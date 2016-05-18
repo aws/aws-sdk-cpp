@@ -46,51 +46,51 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The set of attributes that are projected into the index:</p> <ul> <li>
-     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
-     * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
+     * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
-     * <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table
+     * <i>NonKeyAttributes</i>.</p> </li> <li> <p> <code>ALL</code> - All of the table
      * attributes are projected into the index.</p> </li> </ul>
      */
     inline const ProjectionType& GetProjectionType() const{ return m_projectionType; }
 
     /**
-     * <p>The set of attributes that are projected into the index:</p> <ul> <li>
-     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
-     * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
+     * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
-     * <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table
+     * <i>NonKeyAttributes</i>.</p> </li> <li> <p> <code>ALL</code> - All of the table
      * attributes are projected into the index.</p> </li> </ul>
      */
     inline void SetProjectionType(const ProjectionType& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
 
     /**
-     * <p>The set of attributes that are projected into the index:</p> <ul> <li>
-     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
-     * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
+     * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
-     * <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table
+     * <i>NonKeyAttributes</i>.</p> </li> <li> <p> <code>ALL</code> - All of the table
      * attributes are projected into the index.</p> </li> </ul>
      */
     inline void SetProjectionType(ProjectionType&& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
 
     /**
-     * <p>The set of attributes that are projected into the index:</p> <ul> <li>
-     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
-     * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
+     * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
-     * <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table
+     * <i>NonKeyAttributes</i>.</p> </li> <li> <p> <code>ALL</code> - All of the table
      * attributes are projected into the index.</p> </li> </ul>
      */
     inline Projection& WithProjectionType(const ProjectionType& value) { SetProjectionType(value); return *this;}
 
     /**
-     * <p>The set of attributes that are projected into the index:</p> <ul> <li>
-     * <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into
-     * the index.</p> </li> <li> <p><code>INCLUDE</code> - Only the specified table
+     * <p>The set of attributes that are projected into the index:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
+     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
      * attributes are projected into the index. The list of projected attributes are in
-     * <i>NonKeyAttributes</i>.</p> </li> <li> <p><code>ALL</code> - All of the table
+     * <i>NonKeyAttributes</i>.</p> </li> <li> <p> <code>ALL</code> - All of the table
      * attributes are projected into the index.</p> </li> </ul>
      */
     inline Projection& WithProjectionType(ProjectionType&& value) { SetProjectionType(value); return *this;}

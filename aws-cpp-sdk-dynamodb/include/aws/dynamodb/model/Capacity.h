@@ -31,7 +31,7 @@ namespace Model
 
   /**
    * <p>Represents the amount of provisioned throughput capacity consumed on a table
-   * or an index. </p>
+   * or an index.</p>
    */
   class AWS_DYNAMODB_API Capacity
   {

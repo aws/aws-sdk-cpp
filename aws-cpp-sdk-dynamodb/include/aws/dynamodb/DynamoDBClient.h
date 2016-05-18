@@ -150,7 +150,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/">Amazon
    * DynamoDB Getting Started Guide</a> - provides hands-on exercises that help you
    * learn the basics of working with DynamoDB. <i>If you are new to DynamoDB, we
-   * recommend that you begin with the Getting Started Guide.</i></p> </li> <li> <p>
+   * recommend that you begin with the Getting Started Guide.</i> </p> </li> <li> <p>
    * <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon
    * DynamoDB Developer Guide</a> - contains detailed information about DynamoDB
@@ -174,36 +174,36 @@ namespace Model
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html">Using
    * the DynamoDB API</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>The
    * following are short descriptions of each low-level API action, organized by
-   * function.</p> <p> <b>Managing Tables</b> </p> <ul> <li> <p><i>CreateTable</i> -
+   * function.</p> <p> <b>Managing Tables</b> </p> <ul> <li> <p> <i>CreateTable</i> -
    * Creates a table with user-specified provisioned throughput settings. You must
    * define a primary key for the table - either a simple primary key (partition
    * key), or a composite primary key (partition key and sort key). Optionally, you
    * can create one or more secondary indexes, which provide fast data access using
-   * non-key attributes.</p> </li> <li> <p><i>DescribeTable</i> - Returns metadata
+   * non-key attributes.</p> </li> <li> <p> <i>DescribeTable</i> - Returns metadata
    * for a table, such as table size, status, and index information.</p> </li> <li>
-   * <p><i>UpdateTable</i> - Modifies the provisioned throughput settings for a
+   * <p> <i>UpdateTable</i> - Modifies the provisioned throughput settings for a
    * table. Optionally, you can modify the provisioned throughput settings for global
-   * secondary indexes on the table.</p> </li> <li> <p><i>ListTables</i> - Returns a
+   * secondary indexes on the table.</p> </li> <li> <p> <i>ListTables</i> - Returns a
    * list of all tables associated with the current AWS account and endpoint.</p>
-   * </li> <li> <p><i>DeleteTable</i> - Deletes a table and all of its indexes.</p>
+   * </li> <li> <p> <i>DeleteTable</i> - Deletes a table and all of its indexes.</p>
    * </li> </ul> <p>For conceptual information about managing tables, see <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html">Working
    * with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>
-   * <b>Reading Data</b> </p> <ul> <li> <p><i>GetItem</i> - Returns a set of
+   * <b>Reading Data</b> </p> <ul> <li> <p> <i>GetItem</i> - Returns a set of
    * attributes for the item that has a given primary key. By default, <i>GetItem</i>
    * performs an eventually consistent read; however, applications can request a
-   * strongly consistent read instead.</p> </li> <li> <p><i>BatchGetItem</i> -
+   * strongly consistent read instead.</p> </li> <li> <p> <i>BatchGetItem</i> -
    * Performs multiple <i>GetItem</i> requests for data items using their primary
    * keys, from one table or multiple tables. The response from <i>BatchGetItem</i>
    * has a size limit of 16 MB and returns a maximum of 100 items. Both eventually
-   * consistent and strongly consistent reads can be used.</p> </li> <li>
-   * <p><i>Query</i> - Returns one or more items from a table or a secondary index.
-   * You must provide a specific value for the partition key. You can narrow the
-   * scope of the query using comparison operators against a sort key value, or on
-   * the index key. <i>Query</i> supports either eventual or strong consistency. A
-   * single response has a size limit of 1 MB.</p> </li> <li> <p><i>Scan</i> - Reads
-   * every item in a table; the result set is eventually consistent. You can limit
-   * the number of items returned by filtering the data attributes, using conditional
+   * consistent and strongly consistent reads can be used.</p> </li> <li> <p>
+   * <i>Query</i> - Returns one or more items from a table or a secondary index. You
+   * must provide a specific value for the partition key. You can narrow the scope of
+   * the query using comparison operators against a sort key value, or on the index
+   * key. <i>Query</i> supports either eventual or strong consistency. A single
+   * response has a size limit of 1 MB.</p> </li> <li> <p> <i>Scan</i> - Reads every
+   * item in a table; the result set is eventually consistent. You can limit the
+   * number of items returned by filtering the data attributes, using conditional
    * expressions. <i>Scan</i> can be used to enable ad-hoc querying of a table
    * against non-key attributes; however, since this is a full table scan without
    * using an index, <i>Scan</i> should not be used for any application query use
@@ -213,18 +213,18 @@ namespace Model
    * with Items</a> and <a
    * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
    * and Scan Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>
-   * <b>Modifying Data</b> </p> <ul> <li> <p><i>PutItem</i> - Creates a new item, or
+   * <b>Modifying Data</b> </p> <ul> <li> <p> <i>PutItem</i> - Creates a new item, or
    * replaces an existing item with a new item (including all the attributes). By
    * default, if an item in the table already exists with the same primary key, the
    * new item completely replaces the existing item. You can use conditional
    * operators to replace an item only if its attribute values match certain
    * conditions, or to insert a new item only if that item doesn't already exist.</p>
-   * </li> <li> <p><i>UpdateItem</i> - Modifies the attributes of an existing item.
+   * </li> <li> <p> <i>UpdateItem</i> - Modifies the attributes of an existing item.
    * You can also use conditional operators to perform an update only if the item's
-   * attribute values match certain conditions.</p> </li> <li> <p><i>DeleteItem</i> -
-   * Deletes an item in a table by primary key. You can use conditional operators to
-   * perform a delete an item only if the item's attribute values match certain
-   * conditions.</p> </li> <li> <p><i>BatchWriteItem</i> - Performs multiple
+   * attribute values match certain conditions.</p> </li> <li> <p> <i>DeleteItem</i>
+   * - Deletes an item in a table by primary key. You can use conditional operators
+   * to perform a delete an item only if the item's attribute values match certain
+   * conditions.</p> </li> <li> <p> <i>BatchWriteItem</i> - Performs multiple
    * <i>PutItem</i> and <i>DeleteItem</i> requests across multiple tables in a single
    * request. A failure of any request(s) in the batch will not cause the entire
    * <i>BatchWriteItem</i> operation to fail. Supports batches of up to 25 items to
@@ -270,10 +270,10 @@ namespace Model
          * limit is exceeded, the table's provisioned throughput is exceeded, or an
          * internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <i>UnprocessedKeys</i>. You can use this value to
-         * retry the operation starting with the next item to get.</p> <important><p>If you
-         * request more than 100 items <i>BatchGetItem</i> will return a
+         * retry the operation starting with the next item to get.</p> <important> <p>If
+         * you request more than 100 items <i>BatchGetItem</i> will return a
          * <i>ValidationException</i> with the message "Too many items requested for the
-         * BatchGetItem call".</p></important> <p>For example, if you ask to retrieve 100
+         * BatchGetItem call".</p> </important> <p>For example, if you ask to retrieve 100
          * items, but each individual item is 300 KB in size, the system returns 52 items
          * (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <i>UnprocessedKeys</i> value so you can get the next page of results. If
@@ -298,12 +298,12 @@ namespace Model
          * consistent reads instead, you can set <i>ConsistentRead</i> to <code>true</code>
          * for any or all tables.</p> <p>In order to minimize response latency,
          * <i>BatchGetItem</i> retrieves items in parallel.</p> <p>When designing your
-         * application, keep in mind that DynamoDB does not return attributes in any
-         * particular order. To help parse the response by item, include the primary key
-         * values for the items in your request in the <i>AttributesToGet</i>
-         * parameter.</p> <p>If a requested item does not exist, it is not returned in the
-         * result. Requests for nonexistent items consume the minimum read capacity units
-         * according to the type of read. For more information, see <a
+         * application, keep in mind that DynamoDB does not return items in any particular
+         * order. To help parse the response by item, include the primary key values for
+         * the items in your request in the <i>AttributesToGet</i> parameter.</p> <p>If a
+         * requested item does not exist, it is not returned in the result. Requests for
+         * nonexistent items consume the minimum read capacity units according to the type
+         * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
          * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          */
@@ -317,10 +317,10 @@ namespace Model
          * limit is exceeded, the table's provisioned throughput is exceeded, or an
          * internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <i>UnprocessedKeys</i>. You can use this value to
-         * retry the operation starting with the next item to get.</p> <important><p>If you
-         * request more than 100 items <i>BatchGetItem</i> will return a
+         * retry the operation starting with the next item to get.</p> <important> <p>If
+         * you request more than 100 items <i>BatchGetItem</i> will return a
          * <i>ValidationException</i> with the message "Too many items requested for the
-         * BatchGetItem call".</p></important> <p>For example, if you ask to retrieve 100
+         * BatchGetItem call".</p> </important> <p>For example, if you ask to retrieve 100
          * items, but each individual item is 300 KB in size, the system returns 52 items
          * (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <i>UnprocessedKeys</i> value so you can get the next page of results. If
@@ -345,12 +345,12 @@ namespace Model
          * consistent reads instead, you can set <i>ConsistentRead</i> to <code>true</code>
          * for any or all tables.</p> <p>In order to minimize response latency,
          * <i>BatchGetItem</i> retrieves items in parallel.</p> <p>When designing your
-         * application, keep in mind that DynamoDB does not return attributes in any
-         * particular order. To help parse the response by item, include the primary key
-         * values for the items in your request in the <i>AttributesToGet</i>
-         * parameter.</p> <p>If a requested item does not exist, it is not returned in the
-         * result. Requests for nonexistent items consume the minimum read capacity units
-         * according to the type of read. For more information, see <a
+         * application, keep in mind that DynamoDB does not return items in any particular
+         * order. To help parse the response by item, include the primary key values for
+         * the items in your request in the <i>AttributesToGet</i> parameter.</p> <p>If a
+         * requested item does not exist, it is not returned in the result. Requests for
+         * nonexistent items consume the minimum read capacity units according to the type
+         * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
          * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -366,10 +366,10 @@ namespace Model
          * limit is exceeded, the table's provisioned throughput is exceeded, or an
          * internal processing failure occurs. If a partial result is returned, the
          * operation returns a value for <i>UnprocessedKeys</i>. You can use this value to
-         * retry the operation starting with the next item to get.</p> <important><p>If you
-         * request more than 100 items <i>BatchGetItem</i> will return a
+         * retry the operation starting with the next item to get.</p> <important> <p>If
+         * you request more than 100 items <i>BatchGetItem</i> will return a
          * <i>ValidationException</i> with the message "Too many items requested for the
-         * BatchGetItem call".</p></important> <p>For example, if you ask to retrieve 100
+         * BatchGetItem call".</p> </important> <p>For example, if you ask to retrieve 100
          * items, but each individual item is 300 KB in size, the system returns 52 items
          * (so as not to exceed the 16 MB limit). It also returns an appropriate
          * <i>UnprocessedKeys</i> value so you can get the next page of results. If
@@ -394,12 +394,12 @@ namespace Model
          * consistent reads instead, you can set <i>ConsistentRead</i> to <code>true</code>
          * for any or all tables.</p> <p>In order to minimize response latency,
          * <i>BatchGetItem</i> retrieves items in parallel.</p> <p>When designing your
-         * application, keep in mind that DynamoDB does not return attributes in any
-         * particular order. To help parse the response by item, include the primary key
-         * values for the items in your request in the <i>AttributesToGet</i>
-         * parameter.</p> <p>If a requested item does not exist, it is not returned in the
-         * result. Requests for nonexistent items consume the minimum read capacity units
-         * according to the type of read. For more information, see <a
+         * application, keep in mind that DynamoDB does not return items in any particular
+         * order. To help parse the response by item, include the primary key values for
+         * the items in your request in the <i>AttributesToGet</i> parameter.</p> <p>If a
+         * requested item does not exist, it is not returned in the result. Requests for
+         * nonexistent items consume the minimum read capacity units according to the type
+         * of read. For more information, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity
          * Units Calculations</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -411,7 +411,7 @@ namespace Model
          * <p>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or
          * more tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of
          * data, which can comprise as many as 25 put or delete requests. Individual items
-         * to be written can be as large as 400 KB.</p> <note> <p><i>BatchWriteItem</i>
+         * to be written can be as large as 400 KB.</p> <note> <p> <i>BatchWriteItem</i>
          * cannot update items. To update items, use the <i>UpdateItem</i> API.</p> </note>
          * <p>The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in
          * <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole is
@@ -459,9 +459,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
-         * </li> </ul>
+         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
+         * MB.</p> </li> </ul>
          */
         virtual Model::BatchWriteItemOutcome BatchWriteItem(const Model::BatchWriteItemRequest& request) const;
 
@@ -469,7 +469,7 @@ namespace Model
          * <p>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or
          * more tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of
          * data, which can comprise as many as 25 put or delete requests. Individual items
-         * to be written can be as large as 400 KB.</p> <note> <p><i>BatchWriteItem</i>
+         * to be written can be as large as 400 KB.</p> <note> <p> <i>BatchWriteItem</i>
          * cannot update items. To update items, use the <i>UpdateItem</i> API.</p> </note>
          * <p>The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in
          * <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole is
@@ -517,9 +517,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
-         * </li> </ul>
+         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
+         * MB.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -529,7 +529,7 @@ namespace Model
          * <p>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or
          * more tables. A single call to <i>BatchWriteItem</i> can write up to 16 MB of
          * data, which can comprise as many as 25 put or delete requests. Individual items
-         * to be written can be as large as 400 KB.</p> <note> <p><i>BatchWriteItem</i>
+         * to be written can be as large as 400 KB.</p> <note> <p> <i>BatchWriteItem</i>
          * cannot update items. To update items, use the <i>UpdateItem</i> API.</p> </note>
          * <p>The individual <i>PutItem</i> and <i>DeleteItem</i> operations specified in
          * <i>BatchWriteItem</i> are atomic; however <i>BatchWriteItem</i> as a whole is
@@ -577,9 +577,9 @@ namespace Model
          * to perform multiple operations on the same item in the same
          * <i>BatchWriteItem</i> request. For example, you cannot put and delete the same
          * item in the same <i>BatchWriteItem</i> request. </p> </li> <li> <p>There are
-         * more than 25 requests in the batch.</p></li> <li> <p>Any individual item in a
-         * batch exceeds 400 KB.</p> </li> <li><p>The total request size exceeds 16 MB.</p>
-         * </li> </ul>
+         * more than 25 requests in the batch.</p> </li> <li> <p>Any individual item in a
+         * batch exceeds 400 KB.</p> </li> <li> <p>The total request size exceeds 16
+         * MB.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -588,8 +588,8 @@ namespace Model
         /**
          * <p>The <i>CreateTable</i> operation adds a new table to your account. In an AWS
          * account, table names must be unique within each region. That is, you can have
-         * two tables with same name if you create the tables in different regions.</p>
-         * <p><i>CreateTable</i> is an asynchronous operation. Upon receiving a
+         * two tables with same name if you create the tables in different regions.</p> <p>
+         * <i>CreateTable</i> is an asynchronous operation. Upon receiving a
          * <i>CreateTable</i> request, DynamoDB immediately returns a response with a
          * <i>TableStatus</i> of <code>CREATING</code>. After the table is created,
          * DynamoDB sets the <i>TableStatus</i> to <code>ACTIVE</code>. You can perform
@@ -606,8 +606,8 @@ namespace Model
         /**
          * <p>The <i>CreateTable</i> operation adds a new table to your account. In an AWS
          * account, table names must be unique within each region. That is, you can have
-         * two tables with same name if you create the tables in different regions.</p>
-         * <p><i>CreateTable</i> is an asynchronous operation. Upon receiving a
+         * two tables with same name if you create the tables in different regions.</p> <p>
+         * <i>CreateTable</i> is an asynchronous operation. Upon receiving a
          * <i>CreateTable</i> request, DynamoDB immediately returns a response with a
          * <i>TableStatus</i> of <code>CREATING</code>. After the table is created,
          * DynamoDB sets the <i>TableStatus</i> to <code>ACTIVE</code>. You can perform
@@ -626,8 +626,8 @@ namespace Model
         /**
          * <p>The <i>CreateTable</i> operation adds a new table to your account. In an AWS
          * account, table names must be unique within each region. That is, you can have
-         * two tables with same name if you create the tables in different regions.</p>
-         * <p><i>CreateTable</i> is an asynchronous operation. Upon receiving a
+         * two tables with same name if you create the tables in different regions.</p> <p>
+         * <i>CreateTable</i> is an asynchronous operation. Upon receiving a
          * <i>CreateTable</i> request, DynamoDB immediately returns a response with a
          * <i>TableStatus</i> of <code>CREATING</code>. After the table is created,
          * DynamoDB sets the <i>TableStatus</i> to <code>ACTIVE</code>. You can perform
@@ -653,7 +653,7 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted. </p>
+         * the item is not deleted.</p>
          */
         virtual Model::DeleteItemOutcome DeleteItem(const Model::DeleteItemRequest& request) const;
 
@@ -667,7 +667,7 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted. </p>
+         * the item is not deleted.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -683,7 +683,7 @@ namespace Model
          * same item or attribute does <i>not</i> result in an error response.</p>
          * <p>Conditional deletes are useful for deleting items only if specific conditions
          * are met. If those conditions are met, DynamoDB performs the delete. Otherwise,
-         * the item is not deleted. </p>
+         * the item is not deleted.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -768,31 +768,32 @@ namespace Model
          * obtaining the increase is not instantaneous. The <i>DescribeLimits</i> API lets
          * you write code to compare the capacity you are currently using to those limits
          * imposed by your account so that you have enough time to apply for an increase
-         * before you hit a limit.</p> <p> For example, you could use one of the AWS SDKs
-         * to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> for a particular
-         * region to obtain your current account limits on provisioned capacity there.</li>
-         * <li>Create a variable to hold the aggregate read capacity units provisioned for
-         * all your tables in that region, and one to hold the aggregate write capacity
-         * units. Zero them both.</li> <li>Call <i>ListTables</i> to obtain a list of all
-         * your DynamoDB tables.</li> <li><p>For each table name listed by
-         * <i>ListTables</i>, do the following:</p> <ul> <li>Call <i>DescribeTable</i> with
-         * the table name.</li> <li>Use the data returned by <i>DescribeTable</i> to add
-         * the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</li> <li>If the table has one or more global secondary
-         * indexes (GSIs), loop over these GSIs and add their provisioned capacity values
-         * to your variables as well.</li> </ul> </li> <li>Report the account limits for
-         * that region returned by <i>DescribeLimits</i>, along with the total current
-         * provisioned capacity levels you have calculated.</li> </ol> <p>This will let you
-         * see whether you are getting close to your account-level limits.</p> <p>The
-         * per-table limits apply only when you are creating a new table. They restrict the
-         * sum of the provisioned capacity of the new table itself and all its global
-         * secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB will not
-         * let you increase provisioned capacity extremely rapidly, but the only upper
-         * limit that applies is that the aggregate provisioned capacity over all your
-         * tables and GSIs cannot exceed either of the per-account limits.</p>
-         * <note><p><i>DescribeLimits</i> should only be called periodically. You can
-         * expect throttling errors if you call it more than once in a minute.</p> </note>
-         * <p>The <i>DescribeLimits</i> Request element has no content.</p>
+         * before you hit a limit.</p> <p>For example, you could use one of the AWS SDKs to
+         * do the following:</p> <ol> <li><p>Call <i>DescribeLimits</i> for a particular
+         * region to obtain your current account limits on provisioned capacity there.</p>
+         * </li> <li><p>Create a variable to hold the aggregate read capacity units
+         * provisioned for all your tables in that region, and one to hold the aggregate
+         * write capacity units. Zero them both.</p> </li> <li><p>Call <i>ListTables</i> to
+         * obtain a list of all your DynamoDB tables.</p> </li> <li> <p>For each table name
+         * listed by <i>ListTables</i>, do the following:</p> <ul> <li><p>Call
+         * <i>DescribeTable</i> with the table name.</p> </li> <li><p>Use the data returned
+         * by <i>DescribeTable</i> to add the read capacity units and write capacity units
+         * provisioned for the table itself to your variables.</p> </li> <li><p>If the
+         * table has one or more global secondary indexes (GSIs), loop over these GSIs and
+         * add their provisioned capacity values to your variables as well.</p> </li> </ul>
+         * </li> <li><p>Report the account limits for that region returned by
+         * <i>DescribeLimits</i>, along with the total current provisioned capacity levels
+         * you have calculated.</p> </li> </ol> <p>This will let you see whether you are
+         * getting close to your account-level limits.</p> <p>The per-table limits apply
+         * only when you are creating a new table. They restrict the sum of the provisioned
+         * capacity of the new table itself and all its global secondary indexes.</p>
+         * <p>For existing tables and their GSIs, DynamoDB will not let you increase
+         * provisioned capacity extremely rapidly, but the only upper limit that applies is
+         * that the aggregate provisioned capacity over all your tables and GSIs cannot
+         * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
+         * should only be called periodically. You can expect throttling errors if you call
+         * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
+         * element has no content.</p>
          */
         virtual Model::DescribeLimitsOutcome DescribeLimits(const Model::DescribeLimitsRequest& request) const;
 
@@ -811,31 +812,32 @@ namespace Model
          * obtaining the increase is not instantaneous. The <i>DescribeLimits</i> API lets
          * you write code to compare the capacity you are currently using to those limits
          * imposed by your account so that you have enough time to apply for an increase
-         * before you hit a limit.</p> <p> For example, you could use one of the AWS SDKs
-         * to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> for a particular
-         * region to obtain your current account limits on provisioned capacity there.</li>
-         * <li>Create a variable to hold the aggregate read capacity units provisioned for
-         * all your tables in that region, and one to hold the aggregate write capacity
-         * units. Zero them both.</li> <li>Call <i>ListTables</i> to obtain a list of all
-         * your DynamoDB tables.</li> <li><p>For each table name listed by
-         * <i>ListTables</i>, do the following:</p> <ul> <li>Call <i>DescribeTable</i> with
-         * the table name.</li> <li>Use the data returned by <i>DescribeTable</i> to add
-         * the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</li> <li>If the table has one or more global secondary
-         * indexes (GSIs), loop over these GSIs and add their provisioned capacity values
-         * to your variables as well.</li> </ul> </li> <li>Report the account limits for
-         * that region returned by <i>DescribeLimits</i>, along with the total current
-         * provisioned capacity levels you have calculated.</li> </ol> <p>This will let you
-         * see whether you are getting close to your account-level limits.</p> <p>The
-         * per-table limits apply only when you are creating a new table. They restrict the
-         * sum of the provisioned capacity of the new table itself and all its global
-         * secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB will not
-         * let you increase provisioned capacity extremely rapidly, but the only upper
-         * limit that applies is that the aggregate provisioned capacity over all your
-         * tables and GSIs cannot exceed either of the per-account limits.</p>
-         * <note><p><i>DescribeLimits</i> should only be called periodically. You can
-         * expect throttling errors if you call it more than once in a minute.</p> </note>
-         * <p>The <i>DescribeLimits</i> Request element has no content.</p>
+         * before you hit a limit.</p> <p>For example, you could use one of the AWS SDKs to
+         * do the following:</p> <ol> <li><p>Call <i>DescribeLimits</i> for a particular
+         * region to obtain your current account limits on provisioned capacity there.</p>
+         * </li> <li><p>Create a variable to hold the aggregate read capacity units
+         * provisioned for all your tables in that region, and one to hold the aggregate
+         * write capacity units. Zero them both.</p> </li> <li><p>Call <i>ListTables</i> to
+         * obtain a list of all your DynamoDB tables.</p> </li> <li> <p>For each table name
+         * listed by <i>ListTables</i>, do the following:</p> <ul> <li><p>Call
+         * <i>DescribeTable</i> with the table name.</p> </li> <li><p>Use the data returned
+         * by <i>DescribeTable</i> to add the read capacity units and write capacity units
+         * provisioned for the table itself to your variables.</p> </li> <li><p>If the
+         * table has one or more global secondary indexes (GSIs), loop over these GSIs and
+         * add their provisioned capacity values to your variables as well.</p> </li> </ul>
+         * </li> <li><p>Report the account limits for that region returned by
+         * <i>DescribeLimits</i>, along with the total current provisioned capacity levels
+         * you have calculated.</p> </li> </ol> <p>This will let you see whether you are
+         * getting close to your account-level limits.</p> <p>The per-table limits apply
+         * only when you are creating a new table. They restrict the sum of the provisioned
+         * capacity of the new table itself and all its global secondary indexes.</p>
+         * <p>For existing tables and their GSIs, DynamoDB will not let you increase
+         * provisioned capacity extremely rapidly, but the only upper limit that applies is
+         * that the aggregate provisioned capacity over all your tables and GSIs cannot
+         * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
+         * should only be called periodically. You can expect throttling errors if you call
+         * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
+         * element has no content.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -856,31 +858,32 @@ namespace Model
          * obtaining the increase is not instantaneous. The <i>DescribeLimits</i> API lets
          * you write code to compare the capacity you are currently using to those limits
          * imposed by your account so that you have enough time to apply for an increase
-         * before you hit a limit.</p> <p> For example, you could use one of the AWS SDKs
-         * to do the following:</p> <ol> <li>Call <i>DescribeLimits</i> for a particular
-         * region to obtain your current account limits on provisioned capacity there.</li>
-         * <li>Create a variable to hold the aggregate read capacity units provisioned for
-         * all your tables in that region, and one to hold the aggregate write capacity
-         * units. Zero them both.</li> <li>Call <i>ListTables</i> to obtain a list of all
-         * your DynamoDB tables.</li> <li><p>For each table name listed by
-         * <i>ListTables</i>, do the following:</p> <ul> <li>Call <i>DescribeTable</i> with
-         * the table name.</li> <li>Use the data returned by <i>DescribeTable</i> to add
-         * the read capacity units and write capacity units provisioned for the table
-         * itself to your variables.</li> <li>If the table has one or more global secondary
-         * indexes (GSIs), loop over these GSIs and add their provisioned capacity values
-         * to your variables as well.</li> </ul> </li> <li>Report the account limits for
-         * that region returned by <i>DescribeLimits</i>, along with the total current
-         * provisioned capacity levels you have calculated.</li> </ol> <p>This will let you
-         * see whether you are getting close to your account-level limits.</p> <p>The
-         * per-table limits apply only when you are creating a new table. They restrict the
-         * sum of the provisioned capacity of the new table itself and all its global
-         * secondary indexes.</p> <p>For existing tables and their GSIs, DynamoDB will not
-         * let you increase provisioned capacity extremely rapidly, but the only upper
-         * limit that applies is that the aggregate provisioned capacity over all your
-         * tables and GSIs cannot exceed either of the per-account limits.</p>
-         * <note><p><i>DescribeLimits</i> should only be called periodically. You can
-         * expect throttling errors if you call it more than once in a minute.</p> </note>
-         * <p>The <i>DescribeLimits</i> Request element has no content.</p>
+         * before you hit a limit.</p> <p>For example, you could use one of the AWS SDKs to
+         * do the following:</p> <ol> <li><p>Call <i>DescribeLimits</i> for a particular
+         * region to obtain your current account limits on provisioned capacity there.</p>
+         * </li> <li><p>Create a variable to hold the aggregate read capacity units
+         * provisioned for all your tables in that region, and one to hold the aggregate
+         * write capacity units. Zero them both.</p> </li> <li><p>Call <i>ListTables</i> to
+         * obtain a list of all your DynamoDB tables.</p> </li> <li> <p>For each table name
+         * listed by <i>ListTables</i>, do the following:</p> <ul> <li><p>Call
+         * <i>DescribeTable</i> with the table name.</p> </li> <li><p>Use the data returned
+         * by <i>DescribeTable</i> to add the read capacity units and write capacity units
+         * provisioned for the table itself to your variables.</p> </li> <li><p>If the
+         * table has one or more global secondary indexes (GSIs), loop over these GSIs and
+         * add their provisioned capacity values to your variables as well.</p> </li> </ul>
+         * </li> <li><p>Report the account limits for that region returned by
+         * <i>DescribeLimits</i>, along with the total current provisioned capacity levels
+         * you have calculated.</p> </li> </ol> <p>This will let you see whether you are
+         * getting close to your account-level limits.</p> <p>The per-table limits apply
+         * only when you are creating a new table. They restrict the sum of the provisioned
+         * capacity of the new table itself and all its global secondary indexes.</p>
+         * <p>For existing tables and their GSIs, DynamoDB will not let you increase
+         * provisioned capacity extremely rapidly, but the only upper limit that applies is
+         * that the aggregate provisioned capacity over all your tables and GSIs cannot
+         * exceed either of the per-account limits.</p> <note> <p> <i>DescribeLimits</i>
+         * should only be called periodically. You can expect throttling errors if you call
+         * it more than once in a minute.</p> </note> <p>The <i>DescribeLimits</i> Request
+         * element has no content.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -929,8 +932,8 @@ namespace Model
         /**
          * <p>The <i>GetItem</i> operation returns a set of attributes for the item with
          * the given primary key. If there is no matching item, <i>GetItem</i> does not
-         * return any data.</p> <p><i>GetItem</i> provides an eventually consistent read by
-         * default. If your application requires a strongly consistent read, set
+         * return any data.</p> <p> <i>GetItem</i> provides an eventually consistent read
+         * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
          * last updated value.</p>
@@ -940,8 +943,8 @@ namespace Model
         /**
          * <p>The <i>GetItem</i> operation returns a set of attributes for the item with
          * the given primary key. If there is no matching item, <i>GetItem</i> does not
-         * return any data.</p> <p><i>GetItem</i> provides an eventually consistent read by
-         * default. If your application requires a strongly consistent read, set
+         * return any data.</p> <p> <i>GetItem</i> provides an eventually consistent read
+         * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
          * last updated value.</p>
@@ -953,8 +956,8 @@ namespace Model
         /**
          * <p>The <i>GetItem</i> operation returns a set of attributes for the item with
          * the given primary key. If there is no matching item, <i>GetItem</i> does not
-         * return any data.</p> <p><i>GetItem</i> provides an eventually consistent read by
-         * default. If your application requires a strongly consistent read, set
+         * return any data.</p> <p> <i>GetItem</i> provides an eventually consistent read
+         * by default. If your application requires a strongly consistent read, set
          * <i>ConsistentRead</i> to <code>true</code>. Although a strongly consistent read
          * might take more time than an eventually consistent read, it always returns the
          * last updated value.</p>
@@ -993,22 +996,23 @@ namespace Model
          * has the same primary key as the new item already exists in the specified table,
          * the new item completely replaces the existing item. You can perform a
          * conditional put operation (add a new item if one with the specified primary key
-         * doesn't exist), or replace an existing item if it has certain attribute values.
-         * </p> <p>In addition to putting an item, you can also return the item's attribute
-         * values in the same operation, using the <i>ReturnValues</i> parameter.</p>
-         * <p>When you add an item, the primary key attribute(s) are the only required
-         * attributes. Attribute values cannot be null. String and Binary type attributes
-         * must have lengths greater than zero. Set type attributes cannot be empty.
-         * Requests with empty values will be rejected with a <i>ValidationException</i>
-         * exception.</p> <p>You can request that <i>PutItem</i> return either a copy of
-         * the original item (before the update) or a copy of the updated item (after the
-         * update). For more information, see the <i>ReturnValues</i> description
-         * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about using this API, see <a
+         * doesn't exist), or replace an existing item if it has certain attribute
+         * values.</p> <p>In addition to putting an item, you can also return the item's
+         * attribute values in the same operation, using the <i>ReturnValues</i>
+         * parameter.</p> <p>When you add an item, the primary key attribute(s) are the
+         * only required attributes. Attribute values cannot be null. String and Binary
+         * type attributes must have lengths greater than zero. Set type attributes cannot
+         * be empty. Requests with empty values will be rejected with a
+         * <i>ValidationException</i> exception.</p> <p>You can request that <i>PutItem</i>
+         * return either a copy of the original item (before the update) or a copy of the
+         * updated item (after the update). For more information, see the
+         * <i>ReturnValues</i> description below.</p> <note> <p>To prevent a new item from
+         * replacing an existing item, use a conditional expression that contains the
+         * <code>attribute_not_exists</code> function with the name of the attribute being
+         * used as the partition key for the table. Since every record must contain that
+         * attribute, the <code>attribute_not_exists</code> function will only succeed if
+         * no matching item exists.</p> </note> <p>For more information about using this
+         * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          */
@@ -1019,22 +1023,23 @@ namespace Model
          * has the same primary key as the new item already exists in the specified table,
          * the new item completely replaces the existing item. You can perform a
          * conditional put operation (add a new item if one with the specified primary key
-         * doesn't exist), or replace an existing item if it has certain attribute values.
-         * </p> <p>In addition to putting an item, you can also return the item's attribute
-         * values in the same operation, using the <i>ReturnValues</i> parameter.</p>
-         * <p>When you add an item, the primary key attribute(s) are the only required
-         * attributes. Attribute values cannot be null. String and Binary type attributes
-         * must have lengths greater than zero. Set type attributes cannot be empty.
-         * Requests with empty values will be rejected with a <i>ValidationException</i>
-         * exception.</p> <p>You can request that <i>PutItem</i> return either a copy of
-         * the original item (before the update) or a copy of the updated item (after the
-         * update). For more information, see the <i>ReturnValues</i> description
-         * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about using this API, see <a
+         * doesn't exist), or replace an existing item if it has certain attribute
+         * values.</p> <p>In addition to putting an item, you can also return the item's
+         * attribute values in the same operation, using the <i>ReturnValues</i>
+         * parameter.</p> <p>When you add an item, the primary key attribute(s) are the
+         * only required attributes. Attribute values cannot be null. String and Binary
+         * type attributes must have lengths greater than zero. Set type attributes cannot
+         * be empty. Requests with empty values will be rejected with a
+         * <i>ValidationException</i> exception.</p> <p>You can request that <i>PutItem</i>
+         * return either a copy of the original item (before the update) or a copy of the
+         * updated item (after the update). For more information, see the
+         * <i>ReturnValues</i> description below.</p> <note> <p>To prevent a new item from
+         * replacing an existing item, use a conditional expression that contains the
+         * <code>attribute_not_exists</code> function with the name of the attribute being
+         * used as the partition key for the table. Since every record must contain that
+         * attribute, the <code>attribute_not_exists</code> function will only succeed if
+         * no matching item exists.</p> </note> <p>For more information about using this
+         * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -1047,22 +1052,23 @@ namespace Model
          * has the same primary key as the new item already exists in the specified table,
          * the new item completely replaces the existing item. You can perform a
          * conditional put operation (add a new item if one with the specified primary key
-         * doesn't exist), or replace an existing item if it has certain attribute values.
-         * </p> <p>In addition to putting an item, you can also return the item's attribute
-         * values in the same operation, using the <i>ReturnValues</i> parameter.</p>
-         * <p>When you add an item, the primary key attribute(s) are the only required
-         * attributes. Attribute values cannot be null. String and Binary type attributes
-         * must have lengths greater than zero. Set type attributes cannot be empty.
-         * Requests with empty values will be rejected with a <i>ValidationException</i>
-         * exception.</p> <p>You can request that <i>PutItem</i> return either a copy of
-         * the original item (before the update) or a copy of the updated item (after the
-         * update). For more information, see the <i>ReturnValues</i> description
-         * below.</p> <note> <p>To prevent a new item from replacing an existing item, use
-         * a conditional expression that contains the <code>attribute_not_exists</code>
-         * function with the name of the attribute being used as the partition key for the
-         * table. Since every record must contain that attribute, the
-         * <code>attribute_not_exists</code> function will only succeed if no matching item
-         * exists.</p> </note> <p>For more information about using this API, see <a
+         * doesn't exist), or replace an existing item if it has certain attribute
+         * values.</p> <p>In addition to putting an item, you can also return the item's
+         * attribute values in the same operation, using the <i>ReturnValues</i>
+         * parameter.</p> <p>When you add an item, the primary key attribute(s) are the
+         * only required attributes. Attribute values cannot be null. String and Binary
+         * type attributes must have lengths greater than zero. Set type attributes cannot
+         * be empty. Requests with empty values will be rejected with a
+         * <i>ValidationException</i> exception.</p> <p>You can request that <i>PutItem</i>
+         * return either a copy of the original item (before the update) or a copy of the
+         * updated item (after the update). For more information, see the
+         * <i>ReturnValues</i> description below.</p> <note> <p>To prevent a new item from
+         * replacing an existing item, use a conditional expression that contains the
+         * <code>attribute_not_exists</code> function with the name of the attribute being
+         * used as the partition key for the table. Since every record must contain that
+         * attribute, the <code>attribute_not_exists</code> function will only succeed if
+         * no matching item exists.</p> </note> <p>For more information about using this
+         * API, see <a
          * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
          *
@@ -1086,13 +1092,13 @@ namespace Model
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
-         * only provided if the results exceed 1 MB, or if you have used the <i>Limit</i>
-         * parameter. </p> <p>You can query a table, a local secondary index, or a global
-         * secondary index. For a query on a table or on a local secondary index, you can
-         * set the <i>ConsistentRead</i> parameter to <code>true</code> and obtain a
-         * strongly consistent result. Global secondary indexes support eventually
-         * consistent reads only, so do not specify <i>ConsistentRead</i> when querying a
-         * global secondary index.</p>
+         * only provided if you have used the <i>Limit</i> parameter, or if the result set
+         * exceeds 1 MB (prior to applying a filter). </p> <p>You can query a table, a
+         * local secondary index, or a global secondary index. For a query on a table or on
+         * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
+         * <code>true</code> and obtain a strongly consistent result. Global secondary
+         * indexes support eventually consistent reads only, so do not specify
+         * <i>ConsistentRead</i> when querying a global secondary index.</p>
          */
         virtual Model::QueryOutcome Query(const Model::QueryRequest& request) const;
 
@@ -1112,13 +1118,13 @@ namespace Model
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
-         * only provided if the results exceed 1 MB, or if you have used the <i>Limit</i>
-         * parameter. </p> <p>You can query a table, a local secondary index, or a global
-         * secondary index. For a query on a table or on a local secondary index, you can
-         * set the <i>ConsistentRead</i> parameter to <code>true</code> and obtain a
-         * strongly consistent result. Global secondary indexes support eventually
-         * consistent reads only, so do not specify <i>ConsistentRead</i> when querying a
-         * global secondary index.</p>
+         * only provided if you have used the <i>Limit</i> parameter, or if the result set
+         * exceeds 1 MB (prior to applying a filter). </p> <p>You can query a table, a
+         * local secondary index, or a global secondary index. For a query on a table or on
+         * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
+         * <code>true</code> and obtain a strongly consistent result. Global secondary
+         * indexes support eventually consistent reads only, so do not specify
+         * <i>ConsistentRead</i> when querying a global secondary index.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1140,13 +1146,13 @@ namespace Model
          * <i>LastEvaluatedKey</i> element to continue the query in a subsequent operation.
          * Unlike a <i>Scan</i> operation, a <i>Query</i> operation never returns both an
          * empty result set and a <i>LastEvaluatedKey</i> value. <i>LastEvaluatedKey</i> is
-         * only provided if the results exceed 1 MB, or if you have used the <i>Limit</i>
-         * parameter. </p> <p>You can query a table, a local secondary index, or a global
-         * secondary index. For a query on a table or on a local secondary index, you can
-         * set the <i>ConsistentRead</i> parameter to <code>true</code> and obtain a
-         * strongly consistent result. Global secondary indexes support eventually
-         * consistent reads only, so do not specify <i>ConsistentRead</i> when querying a
-         * global secondary index.</p>
+         * only provided if you have used the <i>Limit</i> parameter, or if the result set
+         * exceeds 1 MB (prior to applying a filter). </p> <p>You can query a table, a
+         * local secondary index, or a global secondary index. For a query on a table or on
+         * a local secondary index, you can set the <i>ConsistentRead</i> parameter to
+         * <code>true</code> and obtain a strongly consistent result. Global secondary
+         * indexes support eventually consistent reads only, so do not specify
+         * <i>ConsistentRead</i> when querying a global secondary index.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1226,23 +1232,23 @@ namespace Model
         virtual void ScanAsync(const Model::ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Edits an existing item's attributes, or adds a new item to the table if it
+         * <p>Edits an existing item's attributes, or adds a new item to the table if it
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). </p> <p>You can also return the
-         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * it has certain expected attribute values).</p> <p>You can also return the item's
+         * attribute values in the same <i>UpdateItem</i> operation using the
          * <i>ReturnValues</i> parameter.</p>
          */
         virtual Model::UpdateItemOutcome UpdateItem(const Model::UpdateItemRequest& request) const;
 
         /**
-         * <p> Edits an existing item's attributes, or adds a new item to the table if it
+         * <p>Edits an existing item's attributes, or adds a new item to the table if it
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). </p> <p>You can also return the
-         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * it has certain expected attribute values).</p> <p>You can also return the item's
+         * attribute values in the same <i>UpdateItem</i> operation using the
          * <i>ReturnValues</i> parameter.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1250,12 +1256,12 @@ namespace Model
         virtual Model::UpdateItemOutcomeCallable UpdateItemCallable(const Model::UpdateItemRequest& request) const;
 
         /**
-         * <p> Edits an existing item's attributes, or adds a new item to the table if it
+         * <p>Edits an existing item's attributes, or adds a new item to the table if it
          * does not already exist. You can put, delete, or add attribute values. You can
          * also perform a conditional update on an existing item (insert a new attribute
          * name-value pair if it doesn't exist, or replace an existing name-value pair if
-         * it has certain expected attribute values). </p> <p>You can also return the
-         * item's attribute values in the same <i>UpdateItem</i> operation using the
+         * it has certain expected attribute values).</p> <p>You can also return the item's
+         * attribute values in the same <i>UpdateItem</i> operation using the
          * <i>ReturnValues</i> parameter.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1265,12 +1271,12 @@ namespace Model
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
-         * the following operations at once:</p> <ul> <li><p>Modify the provisioned
-         * throughput settings of the table.</p></li> <li><p>Enable or disable Streams on
-         * the table.</p></li> <li><p>Remove a global secondary index from the
-         * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
-         * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
+         * throughput settings of the table.</p> </li> <li> <p>Enable or disable Streams on
+         * the table.</p> </li> <li> <p>Remove a global secondary index from the table.</p>
+         * </li> <li> <p>Create a new global secondary index on the table. Once the index
+         * begins backfilling, you can use <i>UpdateTable</i> to perform other
+         * operations.</p> </li> </ul> <p> <i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
@@ -1281,12 +1287,12 @@ namespace Model
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
-         * the following operations at once:</p> <ul> <li><p>Modify the provisioned
-         * throughput settings of the table.</p></li> <li><p>Enable or disable Streams on
-         * the table.</p></li> <li><p>Remove a global secondary index from the
-         * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
-         * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
+         * throughput settings of the table.</p> </li> <li> <p>Enable or disable Streams on
+         * the table.</p> </li> <li> <p>Remove a global secondary index from the table.</p>
+         * </li> <li> <p>Create a new global secondary index on the table. Once the index
+         * begins backfilling, you can use <i>UpdateTable</i> to perform other
+         * operations.</p> </li> </ul> <p> <i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the
@@ -1299,12 +1305,12 @@ namespace Model
         /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
-         * the following operations at once:</p> <ul> <li><p>Modify the provisioned
-         * throughput settings of the table.</p></li> <li><p>Enable or disable Streams on
-         * the table.</p></li> <li><p>Remove a global secondary index from the
-         * table.</p></li> <li> <p>Create a new global secondary index on the table. Once
-         * the index begins backfilling, you can use <i>UpdateTable</i> to perform other
-         * operations.</p></li> </ul> <p><i>UpdateTable</i> is an asynchronous operation;
+         * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
+         * throughput settings of the table.</p> </li> <li> <p>Enable or disable Streams on
+         * the table.</p> </li> <li> <p>Remove a global secondary index from the table.</p>
+         * </li> <li> <p>Create a new global secondary index on the table. Once the index
+         * begins backfilling, you can use <i>UpdateTable</i> to perform other
+         * operations.</p> </li> </ul> <p> <i>UpdateTable</i> is an asynchronous operation;
          * while it is executing, the table status changes from <code>ACTIVE</code> to
          * <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue
          * another <i>UpdateTable</i> request. When the table returns to the

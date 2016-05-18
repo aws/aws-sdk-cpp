@@ -43,86 +43,86 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline QueryRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline QueryRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table containing the requested items. </p>
+     * <p>The name of the table containing the requested items.</p>
      */
     inline QueryRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline QueryRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline QueryRequest& WithIndexName(Aws::String&& value) { SetIndexName(value); return *this;}
 
     /**
      * <p>The name of an index to query. This index can be any local secondary index or
      * global secondary index on the table. Note that if you use the <i>IndexName</i>
-     * parameter, you must also provide <i>TableName.</i></p>
+     * parameter, you must also provide <i>TableName.</i> </p>
      */
     inline QueryRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
@@ -130,16 +130,16 @@ namespace Model
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or in the
      * case of an index, some or all of the attributes projected into the index.</p>
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
+     * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
      * for each matching item in the index DynamoDB will fetch the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
-     * is required.</p> </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
+     * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
      * only when querying an index. Retrieves all attributes that have been projected
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
-     * <li> <p><code>COUNT</code> - Returns the number of matching items, rather than
+     * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
      * <i>AttributesToGet</i>. This return value is equivalent to specifying
@@ -158,10 +158,10 @@ namespace Model
      * both <i>Select</i> and <i>AttributesToGet</i> together in a single request,
      * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
      * usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p> <note><p>If you use the <i>ProjectionExpression</i>
+     * <i>Select</i>.)</p> <note> <p>If you use the <i>ProjectionExpression</i>
      * parameter, then the value for <i>Select</i> can only be
      * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will return
-     * an error.</p></note>
+     * an error.</p> </note>
      */
     inline const Select& GetSelect() const{ return m_select; }
 
@@ -169,16 +169,16 @@ namespace Model
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or in the
      * case of an index, some or all of the attributes projected into the index.</p>
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
+     * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
      * for each matching item in the index DynamoDB will fetch the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
-     * is required.</p> </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
+     * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
      * only when querying an index. Retrieves all attributes that have been projected
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
-     * <li> <p><code>COUNT</code> - Returns the number of matching items, rather than
+     * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
      * <i>AttributesToGet</i>. This return value is equivalent to specifying
@@ -197,10 +197,10 @@ namespace Model
      * both <i>Select</i> and <i>AttributesToGet</i> together in a single request,
      * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
      * usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p> <note><p>If you use the <i>ProjectionExpression</i>
+     * <i>Select</i>.)</p> <note> <p>If you use the <i>ProjectionExpression</i>
      * parameter, then the value for <i>Select</i> can only be
      * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will return
-     * an error.</p></note>
+     * an error.</p> </note>
      */
     inline void SetSelect(const Select& value) { m_selectHasBeenSet = true; m_select = value; }
 
@@ -208,16 +208,16 @@ namespace Model
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or in the
      * case of an index, some or all of the attributes projected into the index.</p>
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
+     * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
      * for each matching item in the index DynamoDB will fetch the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
-     * is required.</p> </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
+     * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
      * only when querying an index. Retrieves all attributes that have been projected
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
-     * <li> <p><code>COUNT</code> - Returns the number of matching items, rather than
+     * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
      * <i>AttributesToGet</i>. This return value is equivalent to specifying
@@ -236,10 +236,10 @@ namespace Model
      * both <i>Select</i> and <i>AttributesToGet</i> together in a single request,
      * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
      * usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p> <note><p>If you use the <i>ProjectionExpression</i>
+     * <i>Select</i>.)</p> <note> <p>If you use the <i>ProjectionExpression</i>
      * parameter, then the value for <i>Select</i> can only be
      * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will return
-     * an error.</p></note>
+     * an error.</p> </note>
      */
     inline void SetSelect(Select&& value) { m_selectHasBeenSet = true; m_select = value; }
 
@@ -247,16 +247,16 @@ namespace Model
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or in the
      * case of an index, some or all of the attributes projected into the index.</p>
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
+     * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
      * for each matching item in the index DynamoDB will fetch the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
-     * is required.</p> </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
+     * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
      * only when querying an index. Retrieves all attributes that have been projected
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
-     * <li> <p><code>COUNT</code> - Returns the number of matching items, rather than
+     * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
      * <i>AttributesToGet</i>. This return value is equivalent to specifying
@@ -275,10 +275,10 @@ namespace Model
      * both <i>Select</i> and <i>AttributesToGet</i> together in a single request,
      * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
      * usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p> <note><p>If you use the <i>ProjectionExpression</i>
+     * <i>Select</i>.)</p> <note> <p>If you use the <i>ProjectionExpression</i>
      * parameter, then the value for <i>Select</i> can only be
      * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will return
-     * an error.</p></note>
+     * an error.</p> </note>
      */
     inline QueryRequest& WithSelect(const Select& value) { SetSelect(value); return *this;}
 
@@ -286,16 +286,16 @@ namespace Model
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, the count of matching items, or in the
      * case of an index, some or all of the attributes projected into the index.</p>
-     * <ul> <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
+     * <ul> <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes
      * from the specified table or index. If you query a local secondary index, then
      * for each matching item in the index DynamoDB will fetch the entire item from the
      * parent table. If the index is configured to project all item attributes, then
      * all of the data can be obtained from the local secondary index, and no fetching
-     * is required.</p> </li> <li> <p><code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
+     * is required.</p> </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed
      * only when querying an index. Retrieves all attributes that have been projected
      * into the index. If the index is configured to project all attributes, this
      * return value is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li>
-     * <li> <p><code>COUNT</code> - Returns the number of matching items, rather than
+     * <li> <p> <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.</p> </li> <li> <p>
      * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
      * <i>AttributesToGet</i>. This return value is equivalent to specifying
@@ -314,20 +314,20 @@ namespace Model
      * both <i>Select</i> and <i>AttributesToGet</i> together in a single request,
      * unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This
      * usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p> <note><p>If you use the <i>ProjectionExpression</i>
+     * <i>Select</i>.)</p> <note> <p>If you use the <i>ProjectionExpression</i>
      * parameter, then the value for <i>Select</i> can only be
      * <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <i>Select</i> will return
-     * an error.</p></note>
+     * an error.</p> </note>
      */
     inline QueryRequest& WithSelect(Select&& value) { SetSelect(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -349,12 +349,12 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -376,12 +376,12 @@ namespace Model
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -403,12 +403,12 @@ namespace Model
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -430,12 +430,12 @@ namespace Model
     inline QueryRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -457,12 +457,12 @@ namespace Model
     inline QueryRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -484,12 +484,12 @@ namespace Model
     inline QueryRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -511,12 +511,12 @@ namespace Model
     inline QueryRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -547,8 +547,8 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline long GetLimit() const{ return m_limit; }
 
@@ -562,8 +562,8 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
@@ -577,8 +577,8 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline QueryRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
@@ -623,72 +623,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -706,72 +707,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -789,72 +791,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -872,72 +875,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -955,72 +959,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1038,72 +1043,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1121,72 +1127,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1204,72 +1211,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1287,72 +1295,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1370,72 +1379,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1453,72 +1463,73 @@ namespace Model
      * provide a second condition, referring to the sort key.</p> <note> <p>If you
      * don't provide a sort key condition, all of the items that match the partition
      * key will be retrieved. If a <i>FilterExpression</i> or <i>QueryFilter</i> is
-     * present, it will be applied after the items are retrieved.</p></note> <p>For a
+     * present, it will be applied after the items are retrieved.</p> </note> <p>For a
      * query on an index, you can have conditions only on the index key attributes. You
      * must provide the index partition key name and value as an <code>EQ</code>
      * condition. You can optionally provide a second condition, referring to the index
      * sort key.</p> <p>Each <i>KeyConditions</i> element consists of an attribute name
-     * to compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i>
-     * - One or more values to evaluate against the supplied attribute. The number of
-     * values in the list depends on the <i>ComparisonOperator</i> being used.</p>
-     * <p>For type Number, value comparisons are numeric.</p> <p>String value
-     * comparisons for greater than, equals, or less than are based on ASCII character
-     * code values. For example, <code>a</code> is greater than <code>A</code>, and
-     * <code>a</code> is greater than <code>B</code>. For a list of code values, see <a
+     * to compare, along with the following:</p> <ul> <li> <p>
+     * <i>AttributeValueList</i> - One or more values to evaluate against the supplied
+     * attribute. The number of values in the list depends on the
+     * <i>ComparisonOperator</i> being used.</p> <p>For type Number, value comparisons
+     * are numeric.</p> <p>String value comparisons for greater than, equals, or less
+     * than are based on ASCII character code values. For example, <code>a</code> is
+     * greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>.
+     * For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
      * <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it
-     * compares binary values.</p> </li> <li> <p><i>ComparisonOperator</i> - A
+     * compares binary values.</p> </li> <li> <p> <i>ComparisonOperator</i> - A
      * comparator for evaluating attributes, for example, equals, greater than, less
      * than, and so on.</p> <p>For <i>KeyConditions</i>, only the following comparison
      * operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH |
      * BETWEEN</code> </p> <p>The following are descriptions of these comparison
-     * operators.</p> <ul> <li> <p><code>EQ</code> : Equal. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * operators.</p> <ul> <li> <p> <code>EQ</code> : Equal. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one specified in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>LE</code> :
-     * Less than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>LE</code> :
+     * Less than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>LT</code> : Less than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>LT</code> : Less than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p><code>GE</code> :
-     * Greater than or equal. </p> <p><i>AttributeValueList</i> can contain only one
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p> <code>GE</code> :
+     * Greater than or equal. </p> <p> <i>AttributeValueList</i> can contain only one
      * <i>AttributeValue</i> element of type String, Number, or Binary (not a set
      * type). If an item contains an <i>AttributeValue</i> element of a different type
      * than the one provided in the request, the value does not match. For example,
      * <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also,
      * <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2",
-     * "1"]}</code>.</p> <p/> </li> <li> <p><code>GT</code> : Greater than. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element
-     * of type String, Number, or Binary (not a set type). If an item contains an
+     * "1"]}</code>.</p> <p/> </li> <li> <p> <code>GT</code> : Greater than. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of
+     * type String, Number, or Binary (not a set type). If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to
-     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li>
-     * <p><code>BEGINS_WITH</code> : Checks for a prefix. </p>
-     * <p><i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+     * <code>{"NS":["6", "2", "1"]}</code>.</p> <p/> </li> <li> <p>
+     * <code>BEGINS_WITH</code> : Checks for a prefix. </p> <p>
+     * <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
      * String or Binary (not a Number or a set type). The target attribute of the
      * comparison must be of type String or Binary (not a Number or a set type).</p>
-     * <p/> </li> <li> <p><code>BETWEEN</code> : Greater than or equal to the first
-     * value, and less than or equal to the second value. </p>
-     * <p><i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of
-     * the same type, either String, Number, or Binary (not a set type). A target
-     * attribute matches if the target value is greater than, or equal to, the first
-     * element and less than, or equal to, the second element. If an item contains an
+     * <p/> </li> <li> <p> <code>BETWEEN</code> : Greater than or equal to the first
+     * value, and less than or equal to the second value. </p> <p>
+     * <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
+     * same type, either String, Number, or Binary (not a set type). A target attribute
+     * matches if the target value is greater than, or equal to, the first element and
+     * less than, or equal to, the second element. If an item contains an
      * <i>AttributeValue</i> element of a different type than the one provided in the
      * request, the value does not match. For example, <code>{"S":"6"}</code> does not
      * compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare
-     * to <code>{"NS":["6", "2", "1"]}</code></p> </li> </ul> </li> </ul> <p>For usage
+     * to <code>{"NS":["6", "2", "1"]}</code> </p> </li> </ul> </li> </ul> <p>For usage
      * examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -1532,17 +1543,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1554,11 +1565,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1572,17 +1583,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1594,11 +1605,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1612,17 +1623,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1634,11 +1645,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1652,17 +1663,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1674,11 +1685,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1692,17 +1703,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1714,11 +1725,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1732,17 +1743,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1754,11 +1765,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1772,17 +1783,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1794,11 +1805,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1812,17 +1823,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1834,11 +1845,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1852,17 +1863,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1874,11 +1885,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1892,17 +1903,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1914,11 +1925,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1932,17 +1943,17 @@ namespace Model
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the query results after the items are read and returns
      * only the desired values.</p> <p>This parameter does not support attributes of
-     * type List or Map.</p> <note><p>A <i>QueryFilter</i> is applied after the items
+     * type List or Map.</p> <note> <p>A <i>QueryFilter</i> is applied after the items
      * have already been read; the process of filtering does not consume any additional
-     * read capacity units.</p></note> <p>If you provide more than one condition in the
-     * <i>QueryFilter</i> map, then by default all of the conditions must evaluate to
-     * true. In other words, the conditions are ANDed together. (You can use the
+     * read capacity units.</p> </note> <p>If you provide more than one condition in
+     * the <i>QueryFilter</i> map, then by default all of the conditions must evaluate
+     * to true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Note that <i>QueryFilter</i> does not allow key attributes. You
      * cannot define a filter condition on a partition key or a sort key.</p> <p>Each
      * <i>QueryFilter</i> element consists of an attribute name to compare, along with
-     * the following:</p> <ul> <li> <p><i>AttributeValueList</i> - One or more values
+     * the following:</p> <ul> <li> <p> <i>AttributeValueList</i> - One or more values
      * to evaluate against the supplied attribute. The number of values in the list
      * depends on the operator specified in <i>ComparisonOperator</i>.</p> <p>For type
      * Number, value comparisons are numeric.</p> <p>String value comparisons for
@@ -1954,11 +1965,11 @@ namespace Model
      * when it compares binary values.</p> <p>For information on specifying data types
      * in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see the <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>
      * data type.</p> </li> </ul>
@@ -1971,13 +1982,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>QueryFilter</i> map:</p>
-     * <ul> <li><p><code>AND</code> - If all of the conditions evaluate to true, then
-     * the entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least
-     * one of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <ul> <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then
+     * the entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at
+     * least one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline const ConditionalOperator& GetConditionalOperator() const{ return m_conditionalOperator; }
 
@@ -1987,13 +1998,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>QueryFilter</i> map:</p>
-     * <ul> <li><p><code>AND</code> - If all of the conditions evaluate to true, then
-     * the entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least
-     * one of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <ul> <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then
+     * the entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at
+     * least one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline void SetConditionalOperator(const ConditionalOperator& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
 
@@ -2003,13 +2014,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>QueryFilter</i> map:</p>
-     * <ul> <li><p><code>AND</code> - If all of the conditions evaluate to true, then
-     * the entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least
-     * one of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <ul> <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then
+     * the entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at
+     * least one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
 
@@ -2019,13 +2030,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>QueryFilter</i> map:</p>
-     * <ul> <li><p><code>AND</code> - If all of the conditions evaluate to true, then
-     * the entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least
-     * one of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <ul> <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then
+     * the entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at
+     * least one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline QueryRequest& WithConditionalOperator(const ConditionalOperator& value) { SetConditionalOperator(value); return *this;}
 
@@ -2035,13 +2046,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>QueryFilter</i> map:</p>
-     * <ul> <li><p><code>AND</code> - If all of the conditions evaluate to true, then
-     * the entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least
-     * one of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <ul> <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then
+     * the entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at
+     * least one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline QueryRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(value); return *this;}
 
@@ -2204,9 +2215,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
 
@@ -2218,9 +2229,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
 
@@ -2232,9 +2243,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
 
@@ -2246,9 +2257,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
 
@@ -2260,9 +2271,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline QueryRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
 
@@ -2274,9 +2285,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline QueryRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(value); return *this;}
 
@@ -2288,9 +2299,9 @@ namespace Model
      * requested attributes are not found, they will not appear in the result.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline QueryRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
 
@@ -2302,9 +2313,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
 
@@ -2316,9 +2327,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
@@ -2330,9 +2341,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
@@ -2344,9 +2355,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
 
@@ -2358,9 +2369,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline QueryRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
 
@@ -2372,9 +2383,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline QueryRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(value); return *this;}
 
@@ -2386,9 +2397,9 @@ namespace Model
      * the process of filtering does not consume any additional read capacity
      * units.</p> </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>QueryFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline QueryRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 
@@ -2407,26 +2418,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2435,18 +2444,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline const Aws::String& GetKeyConditionExpression() const{ return m_keyConditionExpression; }
@@ -2466,26 +2475,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2494,18 +2501,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline void SetKeyConditionExpression(const Aws::String& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = value; }
@@ -2525,26 +2532,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2553,18 +2558,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline void SetKeyConditionExpression(Aws::String&& value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression = value; }
@@ -2584,26 +2589,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2612,18 +2615,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline void SetKeyConditionExpression(const char* value) { m_keyConditionExpressionHasBeenSet = true; m_keyConditionExpression.assign(value); }
@@ -2643,26 +2646,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2671,18 +2672,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline QueryRequest& WithKeyConditionExpression(const Aws::String& value) { SetKeyConditionExpression(value); return *this;}
@@ -2702,26 +2703,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2730,18 +2729,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline QueryRequest& WithKeyConditionExpression(Aws::String&& value) { SetKeyConditionExpression(value); return *this;}
@@ -2761,26 +2760,24 @@ namespace Model
      * the <b>=</b> comparison operator for the sort key:</p> <p>
      * <code>partitionKeyName</code> <i>=</i> <code>:partitionkeyval</code> <i>AND</i>
      * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> </p> <p>Valid
-     * comparisons for the sort key condition are as follows:</p> <ul> <li>
-     * <p><code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
-     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]></i> <code>:sortkeyval</code> -
-     * true if the sort key value is less than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3C;]]>=</i> <code>:sortkeyval</code>
-     * - true if the sort key value is less than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i><![CDATA[&#x3E;]]></i> <code>:sortkeyval</code> - true if the sort key value
-     * is greater than <code>:sortkeyval</code>.</p> </li> <li>
-     * <p><code>sortKeyName</code> <i><![CDATA[&#x3E;]]>= </i><code>:sortkeyval</code>
-     * - true if the sort key value is greater than or equal to
-     * <code>:sortkeyval</code>.</p> </li> <li> <p><code>sortKeyName</code>
-     * <i>BETWEEN</i> <code>:sortkeyval1</code> <i>AND</i> <code>:sortkeyval2</code> -
-     * true if the sort key value is greater than or equal to
-     * <code>:sortkeyval1</code>, and less than or equal to
-     * <code>:sortkeyval2</code>.</p> </li> <li> <p><i>begins_with
-     * (</i><code>sortKeyName</code>, <code>:sortkeyval</code><i>)</i> - true if the
-     * sort key value begins with a particular operand. (You cannot use this function
-     * with a sort key that is of type Number.) Note that the function name
+     * comparisons for the sort key condition are as follows:</p> <ul> <li> <p>
+     * <code>sortKeyName</code> <i>=</i> <code>:sortkeyval</code> - true if the sort
+     * key value is equal to <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;</i> <code>:sortkeyval</code> - true if the sort
+     * key value is less than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&lt;=</i> <code>:sortkeyval</code> - true if the
+     * sort key value is less than or equal to <code>:sortkeyval</code>.</p> </li> <li>
+     * <p> <code>sortKeyName</code> <i>&gt;</i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than <code>:sortkeyval</code>.</p> </li> <li> <p>
+     * <code>sortKeyName</code> <i>&gt;= </i> <code>:sortkeyval</code> - true if the
+     * sort key value is greater than or equal to <code>:sortkeyval</code>.</p> </li>
+     * <li> <p> <code>sortKeyName</code> <i>BETWEEN</i> <code>:sortkeyval1</code>
+     * <i>AND</i> <code>:sortkeyval2</code> - true if the sort key value is greater
+     * than or equal to <code>:sortkeyval1</code>, and less than or equal to
+     * <code>:sortkeyval2</code>.</p> </li> <li> <p> <i>begins_with (</i>
+     * <code>sortKeyName</code>, <code>:sortkeyval</code> <i>)</i> - true if the sort
+     * key value begins with a particular operand. (You cannot use this function with a
+     * sort key that is of type Number.) Note that the function name
      * <code>begins_with</code> is case-sensitive.</p> </li> </ul> <p>Use the
      * <i>ExpressionAttributeValues</i> parameter to replace tokens such as
      * <code>:partitionval</code> and <code>:sortval</code> with actual values at
@@ -2789,18 +2786,18 @@ namespace Model
      * placeholder tokens. This option might be necessary if an attribute name
      * conflicts with a DynamoDB reserved word. For example, the following
      * <i>KeyConditionExpression</i> parameter causes an error because <i>Size</i> is a
-     * reserved word:</p> <ul> <li> <code>Size = :myval</code> </li> </ul> <p>To work
-     * around this, define a placeholder (such a <code>#S</code>) to represent the
-     * attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is as
-     * follows:</p> <ul> <li> <code>#S = :myval</code> </li> </ul> <p>For a list of
-     * reserved words, see <a
+     * reserved word:</p> <ul> <li><p> <code>Size = :myval</code> </p> </li> </ul>
+     * <p>To work around this, define a placeholder (such a <code>#S</code>) to
+     * represent the attribute name <i>Size</i>. <i>KeyConditionExpression</i> then is
+     * as follows:</p> <ul> <li><p> <code>#S = :myval</code> </p> </li> </ul> <p>For a
+     * list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <p>For more
      * information on <i>ExpressionAttributeNames</i> and
      * <i>ExpressionAttributeValues</i>, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
      * Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
-     * Developer Guide</i>.</p> <note> <p><i>KeyConditionExpression</i> replaces the
+     * Developer Guide</i>.</p> <note> <p> <i>KeyConditionExpression</i> replaces the
      * legacy <i>KeyConditions</i> parameter.</p> </note>
      */
     inline QueryRequest& WithKeyConditionExpression(const char* value) { SetKeyConditionExpression(value); return *this;}
@@ -2813,19 +2810,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2839,19 +2836,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2865,19 +2862,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2891,19 +2888,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2917,19 +2914,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2943,19 +2940,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2969,19 +2966,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -2995,19 +2992,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3021,19 +3018,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3047,19 +3044,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3073,19 +3070,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3099,19 +3096,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3121,13 +3118,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3137,13 +3135,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3153,13 +3152,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3169,13 +3169,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3185,13 +3186,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3201,13 +3203,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3217,13 +3220,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3233,13 +3237,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3249,13 +3254,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3265,13 +3271,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -3281,13 +3288,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */

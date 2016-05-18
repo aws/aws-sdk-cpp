@@ -148,11 +148,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -160,11 +160,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -172,11 +172,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -184,11 +184,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -196,11 +196,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -208,11 +208,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
@@ -220,11 +220,11 @@ namespace Model
 
     /**
      * <p>An array of one or more global secondary indexes for the table. For each
-     * index in the array, you can request one action:</p> <ul> <li><p><i>Create</i> -
-     * add a new global secondary index to the table.</p></li> <li><p><i>Update</i> -
-     * modify the provisioned throughput settings of an existing global secondary
-     * index.</p></li> <li><p><i>Delete</i> - remove a global secondary index from the
-     * table.</p></li> </ul> <p>For more information, see <a
+     * index in the array, you can request one action:</p> <ul> <li> <p> <i>Create</i>
+     * - add a new global secondary index to the table.</p> </li> <li> <p>
+     * <i>Update</i> - modify the provisioned throughput settings of an existing global
+     * secondary index.</p> </li> <li> <p> <i>Delete</i> - remove a global secondary
+     * index from the table.</p> </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
      * Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */

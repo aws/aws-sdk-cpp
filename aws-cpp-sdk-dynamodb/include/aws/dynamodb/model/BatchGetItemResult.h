@@ -130,11 +130,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -148,11 +148,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -166,11 +166,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -184,11 +184,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -202,11 +202,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -220,11 +220,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -238,11 +238,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -256,11 +256,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -274,11 +274,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -292,11 +292,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -310,11 +310,11 @@ namespace Model
      * <i>RequestItems</i>, so the value can be provided directly to a subsequent
      * <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i> in
      * the Request Parameters section.</p> <p>Each element consists of:</p> <ul> <li>
-     * <p><i>Keys</i> - An array of primary key attribute values that define specific
-     * items in the table.</p> </li> <li> <p><i>AttributesToGet</i> - One or more
+     * <p> <i>Keys</i> - An array of primary key attribute values that define specific
+     * items in the table.</p> </li> <li> <p> <i>AttributesToGet</i> - One or more
      * attributes to be retrieved from the table or index. By default, all attributes
      * are returned. If a requested attribute is not found, it does not appear in the
-     * result.</p> </li> <li> <p><i>ConsistentRead</i> - The consistency of a read
+     * result.</p> </li> <li> <p> <i>ConsistentRead</i> - The consistency of a read
      * operation. If set to <code>true</code>, then a strongly consistent read is used;
      * otherwise, an eventually consistent read is used.</p> </li> </ul> <p>If there
      * are no unprocessed keys remaining, the response contains an empty
@@ -324,56 +324,56 @@ namespace Model
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = value; }
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline BatchGetItemResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline BatchGetItemResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(value); return *this;}
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline BatchGetItemResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
 
     /**
      * <p>The read capacity units consumed by the operation.</p> <p>Each element
-     * consists of:</p> <ul> <li> <p><i>TableName</i> - The table that consumed the
-     * provisioned throughput.</p> </li> <li> <p><i>CapacityUnits</i> - The total
+     * consists of:</p> <ul> <li> <p> <i>TableName</i> - The table that consumed the
+     * provisioned throughput.</p> </li> <li> <p> <i>CapacityUnits</i> - The total
      * number of capacity units consumed.</p> </li> </ul>
      */
     inline BatchGetItemResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(value); return *this; }
