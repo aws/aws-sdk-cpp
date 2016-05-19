@@ -91,7 +91,7 @@ void ListObjectsV2Request::AddQueryStringParameters(URI& uri) const
     if(m_startAfterHasBeenSet)
     {
       ss << m_startAfter;
-      uri.AddQueryStringParameter("start-key", ss.str());
+      uri.AddQueryStringParameter("start-after", ss.str());
       ss.str("");
     }
 
