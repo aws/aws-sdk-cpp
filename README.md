@@ -68,7 +68,7 @@ cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
 ####CMake Variables
 
 #####BUILD_ONLY
-Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="s3;dynamodb;cognito-identity"
+Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-cpp-sdk-s3;aws-cpp-sdk-dynamodb;aws-cpp-sdk-cognito-identity"
 
 #####ADD_CUSTOM_CLIENTS
 Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example: -DADD_CUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
@@ -83,8 +83,8 @@ If static linking is enabled, custom memory management defaults to off. If dynam
 
 Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
 
-#####BUILD_SHARED_LIBS
-To use static linking, set the value to 0. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
+#####STATIC_LINKING 
+To use static linking, set the value to 1. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
 
 #####TARGET_ARCH
 To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system. 
