@@ -60,7 +60,6 @@
 #include <aws/core/http/HttpTypes.h>
 #include <future>
 #include <functional>
-
 namespace Aws
 {
 
@@ -338,13 +337,13 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
@@ -352,7 +351,7 @@ namespace Aws
         */
         S3Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr, bool signPayloads = true);
 
         virtual ~S3Client();
 

@@ -14,7 +14,7 @@
 \#include <aws/core/http/HttpTypes.h>
 \#include <future>
 \#include <functional>
-
+#set($signPayloadsOptional = true)
 namespace Aws
 {
 

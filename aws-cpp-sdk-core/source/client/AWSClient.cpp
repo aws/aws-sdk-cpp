@@ -93,7 +93,7 @@ void AWSClient::CleanupGlobalStatics()
 AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
     const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller, const char* hostHeaderOverride) :
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_clientFactory(clientFactory),
     m_httpClient(clientFactory->CreateHttpClient(configuration)),
     m_signer(signer),
@@ -102,7 +102,6 @@ AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& 
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
-    m_hostHeaderOverride(hostHeaderOverride),
     m_hash(Aws::MakeUnique<Aws::Utils::Crypto::MD5>(AWS_CLIENT_LOG_TAG))
 {
     InitializeGlobalStatics();
@@ -320,11 +319,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 
 void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 {
-    if (m_hostHeaderOverride)
-    {
-        httpRequest.SetHeaderValue(Http::HOST_HEADER, m_hostHeaderOverride);
-    }
-
     httpRequest.SetUserAgent(m_userAgent);
 }
 
@@ -343,9 +337,8 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 AWSJsonClient::AWSJsonClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
     const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
-    const char* hostHeaderOverride) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller, hostHeaderOverride)
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(clientFactory, configuration, signer, errorMarshaller)
 {
 }
 
@@ -442,9 +435,8 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 AWSXMLClient::AWSXMLClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
     const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
-    const char* hostHeaderOverride) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller, hostHeaderOverride)
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(clientFactory, configuration, signer, errorMarshaller)
 {
 }
 
