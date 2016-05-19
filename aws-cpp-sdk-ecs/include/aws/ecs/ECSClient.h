@@ -802,16 +802,22 @@ namespace Model
         /**
          * <p>Returns a list of task definition families that are registered to your
          * account (which may include task definition families that no longer have any
-         * <code>ACTIVE</code> task definitions). You can filter the results with the
-         * <code>familyPrefix</code> parameter.</p>
+         * <code>ACTIVE</code> task definition revisions).</p> <p>You can filter out task
+         * definition families that do not contain any <code>ACTIVE</code> task definition
+         * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
+         * You can also filter the results with the <code>familyPrefix</code>
+         * parameter.</p>
          */
         virtual Model::ListTaskDefinitionFamiliesOutcome ListTaskDefinitionFamilies(const Model::ListTaskDefinitionFamiliesRequest& request) const;
 
         /**
          * <p>Returns a list of task definition families that are registered to your
          * account (which may include task definition families that no longer have any
-         * <code>ACTIVE</code> task definitions). You can filter the results with the
-         * <code>familyPrefix</code> parameter.</p>
+         * <code>ACTIVE</code> task definition revisions).</p> <p>You can filter out task
+         * definition families that do not contain any <code>ACTIVE</code> task definition
+         * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
+         * You can also filter the results with the <code>familyPrefix</code>
+         * parameter.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -820,8 +826,11 @@ namespace Model
         /**
          * <p>Returns a list of task definition families that are registered to your
          * account (which may include task definition families that no longer have any
-         * <code>ACTIVE</code> task definitions). You can filter the results with the
-         * <code>familyPrefix</code> parameter.</p>
+         * <code>ACTIVE</code> task definition revisions).</p> <p>You can filter out task
+         * definition families that do not contain any <code>ACTIVE</code> task definition
+         * revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
+         * You can also filter the results with the <code>familyPrefix</code>
+         * parameter.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

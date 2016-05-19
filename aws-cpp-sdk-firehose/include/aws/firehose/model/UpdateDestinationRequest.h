@@ -185,34 +185,54 @@ namespace Model
      */
     inline UpdateDestinationRequest& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline const S3DestinationUpdate& GetS3DestinationUpdate() const{ return m_s3DestinationUpdate; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline void SetS3DestinationUpdate(const S3DestinationUpdate& value) { m_s3DestinationUpdateHasBeenSet = true; m_s3DestinationUpdate = value; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline void SetS3DestinationUpdate(S3DestinationUpdate&& value) { m_s3DestinationUpdateHasBeenSet = true; m_s3DestinationUpdate = value; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline UpdateDestinationRequest& WithS3DestinationUpdate(const S3DestinationUpdate& value) { SetS3DestinationUpdate(value); return *this;}
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline UpdateDestinationRequest& WithS3DestinationUpdate(S3DestinationUpdate&& value) { SetS3DestinationUpdate(value); return *this;}
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
     inline const RedshiftDestinationUpdate& GetRedshiftDestinationUpdate() const{ return m_redshiftDestinationUpdate; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
     inline void SetRedshiftDestinationUpdate(const RedshiftDestinationUpdate& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = value; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
     inline void SetRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { m_redshiftDestinationUpdateHasBeenSet = true; m_redshiftDestinationUpdate = value; }
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
     inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(const RedshiftDestinationUpdate& value) { SetRedshiftDestinationUpdate(value); return *this;}
 
-    
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
     inline UpdateDestinationRequest& WithRedshiftDestinationUpdate(RedshiftDestinationUpdate&& value) { SetRedshiftDestinationUpdate(value); return *this;}
 
     /**

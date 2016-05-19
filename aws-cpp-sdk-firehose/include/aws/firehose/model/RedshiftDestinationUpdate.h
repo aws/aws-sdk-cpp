@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/CopyCommand.h>
+#include <aws/firehose/model/RedshiftRetryOptions.h>
 #include <aws/firehose/model/S3DestinationUpdate.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
@@ -210,6 +211,36 @@ namespace Model
     inline RedshiftDestinationUpdate& WithPassword(const char* value) { SetPassword(value); return *this;}
 
     /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline RedshiftDestinationUpdate& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline RedshiftDestinationUpdate& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(value); return *this;}
+
+    /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
      * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
@@ -290,6 +321,8 @@ namespace Model
     bool m_usernameHasBeenSet;
     Aws::String m_password;
     bool m_passwordHasBeenSet;
+    RedshiftRetryOptions m_retryOptions;
+    bool m_retryOptionsHasBeenSet;
     S3DestinationUpdate m_s3Update;
     bool m_s3UpdateHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
