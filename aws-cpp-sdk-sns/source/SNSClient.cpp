@@ -67,7 +67,8 @@ static const char* ALLOCATION_TAG = "SNSClient";
 SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +78,8 @@ SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
 SNSClient::SNSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,7 +90,8 @@ SNSClient::SNSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
   BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {

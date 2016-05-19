@@ -84,12 +84,14 @@ Aws::String CanonicalizeRequestSigningString(HttpRequest& request)
 
 AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
     const char* serviceName,
-    const Aws::String& region) :
+    const Aws::String& region,
+    bool signPayloads) :
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
     m_region(region),
     m_hash(Aws::MakeUnique<Aws::Utils::Crypto::Sha256>(v4LogTag)),
-    m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag))
+    m_HMAC(Aws::MakeUnique<Aws::Utils::Crypto::Sha256HMAC>(v4LogTag)),
+    m_signPayloads(signPayloads)
 {
 }
 
@@ -113,17 +115,26 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
         request.SetAwsSessionToken(credentials.GetSessionToken());
     }
 
-    //calculate date header to use in internal signature (this also goes into date header).
-    Aws::String dateHeaderValue = DateTime::CalculateGmtTimestampAsString(LONG_DATE_FORMAT_STR);
-    request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
-
-    Aws::String payloadHash(ComputePayloadHash(request));
-    if (payloadHash.empty())
+    Aws::String payloadHash(UNSIGNED_PAYLOAD);
+    if(m_signPayloads || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
     {
-        return false;
+        payloadHash.assign(ComputePayloadHash(request));
+        if (payloadHash.empty())
+        {
+            return false;
+        }
+    }
+    else
+    {
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << m_signPayloads
+                << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
     }
 
     request.SetHeaderValue("x-amz-content-sha256", payloadHash);
+
+    //calculate date header to use in internal signature (this also goes into date header).
+    Aws::String dateHeaderValue = DateTime::CalculateGmtTimestampAsString(LONG_DATE_FORMAT_STR);
+    request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
 
     Aws::StringStream headersStream;
     Aws::StringStream signedHeadersStream;
@@ -152,6 +163,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     canonicalRequestString.append(signedHeadersValue);
     canonicalRequestString.append(NEWLINE);
     canonicalRequestString.append(payloadHash);
+
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Request String: " << canonicalRequestString);
 
     //now compute sha256 on that request string

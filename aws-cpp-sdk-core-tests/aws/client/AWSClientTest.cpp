@@ -34,8 +34,8 @@ const char* ALLOCATION_TAG = "AWSClientTest";
 class AccessViolatingAWSClient : public AWSClient
 {
 public:
-    AccessViolatingAWSClient(const char* hostHeaderOverride = nullptr) : AWSClient(MakeShared<HttpClientFactory>(ALLOCATION_TAG),
-        ClientConfiguration(), nullptr, nullptr, hostHeaderOverride)
+    AccessViolatingAWSClient() : AWSClient(MakeShared<HttpClientFactory>(ALLOCATION_TAG),
+        ClientConfiguration(), nullptr, nullptr)
     {
     }
 
@@ -167,28 +167,6 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     Aws::StringStream contentLengthExpected;
     contentLengthExpected << ss->str().length();
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);  
-
-    AWS_END_MEMORY_TEST
-}
-
-TEST(AWSClientTest, TestHostHeaderOverride)
-{
-    AWS_BEGIN_MEMORY_TEST(16, 10);
-    HeaderValueCollection headerValues;
-
-    AmazonWebServiceRequestMock amazonWebServiceRequest;
-    amazonWebServiceRequest.SetHeaders(headerValues);
-
-    URI uri("http://www.uri.com");
-    std::shared_ptr<Standard::StandardHttpRequest> httpRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, uri, HttpMethod::HTTP_GET);
-   
-    //this should cause the host header to be overridden.
-    AccessViolatingAWSClient awsClient("testHost");
-    awsClient.InvokeBuildHttpRequest(amazonWebServiceRequest, httpRequest);
-
-    ASSERT_TRUE(httpRequest->HasHeader(Http::HOST_HEADER));
-    HeaderValueCollection finalHeaders = httpRequest->GetHeaders();
-    ASSERT_EQ("testHost", finalHeaders[Http::HOST_HEADER]);
 
     AWS_END_MEMORY_TEST
 }

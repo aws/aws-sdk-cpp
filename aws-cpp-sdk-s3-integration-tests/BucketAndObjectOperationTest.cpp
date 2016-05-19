@@ -92,7 +92,7 @@ namespace
 
         static void SetUpTestCase()
         {
-            TimeStamp = DateTime::CalculateGmtTimestampAsString("%Y%m%dt%H%M%Sz");
+            TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz");
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
             ClientFactory = Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG);
 
@@ -112,9 +112,9 @@ namespace
                 config.proxyPort = PROXY_PORT;
             }
 
-            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory);
+            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory, false);
             config.region = Aws::Region::US_WEST_2;
-            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory);
+            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory, false);
             m_HttpClient = ClientFactory->CreateHttpClient(config);
         }
 

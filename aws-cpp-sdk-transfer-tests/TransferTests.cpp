@@ -247,7 +247,7 @@ protected:
         config.connectTimeoutMs = 30000;
         config.requestTimeoutMs = 30000;
 
-        m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config);
+        m_s3Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, config, false);
 
         TransferClientConfiguration transferConfig;
         transferConfig.m_uploadBufferCount = 20;
@@ -256,7 +256,7 @@ protected:
 
         DeleteBucket(GetTestBucketName());
 
-	m_testFileName = MakeFilePath( TEST_FILE_NAME );
+	    m_testFileName = MakeFilePath( TEST_FILE_NAME );
         m_smallTestFileName = MakeFilePath( SMALL_TEST_FILE_NAME );
         m_bigTestFileName = MakeFilePath( BIG_TEST_FILE_NAME );
         m_mediumTestFileName = MakeFilePath( MEDIUM_TEST_FILE_NAME );
@@ -485,7 +485,7 @@ protected:
         std::this_thread::sleep_for(std::chrono::seconds(TEST_WAIT_TIMEOUT));
         AbortMultiPartUpload(GetTestBucketName(), BIG_FILE_KEY);
         DeleteBucket(GetTestBucketName());
-	FileSystemUtils::RemoveFileIfExists(m_testFileName.c_str());
+	    FileSystemUtils::RemoveFileIfExists(m_testFileName.c_str());
         FileSystemUtils::RemoveFileIfExists(m_smallTestFileName.c_str());
         FileSystemUtils::RemoveFileIfExists(m_contentTestFileName.c_str());
         FileSystemUtils::RemoveFileIfExists(m_bigTestFileName.c_str());
