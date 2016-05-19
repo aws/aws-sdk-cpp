@@ -96,7 +96,9 @@ public class C2jModelToGeneratorModelTransformer {
         }
 
         metadata.setClassNamePrefix(CppViewHelper.convertToUpperCamel(ifNotNullOrEmpty(c2jMetadata.getClientClassNamePrefix(), metadata.getNamespace())));
-        metadata.setProjectName(ifNotNullOrEmpty(c2jMetadata.getClientProjectName(), c2jMetadata.getEndpointPrefix()));
+
+        c2jServiceModel.setServiceName(ifNotNullOrEmpty(c2jServiceModel.getServiceName(), c2jMetadata.getEndpointPrefix()));
+        metadata.setProjectName(ifNotNullOrEmpty(c2jMetadata.getClientProjectName(), c2jServiceModel.getServiceName()));
 
         if(metadata.getProjectName().contains("."))
         {
