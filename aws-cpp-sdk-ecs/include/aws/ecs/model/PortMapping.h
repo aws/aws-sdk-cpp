@@ -50,7 +50,7 @@ namespace Model
      * automatically assigned host port. If you specify a container port and not a host
      * port, your container automatically receives a host port in the ephemeral port
      * range (for more information, see <code>hostPort</code>). Port mappings that are
-     * automatically assigned in this way do not count toward the 50 reserved ports
+     * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
     inline long GetContainerPort() const{ return m_containerPort; }
@@ -60,7 +60,7 @@ namespace Model
      * automatically assigned host port. If you specify a container port and not a host
      * port, your container automatically receives a host port in the ephemeral port
      * range (for more information, see <code>hostPort</code>). Port mappings that are
-     * automatically assigned in this way do not count toward the 50 reserved ports
+     * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
     inline void SetContainerPort(long value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
@@ -70,7 +70,7 @@ namespace Model
      * automatically assigned host port. If you specify a container port and not a host
      * port, your container automatically receives a host port in the ephemeral port
      * range (for more information, see <code>hostPort</code>). Port mappings that are
-     * automatically assigned in this way do not count toward the 50 reserved ports
+     * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
     inline PortMapping& WithContainerPort(long value) { SetContainerPort(value); return *this;}
@@ -94,8 +94,8 @@ namespace Model
      * running (after a task stops, the host port is released).The current reserved
      * ports are displayed in the <code>remainingResources</code> of
      * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 50 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 50 reserved ports
+     * to 100 reserved ports at a time, including the default reserved ports
+     * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
     inline long GetHostPort() const{ return m_hostPort; }
@@ -119,8 +119,8 @@ namespace Model
      * running (after a task stops, the host port is released).The current reserved
      * ports are displayed in the <code>remainingResources</code> of
      * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 50 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 50 reserved ports
+     * to 100 reserved ports at a time, including the default reserved ports
+     * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
     inline void SetHostPort(long value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
@@ -144,8 +144,8 @@ namespace Model
      * running (after a task stops, the host port is released).The current reserved
      * ports are displayed in the <code>remainingResources</code> of
      * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 50 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 50 reserved ports
+     * to 100 reserved ports at a time, including the default reserved ports
+     * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
     inline PortMapping& WithHostPort(long value) { SetHostPort(value); return *this;}

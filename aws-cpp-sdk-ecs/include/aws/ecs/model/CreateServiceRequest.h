@@ -199,114 +199,51 @@ namespace Model
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>A load balancer object representing the load balancer to use with your
-     * service.</p> <p>For Elastic Load Balancing standard load balancers, this object
-     * must contain the load balancer name, the container name (as it appears in a
-     * container definition), and the container port to access from the load balancer.
-     * When a task from this service is placed on a container instance, the container
-     * instance is registered with the load balancer specified here.</p> <p>For Elastic
-     * Load Balancing application load balancers, this object must contain the load
-     * balancer target group ARN, the container name (as it appears in a container
-     * definition), and the container port to access from the load balancer. When a
-     * task from this service is placed on a container instance, the container instance
-     * and port combination is registered as a target in the target group specified
-     * here.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -371,58 +308,114 @@ namespace Model
     inline CreateServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows your
-     * Amazon ECS container agent to make calls to your load balancer on your behalf.
-     * This parameter is only required if you are using a load balancer with your
-     * service.</p>
+     * <p>The name or full Amazon Resource Name (ARN) of the IAM role that allows
+     * Amazon ECS to make calls to your load balancer on your behalf. This parameter is
+     * required if you are using a load balancer with your service. If you specify the
+     * <code>role</code> parameter, you must also specify a load balancer object with
+     * the <code>loadBalancers</code> parameter.</p> <p>If your specified role has a
+     * path other than <code>/</code>, then you must either specify the full role ARN
+     * (this is recommended) or prefix the role name with the path. For example, if a
+     * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
+     * would specify <code>/foo/bar</code> as the role name. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 

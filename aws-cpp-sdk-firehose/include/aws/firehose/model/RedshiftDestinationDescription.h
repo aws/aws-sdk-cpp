@@ -16,6 +16,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/CopyCommand.h>
+#include <aws/firehose/model/RedshiftRetryOptions.h>
 #include <aws/firehose/model/S3DestinationDescription.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
 
@@ -175,6 +176,36 @@ namespace Model
     inline RedshiftDestinationDescription& WithUsername(const char* value) { SetUsername(value); return *this;}
 
     /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline RedshiftDestinationDescription& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
+
+    /**
+     * <p>Configures retry behavior in the event that Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     */
+    inline RedshiftDestinationDescription& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(value); return *this;}
+
+    /**
      * <p>The Amazon S3 destination.</p>
      */
     inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
@@ -233,6 +264,8 @@ namespace Model
     bool m_copyCommandHasBeenSet;
     Aws::String m_username;
     bool m_usernameHasBeenSet;
+    RedshiftRetryOptions m_retryOptions;
+    bool m_retryOptionsHasBeenSet;
     S3DestinationDescription m_s3DestinationDescription;
     bool m_s3DestinationDescriptionHasBeenSet;
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;

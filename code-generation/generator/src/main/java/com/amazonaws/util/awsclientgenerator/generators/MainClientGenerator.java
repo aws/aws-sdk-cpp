@@ -72,7 +72,7 @@ public class MainClientGenerator {
 
         StringBuilder inputJson = new StringBuilder();
 
-        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), "UTF-8")) {
+        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), "q")) {
             char[] inputBuffer = new char[1024];
 
             while (reader.read(inputBuffer) >= 0) {

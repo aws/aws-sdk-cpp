@@ -409,6 +409,7 @@ list(APPEND C2J_LIST "swf:2012-01-25")
 list(APPEND C2J_LIST "waf:2015-08-24")
 list(APPEND C2J_LIST "workspaces:2015-04-08")
 list(APPEND C2J_LIST "cognito-idp:2016-04-18")
+list(APPEND C2J_LIST "application-autoscaling:2016-02-06")
 
 set(SDK_TEST_PROJECT_LIST "")
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-integration-tests")
