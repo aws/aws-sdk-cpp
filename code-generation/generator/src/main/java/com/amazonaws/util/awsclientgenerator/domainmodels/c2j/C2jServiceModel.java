@@ -26,4 +26,5 @@ public class C2jServiceModel {
     String documentation;
     Map<String, C2jShape> shapes;
     Map<String, C2jOperation> operations;
+    String serviceName;
 }
