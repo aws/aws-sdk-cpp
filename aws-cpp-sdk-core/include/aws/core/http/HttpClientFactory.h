@@ -57,7 +57,11 @@ namespace Aws
             virtual void CleanupStaticState() {}
         };
 
-
+        /**
+         * libCurl infects everything with its global state. If it is being used then we automatically initialize and clean it up.
+         * If this is a problem for you, set this to false. If you manually initialize libcurl please add the option CURL_GLOBAL_ALL to your init call.
+         */
+        AWS_CORE_API void SetInitCleanupCurlFlag(bool initCleanupFlag);
         AWS_CORE_API void InitHttp();
         AWS_CORE_API void CleanupHttp();
         AWS_CORE_API void SetHttpClientFactory(const std::shared_ptr<HttpClientFactory>& factory);

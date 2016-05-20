@@ -36,6 +36,8 @@ namespace Aws
     namespace Http
     {
         static std::shared_ptr<HttpClientFactory> s_HttpClientFactory(nullptr);
+        static bool s_InitCleanupCurlFlag(false);
+
         static const char* HTTP_CLIENT_FACTORY_ALLOCATION_TAG = "HttpClientFactory";
 
         class DefaultHttpClientFactory : public HttpClientFactory
@@ -82,17 +84,28 @@ namespace Aws
             void InitStaticState() override
             {
 #if ENABLE_CURL_CLIENT
-                CurlHttpClient::InitGlobalState();
+                if(s_InitCleanupCurlFlag)
+                {
+                    CurlHttpClient::InitGlobalState();
+                }
 #endif
             }
 
             virtual void CleanupStaticState() override
             {
 #if ENABLE_CURL_CLIENT
-                CurlHttpClient::CleanupGlobalState();
+                if(s_InitCleanupCurlFlag)
+                {
+                    CurlHttpClient::CleanupGlobalState();
+                }
 #endif
             }
         };
+
+        void SetInitCleanupCurlFlag(bool initCleanupFlag)
+        {
+            s_InitCleanupCurlFlag = initCleanupFlag;
+        }
 
         void InitHttp()
         {

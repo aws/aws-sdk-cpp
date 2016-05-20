@@ -42,6 +42,12 @@ namespace Aws
              * You need to call this upon program shutdown.
              */
             AWS_CORE_API void CleanupCrypto();
+            /**
+             * OpenSSL infects everything with its global state. If it is being used then we automatically initialize and clean it up.
+             * If this is a problem for you, set this to false. Be aware that if you don't use our init and cleanup and you are using
+             * crypto functionality, you are responsible for installing thread locking, and loading strings and error messages.
+             */
+            AWS_CORE_API void SetInitCleanupOpenSSLFlag(bool initCleanupFlag);
 
             /**
              * Create an MD5 Hash provider

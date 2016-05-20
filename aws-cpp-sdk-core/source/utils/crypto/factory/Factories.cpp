@@ -41,6 +41,8 @@ static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
 
 static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
 
+static bool s_InitCleanupOpenSSLFlag(false);
+
 class DefaultMD5Factory : public HashFactory
 {
 public:
@@ -64,7 +66,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -75,7 +80,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -103,7 +111,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -114,7 +125,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -142,7 +156,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -153,7 +170,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -211,7 +231,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -222,7 +245,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -273,8 +299,6 @@ public:
 #endif
     }
 
-
-
     /**
      * Opportunity to make any static initialization calls you need to make.
      * Will only be called once.
@@ -282,7 +306,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -293,7 +320,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -364,7 +394,10 @@ public:
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -375,7 +408,10 @@ public:
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
@@ -405,7 +441,10 @@ class DefaultSecureRandFactory : public SecureRandomFactory
     void InitStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
+        }
 #endif
     }
 
@@ -416,10 +455,18 @@ class DefaultSecureRandFactory : public SecureRandomFactory
     void CleanupStaticState() override
     {
 #if ENABLE_OPENSSL_ENCRYPTION
-        OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        if(s_InitCleanupOpenSSLFlag)
+        {
+            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
+        }
 #endif
     }
 };
+
+void Aws::Utils::Crypto::SetInitCleanupOpenSSLFlag(bool initCleanupFlag)
+{
+    s_InitCleanupOpenSSLFlag = initCleanupFlag;
+}
 
 void Aws::Utils::Crypto::InitCrypto()
 {

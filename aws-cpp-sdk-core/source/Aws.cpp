@@ -77,6 +77,7 @@ namespace Aws
             Aws::Utils::Crypto::SetSecureRandomFactory(options.cryptoOptions.secureRandomFactory_create_fn());
         }
 
+        Aws::Utils::Crypto::SetInitCleanupOpenSSLFlag(options.cryptoOptions.initAndCleanupOpenSSL);
         Aws::Utils::Crypto::InitCrypto();
 
         if(options.httpOptions.httpClientFactory_create_fn)
@@ -84,6 +85,7 @@ namespace Aws
             Aws::Http::SetHttpClientFactory(options.httpOptions.httpClientFactory_create_fn());
         }
 
+        Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::InitHttp();
     }
 
