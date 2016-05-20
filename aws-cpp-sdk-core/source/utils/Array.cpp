@@ -17,8 +17,6 @@
 
 #ifdef _WIN32
 #include <Windows.h>
-#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
-#include <string.h>
 #elif __linux__
 #include <linux/version.h>
 #endif
@@ -27,6 +25,12 @@ namespace Aws
 {
     namespace Utils
     {
+            static void FallbackZero(unsigned char* data, size_t length)
+            {
+                memset(data, 0, length);
+                asm volatile("" : "+m" (data));
+            }
+
             Array<CryptoBuffer> CryptoBuffer::Slice(size_t sizeOfSlice) const
             {
                 assert(sizeOfSlice <= GetLength());
@@ -81,11 +85,11 @@ namespace Aws
 #elif defined(__linux__)
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0)
                     memzero_explicit(GetUnderlyingData(), GetLength());
+#else
+                    FallbackZero(GetUnderlyingData(), GetLength());
 #endif
 #else
-                    memset(GetUnderlyingData(), 0, GetLength());
-                    unsigned char* mem = GetUnderlyingData();
-                    asm volatile("" : "+m" (mem));
+                    FallbackZero(GetUnderlyingData(), GetLength());
 #endif
                 }
             }
