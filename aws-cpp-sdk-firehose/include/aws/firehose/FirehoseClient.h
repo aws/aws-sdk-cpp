@@ -141,7 +141,7 @@ namespace Model
         virtual ~FirehoseClient();
 
         /**
-         * <p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an
+         * <p>Creates a delivery stream.</p> <p> <a>CreateDeliveryStream</a> is an
          * asynchronous operation that immediately returns. The initial status of the
          * delivery stream is <code>CREATING</code>. After the delivery stream is created,
          * its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data
@@ -152,42 +152,43 @@ namespace Model
          * Two delivery streams in different AWS accounts or different regions in the same
          * AWS account can have the same name.</p> <p>By default, you can create up to 20
          * delivery streams per region.</p> <p>A delivery stream can only be configured
-         * with a single destination, Amazon S3 or Amazon Redshift. For correct
-         * <a>CreateDeliveryStream</a> request syntax, specify only one destination
-         * configuration parameter: either <b>ElasticsearchDestinationConfiguration</b>,
-         * <b>RedshiftDestinationConfiguration</b> or <b>S3DestinationConfiguration</b></p>
-         * <p>As part of <b>S3DestinationConfiguration</b>, optional values
-         * <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
-         * <b>CompressionFormat</b> can be provided. By default, if no
-         * <b>BufferingHints</b> value is provided, Firehose buffers data up to 5 MB or for
-         * 5 minutes, whichever condition is satisfied first. Note that
+         * with a single destination, Amazon S3, Amazon Elasticsearch Service, or Amazon
+         * Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only
+         * one destination configuration parameter: either
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * or <b>RedshiftDestinationConfiguration</b>. </p> <p>As part of
+         * <b>S3DestinationConfiguration</b>, optional values <b>BufferingHints</b>,
+         * <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b> can be provided. By
+         * default, if no <b>BufferingHints</b> value is provided, Firehose buffers data up
+         * to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that
          * <b>BufferingHints</b> is a hint, so there are some cases where the service
          * cannot adhere to these conditions strictly; for example, record boundaries are
          * such that the size is a little over or under the configured buffering size. By
          * default, no encryption is performed. We strongly recommend that you enable
          * encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about
-         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li>An Amazon Redshift
+         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li> <p>An Amazon Redshift
          * destination requires an S3 bucket as intermediate location, as Firehose first
          * delivers data to S3 and then uses <code>COPY</code> syntax to load data into an
          * Amazon Redshift table. This is specified in the
-         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</li>
-         * <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-         * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b> because the
-         * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-         * doesn't support these compression formats.</li> <li>We strongly recommend that
-         * the username and password provided is used exclusively for Firehose purposes,
-         * and that the permissions for the account are restricted for Amazon Redshift
-         * <code>INSERT</code> permissions.</li> </ul> <p>Firehose assumes the IAM role
-         * that is configured as part of destinations. The IAM role should allow the
-         * Firehose principal to assume the role, and the role should have permissions that
-         * allows the service to deliver the data. For more information, see <a
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</p>
+         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
+         * cannot be specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that the username and password provided is used exclusively for
+         * Firehose purposes, and that the permissions for the account are restricted for
+         * Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Firehose
+         * assumes the IAM role that is configured as part of destinations. The IAM role
+         * should allow the Firehose principal to assume the role, and the role should have
+         * permissions that allows the service to deliver the data. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
          * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
          */
         virtual Model::CreateDeliveryStreamOutcome CreateDeliveryStream(const Model::CreateDeliveryStreamRequest& request) const;
 
         /**
-         * <p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an
+         * <p>Creates a delivery stream.</p> <p> <a>CreateDeliveryStream</a> is an
          * asynchronous operation that immediately returns. The initial status of the
          * delivery stream is <code>CREATING</code>. After the delivery stream is created,
          * its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data
@@ -198,35 +199,36 @@ namespace Model
          * Two delivery streams in different AWS accounts or different regions in the same
          * AWS account can have the same name.</p> <p>By default, you can create up to 20
          * delivery streams per region.</p> <p>A delivery stream can only be configured
-         * with a single destination, Amazon S3 or Amazon Redshift. For correct
-         * <a>CreateDeliveryStream</a> request syntax, specify only one destination
-         * configuration parameter: either <b>ElasticsearchDestinationConfiguration</b>,
-         * <b>RedshiftDestinationConfiguration</b> or <b>S3DestinationConfiguration</b></p>
-         * <p>As part of <b>S3DestinationConfiguration</b>, optional values
-         * <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
-         * <b>CompressionFormat</b> can be provided. By default, if no
-         * <b>BufferingHints</b> value is provided, Firehose buffers data up to 5 MB or for
-         * 5 minutes, whichever condition is satisfied first. Note that
+         * with a single destination, Amazon S3, Amazon Elasticsearch Service, or Amazon
+         * Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only
+         * one destination configuration parameter: either
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * or <b>RedshiftDestinationConfiguration</b>. </p> <p>As part of
+         * <b>S3DestinationConfiguration</b>, optional values <b>BufferingHints</b>,
+         * <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b> can be provided. By
+         * default, if no <b>BufferingHints</b> value is provided, Firehose buffers data up
+         * to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that
          * <b>BufferingHints</b> is a hint, so there are some cases where the service
          * cannot adhere to these conditions strictly; for example, record boundaries are
          * such that the size is a little over or under the configured buffering size. By
          * default, no encryption is performed. We strongly recommend that you enable
          * encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about
-         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li>An Amazon Redshift
+         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li> <p>An Amazon Redshift
          * destination requires an S3 bucket as intermediate location, as Firehose first
          * delivers data to S3 and then uses <code>COPY</code> syntax to load data into an
          * Amazon Redshift table. This is specified in the
-         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</li>
-         * <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-         * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b> because the
-         * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-         * doesn't support these compression formats.</li> <li>We strongly recommend that
-         * the username and password provided is used exclusively for Firehose purposes,
-         * and that the permissions for the account are restricted for Amazon Redshift
-         * <code>INSERT</code> permissions.</li> </ul> <p>Firehose assumes the IAM role
-         * that is configured as part of destinations. The IAM role should allow the
-         * Firehose principal to assume the role, and the role should have permissions that
-         * allows the service to deliver the data. For more information, see <a
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</p>
+         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
+         * cannot be specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that the username and password provided is used exclusively for
+         * Firehose purposes, and that the permissions for the account are restricted for
+         * Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Firehose
+         * assumes the IAM role that is configured as part of destinations. The IAM role
+         * should allow the Firehose principal to assume the role, and the role should have
+         * permissions that allows the service to deliver the data. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
          * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
          *
@@ -235,7 +237,7 @@ namespace Model
         virtual Model::CreateDeliveryStreamOutcomeCallable CreateDeliveryStreamCallable(const Model::CreateDeliveryStreamRequest& request) const;
 
         /**
-         * <p>Creates a delivery stream.</p> <p><a>CreateDeliveryStream</a> is an
+         * <p>Creates a delivery stream.</p> <p> <a>CreateDeliveryStream</a> is an
          * asynchronous operation that immediately returns. The initial status of the
          * delivery stream is <code>CREATING</code>. After the delivery stream is created,
          * its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data
@@ -246,35 +248,36 @@ namespace Model
          * Two delivery streams in different AWS accounts or different regions in the same
          * AWS account can have the same name.</p> <p>By default, you can create up to 20
          * delivery streams per region.</p> <p>A delivery stream can only be configured
-         * with a single destination, Amazon S3 or Amazon Redshift. For correct
-         * <a>CreateDeliveryStream</a> request syntax, specify only one destination
-         * configuration parameter: either <b>ElasticsearchDestinationConfiguration</b>,
-         * <b>RedshiftDestinationConfiguration</b> or <b>S3DestinationConfiguration</b></p>
-         * <p>As part of <b>S3DestinationConfiguration</b>, optional values
-         * <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and
-         * <b>CompressionFormat</b> can be provided. By default, if no
-         * <b>BufferingHints</b> value is provided, Firehose buffers data up to 5 MB or for
-         * 5 minutes, whichever condition is satisfied first. Note that
+         * with a single destination, Amazon S3, Amazon Elasticsearch Service, or Amazon
+         * Redshift. For correct <a>CreateDeliveryStream</a> request syntax, specify only
+         * one destination configuration parameter: either
+         * <b>S3DestinationConfiguration</b>, <b>ElasticsearchDestinationConfiguration</b>,
+         * or <b>RedshiftDestinationConfiguration</b>. </p> <p>As part of
+         * <b>S3DestinationConfiguration</b>, optional values <b>BufferingHints</b>,
+         * <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b> can be provided. By
+         * default, if no <b>BufferingHints</b> value is provided, Firehose buffers data up
+         * to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that
          * <b>BufferingHints</b> is a hint, so there are some cases where the service
          * cannot adhere to these conditions strictly; for example, record boundaries are
          * such that the size is a little over or under the configured buffering size. By
          * default, no encryption is performed. We strongly recommend that you enable
          * encryption to ensure secure data storage in Amazon S3.</p> <p>A few notes about
-         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li>An Amazon Redshift
+         * <b>RedshiftDestinationConfiguration</b>:</p> <ul> <li> <p>An Amazon Redshift
          * destination requires an S3 bucket as intermediate location, as Firehose first
          * delivers data to S3 and then uses <code>COPY</code> syntax to load data into an
          * Amazon Redshift table. This is specified in the
-         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</li>
-         * <li>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be
-         * specified in <b>RedshiftDestinationConfiguration.S3Configuration</b> because the
-         * Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket
-         * doesn't support these compression formats.</li> <li>We strongly recommend that
-         * the username and password provided is used exclusively for Firehose purposes,
-         * and that the permissions for the account are restricted for Amazon Redshift
-         * <code>INSERT</code> permissions.</li> </ul> <p>Firehose assumes the IAM role
-         * that is configured as part of destinations. The IAM role should allow the
-         * Firehose principal to assume the role, and the role should have permissions that
-         * allows the service to deliver the data. For more information, see <a
+         * <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter element.</p>
+         * </li> <li> <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code>
+         * cannot be specified in <b>RedshiftDestinationConfiguration.S3Configuration</b>
+         * because the Amazon Redshift <code>COPY</code> operation that reads from the S3
+         * bucket doesn't support these compression formats.</p> </li> <li> <p>We strongly
+         * recommend that the username and password provided is used exclusively for
+         * Firehose purposes, and that the permissions for the account are restricted for
+         * Amazon Redshift <code>INSERT</code> permissions.</p> </li> </ul> <p>Firehose
+         * assumes the IAM role that is configured as part of destinations. The IAM role
+         * should allow the Firehose principal to assume the role, and the role should have
+         * permissions that allows the service to deliver the data. For more information,
+         * see <a
          * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
          * S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.</p>
          *
@@ -670,7 +673,7 @@ namespace Model
          * not occur immediately. The target delivery stream remains active while the
          * configurations are updated, so data writes to the delivery stream can continue
          * during this process. The updated configurations are normally effective within a
-         * few minutes. </p> <p>If the destination type is the same, Firehose merges the
+         * few minutes.</p> <p>If the destination type is the same, Firehose merges the
          * configuration parameters specified in the <a>UpdateDestination</a> request with
          * the destination configuration that already exists on the delivery stream. If any
          * of the parameters are not specified in the update request, then the existing
@@ -702,7 +705,7 @@ namespace Model
          * not occur immediately. The target delivery stream remains active while the
          * configurations are updated, so data writes to the delivery stream can continue
          * during this process. The updated configurations are normally effective within a
-         * few minutes. </p> <p>If the destination type is the same, Firehose merges the
+         * few minutes.</p> <p>If the destination type is the same, Firehose merges the
          * configuration parameters specified in the <a>UpdateDestination</a> request with
          * the destination configuration that already exists on the delivery stream. If any
          * of the parameters are not specified in the update request, then the existing
@@ -736,7 +739,7 @@ namespace Model
          * not occur immediately. The target delivery stream remains active while the
          * configurations are updated, so data writes to the delivery stream can continue
          * during this process. The updated configurations are normally effective within a
-         * few minutes. </p> <p>If the destination type is the same, Firehose merges the
+         * few minutes.</p> <p>If the destination type is the same, Firehose merges the
          * configuration parameters specified in the <a>UpdateDestination</a> request with
          * the destination configuration that already exists on the delivery stream. If any
          * of the parameters are not specified in the update request, then the existing

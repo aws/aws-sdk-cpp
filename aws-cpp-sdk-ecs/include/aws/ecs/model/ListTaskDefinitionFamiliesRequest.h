@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/TaskDefinitionFamilyStatus.h>
 
 namespace Aws
 {
@@ -91,12 +92,79 @@ namespace Model
     inline ListTaskDefinitionFamiliesRequest& WithFamilyPrefix(const char* value) { SetFamilyPrefix(value); return *this;}
 
     /**
+     * <p>The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
+     * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+     * families that have an <code>ACTIVE</code> task definition revision are returned.
+     * If this parameter is set to <code>INACTIVE</code>, only task definition families
+     * that do not have any <code>ACTIVE</code> task definition revisions are returned.
+     * If you paginate the resulting output, be sure to keep the <code>status</code>
+     * value constant in each subsequent request.</p>
+     */
+    inline const TaskDefinitionFamilyStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
+     * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+     * families that have an <code>ACTIVE</code> task definition revision are returned.
+     * If this parameter is set to <code>INACTIVE</code>, only task definition families
+     * that do not have any <code>ACTIVE</code> task definition revisions are returned.
+     * If you paginate the resulting output, be sure to keep the <code>status</code>
+     * value constant in each subsequent request.</p>
+     */
+    inline void SetStatus(const TaskDefinitionFamilyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
+     * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+     * families that have an <code>ACTIVE</code> task definition revision are returned.
+     * If this parameter is set to <code>INACTIVE</code>, only task definition families
+     * that do not have any <code>ACTIVE</code> task definition revisions are returned.
+     * If you paginate the resulting output, be sure to keep the <code>status</code>
+     * value constant in each subsequent request.</p>
+     */
+    inline void SetStatus(TaskDefinitionFamilyStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
+     * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+     * families that have an <code>ACTIVE</code> task definition revision are returned.
+     * If this parameter is set to <code>INACTIVE</code>, only task definition families
+     * that do not have any <code>ACTIVE</code> task definition revisions are returned.
+     * If you paginate the resulting output, be sure to keep the <code>status</code>
+     * value constant in each subsequent request.</p>
+     */
+    inline ListTaskDefinitionFamiliesRequest& WithStatus(const TaskDefinitionFamilyStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The task definition family status with which to filter the
+     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
+     * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
+     * families that have an <code>ACTIVE</code> task definition revision are returned.
+     * If this parameter is set to <code>INACTIVE</code>, only task definition families
+     * that do not have any <code>ACTIVE</code> task definition revisions are returned.
+     * If you paginate the resulting output, be sure to keep the <code>status</code>
+     * value constant in each subsequent request.</p>
+     */
+    inline ListTaskDefinitionFamiliesRequest& WithStatus(TaskDefinitionFamilyStatus&& value) { SetStatus(value); return *this;}
+
+    /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListTaskDefinitionFamilies</code> request where <code>maxResults</code>
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -106,7 +174,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -116,7 +186,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -126,7 +198,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -136,7 +210,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -146,7 +222,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
@@ -156,7 +234,9 @@ namespace Model
      * was used and the results exceeded the value of that parameter. Pagination
      * continues from the end of the previous results that returned the
      * <code>nextToken</code> value. This value is <code>null</code> when there are no
-     * more results to return.</p>
+     * more results to return.</p> <note> <p>This token should be treated as an opaque
+     * identifier that is only used to retrieve the next items in a list and not for
+     * other programmatic purposes.</p> </note>
      */
     inline ListTaskDefinitionFamiliesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -202,6 +282,8 @@ namespace Model
   private:
     Aws::String m_familyPrefix;
     bool m_familyPrefixHasBeenSet;
+    TaskDefinitionFamilyStatus m_status;
+    bool m_statusHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
     long m_maxResults;
