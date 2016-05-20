@@ -189,28 +189,7 @@ namespace Aws
             bool operator!=(const Array& other) const
             {
                 return !(*this == other);
-            }
-
-            /**
-             * Zero out the array. This is not done by default for this type.
-             */
-            void Zero()
-            {
-                if(m_data)
-                {
-                    memset(m_data.get(), 0, GetLength());
-
-                    //If someone is calling this they don't want the compiler optimizing out the zero operation.
-                    //force the compiler to not attempt a "dead store removal" operation. This is done separately from the 
-                    //memset largely for the same reason. The compiler needs to see the data being read after the set happens.
-                    size_t i = 0;
-                    while (i < m_size)
-                    {
-                        *(volatile unsigned char *)(m_data.get() + i) = *(volatile unsigned char *)(m_data.get() + i);
-                        i++;
-                    }                   
-                }
-            }            
+            }           
 
             T const& GetItem(size_t index) const
             {
@@ -274,6 +253,7 @@ namespace Aws
 
             Array<CryptoBuffer> Slice(size_t sizeOfSlice) const;
             CryptoBuffer& operator^(const CryptoBuffer& operand);
+            void Zero();
         };
 
     } // namespace Utils

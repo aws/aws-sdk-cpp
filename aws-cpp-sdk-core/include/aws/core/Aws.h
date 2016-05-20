@@ -71,13 +71,18 @@ namespace Aws
      */
     struct HttpOptions
     {
-        HttpOptions()
+        HttpOptions() : initAndCleanupCurl(true)
         { }
 
         /**
          * Defaults to empty, if this is set, then the result of your closure will be installed and used instead of the system defaults
          */
         std::function<std::shared_ptr<Aws::Http::HttpClientFactory>()> httpClientFactory_create_fn;
+        /**
+        * libCurl infects everything with its global state. If it is being used then we automatically initialize and clean it up.
+        * If this is a problem for you, set this to false. If you manually initialize libcurl please add the option CURL_GLOBAL_ALL to your init call.
+        */
+        bool initAndCleanupCurl;
     };
 
     /**
@@ -85,7 +90,7 @@ namespace Aws
      */
     struct CryptoOptions
     {
-        CryptoOptions()
+        CryptoOptions() : initAndCleanupOpenSSL(true)
         { }
 
         /**
@@ -116,6 +121,12 @@ namespace Aws
          * If set, this closure will be used to create and install the factory.
          */
         std::function<std::shared_ptr<Aws::Utils::Crypto::SecureRandomFactory>()> secureRandomFactory_create_fn;
+        /**
+         * OpenSSL infects everything with its global state. If it is being used then we automatically initialize and clean it up.
+         * If this is a problem for you, set this to false. Be aware that if you don't use our init and cleanup and you are using 
+         * crypto functionality, you are responsible for installing thread locking, and loading strings and error messages.
+         */
+        bool initAndCleanupOpenSSL;
     };
 
     /**

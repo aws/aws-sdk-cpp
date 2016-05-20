@@ -84,8 +84,11 @@ namespace Aws
                     {
                         for (size_t i = 0; i < sizeof(DataType); ++i)
                         {
-                            value <<= 8;
-                            value |= buffer[i];
+                            if((value << 8) >= 0)
+                            {
+                                value <<= 8;
+                                value |= buffer[i];
+                            }
                         }
                     }
 

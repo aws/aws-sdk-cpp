@@ -15,6 +15,14 @@
 
 #include <aws/core/utils/Array.h>
 
+#ifdef _WIN32
+#include <Windows.h>
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
+#include <string.h>
+#elif __linux__
+#include <linux/version.h>
+#endif
+
 namespace Aws
 {
     namespace Utils
@@ -57,6 +65,26 @@ namespace Aws
                 }
 
                 return *this;
+            }
+
+            /**
+            * Zero out the array securely
+            */
+            void CryptoBuffer::Zero()
+            {
+                if (GetUnderlyingData())
+                {
+#ifdef _WIN32
+                    SecureZeroMemory(GetUnderlyingData(), GetLength());
+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
+                    memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
+#elif LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0)
+                    memzero_explicit(GetUnderlyingData(), GetLength());
+#else
+                    memset(m_data.get(), 0, GetLength());
+                    asm volatile("" : "m" (GetUnderlyingData()));
+#endif
+                }
             }
     }
 }

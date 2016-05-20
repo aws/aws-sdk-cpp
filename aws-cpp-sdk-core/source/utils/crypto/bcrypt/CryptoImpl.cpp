@@ -774,6 +774,7 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
+                //Encryption and decryption are identical in CTR mode.
                 return EncryptWithCtr(encryptedData);
             }
 

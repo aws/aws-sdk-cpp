@@ -19,16 +19,25 @@
 using namespace Aws::Utils;
 
 TEST(GetTheLightsTest, Test_Lights_TurnOff)
-{
+{    
     GetTheLights getTheLights;
-    getTheLights.EnterRoom([]{ ASSERT_TRUE(true); });
+
+    bool firstInGotTheLights(false);
+    getTheLights.EnterRoom([&]{ firstInGotTheLights = true; });
     getTheLights.EnterRoom([]{ ASSERT_TRUE(false); });
     getTheLights.EnterRoom([]{ ASSERT_TRUE(false); });
     getTheLights.EnterRoom([]{ ASSERT_TRUE(false); });
     getTheLights.EnterRoom([]{ ASSERT_TRUE(false); });
+
+    ASSERT_TRUE(firstInGotTheLights);
+
     getTheLights.LeaveRoom([]{ ASSERT_TRUE(false); });
     getTheLights.LeaveRoom([]{ ASSERT_TRUE(false); });
     getTheLights.LeaveRoom([]{ ASSERT_TRUE(false); });
     getTheLights.LeaveRoom([]{ ASSERT_TRUE(false); });
-    getTheLights.LeaveRoom([]{ ASSERT_TRUE(true); });
+
+    bool lastOutGotTheLights(false);
+    getTheLights.LeaveRoom([&]{lastOutGotTheLights = true; });
+
+    ASSERT_TRUE(lastOutGotTheLights);
 }
