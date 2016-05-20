@@ -52,6 +52,10 @@ namespace Aws
         static const int m2_2xlarge_HASH = HashingUtils::HashString("m2.2xlarge");
         static const int m2_4xlarge_HASH = HashingUtils::HashString("m2.4xlarge");
         static const int cr1_8xlarge_HASH = HashingUtils::HashString("cr1.8xlarge");
+        static const int x1_4xlarge_HASH = HashingUtils::HashString("x1.4xlarge");
+        static const int x1_8xlarge_HASH = HashingUtils::HashString("x1.8xlarge");
+        static const int x1_16xlarge_HASH = HashingUtils::HashString("x1.16xlarge");
+        static const int x1_32xlarge_HASH = HashingUtils::HashString("x1.32xlarge");
         static const int i2_xlarge_HASH = HashingUtils::HashString("i2.xlarge");
         static const int i2_2xlarge_HASH = HashingUtils::HashString("i2.2xlarge");
         static const int i2_4xlarge_HASH = HashingUtils::HashString("i2.4xlarge");
@@ -180,6 +184,22 @@ namespace Aws
           else if (hashCode == cr1_8xlarge_HASH)
           {
             return InstanceType::cr1_8xlarge;
+          }
+          else if (hashCode == x1_4xlarge_HASH)
+          {
+            return InstanceType::x1_4xlarge;
+          }
+          else if (hashCode == x1_8xlarge_HASH)
+          {
+            return InstanceType::x1_8xlarge;
+          }
+          else if (hashCode == x1_16xlarge_HASH)
+          {
+            return InstanceType::x1_16xlarge;
+          }
+          else if (hashCode == x1_32xlarge_HASH)
+          {
+            return InstanceType::x1_32xlarge;
           }
           else if (hashCode == i2_xlarge_HASH)
           {
@@ -369,6 +389,14 @@ namespace Aws
             return "m2.4xlarge";
           case InstanceType::cr1_8xlarge:
             return "cr1.8xlarge";
+          case InstanceType::x1_4xlarge:
+            return "x1.4xlarge";
+          case InstanceType::x1_8xlarge:
+            return "x1.8xlarge";
+          case InstanceType::x1_16xlarge:
+            return "x1.16xlarge";
+          case InstanceType::x1_32xlarge:
+            return "x1.32xlarge";
           case InstanceType::i2_xlarge:
             return "i2.xlarge";
           case InstanceType::i2_2xlarge:

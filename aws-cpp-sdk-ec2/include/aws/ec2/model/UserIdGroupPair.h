@@ -45,44 +45,58 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline UserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline UserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS account.</p> <p>[EC2-Classic] Required when adding or
-     * removing rules that reference a security group in another AWS account.</p>
+     * <p>The ID of an AWS account. For a referenced security group in another VPC, the
+     * account ID of the referenced security group is returned.</p> <p>[EC2-Classic]
+     * Required when adding or removing rules that reference a security group in
+     * another AWS account.</p>
      */
     inline UserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
 

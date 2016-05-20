@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Represents a device object associated with a gateway-VTL. </p>
+   * <p>Represents a device object associated with a gateway-VTL.</p>
    */
   class AWS_STORAGEGATEWAY_API VTLDevice
   {

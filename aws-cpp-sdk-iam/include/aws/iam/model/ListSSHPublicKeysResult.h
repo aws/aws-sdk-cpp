@@ -46,37 +46,37 @@ namespace Model
     ListSSHPublicKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline const Aws::Vector<SSHPublicKeyMetadata>& GetSSHPublicKeys() const{ return m_sSHPublicKeys; }
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline void SetSSHPublicKeys(const Aws::Vector<SSHPublicKeyMetadata>& value) { m_sSHPublicKeys = value; }
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline void SetSSHPublicKeys(Aws::Vector<SSHPublicKeyMetadata>&& value) { m_sSHPublicKeys = value; }
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline ListSSHPublicKeysResult& WithSSHPublicKeys(const Aws::Vector<SSHPublicKeyMetadata>& value) { SetSSHPublicKeys(value); return *this;}
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline ListSSHPublicKeysResult& WithSSHPublicKeys(Aws::Vector<SSHPublicKeyMetadata>&& value) { SetSSHPublicKeys(value); return *this;}
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline ListSSHPublicKeysResult& AddSSHPublicKeys(const SSHPublicKeyMetadata& value) { m_sSHPublicKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of SSH public keys.</p>
+     * <p>A list of the SSH public keys assigned to IAM user.</p>
      */
     inline ListSSHPublicKeysResult& AddSSHPublicKeys(SSHPublicKeyMetadata&& value) { m_sSHPublicKeys.push_back(value); return *this; }
 

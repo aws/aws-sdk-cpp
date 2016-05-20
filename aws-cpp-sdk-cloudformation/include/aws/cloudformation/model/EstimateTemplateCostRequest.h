@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>The input for an <a>EstimateTemplateCost</a> action.</p>
    */
   class AWS_CLOUDFORMATION_API EstimateTemplateCostRequest : public CloudFormationRequest
   {

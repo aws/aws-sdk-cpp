@@ -40,7 +40,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetPolicySourceArn() const{ return m_policySourceArn; }
 
@@ -51,7 +55,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const Aws::String& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
 
@@ -62,7 +70,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(Aws::String&& value) { m_policySourceArnHasBeenSet = true; m_policySourceArn = value; }
 
@@ -73,7 +85,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline void SetPolicySourceArn(const char* value) { m_policySourceArnHasBeenSet = true; m_policySourceArn.assign(value); }
 
@@ -84,7 +100,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(const Aws::String& value) { SetPolicySourceArn(value); return *this;}
 
@@ -95,7 +115,11 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(Aws::String&& value) { SetPolicySourceArn(value); return *this;}
 
@@ -106,55 +130,99 @@ namespace Model
      * user is a member of. If you pick a group or a role, then it includes only those
      * context keys that are found in policies attached to that entity. Note that all
      * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p>
+     * to be included as a part of a real HTML request.</p> <p>For more information
+     * about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicySourceArn(const char* value) { SetPolicySourceArn(value); return *this;}
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(value); return *this;}
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
     /**
-     * <p>A optional list of additional policies for which you want list of context
-     * keys used in <code>Condition</code> elements.</p>
+     * <p>An optional list of additional policies for which you want the list of
+     * context keys that are referenced.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of any printable ASCII character ranging from
+     * the space character (\u0020) through end of the ASCII character range (\u00FF).
+     * It also includes the special characters tab (\u0009), line feed (\u000A), and
+     * carriage return (\u000D).</p>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 

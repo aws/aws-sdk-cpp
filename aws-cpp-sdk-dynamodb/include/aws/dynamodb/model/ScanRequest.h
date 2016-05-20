@@ -134,12 +134,12 @@ namespace Model
     inline ScanRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -150,12 +150,12 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -166,12 +166,12 @@ namespace Model
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -182,12 +182,12 @@ namespace Model
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -198,12 +198,12 @@ namespace Model
     inline ScanRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -214,12 +214,12 @@ namespace Model
     inline ScanRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(value); return *this;}
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -230,12 +230,12 @@ namespace Model
     inline ScanRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -246,12 +246,12 @@ namespace Model
     inline ScanRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
     /**
-     * <important><p>This is a legacy parameter, for backward compatibility. New
+     * <important> <p>This is a legacy parameter, for backward compatibility. New
      * applications should use <i>ProjectionExpression</i> instead. Do not combine
      * legacy parameters and expression parameters in a single API call; otherwise,
      * DynamoDB will return a <i>ValidationException</i> exception.</p> <p>This
      * parameter allows you to retrieve attributes of type List or Map; however, it
-     * cannot retrieve individual elements within a List or a Map.</p></important>
+     * cannot retrieve individual elements within a List or a Map.</p> </important>
      * <p>The names of one or more attributes to retrieve. If no attribute names are
      * provided, then all attributes will be returned. If any of the requested
      * attributes are not found, they will not appear in the result.</p> <p>Note that
@@ -271,8 +271,8 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline long GetLimit() const{ return m_limit; }
 
@@ -286,8 +286,8 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
@@ -301,98 +301,113 @@ namespace Model
      * operation and returns the matching values up to the limit, and a key in
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the
      * operation. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
-     * >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline ScanRequest& WithLimit(long value) { SetLimit(value); return *this;}
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.</p> <ul>
-     * <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
-     * </li> <li> <p><code>COUNT</code> - Returns the number of matching items, rather
-     * than the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <i>AttributesToGet</i>. This return value is equivalent to specifying
-     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.</p> </li>
-     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request, unless
-     * the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p>
+     * <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
+     * </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     * querying an index. Retrieves all attributes that have been projected into the
+     * index. If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li> <li> <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than the
+     * matching items themselves.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> -
+     * Returns only the attributes listed in <i>AttributesToGet</i>. This return value
+     * is equivalent to specifying <i>AttributesToGet</i> without specifying any value
+     * for <i>Select</i>.</p> </li> </ul> <p>If neither <i>Select</i> nor
+     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and
+     * <i>Select</i> together in a single request, unless the value for <i>Select</i>
+     * is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+     * <i>AttributesToGet</i> without any value for <i>Select</i>.)</p>
      */
     inline const Select& GetSelect() const{ return m_select; }
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.</p> <ul>
-     * <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
-     * </li> <li> <p><code>COUNT</code> - Returns the number of matching items, rather
-     * than the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <i>AttributesToGet</i>. This return value is equivalent to specifying
-     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.</p> </li>
-     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request, unless
-     * the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p>
+     * <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
+     * </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     * querying an index. Retrieves all attributes that have been projected into the
+     * index. If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li> <li> <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than the
+     * matching items themselves.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> -
+     * Returns only the attributes listed in <i>AttributesToGet</i>. This return value
+     * is equivalent to specifying <i>AttributesToGet</i> without specifying any value
+     * for <i>Select</i>.</p> </li> </ul> <p>If neither <i>Select</i> nor
+     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and
+     * <i>Select</i> together in a single request, unless the value for <i>Select</i>
+     * is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+     * <i>AttributesToGet</i> without any value for <i>Select</i>.)</p>
      */
     inline void SetSelect(const Select& value) { m_selectHasBeenSet = true; m_select = value; }
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.</p> <ul>
-     * <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
-     * </li> <li> <p><code>COUNT</code> - Returns the number of matching items, rather
-     * than the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <i>AttributesToGet</i>. This return value is equivalent to specifying
-     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.</p> </li>
-     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request, unless
-     * the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p>
+     * <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
+     * </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     * querying an index. Retrieves all attributes that have been projected into the
+     * index. If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li> <li> <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than the
+     * matching items themselves.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> -
+     * Returns only the attributes listed in <i>AttributesToGet</i>. This return value
+     * is equivalent to specifying <i>AttributesToGet</i> without specifying any value
+     * for <i>Select</i>.</p> </li> </ul> <p>If neither <i>Select</i> nor
+     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and
+     * <i>Select</i> together in a single request, unless the value for <i>Select</i>
+     * is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+     * <i>AttributesToGet</i> without any value for <i>Select</i>.)</p>
      */
     inline void SetSelect(Select&& value) { m_selectHasBeenSet = true; m_select = value; }
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.</p> <ul>
-     * <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
-     * </li> <li> <p><code>COUNT</code> - Returns the number of matching items, rather
-     * than the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <i>AttributesToGet</i>. This return value is equivalent to specifying
-     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.</p> </li>
-     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request, unless
-     * the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p>
+     * <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
+     * </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     * querying an index. Retrieves all attributes that have been projected into the
+     * index. If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li> <li> <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than the
+     * matching items themselves.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> -
+     * Returns only the attributes listed in <i>AttributesToGet</i>. This return value
+     * is equivalent to specifying <i>AttributesToGet</i> without specifying any value
+     * for <i>Select</i>.</p> </li> </ul> <p>If neither <i>Select</i> nor
+     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and
+     * <i>Select</i> together in a single request, unless the value for <i>Select</i>
+     * is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+     * <i>AttributesToGet</i> without any value for <i>Select</i>.)</p>
      */
     inline ScanRequest& WithSelect(const Select& value) { SetSelect(value); return *this;}
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
      * attributes, specific item attributes, or the count of matching items.</p> <ul>
-     * <li> <p><code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
-     * </li> <li> <p><code>COUNT</code> - Returns the number of matching items, rather
-     * than the matching items themselves.</p> </li> <li> <p>
-     * <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in
-     * <i>AttributesToGet</i>. This return value is equivalent to specifying
-     * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.</p> </li>
-     * </ul> <p>If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
-     * DynamoDB defaults to <code>ALL_ATTRIBUTES</code>. You cannot use both
-     * <i>AttributesToGet</i> and <i>Select</i> together in a single request, unless
-     * the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is
-     * equivalent to specifying <i>AttributesToGet</i> without any value for
-     * <i>Select</i>.)</p>
+     * <li> <p> <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.</p>
+     * </li> <li> <p> <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     * querying an index. Retrieves all attributes that have been projected into the
+     * index. If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.</p> </li> <li> <p>
+     * <code>COUNT</code> - Returns the number of matching items, rather than the
+     * matching items themselves.</p> </li> <li> <p> <code>SPECIFIC_ATTRIBUTES</code> -
+     * Returns only the attributes listed in <i>AttributesToGet</i>. This return value
+     * is equivalent to specifying <i>AttributesToGet</i> without specifying any value
+     * for <i>Select</i>.</p> </li> </ul> <p>If neither <i>Select</i> nor
+     * <i>AttributesToGet</i> are specified, DynamoDB defaults to
+     * <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and
+     * <i>Select</i> together in a single request, unless the value for <i>Select</i>
+     * is <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to specifying
+     * <i>AttributesToGet</i> without any value for <i>Select</i>.)</p>
      */
     inline ScanRequest& WithSelect(Select&& value) { SetSelect(value); return *this;}
 
@@ -402,14 +417,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -422,11 +437,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -439,14 +454,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -459,11 +474,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -476,14 +491,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -496,11 +511,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -513,14 +528,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -533,11 +548,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -550,14 +565,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -570,11 +585,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -587,14 +602,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -607,11 +622,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -624,14 +639,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -644,11 +659,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -661,14 +676,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -681,11 +696,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -698,14 +713,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -718,11 +733,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -735,14 +750,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -755,11 +770,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -772,14 +787,14 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * condition that evaluates the scan results and returns only the desired
-     * values.</p> <note><p>This parameter does not support attributes of type List or
-     * Map.</p></note> <p>If you specify more than one condition in the
+     * values.</p> <note> <p>This parameter does not support attributes of type List or
+     * Map.</p> </note> <p>If you specify more than one condition in the
      * <i>ScanFilter</i> map, then by default all of the conditions must evaluate to
      * true. In other words, the conditions are ANDed together. (You can use the
      * <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do
      * this, then at least one of the conditions must evaluate to true, rather than all
      * of them.)</p> <p>Each <i>ScanFilter</i> element consists of an attribute name to
-     * compare, along with the following:</p> <ul> <li> <p><i>AttributeValueList</i> -
+     * compare, along with the following:</p> <ul> <li> <p> <i>AttributeValueList</i> -
      * One or more values to evaluate against the supplied attribute. The number of
      * values in the list depends on the operator specified in
      * <i>ComparisonOperator</i> .</p> <p>For type Number, value comparisons are
@@ -792,11 +807,11 @@ namespace Model
      * compares binary values.</p> <p>For information on specifying data types in JSON,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li>
-     * <li><p><i>ComparisonOperator</i> - A comparator for evaluating attributes. For
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> </li> <li>
+     * <p> <i>ComparisonOperator</i> - A comparator for evaluating attributes. For
      * example, equals, greater than, less than, etc.</p> <p>The following comparison
-     * operators are available:</p> <p><code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
-     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code></p> <p>For
+     * operators are available:</p> <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL |
+     * NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p> <p>For
      * complete descriptions of all comparison operators, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.</p>
      * </li> </ul>
@@ -809,13 +824,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>ScanFilter</i> map:</p> <ul>
-     * <li><p><code>AND</code> - If all of the conditions evaluate to true, then the
-     * entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least one
-     * of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at least
+     * one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline const ConditionalOperator& GetConditionalOperator() const{ return m_conditionalOperator; }
 
@@ -825,13 +840,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>ScanFilter</i> map:</p> <ul>
-     * <li><p><code>AND</code> - If all of the conditions evaluate to true, then the
-     * entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least one
-     * of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at least
+     * one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline void SetConditionalOperator(const ConditionalOperator& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
 
@@ -841,13 +856,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>ScanFilter</i> map:</p> <ul>
-     * <li><p><code>AND</code> - If all of the conditions evaluate to true, then the
-     * entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least one
-     * of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at least
+     * one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline void SetConditionalOperator(ConditionalOperator&& value) { m_conditionalOperatorHasBeenSet = true; m_conditionalOperator = value; }
 
@@ -857,13 +872,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>ScanFilter</i> map:</p> <ul>
-     * <li><p><code>AND</code> - If all of the conditions evaluate to true, then the
-     * entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least one
-     * of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at least
+     * one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline ScanRequest& WithConditionalOperator(const ConditionalOperator& value) { SetConditionalOperator(value); return *this;}
 
@@ -873,13 +888,13 @@ namespace Model
      * parameters and expression parameters in a single API call; otherwise, DynamoDB
      * will return a <i>ValidationException</i> exception.</p> </important> <p>A
      * logical operator to apply to the conditions in a <i>ScanFilter</i> map:</p> <ul>
-     * <li><p><code>AND</code> - If all of the conditions evaluate to true, then the
-     * entire map evaluates to true.</p></li> <li><p><code>OR</code> - If at least one
-     * of the conditions evaluate to true, then the entire map evaluates to
-     * true.</p></li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
+     * <li> <p> <code>AND</code> - If all of the conditions evaluate to true, then the
+     * entire map evaluates to true.</p> </li> <li> <p> <code>OR</code> - If at least
+     * one of the conditions evaluate to true, then the entire map evaluates to
+     * true.</p> </li> </ul> <p>If you omit <i>ConditionalOperator</i>, then
      * <code>AND</code> is the default.</p> <p>The operation will succeed only if the
-     * entire map evaluates to true.</p> <note><p>This parameter does not support
-     * attributes of type List or Map.</p></note>
+     * entire map evaluates to true.</p> <note> <p>This parameter does not support
+     * attributes of type List or Map.</p> </note>
      */
     inline ScanRequest& WithConditionalOperator(ConditionalOperator&& value) { SetConditionalOperator(value); return *this;}
 
@@ -1114,9 +1129,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline const Aws::String& GetProjectionExpression() const{ return m_projectionExpression; }
 
@@ -1128,9 +1143,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(const Aws::String& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
 
@@ -1142,9 +1157,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(Aws::String&& value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression = value; }
 
@@ -1156,9 +1171,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline void SetProjectionExpression(const char* value) { m_projectionExpressionHasBeenSet = true; m_projectionExpression.assign(value); }
 
@@ -1170,9 +1185,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline ScanRequest& WithProjectionExpression(const Aws::String& value) { SetProjectionExpression(value); return *this;}
 
@@ -1184,9 +1199,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline ScanRequest& WithProjectionExpression(Aws::String&& value) { SetProjectionExpression(value); return *this;}
 
@@ -1198,9 +1213,9 @@ namespace Model
      * be returned. If any of the requested attributes are not found, they will not
      * appear in the result.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
-     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
-     * parameter.</p></note>
+     * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note>
+     * <p> <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i>
+     * parameter.</p> </note>
      */
     inline ScanRequest& WithProjectionExpression(const char* value) { SetProjectionExpression(value); return *this;}
 
@@ -1209,12 +1224,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
 
@@ -1223,12 +1238,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(const Aws::String& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
@@ -1237,12 +1252,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(Aws::String&& value) { m_filterExpressionHasBeenSet = true; m_filterExpression = value; }
 
@@ -1251,12 +1266,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline void SetFilterExpression(const char* value) { m_filterExpressionHasBeenSet = true; m_filterExpression.assign(value); }
 
@@ -1265,12 +1280,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline ScanRequest& WithFilterExpression(const Aws::String& value) { SetFilterExpression(value); return *this;}
 
@@ -1279,12 +1294,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline ScanRequest& WithFilterExpression(Aws::String&& value) { SetFilterExpression(value); return *this;}
 
@@ -1293,12 +1308,12 @@ namespace Model
      * operation, but before the data is returned to you. Items that do not satisfy the
      * <i>FilterExpression</i> criteria are not returned.</p> <note> <p>A
      * <i>FilterExpression</i> is applied after the items have already been read; the
-     * process of filtering does not consume any additional read capacity
-     * units.</p></note> <p>For more information, see <a
+     * process of filtering does not consume any additional read capacity units.</p>
+     * </note> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
-     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     * <note><p><i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
-     * <i>ConditionalOperator</i> parameters.</p></note>
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> <note> <p>
+     * <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and
+     * <i>ConditionalOperator</i> parameters.</p> </note>
      */
     inline ScanRequest& WithFilterExpression(const char* value) { SetFilterExpression(value); return *this;}
 
@@ -1310,19 +1325,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1336,19 +1351,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1362,19 +1377,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1388,19 +1403,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1414,19 +1429,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1440,19 +1455,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1466,19 +1481,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1492,19 +1507,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1518,19 +1533,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1544,19 +1559,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1570,19 +1585,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1596,19 +1611,19 @@ namespace Model
      * attribute name in an expression.</p> </li> <li> <p>To prevent special characters
      * in an attribute name from being misinterpreted in an expression.</p> </li> </ul>
      * <p>Use the <b>#</b> character in an expression to dereference an attribute name.
-     * For example, consider the following attribute name:</p>
-     * <ul><li><p><code>Percentile</code></p></li></ul> <p>The name of this attribute
-     * conflicts with a reserved word, so it cannot be used directly in an expression.
-     * (For the complete list of reserved words, see <a
+     * For example, consider the following attribute name:</p> <ul> <li> <p>
+     * <code>Percentile</code> </p> </li> </ul> <p>The name of this attribute conflicts
+     * with a reserved word, so it cannot be used directly in an expression. (For the
+     * complete list of reserved words, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      * Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this,
-     * you could specify the following for <i>ExpressionAttributeNames</i>:</p>
-     * <ul><li><p><code>{"#P":"Percentile"}</code></p></li></ul> <p>You could then use
-     * this substitution in an expression, as in this example:</p> <ul><li><p><code>#P
-     * = :val</code></p></li></ul> <note><p>Tokens that begin with the <b>:</b>
-     * character are <i>expression attribute values</i>, which are placeholders for the
-     * actual value at runtime.</p></note> <p>For more information on expression
-     * attribute names, see <a
+     * you could specify the following for <i>ExpressionAttributeNames</i>:</p> <ul>
+     * <li> <p> <code>{"#P":"Percentile"}</code> </p> </li> </ul> <p>You could then use
+     * this substitution in an expression, as in this example:</p> <ul> <li> <p>
+     * <code>#P = :val</code> </p> </li> </ul> <note> <p>Tokens that begin with the
+     * <b>:</b> character are <i>expression attribute values</i>, which are
+     * placeholders for the actual value at runtime.</p> </note> <p>For more
+     * information on expression attribute names, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
      * Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1618,13 +1633,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1634,13 +1650,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1650,13 +1667,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1666,13 +1684,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1682,13 +1701,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1698,13 +1718,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1714,13 +1735,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1730,13 +1752,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1746,13 +1769,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1762,13 +1786,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -1778,13 +1803,14 @@ namespace Model
      * <p>One or more values that can be substituted in an expression.</p> <p>Use the
      * <b>:</b> (colon) character in an expression to dereference an attribute value.
      * For example, suppose that you wanted to check whether the value of the
-     * <i>ProductStatus</i> attribute was one of the following: </p> <p><code>Available
-     * | Backordered | Discontinued</code></p> <p>You would first need to specify
-     * <i>ExpressionAttributeValues</i> as follows:</p> <p><code>{
+     * <i>ProductStatus</i> attribute was one of the following: </p> <p>
+     * <code>Available | Backordered | Discontinued</code> </p> <p>You would first need
+     * to specify <i>ExpressionAttributeValues</i> as follows:</p> <p> <code>{
      * ":avail":{"S":"Available"}, ":back":{"S":"Backordered"},
-     * ":disc":{"S":"Discontinued"} }</code></p> <p>You could then use these values in
-     * an expression, such as this:</p> <p><code>ProductStatus IN (:avail, :back,
-     * :disc)</code></p> <p>For more information on expression attribute values, see <a
+     * ":disc":{"S":"Discontinued"} }</code> </p> <p>You could then use these values in
+     * an expression, such as this:</p> <p> <code>ProductStatus IN (:avail, :back,
+     * :disc)</code> </p> <p>For more information on expression attribute values, see
+     * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
      * Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */

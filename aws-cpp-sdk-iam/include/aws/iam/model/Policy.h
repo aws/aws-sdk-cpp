@@ -86,7 +86,7 @@ namespace Model
     inline Policy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -94,7 +94,7 @@ namespace Model
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -102,7 +102,7 @@ namespace Model
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -110,7 +110,7 @@ namespace Model
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -118,7 +118,7 @@ namespace Model
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -126,7 +126,7 @@ namespace Model
     inline Policy& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -134,7 +134,7 @@ namespace Model
     inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The stable and unique string identifying the policy. </p> <p>For more
+     * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.</p>
@@ -213,43 +213,43 @@ namespace Model
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline void SetDefaultVersionId(const char* value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId.assign(value); }
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline Policy& WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline Policy& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(value); return *this;}
 
     /**
      * <p>The identifier for the version of the policy that is set as the default
-     * version. </p>
+     * version.</p>
      */
     inline Policy& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
@@ -272,20 +272,20 @@ namespace Model
     inline Policy& WithAttachmentCount(long value) { SetAttachmentCount(value); return *this;}
 
     /**
-     * <p>Specifies whether the policy can be attached to an IAM user, group, or role.
-     * </p>
+     * <p>Specifies whether the policy can be attached to an IAM user, group, or
+     * role.</p>
      */
     inline bool GetIsAttachable() const{ return m_isAttachable; }
 
     /**
-     * <p>Specifies whether the policy can be attached to an IAM user, group, or role.
-     * </p>
+     * <p>Specifies whether the policy can be attached to an IAM user, group, or
+     * role.</p>
      */
     inline void SetIsAttachable(bool value) { m_isAttachableHasBeenSet = true; m_isAttachable = value; }
 
     /**
-     * <p>Specifies whether the policy can be attached to an IAM user, group, or role.
-     * </p>
+     * <p>Specifies whether the policy can be attached to an IAM user, group, or
+     * role.</p>
      */
     inline Policy& WithIsAttachable(bool value) { SetIsAttachable(value); return *this;}
 
@@ -373,7 +373,7 @@ namespace Model
      * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
      * only one version, this field contains the date and time when the policy was
      * created. When a policy has more than one version, this field contains the date
-     * and time when the most recent policy version was created. </p>
+     * and time when the most recent policy version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
 
@@ -382,7 +382,7 @@ namespace Model
      * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
      * only one version, this field contains the date and time when the policy was
      * created. When a policy has more than one version, this field contains the date
-     * and time when the most recent policy version was created. </p>
+     * and time when the most recent policy version was created.</p>
      */
     inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
@@ -391,7 +391,7 @@ namespace Model
      * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
      * only one version, this field contains the date and time when the policy was
      * created. When a policy has more than one version, this field contains the date
-     * and time when the most recent policy version was created. </p>
+     * and time when the most recent policy version was created.</p>
      */
     inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDateHasBeenSet = true; m_updateDate = value; }
 
@@ -400,7 +400,7 @@ namespace Model
      * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
      * only one version, this field contains the date and time when the policy was
      * created. When a policy has more than one version, this field contains the date
-     * and time when the most recent policy version was created. </p>
+     * and time when the most recent policy version was created.</p>
      */
     inline Policy& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
 
@@ -409,7 +409,7 @@ namespace Model
      * date-time format</a>, when the policy was last updated.</p> <p>When a policy has
      * only one version, this field contains the date and time when the policy was
      * created. When a policy has more than one version, this field contains the date
-     * and time when the most recent policy version was created. </p>
+     * and time when the most recent policy version was created.</p>
      */
     inline Policy& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(value); return *this;}
 

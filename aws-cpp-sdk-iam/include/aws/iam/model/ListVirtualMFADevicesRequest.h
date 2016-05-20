@@ -34,42 +34,42 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The status (unassigned or assigned) of the devices to list. If you do not
-     * specify an <code>AssignmentStatus</code>, the action defaults to
-     * <code>Any</code> which lists both assigned and unassigned virtual MFA devices.
-     * </p>
+     * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
+     * MFA devices.</p>
      */
     inline const AssignmentStatusType& GetAssignmentStatus() const{ return m_assignmentStatus; }
 
     /**
-     * <p> The status (unassigned or assigned) of the devices to list. If you do not
-     * specify an <code>AssignmentStatus</code>, the action defaults to
-     * <code>Any</code> which lists both assigned and unassigned virtual MFA devices.
-     * </p>
+     * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
+     * MFA devices.</p>
      */
     inline void SetAssignmentStatus(const AssignmentStatusType& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
-     * <p> The status (unassigned or assigned) of the devices to list. If you do not
-     * specify an <code>AssignmentStatus</code>, the action defaults to
-     * <code>Any</code> which lists both assigned and unassigned virtual MFA devices.
-     * </p>
+     * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
+     * MFA devices.</p>
      */
     inline void SetAssignmentStatus(AssignmentStatusType&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
-     * <p> The status (unassigned or assigned) of the devices to list. If you do not
-     * specify an <code>AssignmentStatus</code>, the action defaults to
-     * <code>Any</code> which lists both assigned and unassigned virtual MFA devices.
-     * </p>
+     * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
+     * MFA devices.</p>
      */
     inline ListVirtualMFADevicesRequest& WithAssignmentStatus(const AssignmentStatusType& value) { SetAssignmentStatus(value); return *this;}
 
     /**
-     * <p> The status (unassigned or assigned) of the devices to list. If you do not
-     * specify an <code>AssignmentStatus</code>, the action defaults to
-     * <code>Any</code> which lists both assigned and unassigned virtual MFA devices.
-     * </p>
+     * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
+     * MFA devices.</p>
      */
     inline ListVirtualMFADevicesRequest& WithAssignmentStatus(AssignmentStatusType&& value) { SetAssignmentStatus(value); return *this;}
 
@@ -137,7 +137,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -149,7 +149,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -161,7 +161,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListVirtualMFADevicesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

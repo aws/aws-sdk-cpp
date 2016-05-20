@@ -172,22 +172,22 @@ namespace Model
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note>Amazon Web Services may impose its own limit, if
-     * this field is not set.</note>
+     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * this field is not set.</p> </note>
      */
     inline long GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note>Amazon Web Services may impose its own limit, if
-     * this field is not set.</note>
+     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * this field is not set.</p> </note>
      */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
-     * specified number.</p> <note>Amazon Web Services may impose its own limit, if
-     * this field is not set.</note>
+     * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
+     * this field is not set.</p> </note>
      */
     inline DescribeTapesRequest& WithLimit(long value) { SetLimit(value); return *this;}
 

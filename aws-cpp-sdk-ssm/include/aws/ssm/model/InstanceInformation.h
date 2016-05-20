@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Describes a filter for a specific list of instances.
+   * <p>Describes a filter for a specific list of instances. </p>
    */
   class AWS_SSM_API InstanceInformation
   {
@@ -45,232 +45,235 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline InstanceInformation& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline InstanceInformation& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * The instance ID.
+     * <p>The instance ID. </p>
      */
     inline InstanceInformation& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * Connection status of the SSM agent.
+     * <p>Connection status of the SSM agent. </p>
      */
     inline const PingStatus& GetPingStatus() const{ return m_pingStatus; }
 
     /**
-     * Connection status of the SSM agent.
+     * <p>Connection status of the SSM agent. </p>
      */
     inline void SetPingStatus(const PingStatus& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * Connection status of the SSM agent.
+     * <p>Connection status of the SSM agent. </p>
      */
     inline void SetPingStatus(PingStatus&& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * Connection status of the SSM agent.
+     * <p>Connection status of the SSM agent. </p>
      */
     inline InstanceInformation& WithPingStatus(const PingStatus& value) { SetPingStatus(value); return *this;}
 
     /**
-     * Connection status of the SSM agent.
+     * <p>Connection status of the SSM agent. </p>
      */
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(value); return *this;}
 
     /**
-     * The date and time when agent last pinged SSM service.
+     * <p>The date and time when agent last pinged SSM service. </p>
      */
     inline const Aws::Utils::DateTime& GetLastPingDateTime() const{ return m_lastPingDateTime; }
 
     /**
-     * The date and time when agent last pinged SSM service.
+     * <p>The date and time when agent last pinged SSM service. </p>
      */
     inline void SetLastPingDateTime(const Aws::Utils::DateTime& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
-     * The date and time when agent last pinged SSM service.
+     * <p>The date and time when agent last pinged SSM service. </p>
      */
     inline void SetLastPingDateTime(Aws::Utils::DateTime&& value) { m_lastPingDateTimeHasBeenSet = true; m_lastPingDateTime = value; }
 
     /**
-     * The date and time when agent last pinged SSM service.
+     * <p>The date and time when agent last pinged SSM service. </p>
      */
     inline InstanceInformation& WithLastPingDateTime(const Aws::Utils::DateTime& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * The date and time when agent last pinged SSM service.
+     * <p>The date and time when agent last pinged SSM service. </p>
      */
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * The version of the SSM agent running on your instance.
+     * <p>The version of the SSM agent running on your instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
     /**
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * <p>Indicates whether latest version of the SSM agent is running on your
+     * instance. </p>
      */
     inline bool GetIsLatestVersion() const{ return m_isLatestVersion; }
 
     /**
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * <p>Indicates whether latest version of the SSM agent is running on your
+     * instance. </p>
      */
     inline void SetIsLatestVersion(bool value) { m_isLatestVersionHasBeenSet = true; m_isLatestVersion = value; }
 
     /**
-     * Indicates whether latest version of the SSM agent is running on your instance.
+     * <p>Indicates whether latest version of the SSM agent is running on your
+     * instance. </p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}
 
     /**
-     * The operating system platform type.
+     * <p>The operating system platform type. </p>
      */
     inline const PlatformType& GetPlatformType() const{ return m_platformType; }
 
     /**
-     * The operating system platform type.
+     * <p>The operating system platform type. </p>
      */
     inline void SetPlatformType(const PlatformType& value) { m_platformTypeHasBeenSet = true; m_platformType = value; }
 
     /**
-     * The operating system platform type.
+     * <p>The operating system platform type. </p>
      */
     inline void SetPlatformType(PlatformType&& value) { m_platformTypeHasBeenSet = true; m_platformType = value; }
 
     /**
-     * The operating system platform type.
+     * <p>The operating system platform type. </p>
      */
     inline InstanceInformation& WithPlatformType(const PlatformType& value) { SetPlatformType(value); return *this;}
 
     /**
-     * The operating system platform type.
+     * <p>The operating system platform type. </p>
      */
     inline InstanceInformation& WithPlatformType(PlatformType&& value) { SetPlatformType(value); return *this;}
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline const Aws::String& GetPlatformName() const{ return m_platformName; }
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline void SetPlatformName(Aws::String&& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline void SetPlatformName(const char* value) { m_platformNameHasBeenSet = true; m_platformName.assign(value); }
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformName(const Aws::String& value) { SetPlatformName(value); return *this;}
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformName(Aws::String&& value) { SetPlatformName(value); return *this;}
 
     /**
-     * The name of the operating system platform running on your instance.
+     * <p>The name of the operating system platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformName(const char* value) { SetPlatformName(value); return *this;}
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * The version of the OS platform running on your instance.
+     * <p>The version of the OS platform running on your instance. </p>
      */
     inline InstanceInformation& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

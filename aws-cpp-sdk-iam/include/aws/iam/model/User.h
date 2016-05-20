@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an IAM user entity.</p> <p> This data type is used
+   * <p>Contains information about an IAM user entity.</p> <p>This data type is used
    * as a response element in the following actions:</p> <ul> <li> <p>
    * <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p>
    * <a>ListUsers</a> </p> </li> </ul>

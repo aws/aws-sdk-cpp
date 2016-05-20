@@ -29,7 +29,10 @@ namespace Model
 
 DocumentDescription::DocumentDescription() : 
     m_sha1HasBeenSet(false),
+    m_hashHasBeenSet(false),
+    m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -40,7 +43,10 @@ DocumentDescription::DocumentDescription() :
 
 DocumentDescription::DocumentDescription(const JsonValue& jsonValue) : 
     m_sha1HasBeenSet(false),
+    m_hashHasBeenSet(false),
+    m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -59,11 +65,32 @@ DocumentDescription& DocumentDescription::operator =(const JsonValue& jsonValue)
     m_sha1HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Hash"))
+  {
+    m_hash = jsonValue.GetString("Hash");
+
+    m_hashHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HashType"))
+  {
+    m_hashType = DocumentHashTypeMapper::GetDocumentHashTypeForName(jsonValue.GetString("HashType"));
+
+    m_hashTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedDate"))
@@ -120,9 +147,26 @@ JsonValue DocumentDescription::Jsonize() const
 
   }
 
+  if(m_hashHasBeenSet)
+  {
+   payload.WithString("Hash", m_hash);
+
+  }
+
+  if(m_hashTypeHasBeenSet)
+  {
+   payload.WithString("HashType", DocumentHashTypeMapper::GetNameForDocumentHashType(m_hashType));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
 
   }
 

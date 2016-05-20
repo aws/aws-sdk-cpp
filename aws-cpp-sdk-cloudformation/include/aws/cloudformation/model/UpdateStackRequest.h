@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The input for <a>UpdateStack</a> action.</p>
+   * <p>The input for an <a>UpdateStack</a> action.</p>
    */
   class AWS_CLOUDFORMATION_API UpdateStackRequest : public CloudFormationRequest
   {

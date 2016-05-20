@@ -40,9 +40,16 @@ target_include_directories(aws-cpp-sdk-access-management PUBLIC
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-access-management aws-cpp-sdk-cognito-identity aws-cpp-sdk-iam)
 
-install (TARGETS aws-cpp-sdk-access-management 
-         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+if(SIMPLE_INSTALL)
+    install (TARGETS aws-cpp-sdk-access-management
+            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+            LIBRARY DESTINATION lib
+            RUNTIME DESTINATION bin)
+else()
+    install (TARGETS aws-cpp-sdk-access-management
+             ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+endif()
 
 install (FILES ${AWS_ACCESS_MANAGEMENT_HEADERS} DESTINATION include/aws/access-management)

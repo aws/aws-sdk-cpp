@@ -29,12 +29,14 @@ namespace Model
 
 DocumentIdentifier::DocumentIdentifier() : 
     m_nameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
     m_platformTypesHasBeenSet(false)
 {
 }
 
 DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) : 
     m_nameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
     m_platformTypesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +49,13 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PlatformTypes"))
@@ -69,6 +78,12 @@ JsonValue DocumentIdentifier::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
 
   }
 

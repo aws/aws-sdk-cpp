@@ -44,42 +44,27 @@ namespace Model
     GetPolicyVersionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the policy version.</p> <p>For more information about
-     * managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+     * <p>A structure containing details about the policy version.</p>
      */
     inline const PolicyVersion& GetPolicyVersion() const{ return m_policyVersion; }
 
     /**
-     * <p>Information about the policy version.</p> <p>For more information about
-     * managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+     * <p>A structure containing details about the policy version.</p>
      */
     inline void SetPolicyVersion(const PolicyVersion& value) { m_policyVersion = value; }
 
     /**
-     * <p>Information about the policy version.</p> <p>For more information about
-     * managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+     * <p>A structure containing details about the policy version.</p>
      */
     inline void SetPolicyVersion(PolicyVersion&& value) { m_policyVersion = value; }
 
     /**
-     * <p>Information about the policy version.</p> <p>For more information about
-     * managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+     * <p>A structure containing details about the policy version.</p>
      */
     inline GetPolicyVersionResult& WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
 
     /**
-     * <p>Information about the policy version.</p> <p>For more information about
-     * managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>. </p>
+     * <p>A structure containing details about the policy version.</p>
      */
     inline GetPolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(value); return *this;}
 

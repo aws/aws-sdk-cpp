@@ -44,27 +44,27 @@ namespace Model
     CreatePolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the policy.</p>
+     * <p>A structure containing details about the new policy.</p>
      */
     inline const Policy& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>Information about the policy.</p>
+     * <p>A structure containing details about the new policy.</p>
      */
     inline void SetPolicy(const Policy& value) { m_policy = value; }
 
     /**
-     * <p>Information about the policy.</p>
+     * <p>A structure containing details about the new policy.</p>
      */
     inline void SetPolicy(Policy&& value) { m_policy = value; }
 
     /**
-     * <p>Information about the policy.</p>
+     * <p>A structure containing details about the new policy.</p>
      */
     inline CreatePolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>Information about the policy.</p>
+     * <p>A structure containing details about the new policy.</p>
      */
     inline CreatePolicyResult& WithPolicy(Policy&& value) { SetPolicy(value); return *this;}
 

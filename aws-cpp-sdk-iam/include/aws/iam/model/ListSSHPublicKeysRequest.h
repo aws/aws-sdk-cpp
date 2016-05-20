@@ -35,49 +35,70 @@ namespace Model
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the IAM user to list SSH public keys for. If none is specified,
      * the UserName field is determined implicitly based on the AWS access key used to
-     * sign the request.</p>
+     * sign the request.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for this parameter is a string of characters consisting of upper and
+     * lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-</p>
      */
     inline ListSSHPublicKeysRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -145,7 +166,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -157,7 +178,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -169,7 +190,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListSSHPublicKeysRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

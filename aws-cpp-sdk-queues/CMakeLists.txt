@@ -45,10 +45,17 @@ target_include_directories(aws-cpp-sdk-queues PUBLIC
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-queues aws-cpp-sdk-sqs)
 
-install (TARGETS aws-cpp-sdk-queues
-         ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-         RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+if(SIMPLE_INSTALL)
+    install (TARGETS aws-cpp-sdk-queues
+            ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+            LIBRARY DESTINATION lib
+            RUNTIME DESTINATION bin)
+else()
+    install (TARGETS aws-cpp-sdk-queues
+             ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
+             RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+endif()
 
 install (FILES ${AWS_QUEUES_HEADERS} DESTINATION include/aws/queues)
 install (FILES ${AWS_SQS_QUEUES_HEADERS} DESTINATION include/aws/queues/sqs)

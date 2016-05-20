@@ -33,10 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an IAM group entity.</p> <p> This data type is
-   * used as a response element in the following actions:</p> <ul> <li>
-   * <a>CreateGroup</a> </li> <li> <a>GetGroup</a> </li> <li> <a>ListGroups</a> </li>
-   * </ul>
+   * <p>Contains information about an IAM group entity.</p> <p>This data type is used
+   * as a response element in the following actions:</p> <ul> <li> <p>
+   * <a>CreateGroup</a> </p> </li> <li> <p> <a>GetGroup</a> </p> </li> <li> <p>
+   * <a>ListGroups</a> </p> </li> </ul>
    */
   class AWS_IAM_API Group
   {

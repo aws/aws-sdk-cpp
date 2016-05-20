@@ -36,10 +36,10 @@ namespace Model
    * <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated
    * gateway. It is a string made of information such as your account, gateway name,
    * and region. This ARN is used to reference the gateway in other API operations as
-   * well as resource-based authorization.</p> <note>For gateways activated prior to
-   * September 02, 2015 the gateway ARN contains the gateway name rather than the
+   * well as resource-based authorization.</p> <note><p>For gateways activated prior
+   * to September 02, 2015 the gateway ARN contains the gateway name rather than the
    * gateway id. Changing the name of the gateway has no effect on the gateway
-   * ARN.</note>
+   * ARN.</p> </note>
    */
   class AWS_STORAGEGATEWAY_API ActivateGatewayResult
   {

@@ -42,25 +42,39 @@ namespace Model
     UpdateSnapshotScheduleResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     UpdateSnapshotScheduleResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:

@@ -33,106 +33,188 @@ namespace Model
     ListEntitiesForPolicyRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListEntitiesForPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListEntitiesForPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.</p> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline ListEntitiesForPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The entity type to use for filtering the results. </p> <p>For example, when
+     * <p>The entity type to use for filtering the results.</p> <p>For example, when
      * <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached
      * to the specified policy are returned. This parameter is optional. If it is not
-     * included, all attached entities (users, groups, and roles) are returned. </p>
+     * included, all attached entities (users, groups, and roles) are returned. The
+     * argument for this parameter must be one of the valid values listed below.</p>
      */
     inline const EntityType& GetEntityFilter() const{ return m_entityFilter; }
 
     /**
-     * <p>The entity type to use for filtering the results. </p> <p>For example, when
+     * <p>The entity type to use for filtering the results.</p> <p>For example, when
      * <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached
      * to the specified policy are returned. This parameter is optional. If it is not
-     * included, all attached entities (users, groups, and roles) are returned. </p>
+     * included, all attached entities (users, groups, and roles) are returned. The
+     * argument for this parameter must be one of the valid values listed below.</p>
      */
     inline void SetEntityFilter(const EntityType& value) { m_entityFilterHasBeenSet = true; m_entityFilter = value; }
 
     /**
-     * <p>The entity type to use for filtering the results. </p> <p>For example, when
+     * <p>The entity type to use for filtering the results.</p> <p>For example, when
      * <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached
      * to the specified policy are returned. This parameter is optional. If it is not
-     * included, all attached entities (users, groups, and roles) are returned. </p>
+     * included, all attached entities (users, groups, and roles) are returned. The
+     * argument for this parameter must be one of the valid values listed below.</p>
      */
     inline void SetEntityFilter(EntityType&& value) { m_entityFilterHasBeenSet = true; m_entityFilter = value; }
 
     /**
-     * <p>The entity type to use for filtering the results. </p> <p>For example, when
+     * <p>The entity type to use for filtering the results.</p> <p>For example, when
      * <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached
      * to the specified policy are returned. This parameter is optional. If it is not
-     * included, all attached entities (users, groups, and roles) are returned. </p>
+     * included, all attached entities (users, groups, and roles) are returned. The
+     * argument for this parameter must be one of the valid values listed below.</p>
      */
     inline ListEntitiesForPolicyRequest& WithEntityFilter(const EntityType& value) { SetEntityFilter(value); return *this;}
 
     /**
-     * <p>The entity type to use for filtering the results. </p> <p>For example, when
+     * <p>The entity type to use for filtering the results.</p> <p>For example, when
      * <code>EntityFilter</code> is <code>Role</code>, only the roles that are attached
      * to the specified policy are returned. This parameter is optional. If it is not
-     * included, all attached entities (users, groups, and roles) are returned. </p>
+     * included, all attached entities (users, groups, and roles) are returned. The
+     * argument for this parameter must be one of the valid values listed below.</p>
      */
     inline ListEntitiesForPolicyRequest& WithEntityFilter(EntityType&& value) { SetEntityFilter(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListEntitiesForPolicyRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListEntitiesForPolicyRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
-     * is not included, it defaults to a slash (/), listing all entities.</p>
+     * is not included, it defaults to a slash (/), listing all entities.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes, containing any ASCII
+     * character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline ListEntitiesForPolicyRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 
@@ -200,7 +282,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
@@ -212,7 +294,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -224,7 +306,7 @@ namespace Model
      * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
      * <code>true</code> and <code>Marker</code> contains a value to include in the
-     * subsequent call that tells the service where to continue from. </p>
+     * subsequent call that tells the service where to continue from.</p>
      */
     inline ListEntitiesForPolicyRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

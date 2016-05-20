@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * Describes plugin details.
+   * <p>Describes plugin details.</p>
    */
   class AWS_SSM_API CommandPlugin
   {
@@ -44,265 +44,270 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline CommandPlugin& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline CommandPlugin& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * The name of the plugin. Must be one of the following: aws:updateAgent,
+     * <p>The name of the plugin. Must be one of the following: aws:updateAgent,
      * aws:domainjoin, aws:applications, aws:runPowerShellScript, aws:psmodule,
-     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent.
+     * aws:cloudWatch, aws:runShellScript, or aws:updateSSMAgent. </p>
      */
     inline CommandPlugin& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * <p>The status of this plugin. You can execute a document with multiple
+     * plugins.</p>
      */
     inline const CommandPluginStatus& GetStatus() const{ return m_status; }
 
     /**
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * <p>The status of this plugin. You can execute a document with multiple
+     * plugins.</p>
      */
     inline void SetStatus(const CommandPluginStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * <p>The status of this plugin. You can execute a document with multiple
+     * plugins.</p>
      */
     inline void SetStatus(CommandPluginStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * <p>The status of this plugin. You can execute a document with multiple
+     * plugins.</p>
      */
     inline CommandPlugin& WithStatus(const CommandPluginStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * <p>The status of this plugin. You can execute a document with multiple
+     * plugins.</p>
      */
     inline CommandPlugin& WithStatus(CommandPluginStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * A numeric response code generated after executing the plugin.
+     * <p>A numeric response code generated after executing the plugin. </p>
      */
     inline long GetResponseCode() const{ return m_responseCode; }
 
     /**
-     * A numeric response code generated after executing the plugin.
+     * <p>A numeric response code generated after executing the plugin. </p>
      */
     inline void SetResponseCode(long value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
 
     /**
-     * A numeric response code generated after executing the plugin.
+     * <p>A numeric response code generated after executing the plugin. </p>
      */
     inline CommandPlugin& WithResponseCode(long value) { SetResponseCode(value); return *this;}
 
     /**
-     * The time the plugin started executing.
+     * <p>The time the plugin started executing. </p>
      */
     inline const Aws::Utils::DateTime& GetResponseStartDateTime() const{ return m_responseStartDateTime; }
 
     /**
-     * The time the plugin started executing.
+     * <p>The time the plugin started executing. </p>
      */
     inline void SetResponseStartDateTime(const Aws::Utils::DateTime& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
 
     /**
-     * The time the plugin started executing.
+     * <p>The time the plugin started executing. </p>
      */
     inline void SetResponseStartDateTime(Aws::Utils::DateTime&& value) { m_responseStartDateTimeHasBeenSet = true; m_responseStartDateTime = value; }
 
     /**
-     * The time the plugin started executing.
+     * <p>The time the plugin started executing. </p>
      */
     inline CommandPlugin& WithResponseStartDateTime(const Aws::Utils::DateTime& value) { SetResponseStartDateTime(value); return *this;}
 
     /**
-     * The time the plugin started executing.
+     * <p>The time the plugin started executing. </p>
      */
     inline CommandPlugin& WithResponseStartDateTime(Aws::Utils::DateTime&& value) { SetResponseStartDateTime(value); return *this;}
 
     /**
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a
-     * cancel command was sent.
+     * <p>The time the plugin stopped executing. Could stop prematurely if, for
+     * example, a cancel command was sent. </p>
      */
     inline const Aws::Utils::DateTime& GetResponseFinishDateTime() const{ return m_responseFinishDateTime; }
 
     /**
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a
-     * cancel command was sent.
+     * <p>The time the plugin stopped executing. Could stop prematurely if, for
+     * example, a cancel command was sent. </p>
      */
     inline void SetResponseFinishDateTime(const Aws::Utils::DateTime& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
 
     /**
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a
-     * cancel command was sent.
+     * <p>The time the plugin stopped executing. Could stop prematurely if, for
+     * example, a cancel command was sent. </p>
      */
     inline void SetResponseFinishDateTime(Aws::Utils::DateTime&& value) { m_responseFinishDateTimeHasBeenSet = true; m_responseFinishDateTime = value; }
 
     /**
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a
-     * cancel command was sent.
+     * <p>The time the plugin stopped executing. Could stop prematurely if, for
+     * example, a cancel command was sent. </p>
      */
     inline CommandPlugin& WithResponseFinishDateTime(const Aws::Utils::DateTime& value) { SetResponseFinishDateTime(value); return *this;}
 
     /**
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a
-     * cancel command was sent.
+     * <p>The time the plugin stopped executing. Could stop prematurely if, for
+     * example, a cancel command was sent. </p>
      */
     inline CommandPlugin& WithResponseFinishDateTime(Aws::Utils::DateTime&& value) { SetResponseFinishDateTime(value); return *this;}
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline CommandPlugin& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline CommandPlugin& WithOutput(Aws::String&& value) { SetOutput(value); return *this;}
 
     /**
-     * Output of the plugin execution.
+     * <p>Output of the plugin execution.</p>
      */
     inline CommandPlugin& WithOutput(const char* value) { SetOutput(value); return *this;}
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The S3 bucket where the responses to the command executions should be stored.
-     * This was requested when issuing the command.
+     * <p>The S3 bucket where the responses to the command executions should be stored.
+     * This was requested when issuing the command.</p>
      */
     inline CommandPlugin& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * The S3 directory path inside the bucket where the responses to the command
-     * executions should be stored. This was requested when issuing the command.
+     * <p>The S3 directory path inside the bucket where the responses to the command
+     * executions should be stored. This was requested when issuing the command. </p>
      */
     inline CommandPlugin& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 

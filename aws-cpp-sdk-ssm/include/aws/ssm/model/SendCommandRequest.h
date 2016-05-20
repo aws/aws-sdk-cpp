@@ -17,6 +17,7 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentHashType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
 namespace Aws
@@ -37,287 +38,361 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * Required. The instance IDs where the command should execute.
+     * <p>Required. The instance IDs where the command should execute.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(value); return *this;}
 
     /**
-     * Required. The name of the SSM document to execute. This can be an SSM public
-     * document or a custom document.
+     * <p>Required. The name of the SSM document to execute. This can be an SSM public
+     * document or a custom document.</p>
      */
     inline SendCommandRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
     /**
-     * If this time is reached and the command has not already started executing, it
-     * will not execute.
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline const Aws::String& GetDocumentHash() const{ return m_documentHash; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline void SetDocumentHash(const Aws::String& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline void SetDocumentHash(Aws::String&& value) { m_documentHashHasBeenSet = true; m_documentHash = value; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline void SetDocumentHash(const char* value) { m_documentHashHasBeenSet = true; m_documentHash.assign(value); }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline SendCommandRequest& WithDocumentHash(const Aws::String& value) { SetDocumentHash(value); return *this;}
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline SendCommandRequest& WithDocumentHash(Aws::String&& value) { SetDocumentHash(value); return *this;}
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline SendCommandRequest& WithDocumentHash(const char* value) { SetDocumentHash(value); return *this;}
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline const DocumentHashType& GetDocumentHashType() const{ return m_documentHashType; }
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline void SetDocumentHashType(const DocumentHashType& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline void SetDocumentHashType(DocumentHashType&& value) { m_documentHashTypeHasBeenSet = true; m_documentHashType = value; }
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline SendCommandRequest& WithDocumentHashType(const DocumentHashType& value) { SetDocumentHashType(value); return *this;}
+
+    /**
+     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline SendCommandRequest& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(value); return *this;}
+
+    /**
+     * <p>If this time is reached and the command has not already started executing, it
+     * will not execute.</p>
      */
     inline long GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
-     * If this time is reached and the command has not already started executing, it
-     * will not execute.
+     * <p>If this time is reached and the command has not already started executing, it
+     * will not execute.</p>
      */
     inline void SetTimeoutSeconds(long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
-     * If this time is reached and the command has not already started executing, it
-     * will not execute.
+     * <p>If this time is reached and the command has not already started executing, it
+     * will not execute.</p>
      */
     inline SendCommandRequest& WithTimeoutSeconds(long value) { SetTimeoutSeconds(value); return *this;}
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline SendCommandRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline SendCommandRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * User-specified information about the command, such as a brief description of
-     * what the command should do.
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
      */
     inline SendCommandRequest& WithComment(const char* value) { SetComment(value); return *this;}
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(value); return *this;}
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The required and optional parameters specified in the SSM document being
-     * executed.
+     * <p>The required and optional parameters specified in the SSM document being
+     * executed.</p>
      */
     inline SendCommandRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters[key] = value; return *this; }
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The name of the S3 bucket where command execution responses should be stored.
+     * <p>The name of the S3 bucket where command execution responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * The directory structure within the S3 bucket where the responses should be
-     * stored.
+     * <p>The directory structure within the S3 bucket where the responses should be
+     * stored.</p>
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
@@ -326,6 +401,10 @@ namespace Model
     bool m_instanceIdsHasBeenSet;
     Aws::String m_documentName;
     bool m_documentNameHasBeenSet;
+    Aws::String m_documentHash;
+    bool m_documentHashHasBeenSet;
+    DocumentHashType m_documentHashType;
+    bool m_documentHashTypeHasBeenSet;
     long m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
     Aws::String m_comment;

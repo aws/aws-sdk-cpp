@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline DeleteTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline DeleteTableRequest& WithTableName(Aws::String&& value) { SetTableName(value); return *this;}
 
     /**
-     * <p> The name of the table to delete.</p>
+     * <p>The name of the table to delete.</p>
      */
     inline DeleteTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 

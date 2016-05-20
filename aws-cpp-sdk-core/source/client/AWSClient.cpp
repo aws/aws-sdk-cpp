@@ -93,7 +93,7 @@ void AWSClient::CleanupGlobalStatics()
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller, const char* hostHeaderOverride) :
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_httpClient(CreateHttpClient(configuration)),
     m_signer(signer),
     m_errorMarshaller(errorMarshaller),
@@ -101,7 +101,6 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
-    m_hostHeaderOverride(hostHeaderOverride),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
 {
     InitializeGlobalStatics();
@@ -317,11 +316,6 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 
 void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 {
-    if (m_hostHeaderOverride)
-    {
-        httpRequest.SetHeaderValue(Http::HOST_HEADER, m_hostHeaderOverride);
-    }
-
     httpRequest.SetUserAgent(m_userAgent);
 }
 
@@ -339,9 +333,8 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 ////////////////////////////////////////////////////////////////////////////
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
-    const char* hostHeaderOverride) :
-    BASECLASS(configuration, signer, errorMarshaller, hostHeaderOverride)
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(configuration, signer, errorMarshaller)
 {
 }
 
@@ -437,9 +430,8 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
 AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
-    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller,
-    const char* hostHeaderOverride) :
-    BASECLASS(configuration, signer, errorMarshaller, hostHeaderOverride)
+    const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    BASECLASS(configuration, signer, errorMarshaller)
 {
 }
 

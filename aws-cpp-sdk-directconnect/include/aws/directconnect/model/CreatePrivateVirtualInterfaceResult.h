@@ -46,25 +46,39 @@ namespace Model
     CreatePrivateVirtualInterfaceResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreatePrivateVirtualInterfaceResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = value; }
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline void SetOwnerAccount(const char* value) { m_ownerAccount.assign(value); }
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline CreatePrivateVirtualInterfaceResult& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline CreatePrivateVirtualInterfaceResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(value); return *this;}
 
-    
+    /**
+     * <p>The AWS account that will own the new virtual interface.</p>
+     */
     inline CreatePrivateVirtualInterfaceResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
     

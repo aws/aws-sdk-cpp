@@ -40,57 +40,64 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline CreateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline CreateStackRequest& WithStackName(Aws::String&& value) { SetStackName(value); return *this;}
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note>A stack name can contain
-     * only alphanumeric characters (case sensitive) and hyphens. It must start with an
-     * alphabetic character and cannot be longer than 128 characters.</note>
+     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * contain only alphanumeric characters (case sensitive) and hyphens. It must start
+     * with an alphabetic character and cannot be longer than 128 characters.</p>
+     * </note>
      */
     inline CreateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
@@ -342,7 +349,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationARNs() const{ return m_notificationARNs; }
@@ -350,7 +357,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline void SetNotificationARNs(const Aws::Vector<Aws::String>& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
@@ -358,7 +365,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline void SetNotificationARNs(Aws::Vector<Aws::String>&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs = value; }
@@ -366,7 +373,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline CreateStackRequest& WithNotificationARNs(const Aws::Vector<Aws::String>& value) { SetNotificationARNs(value); return *this;}
@@ -374,7 +381,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline CreateStackRequest& WithNotificationARNs(Aws::Vector<Aws::String>&& value) { SetNotificationARNs(value); return *this;}
@@ -382,7 +389,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(const Aws::String& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
@@ -390,7 +397,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(Aws::String&& value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
@@ -398,7 +405,7 @@ namespace Model
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command Line
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
      * Interface (CLI).</p>
      */
     inline CreateStackRequest& AddNotificationARNs(const char* value) { m_notificationARNsHasBeenSet = true; m_notificationARNs.push_back(value); return *this; }
@@ -612,9 +619,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -631,9 +638,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -650,9 +657,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -669,9 +676,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -688,9 +695,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -707,9 +714,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -726,9 +733,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -745,9 +752,9 @@ namespace Model
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use the
      * following syntax to describe template resource types: <code>AWS::*</code> (for
      * all AWS resource), <code>Custom::*</code> (for all custom resources),
-     * <code>Custom::<i>logical_ID</i></code> (for a specific custom resource),
+     * <code>Custom::<i>logical_ID</i> </code> (for a specific custom resource),
      * <code>AWS::<i>service_name</i>::*</code> (for all resources of a particular AWS
-     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     * service), and <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      * (for a specific AWS resource).</p> <p>If the list of resource types doesn't
      * include a resource that you're creating, the stack creation fails. By default,
      * AWS CloudFormation grants permissions to all resource types. AWS Identity and
@@ -762,7 +769,7 @@ namespace Model
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
-     * <p>Default: <code>ROLLBACK</code></p>
+     * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline const OnFailure& GetOnFailure() const{ return m_onFailure; }
 
@@ -770,7 +777,7 @@ namespace Model
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
-     * <p>Default: <code>ROLLBACK</code></p>
+     * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline void SetOnFailure(const OnFailure& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
 
@@ -778,7 +785,7 @@ namespace Model
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
-     * <p>Default: <code>ROLLBACK</code></p>
+     * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline void SetOnFailure(OnFailure&& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
 
@@ -786,7 +793,7 @@ namespace Model
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
-     * <p>Default: <code>ROLLBACK</code></p>
+     * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline CreateStackRequest& WithOnFailure(const OnFailure& value) { SetOnFailure(value); return *this;}
 
@@ -794,7 +801,7 @@ namespace Model
      * <p>Determines what action will be taken if stack creation fails. This must be
      * one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify either
      * <code>OnFailure</code> or <code>DisableRollback</code>, but not both.</p>
-     * <p>Default: <code>ROLLBACK</code></p>
+     * <p>Default: <code>ROLLBACK</code> </p>
      */
     inline CreateStackRequest& WithOnFailure(OnFailure&& value) { SetOnFailure(value); return *this;}
 

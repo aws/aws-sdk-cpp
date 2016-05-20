@@ -122,7 +122,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
@@ -133,7 +134,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -144,7 +146,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
@@ -155,7 +158,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
@@ -166,7 +170,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline S3DestinationConfiguration& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
@@ -177,7 +182,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline S3DestinationConfiguration& WithPrefix(Aws::String&& value) { SetPrefix(value); return *this;}
 
@@ -188,7 +194,8 @@ namespace Model
      * S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
      * S3 Object Name Format</a> in the <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/">guide-fh-dev</a>.</p>
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose
+     * Developer Guide</a>.</p>
      */
     inline S3DestinationConfiguration& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

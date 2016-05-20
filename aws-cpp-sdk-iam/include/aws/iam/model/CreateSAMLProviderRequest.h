@@ -37,10 +37,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline const Aws::String& GetSAMLMetadataDocument() const{ return m_sAMLMetadataDocument; }
 
@@ -49,10 +49,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(const Aws::String& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = value; }
 
@@ -61,10 +61,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(Aws::String&& value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument = value; }
 
@@ -73,10 +73,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline void SetSAMLMetadataDocument(const char* value) { m_sAMLMetadataDocumentHasBeenSet = true; m_sAMLMetadataDocument.assign(value); }
 
@@ -85,10 +85,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const Aws::String& value) { SetSAMLMetadataDocument(value); return *this;}
 
@@ -97,10 +97,10 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(Aws::String&& value) { SetSAMLMetadataDocument(value); return *this;}
 
@@ -109,45 +109,66 @@ namespace Model
      * 2.0. The document includes the issuer's name, expiration information, and keys
      * that can be used to validate the SAML authentication response (assertions) that
      * are received from the IdP. You must generate the metadata document using the
-     * identity management software that is used as your organization's IdP. </p>
-     * <p>For more information, see <a
+     * identity management software that is used as your organization's IdP.</p> <p>For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About
-     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i></p>
+     * SAML 2.0-based Federation</a> in the <i>IAM User Guide</i> </p>
      */
     inline CreateSAMLProviderRequest& WithSAMLMetadataDocument(const char* value) { SetSAMLMetadataDocument(value); return *this;}
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateSAMLProviderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateSAMLProviderRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the provider to create.</p>
+     * <p>The name of the provider to create.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters: =,.@-</p>
      */
     inline CreateSAMLProviderRequest& WithName(const char* value) { SetName(value); return *this;}
 

@@ -35,7 +35,7 @@ namespace SQS
 namespace Model
 {
   /**
-   * A list of your dead letter source queues.
+   * <p>A list of your dead letter source queues.</p>
    */
   class AWS_SQS_API ListDeadLetterSourceQueuesResult
   {
@@ -45,50 +45,50 @@ namespace Model
     ListDeadLetterSourceQueuesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = value; }
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(value); return *this;}
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(value); return *this; }
 
     /**
-     * A list of source queue URLs that have the RedrivePolicy queue attribute
-     * configured with a dead letter queue.
+     * <p>A list of source queue URLs that have the RedrivePolicy queue attribute
+     * configured with a dead letter queue.</p>
      */
     inline ListDeadLetterSourceQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
 

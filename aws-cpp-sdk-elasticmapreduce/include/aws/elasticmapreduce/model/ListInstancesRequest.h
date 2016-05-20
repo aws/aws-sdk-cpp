@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/InstanceGroupType.h>
+#include <aws/elasticmapreduce/model/InstanceState.h>
 
 namespace Aws
 {
@@ -143,6 +144,48 @@ namespace Model
     inline ListInstancesRequest& AddInstanceGroupTypes(InstanceGroupType&& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes.push_back(value); return *this; }
 
     /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline const Aws::Vector<InstanceState>& GetInstanceStates() const{ return m_instanceStates; }
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline void SetInstanceStates(const Aws::Vector<InstanceState>& value) { m_instanceStatesHasBeenSet = true; m_instanceStates = value; }
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline void SetInstanceStates(Aws::Vector<InstanceState>&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates = value; }
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline ListInstancesRequest& WithInstanceStates(const Aws::Vector<InstanceState>& value) { SetInstanceStates(value); return *this;}
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline ListInstancesRequest& WithInstanceStates(Aws::Vector<InstanceState>&& value) { SetInstanceStates(value); return *this;}
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline ListInstancesRequest& AddInstanceStates(const InstanceState& value) { m_instanceStatesHasBeenSet = true; m_instanceStates.push_back(value); return *this; }
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline ListInstancesRequest& AddInstanceStates(InstanceState&& value) { m_instanceStatesHasBeenSet = true; m_instanceStates.push_back(value); return *this; }
+
+    /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -184,6 +227,8 @@ namespace Model
     bool m_instanceGroupIdHasBeenSet;
     Aws::Vector<InstanceGroupType> m_instanceGroupTypes;
     bool m_instanceGroupTypesHasBeenSet;
+    Aws::Vector<InstanceState> m_instanceStates;
+    bool m_instanceStatesHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
   };

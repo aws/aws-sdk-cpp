@@ -79,43 +79,80 @@ namespace Model
     inline DocumentIdentifier& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * The operating system platform.
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline DocumentIdentifier& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline DocumentIdentifier& WithOwner(Aws::String&& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The AWS user account of the person who created the document.</p>
+     */
+    inline DocumentIdentifier& WithOwner(const char* value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The operating system platform. </p>
      */
     inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline void SetPlatformTypes(Aws::Vector<PlatformType>&& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline DocumentIdentifier& WithPlatformTypes(const Aws::Vector<PlatformType>& value) { SetPlatformTypes(value); return *this;}
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline DocumentIdentifier& WithPlatformTypes(Aws::Vector<PlatformType>&& value) { SetPlatformTypes(value); return *this;}
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline DocumentIdentifier& AddPlatformTypes(const PlatformType& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
     /**
-     * The operating system platform.
+     * <p>The operating system platform. </p>
      */
     inline DocumentIdentifier& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
+    Aws::String m_owner;
+    bool m_ownerHasBeenSet;
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;
   };

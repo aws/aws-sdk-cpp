@@ -74,57 +74,57 @@ namespace Model
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The key-value pair that represents the tag you want to add to the resource.
-     * The value can be an empty string.</p> <note><p>Valid characters for key and
+     * The value can be an empty string.</p> <note> <p>Valid characters for key and
      * value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @.</p></note>
+     * following special characters: + - = . _ : / @.</p> </note>
      */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

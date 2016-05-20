@@ -42,79 +42,79 @@ namespace Model
     DescribeInstanceInformationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline const Aws::Vector<InstanceInformation>& GetInstanceInformationList() const{ return m_instanceInformationList; }
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline void SetInstanceInformationList(const Aws::Vector<InstanceInformation>& value) { m_instanceInformationList = value; }
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline void SetInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { m_instanceInformationList = value; }
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline DescribeInstanceInformationResult& WithInstanceInformationList(const Aws::Vector<InstanceInformation>& value) { SetInstanceInformationList(value); return *this;}
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline DescribeInstanceInformationResult& WithInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { SetInstanceInformationList(value); return *this;}
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline DescribeInstanceInformationResult& AddInstanceInformationList(const InstanceInformation& value) { m_instanceInformationList.push_back(value); return *this; }
 
     /**
-     * The instance information list.
+     * <p>The instance information list.</p>
      */
     inline DescribeInstanceInformationResult& AddInstanceInformationList(InstanceInformation&& value) { m_instanceInformationList.push_back(value); return *this; }
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline DescribeInstanceInformationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline DescribeInstanceInformationResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * The token to use when requesting the next set of items. If there are no
-     * additional items to return, the string is empty.
+     * <p>The token to use when requesting the next set of items. If there are no
+     * additional items to return, the string is empty. </p>
      */
     inline DescribeInstanceInformationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -70,37 +70,37 @@ namespace Model
     inline DescribeAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline DescribeAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline DescribeAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The Windows Server instance ID.</p>
+     * <p>The instance ID.</p>
      */
     inline DescribeAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

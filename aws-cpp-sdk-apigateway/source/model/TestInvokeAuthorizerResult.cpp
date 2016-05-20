@@ -75,7 +75,7 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const AmazonW
     Aws::Map<Aws::String, JsonValue> authorizationJsonMap = jsonValue.GetObject("authorization").GetAllObjects();
     for(auto& authorizationItem : authorizationJsonMap)
     {
-      Array<JsonValue> listOfStringJsonList = authorizationItem.second.GetArray("ListOfString");
+      Array<JsonValue> listOfStringJsonList = authorizationItem.second.AsArray();
       Aws::Vector<Aws::String> listOfStringList((size_t)listOfStringJsonList.GetLength());
       for(unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex)
       {

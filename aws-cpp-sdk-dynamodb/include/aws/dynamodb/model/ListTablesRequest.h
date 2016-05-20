@@ -85,19 +85,19 @@ namespace Model
     inline ListTablesRequest& WithExclusiveStartTableName(const char* value) { SetExclusiveStartTableName(value); return *this;}
 
     /**
-     * <p> A maximum number of table names to return. If this parameter is not
+     * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
     inline long GetLimit() const{ return m_limit; }
 
     /**
-     * <p> A maximum number of table names to return. If this parameter is not
+     * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
     inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p> A maximum number of table names to return. If this parameter is not
+     * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
     inline ListTablesRequest& WithLimit(long value) { SetLimit(value); return *this;}

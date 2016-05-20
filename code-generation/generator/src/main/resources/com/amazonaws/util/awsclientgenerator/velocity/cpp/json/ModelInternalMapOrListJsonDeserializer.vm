@@ -54,7 +54,11 @@
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)
+#if($template.recursionDepth > 1)
+  ${template.currentSpaces}Array<JsonValue> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.AsArray();
+#else
   ${template.currentSpaces}Array<JsonValue> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.GetArray("${template.memberKey}");
+#end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "List")
   ${template.currentSpaces}Aws::Vector<${CppViewHelper.computeCppType($template.currentShape.listMember.shape)}> ${template.lowerCaseVarName}List((size_t)${template.lowerCaseVarName}JsonList.GetLength());

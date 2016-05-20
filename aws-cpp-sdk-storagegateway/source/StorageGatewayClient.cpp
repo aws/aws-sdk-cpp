@@ -64,6 +64,7 @@
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
 #include <aws/storagegateway/model/ListTagsForResourceRequest.h>
+#include <aws/storagegateway/model/ListTapesRequest.h>
 #include <aws/storagegateway/model/ListVolumeInitiatorsRequest.h>
 #include <aws/storagegateway/model/ListVolumeRecoveryPointsRequest.h>
 #include <aws/storagegateway/model/ListVolumesRequest.h>
@@ -96,7 +97,8 @@ static const char* ALLOCATION_TAG = "StorageGatewayClient";
 StorageGatewayClient::StorageGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -106,7 +108,8 @@ StorageGatewayClient::StorageGatewayClient(const Client::ClientConfiguration& cl
 StorageGatewayClient::StorageGatewayClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -117,7 +120,8 @@ StorageGatewayClient::StorageGatewayClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region) : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
+                                                                        : clientConfiguration.authenticationRegion),
     Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -144,6 +148,7 @@ void StorageGatewayClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+
 ActivateGatewayOutcome StorageGatewayClient::ActivateGateway(const ActivateGatewayRequest& request) const
 {
   Aws::StringStream ss;
@@ -1320,6 +1325,37 @@ void StorageGatewayClient::ListTagsForResourceAsync(const ListTagsForResourceReq
 void StorageGatewayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ListTapesOutcome StorageGatewayClient::ListTapes(const ListTapesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTapesOutcome(ListTapesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTapesOutcome(outcome.GetError());
+  }
+}
+
+ListTapesOutcomeCallable StorageGatewayClient::ListTapesCallable(const ListTapesRequest& request) const
+{
+  return std::async(std::launch::async, &StorageGatewayClient::ListTapes, this, request);
+}
+
+void StorageGatewayClient::ListTapesAsync(const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&StorageGatewayClient::ListTapesAsyncHelper, this, request, handler, context);
+}
+
+void StorageGatewayClient::ListTapesAsyncHelper(const ListTapesRequest& request, const ListTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTapes(request), context);
 }
 
 ListVolumeInitiatorsOutcome StorageGatewayClient::ListVolumeInitiators(const ListVolumeInitiatorsRequest& request) const

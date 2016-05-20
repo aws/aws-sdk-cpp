@@ -25,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A JSON object containing the following fields:</p> <ul> <li>
-   * <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </li> <li>
-   * <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </li> <li>
-   * <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </li> </ul>
+   * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+   * <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </p> </li> <li> <p>
+   * <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </p> </li> <li> <p>
+   * <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API UpdateMaintenanceStartTimeRequest : public StorageGatewayRequest
   {

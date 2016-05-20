@@ -45,27 +45,27 @@ namespace Model
     GetServerCertificateResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Information about the server certificate.</p>
+     * <p>A structure containing details about the server certificate.</p>
      */
     inline const ServerCertificate& GetServerCertificate() const{ return m_serverCertificate; }
 
     /**
-     * <p>Information about the server certificate.</p>
+     * <p>A structure containing details about the server certificate.</p>
      */
     inline void SetServerCertificate(const ServerCertificate& value) { m_serverCertificate = value; }
 
     /**
-     * <p>Information about the server certificate.</p>
+     * <p>A structure containing details about the server certificate.</p>
      */
     inline void SetServerCertificate(ServerCertificate&& value) { m_serverCertificate = value; }
 
     /**
-     * <p>Information about the server certificate.</p>
+     * <p>A structure containing details about the server certificate.</p>
      */
     inline GetServerCertificateResult& WithServerCertificate(const ServerCertificate& value) { SetServerCertificate(value); return *this;}
 
     /**
-     * <p>Information about the server certificate.</p>
+     * <p>A structure containing details about the server certificate.</p>
      */
     inline GetServerCertificateResult& WithServerCertificate(ServerCertificate&& value) { SetServerCertificate(value); return *this;}
 

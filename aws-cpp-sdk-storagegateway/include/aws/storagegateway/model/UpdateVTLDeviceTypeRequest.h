@@ -70,43 +70,43 @@ namespace Model
     inline UpdateVTLDeviceTypeRequest& WithVTLDeviceARN(const char* value) { SetVTLDeviceARN(value); return *this;}
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(Aws::String&& value) { SetDeviceType(value); return *this;}
 
     /**
-     * <p>The type of medium changer you want to select.</p> <p><i>Valid Values</i>:
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline UpdateVTLDeviceTypeRequest& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}

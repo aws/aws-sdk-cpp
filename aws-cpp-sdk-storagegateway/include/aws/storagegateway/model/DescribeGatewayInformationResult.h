@@ -66,50 +66,50 @@ namespace Model
     inline DescribeGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayId = value; }
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayId = value; }
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline void SetGatewayId(const char* value) { m_gatewayId.assign(value); }
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayId(Aws::String&& value) { SetGatewayId(value); return *this;}
 
     /**
-     * <p>The unique identifier assigned to your gateway during activation. This id
-     * becomes part of the gateway Amazon Resources Name (ARN) which you use as input
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
     inline DescribeGatewayInformationResult& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}

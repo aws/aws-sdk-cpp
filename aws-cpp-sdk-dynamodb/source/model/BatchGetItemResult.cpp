@@ -41,7 +41,7 @@ BatchGetItemResult& BatchGetItemResult::operator =(const AmazonWebServiceResult<
     Aws::Map<Aws::String, JsonValue> responsesJsonMap = jsonValue.GetObject("Responses").GetAllObjects();
     for(auto& responsesItem : responsesJsonMap)
     {
-      Array<JsonValue> itemListJsonList = responsesItem.second.GetArray("ItemList");
+      Array<JsonValue> itemListJsonList = responsesItem.second.AsArray();
       Aws::Vector<Aws::Map<Aws::String, AttributeValue>> itemListList((size_t)itemListJsonList.GetLength());
       for(unsigned itemListIndex = 0; itemListIndex < itemListJsonList.GetLength(); ++itemListIndex)
       {

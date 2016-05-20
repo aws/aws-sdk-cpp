@@ -1314,7 +1314,7 @@ namespace Model
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter in the same call.</p>
+     * and the instance IDs parameter or tag filters in the same call.</p>
      */
     inline long GetMaxResults() const{ return m_maxResults; }
 
@@ -1322,7 +1322,7 @@ namespace Model
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter in the same call.</p>
+     * and the instance IDs parameter or tag filters in the same call.</p>
      */
     inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -1330,7 +1330,7 @@ namespace Model
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 5 and 1000. You cannot specify this parameter
-     * and the instance IDs parameter in the same call.</p>
+     * and the instance IDs parameter or tag filters in the same call.</p>
      */
     inline DescribeInstancesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
 

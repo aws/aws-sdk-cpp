@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTapeARNs() const{ return m_tapeARNs; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline void SetTapeARNs(const Aws::Vector<Aws::String>& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = value; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline void SetTapeARNs(Aws::Vector<Aws::String>&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs = value; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline DescribeTapeArchivesRequest& WithTapeARNs(const Aws::Vector<Aws::String>& value) { SetTapeARNs(value); return *this;}
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline DescribeTapeArchivesRequest& WithTapeARNs(Aws::Vector<Aws::String>&& value) { SetTapeARNs(value); return *this;}
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline DescribeTapeArchivesRequest& AddTapeARNs(const Aws::String& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline DescribeTapeArchivesRequest& AddTapeARNs(Aws::String&& value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 
     /**
      * <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the
-     * virtual tapes you want to describe. </p>
+     * virtual tapes you want to describe.</p>
      */
     inline DescribeTapeArchivesRequest& AddTapeARNs(const char* value) { m_tapeARNsHasBeenSet = true; m_tapeARNs.push_back(value); return *this; }
 

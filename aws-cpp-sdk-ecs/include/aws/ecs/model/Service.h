@@ -209,51 +209,51 @@ namespace Model
     inline Service& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline Service& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(value); return *this;}
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline Service& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
-     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
-     * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * <p>A list of load balancer objects, containing the load balancer name, the
+     * container name (as it appears in a container definition), and the container port
+     * to access from the load balancer.</p>
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -473,49 +473,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline Service& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline Service& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the service
      * that allows the Amazon ECS container agent to register container instances with
-     * an Elastic Load Balancing load balancer.</p>
+     * a load balancer.</p>
      */
     inline Service& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -561,19 +561,29 @@ namespace Model
      */
     inline Service& AddEvents(ServiceEvent&& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
-    
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
-    
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
-    
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
     inline Service& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
-    
+    /**
+     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     */
     inline Service& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
   private:

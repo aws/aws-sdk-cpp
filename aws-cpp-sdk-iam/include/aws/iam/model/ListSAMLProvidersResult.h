@@ -45,37 +45,44 @@ namespace Model
     ListSAMLProvidersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline const Aws::Vector<SAMLProviderListEntry>& GetSAMLProviderList() const{ return m_sAMLProviderList; }
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline void SetSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { m_sAMLProviderList = value; }
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline void SetSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { m_sAMLProviderList = value; }
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline ListSAMLProvidersResult& WithSAMLProviderList(const Aws::Vector<SAMLProviderListEntry>& value) { SetSAMLProviderList(value); return *this;}
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline ListSAMLProvidersResult& WithSAMLProviderList(Aws::Vector<SAMLProviderListEntry>&& value) { SetSAMLProviderList(value); return *this;}
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline ListSAMLProvidersResult& AddSAMLProviderList(const SAMLProviderListEntry& value) { m_sAMLProviderList.push_back(value); return *this; }
 
     /**
-     * <p>The list of SAML providers for this account.</p>
+     * <p>The list of SAML provider resource objects defined in IAM for this AWS
+     * account.</p>
      */
     inline ListSAMLProvidersResult& AddSAMLProviderList(SAMLProviderListEntry&& value) { m_sAMLProviderList.push_back(value); return *this; }
 

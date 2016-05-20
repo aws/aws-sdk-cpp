@@ -78,10 +78,15 @@ namespace Aws
 
         public:
             /**
-            * Take credentials provider and uses it for authentication. This constructor
-            * is ideal for special credentials providers such as cognito-identity.
-            */
-            AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const char* serviceName, const Aws::String& region);
+             * credentialsProvider, source of AWS Credentials to sign requests with
+             * serviceName,  canonical service name to sign with
+             * region, region string to use in signature
+             * signPayloads, if true, the payload will have a sha256 computed on the body of the request. If this is set
+             *    to false, the sha256 will not be computed on the body. This is only useful for Amazon S3 over Https. If
+             *    Https is not used then this flag will be ignored.
+             */
+            AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const char* serviceName, const Aws::String& region, bool signPayloads = true);
 
             virtual ~AWSAuthV4Signer();
 
@@ -109,6 +114,7 @@ namespace Aws
             Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
+            bool m_signPayloads;
         };
 
     } // namespace Client

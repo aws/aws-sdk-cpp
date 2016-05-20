@@ -16,6 +16,7 @@
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/ExecutionStatus.h>
 #include <aws/cloudformation/model/ChangeSetStatus.h>
 #include <aws/core/utils/DateTime.h>
 
@@ -188,6 +189,51 @@ namespace Model
     inline ChangeSetSummary& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
     /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
+    inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
+
+    /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
+    inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+
+    /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
+    inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
+
+    /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
+    inline ChangeSetSummary& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
+
+    /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
+    inline ChangeSetSummary& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(value); return *this;}
+
+    /**
      * <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
@@ -335,6 +381,8 @@ namespace Model
     bool m_changeSetIdHasBeenSet;
     Aws::String m_changeSetName;
     bool m_changeSetNameHasBeenSet;
+    ExecutionStatus m_executionStatus;
+    bool m_executionStatusHasBeenSet;
     ChangeSetStatus m_status;
     bool m_statusHasBeenSet;
     Aws::String m_statusReason;

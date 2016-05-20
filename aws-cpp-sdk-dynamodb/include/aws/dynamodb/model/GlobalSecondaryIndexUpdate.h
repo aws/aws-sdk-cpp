@@ -33,10 +33,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents one of the following:</p> <ul> <li><p>A new global secondary index
-   * to be added to an existing table.</p></li> <li><p>New provisioned throughput
-   * parameters for an existing global secondary index.</p></li> <li><p>An existing
-   * global secondary index to be removed from an existing table.</p></li> </ul>
+   * <p>Represents one of the following:</p> <ul> <li> <p>A new global secondary
+   * index to be added to an existing table.</p> </li> <li> <p>New provisioned
+   * throughput parameters for an existing global secondary index.</p> </li> <li>
+   * <p>An existing global secondary index to be removed from an existing table.</p>
+   * </li> </ul>
    */
   class AWS_DYNAMODB_API GlobalSecondaryIndexUpdate
   {
@@ -78,46 +79,46 @@ namespace Model
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
-     * table:</p> <ul> <li><p><code>IndexName </code></p></li> <li><p><code>KeySchema
-     * </code></p></li> <li><p><code>AttributeDefinitions </code></p></li>
-     * <li><p><code>Projection </code></p></li> <li><p><code>ProvisionedThroughput
-     * </code></p></li> </ul>
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline const CreateGlobalSecondaryIndexAction& GetCreate() const{ return m_create; }
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
-     * table:</p> <ul> <li><p><code>IndexName </code></p></li> <li><p><code>KeySchema
-     * </code></p></li> <li><p><code>AttributeDefinitions </code></p></li>
-     * <li><p><code>Projection </code></p></li> <li><p><code>ProvisionedThroughput
-     * </code></p></li> </ul>
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline void SetCreate(const CreateGlobalSecondaryIndexAction& value) { m_createHasBeenSet = true; m_create = value; }
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
-     * table:</p> <ul> <li><p><code>IndexName </code></p></li> <li><p><code>KeySchema
-     * </code></p></li> <li><p><code>AttributeDefinitions </code></p></li>
-     * <li><p><code>Projection </code></p></li> <li><p><code>ProvisionedThroughput
-     * </code></p></li> </ul>
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline void SetCreate(CreateGlobalSecondaryIndexAction&& value) { m_createHasBeenSet = true; m_create = value; }
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
-     * table:</p> <ul> <li><p><code>IndexName </code></p></li> <li><p><code>KeySchema
-     * </code></p></li> <li><p><code>AttributeDefinitions </code></p></li>
-     * <li><p><code>Projection </code></p></li> <li><p><code>ProvisionedThroughput
-     * </code></p></li> </ul>
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline GlobalSecondaryIndexUpdate& WithCreate(const CreateGlobalSecondaryIndexAction& value) { SetCreate(value); return *this;}
 
     /**
      * <p>The parameters required for creating a global secondary index on an existing
-     * table:</p> <ul> <li><p><code>IndexName </code></p></li> <li><p><code>KeySchema
-     * </code></p></li> <li><p><code>AttributeDefinitions </code></p></li>
-     * <li><p><code>Projection </code></p></li> <li><p><code>ProvisionedThroughput
-     * </code></p></li> </ul>
+     * table:</p> <ul> <li> <p> <code>IndexName </code> </p> </li> <li> <p>
+     * <code>KeySchema </code> </p> </li> <li> <p> <code>AttributeDefinitions </code>
+     * </p> </li> <li> <p> <code>Projection </code> </p> </li> <li> <p>
+     * <code>ProvisionedThroughput </code> </p> </li> </ul>
      */
     inline GlobalSecondaryIndexUpdate& WithCreate(CreateGlobalSecondaryIndexAction&& value) { SetCreate(value); return *this;}
 

@@ -26,11 +26,11 @@ namespace Model
 
   /**
    * <p>A JSON object containing one or more of the following fields:</p> <ul> <li>
-   * <a>CreateStorediSCSIVolumeInput$DiskId</a> </li> <li>
-   * <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </li> <li>
-   * <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </li> <li>
-   * <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </li> <li>
-   * <a>CreateStorediSCSIVolumeInput$TargetName</a> </li> </ul>
+   * <p> <a>CreateStorediSCSIVolumeInput$DiskId</a> </p> </li> <li> <p>
+   * <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </p> </li> <li> <p>
+   * <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </p> </li> <li> <p>
+   * <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </p> </li> <li> <p>
+   * <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul>
    */
   class AWS_STORAGEGATEWAY_API CreateStorediSCSIVolumeRequest : public StorageGatewayRequest
   {
@@ -189,22 +189,22 @@ namespace Model
 
     /**
      * <p>Specify this field as true if you want to preserve the data on the local
-     * disk. Otherwise, specifying this field as false creates an empty volume.</p>
-     * <p><i>Valid Values</i>: true, false</p>
+     * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
+     * Valid Values: true, false</p>
      */
     inline bool GetPreserveExistingData() const{ return m_preserveExistingData; }
 
     /**
      * <p>Specify this field as true if you want to preserve the data on the local
-     * disk. Otherwise, specifying this field as false creates an empty volume.</p>
-     * <p><i>Valid Values</i>: true, false</p>
+     * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
+     * Valid Values: true, false</p>
      */
     inline void SetPreserveExistingData(bool value) { m_preserveExistingDataHasBeenSet = true; m_preserveExistingData = value; }
 
     /**
      * <p>Specify this field as true if you want to preserve the data on the local
-     * disk. Otherwise, specifying this field as false creates an empty volume.</p>
-     * <p><i>Valid Values</i>: true, false</p>
+     * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
+     * Valid Values: true, false</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithPreserveExistingData(bool value) { SetPreserveExistingData(value); return *this;}
 
@@ -274,56 +274,56 @@ namespace Model
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
      * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
-     * list of the network interfaces available on a gateway.</p> <p><i>Valid
-     * Values</i>: A valid IP address.</p>
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 

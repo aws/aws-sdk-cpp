@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SQS_API DeleteMessageRequest : public SQSRequest
   {
@@ -33,37 +34,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline DeleteMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline DeleteMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue to take action on.</p>
+     * <p>The URL of the Amazon SQS queue to take action on.</p> <p>Queue URLs are
+     * case-sensitive.</p>
      */
     inline DeleteMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

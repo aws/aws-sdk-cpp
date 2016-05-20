@@ -208,14 +208,16 @@ namespace Model
         /**
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
-         * given interconnect.</p>
+         * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          */
         virtual Model::AllocateConnectionOnInterconnectOutcome AllocateConnectionOnInterconnect(const Model::AllocateConnectionOnInterconnectRequest& request) const;
 
         /**
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
-         * given interconnect.</p>
+         * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -224,7 +226,8 @@ namespace Model
         /**
          * <p>Creates a hosted connection on an interconnect.</p> <p>Allocates a VLAN
          * number and a specified amount of bandwidth for use by a hosted connection on the
-         * given interconnect.</p>
+         * given interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -441,7 +444,8 @@ namespace Model
          * a connection on their interconnect by calling AllocateConnectionOnInterconnect.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect partner.</p>
+         * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          */
         virtual Model::CreateInterconnectOutcome CreateInterconnect(const Model::CreateInterconnectRequest& request) const;
 
@@ -458,7 +462,8 @@ namespace Model
          * a connection on their interconnect by calling AllocateConnectionOnInterconnect.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect partner.</p>
+         * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -477,7 +482,8 @@ namespace Model
          * a connection on their interconnect by calling AllocateConnectionOnInterconnect.
          * The end customer can then connect to AWS resources by creating a virtual
          * interface on their connection, using the VLAN assigned to them by the AWS Direct
-         * Connect partner.</p>
+         * Connect partner.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -565,19 +571,22 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p>
+         * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
+         * AWS Direct Connect partners only.</p> </note>
          */
         virtual Model::DeleteInterconnectOutcome DeleteInterconnect(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p>
+         * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
+         * AWS Direct Connect partners only.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteInterconnectOutcomeCallable DeleteInterconnectCallable(const Model::DeleteInterconnectRequest& request) const;
 
         /**
-         * <p>Deletes the specified interconnect.</p>
+         * <p>Deletes the specified interconnect.</p> <note> <p>This is intended for use by
+         * AWS Direct Connect partners only.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -626,13 +635,15 @@ namespace Model
 
         /**
          * <p>Return a list of connections that have been provisioned on the given
-         * interconnect.</p>
+         * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          */
         virtual Model::DescribeConnectionsOnInterconnectOutcome DescribeConnectionsOnInterconnect(const Model::DescribeConnectionsOnInterconnectRequest& request) const;
 
         /**
          * <p>Return a list of connections that have been provisioned on the given
-         * interconnect.</p>
+         * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -640,7 +651,8 @@ namespace Model
 
         /**
          * <p>Return a list of connections that have been provisioned on the given
-         * interconnect.</p>
+         * interconnect.</p> <note> <p>This is intended for use by AWS Direct Connect
+         * partners only.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

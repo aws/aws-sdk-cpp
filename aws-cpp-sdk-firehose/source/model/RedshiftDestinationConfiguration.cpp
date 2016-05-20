@@ -33,6 +33,7 @@ RedshiftDestinationConfiguration::RedshiftDestinationConfiguration() :
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_retryOptionsHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
@@ -44,6 +45,7 @@ RedshiftDestinationConfiguration::RedshiftDestinationConfiguration(const JsonVal
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_retryOptionsHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
@@ -85,6 +87,13 @@ RedshiftDestinationConfiguration& RedshiftDestinationConfiguration::operator =(c
     m_password = jsonValue.GetString("Password");
 
     m_passwordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryOptions"))
+  {
+    m_retryOptions = jsonValue.GetObject("RetryOptions");
+
+    m_retryOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("S3Configuration"))
@@ -135,6 +144,12 @@ JsonValue RedshiftDestinationConfiguration::Jsonize() const
   if(m_passwordHasBeenSet)
   {
    payload.WithString("Password", m_password);
+
+  }
+
+  if(m_retryOptionsHasBeenSet)
+  {
+   payload.WithObject("RetryOptions", m_retryOptions.Jsonize());
 
   }
 

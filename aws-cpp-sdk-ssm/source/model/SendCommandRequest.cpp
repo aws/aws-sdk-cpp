@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 SendCommandRequest::SendCommandRequest() : 
     m_instanceIdsHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentHashHasBeenSet(false),
+    m_documentHashTypeHasBeenSet(false),
     m_timeoutSeconds(0),
     m_timeoutSecondsHasBeenSet(false),
     m_commentHasBeenSet(false),
@@ -52,6 +54,17 @@ Aws::String SendCommandRequest::SerializePayload() const
   {
    payload.WithString("DocumentName", m_documentName);
 
+  }
+
+  if(m_documentHashHasBeenSet)
+  {
+   payload.WithString("DocumentHash", m_documentHash);
+
+  }
+
+  if(m_documentHashTypeHasBeenSet)
+  {
+   payload.WithString("DocumentHashType", DocumentHashTypeMapper::GetNameForDocumentHashType(m_documentHashType));
   }
 
   if(m_timeoutSecondsHasBeenSet)

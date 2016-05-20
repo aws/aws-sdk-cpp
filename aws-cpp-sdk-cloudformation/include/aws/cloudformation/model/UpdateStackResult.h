@@ -34,7 +34,7 @@ namespace CloudFormation
 namespace Model
 {
   /**
-   * <p>The output for a <a>UpdateStack</a> action.</p>
+   * <p>The output for an <a>UpdateStack</a> action.</p>
    */
   class AWS_CLOUDFORMATION_API UpdateStackResult
   {

@@ -32,6 +32,7 @@ RedshiftDestinationDescription::RedshiftDestinationDescription() :
     m_clusterJDBCURLHasBeenSet(false),
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
+    m_retryOptionsHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
@@ -42,6 +43,7 @@ RedshiftDestinationDescription::RedshiftDestinationDescription(const JsonValue& 
     m_clusterJDBCURLHasBeenSet(false),
     m_copyCommandHasBeenSet(false),
     m_usernameHasBeenSet(false),
+    m_retryOptionsHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionsHasBeenSet(false)
 {
@@ -76,6 +78,13 @@ RedshiftDestinationDescription& RedshiftDestinationDescription::operator =(const
     m_username = jsonValue.GetString("Username");
 
     m_usernameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RetryOptions"))
+  {
+    m_retryOptions = jsonValue.GetObject("RetryOptions");
+
+    m_retryOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("S3DestinationDescription"))
@@ -120,6 +129,12 @@ JsonValue RedshiftDestinationDescription::Jsonize() const
   if(m_usernameHasBeenSet)
   {
    payload.WithString("Username", m_username);
+
+  }
+
+  if(m_retryOptionsHasBeenSet)
+  {
+   payload.WithObject("RetryOptions", m_retryOptions.Jsonize());
 
   }
 

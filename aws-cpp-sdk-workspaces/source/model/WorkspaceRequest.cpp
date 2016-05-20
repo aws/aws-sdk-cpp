@@ -35,7 +35,8 @@ WorkspaceRequest::WorkspaceRequest() :
     m_userVolumeEncryptionEnabled(false),
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false)
+    m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -47,7 +48,8 @@ WorkspaceRequest::WorkspaceRequest(const JsonValue& jsonValue) :
     m_userVolumeEncryptionEnabled(false),
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
-    m_rootVolumeEncryptionEnabledHasBeenSet(false)
+    m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,16 @@ WorkspaceRequest& WorkspaceRequest::operator =(const JsonValue& jsonValue)
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +148,17 @@ JsonValue WorkspaceRequest::Jsonize() const
   if(m_rootVolumeEncryptionEnabledHasBeenSet)
   {
    payload.WithBool("RootVolumeEncryptionEnabled", m_rootVolumeEncryptionEnabled);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

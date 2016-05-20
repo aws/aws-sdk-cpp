@@ -47,186 +47,186 @@ namespace Model
     GetOpenIDConnectProviderResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_url = value; }
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline void SetUrl(const char* value) { m_url.assign(value); }
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithUrl(Aws::String&& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The URL that the IAM OpenID Connect provider is associated with. For more
-     * information, see <a>CreateOpenIDConnectProvider</a>. </p>
+     * <p>The URL that the IAM OIDC provider resource object is associated with. For
+     * more information, see <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithUrl(const char* value) { SetUrl(value); return *this;}
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientIDList() const{ return m_clientIDList; }
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline void SetClientIDList(const Aws::Vector<Aws::String>& value) { m_clientIDList = value; }
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDList = value; }
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithClientIDList(const Aws::Vector<Aws::String>& value) { SetClientIDList(value); return *this;}
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(value); return *this;}
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& AddClientIDList(const Aws::String& value) { m_clientIDList.push_back(value); return *this; }
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& AddClientIDList(Aws::String&& value) { m_clientIDList.push_back(value); return *this; }
 
     /**
      * <p>A list of client IDs (also known as audiences) that are associated with the
-     * specified IAM OpenID Connect provider. For more information, see
-     * <a>CreateOpenIDConnectProvider</a>. </p>
+     * specified IAM OIDC provider resource object. For more information, see
+     * <a>CreateOpenIDConnectProvider</a>.</p>
      */
     inline GetOpenIDConnectProviderResult& AddClientIDList(const char* value) { m_clientIDList.push_back(value); return *this; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintList = value; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintList = value; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline GetOpenIDConnectProviderResult& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline GetOpenIDConnectProviderResult& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(value); return *this;}
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline GetOpenIDConnectProviderResult& AddThumbprintList(const Aws::String& value) { m_thumbprintList.push_back(value); return *this; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline GetOpenIDConnectProviderResult& AddThumbprintList(Aws::String&& value) { m_thumbprintList.push_back(value); return *this; }
 
     /**
      * <p>A list of certificate thumbprints that are associated with the specified IAM
-     * OpenID Connect provider. For more information, see
+     * OIDC provider resource object. For more information, see
      * <a>CreateOpenIDConnectProvider</a>. </p>
      */
     inline GetOpenIDConnectProviderResult& AddThumbprintList(const char* value) { m_thumbprintList.push_back(value); return *this; }
 
     /**
-     * <p>The date and time when the IAM OpenID Connect provider entity was created in
-     * the AWS account. </p>
+     * <p>The date and time when the IAM OIDC provider resource object was created in
+     * the AWS account.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
-     * <p>The date and time when the IAM OpenID Connect provider entity was created in
-     * the AWS account. </p>
+     * <p>The date and time when the IAM OIDC provider resource object was created in
+     * the AWS account.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDate = value; }
 
     /**
-     * <p>The date and time when the IAM OpenID Connect provider entity was created in
-     * the AWS account. </p>
+     * <p>The date and time when the IAM OIDC provider resource object was created in
+     * the AWS account.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDate = value; }
 
     /**
-     * <p>The date and time when the IAM OpenID Connect provider entity was created in
-     * the AWS account. </p>
+     * <p>The date and time when the IAM OIDC provider resource object was created in
+     * the AWS account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
-     * <p>The date and time when the IAM OpenID Connect provider entity was created in
-     * the AWS account. </p>
+     * <p>The date and time when the IAM OIDC provider resource object was created in
+     * the AWS account.</p>
      */
     inline GetOpenIDConnectProviderResult& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(value); return *this;}
 

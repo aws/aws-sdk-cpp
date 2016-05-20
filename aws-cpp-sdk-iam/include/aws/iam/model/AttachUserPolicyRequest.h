@@ -33,59 +33,129 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AttachUserPolicyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AttachUserPolicyRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name (friendly name, not ARN) of the user to attach the policy to.</p>
+     * <p>The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-</p>
      */
     inline AttachUserPolicyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline AttachUserPolicyRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline AttachUserPolicyRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline AttachUserPolicyRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
   private:

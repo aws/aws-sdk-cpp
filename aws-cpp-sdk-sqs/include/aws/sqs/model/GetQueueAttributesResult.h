@@ -36,7 +36,7 @@ namespace SQS
 namespace Model
 {
   /**
-   * A list of returned queue attributes.
+   * <p>A list of returned queue attributes.</p>
    */
   class AWS_SQS_API GetQueueAttributesResult
   {

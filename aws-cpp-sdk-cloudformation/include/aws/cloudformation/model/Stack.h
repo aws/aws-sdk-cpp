@@ -307,23 +307,23 @@ namespace Model
     inline Stack& WithStackStatusReason(const char* value) { SetStackStatusReason(value); return *this;}
 
     /**
-     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
-     * rollback</li> </ul> </p>
+     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
+     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
+     * <code>false</code>: enable rollback</p> </li> </ul>
      */
     inline bool GetDisableRollback() const{ return m_disableRollback; }
 
     /**
-     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
-     * rollback</li> </ul> </p>
+     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
+     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
+     * <code>false</code>: enable rollback</p> </li> </ul>
      */
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
 
     /**
-     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <p>
-     * <ul> <li><code>true</code>: disable rollback</li> <li><code>false</code>: enable
-     * rollback</li> </ul> </p>
+     * <p>Boolean to enable or disable rollback on stack creation failures:</p> <ul>
+     * <li> <p> <code>true</code>: disable rollback</p> </li> <li> <p>
+     * <code>false</code>: enable rollback</p> </li> </ul>
      */
     inline Stack& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 

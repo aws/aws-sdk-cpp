@@ -50,42 +50,42 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Information about the peer VPC. CIDR block information is not returned when
-     * creating a VPC peering connection, or when describing a VPC peering connection
-     * that's in the <code>initiating-request</code> or <code>pending-acceptance</code>
-     * state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.</p>
      */
     inline const VpcPeeringConnectionVpcInfo& GetAccepterVpcInfo() const{ return m_accepterVpcInfo; }
 
     /**
-     * <p>Information about the peer VPC. CIDR block information is not returned when
-     * creating a VPC peering connection, or when describing a VPC peering connection
-     * that's in the <code>initiating-request</code> or <code>pending-acceptance</code>
-     * state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.</p>
      */
     inline void SetAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
 
     /**
-     * <p>Information about the peer VPC. CIDR block information is not returned when
-     * creating a VPC peering connection, or when describing a VPC peering connection
-     * that's in the <code>initiating-request</code> or <code>pending-acceptance</code>
-     * state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.</p>
      */
     inline void SetAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
 
     /**
-     * <p>Information about the peer VPC. CIDR block information is not returned when
-     * creating a VPC peering connection, or when describing a VPC peering connection
-     * that's in the <code>initiating-request</code> or <code>pending-acceptance</code>
-     * state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.</p>
      */
     inline VpcPeeringConnection& WithAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetAccepterVpcInfo(value); return *this;}
 
     /**
-     * <p>Information about the peer VPC. CIDR block information is not returned when
-     * creating a VPC peering connection, or when describing a VPC peering connection
-     * that's in the <code>initiating-request</code> or <code>pending-acceptance</code>
-     * state.</p>
+     * <p>Information about the accepter VPC. CIDR block information is not returned
+     * when creating a VPC peering connection, or when describing a VPC peering
+     * connection that's in the <code>initiating-request</code> or
+     * <code>pending-acceptance</code> state.</p>
      */
     inline VpcPeeringConnection& WithAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetAccepterVpcInfo(value); return *this;}
 
