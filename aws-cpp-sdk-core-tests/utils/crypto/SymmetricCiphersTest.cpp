@@ -356,7 +356,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
     //the test vectors don't include padding, we need to strip it out of the encrypted text
     size_t paddingLengthForTest = 16;
-    ASSERT_EQ(0, encryptedResult.GetLength() % paddingLengthForTest);
+    ASSERT_EQ(0u, encryptedResult.GetLength() % paddingLengthForTest);
     //since this test is for even 16 bytes, the padding is always 16 bytes and also safe to remove.
     CryptoBuffer encryptionMinusPadding(encryptedResult.GetUnderlyingData(), encryptedResult.GetLength() - paddingLengthForTest);
     ASSERT_EQ(expected, encryptionMinusPadding);
@@ -533,7 +533,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     CryptoBuffer encryptedResultWithPadding(std::move(encryptedStreams));   
     ASSERT_TRUE(*cipher); 
     size_t blockSize = 16;
-    ASSERT_EQ(0, encryptedResultWithPadding.GetLength() % blockSize);
+    ASSERT_EQ(0u, encryptedResultWithPadding.GetLength() % blockSize);
     size_t trimLength = encryptedResultWithPadding.GetLength() - blockSize;
 
     ASSERT_EQ(expected, CryptoBuffer(encryptedResultWithPadding.GetUnderlyingData(), trimLength));

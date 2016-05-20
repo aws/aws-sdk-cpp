@@ -78,11 +78,14 @@ namespace Aws
                     SecureZeroMemory(GetUnderlyingData(), GetLength());
 #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
                     memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
-#elif LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0)
+#elif defined(__linux__)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0)
                     memzero_explicit(GetUnderlyingData(), GetLength());
+#endif
 #else
-                    memset(m_data.get(), 0, GetLength());
-                    asm volatile("" : "m" (GetUnderlyingData()));
+                    memset(GetUnderlyingData(), 0, GetLength());
+                    unsigned char* mem = GetUnderlyingData();
+                    asm volatile("" : "+m" (mem));
 #endif
                 }
             }

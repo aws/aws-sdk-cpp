@@ -71,7 +71,7 @@ namespace Aws
                 return CreateHttpRequest(URI(uri), method, streamFactory);
             }
 
-            std::shared_ptr<HttpRequest> HttpClientFactory::CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const
+            std::shared_ptr<HttpRequest> CreateHttpRequest(const URI& uri, HttpMethod method, const Aws::IOStreamFactory& streamFactory) const override
             {
                 auto request = Aws::MakeShared<Standard::StandardHttpRequest>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, uri, method);
                 request->SetResponseStreamFactory(streamFactory);
