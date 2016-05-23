@@ -60,6 +60,7 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
+
 static const char* SERVICE_NAME = "machinelearning";
 static const char* ALLOCATION_TAG = "MachineLearningClient";
 
@@ -740,10 +741,7 @@ void MachineLearningClient::GetMLModelAsyncHelper(const GetMLModelRequest& reque
 
 PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) const
 {
-  Aws::StringStream ss;
-  ss << m_uri << "/";
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return PredictOutcome(PredictResult(outcome.GetResult()));
