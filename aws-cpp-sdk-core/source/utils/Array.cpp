@@ -17,8 +17,6 @@
 
 #ifdef _WIN32
 #include <Windows.h>
-#elif __linux__
-#include <linux/version.h>
 #endif
 
 namespace Aws
@@ -82,12 +80,6 @@ namespace Aws
                     SecureZeroMemory(GetUnderlyingData(), GetLength());
 #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
                     memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
-#elif defined(__linux__)
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0)
-                    memzero_explicit(GetUnderlyingData(), GetLength());
-#else
-                    FallbackZero(GetUnderlyingData(), GetLength());
-#endif
 #else
                     FallbackZero(GetUnderlyingData(), GetLength());
 #endif

@@ -17,6 +17,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <cstdlib>
 
 using namespace Aws::Utils::Crypto;
 using namespace Aws::Utils;
@@ -42,6 +43,7 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_FATAL(LOG_TAG, "Random Number generation failed. Abort all crypto operations.");
                     assert(false);
+                    abort();
                     return CryptoBuffer(0);
                 }
 

@@ -64,7 +64,7 @@ namespace Aws
                  *  for memory fencing.
                  */
                 SecureRandom(const std::shared_ptr<SecureRandomBytes>& entropySource) : m_entropy(entropySource)
-                    { static_assert(std::is_integral<DataType>::value, "Type DataType must be integral"); }
+                    { static_assert(std::is_unsigned<DataType>::value, "Type DataType must be integral"); }
 
                 virtual ~SecureRandom() = default;
 
@@ -84,11 +84,9 @@ namespace Aws
                     {
                         for (size_t i = 0; i < sizeof(DataType); ++i)
                         {
-                            if((value << 8) >= 0)
-                            {
-                                value <<= 8;
-                                value |= buffer[i];
-                            }
+                             value <<= 8;
+                             value |= buffer[i];
+
                         }
                     }
 
