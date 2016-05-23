@@ -43,8 +43,7 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_FATAL(LOG_TAG, "Random Number generation failed. Abort all crypto operations.");
                     assert(false);
-                    abort();
-                    return CryptoBuffer(0);
+                    abort();                    
                 }
 
                 return bytes;

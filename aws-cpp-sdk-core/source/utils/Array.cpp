@@ -23,12 +23,6 @@ namespace Aws
 {
     namespace Utils
     {
-            static void FallbackZero(unsigned char* data, size_t length)
-            {
-                memset(data, 0, length);
-                asm volatile("" : "+m" (data));
-            }
-
             Array<CryptoBuffer> CryptoBuffer::Slice(size_t sizeOfSlice) const
             {
                 assert(sizeOfSlice <= GetLength());
@@ -81,7 +75,9 @@ namespace Aws
 #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
                     memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
 #else
-                    FallbackZero(GetUnderlyingData(), GetLength());
+                    unsigned char* data = GetUnderlyingData();
+                    memset(data, 0, GetLength());
+                    asm volatile("" : "+m" (data));
 #endif
                 }
             }

@@ -245,7 +245,7 @@ namespace Aws
             CryptoBuffer(const CryptoBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(CryptoBuffer&& other) : ByteBuffer(std::move(other)) {}
             CryptoBuffer& operator=(const CryptoBuffer& other) = default;
-            CryptoBuffer& operator=(CryptoBuffer&& other) = default;
+            CryptoBuffer& operator=(CryptoBuffer&& other) { ByteBuffer::operator=(std::move(other)); return *this; }
             bool operator==(const CryptoBuffer& other) const { return ByteBuffer::operator==(other); }
             bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }
 
