@@ -281,7 +281,7 @@ namespace Aws
 
                 AES_CBC_Cipher_BCrypt& operator=(const AES_CBC_Cipher_BCrypt& other) = delete;
 
-                AES_CBC_Cipher_BCrypt(AES_CBC_Cipher_BCrypt&& toMove) = default;
+                AES_CBC_Cipher_BCrypt(AES_CBC_Cipher_BCrypt&& toMove) : BCryptSymmetricCipher(std::move(toMove)), m_blockOverflow(std::move(toMove.m_blockOverflow)) {}
 
                 CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
                 CryptoBuffer FinalizeEncryption() override;
@@ -329,7 +329,7 @@ namespace Aws
 
                 AES_CTR_Cipher_BCrypt& operator=(const AES_CTR_Cipher_BCrypt& other) = delete;
 
-                AES_CTR_Cipher_BCrypt(AES_CTR_Cipher_BCrypt&& toMove) = default;
+                AES_CTR_Cipher_BCrypt(AES_CTR_Cipher_BCrypt&& toMove) : BCryptSymmetricCipher(std::move(toMove)), m_blockOverflow(std::move(toMove.m_blockOverflow)) {}
 
                 CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
                 CryptoBuffer FinalizeEncryption() override;
@@ -381,7 +381,9 @@ namespace Aws
 
                 AES_GCM_Cipher_BCrypt& operator=(const AES_GCM_Cipher_BCrypt& other) = delete;
 
-                AES_GCM_Cipher_BCrypt(AES_GCM_Cipher_BCrypt&& toMove) = default;
+                AES_GCM_Cipher_BCrypt(AES_GCM_Cipher_BCrypt&& toMove) : 
+                    BCryptSymmetricCipher(std::move(toMove)), m_macBuffer(std::move(toMove.m_macBuffer)), m_finalBuffer(std::move(toMove.m_finalBuffer)),
+                    m_authInfo(std::move(toMove.m_authInfo)) {}
 
                 CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
                 CryptoBuffer FinalizeEncryption() override;
