@@ -492,14 +492,14 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -508,7 +508,7 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
