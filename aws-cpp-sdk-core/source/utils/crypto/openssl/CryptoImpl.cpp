@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -205,9 +205,9 @@ namespace Aws
                 return HashResult(std::move(digest));
             }
 
-            static const char* LOG_TAG = "OpenSSLCipher";
+            static const char* OPENSSL_LOG_TAG = "OpenSSLCipher";
 
-            void LogErrors(const char* logTag = LOG_TAG)
+            void LogErrors(const char* logTag = OPENSSL_LOG_TAG)
             {
                 unsigned long errorCode = ERR_get_error();
                 char errStr[256];
@@ -296,7 +296,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
+                    AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -325,7 +325,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG,
+                    AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG,
                                         "Cipher not properly initialized for encryption finalization. Aborting");
                     return CryptoBuffer();
                 }
@@ -345,7 +345,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for decryption. Aborting");
+                    AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG, "Cipher not properly initialized for decryption. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -374,7 +374,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG,
+                    AWS_LOGSTREAM_FATAL(OPENSSL_LOG_TAG,
                                         "Cipher not properly initialized for decryption finalization. Aborting");
                     return CryptoBuffer();
                 }

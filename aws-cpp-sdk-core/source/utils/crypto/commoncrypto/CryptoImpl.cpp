@@ -26,7 +26,7 @@ namespace Aws
     {
         namespace Crypto
         {
-            static const char* LOG_TAG = "CommonCryptoImpl";
+            static const char* CC_LOG_TAG = "CommonCryptoImpl";
 
             SecureRandomBytes_CommonCrypto::SecureRandomBytes_CommonCrypto()
             {
@@ -230,7 +230,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG, "Cipher not properly initialized for encryption. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -244,7 +244,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Encryption of buffer failed with status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Encryption of buffer failed with status code: " << status);
                     return CryptoBuffer();
                 }
 
@@ -260,7 +260,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG,
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
                                         "Cipher not properly initialized for encryption finalization. Aborting");
                     return CryptoBuffer();
                 }
@@ -272,7 +272,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Decryption of buffer failed with status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Decryption of buffer failed with status code: " << status);
                     return CryptoBuffer();
                 }
 
@@ -283,7 +283,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG, "Cipher not properly initialized for decryption. Aborting");
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG, "Cipher not properly initialized for decryption. Aborting");
                     return CryptoBuffer();
                 }
 
@@ -297,7 +297,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Decryption of buffer failed with status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Decryption of buffer failed with status code: " << status);
                     return CryptoBuffer();
                 }
 
@@ -313,7 +313,7 @@ namespace Aws
             {
                 if (m_failure)
                 {
-                    AWS_LOGSTREAM_FATAL(LOG_TAG,
+                    AWS_LOGSTREAM_FATAL(CC_LOG_TAG,
                                         "Cipher not properly initialized for decryption finalization. Aborting");
                     return CryptoBuffer();
                 }
@@ -324,7 +324,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(LOG_TAG, "Decryption of buffer failed with status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CC_LOG_TAG, "Decryption of buffer failed with status code: " << status);
                     return CryptoBuffer();
                 }
                 return CryptoBuffer(finalBlock.GetUnderlyingData(), writtenSize);
@@ -332,7 +332,7 @@ namespace Aws
 
             size_t AES_CBC_Cipher_CommonCrypto::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_CommonCrypto::KeyLengthBits = 256;
-            static const char* CBC_LOG_TAG = "AES_CBC_Cipher_CommonCrypto";
+            static const char* CBC_CC_LOG_TAG = "AES_CBC_Cipher_CommonCrypto";
 
             AES_CBC_Cipher_CommonCrypto::AES_CBC_Cipher_CommonCrypto(const CryptoBuffer& key) : CommonCryptoCipher(key, BlockSizeBytes)
             { }
@@ -355,7 +355,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Error while initializing AES 256 CBC in Encryption mode. Status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CBC_CC_LOG_TAG, "Error while initializing AES 256 CBC in Encryption mode. Status code: " << status);
                 }
             }
 
@@ -368,7 +368,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Error while initializing AES 256 CBC in Decryption mode. Status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CBC_CC_LOG_TAG, "Error while initializing AES 256 CBC in Decryption mode. Status code: " << status);
                 }
             }
 
@@ -384,7 +384,7 @@ namespace Aws
 
             size_t AES_CTR_Cipher_CommonCrypto::BlockSizeBytes = 16;
             size_t AES_CTR_Cipher_CommonCrypto::KeyLengthBits = 256;
-            static const char* CTR_LOG_TAG = "AES_CTR_Cipher_CommonCrypto";
+            static const char* CTR_CC_LOG_TAG = "AES_CTR_Cipher_CommonCrypto";
 
             AES_CTR_Cipher_CommonCrypto::AES_CTR_Cipher_CommonCrypto(const CryptoBuffer& key) :
                     CommonCryptoCipher(key, BlockSizeBytes, true)
@@ -408,7 +408,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CTR_LOG_TAG, "Error while initializing AES 256 CTR in Encryption mode. Status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CTR_CC_LOG_TAG, "Error while initializing AES 256 CTR in Encryption mode. Status code: " << status);
                 }
             }
 
@@ -421,7 +421,7 @@ namespace Aws
                 if (status != kCCSuccess)
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CTR_LOG_TAG, "Error while initializing AES 256 CTR in Encryption mode. Status code: " << status);
+                    AWS_LOGSTREAM_ERROR(CTR_CC_LOG_TAG, "Error while initializing AES 256 CTR in Encryption mode. Status code: " << status);
                 }
             }
 
