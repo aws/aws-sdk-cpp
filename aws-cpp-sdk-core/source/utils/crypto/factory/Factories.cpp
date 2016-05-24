@@ -15,6 +15,8 @@
 
 
 #include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/crypto/HMAC.h>
 
 #if ENABLE_BCRYPT_ENCRYPTION
     #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
