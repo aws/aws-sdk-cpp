@@ -114,7 +114,7 @@ namespace Model
    * Amazon EC2 Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling
    * only supports scaling Amazon ECS services.</p> </note> <p>For example, you can
    * use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li>
-   * <p>Define scaling policies for automatically adjusting your application?s
+   * <p>Define scaling policies for automatically adjusting your application’s
    * resources</p> </li> <li> <p>Scale your resources in response to CloudWatch
    * alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul>
    */
