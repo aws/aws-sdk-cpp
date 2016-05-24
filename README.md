@@ -1,3 +1,6 @@
+# Upgrading Notes
+For 0.12+ all applications must call the Aws::InitAPI() function before making any other SDK calls, and the Aws::ShutdownAPI function when finished using the SDK. More information can be found here: 
+https://aws.amazon.com/blogs/developer/aws-sdk-for-c-simplified-configuration-and-initialization/ 
 
 # aws-sdk-cpp
 The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).  
