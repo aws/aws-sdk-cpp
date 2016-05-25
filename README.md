@@ -81,7 +81,7 @@ cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
 #####BUILD_ONLY
 Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: 
 ```
-cmake -DBUILD_ONLY="aws-cpp-sdk-s3;aws-cpp-sdk-dynamodb;aws-cpp-sdk-cognito-identity"
+cmake -DBUILD_ONLY="s3;dynamodb;cognito-identity"
 ```
 
 #####ADD_CUSTOM_CLIENTS
