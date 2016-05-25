@@ -45,37 +45,37 @@ namespace Model
     ResetDBParameterGroupResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupName = value; }
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline ResetDBParameterGroupResult& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline ResetDBParameterGroupResult& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> Provides the name of the DB parameter group. </p>
+     * <p>Provides the name of the DB parameter group.</p>
      */
     inline ResetDBParameterGroupResult& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 

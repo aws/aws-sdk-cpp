@@ -47,37 +47,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline const Aws::String& GetSubnetIdentifier() const{ return m_subnetIdentifier; }
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline void SetSubnetIdentifier(Aws::String&& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline void SetSubnetIdentifier(const char* value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier.assign(value); }
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline Subnet& WithSubnetIdentifier(const Aws::String& value) { SetSubnetIdentifier(value); return *this;}
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline Subnet& WithSubnetIdentifier(Aws::String&& value) { SetSubnetIdentifier(value); return *this;}
 
     /**
-     * <p> Specifies the identifier of the subnet. </p>
+     * <p>Specifies the identifier of the subnet.</p>
      */
     inline Subnet& WithSubnetIdentifier(const char* value) { SetSubnetIdentifier(value); return *this;}
 
@@ -97,37 +97,37 @@ namespace Model
     inline Subnet& WithSubnetAvailabilityZone(AvailabilityZone&& value) { SetSubnetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline const Aws::String& GetSubnetStatus() const{ return m_subnetStatus; }
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline void SetSubnetStatus(const Aws::String& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = value; }
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline void SetSubnetStatus(Aws::String&& value) { m_subnetStatusHasBeenSet = true; m_subnetStatus = value; }
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline void SetSubnetStatus(const char* value) { m_subnetStatusHasBeenSet = true; m_subnetStatus.assign(value); }
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline Subnet& WithSubnetStatus(const Aws::String& value) { SetSubnetStatus(value); return *this;}
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline Subnet& WithSubnetStatus(Aws::String&& value) { SetSubnetStatus(value); return *this;}
 
     /**
-     * <p> Specifies the status of the subnet. </p>
+     * <p>Specifies the status of the subnet.</p>
      */
     inline Subnet& WithSubnetStatus(const char* value) { SetSubnetStatus(value); return *this;}
 

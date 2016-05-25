@@ -179,6 +179,7 @@
 #include <aws/ec2/model/EnableVpcClassicLinkRequest.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
+#include <aws/ec2/model/GetConsoleScreenshotRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/ImportImageRequest.h>
 #include <aws/ec2/model/ImportInstanceRequest.h>
@@ -4885,6 +4886,36 @@ void EC2Client::GetConsoleOutputAsync(const GetConsoleOutputRequest& request, co
 void EC2Client::GetConsoleOutputAsyncHelper(const GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetConsoleOutput(request), context);
+}
+
+GetConsoleScreenshotOutcome EC2Client::GetConsoleScreenshot(const GetConsoleScreenshotRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetConsoleScreenshotOutcome(GetConsoleScreenshotResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetConsoleScreenshotOutcome(outcome.GetError());
+  }
+}
+
+GetConsoleScreenshotOutcomeCallable EC2Client::GetConsoleScreenshotCallable(const GetConsoleScreenshotRequest& request) const
+{
+  return std::async(std::launch::async, &EC2Client::GetConsoleScreenshot, this, request);
+}
+
+void EC2Client::GetConsoleScreenshotAsync(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&EC2Client::GetConsoleScreenshotAsyncHelper, this, request, handler, context);
+}
+
+void EC2Client::GetConsoleScreenshotAsyncHelper(const GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConsoleScreenshot(request), context);
 }
 
 GetPasswordDataOutcome EC2Client::GetPasswordData(const GetPasswordDataRequest& request) const

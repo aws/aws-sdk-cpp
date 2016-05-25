@@ -35,170 +35,170 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The database engine to return. </p>
+     * <p>The database engine to return.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The database engine version to return. </p> <p>Example:
-     * <code>5.1.49</code></p>
+     * <p>The database engine version to return.</p> <p>Example: <code>5.1.49</code>
+     * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of a specific DB parameter group family to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group family to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBEngineVersionsRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -276,41 +276,41 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> Indicates that only the default version of the specified engine or engine
-     * and major version combination is returned. </p>
+     * <p>Indicates that only the default version of the specified engine or engine and
+     * major version combination is returned.</p>
      */
     inline bool GetDefaultOnly() const{ return m_defaultOnly; }
 
     /**
-     * <p> Indicates that only the default version of the specified engine or engine
-     * and major version combination is returned. </p>
+     * <p>Indicates that only the default version of the specified engine or engine and
+     * major version combination is returned.</p>
      */
     inline void SetDefaultOnly(bool value) { m_defaultOnlyHasBeenSet = true; m_defaultOnly = value; }
 
     /**
-     * <p> Indicates that only the default version of the specified engine or engine
-     * and major version combination is returned. </p>
+     * <p>Indicates that only the default version of the specified engine or engine and
+     * major version combination is returned.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
 
     /**
-     * <p> If this parameter is specified, and if the requested engine supports the
+     * <p>If this parameter is specified, and if the requested engine supports the
      * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version. </p>
+     * supported character sets for each engine version.</p>
      */
     inline bool GetListSupportedCharacterSets() const{ return m_listSupportedCharacterSets; }
 
     /**
-     * <p> If this parameter is specified, and if the requested engine supports the
+     * <p>If this parameter is specified, and if the requested engine supports the
      * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version. </p>
+     * supported character sets for each engine version.</p>
      */
     inline void SetListSupportedCharacterSets(bool value) { m_listSupportedCharacterSetsHasBeenSet = true; m_listSupportedCharacterSets = value; }
 
     /**
-     * <p> If this parameter is specified, and if the requested engine supports the
+     * <p>If this parameter is specified, and if the requested engine supports the
      * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version. </p>
+     * supported character sets for each engine version.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
 

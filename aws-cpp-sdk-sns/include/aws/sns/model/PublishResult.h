@@ -44,50 +44,43 @@ namespace Model
     PublishResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = value; }
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline PublishResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline PublishResult& WithMessageId(Aws::String&& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>Unique identifier assigned to the published message.</p>
-    <p>Length
+     * <p>Unique identifier assigned to the published message.</p> <p>Length
      * Constraint: Maximum 100 characters</p>
      */
     inline PublishResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}

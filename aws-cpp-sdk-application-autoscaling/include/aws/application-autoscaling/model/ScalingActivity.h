@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
@@ -139,7 +139,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline ScalingActivity& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline ScalingActivity& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
@@ -171,48 +171,48 @@ namespace Model
     /**
      * <p>The unique identifier string for the resource associated with the scaling
      * activity. For Amazon ECS services, this value is the resource type, followed by
-     * the cluster name, and then the service name, such as
+     * the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline ScalingActivity& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
      * <p>The scalable dimension associated with the scaling activity. The scalable
-     * dimension contains the service namespace, the resource type, and the scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired task
-     * count for an Amazon ECS service.</p>
+     * dimension contains the service namespace, resource type, and scaling property,
+     * such as <code>ecs:service:DesiredCount</code> for the desired task count of an
+     * Amazon ECS service.</p>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
     /**
      * <p>The scalable dimension associated with the scaling activity. The scalable
-     * dimension contains the service namespace, the resource type, and the scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired task
-     * count for an Amazon ECS service.</p>
+     * dimension contains the service namespace, resource type, and scaling property,
+     * such as <code>ecs:service:DesiredCount</code> for the desired task count of an
+     * Amazon ECS service.</p>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
      * <p>The scalable dimension associated with the scaling activity. The scalable
-     * dimension contains the service namespace, the resource type, and the scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired task
-     * count for an Amazon ECS service.</p>
+     * dimension contains the service namespace, resource type, and scaling property,
+     * such as <code>ecs:service:DesiredCount</code> for the desired task count of an
+     * Amazon ECS service.</p>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
      * <p>The scalable dimension associated with the scaling activity. The scalable
-     * dimension contains the service namespace, the resource type, and the scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired task
-     * count for an Amazon ECS service.</p>
+     * dimension contains the service namespace, resource type, and scaling property,
+     * such as <code>ecs:service:DesiredCount</code> for the desired task count of an
+     * Amazon ECS service.</p>
      */
     inline ScalingActivity& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
     /**
      * <p>The scalable dimension associated with the scaling activity. The scalable
-     * dimension contains the service namespace, the resource type, and the scaling
-     * property, such as <code>ecs:service:DesiredCount</code> for the desired task
-     * count for an Amazon ECS service.</p>
+     * dimension contains the service namespace, resource type, and scaling property,
+     * such as <code>ecs:service:DesiredCount</code> for the desired task count of an
+     * Amazon ECS service.</p>
      */
     inline ScalingActivity& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 

@@ -49,177 +49,177 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline DBEngineVersion& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline DBEngineVersion& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The name of the database engine. </p>
+     * <p>The name of the database engine.</p>
      */
     inline DBEngineVersion& WithEngine(const char* value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline DBEngineVersion& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline DBEngineVersion& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The version number of the database engine. </p>
+     * <p>The version number of the database engine.</p>
      */
     inline DBEngineVersion& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline DBEngineVersion& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline DBEngineVersion& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group family for the database engine. </p>
+     * <p>The name of the DB parameter group family for the database engine.</p>
      */
     inline DBEngineVersion& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline const Aws::String& GetDBEngineDescription() const{ return m_dBEngineDescription; }
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline void SetDBEngineDescription(const Aws::String& value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription = value; }
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline void SetDBEngineDescription(Aws::String&& value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription = value; }
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline void SetDBEngineDescription(const char* value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription.assign(value); }
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline DBEngineVersion& WithDBEngineDescription(const Aws::String& value) { SetDBEngineDescription(value); return *this;}
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline DBEngineVersion& WithDBEngineDescription(Aws::String&& value) { SetDBEngineDescription(value); return *this;}
 
     /**
-     * <p> The description of the database engine. </p>
+     * <p>The description of the database engine.</p>
      */
     inline DBEngineVersion& WithDBEngineDescription(const char* value) { SetDBEngineDescription(value); return *this;}
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline const Aws::String& GetDBEngineVersionDescription() const{ return m_dBEngineVersionDescription; }
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline void SetDBEngineVersionDescription(const Aws::String& value) { m_dBEngineVersionDescriptionHasBeenSet = true; m_dBEngineVersionDescription = value; }
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline void SetDBEngineVersionDescription(Aws::String&& value) { m_dBEngineVersionDescriptionHasBeenSet = true; m_dBEngineVersionDescription = value; }
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline void SetDBEngineVersionDescription(const char* value) { m_dBEngineVersionDescriptionHasBeenSet = true; m_dBEngineVersionDescription.assign(value); }
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline DBEngineVersion& WithDBEngineVersionDescription(const Aws::String& value) { SetDBEngineVersionDescription(value); return *this;}
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline DBEngineVersion& WithDBEngineVersionDescription(Aws::String&& value) { SetDBEngineVersionDescription(value); return *this;}
 
     /**
-     * <p> The description of the database engine version. </p>
+     * <p>The description of the database engine version.</p>
      */
     inline DBEngineVersion& WithDBEngineVersionDescription(const char* value) { SetDBEngineVersionDescription(value); return *this;}
 

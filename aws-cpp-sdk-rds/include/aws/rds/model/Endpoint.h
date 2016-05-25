@@ -32,9 +32,10 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the following actions: </p>
-   * <ul> <li> <a>CreateDBInstance</a> </li> <li> <a>DescribeDBInstances</a> </li>
-   * <li> <a>DeleteDBInstance</a> </li> </ul>
+   * <p>This data type is used as a response element in the following actions:</p>
+   * <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p>
+   * <a>DescribeDBInstances</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p>
+   * </li> </ul>
    */
   class AWS_RDS_API Endpoint
   {
@@ -47,52 +48,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> Specifies the DNS address of the DB instance. </p>
+     * <p>Specifies the DNS address of the DB instance.</p>
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
     /**
-     * <p> Specifies the port that the database engine is listening on. </p>
+     * <p>Specifies the port that the database engine is listening on.</p>
      */
     inline long GetPort() const{ return m_port; }
 
     /**
-     * <p> Specifies the port that the database engine is listening on. </p>
+     * <p>Specifies the port that the database engine is listening on.</p>
      */
     inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p> Specifies the port that the database engine is listening on. </p>
+     * <p>Specifies the port that the database engine is listening on.</p>
      */
     inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
 

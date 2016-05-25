@@ -39,25 +39,39 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Request& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Request& WithBucket(Aws::String&& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Request& WithBucket(const char* value) { SetBucket(value); return *this;}
 
     /**

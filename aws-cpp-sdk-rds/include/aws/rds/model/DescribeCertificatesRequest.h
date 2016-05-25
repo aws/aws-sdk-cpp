@@ -36,72 +36,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCertificatesRequest& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCertificatesRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
-     * <p> The user-supplied certificate identifier. If this parameter is specified,
+     * <p>The user-supplied certificate identifier. If this parameter is specified,
      * information for only the identified certificate is returned. This parameter
-     * isn't case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens</p> </li> <li> <p>First character must
+     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCertificatesRequest& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
 

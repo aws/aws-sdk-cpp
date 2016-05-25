@@ -72,98 +72,110 @@ namespace Model
     inline GetOpenIdTokenRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLogins() const{ return m_logins; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline void SetLogins(const Aws::Map<Aws::String, Aws::String>& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline void SetLogins(Aws::Map<Aws::String, Aws::String>&& value) { m_loginsHasBeenSet = true; m_logins = value; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& WithLogins(const Aws::Map<Aws::String, Aws::String>& value) { SetLogins(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& WithLogins(Aws::Map<Aws::String, Aws::String>&& value) { SetLogins(value); return *this;}
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(const Aws::String& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(Aws::String&& key, const Aws::String& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(const Aws::String& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(Aws::String&& key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(const char* key, Aws::String&& value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(Aws::String&& key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
     /**
-     * A set of optional name-value pairs that map provider names to provider tokens.
-     * When using graph.facebook.com and www.amazon.com, supply the access_token
-     * returned from the provider's authflow. For accounts.google.com or any other
-     * OpenId Connect provider, always include the id_token.
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. When using graph.facebook.com and www.amazon.com, supply the
+     * access_token returned from the provider's authflow. For accounts.google.com, an
+     * Amazon Cognito Identity Provider, or any other OpenId Connect provider, always
+     * include the <code>id_token</code>.</p>
      */
     inline GetOpenIdTokenRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 

@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> Option details. </p>
+   * <p>Option details.</p>
    */
   class AWS_RDS_API Option
   {
@@ -49,87 +49,87 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(Aws::String&& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline void SetOptionName(const char* value) { m_optionNameHasBeenSet = true; m_optionName.assign(value); }
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline Option& WithOptionName(const Aws::String& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline Option& WithOptionName(Aws::String&& value) { SetOptionName(value); return *this;}
 
     /**
-     * <p> The name of the option. </p>
+     * <p>The name of the option.</p>
      */
     inline Option& WithOptionName(const char* value) { SetOptionName(value); return *this;}
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline const Aws::String& GetOptionDescription() const{ return m_optionDescription; }
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline void SetOptionDescription(const Aws::String& value) { m_optionDescriptionHasBeenSet = true; m_optionDescription = value; }
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline void SetOptionDescription(Aws::String&& value) { m_optionDescriptionHasBeenSet = true; m_optionDescription = value; }
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline void SetOptionDescription(const char* value) { m_optionDescriptionHasBeenSet = true; m_optionDescription.assign(value); }
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline Option& WithOptionDescription(const Aws::String& value) { SetOptionDescription(value); return *this;}
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline Option& WithOptionDescription(Aws::String&& value) { SetOptionDescription(value); return *this;}
 
     /**
-     * <p> The description of the option. </p>
+     * <p>The description of the option.</p>
      */
     inline Option& WithOptionDescription(const char* value) { SetOptionDescription(value); return *this;}
 
     /**
-     * <p> Indicate if this option is persistent. </p>
+     * <p>Indicate if this option is persistent.</p>
      */
     inline bool GetPersistent() const{ return m_persistent; }
 
     /**
-     * <p> Indicate if this option is persistent. </p>
+     * <p>Indicate if this option is persistent.</p>
      */
     inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
 
     /**
-     * <p> Indicate if this option is persistent. </p>
+     * <p>Indicate if this option is persistent.</p>
      */
     inline Option& WithPersistent(bool value) { SetPersistent(value); return *this;}
 
@@ -149,136 +149,136 @@ namespace Model
     inline Option& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
     /**
-     * <p> If required, the port configured for this option to use. </p>
+     * <p>If required, the port configured for this option to use.</p>
      */
     inline long GetPort() const{ return m_port; }
 
     /**
-     * <p> If required, the port configured for this option to use. </p>
+     * <p>If required, the port configured for this option to use.</p>
      */
     inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p> If required, the port configured for this option to use. </p>
+     * <p>If required, the port configured for this option to use.</p>
      */
     inline Option& WithPort(long value) { SetPort(value); return *this;}
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline const Aws::Vector<OptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<OptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline void SetOptionSettings(Aws::Vector<OptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline Option& WithOptionSettings(const Aws::Vector<OptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline Option& WithOptionSettings(Aws::Vector<OptionSetting>&& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline Option& AddOptionSettings(const OptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> The option settings for this option. </p>
+     * <p>The option settings for this option.</p>
      */
     inline Option& AddOptionSettings(OptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline const Aws::Vector<DBSecurityGroupMembership>& GetDBSecurityGroupMemberships() const{ return m_dBSecurityGroupMemberships; }
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline void SetDBSecurityGroupMemberships(const Aws::Vector<DBSecurityGroupMembership>& value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships = value; }
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline void SetDBSecurityGroupMemberships(Aws::Vector<DBSecurityGroupMembership>&& value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships = value; }
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline Option& WithDBSecurityGroupMemberships(const Aws::Vector<DBSecurityGroupMembership>& value) { SetDBSecurityGroupMemberships(value); return *this;}
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline Option& WithDBSecurityGroupMemberships(Aws::Vector<DBSecurityGroupMembership>&& value) { SetDBSecurityGroupMemberships(value); return *this;}
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline Option& AddDBSecurityGroupMemberships(const DBSecurityGroupMembership& value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p> If the option requires access to a port, then this DB security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
      */
     inline Option& AddDBSecurityGroupMemberships(DBSecurityGroupMembership&& value) { m_dBSecurityGroupMembershipsHasBeenSet = true; m_dBSecurityGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroupMemberships() const{ return m_vpcSecurityGroupMemberships; }
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline void SetVpcSecurityGroupMemberships(const Aws::Vector<VpcSecurityGroupMembership>& value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships = value; }
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline void SetVpcSecurityGroupMemberships(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships = value; }
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline Option& WithVpcSecurityGroupMemberships(const Aws::Vector<VpcSecurityGroupMembership>& value) { SetVpcSecurityGroupMemberships(value); return *this;}
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline Option& WithVpcSecurityGroupMemberships(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroupMemberships(value); return *this;}
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline Option& AddVpcSecurityGroupMemberships(const VpcSecurityGroupMembership& value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p> If the option requires access to a port, then this VPC security group allows
-     * access to the port. </p>
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
      */
     inline Option& AddVpcSecurityGroupMemberships(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupMembershipsHasBeenSet = true; m_vpcSecurityGroupMemberships.push_back(value); return *this; }
 

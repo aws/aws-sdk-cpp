@@ -36,205 +36,331 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>A DB cluster identifier to retrieve the list of DB cluster snapshots for.
+     * <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
      * This parameter cannot be used in conjunction with the
      * <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive. </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>A specific DB cluster snapshot identifier to describe. This parameter cannot
      * be used in conjunction with the <code>DBClusterIdentifier</code> parameter. This
-     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>Must be
-     * 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>If this
-     * is the identifier of an automated snapshot, the <code>SnapshotType</code>
-     * parameter must also be specified.</li> </ul>
+     * value is stored as a lowercase string. </p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 alphanumeric characters</p> </li> <li> <p>First character
+     * must be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens</p> </li> <li> <p>If this identifier is for an automated
+     * snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
+     * </li> </ul>
      */
     inline DescribeDBClusterSnapshotsRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(Aws::String&& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline void SetSnapshotType(const char* value) { m_snapshotTypeHasBeenSet = true; m_snapshotType.assign(value); }
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithSnapshotType(const Aws::String& value) { SetSnapshotType(value); return *this;}
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithSnapshotType(Aws::String&& value) { SetSnapshotType(value); return *this;}
 
     /**
-     * <p>The type of DB cluster snapshots that will be returned. Values can be
-     * <code>automated</code> or <code>manual</code>. If this parameter is not
-     * specified, the returned results will include all snapshot types. </p>
+     * <p>The type of DB cluster snapshots to be returned. You can specify one of the
+     * following values:</p> <ul> <li> <p> <code>automated</code> - Return all DB
+     * cluster snapshots that have been automatically taken by Amazon RDS for my AWS
+     * account.</p> </li> <li> <p> <code>manual</code> - Return all DB cluster
+     * snapshots that have been taken by my AWS account.</p> </li> <li> <p>
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been
+     * shared to my AWS account.</p> </li> <li> <p> <code>public</code> - Return all DB
+     * cluster snapshots that have been marked as public.</p> </li> </ul> <p>If you
+     * don't specify a <code>SnapshotType</code> value, then both automated and manual
+     * DB cluster snapshots are returned. You can include shared DB cluster snapshots
+     * with these results by setting the <code>IncludeShared</code> parameter to
+     * <code>true</code>. You can include public DB cluster snapshots with these
+     * results by setting the <code>IncludePublic</code> parameter to
+     * <code>true</code>.</p> <p>The <code>IncludeShared</code> and
+     * <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code>
+     * values of <code>manual</code> or <code>automated</code>. The
+     * <code>IncludePublic</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>shared</code>. The
+     * <code>IncludeShared</code> parameter doesn't apply when
+     * <code>SnapshotType</code> is set to <code>public</code>.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithSnapshotType(const char* value) { SetSnapshotType(value); return *this;}
 
@@ -353,6 +479,63 @@ namespace Model
      */
     inline DescribeDBClusterSnapshotsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
+    /**
+     * <p>Set this value to <code>true</code> to include shared manual DB cluster
+     * snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, otherwise set this value to <code>false</code>.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB cluster snapshot from another AWS account by the
+     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline bool GetIncludeShared() const{ return m_includeShared; }
+
+    /**
+     * <p>Set this value to <code>true</code> to include shared manual DB cluster
+     * snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, otherwise set this value to <code>false</code>.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB cluster snapshot from another AWS account by the
+     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
+
+    /**
+     * <p>Set this value to <code>true</code> to include shared manual DB cluster
+     * snapshots from other AWS accounts that this AWS account has been given
+     * permission to copy or restore, otherwise set this value to <code>false</code>.
+     * The default is <code>false</code>.</p> <p>You can give an AWS account permission
+     * to restore a manual DB cluster snapshot from another AWS account by the
+     * <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline DescribeDBClusterSnapshotsRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
+
+    /**
+     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
+     * that are public and can be copied or restored by any AWS account, otherwise set
+     * this value to <code>false</code>. The default is <code>false</code>. The default
+     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
+     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline bool GetIncludePublic() const{ return m_includePublic; }
+
+    /**
+     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
+     * that are public and can be copied or restored by any AWS account, otherwise set
+     * this value to <code>false</code>. The default is <code>false</code>. The default
+     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
+     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
+
+    /**
+     * <p>Set this value to <code>true</code> to include manual DB cluster snapshots
+     * that are public and can be copied or restored by any AWS account, otherwise set
+     * this value to <code>false</code>. The default is <code>false</code>. The default
+     * is false.</p> <p>You can share a manual DB cluster snapshot as public by using
+     * the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
+     */
+    inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
+
   private:
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
@@ -366,6 +549,10 @@ namespace Model
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
+    bool m_includeShared;
+    bool m_includeSharedHasBeenSet;
+    bool m_includePublic;
+    bool m_includePublicHasBeenSet;
   };
 
 } // namespace Model

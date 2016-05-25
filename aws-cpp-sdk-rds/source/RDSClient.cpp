@@ -59,6 +59,7 @@
 #include <aws/rds/model/DescribeCertificatesRequest.h>
 #include <aws/rds/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/rds/model/DescribeDBClusterParametersRequest.h>
+#include <aws/rds/model/DescribeDBClusterSnapshotAttributesRequest.h>
 #include <aws/rds/model/DescribeDBClusterSnapshotsRequest.h>
 #include <aws/rds/model/DescribeDBClustersRequest.h>
 #include <aws/rds/model/DescribeDBEngineVersionsRequest.h>
@@ -86,6 +87,7 @@
 #include <aws/rds/model/ListTagsForResourceRequest.h>
 #include <aws/rds/model/ModifyDBClusterRequest.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupRequest.h>
+#include <aws/rds/model/ModifyDBClusterSnapshotAttributeRequest.h>
 #include <aws/rds/model/ModifyDBInstanceRequest.h>
 #include <aws/rds/model/ModifyDBParameterGroupRequest.h>
 #include <aws/rds/model/ModifyDBSnapshotAttributeRequest.h>
@@ -1162,6 +1164,36 @@ void RDSClient::DescribeDBClusterParametersAsyncHelper(const DescribeDBClusterPa
   handler(this, request, DescribeDBClusterParameters(request), context);
 }
 
+DescribeDBClusterSnapshotAttributesOutcome RDSClient::DescribeDBClusterSnapshotAttributes(const DescribeDBClusterSnapshotAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDBClusterSnapshotAttributesOutcome(DescribeDBClusterSnapshotAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDBClusterSnapshotAttributesOutcome(outcome.GetError());
+  }
+}
+
+DescribeDBClusterSnapshotAttributesOutcomeCallable RDSClient::DescribeDBClusterSnapshotAttributesCallable(const DescribeDBClusterSnapshotAttributesRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::DescribeDBClusterSnapshotAttributes, this, request);
+}
+
+void RDSClient::DescribeDBClusterSnapshotAttributesAsync(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::DescribeDBClusterSnapshotAttributesAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::DescribeDBClusterSnapshotAttributesAsyncHelper(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDBClusterSnapshotAttributes(request), context);
+}
+
 DescribeDBClusterSnapshotsOutcome RDSClient::DescribeDBClusterSnapshots(const DescribeDBClusterSnapshotsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1970,6 +2002,36 @@ void RDSClient::ModifyDBClusterParameterGroupAsync(const ModifyDBClusterParamete
 void RDSClient::ModifyDBClusterParameterGroupAsyncHelper(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyDBClusterParameterGroup(request), context);
+}
+
+ModifyDBClusterSnapshotAttributeOutcome RDSClient::ModifyDBClusterSnapshotAttribute(const ModifyDBClusterSnapshotAttributeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyDBClusterSnapshotAttributeOutcome(ModifyDBClusterSnapshotAttributeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyDBClusterSnapshotAttributeOutcome(outcome.GetError());
+  }
+}
+
+ModifyDBClusterSnapshotAttributeOutcomeCallable RDSClient::ModifyDBClusterSnapshotAttributeCallable(const ModifyDBClusterSnapshotAttributeRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::ModifyDBClusterSnapshotAttribute, this, request);
+}
+
+void RDSClient::ModifyDBClusterSnapshotAttributeAsync(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::ModifyDBClusterSnapshotAttributeAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::ModifyDBClusterSnapshotAttributeAsyncHelper(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyDBClusterSnapshotAttribute(request), context);
 }
 
 ModifyDBInstanceOutcome RDSClient::ModifyDBInstance(const ModifyDBInstanceRequest& request) const

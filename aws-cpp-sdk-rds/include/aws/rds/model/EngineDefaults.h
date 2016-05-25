@@ -48,44 +48,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> Specifies the name of the DB parameter group family that the engine default
-     * parameters apply to. </p>
+     * <p>Specifies the name of the DB parameter group family that the engine default
+     * parameters apply to.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -139,37 +139,37 @@ namespace Model
     inline EngineDefaults& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline EngineDefaults& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline EngineDefaults& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline EngineDefaults& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p> Contains a list of engine default parameters. </p>
+     * <p>Contains a list of engine default parameters.</p>
      */
     inline EngineDefaults& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 

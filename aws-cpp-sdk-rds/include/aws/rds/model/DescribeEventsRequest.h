@@ -38,144 +38,151 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the event source for which events will be returned. If not
-     * specified, then all sources are included in the response. </p>
-     * <p>Constraints:</p> <ul> <li>If SourceIdentifier is supplied, SourceType must
-     * also be provided.</li> <li>If the source type is <code>DBInstance</code>, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is <code>DBParameterGroup</code>, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be
-     * supplied.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul>
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</p> </li> <li> <p>If the source type is
+     * <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is <code>DBSecurityGroup</code>,
+     * a <code>DBSecurityGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBParameterGroup</code>, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
+     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p> The event source to retrieve events for. If no value is specified, all
-     * events are returned. </p>
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> The event source to retrieve events for. If no value is specified, all
-     * events are returned. </p>
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The event source to retrieve events for. If no value is specified, all
-     * events are returned. </p>
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The event source to retrieve events for. If no value is specified, all
-     * events are returned. </p>
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The event source to retrieve events for. If no value is specified, all
-     * events are returned. </p>
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -183,7 +190,7 @@ namespace Model
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
@@ -191,7 +198,7 @@ namespace Model
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
@@ -199,7 +206,7 @@ namespace Model
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline DescribeEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
@@ -207,7 +214,7 @@ namespace Model
     /**
      * <p> The beginning of the time interval to retrieve events for, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline DescribeEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
@@ -215,7 +222,7 @@ namespace Model
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
@@ -223,7 +230,7 @@ namespace Model
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
@@ -231,7 +238,7 @@ namespace Model
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
@@ -239,7 +246,7 @@ namespace Model
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline DescribeEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
@@ -247,71 +254,71 @@ namespace Model
     /**
      * <p> The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format. For more information about ISO 8601, go to the <a
-     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a></p>
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p>
      * <p>Example: 2009-07-08T18:00Z</p>
      */
     inline DescribeEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p> The number of minutes to retrieve events for. </p> <p>Default: 60</p>
+     * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
     inline long GetDuration() const{ return m_duration; }
 
     /**
-     * <p> The number of minutes to retrieve events for. </p> <p>Default: 60</p>
+     * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
     inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * <p> The number of minutes to retrieve events for. </p> <p>Default: 60</p>
+     * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
     inline DescribeEventsRequest& WithDuration(long value) { SetDuration(value); return *this;}
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline DescribeEventsRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline DescribeEventsRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(value); return *this;}
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline DescribeEventsRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline DescribeEventsRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> A list of event categories that trigger notifications for a event
-     * notification subscription. </p>
+     * <p>A list of event categories that trigger notifications for a event
+     * notification subscription.</p>
      */
     inline DescribeEventsRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 

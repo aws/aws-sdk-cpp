@@ -28,7 +28,8 @@ UpdateIdentityPoolRequest::UpdateIdentityPoolRequest() :
     m_allowUnauthenticatedIdentitiesHasBeenSet(false),
     m_supportedLoginProvidersHasBeenSet(false),
     m_developerProviderNameHasBeenSet(false),
-    m_openIdConnectProviderARNsHasBeenSet(false)
+    m_openIdConnectProviderARNsHasBeenSet(false),
+    m_cognitoIdentityProvidersHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,17 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
      openIdConnectProviderARNsJsonList[openIdConnectProviderARNsIndex].AsString(m_openIdConnectProviderARNs[openIdConnectProviderARNsIndex]);
    }
    payload.WithArray("OpenIdConnectProviderARNs", std::move(openIdConnectProviderARNsJsonList));
+
+  }
+
+  if(m_cognitoIdentityProvidersHasBeenSet)
+  {
+   Array<JsonValue> cognitoIdentityProvidersJsonList(m_cognitoIdentityProviders.size());
+   for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
+   {
+     cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
+   }
+   payload.WithArray("CognitoIdentityProviders", std::move(cognitoIdentityProvidersJsonList));
 
   }
 

@@ -32,6 +32,9 @@ namespace RDS
 namespace Model
 {
 
+  /**
+   * <p>This type is not currently supported.</p>
+   */
   class AWS_RDS_API Filter
   {
   public:

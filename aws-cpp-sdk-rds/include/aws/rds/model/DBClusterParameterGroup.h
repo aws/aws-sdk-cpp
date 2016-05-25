@@ -48,121 +48,121 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>Provides the name of the DB cluster parameter group. </p>
+     * <p>Provides the name of the DB cluster parameter group.</p>
      */
     inline DBClusterParameterGroup& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB cluster
-     * parameter group is compatible with. </p>
+     * parameter group is compatible with.</p>
      */
     inline DBClusterParameterGroup& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline DBClusterParameterGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline DBClusterParameterGroup& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
      * <p>Provides the customer-specified description for this DB cluster parameter
-     * group. </p>
+     * group.</p>
      */
     inline DBClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 

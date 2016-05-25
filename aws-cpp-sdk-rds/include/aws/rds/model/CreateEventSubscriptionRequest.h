@@ -36,155 +36,155 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the subscription. </p> <p>Constraints: The name must be less than
-     * 255 characters. </p>
+     * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
+     * 255 characters.</p>
      */
     inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the SNS topic created for event
+     * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
      * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it. </p>
+     * subscribe to it.</p>
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The type of source that will be generating the events. For example, if you
+     * <p>The type of source that will be generating the events. For example, if you
      * want to be notified of events generated by a DB instance, you would set this
      * parameter to db-instance. if this value is not specified, all events are
-     * returned. </p> <p>Valid values: db-instance | db-parameter-group |
+     * returned.</p> <p>Valid values: db-instance | db-parameter-group |
      * db-security-group | db-snapshot</p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
@@ -262,130 +262,130 @@ namespace Model
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIds() const{ return m_sourceIds; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline void SetSourceIds(const Aws::Vector<Aws::String>& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline CreateEventSubscriptionRequest& WithSourceIds(const Aws::Vector<Aws::String>& value) { SetSourceIds(value); return *this;}
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(value); return *this;}
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline CreateEventSubscriptionRequest& AddSourceIds(const Aws::String& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 
     /**
-     * <p> The list of identifiers of the event sources for which events will be
+     * <p>The list of identifiers of the event sources for which events will be
      * returned. If not specified, then all sources are included in the response. An
      * identifier must begin with a letter and must contain only ASCII letters, digits,
-     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.
-     * </p> <p>Constraints:</p> <ul> <li>If SourceIds are supplied, SourceType must
-     * also be provided.</li> <li>If the source type is a DB instance, then a
-     * <code>DBInstanceIdentifier</code> must be supplied.</li> <li>If the source type
-     * is a DB security group, a <code>DBSecurityGroupName</code> must be
-     * supplied.</li> <li>If the source type is a DB parameter group, a
-     * <code>DBParameterGroupName</code> must be supplied.</li> <li>If the source type
-     * is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</li>
-     * </ul>
+     * and hyphens; it cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If SourceIds are supplied, SourceType must also
+     * be provided.</p> </li> <li> <p>If the source type is a DB instance, then a
+     * <code>DBInstanceIdentifier</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB security group, a <code>DBSecurityGroupName</code> must be
+     * supplied.</p> </li> <li> <p>If the source type is a DB parameter group, a
+     * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
+     * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
+     * supplied.</p> </li> </ul>
      */
     inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
 

@@ -35,6 +35,7 @@
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
+#include <aws/gamelift/model/DeleteScalingPolicyRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
@@ -43,12 +44,15 @@
 #include <aws/gamelift/model/DescribeFleetEventsRequest.h>
 #include <aws/gamelift/model/DescribeFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
+#include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionsRequest.h>
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
+#include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
+#include <aws/gamelift/model/PutScalingPolicyRequest.h>
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>
@@ -403,6 +407,37 @@ void GameLiftClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, c
   handler(this, request, DeleteFleet(request), context);
 }
 
+DeleteScalingPolicyOutcome GameLiftClient::DeleteScalingPolicy(const DeleteScalingPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteScalingPolicyOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteScalingPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteScalingPolicyOutcomeCallable GameLiftClient::DeleteScalingPolicyCallable(const DeleteScalingPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::DeleteScalingPolicy, this, request);
+}
+
+void GameLiftClient::DeleteScalingPolicyAsync(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::DeleteScalingPolicyAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::DeleteScalingPolicyAsyncHelper(const DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteScalingPolicy(request), context);
+}
+
 DescribeAliasOutcome GameLiftClient::DescribeAlias(const DescribeAliasRequest& request) const
 {
   Aws::StringStream ss;
@@ -651,6 +686,37 @@ void GameLiftClient::DescribeFleetUtilizationAsyncHelper(const DescribeFleetUtil
   handler(this, request, DescribeFleetUtilization(request), context);
 }
 
+DescribeGameSessionDetailsOutcome GameLiftClient::DescribeGameSessionDetails(const DescribeGameSessionDetailsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGameSessionDetailsOutcome(DescribeGameSessionDetailsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGameSessionDetailsOutcome(outcome.GetError());
+  }
+}
+
+DescribeGameSessionDetailsOutcomeCallable GameLiftClient::DescribeGameSessionDetailsCallable(const DescribeGameSessionDetailsRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::DescribeGameSessionDetails, this, request);
+}
+
+void GameLiftClient::DescribeGameSessionDetailsAsync(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::DescribeGameSessionDetailsAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::DescribeGameSessionDetailsAsyncHelper(const DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameSessionDetails(request), context);
+}
+
 DescribeGameSessionsOutcome GameLiftClient::DescribeGameSessions(const DescribeGameSessionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -711,6 +777,37 @@ void GameLiftClient::DescribePlayerSessionsAsync(const DescribePlayerSessionsReq
 void GameLiftClient::DescribePlayerSessionsAsyncHelper(const DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePlayerSessions(request), context);
+}
+
+DescribeScalingPoliciesOutcome GameLiftClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeScalingPoliciesOutcome(DescribeScalingPoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeScalingPoliciesOutcome(outcome.GetError());
+  }
+}
+
+DescribeScalingPoliciesOutcomeCallable GameLiftClient::DescribeScalingPoliciesCallable(const DescribeScalingPoliciesRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::DescribeScalingPolicies, this, request);
+}
+
+void GameLiftClient::DescribeScalingPoliciesAsync(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::DescribeScalingPoliciesAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::DescribeScalingPoliciesAsyncHelper(const DescribeScalingPoliciesRequest& request, const DescribeScalingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeScalingPolicies(request), context);
 }
 
 GetGameSessionLogUrlOutcome GameLiftClient::GetGameSessionLogUrl(const GetGameSessionLogUrlRequest& request) const
@@ -835,6 +932,37 @@ void GameLiftClient::ListFleetsAsync(const ListFleetsRequest& request, const Lis
 void GameLiftClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListFleets(request), context);
+}
+
+PutScalingPolicyOutcome GameLiftClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutScalingPolicyOutcome(PutScalingPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutScalingPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutScalingPolicyOutcomeCallable GameLiftClient::PutScalingPolicyCallable(const PutScalingPolicyRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::PutScalingPolicy, this, request);
+}
+
+void GameLiftClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::PutScalingPolicyAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutScalingPolicy(request), context);
 }
 
 RequestUploadCredentialsOutcome GameLiftClient::RequestUploadCredentials(const RequestUploadCredentialsRequest& request) const

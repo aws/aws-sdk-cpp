@@ -96,37 +96,37 @@ namespace Model
     inline DescribeReservedDBInstancesOfferingsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline const Aws::Vector<ReservedDBInstancesOffering>& GetReservedDBInstancesOfferings() const{ return m_reservedDBInstancesOfferings; }
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline void SetReservedDBInstancesOfferings(const Aws::Vector<ReservedDBInstancesOffering>& value) { m_reservedDBInstancesOfferings = value; }
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline void SetReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { m_reservedDBInstancesOfferings = value; }
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline DescribeReservedDBInstancesOfferingsResult& WithReservedDBInstancesOfferings(const Aws::Vector<ReservedDBInstancesOffering>& value) { SetReservedDBInstancesOfferings(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline DescribeReservedDBInstancesOfferingsResult& WithReservedDBInstancesOfferings(Aws::Vector<ReservedDBInstancesOffering>&& value) { SetReservedDBInstancesOfferings(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline DescribeReservedDBInstancesOfferingsResult& AddReservedDBInstancesOfferings(const ReservedDBInstancesOffering& value) { m_reservedDBInstancesOfferings.push_back(value); return *this; }
 
     /**
-     * <p> A list of reserved DB instance offerings. </p>
+     * <p>A list of reserved DB instance offerings.</p>
      */
     inline DescribeReservedDBInstancesOfferingsResult& AddReservedDBInstancesOfferings(ReservedDBInstancesOffering&& value) { m_reservedDBInstancesOfferings.push_back(value); return *this; }
 

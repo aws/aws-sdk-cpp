@@ -30,14 +30,14 @@ namespace Model
 {
 
 UnsuccessfulItem::UnsuccessfulItem() : 
-    m_resourceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
 UnsuccessfulItem::UnsuccessfulItem(const XmlNode& xmlNode) : 
-    m_resourceIdHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -48,17 +48,17 @@ UnsuccessfulItem& UnsuccessfulItem::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
-    if(!resourceIdNode.IsNull())
-    {
-      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
-      m_resourceIdHasBeenSet = true;
-    }
     XmlNode errorNode = resultNode.FirstChild("error");
     if(!errorNode.IsNull())
     {
       m_error = errorNode;
       m_errorHasBeenSet = true;
+    }
+    XmlNode resourceIdNode = resultNode.FirstChild("resourceId");
+    if(!resourceIdNode.IsNull())
+    {
+      m_resourceId = StringUtils::Trim(resourceIdNode.GetText().c_str());
+      m_resourceIdHasBeenSet = true;
     }
   }
 
@@ -67,29 +67,29 @@ UnsuccessfulItem& UnsuccessfulItem::operator =(const XmlNode& xmlNode)
 
 void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  if(m_resourceIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
-  }
   if(m_errorHasBeenSet)
   {
       Aws::StringStream errorLocationAndMemberSs;
       errorLocationAndMemberSs << location << index << locationValue << ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMemberSs.str().c_str());
   }
+  if(m_resourceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
+  }
 }
 
 void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
-  if(m_resourceIdHasBeenSet)
-  {
-      oStream << location << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
-  }
   if(m_errorHasBeenSet)
   {
       Aws::String errorLocationAndMember(location);
       errorLocationAndMember += ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMember.c_str());
+  }
+  if(m_resourceIdHasBeenSet)
+  {
+      oStream << location << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
 }
 
