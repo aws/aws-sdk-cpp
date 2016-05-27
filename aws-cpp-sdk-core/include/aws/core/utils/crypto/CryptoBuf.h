@@ -42,7 +42,13 @@ namespace Aws
             class AWS_CORE_API CryptoBuf : public std::streambuf
             {
             public:
+                CryptoBuf() = default;
                 virtual ~CryptoBuf() = default;
+                CryptoBuf(const CryptoBuf&) = delete;
+                /**
+                 * Copies the state from rhs to this. doesn't actually move but we need it for subclass moves to work.
+                 */
+                CryptoBuf(CryptoBuf&& rhs) : std::streambuf(rhs) {}
                 /**
                  * If the buffer needs to do a final push to the sink or needs to empty the cipher blocks etc...
                  */
@@ -67,6 +73,15 @@ namespace Aws
                  * buffersize, the size of the src buffers to read at a time. Defaults to 1kb
                  */
                 SymmetricCryptoBufSrc(Aws::IStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);
+
+                SymmetricCryptoBufSrc(const SymmetricCryptoBufSrc&) = delete;
+                SymmetricCryptoBufSrc(SymmetricCryptoBufSrc&&);
+
+                SymmetricCryptoBufSrc& operator=(const SymmetricCryptoBufSrc&) = delete;
+                /**
+                 * Not move assignable since it contains reference members
+                 */
+                SymmetricCryptoBufSrc& operator=(SymmetricCryptoBufSrc&&) = delete;
 
             protected:
                 pos_type seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out ) override;
@@ -101,6 +116,15 @@ namespace Aws
                  * bufferSize, amount of data to encrypt/decrypt at a time.
                  */
                 SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);
+                SymmetricCryptoBufSink(const SymmetricCryptoBufSink&) = delete;
+                SymmetricCryptoBufSink(SymmetricCryptoBufSink&&);
+
+                SymmetricCryptoBufSink& operator=(const SymmetricCryptoBufSink&) = delete;
+                /**
+                 * Not move assignable since it contains reference members
+                 */
+                SymmetricCryptoBufSink& operator=(SymmetricCryptoBufSink&&) = delete;
+
                 virtual ~SymmetricCryptoBufSink();
 
                 /**

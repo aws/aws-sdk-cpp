@@ -42,14 +42,52 @@ namespace Aws
             {
             }
 
+            SymmetricCryptoStream::SymmetricCryptoStream(SymmetricCryptoStream&& toMove) :
+                    Aws::IOStream(std::move(toMove)), m_cryptoBuf(toMove.m_cryptoBuf), m_hasOwnership(toMove.m_hasOwnership)
+            {
+                toMove.m_cryptoBuf = nullptr;
+
+                if(m_hasOwnership)
+                {
+                    toMove.m_hasOwnership = false;
+                }
+
+                this->rdbuf(m_cryptoBuf);
+            }
+
             SymmetricCryptoStream::~SymmetricCryptoStream()
             {
                 Finalize();
 
-                if(m_hasOwnership)
+                if(m_hasOwnership && m_cryptoBuf)
                 {
                     Aws::Delete(m_cryptoBuf);
                 }
+            }
+
+            SymmetricCryptoStream& SymmetricCryptoStream::operator=(SymmetricCryptoStream&& toMove)
+            {
+                if(this != &toMove)
+                {
+                    Aws::IOStream::operator=(std::move(toMove));
+                    if (m_cryptoBuf && m_hasOwnership)
+                    {
+                        Aws::Delete(m_cryptoBuf);
+                        m_cryptoBuf = nullptr;
+                    }
+
+                    m_cryptoBuf = toMove.m_cryptoBuf;
+                    m_hasOwnership = toMove.m_hasOwnership;
+
+                    toMove.m_cryptoBuf = nullptr;
+
+                    if(m_hasOwnership)
+                    {
+                        toMove.m_hasOwnership = false;
+                    }
+                }
+
+                return *this;
             }
 
             void SymmetricCryptoStream::Finalize()

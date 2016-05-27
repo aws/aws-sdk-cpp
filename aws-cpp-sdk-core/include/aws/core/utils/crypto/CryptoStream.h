@@ -41,6 +41,8 @@ namespace Aws
              * to write text to it from your program but have it go encrypted to disk.
              *
              * In output mode, this stream is not seekable.
+             *
+             * This type is move only
              */
             class AWS_CORE_API SymmetricCryptoStream : public Aws::IOStream
             {
@@ -66,7 +68,14 @@ namespace Aws
                  */
                 SymmetricCryptoStream(Aws::Utils::Crypto::SymmetricCryptoBufSink& bufSink);
 
+                SymmetricCryptoStream(const SymmetricCryptoStream&) = delete;
+                SymmetricCryptoStream(SymmetricCryptoStream&&);
+
                 virtual ~SymmetricCryptoStream();
+
+                SymmetricCryptoStream& operator=(const SymmetricCryptoStream&) = delete;
+                SymmetricCryptoStream& operator=(SymmetricCryptoStream&&);
+
 
                 /**
                  * Call this in output stream mode when you want to flush the output to file.
