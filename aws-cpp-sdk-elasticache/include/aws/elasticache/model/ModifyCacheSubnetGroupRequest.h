@@ -37,49 +37,49 @@ namespace Model
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the cache subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code></p>
+     * characters or hyphens.</p> <p>Example: <code>mysubnetgroup</code> </p>
      */
     inline ModifyCacheSubnetGroupRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
 

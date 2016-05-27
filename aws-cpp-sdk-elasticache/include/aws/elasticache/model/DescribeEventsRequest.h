@@ -81,7 +81,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
      * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code></p>
+     * <code>cache-subnet-group</code> </p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
      * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code></p>
+     * <code>cache-subnet-group</code> </p>
      */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
      * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code></p>
+     * <code>cache-subnet-group</code> </p>
      */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
      * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code></p>
+     * <code>cache-subnet-group</code> </p>
      */
     inline DescribeEventsRequest& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p> <p>Valid values are: <code>cache-cluster</code> |
      * <code>cache-parameter-group</code> | <code>cache-security-group</code> |
-     * <code>cache-subnet-group</code></p>
+     * <code>cache-subnet-group</code> </p>
      */
     inline DescribeEventsRequest& WithSourceType(SourceType&& value) { SetSourceType(value); return *this;}
 
