@@ -23,8 +23,9 @@ using namespace Aws::Utils;
 class MockSymmetricCipher : public SymmetricCipher
 {    
 public:
-    MockSymmetricCipher() : SymmetricCipher(SymmetricCipher::GenerateKey(), SymmetricCipher::GenerateIV(16)), m_resetCalledCount(0), m_encryptCalledCount(0), m_finalizeEncryptionCalledCount(0),
-        m_decryptCalledCount(0), m_finalizeDecryptionCalledCount(0)
+    MockSymmetricCipher() : SymmetricCipher(SymmetricCipher::GenerateKey(), SymmetricCipher::GenerateIV(16)),
+        m_resetCalledCount(0), m_encryptCalledCount(0),
+        m_decryptCalledCount(0), m_finalizeEncryptionCalledCount(0), m_finalizeDecryptionCalledCount(0)
     {
     }
 
@@ -426,7 +427,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekNop)
     ASSERT_STREQ(TEST_RESPONSE_1, buffer.GetUnderlyingData());
     stream.seekg(0, std::ios_base::cur);
     ASSERT_EQ(0u, cipher.m_resetCalledCount);
-    ASSERT_EQ(buffer.GetLength(), stream.tellg());
+    ASSERT_EQ(buffer.GetLength(), static_cast<size_t>(stream.tellg()));
 
     Aws::String fullOutput(buffer.GetUnderlyingData());
     Aws::String encryptedOutput;    
@@ -458,7 +459,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekForward)
     ASSERT_STREQ(TEST_RESPONSE_1, buffer.GetUnderlyingData());
     stream.seekg(strlen(TEST_RESPONSE_2), std::ios_base::cur);
     ASSERT_EQ(0u, cipher.m_resetCalledCount);
-    ASSERT_EQ(buffer.GetLength() + strlen(TEST_RESPONSE_2), stream.tellg());
+    ASSERT_EQ(buffer.GetLength() + strlen(TEST_RESPONSE_2), static_cast<size_t>(stream.tellg()));
 
     Aws::String fullOutput(buffer.GetUnderlyingData());
     Aws::String encryptedOutput;
@@ -485,7 +486,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
 
     stream.seekg(0, std::ios_base::end);
     ASSERT_EQ(0u, cipher.m_resetCalledCount);
-    ASSERT_EQ(ComputeCompleteOutput().length(), stream.tellg());
+    ASSERT_EQ(ComputeCompleteOutput().length(), static_cast<size_t>(stream.tellg()));
 
     Aws::String encryptedOutput;
     stream >> encryptedOutput;    
