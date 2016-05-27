@@ -33,8 +33,16 @@ namespace Aws
             SymmetricCryptoBufSrc::pos_type SymmetricCryptoBufSrc::seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which)
             {
                 if(which == std::ios_base::in)
-                {
+                {                    
                     auto curPos = m_stream.tellg();
+                    //error on seek we may have read past the end already. Try resetting and seeking to the end first
+                    if (curPos == pos_type(-1))
+                    {
+                        m_stream.clear();
+                        m_stream.seekg(0, std::ios_base::end);
+                        curPos = m_stream.tellg();
+                    }
+
                     auto absPosition = dir == std::ios_base::beg ? off : dir == std::ios_base::cur ? static_cast<off_type>(m_stream.tellg()) + off :
                                                                          static_cast<off_type>(m_stream.seekg(0, std::ios_base::end).tellg()) - off;
                     size_t seekTo = static_cast<size_t>(absPosition);
@@ -55,14 +63,17 @@ namespace Aws
                     }
 
                     CryptoBuffer cryptoBuffer;
-
-                    while (index < seekTo && !m_isFinalized)
+                    while (m_cipher && index < seekTo && !m_isFinalized)
                     {
                         size_t max_read = std::min<size_t>(static_cast<size_t>(seekTo - index), m_bufferSize);
 
                         Aws::Utils::Array<char> buf(max_read);
-                        m_stream.read(buf.GetUnderlyingData(), max_read);
-                        size_t readSize = static_cast<size_t>(m_stream.gcount());
+                        size_t readSize(0);
+                        if(m_stream)
+                        {
+                            m_stream.read(buf.GetUnderlyingData(), max_read);
+                            readSize = static_cast<size_t>(m_stream.gcount());
+                        }
 
                         if (readSize > 0)
                         {
@@ -92,14 +103,24 @@ namespace Aws
                         index += cryptoBuffer.GetLength();
                     }
 
-                    if (index >= seekTo && cryptoBuffer.GetLength())
+                    if (cryptoBuffer.GetLength() && m_cipher)
                     {
                         CryptoBuffer putBackArea(m_putBack);
+                                                
                         m_isBuf = CryptoBuffer({&putBackArea, &cryptoBuffer});
-
+                        //in the very unlikely case that the cipher had less output than the source stream.
+                        assert(seekTo <= index);
+                        size_t newBufferPos = index > seekTo ? cryptoBuffer.GetLength() - (index - seekTo) : cryptoBuffer.GetLength();
                         char* baseBufPtr = reinterpret_cast<char*>(m_isBuf.GetUnderlyingData());
-                        setg(baseBufPtr, baseBufPtr + m_putBack + (index - seekTo), baseBufPtr + m_isBuf.GetLength());
+                        setg(baseBufPtr, baseBufPtr + m_putBack + newBufferPos, baseBufPtr + m_isBuf.GetLength());
 
+                        return pos_type(seekTo);
+                    }
+                    else if (seekTo == 0)
+                    {
+                        m_isBuf = CryptoBuffer(m_putBack);
+                        char* end = reinterpret_cast<char*>(m_isBuf.GetUnderlyingData() + m_isBuf.GetLength());
+                        setg(end, end, end);
                         return pos_type(seekTo);
                     }
                 }
@@ -114,7 +135,7 @@ namespace Aws
 
             SymmetricCryptoBufSrc::int_type SymmetricCryptoBufSrc::underflow()
             {
-                if (!m_cipher || (m_stream.eof() && m_isFinalized))
+                if (!m_cipher || m_isFinalized)
                 {
                     return traits_type::eof();
                 }

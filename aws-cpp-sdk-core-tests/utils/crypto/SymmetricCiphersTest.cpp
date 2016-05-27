@@ -140,35 +140,22 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     Aws::String data_raw(TEST_ENCRYPTION_STRING);
 
     auto cipher = CreateAES_CBCImplementation(key);
-
-    Aws::IStringStream ss(data_raw);
-    SymmetricCryptoStream stream(ss, CipherMode::Encrypt, *cipher);
-
-    CryptoBuffer encryptedResult;
-
-    char readBuf[1024];
-    size_t lengthRead(0);
-
-    do
-    {
-       stream.read(readBuf, 1024);
-       lengthRead = static_cast<size_t>(stream.gcount());
-       CryptoBuffer temp((unsigned char*)readBuf, lengthRead);
-       encryptedResult = CryptoBuffer({&encryptedResult, &temp});
-    }
-    while(stream && lengthRead > 0);
+    ASSERT_EQ(16u, cipher->GetIV().GetLength());
+    auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
+    auto part2 = cipher->FinalizeEncryption();
 
     ASSERT_TRUE(*cipher);
+    CryptoBuffer finalEncryptionResult({ &part1, &part2 });
 
     cipher = CreateAES_CBCImplementation(key, cipher->GetIV());
-    Aws::OStringStream ostringstream;
+    part1 = cipher->DecryptBuffer(finalEncryptionResult);
+    part2 = cipher->FinalizeDecryption();
+    CryptoBuffer finalDecryptionResult({ &part1, &part2 });
 
-    {
-        SymmetricCryptoStream decryptStream(ostringstream, CipherMode::Decrypt, *cipher);
-        decryptStream.write((char*) encryptedResult.GetUnderlyingData(), encryptedResult.GetLength());
-    }
-
-    ASSERT_STREQ(data_raw.c_str(), ostringstream.str().c_str());
+    CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
+    plainText.Zero();
+    memcpy(plainText.GetUnderlyingData(), finalDecryptionResult.GetUnderlyingData(), finalDecryptionResult.GetLength());
+    ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
 
 TEST(AES_CTR_TEST, RFC3686_Case_7)

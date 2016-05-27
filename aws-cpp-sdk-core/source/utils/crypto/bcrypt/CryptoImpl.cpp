@@ -596,6 +596,7 @@ namespace Aws
                 Init();
                 m_flags = 0;
                 m_authInfoPtr = nullptr;
+                m_failure = false;
             }
 
             size_t AES_CBC_Cipher_BCrypt::BlockSizeBytes = 16;

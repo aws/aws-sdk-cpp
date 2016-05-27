@@ -22,13 +22,13 @@ namespace Aws
         {
             static const char* CLASS_TAG = "Aws::Utils::Crypto::SymmetricCryptoStream";
 
-            SymmetricCryptoStream::SymmetricCryptoStream(Aws::IStream& src, CipherMode mode, SymmetricCipher& cipher) :
-                Aws::IOStream(m_cryptoBuf = Aws::New<SymmetricCryptoBufSrc>(CLASS_TAG, src, cipher, mode)), m_hasOwnership(true)
+            SymmetricCryptoStream::SymmetricCryptoStream(Aws::IStream& src, CipherMode mode, SymmetricCipher& cipher, size_t bufSize) :
+                Aws::IOStream(m_cryptoBuf = Aws::New<SymmetricCryptoBufSrc>(CLASS_TAG, src, cipher, mode, bufSize)), m_hasOwnership(true)
             {
             }
 
-            SymmetricCryptoStream::SymmetricCryptoStream(Aws::OStream& sink, CipherMode mode, SymmetricCipher& cipher) :
-                    Aws::IOStream(m_cryptoBuf = Aws::New<SymmetricCryptoBufSink>(CLASS_TAG, sink, cipher, mode)), m_hasOwnership(true)
+            SymmetricCryptoStream::SymmetricCryptoStream(Aws::OStream& sink, CipherMode mode, SymmetricCipher& cipher, size_t bufSize) :
+                    Aws::IOStream(m_cryptoBuf = Aws::New<SymmetricCryptoBufSink>(CLASS_TAG, sink, cipher, mode, bufSize)), m_hasOwnership(true)
             {
             }
 
