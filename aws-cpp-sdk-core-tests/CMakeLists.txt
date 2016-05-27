@@ -70,7 +70,7 @@ target_link_libraries(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 copyDlls(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
 if(NOT PLATFORM_ANDROID)
-    ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
-    SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
+    #ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
+    #SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
 endif()
 

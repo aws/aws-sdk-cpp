@@ -330,6 +330,19 @@ namespace Aws
                 return CryptoBuffer(finalBlock.GetUnderlyingData(), writtenSize);
             }
 
+            void CommonCryptoCipher::Reset()
+            {
+                m_failure = false;
+                m_encryptionMode = false;
+                m_encDecInitialized = false;
+                if(m_cryptoHandle)
+                {
+                    CCCryptorRelease(m_cryptoHandle);
+                }
+                m_cryptoHandle = nullptr;
+                Init();
+            }
+
             size_t AES_CBC_Cipher_CommonCrypto::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_CommonCrypto::KeyLengthBits = 256;
             static const char* CBC_CC_LOG_TAG = "AES_CBC_Cipher_CommonCrypto";
