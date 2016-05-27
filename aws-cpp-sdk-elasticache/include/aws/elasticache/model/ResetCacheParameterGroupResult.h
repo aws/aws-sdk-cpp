@@ -34,9 +34,9 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li>
-   * <i>ModifyCacheParameterGroup</i> </li> <li> <i>ResetCacheParameterGroup</i>
-   * </li> </ul>
+   * <p>Represents the output of one of the following actions:</p> <ul> <li> <p>
+   * <i>ModifyCacheParameterGroup</i> </p> </li> <li> <p>
+   * <i>ResetCacheParameterGroup</i> </p> </li> </ul>
    */
   class AWS_ELASTICACHE_API ResetCacheParameterGroupResult
   {

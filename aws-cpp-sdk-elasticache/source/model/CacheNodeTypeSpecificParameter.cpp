@@ -38,7 +38,8 @@ CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter() :
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
-    m_cacheNodeTypeSpecificValuesHasBeenSet(false)
+    m_cacheNodeTypeSpecificValuesHasBeenSet(false),
+    m_changeTypeHasBeenSet(false)
 {
 }
 
@@ -51,7 +52,8 @@ CacheNodeTypeSpecificParameter::CacheNodeTypeSpecificParameter(const XmlNode& xm
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
     m_minimumEngineVersionHasBeenSet(false),
-    m_cacheNodeTypeSpecificValuesHasBeenSet(false)
+    m_cacheNodeTypeSpecificValuesHasBeenSet(false),
+    m_changeTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -116,6 +118,12 @@ CacheNodeTypeSpecificParameter& CacheNodeTypeSpecificParameter::operator =(const
 
       m_cacheNodeTypeSpecificValuesHasBeenSet = true;
     }
+    XmlNode changeTypeNode = resultNode.FirstChild("ChangeType");
+    if(!changeTypeNode.IsNull())
+    {
+      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(changeTypeNode.GetText().c_str()).c_str());
+      m_changeTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -161,6 +169,10 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }
+  if(m_changeTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+  }
 }
 
 void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -202,6 +214,10 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
         cacheNodeTypeSpecificValuesSs << location <<  ".CacheNodeTypeSpecificValue." << cacheNodeTypeSpecificValuesIdx++;
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
+  }
+  if(m_changeTypeHasBeenSet)
+  {
+      oStream << location << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
   }
 }
 

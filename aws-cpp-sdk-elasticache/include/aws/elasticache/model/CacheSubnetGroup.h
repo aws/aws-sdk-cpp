@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents the output of one of the following actions:</p> <ul> <li>
-   * <i>CreateCacheSubnetGroup</i> </li> <li> <i>ModifyCacheSubnetGroup</i> </li>
-   * </ul>
+   * <p>Represents the output of one of the following actions:</p> <ul> <li> <p>
+   * <i>CreateCacheSubnetGroup</i> </p> </li> <li> <p> <i>ModifyCacheSubnetGroup</i>
+   * </p> </li> </ul>
    */
   class AWS_ELASTICACHE_API CacheSubnetGroup
   {
