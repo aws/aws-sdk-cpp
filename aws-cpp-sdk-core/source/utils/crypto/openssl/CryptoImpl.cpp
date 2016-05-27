@@ -98,7 +98,7 @@ namespace Aws
             {
                 assert(buffer);
 
-                int success = RAND_bytes(buffer, bufferSize);
+                int success = RAND_bytes(buffer, static_cast<int>(bufferSize));
                 if (success != 1)
                 {
                     m_failure = true;
@@ -388,6 +388,24 @@ namespace Aws
                     return CryptoBuffer();
                 }
                 return CryptoBuffer(finalBlock.GetUnderlyingData(), static_cast<size_t>(writtenSize));
+            }
+
+            void OpenSSLCipher::Reset()
+            {
+                m_failure = false;
+                m_encDecInitialized = false;
+                m_encryptionMode = false;
+                m_decryptionMode = false;
+
+                if(m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
+                {
+                    EVP_CIPHER_CTX_cleanup(&m_ctx);
+                }
+
+                m_ctx.cipher = nullptr;
+                m_ctx.cipher_data = nullptr;
+                m_ctx.engine = nullptr;
+                Init();
             }
 
             size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;

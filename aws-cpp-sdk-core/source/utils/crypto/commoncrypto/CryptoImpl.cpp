@@ -335,10 +335,12 @@ namespace Aws
                 m_failure = false;
                 m_encryptionMode = false;
                 m_encDecInitialized = false;
+
                 if(m_cryptoHandle)
                 {
                     CCCryptorRelease(m_cryptoHandle);
                 }
+
                 m_cryptoHandle = nullptr;
                 Init();
             }
