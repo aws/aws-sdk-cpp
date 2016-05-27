@@ -258,7 +258,7 @@ namespace Aws
                 {
                     if(ch != traits_type::eof())
                     {
-                        *pptr() = ch;
+                        *pptr() = (char)ch;
                         pbump(1);
                     }
 

@@ -15,6 +15,7 @@
 #pragma once
 
 #include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/Core_EXPORTS.h>
 #include <ios>
 
 namespace Aws
@@ -38,7 +39,7 @@ namespace Aws
             /**
              * Generic base class for a streambuf that handles cryptography.
              */
-            class CryptoBuf : public std::streambuf
+            class AWS_CORE_API CryptoBuf : public std::streambuf
             {
             public:
                 virtual ~CryptoBuf() = default;

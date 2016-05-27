@@ -15,6 +15,7 @@
 #pragma once
 
 #include <aws/core/utils/crypto/CryptoBuf.h>
+#include <aws/core/Core_EXPORTS.h>
 
 namespace Aws
 {
@@ -41,7 +42,7 @@ namespace Aws
              *
              * In output mode, this stream is not seekable.
              */
-            class SymmetricCryptoStream : public Aws::IOStream
+            class AWS_CORE_API SymmetricCryptoStream : public Aws::IOStream
             {
             public:
                 /**

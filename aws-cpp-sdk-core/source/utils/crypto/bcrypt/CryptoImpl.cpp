@@ -575,6 +575,29 @@ namespace Aws
                 return CryptoBuffer();
             }
 
+            void BCryptSymmetricCipher::Reset()
+            {
+                m_encDecInitialized = false;
+                m_encryptionMode = false;
+                m_decryptionMode = false;
+
+                if (m_keyHandle)
+                {
+                    BCryptDestroyKey(m_keyHandle);
+                    m_keyHandle = nullptr;
+                }
+
+                if (m_algHandle)
+                {
+                    BCryptCloseAlgorithmProvider(m_algHandle, 0);
+                    m_algHandle = nullptr;
+                }
+                
+                Init();
+                m_flags = 0;
+                m_authInfoPtr = nullptr;
+            }
+
             size_t AES_CBC_Cipher_BCrypt::BlockSizeBytes = 16;
             size_t AES_CBC_Cipher_BCrypt::KeyLengthBits = 256;
 
@@ -707,6 +730,12 @@ namespace Aws
                     return BCryptSymmetricCipher::DecryptBuffer(m_blockOverflow);
                 }
                 return CryptoBuffer();
+            }
+
+            void AES_CBC_Cipher_BCrypt::Reset()
+            {
+                BCryptSymmetricCipher::Reset();
+                m_blockOverflow = CryptoBuffer();
             }
 
             size_t AES_CBC_Cipher_BCrypt::GetBlockSizeBytes() const
@@ -905,6 +934,12 @@ namespace Aws
                 CleanupBuffers(finalBufferSet);
 
                 return returnBuffer;
+            }
+
+            void AES_CTR_Cipher_BCrypt::Reset()
+            {
+                BCryptSymmetricCipher::Reset();
+                m_blockOverflow = CryptoBuffer();
             }
 
             size_t AES_CTR_Cipher_BCrypt::GetBlockSizeBytes() const
@@ -1132,6 +1167,17 @@ namespace Aws
             void AES_GCM_Cipher_BCrypt::InitDecryptor_Internal()
             {
                 InitCipher();
+            }
+
+            void AES_GCM_Cipher_BCrypt::Reset()
+            {
+                if (m_encryptionMode)
+                {
+                    m_tag = CryptoBuffer(TagLengthBytes);
+                }
+                m_macBuffer.Zero();
+                m_finalBuffer = CryptoBuffer();
+                BCryptSymmetricCipher::Reset();
             }
 
             size_t AES_GCM_Cipher_BCrypt::GetBlockSizeBytes() const
