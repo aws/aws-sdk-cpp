@@ -30,8 +30,11 @@ namespace Aws
       {
 
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+        static const int PENDING_CONCURRENCY_HASH = HashingUtils::HashString("PENDING_CONCURRENCY");
+        static const int PENDING_DEVICE_HASH = HashingUtils::HashString("PENDING_DEVICE");
         static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
         static const int SCHEDULING_HASH = HashingUtils::HashString("SCHEDULING");
+        static const int PREPARING_HASH = HashingUtils::HashString("PREPARING");
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
@@ -44,6 +47,14 @@ namespace Aws
           {
             return ExecutionStatus::PENDING;
           }
+          else if (hashCode == PENDING_CONCURRENCY_HASH)
+          {
+            return ExecutionStatus::PENDING_CONCURRENCY;
+          }
+          else if (hashCode == PENDING_DEVICE_HASH)
+          {
+            return ExecutionStatus::PENDING_DEVICE;
+          }
           else if (hashCode == PROCESSING_HASH)
           {
             return ExecutionStatus::PROCESSING;
@@ -51,6 +62,10 @@ namespace Aws
           else if (hashCode == SCHEDULING_HASH)
           {
             return ExecutionStatus::SCHEDULING;
+          }
+          else if (hashCode == PREPARING_HASH)
+          {
+            return ExecutionStatus::PREPARING;
           }
           else if (hashCode == RUNNING_HASH)
           {
@@ -80,10 +95,16 @@ namespace Aws
           {
           case ExecutionStatus::PENDING:
             return "PENDING";
+          case ExecutionStatus::PENDING_CONCURRENCY:
+            return "PENDING_CONCURRENCY";
+          case ExecutionStatus::PENDING_DEVICE:
+            return "PENDING_DEVICE";
           case ExecutionStatus::PROCESSING:
             return "PROCESSING";
           case ExecutionStatus::SCHEDULING:
             return "SCHEDULING";
+          case ExecutionStatus::PREPARING:
+            return "PREPARING";
           case ExecutionStatus::RUNNING:
             return "RUNNING";
           case ExecutionStatus::COMPLETED:

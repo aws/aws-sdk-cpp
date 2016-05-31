@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/EC2InstanceType.h>
+#include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/IpPermission.h>
 
 namespace Aws
@@ -419,6 +420,61 @@ namespace Model
      */
     inline CreateFleetRequest& AddEC2InboundPermissions(IpPermission&& value) { m_eC2InboundPermissionsHasBeenSet = true; m_eC2InboundPermissions.push_back(value); return *this; }
 
+    /**
+     * <p>Game session protection policy to apply to all instances created in this
+     * fleet. If this parameter is not set, new instances in this fleet will default to
+     * no protection. Protection can be set for individual instances using
+     * <a>UpdateGameSession</a>. <ul><li>NoProtection: The game session can be
+     * terminated during a scale-down event.</li> <li>FullProtection: If the game
+     * session is in an ACTIVE status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
+     */
+    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+
+    /**
+     * <p>Game session protection policy to apply to all instances created in this
+     * fleet. If this parameter is not set, new instances in this fleet will default to
+     * no protection. Protection can be set for individual instances using
+     * <a>UpdateGameSession</a>. <ul><li>NoProtection: The game session can be
+     * terminated during a scale-down event.</li> <li>FullProtection: If the game
+     * session is in an ACTIVE status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to all instances created in this
+     * fleet. If this parameter is not set, new instances in this fleet will default to
+     * no protection. Protection can be set for individual instances using
+     * <a>UpdateGameSession</a>. <ul><li>NoProtection: The game session can be
+     * terminated during a scale-down event.</li> <li>FullProtection: If the game
+     * session is in an ACTIVE status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to all instances created in this
+     * fleet. If this parameter is not set, new instances in this fleet will default to
+     * no protection. Protection can be set for individual instances using
+     * <a>UpdateGameSession</a>. <ul><li>NoProtection: The game session can be
+     * terminated during a scale-down event.</li> <li>FullProtection: If the game
+     * session is in an ACTIVE status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
+     */
+    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>Game session protection policy to apply to all instances created in this
+     * fleet. If this parameter is not set, new instances in this fleet will default to
+     * no protection. Protection can be set for individual instances using
+     * <a>UpdateGameSession</a>. <ul><li>NoProtection: The game session can be
+     * terminated during a scale-down event.</li> <li>FullProtection: If the game
+     * session is in an ACTIVE status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
+     */
+    inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -436,6 +492,8 @@ namespace Model
     bool m_eC2InstanceTypeHasBeenSet;
     Aws::Vector<IpPermission> m_eC2InboundPermissions;
     bool m_eC2InboundPermissionsHasBeenSet;
+    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    bool m_newGameSessionProtectionPolicyHasBeenSet;
   };
 
 } // namespace Model

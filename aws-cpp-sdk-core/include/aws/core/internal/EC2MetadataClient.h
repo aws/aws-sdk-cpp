@@ -40,8 +40,7 @@ namespace Aws
              * Builds an instance using "http://169.254.169.254" as the endpoint if not specified otherwise,
              * and the default http stack if httpClientFactory is not specified.
              */
-            EC2MetadataClient(const char* endpoint = "http://169.254.169.254",
-                std::shared_ptr<Http::HttpClientFactory const> httpClientFactory = nullptr);
+            EC2MetadataClient(const char* endpoint = "http://169.254.169.254");
 
             virtual ~EC2MetadataClient();
 

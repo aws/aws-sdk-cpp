@@ -29,13 +29,15 @@ namespace Model
 
 AccountSettings::AccountSettings() : 
     m_awsAccountNumberHasBeenSet(false),
-    m_unmeteredDevicesHasBeenSet(false)
+    m_unmeteredDevicesHasBeenSet(false),
+    m_unmeteredRemoteAccessDevicesHasBeenSet(false)
 {
 }
 
 AccountSettings::AccountSettings(const JsonValue& jsonValue) : 
     m_awsAccountNumberHasBeenSet(false),
-    m_unmeteredDevicesHasBeenSet(false)
+    m_unmeteredDevicesHasBeenSet(false),
+    m_unmeteredRemoteAccessDevicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ AccountSettings& AccountSettings::operator =(const JsonValue& jsonValue)
     m_unmeteredDevicesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("unmeteredRemoteAccessDevices"))
+  {
+    Aws::Map<Aws::String, JsonValue> unmeteredRemoteAccessDevicesJsonMap = jsonValue.GetObject("unmeteredRemoteAccessDevices").GetAllObjects();
+    for(auto& unmeteredRemoteAccessDevicesItem : unmeteredRemoteAccessDevicesJsonMap)
+    {
+      m_unmeteredRemoteAccessDevices[DevicePlatformMapper::GetDevicePlatformForName(unmeteredRemoteAccessDevicesItem.first)] = unmeteredRemoteAccessDevicesItem.second.AsInteger();
+    }
+    m_unmeteredRemoteAccessDevicesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +92,17 @@ JsonValue AccountSettings::Jsonize() const
      unmeteredDevicesJsonMap.WithInteger(DevicePlatformMapper::GetNameForDevicePlatform(unmeteredDevicesItem.first), unmeteredDevicesItem.second);
    }
    payload.WithObject("unmeteredDevices", std::move(unmeteredDevicesJsonMap));
+
+  }
+
+  if(m_unmeteredRemoteAccessDevicesHasBeenSet)
+  {
+   JsonValue unmeteredRemoteAccessDevicesJsonMap;
+   for(auto& unmeteredRemoteAccessDevicesItem : m_unmeteredRemoteAccessDevices)
+   {
+     unmeteredRemoteAccessDevicesJsonMap.WithInteger(DevicePlatformMapper::GetNameForDevicePlatform(unmeteredRemoteAccessDevicesItem.first), unmeteredRemoteAccessDevicesItem.second);
+   }
+   payload.WithObject("unmeteredRemoteAccessDevices", std::move(unmeteredRemoteAccessDevicesJsonMap));
 
   }
 

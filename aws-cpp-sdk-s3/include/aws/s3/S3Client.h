@@ -350,8 +350,7 @@ namespace Aws
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr, bool signPayloads = true);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
 
         virtual ~S3Client();
 

@@ -37,7 +37,6 @@ static const int KMS_KEY_NOT_FOUND_HASH = HashingUtils::HashString("KmsKeyNotFou
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int INVALID_S3_PREFIX_HASH = HashingUtils::HashString("InvalidS3PrefixException");
 static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTimeRangeException");
-static const int KMS_KEY_INVALID_STATE_HASH = HashingUtils::HashString("KmsKeyInvalidStateException");
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int TAGS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagsLimitExceededException");
 static const int CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH = HashingUtils::HashString("CloudWatchLogsDeliveryUnavailableException");
@@ -103,10 +102,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TIME_RANGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TIME_RANGE), false);
-  }
-  else if (hashCode == KMS_KEY_INVALID_STATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_INVALID_STATE), false);
   }
   else if (hashCode == RESOURCE_TYPE_NOT_SUPPORTED_HASH)
   {

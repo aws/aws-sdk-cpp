@@ -8,6 +8,7 @@ file(GLOB AWS_AUTH_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/auth/*.cpp")
 file(GLOB AWS_CLIENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/client/*.cpp")
 file(GLOB HTTP_SRC "${CMAKE_CURRENT_SOURCE_DIR}/http/*.cpp")
 file(GLOB UTILS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/*.cpp")
+file(GLOB UTILS_CRYPTO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/crypto/*.cpp")
 file(GLOB UTILS_JSON_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/json/*.cpp")
 file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
 file(GLOB UTILS_MEMORY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
@@ -21,6 +22,7 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${AWS_CLIENT_SRC}
   ${HTTP_SRC}
   ${UTILS_SRC}
+  ${UTILS_CRYPTO_SRC}
   ${UTILS_JSON_SRC}
   ${UTILS_XML_SRC}
   ${UTILS_LOGGING_SRC}
@@ -35,6 +37,7 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\aws\\client" FILES ${AWS_CLIENT_SRC})
     source_group("Source Files\\http" FILES  ${HTTP_SRC})
     source_group("Source Files\\utils" FILES ${UTILS_SRC})
+    source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SRC})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SRC})
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SRC})
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SRC})

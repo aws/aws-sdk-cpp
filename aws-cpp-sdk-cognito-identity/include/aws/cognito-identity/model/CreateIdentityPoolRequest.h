@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cognito-identity/model/CognitoIdentityProvider.h>
 
 namespace Aws
 {
@@ -257,6 +258,41 @@ namespace Model
      */
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const{ return m_cognitoIdentityProviders; }
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline void SetCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { SetCognitoIdentityProviders(value); return *this;}
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(value); return *this;}
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(const CognitoIdentityProvider& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
+
+    /**
+     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     */
+    inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
+
   private:
     Aws::String m_identityPoolName;
     bool m_identityPoolNameHasBeenSet;
@@ -268,6 +304,8 @@ namespace Model
     bool m_developerProviderNameHasBeenSet;
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
     bool m_openIdConnectProviderARNsHasBeenSet;
+    Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
+    bool m_cognitoIdentityProvidersHasBeenSet;
   };
 
 } // namespace Model

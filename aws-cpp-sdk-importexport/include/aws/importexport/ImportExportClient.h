@@ -132,8 +132,7 @@ namespace Model
         * the default http client factory will be used
         */
         ImportExportClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~ImportExportClient();
 
@@ -191,25 +190,22 @@ namespace Model
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * This operation returns information about a job, including where the job is in
-         * the processing pipeline, the status of the results, and the signature value
-         * associated with the job. You can only return information about jobs you own.
+         * This operation generates a pre-paid UPS shipping label that you will use to ship
+         * your device to AWS for processing.
          */
         virtual Model::GetShippingLabelOutcome GetShippingLabel(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation returns information about a job, including where the job is in
-         * the processing pipeline, the status of the results, and the signature value
-         * associated with the job. You can only return information about jobs you own.
+         * This operation generates a pre-paid UPS shipping label that you will use to ship
+         * your device to AWS for processing.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetShippingLabelOutcomeCallable GetShippingLabelCallable(const Model::GetShippingLabelRequest& request) const;
 
         /**
-         * This operation returns information about a job, including where the job is in
-         * the processing pipeline, the status of the results, and the signature value
-         * associated with the job. You can only return information about jobs you own.
+         * This operation generates a pre-paid UPS shipping label that you will use to ship
+         * your device to AWS for processing.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

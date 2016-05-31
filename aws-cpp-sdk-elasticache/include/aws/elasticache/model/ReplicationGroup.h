@@ -323,42 +323,42 @@ namespace Model
     inline ReplicationGroup& WithSnapshottingClusterId(const char* value) { SetSnapshottingClusterId(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p>
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul>
-     * <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-     * </ul> </note>
+     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
+     * types.</p> </li> </ul> </note>
      */
     inline const AutomaticFailoverStatus& GetAutomaticFailover() const{ return m_automaticFailover; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p>
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul>
-     * <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-     * </ul> </note>
+     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
+     * types.</p> </li> </ul> </note>
      */
     inline void SetAutomaticFailover(const AutomaticFailoverStatus& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p>
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul>
-     * <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-     * </ul> </note>
+     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
+     * types.</p> </li> </ul> </note>
      */
     inline void SetAutomaticFailover(AutomaticFailoverStatus&& value) { m_automaticFailoverHasBeenSet = true; m_automaticFailover = value; }
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p>
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul>
-     * <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-     * </ul> </note>
+     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
+     * types.</p> </li> </ul> </note>
      */
     inline ReplicationGroup& WithAutomaticFailover(const AutomaticFailoverStatus& value) { SetAutomaticFailover(value); return *this;}
 
     /**
-     * <p>Indicates the status of Multi-AZ for this replication group.</p>
-     * <note><p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul>
-     * <li>Redis versions earlier than 2.8.6.</li> <li>T1 and T2 cache node types.</li>
-     * </ul> </note>
+     * <p>Indicates the status of Multi-AZ for this replication group.</p> <note>
+     * <p>ElastiCache Multi-AZ replication groups are not supported on:</p> <ul> <li>
+     * <p>Redis versions earlier than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node
+     * types.</p> </li> </ul> </note>
      */
     inline ReplicationGroup& WithAutomaticFailover(AutomaticFailoverStatus&& value) { SetAutomaticFailover(value); return *this;}
 

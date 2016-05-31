@@ -35,100 +35,100 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBParametersRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBParametersRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of a specific DB parameter group to return details for. </p>
-     * <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * <p>The name of a specific DB parameter group to return details for.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters</p>
+     * </li> <li> <p>First character must be a letter</p> </li> <li> <p>Cannot end with
+     * a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeDBParametersRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline DescribeDBParametersRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline DescribeDBParametersRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
 
     /**
-     * <p> The parameter types to return. </p> <p>Default: All parameter types
-     * returned</p> <p>Valid Values: <code>user | system | engine-default</code></p>
+     * <p>The parameter types to return.</p> <p>Default: All parameter types
+     * returned</p> <p>Valid Values: <code>user | system | engine-default</code> </p>
      */
     inline DescribeDBParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 

@@ -60,6 +60,36 @@ namespace Model
     inline EC2InstanceCounts& WithDESIRED(long value) { SetDESIRED(value); return *this;}
 
     /**
+     * <p>Minimum value allowed for the fleet's instance count.</p>
+     */
+    inline long GetMINIMUM() const{ return m_mINIMUM; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count.</p>
+     */
+    inline void SetMINIMUM(long value) { m_mINIMUMHasBeenSet = true; m_mINIMUM = value; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count.</p>
+     */
+    inline EC2InstanceCounts& WithMINIMUM(long value) { SetMINIMUM(value); return *this;}
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count.</p>
+     */
+    inline long GetMAXIMUM() const{ return m_mAXIMUM; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count.</p>
+     */
+    inline void SetMAXIMUM(long value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count.</p>
+     */
+    inline EC2InstanceCounts& WithMAXIMUM(long value) { SetMAXIMUM(value); return *this;}
+
+    /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
      */
     inline long GetPENDING() const{ return m_pENDING; }
@@ -90,6 +120,24 @@ namespace Model
     inline EC2InstanceCounts& WithACTIVE(long value) { SetACTIVE(value); return *this;}
 
     /**
+     * <p>Number of active instances in the fleet that are not currently hosting a game
+     * session.</p>
+     */
+    inline long GetIDLE() const{ return m_iDLE; }
+
+    /**
+     * <p>Number of active instances in the fleet that are not currently hosting a game
+     * session.</p>
+     */
+    inline void SetIDLE(long value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
+
+    /**
+     * <p>Number of active instances in the fleet that are not currently hosting a game
+     * session.</p>
+     */
+    inline EC2InstanceCounts& WithIDLE(long value) { SetIDLE(value); return *this;}
+
+    /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
      * been terminated. </p>
      */
@@ -110,10 +158,16 @@ namespace Model
   private:
     long m_dESIRED;
     bool m_dESIREDHasBeenSet;
+    long m_mINIMUM;
+    bool m_mINIMUMHasBeenSet;
+    long m_mAXIMUM;
+    bool m_mAXIMUMHasBeenSet;
     long m_pENDING;
     bool m_pENDINGHasBeenSet;
     long m_aCTIVE;
     bool m_aCTIVEHasBeenSet;
+    long m_iDLE;
+    bool m_iDLEHasBeenSet;
     long m_tERMINATING;
     bool m_tERMINATINGHasBeenSet;
   };

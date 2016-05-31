@@ -34,9 +34,8 @@ static const char* SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/securi
 
 static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 
-EC2MetadataClient::EC2MetadataClient(const char* endpoint, std::shared_ptr<HttpClientFactory const> httpClientFactory) :
+EC2MetadataClient::EC2MetadataClient(const char* endpoint) :
     m_httpClient(nullptr),
-    m_httpClientFactory((httpClientFactory != nullptr) ? httpClientFactory : Aws::MakeShared<Http::HttpClientFactory>(EC2_METADATA_CLIENT_LOG_TAG)),
     m_endpoint(endpoint)
 {
     AWS_LOG_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Creating HttpClient with max connections %d and scheme %s", 2, "http");
@@ -44,7 +43,7 @@ EC2MetadataClient::EC2MetadataClient(const char* endpoint, std::shared_ptr<HttpC
     clientConfiguration.maxConnections = 2;
     clientConfiguration.scheme = Scheme::HTTP;
 
-    m_httpClient = m_httpClientFactory->CreateHttpClient(clientConfiguration);
+    m_httpClient = CreateHttpClient(clientConfiguration);
 }
 
 EC2MetadataClient::~EC2MetadataClient()
@@ -83,7 +82,7 @@ Aws::String EC2MetadataClient::GetResource(const char* resource) const
     ss << m_endpoint << resource;
     AWS_LOG_TRACE(EC2_METADATA_CLIENT_LOG_TAG, "Calling Ec2MetadataService at %s", ss.str().c_str());
 
-    std::shared_ptr<HttpRequest> request(m_httpClientFactory->CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
 
     if (response == nullptr)

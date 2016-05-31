@@ -36,44 +36,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> The name of the option group to describe. Cannot be supplied together with
-     * EngineName or MajorEngineVersion. </p>
+     * <p>The name of the option group to describe. Cannot be supplied together with
+     * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -186,93 +186,93 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline DescribeOptionGroupsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline DescribeOptionGroupsRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
-     * specific database engine. </p>
+     * <p>Filters the list of option groups to only include groups associated with a
+     * specific database engine.</p>
      */
     inline DescribeOptionGroupsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline DescribeOptionGroupsRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline DescribeOptionGroupsRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> Filters the list of option groups to only include groups associated with a
+     * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine version. If specified, then EngineName must also be
-     * specified. </p>
+     * specified.</p>
      */
     inline DescribeOptionGroupsRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 

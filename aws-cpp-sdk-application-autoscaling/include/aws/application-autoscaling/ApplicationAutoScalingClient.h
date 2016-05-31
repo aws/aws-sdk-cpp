@@ -111,12 +111,12 @@ namespace Model
    * <p>Application Auto Scaling is a general purpose Auto Scaling service for
    * supported elastic AWS resources. With Application Auto Scaling, you can
    * automatically scale your AWS resources, with an experience similar to that of
-   * Amazon EC2 Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling
-   * only supports scaling Amazon ECS services.</p> </note> <p>For example, you can
-   * use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li>
-   * <p>Define scaling policies for automatically adjusting your application’s
-   * resources</p> </li> <li> <p>Scale your resources in response to CloudWatch
-   * alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul>
+   * Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports
+   * scaling Amazon ECS services.</p> </note> <p>For example, you can use Application
+   * Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling
+   * policies for automatically adjusting your application’s resources</p> </li> <li>
+   * <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View
+   * history of your scaling events </p> </li> </ul>
    */
   class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
   {
@@ -140,8 +140,7 @@ namespace Model
         * the default http client factory will be used
         */
         ApplicationAutoScalingClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~ApplicationAutoScalingClient();
 
@@ -366,13 +365,13 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled up or down with Application Auto Scaling. Once you have registered
-         * a scalable target, you can use this command to update the minimum and maximum
-         * values for your scalable dimension.</p> <note> <p>At this time, Application Auto
-         * Scaling only supports scaling Amazon ECS services.</p> </note> <p>After you
-         * register a scalable target with Application Auto Scaling, you can create and
-         * apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the
-         * existing scaling policies for a service namespace with
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
          * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          */
@@ -380,13 +379,13 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled up or down with Application Auto Scaling. Once you have registered
-         * a scalable target, you can use this command to update the minimum and maximum
-         * values for your scalable dimension.</p> <note> <p>At this time, Application Auto
-         * Scaling only supports scaling Amazon ECS services.</p> </note> <p>After you
-         * register a scalable target with Application Auto Scaling, you can create and
-         * apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the
-         * existing scaling policies for a service namespace with
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
          * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          *
@@ -396,13 +395,13 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled up or down with Application Auto Scaling. Once you have registered
-         * a scalable target, you can use this command to update the minimum and maximum
-         * values for your scalable dimension.</p> <note> <p>At this time, Application Auto
-         * Scaling only supports scaling Amazon ECS services.</p> </note> <p>After you
-         * register a scalable target with Application Auto Scaling, you can create and
-         * apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the
-         * existing scaling policies for a service namespace with
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
          * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
          * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          *

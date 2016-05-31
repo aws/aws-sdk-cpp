@@ -123,7 +123,7 @@
         {"shape":"ConcurrentUpdateException"},
         {"shape":"InternalServiceException"}
       ],
-      "documentation":"<p>Registers or updates a scalable target. A scalable target is a resource that can be scaled up or down with Application Auto Scaling. Once you have registered a scalable target, you can use this command to update the minimum and maximum values for your scalable dimension.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>After you register a scalable target with Application Auto Scaling, you can create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a service namespace with <a>DescribeScalableTargets</a>. If you are no longer using a scalable target, you can deregister it with <a>DeregisterScalableTarget</a>.</p>"
+      "documentation":"<p>Registers or updates a scalable target. A scalable target is a resource that can be scaled up or down with Application Auto Scaling. After you have registered a scalable target, you can use this command to update the minimum and maximum values for your scalable dimension.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>After you register a scalable target with Application Auto Scaling, you can create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a service namespace with <a>DescribeScalableTargets</a>. If you are no longer using a scalable target, you can deregister it with <a>DeregisterScalableTarget</a>.</p>"
     }
   },
   "shapes":{
@@ -185,11 +185,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         }
       }
     },
@@ -212,11 +212,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         }
       }
     },
@@ -235,11 +235,11 @@
         },
         "ResourceIds":{
           "shape":"ResourceIdsMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "MaxResults":{
           "shape":"MaxResults",
@@ -274,11 +274,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scaling activity. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scaling activity. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scaling activity. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The scalable dimension associated with the scaling activity. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "MaxResults":{
           "shape":"MaxResults",
@@ -317,11 +317,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique resource identifier string of the scalable target that the scaling policy is associated with. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The unique resource identifier string of the scalable target that the scaling policy is associated with. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension of the scalable target that the scaling policy is associated with. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
+          "documentation":"<p>The scalable dimension of the scalable target that the scaling policy is associated with. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service. If you specify a scalable dimension, you must also specify a resource ID.</p>"
         },
         "MaxResults":{
           "shape":"MaxResults",
@@ -352,7 +352,7 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Failed access to resources caused an exception. This exception currently only applies to <a>DescribeScalingPolicies</a>. It is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error. For example, if the role ARN specified for a scalable target does not have the proper permissions to call the CloudWatch <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html\">DescribeAlarms</a> API operation on behalf of your account.</p>",
+      "documentation":"<p>Failed access to resources caused an exception. This exception currently only applies to <a>DescribeScalingPolicies</a>. It is thrown when Application Auto Scaling is unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for a scalable target does not have the proper permissions to call the CloudWatch <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html\">DescribeAlarms</a> API operation on behalf of your account.</p>",
       "exception":true
     },
     "InternalServiceException":{
@@ -395,7 +395,7 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation, which depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource that is to be deleted or deregistered can not be found.</p>",
+      "documentation":"<p>The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation, which depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension does not exist. For any <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource that is to be deleted or deregistered cannot be found.</p>",
       "exception":true
     },
     "PolicyName":{
@@ -427,11 +427,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique resource identifier string for the scalable target that this scaling policy applies to. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique resource identifier string for the scalable target that this scaling policy applies to. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension of the scalable target that this scaling policy applies to. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         },
         "PolicyType":{
           "shape":"PolicyType",
@@ -439,7 +439,7 @@
         },
         "StepScalingPolicyConfiguration":{
           "shape":"StepScalingPolicyConfiguration",
-          "documentation":"<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a href=\"http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html\">StepScalingPolicyConfiguration</a> and <a href=\"http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html\">StepAdjustment</a> in the <i>Application Auto Scaling API Reference</i>.</p>"
+          "documentation":"<p>The configuration for the step scaling policy. This parameter is required if you are creating a new policy. For more information, see <a href=\"http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html\">StepScalingPolicyConfiguration</a> and <a href=\"http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html\">StepAdjustment</a> in the <i>Application Auto Scaling API Reference</i>.</p>"
         }
       }
     },
@@ -467,11 +467,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource to associate with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource to associate with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         },
         "MinCapacity":{
           "shape":"ResourceCapacity",
@@ -529,11 +529,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scalable target. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scalable target. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         },
         "MinCapacity":{
           "shape":"ResourceCapacity",
@@ -585,11 +585,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scaling activity. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scaling activity. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scaling activity. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scaling activity. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         },
         "Description":{
           "shape":"XmlString",
@@ -664,11 +664,11 @@
         },
         "ResourceId":{
           "shape":"ResourceIdMaxLen1600",
-          "documentation":"<p>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name, and then the service name, such as <code>service/default/sample-webapp</code>.</p>"
+          "documentation":"<p>The unique identifier string for the resource associated with the scaling policy. For Amazon ECS services, this value is the resource type, followed by the cluster name and service name, such as <code>service/default/sample-webapp</code>.</p>"
         },
         "ScalableDimension":{
           "shape":"ScalableDimension",
-          "documentation":"<p>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, the resource type, and the scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count for an Amazon ECS service.</p>"
+          "documentation":"<p>The scalable dimension associated with the scaling policy. The scalable dimension contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code> for the desired task count of an Amazon ECS service.</p>"
         },
         "PolicyType":{
           "shape":"PolicyType",
@@ -733,7 +733,7 @@
         },
         "Cooldown":{
           "shape":"Cooldown",
-          "documentation":"<p>The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling activities can influence future scaling events.</p> <p>For scale out policies, while <code>Cooldown</code> is in effect, the capacity that has been added by the previous scale out event that initiated the <code>Cooldown</code> is calculated as part of the desired capacity for the next scale out. The intention is to continuously (but not excessively) scale out. For example, if an alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, and the scaling activity complete successfully, and a <code>Cooldown</code> period of 5 minutes starts. During the <code>Cooldown</code> period, if the alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous scale out event are considered part of that capacity and only add 1 additional task is added to the desired count.</p> <p>For scale in policies, the <code>Cooldown</code> period is used to block subsequent scale in requests until it has expired. The intention is to scale in conservatively to protect your application's availability. However, if another alarm triggers a scale-out policy during the <code>Cooldown</code> period after a scale-in, Application Auto Scaling will scale out your scalable target immediately.</p>"
+          "documentation":"<p>The amount of time, in seconds, after a scaling activity completes where previous trigger-related scaling activities can influence future scaling events.</p> <p>For scale out policies, while <code>Cooldown</code> is in effect, the capacity that has been added by the previous scale out event that initiated the <code>Cooldown</code> is calculated as part of the desired capacity for the next scale out. The intention is to continuously (but not excessively) scale out. For example, an alarm triggers a step scaling policy to scale out an Amazon ECS service by 2 tasks, the scaling activity completes successfully, and a <code>Cooldown</code> period of 5 minutes starts. During the <code>Cooldown</code> period, if the alarm triggers the same policy again but at a more aggressive step adjustment to scale out the service by 3 tasks, the 2 tasks that were added in the previous scale out event are considered part of that capacity and only 1 additional task is added to the desired count.</p> <p>For scale in policies, the <code>Cooldown</code> period is used to block subsequent scale in requests until it has expired. The intention is to scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the <code>Cooldown</code> period after a scale-in, Application Auto Scaling scales out your scalable target immediately.</p>"
         },
         "MetricAggregationType":{
           "shape":"MetricAggregationType",
@@ -756,5 +756,5 @@
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\r\\n\\t]*"
     }
   },
-  "documentation":"<p>Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>For example, you can use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for automatically adjusting your application’s resources</p> </li> <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul>"
+  "documentation":"<p>Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports scaling Amazon ECS services.</p> </note> <p>For example, you can use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for automatically adjusting your application’s resources</p> </li> <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View history of your scaling events </p> </li> </ul>"
 }

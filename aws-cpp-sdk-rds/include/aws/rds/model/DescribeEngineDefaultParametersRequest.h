@@ -36,72 +36,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group family. </p>
+     * <p>The name of the DB parameter group family.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeEngineDefaultParametersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p> Not currently supported. </p>
+     * <p>Not currently supported.</p>
      */
     inline DescribeEngineDefaultParametersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

@@ -38,6 +38,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_optionGroupNameHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_replicationSourceIdentifierHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
@@ -124,6 +125,10 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
+  }
+  if(m_replicationSourceIdentifierHasBeenSet)
+  {
+    ss << "ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

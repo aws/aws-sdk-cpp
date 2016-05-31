@@ -205,27 +205,30 @@ namespace Model
     /**
      * <p>Whether a read replica will be automatically promoted to read/write primary
      * if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code></p> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li>Redis versions earlier
-     * than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
+     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
+     * than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node types.</p> </li> </ul>
+     * </note>
      */
     inline bool GetAutomaticFailoverEnabled() const{ return m_automaticFailoverEnabled; }
 
     /**
      * <p>Whether a read replica will be automatically promoted to read/write primary
      * if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code></p> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li>Redis versions earlier
-     * than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
+     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
+     * than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node types.</p> </li> </ul>
+     * </note>
      */
     inline void SetAutomaticFailoverEnabled(bool value) { m_automaticFailoverEnabledHasBeenSet = true; m_automaticFailoverEnabled = value; }
 
     /**
      * <p>Whether a read replica will be automatically promoted to read/write primary
      * if the existing primary encounters a failure.</p> <p>Valid values:
-     * <code>true</code> | <code>false</code></p> <note><p>ElastiCache Multi-AZ
-     * replication groups are not supported on:</p> <ul> <li>Redis versions earlier
-     * than 2.8.6.</li> <li>T1 and T2 cache node types.</li> </ul> </note>
+     * <code>true</code> | <code>false</code> </p> <note> <p>ElastiCache Multi-AZ
+     * replication groups are not supported on:</p> <ul> <li> <p>Redis versions earlier
+     * than 2.8.6.</p> </li> <li> <p>T1 and T2 cache node types.</p> </li> </ul>
+     * </note>
      */
     inline ModifyReplicationGroupRequest& WithAutomaticFailoverEnabled(bool value) { SetAutomaticFailoverEnabled(value); return *this;}
 
@@ -235,7 +238,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
 
@@ -245,7 +248,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
@@ -255,7 +258,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
@@ -265,7 +268,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
 
@@ -275,7 +278,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline ModifyReplicationGroupRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(value); return *this;}
 
@@ -285,7 +288,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -295,7 +298,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -305,7 +308,7 @@ namespace Model
      * possible.</p> <p>This parameter can be used only with replication group
      * containing cache clusters running outside of an Amazon Virtual Private Cloud
      * (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be &quot;Default".</p>
+     * characters. Must not be "Default".</p>
      */
     inline ModifyReplicationGroupRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
@@ -369,10 +372,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -380,10 +384,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -391,10 +396,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -402,10 +408,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -413,10 +420,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -424,10 +432,11 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -435,59 +444,60 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cache cluster
      * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
      * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
-     * values for <code>ddd</code> are:</p> <ul> <li><code>sun</code></li>
-     * <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li>
-     * <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li>
-     * </ul> <p>Example: <code>sun:05:00-sun:09:00</code></p>
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note>The Amazon SNS topic owner must be same as the
-     * replication group owner. </note>
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the
+     * replication group owner. </p> </note>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
 
@@ -550,49 +560,49 @@ namespace Model
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline const Aws::String& GetNotificationTopicStatus() const{ return m_notificationTopicStatus; }
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(const Aws::String& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(Aws::String&& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(const char* value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus.assign(value); }
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(const Aws::String& value) { SetNotificationTopicStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(Aws::String&& value) { SetNotificationTopicStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic for the replication group.
      * Notifications are sent only if the status is <i>active</i>.</p> <p>Valid values:
-     * <code>active</code> | <code>inactive</code></p>
+     * <code>active</code> | <code>inactive</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithNotificationTopicStatus(const char* value) { SetNotificationTopicStatus(value); return *this;}
 
@@ -603,7 +613,7 @@ namespace Model
      * replication group.</p> <p>If <code>false</code>, then changes to the nodes in
      * the replication group are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Default: <code>false</code></p>
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
@@ -614,7 +624,7 @@ namespace Model
      * replication group.</p> <p>If <code>false</code>, then changes to the nodes in
      * the replication group are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Default: <code>false</code></p>
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
@@ -625,13 +635,13 @@ namespace Model
      * replication group.</p> <p>If <code>false</code>, then changes to the nodes in
      * the replication group are applied on the next maintenance reboot, or the next
      * failure reboot, whichever occurs first.</p> <p>Valid values: <code>true</code> |
-     * <code>false</code></p> <p>Default: <code>false</code></p>
+     * <code>false</code> </p> <p>Default: <code>false</code> </p>
      */
     inline ModifyReplicationGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -643,7 +653,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -655,7 +665,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -667,7 +677,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -679,7 +689,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -691,7 +701,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -703,7 +713,7 @@ namespace Model
 
     /**
      * <p>The upgraded version of the cache engine to be run on the cache clusters in
-     * the replication group.</p> <p><b>Important:</b> You can upgrade to a newer
+     * the replication group.</p> <p> <b>Important:</b> You can upgrade to a newer
      * engine version (see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
@@ -732,8 +742,8 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
-     * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+     * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -741,8 +751,8 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
-     * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+     * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -750,15 +760,15 @@ namespace Model
      * <p>The number of days for which ElastiCache will retain automatic node group
      * snapshots before deleting them. For example, if you set
      * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
-     * retained for 5 days before being deleted.</p> <p><b>Important</b><br/>If the
-     * value of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+     * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
+     * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
     inline ModifyReplicationGroupRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -767,7 +777,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -776,7 +786,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -785,7 +795,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -794,7 +804,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -803,7 +813,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */
@@ -812,7 +822,7 @@ namespace Model
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
      * daily snapshot of the node group specified by <i>SnapshottingClusterId</i>.</p>
-     * <p>Example: <code>05:00-09:00</code></p> <p>If you do not specify this
+     * <p>Example: <code>05:00-09:00</code> </p> <p>If you do not specify this
      * parameter, then ElastiCache will automatically choose an appropriate time
      * range.</p>
      */

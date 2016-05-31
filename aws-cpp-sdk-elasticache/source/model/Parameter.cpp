@@ -38,7 +38,8 @@ Parameter::Parameter() :
     m_allowedValuesHasBeenSet(false),
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
+    m_minimumEngineVersionHasBeenSet(false),
+    m_changeTypeHasBeenSet(false)
 {
 }
 
@@ -51,7 +52,8 @@ Parameter::Parameter(const XmlNode& xmlNode) :
     m_allowedValuesHasBeenSet(false),
     m_isModifiable(false),
     m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
+    m_minimumEngineVersionHasBeenSet(false),
+    m_changeTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -110,6 +112,12 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
       m_minimumEngineVersion = StringUtils::Trim(minimumEngineVersionNode.GetText().c_str());
       m_minimumEngineVersionHasBeenSet = true;
     }
+    XmlNode changeTypeNode = resultNode.FirstChild("ChangeType");
+    if(!changeTypeNode.IsNull())
+    {
+      m_changeType = ChangeTypeMapper::GetChangeTypeForName(StringUtils::Trim(changeTypeNode.GetText().c_str()).c_str());
+      m_changeTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +157,10 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
+  if(m_changeTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
+  }
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -184,6 +196,10 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_minimumEngineVersionHasBeenSet)
   {
       oStream << location << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
+  }
+  if(m_changeTypeHasBeenSet)
+  {
+      oStream << location << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
   }
 }
 

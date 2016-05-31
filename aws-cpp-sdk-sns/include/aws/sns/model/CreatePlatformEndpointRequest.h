@@ -78,85 +78,64 @@ namespace Model
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline CreatePlatformEndpointRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline CreatePlatformEndpointRequest& WithToken(Aws::String&& value) { SetToken(value); return *this;}
 
     /**
      * <p>Unique identifier created by the notification service for an app on a device.
-     * 
-      The specific name for Token will vary, depending on which notification
-     * service is being used. 
-      For example, when using APNS as the notification
-     * service, you need the device token. 
-      Alternatively, when using GCM or ADM,
-     * the device token equivalent is called the registration ID.</p>
+     * The specific name for Token will vary, depending on which notification service
+     * is being used. For example, when using APNS as the notification service, you
+     * need the device token. Alternatively, when using GCM or ADM, the device token
+     * equivalent is called the registration ID.</p>
      */
     inline CreatePlatformEndpointRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

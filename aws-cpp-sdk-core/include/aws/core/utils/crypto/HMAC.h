@@ -58,6 +58,18 @@ namespace Aws
                 * Factory method. Returns hmac hash implementation.
                 */
                 virtual std::shared_ptr<HMAC> CreateImplementation() const = 0;
+
+                /**
+                 * Opportunity to make any static initialization calls you need to make.
+                 * Will only be called once.
+                 */
+                virtual void InitStaticState() {}
+
+                /**
+                 * Opportunity to make any static cleanup calls you need to make.
+                 * will only be called at the end of the application.
+                 */
+                virtual void CleanupStaticState() {}
             };
 
         } // namespace Crypto

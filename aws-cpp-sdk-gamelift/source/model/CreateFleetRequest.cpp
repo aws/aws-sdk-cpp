@@ -29,7 +29,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
     m_eC2InstanceTypeHasBeenSet(false),
-    m_eC2InboundPermissionsHasBeenSet(false)
+    m_eC2InboundPermissionsHasBeenSet(false),
+    m_newGameSessionProtectionPolicyHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
    }
    payload.WithArray("EC2InboundPermissions", std::move(eC2InboundPermissionsJsonList));
 
+  }
+
+  if(m_newGameSessionProtectionPolicyHasBeenSet)
+  {
+   payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
   }
 
   return payload.WriteReadable();

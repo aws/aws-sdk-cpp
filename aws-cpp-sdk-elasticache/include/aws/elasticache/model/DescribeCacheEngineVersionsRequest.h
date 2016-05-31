@@ -35,134 +35,134 @@ namespace Model
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The cache engine to return. Valid values: <code>memcached</code> |
-     * <code>redis</code></p>
+     * <code>redis</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code></p>
+     * <p>The cache engine version to return.</p> <p>Example: <code>1.4.14</code> </p>
      */
     inline DescribeCacheEngineVersionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
      * <p>The name of a specific cache parameter group family to return details
-     * for.</p> <p>Constraints:</p> <ul> <li>Must be 1 to 255 alphanumeric
-     * characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul>
+     * for.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DescribeCacheEngineVersionsRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
