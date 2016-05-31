@@ -341,11 +341,15 @@ if(NOT PLATFORM_WINDOWS)
     if(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
         # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
         # We also have some nested comments in the auto-generated member comments so turn that off as well
-       target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
+        target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
 
-       if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-           target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
-       endif()
+        if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
+        endif()
+
+        if(NOT ENABLE_RTTI)
+            target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
+        endif()
     endif()
 elseif(MSVC)
     target_compile_options(aws-cpp-sdk-core PRIVATE /bigobj)
@@ -360,6 +364,10 @@ elseif(MSVC)
         string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     else()
         target_compile_options(aws-cpp-sdk-core PRIVATE /W4)
+    endif()
+
+    if(NOT ENABLE_RTTI)
+        target_compile_options(aws-cpp-sdk-core PUBLIC /GR-)
     endif()
 endif()
 

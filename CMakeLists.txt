@@ -50,7 +50,7 @@ option(DISABLE_ANDROID_STANDALONE_BUILD "If enabled, the android build will not 
 option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
 option(NO_HTTP_CLIENT "If enabled, no platform-default http client will be included in the library.  For the library to be used you will need to provide your own platform-specific implementation" OFF)
 option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
-
+option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
 
 
 # backwards compatibility with old command line params
@@ -732,22 +732,22 @@ if(PLATFORM_WINDOWS)
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
         endif()
 
-		#remove bogus errors at generation time if these variables haven't been manually set
-		if(NOT CMAKE_CONFIGURATION_TYPES)
-			set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
-		endif()
-	
-		if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
-			set(CMAKE_CXX_FLAGS_DEBUGOPT "")
-		endif()
+        #remove bogus errors at generation time if these variables haven't been manually set
+        if(NOT CMAKE_CONFIGURATION_TYPES)
+            set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
+        endif()
+    
+        if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
+            set(CMAKE_CXX_FLAGS_DEBUGOPT "")
+        endif()
 
-		if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
-			set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
-		endif()
+        if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
+            set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
+        endif()
 
-		if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
-			set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
-		endif()
+        if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
+            set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
+        endif()
     endif()
 elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    
@@ -758,10 +758,18 @@ elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
     endif()
 endif()
 
-if(NOT PLATFORM_WINDOWS)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions -fno-rtti")
+if(PLATFORM_WINDOWS)
+    if(NOT ENABLE_RTTI)
+        string(REGEX REPLACE "/GR " " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
+    endif()
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
     if(MINIMIZE_SIZE)
         set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
+    endif()
+    if(NOT ENABLE_RTTI)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
     endif()
 endif()
 
