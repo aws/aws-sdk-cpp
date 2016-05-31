@@ -64,7 +64,7 @@ static const char* SERVICE_NAME = "logs";
 static const char* ALLOCATION_TAG = "CloudWatchLogsClient";
 
 CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -75,7 +75,7 @@ CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& cl
 }
 
 CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -86,8 +86,8 @@ CloudWatchLogsClient::CloudWatchLogsClient(const AWSCredentials& credentials, co
 }
 
 CloudWatchLogsClient::CloudWatchLogsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
-  BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -117,6 +117,7 @@ void CloudWatchLogsClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+
 CancelExportTaskOutcome CloudWatchLogsClient::CancelExportTask(const CancelExportTaskRequest& request) const
 {
   Aws::StringStream ss;

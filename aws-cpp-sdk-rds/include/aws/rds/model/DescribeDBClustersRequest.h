@@ -38,70 +38,70 @@ namespace Model
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The user-supplied DB cluster identifier. If this parameter is specified,
      * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

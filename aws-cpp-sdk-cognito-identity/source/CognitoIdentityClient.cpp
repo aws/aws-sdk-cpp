@@ -57,7 +57,7 @@ static const char* SERVICE_NAME = "cognito-identity";
 static const char* ALLOCATION_TAG = "CognitoIdentityClient";
 
 CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -68,7 +68,7 @@ CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& 
 }
 
 CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
-  BASECLASS(Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -79,8 +79,8 @@ CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, 
 }
 
 CognitoIdentityClient::CognitoIdentityClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration, const std::shared_ptr<HttpClientFactory const>& httpClientFactory) :
-  BASECLASS(httpClientFactory != nullptr ? httpClientFactory : Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG), clientConfiguration,
+  const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
                                                                         : clientConfiguration.authenticationRegion),
@@ -110,6 +110,7 @@ void CognitoIdentityClient::init(const ClientConfiguration& config)
 
   m_uri = ss.str();
 }
+
 CreateIdentityPoolOutcome CognitoIdentityClient::CreateIdentityPool(const CreateIdentityPoolRequest& request) const
 {
   Aws::StringStream ss;

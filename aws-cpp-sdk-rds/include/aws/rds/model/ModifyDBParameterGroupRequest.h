@@ -36,142 +36,149 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBParameterGroupRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBParameterGroupRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB parameter group. </p> <p>Constraints:</p> <ul> <li>Must
-     * be the name of an existing DB parameter group</li> <li>Must be 1 to 255
-     * alphanumeric characters</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * be the name of an existing DB parameter group</p> </li> <li> <p>Must be 1 to 255
+     * alphanumeric characters</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul>
      */
     inline ModifyDBParameterGroupRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline ModifyDBParameterGroupRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline ModifyDBParameterGroupRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(value); return *this;}
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline ModifyDBParameterGroupRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p> An array of parameter names, values, and the apply method for the parameter
+     * <p>An array of parameter names, values, and the apply method for the parameter
      * update. At least one parameter name, value, and apply method must be supplied;
      * subsequent arguments are optional. A maximum of 20 parameters can be modified in
-     * a single request. </p> <p>Valid Values (for the application method):
-     * <code>immediate | pending-reboot</code></p> <note>You can use the immediate
+     * a single request.</p> <p>Valid Values (for the application method):
+     * <code>immediate | pending-reboot</code> </p> <note> <p>You can use the immediate
      * value with dynamic parameters only. You can use the pending-reboot value for
      * both dynamic and static parameters, and changes are applied when you reboot the
-     * DB instance without failover. </note>
+     * DB instance without failover.</p> </note>
      */
     inline ModifyDBParameterGroupRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 

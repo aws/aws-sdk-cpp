@@ -94,7 +94,6 @@ namespace
         {
             TimeStamp = DateTime::Now().CalculateLocalTimestampAsString("%Y%m%dt%H%M%Sz");
             Limiter = Aws::MakeShared<Aws::Utils::RateLimits::DefaultRateLimiter<>>(ALLOCATION_TAG, 50000000);
-            ClientFactory = Aws::MakeShared<HttpClientFactory>(ALLOCATION_TAG);
 
             // Create a client
             ClientConfiguration config;
@@ -112,10 +111,10 @@ namespace
                 config.proxyPort = PROXY_PORT;
             }
 
-            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory, false);
+            Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
             config.region = Aws::Region::US_WEST_2;
-            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, ClientFactory, false);
-            m_HttpClient = ClientFactory->CreateHttpClient(config);
+            oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
+            m_HttpClient = Aws::Http::CreateHttpClient(config);
         }
 
         static void TearDownTestCase()
@@ -640,7 +639,7 @@ namespace
         objectStream->flush();
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_PUT);
-        std::shared_ptr<HttpRequest> putRequest = ClientFactory->CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         putRequest->AddContentBody(objectStream);
         Aws::StringStream intConverter;
         intConverter << objectStream->tellp();
@@ -653,7 +652,7 @@ namespace
         WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
 
         Aws::String presignedUrlGet = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
-        std::shared_ptr<HttpRequest> getRequest = ClientFactory->CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<HttpRequest> getRequest = CreateHttpRequest(presignedUrlGet, HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<HttpResponse> getResponse = m_HttpClient->MakeRequest(*getRequest);
 
         ASSERT_EQ(HttpResponseCode::OK, getResponse->GetResponseCode());
@@ -662,7 +661,7 @@ namespace
         ASSERT_EQ("Test Object", ss.str());
 
         Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
-        std::shared_ptr<HttpRequest> deleteRequest = ClientFactory->CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        std::shared_ptr<HttpRequest> deleteRequest = CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(*deleteRequest);
         ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponse->GetResponseCode());
 

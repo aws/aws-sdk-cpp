@@ -99,43 +99,43 @@ namespace Model
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupStatus() const{ return m_dBClusterParameterGroupStatus; }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline void SetDBClusterParameterGroupStatus(const Aws::String& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = value; }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline void SetDBClusterParameterGroupStatus(Aws::String&& value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus = value; }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline void SetDBClusterParameterGroupStatus(const char* value) { m_dBClusterParameterGroupStatusHasBeenSet = true; m_dBClusterParameterGroupStatus.assign(value); }
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline DBClusterMember& WithDBClusterParameterGroupStatus(const Aws::String& value) { SetDBClusterParameterGroupStatus(value); return *this;}
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline DBClusterMember& WithDBClusterParameterGroupStatus(Aws::String&& value) { SetDBClusterParameterGroupStatus(value); return *this;}
 
     /**
      * <p>Specifies the status of the DB cluster parameter group for this member of the
-     * DB cluster. </p>
+     * DB cluster.</p>
      */
     inline DBClusterMember& WithDBClusterParameterGroupStatus(const char* value) { SetDBClusterParameterGroupStatus(value); return *this;}
 

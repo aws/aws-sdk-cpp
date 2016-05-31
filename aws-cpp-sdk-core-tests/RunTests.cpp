@@ -14,6 +14,9 @@
   */
 
 #include <aws/external/gtest.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/Aws.h>
 
 int main(int argc, char** argv)
 {
@@ -22,6 +25,10 @@ int main(int argc, char** argv)
         setenv("HOME", P_tmpdir, 1);
     #endif //__UNIX_SV__
 
+    Aws::SDKOptions options;
+    Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    int retVal = RUN_ALL_TESTS();
+    Aws::ShutdownAPI(options);
+    return retVal;
 }

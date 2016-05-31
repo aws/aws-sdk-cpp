@@ -31,9 +31,6 @@ namespace ECR
 namespace Model
 {
 
-  /**
-   * <p>An object representing an Amazon ECR image layer.</p>
-   */
   class AWS_ECR_API Layer
   {
   public:

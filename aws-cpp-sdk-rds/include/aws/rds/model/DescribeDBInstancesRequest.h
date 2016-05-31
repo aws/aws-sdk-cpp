@@ -36,72 +36,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The user-supplied instance identifier. If this parameter is specified,
+     * <p>The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB instance is returned. This parameter isn't
-     * case-sensitive. </p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul>
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</p> </li> <li> <p>First character must be a
+     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 

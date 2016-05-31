@@ -21,7 +21,8 @@ using namespace Aws::Utils;
 
 CopySnapshotRequest::CopySnapshotRequest() : 
     m_sourceSnapshotNameHasBeenSet(false),
-    m_targetSnapshotNameHasBeenSet(false)
+    m_targetSnapshotNameHasBeenSet(false),
+    m_targetBucketHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,10 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_targetSnapshotNameHasBeenSet)
   {
     ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
+  }
+  if(m_targetBucketHasBeenSet)
+  {
+    ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
   }
   ss << "Version=2015-02-02";
   return ss.str();

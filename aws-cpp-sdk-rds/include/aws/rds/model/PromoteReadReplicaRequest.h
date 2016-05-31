@@ -34,96 +34,96 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The DB instance identifier. This value is stored as a lowercase string. </p>
-     * <p>Constraints:</p> <ul> <li>Must be the identifier for an existing Read Replica
-     * DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
-     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
-     * hyphen or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>mydbinstance</code></p>
+     * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be the identifier for an existing Read
+     * Replica DB instance</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</p> </li> <li> <p>First character must be a letter</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The number of days to retain automated backups. Setting this parameter to a
+     * <p>The number of days to retain automated backups. Setting this parameter to a
      * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups. </p> <p> Default: 1 </p> <p>Constraints:</p> <ul> <li>Must be a value
-     * from 0 to 8</li> </ul>
+     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
+     * from 0 to 8</p> </li> </ul>
      */
     inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
-     * <p> The number of days to retain automated backups. Setting this parameter to a
+     * <p>The number of days to retain automated backups. Setting this parameter to a
      * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups. </p> <p> Default: 1 </p> <p>Constraints:</p> <ul> <li>Must be a value
-     * from 0 to 8</li> </ul>
+     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
+     * from 0 to 8</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
-     * <p> The number of days to retain automated backups. Setting this parameter to a
+     * <p>The number of days to retain automated backups. Setting this parameter to a
      * positive number enables backups. Setting this parameter to 0 disables automated
-     * backups. </p> <p> Default: 1 </p> <p>Constraints:</p> <ul> <li>Must be a value
-     * from 0 to 8</li> </ul>
+     * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
+     * from 0 to 8</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -134,10 +134,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -148,10 +149,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -162,10 +164,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -176,10 +179,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -190,10 +194,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -204,10 +209,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -218,10 +224,11 @@ namespace Model
      * time per region. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
-     * Guide.</i> </p> <p>Constraints:</p> <ul> <li>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</li> <li>Times should be in Universal Coordinated
-     * Time (UTC).</li> <li>Must not conflict with the preferred maintenance
-     * window.</li> <li>Must be at least 30 minutes.</li> </ul>
+     * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Times should be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline PromoteReadReplicaRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 

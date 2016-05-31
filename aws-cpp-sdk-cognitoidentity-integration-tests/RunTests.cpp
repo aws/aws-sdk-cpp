@@ -14,20 +14,15 @@
   */
 
 #include <aws/external/gtest.h>
-
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/logging/DefaultLogSystem.h>
-#include <aws/core/utils/logging/AWSLogging.h>
-
-#include <iostream>
-
-static const char* ALLOCATION_TAG = "CognitoIdentityIntegrationTests";
+#include <aws/core/Aws.h>
 
 int main(int argc, char** argv)
 {
-    Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Trace, "aws_sdk_"));
+    Aws::SDKOptions options;
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
+    Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int exitCode = RUN_ALL_TESTS();
-    Aws::Utils::Logging::ShutdownAWSLogging();
+    Aws::ShutdownAPI(options);
     return exitCode;
 }

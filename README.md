@@ -1,3 +1,6 @@
+# Upgrading Notes
+For 0.12+ all applications must call the Aws::InitAPI() function before making any other SDK calls, and the Aws::ShutdownAPI function when finished using the SDK. More information can be found here: 
+https://aws.amazon.com/blogs/developer/aws-sdk-for-c-simplified-configuration-and-initialization/ 
 
 # aws-sdk-cpp
 The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).  
@@ -52,6 +55,10 @@ sudo make install
 cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
 msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
+
+You may also find the following link helpful for including the build in your project:
+
+https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
 
 ####Building for Android
 To build for Android, add -DTARGET_ARCH=ANDROID to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
@@ -113,9 +120,71 @@ After they are constructed, individual service clients are very similar to other
 The aws-cpp-sdk-core is the heart of the system and does the heavy lifting. You can write a client to connect to any AWS service using just the core, and the individual service clients are available to help make the process a little easier.
 
 ####Build Defines
-If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.  
+If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
 If you wish to install your own memory manager to handle allocations made by the SDK, you will need to pass the CUSTOM_MEMORY_MANAGEMENT cmake parameter (-DCUSTOM_MEMORY_MANAGEMENT) as well as define AWS_CUSTOM_MEMORY_MANAGEMENT in all build targets dependent on the SDK.
 
+Note, if you use our export file, this will be handled automatically for you. We recommend you use our export file to handle this for you:
+https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
+
+####Initialization and Shutdown
+We avoid global and static state where ever possible. However, on some platforms, dependencies need to be globally initialized. Also, we have a few global options such as
+logging, memory management, http factories, and crypto factories. As a result, before using the SDK you MUST call our global initialization function. When you are finished using the SDK you should call our cleanup function.
+
+All code using the AWS SDK and C++ should have at least the following:
+
+```
+#include <aws/core/Aws.h>
+...
+
+    Aws::SDKOptions options;
+    Aws::InitAPI(options);
+
+    //use the sdk
+
+    Aws::ShutdownAPI(options);
+```
+
+Due to the way memory managers work, many of the configuration options take closures instead of pointers directly in order to ensure that the memory manager
+is installed prior to any memory allocations occuring.
+
+Here are a few recipes:
+
+Just use defaults:
+```
+   SDKOptions options;
+   Aws::InitAPI(options);
+   .....
+   Aws::ShutdownAPI(options);
+```
+
+Turn logging on using the default logger:
+```
+   SDKOptions options;
+   options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
+   Aws::InitAPI(options);
+   .....
+   Aws::ShutdownAPI(options);
+```
+
+Install custom memory manager:
+```
+    MyMemoryManager memoryManager;
+
+    SDKOptions options;
+    options.memoryManagementOptions.memoryManager = &memoryManager;
+    Aws::InitAPI(options);
+    .....
+    Aws::ShutdownAPI(options);
+```
+
+Override default http client factory:
+```
+    SDKOptions options;
+    options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
+    Aws::InitAPI(options);
+    .....
+    Aws::ShutdownAPI(options);
+```
 
 ####Memory Management
 The AWS SDK for C++ provides a way to control memory allocation and deallocation in a library. 
@@ -129,13 +198,6 @@ For more information about the compile-time constant, see the STL and AWS String
 To allocate or deallocate memory: 
 1. Implement the MemorySystemInterface subclass: 
    aws/core/utils/memory/MemorySystemInterface.h
-
-2. Install a memory manager with an instance of your subclass by calling: 
-   InitializeAWSMemorySystem
-   Note: This should occur at the beginning of your application. 
-
-3. Just before exit, initialize a corresponding call: 
-ShutdownAWSMemorySystem
 
 In the following example, the type signature for AllocateMemory can be changed as needed: 
 
@@ -158,11 +220,13 @@ In Main:
 int main(void)
 {
   MyMemoryManager sdkMemoryManager;
-  Aws::Utils::Memory::InitializeAWSMemorySystem(sdkMemoryManager);
+  SDKOptions options;
+  options.memoryManagementOptions.memoryManager = &sdkMemoryManager;
+  Aws::InitAPI(options);
 
   // ... do stuff
 
-  Aws::Utils::Memory::ShutdownAWSMemorySystem();
+  Aws::ShutdownAPI(options);
 
   return 0;
 }
@@ -232,34 +296,17 @@ Follow these rules in the SDK code:
 ####Logging
 The AWS SDK for C++ includes logging support that you can configure. When initializing the logging system, you can control the filter level and the logging target (file with a name that has a configurable prefix or a stream). The log file generated by the prefix option rolls over once per hour to allow for archiving or deleting log files.
 
-`Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));`
+You can provide your own logger. However, it is incredibly simple to use the default logger we've already provided:
 
-If you do not call InitializeAWSLogging in your program, the SDK will not do any logging.
-Don't forget to shut it down at the end of your program:
-
-`Aws::Utils::Logging::ShutdownAWSLogging();`
-
-Example integration test: 
+In your main function:
 
 ```
-#include <aws/external/gtest.h>
-
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/logging/DefaultLogSystem.h>
-#include <aws/core/utils/logging/AWSLogging.h>
-
-#include <iostream>
-
-int main(int argc, char** argv)
-{
-  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>("RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
-  ::testing::InitGoogleTest(&argc, argv);
-  int exitCode = RUN_ALL_TESTS();
-  Aws::Utils::Logging::ShutdownAWSLogging();
-  return exitCode;
-}
+    SDKOptions options;
+    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
+    Aws::InitAPI(options);
+    //do SDK stuff;
+    Aws::ShutdownAPI(options);
 ```
-
 ####Client Configuration
 You can use the client configuration to control most functionality in the AWS SDK for C++.
 
@@ -319,7 +366,7 @@ Do not alter the endpoint.
 These settings allow you to configure a proxy for all communication with AWS. Examples of when this functionality might be useful include debugging in conjunction with the Burp suite, or using a proxy to connect to the internet.
 
 #####Executor
-The default behavior for the executor is to create and detach a thread for each async call. You can change this behavior by implementing a subclass of Executor and passing an instance.
+The default behavior for the executor is to create and detach a thread for each async call. You can change this behavior by implementing a subclass of Executor and passing an instance. We now provide a thread pooled executor as an option. For more information see this blog post: https://aws.amazon.com/blogs/developer/using-a-thread-pool-with-the-aws-sdk-for-c/
 
 #####Verify SSL
 If necessary, you can disable SSL certificate verification by setting the verify SSL value to false.
@@ -432,7 +479,7 @@ This section includes the following topics:
 * Controlling IOStreams Used by the HttpClient and the AWSClient
 
 #####Overriding your Http Client
-The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms is Curl. If needed, you can create a custom HttpClientFactory to pass to any service client’s constructor.
+The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms is Curl. If needed, you can create a custom HttpClientFactory, add it to the SDKOptions object which you pass to Aws::InitAPI().
 
 #####Provided Utilities
 The provided utilities include HTTP stack, string utils, hashing utils, JSON parser, and XML parser.
@@ -451,6 +498,12 @@ This header file provides core string functions, such as trim, lowercase, and nu
 /aws/core/utils/HashingUtils.h
 
 This header file provides hashing functions, such as SHA256, MD5, Base64, and SHA256_HMAC.
+
+######Cryptography
+/aws/core/utils/crypto/Cipher.h
+/aws/core/utils/crypto/Factories.h
+
+This header file provides access to secure random number generators, AES symmetric ciphers in CBC, CTR, and GCM modes, and the underlying Hash implementations that are used in HashingUtils.
 
 ######JSON Parser
 /aws/core/utils/json/JsonSerializer.h
@@ -492,7 +545,7 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 * Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly accross builds so please be explicit.
 * Namespace names should be UpperCammelCase. Never put a using namespace statement in a header file unless it is scoped by a class. It is fine to use a using namespace statement in a cpp file.
 * Use enum class, not enum
-* prefer `#pragma once for include guards.
+* prefer `#pragma once` for include guards.
 * Forward declare whenever possible.
 * Use nullptr instead of NULL.
 

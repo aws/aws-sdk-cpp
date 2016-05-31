@@ -20,7 +20,6 @@
         * the default http client factory will be used
         */
         ${className}(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr${signPayloads});
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration()${signPayloads});
 
         virtual ~${className}();

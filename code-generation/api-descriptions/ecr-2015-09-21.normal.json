@@ -685,7 +685,7 @@
           "documentation":"<p>The image manifest associated with the image.</p>"
         }
       },
-      "documentation":"<p>An object representing an Amazon ECR image.</p>"
+      "documentation":"<p>Object representing an image.</p>"
     },
     "ImageAlreadyExistsException":{
       "type":"structure",
@@ -714,8 +714,7 @@
           "shape":"ImageFailureReason",
           "documentation":"<p>The reason for the failure.</p>"
         }
-      },
-      "documentation":"<p>An object representing an Amazon ECR image failure.</p>"
+      }
     },
     "ImageFailureCode":{
       "type":"string",
@@ -743,8 +742,7 @@
           "shape":"ImageTag",
           "documentation":"<p>The tag used for the image.</p>"
         }
-      },
-      "documentation":"<p>An object with identifying information for an Amazon ECR image.</p>"
+      }
     },
     "ImageIdentifierList":{
       "type":"list",
@@ -849,8 +847,7 @@
           "shape":"LayerSizeInBytes",
           "documentation":"<p>The size, in bytes, of the image layer.</p>"
         }
-      },
-      "documentation":"<p>An object representing an Amazon ECR image layer.</p>"
+      }
     },
     "LayerAlreadyExistsException":{
       "type":"structure",
@@ -895,8 +892,7 @@
           "shape":"LayerFailureReason",
           "documentation":"<p>The reason for the failure.</p>"
         }
-      },
-      "documentation":"<p>An object representing an Amazon ECR image layer failure.</p>"
+      }
     },
     "LayerFailureCode":{
       "type":"string",
@@ -1060,7 +1056,7 @@
           "documentation":"<p>The URI for the repository. You can use this URI for Docker <code>push</code> and <code>pull</code> operations.</p>"
         }
       },
-      "documentation":"<p>An object representing a repository.</p>"
+      "documentation":"<p>Object representing a repository.</p>"
     },
     "RepositoryAlreadyExistsException":{
       "type":"structure",

@@ -70,48 +70,48 @@ namespace Model
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline DescribeCacheParametersRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline DescribeCacheParametersRequest& WithSource(Aws::String&& value) { SetSource(value); return *this;}
 
     /**
      * <p>The parameter types to return.</p> <p>Valid values: <code>user</code> |
-     * <code>system</code> | <code>engine-default</code></p>
+     * <code>system</code> | <code>engine-default</code> </p>
      */
     inline DescribeCacheParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
     /**
-     * <p>The maximum number of records to include in the response. If more records
+     * <p>The maximum number of brecords to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
@@ -119,7 +119,7 @@ namespace Model
     inline long GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>The maximum number of records to include in the response. If more records
+     * <p>The maximum number of brecords to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
@@ -127,7 +127,7 @@ namespace Model
     inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>The maximum number of records to include in the response. If more records
+     * <p>The maximum number of brecords to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a marker is included in
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>

@@ -36,86 +36,86 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> A required parameter. Options available for the given engine name will be
-     * described. </p>
+     * <p>A required parameter. Options available for the given engine name will be
+     * described.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> If specified, filters the results to include only options for the specified
-     * major engine version. </p>
+     * <p>If specified, filters the results to include only options for the specified
+     * major engine version.</p>
      */
     inline DescribeOptionGroupOptionsRequest& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 

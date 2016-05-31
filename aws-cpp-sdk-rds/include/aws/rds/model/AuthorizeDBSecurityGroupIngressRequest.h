@@ -34,72 +34,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB security group to add authorization to. </p>
+     * <p>The name of the DB security group to add authorization to.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline void SetCIDRIP(Aws::String&& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline void SetCIDRIP(const char* value) { m_cIDRIPHasBeenSet = true; m_cIDRIP.assign(value); }
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(const Aws::String& value) { SetCIDRIP(value); return *this;}
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(Aws::String&& value) { SetCIDRIP(value); return *this;}
 
     /**
-     * <p> The IP range to authorize. </p>
+     * <p>The IP range to authorize.</p>
      */
     inline AuthorizeDBSecurityGroupIngressRequest& WithCIDRIP(const char* value) { SetCIDRIP(value); return *this;}
 

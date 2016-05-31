@@ -106,148 +106,148 @@ namespace Model
     inline PendingModifiedValues& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p> Contains the pending or in-progress change of the master credentials for the
-     * DB instance. </p>
+     * <p>Contains the pending or in-progress change of the master credentials for the
+     * DB instance.</p>
      */
     inline PendingModifiedValues& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p> Specifies the pending port for the DB instance. </p>
+     * <p>Specifies the pending port for the DB instance.</p>
      */
     inline long GetPort() const{ return m_port; }
 
     /**
-     * <p> Specifies the pending port for the DB instance. </p>
+     * <p>Specifies the pending port for the DB instance.</p>
      */
     inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p> Specifies the pending port for the DB instance. </p>
+     * <p>Specifies the pending port for the DB instance.</p>
      */
     inline PendingModifiedValues& WithPort(long value) { SetPort(value); return *this;}
 
     /**
-     * <p> Specifies the pending number of days for which automated backups are
-     * retained. </p>
+     * <p>Specifies the pending number of days for which automated backups are
+     * retained.</p>
      */
     inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
-     * <p> Specifies the pending number of days for which automated backups are
-     * retained. </p>
+     * <p>Specifies the pending number of days for which automated backups are
+     * retained.</p>
      */
     inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
-     * <p> Specifies the pending number of days for which automated backups are
-     * retained. </p>
+     * <p>Specifies the pending number of days for which automated backups are
+     * retained.</p>
      */
     inline PendingModifiedValues& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
-     * <p> Indicates that the Single-AZ DB instance is to change to a Multi-AZ
-     * deployment. </p>
+     * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
+     * deployment.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p> Indicates that the Single-AZ DB instance is to change to a Multi-AZ
-     * deployment. </p>
+     * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
+     * deployment.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p> Indicates that the Single-AZ DB instance is to change to a Multi-AZ
-     * deployment. </p>
+     * <p>Indicates that the Single-AZ DB instance is to change to a Multi-AZ
+     * deployment.</p>
      */
     inline PendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates the database engine version. </p>
+     * <p>Indicates the database engine version.</p>
      */
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied. </p>
+     * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
+     * applied or is being applied.</p>
      */
     inline long GetIops() const{ return m_iops; }
 
     /**
-     * <p> Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied. </p>
+     * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
+     * applied or is being applied.</p>
      */
     inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p> Specifies the new Provisioned IOPS value for the DB instance that will be
-     * applied or is being applied. </p>
+     * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
+     * applied or is being applied.</p>
      */
     inline PendingModifiedValues& WithIops(long value) { SetIops(value); return *this;}
 
@@ -294,37 +294,37 @@ namespace Model
     inline PendingModifiedValues& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline PendingModifiedValues& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline PendingModifiedValues& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p> Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Specifies the storage type to be associated with the DB instance.</p>
      */
     inline PendingModifiedValues& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

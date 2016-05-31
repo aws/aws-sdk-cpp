@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NatGatewayState.h>
+#include <aws/ec2/model/ProvisionedBandwidth.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
 
 namespace Aws
@@ -495,6 +496,46 @@ namespace Model
      */
     inline NatGateway& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline const ProvisionedBandwidth& GetProvisionedBandwidth() const{ return m_provisionedBandwidth; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetProvisionedBandwidth(const ProvisionedBandwidth& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = value; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline void SetProvisionedBandwidth(ProvisionedBandwidth&& value) { m_provisionedBandwidthHasBeenSet = true; m_provisionedBandwidth = value; }
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline NatGateway& WithProvisionedBandwidth(const ProvisionedBandwidth& value) { SetProvisionedBandwidth(value); return *this;}
+
+    /**
+     * <p>Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented
+     * limits</a>, contact us through the <a
+     * href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+     */
+    inline NatGateway& WithProvisionedBandwidth(ProvisionedBandwidth&& value) { SetProvisionedBandwidth(value); return *this;}
+
   private:
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
@@ -514,6 +555,8 @@ namespace Model
     bool m_failureCodeHasBeenSet;
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet;
+    ProvisionedBandwidth m_provisionedBandwidth;
+    bool m_provisionedBandwidthHasBeenSet;
   };
 
 } // namespace Model

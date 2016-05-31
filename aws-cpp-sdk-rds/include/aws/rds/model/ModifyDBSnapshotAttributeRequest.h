@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_RDS_API ModifyDBSnapshotAttributeRequest : public RDSRequest
   {
@@ -71,136 +72,136 @@ namespace Model
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the DB snapshot attribute to modify.</p> <p>To manage
      * authorization for other AWS accounts to copy or restore a manual DB snapshot,
-     * this value is <code>restore</code>.</p>
+     * set this value to <code>restore</code>.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValuesToAdd() const{ return m_valuesToAdd; }
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline void SetValuesToAdd(const Aws::Vector<Aws::String>& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline void SetValuesToAdd(Aws::Vector<Aws::String>&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd = value; }
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithValuesToAdd(const Aws::Vector<Aws::String>& value) { SetValuesToAdd(value); return *this;}
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithValuesToAdd(Aws::Vector<Aws::String>&& value) { SetValuesToAdd(value); return *this;}
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(const Aws::String& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(Aws::String&& value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
 
     /**
      * <p>A list of DB snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS Accounts to copy or
-     * restore a manual snapshot, this is one or more AWS account identifiers, or
-     * <code>all</code> to make the manual DB snapshot restorable by any AWS account.
-     * Do not add the <code>all</code> value for any manual DB snapshots that contain
-     * private information that you do not want to be available to all AWS
+     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
+     * restore a manual snapshot, set this list to include one or more AWS account IDs,
+     * or <code>all</code> to make the manual DB snapshot restorable by any AWS
+     * account. Do not add the <code>all</code> value for any manual DB snapshots that
+     * contain private information that you don't want available to all AWS
      * accounts.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToAdd(const char* value) { m_valuesToAddHasBeenSet = true; m_valuesToAdd.push_back(value); return *this; }
@@ -208,88 +209,96 @@ namespace Model
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValuesToRemove() const{ return m_valuesToRemove; }
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline void SetValuesToRemove(const Aws::Vector<Aws::String>& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = value; }
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline void SetValuesToRemove(Aws::Vector<Aws::String>&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove = value; }
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithValuesToRemove(const Aws::Vector<Aws::String>& value) { SetValuesToRemove(value); return *this;}
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& WithValuesToRemove(Aws::Vector<Aws::String>&& value) { SetValuesToRemove(value); return *this;}
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(const Aws::String& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(Aws::String&& value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of DB snapshot attributes to remove from the attribute specified by
      * <code>AttributeName</code>.</p> <p>To remove authorization for other AWS
-     * Accounts to copy or restore a manual snapshot, this is one or more AWS account
-     * identifiers, or <code>all</code> to remove authorization for any AWS account to
-     * copy or restore the DB snapshot. If you specify <code>all</code>, AWS accounts
-     * that have their account identifier explicitly added to the <code>restore</code>
-     * attribute can still copy or restore the manual DB snapshot.</p>
+     * accounts to copy or restore a manual snapshot, set this list to include one or
+     * more AWS account identifiers, or <code>all</code> to remove authorization for
+     * any AWS account to copy or restore the DB snapshot. If you specify
+     * <code>all</code>, an AWS account whose account ID is explicitly added to the
+     * <code>restore</code> attribute can still copy or restore the manual DB
+     * snapshot.</p>
      */
     inline ModifyDBSnapshotAttributeRequest& AddValuesToRemove(const char* value) { m_valuesToRemoveHasBeenSet = true; m_valuesToRemove.push_back(value); return *this; }
 

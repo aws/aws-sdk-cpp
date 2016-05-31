@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
+#include <aws/gamelift/model/ProtectionPolicy.h>
 
 namespace Aws
 {
@@ -163,6 +164,46 @@ namespace Model
      */
     inline UpdateGameSessionRequest& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(value); return *this;}
 
+    /**
+     * <p>Game session protection policy to apply to this game session only.
+     * <ul><li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
+     * cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
+
+    /**
+     * <p>Game session protection policy to apply to this game session only.
+     * <ul><li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
+     * cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to this game session only.
+     * <ul><li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
+     * cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
+
+    /**
+     * <p>Game session protection policy to apply to this game session only.
+     * <ul><li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
+     * cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline UpdateGameSessionRequest& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>Game session protection policy to apply to this game session only.
+     * <ul><li>NoProtection: The game session can be terminated during a scale-down
+     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
+     * cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(value); return *this;}
+
   private:
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
@@ -172,6 +213,8 @@ namespace Model
     bool m_nameHasBeenSet;
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
     bool m_playerSessionCreationPolicyHasBeenSet;
+    ProtectionPolicy m_protectionPolicy;
+    bool m_protectionPolicyHasBeenSet;
   };
 
 } // namespace Model

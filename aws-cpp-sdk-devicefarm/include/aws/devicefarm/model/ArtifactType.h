@@ -47,7 +47,8 @@ namespace Model
     EXPLORER_EVENT_LOG,
     EXPLORER_SUMMARY_LOG,
     APPLICATION_CRASH_REPORT,
-    XCTEST_LOG
+    XCTEST_LOG,
+    VIDEO
   };
 
 namespace ArtifactTypeMapper

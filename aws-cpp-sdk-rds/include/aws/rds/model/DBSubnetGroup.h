@@ -34,11 +34,12 @@ namespace Model
 {
 
   /**
-   * <p> Contains the result of a successful invocation of the following actions:
-   * </p> <ul> <li> <a>CreateDBSubnetGroup</a> </li> <li> <a>ModifyDBSubnetGroup</a>
-   * </li> <li> <a>DescribeDBSubnetGroups</a> </li> <li> <a>DeleteDBSubnetGroup</a>
-   * </li> </ul> <p>This data type is used as a response element in the
-   * <a>DescribeDBSubnetGroups</a> action.</p>
+   * <p>Contains the result of a successful invocation of the following actions:</p>
+   * <ul> <li> <p> <a>CreateDBSubnetGroup</a> </p> </li> <li> <p>
+   * <a>ModifyDBSubnetGroup</a> </p> </li> <li> <p> <a>DescribeDBSubnetGroups</a>
+   * </p> </li> <li> <p> <a>DeleteDBSubnetGroup</a> </p> </li> </ul> <p>This data
+   * type is used as a response element in the <a>DescribeDBSubnetGroups</a>
+   * action.</p>
    */
   class AWS_RDS_API DBSubnetGroup
   {
@@ -51,142 +52,142 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB subnet group. </p>
+     * <p>The name of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline const Aws::String& GetDBSubnetGroupDescription() const{ return m_dBSubnetGroupDescription; }
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupDescription(const Aws::String& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupDescription(Aws::String&& value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription = value; }
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline void SetDBSubnetGroupDescription(const char* value) { m_dBSubnetGroupDescriptionHasBeenSet = true; m_dBSubnetGroupDescription.assign(value); }
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupDescription(const Aws::String& value) { SetDBSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupDescription(Aws::String&& value) { SetDBSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> Provides the description of the DB subnet group. </p>
+     * <p>Provides the description of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithDBSubnetGroupDescription(const char* value) { SetDBSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithVpcId(Aws::String&& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> Provides the VpcId of the DB subnet group. </p>
+     * <p>Provides the VpcId of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline const Aws::String& GetSubnetGroupStatus() const{ return m_subnetGroupStatus; }
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline void SetSubnetGroupStatus(const Aws::String& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline void SetSubnetGroupStatus(Aws::String&& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline void SetSubnetGroupStatus(const char* value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus.assign(value); }
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithSubnetGroupStatus(const Aws::String& value) { SetSubnetGroupStatus(value); return *this;}
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithSubnetGroupStatus(Aws::String&& value) { SetSubnetGroupStatus(value); return *this;}
 
     /**
-     * <p> Provides the status of the DB subnet group. </p>
+     * <p>Provides the status of the DB subnet group.</p>
      */
     inline DBSubnetGroup& WithSubnetGroupStatus(const char* value) { SetSubnetGroupStatus(value); return *this;}
 

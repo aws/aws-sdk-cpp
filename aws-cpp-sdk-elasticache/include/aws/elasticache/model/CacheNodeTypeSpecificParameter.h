@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/ChangeType.h>
 #include <aws/elasticache/model/CacheNodeTypeSpecificValue.h>
 
 namespace Aws
@@ -322,6 +323,56 @@ namespace Model
      */
     inline CacheNodeTypeSpecificParameter& AddCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValue&& value) { m_cacheNodeTypeSpecificValuesHasBeenSet = true; m_cacheNodeTypeSpecificValues.push_back(value); return *this; }
 
+    /**
+     * <p>ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can force a
+     * reboot or wait until the next maintenance window's reboot. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline const ChangeType& GetChangeType() const{ return m_changeType; }
+
+    /**
+     * <p>ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can force a
+     * reboot or wait until the next maintenance window's reboot. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+
+    /**
+     * <p>ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can force a
+     * reboot or wait until the next maintenance window's reboot. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+
+    /**
+     * <p>ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can force a
+     * reboot or wait until the next maintenance window's reboot. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline CacheNodeTypeSpecificParameter& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
+
+    /**
+     * <p>ChangeType indicates whether a change to the parameter will be applied
+     * immediately or requires a reboot for the change to be applied. You can force a
+     * reboot or wait until the next maintenance window's reboot. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline CacheNodeTypeSpecificParameter& WithChangeType(ChangeType&& value) { SetChangeType(value); return *this;}
+
   private:
     Aws::String m_parameterName;
     bool m_parameterNameHasBeenSet;
@@ -339,6 +390,8 @@ namespace Model
     bool m_minimumEngineVersionHasBeenSet;
     Aws::Vector<CacheNodeTypeSpecificValue> m_cacheNodeTypeSpecificValues;
     bool m_cacheNodeTypeSpecificValuesHasBeenSet;
+    ChangeType m_changeType;
+    bool m_changeTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -3272,8 +3272,14 @@
           "shape":"IsTruncated",
           "documentation":"A flag that indicates whether or not Amazon S3 returned all of the results that satisfied the search criteria."
         },
-        "Contents":{"shape":"ObjectList"},
-        "Name":{"shape":"BucketName"},
+        "Contents":{
+          "shape":"ObjectList",
+          "documentation":"Metadata about each object returned."
+        },
+        "Name":{
+          "shape":"BucketName",
+          "documentation":"Name of the bucket to list."
+        },
         "Prefix":{
           "shape":"Prefix",
           "documentation":"Limits the response to keys that begin with the specified prefix."
@@ -3286,7 +3292,10 @@
           "shape":"MaxKeys",
           "documentation":"Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more."
         },
-        "CommonPrefixes":{"shape":"CommonPrefixList"},
+        "CommonPrefixes":{
+          "shape":"CommonPrefixList",
+          "documentation":"CommonPrefixes contains all (if there are any) keys between Prefix and the next occurrence of the string specified by delimiter"
+        },
         "EncodingType":{
           "shape":"EncodingType",
           "documentation":"Encoding type used by Amazon S3 to encode object keys in the response."
@@ -3315,6 +3324,7 @@
       "members":{
         "Bucket":{
           "shape":"BucketName",
+          "documentation":"Name of the bucket to list.",
           "location":"uri",
           "locationName":"Bucket"
         },

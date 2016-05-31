@@ -61,46 +61,74 @@ namespace Model
      */
     inline ListObjectsV2Result& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline const Aws::Vector<Object>& GetContents() const{ return m_contents; }
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline void SetContents(const Aws::Vector<Object>& value) { m_contents = value; }
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline void SetContents(Aws::Vector<Object>&& value) { m_contents = value; }
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline ListObjectsV2Result& WithContents(const Aws::Vector<Object>& value) { SetContents(value); return *this;}
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline ListObjectsV2Result& WithContents(Aws::Vector<Object>&& value) { SetContents(value); return *this;}
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline ListObjectsV2Result& AddContents(const Object& value) { m_contents.push_back(value); return *this; }
 
-    
+    /**
+     * Metadata about each object returned.
+     */
     inline ListObjectsV2Result& AddContents(Object&& value) { m_contents.push_back(value); return *this; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetName(Aws::String&& value) { m_name = value; }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline void SetName(const char* value) { m_name.assign(value); }
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(value); return *this;}
 
-    
+    /**
+     * Name of the bucket to list.
+     */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
 
     /**
@@ -191,25 +219,46 @@ namespace Model
      */
     inline ListObjectsV2Result& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = value; }
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline ListObjectsV2Result& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline ListObjectsV2Result& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(value); return *this;}
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline ListObjectsV2Result& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    
+    /**
+     * CommonPrefixes contains all (if there are any) keys between Prefix and the next
+     * occurrence of the string specified by delimiter
+     */
     inline ListObjectsV2Result& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**

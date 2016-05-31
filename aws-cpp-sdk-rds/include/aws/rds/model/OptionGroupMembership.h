@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Provides information on the option groups the DB instance is a member of.
-   * </p>
+   * <p>Provides information on the option groups the DB instance is a member of.</p>
    */
   class AWS_RDS_API OptionGroupMembership
   {
@@ -46,37 +45,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> The name of the option group that the instance belongs to. </p>
+     * <p>The name of the option group that the instance belongs to.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 

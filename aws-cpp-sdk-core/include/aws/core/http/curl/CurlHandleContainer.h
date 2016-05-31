@@ -69,7 +69,6 @@ private:
     unsigned long m_requestTimeout;
     unsigned long m_connectTimeout;
     unsigned m_poolSize;
-    static bool isInit;
 };
 
 } // namespace Http

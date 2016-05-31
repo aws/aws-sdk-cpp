@@ -47,184 +47,184 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the option group. </p>
+     * <p>Specifies the name of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline const Aws::String& GetOptionGroupDescription() const{ return m_optionGroupDescription; }
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline void SetOptionGroupDescription(const Aws::String& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline void SetOptionGroupDescription(Aws::String&& value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription = value; }
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline void SetOptionGroupDescription(const char* value) { m_optionGroupDescriptionHasBeenSet = true; m_optionGroupDescription.assign(value); }
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupDescription(const Aws::String& value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupDescription(Aws::String&& value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p>Provides a description of the option group. </p>
+     * <p>Provides a description of the option group.</p>
      */
     inline OptionGroup& WithOptionGroupDescription(const char* value) { SetOptionGroupDescription(value); return *this;}
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline OptionGroup& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline OptionGroup& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Indicates the name of the engine that this option group can be applied to.
-     * </p>
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
      */
     inline OptionGroup& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline void SetMajorEngineVersion(Aws::String&& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline void SetMajorEngineVersion(const char* value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion.assign(value); }
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline OptionGroup& WithMajorEngineVersion(const Aws::String& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline OptionGroup& WithMajorEngineVersion(Aws::String&& value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates the major engine version associated with this option group. </p>
+     * <p>Indicates the major engine version associated with this option group.</p>
      */
     inline OptionGroup& WithMajorEngineVersion(const char* value) { SetMajorEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline const Aws::Vector<Option>& GetOptions() const{ return m_options; }
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline void SetOptions(const Aws::Vector<Option>& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline void SetOptions(Aws::Vector<Option>&& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline OptionGroup& WithOptions(const Aws::Vector<Option>& value) { SetOptions(value); return *this;}
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline OptionGroup& WithOptions(Aws::Vector<Option>&& value) { SetOptions(value); return *this;}
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline OptionGroup& AddOptions(const Option& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
 
     /**
-     * <p> Indicates what options are available in the option group. </p>
+     * <p>Indicates what options are available in the option group.</p>
      */
     inline OptionGroup& AddOptions(Option&& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
 

@@ -26,7 +26,8 @@ UpdateGameSessionRequest::UpdateGameSessionRequest() :
     m_maximumPlayerSessionCount(0),
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_playerSessionCreationPolicyHasBeenSet(false)
+    m_playerSessionCreationPolicyHasBeenSet(false),
+    m_protectionPolicyHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,11 @@ Aws::String UpdateGameSessionRequest::SerializePayload() const
   if(m_playerSessionCreationPolicyHasBeenSet)
   {
    payload.WithString("PlayerSessionCreationPolicy", PlayerSessionCreationPolicyMapper::GetNameForPlayerSessionCreationPolicy(m_playerSessionCreationPolicy));
+  }
+
+  if(m_protectionPolicyHasBeenSet)
+  {
+   payload.WithString("ProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_protectionPolicy));
   }
 
   return payload.WriteReadable();

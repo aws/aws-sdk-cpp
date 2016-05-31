@@ -133,6 +133,7 @@
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
+#include <aws/ec2/model/GetConsoleScreenshotResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/ImportImageResponse.h>
 #include <aws/ec2/model/ImportInstanceResponse.h>
@@ -362,6 +363,7 @@ namespace Model
         class EnableVpcClassicLinkRequest;
         class EnableVpcClassicLinkDnsSupportRequest;
         class GetConsoleOutputRequest;
+        class GetConsoleScreenshotRequest;
         class GetPasswordDataRequest;
         class ImportImageRequest;
         class ImportInstanceRequest;
@@ -566,6 +568,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkOutcome;
         typedef Aws::Utils::Outcome<EnableVpcClassicLinkDnsSupportResponse, Aws::Client::AWSError<EC2Errors>> EnableVpcClassicLinkDnsSupportOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
+        typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleScreenshotOutcome;
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, Aws::Client::AWSError<EC2Errors>> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<ImportImageResponse, Aws::Client::AWSError<EC2Errors>> ImportImageOutcome;
         typedef Aws::Utils::Outcome<ImportInstanceResponse, Aws::Client::AWSError<EC2Errors>> ImportInstanceOutcome;
@@ -770,6 +773,7 @@ namespace Model
         typedef std::future<EnableVpcClassicLinkOutcome> EnableVpcClassicLinkOutcomeCallable;
         typedef std::future<EnableVpcClassicLinkDnsSupportOutcome> EnableVpcClassicLinkDnsSupportOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
+        typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
         typedef std::future<ImportInstanceOutcome> ImportInstanceOutcomeCallable;
@@ -977,6 +981,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::EnableVpcClassicLinkRequest&, const Model::EnableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVpcClassicLinkResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVpcClassicLinkDnsSupportRequest&, const Model::EnableVpcClassicLinkDnsSupportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVpcClassicLinkDnsSupportResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetConsoleScreenshotRequest&, const Model::GetConsoleScreenshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleScreenshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportImageRequest&, const Model::ImportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportInstanceRequest&, const Model::ImportInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstanceResponseReceivedHandler;
@@ -1056,8 +1061,7 @@ namespace Model
         * the default http client factory will be used
         */
         EC2Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~EC2Client();
 
@@ -6666,6 +6670,31 @@ namespace Model
         virtual void GetConsoleOutputAsync(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve a JPG-format screenshot of an instance to help with
+         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
+         * For command line tools, the decoding is performed for you.</p>
+         */
+        virtual Model::GetConsoleScreenshotOutcome GetConsoleScreenshot(const Model::GetConsoleScreenshotRequest& request) const;
+
+        /**
+         * <p>Retrieve a JPG-format screenshot of an instance to help with
+         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
+         * For command line tools, the decoding is performed for you.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConsoleScreenshotOutcomeCallable GetConsoleScreenshotCallable(const Model::GetConsoleScreenshotRequest& request) const;
+
+        /**
+         * <p>Retrieve a JPG-format screenshot of an instance to help with
+         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
+         * For command line tools, the decoding is performed for you.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the encrypted administrator password for an instance running
          * Windows.</p> <p>The Windows password is generated at boot if the
          * <code>EC2Config</code> service plugin, <code>Ec2SetPassword</code>, is enabled.
@@ -7464,9 +7493,7 @@ namespace Model
          * address is moved, it is no longer available for use in the EC2-Classic platform,
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
-         * EC2-VPC platform to the EC2-Classic platform. You cannot migrate an Elastic IP
-         * address that's associated with a reverse DNS record. Contact AWS account and
-         * billing support to remove the reverse DNS record. </p>
+         * EC2-VPC platform to the EC2-Classic platform. </p>
          */
         virtual Model::MoveAddressToVpcOutcome MoveAddressToVpc(const Model::MoveAddressToVpcRequest& request) const;
 
@@ -7477,9 +7504,7 @@ namespace Model
          * address is moved, it is no longer available for use in the EC2-Classic platform,
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
-         * EC2-VPC platform to the EC2-Classic platform. You cannot migrate an Elastic IP
-         * address that's associated with a reverse DNS record. Contact AWS account and
-         * billing support to remove the reverse DNS record. </p>
+         * EC2-VPC platform to the EC2-Classic platform. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -7492,9 +7517,7 @@ namespace Model
          * address is moved, it is no longer available for use in the EC2-Classic platform,
          * unless you move it back using the <a>RestoreAddressToClassic</a> request. You
          * cannot move an Elastic IP address that was originally allocated for use in the
-         * EC2-VPC platform to the EC2-Classic platform. You cannot migrate an Elastic IP
-         * address that's associated with a reverse DNS record. Contact AWS account and
-         * billing support to remove the reverse DNS record. </p>
+         * EC2-VPC platform to the EC2-Classic platform. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8242,9 +8265,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. You cannot restore an
-         * Elastic IP address that's associated with a reverse DNS record. Contact AWS
-         * account and billing support to remove the reverse DNS record. </p>
+         * not be associated with an instance or network interface. </p>
          */
         virtual Model::RestoreAddressToClassicOutcome RestoreAddressToClassic(const Model::RestoreAddressToClassicRequest& request) const;
 
@@ -8252,9 +8273,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. You cannot restore an
-         * Elastic IP address that's associated with a reverse DNS record. Contact AWS
-         * account and billing support to remove the reverse DNS record. </p>
+         * not be associated with an instance or network interface. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -8264,9 +8283,7 @@ namespace Model
          * <p>Restores an Elastic IP address that was previously moved to the EC2-VPC
          * platform back to the EC2-Classic platform. You cannot move an Elastic IP address
          * that was originally allocated for use in EC2-VPC. The Elastic IP address must
-         * not be associated with an instance or network interface. You cannot restore an
-         * Elastic IP address that's associated with a reverse DNS record. Contact AWS
-         * account and billing support to remove the reverse DNS record. </p>
+         * not be associated with an instance or network interface. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -8363,9 +8380,13 @@ namespace Model
          * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
          * large requests into smaller batches. For example, create five separate launch
          * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>If you don't specify a security group when launching an
-         * instance, Amazon EC2 uses the default security group. For more information, see
-         * <a
+         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
+         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
+         * launching an instance, Amazon EC2 uses the default security group. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8405,9 +8426,13 @@ namespace Model
          * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
          * large requests into smaller batches. For example, create five separate launch
          * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>If you don't specify a security group when launching an
-         * instance, Amazon EC2 uses the default security group. For more information, see
-         * <a
+         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
+         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
+         * launching an instance, Amazon EC2 uses the default security group. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8449,9 +8474,13 @@ namespace Model
          * <a>DescribeInstances</a>.</p> <p>To ensure faster instance launches, break up
          * large requests into smaller batches. For example, create five separate launch
          * requests for 100 instances each instead of one launch request for 500
-         * instances.</p> <p>If you don't specify a security group when launching an
-         * instance, Amazon EC2 uses the default security group. For more information, see
-         * <a
+         * instances.</p> <p>To tag your instance, ensure that it is <code>running</code>
+         * as <a>CreateTags</a> requires a resource ID. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * Your Amazon EC2 Resources</a>.</p> <p>If you don't specify a security group when
+         * launching an instance, Amazon EC2 uses the default security group. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-VPC only accounts] If you don't specify a subnet in the request, we
@@ -8961,6 +8990,7 @@ namespace Model
         void EnableVpcClassicLinkAsyncHelper(const Model::EnableVpcClassicLinkRequest& request, const EnableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVpcClassicLinkDnsSupportAsyncHelper(const Model::EnableVpcClassicLinkDnsSupportRequest& request, const EnableVpcClassicLinkDnsSupportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetConsoleScreenshotAsyncHelper(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportImageAsyncHelper(const Model::ImportImageRequest& request, const ImportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportInstanceAsyncHelper(const Model::ImportInstanceRequest& request, const ImportInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
