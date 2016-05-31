@@ -317,13 +317,11 @@ endif()
 
 add_library(aws-cpp-sdk-core ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
 
-if(PLATFORM_ANDROID)
-    if(ENABLE_CURL_CLIENT)
-        add_dependencies(aws-cpp-sdk-core CURL)
-    endif()
-    if(ENABLE_OPENSSL_ENCRYPTION)
-        add_dependencies(aws-cpp-sdk-core OPENSSL)
-    endif()
+if(ENABLE_CURL_CLIENT AND BUILD_CURL)
+    add_dependencies(aws-cpp-sdk-core CURL)
+endif()
+if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
+    add_dependencies(aws-cpp-sdk-core OPENSSL)
 endif()
 
 target_include_directories(aws-cpp-sdk-core PUBLIC
