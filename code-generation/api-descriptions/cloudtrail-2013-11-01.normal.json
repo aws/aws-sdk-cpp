@@ -56,7 +56,6 @@
         {"shape":"InvalidParameterCombinationException"},
         {"shape":"KmsKeyNotFoundException"},
         {"shape":"KmsKeyDisabledException"},
-        {"shape":"KmsKeyInvalidStateException"},
         {"shape":"InvalidCloudWatchLogsLogGroupArnException"},
         {"shape":"InvalidCloudWatchLogsRoleArnException"},
         {"shape":"CloudWatchLogsDeliveryUnavailableException"},
@@ -242,7 +241,6 @@
         {"shape":"InvalidHomeRegionException"},
         {"shape":"KmsKeyNotFoundException"},
         {"shape":"KmsKeyDisabledException"},
-        {"shape":"KmsKeyInvalidStateException"},
         {"shape":"InvalidCloudWatchLogsLogGroupArnException"},
         {"shape":"InvalidCloudWatchLogsRoleArnException"},
         {"shape":"CloudWatchLogsDeliveryUnavailableException"},
@@ -688,12 +686,6 @@
       "members":{
       },
       "documentation":"<p>This exception is thrown when the KMS key is disabled.</p>",
-      "exception":true
-    },
-    "KmsKeyInvalidStateException":{
-      "type":"structure",
-      "members":{
-      },
       "exception":true
     },
     "KmsKeyNotFoundException":{

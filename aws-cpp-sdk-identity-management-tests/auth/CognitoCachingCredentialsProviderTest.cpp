@@ -109,9 +109,10 @@ namespace
             mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
             mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
             mockHttpClientFactory->SetClient(mockHttpClient);
+            SetHttpClientFactory(mockHttpClientFactory);
             cognitoIdentityClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG,
                                                                            Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, "", ""),
-                                                                           config, mockHttpClientFactory);
+                                                                           config);
             mockIdentityRepository = Aws::MakeShared<MockPersistentCognitoIdentityProvider>(ALLOCATION_TAG);
             mockIdentityRepository->SetIdentityPoolId("TestIdentityPool");
             mockIdentityRepository->SetAccountId("598156584");
@@ -141,7 +142,7 @@ namespace
     TEST_F(CognitoCachingCredentialsProviderTest, TestAnonymousGetCredentialsNoIdentity)
     {
         std::shared_ptr<HttpRequest> getIdrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
@@ -150,7 +151,7 @@ namespace
         mockHttpClient->AddResponseToReturn(getIdResponse);
 
         std::shared_ptr<HttpRequest> getCredsrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
@@ -180,7 +181,7 @@ namespace
     TEST_F(CognitoCachingCredentialsProviderTest, TestAnonymousGetCredentialsHasIdentity)
     {
         std::shared_ptr<HttpRequest> getCredsrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
@@ -211,7 +212,7 @@ namespace
     TEST_F(CognitoCachingCredentialsProviderTest, TestAnonymousGetCredentialsServiceCallsFail)
     {
         std::shared_ptr<HttpRequest> getIdrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
 
         getIdResponse->SetResponseCode(HttpResponseCode::BAD_REQUEST);
@@ -244,7 +245,7 @@ namespace
     TEST_F(CognitoCachingCredentialsProviderTest, TestAuthenticatedGetCredentialsNoIdentity)
     {
         std::shared_ptr<HttpRequest> getIdrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
@@ -253,7 +254,7 @@ namespace
         mockHttpClient->AddResponseToReturn(getIdResponse);
 
         std::shared_ptr<HttpRequest> getCredsrequest =
-                mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+                mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
@@ -297,7 +298,7 @@ namespace
     {
         //do an anoymous auth run
         std::shared_ptr<HttpRequest> getIdrequest =
-            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getIdResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getIdrequest));
 
         getIdResponse->SetResponseCode(HttpResponseCode::OK);
@@ -306,7 +307,7 @@ namespace
         mockHttpClient->AddResponseToReturn(getIdResponse);
 
         std::shared_ptr<HttpRequest> getCredsrequest =
-            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         std::shared_ptr<StandardHttpResponse> getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);
@@ -347,7 +348,7 @@ namespace
         Aws::String SECRET_KEY_ID = "SecretKey2";
 
         getCredsrequest =
-            mockHttpClientFactory->CreateHttpRequest("www.uri.com", HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+            mockHttpClientFactory->CreateHttpRequest(URI("www.uri.com"), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         getCredsResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*getCredsrequest));
 
         getCredsResponse->SetResponseCode(HttpResponseCode::OK);

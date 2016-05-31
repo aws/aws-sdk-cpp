@@ -98,21 +98,21 @@ namespace Model
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
-     * to 32766</p>
+     * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
     inline long GetRuleNumber() const{ return m_ruleNumber; }
 
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
-     * to 32766</p>
+     * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
     inline void SetRuleNumber(long value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
 
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
-     * to 32766</p>
+     * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
     inline CreateNetworkAclEntryRequest& WithRuleNumber(long value) { SetRuleNumber(value); return *this;}
 

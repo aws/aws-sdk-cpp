@@ -293,8 +293,7 @@ namespace Model
         * the default http client factory will be used
         */
         ElastiCacheClient(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(),
-            const std::shared_ptr<Http::HttpClientFactory const>& httpClientFactory = nullptr);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~ElastiCacheClient();
 
@@ -309,7 +308,8 @@ namespace Model
          * owners) to organize your costs across multiple services. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
+         * Guide</i>.</p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
@@ -324,7 +324,8 @@ namespace Model
          * owners) to organize your costs across multiple services. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
+         * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -341,7 +342,8 @@ namespace Model
          * owners) to organize your costs across multiple services. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Tagging.html">Using
-         * Cost Allocation Tags in Amazon ElastiCache</a>.</p>
+         * Cost Allocation Tags in Amazon ElastiCache</a> in the <i>ElastiCache User
+         * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -351,8 +353,9 @@ namespace Model
          * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
          * to a cache security group. Applications using ElastiCache must be running on
          * Amazon EC2, and Amazon EC2 security groups are used as the authorization
-         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
-         * group in one region to an ElastiCache cluster in another region. </note>
+         * mechanism.</p> <note> <p>You cannot authorize ingress from an Amazon EC2
+         * security group in one region to an ElastiCache cluster in another region.</p>
+         * </note>
          */
         virtual Model::AuthorizeCacheSecurityGroupIngressOutcome AuthorizeCacheSecurityGroupIngress(const Model::AuthorizeCacheSecurityGroupIngressRequest& request) const;
 
@@ -360,8 +363,9 @@ namespace Model
          * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
          * to a cache security group. Applications using ElastiCache must be running on
          * Amazon EC2, and Amazon EC2 security groups are used as the authorization
-         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
-         * group in one region to an ElastiCache cluster in another region. </note>
+         * mechanism.</p> <note> <p>You cannot authorize ingress from an Amazon EC2
+         * security group in one region to an ElastiCache cluster in another region.</p>
+         * </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -371,8 +375,9 @@ namespace Model
          * <p>The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress
          * to a cache security group. Applications using ElastiCache must be running on
          * Amazon EC2, and Amazon EC2 security groups are used as the authorization
-         * mechanism.</p> <note>You cannot authorize ingress from an Amazon EC2 security
-         * group in one region to an ElastiCache cluster in another region. </note>
+         * mechanism.</p> <note> <p>You cannot authorize ingress from an Amazon EC2
+         * security group in one region to an ElastiCache cluster in another region.</p>
+         * </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -380,11 +385,37 @@ namespace Model
 
         /**
          * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         * <important> <p>Users or groups that have permissions to use the
+         * <i>CopySnapshot</i> API can create their own Amazon S3 buckets and copy
+         * snapshots to it. To control access to your snapshots, use an IAM policy to
+         * control who has the ability to use the <i>CopySnapshot</i> API. For more
+         * information about using IAM to control the use of ElastiCache APIs, see <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html">Exporting
+         * Snapshots</a> and <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html">Authentication
+         * &amp; Access Control</a>.</p> </important> <p class="title"> <b>Erorr
+         * Message:</b> </p> <ul> <li> <p> <b>Error Message:</b> The authenticated user
+         * does not have sufficient permissions to perform the desired activity.</p> <p>
+         * <b>Solution:</b> Contact your system administrator to get the needed
+         * permissions.</p> </li> </ul>
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
         /**
          * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         * <important> <p>Users or groups that have permissions to use the
+         * <i>CopySnapshot</i> API can create their own Amazon S3 buckets and copy
+         * snapshots to it. To control access to your snapshots, use an IAM policy to
+         * control who has the ability to use the <i>CopySnapshot</i> API. For more
+         * information about using IAM to control the use of ElastiCache APIs, see <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html">Exporting
+         * Snapshots</a> and <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html">Authentication
+         * &amp; Access Control</a>.</p> </important> <p class="title"> <b>Erorr
+         * Message:</b> </p> <ul> <li> <p> <b>Error Message:</b> The authenticated user
+         * does not have sufficient permissions to perform the desired activity.</p> <p>
+         * <b>Solution:</b> Contact your system administrator to get the needed
+         * permissions.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -392,6 +423,19 @@ namespace Model
 
         /**
          * <p>The <i>CopySnapshot</i> action makes a copy of an existing snapshot.</p>
+         * <important> <p>Users or groups that have permissions to use the
+         * <i>CopySnapshot</i> API can create their own Amazon S3 buckets and copy
+         * snapshots to it. To control access to your snapshots, use an IAM policy to
+         * control who has the ability to use the <i>CopySnapshot</i> API. For more
+         * information about using IAM to control the use of ElastiCache APIs, see <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/Snapshots.Exporting.html">Exporting
+         * Snapshots</a> and <a
+         * href="http://docs.aws.amazon.com/ElastiCache/latest/IAM.html">Authentication
+         * &amp; Access Control</a>.</p> </important> <p class="title"> <b>Erorr
+         * Message:</b> </p> <ul> <li> <p> <b>Error Message:</b> The authenticated user
+         * does not have sufficient permissions to perform the desired activity.</p> <p>
+         * <b>Solution:</b> Contact your system administrator to get the needed
+         * permissions.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -517,7 +561,7 @@ namespace Model
          * create a replication group, you must specify an existing cache cluster that is
          * in the primary role. When the replication group has been successfully created,
          * you can add one or more read replica replicas to it, up to a total of five read
-         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         * replicas.</p> <note> <p>This action is valid only for Redis.</p> </note>
          */
         virtual Model::CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest& request) const;
 
@@ -529,7 +573,7 @@ namespace Model
          * create a replication group, you must specify an existing cache cluster that is
          * in the primary role. When the replication group has been successfully created,
          * you can add one or more read replica replicas to it, up to a total of five read
-         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         * replicas.</p> <note> <p>This action is valid only for Redis.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -543,7 +587,7 @@ namespace Model
          * create a replication group, you must specify an existing cache cluster that is
          * in the primary role. When the replication group has been successfully created,
          * you can add one or more read replica replicas to it, up to a total of five read
-         * replicas.</p> <p><b>Note:</b> This action is valid only for Redis.</p>
+         * replicas.</p> <note> <p>This action is valid only for Redis.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -635,15 +679,15 @@ namespace Model
 
         /**
          * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
-         * group.</p> <note>You cannot delete a cache security group if it is associated
-         * with any cache clusters.</note>
+         * group.</p> <note> <p>You cannot delete a cache security group if it is
+         * associated with any cache clusters.</p> </note>
          */
         virtual Model::DeleteCacheSecurityGroupOutcome DeleteCacheSecurityGroup(const Model::DeleteCacheSecurityGroupRequest& request) const;
 
         /**
          * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
-         * group.</p> <note>You cannot delete a cache security group if it is associated
-         * with any cache clusters.</note>
+         * group.</p> <note> <p>You cannot delete a cache security group if it is
+         * associated with any cache clusters.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -651,8 +695,8 @@ namespace Model
 
         /**
          * <p>The <i>DeleteCacheSecurityGroup</i> action deletes a cache security
-         * group.</p> <note>You cannot delete a cache security group if it is associated
-         * with any cache clusters.</note>
+         * group.</p> <note> <p>You cannot delete a cache security group if it is
+         * associated with any cache clusters.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -660,15 +704,15 @@ namespace Model
 
         /**
          * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
-         * <note>You cannot delete a cache subnet group if it is associated with any cache
-         * clusters.</note>
+         * <note> <p>You cannot delete a cache subnet group if it is associated with any
+         * cache clusters.</p> </note>
          */
         virtual Model::DeleteCacheSubnetGroupOutcome DeleteCacheSubnetGroup(const Model::DeleteCacheSubnetGroupRequest& request) const;
 
         /**
          * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
-         * <note>You cannot delete a cache subnet group if it is associated with any cache
-         * clusters.</note>
+         * <note> <p>You cannot delete a cache subnet group if it is associated with any
+         * cache clusters.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -676,8 +720,8 @@ namespace Model
 
         /**
          * <p>The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.</p>
-         * <note>You cannot delete a cache subnet group if it is associated with any cache
-         * clusters.</note>
+         * <note> <p>You cannot delete a cache subnet group if it is associated with any
+         * cache clusters.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

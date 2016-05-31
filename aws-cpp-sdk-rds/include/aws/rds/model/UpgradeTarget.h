@@ -45,37 +45,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline UpgradeTarget& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline UpgradeTarget& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the upgrade target database engine. </p>
+     * <p>The name of the upgrade target database engine.</p>
      */
     inline UpgradeTarget& WithEngine(const char* value) { SetEngine(value); return *this;}
 

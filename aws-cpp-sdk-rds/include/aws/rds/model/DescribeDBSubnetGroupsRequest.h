@@ -36,37 +36,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline DescribeDBSubnetGroupsRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline DescribeDBSubnetGroupsRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB subnet group to return details for. </p>
+     * <p>The name of the DB subnet group to return details for.</p>
      */
     inline DescribeDBSubnetGroupsRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

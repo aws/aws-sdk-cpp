@@ -80,6 +80,15 @@ CreateIdentityPoolResult& CreateIdentityPoolResult::operator =(const AmazonWebSe
     }
   }
 
+  if(jsonValue.ValueExists("CognitoIdentityProviders"))
+  {
+    Array<JsonValue> cognitoIdentityProvidersJsonList = jsonValue.GetArray("CognitoIdentityProviders");
+    for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
+    {
+      m_cognitoIdentityProviders.push_back(cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

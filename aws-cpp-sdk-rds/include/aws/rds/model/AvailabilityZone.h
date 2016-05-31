@@ -32,9 +32,9 @@ namespace Model
 {
 
   /**
-   * <p> Contains Availability Zone information. </p> <p> This data type is used as
-   * an element in the following data type:
-   * <ul><li><a>OrderableDBInstanceOption</a></li></ul></p>
+   * <p>Contains Availability Zone information.</p> <p> This data type is used as an
+   * element in the following data type:</p> <ul> <li> <p>
+   * <a>OrderableDBInstanceOption</a> </p> </li> </ul>
    */
   class AWS_RDS_API AvailabilityZone
   {
@@ -47,37 +47,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 

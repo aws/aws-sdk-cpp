@@ -96,37 +96,37 @@ namespace Model
     inline DescribeReservedDBInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline const Aws::Vector<ReservedDBInstance>& GetReservedDBInstances() const{ return m_reservedDBInstances; }
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline void SetReservedDBInstances(const Aws::Vector<ReservedDBInstance>& value) { m_reservedDBInstances = value; }
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline void SetReservedDBInstances(Aws::Vector<ReservedDBInstance>&& value) { m_reservedDBInstances = value; }
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline DescribeReservedDBInstancesResult& WithReservedDBInstances(const Aws::Vector<ReservedDBInstance>& value) { SetReservedDBInstances(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline DescribeReservedDBInstancesResult& WithReservedDBInstances(Aws::Vector<ReservedDBInstance>&& value) { SetReservedDBInstances(value); return *this;}
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline DescribeReservedDBInstancesResult& AddReservedDBInstances(const ReservedDBInstance& value) { m_reservedDBInstances.push_back(value); return *this; }
 
     /**
-     * <p> A list of reserved DB instances. </p>
+     * <p>A list of reserved DB instances.</p>
      */
     inline DescribeReservedDBInstancesResult& AddReservedDBInstances(ReservedDBInstance&& value) { m_reservedDBInstances.push_back(value); return *this; }
 

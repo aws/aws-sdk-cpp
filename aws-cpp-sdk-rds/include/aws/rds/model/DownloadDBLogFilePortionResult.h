@@ -45,97 +45,97 @@ namespace Model
     DownloadDBLogFilePortionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline const Aws::String& GetLogFileData() const{ return m_logFileData; }
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline void SetLogFileData(const Aws::String& value) { m_logFileData = value; }
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline void SetLogFileData(Aws::String&& value) { m_logFileData = value; }
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline void SetLogFileData(const char* value) { m_logFileData.assign(value); }
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline DownloadDBLogFilePortionResult& WithLogFileData(const Aws::String& value) { SetLogFileData(value); return *this;}
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline DownloadDBLogFilePortionResult& WithLogFileData(Aws::String&& value) { SetLogFileData(value); return *this;}
 
     /**
-     * <p> Entries from the specified log file. </p>
+     * <p>Entries from the specified log file.</p>
      */
     inline DownloadDBLogFilePortionResult& WithLogFileData(const char* value) { SetLogFileData(value); return *this;}
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A pagination token that can be used in a subsequent DownloadDBLogFilePortion
-     * request. </p>
+     * <p>A pagination token that can be used in a subsequent DownloadDBLogFilePortion
+     * request.</p>
      */
     inline DownloadDBLogFilePortionResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> Boolean value that if true, indicates there is more data to be downloaded.
-     * </p>
+     * <p>Boolean value that if true, indicates there is more data to be
+     * downloaded.</p>
      */
     inline bool GetAdditionalDataPending() const{ return m_additionalDataPending; }
 
     /**
-     * <p> Boolean value that if true, indicates there is more data to be downloaded.
-     * </p>
+     * <p>Boolean value that if true, indicates there is more data to be
+     * downloaded.</p>
      */
     inline void SetAdditionalDataPending(bool value) { m_additionalDataPending = value; }
 
     /**
-     * <p> Boolean value that if true, indicates there is more data to be downloaded.
-     * </p>
+     * <p>Boolean value that if true, indicates there is more data to be
+     * downloaded.</p>
      */
     inline DownloadDBLogFilePortionResult& WithAdditionalDataPending(bool value) { SetAdditionalDataPending(value); return *this;}
 

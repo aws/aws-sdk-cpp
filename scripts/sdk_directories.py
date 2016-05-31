@@ -79,7 +79,11 @@ def getDirectories():
                 "aws-cpp-sdk-support",
                 "aws-cpp-sdk-swf",
                 "aws-cpp-sdk-waf",
-                "aws-cpp-sdk-workspaces"  ]
+                "aws-cpp-sdk-workspaces",
+                "aws-cpp-sdk-application-autoscaling",
+		"aws-cpp-sdk-cognito-idp",
+                "aws-cpp-sdk-dms",
+		"aws-cpp-sdk-meteringmarketplace"  ]
 
 def wipeGeneratedCode():
     for directory in getDirectories():

@@ -85,11 +85,51 @@ namespace Model
      */
     inline UpdateFleetCapacityRequest& WithDesiredInstances(long value) { SetDesiredInstances(value); return *this;}
 
+    /**
+     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
+     * 0.</p>
+     */
+    inline long GetMinSize() const{ return m_minSize; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
+     * 0.</p>
+     */
+    inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
+
+    /**
+     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
+     * 0.</p>
+     */
+    inline UpdateFleetCapacityRequest& WithMinSize(long value) { SetMinSize(value); return *this;}
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
+     * 1.</p>
+     */
+    inline long GetMaxSize() const{ return m_maxSize; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
+     * 1.</p>
+     */
+    inline void SetMaxSize(long value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
+
+    /**
+     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
+     * 1.</p>
+     */
+    inline UpdateFleetCapacityRequest& WithMaxSize(long value) { SetMaxSize(value); return *this;}
+
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
     long m_desiredInstances;
     bool m_desiredInstancesHasBeenSet;
+    long m_minSize;
+    bool m_minSizeHasBeenSet;
+    long m_maxSize;
+    bool m_maxSizeHasBeenSet;
   };
 
 } // namespace Model

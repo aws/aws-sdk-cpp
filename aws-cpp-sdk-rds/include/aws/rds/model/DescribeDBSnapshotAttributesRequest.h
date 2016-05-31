@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_RDS_API DescribeDBSnapshotAttributesRequest : public RDSRequest
   {
@@ -33,37 +34,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline const Aws::String& GetDBSnapshotIdentifier() const{ return m_dBSnapshotIdentifier; }
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline void SetDBSnapshotIdentifier(Aws::String&& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline void SetDBSnapshotIdentifier(const char* value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline DescribeDBSnapshotAttributesRequest& WithDBSnapshotIdentifier(const Aws::String& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline DescribeDBSnapshotAttributesRequest& WithDBSnapshotIdentifier(Aws::String&& value) { SetDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the DB snapshot to modify the attributes for.</p>
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
     inline DescribeDBSnapshotAttributesRequest& WithDBSnapshotIdentifier(const char* value) { SetDBSnapshotIdentifier(value); return *this;}
 

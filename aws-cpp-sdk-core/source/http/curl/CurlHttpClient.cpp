@@ -14,8 +14,6 @@
   */
 
 #include <aws/core/http/curl/CurlHttpClient.h>
-
-
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
@@ -31,6 +29,103 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
+#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+
+static const char* MemTag = "libcurl";
+static size_t offset = sizeof(size_t);
+
+static void* malloc_callback(size_t size)
+{
+    char* newMem = reinterpret_cast<char*>(Aws::Malloc(MemTag, size + offset));
+    std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(newMem);
+    *pointerToSize = size;
+    return reinterpret_cast<void*>(newMem + offset);
+}
+
+static void free_callback(void* ptr)
+{
+    if(ptr)
+    {
+        char* shiftedMemory = reinterpret_cast<char*>(ptr);
+        Aws::Free(shiftedMemory - offset);
+    }
+}
+
+static void* realloc_callback(void* ptr, size_t size)
+{
+    if(!ptr)
+    {
+        return malloc_callback(size);
+    }
+
+
+    if(!size && ptr)
+    {
+        free_callback(ptr);
+        return nullptr;
+    }
+
+    char* originalLenCharPtr = reinterpret_cast<char*>(ptr) - offset;
+    size_t originalLen = *reinterpret_cast<size_t*>(originalLenCharPtr);
+
+    char* rawMemory = reinterpret_cast<char*>(Aws::Malloc(MemTag, size + offset));
+    if(rawMemory)
+    {
+        std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(rawMemory);
+        *pointerToSize = size;
+
+        size_t copyLength = std::min(originalLen, size);
+#ifdef _MSC_VER
+        memcpy_s(rawMemory + offset, size, ptr, copyLength);
+#else
+        memcpy(rawMemory + offset, ptr, copyLength);
+#endif
+        free_callback(ptr);
+        return reinterpret_cast<void*>(rawMemory + offset);
+    }
+    else
+    {
+        return ptr;
+    }
+
+}
+
+static void* calloc_callback(size_t nmemb, size_t size)
+{
+    size_t dataSize = nmemb * size;
+    char* newMem = reinterpret_cast<char*>(Aws::Malloc(MemTag, dataSize + offset));
+    std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(newMem);
+    *pointerToSize = dataSize;
+#ifdef _MSC_VER
+    memset_s(newMem + offset, dataSize, 0, dataSize);
+#else
+    memset(newMem + offset, 0, dataSize);
+#endif
+
+    return reinterpret_cast<void*>(newMem + offset);
+}
+
+static char* strdup_callback(const char* str)
+{
+    size_t len = strlen(str) + 1;
+    size_t newLen = len + offset;
+    char* newMem = reinterpret_cast<char*>(Aws::Malloc(MemTag, newLen));
+
+    if(newMem)
+    {
+        std::size_t* pointerToSize = reinterpret_cast<std::size_t*>(newMem);
+        *pointerToSize = len;
+#ifdef _MSC_VER
+        memcpy_s(newMem + offset, len, str, len);
+#else
+        memcpy(newMem + offset, str, len);
+#endif
+        return newMem + offset;
+    }
+    return nullptr;
+}
+
+#endif
 
 struct CurlWriteCallbackContext
 {
@@ -107,6 +202,29 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "GET");
             break;
     }
+}
+
+
+std::atomic<bool> CurlHttpClient::isInit(false);
+
+void CurlHttpClient::InitGlobalState()
+{
+    if (!isInit)
+    {
+        AWS_LOG_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library");
+        isInit = true;
+#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+        curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
+#else
+        curl_global_init(CURL_GLOBAL_ALL);
+#endif
+    }
+}
+
+
+void CurlHttpClient::CleanupGlobalState()
+{
+    curl_global_cleanup();
 }
 
 Aws::String CurlInfoTypeToString(curl_infotype type)

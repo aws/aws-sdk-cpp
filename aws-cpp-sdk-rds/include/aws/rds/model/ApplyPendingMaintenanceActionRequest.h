@@ -91,120 +91,120 @@ namespace Model
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(value); return *this;}
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code></p>
+     * values: <code>system-update</code>, <code>db-upgrade</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline const Aws::String& GetOptInType() const{ return m_optInType; }
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline void SetOptInType(const Aws::String& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline void SetOptInType(Aws::String&& value) { m_optInTypeHasBeenSet = true; m_optInType = value; }
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline void SetOptInType(const char* value) { m_optInTypeHasBeenSet = true; m_optInType.assign(value); }
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline ApplyPendingMaintenanceActionRequest& WithOptInType(const Aws::String& value) { SetOptInType(value); return *this;}
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline ApplyPendingMaintenanceActionRequest& WithOptInType(Aws::String&& value) { SetOptInType(value); return *this;}
 
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> cannot be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <code>immediate</code> - Apply the maintenance
-     * action immediately.</li> <li> <code>next-maintenance</code> - Apply the
-     * maintenance action during the next maintenance window for the resource.</li>
-     * <li> <code>undo-opt-in</code> - Cancel any existing
-     * <code>next-maintenance</code> opt-in requests.</li> </ul>
+     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
+     * - Apply the maintenance action during the next maintenance window for the
+     * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
+     * <code>next-maintenance</code> opt-in requests.</p> </li> </ul>
      */
     inline ApplyPendingMaintenanceActionRequest& WithOptInType(const char* value) { SetOptInType(value); return *this;}
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/ProtectionPolicy.h>
 
 namespace Aws
 {
@@ -479,6 +480,46 @@ namespace Model
      */
     inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet. <ul><li>NoProtection: The game session can be terminated during a
+     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
+     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
+
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet. <ul><li>NoProtection: The game session can be terminated during a
+     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
+     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet. <ul><li>NoProtection: The game session can be terminated during a
+     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
+     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
+
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet. <ul><li>NoProtection: The game session can be terminated during a
+     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
+     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
+    /**
+     * <p>Type of game session protection to set for all new instances started in the
+     * fleet. <ul><li>NoProtection: The game session can be terminated during a
+     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
+     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     */
+    inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
+
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
@@ -500,6 +541,8 @@ namespace Model
     bool m_serverLaunchParametersHasBeenSet;
     Aws::Vector<Aws::String> m_logPaths;
     bool m_logPathsHasBeenSet;
+    ProtectionPolicy m_newGameSessionProtectionPolicy;
+    bool m_newGameSessionProtectionPolicyHasBeenSet;
   };
 
 } // namespace Model

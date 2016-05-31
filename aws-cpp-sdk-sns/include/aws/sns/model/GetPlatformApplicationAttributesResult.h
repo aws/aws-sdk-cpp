@@ -45,338 +45,158 @@ namespace Model
     GetPlatformApplicationAttributesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = value; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>Attributes include the following:</p>
-    <ul>      
-      
-      
-     
-     * <li>
-<code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted
-     * event notifications should be sent.</li>
-     
-     * <li>
-<code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate
-     * event notifications should be sent.</li>
-      
-     
-     * <li>
-<code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure
-     * event notifications should be sent upon Direct Publish delivery failure
-     * (permanent) to one of the application's endpoints.</li>
-      
-    </ul>
+     * <p>Attributes include the following:</p> <ul> <li>
+     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> --
+     * Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li>
+     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> --
+     * Topic ARN to which DeliveryFailure event notifications should be sent upon
+     * Direct Publish delivery failure (permanent) to one of the application's
+     * endpoints.</li> </ul>
      */
     inline GetPlatformApplicationAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
 

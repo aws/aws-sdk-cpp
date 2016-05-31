@@ -38,7 +38,8 @@ NatGateway::NatGateway() :
     m_natGatewayAddressesHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_provisionedBandwidthHasBeenSet(false)
 {
 }
 
@@ -51,7 +52,8 @@ NatGateway::NatGateway(const XmlNode& xmlNode) :
     m_natGatewayAddressesHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
+    m_failureMessageHasBeenSet(false),
+    m_provisionedBandwidthHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -122,6 +124,12 @@ NatGateway& NatGateway::operator =(const XmlNode& xmlNode)
       m_failureMessage = StringUtils::Trim(failureMessageNode.GetText().c_str());
       m_failureMessageHasBeenSet = true;
     }
+    XmlNode provisionedBandwidthNode = resultNode.FirstChild("provisionedBandwidth");
+    if(!provisionedBandwidthNode.IsNull())
+    {
+      m_provisionedBandwidth = provisionedBandwidthNode;
+      m_provisionedBandwidthHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,6 +179,12 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
   }
+  if(m_provisionedBandwidthHasBeenSet)
+  {
+      Aws::StringStream provisionedBandwidthLocationAndMemberSs;
+      provisionedBandwidthLocationAndMemberSs << location << index << locationValue << ".ProvisionedBandwidth";
+      m_provisionedBandwidth.OutputToStream(oStream, provisionedBandwidthLocationAndMemberSs.str().c_str());
+  }
 }
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -216,6 +230,12 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_failureMessageHasBeenSet)
   {
       oStream << location << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
+  }
+  if(m_provisionedBandwidthHasBeenSet)
+  {
+      Aws::String provisionedBandwidthLocationAndMember(location);
+      provisionedBandwidthLocationAndMember += ".ProvisionedBandwidth";
+      m_provisionedBandwidth.OutputToStream(oStream, provisionedBandwidthLocationAndMember.c_str());
   }
 }
 

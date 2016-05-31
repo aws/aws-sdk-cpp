@@ -36,181 +36,181 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The name of the engine to retrieve DB instance options for. </p>
+     * <p>The name of the engine to retrieve DB instance options for.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version filter value. Specify this parameter to show only the
-     * available offerings matching the specified engine version. </p>
+     * <p>The engine version filter value. Specify this parameter to show only the
+     * available offerings matching the specified engine version.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The DB instance class filter value. Specify this parameter to show only the
-     * available offerings matching the specified DB instance class. </p>
+     * <p>The DB instance class filter value. Specify this parameter to show only the
+     * available offerings matching the specified DB instance class.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p> The license model filter value. Specify this parameter to show only the
-     * available offerings matching the specified license model. </p>
+     * <p>The license model filter value. Specify this parameter to show only the
+     * available offerings matching the specified license model.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p> The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings. </p>
+     * <p>The VPC filter value. Specify this parameter to show only the available VPC
+     * or non-VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
 
     /**
-     * <p> The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings. </p>
+     * <p>The VPC filter value. Specify this parameter to show only the available VPC
+     * or non-VPC offerings.</p>
      */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
-     * <p> The VPC filter value. Specify this parameter to show only the available VPC
-     * or non-VPC offerings. </p>
+     * <p>The VPC filter value. Specify this parameter to show only the available VPC
+     * or non-VPC offerings.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithVpc(bool value) { SetVpc(value); return *this;}
 

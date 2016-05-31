@@ -80,7 +80,7 @@ TEST(HashingUtilsTest, TestBase64Decoding)
     AWS_END_MEMORY_TEST
 }
 
-TEST(HashingUtilsTest, TestHexEncoding)
+TEST(HashingUtilsTest, TestHexEncodingDecoding)
 {
     unsigned char beforeHexEncoding[32] =
     { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C,
@@ -94,6 +94,9 @@ TEST(HashingUtilsTest, TestHexEncoding)
     const char* afterEncoding =
             "0102030405060708090a0b0c0d0e0f1122334455667778695a4b3c2d1e0f1000";
     ASSERT_STREQ(afterEncoding, hexEncodedValue.c_str());
+
+    ByteBuffer hexBuffer(beforeHexEncoding, 32);
+    ASSERT_EQ(hexBuffer, HashingUtils::HexDecode(afterEncoding));
 
     AWS_END_MEMORY_TEST
 }

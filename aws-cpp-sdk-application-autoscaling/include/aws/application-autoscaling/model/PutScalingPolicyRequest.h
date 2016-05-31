@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
@@ -132,7 +132,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline PutScalingPolicyRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline PutScalingPolicyRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
@@ -164,48 +164,48 @@ namespace Model
     /**
      * <p>The unique resource identifier string for the scalable target that this
      * scaling policy applies to. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name, and then the service name, such as
+     * type, followed by the cluster name and service name, such as
      * <code>service/default/sample-webapp</code>.</p>
      */
     inline PutScalingPolicyRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
      * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, the resource
-     * type, and the scaling property, such as <code>ecs:service:DesiredCount</code>
-     * for the desired task count for an Amazon ECS service.</p>
+     * applies to. The scalable dimension contains the service namespace, resource
+     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
+     * the desired task count of an Amazon ECS service.</p>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
     /**
      * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, the resource
-     * type, and the scaling property, such as <code>ecs:service:DesiredCount</code>
-     * for the desired task count for an Amazon ECS service.</p>
+     * applies to. The scalable dimension contains the service namespace, resource
+     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
+     * the desired task count of an Amazon ECS service.</p>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
      * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, the resource
-     * type, and the scaling property, such as <code>ecs:service:DesiredCount</code>
-     * for the desired task count for an Amazon ECS service.</p>
+     * applies to. The scalable dimension contains the service namespace, resource
+     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
+     * the desired task count of an Amazon ECS service.</p>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
      * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, the resource
-     * type, and the scaling property, such as <code>ecs:service:DesiredCount</code>
-     * for the desired task count for an Amazon ECS service.</p>
+     * applies to. The scalable dimension contains the service namespace, resource
+     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
+     * the desired task count of an Amazon ECS service.</p>
      */
     inline PutScalingPolicyRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
     /**
      * <p>The scalable dimension of the scalable target that this scaling policy
-     * applies to. The scalable dimension contains the service namespace, the resource
-     * type, and the scaling property, such as <code>ecs:service:DesiredCount</code>
-     * for the desired task count for an Amazon ECS service.</p>
+     * applies to. The scalable dimension contains the service namespace, resource
+     * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
+     * the desired task count of an Amazon ECS service.</p>
      */
     inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 
@@ -242,9 +242,9 @@ namespace Model
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
      * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
      * and <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
      * in the <i>Application Auto Scaling API Reference</i>.</p>
      */
     inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
@@ -252,9 +252,9 @@ namespace Model
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
      * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
      * and <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
      * in the <i>Application Auto Scaling API Reference</i>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
@@ -262,9 +262,9 @@ namespace Model
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
      * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
      * and <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
      * in the <i>Application Auto Scaling API Reference</i>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
@@ -272,9 +272,9 @@ namespace Model
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
      * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
      * and <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
      * in the <i>Application Auto Scaling API Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { SetStepScalingPolicyConfiguration(value); return *this;}
@@ -282,9 +282,9 @@ namespace Model
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
      * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
      * and <a
-     * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
      * in the <i>Application Auto Scaling API Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(value); return *this;}

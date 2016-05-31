@@ -36,6 +36,7 @@
 #include <aws/core/utils/crypto/MD5.h>
 #include <thread>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/crypto/Factories.h>
 
 
 using namespace Aws;
@@ -59,7 +60,7 @@ void AWSClient::InitializeGlobalStatics()
     {      
         int expectedRefCount = 0;    
         Utils::EnumParseOverflowContainer* expectedPtrValue = nullptr;
-        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);        
+        Utils::EnumParseOverflowContainer* container = Aws::New<Utils::EnumParseOverflowContainer>(AWS_CLIENT_LOG_TAG);
         if (!s_refCount.compare_exchange_strong(expectedRefCount, 1) ||
              !Aws::CheckAndSwapEnumOverflowContainer(expectedPtrValue, container))
         {
@@ -90,19 +91,17 @@ void AWSClient::CleanupGlobalStatics()
     --s_refCount;
 }
 
-AWSClient::AWSClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    m_clientFactory(clientFactory),
-    m_httpClient(clientFactory->CreateHttpClient(configuration)),
+    m_httpClient(CreateHttpClient(configuration)),
     m_signer(signer),
     m_errorMarshaller(errorMarshaller),
     m_retryStrategy(configuration.retryStrategy),
     m_writeRateLimiter(configuration.writeRateLimiter),
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
-    m_hash(Aws::MakeUnique<Aws::Utils::Crypto::MD5>(AWS_CLIENT_LOG_TAG))
+    m_hash(Aws::Utils::Crypto::CreateMD5Implementation())
 {
     InitializeGlobalStatics();
 }
@@ -179,9 +178,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
     const Aws::AmazonWebServiceRequest& request,
     HttpMethod method) const
 {
-    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Starting single request")
-
-    std::shared_ptr<HttpRequest> httpRequest(m_clientFactory->CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     BuildHttpRequest(request, httpRequest);
 
     if (!m_signer->SignRequest(*httpRequest))
@@ -207,7 +204,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri,
 
 HttpResponseOutcome AWSClient::AttemptOneRequest(const Aws::String& uri, HttpMethod method) const
 {
-    std::shared_ptr<HttpRequest> httpRequest(m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     AddCommonHeaders(*httpRequest);
 
     if (!m_signer->SignRequest(*httpRequest))
@@ -324,7 +321,7 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
 {
-    std::shared_ptr<HttpRequest> request = m_clientFactory->CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     if (m_signer->PresignRequest(*request, expirationInSeconds))
     {
         return request->GetURIString();
@@ -334,11 +331,10 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
 }
 
 ////////////////////////////////////////////////////////////////////////////
-AWSJsonClient::AWSJsonClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller)
+    BASECLASS(configuration, signer, errorMarshaller)
 {
 }
 
@@ -432,11 +428,10 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-AWSXMLClient::AWSXMLClient(const std::shared_ptr<Aws::Http::HttpClientFactory const>& clientFactory,
-    const Aws::Client::ClientConfiguration& configuration,
+AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
-    BASECLASS(clientFactory, configuration, signer, errorMarshaller)
+    BASECLASS(configuration, signer, errorMarshaller)
 {
 }
 
