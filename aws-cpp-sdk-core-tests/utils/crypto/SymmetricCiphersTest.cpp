@@ -495,7 +495,7 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     }
 
     ASSERT_TRUE(*cipher);
-    auto decryptResult = CryptoBuffer({ std::move(decryptedStreams) });
+    auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
 
     CryptoBuffer plainText(decryptResult.GetLength());
     plainText.Zero();
@@ -564,7 +564,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     }
 
     ASSERT_TRUE(*cipher);
-    auto decryptResult = CryptoBuffer({ std::move(decryptedStreams) });
+    auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
 
     CryptoBuffer plainText(decryptResult.GetLength());
     plainText.Zero();
@@ -626,7 +626,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     }
 
     ASSERT_TRUE(*cipher);
-    auto decryptResult = CryptoBuffer({ std::move(decryptedStreams) });
+    auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
 
     CryptoBuffer plainText(decryptResult.GetLength());
     plainText.Zero();
