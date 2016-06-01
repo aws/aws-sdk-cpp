@@ -20,6 +20,10 @@
 #include <CommonCrypto/CommonCryptor.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+//for OSX < 10.10 compatibility
+typedef int32_t CCStatus;
+typedef int32_t CCCryptorStatus;
+
 namespace Aws
 {
     namespace Utils
