@@ -14,6 +14,8 @@
   */
 
 #include <aws/core/utils/OSVersionInfo.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <sys/utsname.h>
 
 namespace Aws
 {
@@ -22,12 +24,13 @@ namespace Utils
 
 Aws::String ComputeOSVersionString()
 {
-    Aws::String kernelName = GetSysCommandOutput("uname -s 2>&1");
-    Aws::String releaseAndMachineName = GetSysCommandOutput("uname -rm 2>&1");
-
-    if(!kernelName.empty())
+    utsname name;
+    int32_t success = uname(&name);
+    if(success >= 0)
     {
-        return kernelName + "/" + releaseAndMachineName;
+        Aws::StringStream ss;
+        ss << name.sysname << "/" << name.release << " " << name.machine;
+        return ss.str();
     }
 
     return "non-windows/unknown";
