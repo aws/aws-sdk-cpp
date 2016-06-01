@@ -254,7 +254,8 @@ namespace Aws
 
             private:
                 void Init();
-                void InitKey();                
+                void InitKey();
+                void Cleanup();
             };
 
             /**

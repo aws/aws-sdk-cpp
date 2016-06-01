@@ -385,17 +385,7 @@ namespace Aws
 
             BCryptSymmetricCipher::~BCryptSymmetricCipher()
             {
-                if (m_keyHandle)
-                {
-                    BCryptDestroyKey(m_keyHandle);
-                    m_keyHandle = nullptr;
-                }
-
-                if (m_algHandle)
-                {
-                    BCryptCloseAlgorithmProvider(m_algHandle, 0);
-                    m_algHandle = nullptr;
-                }
+                Cleanup();
             }
 
             void BCryptSymmetricCipher::Init()
@@ -577,6 +567,12 @@ namespace Aws
 
             void BCryptSymmetricCipher::Reset()
             {
+                Cleanup();
+                Init();
+            }
+
+            void BCryptSymmetricCipher::Cleanup()
+            {
                 m_encDecInitialized = false;
                 m_encryptionMode = false;
                 m_decryptionMode = false;
@@ -592,8 +588,7 @@ namespace Aws
                     BCryptCloseAlgorithmProvider(m_algHandle, 0);
                     m_algHandle = nullptr;
                 }
-                
-                Init();
+
                 m_flags = 0;
                 m_authInfoPtr = nullptr;
                 m_failure = false;

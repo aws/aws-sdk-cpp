@@ -70,21 +70,20 @@ namespace Aws
                 if(this != &toMove)
                 {
                     Aws::IOStream::operator=(std::move(toMove));
-                    if (m_cryptoBuf && m_hasOwnership)
+                    if (m_hasOwnership)
                     {
-                        Aws::Delete(m_cryptoBuf);
-                        m_cryptoBuf = nullptr;
+                        if(m_cryptoBuf)
+                        {
+                            Aws::Delete(m_cryptoBuf);
+                            m_cryptoBuf = nullptr;
+                        }
+                        toMove.m_hasOwnership = false;
                     }
 
                     m_cryptoBuf = toMove.m_cryptoBuf;
                     m_hasOwnership = toMove.m_hasOwnership;
 
                     toMove.m_cryptoBuf = nullptr;
-
-                    if(m_hasOwnership)
-                    {
-                        toMove.m_hasOwnership = false;
-                    }
                 }
 
                 return *this;

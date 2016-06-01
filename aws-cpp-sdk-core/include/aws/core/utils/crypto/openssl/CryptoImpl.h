@@ -195,10 +195,9 @@ namespace Aws
 
             private:
                 void Init();
-
                 void CheckInitEncryptor();
-
                 void CheckInitDecryptor();
+                void Cleanup();
 
                 bool m_encDecInitialized;
                 bool m_encryptionMode;

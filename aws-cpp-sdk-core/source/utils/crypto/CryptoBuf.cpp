@@ -50,18 +50,15 @@ namespace Aws
                         curPos = m_stream.tellg();
                     }
 
-                    auto absPosition = dir == std::ios_base::beg ? off : dir == std::ios_base::cur ? static_cast<off_type>(m_stream.tellg()) + off :
-                                                                         static_cast<off_type>(m_stream.seekg(0, std::ios_base::end).tellg()) - off;
+                    auto absPosition = ComputeAbsSeekPosition(off, dir, curPos);
                     size_t seekTo = static_cast<size_t>(absPosition);
-                    m_stream.seekg(curPos);
                     size_t index = static_cast<size_t>(curPos);
 
                     if(index == seekTo)
                     {
                         return curPos;
                     }
-
-                    if (seekTo < index)
+                    else if (seekTo < index)
                     {
                         m_cipher.Reset();
                         m_stream.clear();
@@ -164,7 +161,7 @@ namespace Aws
 
                 CryptoBuffer newDataBuf;
 
-                while(!newDataBuf.GetLength())
+                while(!newDataBuf.GetLength() && !m_isFinalized)
                 {
                     Aws::Utils::Array<char> buf(m_bufferSize);
                     m_stream.read(buf.GetUnderlyingData(), m_bufferSize);
@@ -196,12 +193,52 @@ namespace Aws
                     }
                 }
 
-                m_isBuf = CryptoBuffer({&putBackArea, &newDataBuf });
+                if(newDataBuf.GetLength() > 0)
+                {
+                    m_isBuf = CryptoBuffer({&putBackArea, &newDataBuf});
 
-                baseBufPtr = reinterpret_cast<char*>(m_isBuf.GetUnderlyingData());
-                setg(baseBufPtr, baseBufPtr + m_putBack, baseBufPtr + m_isBuf.GetLength());
+                    baseBufPtr = reinterpret_cast<char*>(m_isBuf.GetUnderlyingData());
+                    setg(baseBufPtr, baseBufPtr + m_putBack, baseBufPtr + m_isBuf.GetLength());
 
-                return traits_type::to_int_type(*gptr());
+                    return traits_type::to_int_type(*gptr());
+                }
+
+                return traits_type::eof();
+            }
+
+            SymmetricCryptoBufSrc::off_type SymmetricCryptoBufSrc::ComputeAbsSeekPosition(off_type pos, std::ios_base::seekdir dir,  std::fpos<__mbstate_t> curPos)
+            {
+                switch(dir)
+                {
+                case std::ios_base::beg:
+                    return pos;
+                case std::ios_base::cur:
+                    return m_stream.tellg() + pos;
+                case std::ios_base::end:
+                {
+                    off_type absPos = m_stream.seekg(0, std::ios_base::end).tellg() - pos;
+                    m_stream.seekg(curPos);
+                    return absPos;
+                }
+                default:
+                    assert(0);
+                    return off_type(-1);
+                }
+            }
+
+            void SymmetricCryptoBufSrc::FinalizeCipher()
+            {
+                if(m_cipher && !m_isFinalized)
+                {
+                    if(m_cipherMode == CipherMode::Encrypt)
+                    {
+                        m_cipher.FinalizeEncryption();
+                    }
+                    else
+                    {
+                        m_cipher.FinalizeDecryption();
+                    }
+                }
             }
 
             SymmetricCryptoBufSink::SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize)

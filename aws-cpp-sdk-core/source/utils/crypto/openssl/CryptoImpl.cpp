@@ -255,10 +255,7 @@ namespace Aws
 
             OpenSSLCipher::~OpenSSLCipher()
             {
-                if(m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
-                {
-                    EVP_CIPHER_CTX_cleanup(&m_ctx);
-                }
+                Cleanup();
             }
 
             void OpenSSLCipher::Init()
@@ -392,6 +389,12 @@ namespace Aws
 
             void OpenSSLCipher::Reset()
             {
+                Cleanup();
+                Init();
+            }
+
+            void OpenSSLCipher::Cleanup()
+            {
                 m_failure = false;
                 m_encDecInitialized = false;
                 m_encryptionMode = false;
@@ -405,7 +408,6 @@ namespace Aws
                 m_ctx.cipher = nullptr;
                 m_ctx.cipher_data = nullptr;
                 m_ctx.engine = nullptr;
-                Init();
             }
 
             size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;

@@ -63,7 +63,7 @@ namespace Aws
              * This streambuf is seekable, but it is very expensive to seek backwards since we have to reset the cipher and rencrypt everything up to that point.
              * So seeking should be avoided if at all possible.
              */
-            class SymmetricCryptoBufSrc : public CryptoBuf
+            class AWS_CORE_API SymmetricCryptoBufSrc : public CryptoBuf
             {
             public:
                 /**
@@ -83,12 +83,23 @@ namespace Aws
                  */
                 SymmetricCryptoBufSrc& operator=(SymmetricCryptoBufSrc&&) = delete;
 
+                virtual ~SymmetricCryptoBufSrc() { FinalizeCipher(); }
+
+                /**
+                 * This call isn't necessary if you loop over the stream.read until you reach EOF, if you happen to read the exact
+                 * amount as the in memory buffers and finish the stream, but never finish the finalize call you'll need to be sure
+                 * to call this. This is automatically called by the destructor.
+                 */
+                void Finalize() override { FinalizeCipher(); }
+
             protected:
                 pos_type seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out ) override;
                 pos_type seekpos(pos_type pos, std::ios_base::openmode which = std::ios_base::in | std::ios_base::out ) override;
 
             private:
                 int_type underflow() override;
+                off_type ComputeAbsSeekPosition(off_type, std::ios_base::seekdir,  std::fpos<__mbstate_t>);
+                void FinalizeCipher();
 
                 CryptoBuffer m_isBuf;
                 SymmetricCipher& m_cipher;
@@ -106,7 +117,7 @@ namespace Aws
              *
              * This stream buf is not seekable.
              */
-            class SymmetricCryptoBufSink : public CryptoBuf
+            class AWS_CORE_API SymmetricCryptoBufSink : public CryptoBuf
             {
             public:
                 /**
