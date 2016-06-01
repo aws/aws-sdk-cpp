@@ -503,6 +503,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
 {
     Aws::String iv_raw =  "92f258071d79af3e63672285";
@@ -538,3 +539,4 @@ TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
         ASSERT_STREQ(data_raw.c_str(), plainTextOutput.c_str());
     }
 }
+#endif
