@@ -30,13 +30,6 @@ namespace Aws
                 setg(end, end, end);
             }
 
-            SymmetricCryptoBufSrc::SymmetricCryptoBufSrc(SymmetricCryptoBufSrc&& rhs) : CryptoBuf(std::move(rhs)),
-                   m_isBuf(std::move(rhs.m_isBuf)), m_cipher(rhs.m_cipher), m_stream(rhs.m_stream),
-                   m_cipherMode(rhs.m_cipherMode), m_isFinalized(rhs.m_isFinalized),
-                   m_bufferSize(rhs.m_bufferSize), m_putBack(rhs.m_putBack)
-            {
-            }
-
             SymmetricCryptoBufSrc::pos_type SymmetricCryptoBufSrc::seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which)
             {
                 if(which == std::ios_base::in)
@@ -248,12 +241,6 @@ namespace Aws
             {
                 char* outputBase = reinterpret_cast<char*>(m_osBuf.GetUnderlyingData());
                 setp(outputBase, outputBase + bufferSize - 1);
-            }
-
-            SymmetricCryptoBufSink::SymmetricCryptoBufSink(SymmetricCryptoBufSink&& rhs) : CryptoBuf(std::move(rhs)),
-                m_osBuf(std::move(rhs.m_osBuf)), m_cipher(rhs.m_cipher), m_stream(rhs.m_stream),
-                m_cipherMode(rhs.m_cipherMode), m_isFinalized(rhs.m_isFinalized)
-            {
             }
 
             SymmetricCryptoBufSink::~SymmetricCryptoBufSink()

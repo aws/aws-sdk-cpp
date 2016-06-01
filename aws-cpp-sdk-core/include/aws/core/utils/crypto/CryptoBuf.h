@@ -45,10 +45,7 @@ namespace Aws
                 CryptoBuf() = default;
                 virtual ~CryptoBuf() = default;
                 CryptoBuf(const CryptoBuf&) = delete;
-                /**
-                 * Copies the state from rhs to this. doesn't actually move but we need it for subclass moves to work.
-                 */
-                CryptoBuf(CryptoBuf&& rhs) : std::streambuf(rhs) {}
+                CryptoBuf(CryptoBuf&& rhs) = delete;
                 /**
                  * If the buffer needs to do a final push to the sink or needs to empty the cipher blocks etc...
                  */
@@ -60,7 +57,7 @@ namespace Aws
              * to go through the cipher. A common use case is a file that is encrypted on disk being read via ifstream and then read decrypted into memory.
              * Or you could send a plain text file through an iostream and have it encrypted when the stream is read.
              *
-             * This streambuf is seekable, but it is very expensive to seek backwards since we have to reset the cipher and rencrypt everything up to that point.
+             * This streambuf is seekable, but it is very expensive to seek backwards since we have to reset the cipher and re-encrypt everything up to that point.
              * So seeking should be avoided if at all possible.
              */
             class AWS_CORE_API SymmetricCryptoBufSrc : public CryptoBuf
@@ -75,12 +72,9 @@ namespace Aws
                 SymmetricCryptoBufSrc(Aws::IStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);
 
                 SymmetricCryptoBufSrc(const SymmetricCryptoBufSrc&) = delete;
-                SymmetricCryptoBufSrc(SymmetricCryptoBufSrc&&);
+                SymmetricCryptoBufSrc(SymmetricCryptoBufSrc&&) = delete;
 
                 SymmetricCryptoBufSrc& operator=(const SymmetricCryptoBufSrc&) = delete;
-                /**
-                 * Not move assignable since it contains reference members
-                 */
                 SymmetricCryptoBufSrc& operator=(SymmetricCryptoBufSrc&&) = delete;
 
                 virtual ~SymmetricCryptoBufSrc() { FinalizeCipher(); }
@@ -128,7 +122,7 @@ namespace Aws
                  */
                 SymmetricCryptoBufSink(Aws::OStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);
                 SymmetricCryptoBufSink(const SymmetricCryptoBufSink&) = delete;
-                SymmetricCryptoBufSink(SymmetricCryptoBufSink&&);
+                SymmetricCryptoBufSink(SymmetricCryptoBufSink&&) = delete;
 
                 SymmetricCryptoBufSink& operator=(const SymmetricCryptoBufSink&) = delete;
                 /**
