@@ -6670,25 +6670,22 @@ namespace Model
         virtual void GetConsoleOutputAsync(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve a JPG-format screenshot of an instance to help with
-         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
-         * For command line tools, the decoding is performed for you.</p>
+         * <p>Retrieve a JPG-format screenshot of a running instance to help with
+         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
          */
         virtual Model::GetConsoleScreenshotOutcome GetConsoleScreenshot(const Model::GetConsoleScreenshotRequest& request) const;
 
         /**
-         * <p>Retrieve a JPG-format screenshot of an instance to help with
-         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
-         * For command line tools, the decoding is performed for you.</p>
+         * <p>Retrieve a JPG-format screenshot of a running instance to help with
+         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConsoleScreenshotOutcomeCallable GetConsoleScreenshotCallable(const Model::GetConsoleScreenshotRequest& request) const;
 
         /**
-         * <p>Retrieve a JPG-format screenshot of an instance to help with
-         * troubleshooting.</p> <p>For API calls, the returned content is base64-encoded.
-         * For command line tools, the decoding is performed for you.</p>
+         * <p>Retrieve a JPG-format screenshot of a running instance to help with
+         * troubleshooting.</p> <p>The returned content is base64-encoded.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
