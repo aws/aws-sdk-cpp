@@ -41,7 +41,10 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_fulfilledCapacity(0.0),
+    m_fulfilledCapacityHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -57,7 +60,10 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_iamFleetRoleHasBeenSet(false),
     m_launchSpecificationsHasBeenSet(false),
     m_excessCapacityTerminationPolicyHasBeenSet(false),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_fulfilledCapacity(0.0),
+    m_fulfilledCapacityHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -134,6 +140,18 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_allocationStrategy = AllocationStrategyMapper::GetAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
     }
+    XmlNode fulfilledCapacityNode = resultNode.FirstChild("fulfilledCapacity");
+    if(!fulfilledCapacityNode.IsNull())
+    {
+      m_fulfilledCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(fulfilledCapacityNode.GetText().c_str()).c_str());
+      m_fulfilledCapacityHasBeenSet = true;
+    }
+    XmlNode typeNode = resultNode.FirstChild("type");
+    if(!typeNode.IsNull())
+    {
+      m_type = FleetTypeMapper::GetFleetTypeForName(StringUtils::Trim(typeNode.GetText().c_str()).c_str());
+      m_typeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -187,6 +205,14 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
   }
+  if(m_fulfilledCapacityHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
+  }
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -236,6 +262,14 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_allocationStrategyHasBeenSet)
   {
       oStream << location << ".AllocationStrategy=" << AllocationStrategyMapper::GetNameForAllocationStrategy(m_allocationStrategy) << "&";
+  }
+  if(m_fulfilledCapacityHasBeenSet)
+  {
+        oStream << location << ".FulfilledCapacity=" << StringUtils::URLEncode(m_fulfilledCapacity) << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << FleetTypeMapper::GetNameForFleetType(m_type) << "&";
   }
 }
 
