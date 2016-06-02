@@ -267,17 +267,13 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         httpRequest->DeleteHeader(Http::CONTENT_TYPE_HEADER);
 
         if(httpRequest->GetMethod() == HttpMethod::HTTP_POST || httpRequest->GetMethod() == HttpMethod::HTTP_PUT)
-        {        
-            httpRequest->SetHeaderValue(Http::CONTENT_LENGTH_HEADER, "0");        
+        {
+            httpRequest->SetHeaderValue(Http::CONTENT_LENGTH_HEADER, "0");
         }
         else
         {
             httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         }
-    }
-    else if (!body)
-    {
-        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
     }
 
     //in the scenario where we are adding a content body as a stream, the request object likely already
