@@ -199,7 +199,7 @@ namespace Aws
                 return traits_type::eof();
             }
 
-            SymmetricCryptoBufSrc::off_type SymmetricCryptoBufSrc::ComputeAbsSeekPosition(off_type pos, std::ios_base::seekdir dir,  std::fpos<__mbstate_t> curPos)
+            SymmetricCryptoBufSrc::off_type SymmetricCryptoBufSrc::ComputeAbsSeekPosition(off_type pos, std::ios_base::seekdir dir,  std::fpos<FPOS_TYPE> curPos)
             {
                 switch(dir)
                 {

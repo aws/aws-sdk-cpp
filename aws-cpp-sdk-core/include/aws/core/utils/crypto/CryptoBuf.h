@@ -24,6 +24,11 @@ namespace Aws
     {
         namespace Crypto
         {
+#ifdef _MSC_VER
+            typedef _Mbstatet FPOS_TYPE;
+#else
+            typedef __mbstate_t FPOS_TYPE;
+#endif
             static const size_t DEFAULT_BUF_SIZE = 1024;
             static const size_t PUT_BACK_SIZE = 1;
 
@@ -92,7 +97,7 @@ namespace Aws
 
             private:
                 int_type underflow() override;
-                off_type ComputeAbsSeekPosition(off_type, std::ios_base::seekdir,  std::fpos<__mbstate_t>);
+                off_type ComputeAbsSeekPosition(off_type, std::ios_base::seekdir,  std::fpos<FPOS_TYPE>);
                 void FinalizeCipher();
 
                 CryptoBuffer m_isBuf;

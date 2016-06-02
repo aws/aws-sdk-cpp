@@ -506,7 +506,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
 {
-    Aws::String iv_raw =  "92f258071d79af3e63672285";
+    Aws::String iv_raw = "92f258071d79af3e63672285";
     Aws::String key_raw = "595f259c55abe00ae07535ca5d9b09d6efb9f7e9abb64605c337acbd6b14fc7e";
     Aws::String data_raw = "a6fee33eb110a2d769bbc52b0f36969c287874f665681477a25fc4c48015c541fbe2394133ba490a34ee2dd67b898177849a91";
     Aws::String expected_raw = "bbca4a9e09ae9690c0f6f8d405e53dccd666aa9c5fa13c8758bc30abe1ddd1bcce0d36a1eaaaaffef20cd3c5970b9673f8a65c";
@@ -516,14 +516,16 @@ TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
     auto cipher = Aws::Utils::Crypto::CreateAES_GCMImplementation(HashingUtils::HexDecode(key_raw), HashingUtils::HexDecode(iv_raw));
 
     {
-        std::istringstream is((const char*)HashingUtils::HexDecode(data_raw).GetUnderlyingData());
-        SymmetricCryptoStream stream(is, CipherMode::Encrypt, *cipher);
-
+        std::stringstream is;
+        CryptoBuffer dataToEncrypt = HashingUtils::HexDecode(data_raw);
+        is.write((const char*)dataToEncrypt.GetUnderlyingData(), dataToEncrypt.GetLength());
+        SymmetricCryptoStream stream((std::istream&)is, CipherMode::Encrypt, *cipher, buffer.GetLength());
+        
         memset(buffer.GetUnderlyingData(), 0, buffer.GetLength());
         stream.read((char*)buffer.GetUnderlyingData(), buffer.GetLength());
 
         ASSERT_STREQ(expected_raw.c_str(), HashingUtils::HexEncode(buffer).c_str());
-        stream.Finalize();
+        stream.Finalize();       
         ASSERT_STREQ(tag_raw.c_str(), HashingUtils::HexEncode(cipher->GetTag()).c_str());
     }
 
