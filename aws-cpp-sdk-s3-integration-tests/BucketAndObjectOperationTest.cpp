@@ -328,6 +328,7 @@ namespace
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
         //verify md5 sums between what was sent and what s3 told us they received.
+        putObjectRequest.GetBody()->clear();
         Aws::StringStream ss;
         ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())) << "\"";
         ASSERT_EQ(ss.str(), putObjectOutcome.GetResult().GetETag());
@@ -478,6 +479,7 @@ namespace
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
 
         //verify md5 sums between what was sent and what s3 told us they received.
+        putObjectRequest.GetBody()->clear();
         Aws::StringStream ss;
         ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())) << "\"";
         ASSERT_EQ(ss.str(), putObjectOutcome.GetResult().GetETag());
@@ -758,6 +760,9 @@ namespace
         GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
         ASSERT_TRUE(getObjectOutcome.IsSuccess());
 
+        part1Stream->clear();
+        part2Stream->clear();
+        part3Stream->clear();
         Aws::StringStream expectedStreamValue;
         part1Stream->seekg(0, part1Stream->beg);
         part2Stream->seekg(0, part2Stream->beg);
@@ -765,6 +770,7 @@ namespace
         expectedStreamValue << part1Stream->rdbuf() << part2Stream->rdbuf() << part3Stream->rdbuf();
 
         Aws::StringStream actualStreamValue;
+        getObjectOutcome.GetResult().GetBody().clear();
         actualStreamValue << getObjectOutcome.GetResult().GetBody().rdbuf();
         ASSERT_EQ(expectedStreamValue.str(), actualStreamValue.str());
 

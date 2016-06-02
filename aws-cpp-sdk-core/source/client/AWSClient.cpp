@@ -275,10 +275,6 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
             httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         }
     }
-    else if (!body)
-    {
-        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
-    }
 
     //in the scenario where we are adding a content body as a stream, the request object likely already
     //has a content-length header set and we don't want to seek the stream just to find this information.
@@ -288,12 +284,9 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
         body->seekg(0, body->beg);
-        if (streamSize > 0)
-        {
-            Aws::StringStream ss;
-            ss << streamSize;
-            httpRequest->SetContentLength(ss.str());
-        }
+        Aws::StringStream ss;
+        ss << streamSize;
+        httpRequest->SetContentLength(ss.str());
     }
 
     if (needsContentMd5 && body && !httpRequest->HasHeader(Http::CONTENT_MD5_HEADER))

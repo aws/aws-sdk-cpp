@@ -166,8 +166,7 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             curl_easy_setopt(requestHandle, CURLOPT_HTTPGET, 1L);
             break;
         case HttpMethod::HTTP_POST:
-
-            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER)|| request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0")
             {
                 curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "POST");
             }
@@ -177,7 +176,7 @@ void SetOptCodeForHttpMethod(CURL* requestHandle, const HttpRequest& request)
             }
             break;
         case HttpMethod::HTTP_PUT:
-            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+            if (!request.HasHeader(Aws::Http::CONTENT_LENGTH_HEADER) || request.GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER) == "0")
             {
                 curl_easy_setopt(requestHandle, CURLOPT_CUSTOMREQUEST, "PUT");
             }
@@ -515,7 +514,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     const CurlHttpClient* client = context->m_client;
     if(!client->IsRequestProcessingEnabled())
     {
-        return 0;
+        return CURL_READFUNC_ABORT;
     }
 
     HttpRequest* request = context->m_request;
