@@ -24,11 +24,7 @@ namespace Aws
     {
         namespace Crypto
         {
-#ifdef _MSC_VER
-            typedef _Mbstatet FPOS_TYPE;
-#else
-            typedef __mbstate_t FPOS_TYPE;
-#endif
+            typedef std::mbstate_t FPOS_TYPE;
             static const size_t DEFAULT_BUF_SIZE = 1024;
             static const size_t PUT_BACK_SIZE = 1;
 
