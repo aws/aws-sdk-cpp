@@ -338,6 +338,13 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     //compute hash on payload if it exists.
     auto hashResult = request.GetContentBody() ? m_hash->Calculate(*request.GetContentBody())
         : m_hash->Calculate("");
+
+    if(request.GetContentBody())
+    {
+        request.GetContentBody()->clear();
+        request.GetContentBody()->seekg(0);
+    }
+
     if (!hashResult.IsSuccess())
     {
         AWS_LOG_ERROR(v4LogTag, "Unable to hash (sha256) request body");

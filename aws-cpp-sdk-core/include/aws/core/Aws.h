@@ -23,7 +23,7 @@
 
 namespace Aws
 {
-    static const char* DEFAULT_LOG_PREFIX = "aws_sdk";
+    static const char* DEFAULT_LOG_PREFIX = "aws_sdk_";
 
     /**
      * SDK wide options for logging
