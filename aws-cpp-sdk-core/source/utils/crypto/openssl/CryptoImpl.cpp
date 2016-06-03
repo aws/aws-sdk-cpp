@@ -123,6 +123,11 @@ namespace Aws
                 MD5_Init(&md5);
 
                 auto currentPos = stream.tellg();
+                if(currentPos == -1)
+                {
+                    currentPos = 0;
+                    stream.clear();
+                }
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -164,6 +169,12 @@ namespace Aws
                 SHA256_Init(&sha256);
 
                 auto currentPos = stream.tellg();
+                if(currentPos == -1)
+                {
+                    currentPos = 0;
+                    stream.clear();
+                }
+
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];

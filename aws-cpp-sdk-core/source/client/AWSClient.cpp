@@ -142,6 +142,12 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
             AWS_LOG_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
+            if(request.GetBody())
+            {
+                request.GetBody()->clear();
+                request.GetBody()->seekg(0);
+            }
+
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
@@ -299,6 +305,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //of hash computations, we can't control the fact that computing a hash mutates
         //state on some platforms such as windows (but that isn't a concern of this class.
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
+        body->clear();
         if(md5HashResult.IsSuccess())
         {
             httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(md5HashResult.GetResult()));

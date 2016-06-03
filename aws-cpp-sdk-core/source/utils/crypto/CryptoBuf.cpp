@@ -33,7 +33,7 @@ namespace Aws
             SymmetricCryptoBufSrc::pos_type SymmetricCryptoBufSrc::seekoff(off_type off, std::ios_base::seekdir dir, std::ios_base::openmode which)
             {
                 if(which == std::ios_base::in)
-                {                    
+                {
                     auto curPos = m_stream.tellg();
                     //error on seek we may have read past the end already. Try resetting and seeking to the end first
                     if (curPos == pos_type(-1))
@@ -56,6 +56,7 @@ namespace Aws
                         m_cipher.Reset();
                         m_stream.clear();
                         m_stream.seekg(0);
+                        m_isFinalized = false;
                         index = 0;
                     }
 
@@ -132,7 +133,7 @@ namespace Aws
 
             SymmetricCryptoBufSrc::int_type SymmetricCryptoBufSrc::underflow()
             {
-                if (!m_cipher || m_isFinalized)
+                if (!m_cipher || (m_isFinalized && gptr() < egptr()))
                 {
                     return traits_type::eof();
                 }
@@ -185,6 +186,7 @@ namespace Aws
                         m_isFinalized = true;
                     }
                 }
+
 
                 if(newDataBuf.GetLength() > 0)
                 {
