@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ExcessCapacityTerminationPolicy.h>
 #include <aws/ec2/model/AllocationStrategy.h>
+#include <aws/ec2/model/FleetType.h>
 #include <aws/ec2/model/SpotFleetLaunchSpecification.h>
 
 namespace Aws
@@ -405,6 +406,89 @@ namespace Model
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(value); return *this;}
 
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * capacity.</p>
+     */
+    inline double GetFulfilledCapacity() const{ return m_fulfilledCapacity; }
+
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * capacity.</p>
+     */
+    inline void SetFulfilledCapacity(double value) { m_fulfilledCapacityHasBeenSet = true; m_fulfilledCapacity = value; }
+
+    /**
+     * <p>The number of units fulfilled by this request compared to the set target
+     * capacity.</p>
+     */
+    inline SpotFleetRequestConfigData& WithFulfilledCapacity(double value) { SetFulfilledCapacity(value); return *this;}
+
+    /**
+     * <p>The type of request. Indicates whether the fleet will only
+     * <code>request</code> the target capacity or also attempt to
+     * <code>maintain</code> it. When you <code>request</code> a certain target
+     * capacity, the fleet will only place the required bids. It will not attempt to
+     * replenish Spot instances if capacity is diminished, nor will it submit bids in
+     * alternative Spot pools if capacity is not available. When you want to
+     * <code>maintain</code> a certain target capacity, fleet will place the required
+     * bids to meet this target capacity. It will also automatically replenish any
+     * interrupted instances. Default: <code>maintain</code>. </p>
+     */
+    inline const FleetType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of request. Indicates whether the fleet will only
+     * <code>request</code> the target capacity or also attempt to
+     * <code>maintain</code> it. When you <code>request</code> a certain target
+     * capacity, the fleet will only place the required bids. It will not attempt to
+     * replenish Spot instances if capacity is diminished, nor will it submit bids in
+     * alternative Spot pools if capacity is not available. When you want to
+     * <code>maintain</code> a certain target capacity, fleet will place the required
+     * bids to meet this target capacity. It will also automatically replenish any
+     * interrupted instances. Default: <code>maintain</code>. </p>
+     */
+    inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of request. Indicates whether the fleet will only
+     * <code>request</code> the target capacity or also attempt to
+     * <code>maintain</code> it. When you <code>request</code> a certain target
+     * capacity, the fleet will only place the required bids. It will not attempt to
+     * replenish Spot instances if capacity is diminished, nor will it submit bids in
+     * alternative Spot pools if capacity is not available. When you want to
+     * <code>maintain</code> a certain target capacity, fleet will place the required
+     * bids to meet this target capacity. It will also automatically replenish any
+     * interrupted instances. Default: <code>maintain</code>. </p>
+     */
+    inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of request. Indicates whether the fleet will only
+     * <code>request</code> the target capacity or also attempt to
+     * <code>maintain</code> it. When you <code>request</code> a certain target
+     * capacity, the fleet will only place the required bids. It will not attempt to
+     * replenish Spot instances if capacity is diminished, nor will it submit bids in
+     * alternative Spot pools if capacity is not available. When you want to
+     * <code>maintain</code> a certain target capacity, fleet will place the required
+     * bids to meet this target capacity. It will also automatically replenish any
+     * interrupted instances. Default: <code>maintain</code>. </p>
+     */
+    inline SpotFleetRequestConfigData& WithType(const FleetType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of request. Indicates whether the fleet will only
+     * <code>request</code> the target capacity or also attempt to
+     * <code>maintain</code> it. When you <code>request</code> a certain target
+     * capacity, the fleet will only place the required bids. It will not attempt to
+     * replenish Spot instances if capacity is diminished, nor will it submit bids in
+     * alternative Spot pools if capacity is not available. When you want to
+     * <code>maintain</code> a certain target capacity, fleet will place the required
+     * bids to meet this target capacity. It will also automatically replenish any
+     * interrupted instances. Default: <code>maintain</code>. </p>
+     */
+    inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(value); return *this;}
+
   private:
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
@@ -426,6 +510,10 @@ namespace Model
     bool m_excessCapacityTerminationPolicyHasBeenSet;
     AllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+    double m_fulfilledCapacity;
+    bool m_fulfilledCapacityHasBeenSet;
+    FleetType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

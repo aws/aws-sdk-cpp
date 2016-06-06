@@ -142,6 +142,12 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
         {
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
             AWS_LOG_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
+            if(request.GetBody())
+            {
+                request.GetBody()->clear();
+                request.GetBody()->seekg(0);
+            }
+
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
@@ -264,9 +270,18 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     if (!body)
     {
         AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
-        httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
         httpRequest->DeleteHeader(Http::CONTENT_TYPE_HEADER);
+
+        if(httpRequest->GetMethod() == HttpMethod::HTTP_POST || httpRequest->GetMethod() == HttpMethod::HTTP_PUT)
+        {        
+            httpRequest->SetHeaderValue(Http::CONTENT_LENGTH_HEADER, "0");        
+        }
+        else
+        {
+            httpRequest->DeleteHeader(Http::CONTENT_LENGTH_HEADER);
+        }
     }
+
     //in the scenario where we are adding a content body as a stream, the request object likely already
     //has a content-length header set and we don't want to seek the stream just to find this information.
     if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
@@ -275,12 +290,9 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
         body->seekg(0, body->beg);
-        if (streamSize > 0)
-        {
-            Aws::StringStream ss;
-            ss << streamSize;
-            httpRequest->SetContentLength(ss.str());
-        }
+        Aws::StringStream ss;
+        ss << streamSize;
+        httpRequest->SetContentLength(ss.str());
     }
 
     if (needsContentMd5 && body && !httpRequest->HasHeader(Http::CONTENT_MD5_HEADER))
@@ -293,6 +305,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         //of hash computations, we can't control the fact that computing a hash mutates
         //state on some platforms such as windows (but that isn't a concern of this class.
         auto md5HashResult = const_cast<AWSClient*>(this)->m_hash->Calculate(*body);
+        body->clear();
         if(md5HashResult.IsSuccess())
         {
             httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(md5HashResult.GetResult()));

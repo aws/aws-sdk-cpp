@@ -36,7 +36,6 @@
 #include <aws/transfer/S3FileRequest.h>
 #include <aws/transfer/UploadFileRequest.h>
 #include <aws/transfer/DownloadFileRequest.h>
-
 #include <iostream>
 #include <fstream>
 #include <time.h>
@@ -52,27 +51,27 @@ using namespace Aws::Utils;
 static const char* TEST_FILE_NAME = "TransferTestFile.txt"; // Also used as key
 
 static const char* SMALL_TEST_FILE_NAME = "SmallTransferTestFile.txt";
-//static const char* SMALL_FILE_KEY = "SmallFileKey";
+static const char* SMALL_FILE_KEY = "SmallFileKey";
 
 static const char* MEDIUM_TEST_FILE_NAME = "MedTransferTestFile.txt";
-//static const char* MEDIUM_FILE_KEY = "MediumFileKey";
+static const char* MEDIUM_FILE_KEY = "MediumFileKey";
 
 static const char* MULTI_PART_CONTENT_FILE = "MultiContentTransferTestFile.txt";
-//static const char* MULTI_PART_CONTENT_KEY = "MultiContentKey";
+static const char* MULTI_PART_CONTENT_KEY = "MultiContentKey";
 static const char* MULTI_PART_CONTENT_TEXT = "This is a test..##";
 static const char* MULTI_PART_CONTENT_DOWNLOAD = "MultiContentDownloadTransferTestFile.txt";
 
 static const char* CONTENT_TEST_FILE_TEXT = "This is a test..";
 static const char* CONTENT_TEST_FILE_NAME = "ContentTransferTestFile.txt";
 static const char* CONTENT_TEST_DOWNLOAD_FILE_NAME = "ContentTransferTestFileDownload.txt";
-//static const char* CONTENT_FILE_KEY = "ContentFileKey";
+static const char* CONTENT_FILE_KEY = "ContentFileKey";
 
 static const char* BIG_TEST_FILE_NAME = "BigTransferTestFile.txt";
 static const char* BIG_FILE_KEY = "BigFileKey";
 
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
-//static const char* CANCEL_FILE_KEY = "CancelFileKey";
-//static const char* CANCEL_FILE_KEY2 = "CancelFileKey2";
+static const char* CANCEL_FILE_KEY = "CancelFileKey";
+static const char* CANCEL_FILE_KEY2 = "CancelFileKey2";
 
 static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtestbucket";
 static const unsigned SMALL_TEST_SIZE = MB5_BUFFER_SIZE / 2;
@@ -80,7 +79,7 @@ static const unsigned MEDIUM_TEST_SIZE = MB5_BUFFER_SIZE * 3 / 2;
 
 static const unsigned CANCEL_TEST_SIZE = MB5_BUFFER_SIZE * 30;
 
-//static const unsigned PARTS_IN_MEDIUM_TEST = 2;
+static const unsigned PARTS_IN_MEDIUM_TEST = 2;
 
 static const unsigned PARTS_IN_BIG_TEST = 15;
 static const unsigned BIG_TEST_SIZE = MB5_BUFFER_SIZE * PARTS_IN_BIG_TEST;
@@ -573,8 +572,6 @@ TEST_F(TransferTests, SinglePartUploadTest)
 
     ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
 }
-
-#ifdef NEVER
 
 // Half size file - similar to our 5 meg test, let's make sure we're processing < 1 part files correctly
 TEST_F(TransferTests, SmallTest)
@@ -1326,9 +1323,6 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
     ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
     ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
-
 }
-
-#endif // NEVER
 
 }

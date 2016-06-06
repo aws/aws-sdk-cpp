@@ -120,7 +120,7 @@ namespace Aws
                  * cipher being used for decryption.
                  */
                 OpenSSLCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
-                              CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+                              CryptoBuffer&& tag = CryptoBuffer(0));
 
                 /**
                  * Creates new OpenSSL based cipher for key, initializationVector, and optional tag. If this is an authenticated
@@ -174,6 +174,8 @@ namespace Aws
                  */
                 CryptoBuffer FinalizeDecryption() override;
 
+                void Reset() override;
+
             protected:
                 /**
                  * Algorithm/Mode level config for the EVP_CIPHER_CTX
@@ -193,10 +195,9 @@ namespace Aws
 
             private:
                 void Init();
-
                 void CheckInitEncryptor();
-
                 void CheckInitDecryptor();
+                void Cleanup();
 
                 bool m_encDecInitialized;
                 bool m_encryptionMode;
@@ -302,7 +303,7 @@ namespace Aws
                  * cipher to decrypt an encrypted payload, you must set the tag here.
                  */
                 AES_GCM_Cipher_OpenSSL(CryptoBuffer&& key, CryptoBuffer&& initializationVector,
-                                       CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+                                       CryptoBuffer&& tag = CryptoBuffer(0));
 
                 /**
                  * Create AES in GCM mode off of a 256 bit key, a 16 byte secure random IV, and an optional 16 byte Tag. If you are using this
