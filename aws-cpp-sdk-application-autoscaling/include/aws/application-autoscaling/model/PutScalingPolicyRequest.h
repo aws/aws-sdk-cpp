@@ -241,51 +241,36 @@ namespace Model
 
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-     * in the <i>Application Auto Scaling API Reference</i>.</p>
+     * you are creating a new policy. For more information, see
+     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
 
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-     * in the <i>Application Auto Scaling API Reference</i>.</p>
+     * you are creating a new policy. For more information, see
+     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-     * in the <i>Application Auto Scaling API Reference</i>.</p>
+     * you are creating a new policy. For more information, see
+     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-     * in the <i>Application Auto Scaling API Reference</i>.</p>
+     * you are creating a new policy. For more information, see
+     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { SetStepScalingPolicyConfiguration(value); return *this;}
 
     /**
      * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepScalingPolicyConfiguration.html">StepScalingPolicyConfiguration</a>
-     * and <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-     * in the <i>Application Auto Scaling API Reference</i>.</p>
+     * you are creating a new policy. For more information, see
+     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(value); return *this;}
 

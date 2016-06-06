@@ -20,6 +20,10 @@
 #include <CommonCrypto/CommonCryptor.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+//for OSX < 10.10 compatibility
+typedef int32_t CCStatus;
+typedef int32_t CCCryptorStatus;
+
 namespace Aws
 {
     namespace Utils
@@ -328,6 +332,21 @@ namespace Aws
                     return CryptoBuffer();
                 }
                 return CryptoBuffer(finalBlock.GetUnderlyingData(), writtenSize);
+            }
+
+            void CommonCryptoCipher::Reset()
+            {
+                m_failure = false;
+                m_encryptionMode = false;
+                m_encDecInitialized = false;
+
+                if(m_cryptoHandle)
+                {
+                    CCCryptorRelease(m_cryptoHandle);
+                }
+
+                m_cryptoHandle = nullptr;
+                Init();
             }
 
             size_t AES_CBC_Cipher_CommonCrypto::BlockSizeBytes = 16;

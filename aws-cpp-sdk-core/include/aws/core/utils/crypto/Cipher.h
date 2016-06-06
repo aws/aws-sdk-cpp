@@ -120,6 +120,8 @@ namespace Aws
                  */
                 virtual CryptoBuffer FinalizeDecryption () = 0;
 
+                virtual void Reset() = 0;
+
                 /**
                  * IV used for encryption/decryption
                  */
