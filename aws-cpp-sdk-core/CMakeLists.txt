@@ -106,7 +106,6 @@ endif()
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_SOURCE}
     ${AWS_TINYXML2_SOURCE}
-    ${AWS_JSONCPP_SOURCE}
     ${AWS_AUTH_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${AWS_INTERNAL_SOURCE}
@@ -195,6 +194,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
+    ${AWS_JSONCPP_SOURCE}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
@@ -317,13 +317,11 @@ endif()
 
 add_library(aws-cpp-sdk-core ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
 
-if(PLATFORM_ANDROID)
-    if(ENABLE_CURL_CLIENT)
-        add_dependencies(aws-cpp-sdk-core CURL)
-    endif()
-    if(ENABLE_OPENSSL_ENCRYPTION)
-        add_dependencies(aws-cpp-sdk-core OPENSSL)
-    endif()
+if(ENABLE_CURL_CLIENT AND BUILD_CURL)
+    add_dependencies(aws-cpp-sdk-core CURL)
+endif()
+if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
+    add_dependencies(aws-cpp-sdk-core OPENSSL)
 endif()
 
 target_include_directories(aws-cpp-sdk-core PUBLIC
@@ -343,11 +341,15 @@ if(NOT PLATFORM_WINDOWS)
     if(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
         # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.
         # We also have some nested comments in the auto-generated member comments so turn that off as well
-       target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
+        target_compile_options(aws-cpp-sdk-core PRIVATE -Wall -Werror -Wno-comment)
 
-       if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-           target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
-       endif()
+        if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
+        endif()
+
+        if(NOT ENABLE_RTTI)
+            target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
+        endif()
     endif()
 elseif(MSVC)
     target_compile_options(aws-cpp-sdk-core PRIVATE /bigobj)
@@ -363,6 +365,10 @@ elseif(MSVC)
     else()
         target_compile_options(aws-cpp-sdk-core PRIVATE /W4)
     endif()
+
+    if(NOT ENABLE_RTTI)
+        target_compile_options(aws-cpp-sdk-core PUBLIC /GR-)
+    endif()
 endif()
 
 if(SIMPLE_INSTALL)
@@ -370,9 +376,9 @@ if(SIMPLE_INSTALL)
                                       LIBRARY DESTINATION lib
                                       RUNTIME DESTINATION bin)
 else()
-    install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-                                      LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME}
-                                      RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/\${CMAKE_INSTALL_CONFIG_NAME})
+    install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+                                      LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+                                      RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
 endif()
 
 install (FILES ${AWS_HEADERS} DESTINATION include/aws/core)

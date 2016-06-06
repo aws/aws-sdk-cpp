@@ -98,7 +98,7 @@ namespace Aws
             {
                 assert(buffer);
 
-                int success = RAND_bytes(buffer, bufferSize);
+                int success = RAND_bytes(buffer, static_cast<int>(bufferSize));
                 if (success != 1)
                 {
                     m_failure = true;
@@ -123,6 +123,11 @@ namespace Aws
                 MD5_Init(&md5);
 
                 auto currentPos = stream.tellg();
+                if(currentPos == -1)
+                {
+                    currentPos = 0;
+                    stream.clear();
+                }
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -164,6 +169,12 @@ namespace Aws
                 SHA256_Init(&sha256);
 
                 auto currentPos = stream.tellg();
+                if(currentPos == -1)
+                {
+                    currentPos = 0;
+                    stream.clear();
+                }
+
                 stream.seekg(0, stream.beg);
 
                 char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
@@ -255,10 +266,7 @@ namespace Aws
 
             OpenSSLCipher::~OpenSSLCipher()
             {
-                if(m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
-                {
-                    EVP_CIPHER_CTX_cleanup(&m_ctx);
-                }
+                Cleanup();
             }
 
             void OpenSSLCipher::Init()
@@ -388,6 +396,29 @@ namespace Aws
                     return CryptoBuffer();
                 }
                 return CryptoBuffer(finalBlock.GetUnderlyingData(), static_cast<size_t>(writtenSize));
+            }
+
+            void OpenSSLCipher::Reset()
+            {
+                Cleanup();
+                Init();
+            }
+
+            void OpenSSLCipher::Cleanup()
+            {
+                m_failure = false;
+                m_encDecInitialized = false;
+                m_encryptionMode = false;
+                m_decryptionMode = false;
+
+                if(m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
+                {
+                    EVP_CIPHER_CTX_cleanup(&m_ctx);
+                }
+
+                m_ctx.cipher = nullptr;
+                m_ctx.cipher_data = nullptr;
+                m_ctx.engine = nullptr;
             }
 
             size_t AES_CBC_Cipher_OpenSSL::BlockSizeBytes = 16;

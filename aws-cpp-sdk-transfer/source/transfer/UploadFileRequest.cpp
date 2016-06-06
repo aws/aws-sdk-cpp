@@ -709,6 +709,7 @@ void UploadFileRequest::HandlePartFailure(const Aws::S3::Model::UploadPartOutcom
 void UploadFileRequest::DoRetry(PartRequestRecord& partRequest)
 {
     ++m_totalPartRetries;
+    partRequest.m_partRequest.GetBody()->clear();
     partRequest.m_partRequest.GetBody()->seekg(0);
     RequestPart(partRequest.m_partRequest.GetPartNumber());
 }
@@ -833,6 +834,7 @@ bool UploadFileRequest::HandlePutObjectOutcome(const Aws::S3::Model::PutObjectRe
 {
     //verify md5 sums between what was sent and what s3 told us they received.
     Aws::StringStream ss;
+    request.GetBody()->clear();
     ss << "\"" << HashingUtils::HexEncode(HashingUtils::CalculateMD5(*request.GetBody())) << "\"";
 
     if (outcome.IsSuccess() && (ss.str() == outcome.GetResult().GetETag()))
