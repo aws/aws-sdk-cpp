@@ -18,6 +18,7 @@
 #include <aws/core/utils/crypto/Cipher.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/crypto/CryptoStream.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -144,12 +145,12 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     auto part2 = cipher->FinalizeEncryption();
 
     ASSERT_TRUE(*cipher);
-    CryptoBuffer finalEncryptionResult({&part1, &part2});
+    CryptoBuffer finalEncryptionResult({ &part1, &part2 });
 
     cipher = CreateAES_CBCImplementation(key, cipher->GetIV());
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
-    CryptoBuffer finalDecryptionResult({&part1, &part2});
+    CryptoBuffer finalDecryptionResult({ &part1, &part2 });
 
     CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
     plainText.Zero();

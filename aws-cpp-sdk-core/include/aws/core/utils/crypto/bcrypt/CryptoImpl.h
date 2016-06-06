@@ -229,6 +229,8 @@ namespace Aws
                  */
                 CryptoBuffer FinalizeDecryption() override;
 
+                void Reset() override;
+
             protected:
                 /**
                 * Algorithm/Mode level config for the BCRYPT_ALG_HANDLE and BCRYPT_KEY_HANDLE
@@ -246,14 +248,14 @@ namespace Aws
                 DWORD m_flags;
                 CryptoBuffer m_workingIv;
                 PBCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfoPtr;
+                bool m_encDecInitialized;
+                bool m_encryptionMode;
+                bool m_decryptionMode;
 
             private:
                 void Init();
                 void InitKey();
-
-                bool m_encDecInitialized;
-                bool m_encryptionMode;
-                bool m_decryptionMode;
+                void Cleanup();
             };
 
             /**
@@ -287,6 +289,8 @@ namespace Aws
                 CryptoBuffer FinalizeEncryption() override;
                 CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
                 CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
 
             protected:
                 void InitEncryptor_Internal() override;
@@ -335,6 +339,8 @@ namespace Aws
                 CryptoBuffer FinalizeEncryption() override;
                 CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
                 CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
 
             protected:
                 void InitEncryptor_Internal() override;
@@ -389,6 +395,8 @@ namespace Aws
                 CryptoBuffer FinalizeEncryption() override;
                 CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;
                 CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
 
             protected:
                 void InitEncryptor_Internal() override;

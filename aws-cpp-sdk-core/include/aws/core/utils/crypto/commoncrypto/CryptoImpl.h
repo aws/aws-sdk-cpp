@@ -161,6 +161,8 @@ namespace Aws
                  */
                 CryptoBuffer FinalizeDecryption() override;
 
+                void Reset() override;
+
             protected:
                 /**
                  * Algorithm/Mode level config for the EVP_CIPHER_CTX
