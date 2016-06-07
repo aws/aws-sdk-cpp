@@ -33,10 +33,10 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p> Represents the output of a <a>CreateDataSourceFromS3</a> operation, and is
-   * an acknowledgement that Amazon ML received the request.</p> <p>The
-   * <a>CreateDataSourceFromS3</a> operation is asynchronous. You can poll for
-   * updates by using the <a>GetBatchPrediction</a> operation and checking the
+   * <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation,
+   * and is an acknowledgement that Amazon ML received the request.</p> <p>The
+   * <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for
+   * updates by using the <code>GetBatchPrediction</code> operation and checking the
    * <code>Status</code> parameter. </p>
    */
   class AWS_MACHINELEARNING_API CreateDataSourceFromS3Result
@@ -47,44 +47,51 @@ namespace Model
     CreateDataSourceFromS3Result& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = value; }
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline CreateDataSourceFromS3Result& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline CreateDataSourceFromS3Result& WithDataSourceId(Aws::String&& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>A user-supplied ID that uniquely identifies the datasource. This value should
-     * be identical to the value of the <code>DataSourceID</code> in the request. </p>
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This
+     * value should be identical to the value of the <code>DataSourceID</code> in the
+     * request. </p>
      */
     inline CreateDataSourceFromS3Result& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 

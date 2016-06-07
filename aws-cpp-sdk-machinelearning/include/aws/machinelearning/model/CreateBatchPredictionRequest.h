@@ -205,77 +205,77 @@ namespace Model
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(Aws::String&& value) { SetOutputUri(value); return *this;}
 
     /**
      * <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory to store the batch prediction results. The following substrings are
-     * not allowed in the s3 key portion of the "outputURI" field: ':', '//', '/./',
-     * '/../'.</p> <p>Amazon ML needs permissions to store and retrieve the logs on
-     * your behalf. For information about how to set permissions, see the <a
-     * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-     * Learning Developer Guide</a>.</p>
+     * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
+     * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
+     * retrieve the logs on your behalf. For information about how to set permissions,
+     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
 

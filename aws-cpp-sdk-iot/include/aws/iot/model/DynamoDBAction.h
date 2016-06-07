@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/DynamoKeyType.h>
 
 namespace Aws
 {
@@ -192,6 +193,31 @@ namespace Model
     inline DynamoDBAction& WithHashKeyValue(const char* value) { SetHashKeyValue(value); return *this;}
 
     /**
+     * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline const DynamoKeyType& GetHashKeyType() const{ return m_hashKeyType; }
+
+    /**
+     * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline void SetHashKeyType(const DynamoKeyType& value) { m_hashKeyTypeHasBeenSet = true; m_hashKeyType = value; }
+
+    /**
+     * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline void SetHashKeyType(DynamoKeyType&& value) { m_hashKeyTypeHasBeenSet = true; m_hashKeyType = value; }
+
+    /**
+     * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline DynamoDBAction& WithHashKeyType(const DynamoKeyType& value) { SetHashKeyType(value); return *this;}
+
+    /**
+     * <p>The hash key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline DynamoDBAction& WithHashKeyType(DynamoKeyType&& value) { SetHashKeyType(value); return *this;}
+
+    /**
      * <p>The range key name.</p>
      */
     inline const Aws::String& GetRangeKeyField() const{ return m_rangeKeyField; }
@@ -262,6 +288,31 @@ namespace Model
     inline DynamoDBAction& WithRangeKeyValue(const char* value) { SetRangeKeyValue(value); return *this;}
 
     /**
+     * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline const DynamoKeyType& GetRangeKeyType() const{ return m_rangeKeyType; }
+
+    /**
+     * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline void SetRangeKeyType(const DynamoKeyType& value) { m_rangeKeyTypeHasBeenSet = true; m_rangeKeyType = value; }
+
+    /**
+     * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline void SetRangeKeyType(DynamoKeyType&& value) { m_rangeKeyTypeHasBeenSet = true; m_rangeKeyType = value; }
+
+    /**
+     * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline DynamoDBAction& WithRangeKeyType(const DynamoKeyType& value) { SetRangeKeyType(value); return *this;}
+
+    /**
+     * <p>The range key type. Valid values are "STRING" or "NUMBER"</p>
+     */
+    inline DynamoDBAction& WithRangeKeyType(DynamoKeyType&& value) { SetRangeKeyType(value); return *this;}
+
+    /**
      * <p>The action payload. This name can be customized.</p>
      */
     inline const Aws::String& GetPayloadField() const{ return m_payloadField; }
@@ -305,10 +356,14 @@ namespace Model
     bool m_hashKeyFieldHasBeenSet;
     Aws::String m_hashKeyValue;
     bool m_hashKeyValueHasBeenSet;
+    DynamoKeyType m_hashKeyType;
+    bool m_hashKeyTypeHasBeenSet;
     Aws::String m_rangeKeyField;
     bool m_rangeKeyFieldHasBeenSet;
     Aws::String m_rangeKeyValue;
     bool m_rangeKeyValueHasBeenSet;
+    DynamoKeyType m_rangeKeyType;
+    bool m_rangeKeyTypeHasBeenSet;
     Aws::String m_payloadField;
     bool m_payloadFieldHasBeenSet;
   };

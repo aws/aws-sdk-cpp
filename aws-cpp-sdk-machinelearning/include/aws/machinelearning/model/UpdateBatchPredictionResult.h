@@ -33,8 +33,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of an <a>UpdateBatchPrediction</a> operation.</p>
-   * <p>You can see the updated content by using the <a>GetBatchPrediction</a>
+   * <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p>
+   * <p>You can see the updated content by using the <code>GetBatchPrediction</code>
    * operation.</p>
    */
   class AWS_MACHINELEARNING_API UpdateBatchPredictionResult

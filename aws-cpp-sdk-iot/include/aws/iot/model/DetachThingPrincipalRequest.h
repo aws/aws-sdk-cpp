@@ -71,37 +71,51 @@ namespace Model
     inline DetachThingPrincipalRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline DetachThingPrincipalRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline DetachThingPrincipalRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal.</p>
+     * <p>The principal.</p> <p>If the principal is a certificate, specify the
+     * certificate ARN. If the principal is an Amazon Cognito identity, specify the
+     * identity ID.</p>
      */
     inline DetachThingPrincipalRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
