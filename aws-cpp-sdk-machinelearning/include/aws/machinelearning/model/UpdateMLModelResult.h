@@ -33,8 +33,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of an <a>UpdateMLModel</a> operation.</p> <p>You can
-   * see the updated content by using the <a>GetMLModel</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You
+   * can see the updated content by using the <code>GetMLModel</code> operation.</p>
    */
   class AWS_MACHINELEARNING_API UpdateMLModelResult
   {

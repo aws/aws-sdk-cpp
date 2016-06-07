@@ -35,8 +35,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>GetBatchPrediction</a> operation and describes
-   * a <code>BatchPrediction</code>.</p>
+   * <p>Represents the output of a <code>GetBatchPrediction</code> operation and
+   * describes a <code>BatchPrediction</code>.</p>
    */
   class AWS_MACHINELEARNING_API GetBatchPredictionResult
   {
@@ -467,44 +467,44 @@ namespace Model
     inline GetBatchPredictionResult& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline void SetLogUri(const Aws::String& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline void SetLogUri(Aws::String&& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline void SetLogUri(const char* value) { m_logUri.assign(value); }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline GetBatchPredictionResult& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline GetBatchPredictionResult& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateBatchPrediction</a>
-     * operation.</p>
+     * <p>A link to the file that contains logs of the
+     * <code>CreateBatchPrediction</code> operation.</p>
      */
     inline GetBatchPredictionResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 

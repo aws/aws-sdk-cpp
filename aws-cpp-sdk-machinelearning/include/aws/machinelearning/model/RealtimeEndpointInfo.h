@@ -143,46 +143,51 @@ namespace Model
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>NONE - Endpoint
-     * does not exist or was previously deleted.</li> <li>READY - Endpoint is ready to
-     * be used for real-time predictions.</li> <li>UPDATING - Updating/creating the
-     * endpoint. </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
+     * <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
+     * </li> </ul>
      */
     inline const RealtimeEndpointStatus& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>NONE - Endpoint
-     * does not exist or was previously deleted.</li> <li>READY - Endpoint is ready to
-     * be used for real-time predictions.</li> <li>UPDATING - Updating/creating the
-     * endpoint. </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
+     * <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
+     * </li> </ul>
      */
     inline void SetEndpointStatus(const RealtimeEndpointStatus& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>NONE - Endpoint
-     * does not exist or was previously deleted.</li> <li>READY - Endpoint is ready to
-     * be used for real-time predictions.</li> <li>UPDATING - Updating/creating the
-     * endpoint. </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
+     * <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
+     * </li> </ul>
      */
     inline void SetEndpointStatus(RealtimeEndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>NONE - Endpoint
-     * does not exist or was previously deleted.</li> <li>READY - Endpoint is ready to
-     * be used for real-time predictions.</li> <li>UPDATING - Updating/creating the
-     * endpoint. </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
+     * <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
+     * </li> </ul>
      */
     inline RealtimeEndpointInfo& WithEndpointStatus(const RealtimeEndpointStatus& value) { SetEndpointStatus(value); return *this;}
 
     /**
      * <p> The current status of the real-time endpoint for the <code>MLModel</code>.
-     * This element can have one of the following values: </p> <ul> <li>NONE - Endpoint
-     * does not exist or was previously deleted.</li> <li>READY - Endpoint is ready to
-     * be used for real-time predictions.</li> <li>UPDATING - Updating/creating the
-     * endpoint. </li> </ul>
+     * This element can have one of the following values: </p> <ul> <li>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.</li> <li>
+     * <code>READY</code> - Endpoint is ready to be used for real-time
+     * predictions.</li> <li> <code>UPDATING</code> - Updating/creating the endpoint.
+     * </li> </ul>
      */
     inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(value); return *this;}
 

@@ -26,6 +26,7 @@
 #include <aws/machinelearning/MachineLearningClient.h>
 #include <aws/machinelearning/MachineLearningEndpoint.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>
+#include <aws/machinelearning/model/AddTagsRequest.h>
 #include <aws/machinelearning/model/CreateBatchPredictionRequest.h>
 #include <aws/machinelearning/model/CreateDataSourceFromRDSRequest.h>
 #include <aws/machinelearning/model/CreateDataSourceFromRedshiftRequest.h>
@@ -38,10 +39,12 @@
 #include <aws/machinelearning/model/DeleteEvaluationRequest.h>
 #include <aws/machinelearning/model/DeleteMLModelRequest.h>
 #include <aws/machinelearning/model/DeleteRealtimeEndpointRequest.h>
+#include <aws/machinelearning/model/DeleteTagsRequest.h>
 #include <aws/machinelearning/model/DescribeBatchPredictionsRequest.h>
 #include <aws/machinelearning/model/DescribeDataSourcesRequest.h>
 #include <aws/machinelearning/model/DescribeEvaluationsRequest.h>
 #include <aws/machinelearning/model/DescribeMLModelsRequest.h>
+#include <aws/machinelearning/model/DescribeTagsRequest.h>
 #include <aws/machinelearning/model/GetBatchPredictionRequest.h>
 #include <aws/machinelearning/model/GetDataSourceRequest.h>
 #include <aws/machinelearning/model/GetEvaluationRequest.h>
@@ -117,6 +120,37 @@ void MachineLearningClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AddTagsOutcome MachineLearningClient::AddTags(const AddTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddTagsOutcome(AddTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddTagsOutcome(outcome.GetError());
+  }
+}
+
+AddTagsOutcomeCallable MachineLearningClient::AddTagsCallable(const AddTagsRequest& request) const
+{
+  return std::async(std::launch::async, &MachineLearningClient::AddTags, this, request);
+}
+
+void MachineLearningClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&MachineLearningClient::AddTagsAsyncHelper, this, request, handler, context);
+}
+
+void MachineLearningClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddTags(request), context);
 }
 
 CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const CreateBatchPredictionRequest& request) const
@@ -491,6 +525,37 @@ void MachineLearningClient::DeleteRealtimeEndpointAsyncHelper(const DeleteRealti
   handler(this, request, DeleteRealtimeEndpoint(request), context);
 }
 
+DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTagsOutcome(DeleteTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTagsOutcome(outcome.GetError());
+  }
+}
+
+DeleteTagsOutcomeCallable MachineLearningClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
+{
+  return std::async(std::launch::async, &MachineLearningClient::DeleteTags, this, request);
+}
+
+void MachineLearningClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&MachineLearningClient::DeleteTagsAsyncHelper, this, request, handler, context);
+}
+
+void MachineLearningClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTags(request), context);
+}
+
 DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(const DescribeBatchPredictionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -613,6 +678,37 @@ void MachineLearningClient::DescribeMLModelsAsync(const DescribeMLModelsRequest&
 void MachineLearningClient::DescribeMLModelsAsyncHelper(const DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeMLModels(request), context);
+}
+
+DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTagsOutcome(DescribeTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTagsOutcome(outcome.GetError());
+  }
+}
+
+DescribeTagsOutcomeCallable MachineLearningClient::DescribeTagsCallable(const DescribeTagsRequest& request) const
+{
+  return std::async(std::launch::async, &MachineLearningClient::DescribeTags, this, request);
+}
+
+void MachineLearningClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&MachineLearningClient::DescribeTagsAsyncHelper, this, request, handler, context);
+}
+
+void MachineLearningClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTags(request), context);
 }
 
 GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBatchPredictionRequest& request) const

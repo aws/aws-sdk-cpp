@@ -107,21 +107,21 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of
-     * the Amazon Redshift database. </li> <li> <code> ClusterIdentifier </code> -
-     * Unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - Amazon Simple
-     * Storage Service (Amazon S3) location for staging Amazon Redshift data. The data
-     * retrieved from Amazon Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.</p></li>
-     * <li><p>DataSchemaUri - Amazon S3 location of the
-     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
-     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
-     * </p></li> <li> <p>DataRearrangement - A JSON string representing the splitting
-     * requirement of a <code>Datasource</code>. </p> <br> <p> Sample - <code>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
@@ -129,21 +129,21 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of
-     * the Amazon Redshift database. </li> <li> <code> ClusterIdentifier </code> -
-     * Unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - Amazon Simple
-     * Storage Service (Amazon S3) location for staging Amazon Redshift data. The data
-     * retrieved from Amazon Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.</p></li>
-     * <li><p>DataSchemaUri - Amazon S3 location of the
-     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
-     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
-     * </p></li> <li> <p>DataRearrangement - A JSON string representing the splitting
-     * requirement of a <code>Datasource</code>. </p> <br> <p> Sample - <code>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
@@ -151,21 +151,21 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of
-     * the Amazon Redshift database. </li> <li> <code> ClusterIdentifier </code> -
-     * Unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - Amazon Simple
-     * Storage Service (Amazon S3) location for staging Amazon Redshift data. The data
-     * retrieved from Amazon Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.</p></li>
-     * <li><p>DataSchemaUri - Amazon S3 location of the
-     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
-     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
-     * </p></li> <li> <p>DataRearrangement - A JSON string representing the splitting
-     * requirement of a <code>Datasource</code>. </p> <br> <p> Sample - <code>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
@@ -173,21 +173,21 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of
-     * the Amazon Redshift database. </li> <li> <code> ClusterIdentifier </code> -
-     * Unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - Amazon Simple
-     * Storage Service (Amazon S3) location for staging Amazon Redshift data. The data
-     * retrieved from Amazon Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.</p></li>
-     * <li><p>DataSchemaUri - Amazon S3 location of the
-     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
-     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
-     * </p></li> <li> <p>DataRearrangement - A JSON string representing the splitting
-     * requirement of a <code>Datasource</code>. </p> <br> <p> Sample - <code>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
@@ -195,21 +195,21 @@ namespace Model
 
     /**
      * <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
-     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName </code> - Name of
-     * the Amazon Redshift database. </li> <li> <code> ClusterIdentifier </code> -
-     * Unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
-     * <li><p>DatabaseCredentials - AWS Identity abd Access Management (IAM)
+     * <ul> <li><p>DatabaseInformation - <ul> <li> <code>DatabaseName</code> - The name
+     * of the Amazon Redshift database. </li> <li> <code> ClusterIdentifier</code> -
+     * The unique ID for the Amazon Redshift cluster.</li> </ul></p></li>
+     * <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM)
      * credentials that are used to connect to the Amazon Redshift database.</p></li>
-     * <li><p>SelectSqlQuery - Query that is used to retrieve the observation data for
-     * the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - Amazon Simple
-     * Storage Service (Amazon S3) location for staging Amazon Redshift data. The data
-     * retrieved from Amazon Relational Database Service (Amazon RDS) using
-     * <code>SelectSqlQuery</code> is stored in this location.</p></li>
-     * <li><p>DataSchemaUri - Amazon S3 location of the
-     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
-     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
-     * </p></li> <li> <p>DataRearrangement - A JSON string representing the splitting
-     * requirement of a <code>Datasource</code>. </p> <br> <p> Sample - <code>
+     * <li><p>SelectSqlQuery - The query that is used to retrieve the observation data
+     * for the <code>Datasource</code>.</p></li> <li><p>S3StagingLocation - The Amazon
+     * Simple Storage Service (Amazon S3) location for staging Amazon Redshift data.
+     * The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code>
+     * query is stored in this location.</p></li> <li><p>DataSchemaUri - The Amazon S3
+     * location of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON
+     * string representing the schema. This is not required if
+     * <code>DataSchemaUri</code> is specified. </p></li> <li> <p>DataRearrangement - A
+     * JSON string that represents the splitting and rearrangement requirements for the
+     * <code>DataSource</code>.</p> <p> Sample - <code>
      * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
      * </ul>
      */
@@ -289,9 +289,8 @@ namespace Model
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
      * Amazon ML uses the statistics internally during <code>MLModel</code> training.
-     * This parameter must be set to <code>true</code> if the
-     * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * This parameter must be set to <code>true</code> if the <code>DataSource</code>
+     * needs to be used for <code>MLModel</code> training.</p>
      */
     inline bool GetComputeStatistics() const{ return m_computeStatistics; }
 
@@ -299,9 +298,8 @@ namespace Model
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
      * Amazon ML uses the statistics internally during <code>MLModel</code> training.
-     * This parameter must be set to <code>true</code> if the
-     * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * This parameter must be set to <code>true</code> if the <code>DataSource</code>
+     * needs to be used for <code>MLModel</code> training.</p>
      */
     inline void SetComputeStatistics(bool value) { m_computeStatisticsHasBeenSet = true; m_computeStatistics = value; }
 
@@ -309,9 +307,8 @@ namespace Model
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
      * Amazon ML uses the statistics internally during <code>MLModel</code> training.
-     * This parameter must be set to <code>true</code> if the
-     * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * This parameter must be set to <code>true</code> if the <code>DataSource</code>
+     * needs to be used for <code>MLModel</code> training.</p>
      */
     inline CreateDataSourceFromRedshiftRequest& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 

@@ -114,96 +114,101 @@ namespace Model
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
-     * <li><p>DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.</p></li> <li><p>DataSchemaLocationS3 - Amazon S3 location
-     * of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string
-     * representing the schema. This is not required if <code>DataSchemaUri</code> is
-     * specified. </p></li> <li> <p>DataRearrangement - A JSON string representing the
-     * splitting requirement of a <code>Datasource</code>. </p> <br> <p> Sample -
-     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
-     * </li> </ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
      */
     inline const S3DataSpec& GetDataSpec() const{ return m_dataSpec; }
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
-     * <li><p>DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.</p></li> <li><p>DataSchemaLocationS3 - Amazon S3 location
-     * of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string
-     * representing the schema. This is not required if <code>DataSchemaUri</code> is
-     * specified. </p></li> <li> <p>DataRearrangement - A JSON string representing the
-     * splitting requirement of a <code>Datasource</code>. </p> <br> <p> Sample -
-     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
-     * </li> </ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
      */
     inline void SetDataSpec(const S3DataSpec& value) { m_dataSpecHasBeenSet = true; m_dataSpec = value; }
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
-     * <li><p>DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.</p></li> <li><p>DataSchemaLocationS3 - Amazon S3 location
-     * of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string
-     * representing the schema. This is not required if <code>DataSchemaUri</code> is
-     * specified. </p></li> <li> <p>DataRearrangement - A JSON string representing the
-     * splitting requirement of a <code>Datasource</code>. </p> <br> <p> Sample -
-     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
-     * </li> </ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
      */
     inline void SetDataSpec(S3DataSpec&& value) { m_dataSpecHasBeenSet = true; m_dataSpec = value; }
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
-     * <li><p>DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.</p></li> <li><p>DataSchemaLocationS3 - Amazon S3 location
-     * of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string
-     * representing the schema. This is not required if <code>DataSchemaUri</code> is
-     * specified. </p></li> <li> <p>DataRearrangement - A JSON string representing the
-     * splitting requirement of a <code>Datasource</code>. </p> <br> <p> Sample -
-     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
-     * </li> </ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
      */
     inline CreateDataSourceFromS3Request& WithDataSpec(const S3DataSpec& value) { SetDataSpec(value); return *this;}
 
     /**
      * <p>The data specification of a <code>DataSource</code>:</p> <ul>
-     * <li><p>DataLocationS3 - Amazon Simple Storage Service (Amazon S3) location of
-     * the observation data.</p></li> <li><p>DataSchemaLocationS3 - Amazon S3 location
-     * of the <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string
-     * representing the schema. This is not required if <code>DataSchemaUri</code> is
-     * specified. </p></li> <li> <p>DataRearrangement - A JSON string representing the
-     * splitting requirement of a <code>Datasource</code>. </p> <br> <p> Sample -
-     * <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p>
-     * </li> </ul>
+     * <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+     * <li><p>DataSchemaLocationS3 - The Amazon S3 location of the
+     * <code>DataSchema</code>.</p></li> <li><p>DataSchema - A JSON string representing
+     * the schema. This is not required if <code>DataSchemaUri</code> is specified.
+     * </p></li> <li> <p>DataRearrangement - A JSON string that represents the
+     * splitting and rearrangement requirements for the <code>Datasource</code>. </p>
+     * <p> Sample - <code>
+     * "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code> </p> </li>
+     * </ul>
      */
     inline CreateDataSourceFromS3Request& WithDataSpec(S3DataSpec&& value) { SetDataSpec(value); return *this;}
 
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
-     * Amazon ML uses the statistics internally during an <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the
+     * Amazon ML uses the statistics internally during <code>MLModel</code> training.
+     * This parameter must be set to <code>true</code> if the
      * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * training.</p>
      */
     inline bool GetComputeStatistics() const{ return m_computeStatistics; }
 
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
-     * Amazon ML uses the statistics internally during an <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the
+     * Amazon ML uses the statistics internally during <code>MLModel</code> training.
+     * This parameter must be set to <code>true</code> if the
      * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * training.</p>
      */
     inline void SetComputeStatistics(bool value) { m_computeStatisticsHasBeenSet = true; m_computeStatistics = value; }
 
     /**
      * <p>The compute statistics for a <code>DataSource</code>. The statistics are
      * generated from the observation data referenced by a <code>DataSource</code>.
-     * Amazon ML uses the statistics internally during an <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the
+     * Amazon ML uses the statistics internally during <code>MLModel</code> training.
+     * This parameter must be set to <code>true</code> if the
      * <code></code>DataSource<code></code> needs to be used for <code>MLModel</code>
-     * training</p>
+     * training.</p>
      */
     inline CreateDataSourceFromS3Request& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 
