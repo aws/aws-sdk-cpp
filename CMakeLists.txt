@@ -117,14 +117,14 @@ elseif(PLATFORM_ANDROID)
     # android-specific parameter defaults
     if(NOT ANDROID_ABI)
         set(ANDROID_ABI "armeabi-v7a")
-	message(STATUS "Android ABI: none specified, defaulting to ${ANDROID_ABI}")
+        message(STATUS "Android ABI: none specified, defaulting to ${ANDROID_ABI}")
     else()
         message(STATUS "Android ABI: ${ANDROID_ABI}")
     endif()
 
     if(NOT ANDROID_TOOLCHAIN_NAME)
         set(ANDROID_TOOLCHAIN_NAME "standalone-clang")
-	message(STATUS "Android toolchain unspecified, defaulting to ${ANDROID_TOOLCHAIN_NAME}")
+	    message(STATUS "Android toolchain unspecified, defaulting to ${ANDROID_TOOLCHAIN_NAME}")
     endif()
 
     if(ANDROID_STL MATCHES "libc" OR NOT ANDROID_STL)
@@ -134,10 +134,10 @@ elseif(PLATFORM_ANDROID)
             SET(ANDROID_STL "libc++_static" CACHE STRING "" FORCE)
         endif()
 
-	# API levels below 21 will not build with libc++
+	    # API levels below 21 will not build with libc++
         string(REGEX REPLACE "android-(..?)" "\\1" EXTRACTED_API_LEVEL "${ANDROID_NATIVE_API_LEVEL}")
         if(NOT ANDROID_NATIVE_API_LEVEL OR EXTRACTED_API_LEVEL LESS "21")
-	    message(STATUS "Libc++ requires setting API level to at least 21")
+	        message(STATUS "Libc++ requires setting API level to at least 21")
             set(ANDROID_NATIVE_API_LEVEL "android-21" CACHE STRING "" FORCE)
         endif()
 
@@ -149,7 +149,7 @@ elseif(PLATFORM_ANDROID)
             SET(ANDROID_STL "gnustl_static" CACHE STRING "" FORCE)
         endif()
 
-	# With gnustl, API level can go as low as 3, but let's make a reasonably modern default
+	    # With gnustl, API level can go as low as 3, but let's make a reasonably modern default
         if(NOT ANDROID_NATIVE_API_LEVEL)
             set(ANDROID_NATIVE_API_LEVEL "android-19") 
         endif()
@@ -159,7 +159,7 @@ elseif(PLATFORM_ANDROID)
         message(FATAL_ERROR "Invalid value for ANDROID_STL: ${ANDROID_STL}")
     endif()
 
-    message(STATUS "Android stl: ${ANDROID_STL}")
+    message(STATUS "Android std lib: ${ANDROID_STL}")
     message(STATUS "Android API level: ${ANDROID_NATIVE_API_LEVEL}")
 
     # if not explicitly disabled, generate a standalone toolchain
@@ -192,15 +192,15 @@ elseif(PLATFORM_ANDROID)
                 set(__TOOLCHAIN "mips64el-linux-android-clang")
             elseif(ANDROID_ABI MATCHES "mips")
                 set(__TOOLCHAIN "mipsel-linux-android-clang")
-else()
+            else()
                 message(FATAL, "Unable to map ANDROID_ABI value ${ANDROID_ABI} to a valid architecture for make-standalone-toolchain")
             endif()
 
             message(STATUS "standalone toolchain name: ${__TOOLCHAIN}")
 
             execute_process(
-                        COMMAND ${SH_VAR} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} --use-llvm --stl=${STANDALONE_TOOLCHAIN_STL} --platform=${ANDROID_NATIVE_API_LEVEL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}
-                        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                COMMAND ${SH_VAR} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} --use-llvm --stl=${STANDALONE_TOOLCHAIN_STL} --platform=${ANDROID_NATIVE_API_LEVEL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
         else()
             message(STATUS "Using existing standalone toolchain located at ${STANDALONE_TOOLCHAIN_DIR}")
