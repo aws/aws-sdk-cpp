@@ -737,7 +737,7 @@ set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 if(PLATFORM_ANDROID)
     include(ExternalProject)
 
-    set(EXTERNAL_CXX_FLAGS "-fno-exceptions -fno-rtti -Wno-unused-private-field")
+    set(EXTERNAL_CXX_FLAGS "-Wno-unused-private-field")
     set(EXTERNAL_C_FLAGS "")
 
     set(BASE_SDK_DIR ${CMAKE_SOURCE_DIR} CACHE STRING "Android build" FORCE)
