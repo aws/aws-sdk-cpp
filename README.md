@@ -151,7 +151,7 @@ Here are a few recipes:
 
 Just use defaults:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    Aws::InitAPI(options);
    .....
    Aws::ShutdownAPI(options);
@@ -159,7 +159,7 @@ Just use defaults:
 
 Turn logging on using the default logger:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
    Aws::InitAPI(options);
    .....
@@ -170,7 +170,7 @@ Install custom memory manager:
 ```
     MyMemoryManager memoryManager;
 
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.memoryManagementOptions.memoryManager = &memoryManager;
     Aws::InitAPI(options);
     .....
@@ -179,7 +179,7 @@ Install custom memory manager:
 
 Override default http client factory:
 ```
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
     Aws::InitAPI(options);
     .....
@@ -220,7 +220,7 @@ In Main:
 int main(void)
 {
   MyMemoryManager sdkMemoryManager;
-  SDKOptions options;
+  Aws::SDKOptions options;
   options.memoryManagementOptions.memoryManager = &sdkMemoryManager;
   Aws::InitAPI(options);
 
@@ -301,7 +301,7 @@ You can provide your own logger. However, it is incredibly simple to use the def
 In your main function:
 
 ```
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
     Aws::InitAPI(options);
     //do SDK stuff;
