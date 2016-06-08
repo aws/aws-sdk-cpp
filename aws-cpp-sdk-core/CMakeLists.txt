@@ -347,8 +347,17 @@ if(NOT PLATFORM_WINDOWS)
             target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
         endif()
 
+
         if(NOT ENABLE_RTTI)
             target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
+        endif()
+
+        if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
+
+            if(PLATFORM_ANDROID AND ANDROID_ABI MATCHES "mips*")
+                string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+            endif()
         endif()
     endif()
 elseif(MSVC)

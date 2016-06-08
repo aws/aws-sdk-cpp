@@ -95,6 +95,7 @@ def GetPlatformBuildTargets():
                                                    "-DGENERATE_VERSION_INFO=0 " \
                                                    "-DENABLE_RTTI=OFF " \
                                                    "-DMINIMIZE_SIZE=ON " \
+                                                   "-DANDROID_STL=gnustl " \
                                                    "-DTARGET_ARCH=ANDROID "},
              'Linux' : { 'buildPlatforms' : [ 'Linux' ],
                          'configs' : { 'DebugDynamic' : { 'directory' : '_build_linux_dynamic_debug', 
