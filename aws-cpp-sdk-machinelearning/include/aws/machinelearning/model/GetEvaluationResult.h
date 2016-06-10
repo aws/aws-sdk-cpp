@@ -36,8 +36,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>GetEvaluation</a> operation and describes an
-   * <code>Evaluation</code>.</p>
+   * <p>Represents the output of a <code>GetEvaluation</code> operation and describes
+   * an <code>Evaluation</code>.</p>
    */
   class AWS_MACHINELEARNING_API GetEvaluationResult
   {
@@ -490,43 +490,43 @@ namespace Model
     inline GetEvaluationResult& WithPerformanceMetrics(PerformanceMetrics&& value) { SetPerformanceMetrics(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline void SetLogUri(const Aws::String& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline void SetLogUri(Aws::String&& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline void SetLogUri(const char* value) { m_logUri.assign(value); }
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline GetEvaluationResult& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline GetEvaluationResult& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file that contains logs of the <a>CreateEvaluation</a>
+     * <p>A link to the file that contains logs of the <code>CreateEvaluation</code>
      * operation.</p>
      */
     inline GetEvaluationResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}

@@ -34,11 +34,12 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of an <a>CreateRealtimeEndpoint</a> operation.</p>
-   * <p>The result contains the <code>MLModelId</code> and the endpoint information
-   * for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes
-   * the URI of the <code>MLModel</code>; that is, the location to send online
-   * prediction requests for the specified <code>MLModel</code>.</p> </note>
+   * <p>Represents the output of an <code>CreateRealtimeEndpoint</code>
+   * operation.</p> <p>The result contains the <code>MLModelId</code> and the
+   * endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint
+   * information includes the URI of the <code>MLModel</code>; that is, the location
+   * to send online prediction requests for the specified <code>MLModel</code>.</p>
+   * </note>
    */
   class AWS_MACHINELEARNING_API CreateRealtimeEndpointResult
   {

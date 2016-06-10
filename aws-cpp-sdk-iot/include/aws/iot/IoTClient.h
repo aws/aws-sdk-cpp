@@ -43,6 +43,7 @@
 #include <aws/iot/model/ListCertificatesResult.h>
 #include <aws/iot/model/ListCertificatesByCAResult.h>
 #include <aws/iot/model/ListPoliciesResult.h>
+#include <aws/iot/model/ListPolicyPrincipalsResult.h>
 #include <aws/iot/model/ListPolicyVersionsResult.h>
 #include <aws/iot/model/ListPrincipalPoliciesResult.h>
 #include <aws/iot/model/ListPrincipalThingsResult.h>
@@ -133,6 +134,7 @@ namespace Model
         class ListCertificatesRequest;
         class ListCertificatesByCARequest;
         class ListPoliciesRequest;
+        class ListPolicyPrincipalsRequest;
         class ListPolicyVersionsRequest;
         class ListPrincipalPoliciesRequest;
         class ListPrincipalThingsRequest;
@@ -184,6 +186,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<IoTErrors>> ListCertificatesOutcome;
         typedef Aws::Utils::Outcome<ListCertificatesByCAResult, Aws::Client::AWSError<IoTErrors>> ListCertificatesByCAOutcome;
         typedef Aws::Utils::Outcome<ListPoliciesResult, Aws::Client::AWSError<IoTErrors>> ListPoliciesOutcome;
+        typedef Aws::Utils::Outcome<ListPolicyPrincipalsResult, Aws::Client::AWSError<IoTErrors>> ListPolicyPrincipalsOutcome;
         typedef Aws::Utils::Outcome<ListPolicyVersionsResult, Aws::Client::AWSError<IoTErrors>> ListPolicyVersionsOutcome;
         typedef Aws::Utils::Outcome<ListPrincipalPoliciesResult, Aws::Client::AWSError<IoTErrors>> ListPrincipalPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListPrincipalThingsResult, Aws::Client::AWSError<IoTErrors>> ListPrincipalThingsOutcome;
@@ -235,6 +238,7 @@ namespace Model
         typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
         typedef std::future<ListCertificatesByCAOutcome> ListCertificatesByCAOutcomeCallable;
         typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+        typedef std::future<ListPolicyPrincipalsOutcome> ListPolicyPrincipalsOutcomeCallable;
         typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
         typedef std::future<ListPrincipalPoliciesOutcome> ListPrincipalPoliciesOutcomeCallable;
         typedef std::future<ListPrincipalThingsOutcome> ListPrincipalThingsOutcomeCallable;
@@ -289,6 +293,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListCertificatesByCARequest&, const Model::ListCertificatesByCAOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesByCAResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListPolicyPrincipalsRequest&, const Model::ListPolicyPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyPrincipalsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPolicyVersionsRequest&, const Model::ListPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyVersionsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPrincipalPoliciesRequest&, const Model::ListPrincipalPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalPoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListPrincipalThingsRequest&, const Model::ListPrincipalThingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalThingsResponseReceivedHandler;
@@ -455,7 +460,7 @@ namespace Model
          * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
+         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
@@ -482,7 +487,7 @@ namespace Model
          * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
+         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
@@ -511,7 +516,7 @@ namespace Model
          * directory, and then specifying that directory on the command line. The following
          * commands show how to create a batch of certificates given a batch of CSRs. </p>
          * <p>Assuming a set of CSRs are located inside of the directory
-         * my-csr-directory:</p>&gt; <p>On Linux and OS X, the command is:</p> <p>$ ls
+         * my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls
          * my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
          * --certificate-signing-request file://my-csr-directory/{}</p> <p> This command
          * lists all of the CSRs in my-csr-directory and pipes each CSR file name to the
@@ -877,25 +882,19 @@ namespace Model
         virtual void DescribeCertificateAsync(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the call. You
-         * specify the following URI when updating state information for your thing:
-         * https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>
+         * <p>Returns a unique endpoint specific to the AWS account making the call.</p>
          */
         virtual Model::DescribeEndpointOutcome DescribeEndpoint(const Model::DescribeEndpointRequest& request) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the call. You
-         * specify the following URI when updating state information for your thing:
-         * https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>
+         * <p>Returns a unique endpoint specific to the AWS account making the call.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEndpointOutcomeCallable DescribeEndpointCallable(const Model::DescribeEndpointRequest& request) const;
 
         /**
-         * <p>Returns a unique endpoint specific to the AWS account making the call. You
-         * specify the following URI when updating state information for your thing:
-         * https://<i>endpoint</i>/things/<i>thingName</i>/shadow.</p>
+         * <p>Returns a unique endpoint specific to the AWS account making the call.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1183,13 +1182,32 @@ namespace Model
         virtual void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the versions of the specified policy, and identifies the default
+         * <p>Lists the principals associated with the specified policy.</p>
+         */
+        virtual Model::ListPolicyPrincipalsOutcome ListPolicyPrincipals(const Model::ListPolicyPrincipalsRequest& request) const;
+
+        /**
+         * <p>Lists the principals associated with the specified policy.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPolicyPrincipalsOutcomeCallable ListPolicyPrincipalsCallable(const Model::ListPolicyPrincipalsRequest& request) const;
+
+        /**
+         * <p>Lists the principals associated with the specified policy.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPolicyPrincipalsAsync(const Model::ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the versions of the specified policy and identifies the default
          * version.</p>
          */
         virtual Model::ListPolicyVersionsOutcome ListPolicyVersions(const Model::ListPolicyVersionsRequest& request) const;
 
         /**
-         * <p>Lists the versions of the specified policy, and identifies the default
+         * <p>Lists the versions of the specified policy and identifies the default
          * version.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1197,7 +1215,7 @@ namespace Model
         virtual Model::ListPolicyVersionsOutcomeCallable ListPolicyVersionsCallable(const Model::ListPolicyVersionsRequest& request) const;
 
         /**
-         * <p>Lists the versions of the specified policy, and identifies the default
+         * <p>Lists the versions of the specified policy and identifies the default
          * version.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1630,6 +1648,7 @@ namespace Model
         void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCertificatesByCAAsyncHelper(const Model::ListCertificatesByCARequest& request, const ListCertificatesByCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPolicyPrincipalsAsyncHelper(const Model::ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPolicyVersionsAsyncHelper(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPrincipalPoliciesAsyncHelper(const Model::ListPrincipalPoliciesRequest& request, const ListPrincipalPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPrincipalThingsAsyncHelper(const Model::ListPrincipalThingsRequest& request, const ListPrincipalThingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
