@@ -257,19 +257,19 @@ namespace Model
      * Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically.
      */
-    inline long GetContentLength() const{ return m_contentLength; }
+    inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
      * Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically.
      */
-    inline void SetContentLength(long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
+    inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
      * Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically.
      */
-    inline PutObjectRequest& WithContentLength(long value) { SetContentLength(value); return *this;}
+    inline PutObjectRequest& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
     /**
      * The base64-encoded 128-bit MD5 digest of the part data.
@@ -908,7 +908,7 @@ namespace Model
     bool m_contentEncodingHasBeenSet;
     Aws::String m_contentLanguage;
     bool m_contentLanguageHasBeenSet;
-    long m_contentLength;
+    long long m_contentLength;
     bool m_contentLengthHasBeenSet;
     Aws::String m_contentMD5;
     bool m_contentMD5HasBeenSet;

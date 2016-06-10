@@ -220,17 +220,17 @@ namespace Model
     /**
      * Size of the body in bytes.
      */
-    inline long GetContentLength() const{ return m_contentLength; }
+    inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
      * Size of the body in bytes.
      */
-    inline void SetContentLength(long value) { m_contentLength = value; }
+    inline void SetContentLength(long long value) { m_contentLength = value; }
 
     /**
      * Size of the body in bytes.
      */
-    inline GetObjectResult& WithContentLength(long value) { SetContentLength(value); return *this;}
+    inline GetObjectResult& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
     /**
      * An ETag is an opaque identifier assigned by a web server to a specific version
@@ -906,7 +906,7 @@ namespace Model
     Aws::String m_expiration;
     Aws::String m_restore;
     Aws::Utils::DateTime m_lastModified;
-    long m_contentLength;
+    long long m_contentLength;
     Aws::String m_eTag;
     long m_missingMeta;
     Aws::String m_versionId;
