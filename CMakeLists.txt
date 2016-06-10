@@ -85,7 +85,8 @@ elseif("${TARGET_ARCH}" STREQUAL "ANDROID")
     if(NOT GIT_FOUND)
         message(FATAL "Unable to find git; git is required in order to build for Android")
     endif()
-    # TODO: check for patch as well, it's required to build zlib/curl/openssl
+    # TODO: check for patch, it's required to build zlib/curl/openssl
+    # TODO: check for sh, it's required to generate the standalone toolchains
 else()
     message(STATUS "TARGET_ARCH not specified; inferring host OS to be platform compilation target")
     if(WIN32)
@@ -128,28 +129,54 @@ elseif(PLATFORM_ANDROID)
     # android-specific parameter defaults
     if(NOT ANDROID_ABI)
         set(ANDROID_ABI "armeabi-v7a")
+        message(STATUS "Android ABI: none specified, defaulting to ${ANDROID_ABI}")
+    else()
+        message(STATUS "Android ABI: ${ANDROID_ABI}")
     endif()
 
     if(NOT ANDROID_TOOLCHAIN_NAME)
         set(ANDROID_TOOLCHAIN_NAME "standalone-clang")
+	    message(STATUS "Android toolchain unspecified, defaulting to ${ANDROID_TOOLCHAIN_NAME}")
     endif()
 
-    if(NOT ANDROID_STL)
+    if(ANDROID_STL MATCHES "libc" OR NOT ANDROID_STL)
         if(FORCE_SHARED_CRT OR BUILD_SHARED_LIBS)
-            SET(ANDROID_STL "libc++_shared")
+            SET(ANDROID_STL "libc++_shared" CACHE STRING "" FORCE)
         else()
-            SET(ANDROID_STL "libc++_static")
+            SET(ANDROID_STL "libc++_static" CACHE STRING "" FORCE)
         endif()
+
+	    # API levels below 21 will not build with libc++
+        string(REGEX REPLACE "android-(..?)" "\\1" EXTRACTED_API_LEVEL "${ANDROID_NATIVE_API_LEVEL}")
+        if(NOT ANDROID_NATIVE_API_LEVEL OR EXTRACTED_API_LEVEL LESS "21")
+	        message(STATUS "Libc++ requires setting API level to at least 21")
+            set(ANDROID_NATIVE_API_LEVEL "android-21" CACHE STRING "" FORCE)
+        endif()
+
+        set(STANDALONE_TOOLCHAIN_STL "libc++")
+    elseif(ANDROID_STL MATCHES "gnustl")
+        if(FORCE_SHARED_CRT OR BUILD_SHARED_LIBS)
+            SET(ANDROID_STL "gnustl_shared" CACHE STRING "" FORCE)
+        else()
+            SET(ANDROID_STL "gnustl_static" CACHE STRING "" FORCE)
+        endif()
+
+	    # With gnustl, API level can go as low as 3, but let's make a reasonably modern default
+        if(NOT ANDROID_NATIVE_API_LEVEL)
+            set(ANDROID_NATIVE_API_LEVEL "android-19") 
+        endif()
+
+        set(STANDALONE_TOOLCHAIN_STL "gnustl")
+    else()
+        message(FATAL_ERROR "Invalid value for ANDROID_STL: ${ANDROID_STL}")
     endif()
 
-    # minimum API level the native SDK will work against
-    if(NOT ANDROID_NATIVE_API_LEVEL)
-        set(ANDROID_NATIVE_API_LEVEL "android-21")
-    endif()
+    message(STATUS "Android std lib: ${ANDROID_STL}")
+    message(STATUS "Android API level: ${ANDROID_NATIVE_API_LEVEL}")
 
     # if not explicitly disabled, generate a standalone toolchain
     if(NOT DISABLE_ANDROID_STANDALONE_BUILD AND NOT ANDROID_STANDALONE_TOOLCHAIN)
-        set(STANDALONE_TOOLCHAIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/toolchains/android/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}")
+        set(STANDALONE_TOOLCHAIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/toolchains/android/${ANDROID_ABI}-${ANDROID_TOOLCHAIN_NAME}-${ANDROID_NATIVE_API_LEVEL}-${ANDROID_STL}")
         if( NOT EXISTS ${STANDALONE_TOOLCHAIN_DIR} )
             message(STATUS "Could not find an appropriate standalone toolchain.  Generating one into ${STANDALONE_TOOLCHAIN_DIR}")
             if( NOT NDK_DIR )
@@ -184,14 +211,16 @@ elseif(PLATFORM_ANDROID)
             message(STATUS "standalone toolchain name: ${__TOOLCHAIN}")
 
             execute_process(
-                        COMMAND ${SH_VAR} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} --use-llvm --stl=libc++ --platform=${ANDROID_NATIVE_API_LEVEL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}
-                        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                COMMAND ${SH_VAR} ${NDK_DIR}/build/tools/make-standalone-toolchain.sh --ndk-dir=${NDK_DIR} --toolchain=${__TOOLCHAIN} --use-llvm --stl=${STANDALONE_TOOLCHAIN_STL} --platform=${ANDROID_NATIVE_API_LEVEL} --install-dir=${STANDALONE_TOOLCHAIN_DIR}
+                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             )
         else()
             message(STATUS "Using existing standalone toolchain located at ${STANDALONE_TOOLCHAIN_DIR}")
         endif()
 
         set(ANDROID_STANDALONE_TOOLCHAIN "${STANDALONE_TOOLCHAIN_DIR}")
+    else()
+        message(STATUS "Standalone toolchain disabled; this is not a well-supported option")
     endif()
 else()
     message(FATAL_ERROR "Unknown target platform.  How did this happen?")
@@ -778,7 +807,7 @@ set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 if(BUILD_CURL OR BUILD_OPENSSL)
     include(ExternalProject)
 
-    set(EXTERNAL_CXX_FLAGS "-fno-exceptions -fno-rtti -Wno-unused-private-field")
+    set(EXTERNAL_CXX_FLAGS "-Wno-unused-private-field")
     set(EXTERNAL_C_FLAGS "")
 
     set(BASE_SDK_DIR ${CMAKE_SOURCE_DIR} CACHE STRING "Android build" FORCE)

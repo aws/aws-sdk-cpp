@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/machinelearning/model/AddTagsResult.h>
 #include <aws/machinelearning/model/CreateBatchPredictionResult.h>
 #include <aws/machinelearning/model/CreateDataSourceFromRDSResult.h>
 #include <aws/machinelearning/model/CreateDataSourceFromRedshiftResult.h>
@@ -32,10 +33,12 @@
 #include <aws/machinelearning/model/DeleteEvaluationResult.h>
 #include <aws/machinelearning/model/DeleteMLModelResult.h>
 #include <aws/machinelearning/model/DeleteRealtimeEndpointResult.h>
+#include <aws/machinelearning/model/DeleteTagsResult.h>
 #include <aws/machinelearning/model/DescribeBatchPredictionsResult.h>
 #include <aws/machinelearning/model/DescribeDataSourcesResult.h>
 #include <aws/machinelearning/model/DescribeEvaluationsResult.h>
 #include <aws/machinelearning/model/DescribeMLModelsResult.h>
+#include <aws/machinelearning/model/DescribeTagsResult.h>
 #include <aws/machinelearning/model/GetBatchPredictionResult.h>
 #include <aws/machinelearning/model/GetDataSourceResult.h>
 #include <aws/machinelearning/model/GetEvaluationResult.h>
@@ -90,6 +93,7 @@ namespace MachineLearning
 
 namespace Model
 {
+        class AddTagsRequest;
         class CreateBatchPredictionRequest;
         class CreateDataSourceFromRDSRequest;
         class CreateDataSourceFromRedshiftRequest;
@@ -102,10 +106,12 @@ namespace Model
         class DeleteEvaluationRequest;
         class DeleteMLModelRequest;
         class DeleteRealtimeEndpointRequest;
+        class DeleteTagsRequest;
         class DescribeBatchPredictionsRequest;
         class DescribeDataSourcesRequest;
         class DescribeEvaluationsRequest;
         class DescribeMLModelsRequest;
+        class DescribeTagsRequest;
         class GetBatchPredictionRequest;
         class GetDataSourceRequest;
         class GetEvaluationRequest;
@@ -116,6 +122,7 @@ namespace Model
         class UpdateEvaluationRequest;
         class UpdateMLModelRequest;
 
+        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<MachineLearningErrors>> AddTagsOutcome;
         typedef Aws::Utils::Outcome<CreateBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> CreateBatchPredictionOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceFromRDSResult, Aws::Client::AWSError<MachineLearningErrors>> CreateDataSourceFromRDSOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceFromRedshiftResult, Aws::Client::AWSError<MachineLearningErrors>> CreateDataSourceFromRedshiftOutcome;
@@ -128,10 +135,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteEvaluationOutcome;
         typedef Aws::Utils::Outcome<DeleteMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteMLModelOutcome;
         typedef Aws::Utils::Outcome<DeleteRealtimeEndpointResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteRealtimeEndpointOutcome;
+        typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<MachineLearningErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeBatchPredictionsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeBatchPredictionsOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourcesResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeDataSourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeEvaluationsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeEvaluationsOutcome;
         typedef Aws::Utils::Outcome<DescribeMLModelsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeMLModelsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<MachineLearningErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<GetBatchPredictionResult, Aws::Client::AWSError<MachineLearningErrors>> GetBatchPredictionOutcome;
         typedef Aws::Utils::Outcome<GetDataSourceResult, Aws::Client::AWSError<MachineLearningErrors>> GetDataSourceOutcome;
         typedef Aws::Utils::Outcome<GetEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> GetEvaluationOutcome;
@@ -142,6 +151,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateEvaluationResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateEvaluationOutcome;
         typedef Aws::Utils::Outcome<UpdateMLModelResult, Aws::Client::AWSError<MachineLearningErrors>> UpdateMLModelOutcome;
 
+        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<CreateBatchPredictionOutcome> CreateBatchPredictionOutcomeCallable;
         typedef std::future<CreateDataSourceFromRDSOutcome> CreateDataSourceFromRDSOutcomeCallable;
         typedef std::future<CreateDataSourceFromRedshiftOutcome> CreateDataSourceFromRedshiftOutcomeCallable;
@@ -154,10 +164,12 @@ namespace Model
         typedef std::future<DeleteEvaluationOutcome> DeleteEvaluationOutcomeCallable;
         typedef std::future<DeleteMLModelOutcome> DeleteMLModelOutcomeCallable;
         typedef std::future<DeleteRealtimeEndpointOutcome> DeleteRealtimeEndpointOutcomeCallable;
+        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DescribeBatchPredictionsOutcome> DescribeBatchPredictionsOutcomeCallable;
         typedef std::future<DescribeDataSourcesOutcome> DescribeDataSourcesOutcomeCallable;
         typedef std::future<DescribeEvaluationsOutcome> DescribeEvaluationsOutcomeCallable;
         typedef std::future<DescribeMLModelsOutcome> DescribeMLModelsOutcomeCallable;
+        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<GetBatchPredictionOutcome> GetBatchPredictionOutcomeCallable;
         typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
         typedef std::future<GetEvaluationOutcome> GetEvaluationOutcomeCallable;
@@ -171,6 +183,7 @@ namespace Model
 
   class MachineLearningClient;
 
+    typedef std::function<void(const MachineLearningClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::CreateBatchPredictionRequest&, const Model::CreateBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchPredictionResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::CreateDataSourceFromRDSRequest&, const Model::CreateDataSourceFromRDSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceFromRDSResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::CreateDataSourceFromRedshiftRequest&, const Model::CreateDataSourceFromRedshiftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceFromRedshiftResponseReceivedHandler;
@@ -183,10 +196,12 @@ namespace Model
     typedef std::function<void(const MachineLearningClient*, const Model::DeleteEvaluationRequest&, const Model::DeleteEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DeleteMLModelRequest&, const Model::DeleteMLModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMLModelResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DeleteRealtimeEndpointRequest&, const Model::DeleteRealtimeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRealtimeEndpointResponseReceivedHandler;
+    typedef std::function<void(const MachineLearningClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DescribeBatchPredictionsRequest&, const Model::DescribeBatchPredictionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchPredictionsResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DescribeDataSourcesRequest&, const Model::DescribeDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourcesResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DescribeEvaluationsRequest&, const Model::DescribeEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEvaluationsResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::DescribeMLModelsRequest&, const Model::DescribeMLModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMLModelsResponseReceivedHandler;
+    typedef std::function<void(const MachineLearningClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::GetBatchPredictionRequest&, const Model::GetBatchPredictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBatchPredictionResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const MachineLearningClient*, const Model::GetEvaluationRequest&, const Model::GetEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEvaluationResponseReceivedHandler;
@@ -225,6 +240,31 @@ namespace Model
             const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
         virtual ~MachineLearningClient();
+
+        /**
+         * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
+         * a key and an optional value. If you add a tag using a key that is already
+         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         */
+        virtual Model::AddTagsOutcome AddTags(const Model::AddTagsRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
+         * a key and an optional value. If you add a tag using a key that is already
+         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddTagsOutcomeCallable AddTagsCallable(const Model::AddTagsRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an object, up to a limit of 10. Each tag consists of
+         * a key and an optional value. If you add a tag using a key that is already
+         * associated with the ML object, <code>AddTags</code> updates the tag's value.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Generates predictions for a group of observations. The observations to
@@ -288,19 +328,20 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object from an <a
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations.</p>
+         * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
          * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p>
+         * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
+         * state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML cannot accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p>
          */
         virtual Model::CreateDataSourceFromRDSOutcome CreateDataSourceFromRDS(const Model::CreateDataSourceFromRDSRequest& request) const;
 
@@ -308,19 +349,20 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object from an <a
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations.</p>
+         * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
          * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p>
+         * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
+         * state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML cannot accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -330,128 +372,141 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object from an <a
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations.</p>
+         * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
          * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p>
+         * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
+         * state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML cannot accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataSourceFromRDSAsync(const Model::CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <code>DataSource</code> from <a
-         * href="http://aws.amazon.com/redshift/">Amazon Redshift</a>. A
-         * <code>DataSource</code> references data that can be used to perform either
-         * <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-         * operations.</p> <p><code>CreateDataSourceFromRedshift</code> is an asynchronous
-         * operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the
-         * <code>DataSource</code> status to <code>PENDING</code>. After the
-         * <code>DataSource</code> is created and ready for use, Amazon ML sets the
-         * <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
-         * in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observations should exist
-         * in the database hosted on an Amazon Redshift cluster and should be specified by
-         * a <code>SelectSqlQuery</code>. Amazon ML executes <a
-         * href="http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html">
-         * Unload</a> command in Amazon Redshift to transfer the result set of
-         * <code>SelectSqlQuery</code> to <code>S3StagingLocation.</code> </p> <p>After the
-         * <code>DataSource</code> is created, it's ready for use in evaluations and batch
-         * predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item -- a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the Amazon Machine Learning Developer
-         * Guide.</p>
+         * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
+         * Redshift cluster. A <code>DataSource</code> references data that can be used to
+         * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
+         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
+         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
+         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> states
+         * can be used to perform only <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML can't accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p> <p>The observations should be contained in the database
+         * hosted on an Amazon Redshift cluster and should be specified by a
+         * <code>SelectSqlQuery</code> query. Amazon ML executes an <code>Unload</code>
+         * command in Amazon Redshift to transfer the result set of the
+         * <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
+         * <p>After the <code>DataSource</code> has been created, it's ready for use in
+         * evaluations and batch predictions. If you plan to use the
+         * <code>DataSource</code> to train an <code>MLModel</code>, the
+         * <code>DataSource</code> also requires a recipe. A recipe describes how each
+         * input variable will be used in training an <code>MLModel</code>. Will the
+         * variable be included or excluded from training? Will the variable be
+         * manipulated; for example, will it be combined with another variable or will it
+         * be split apart into word combinations? The recipe provides answers to these
+         * questions.</p> <?oxy_insert_start author="laurama"
+         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
+         * you can copy and modify the settings from an existing Amazon Redshift datasource
+         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
+         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
+         * Change the settings that you want to change and make sure that all required
+         * fields have the appropriate values.</p> <?oxy_insert_end>
          */
         virtual Model::CreateDataSourceFromRedshiftOutcome CreateDataSourceFromRedshift(const Model::CreateDataSourceFromRedshiftRequest& request) const;
 
         /**
-         * <p>Creates a <code>DataSource</code> from <a
-         * href="http://aws.amazon.com/redshift/">Amazon Redshift</a>. A
-         * <code>DataSource</code> references data that can be used to perform either
-         * <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-         * operations.</p> <p><code>CreateDataSourceFromRedshift</code> is an asynchronous
-         * operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the
-         * <code>DataSource</code> status to <code>PENDING</code>. After the
-         * <code>DataSource</code> is created and ready for use, Amazon ML sets the
-         * <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
-         * in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observations should exist
-         * in the database hosted on an Amazon Redshift cluster and should be specified by
-         * a <code>SelectSqlQuery</code>. Amazon ML executes <a
-         * href="http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html">
-         * Unload</a> command in Amazon Redshift to transfer the result set of
-         * <code>SelectSqlQuery</code> to <code>S3StagingLocation.</code> </p> <p>After the
-         * <code>DataSource</code> is created, it's ready for use in evaluations and batch
-         * predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item -- a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the Amazon Machine Learning Developer
-         * Guide.</p>
+         * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
+         * Redshift cluster. A <code>DataSource</code> references data that can be used to
+         * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
+         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
+         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
+         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> states
+         * can be used to perform only <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML can't accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p> <p>The observations should be contained in the database
+         * hosted on an Amazon Redshift cluster and should be specified by a
+         * <code>SelectSqlQuery</code> query. Amazon ML executes an <code>Unload</code>
+         * command in Amazon Redshift to transfer the result set of the
+         * <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
+         * <p>After the <code>DataSource</code> has been created, it's ready for use in
+         * evaluations and batch predictions. If you plan to use the
+         * <code>DataSource</code> to train an <code>MLModel</code>, the
+         * <code>DataSource</code> also requires a recipe. A recipe describes how each
+         * input variable will be used in training an <code>MLModel</code>. Will the
+         * variable be included or excluded from training? Will the variable be
+         * manipulated; for example, will it be combined with another variable or will it
+         * be split apart into word combinations? The recipe provides answers to these
+         * questions.</p> <?oxy_insert_start author="laurama"
+         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
+         * you can copy and modify the settings from an existing Amazon Redshift datasource
+         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
+         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
+         * Change the settings that you want to change and make sure that all required
+         * fields have the appropriate values.</p> <?oxy_insert_end>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateDataSourceFromRedshiftOutcomeCallable CreateDataSourceFromRedshiftCallable(const Model::CreateDataSourceFromRedshiftRequest& request) const;
 
         /**
-         * <p>Creates a <code>DataSource</code> from <a
-         * href="http://aws.amazon.com/redshift/">Amazon Redshift</a>. A
-         * <code>DataSource</code> references data that can be used to perform either
-         * <a>CreateMLModel</a>, <a>CreateEvaluation</a> or <a>CreateBatchPrediction</a>
-         * operations.</p> <p><code>CreateDataSourceFromRedshift</code> is an asynchronous
-         * operation. In response to <code>CreateDataSourceFromRedshift</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the
-         * <code>DataSource</code> status to <code>PENDING</code>. After the
-         * <code>DataSource</code> is created and ready for use, Amazon ML sets the
-         * <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
-         * in <code>COMPLETED</code> or <code>PENDING</code> status can only be used to
-         * perform <a>CreateMLModel</a>, <a>CreateEvaluation</a>, or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observations should exist
-         * in the database hosted on an Amazon Redshift cluster and should be specified by
-         * a <code>SelectSqlQuery</code>. Amazon ML executes <a
-         * href="http://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html">
-         * Unload</a> command in Amazon Redshift to transfer the result set of
-         * <code>SelectSqlQuery</code> to <code>S3StagingLocation.</code> </p> <p>After the
-         * <code>DataSource</code> is created, it's ready for use in evaluations and batch
-         * predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item -- a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the Amazon Machine Learning Developer
-         * Guide.</p>
+         * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
+         * Redshift cluster. A <code>DataSource</code> references data that can be used to
+         * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
+         * <code>CreateBatchPrediction</code> operations.</p>
+         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
+         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
+         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> states
+         * can be used to perform only <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+         * </p> <p> If Amazon ML can't accept the input source, it sets the
+         * <code>Status</code> parameter to <code>FAILED</code> and includes an error
+         * message in the <code>Message</code> attribute of the <code>GetDataSource</code>
+         * operation response. </p> <p>The observations should be contained in the database
+         * hosted on an Amazon Redshift cluster and should be specified by a
+         * <code>SelectSqlQuery</code> query. Amazon ML executes an <code>Unload</code>
+         * command in Amazon Redshift to transfer the result set of the
+         * <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
+         * <p>After the <code>DataSource</code> has been created, it's ready for use in
+         * evaluations and batch predictions. If you plan to use the
+         * <code>DataSource</code> to train an <code>MLModel</code>, the
+         * <code>DataSource</code> also requires a recipe. A recipe describes how each
+         * input variable will be used in training an <code>MLModel</code>. Will the
+         * variable be included or excluded from training? Will the variable be
+         * manipulated; for example, will it be combined with another variable or will it
+         * be split apart into word combinations? The recipe provides answers to these
+         * questions.</p> <?oxy_insert_start author="laurama"
+         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
+         * you can copy and modify the settings from an existing Amazon Redshift datasource
+         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
+         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
+         * Change the settings that you want to change and make sure that all required
+         * fields have the appropriate values.</p> <?oxy_insert_end>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -459,71 +514,67 @@ namespace Model
 
         /**
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
-         * references data that can be used to perform <a>CreateMLModel</a>,
-         * <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.</p>
-         * <p><code>CreateDataSourceFromS3</code> is an asynchronous operation. In response
-         * to <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML)
-         * immediately returns and sets the <code>DataSource</code> status to
-         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
-         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a> or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observation data used in a
-         * <code>DataSource</code> should be ready to use; that is, it should have a
-         * consistent structure, and missing data values should be kept to a minimum. The
-         * observation data must reside in one or more CSV files in an Amazon Simple
-         * Storage Service (Amazon S3) bucket, along with a schema that describes the data
-         * items by name and type. The same schema must be used for all of the data files
-         * referenced by the <code>DataSource</code>. </p> <p>After the
+         * references data that can be used to perform <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
+         * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
+         * status to <code>PENDING</code>. After the <code>DataSource</code> has been
+         * created and is ready for use, Amazon ML sets the <code>Status</code> parameter
+         * to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
+         * or <code>PENDING</code> state can be used to perform only
+         * <code>CreateMLModel</code>, <code>CreateEvaluation</code> or
+         * <code>CreateBatchPrediction</code> operations. </p> <p> If Amazon ML can't
+         * accept the input source, it sets the <code>Status</code> parameter to
+         * <code>FAILED</code> and includes an error message in the <code>Message</code>
+         * attribute of the <code>GetDataSource</code> operation response. </p> <p>The
+         * observation data used in a <code>DataSource</code> should be ready to use; that
+         * is, it should have a consistent structure, and missing data values should be
+         * kept to a minimum. The observation data must reside in one or more .csv files in
+         * an Amazon Simple Storage Service (Amazon S3) location, along with a schema that
+         * describes the data items by name and type. The same schema must be used for all
+         * of the data files referenced by the <code>DataSource</code>. </p> <p>After the
          * <code>DataSource</code> has been created, it's ready to use in evaluations and
          * batch predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item: a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable, or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the <a
-         * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-         * Learning Developer Guide</a>.</p>
+         * <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe
+         * describes how each input variable will be used in training an
+         * <code>MLModel</code>. Will the variable be included or excluded from training?
+         * Will the variable be manipulated; for example, will it be combined with another
+         * variable or will it be split apart into word combinations? The recipe provides
+         * answers to these questions.</p>
          */
         virtual Model::CreateDataSourceFromS3Outcome CreateDataSourceFromS3(const Model::CreateDataSourceFromS3Request& request) const;
 
         /**
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
-         * references data that can be used to perform <a>CreateMLModel</a>,
-         * <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.</p>
-         * <p><code>CreateDataSourceFromS3</code> is an asynchronous operation. In response
-         * to <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML)
-         * immediately returns and sets the <code>DataSource</code> status to
-         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
-         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a> or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observation data used in a
-         * <code>DataSource</code> should be ready to use; that is, it should have a
-         * consistent structure, and missing data values should be kept to a minimum. The
-         * observation data must reside in one or more CSV files in an Amazon Simple
-         * Storage Service (Amazon S3) bucket, along with a schema that describes the data
-         * items by name and type. The same schema must be used for all of the data files
-         * referenced by the <code>DataSource</code>. </p> <p>After the
+         * references data that can be used to perform <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
+         * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
+         * status to <code>PENDING</code>. After the <code>DataSource</code> has been
+         * created and is ready for use, Amazon ML sets the <code>Status</code> parameter
+         * to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
+         * or <code>PENDING</code> state can be used to perform only
+         * <code>CreateMLModel</code>, <code>CreateEvaluation</code> or
+         * <code>CreateBatchPrediction</code> operations. </p> <p> If Amazon ML can't
+         * accept the input source, it sets the <code>Status</code> parameter to
+         * <code>FAILED</code> and includes an error message in the <code>Message</code>
+         * attribute of the <code>GetDataSource</code> operation response. </p> <p>The
+         * observation data used in a <code>DataSource</code> should be ready to use; that
+         * is, it should have a consistent structure, and missing data values should be
+         * kept to a minimum. The observation data must reside in one or more .csv files in
+         * an Amazon Simple Storage Service (Amazon S3) location, along with a schema that
+         * describes the data items by name and type. The same schema must be used for all
+         * of the data files referenced by the <code>DataSource</code>. </p> <p>After the
          * <code>DataSource</code> has been created, it's ready to use in evaluations and
          * batch predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item: a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable, or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the <a
-         * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-         * Learning Developer Guide</a>.</p>
+         * <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe
+         * describes how each input variable will be used in training an
+         * <code>MLModel</code>. Will the variable be included or excluded from training?
+         * Will the variable be manipulated; for example, will it be combined with another
+         * variable or will it be split apart into word combinations? The recipe provides
+         * answers to these questions.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -531,36 +582,34 @@ namespace Model
 
         /**
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
-         * references data that can be used to perform <a>CreateMLModel</a>,
-         * <a>CreateEvaluation</a>, or <a>CreateBatchPrediction</a> operations.</p>
-         * <p><code>CreateDataSourceFromS3</code> is an asynchronous operation. In response
-         * to <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML)
-         * immediately returns and sets the <code>DataSource</code> status to
-         * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
-         * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
-         * <code>DataSource</code> in <code>COMPLETED</code> or <code>PENDING</code> status
-         * can only be used to perform <a>CreateMLModel</a>, <a>CreateEvaluation</a> or
-         * <a>CreateBatchPrediction</a> operations. </p> <p> If Amazon ML cannot accept the
-         * input source, it sets the <code>Status</code> parameter to <code>FAILED</code>
-         * and includes an error message in the <code>Message</code> attribute of the
-         * <a>GetDataSource</a> operation response. </p> <p>The observation data used in a
-         * <code>DataSource</code> should be ready to use; that is, it should have a
-         * consistent structure, and missing data values should be kept to a minimum. The
-         * observation data must reside in one or more CSV files in an Amazon Simple
-         * Storage Service (Amazon S3) bucket, along with a schema that describes the data
-         * items by name and type. The same schema must be used for all of the data files
-         * referenced by the <code>DataSource</code>. </p> <p>After the
+         * references data that can be used to perform <code>CreateMLModel</code>,
+         * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
+         * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
+         * status to <code>PENDING</code>. After the <code>DataSource</code> has been
+         * created and is ready for use, Amazon ML sets the <code>Status</code> parameter
+         * to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
+         * or <code>PENDING</code> state can be used to perform only
+         * <code>CreateMLModel</code>, <code>CreateEvaluation</code> or
+         * <code>CreateBatchPrediction</code> operations. </p> <p> If Amazon ML can't
+         * accept the input source, it sets the <code>Status</code> parameter to
+         * <code>FAILED</code> and includes an error message in the <code>Message</code>
+         * attribute of the <code>GetDataSource</code> operation response. </p> <p>The
+         * observation data used in a <code>DataSource</code> should be ready to use; that
+         * is, it should have a consistent structure, and missing data values should be
+         * kept to a minimum. The observation data must reside in one or more .csv files in
+         * an Amazon Simple Storage Service (Amazon S3) location, along with a schema that
+         * describes the data items by name and type. The same schema must be used for all
+         * of the data files referenced by the <code>DataSource</code>. </p> <p>After the
          * <code>DataSource</code> has been created, it's ready to use in evaluations and
          * batch predictions. If you plan to use the <code>DataSource</code> to train an
-         * <code>MLModel</code>, the <code>DataSource</code> requires another item: a
-         * recipe. A recipe describes the observation variables that participate in
-         * training an <code>MLModel</code>. A recipe describes how each input variable
-         * will be used in training. Will the variable be included or excluded from
-         * training? Will the variable be manipulated, for example, combined with another
-         * variable, or split apart into word combinations? The recipe provides answers to
-         * these questions. For more information, see the <a
-         * href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
-         * Learning Developer Guide</a>.</p>
+         * <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe
+         * describes how each input variable will be used in training an
+         * <code>MLModel</code>. Will the variable be included or excluded from training?
+         * Will the variable be manipulated; for example, will it be combined with another
+         * variable or will it be split apart into word combinations? The recipe provides
+         * answers to these questions.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -571,19 +620,19 @@ namespace Model
          * <code>MLModel</code> is evaluated on a set of observations associated to a
          * <code>DataSource</code>. Like a <code>DataSource</code> for an
          * <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code>
-         * contains values for the Target Variable. The <code>Evaluation</code> compares
-         * the predicted result for each observation to the actual outcome and provides a
-         * summary so that you know how effective the <code>MLModel</code> functions on the
-         * test data. Evaluation generates a relevant performance metric such as BinaryAUC,
-         * RegressionRMSE or MulticlassAvgFScore based on the corresponding
-         * <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or
-         * <code>MULTICLASS</code>. </p> <p><code>CreateEvaluation</code> is an
-         * asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the evaluation status
-         * to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready
-         * for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
-         * use the <a>GetEvaluation</a> operation to check progress of the evaluation
-         * during the creation operation.</p>
+         * contains values for the <code>Target Variable</code>. The
+         * <code>Evaluation</code> compares the predicted result for each observation to
+         * the actual outcome and provides a summary so that you know how effective the
+         * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
+         * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
+         * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
+         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
+         * returns and sets the evaluation status to <code>PENDING</code>. After the
+         * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
+         * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
+         * operation to check progress of the evaluation during the creation operation.</p>
          */
         virtual Model::CreateEvaluationOutcome CreateEvaluation(const Model::CreateEvaluationRequest& request) const;
 
@@ -592,19 +641,19 @@ namespace Model
          * <code>MLModel</code> is evaluated on a set of observations associated to a
          * <code>DataSource</code>. Like a <code>DataSource</code> for an
          * <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code>
-         * contains values for the Target Variable. The <code>Evaluation</code> compares
-         * the predicted result for each observation to the actual outcome and provides a
-         * summary so that you know how effective the <code>MLModel</code> functions on the
-         * test data. Evaluation generates a relevant performance metric such as BinaryAUC,
-         * RegressionRMSE or MulticlassAvgFScore based on the corresponding
-         * <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or
-         * <code>MULTICLASS</code>. </p> <p><code>CreateEvaluation</code> is an
-         * asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the evaluation status
-         * to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready
-         * for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
-         * use the <a>GetEvaluation</a> operation to check progress of the evaluation
-         * during the creation operation.</p>
+         * contains values for the <code>Target Variable</code>. The
+         * <code>Evaluation</code> compares the predicted result for each observation to
+         * the actual outcome and provides a summary so that you know how effective the
+         * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
+         * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
+         * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
+         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
+         * returns and sets the evaluation status to <code>PENDING</code>. After the
+         * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
+         * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
+         * operation to check progress of the evaluation during the creation operation.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -615,80 +664,83 @@ namespace Model
          * <code>MLModel</code> is evaluated on a set of observations associated to a
          * <code>DataSource</code>. Like a <code>DataSource</code> for an
          * <code>MLModel</code>, the <code>DataSource</code> for an <code>Evaluation</code>
-         * contains values for the Target Variable. The <code>Evaluation</code> compares
-         * the predicted result for each observation to the actual outcome and provides a
-         * summary so that you know how effective the <code>MLModel</code> functions on the
-         * test data. Evaluation generates a relevant performance metric such as BinaryAUC,
-         * RegressionRMSE or MulticlassAvgFScore based on the corresponding
-         * <code>MLModelType</code>: <code>BINARY</code>, <code>REGRESSION</code> or
-         * <code>MULTICLASS</code>. </p> <p><code>CreateEvaluation</code> is an
-         * asynchronous operation. In response to <code>CreateEvaluation</code>, Amazon
-         * Machine Learning (Amazon ML) immediately returns and sets the evaluation status
-         * to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready
-         * for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
-         * use the <a>GetEvaluation</a> operation to check progress of the evaluation
-         * during the creation operation.</p>
+         * contains values for the <code>Target Variable</code>. The
+         * <code>Evaluation</code> compares the predicted result for each observation to
+         * the actual outcome and provides a summary so that you know how effective the
+         * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
+         * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
+         * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
+         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
+         * returns and sets the evaluation status to <code>PENDING</code>. After the
+         * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
+         * to <code>COMPLETED</code>. </p> <p>You can use the <code>GetEvaluation</code>
+         * operation to check progress of the evaluation during the creation operation.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEvaluationAsync(const Model::CreateEvaluationRequest& request, const CreateEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <code>MLModel</code> using the data files and the recipe as
-         * information sources. </p> <p>An <code>MLModel</code> is nearly immutable. Users
-         * can only update the <code>MLModelName</code> and the <code>ScoreThreshold</code>
-         * in an <code>MLModel</code> without creating a new <code>MLModel</code>. </p>
-         * <p><code>CreateMLModel</code> is an asynchronous operation. In response to
-         * <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately
-         * returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After
-         * the <code>MLModel</code> is created and ready for use, Amazon ML sets the status
-         * to <code>COMPLETED</code>. </p> <p>You can use the <a>GetMLModel</a> operation
-         * to check progress of the <code>MLModel</code> during the creation operation.</p>
-         * <p> <a>CreateMLModel</a> requires a <code>DataSource</code> with computed
+         * <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the
+         * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
+         * immutable. Users can update only the <code>MLModelName</code> and the
+         * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
+         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
+         * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
+         * is for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
+         * use the <code>GetMLModel</code> operation to check the progress of the
+         * <code>MLModel</code> during the creation operation.</p> <p>
+         * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <a>CreateDataSourceFromRDS</a>,
-         * <a>CreateDataSourceFromS3</a>, or <a>CreateDataSourceFromRedshift</a>
-         * operations. </p>
+         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>CreateDataSourceFromS3</code>, or
+         * <code>CreateDataSourceFromRedshift</code> operations. </p>
          */
         virtual Model::CreateMLModelOutcome CreateMLModel(const Model::CreateMLModelRequest& request) const;
 
         /**
-         * <p>Creates a new <code>MLModel</code> using the data files and the recipe as
-         * information sources. </p> <p>An <code>MLModel</code> is nearly immutable. Users
-         * can only update the <code>MLModelName</code> and the <code>ScoreThreshold</code>
-         * in an <code>MLModel</code> without creating a new <code>MLModel</code>. </p>
-         * <p><code>CreateMLModel</code> is an asynchronous operation. In response to
-         * <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately
-         * returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After
-         * the <code>MLModel</code> is created and ready for use, Amazon ML sets the status
-         * to <code>COMPLETED</code>. </p> <p>You can use the <a>GetMLModel</a> operation
-         * to check progress of the <code>MLModel</code> during the creation operation.</p>
-         * <p> <a>CreateMLModel</a> requires a <code>DataSource</code> with computed
+         * <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the
+         * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
+         * immutable. Users can update only the <code>MLModelName</code> and the
+         * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
+         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
+         * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
+         * is for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
+         * use the <code>GetMLModel</code> operation to check the progress of the
+         * <code>MLModel</code> during the creation operation.</p> <p>
+         * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <a>CreateDataSourceFromRDS</a>,
-         * <a>CreateDataSourceFromS3</a>, or <a>CreateDataSourceFromRedshift</a>
-         * operations. </p>
+         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>CreateDataSourceFromS3</code>, or
+         * <code>CreateDataSourceFromRedshift</code> operations. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateMLModelOutcomeCallable CreateMLModelCallable(const Model::CreateMLModelRequest& request) const;
 
         /**
-         * <p>Creates a new <code>MLModel</code> using the data files and the recipe as
-         * information sources. </p> <p>An <code>MLModel</code> is nearly immutable. Users
-         * can only update the <code>MLModelName</code> and the <code>ScoreThreshold</code>
-         * in an <code>MLModel</code> without creating a new <code>MLModel</code>. </p>
-         * <p><code>CreateMLModel</code> is an asynchronous operation. In response to
-         * <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately
-         * returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After
-         * the <code>MLModel</code> is created and ready for use, Amazon ML sets the status
-         * to <code>COMPLETED</code>. </p> <p>You can use the <a>GetMLModel</a> operation
-         * to check progress of the <code>MLModel</code> during the creation operation.</p>
-         * <p> <a>CreateMLModel</a> requires a <code>DataSource</code> with computed
+         * <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the
+         * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
+         * immutable. Users can update only the <code>MLModelName</code> and the
+         * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
+         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
+         * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
+         * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
+         * is for use, Amazon ML sets the status to <code>COMPLETED</code>. </p> <p>You can
+         * use the <code>GetMLModel</code> operation to check the progress of the
+         * <code>MLModel</code> during the creation operation.</p> <p>
+         * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <a>CreateDataSourceFromRDS</a>,
-         * <a>CreateDataSourceFromS3</a>, or <a>CreateDataSourceFromRedshift</a>
-         * operations. </p>
+         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>CreateDataSourceFromS3</code>, or
+         * <code>CreateDataSourceFromRedshift</code> operations. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -784,20 +836,20 @@ namespace Model
         /**
          * <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>,
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
-         * operation, you can use the <a>GetEvaluation</a> operation to verify that the
-         * status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <p><b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
-         * are irreversible.</p>
+         * operation, you can use the <code>GetEvaluation</code> operation to verify that
+         * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
+         * <caution><title>Caution</title> <p>The results of the
+         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
          */
         virtual Model::DeleteEvaluationOutcome DeleteEvaluation(const Model::DeleteEvaluationRequest& request) const;
 
         /**
          * <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>,
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
-         * operation, you can use the <a>GetEvaluation</a> operation to verify that the
-         * status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <p><b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
-         * are irreversible.</p>
+         * operation, you can use the <code>GetEvaluation</code> operation to verify that
+         * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
+         * <caution><title>Caution</title> <p>The results of the
+         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -806,28 +858,28 @@ namespace Model
         /**
          * <p>Assigns the <code>DELETED</code> status to an <code>Evaluation</code>,
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
-         * operation, you can use the <a>GetEvaluation</a> operation to verify that the
-         * status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <p><b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
-         * are irreversible.</p>
+         * operation, you can use the <code>GetEvaluation</code> operation to verify that
+         * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
+         * <caution><title>Caution</title> <p>The results of the
+         * <code>DeleteEvaluation</code> operation are irreversible.</p></caution>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEvaluationAsync(const Model::DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Assigns the DELETED status to an <code>MLModel</code>, rendering it
-         * unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you can
-         * use the <a>GetMLModel</a> operation to verify that the status of the
+         * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
+         * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
+         * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p>
          */
         virtual Model::DeleteMLModelOutcome DeleteMLModel(const Model::DeleteMLModelRequest& request) const;
 
         /**
-         * <p>Assigns the DELETED status to an <code>MLModel</code>, rendering it
-         * unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you can
-         * use the <a>GetMLModel</a> operation to verify that the status of the
+         * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
+         * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
+         * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p>
          *
@@ -836,9 +888,9 @@ namespace Model
         virtual Model::DeleteMLModelOutcomeCallable DeleteMLModelCallable(const Model::DeleteMLModelRequest& request) const;
 
         /**
-         * <p>Assigns the DELETED status to an <code>MLModel</code>, rendering it
-         * unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you can
-         * use the <a>GetMLModel</a> operation to verify that the status of the
+         * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
+         * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
+         * can use the <code>GetMLModel</code> operation to verify that the status of the
          * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p>
          *
@@ -864,6 +916,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRealtimeEndpointAsync(const Model::DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified tags associated with an ML object. After this operation
+         * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
+         * doesn't exist, Amazon ML ignores it.</p>
+         */
+        virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags associated with an ML object. After this operation
+         * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
+         * doesn't exist, Amazon ML ignores it.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
+
+        /**
+         * <p>Deletes the specified tags associated with an ML object. After this operation
+         * is complete, you can't recover deleted tags.</p> <p>If you specify a tag that
+         * doesn't exist, Amazon ML ignores it.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of <code>BatchPrediction</code> operations that match the
@@ -954,6 +1031,25 @@ namespace Model
         virtual void DescribeMLModelsAsync(const Model::DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         */
+        virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
+
+        /**
+         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
+
+        /**
+         * <p>Describes one or more of the tags for your Amazon ML object.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a <code>BatchPrediction</code> that includes detailed metadata,
          * status, and data file information for a <code>Batch Prediction</code>
          * request.</p>
@@ -1032,28 +1128,25 @@ namespace Model
         virtual void GetEvaluationAsync(const Model::GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns an <code>MLModel</code> that includes detailed metadata, and data
-         * source information as well as the current status of the
-         * <code>MLModel</code>.</p> <p><code>GetMLModel</code> provides results in normal
-         * or verbose format. </p>
+         * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
+         * information, and the current status of the <code>MLModel</code>.</p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
          */
         virtual Model::GetMLModelOutcome GetMLModel(const Model::GetMLModelRequest& request) const;
 
         /**
-         * <p>Returns an <code>MLModel</code> that includes detailed metadata, and data
-         * source information as well as the current status of the
-         * <code>MLModel</code>.</p> <p><code>GetMLModel</code> provides results in normal
-         * or verbose format. </p>
+         * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
+         * information, and the current status of the <code>MLModel</code>.</p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetMLModelOutcomeCallable GetMLModelCallable(const Model::GetMLModelRequest& request) const;
 
         /**
-         * <p>Returns an <code>MLModel</code> that includes detailed metadata, and data
-         * source information as well as the current status of the
-         * <code>MLModel</code>.</p> <p><code>GetMLModel</code> provides results in normal
-         * or verbose format. </p>
+         * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
+         * information, and the current status of the <code>MLModel</code>.</p>
+         * <p><code>GetMLModel</code> provides results in normal or verbose format. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1089,15 +1182,17 @@ namespace Model
 
         /**
          * <p>Updates the <code>BatchPredictionName</code> of a
-         * <code>BatchPrediction</code>.</p> <p>You can use the <a>GetBatchPrediction</a>
-         * operation to view the contents of the updated data element.</p>
+         * <code>BatchPrediction</code>.</p> <p>You can use the
+         * <code>GetBatchPrediction</code> operation to view the contents of the updated
+         * data element.</p>
          */
         virtual Model::UpdateBatchPredictionOutcome UpdateBatchPrediction(const Model::UpdateBatchPredictionRequest& request) const;
 
         /**
          * <p>Updates the <code>BatchPredictionName</code> of a
-         * <code>BatchPrediction</code>.</p> <p>You can use the <a>GetBatchPrediction</a>
-         * operation to view the contents of the updated data element.</p>
+         * <code>BatchPrediction</code>.</p> <p>You can use the
+         * <code>GetBatchPrediction</code> operation to view the contents of the updated
+         * data element.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1105,8 +1200,9 @@ namespace Model
 
         /**
          * <p>Updates the <code>BatchPredictionName</code> of a
-         * <code>BatchPrediction</code>.</p> <p>You can use the <a>GetBatchPrediction</a>
-         * operation to view the contents of the updated data element.</p>
+         * <code>BatchPrediction</code>.</p> <p>You can use the
+         * <code>GetBatchPrediction</code> operation to view the contents of the updated
+         * data element.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1114,15 +1210,15 @@ namespace Model
 
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
-         * <p>You can use the <a>GetDataSource</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetDataSource</code> operation to view the contents of
+         * the updated data element.</p>
          */
         virtual Model::UpdateDataSourceOutcome UpdateDataSource(const Model::UpdateDataSourceRequest& request) const;
 
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
-         * <p>You can use the <a>GetDataSource</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetDataSource</code> operation to view the contents of
+         * the updated data element.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1130,8 +1226,8 @@ namespace Model
 
         /**
          * <p>Updates the <code>DataSourceName</code> of a <code>DataSource</code>.</p>
-         * <p>You can use the <a>GetDataSource</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetDataSource</code> operation to view the contents of
+         * the updated data element.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1139,15 +1235,15 @@ namespace Model
 
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
-         * <p>You can use the <a>GetEvaluation</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
+         * the updated data element.</p>
          */
         virtual Model::UpdateEvaluationOutcome UpdateEvaluation(const Model::UpdateEvaluationRequest& request) const;
 
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
-         * <p>You can use the <a>GetEvaluation</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
+         * the updated data element.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1155,8 +1251,8 @@ namespace Model
 
         /**
          * <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>
-         * <p>You can use the <a>GetEvaluation</a> operation to view the contents of the
-         * updated data element.</p>
+         * <p>You can use the <code>GetEvaluation</code> operation to view the contents of
+         * the updated data element.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1164,15 +1260,15 @@ namespace Model
 
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
-         * an <code>MLModel</code>.</p> <p>You can use the <a>GetMLModel</a> operation to
-         * view the contents of the updated data element.</p>
+         * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
+         * operation to view the contents of the updated data element.</p>
          */
         virtual Model::UpdateMLModelOutcome UpdateMLModel(const Model::UpdateMLModelRequest& request) const;
 
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
-         * an <code>MLModel</code>.</p> <p>You can use the <a>GetMLModel</a> operation to
-         * view the contents of the updated data element.</p>
+         * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
+         * operation to view the contents of the updated data element.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1180,8 +1276,8 @@ namespace Model
 
         /**
          * <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of
-         * an <code>MLModel</code>.</p> <p>You can use the <a>GetMLModel</a> operation to
-         * view the contents of the updated data element.</p>
+         * an <code>MLModel</code>.</p> <p>You can use the <code>GetMLModel</code>
+         * operation to view the contents of the updated data element.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1192,6 +1288,7 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBatchPredictionAsyncHelper(const Model::CreateBatchPredictionRequest& request, const CreateBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceFromRDSAsyncHelper(const Model::CreateDataSourceFromRDSRequest& request, const CreateDataSourceFromRDSResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceFromRedshiftAsyncHelper(const Model::CreateDataSourceFromRedshiftRequest& request, const CreateDataSourceFromRedshiftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1204,10 +1301,12 @@ namespace Model
         void DeleteEvaluationAsyncHelper(const Model::DeleteEvaluationRequest& request, const DeleteEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMLModelAsyncHelper(const Model::DeleteMLModelRequest& request, const DeleteMLModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRealtimeEndpointAsyncHelper(const Model::DeleteRealtimeEndpointRequest& request, const DeleteRealtimeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBatchPredictionsAsyncHelper(const Model::DescribeBatchPredictionsRequest& request, const DescribeBatchPredictionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourcesAsyncHelper(const Model::DescribeDataSourcesRequest& request, const DescribeDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEvaluationsAsyncHelper(const Model::DescribeEvaluationsRequest& request, const DescribeEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMLModelsAsyncHelper(const Model::DescribeMLModelsRequest& request, const DescribeMLModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBatchPredictionAsyncHelper(const Model::GetBatchPredictionRequest& request, const GetBatchPredictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataSourceAsyncHelper(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEvaluationAsyncHelper(const Model::GetEvaluationRequest& request, const GetEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

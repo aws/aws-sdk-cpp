@@ -33,9 +33,9 @@ namespace Model
 {
 
   /**
-   * <p> Represents the output of <a>GetBatchPrediction</a> operation.</p> <p> The
-   * content consists of the detailed metadata, the status, and the data file
-   * information of a <i>Batch Prediction</i>.</p>
+   * <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p>
+   * <p> The content consists of the detailed metadata, the status, and the data file
+   * information of a <code>Batch Prediction</code>.</p>
    */
   class AWS_MACHINELEARNING_API BatchPrediction
   {
@@ -369,7 +369,7 @@ namespace Model
      * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
      * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did not run
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
      * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
@@ -381,7 +381,7 @@ namespace Model
      * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
      * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did not run
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
      * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
@@ -393,7 +393,7 @@ namespace Model
      * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
      * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did not run
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
      * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
@@ -405,7 +405,7 @@ namespace Model
      * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
      * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did not run
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
      * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
@@ -417,7 +417,7 @@ namespace Model
      * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
      * Learning (Amazon ML) submitted a request to generate predictions for a batch of
      * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
-     * <li> <code>FAILED</code> - The request to peform a batch prediction did not run
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
      * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
      * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
@@ -426,50 +426,50 @@ namespace Model
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline BatchPrediction& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline BatchPrediction& WithOutputUri(Aws::String&& value) { SetOutputUri(value); return *this;}
 
     /**
      * <p>The location of an Amazon S3 bucket or directory to receive the operation
-     * results. The following substrings are not allowed in the s3 key portion of the
-     * "outputURI" field: ':', '//', '/./', '/../'.</p>
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
     inline BatchPrediction& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}
 

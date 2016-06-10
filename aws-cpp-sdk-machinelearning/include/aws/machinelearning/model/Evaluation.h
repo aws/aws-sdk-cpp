@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p> Represents the output of <a>GetEvaluation</a> operation. </p> <p>The content
-   * consists of the detailed metadata and data file information and the current
-   * status of the <code>Evaluation</code>.</p>
+   * <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The
+   * content consists of the detailed metadata and data file information and the
+   * current status of the <code>Evaluation</code>.</p>
    */
   class AWS_MACHINELEARNING_API Evaluation
   {
@@ -407,9 +407,9 @@ namespace Model
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the following
-     * metrics is returned, based on the type of the MLModel: </p> <ul> <li>
-     * <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC)
-     * technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
      * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
      * to measure performance. RMSE measures the difference between predicted and
      * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A
@@ -424,9 +424,9 @@ namespace Model
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the following
-     * metrics is returned, based on the type of the MLModel: </p> <ul> <li>
-     * <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC)
-     * technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
      * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
      * to measure performance. RMSE measures the difference between predicted and
      * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A
@@ -441,9 +441,9 @@ namespace Model
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the following
-     * metrics is returned, based on the type of the MLModel: </p> <ul> <li>
-     * <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC)
-     * technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
      * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
      * to measure performance. RMSE measures the difference between predicted and
      * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A
@@ -458,9 +458,9 @@ namespace Model
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the following
-     * metrics is returned, based on the type of the MLModel: </p> <ul> <li>
-     * <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC)
-     * technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
      * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
      * to measure performance. RMSE measures the difference between predicted and
      * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A
@@ -475,9 +475,9 @@ namespace Model
     /**
      * <p>Measurements of how well the <code>MLModel</code> performed, using
      * observations referenced by the <code>DataSource</code>. One of the following
-     * metrics is returned, based on the type of the MLModel: </p> <ul> <li>
-     * <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC)
-     * technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
+     * metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul>
+     * <li> <p>BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve
+     * (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: A
      * regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique
      * to measure performance. RMSE measures the difference between predicted and
      * actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: A

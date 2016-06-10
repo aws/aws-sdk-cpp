@@ -35,8 +35,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>DescribeMLModels</a> operation. The content is
-   * essentially a list of <code>MLModel</code>.</p>
+   * <p>Represents the output of a <code>DescribeMLModels</code> operation. The
+   * content is essentially a list of <code>MLModel</code>.</p>
    */
   class AWS_MACHINELEARNING_API DescribeMLModelsResult
   {
@@ -46,37 +46,37 @@ namespace Model
     DescribeMLModelsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline const Aws::Vector<MLModel>& GetResults() const{ return m_results; }
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline void SetResults(const Aws::Vector<MLModel>& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline void SetResults(Aws::Vector<MLModel>&& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline DescribeMLModelsResult& WithResults(const Aws::Vector<MLModel>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline DescribeMLModelsResult& WithResults(Aws::Vector<MLModel>&& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline DescribeMLModelsResult& AddResults(const MLModel& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>MLModel</a> that meet the search criteria.</p>
+     * <p>A list of <code>MLModel</code> that meet the search criteria.</p>
      */
     inline DescribeMLModelsResult& AddResults(MLModel&& value) { m_results.push_back(value); return *this; }
 

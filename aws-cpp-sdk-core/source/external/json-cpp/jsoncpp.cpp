@@ -3070,6 +3070,8 @@ Value& Path::make(Value& root) const {
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
+#include <cmath>
+
 #if !defined(JSON_IS_AMALGAMATION)
 #include <json/writer.h>
 #include <json_tool.h>
@@ -3084,9 +3086,20 @@ Value& Path::make(Value& root) const {
 #include <string.h>
 
 #if defined(_MSC_VER) && _MSC_VER < 1500 // VC++ 8.0 and below
+
 #include <float.h>
-#define isfinite _finite
+#define IS_FINITE _finite
 #define snprintf _snprintf
+
+#elif defined(__sun) && defined(__SVR4) //Solaris
+
+#include <ieeefp.h>
+#define IS_FINITE finite
+
+#else
+
+#define IS_FINITE std::isfinite
+
 #endif
 
 #if defined(_MSC_VER) && _MSC_VER >= 1400 // VC++ 8.0
@@ -3094,10 +3107,7 @@ Value& Path::make(Value& root) const {
 #pragma warning(disable : 4996)
 #endif
 
-#if defined(__sun) && defined(__SVR4) //Solaris
-#include <ieeefp.h>
-#define isfinite finite
-#endif
+
 
 namespace Aws {
 namespace External {
@@ -3162,7 +3172,7 @@ Aws::String valueToString(double value) {
   len = sprintf_s(buffer, sizeof(buffer), "%.17g", value);
 #endif
 #else
-  if (isfinite(value)) {
+  if (IS_FINITE(value)) {
     len = snprintf(buffer, sizeof(buffer), "%.17g", value);
   } else {
     // IEEE standard states that NaN values will not compare to themselves

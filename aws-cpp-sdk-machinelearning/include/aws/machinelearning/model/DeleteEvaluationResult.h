@@ -33,11 +33,11 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p> Represents the output of a <a>DeleteEvaluation</a> operation. The output
-   * indicates that Amazon Machine Learning (Amazon ML) received the request.</p>
-   * <p>You can use the <a>GetEvaluation</a> operation and check the value of the
-   * <code>Status</code> parameter to see whether an <code>Evaluation</code> is
-   * marked as <code>DELETED</code>.</p>
+   * <p> Represents the output of a <code>DeleteEvaluation</code> operation. The
+   * output indicates that Amazon Machine Learning (Amazon ML) received the
+   * request.</p> <p>You can use the <code>GetEvaluation</code> operation and check
+   * the value of the <code>Status</code> parameter to see whether an
+   * <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
    */
   class AWS_MACHINELEARNING_API DeleteEvaluationResult
   {

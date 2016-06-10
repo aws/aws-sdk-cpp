@@ -37,8 +37,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>GetDataSource</a> operation and describes a
-   * <code>DataSource</code>.</p>
+   * <p>Represents the output of a <code>GetDataSource</code> operation and describes
+   * a <code>DataSource</code>.</p>
    */
   class AWS_MACHINELEARNING_API GetDataSourceResult
   {
@@ -132,44 +132,44 @@ namespace Model
     inline GetDataSourceResult& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangement = value; }
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangement = value; }
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(const char* value) { m_dataRearrangement.assign(value); }
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline GetDataSourceResult& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline GetDataSourceResult& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(value); return *this;}
 
     /**
-     * <p>A JSON string that captures the splitting rearrangement requirement of the
-     * <code>DataSource</code>.</p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline GetDataSourceResult& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
@@ -349,149 +349,144 @@ namespace Model
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
-     * Language (Amazon ML) submitted a request to create a
-     * <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The creation
-     * process is underway.</li> <li> <code>FAILED</code> - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li> <li>
-     * <code>COMPLETED</code> - The creation process completed successfully.</li> <li>
-     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-     * not usable.</li> </ul>
+     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</li> <li>
+     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
-     * Language (Amazon ML) submitted a request to create a
-     * <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The creation
-     * process is underway.</li> <li> <code>FAILED</code> - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li> <li>
-     * <code>COMPLETED</code> - The creation process completed successfully.</li> <li>
-     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-     * not usable.</li> </ul>
+     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</li> <li>
+     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline void SetStatus(const EntityStatus& value) { m_status = value; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
-     * Language (Amazon ML) submitted a request to create a
-     * <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The creation
-     * process is underway.</li> <li> <code>FAILED</code> - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li> <li>
-     * <code>COMPLETED</code> - The creation process completed successfully.</li> <li>
-     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-     * not usable.</li> </ul>
+     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</li> <li>
+     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline void SetStatus(EntityStatus&& value) { m_status = value; }
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
-     * Language (Amazon ML) submitted a request to create a
-     * <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The creation
-     * process is underway.</li> <li> <code>FAILED</code> - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li> <li>
-     * <code>COMPLETED</code> - The creation process completed successfully.</li> <li>
-     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-     * not usable.</li> </ul>
+     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</li> <li>
+     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline GetDataSourceResult& WithStatus(const EntityStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the <code>DataSource</code>. This element can have one
-     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
-     * Language (Amazon ML) submitted a request to create a
-     * <code>DataSource</code>.</li> <li> <code>INPROGRESS</code> - The creation
-     * process is underway.</li> <li> <code>FAILED</code> - The request to create a
-     * <code>DataSource</code> did not run to completion. It is not usable.</li> <li>
-     * <code>COMPLETED</code> - The creation process completed successfully.</li> <li>
-     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is
-     * not usable.</li> </ul>
+     * of the following values:</p> <ul> <li> <code>PENDING</code> - Amazon ML
+     * submitted a request to create a <code>DataSource</code>.</li> <li>
+     * <code>INPROGRESS</code> - The creation process is underway.</li> <li>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not
+     * run to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The
+     * creation process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>DataSource</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline GetDataSourceResult& WithStatus(EntityStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline void SetLogUri(const Aws::String& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline void SetLogUri(Aws::String&& value) { m_logUri = value; }
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline void SetLogUri(const char* value) { m_logUri.assign(value); }
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline GetDataSourceResult& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline GetDataSourceResult& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>A link to the file containining logs of either create <code>DataSource</code>
-     * operation.</p>
+     * <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code>
+     * operations.</p>
      */
     inline GetDataSourceResult& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_message = value; }
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline GetDataSourceResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline GetDataSourceResult& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The description of the most recent details about creating the
+     * <p>The user-supplied description of the most recent details about creating the
      * <code>DataSource</code>.</p>
      */
     inline GetDataSourceResult& WithMessage(const char* value) { SetMessage(value); return *this;}

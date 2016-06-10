@@ -35,8 +35,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the query results from a <a>DescribeEvaluations</a> operation. The
-   * content is essentially a list of <code>Evaluation</code>.</p>
+   * <p>Represents the query results from a <code>DescribeEvaluations</code>
+   * operation. The content is essentially a list of <code>Evaluation</code>.</p>
    */
   class AWS_MACHINELEARNING_API DescribeEvaluationsResult
   {
@@ -46,37 +46,37 @@ namespace Model
     DescribeEvaluationsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline const Aws::Vector<Evaluation>& GetResults() const{ return m_results; }
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline void SetResults(const Aws::Vector<Evaluation>& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline void SetResults(Aws::Vector<Evaluation>&& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline DescribeEvaluationsResult& WithResults(const Aws::Vector<Evaluation>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline DescribeEvaluationsResult& WithResults(Aws::Vector<Evaluation>&& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline DescribeEvaluationsResult& AddResults(const Evaluation& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>Evaluation</a> that meet the search criteria. </p>
+     * <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
      */
     inline DescribeEvaluationsResult& AddResults(Evaluation&& value) { m_results.push_back(value); return *this; }
 

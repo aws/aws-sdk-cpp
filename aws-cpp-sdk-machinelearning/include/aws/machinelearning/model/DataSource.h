@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p> Represents the output of the <a>GetDataSource</a> operation. </p> <p> The
-   * content consists of the detailed metadata and data file information and the
+   * <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p>
+   * The content consists of the detailed metadata and data file information and the
    * current status of the <code>DataSource</code>. </p>
    */
   class AWS_MACHINELEARNING_API DataSource
@@ -125,44 +125,44 @@ namespace Model
     inline DataSource& WithDataLocationS3(const char* value) { SetDataLocationS3(value); return *this;}
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline DataSource& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline DataSource& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(value); return *this;}
 
     /**
-     * <p>A JSON string that represents the splitting requirement of a
-     * <code>Datasource</code>. </p>
+     * <p>A JSON string that represents the splitting and rearrangement requirement
+     * used when this <code>DataSource</code> was created.</p>
      */
     inline DataSource& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
