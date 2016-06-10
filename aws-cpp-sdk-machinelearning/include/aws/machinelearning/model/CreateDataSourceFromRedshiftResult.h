@@ -33,11 +33,11 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p> Represents the output of a <a>CreateDataSourceFromRedshift</a> operation,
-   * and is an acknowledgement that Amazon ML received the request.</p> <p>The
-   * <a>CreateDataSourceFromRedshift</a> operation is asynchronous. You can poll for
-   * updates by using the <a>GetBatchPrediction</a> operation and checking the
-   * <code>Status</code> parameter. </p>
+   * <p> Represents the output of a <code>CreateDataSourceFromRedshift</code>
+   * operation, and is an acknowledgement that Amazon ML received the request.</p>
+   * <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You
+   * can poll for updates by using the <code>GetBatchPrediction</code> operation and
+   * checking the <code>Status</code> parameter. </p>
    */
   class AWS_MACHINELEARNING_API CreateDataSourceFromRedshiftResult
   {

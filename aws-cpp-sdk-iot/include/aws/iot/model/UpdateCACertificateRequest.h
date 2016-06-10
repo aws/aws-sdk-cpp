@@ -76,27 +76,32 @@ namespace Model
     inline UpdateCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The updated status of the CA certificate.</p>
+     * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline const CACertificateStatus& GetNewStatus() const{ return m_newStatus; }
 
     /**
-     * <p>The updated status of the CA certificate.</p>
+     * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline void SetNewStatus(const CACertificateStatus& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
 
     /**
-     * <p>The updated status of the CA certificate.</p>
+     * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline void SetNewStatus(CACertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
 
     /**
-     * <p>The updated status of the CA certificate.</p>
+     * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline UpdateCACertificateRequest& WithNewStatus(const CACertificateStatus& value) { SetNewStatus(value); return *this;}
 
     /**
-     * <p>The updated status of the CA certificate.</p>
+     * <p>The updated status of the CA certificate.</p> <p><b>Note:</b> The status
+     * value REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline UpdateCACertificateRequest& WithNewStatus(CACertificateStatus&& value) { SetNewStatus(value); return *this;}
 

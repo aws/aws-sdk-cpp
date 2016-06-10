@@ -33,8 +33,9 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of an <a>UpdateEvaluation</a> operation.</p> <p>You can
-   * see the updated content by using the <a>GetEvaluation</a> operation.</p>
+   * <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p>
+   * <p>You can see the updated content by using the <code>GetEvaluation</code>
+   * operation.</p>
    */
   class AWS_MACHINELEARNING_API UpdateEvaluationResult
   {

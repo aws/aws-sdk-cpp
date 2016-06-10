@@ -60,6 +60,7 @@
 #include <aws/iot/model/ListCertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesByCARequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
+#include <aws/iot/model/ListPolicyPrincipalsRequest.h>
 #include <aws/iot/model/ListPolicyVersionsRequest.h>
 #include <aws/iot/model/ListPrincipalPoliciesRequest.h>
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
@@ -1229,6 +1230,37 @@ void IoTClient::ListPoliciesAsync(const ListPoliciesRequest& request, const List
 void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPolicies(request), context);
+}
+
+ListPolicyPrincipalsOutcome IoTClient::ListPolicyPrincipals(const ListPolicyPrincipalsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/policy-principals";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListPolicyPrincipalsOutcome(ListPolicyPrincipalsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPolicyPrincipalsOutcome(outcome.GetError());
+  }
+}
+
+ListPolicyPrincipalsOutcomeCallable IoTClient::ListPolicyPrincipalsCallable(const ListPolicyPrincipalsRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::ListPolicyPrincipals, this, request);
+}
+
+void IoTClient::ListPolicyPrincipalsAsync(const ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::ListPolicyPrincipalsAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::ListPolicyPrincipalsAsyncHelper(const ListPolicyPrincipalsRequest& request, const ListPolicyPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPolicyPrincipals(request), context);
 }
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const

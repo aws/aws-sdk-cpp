@@ -133,7 +133,7 @@ namespace Aws
 
             SymmetricCryptoBufSrc::int_type SymmetricCryptoBufSrc::underflow()
             {
-                if (!m_cipher || (m_isFinalized && gptr() < egptr()))
+                if (!m_cipher || (m_isFinalized && gptr() >= egptr()))
                 {
                     return traits_type::eof();
                 }

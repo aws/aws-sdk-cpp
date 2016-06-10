@@ -122,11 +122,10 @@ def GetTestDirectories():
              "aws-cpp-sdk-cognitoidentity-integration-tests",
              "aws-cpp-sdk-cloudfront-integration-tests",
              "aws-cpp-sdk-core-tests",
-             "android-tests",
              "android-unified-tests" ]
 
 def GetCoreDirectories():
-    return [ "aws-cpp-sdk-core", "code-generation/generator", "scripts", "doxygen", "android-build" ]
+    return [ "aws-cpp-sdk-core", os.path.join("code-generation", "generator", "src"), "scripts", "doxygen", "android-build" ]
 
 def GetHighLevelSDKDirectories():
     return [ "aws-cpp-sdk-access-management",
@@ -138,7 +137,14 @@ def GetAllDirectories():
     return GetCoreDirectories() + GetGeneratedSDKDirectories() + GetTestDirectories() + GetHighLevelSDKDirectories()
 
 def GetLooseFiles():
-    return [ "CMakeLists.txt", "LICENSE.txt", "NOTICE.txt", "README.md" ]
+    return [ "CMakeLists.txt",
+             "LICENSE.txt",
+             "NOTICE.txt",
+             "README.md",
+             os.path.join("toolchains", "android.toolchain.cmake"),
+             os.path.join("code-generation", "generator", "LICENSE.txt"),
+             os.path.join("code-generation", "generator", "NOTICE.txt"),
+             os.path.join("code-generation", "generator", "pom.xml")]
 
 
 def ParseArguments(platformEnv):
@@ -173,7 +179,7 @@ def Main():
 
     time.sleep(2)
 
-    os.mkdir( destDir )
+    os.makedirs( destDir )
 
     # copy all files needed
     sourceDir = os.getcwd()
@@ -184,7 +190,12 @@ def Main():
 
     for filename in GetLooseFiles():
         sourceFile = os.path.join( sourceDir, filename )
-        shutil.copy( sourceFile, destDir )
+        destFile = os.path.join(destDir, filename)
+        fileDestDir = os.path.dirname(destFile)
+        if( not os.path.exists( fileDestDir ) ):
+            os.makedirs( fileDestDir )
+
+        shutil.copy( sourceFile, os.path.join(destDir, filename) )
 
     # c2j files need to be individually filtered to keep out services we don't want
     c2jDir = os.path.join( destDir, "code-generation", "api-descriptions" )

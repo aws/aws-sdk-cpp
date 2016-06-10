@@ -32,8 +32,10 @@ DynamoDBAction::DynamoDBAction() :
     m_roleArnHasBeenSet(false),
     m_hashKeyFieldHasBeenSet(false),
     m_hashKeyValueHasBeenSet(false),
+    m_hashKeyTypeHasBeenSet(false),
     m_rangeKeyFieldHasBeenSet(false),
     m_rangeKeyValueHasBeenSet(false),
+    m_rangeKeyTypeHasBeenSet(false),
     m_payloadFieldHasBeenSet(false)
 {
 }
@@ -43,8 +45,10 @@ DynamoDBAction::DynamoDBAction(const JsonValue& jsonValue) :
     m_roleArnHasBeenSet(false),
     m_hashKeyFieldHasBeenSet(false),
     m_hashKeyValueHasBeenSet(false),
+    m_hashKeyTypeHasBeenSet(false),
     m_rangeKeyFieldHasBeenSet(false),
     m_rangeKeyValueHasBeenSet(false),
+    m_rangeKeyTypeHasBeenSet(false),
     m_payloadFieldHasBeenSet(false)
 {
   *this = jsonValue;
@@ -80,6 +84,13 @@ DynamoDBAction& DynamoDBAction::operator =(const JsonValue& jsonValue)
     m_hashKeyValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hashKeyType"))
+  {
+    m_hashKeyType = DynamoKeyTypeMapper::GetDynamoKeyTypeForName(jsonValue.GetString("hashKeyType"));
+
+    m_hashKeyTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("rangeKeyField"))
   {
     m_rangeKeyField = jsonValue.GetString("rangeKeyField");
@@ -92,6 +103,13 @@ DynamoDBAction& DynamoDBAction::operator =(const JsonValue& jsonValue)
     m_rangeKeyValue = jsonValue.GetString("rangeKeyValue");
 
     m_rangeKeyValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rangeKeyType"))
+  {
+    m_rangeKeyType = DynamoKeyTypeMapper::GetDynamoKeyTypeForName(jsonValue.GetString("rangeKeyType"));
+
+    m_rangeKeyTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("payloadField"))
@@ -132,6 +150,11 @@ JsonValue DynamoDBAction::Jsonize() const
 
   }
 
+  if(m_hashKeyTypeHasBeenSet)
+  {
+   payload.WithString("hashKeyType", DynamoKeyTypeMapper::GetNameForDynamoKeyType(m_hashKeyType));
+  }
+
   if(m_rangeKeyFieldHasBeenSet)
   {
    payload.WithString("rangeKeyField", m_rangeKeyField);
@@ -142,6 +165,11 @@ JsonValue DynamoDBAction::Jsonize() const
   {
    payload.WithString("rangeKeyValue", m_rangeKeyValue);
 
+  }
+
+  if(m_rangeKeyTypeHasBeenSet)
+  {
+   payload.WithString("rangeKeyType", DynamoKeyTypeMapper::GetNameForDynamoKeyType(m_rangeKeyType));
   }
 
   if(m_payloadFieldHasBeenSet)

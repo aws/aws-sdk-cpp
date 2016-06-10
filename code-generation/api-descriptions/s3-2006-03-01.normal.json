@@ -1063,7 +1063,7 @@
     "ContentDisposition":{"type":"string"},
     "ContentEncoding":{"type":"string"},
     "ContentLanguage":{"type":"string"},
-    "ContentLength":{"type":"integer"},
+    "ContentLength":{"type":"long"},
     "ContentMD5":{"type":"string"},
     "ContentRange":{"type":"string"},
     "ContentType":{"type":"string"},
@@ -3368,7 +3368,7 @@
           "shape":"StartAfter",
           "documentation":"StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket",
           "location":"querystring",
-          "locationName":"start-key"
+          "locationName":"start-after"
         }
       }
     },

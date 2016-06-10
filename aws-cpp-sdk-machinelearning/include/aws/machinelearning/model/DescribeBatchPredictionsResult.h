@@ -35,8 +35,8 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>DescribeBatchPredictions</a> operation. The
-   * content is essentially a list of <code>BatchPrediction</code>s.</p>
+   * <p>Represents the output of a <code>DescribeBatchPredictions</code> operation.
+   * The content is essentially a list of <code>BatchPrediction</code>s.</p>
    */
   class AWS_MACHINELEARNING_API DescribeBatchPredictionsResult
   {
@@ -46,37 +46,44 @@ namespace Model
     DescribeBatchPredictionsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline const Aws::Vector<BatchPrediction>& GetResults() const{ return m_results; }
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline void SetResults(const Aws::Vector<BatchPrediction>& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline void SetResults(Aws::Vector<BatchPrediction>&& value) { m_results = value; }
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline DescribeBatchPredictionsResult& WithResults(const Aws::Vector<BatchPrediction>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline DescribeBatchPredictionsResult& WithResults(Aws::Vector<BatchPrediction>&& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline DescribeBatchPredictionsResult& AddResults(const BatchPrediction& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>BatchPrediction</a> objects that meet the search criteria. </p>
+     * <p>A list of <code>BatchPrediction</code> objects that meet the search criteria.
+     * </p>
      */
     inline DescribeBatchPredictionsResult& AddResults(BatchPrediction&& value) { m_results.push_back(value); return *this; }
 

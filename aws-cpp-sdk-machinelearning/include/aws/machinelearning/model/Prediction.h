@@ -35,13 +35,14 @@ namespace Model
   /**
    * <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p>
    * <code>Details</code> - Contains the following attributes:
-   * DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS
-   * DetailsAttributes.ALGORITHM - SGD </p> </li> <li> <p>
-   * <code>PredictedLabel</code> - Present for either a BINARY or MULTICLASS
-   * <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> -
-   * Contains the raw classification score corresponding to each label. </p> </li>
-   * <li> <p> <code>PredictedValue</code> - Present for a REGRESSION
-   * <code>MLModel</code> request. </p> </li> </ul>
+   * <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY |
+   * MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li>
+   * <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or
+   * <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p>
+   * <code>PredictedScores</code> - Contains the raw classification score
+   * corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> -
+   * Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li>
+   * </ul>
    */
   class AWS_MACHINELEARNING_API Prediction
   {
@@ -52,52 +53,59 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetPredictedLabel() const{ return m_predictedLabel; }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline void SetPredictedLabel(const Aws::String& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = value; }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline void SetPredictedLabel(Aws::String&& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = value; }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline void SetPredictedLabel(const char* value) { m_predictedLabelHasBeenSet = true; m_predictedLabel.assign(value); }
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline Prediction& WithPredictedLabel(const Aws::String& value) { SetPredictedLabel(value); return *this;}
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline Prediction& WithPredictedLabel(Aws::String&& value) { SetPredictedLabel(value); return *this;}
 
     /**
-     * The prediction label for either a BINARY or MULTICLASS <code>MLModel</code>.
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
     inline Prediction& WithPredictedLabel(const char* value) { SetPredictedLabel(value); return *this;}
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
     inline double GetPredictedValue() const{ return m_predictedValue; }
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
     inline void SetPredictedValue(double value) { m_predictedValueHasBeenSet = true; m_predictedValue = value; }
 
     /**
-     * The prediction value for REGRESSION <code>MLModel</code>.
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
     inline Prediction& WithPredictedValue(double value) { SetPredictedValue(value); return *this;}
 

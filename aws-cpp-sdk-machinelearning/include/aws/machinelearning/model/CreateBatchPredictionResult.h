@@ -33,11 +33,11 @@ namespace MachineLearning
 namespace Model
 {
   /**
-   * <p> Represents the output of a <a>CreateBatchPrediction</a> operation, and is an
-   * acknowledgement that Amazon ML received the request.</p> <p>The
-   * <a>CreateBatchPrediction</a> operation is asynchronous. You can poll for status
-   * updates by using the <a>GetBatchPrediction</a> operation and checking the
-   * <code>Status</code> parameter of the result. </p>
+   * <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and
+   * is an acknowledgement that Amazon ML received the request.</p> <p>The
+   * <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for
+   * status updates by using the <code>&gt;GetBatchPrediction</code> operation and
+   * checking the <code>Status</code> parameter of the result. </p>
    */
   class AWS_MACHINELEARNING_API CreateBatchPredictionResult
   {

@@ -83,7 +83,7 @@ HeadObjectResult& HeadObjectResult::operator =(const AmazonWebServiceResult<XmlD
   const auto& contentLengthIter = headers.find("content-length");
   if(contentLengthIter != headers.end())
   {
-     m_contentLength = StringUtils::ConvertToInt32(contentLengthIter->second.c_str());
+     m_contentLength = StringUtils::ConvertToInt64(contentLengthIter->second.c_str());
   }
 
   const auto& eTagIter = headers.find("etag");
