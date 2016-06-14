@@ -65,9 +65,6 @@ project(aws-cpp-sdk-ds)
   
   target_link_libraries(aws-cpp-sdk-ds aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-ds
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-ds)
 
   install (FILES ${AWS_DS_HEADERS} DESTINATION include/aws/ds)
   install (FILES ${AWS_DS_MODEL_HEADERS} DESTINATION include/aws/ds/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-ds.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -65,9 +65,6 @@ project(aws-cpp-sdk-importexport)
   
   target_link_libraries(aws-cpp-sdk-importexport aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-importexport
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-importexport)
 
   install (FILES ${AWS_IMPORTEXPORT_HEADERS} DESTINATION include/aws/importexport)
   install (FILES ${AWS_IMPORTEXPORT_MODEL_HEADERS} DESTINATION include/aws/importexport/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-importexport.autopkg DESTINATION nuget)
+  endif()
+
+
 

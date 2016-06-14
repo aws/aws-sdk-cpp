@@ -65,9 +65,6 @@ project(aws-cpp-sdk-monitoring)
   
   target_link_libraries(aws-cpp-sdk-monitoring aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-monitoring
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-monitoring)
 
   install (FILES ${AWS_MONITORING_HEADERS} DESTINATION include/aws/monitoring)
   install (FILES ${AWS_MONITORING_MODEL_HEADERS} DESTINATION include/aws/monitoring/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-monitoring.autopkg DESTINATION nuget)
+  endif()
+
+
 

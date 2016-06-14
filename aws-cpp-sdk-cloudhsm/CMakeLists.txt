@@ -65,9 +65,6 @@ project(aws-cpp-sdk-cloudhsm)
   
   target_link_libraries(aws-cpp-sdk-cloudhsm aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-cloudhsm
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-cloudhsm)
 
   install (FILES ${AWS_CLOUDHSM_HEADERS} DESTINATION include/aws/cloudhsm)
   install (FILES ${AWS_CLOUDHSM_MODEL_HEADERS} DESTINATION include/aws/cloudhsm/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-cloudhsm.autopkg DESTINATION nuget)
+  endif()
+
+
 

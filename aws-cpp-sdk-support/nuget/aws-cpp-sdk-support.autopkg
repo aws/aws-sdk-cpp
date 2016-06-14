@@ -1,0 +1,156 @@
+configurations {
+    Toolset {
+    key : "PlatformToolset";
+    choices: { v140, v120 };
+    };
+}
+
+nuget {
+    // The nuspec file metadata.
+    nuspec {
+
+        // Unique package identifier
+        id = AWSSDKCPP-Support;
+
+        // Version number. Follows NuGet standards. (currently SemVer 1.0)
+        version : @RUNTIME_MAJOR_VERSION@.20130415.@RUNTIME_MINOR_VERSION@;
+
+        // Display name for package.
+        title: AWS SDK for C++ (AWS Support);
+
+        // List of package authors.  Braces may be ommited if only one author.
+        authors: Amazon Web Services;
+
+        // URL link to the license this package is released under.
+        licenseUrl: "http://aws.amazon.com/apache2.0/";
+
+        // URL to the project website (if any).
+        projectUrl: "http://github.com/aws/aws-sdk-cpp";
+
+        // URL to an image to be used for package icons.
+        iconUrl: "http://media.amazonwebservices.com/aws_singlebox_01.png";
+
+        // If the license this package is being released
+        // under has use restrictions, set this to "true".
+        requireLicenseAcceptance:false;
+
+        // Brief summary of the package contents. Keep it short!
+        summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
+
+        // Extended description of the package contents.
+        description: "<fullname>AWS Support</fullname> <p>The AWS Support API reference is intended
+   * for programmers who need detailed information about the AWS Support operations
+   * and data types. This service enables you to manage your AWS Support cases
+   * programmatically. It uses HTTP methods that return results in JSON format.</p>
+   * <p>The AWS Support service also exposes a set of <a
+   * href="https://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted Advisor</a>
+   * features. You can retrieve a list of checks and their descriptions, get check
+   * results, specify checks to refresh, and get the refresh status of checks. </p>
+   * <p>The following list describes the AWS Support case management operations: </p>
+   * <ul> <li> <b>Service names, issue categories, and available severity levels.
+   * </b>The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations
+   * return AWS service names, service codes, service categories, and problem
+   * severity levels. You use these values when you call the <a>CreateCase</a>
+   * operation. </li> <li> <b>Case creation, case details, and case resolution.</b>
+   * The <a>CreateCase</a>, <a>DescribeCases</a>, <a>DescribeAttachment</a>, and
+   * <a>ResolveCase</a> operations create AWS Support cases, retrieve information
+   * about cases, and resolve cases.</li> <li> <b>Case communication.</b> The
+   * <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
+   * <a>AddAttachmentsToSet</a> operations retrieve and add communications and
+   * attachments to AWS Support cases. </li> </ul> <p>The following list describes
+   * the operations available from the AWS Support service for Trusted Advisor:</p>
+   * <ul> <li> <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that
+   * run against your AWS resources.</li> <li>Using the <code>CheckId</code> for a
+   * specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
+   * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check you
+   * specified.</li> <li> <a>DescribeTrustedAdvisorCheckSummaries</a> returns
+   * summarized results for one or more Trusted Advisor checks.</li> <li>
+   * <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a
+   * specified check. </li> <li> <a>DescribeTrustedAdvisorCheckRefreshStatuses</a>
+   * reports the refresh status of one or more checks. </li> </ul> <p>For
+   * authentication of requests, AWS Support uses <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * Version 4 Signing Process</a>.</p> <p>See <a
+   * href="http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the
+   * AWS Support API</a> in the <i>AWS Support User Guide</i> for information about
+   * how to use this service to create and manage your support cases, and how to call
+   * Trusted Advisor for results of checks on your resources. </p>
+
+AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+
+        // Copyright notice.
+        copyright: Copyright 2016;
+
+        // Tags of arbitrary text for categorizing and filtering.
+        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, support };
+    };
+
+    dependencies {
+       packages: {
+            AWSSDKCPP-Core/[@RUNTIME_MAJOR_VERSION@,@RUNTIME_MAJOR_VERSION_UPPER_BOUND@)
+       }
+    }
+
+    files {
+        // File location information.  This node is critical for all packages, and is
+        // where much of the effort is.  All file paths are relative to this .autopkg
+        // file's location.
+
+        // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
+        // Included for all conditions.
+        nestedInclude: {
+            #destination = ${d_include}\aws\support;
+            "..\include\aws\support\**\*.h"
+        };
+
+        // Include these specific files in the libpath and "copy to output" path only
+        // under these pivot conditions.
+        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-support.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-support.dll };
+        }
+
+        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-support.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-support.dll };
+        }
+
+        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-support.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-support.dll };
+        }
+
+        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-support.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-support.dll };
+        }
+
+        [x64,release,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-support.lib };
+        }
+
+        [x64,release,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-support.lib };
+        }
+
+        [x64,debug,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-support.lib };
+        }
+
+        [x64,debug,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-support.lib };
+        }
+    };
+
+    targets {
+        // Additional declarations to insert into consuming projects after most of the
+        // project settings. (These may NOT be modified in visual studio by a developer
+        // consuming this package.)
+        // This node is often used to set defines that are required that must be set by
+        // the consuming project in order to correctly link to the libraries in this
+        // package.  Such defines may be set either globally or only set under specific
+        // conditions.
+        [dynamic]
+        Defines += USE_IMPORT_EXPORT;
+    }
+}

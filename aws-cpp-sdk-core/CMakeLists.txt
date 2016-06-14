@@ -429,3 +429,6 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION include/aws/core/utils/crypto/commoncrypto)
 endif()
 
+if(MSVC)
+  install (FILES nuget/aws-cpp-sdk-core.autopkg DESTINATION nuget)
+endif()

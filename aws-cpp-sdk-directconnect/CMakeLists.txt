@@ -65,9 +65,6 @@ project(aws-cpp-sdk-directconnect)
   
   target_link_libraries(aws-cpp-sdk-directconnect aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-directconnect
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-directconnect)
 
   install (FILES ${AWS_DIRECTCONNECT_HEADERS} DESTINATION include/aws/directconnect)
   install (FILES ${AWS_DIRECTCONNECT_MODEL_HEADERS} DESTINATION include/aws/directconnect/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-directconnect.autopkg DESTINATION nuget)
+  endif()
+
+
 

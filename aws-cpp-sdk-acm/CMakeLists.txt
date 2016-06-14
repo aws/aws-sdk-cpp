@@ -65,9 +65,6 @@ project(aws-cpp-sdk-acm)
   
   target_link_libraries(aws-cpp-sdk-acm aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-acm
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-acm)
 
   install (FILES ${AWS_ACM_HEADERS} DESTINATION include/aws/acm)
   install (FILES ${AWS_ACM_MODEL_HEADERS} DESTINATION include/aws/acm/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-acm.autopkg DESTINATION nuget)
+  endif()
+
+
 

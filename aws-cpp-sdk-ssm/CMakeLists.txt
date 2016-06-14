@@ -65,9 +65,6 @@ project(aws-cpp-sdk-ssm)
   
   target_link_libraries(aws-cpp-sdk-ssm aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-ssm
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-ssm)
 
   install (FILES ${AWS_SSM_HEADERS} DESTINATION include/aws/ssm)
   install (FILES ${AWS_SSM_MODEL_HEADERS} DESTINATION include/aws/ssm/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-ssm.autopkg DESTINATION nuget)
+  endif()
+
+
 

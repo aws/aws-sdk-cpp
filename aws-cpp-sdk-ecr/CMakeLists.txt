@@ -65,9 +65,6 @@ project(aws-cpp-sdk-ecr)
   
   target_link_libraries(aws-cpp-sdk-ecr aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-ecr
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-ecr)
 
   install (FILES ${AWS_ECR_HEADERS} DESTINATION include/aws/ecr)
   install (FILES ${AWS_ECR_MODEL_HEADERS} DESTINATION include/aws/ecr/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-ecr.autopkg DESTINATION nuget)
+  endif()
+
+
 

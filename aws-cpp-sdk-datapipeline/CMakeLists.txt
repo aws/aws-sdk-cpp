@@ -65,9 +65,6 @@ project(aws-cpp-sdk-datapipeline)
   
   target_link_libraries(aws-cpp-sdk-datapipeline aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-datapipeline
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-datapipeline)
 
   install (FILES ${AWS_DATAPIPELINE_HEADERS} DESTINATION include/aws/datapipeline)
   install (FILES ${AWS_DATAPIPELINE_MODEL_HEADERS} DESTINATION include/aws/datapipeline/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-datapipeline.autopkg DESTINATION nuget)
+  endif()
+
+
 

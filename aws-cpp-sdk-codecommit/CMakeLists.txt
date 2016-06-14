@@ -65,9 +65,6 @@ project(aws-cpp-sdk-codecommit)
   
   target_link_libraries(aws-cpp-sdk-codecommit aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-codecommit
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-codecommit)
 
   install (FILES ${AWS_CODECOMMIT_HEADERS} DESTINATION include/aws/codecommit)
   install (FILES ${AWS_CODECOMMIT_MODEL_HEADERS} DESTINATION include/aws/codecommit/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-codecommit.autopkg DESTINATION nuget)
+  endif()
+
+
 
