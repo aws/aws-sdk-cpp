@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudFront;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20160128.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20160128.10;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudFront);
@@ -49,7 +49,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/[@RUNTIME_MAJOR_VERSION@,@RUNTIME_MAJOR_VERSION_UPPER_BOUND@)
+            AWSSDKCPP-Core/[0.12,0.13)
        }
     }
 
