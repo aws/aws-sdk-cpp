@@ -34,7 +34,13 @@ IdentityNotificationAttributes::IdentityNotificationAttributes() :
     m_complaintTopicHasBeenSet(false),
     m_deliveryTopicHasBeenSet(false),
     m_forwardingEnabled(false),
-    m_forwardingEnabledHasBeenSet(false)
+    m_forwardingEnabledHasBeenSet(false),
+    m_headersInBounceNotificationsEnabled(false),
+    m_headersInBounceNotificationsEnabledHasBeenSet(false),
+    m_headersInComplaintNotificationsEnabled(false),
+    m_headersInComplaintNotificationsEnabledHasBeenSet(false),
+    m_headersInDeliveryNotificationsEnabled(false),
+    m_headersInDeliveryNotificationsEnabledHasBeenSet(false)
 {
 }
 
@@ -43,7 +49,13 @@ IdentityNotificationAttributes::IdentityNotificationAttributes(const XmlNode& xm
     m_complaintTopicHasBeenSet(false),
     m_deliveryTopicHasBeenSet(false),
     m_forwardingEnabled(false),
-    m_forwardingEnabledHasBeenSet(false)
+    m_forwardingEnabledHasBeenSet(false),
+    m_headersInBounceNotificationsEnabled(false),
+    m_headersInBounceNotificationsEnabledHasBeenSet(false),
+    m_headersInComplaintNotificationsEnabled(false),
+    m_headersInComplaintNotificationsEnabledHasBeenSet(false),
+    m_headersInDeliveryNotificationsEnabled(false),
+    m_headersInDeliveryNotificationsEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -78,6 +90,24 @@ IdentityNotificationAttributes& IdentityNotificationAttributes::operator =(const
       m_forwardingEnabled = StringUtils::ConvertToBool(StringUtils::Trim(forwardingEnabledNode.GetText().c_str()).c_str());
       m_forwardingEnabledHasBeenSet = true;
     }
+    XmlNode headersInBounceNotificationsEnabledNode = resultNode.FirstChild("HeadersInBounceNotificationsEnabled");
+    if(!headersInBounceNotificationsEnabledNode.IsNull())
+    {
+      m_headersInBounceNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(headersInBounceNotificationsEnabledNode.GetText().c_str()).c_str());
+      m_headersInBounceNotificationsEnabledHasBeenSet = true;
+    }
+    XmlNode headersInComplaintNotificationsEnabledNode = resultNode.FirstChild("HeadersInComplaintNotificationsEnabled");
+    if(!headersInComplaintNotificationsEnabledNode.IsNull())
+    {
+      m_headersInComplaintNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(headersInComplaintNotificationsEnabledNode.GetText().c_str()).c_str());
+      m_headersInComplaintNotificationsEnabledHasBeenSet = true;
+    }
+    XmlNode headersInDeliveryNotificationsEnabledNode = resultNode.FirstChild("HeadersInDeliveryNotificationsEnabled");
+    if(!headersInDeliveryNotificationsEnabledNode.IsNull())
+    {
+      m_headersInDeliveryNotificationsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(headersInDeliveryNotificationsEnabledNode.GetText().c_str()).c_str());
+      m_headersInDeliveryNotificationsEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -101,6 +131,18 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
   }
+  if(m_headersInBounceNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HeadersInBounceNotificationsEnabled=" << m_headersInBounceNotificationsEnabled << "&";
+  }
+  if(m_headersInComplaintNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HeadersInComplaintNotificationsEnabled=" << m_headersInComplaintNotificationsEnabled << "&";
+  }
+  if(m_headersInDeliveryNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HeadersInDeliveryNotificationsEnabled=" << m_headersInDeliveryNotificationsEnabled << "&";
+  }
 }
 
 void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -120,6 +162,18 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
   if(m_forwardingEnabledHasBeenSet)
   {
       oStream << location << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
+  }
+  if(m_headersInBounceNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << ".HeadersInBounceNotificationsEnabled=" << m_headersInBounceNotificationsEnabled << "&";
+  }
+  if(m_headersInComplaintNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << ".HeadersInComplaintNotificationsEnabled=" << m_headersInComplaintNotificationsEnabled << "&";
+  }
+  if(m_headersInDeliveryNotificationsEnabledHasBeenSet)
+  {
+      oStream << location << ".HeadersInDeliveryNotificationsEnabled=" << m_headersInDeliveryNotificationsEnabled << "&";
   }
 }
 

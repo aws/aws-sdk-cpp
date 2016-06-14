@@ -95,6 +95,7 @@
 #include <aws/rds/model/ModifyEventSubscriptionRequest.h>
 #include <aws/rds/model/ModifyOptionGroupRequest.h>
 #include <aws/rds/model/PromoteReadReplicaRequest.h>
+#include <aws/rds/model/PromoteReadReplicaDBClusterRequest.h>
 #include <aws/rds/model/PurchaseReservedDBInstancesOfferingRequest.h>
 #include <aws/rds/model/RebootDBInstanceRequest.h>
 #include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
@@ -2242,6 +2243,36 @@ void RDSClient::PromoteReadReplicaAsync(const PromoteReadReplicaRequest& request
 void RDSClient::PromoteReadReplicaAsyncHelper(const PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PromoteReadReplica(request), context);
+}
+
+PromoteReadReplicaDBClusterOutcome RDSClient::PromoteReadReplicaDBCluster(const PromoteReadReplicaDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PromoteReadReplicaDBClusterOutcome(PromoteReadReplicaDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PromoteReadReplicaDBClusterOutcome(outcome.GetError());
+  }
+}
+
+PromoteReadReplicaDBClusterOutcomeCallable RDSClient::PromoteReadReplicaDBClusterCallable(const PromoteReadReplicaDBClusterRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::PromoteReadReplicaDBCluster, this, request);
+}
+
+void RDSClient::PromoteReadReplicaDBClusterAsync(const PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::PromoteReadReplicaDBClusterAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::PromoteReadReplicaDBClusterAsyncHelper(const PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PromoteReadReplicaDBCluster(request), context);
 }
 
 PurchaseReservedDBInstancesOfferingOutcome RDSClient::PurchaseReservedDBInstancesOffering(const PurchaseReservedDBInstancesOfferingRequest& request) const

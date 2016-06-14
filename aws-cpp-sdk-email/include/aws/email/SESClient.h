@@ -52,6 +52,7 @@
 #include <aws/email/model/SetActiveReceiptRuleSetResult.h>
 #include <aws/email/model/SetIdentityDkimEnabledResult.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledResult.h>
+#include <aws/email/model/SetIdentityHeadersInNotificationsEnabledResult.h>
 #include <aws/email/model/SetIdentityMailFromDomainResult.h>
 #include <aws/email/model/SetIdentityNotificationTopicResult.h>
 #include <aws/email/model/SetReceiptRulePositionResult.h>
@@ -138,6 +139,7 @@ namespace Model
         class SetActiveReceiptRuleSetRequest;
         class SetIdentityDkimEnabledRequest;
         class SetIdentityFeedbackForwardingEnabledRequest;
+        class SetIdentityHeadersInNotificationsEnabledRequest;
         class SetIdentityMailFromDomainRequest;
         class SetIdentityNotificationTopicRequest;
         class SetReceiptRulePositionRequest;
@@ -180,6 +182,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SetActiveReceiptRuleSetResult, Aws::Client::AWSError<SESErrors>> SetActiveReceiptRuleSetOutcome;
         typedef Aws::Utils::Outcome<SetIdentityDkimEnabledResult, Aws::Client::AWSError<SESErrors>> SetIdentityDkimEnabledOutcome;
         typedef Aws::Utils::Outcome<SetIdentityFeedbackForwardingEnabledResult, Aws::Client::AWSError<SESErrors>> SetIdentityFeedbackForwardingEnabledOutcome;
+        typedef Aws::Utils::Outcome<SetIdentityHeadersInNotificationsEnabledResult, Aws::Client::AWSError<SESErrors>> SetIdentityHeadersInNotificationsEnabledOutcome;
         typedef Aws::Utils::Outcome<SetIdentityMailFromDomainResult, Aws::Client::AWSError<SESErrors>> SetIdentityMailFromDomainOutcome;
         typedef Aws::Utils::Outcome<SetIdentityNotificationTopicResult, Aws::Client::AWSError<SESErrors>> SetIdentityNotificationTopicOutcome;
         typedef Aws::Utils::Outcome<SetReceiptRulePositionResult, Aws::Client::AWSError<SESErrors>> SetReceiptRulePositionOutcome;
@@ -222,6 +225,7 @@ namespace Model
         typedef std::future<SetActiveReceiptRuleSetOutcome> SetActiveReceiptRuleSetOutcomeCallable;
         typedef std::future<SetIdentityDkimEnabledOutcome> SetIdentityDkimEnabledOutcomeCallable;
         typedef std::future<SetIdentityFeedbackForwardingEnabledOutcome> SetIdentityFeedbackForwardingEnabledOutcomeCallable;
+        typedef std::future<SetIdentityHeadersInNotificationsEnabledOutcome> SetIdentityHeadersInNotificationsEnabledOutcomeCallable;
         typedef std::future<SetIdentityMailFromDomainOutcome> SetIdentityMailFromDomainOutcomeCallable;
         typedef std::future<SetIdentityNotificationTopicOutcome> SetIdentityNotificationTopicOutcomeCallable;
         typedef std::future<SetReceiptRulePositionOutcome> SetReceiptRulePositionOutcomeCallable;
@@ -267,6 +271,7 @@ namespace Model
     typedef std::function<void(const SESClient*, const Model::SetActiveReceiptRuleSetRequest&, const Model::SetActiveReceiptRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetActiveReceiptRuleSetResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityDkimEnabledRequest&, const Model::SetIdentityDkimEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityDkimEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityFeedbackForwardingEnabledRequest&, const Model::SetIdentityFeedbackForwardingEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityFeedbackForwardingEnabledResponseReceivedHandler;
+    typedef std::function<void(const SESClient*, const Model::SetIdentityHeadersInNotificationsEnabledRequest&, const Model::SetIdentityHeadersInNotificationsEnabledOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityMailFromDomainRequest&, const Model::SetIdentityMailFromDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityMailFromDomainResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetIdentityNotificationTopicRequest&, const Model::SetIdentityNotificationTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetIdentityNotificationTopicResponseReceivedHandler;
     typedef std::function<void(const SESClient*, const Model::SetReceiptRulePositionRequest&, const Model::SetReceiptRulePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetReceiptRulePositionResponseReceivedHandler;
@@ -281,10 +286,10 @@ namespace Model
    * for Amazon Simple Email Service (Amazon SES). This documentation is intended to
    * be used in conjunction with the <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon
-   * SES Developer Guide</a>. </p> <note>For a list of Amazon SES endpoints to use in
-   * service requests, see <a
+   * SES Developer Guide</a>. </p> <note> <p> For a list of Amazon SES endpoints to
+   * use in service requests, see <a
    * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
-   * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
+   * and Amazon SES</a> in the Amazon SES Developer Guide. </p> </note>
    */
   class AWS_SES_API SESClient : public Aws::Client::AWSXMLClient
   {
@@ -443,15 +448,15 @@ namespace Model
         virtual void CreateReceiptRuleSetAsync(const Model::CreateReceiptRuleSetRequest& request, const CreateReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified identity (email address or domain) from the list of
-         * verified identities.</p> <p>This action is throttled at one request per
+         * <p>Deletes the specified identity (an email address or a domain) from the list
+         * of verified identities.</p> <p>This action is throttled at one request per
          * second.</p>
          */
         virtual Model::DeleteIdentityOutcome DeleteIdentity(const Model::DeleteIdentityRequest& request) const;
 
         /**
-         * <p>Deletes the specified identity (email address or domain) from the list of
-         * verified identities.</p> <p>This action is throttled at one request per
+         * <p>Deletes the specified identity (an email address or a domain) from the list
+         * of verified identities.</p> <p>This action is throttled at one request per
          * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -459,8 +464,8 @@ namespace Model
         virtual Model::DeleteIdentityOutcomeCallable DeleteIdentityCallable(const Model::DeleteIdentityRequest& request) const;
 
         /**
-         * <p>Deletes the specified identity (email address or domain) from the list of
-         * verified identities.</p> <p>This action is throttled at one request per
+         * <p>Deletes the specified identity (an email address or a domain) from the list
+         * of verified identities.</p> <p>This action is throttled at one request per
          * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -468,13 +473,13 @@ namespace Model
         virtual void DeleteIdentityAsync(const Model::DeleteIdentityRequest& request, const DeleteIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified sending authorization policy for the given identity
-         * (email address or domain). This API returns successfully even if a policy with
-         * the specified name does not exist.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * <p>Deletes the specified sending authorization policy for the given identity (an
+         * email address or a domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -482,13 +487,13 @@ namespace Model
         virtual Model::DeleteIdentityPolicyOutcome DeleteIdentityPolicy(const Model::DeleteIdentityPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified sending authorization policy for the given identity
-         * (email address or domain). This API returns successfully even if a policy with
-         * the specified name does not exist.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * <p>Deletes the specified sending authorization policy for the given identity (an
+         * email address or a domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -498,13 +503,13 @@ namespace Model
         virtual Model::DeleteIdentityPolicyOutcomeCallable DeleteIdentityPolicyCallable(const Model::DeleteIdentityPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified sending authorization policy for the given identity
-         * (email address or domain). This API returns successfully even if a policy with
-         * the specified name does not exist.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * <p>Deletes the specified sending authorization policy for the given identity (an
+         * email address or a domain). This API returns successfully even if a policy with
+         * the specified name does not exist.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -577,8 +582,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
-         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
-         * <p>For information about managing receipt rule sets, see the <a
+         * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
+         * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -587,8 +592,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
-         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
-         * <p>For information about managing receipt rule sets, see the <a
+         * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
+         * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -599,8 +604,8 @@ namespace Model
 
         /**
          * <p>Deletes the specified receipt rule set and all of the receipt rules it
-         * contains.</p> <note>The currently active rule set cannot be deleted.</note>
-         * <p>For information about managing receipt rule sets, see the <a
+         * contains.</p> <note> <p>The currently active rule set cannot be deleted.</p>
+         * </note> <p>For information about managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -611,18 +616,18 @@ namespace Model
 
         /**
          * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
-         * 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</important> <p>This action is throttled at one request per
+         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
+         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</p> </important> <p>This action is throttled at one request per
          * second.</p>
          */
         virtual Model::DeleteVerifiedEmailAddressOutcome DeleteVerifiedEmailAddress(const Model::DeleteVerifiedEmailAddressRequest& request) const;
 
         /**
          * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
-         * 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</important> <p>This action is throttled at one request per
+         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
+         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</p> </important> <p>This action is throttled at one request per
          * second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -631,9 +636,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified email address from the list of verified addresses.</p>
-         * <important>The DeleteVerifiedEmailAddress action is deprecated as of the May 15,
-         * 2012 release of Domain Verification. The DeleteIdentity action is now
-         * preferred.</important> <p>This action is throttled at one request per
+         * <important> <p>The DeleteVerifiedEmailAddress action is deprecated as of the May
+         * 15, 2012 release of Domain Verification. The DeleteIdentity action is now
+         * preferred.</p> </important> <p>This action is throttled at one request per
          * second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -741,15 +746,15 @@ namespace Model
          * name identities, this action also returns the DKIM tokens that are required for
          * Easy DKIM signing, and whether Amazon SES has successfully verified that these
          * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li>Whether Easy
-         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
-         * represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * input and returns the following information for each:</p> <ul> <li> <p>Whether
+         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
+         * that represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
          * successfully verified the DKIM tokens published in the domain's DNS. This
          * information is only returned for domain name identities, not for email
-         * addresses.</li> </ul> <p>This action is throttled at one request per second and
-         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
-         * information about creating DNS records using DKIM tokens, go to the <a
+         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
+         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
+         * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
          * SES Developer Guide</a>.</p>
          */
@@ -760,15 +765,15 @@ namespace Model
          * name identities, this action also returns the DKIM tokens that are required for
          * Easy DKIM signing, and whether Amazon SES has successfully verified that these
          * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li>Whether Easy
-         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
-         * represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * input and returns the following information for each:</p> <ul> <li> <p>Whether
+         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
+         * that represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
          * successfully verified the DKIM tokens published in the domain's DNS. This
          * information is only returned for domain name identities, not for email
-         * addresses.</li> </ul> <p>This action is throttled at one request per second and
-         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
-         * information about creating DNS records using DKIM tokens, go to the <a
+         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
+         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
+         * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -781,15 +786,15 @@ namespace Model
          * name identities, this action also returns the DKIM tokens that are required for
          * Easy DKIM signing, and whether Amazon SES has successfully verified that these
          * tokens have been published.</p> <p>This action takes a list of identities as
-         * input and returns the following information for each:</p> <ul> <li>Whether Easy
-         * DKIM signing is enabled or disabled.</li> <li>A set of DKIM tokens that
-         * represent the identity. If the identity is an email address, the tokens
-         * represent the domain of that address.</li> <li>Whether Amazon SES has
+         * input and returns the following information for each:</p> <ul> <li> <p>Whether
+         * Easy DKIM signing is enabled or disabled.</p> </li> <li> <p>A set of DKIM tokens
+         * that represent the identity. If the identity is an email address, the tokens
+         * represent the domain of that address.</p> </li> <li> <p>Whether Amazon SES has
          * successfully verified the DKIM tokens published in the domain's DNS. This
          * information is only returned for domain name identities, not for email
-         * addresses.</li> </ul> <p>This action is throttled at one request per second and
-         * can only get DKIM attributes for up to 100 identities at a time.</p> <p>For more
-         * information about creating DNS records using DKIM tokens, go to the <a
+         * addresses.</p> </li> </ul> <p>This action is throttled at one request per second
+         * and can only get DKIM attributes for up to 100 identities at a time.</p> <p>For
+         * more information about creating DNS records using DKIM tokens, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -864,12 +869,13 @@ namespace Model
 
         /**
          * <p>Returns the requested sending authorization policies for the given identity
-         * (email address or domain). The policies are returned as a map of policy names to
-         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
-         * <note>This API is for the identity owner only. If you have not verified the
-         * identity, this API will return an error.</note> <p>Sending authorization is a
-         * feature that enables an identity owner to authorize other senders to use its
-         * identities. For information about using sending authorization, see the <a
+         * (an email address or a domain). The policies are returned as a map of policy
+         * names to policy contents. You can retrieve a maximum of 20 policies at a
+         * time.</p> <note> <p>This API is for the identity owner only. If you have not
+         * verified the identity, this API will return an error.</p> </note> <p>Sending
+         * authorization is a feature that enables an identity owner to authorize other
+         * senders to use its identities. For information about using sending
+         * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -878,12 +884,13 @@ namespace Model
 
         /**
          * <p>Returns the requested sending authorization policies for the given identity
-         * (email address or domain). The policies are returned as a map of policy names to
-         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
-         * <note>This API is for the identity owner only. If you have not verified the
-         * identity, this API will return an error.</note> <p>Sending authorization is a
-         * feature that enables an identity owner to authorize other senders to use its
-         * identities. For information about using sending authorization, see the <a
+         * (an email address or a domain). The policies are returned as a map of policy
+         * names to policy contents. You can retrieve a maximum of 20 policies at a
+         * time.</p> <note> <p>This API is for the identity owner only. If you have not
+         * verified the identity, this API will return an error.</p> </note> <p>Sending
+         * authorization is a feature that enables an identity owner to authorize other
+         * senders to use its identities. For information about using sending
+         * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -894,12 +901,13 @@ namespace Model
 
         /**
          * <p>Returns the requested sending authorization policies for the given identity
-         * (email address or domain). The policies are returned as a map of policy names to
-         * policy contents. You can retrieve a maximum of 20 policies at a time.</p>
-         * <note>This API is for the identity owner only. If you have not verified the
-         * identity, this API will return an error.</note> <p>Sending authorization is a
-         * feature that enables an identity owner to authorize other senders to use its
-         * identities. For information about using sending authorization, see the <a
+         * (an email address or a domain). The policies are returned as a map of policy
+         * names to policy contents. You can retrieve a maximum of 20 policies at a
+         * time.</p> <note> <p>This API is for the identity owner only. If you have not
+         * verified the identity, this API will return an error.</p> </note> <p>Sending
+         * authorization is a feature that enables an identity owner to authorize other
+         * senders to use its identities. For information about using sending
+         * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -960,7 +968,7 @@ namespace Model
 
         /**
          * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
          * throttled at one request per second.</p>
          */
@@ -968,7 +976,7 @@ namespace Model
 
         /**
          * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
          * throttled at one request per second.</p>
          *
@@ -978,7 +986,7 @@ namespace Model
 
         /**
          * <p>Returns the user's sending statistics. The result is a list of data points,
-         * representing the last two weeks of sending activity. </p> <p>Each data point in
+         * representing the last two weeks of sending activity.</p> <p>Each data point in
          * the list contains statistics for a 15-minute interval.</p> <p>This action is
          * throttled at one request per second.</p>
          *
@@ -988,15 +996,15 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for a specific AWS Account, regardless of verification status.</p> <p>This
-         * action is throttled at one request per second.</p>
+         * for your AWS account, regardless of verification status.</p> <p>This action is
+         * throttled at one request per second.</p>
          */
         virtual Model::ListIdentitiesOutcome ListIdentities(const Model::ListIdentitiesRequest& request) const;
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for a specific AWS Account, regardless of verification status.</p> <p>This
-         * action is throttled at one request per second.</p>
+         * for your AWS account, regardless of verification status.</p> <p>This action is
+         * throttled at one request per second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1004,8 +1012,8 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the identities (email addresses and domains)
-         * for a specific AWS Account, regardless of verification status.</p> <p>This
-         * action is throttled at one request per second.</p>
+         * for your AWS account, regardless of verification status.</p> <p>This action is
+         * throttled at one request per second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1013,13 +1021,13 @@ namespace Model
 
         /**
          * <p>Returns a list of sending authorization policies that are attached to the
-         * given identity (email address or domain). This API returns only a list. If you
-         * want the actual policy content, you can use
-         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * given identity (an email address or a domain). This API returns only a list. If
+         * you want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1028,13 +1036,13 @@ namespace Model
 
         /**
          * <p>Returns a list of sending authorization policies that are attached to the
-         * given identity (email address or domain). This API returns only a list. If you
-         * want the actual policy content, you can use
-         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * given identity (an email address or a domain). This API returns only a list. If
+         * you want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1045,13 +1053,13 @@ namespace Model
 
         /**
          * <p>Returns a list of sending authorization policies that are attached to the
-         * given identity (email address or domain). This API returns only a list. If you
-         * want the actual policy content, you can use
-         * <code>GetIdentityPolicies</code>.</p> <note>This API is for the identity owner
-         * only. If you have not verified the identity, this API will return an
-         * error.</note> <p>Sending authorization is a feature that enables an identity
-         * owner to authorize other senders to use its identities. For information about
-         * using sending authorization, see the <a
+         * given identity (an email address or a domain). This API returns only a list. If
+         * you want the actual policy content, you can use
+         * <code>GetIdentityPolicies</code>.</p> <note> <p>This API is for the identity
+         * owner only. If you have not verified the identity, this API will return an
+         * error.</p> </note> <p>Sending authorization is a feature that enables an
+         * identity owner to authorize other senders to use its identities. For information
+         * about using sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1061,7 +1069,7 @@ namespace Model
         virtual void ListIdentityPoliciesAsync(const Model::ListIdentityPoliciesRequest& request, const ListIdentityPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1070,7 +1078,7 @@ namespace Model
         virtual Model::ListReceiptFiltersOutcome ListReceiptFilters(const Model::ListReceiptFiltersRequest& request) const;
 
         /**
-         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1081,7 +1089,7 @@ namespace Model
         virtual Model::ListReceiptFiltersOutcomeCallable ListReceiptFiltersCallable(const Model::ListReceiptFiltersRequest& request) const;
 
         /**
-         * <p>Lists the IP address filters associated with your account.</p> <p>For
+         * <p>Lists the IP address filters associated with your AWS account.</p> <p>For
          * information about managing IP address filters, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-ip-filters.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1133,19 +1141,19 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
-         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
-         * now preferred.</important> <p>This action is throttled at one request per
-         * second.</p>
+         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
+         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
+         * is now preferred.</p> </important> <p>This action is throttled at one request
+         * per second.</p>
          */
         virtual Model::ListVerifiedEmailAddressesOutcome ListVerifiedEmailAddresses(const Model::ListVerifiedEmailAddressesRequest& request) const;
 
         /**
          * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
-         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
-         * now preferred.</important> <p>This action is throttled at one request per
-         * second.</p>
+         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
+         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
+         * is now preferred.</p> </important> <p>This action is throttled at one request
+         * per second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1153,20 +1161,20 @@ namespace Model
 
         /**
          * <p>Returns a list containing all of the email addresses that have been
-         * verified.</p> <important>The ListVerifiedEmailAddresses action is deprecated as
-         * of the May 15, 2012 release of Domain Verification. The ListIdentities action is
-         * now preferred.</important> <p>This action is throttled at one request per
-         * second.</p>
+         * verified.</p> <important> <p>The ListVerifiedEmailAddresses action is deprecated
+         * as of the May 15, 2012 release of Domain Verification. The ListIdentities action
+         * is now preferred.</p> </important> <p>This action is throttled at one request
+         * per second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVerifiedEmailAddressesAsync(const Model::ListVerifiedEmailAddressesRequest& request, const ListVerifiedEmailAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates a sending authorization policy for the specified identity
-         * (email address or domain).</p> <note>This API is for the identity owner only. If
-         * you have not verified the identity, this API will return an error.</note>
-         * <p>Sending authorization is a feature that enables an identity owner to
+         * <p>Adds or updates a sending authorization policy for the specified identity (an
+         * email address or a domain).</p> <note> <p>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an error.</p>
+         * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
@@ -1176,10 +1184,10 @@ namespace Model
         virtual Model::PutIdentityPolicyOutcome PutIdentityPolicy(const Model::PutIdentityPolicyRequest& request) const;
 
         /**
-         * <p>Adds or updates a sending authorization policy for the specified identity
-         * (email address or domain).</p> <note>This API is for the identity owner only. If
-         * you have not verified the identity, this API will return an error.</note>
-         * <p>Sending authorization is a feature that enables an identity owner to
+         * <p>Adds or updates a sending authorization policy for the specified identity (an
+         * email address or a domain).</p> <note> <p>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an error.</p>
+         * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
@@ -1191,10 +1199,10 @@ namespace Model
         virtual Model::PutIdentityPolicyOutcomeCallable PutIdentityPolicyCallable(const Model::PutIdentityPolicyRequest& request) const;
 
         /**
-         * <p>Adds or updates a sending authorization policy for the specified identity
-         * (email address or domain).</p> <note>This API is for the identity owner only. If
-         * you have not verified the identity, this API will return an error.</note>
-         * <p>Sending authorization is a feature that enables an identity owner to
+         * <p>Adds or updates a sending authorization policy for the specified identity (an
+         * email address or a domain).</p> <note> <p>This API is for the identity owner
+         * only. If you have not verified the identity, this API will return an error.</p>
+         * </note> <p>Sending authorization is a feature that enables an identity owner to
          * authorize other senders to use its identities. For information about using
          * sending authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
@@ -1206,11 +1214,11 @@ namespace Model
         virtual void PutIdentityPolicyAsync(const Model::PutIdentityPolicyRequest& request, const PutIdentityPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
-         * rules in the rule set must be represented in this request. That is, this API
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note> <p>All of
+         * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
-         * the rules.</note> <p>For information about managing receipt rule sets, see the
-         * <a
+         * the rules.</p> </note> <p>For information about managing receipt rule sets, see
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1218,11 +1226,11 @@ namespace Model
         virtual Model::ReorderReceiptRuleSetOutcome ReorderReceiptRuleSet(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /**
-         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
-         * rules in the rule set must be represented in this request. That is, this API
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note> <p>All of
+         * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
-         * the rules.</note> <p>For information about managing receipt rule sets, see the
-         * <a
+         * the rules.</p> </note> <p>For information about managing receipt rule sets, see
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1232,11 +1240,11 @@ namespace Model
         virtual Model::ReorderReceiptRuleSetOutcomeCallable ReorderReceiptRuleSetCallable(const Model::ReorderReceiptRuleSetRequest& request) const;
 
         /**
-         * <p>Reorders the receipt rules within a receipt rule set.</p> <note>All of the
-         * rules in the rule set must be represented in this request. That is, this API
+         * <p>Reorders the receipt rules within a receipt rule set.</p> <note> <p>All of
+         * the rules in the rule set must be represented in this request. That is, this API
          * will return an error if the reorder request doesn't explicitly position all of
-         * the rules.</note> <p>For information about managing receipt rule sets, see the
-         * <a
+         * the rules.</p> </note> <p>For information about managing receipt rule sets, see
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1248,9 +1256,9 @@ namespace Model
         /**
          * <p>Generates and sends a bounce message to the sender of an email you received
          * through Amazon SES. You can only use this API on an email up to 24 hours after
-         * you receive it.</p> <note>You cannot use this API to send generic bounces for
-         * mail that was not received by Amazon SES.</note> <p>For information about
-         * receiving email through Amazon SES, see the <a
+         * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
+         * for mail that was not received by Amazon SES.</p> </note> <p>For information
+         * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1260,9 +1268,9 @@ namespace Model
         /**
          * <p>Generates and sends a bounce message to the sender of an email you received
          * through Amazon SES. You can only use this API on an email up to 24 hours after
-         * you receive it.</p> <note>You cannot use this API to send generic bounces for
-         * mail that was not received by Amazon SES.</note> <p>For information about
-         * receiving email through Amazon SES, see the <a
+         * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
+         * for mail that was not received by Amazon SES.</p> </note> <p>For information
+         * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1274,9 +1282,9 @@ namespace Model
         /**
          * <p>Generates and sends a bounce message to the sender of an email you received
          * through Amazon SES. You can only use this API on an email up to 24 hours after
-         * you receive it.</p> <note>You cannot use this API to send generic bounces for
-         * mail that was not received by Amazon SES.</note> <p>For information about
-         * receiving email through Amazon SES, see the <a
+         * you receive it.</p> <note> <p>You cannot use this API to send generic bounces
+         * for mail that was not received by Amazon SES.</p> </note> <p>For information
+         * about receiving email through Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
          * second.</p>
@@ -1287,49 +1295,49 @@ namespace Model
 
         /**
          * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending. </p> <p>There are several important points to know
-         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * the message for sending.</p> <p>There are several important points to know about
+         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
          * email addresses and domains; otherwise, you will get an "Email address not
          * verified" error. If your account is still in the Amazon SES sandbox, you must
          * also verify every recipient email address except for the recipients provided by
          * the Amazon SES mailbox simulator. For more information, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>For every message that you send, the total
-         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
-         * the maximum number of emails you can send in a 24-hour period. For information
-         * about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
+         * message that you send, the total number of recipients (To:, CC: and BCC:) is
+         * counted against your sending quota - the maximum number of emails you can send
+         * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          */
         virtual Model::SendEmailOutcome SendEmail(const Model::SendEmailRequest& request) const;
 
         /**
          * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending. </p> <p>There are several important points to know
-         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * the message for sending.</p> <p>There are several important points to know about
+         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
          * email addresses and domains; otherwise, you will get an "Email address not
          * verified" error. If your account is still in the Amazon SES sandbox, you must
          * also verify every recipient email address except for the recipients provided by
          * the Amazon SES mailbox simulator. For more information, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>For every message that you send, the total
-         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
-         * the maximum number of emails you can send in a 24-hour period. For information
-         * about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
+         * message that you send, the total number of recipients (To:, CC: and BCC:) is
+         * counted against your sending quota - the maximum number of emails you can send
+         * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1337,25 +1345,25 @@ namespace Model
 
         /**
          * <p>Composes an email message based on input data, and then immediately queues
-         * the message for sending. </p> <p>There are several important points to know
-         * about <code>SendEmail</code>:</p> <ul> <li>You can only send email from verified
+         * the message for sending.</p> <p>There are several important points to know about
+         * <code>SendEmail</code>:</p> <ul> <li> <p>You can only send email from verified
          * email addresses and domains; otherwise, you will get an "Email address not
          * verified" error. If your account is still in the Amazon SES sandbox, you must
          * also verify every recipient email address except for the recipients provided by
          * the Amazon SES mailbox simulator. For more information, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>For every message that you send, the total
-         * number of recipients (To:, CC: and BCC:) is counted against your sending quota -
-         * the maximum number of emails you can send in a 24-hour period. For information
-         * about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>For every
+         * message that you send, the total number of recipients (To:, CC: and BCC:) is
+         * counted against your sending quota - the maximum number of emails you can send
+         * in a 24-hour period. For information about your sending quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1366,38 +1374,40 @@ namespace Model
          * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
          * The raw text of the message must comply with Internet email standards;
          * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
-         * email from verified email addresses and domains; otherwise, you will get an
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
+         * send email from verified email addresses and domains; otherwise, you will get an
          * "Email address not verified" error. If your account is still in the Amazon SES
          * sandbox, you must also verify every recipient email address except for the
          * recipients provided by the Amazon SES mailbox simulator. For more information,
          * go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
-         * message can contain a group list. Note that each recipient in a group list
-         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
-         * the total number of recipients (To:, CC: and BCC:) is counted against your
-         * sending quota - the maximum number of emails you can send in a 24-hour period.
-         * For information about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
+         * and BCC: headers in the raw message can contain a group list. Note that each
+         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
+         * <p>For every message that you send, the total number of recipients (To:, CC: and
+         * BCC:) is counted against your sending quota - the maximum number of emails you
+         * can send in a 24-hour period. For information about your sending quota, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
-         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
-         * cross-account identity for the email's "Source," "From," and "Return-Path"
-         * parameters in one of two ways: you can pass optional parameters
-         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
-         * to the API, or you can include the following X-headers in the header of your raw
-         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
-         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
-         * </ul> <important>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</important> For the
-         * most common sending authorization use case, we recommend that you specify the
-         * <code>SourceIdentityArn</code> and do not specify either the
+         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
+         * authorization to send on behalf of another user, <code>SendRawEmail</code>
+         * enables you to specify the cross-account identity for the email's "Source,"
+         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
+         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
+         * <code>ReturnPathArn</code> to the API, or you can include the following
+         * X-headers in the header of your raw email:</p> <ul> <li> <p>
+         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
+         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
+         * <important> <p>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
+         * the most common sending authorization use case, we recommend that you specify
+         * the <code>SourceIdentityArn</code> and do not specify either the
          * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
          * note applies to the corresponding X-headers.) If you only specify the
          * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
@@ -1405,7 +1415,7 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          */
         virtual Model::SendRawEmailOutcome SendRawEmail(const Model::SendRawEmailRequest& request) const;
 
@@ -1414,38 +1424,40 @@ namespace Model
          * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
          * The raw text of the message must comply with Internet email standards;
          * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
-         * email from verified email addresses and domains; otherwise, you will get an
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
+         * send email from verified email addresses and domains; otherwise, you will get an
          * "Email address not verified" error. If your account is still in the Amazon SES
          * sandbox, you must also verify every recipient email address except for the
          * recipients provided by the Amazon SES mailbox simulator. For more information,
          * go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
-         * message can contain a group list. Note that each recipient in a group list
-         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
-         * the total number of recipients (To:, CC: and BCC:) is counted against your
-         * sending quota - the maximum number of emails you can send in a 24-hour period.
-         * For information about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
+         * and BCC: headers in the raw message can contain a group list. Note that each
+         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
+         * <p>For every message that you send, the total number of recipients (To:, CC: and
+         * BCC:) is counted against your sending quota - the maximum number of emails you
+         * can send in a 24-hour period. For information about your sending quota, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
-         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
-         * cross-account identity for the email's "Source," "From," and "Return-Path"
-         * parameters in one of two ways: you can pass optional parameters
-         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
-         * to the API, or you can include the following X-headers in the header of your raw
-         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
-         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
-         * </ul> <important>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</important> For the
-         * most common sending authorization use case, we recommend that you specify the
-         * <code>SourceIdentityArn</code> and do not specify either the
+         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
+         * authorization to send on behalf of another user, <code>SendRawEmail</code>
+         * enables you to specify the cross-account identity for the email's "Source,"
+         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
+         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
+         * <code>ReturnPathArn</code> to the API, or you can include the following
+         * X-headers in the header of your raw email:</p> <ul> <li> <p>
+         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
+         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
+         * <important> <p>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
+         * the most common sending authorization use case, we recommend that you specify
+         * the <code>SourceIdentityArn</code> and do not specify either the
          * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
          * note applies to the corresponding X-headers.) If you only specify the
          * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
@@ -1453,7 +1465,7 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1464,38 +1476,40 @@ namespace Model
          * <code>SendRawEmail</code> action is useful for sending multipart MIME emails.
          * The raw text of the message must comply with Internet email standards;
          * otherwise, the message cannot be sent. </p> <p>There are several important
-         * points to know about <code>SendRawEmail</code>:</p> <ul> <li>You can only send
-         * email from verified email addresses and domains; otherwise, you will get an
+         * points to know about <code>SendRawEmail</code>:</p> <ul> <li> <p>You can only
+         * send email from verified email addresses and domains; otherwise, you will get an
          * "Email address not verified" error. If your account is still in the Amazon SES
          * sandbox, you must also verify every recipient email address except for the
          * recipients provided by the Amazon SES mailbox simulator. For more information,
          * go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon
-         * SES Developer Guide</a>.</li> <li>The total size of the message cannot exceed 10
-         * MB. This includes any attachments that are part of the message.</li> <li>Amazon
-         * SES has a limit on the total number of recipients per message. The combined
-         * number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to
-         * send an email message to a larger audience, you can divide your recipient list
-         * into groups of 50 or fewer, and then call Amazon SES repeatedly to send the
-         * message to each group.</li> <li>The To:, CC:, and BCC: headers in the raw
-         * message can contain a group list. Note that each recipient in a group list
-         * counts towards the 50-recipient limit.</li> <li>For every message that you send,
-         * the total number of recipients (To:, CC: and BCC:) is counted against your
-         * sending quota - the maximum number of emails you can send in a 24-hour period.
-         * For information about your sending quota, go to the <a
+         * SES Developer Guide</a>.</p> </li> <li> <p>The total size of the message cannot
+         * exceed 10 MB. This includes any attachments that are part of the message.</p>
+         * </li> <li> <p>Amazon SES has a limit on the total number of recipients per
+         * message. The combined number of To:, CC: and BCC: email addresses cannot exceed
+         * 50. If you need to send an email message to a larger audience, you can divide
+         * your recipient list into groups of 50 or fewer, and then call Amazon SES
+         * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
+         * and BCC: headers in the raw message can contain a group list. Note that each
+         * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
+         * <p>For every message that you send, the total number of recipients (To:, CC: and
+         * BCC:) is counted against your sending quota - the maximum number of emails you
+         * can send in a 24-hour period. For information about your sending quota, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
-         * SES Developer Guide</a>.</li> <li>If you are using sending authorization to send
-         * on behalf of another user, <code>SendRawEmail</code> enables you to specify the
-         * cross-account identity for the email's "Source," "From," and "Return-Path"
-         * parameters in one of two ways: you can pass optional parameters
-         * <code>SourceArn</code>, <code>FromArn</code>, and/or <code>ReturnPathArn</code>
-         * to the API, or you can include the following X-headers in the header of your raw
-         * email: <ul> <li><code>X-SES-SOURCE-ARN</code></li>
-         * <li><code>X-SES-FROM-ARN</code></li> <li><code>X-SES-RETURN-PATH-ARN</code></li>
-         * </ul> <important>Do not include these X-headers in the DKIM signature, because
-         * they are removed by Amazon SES before sending the email.</important> For the
-         * most common sending authorization use case, we recommend that you specify the
-         * <code>SourceIdentityArn</code> and do not specify either the
+         * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
+         * authorization to send on behalf of another user, <code>SendRawEmail</code>
+         * enables you to specify the cross-account identity for the email's "Source,"
+         * "From," and "Return-Path" parameters in one of two ways: you can pass optional
+         * parameters <code>SourceArn</code>, <code>FromArn</code>, and/or
+         * <code>ReturnPathArn</code> to the API, or you can include the following
+         * X-headers in the header of your raw email:</p> <ul> <li> <p>
+         * <code>X-SES-SOURCE-ARN</code> </p> </li> <li> <p> <code>X-SES-FROM-ARN</code>
+         * </p> </li> <li> <p> <code>X-SES-RETURN-PATH-ARN</code> </p> </li> </ul>
+         * <important> <p>Do not include these X-headers in the DKIM signature, because
+         * they are removed by Amazon SES before sending the email.</p> </important> <p>For
+         * the most common sending authorization use case, we recommend that you specify
+         * the <code>SourceIdentityArn</code> and do not specify either the
          * <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code>. (The same
          * note applies to the corresponding X-headers.) If you only specify the
          * <code>SourceIdentityArn</code>, Amazon SES will simply set the "From" address
@@ -1503,7 +1517,7 @@ namespace Model
          * <code>SourceIdentityArn</code>. For more information about sending
          * authorization, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon
-         * SES Developer Guide</a>.</li> </ul>
+         * SES Developer Guide</a>.</p> </li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1511,8 +1525,8 @@ namespace Model
 
         /**
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
-         * <note>To disable your email-receiving through Amazon SES completely, you can
-         * call this API with RuleSetName set to null.</note> <p>For information about
+         * <note> <p>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</p> </note> <p>For information about
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1522,8 +1536,8 @@ namespace Model
 
         /**
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
-         * <note>To disable your email-receiving through Amazon SES completely, you can
-         * call this API with RuleSetName set to null.</note> <p>For information about
+         * <note> <p>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</p> </note> <p>For information about
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1535,8 +1549,8 @@ namespace Model
 
         /**
          * <p>Sets the specified receipt rule set as the active receipt rule set.</p>
-         * <note>To disable your email-receiving through Amazon SES completely, you can
-         * call this API with RuleSetName set to null.</note> <p>For information about
+         * <note> <p>To disable your email-receiving through Amazon SES completely, you can
+         * call this API with RuleSetName set to null.</p> </note> <p>For information about
          * managing receipt rule sets, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html">Amazon
          * SES Developer Guide</a>.</p> <p>This action is throttled at one request per
@@ -1548,16 +1562,17 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
-         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
-         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
-         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
-         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
-         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
-         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
-         * more information about Easy DKIM signing, go to the <a
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
+         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
+         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
+         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
+         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
+         * been set up for Easy DKIM using the AWS Console or the
+         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about Easy DKIM signing, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
          * SES Developer Guide</a>.</p>
          */
@@ -1565,16 +1580,17 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
-         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
-         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
-         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
-         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
-         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
-         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
-         * more information about Easy DKIM signing, go to the <a
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
+         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
+         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
+         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
+         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
+         * been set up for Easy DKIM using the AWS Console or the
+         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about Easy DKIM signing, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -1584,16 +1600,17 @@ namespace Model
 
         /**
          * <p>Enables or disables Easy DKIM signing of email sent from an identity:</p>
-         * <ul> <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+         * <ul> <li> <p>If Easy DKIM signing is enabled for a domain name identity (e.g.,
          * <code>example.com</code>), then Amazon SES will DKIM-sign all email sent by
-         * addresses under that domain name (e.g., <code>user@example.com</code>).</li>
-         * <li>If Easy DKIM signing is enabled for an email address, then Amazon SES will
-         * DKIM-sign all email sent by that email address.</li> </ul> <p>For email
-         * addresses (e.g., <code>user@example.com</code>), you can only enable Easy DKIM
-         * signing if the corresponding domain (e.g., <code>example.com</code>) has been
-         * set up for Easy DKIM using the AWS Console or the <code>VerifyDomainDkim</code>
-         * action.</p> <p>This action is throttled at one request per second.</p> <p>For
-         * more information about Easy DKIM signing, go to the <a
+         * addresses under that domain name (e.g., <code>user@example.com</code>).</p>
+         * </li> <li> <p>If Easy DKIM signing is enabled for an email address, then Amazon
+         * SES will DKIM-sign all email sent by that email address.</p> </li> </ul> <p>For
+         * email addresses (e.g., <code>user@example.com</code>), you can only enable Easy
+         * DKIM signing if the corresponding domain (e.g., <code>example.com</code>) has
+         * been set up for Easy DKIM using the AWS Console or the
+         * <code>VerifyDomainDkim</code> action.</p> <p>This action is throttled at one
+         * request per second.</p> <p>For more information about Easy DKIM signing, go to
+         * the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -1602,28 +1619,28 @@ namespace Model
         virtual void SetIdentityDkimEnabledAsync(const Model::SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Given an identity (email address or domain), enables or disables whether
+         * <p>Given an identity (an email address or a domain), enables or disables whether
          * Amazon SES forwards bounce and complaint notifications as email. Feedback
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
-         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
-         * forwarding does not apply to delivery notifications. Delivery notifications are
-         * only available through Amazon SNS.</note> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about using notifications with
-         * Amazon SES, see the <a
+         * SNS) topics are specified for both bounces and complaints.</p> <note>
+         * <p>Feedback forwarding does not apply to delivery notifications. Delivery
+         * notifications are only available through Amazon SNS.</p> </note> <p>This action
+         * is throttled at one request per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
          */
         virtual Model::SetIdentityFeedbackForwardingEnabledOutcome SetIdentityFeedbackForwardingEnabled(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
 
         /**
-         * <p>Given an identity (email address or domain), enables or disables whether
+         * <p>Given an identity (an email address or a domain), enables or disables whether
          * Amazon SES forwards bounce and complaint notifications as email. Feedback
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
-         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
-         * forwarding does not apply to delivery notifications. Delivery notifications are
-         * only available through Amazon SNS.</note> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about using notifications with
-         * Amazon SES, see the <a
+         * SNS) topics are specified for both bounces and complaints.</p> <note>
+         * <p>Feedback forwarding does not apply to delivery notifications. Delivery
+         * notifications are only available through Amazon SNS.</p> </note> <p>This action
+         * is throttled at one request per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -1632,14 +1649,14 @@ namespace Model
         virtual Model::SetIdentityFeedbackForwardingEnabledOutcomeCallable SetIdentityFeedbackForwardingEnabledCallable(const Model::SetIdentityFeedbackForwardingEnabledRequest& request) const;
 
         /**
-         * <p>Given an identity (email address or domain), enables or disables whether
+         * <p>Given an identity (an email address or a domain), enables or disables whether
          * Amazon SES forwards bounce and complaint notifications as email. Feedback
          * forwarding can only be disabled when Amazon Simple Notification Service (Amazon
-         * SNS) topics are specified for both bounces and complaints.</p> <note>Feedback
-         * forwarding does not apply to delivery notifications. Delivery notifications are
-         * only available through Amazon SNS.</note> <p>This action is throttled at one
-         * request per second.</p> <p>For more information about using notifications with
-         * Amazon SES, see the <a
+         * SNS) topics are specified for both bounces and complaints.</p> <note>
+         * <p>Feedback forwarding does not apply to delivery notifications. Delivery
+         * notifications are only available through Amazon SNS.</p> </note> <p>This action
+         * is throttled at one request per second.</p> <p>For more information about using
+         * notifications with Amazon SES, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
          *
@@ -1648,26 +1665,65 @@ namespace Model
         virtual void SetIdentityFeedbackForwardingEnabledAsync(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Given an identity (an email address or a domain), sets whether Amazon SES
+         * includes the original email headers in the Amazon Simple Notification Service
+         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
+         * at one request per second.</p> <p>For more information about using notifications
+         * with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         */
+        virtual Model::SetIdentityHeadersInNotificationsEnabledOutcome SetIdentityHeadersInNotificationsEnabled(const Model::SetIdentityHeadersInNotificationsEnabledRequest& request) const;
+
+        /**
+         * <p>Given an identity (an email address or a domain), sets whether Amazon SES
+         * includes the original email headers in the Amazon Simple Notification Service
+         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
+         * at one request per second.</p> <p>For more information about using notifications
+         * with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetIdentityHeadersInNotificationsEnabledOutcomeCallable SetIdentityHeadersInNotificationsEnabledCallable(const Model::SetIdentityHeadersInNotificationsEnabledRequest& request) const;
+
+        /**
+         * <p>Given an identity (an email address or a domain), sets whether Amazon SES
+         * includes the original email headers in the Amazon Simple Notification Service
+         * (Amazon SNS) notifications of a specified type.</p> <p>This action is throttled
+         * at one request per second.</p> <p>For more information about using notifications
+         * with Amazon SES, see the <a
+         * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
+         * SES Developer Guide</a>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetIdentityHeadersInNotificationsEnabledAsync(const Model::SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
-         * (email address or domain). </p> <important>To send emails using the specified
-         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
-         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
-         * you must also add or update an SPF record. For more information, see the <a
+         * (an email address or a domain).</p> <important> <p>To send emails using the
+         * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
+         * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
+         * checks, you must also add or update an SPF record. For more information, see the
+         * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
-         * per second.</p>
+         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
+         * request per second.</p>
          */
         virtual Model::SetIdentityMailFromDomainOutcome SetIdentityMailFromDomain(const Model::SetIdentityMailFromDomainRequest& request) const;
 
         /**
          * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
-         * (email address or domain). </p> <important>To send emails using the specified
-         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
-         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
-         * you must also add or update an SPF record. For more information, see the <a
+         * (an email address or a domain).</p> <important> <p>To send emails using the
+         * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
+         * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
+         * checks, you must also add or update an SPF record. For more information, see the
+         * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
-         * per second.</p>
+         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
+         * request per second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1675,26 +1731,27 @@ namespace Model
 
         /**
          * <p>Enables or disables the custom MAIL FROM domain setup for a verified identity
-         * (email address or domain). </p> <important>To send emails using the specified
-         * MAIL FROM domain, you must add an MX record to your MAIL FROM domain's DNS
-         * settings. If you want your emails to pass Sender Policy Framework (SPF) checks,
-         * you must also add or update an SPF record. For more information, see the <a
+         * (an email address or a domain).</p> <important> <p>To send emails using the
+         * specified MAIL FROM domain, you must add an MX record to your MAIL FROM domain's
+         * DNS settings. If you want your emails to pass Sender Policy Framework (SPF)
+         * checks, you must also add or update an SPF record. For more information, see the
+         * <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html">Amazon
-         * SES Developer Guide</a>.</important> <p>This action is throttled at one request
-         * per second.</p>
+         * SES Developer Guide</a>.</p> </important> <p>This action is throttled at one
+         * request per second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetIdentityMailFromDomainAsync(const Model::SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * <p>Given an identity (an email address or a domain), sets the Amazon Simple
          * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
          * complaint, and/or delivery notifications for emails sent with that identity as
-         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
-         * must specify Amazon SNS topics for bounce and complaint notifications. For more
-         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
-         * <p>This action is throttled at one request per second.</p> <p>For more
+         * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
+         * you must specify Amazon SNS topics for bounce and complaint notifications. For
+         * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
+         * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
@@ -1702,13 +1759,13 @@ namespace Model
         virtual Model::SetIdentityNotificationTopicOutcome SetIdentityNotificationTopic(const Model::SetIdentityNotificationTopicRequest& request) const;
 
         /**
-         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * <p>Given an identity (an email address or a domain), sets the Amazon Simple
          * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
          * complaint, and/or delivery notifications for emails sent with that identity as
-         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
-         * must specify Amazon SNS topics for bounce and complaint notifications. For more
-         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
-         * <p>This action is throttled at one request per second.</p> <p>For more
+         * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
+         * you must specify Amazon SNS topics for bounce and complaint notifications. For
+         * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
+         * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
@@ -1718,13 +1775,13 @@ namespace Model
         virtual Model::SetIdentityNotificationTopicOutcomeCallable SetIdentityNotificationTopicCallable(const Model::SetIdentityNotificationTopicRequest& request) const;
 
         /**
-         * <p>Given an identity (email address or domain), sets the Amazon Simple
+         * <p>Given an identity (an email address or a domain), sets the Amazon Simple
          * Notification Service (Amazon SNS) topic to which Amazon SES will publish bounce,
          * complaint, and/or delivery notifications for emails sent with that identity as
-         * the <code>Source</code>.</p> <note>Unless feedback forwarding is enabled, you
-         * must specify Amazon SNS topics for bounce and complaint notifications. For more
-         * information, see <code>SetIdentityFeedbackForwardingEnabled</code>. </note>
-         * <p>This action is throttled at one request per second.</p> <p>For more
+         * the <code>Source</code>.</p> <note> <p>Unless feedback forwarding is enabled,
+         * you must specify Amazon SNS topics for bounce and complaint notifications. For
+         * more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.</p>
+         * </note> <p>This action is throttled at one request per second.</p> <p>For more
          * information about feedback notification, see the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon
          * SES Developer Guide</a>.</p>
@@ -1871,18 +1928,18 @@ namespace Model
 
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
-         * is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
+         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
          * throttled at one request per second.</p>
          */
         virtual Model::VerifyEmailAddressOutcome VerifyEmailAddress(const Model::VerifyEmailAddressRequest& request) const;
 
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
-         * is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
+         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
          * throttled at one request per second.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1891,9 +1948,9 @@ namespace Model
 
         /**
          * <p>Verifies an email address. This action causes a confirmation email message to
-         * be sent to the specified address.</p> <important>The VerifyEmailAddress action
-         * is deprecated as of the May 15, 2012 release of Domain Verification. The
-         * VerifyEmailIdentity action is now preferred.</important> <p>This action is
+         * be sent to the specified address.</p> <important> <p>The VerifyEmailAddress
+         * action is deprecated as of the May 15, 2012 release of Domain Verification. The
+         * VerifyEmailIdentity action is now preferred.</p> </important> <p>This action is
          * throttled at one request per second.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1963,6 +2020,7 @@ namespace Model
         void SetActiveReceiptRuleSetAsyncHelper(const Model::SetActiveReceiptRuleSetRequest& request, const SetActiveReceiptRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityDkimEnabledAsyncHelper(const Model::SetIdentityDkimEnabledRequest& request, const SetIdentityDkimEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityFeedbackForwardingEnabledAsyncHelper(const Model::SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetIdentityHeadersInNotificationsEnabledAsyncHelper(const Model::SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityMailFromDomainAsyncHelper(const Model::SetIdentityMailFromDomainRequest& request, const SetIdentityMailFromDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetIdentityNotificationTopicAsyncHelper(const Model::SetIdentityNotificationTopicRequest& request, const SetIdentityNotificationTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetReceiptRulePositionAsyncHelper(const Model::SetReceiptRulePositionRequest& request, const SetReceiptRulePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

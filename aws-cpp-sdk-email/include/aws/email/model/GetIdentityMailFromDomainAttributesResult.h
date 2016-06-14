@@ -35,6 +35,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents the custom MAIL FROM attributes for a list of identities.</p>
+   */
   class AWS_SES_API GetIdentityMailFromDomainAttributesResult
   {
   public:

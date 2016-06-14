@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p> This structure is returned in the response object of <a>ListCertificates</a>
-   * action. </p>
+   * <p>This structure is returned in the response object of <a>ListCertificates</a>
+   * action.</p>
    */
   class AWS_ACM_API CertificateSummary
   {
@@ -43,107 +43,107 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline CertificateSummary& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline CertificateSummary& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p> Amazon Resource Name (ARN) of the certificate. This is of the form: </p> <p>
+     * <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline CertificateSummary& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline CertificateSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline CertificateSummary& WithDomainName(Aws::String&& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com or example.com,
-     * for the certificate. </p>
+     * <p>Fully qualified domain name (FQDN), such as www.example.com or example.com,
+     * for the certificate.</p>
      */
     inline CertificateSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

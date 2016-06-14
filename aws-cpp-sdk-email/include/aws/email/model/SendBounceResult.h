@@ -33,6 +33,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents a unique message ID.</p>
+   */
   class AWS_SES_API SendBounceResult
   {
   public:

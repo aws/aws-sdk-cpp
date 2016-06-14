@@ -24,6 +24,11 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to return the metadata and receipt rules for the receipt
+   * rule set that is currently active. You use receipt rule sets to receive email
+   * with Amazon SES. For more information, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API DescribeActiveReceiptRuleSetRequest : public SESRequest
   {

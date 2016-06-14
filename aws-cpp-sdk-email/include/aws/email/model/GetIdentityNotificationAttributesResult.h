@@ -35,6 +35,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents the notification attributes for a list of identities.</p>
+   */
   class AWS_SES_API GetIdentityNotificationAttributesResult
   {
   public:

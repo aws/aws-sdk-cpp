@@ -25,6 +25,8 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to delete an email address from the list of email
+   * addresses you have attempted to verify under your AWS account.</p>
    */
   class AWS_SES_API DeleteVerifiedEmailAddressRequest : public SESRequest
   {

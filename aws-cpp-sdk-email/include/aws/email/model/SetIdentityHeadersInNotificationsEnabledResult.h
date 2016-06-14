@@ -35,12 +35,12 @@ namespace Model
   /**
    * <p>An empty element returned on a successful request.</p>
    */
-  class AWS_SES_API ReorderReceiptRuleSetResult
+  class AWS_SES_API SetIdentityHeadersInNotificationsEnabledResult
   {
   public:
-    ReorderReceiptRuleSetResult();
-    ReorderReceiptRuleSetResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    ReorderReceiptRuleSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityHeadersInNotificationsEnabledResult();
+    SetIdentityHeadersInNotificationsEnabledResult(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    SetIdentityHeadersInNotificationsEnabledResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -52,10 +52,10 @@ namespace Model
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = value; }
 
     
-    inline ReorderReceiptRuleSetResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline SetIdentityHeadersInNotificationsEnabledResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline ReorderReceiptRuleSetResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
+    inline SetIdentityHeadersInNotificationsEnabledResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
     ResponseMetadata m_responseMetadata;
