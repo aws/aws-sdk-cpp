@@ -242,7 +242,7 @@ namespace Model
    * <p>For information about creating and sharing SSM documents, see the following
    * topics in the SSM User Guide: </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
-   * SSM Documents</a> and <a
+   * SSM Documents</a> and <armission t
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
    * SSM Documents</a> (Linux)</p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating

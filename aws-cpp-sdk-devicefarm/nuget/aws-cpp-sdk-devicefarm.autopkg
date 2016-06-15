@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DeviceFarm;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150623.10;
+        version : @RUNTIME_MAJOR_VERSION@.20150623.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Device Farm);
@@ -53,7 +53,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/[0.12,0.13)
+            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
        }
     }
 
