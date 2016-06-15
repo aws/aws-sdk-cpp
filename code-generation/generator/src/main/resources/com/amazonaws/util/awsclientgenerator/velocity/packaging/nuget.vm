@@ -55,7 +55,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/[${serviceModel.runtimeMajorVersion},${serviceModel.runtimeMajorVersionUpperBound})
+            AWSSDKCPP-Core/${serviceModel.runtimeMajorVersion}.1
        }
     }
 
