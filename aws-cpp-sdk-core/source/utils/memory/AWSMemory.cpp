@@ -22,9 +22,9 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Memory;
 
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
   static MemorySystemInterface* AWSMemorySystem(nullptr);
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // USE_AWS_MEMORY_MANAGEMENT
 
 namespace Aws
 {
@@ -35,7 +35,7 @@ namespace Memory
 
 void InitializeAWSMemorySystem(MemorySystemInterface& memorySystem)
 {
-    #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+    #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(AWSMemorySystem != nullptr)
         {
             AWSMemorySystem->End();
@@ -45,27 +45,27 @@ void InitializeAWSMemorySystem(MemorySystemInterface& memorySystem)
         AWSMemorySystem->Begin();
     #else
         AWS_UNREFERENCED_PARAM(memorySystem);
-    #endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+    #endif // USE_AWS_MEMORY_MANAGEMENT
 }
 
 void ShutdownAWSMemorySystem(void)
 {
-    #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+    #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(AWSMemorySystem != nullptr)
         {
             AWSMemorySystem->End();
         }
         AWSMemorySystem = nullptr;
-    #endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+    #endif // USE_AWS_MEMORY_MANAGEMENT
 }
 
 MemorySystemInterface* GetMemorySystem()
 {
-    #ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+    #ifdef USE_AWS_MEMORY_MANAGEMENT
         return AWSMemorySystem;
     #else
         return nullptr;
-    #endif
+    #endif // USE_AWS_MEMORY_MANAGEMENT
 }
 
 } // namespace Memory

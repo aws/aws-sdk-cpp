@@ -118,7 +118,7 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 
 };
 
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
 
 // Utility macros to put at the start and end of tests
 // Checks:
@@ -144,4 +144,4 @@ class AWS_TESTING_API ExactTestMemorySystem : public BaseTestMemorySystem
 #define AWS_END_MEMORY_TEST
 #define AWS_END_MEMORY_OVERRIDE
 
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // USE_AWS_MEMORY_MANAGEMENT

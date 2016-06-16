@@ -32,9 +32,6 @@ namespace ACM
 {
 namespace Model
 {
-  /**
-   * <p/>
-   */
   class AWS_ACM_API DescribeCertificateResult
   {
   public:
