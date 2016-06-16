@@ -35,6 +35,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents the metadata and receipt rules for the receipt rule set that is
+   * currently active.</p>
+   */
   class AWS_SES_API DescribeActiveReceiptRuleSetResult
   {
   public:

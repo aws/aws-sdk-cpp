@@ -25,6 +25,10 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to delete an IP address filter. You use IP address
+   * filters when you receive email with Amazon SES. For more information, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API DeleteReceiptFilterRequest : public SESRequest
   {

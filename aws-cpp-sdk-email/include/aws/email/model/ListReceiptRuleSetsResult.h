@@ -35,6 +35,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>A list of receipt rule sets that exist under your AWS account.</p>
+   */
   class AWS_SES_API ListReceiptRuleSetsResult
   {
   public:

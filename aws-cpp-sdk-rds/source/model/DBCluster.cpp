@@ -53,6 +53,8 @@ DBCluster::DBCluster() :
     m_dBClusterOptionGroupMembershipsHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_replicationSourceIdentifierHasBeenSet(false),
+    m_readReplicaIdentifiersHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -87,6 +89,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_dBClusterOptionGroupMembershipsHasBeenSet(false),
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_replicationSourceIdentifierHasBeenSet(false),
+    m_readReplicaIdentifiersHasBeenSet(false),
     m_dBClusterMembersHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_hostedZoneIdHasBeenSet(false),
@@ -236,6 +240,24 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_preferredMaintenanceWindow = StringUtils::Trim(preferredMaintenanceWindowNode.GetText().c_str());
       m_preferredMaintenanceWindowHasBeenSet = true;
     }
+    XmlNode replicationSourceIdentifierNode = resultNode.FirstChild("ReplicationSourceIdentifier");
+    if(!replicationSourceIdentifierNode.IsNull())
+    {
+      m_replicationSourceIdentifier = StringUtils::Trim(replicationSourceIdentifierNode.GetText().c_str());
+      m_replicationSourceIdentifierHasBeenSet = true;
+    }
+    XmlNode readReplicaIdentifiersNode = resultNode.FirstChild("ReadReplicaIdentifiers");
+    if(!readReplicaIdentifiersNode.IsNull())
+    {
+      XmlNode readReplicaIdentifiersMember = readReplicaIdentifiersNode.FirstChild("ReadReplicaIdentifier");
+      while(!readReplicaIdentifiersMember.IsNull())
+      {
+        m_readReplicaIdentifiers.push_back(StringUtils::Trim(readReplicaIdentifiersMember.GetText().c_str()));
+        readReplicaIdentifiersMember = readReplicaIdentifiersMember.NextNode("ReadReplicaIdentifier");
+      }
+
+      m_readReplicaIdentifiersHasBeenSet = true;
+    }
     XmlNode dBClusterMembersNode = resultNode.FirstChild("DBClusterMembers");
     if(!dBClusterMembersNode.IsNull())
     {
@@ -381,6 +403,18 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+  if(m_replicationSourceIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
+  }
+  if(m_readReplicaIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaIdentifiers)
+      {
+        oStream << location << index << locationValue << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
   if(m_dBClusterMembersHasBeenSet)
   {
       unsigned dBClusterMembersIdx = 1;
@@ -510,6 +544,18 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
+  }
+  if(m_replicationSourceIdentifierHasBeenSet)
+  {
+      oStream << location << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
+  }
+  if(m_readReplicaIdentifiersHasBeenSet)
+  {
+      unsigned readReplicaIdentifiersIdx = 1;
+      for(auto& item : m_readReplicaIdentifiers)
+      {
+        oStream << location << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_dBClusterMembersHasBeenSet)
   {

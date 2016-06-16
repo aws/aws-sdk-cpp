@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>Represents the body of the message. You can specify text, HTML, or both. If
    * you use both, then the message should display correctly in the widest variety of
-   * email clients. </p>
+   * email clients.</p>
    */
   class AWS_SES_API Body
   {
@@ -48,66 +48,66 @@ namespace Model
 
     /**
      * <p>The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices). </p>
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline const Content& GetText() const{ return m_text; }
 
     /**
      * <p>The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices). </p>
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline void SetText(const Content& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
      * <p>The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices). </p>
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline void SetText(Content&& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
      * <p>The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices). </p>
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline Body& WithText(const Content& value) { SetText(value); return *this;}
 
     /**
      * <p>The content of the message, in text format. Use this for text-based email
-     * clients, or clients on high-latency networks (such as mobile devices). </p>
+     * clients, or clients on high-latency networks (such as mobile devices).</p>
      */
     inline Body& WithText(Content&& value) { SetText(value); return *this;}
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
      * can process HTML. You can include clickable links, formatted text, and much more
-     * in an HTML message. </p>
+     * in an HTML message.</p>
      */
     inline const Content& GetHtml() const{ return m_html; }
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
      * can process HTML. You can include clickable links, formatted text, and much more
-     * in an HTML message. </p>
+     * in an HTML message.</p>
      */
     inline void SetHtml(const Content& value) { m_htmlHasBeenSet = true; m_html = value; }
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
      * can process HTML. You can include clickable links, formatted text, and much more
-     * in an HTML message. </p>
+     * in an HTML message.</p>
      */
     inline void SetHtml(Content&& value) { m_htmlHasBeenSet = true; m_html = value; }
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
      * can process HTML. You can include clickable links, formatted text, and much more
-     * in an HTML message. </p>
+     * in an HTML message.</p>
      */
     inline Body& WithHtml(const Content& value) { SetHtml(value); return *this;}
 
     /**
      * <p>The content of the message, in HTML format. Use this for email clients that
      * can process HTML. You can include clickable links, formatted text, and much more
-     * in an HTML message. </p>
+     * in an HTML message.</p>
      */
     inline Body& WithHtml(Content&& value) { SetHtml(value); return *this;}
 

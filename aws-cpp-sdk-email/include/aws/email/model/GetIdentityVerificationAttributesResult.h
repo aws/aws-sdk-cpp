@@ -35,6 +35,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>The Amazon SES verification status of a list of identities. For domain
+   * identities, this response also contains the verification token.</p>
+   */
   class AWS_SES_API GetIdentityVerificationAttributesResult
   {
   public:
