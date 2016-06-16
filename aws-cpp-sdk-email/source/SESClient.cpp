@@ -59,6 +59,7 @@
 #include <aws/email/model/SetActiveReceiptRuleSetRequest.h>
 #include <aws/email/model/SetIdentityDkimEnabledRequest.h>
 #include <aws/email/model/SetIdentityFeedbackForwardingEnabledRequest.h>
+#include <aws/email/model/SetIdentityHeadersInNotificationsEnabledRequest.h>
 #include <aws/email/model/SetIdentityMailFromDomainRequest.h>
 #include <aws/email/model/SetIdentityNotificationTopicRequest.h>
 #include <aws/email/model/SetReceiptRulePositionRequest.h>
@@ -1123,6 +1124,36 @@ void SESClient::SetIdentityFeedbackForwardingEnabledAsync(const SetIdentityFeedb
 void SESClient::SetIdentityFeedbackForwardingEnabledAsyncHelper(const SetIdentityFeedbackForwardingEnabledRequest& request, const SetIdentityFeedbackForwardingEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetIdentityFeedbackForwardingEnabled(request), context);
+}
+
+SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInNotificationsEnabled(const SetIdentityHeadersInNotificationsEnabledRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetIdentityHeadersInNotificationsEnabledOutcome(SetIdentityHeadersInNotificationsEnabledResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetIdentityHeadersInNotificationsEnabledOutcome(outcome.GetError());
+  }
+}
+
+SetIdentityHeadersInNotificationsEnabledOutcomeCallable SESClient::SetIdentityHeadersInNotificationsEnabledCallable(const SetIdentityHeadersInNotificationsEnabledRequest& request) const
+{
+  return std::async(std::launch::async, &SESClient::SetIdentityHeadersInNotificationsEnabled, this, request);
+}
+
+void SESClient::SetIdentityHeadersInNotificationsEnabledAsync(const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SESClient::SetIdentityHeadersInNotificationsEnabledAsyncHelper, this, request, handler, context);
+}
+
+void SESClient::SetIdentityHeadersInNotificationsEnabledAsyncHelper(const SetIdentityHeadersInNotificationsEnabledRequest& request, const SetIdentityHeadersInNotificationsEnabledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetIdentityHeadersInNotificationsEnabled(request), context);
 }
 
 SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetIdentityMailFromDomainRequest& request) const

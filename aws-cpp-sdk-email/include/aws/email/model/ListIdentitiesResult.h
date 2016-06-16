@@ -34,6 +34,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>A list of all identities that you have attempted to verify under your AWS
+   * account, regardless of verification status.</p>
+   */
   class AWS_SES_API ListIdentitiesResult
   {
   public:

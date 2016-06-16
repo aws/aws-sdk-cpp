@@ -33,6 +33,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents the details of a receipt rule.</p>
+   */
   class AWS_SES_API DescribeReceiptRuleResult
   {
   public:

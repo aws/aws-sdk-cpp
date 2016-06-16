@@ -34,6 +34,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>A list of IP address filters that exist under your AWS account.</p>
+   */
   class AWS_SES_API ListReceiptFiltersResult
   {
   public:

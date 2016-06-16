@@ -32,6 +32,9 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>An empty element returned on a successful request.</p>
+   */
   class AWS_SES_API DeleteReceiptRuleResult
   {
   public:

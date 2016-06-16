@@ -38,56 +38,56 @@ namespace Model
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>The name for the DB subnet group. This value is stored as a lowercase
      * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters, periods, underscores, spaces, or hyphens. Must not be default.</p>
-     * <p>Example: <code>mySubnetgroup</code> </p>
+     * characters. Cannot contain periods, underscores, spaces, or hyphens. Must not be
+     * <code>default</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBSubnetGroupRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 

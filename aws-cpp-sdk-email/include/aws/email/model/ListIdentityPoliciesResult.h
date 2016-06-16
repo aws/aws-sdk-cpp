@@ -34,6 +34,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>A list of names of sending authorization policies that apply to an
+   * identity.</p>
+   */
   class AWS_SES_API ListIdentityPoliciesResult
   {
   public:

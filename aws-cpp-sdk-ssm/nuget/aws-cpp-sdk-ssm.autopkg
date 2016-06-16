@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SSM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20141106.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20141106.10;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Systems Management Service);
@@ -117,7 +117,7 @@ nuget {
    * <p>For information about creating and sharing SSM documents, see the following
    * topics in the SSM User Guide: </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
-   * SSM Documents</a> and <armission t
+   * SSM Documents</a> and <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
    * SSM Documents</a> (Linux)</p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating
@@ -136,7 +136,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/0.12.1
        }
     }
 
