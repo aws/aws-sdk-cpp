@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-StorageGateway;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20130630.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20130630.10;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Storage Gateway);
@@ -80,7 +80,7 @@ nuget {
    * <p>A snapshot ID with the longer ID format will look like this:
    * <code>snap-78e226633445566ee</code>.</p> <p>For more information, see <a
    * href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up
-   * ? Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
+   * – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p>
    * </important>
 
 AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
@@ -94,7 +94,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/0.12.1
        }
     }
 

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ACM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20151208.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20151208.10;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Certificate Manager);
@@ -47,8 +47,8 @@ nuget {
    * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
    * Certificate Manager User Guide</a>. For more information about using the ACM
    * API, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
-   * Certificate Manager API Reference</a>. </p>
+   * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
+   * Certificate Manager API Reference</a>.</p>
 
 AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
@@ -61,7 +61,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/0.12.1
        }
     }
 

@@ -242,7 +242,7 @@ namespace Model
    * <p>For information about creating and sharing SSM documents, see the following
    * topics in the SSM User Guide: </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
-   * SSM Documents</a> and <armission t
+   * SSM Documents</a> and <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
    * SSM Documents</a> (Linux)</p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating
@@ -491,14 +491,14 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
          */
         virtual Model::DescribeDocumentPermissionOutcome DescribeDocumentPermission(const Model::DescribeDocumentPermissionRequest& request) const;
 
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -507,7 +507,7 @@ namespace Model
         /**
          * <p>Describes the permissions for an SSM document. If you created the document,
          * you are the owner. If a document is shared, it can either be shared privately
-         * (by specifying a user?s AWS account ID) or publicly (<i>All</i>). </p>
+         * (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
