@@ -69,9 +69,6 @@ project(aws-cpp-sdk-${metadata.projectName})
   
   target_link_libraries(aws-cpp-sdk-${metadata.projectName} aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-${metadata.projectName}
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -86,4 +83,10 @@ project(aws-cpp-sdk-${metadata.projectName})
 
   install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION include/aws/${metadata.projectName})
   install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION include/aws/${metadata.projectName}/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-${metadata.projectName}.autopkg DESTINATION nuget)
+  endif()
+
+
 

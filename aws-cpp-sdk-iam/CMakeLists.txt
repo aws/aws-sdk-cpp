@@ -65,9 +65,6 @@ project(aws-cpp-sdk-iam)
   
   target_link_libraries(aws-cpp-sdk-iam aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-iam
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-iam)
 
   install (FILES ${AWS_IAM_HEADERS} DESTINATION include/aws/iam)
   install (FILES ${AWS_IAM_MODEL_HEADERS} DESTINATION include/aws/iam/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-iam.autopkg DESTINATION nuget)
+  endif()
+
+
 

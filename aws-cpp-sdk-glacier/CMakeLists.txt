@@ -65,9 +65,6 @@ project(aws-cpp-sdk-glacier)
   
   target_link_libraries(aws-cpp-sdk-glacier aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-glacier
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-glacier)
 
   install (FILES ${AWS_GLACIER_HEADERS} DESTINATION include/aws/glacier)
   install (FILES ${AWS_GLACIER_MODEL_HEADERS} DESTINATION include/aws/glacier/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-glacier.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -65,9 +65,6 @@ project(aws-cpp-sdk-codepipeline)
   
   target_link_libraries(aws-cpp-sdk-codepipeline aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-codepipeline
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-codepipeline)
 
   install (FILES ${AWS_CODEPIPELINE_HEADERS} DESTINATION include/aws/codepipeline)
   install (FILES ${AWS_CODEPIPELINE_MODEL_HEADERS} DESTINATION include/aws/codepipeline/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-codepipeline.autopkg DESTINATION nuget)
+  endif()
+
+
 

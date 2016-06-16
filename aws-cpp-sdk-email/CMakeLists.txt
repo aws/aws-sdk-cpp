@@ -65,9 +65,6 @@ project(aws-cpp-sdk-email)
   
   target_link_libraries(aws-cpp-sdk-email aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-email
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-email)
 
   install (FILES ${AWS_EMAIL_HEADERS} DESTINATION include/aws/email)
   install (FILES ${AWS_EMAIL_MODEL_HEADERS} DESTINATION include/aws/email/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-email.autopkg DESTINATION nuget)
+  endif()
+
+
 

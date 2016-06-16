@@ -65,9 +65,6 @@ project(aws-cpp-sdk-inspector)
   
   target_link_libraries(aws-cpp-sdk-inspector aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-inspector
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-inspector)
 
   install (FILES ${AWS_INSPECTOR_HEADERS} DESTINATION include/aws/inspector)
   install (FILES ${AWS_INSPECTOR_MODEL_HEADERS} DESTINATION include/aws/inspector/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-inspector.autopkg DESTINATION nuget)
+  endif()
+
+
 

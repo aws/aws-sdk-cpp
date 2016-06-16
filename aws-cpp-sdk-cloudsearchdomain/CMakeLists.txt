@@ -65,9 +65,6 @@ project(aws-cpp-sdk-cloudsearchdomain)
   
   target_link_libraries(aws-cpp-sdk-cloudsearchdomain aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-cloudsearchdomain
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-cloudsearchdomain)
 
   install (FILES ${AWS_CLOUDSEARCHDOMAIN_HEADERS} DESTINATION include/aws/cloudsearchdomain)
   install (FILES ${AWS_CLOUDSEARCHDOMAIN_MODEL_HEADERS} DESTINATION include/aws/cloudsearchdomain/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-cloudsearchdomain.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -79,6 +79,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         Metadata metadata = new Metadata();
         metadata.setApiVersion(c2jMetadata.getApiVersion());
+        metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
         metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());

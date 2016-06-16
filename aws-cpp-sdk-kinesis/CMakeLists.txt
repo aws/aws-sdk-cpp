@@ -65,9 +65,6 @@ project(aws-cpp-sdk-kinesis)
   
   target_link_libraries(aws-cpp-sdk-kinesis aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-kinesis
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-kinesis)
 
   install (FILES ${AWS_KINESIS_HEADERS} DESTINATION include/aws/kinesis)
   install (FILES ${AWS_KINESIS_MODEL_HEADERS} DESTINATION include/aws/kinesis/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-kinesis.autopkg DESTINATION nuget)
+  endif()
+
+
 

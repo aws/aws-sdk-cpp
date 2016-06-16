@@ -65,9 +65,6 @@ project(aws-cpp-sdk-workspaces)
   
   target_link_libraries(aws-cpp-sdk-workspaces aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-workspaces
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-workspaces)
 
   install (FILES ${AWS_WORKSPACES_HEADERS} DESTINATION include/aws/workspaces)
   install (FILES ${AWS_WORKSPACES_MODEL_HEADERS} DESTINATION include/aws/workspaces/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-workspaces.autopkg DESTINATION nuget)
+  endif()
+
+
 

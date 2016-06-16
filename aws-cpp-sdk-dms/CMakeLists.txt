@@ -65,9 +65,6 @@ project(aws-cpp-sdk-dms)
   
   target_link_libraries(aws-cpp-sdk-dms aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-dms
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-dms)
 
   install (FILES ${AWS_DMS_HEADERS} DESTINATION include/aws/dms)
   install (FILES ${AWS_DMS_MODEL_HEADERS} DESTINATION include/aws/dms/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-dms.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -65,9 +65,6 @@ project(aws-cpp-sdk-sns)
   
   target_link_libraries(aws-cpp-sdk-sns aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-sns
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-sns)
 
   install (FILES ${AWS_SNS_HEADERS} DESTINATION include/aws/sns)
   install (FILES ${AWS_SNS_MODEL_HEADERS} DESTINATION include/aws/sns/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-sns.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -65,9 +65,6 @@ project(aws-cpp-sdk-cloudtrail)
   
   target_link_libraries(aws-cpp-sdk-cloudtrail aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-cloudtrail
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-cloudtrail)
 
   install (FILES ${AWS_CLOUDTRAIL_HEADERS} DESTINATION include/aws/cloudtrail)
   install (FILES ${AWS_CLOUDTRAIL_MODEL_HEADERS} DESTINATION include/aws/cloudtrail/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-cloudtrail.autopkg DESTINATION nuget)
+  endif()
+
+
 
