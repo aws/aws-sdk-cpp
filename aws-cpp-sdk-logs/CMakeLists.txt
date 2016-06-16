@@ -65,9 +65,6 @@ project(aws-cpp-sdk-logs)
   
   target_link_libraries(aws-cpp-sdk-logs aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-logs
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-logs)
 
   install (FILES ${AWS_LOGS_HEADERS} DESTINATION include/aws/logs)
   install (FILES ${AWS_LOGS_MODEL_HEADERS} DESTINATION include/aws/logs/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-logs.autopkg DESTINATION nuget)
+  endif()
+
+
 

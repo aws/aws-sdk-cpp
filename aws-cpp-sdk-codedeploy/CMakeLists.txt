@@ -65,9 +65,6 @@ project(aws-cpp-sdk-codedeploy)
   
   target_link_libraries(aws-cpp-sdk-codedeploy aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-codedeploy
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-codedeploy)
 
   install (FILES ${AWS_CODEDEPLOY_HEADERS} DESTINATION include/aws/codedeploy)
   install (FILES ${AWS_CODEDEPLOY_MODEL_HEADERS} DESTINATION include/aws/codedeploy/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-codedeploy.autopkg DESTINATION nuget)
+  endif()
+
+
 

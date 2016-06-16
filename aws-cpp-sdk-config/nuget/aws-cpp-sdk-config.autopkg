@@ -1,0 +1,141 @@
+configurations {
+    Toolset {
+    key : "PlatformToolset";
+    choices: { v140, v120 };
+    };
+}
+
+nuget {
+    // The nuspec file metadata.
+    nuspec {
+
+        // Unique package identifier
+        id = AWSSDKCPP-ConfigService;
+
+        // Version number. Follows NuGet standards. (currently SemVer 1.0)
+        version : 0.12.20141112.10;
+
+        // Display name for package.
+        title: AWS SDK for C++ (AWS Config);
+
+        // List of package authors.  Braces may be ommited if only one author.
+        authors: Amazon Web Services;
+
+        // URL link to the license this package is released under.
+        licenseUrl: "http://aws.amazon.com/apache2.0/";
+
+        // URL to the project website (if any).
+        projectUrl: "http://github.com/aws/aws-sdk-cpp";
+
+        // URL to an image to be used for package icons.
+        iconUrl: "http://media.amazonwebservices.com/aws_singlebox_01.png";
+
+        // If the license this package is being released
+        // under has use restrictions, set this to "true".
+        requireLicenseAcceptance:false;
+
+        // Brief summary of the package contents. Keep it short!
+        summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
+
+        // Extended description of the package contents.
+        description: "<fullname>AWS Config</fullname> <p>AWS Config provides a way to keep track of
+   * the configurations of all the AWS resources associated with your AWS account.
+   * You can use AWS Config to get the current and historical configurations of each
+   * AWS resource and also to get information about the relationship between the
+   * resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2) instance,
+   * an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI), or a
+   * security group. For a complete list of resources currently supported by AWS
+   * Config, see <a
+   * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+   * AWS Resources</a>.</p> <p>You can access and manage AWS Config through the AWS
+   * Management Console, the AWS Command Line Interface (AWS CLI), the AWS Config
+   * API, or the AWS SDKs for AWS Config</p> <p>This reference guide contains
+   * documentation for the AWS Config API and the AWS CLI commands that you can use
+   * to manage AWS Config.</p> <p>The AWS Config API uses the Signature Version 4
+   * protocol for signing requests. For more information about how to sign a request
+   * with this protocol, see <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * Version 4 Signing Process</a>.</p> <p>For detailed information about AWS Config
+   * features and their associated actions or commands, as well as how to work with
+   * AWS Management Console, see <a
+   * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
+   * Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.</p>
+
+AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+
+        // Copyright notice.
+        copyright: Copyright 2016;
+
+        // Tags of arbitrary text for categorizing and filtering.
+        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, config };
+    };
+
+    dependencies {
+       packages: {
+            AWSSDKCPP-Core/0.12.1
+       }
+    }
+
+    files {
+        // File location information.  This node is critical for all packages, and is
+        // where much of the effort is.  All file paths are relative to this .autopkg
+        // file's location.
+
+        // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
+        // Included for all conditions.
+        nestedInclude: {
+            #destination = ${d_include}\aws\config;
+            "..\include\aws\config\**\*.h"
+        };
+
+        // Include these specific files in the libpath and "copy to output" path only
+        // under these pivot conditions.
+        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-config.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-config.dll };
+        }
+
+        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-config.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-config.dll };
+        }
+
+        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-config.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-config.dll };
+        }
+
+        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-config.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-config.dll };
+        }
+
+        [x64,release,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-config.lib };
+        }
+
+        [x64,release,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-config.lib };
+        }
+
+        [x64,debug,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-config.lib };
+        }
+
+        [x64,debug,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-config.lib };
+        }
+    };
+
+    targets {
+        // Additional declarations to insert into consuming projects after most of the
+        // project settings. (These may NOT be modified in visual studio by a developer
+        // consuming this package.)
+        // This node is often used to set defines that are required that must be set by
+        // the consuming project in order to correctly link to the libraries in this
+        // package.  Such defines may be set either globally or only set under specific
+        // conditions.
+        [dynamic]
+        Defines += USE_IMPORT_EXPORT;
+    }
+}

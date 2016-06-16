@@ -65,9 +65,6 @@ project(aws-cpp-sdk-sqs)
   
   target_link_libraries(aws-cpp-sdk-sqs aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-sqs
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-sqs)
 
   install (FILES ${AWS_SQS_HEADERS} DESTINATION include/aws/sqs)
   install (FILES ${AWS_SQS_MODEL_HEADERS} DESTINATION include/aws/sqs/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-sqs.autopkg DESTINATION nuget)
+  endif()
+
+
 

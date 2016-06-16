@@ -65,9 +65,6 @@ project(aws-cpp-sdk-sdb)
   
   target_link_libraries(aws-cpp-sdk-sdb aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-sdb
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-sdb)
 
   install (FILES ${AWS_SDB_HEADERS} DESTINATION include/aws/sdb)
   install (FILES ${AWS_SDB_MODEL_HEADERS} DESTINATION include/aws/sdb/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-sdb.autopkg DESTINATION nuget)
+  endif()
+
+
 

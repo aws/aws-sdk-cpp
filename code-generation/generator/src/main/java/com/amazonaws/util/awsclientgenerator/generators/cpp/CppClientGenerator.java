@@ -75,6 +75,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateServiceRequestHeader(serviceModel));
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
+        fileList.add(generateNugetFile(serviceModel));
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
     }
@@ -224,6 +225,17 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
                 serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName);
+    }
+
+    protected SdkFileEntry generateNugetFile(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/nuget.vm");
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("nl", "\n");
+
+        String fileName = String.format("nuget/aws-cpp-sdk-%s.autopkg", serviceModel.getMetadata().getProjectName());
 
         return makeFile(template, context, fileName);
     }

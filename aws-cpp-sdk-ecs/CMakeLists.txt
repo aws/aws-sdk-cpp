@@ -65,9 +65,6 @@ project(aws-cpp-sdk-ecs)
   
   target_link_libraries(aws-cpp-sdk-ecs aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-ecs
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-ecs)
 
   install (FILES ${AWS_ECS_HEADERS} DESTINATION include/aws/ecs)
   install (FILES ${AWS_ECS_MODEL_HEADERS} DESTINATION include/aws/ecs/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-ecs.autopkg DESTINATION nuget)
+  endif()
+
+
 

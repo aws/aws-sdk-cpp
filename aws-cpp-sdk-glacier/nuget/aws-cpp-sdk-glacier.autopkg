@@ -1,0 +1,144 @@
+configurations {
+    Toolset {
+    key : "PlatformToolset";
+    choices: { v140, v120 };
+    };
+}
+
+nuget {
+    // The nuspec file metadata.
+    nuspec {
+
+        // Unique package identifier
+        id = AWSSDKCPP-Glacier;
+
+        // Version number. Follows NuGet standards. (currently SemVer 1.0)
+        version : 0.12.20120601.10;
+
+        // Display name for package.
+        title: AWS SDK for C++ (Amazon Glacier);
+
+        // List of package authors.  Braces may be ommited if only one author.
+        authors: Amazon Web Services;
+
+        // URL link to the license this package is released under.
+        licenseUrl: "http://aws.amazon.com/apache2.0/";
+
+        // URL to the project website (if any).
+        projectUrl: "http://github.com/aws/aws-sdk-cpp";
+
+        // URL to an image to be used for package icons.
+        iconUrl: "http://media.amazonwebservices.com/aws_singlebox_01.png";
+
+        // If the license this package is being released
+        // under has use restrictions, set this to "true".
+        requireLicenseAcceptance:false;
+
+        // Brief summary of the package contents. Keep it short!
+        summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
+
+        // Extended description of the package contents.
+        description: "<p>Amazon Glacier is a storage solution for "cold data."</p> <p>Amazon Glacier
+   * is an extremely low-cost storage service that provides secure, durable, and
+   * easy-to-use storage for data backup and archival. With Amazon Glacier, customers
+   * can store their data cost effectively for months, years, or decades. Amazon
+   * Glacier also enables customers to offload the administrative burdens of
+   * operating and scaling storage to AWS, so they don't have to worry about capacity
+   * planning, hardware provisioning, data replication, hardware failure and
+   * recovery, or time-consuming hardware migrations.</p> <p>Amazon Glacier is a
+   * great storage choice when low storage cost is paramount, your data is rarely
+   * retrieved, and retrieval latency of several hours is acceptable. If your
+   * application requires fast or frequent access to your data, consider using Amazon
+   * S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon
+   * Simple Storage Service (Amazon S3)</a>.</p> <p>You can store any kind of data in
+   * any format. There is no maximum limit on the total amount of data you can store
+   * in Amazon Glacier. </p> <p>If you are a first-time user of Amazon Glacier, we
+   * recommend that you begin by reading the following sections in the <i>Amazon
+   * Glacier Developer Guide</i>:</p> <ul> <li><p><a
+   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
+   * is Amazon Glacier</a> - This section of the Developer Guide describes the
+   * underlying data model, the operations it supports, and the AWS SDKs that you can
+   * use to interact with the service.</p></li> <li><p><a
+   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
+   * Started with Amazon Glacier</a> - The Getting Started section walks you through
+   * the process of creating a vault, uploading archives, creating jobs to download
+   * archives, retrieving the job output, and deleting archives.</p></li> </ul>
+
+AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+
+        // Copyright notice.
+        copyright: Copyright 2016;
+
+        // Tags of arbitrary text for categorizing and filtering.
+        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, glacier };
+    };
+
+    dependencies {
+       packages: {
+            AWSSDKCPP-Core/0.12.1
+       }
+    }
+
+    files {
+        // File location information.  This node is critical for all packages, and is
+        // where much of the effort is.  All file paths are relative to this .autopkg
+        // file's location.
+
+        // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
+        // Included for all conditions.
+        nestedInclude: {
+            #destination = ${d_include}\aws\glacier;
+            "..\include\aws\glacier\**\*.h"
+        };
+
+        // Include these specific files in the libpath and "copy to output" path only
+        // under these pivot conditions.
+        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-glacier.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-glacier.dll };
+        }
+
+        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-glacier.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-glacier.dll };
+        }
+
+        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-glacier.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-glacier.dll };
+        }
+
+        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-glacier.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-glacier.dll };
+        }
+
+        [x64,release,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-glacier.lib };
+        }
+
+        [x64,release,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-glacier.lib };
+        }
+
+        [x64,debug,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-glacier.lib };
+        }
+
+        [x64,debug,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-glacier.lib };
+        }
+    };
+
+    targets {
+        // Additional declarations to insert into consuming projects after most of the
+        // project settings. (These may NOT be modified in visual studio by a developer
+        // consuming this package.)
+        // This node is often used to set defines that are required that must be set by
+        // the consuming project in order to correctly link to the libraries in this
+        // package.  Such defines may be set either globally or only set under specific
+        // conditions.
+        [dynamic]
+        Defines += USE_IMPORT_EXPORT;
+    }
+}

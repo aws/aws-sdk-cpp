@@ -65,9 +65,6 @@ project(aws-cpp-sdk-cognito-identity)
   
   target_link_libraries(aws-cpp-sdk-cognito-identity aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-cognito-identity
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-cognito-identity)
 
   install (FILES ${AWS_COGNITO-IDENTITY_HEADERS} DESTINATION include/aws/cognito-identity)
   install (FILES ${AWS_COGNITO-IDENTITY_MODEL_HEADERS} DESTINATION include/aws/cognito-identity/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-cognito-identity.autopkg DESTINATION nuget)
+  endif()
+
+
 

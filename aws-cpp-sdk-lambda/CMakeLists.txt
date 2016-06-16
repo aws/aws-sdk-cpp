@@ -65,9 +65,6 @@ project(aws-cpp-sdk-lambda)
   
   target_link_libraries(aws-cpp-sdk-lambda aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-lambda
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-lambda)
 
   install (FILES ${AWS_LAMBDA_HEADERS} DESTINATION include/aws/lambda)
   install (FILES ${AWS_LAMBDA_MODEL_HEADERS} DESTINATION include/aws/lambda/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-lambda.autopkg DESTINATION nuget)
+  endif()
+
+
 

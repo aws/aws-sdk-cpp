@@ -65,9 +65,6 @@ project(aws-cpp-sdk-mobileanalytics)
   
   target_link_libraries(aws-cpp-sdk-mobileanalytics aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-mobileanalytics
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-mobileanalytics)
 
   install (FILES ${AWS_MOBILEANALYTICS_HEADERS} DESTINATION include/aws/mobileanalytics)
   install (FILES ${AWS_MOBILEANALYTICS_MODEL_HEADERS} DESTINATION include/aws/mobileanalytics/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-mobileanalytics.autopkg DESTINATION nuget)
+  endif()
+
+
 

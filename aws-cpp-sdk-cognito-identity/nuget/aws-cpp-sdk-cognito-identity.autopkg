@@ -1,0 +1,150 @@
+configurations {
+    Toolset {
+    key : "PlatformToolset";
+    choices: { v140, v120 };
+    };
+}
+
+nuget {
+    // The nuspec file metadata.
+    nuspec {
+
+        // Unique package identifier
+        id = AWSSDKCPP-CognitoIdentity;
+
+        // Version number. Follows NuGet standards. (currently SemVer 1.0)
+        version : 0.12.20140630.10;
+
+        // Display name for package.
+        title: AWS SDK for C++ (Amazon Cognito Identity);
+
+        // List of package authors.  Braces may be ommited if only one author.
+        authors: Amazon Web Services;
+
+        // URL link to the license this package is released under.
+        licenseUrl: "http://aws.amazon.com/apache2.0/";
+
+        // URL to the project website (if any).
+        projectUrl: "http://github.com/aws/aws-sdk-cpp";
+
+        // URL to an image to be used for package icons.
+        iconUrl: "http://media.amazonwebservices.com/aws_singlebox_01.png";
+
+        // If the license this package is being released
+        // under has use restrictions, set this to "true".
+        requireLicenseAcceptance:false;
+
+        // Brief summary of the package contents. Keep it short!
+        summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
+
+        // Extended description of the package contents.
+        description: "<fullname>Amazon Cognito</fullname> <p>Amazon Cognito is a web service that
+   * delivers scoped temporary credentials to mobile devices and other untrusted
+   * environments. Amazon Cognito uniquely identifies a device and supplies the user
+   * with a consistent identity over the lifetime of an application.</p> <p>Using
+   * Amazon Cognito, you can enable authentication with one or more third-party
+   * identity providers (Facebook, Google, or Login with Amazon), and you can also
+   * choose to support unauthenticated access from your app. Cognito delivers a
+   * unique identifier for each user and acts as an OpenID token provider trusted by
+   * AWS Security Token Service (STS) to access temporary, limited-privilege AWS
+   * credentials.</p> <p>To provide end-user credentials, first make an unsigned call
+   * to <a>GetId</a>. If the end user is authenticated with one of the supported
+   * identity providers, set the <code>Logins</code> map with the identity provider
+   * token. <code>GetId</code> returns a unique identifier for the user.</p> <p>Next,
+   * make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects the
+   * same <code>Logins</code> map as the <code>GetId</code> call, as well as the
+   * <code>IdentityID</code> originally returned by <code>GetId</code>. Assuming your
+   * identity pool has been configured via the <a>SetIdentityPoolRoles</a> operation,
+   * <code>GetCredentialsForIdentity</code> will return AWS credentials for your use.
+   * If your pool has not been configured with <code>SetIdentityPoolRoles</code>, or
+   * if you want to follow legacy flow, make an unsigned call to
+   * <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS and
+   * retrieve AWS credentials. This call expects the same <code>Logins</code> map as
+   * the <code>GetId</code> call, as well as the <code>IdentityID</code> originally
+   * returned by <code>GetId</code>. The token returned by
+   * <code>GetOpenIdToken</code> can be passed to the STS operation <a
+   * href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity</a>
+   * to retrieve AWS credentials.</p> <p>If you want to use Amazon Cognito in an
+   * Android, iOS, or Unity application, you will probably want to make API calls via
+   * the AWS Mobile SDK. To learn more, see the <a
+   * href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer
+   * Guide</a>.</p>
+
+AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+
+        // Copyright notice.
+        copyright: Copyright 2016;
+
+        // Tags of arbitrary text for categorizing and filtering.
+        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native, cognito-identity };
+    };
+
+    dependencies {
+       packages: {
+            AWSSDKCPP-Core/0.12.1
+       }
+    }
+
+    files {
+        // File location information.  This node is critical for all packages, and is
+        // where much of the effort is.  All file paths are relative to this .autopkg
+        // file's location.
+
+        // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
+        // Included for all conditions.
+        nestedInclude: {
+            #destination = ${d_include}\aws\cognito-identity;
+            "..\include\aws\cognito-identity\**\*.h"
+        };
+
+        // Include these specific files in the libpath and "copy to output" path only
+        // under these pivot conditions.
+        [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-cognito-identity.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-cognito-identity.dll };
+        }
+
+        [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-cognito-identity.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-cognito-identity.dll };
+        }
+
+        [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-cognito-identity.lib };
+            bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-cognito-identity.dll };
+        }
+
+        [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
+            lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-cognito-identity.lib };
+            bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-cognito-identity.dll };
+        }
+
+        [x64,release,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-cognito-identity.lib };
+        }
+
+        [x64,release,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-cognito-identity.lib };
+        }
+
+        [x64,debug,v140,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-cognito-identity.lib };
+        }
+
+        [x64,debug,v120,static] {  // x64, static linking
+            lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-cognito-identity.lib };
+        }
+    };
+
+    targets {
+        // Additional declarations to insert into consuming projects after most of the
+        // project settings. (These may NOT be modified in visual studio by a developer
+        // consuming this package.)
+        // This node is often used to set defines that are required that must be set by
+        // the consuming project in order to correctly link to the libraries in this
+        // package.  Such defines may be set either globally or only set under specific
+        // conditions.
+        [dynamic]
+        Defines += USE_IMPORT_EXPORT;
+    }
+}

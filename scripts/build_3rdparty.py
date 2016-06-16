@@ -55,7 +55,7 @@ def GetPlatformBuildTargets():
                                                              'config' : 'Release' } },
                            'platform_install_qualifier' : "vs2013", 
                            'build_environment' : 'msbuild',
-                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Windows2015' : { 'buildPlatforms' : [ 'Windows' ],
                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_windows_2015_dynamic_debug', 
                                                                 'cmake_params' : "-DSTATIC_LINKING=0",
@@ -75,7 +75,7 @@ def GetPlatformBuildTargets():
                                                                  'config' : 'Release' } },
                                'platform_install_qualifier' : "vs2015",
                                'build_environment' : 'msbuild',
-                               'global_cmake_params' : "-G \"Visual Studio 14 2015 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                               'global_cmake_params' : "-G \"Visual Studio 14 2015 Win64\" -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Android' : { 'buildPlatforms' : [ 'Linux' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -96,9 +96,7 @@ def GetPlatformBuildTargets():
                            'platform_install_qualifier' : "",
                            'build_environment' : 'make',
                            'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
-                                                   "-DCUSTOM_MEMORY_MANAGEMENT=1 " \
                                                    "-DGENERATE_VERSION_INFO=0 " \
-                                                   "-DENABLE_RTTI=OFF " \
                                                    "-DMINIMIZE_SIZE=ON " \
                                                    "-DANDROID_STL=gnustl " \
                                                    "-DTARGET_ARCH=ANDROID "},
@@ -123,9 +121,7 @@ def GetPlatformBuildTargets():
                                   'build_environment' : 'nmake',
                                   'global_cmake_params' : "-G \"NMake Makefiles\" " \
                                                           "-DSIMPLE_INSTALL=OFF " \
-                                                          "-DCUSTOM_MEMORY_MANAGEMENT=1 " \
                                                           "-DGENERATE_VERSION_INFO=0 " \
-                                                          "-DENABLE_RTTI=OFF " \
                                                           "-DMINIMIZE_SIZE=ON " \
                                                           "-DANDROID_STL=gnustl " \
                                                           "-DTARGET_ARCH=ANDROID "},
@@ -148,7 +144,7 @@ def GetPlatformBuildTargets():
                                                            'config' : 'Release' } },
                          'platform_install_qualifier' : "",
                          'build_environment' : 'make',
-                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DENABLE_UNITY_BUILD=ON" },
+                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DGENERATE_VERSION_INFO=0 -DENABLE_UNITY_BUILD=ON" },
              'Darwin' : { 'buildPlatforms' : [ 'Darwin' ],
                                       'configs' : { 'DebugDynamic' : { 'directory' : '_build_darwin_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -168,7 +164,7 @@ def GetPlatformBuildTargets():
                                                            'config' : 'Release' } },
                          'platform_install_qualifier' : "",
                          'build_environment' : 'make',
-                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF " } }
+                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DGENERATE_VERSION_INFO=0 " } }
 
 
 def ParseArguments(platformEnvironments):
@@ -185,6 +181,8 @@ def ParseArguments(platformEnvironments):
     parser.add_argument("--parallel", action="store")
     parser.add_argument("--generateClients", action="store")
     parser.add_argument("--sourcedir", action="store")
+    parser.add_argument("--customMemoryManagement", action="store")
+    parser.add_argument("--enableRtti", action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
@@ -194,6 +192,8 @@ def ParseArguments(platformEnvironments):
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
     argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
+    argMap[ "customMemoryManagement" ] = args[ "customMemoryManagement"] or "1"
+    argMap[ "enableRtti" ] = args[ "enableRtti"] or "0"
     
     return argMap
 
@@ -249,6 +249,8 @@ def Main():
     quotedInstallDirectory = '"' + installDirectory + '"'
     generateClients = arguments[ "generateClients" ]
     sourceDir = arguments["sourcedir" ]
+    customMemoryManagement = arguments["customMemoryManagement"]
+    enableRtti = arguments["enableRtti"]
 
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
@@ -272,6 +274,16 @@ def Main():
     if generateClients != "0":
         sdk_directories.wipeGeneratedCode()
         customCmakeParams += "-DREGENERATE_CLIENTS=1 "
+
+    if customMemoryManagement == "0":
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=0 "
+    else:
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=1 "
+
+    if enableRtti == "0":
+        customCmakeParams += "-DENABLE_RTTI=OFF "
+    else:
+        customCmakeParams += "-DENABLE_RTTI=ON "
 
     for targetConfig in targetConfigs:
         if targetConfig in archConfigs:

@@ -65,9 +65,6 @@ project(aws-cpp-sdk-s3)
   
   target_link_libraries(aws-cpp-sdk-s3 aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-s3
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-s3)
 
   install (FILES ${AWS_S3_HEADERS} DESTINATION include/aws/s3)
   install (FILES ${AWS_S3_MODEL_HEADERS} DESTINATION include/aws/s3/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-s3.autopkg DESTINATION nuget)
+  endif()
+
+
 

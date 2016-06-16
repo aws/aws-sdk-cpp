@@ -65,9 +65,6 @@ project(aws-cpp-sdk-elastictranscoder)
   
   target_link_libraries(aws-cpp-sdk-elastictranscoder aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-elastictranscoder
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-elastictranscoder)
 
   install (FILES ${AWS_ELASTICTRANSCODER_HEADERS} DESTINATION include/aws/elastictranscoder)
   install (FILES ${AWS_ELASTICTRANSCODER_MODEL_HEADERS} DESTINATION include/aws/elastictranscoder/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-elastictranscoder.autopkg DESTINATION nuget)
+  endif()
+
+
 

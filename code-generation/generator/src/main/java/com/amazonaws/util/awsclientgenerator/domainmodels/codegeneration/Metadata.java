@@ -22,6 +22,7 @@ import java.util.Map;
 @Data
 public class Metadata {
     private String apiVersion;
+    private String concatAPIVersion;
     private String endpointPrefix;
     private String globalEndpoint;
     private String jsonVersion;

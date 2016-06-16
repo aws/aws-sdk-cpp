@@ -65,9 +65,6 @@ project(aws-cpp-sdk-redshift)
   
   target_link_libraries(aws-cpp-sdk-redshift aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-redshift
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-redshift)
 
   install (FILES ${AWS_REDSHIFT_HEADERS} DESTINATION include/aws/redshift)
   install (FILES ${AWS_REDSHIFT_MODEL_HEADERS} DESTINATION include/aws/redshift/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-redshift.autopkg DESTINATION nuget)
+  endif()
+
+
 
