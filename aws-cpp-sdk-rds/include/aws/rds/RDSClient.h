@@ -83,6 +83,7 @@
 #include <aws/rds/model/ModifyEventSubscriptionResult.h>
 #include <aws/rds/model/ModifyOptionGroupResult.h>
 #include <aws/rds/model/PromoteReadReplicaResult.h>
+#include <aws/rds/model/PromoteReadReplicaDBClusterResult.h>
 #include <aws/rds/model/PurchaseReservedDBInstancesOfferingResult.h>
 #include <aws/rds/model/RebootDBInstanceResult.h>
 #include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionResult.h>
@@ -208,6 +209,7 @@ namespace Model
         class ModifyEventSubscriptionRequest;
         class ModifyOptionGroupRequest;
         class PromoteReadReplicaRequest;
+        class PromoteReadReplicaDBClusterRequest;
         class PurchaseReservedDBInstancesOfferingRequest;
         class RebootDBInstanceRequest;
         class RemoveSourceIdentifierFromSubscriptionRequest;
@@ -289,6 +291,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, Aws::Client::AWSError<RDSErrors>> ModifyEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<ModifyOptionGroupResult, Aws::Client::AWSError<RDSErrors>> ModifyOptionGroupOutcome;
         typedef Aws::Utils::Outcome<PromoteReadReplicaResult, Aws::Client::AWSError<RDSErrors>> PromoteReadReplicaOutcome;
+        typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, Aws::Client::AWSError<RDSErrors>> PromoteReadReplicaDBClusterOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedDBInstancesOfferingResult, Aws::Client::AWSError<RDSErrors>> PurchaseReservedDBInstancesOfferingOutcome;
         typedef Aws::Utils::Outcome<RebootDBInstanceResult, Aws::Client::AWSError<RDSErrors>> RebootDBInstanceOutcome;
         typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, Aws::Client::AWSError<RDSErrors>> RemoveSourceIdentifierFromSubscriptionOutcome;
@@ -370,6 +373,7 @@ namespace Model
         typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
         typedef std::future<ModifyOptionGroupOutcome> ModifyOptionGroupOutcomeCallable;
         typedef std::future<PromoteReadReplicaOutcome> PromoteReadReplicaOutcomeCallable;
+        typedef std::future<PromoteReadReplicaDBClusterOutcome> PromoteReadReplicaDBClusterOutcomeCallable;
         typedef std::future<PurchaseReservedDBInstancesOfferingOutcome> PurchaseReservedDBInstancesOfferingOutcomeCallable;
         typedef std::future<RebootDBInstanceOutcome> RebootDBInstanceOutcomeCallable;
         typedef std::future<RemoveSourceIdentifierFromSubscriptionOutcome> RemoveSourceIdentifierFromSubscriptionOutcomeCallable;
@@ -454,6 +458,7 @@ namespace Model
     typedef std::function<void(const RDSClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyOptionGroupRequest&, const Model::ModifyOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::PromoteReadReplicaRequest&, const Model::PromoteReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteReadReplicaResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::PromoteReadReplicaDBClusterRequest&, const Model::PromoteReadReplicaDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteReadReplicaDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::PurchaseReservedDBInstancesOfferingRequest&, const Model::PurchaseReservedDBInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedDBInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RebootDBInstanceRequest&, const Model::RebootDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootDBInstanceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::RemoveSourceIdentifierFromSubscriptionRequest&, const Model::RemoveSourceIdentifierFromSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler;
@@ -1287,14 +1292,23 @@ namespace Model
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
          * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
-         * deleted are not deleted.</p> <p> If a final DB snapshot is requested the status
-         * of the RDS instance will be <code>deleting</code> until the DB snapshot is
-         * created. The API action <code>DescribeDBInstance</code> is used to monitor the
-         * status of this operation. The action cannot be canceled or reverted once
-         * submitted. </p> <p>Note that when a DB instance is in a failure state and has a
-         * status of <code>failed</code>, <code>incompatible-restore</code>, or
-         * <code>incompatible-network</code>, it can only be deleted when the
-         * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+         * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
+         * a final DB snapshot the status of the Amazon RDS DB instance is
+         * <code>deleting</code> until the DB snapshot is created. The API action
+         * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
+         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
+         * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
+         * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
+         * Aurora DB cluster, you cannot delete the DB instance if the following are
+         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
+         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
+         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
+         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
+         * no longer a Read Replica. After the promotion completes, then call the
+         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
+         * cluster.</p>
          */
         virtual Model::DeleteDBInstanceOutcome DeleteDBInstance(const Model::DeleteDBInstanceRequest& request) const;
 
@@ -1302,14 +1316,23 @@ namespace Model
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
          * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
-         * deleted are not deleted.</p> <p> If a final DB snapshot is requested the status
-         * of the RDS instance will be <code>deleting</code> until the DB snapshot is
-         * created. The API action <code>DescribeDBInstance</code> is used to monitor the
-         * status of this operation. The action cannot be canceled or reverted once
-         * submitted. </p> <p>Note that when a DB instance is in a failure state and has a
-         * status of <code>failed</code>, <code>incompatible-restore</code>, or
-         * <code>incompatible-network</code>, it can only be deleted when the
-         * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+         * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
+         * a final DB snapshot the status of the Amazon RDS DB instance is
+         * <code>deleting</code> until the DB snapshot is created. The API action
+         * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
+         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
+         * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
+         * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
+         * Aurora DB cluster, you cannot delete the DB instance if the following are
+         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
+         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
+         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
+         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
+         * no longer a Read Replica. After the promotion completes, then call the
+         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
+         * cluster.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1319,14 +1342,23 @@ namespace Model
          * <p>The DeleteDBInstance action deletes a previously provisioned DB instance.
          * When you delete a DB instance, all automated backups for that instance are
          * deleted and cannot be recovered. Manual DB snapshots of the DB instance to be
-         * deleted are not deleted.</p> <p> If a final DB snapshot is requested the status
-         * of the RDS instance will be <code>deleting</code> until the DB snapshot is
-         * created. The API action <code>DescribeDBInstance</code> is used to monitor the
-         * status of this operation. The action cannot be canceled or reverted once
-         * submitted. </p> <p>Note that when a DB instance is in a failure state and has a
-         * status of <code>failed</code>, <code>incompatible-restore</code>, or
-         * <code>incompatible-network</code>, it can only be deleted when the
-         * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+         * deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request
+         * a final DB snapshot the status of the Amazon RDS DB instance is
+         * <code>deleting</code> until the DB snapshot is created. The API action
+         * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
+         * The action cannot be canceled or reverted once submitted. </p> <p>Note that when
+         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
+         * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
+         * <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon
+         * Aurora DB cluster, you cannot delete the DB instance if the following are
+         * true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora
+         * DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB
+         * cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the
+         * <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's
+         * no longer a Read Replica. After the promotion completes, then call the
+         * <code>DeleteDBInstance</code> API action to delete the final instance in the DB
+         * cluster.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2687,6 +2719,25 @@ namespace Model
         virtual void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         */
+        virtual Model::PromoteReadReplicaDBClusterOutcome PromoteReadReplicaDBCluster(const Model::PromoteReadReplicaDBClusterRequest& request) const;
+
+        /**
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PromoteReadReplicaDBClusterOutcomeCallable PromoteReadReplicaDBClusterCallable(const Model::PromoteReadReplicaDBClusterRequest& request) const;
+
+        /**
+         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PromoteReadReplicaDBClusterAsync(const Model::PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Purchases a reserved DB instance offering.</p>
          */
         virtual Model::PurchaseReservedDBInstancesOfferingOutcome PurchaseReservedDBInstancesOffering(const Model::PurchaseReservedDBInstancesOfferingRequest& request) const;
@@ -3194,6 +3245,7 @@ namespace Model
         void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyOptionGroupAsyncHelper(const Model::ModifyOptionGroupRequest& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PromoteReadReplicaAsyncHelper(const Model::PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PromoteReadReplicaDBClusterAsyncHelper(const Model::PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedDBInstancesOfferingAsyncHelper(const Model::PurchaseReservedDBInstancesOfferingRequest& request, const PurchaseReservedDBInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootDBInstanceAsyncHelper(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveSourceIdentifierFromSubscriptionAsyncHelper(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

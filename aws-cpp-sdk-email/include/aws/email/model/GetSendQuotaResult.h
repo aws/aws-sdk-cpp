@@ -32,6 +32,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Represents your Amazon SES daily sending quota, maximum send rate, and the
+   * number of emails you have sent in the last 24 hours.</p>
+   */
   class AWS_SES_API GetSendQuotaResult
   {
   public:
@@ -59,22 +63,22 @@ namespace Model
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note>The rate at which Amazon SES accepts the user's
-     * messages might be less than the maximum send rate.</note>
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
      */
     inline double GetMaxSendRate() const{ return m_maxSendRate; }
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note>The rate at which Amazon SES accepts the user's
-     * messages might be less than the maximum send rate.</note>
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
      */
     inline void SetMaxSendRate(double value) { m_maxSendRate = value; }
 
     /**
      * <p>The maximum number of emails that Amazon SES can accept from the user's
-     * account per second.</p> <note>The rate at which Amazon SES accepts the user's
-     * messages might be less than the maximum send rate.</note>
+     * account per second.</p> <note> <p>The rate at which Amazon SES accepts the
+     * user's messages might be less than the maximum send rate.</p> </note>
      */
     inline GetSendQuotaResult& WithMaxSendRate(double value) { SetMaxSendRate(value); return *this;}
 

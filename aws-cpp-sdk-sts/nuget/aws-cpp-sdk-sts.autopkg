@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-STS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20110615.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20110615.10;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Security Token Service);
@@ -95,7 +95,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/0.12.1
        }
     }
 

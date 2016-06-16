@@ -26,6 +26,12 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to specify the Amazon SNS topic to which Amazon SES will
+   * publish bounce, complaint, or delivery notifications for emails sent with that
+   * identity as the Source. For information about Amazon SES notifications, see the
+   * <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API SetIdentityNotificationTopicRequest : public SESRequest
   {

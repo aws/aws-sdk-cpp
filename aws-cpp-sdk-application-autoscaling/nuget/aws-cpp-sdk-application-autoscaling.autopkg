@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ApplicationAutoScaling;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : @RUNTIME_MAJOR_VERSION@.20160206.@RUNTIME_MINOR_VERSION@;
+        version : 0.12.20160206.10;
 
         // Display name for package.
         title: AWS SDK for C++ (Application Auto Scaling);
@@ -44,7 +44,7 @@ nuget {
    * Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports
    * scaling Amazon ECS services.</p> </note> <p>For example, you can use Application
    * Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling
-   * policies for automatically adjusting your application?s resources</p> </li> <li>
+   * policies for automatically adjusting your application’s resources</p> </li> <li>
    * <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View
    * history of your scaling events </p> </li> </ul> <p>Application Auto Scaling is
    * available in the following regions:</p> <ul> <li> <p> <code>us-east-1</code>
@@ -62,7 +62,7 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
+            AWSSDKCPP-Core/0.12.1
        }
     }
 
