@@ -75,7 +75,7 @@ def GetPlatformBuildTargets():
                                                                  'config' : 'Release' } },
                                'platform_install_qualifier' : "vs2015",
                                'build_environment' : 'msbuild',
-                               'global_cmake_params' : "-G \"Visual Studio 14 2015 Win64\" -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                               'global_cmake_params' : "-G \"Visual Studio 14 2015 Win64\" -DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Android' : { 'buildPlatforms' : [ 'Linux' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
