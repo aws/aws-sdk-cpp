@@ -26,6 +26,11 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to enable or disable the Amazon SES custom MAIL FROM
+   * domain setup for a verified identity. For information about using a custom MAIL
+   * FROM domain, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API SetIdentityMailFromDomainRequest : public SESRequest
   {

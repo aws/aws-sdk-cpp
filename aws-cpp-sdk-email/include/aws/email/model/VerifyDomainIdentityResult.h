@@ -33,6 +33,10 @@ namespace SES
 {
 namespace Model
 {
+  /**
+   * <p>Returns a TXT record that you must publish to the DNS server of your domain
+   * to complete domain verification with Amazon SES.</p>
+   */
   class AWS_SES_API VerifyDomainIdentityResult
   {
   public:

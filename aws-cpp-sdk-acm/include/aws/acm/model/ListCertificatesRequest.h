@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p/>
    */
   class AWS_ACM_API ListCertificatesRequest : public ACMRequest
   {
@@ -38,183 +37,113 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline const Aws::Vector<CertificateStatus>& GetCertificateStatuses() const{ return m_certificateStatuses; }
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline void SetCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline void SetCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses = value; }
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(const Aws::Vector<CertificateStatus>& value) { SetCertificateStatuses(value); return *this;}
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline ListCertificatesRequest& WithCertificateStatuses(Aws::Vector<CertificateStatus>&& value) { SetCertificateStatuses(value); return *this;}
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(const CertificateStatus& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 
     /**
-     * <p> Identifies the statuses of the ACM Certificates for which you want to
-     * retrieve the ARNs. This can be one or more of the following values: <ul>
-     * <li><p><code>PENDING_VALIDATION</code></p></li>
-     * <li><p><code>ISSUED</code></p></li> <li><p><code>INACTIVE</code></p></li>
-     * <li><p><code>EXPIRED</code></p></li>
-     * <li><p><code>VALIDATION_TIMED_OUT</code></p></li>
-     * <li><p><code>REVOKED</code></p></li> <li><p><code>FAILED</code></p></li> </ul>
-     * </p>
+     * <p>The status or statuses on which to filter the list of ACM Certificates.</p>
      */
     inline ListCertificatesRequest& AddCertificateStatuses(CertificateStatus&& value) { m_certificateStatusesHasBeenSet = true; m_certificateStatuses.push_back(value); return *this; }
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline ListCertificatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline ListCertificatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> String that contains an opaque marker of the next ACM Certificate ARN to be
-     * displayed. Use this parameter when paginating results, and only in a subsequent
-     * request after you've received a response where the results have been truncated.
-     * Set it to an empty string the first time you call this action, and set it to the
-     * value of the <code>NextToken</code> element you receive in the response object
-     * for subsequent calls. </p>
+     * <p>Use this parameter only when paginating results and only in a subsequent
+     * request after you receive a response with truncated results. Set it to the value
+     * of <code>NextToken</code> from the response you just received.</p>
      */
     inline ListCertificatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If there
-     * are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action. </p>
+     * <p>Use this parameter when paginating results to specify the maximum number of
+     * items to return in the response. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> element is sent in the response. Use this
+     * <code>NextToken</code> value in a subsequent request to retrieve additional
+     * items.</p>
      */
     inline long GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p> Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If there
-     * are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action. </p>
+     * <p>Use this parameter when paginating results to specify the maximum number of
+     * items to return in the response. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> element is sent in the response. Use this
+     * <code>NextToken</code> value in a subsequent request to retrieve additional
+     * items.</p>
      */
     inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p> Specify this parameter when paginating results to indicate the maximum
-     * number of ACM Certificates that you want to display for each response. If there
-     * are additional certificates beyond the maximum you specify, use the
-     * <code>NextToken</code> value in your next call to the
-     * <code>ListCertificates</code> action. </p>
+     * <p>Use this parameter when paginating results to specify the maximum number of
+     * items to return in the response. If additional items exist beyond the number you
+     * specify, the <code>NextToken</code> element is sent in the response. Use this
+     * <code>NextToken</code> value in a subsequent request to retrieve additional
+     * items.</p>
      */
     inline ListCertificatesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
 

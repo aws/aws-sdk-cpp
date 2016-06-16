@@ -26,6 +26,9 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to return a list of all identities (email addresses and
+   * domains) that you have attempted to verify under your AWS account, regardless of
+   * verification status.</p>
    */
   class AWS_SES_API ListIdentitiesRequest : public SESRequest
   {

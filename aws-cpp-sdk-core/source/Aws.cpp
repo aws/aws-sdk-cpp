@@ -22,12 +22,12 @@ namespace Aws
 
     void InitAPI(const SDKOptions &options)
     {
-#if AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
-#endif
+#endif // USE_AWS_MEMORY_MANAGEMENT
 
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
@@ -99,11 +99,11 @@ namespace Aws
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
 
-#if AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
             Aws::Utils::Memory::ShutdownAWSMemorySystem();
         }
-#endif
+#endif // USE_AWS_MEMORY_MANAGEMENT
     }
 }

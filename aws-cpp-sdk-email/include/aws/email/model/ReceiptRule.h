@@ -55,58 +55,58 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline ReceiptRule& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline ReceiptRule& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the receipt rule. The name must:</p> <ul> <li>Contain only ASCII
-     * letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
-     * (-).</li> <li>Start and end with a letter or number.</li> <li>Contain less than
-     * 64 characters.</li> </ul>
+     * <p>The name of the receipt rule. The name must:</p> <ul> <li> <p>Contain only
+     * ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes
+     * (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li> <li>
+     * <p>Contain less than 64 characters.</p> </li> </ul>
      */
     inline ReceiptRule& WithName(const char* value) { SetName(value); return *this;}
 

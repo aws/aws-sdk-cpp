@@ -27,7 +27,6 @@ namespace Model
 {
 
   /**
-   * <p/>
    */
   class AWS_ACM_API AddTagsToCertificateRequest : public ACMRequest
   {
@@ -38,72 +37,72 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToCertificateRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p> String that contains the ARN of the ACM Certificate to which the tag is to
-     * be applied. This must be of the form: </p> <p>
+     * <p>String that contains the ARN of the ACM Certificate to which the tag is to be
+     * applied. This must be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
-     * </p> <p> For more information about ARNs, see <a
+     * </p> <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a>. </p>
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline AddTagsToCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
