@@ -90,9 +90,6 @@ If static linking is enabled, custom memory management defaults to off. If dynam
 
 Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
 
-#####STATIC_LINKING 
-To use static linking, set the value to 1. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
-
 #####TARGET_ARCH
 To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system. 
 Options: WINDOWS | LINUX | APPLE | ANDROID
@@ -104,6 +101,40 @@ Windows example:
 -G "Visual Studio 12 Win64"
 
 For more information, see the CMake documentation for your platform.
+
+#### CMake Options
+CMake options are variables that can either be ON or OFF, with a controllable default.  You can set an option either via CMake Gui tools or the command line via -D.
+
+#####ENABLE_UNITY_BUILD 
+(Defaults to OFF) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
+
+#####MINIMIZE_SIZE 
+(Defaults to OFF) A superset of ENABLE_UNITY_BUILD, if enabled this option turns on ENABLE_UNITY_BUILD as well as some additional binary size reduction settings.  This is a work-in-progress and may change in the future (symbol stripping in particular).
+
+#####BUILD_SHARED_LIBS 
+(Defaults to ON) A built-in CMake option, reexposed here for visibility.  If enabled, shared libraries will be built, otherwise static libraries will be built.
+
+#####FORCE_SHARED_CRT 
+(Defaults to ON) If enabled, the SDK will link to the C runtime dynamically, otherwise it will use the BUILD_SHARED_LIBS setting (weird but necessary for backwards compatibility with older versions of the SDK)
+
+#####SIMPLE_INSTALL 
+(Defaults to ON) If enabled, the install process will not insert platform-specific intermediate directories underneath bin/ and lib/.  Turn OFF if you need to make multi-platform releases under a single install directory.
+
+#####DISABLE_ANDROID_STANDALONE_BUILD 
+(Defaults to OFF) By default, Android builds will construct and use a standalone clang-based toolchain via NDK scripts.  If you wish to use your own toolchain, turn this option ON.
+
+#####NO_HTTP_CLIENT
+(Defaults to OFF) If enabled, prevents the default platform-specific http client from being built into the library.  Turn this ON if you wish to inject your own http client implementation.
+
+#####NO_ENCRYPTION
+(Defaults to OFF) If enabled, prevents the default platform-specific cryptography implementation from being built into the library.  Turn this ON if you wish to inject your own cryptography implementation.
+
+#####ENABLE_RTTI 
+(Defaults to ON) Controls whether or not the SDK is built with RTTI information
+
+#####ENABLE_TESTING 
+(Defaults to ON) Controls whether or not the unit and integration test projects are built
+
 
 ###Running integration tests:
 Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
