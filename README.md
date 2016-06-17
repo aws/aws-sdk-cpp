@@ -153,8 +153,6 @@ An override path for where the build system should find the Android NDK.  By def
 (Default varies by STL choice) Controls what API level the SDK will be built against.  If you use gnustl, you have complete freedom with the choice of API level.  If you use libc++, you must use an API level of at least 21.
 
 
-#####
-
 ###Running integration tests:
 Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
 
