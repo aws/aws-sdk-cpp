@@ -72,7 +72,7 @@ Nmake builds targets in a serial fashion.  To make things quicker, we recommend 
 
 cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
 
-####CMake Variables
+####General CMake Variables
 
 #####BUILD_ONLY
 Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-cpp-sdk-s3;aws-cpp-sdk-dynamodb;aws-cpp-sdk-cognito-identity"
@@ -102,8 +102,8 @@ Windows example:
 
 For more information, see the CMake documentation for your platform.
 
-#### CMake Options
-CMake options are variables that can either be ON or OFF, with a controllable default.  You can set an option either via CMake Gui tools or the command line via -D.
+#### General CMake Options
+CMake options are variables that can either be ON or OFF, with a controllable default.  You can set an option either with CMake Gui tools or the command line via -D.
 
 #####ENABLE_UNITY_BUILD 
 (Defaults to OFF) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
@@ -120,9 +120,6 @@ CMake options are variables that can either be ON or OFF, with a controllable de
 #####SIMPLE_INSTALL 
 (Defaults to ON) If enabled, the install process will not insert platform-specific intermediate directories underneath bin/ and lib/.  Turn OFF if you need to make multi-platform releases under a single install directory.
 
-#####DISABLE_ANDROID_STANDALONE_BUILD 
-(Defaults to OFF) By default, Android builds will construct and use a standalone clang-based toolchain via NDK scripts.  If you wish to use your own toolchain, turn this option ON.
-
 #####NO_HTTP_CLIENT
 (Defaults to OFF) If enabled, prevents the default platform-specific http client from being built into the library.  Turn this ON if you wish to inject your own http client implementation.
 
@@ -135,6 +132,28 @@ CMake options are variables that can either be ON or OFF, with a controllable de
 #####ENABLE_TESTING 
 (Defaults to ON) Controls whether or not the unit and integration test projects are built
 
+#### Android CMake Variables/Options
+
+#####NDK_DIR
+An override path for where the build system should find the Android NDK.  By default, the build system will check environment variables (ANDROID_NDK) if this CMake variable is not set.
+
+#####DISABLE_ANDROID_STANDALONE_BUILD 
+(Defaults to OFF) By default, Android builds will use a standalone clang-based toolchain constructed via NDK scripts.  If you wish to use your own toolchain, turn this option ON.
+
+#####ANDROID_STL
+(Defaults to libc++_shared)  Controls what flavor of the C++ standard library the SDK will use.  Valid values are one of {libc++_shared, libc++_static, gnustl_shared, gnustl_static}.  There are severe performance problems within the SDK if gnustl is used, so we recommend libc++.
+
+#####ANDROID_ABI
+(Defaults to armeabi-v7a) Controls what abi to output code for.  Not all valid Android ABI values are currently supported, but we intend to provide full coverage in the future.  We welcome patches to our Openssl build wrapper that speed this process up.  Valid values are one of {arm64, armeabi-v7a, x86_64, x86, mips64, mips}. 
+
+#####ANDROID_TOOLCHAIN_NAME
+(Defaults to standalone-clang) Controls which compiler is used to build the SDK.  With GCC being deprecated by Android NDK, we recommend using the default (clang).
+
+#####ANDROID_NATIVE_API_LEVEL
+(Default varies by STL choice) Controls what API level the SDK will be built against.  If you use gnustl, you have complete freedom with the choice of API level.  If you use libc++, you must use an API level of at least 21.
+
+
+#####
 
 ###Running integration tests:
 Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
