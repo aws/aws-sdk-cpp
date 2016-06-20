@@ -354,6 +354,7 @@ if(NOT PLATFORM_WINDOWS)
 
         if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
             target_compile_options(aws-cpp-sdk-core PRIVATE -Wno-unused-private-field)
+            target_compile_options(aws-cpp-sdk-core PUBLIC -Wshorten-64-to-32)
 
             if(PLATFORM_ANDROID AND ANDROID_ABI MATCHES "mips*")
                 string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
