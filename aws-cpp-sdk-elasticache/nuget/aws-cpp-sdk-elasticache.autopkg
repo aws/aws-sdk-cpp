@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElastiCache;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150202.11;
+        version : 0.12.20150202.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon ElastiCache);
@@ -38,17 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>Amazon ElastiCache</fullname> <p>Amazon ElastiCache is a web service
-   * that makes it easier to set up, operate, and scale a distributed cache in the
-   * cloud.</p> <p>With ElastiCache, customers gain all of the benefits of a
-   * high-performance, in-memory cache with far less of the administrative burden of
-   * launching and managing a distributed cache. The service makes setup, scaling,
-   * and cluster failure handling much simpler than in a self-managed cache
-   * deployment.</p> <p>In addition, through integration with Amazon CloudWatch,
-   * customers get enhanced visibility into the key performance statistics associated
-   * with their cache and can receive alarms if a part of their cache runs hot.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon ElastiCache Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

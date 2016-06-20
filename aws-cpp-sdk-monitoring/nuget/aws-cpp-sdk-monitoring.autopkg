@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudWatch;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20100801.11;
+        version : 0.12.20100801.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudWatch);
@@ -38,21 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
-   * applications you run on AWS in real-time. You can use CloudWatch to collect and
-   * track metrics, which are the variables you want to measure for your resources
-   * and applications.</p> <p>CloudWatch alarms send notifications or automatically
-   * make changes to the resources you are monitoring based on rules that you define.
-   * For example, you can monitor the CPU usage and disk reads and writes of your
-   * Amazon Elastic Compute Cloud (Amazon EC2) instances and then use this data to
-   * determine whether you should launch additional instances to handle increased
-   * load. You can also use this data to stop under-used instances to save money.</p>
-   * <p>In addition to monitoring the built-in metrics that come with AWS, you can
-   * monitor your own custom metrics. With CloudWatch, you gain system-wide
-   * visibility into resource utilization, application performance, and operational
-   * health.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon CloudWatch Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

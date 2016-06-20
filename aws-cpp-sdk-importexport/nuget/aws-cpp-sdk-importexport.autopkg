@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ImportExport;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20100601.11;
+        version : 0.12.20100601.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Import/Export);
@@ -38,14 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Import/Export Service</fullname> AWS Import/Export accelerates
-   * transferring large amounts of data between the AWS cloud and portable storage
-   * devices that you mail to us. AWS Import/Export transfers data directly onto and
-   * off of your storage devices using Amazon's high-speed internal network and
-   * bypassing the Internet. For large data sets, AWS Import/Export is often faster
-   * than Internet transfer and more cost effective than upgrading your connectivity.
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Import/Export Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

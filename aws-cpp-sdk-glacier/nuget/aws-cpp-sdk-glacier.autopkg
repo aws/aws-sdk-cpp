@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Glacier;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20120601.11;
+        version : 0.12.20120601.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Glacier);
@@ -38,33 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>Amazon Glacier is a storage solution for "cold data."</p> <p>Amazon Glacier
-   * is an extremely low-cost storage service that provides secure, durable, and
-   * easy-to-use storage for data backup and archival. With Amazon Glacier, customers
-   * can store their data cost effectively for months, years, or decades. Amazon
-   * Glacier also enables customers to offload the administrative burdens of
-   * operating and scaling storage to AWS, so they don't have to worry about capacity
-   * planning, hardware provisioning, data replication, hardware failure and
-   * recovery, or time-consuming hardware migrations.</p> <p>Amazon Glacier is a
-   * great storage choice when low storage cost is paramount, your data is rarely
-   * retrieved, and retrieval latency of several hours is acceptable. If your
-   * application requires fast or frequent access to your data, consider using Amazon
-   * S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon
-   * Simple Storage Service (Amazon S3)</a>.</p> <p>You can store any kind of data in
-   * any format. There is no maximum limit on the total amount of data you can store
-   * in Amazon Glacier. </p> <p>If you are a first-time user of Amazon Glacier, we
-   * recommend that you begin by reading the following sections in the <i>Amazon
-   * Glacier Developer Guide</i>:</p> <ul> <li><p><a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
-   * is Amazon Glacier</a> - This section of the Developer Guide describes the
-   * underlying data model, the operations it supports, and the AWS SDKs that you can
-   * use to interact with the service.</p></li> <li><p><a
-   * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
-   * Started with Amazon Glacier</a> - The Getting Started section walks you through
-   * the process of creating a vault, uploading archives, creating jobs to download
-   * archives, retrieving the job output, and deleting archives.</p></li> </ul>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon Glacier Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

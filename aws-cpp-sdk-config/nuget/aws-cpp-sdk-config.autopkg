@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ConfigService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20141112.11;
+        version : 0.12.20141112.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Config);
@@ -38,30 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Config</fullname> <p>AWS Config provides a way to keep track of
-   * the configurations of all the AWS resources associated with your AWS account.
-   * You can use AWS Config to get the current and historical configurations of each
-   * AWS resource and also to get information about the relationship between the
-   * resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2) instance,
-   * an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI), or a
-   * security group. For a complete list of resources currently supported by AWS
-   * Config, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
-   * AWS Resources</a>.</p> <p>You can access and manage AWS Config through the AWS
-   * Management Console, the AWS Command Line Interface (AWS CLI), the AWS Config
-   * API, or the AWS SDKs for AWS Config</p> <p>This reference guide contains
-   * documentation for the AWS Config API and the AWS CLI commands that you can use
-   * to manage AWS Config.</p> <p>The AWS Config API uses the Signature Version 4
-   * protocol for signing requests. For more information about how to sign a request
-   * with this protocol, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-   * Version 4 Signing Process</a>.</p> <p>For detailed information about AWS Config
-   * features and their associated actions or commands, as well as how to work with
-   * AWS Management Console, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
-   * Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Config Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

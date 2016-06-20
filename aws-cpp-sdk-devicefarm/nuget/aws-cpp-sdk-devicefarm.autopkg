@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DeviceFarm;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150623.11;
+        version : 0.12.20150623.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Device Farm);
@@ -38,11 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>AWS Device Farm is a service that enables mobile app developers to test
-   * Android, iOS, and Fire OS apps on physical phones, tablets, and other devices in
-   * the cloud.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Device Farm Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

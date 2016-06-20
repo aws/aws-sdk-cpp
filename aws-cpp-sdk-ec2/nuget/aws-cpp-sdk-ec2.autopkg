@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-EC2;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20151001.11;
+        version : 0.12.20151001.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic Compute Cloud);
@@ -38,12 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
-   * Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web
-   * Services (AWS) cloud. Using Amazon EC2 eliminates your need to invest in
-   * hardware up front, so you can develop and deploy applications faster.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon Elastic Compute Cloud Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoT;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150528.11;
+        version : 0.12.20150528.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT);
@@ -38,18 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional
-   * communication between Internet-connected things (such as sensors, actuators,
-   * embedded devices, or smart appliances) and the AWS cloud. You can discover your
-   * custom IoT-Data endpoint to communicate with, configure rules for data
-   * processing and integration with other services, organize resources associated
-   * with each thing (Thing Registry), configure logging, and create and manage
-   * policies and credentials to authenticate things.</p> <p>For more information
-   * about how AWS IoT works, see the <a
-   * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
-   * Guide</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS IoT Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

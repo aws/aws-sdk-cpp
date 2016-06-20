@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticLoadBalancing;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20120601.11;
+        version : 0.12.20120601.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Elastic Load Balancing);
@@ -38,20 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>Elastic Load Balancing</fullname> <p>Elastic Load Balancing
-   * distributes incoming traffic across your EC2 instances.</p> <p>For information
-   * about the features of Elastic Load Balancing, see <a
-   * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html">What
-   * Is Elastic Load Balancing?</a> in the <i>Elastic Load Balancing Developer
-   * Guide</i>.</p> <p>For information about the AWS regions supported by Elastic
-   * Load Balancing, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region">Regions
-   * and Endpoints - Elastic Load Balancing</a> in the <i>Amazon Web Services General
-   * Reference</i>.</p> <p>All Elastic Load Balancing operations are
-   * <i>idempotent</i>, which means that they complete at most one time. If you
-   * repeat an operation, it succeeds with a 200 OK response code.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Elastic Load Balancing Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

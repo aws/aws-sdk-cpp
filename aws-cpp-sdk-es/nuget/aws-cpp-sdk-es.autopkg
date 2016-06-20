@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticsearchService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150101.11;
+        version : 0.12.20150101.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elasticsearch Service);
@@ -38,16 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>Amazon Elasticsearch Configuration Service</fullname> <p>Use the
-   * Amazon Elasticsearch configuration API to create, configure, and manage
-   * Elasticsearch domains.</p> <p>The endpoint for configuration service requests is
-   * region-specific: es.<i>region</i>.amazonaws.com. For example,
-   * es.us-east-1.amazonaws.com. For a current list of supported regions and
-   * endpoints, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"
-   * target="_blank">Regions and Endpoints</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon Elasticsearch Service Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

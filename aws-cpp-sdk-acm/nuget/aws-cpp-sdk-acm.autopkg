@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ACM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20151208.11;
+        version : 0.12.20151208.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Certificate Manager);
@@ -38,19 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate
-   * Manager (ACM) Command Reference. This guide provides descriptions, syntax, and
-   * usage examples for each ACM command. You can use AWS Certificate Manager to
-   * request ACM Certificates for your AWS-based websites and applications. For
-   * general information about using ACM and for more information about using the
-   * console, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-   * Certificate Manager User Guide</a>. For more information about using the ACM
-   * API, see the <a
-   * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
-   * Certificate Manager API Reference</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Certificate Manager Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudSearchDomain;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20130101.11;
+        version : 0.12.20130101.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudSearch Domain);
@@ -38,18 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>You use the AmazonCloudSearch2013 API to upload documents to a search domain
-   * and search those documents. </p> <p>The endpoints for submitting
-   * <code>UploadDocuments</code>, <code>Search</code>, and <code>Suggest</code>
-   * requests are domain-specific. To get the endpoints for your domain, use the
-   * Amazon CloudSearch configuration service <code>DescribeDomains</code> action.
-   * The domain endpoints are also displayed on the domain dashboard in the Amazon
-   * CloudSearch console. You submit suggest requests to the search endpoint. </p>
-   * <p>For more information, see the <a
-   * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide">Amazon
-   * CloudSearch Developer Guide</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon CloudSearch Domain Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

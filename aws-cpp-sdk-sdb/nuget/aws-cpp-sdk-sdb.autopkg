@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SimpleDB;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20090415.11;
+        version : 0.12.20090415.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon SimpleDB);
@@ -38,22 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "Amazon SimpleDB is a web service providing the core database functions of data
-   * indexing and querying in the cloud. By offloading the time and effort associated
-   * with building and operating a web-scale database, SimpleDB provides developers
-   * the freedom to focus on application development. <p> A traditional, clustered
-   * relational database requires a sizable upfront capital outlay, is complex to
-   * design, and often requires extensive and repetitive database administration.
-   * Amazon SimpleDB is dramatically simpler, requiring no schema, automatically
-   * indexing your data and providing a simple API for storage and access. This
-   * approach eliminates the administrative burden of data modeling, index
-   * maintenance, and performance tuning. Developers gain access to this
-   * functionality within Amazon's proven computing environment, are able to scale
-   * instantly, and pay only for what they use. </p> <p> Visit <a
-   * href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for
-   * more information. </p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon SimpleDB Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

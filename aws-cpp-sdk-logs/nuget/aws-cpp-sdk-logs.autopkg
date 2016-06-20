@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudWatchLogs;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20140328.11;
+        version : 0.12.20140328.12;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudWatch Logs);
@@ -38,33 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>Amazon CloudWatch Logs API Reference</fullname> <p>You can use Amazon
-   * CloudWatch Logs to monitor, store, and access your log files from Amazon Elastic
-   * Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources. You
-   * can then retrieve the associated log data from CloudWatch Logs using the Amazon
-   * CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch
-   * Logs API, or the CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p>
-   * <ul> <li> <p><b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can
-   * use CloudWatch Logs to monitor applications and systems using log data. For
-   * example, CloudWatch Logs can track the number of errors that occur in your
-   * application logs and send you a notification whenever the rate of errors exceeds
-   * a threshold you specify. CloudWatch Logs uses your log data for monitoring; so,
-   * no code changes are required. For example, you can monitor application logs for
-   * specific literal terms (such as "NullReferenceException") or count the number of
-   * occurrences of a literal term at a particular position in log data (such as
-   * "404" status codes in an Apache access log). When the term you are searching for
-   * is found, CloudWatch Logs reports the data to a Amazon CloudWatch metric that
-   * you specify.</p> </li> <li> <p><b>Monitor Amazon CloudTrail Logged Events</b>:
-   * You can create alarms in Amazon CloudWatch and receive notifications of
-   * particular API activity as captured by CloudTrail and use the notification to
-   * perform troubleshooting.</p> </li> <li> <p><b>Archive Log Data</b>: You can use
-   * CloudWatch Logs to store your log data in highly durable storage. You can change
-   * the log retention setting so that any log events older than this setting are
-   * automatically deleted. The CloudWatch Logs agent makes it easy to quickly send
-   * both rotated and non-rotated log data off of a host and into the log service.
-   * You can then access the raw log data when you need it.</p> </li> </ul>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon CloudWatch Logs Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;

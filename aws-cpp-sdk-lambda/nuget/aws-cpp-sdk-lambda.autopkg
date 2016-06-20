@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Lambda;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150331.11;
+        version : 0.12.20150331.12;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Lambda);
@@ -38,15 +38,7 @@ nuget {
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Lambda</fullname> <p><b>Overview</b></p> <p>This is the <i>AWS
-   * Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional
-   * information. For the service overview, go to <a
-   * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
-   * Lambda</a>, and for information about how the service works, go to <a
-   * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-   * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Lambda Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
