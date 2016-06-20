@@ -1568,7 +1568,7 @@ const LargestInt Value::maxLargestInt = LargestInt(LargestUInt(-1) / 2);
 const LargestUInt Value::maxLargestUInt = LargestUInt(-1);
 
 /// Unknown size marker
-static const unsigned int unknown = (size_t)-1;
+static const size_t unknown = (size_t)-1;
 
 #if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
 template <typename T, typename U>
