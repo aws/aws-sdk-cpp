@@ -33,7 +33,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a get third party job details action. </p>
+   * <p>Represents the output of a get third party job details action.</p>
    */
   class AWS_CODEPIPELINE_API GetThirdPartyJobDetailsResult
   {
@@ -43,32 +43,32 @@ namespace Model
     GetThirdPartyJobDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The details of the job, including any protected values defined for the job.
-     * </p>
+     * <p>The details of the job, including any protected values defined for the
+     * job.</p>
      */
     inline const ThirdPartyJobDetails& GetJobDetails() const{ return m_jobDetails; }
 
     /**
-     * <p>The details of the job, including any protected values defined for the job.
-     * </p>
+     * <p>The details of the job, including any protected values defined for the
+     * job.</p>
      */
     inline void SetJobDetails(const ThirdPartyJobDetails& value) { m_jobDetails = value; }
 
     /**
-     * <p>The details of the job, including any protected values defined for the job.
-     * </p>
+     * <p>The details of the job, including any protected values defined for the
+     * job.</p>
      */
     inline void SetJobDetails(ThirdPartyJobDetails&& value) { m_jobDetails = value; }
 
     /**
-     * <p>The details of the job, including any protected values defined for the job.
-     * </p>
+     * <p>The details of the job, including any protected values defined for the
+     * job.</p>
      */
     inline GetThirdPartyJobDetailsResult& WithJobDetails(const ThirdPartyJobDetails& value) { SetJobDetails(value); return *this;}
 
     /**
-     * <p>The details of the job, including any protected values defined for the job.
-     * </p>
+     * <p>The details of the job, including any protected values defined for the
+     * job.</p>
      */
     inline GetThirdPartyJobDetailsResult& WithJobDetails(ThirdPartyJobDetails&& value) { SetJobDetails(value); return *this;}
 

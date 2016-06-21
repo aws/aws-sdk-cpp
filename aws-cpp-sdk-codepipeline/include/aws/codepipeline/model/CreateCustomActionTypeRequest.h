@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a create custom action operation. </p>
+   * <p>Represents the input of a create custom action operation.</p>
    */
   class AWS_CODEPIPELINE_API CreateCustomActionTypeRequest : public CodePipelineRequest
   {
@@ -42,36 +42,36 @@ namespace Model
 
     /**
      * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</note>
+     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
+     * currently functional. This value is reserved for future use.</p> </note>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
      * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</note>
+     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
+     * currently functional. This value is reserved for future use.</p> </note>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</note>
+     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
+     * currently functional. This value is reserved for future use.</p> </note>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</note>
+     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
+     * currently functional. This value is reserved for future use.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
      * <p>The category of the custom action, such as a source action or a build
-     * action.</p> <note>Although Source is listed as a valid value, it is not
-     * currently functional. This value is reserved for future use.</note>
+     * action.</p> <note> <p>Although Source is listed as a valid value, it is not
+     * currently functional. This value is reserved for future use.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithCategory(ActionCategory&& value) { SetCategory(value); return *this;}
 
@@ -118,37 +118,37 @@ namespace Model
     inline CreateCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number of the custom action. </p>
+     * <p>The version number of the custom action.</p>
      */
     inline CreateCustomActionTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -168,79 +168,79 @@ namespace Model
     inline CreateCustomActionTypeRequest& WithSettings(ActionTypeSettings&& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline const Aws::Vector<ActionConfigurationProperty>& GetConfigurationProperties() const{ return m_configurationProperties; }
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = value; }
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = value; }
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { SetConfigurationProperties(value); return *this;}
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { SetConfigurationProperties(value); return *this;}
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(const ActionConfigurationProperty& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(value); return *this; }
 
     /**
-     * <p>The configuration properties for the custom action.</p> <note>You can refer
-     * to a name in the configuration properties of the custom action within the URL
-     * templates by following the format of {Config:<i>name</i>}, as long as the
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
-     * a Custom Action for a Pipeline</a>.</note>
+     * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(ActionConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(value); return *this; }
 

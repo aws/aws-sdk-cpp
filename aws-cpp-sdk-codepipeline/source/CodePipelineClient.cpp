@@ -47,6 +47,7 @@
 #include <aws/codepipeline/model/PutJobSuccessResultRequest.h>
 #include <aws/codepipeline/model/PutThirdPartyJobFailureResultRequest.h>
 #include <aws/codepipeline/model/PutThirdPartyJobSuccessResultRequest.h>
+#include <aws/codepipeline/model/RetryStageExecutionRequest.h>
 #include <aws/codepipeline/model/StartPipelineExecutionRequest.h>
 #include <aws/codepipeline/model/UpdatePipelineRequest.h>
 
@@ -765,6 +766,37 @@ void CodePipelineClient::PutThirdPartyJobSuccessResultAsync(const PutThirdPartyJ
 void CodePipelineClient::PutThirdPartyJobSuccessResultAsyncHelper(const PutThirdPartyJobSuccessResultRequest& request, const PutThirdPartyJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutThirdPartyJobSuccessResult(request), context);
+}
+
+RetryStageExecutionOutcome CodePipelineClient::RetryStageExecution(const RetryStageExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RetryStageExecutionOutcome(RetryStageExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RetryStageExecutionOutcome(outcome.GetError());
+  }
+}
+
+RetryStageExecutionOutcomeCallable CodePipelineClient::RetryStageExecutionCallable(const RetryStageExecutionRequest& request) const
+{
+  return std::async(std::launch::async, &CodePipelineClient::RetryStageExecution, this, request);
+}
+
+void CodePipelineClient::RetryStageExecutionAsync(const RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodePipelineClient::RetryStageExecutionAsyncHelper, this, request, handler, context);
+}
+
+void CodePipelineClient::RetryStageExecutionAsyncHelper(const RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RetryStageExecution(request), context);
 }
 
 StartPipelineExecutionOutcome CodePipelineClient::StartPipelineExecution(const StartPipelineExecutionRequest& request) const

@@ -80,43 +80,43 @@ namespace Model
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline DisableStageTransitionRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline DisableStageTransitionRequest& WithStageName(Aws::String&& value) { SetStageName(value); return *this;}
 
     /**
      * <p>The name of the stage where you want to disable the inbound or outbound
-     * transition of artifacts. </p>
+     * transition of artifacts.</p>
      */
     inline DisableStageTransitionRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 

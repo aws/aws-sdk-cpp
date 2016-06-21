@@ -30,14 +30,16 @@ namespace Model
 StageState::StageState() : 
     m_stageNameHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
-    m_actionStatesHasBeenSet(false)
+    m_actionStatesHasBeenSet(false),
+    m_latestExecutionHasBeenSet(false)
 {
 }
 
 StageState::StageState(const JsonValue& jsonValue) : 
     m_stageNameHasBeenSet(false),
     m_inboundTransitionStateHasBeenSet(false),
-    m_actionStatesHasBeenSet(false)
+    m_actionStatesHasBeenSet(false),
+    m_latestExecutionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ StageState& StageState::operator =(const JsonValue& jsonValue)
     m_actionStatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestExecution"))
+  {
+    m_latestExecution = jsonValue.GetObject("latestExecution");
+
+    m_latestExecutionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +104,12 @@ JsonValue StageState::Jsonize() const
      actionStatesJsonList[actionStatesIndex].AsObject(m_actionStates[actionStatesIndex].Jsonize());
    }
    payload.WithArray("actionStates", std::move(actionStatesJsonList));
+
+  }
+
+  if(m_latestExecutionHasBeenSet)
+  {
+   payload.WithObject("latestExecution", m_latestExecution.Jsonize());
 
   }
 

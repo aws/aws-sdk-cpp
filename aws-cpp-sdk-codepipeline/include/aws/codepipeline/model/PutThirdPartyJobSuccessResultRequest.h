@@ -142,7 +142,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
@@ -152,7 +152,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
@@ -162,7 +162,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
@@ -172,7 +172,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
@@ -182,7 +182,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
@@ -192,7 +192,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
 
@@ -202,7 +202,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the partner action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about how an action runs.</p>
+   * <p>Represents information about the run of an action.</p>
    */
   class AWS_CODEPIPELINE_API ActionExecution
   {

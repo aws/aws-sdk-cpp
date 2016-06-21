@@ -118,7 +118,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
 
@@ -130,7 +130,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
@@ -142,7 +142,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline void SetShortname(Aws::String&& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
@@ -154,7 +154,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline void SetShortname(const char* value) { m_shortnameHasBeenSet = true; m_shortname.assign(value); }
 
@@ -166,7 +166,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline UpdateLayerRequest& WithShortname(const Aws::String& value) { SetShortname(value); return *this;}
 
@@ -178,7 +178,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline UpdateLayerRequest& WithShortname(Aws::String&& value) { SetShortname(value); return *this;}
 
@@ -190,7 +190,7 @@ namespace Model
      * /\A[a-z0-9\-\_\.]+\Z/.</p> <p>The built-in layers' short names are defined by
      * AWS OpsWorks. For more information, see the <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
-     * Reference</a></p>
+     * Reference</a> </p>
      */
     inline UpdateLayerRequest& WithShortname(const char* value) { SetShortname(value); return *this;}
 

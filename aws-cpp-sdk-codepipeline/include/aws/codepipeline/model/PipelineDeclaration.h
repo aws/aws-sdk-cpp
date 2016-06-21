@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Represents the structure of actions and stages to be performed in the
-   * pipeline. </p>
+   * pipeline.</p>
    */
   class AWS_CODEPIPELINE_API PipelineDeclaration
   {
@@ -46,37 +46,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline PipelineDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline PipelineDeclaration& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the action to be performed. </p>
+     * <p>The name of the action to be performed.</p>
      */
     inline PipelineDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
@@ -145,37 +145,37 @@ namespace Model
     inline PipelineDeclaration& WithArtifactStore(ArtifactStore&& value) { SetArtifactStore(value); return *this;}
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline const Aws::Vector<StageDeclaration>& GetStages() const{ return m_stages; }
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline void SetStages(const Aws::Vector<StageDeclaration>& value) { m_stagesHasBeenSet = true; m_stages = value; }
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline void SetStages(Aws::Vector<StageDeclaration>&& value) { m_stagesHasBeenSet = true; m_stages = value; }
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline PipelineDeclaration& WithStages(const Aws::Vector<StageDeclaration>& value) { SetStages(value); return *this;}
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline PipelineDeclaration& WithStages(Aws::Vector<StageDeclaration>&& value) { SetStages(value); return *this;}
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline PipelineDeclaration& AddStages(const StageDeclaration& value) { m_stagesHasBeenSet = true; m_stages.push_back(value); return *this; }
 
     /**
-     * <p>The stage in which to perform the action. </p>
+     * <p>The stage in which to perform the action.</p>
      */
     inline PipelineDeclaration& AddStages(StageDeclaration&& value) { m_stagesHasBeenSet = true; m_stages.push_back(value); return *this; }
 

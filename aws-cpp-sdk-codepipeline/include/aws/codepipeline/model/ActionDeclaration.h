@@ -82,27 +82,27 @@ namespace Model
     inline ActionDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline ActionDeclaration& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline ActionDeclaration& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(value); return *this;}
 

@@ -46,60 +46,60 @@ namespace Model
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below. </p>
+     * of the values below.</p>
      */
     inline const ActionCategory& GetCategory() const{ return m_category; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below. </p>
+     * of the values below.</p>
      */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below. </p>
+     * of the values below.</p>
      */
     inline void SetCategory(ActionCategory&& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below. </p>
+     * of the values below.</p>
      */
     inline ActionTypeId& WithCategory(const ActionCategory& value) { SetCategory(value); return *this;}
 
     /**
      * <p>A category defines what kind of action can be taken in the stage, and
      * constrains the provider type for the action. Valid categories are limited to one
-     * of the values below. </p>
+     * of the values below.</p>
      */
     inline ActionTypeId& WithCategory(ActionCategory&& value) { SetCategory(value); return *this;}
 
     /**
-     * <p>The creator of the action being called. </p>
+     * <p>The creator of the action being called.</p>
      */
     inline const ActionOwner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The creator of the action being called. </p>
+     * <p>The creator of the action being called.</p>
      */
     inline void SetOwner(const ActionOwner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The creator of the action being called. </p>
+     * <p>The creator of the action being called.</p>
      */
     inline void SetOwner(ActionOwner&& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The creator of the action being called. </p>
+     * <p>The creator of the action being called.</p>
      */
     inline ActionTypeId& WithOwner(const ActionOwner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The creator of the action being called. </p>
+     * <p>The creator of the action being called.</p>
      */
     inline ActionTypeId& WithOwner(ActionOwner&& value) { SetOwner(value); return *this;}
 
@@ -160,37 +160,37 @@ namespace Model
     inline ActionTypeId& WithProvider(const char* value) { SetProvider(value); return *this;}
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline ActionTypeId& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline ActionTypeId& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>A string that identifies the action type. </p>
+     * <p>A string that identifies the action type.</p>
      */
     inline ActionTypeId& WithVersion(const char* value) { SetVersion(value); return *this;}
 
