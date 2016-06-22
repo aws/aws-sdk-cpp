@@ -169,7 +169,7 @@ Aws::String StringUtils::URLDecode(const char* safe)
             hex[1] = *(i + 2);
             hex[2] = 0;
             i += 2;
-            int hexAsInteger = strtol(hex, nullptr, 16);
+            auto hexAsInteger = strtol(hex, nullptr, 16);
             unescaped << (char)hexAsInteger;
         }
         else
