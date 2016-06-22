@@ -34,32 +34,18 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false; 
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md"; 
 
         // Extended description of the package contents.                                           
         description: "The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile)."; 
 
         // Copyright notice.
-        copyright: Copyright 2016;       
+        copyright: Copyright 2016;
 
-        // Tags of arbitrary text for categorizing and filtering.
-        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native }; 
-
+        tags: { AWS, Amazon, cloud, aws-sdk-cpp, native };
     };   
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
-        // This node is frequently divided by multiple condition statements or rules.
-        // Below is an example of how a typical package might be described.
-        // For the below examples, we assume that this file is in
-        //      <src_root>\contrib\coapp\
-        // and that the compiled libraries are in a semi-logical directory tree in
-        //      <src_root>\output\.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -72,48 +58,93 @@ nuget {
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-core.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-core.pdb };
         }
-        
+
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-core.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-core.pdb };
         }
-        
+
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-core.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-core.pdb };
         }
-        
+
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-core.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-core.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2015\release\aws-cpp-sdk-core.lib };
         }
-        
+
         [x64,release,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\release\aws-cpp-sdk-core.lib };
         }
-        
+
         [x64,debug,v140,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2015\debug\aws-cpp-sdk-core.lib };
         }
-        
+
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-core.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-core.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-core.pdb };
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-core.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-core.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-core.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-core.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-core.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-core.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-core.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-core.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-core.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-core.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-core.lib };
         }
     };       
     
     targets {
-        // Additional declarations to insert into consuming projects after most of the
-        // project settings. (These may NOT be modified in visual studio by a developer
-        // consuming this package.)
-        // This node is often used to set defines that are required that must be set by
-        // the consuming project in order to correctly link to the libraries in this
-        // package.  Such defines may be set either globally or only set under specific
-        // conditions.
         [dynamic]
             Defines += USE_IMPORT_EXPORT;
             
