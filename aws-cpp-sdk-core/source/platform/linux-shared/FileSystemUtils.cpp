@@ -30,9 +30,8 @@ Aws::String FileSystemUtils::GetHomeDirectory()
     static const char* HOME_DIR_ENV_VAR = "HOME";
 
     AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Checking " << HOME_DIR_ENV_VAR << " for the home directory.");
- 
-    const char* homeEnvDir = std::getenv(HOME_DIR_ENV_VAR);
-    Aws::String homeDir(homeEnvDir ? homeEnvDir : "");
+
+    Aws::String homeDir = Aws::Utils::GetEnv(HOME_DIR_ENV_VAR);
 
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
 
@@ -40,15 +39,15 @@ Aws::String FileSystemUtils::GetHomeDirectory()
     {
         AWS_LOG_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
 
-	passwd pw;
-	passwd *p_pw = nullptr;
-	char pw_buffer[4096];
-	getpwuid_r(getuid(), &pw, pw_buffer, sizeof(pw_buffer), &p_pw);
+        passwd pw;
+        passwd *p_pw = nullptr;
+        char pw_buffer[4096];
+        getpwuid_r(getuid(), &pw, pw_buffer, sizeof(pw_buffer), &p_pw);
         if(p_pw && p_pw->pw_dir)
         {
             homeDir = p_pw->pw_dir;
         }
-	
+
         AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Pulled " << homeDir << " as home directory from the OS.");
     }
 

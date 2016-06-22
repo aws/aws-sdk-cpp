@@ -22,14 +22,19 @@
     #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-#include <aws/core/utils/logging/LogMacros.h>
-
+    #include <aws/core/utils/logging/LogMacros.h>
+#else
+    // if you don't have any encryption you still need to pull in the interface definitions
+    #include <aws/core/utils/crypto/Hash.h>
+    #include <aws/core/utils/crypto/HMAC.h>
 #endif
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 
-static const char *s_allocationTag = "CryptoFactory";
+#if defined(ENABLE_BCRYPT_ENCRYPTION) || defined(ENABLE_OPENSSL_ENCRYPTION) || defined(ENABLE_COMMONCRYPTO_ENCRYPTION)
+    static const char *s_allocationTag = "CryptoFactory";
+#endif 
 
 static std::shared_ptr<HashFactory> s_MD5Factory(nullptr);
 static std::shared_ptr<HashFactory> s_Sha256Factory(nullptr);

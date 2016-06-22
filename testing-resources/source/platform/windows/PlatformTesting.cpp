@@ -1,32 +1,42 @@
 /*
   * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
 
-#include <aws/external/gtest.h>
-#include <aws/core/utils/crypto/Factories.h>
-#include <aws/core/http/HttpClientFactory.h>
-#include <aws/core/Aws.h>
-#include <aws/testing/Environment.h>
+#include <aws/testing/platform/PlatformTesting.h>
 
-int main(int argc, char** argv)
+#pragma warning(disable: 4996)
+#include <windows.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+namespace Aws
 {
-    Aws::Testing::RedirectHomeToTempIfAppropriate();
+namespace Testing
+{
 
-    Aws::SDKOptions options;
-    Aws::InitAPI(options);
-    ::testing::InitGoogleTest(&argc, argv);
-    int retVal = RUN_ALL_TESTS();
-    Aws::ShutdownAPI(options);
-    return retVal;
+int SetEnv(const char* name, const char* value, int overwrite)
+{
+    AWS_UNREFERENCED_PARAM(overwrite);
+
+    Aws::StringStream ss;
+    ss << name << "=" << value;
+    return _putenv(ss.str().c_str());
 }
+
+int UnSetEnv(const char* name)
+{
+    return SetEnv(name, "", 1);
+}
+
+} // namespace Testing
+} // namespace Aws

@@ -30,7 +30,7 @@ namespace Aws
         /**
          * Models Http methods.
          */
-        enum class AWS_CORE_API HttpMethod
+        enum class HttpMethod
         {
             HTTP_GET,
             HTTP_POST,
@@ -43,7 +43,7 @@ namespace Aws
         /**
          * Possible default http factory vended http client implementations.
          */
-        enum class AWS_CORE_API TransferLibType
+        enum class TransferLibType
         {
             DEFAULT_CLIENT,
             CURL_CLIENT,

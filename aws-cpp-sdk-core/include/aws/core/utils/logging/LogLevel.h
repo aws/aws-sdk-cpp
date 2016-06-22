@@ -29,7 +29,7 @@ namespace Aws
             /**
              * LogLevel used to control verbosity of logging system.
              */
-            enum class AWS_CORE_API LogLevel : int
+            enum class LogLevel : int
             {
                 Off = 0,
                 Fatal = 1,

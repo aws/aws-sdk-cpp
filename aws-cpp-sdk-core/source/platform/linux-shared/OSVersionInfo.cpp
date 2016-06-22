@@ -22,6 +22,34 @@ namespace Aws
 namespace Utils
 {
 
+Aws::String GetSysCommandOutput(const char* command)
+{
+    Aws::String outputStr;
+    FILE* outputStream;
+    const int maxBufferSize = 256;
+    char outputBuffer[maxBufferSize];
+
+    outputStream = popen(command, "r");
+
+    if (outputStream)
+    {
+        while (!feof(outputStream))
+        {
+            if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
+            {
+                outputStr.append(outputBuffer);
+            }
+        }
+
+        pclose(outputStream);
+
+        return StringUtils::Trim(outputStr.c_str());
+    }
+
+    return "";
+}
+
+
 Aws::String ComputeOSVersionString()
 {
     utsname name;
@@ -34,6 +62,11 @@ Aws::String ComputeOSVersionString()
     }
 
     return "non-windows/unknown";
+}
+
+Aws::String GetEnv(const char* variableName)
+{
+    return std::getenv(variableName);
 }
 
 } // namespace Utils 

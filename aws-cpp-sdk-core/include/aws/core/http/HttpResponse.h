@@ -35,7 +35,7 @@ namespace Aws
         /**
          * Enum of Http response Codes. The integer values of the response codes coorespond to the values in the RFC.
          */
-        enum AWS_CORE_API HttpResponseCode
+        enum HttpResponseCode
         {
             REQUEST_NOT_MADE = -1,
             CONTINUE = 100,

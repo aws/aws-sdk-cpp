@@ -15,6 +15,7 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/OSVersionInfo.h>
 
 #include <Userenv.h>
 
@@ -29,10 +30,9 @@ Aws::String FileSystemUtils::GetHomeDirectory()
     static const char* HOME_DIR_ENV_VAR = "USERPROFILE";
 
     AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Checking " << HOME_DIR_ENV_VAR << " for the home directory.");
-    char* homeDir = std::getenv(HOME_DIR_ENV_VAR);
-    CHAR path[MAX_PATH];
+    Aws::String homeDir = Aws::Utils::GetEnv(HOME_DIR_ENV_VAR);
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
-    if(!homeDir)
+    if(homeDir.empty())
     {
         AWS_LOG_WARN(FILE_SYSTEM_UTILS_LOG_TAG, "Home dir not stored in environment, trying to fetch manually from the OS.");
         HANDLE hToken;
@@ -40,6 +40,7 @@ Aws::String FileSystemUtils::GetHomeDirectory()
         if (OpenProcessToken(GetCurrentProcess(), TOKEN_READ, &hToken))
         {
             DWORD len = MAX_PATH;
+            CHAR path[MAX_PATH];
             if (GetUserProfileDirectoryA(hToken, path, &len))
             {                
                 homeDir = path;
@@ -50,7 +51,7 @@ Aws::String FileSystemUtils::GetHomeDirectory()
         AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Pulled " << homeDir << " as home directory from the OS.");
     }
 
-    Aws::String retVal = homeDir ? StringUtils::Trim(static_cast<const char*>(homeDir)) : "";
+    Aws::String retVal = (homeDir.size() > 0) ? StringUtils::Trim(homeDir.c_str()) : "";
 
     if (!retVal.empty())
     {

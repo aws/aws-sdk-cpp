@@ -27,12 +27,15 @@ namespace Aws
          */
         AWS_CORE_API Aws::String ComputeOSVersionString();
 
-	/**
-	 * runs a (shell) command string and returns the output; not needed on windows currently
-	 */
-#ifndef _WIN32
+        /**
+         * runs a (shell) command string and returns the output; not needed on windows currently
+         */
         AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);
-#endif // _WIN32
+
+        /**
+         * shim for getenv
+         */
+        AWS_CORE_API Aws::String GetEnv(const char* name);
 
     } //namespace Utils
 } //namespace Aws

@@ -14,22 +14,25 @@
 */
 #pragma once
 
-#ifdef _WIN32
-//disable windows complaining about max template size.
-#pragma warning (disable : 4503)
+#ifdef _MSC_VER
+    //disable windows complaining about max template size.
+    #pragma warning (disable : 4503)
 #endif
 
-#if defined (_MSC_VER)
-#pragma warning(disable : 4251)
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4251)
+    #endif // _MSC_VER
+
     #ifdef USE_IMPORT_EXPORT
       #ifdef AWS_TRANSFER_EXPORTS
         #define AWS_TRANSFER_API __declspec(dllexport)
       #else
         #define AWS_TRANSFER_API __declspec(dllimport)
-      #endif /* AWS_TRANSFER_EXPORTS */
-    #else
+      #endif // AWS_TRANSFER_EXPORTS
+    #else // USE_IMPORT_EXPORT
        #define AWS_TRANSFER_API
-    #endif //
-#else /* defined (_WIN32) */
+    #endif // USE_IMPORT_EXPORT
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_TRANSFER_API
-#endif
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

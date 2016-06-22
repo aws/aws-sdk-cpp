@@ -26,7 +26,7 @@ namespace Aws
         /**
          * Enum representing URI scheme.
          */
-        enum class AWS_CORE_API Scheme
+        enum class Scheme
         {
             HTTP,
             HTTPS

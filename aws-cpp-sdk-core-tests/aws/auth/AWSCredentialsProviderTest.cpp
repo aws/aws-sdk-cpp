@@ -18,70 +18,17 @@
 #include <aws/testing/MemoryTesting.h>
 
 #include <aws/testing/mocks/aws/auth/MockEC2MetadataClient.h>
+#include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/utils/OSVersionInfo.h>
 
 #include <stdlib.h>
 #include <thread>
 #include <fstream>
-
-#ifndef _WIN32
-    #include <sys/stat.h>
-    #include <sys/types.h>
-    #include <errno.h>
-
-    Aws::String GetEnv(const char *variableName)
-    {
-        char* envValue = std::getenv(variableName);
-        if(envValue)
-        {
-            return Aws::String(envValue);
-        }
-
-        return "";
-    }
-
-#else
-    #include <Windows.h>
-
-    void setenv(const char* name, const char* value, unsigned overwrite)
-    {
-        AWS_UNREFERENCED_PARAM(overwrite);
-        Aws::StringStream ss;
-        ss << name << "=" << value;
-        _putenv(ss.str().c_str());
-    }
-
-    void unsetenv(const char* name)
-    {
-        setenv(name, "", 1);
-    }
-
-    /*
-    using std::getenv generates a warning on windows so we use _dupenv_s instead.  The character array returned by this function is our responsibility to clean up, so rather than returning raw strings
-    that would need to be manually freed in all the client functions, just copy it into a Aws::String instead, freeing it here.
-    */
-    Aws::String GetEnv(const char *variableName)
-    {
-        char* variableValue = nullptr;
-        std::size_t valueSize = 0;
-        auto queryResult = _dupenv_s(&variableValue, &valueSize, variableName);
-
-        Aws::String result;
-        if(queryResult == 0 && variableValue != nullptr && valueSize > 0)
-        {
-            result.assign(variableValue, valueSize - 1);  // don't copy the c-string terminator byte
-            free(variableValue);
-        }
-
-        return result;
-    }
- 
-
-#endif // _WIN32
 
 static const char *AllocationTag = "AWSCredentialsProviderTest";
 
@@ -160,23 +107,23 @@ public:
     void TearDown()
     {
         for(const auto& iter : m_environment)
-	{
-	    if(iter.second.empty())
+        {
+            if(iter.second.empty())
             {
-                unsetenv(iter.first.c_str());
+                Aws::Testing::UnSetEnv(iter.first.c_str());
             }
-	    else
+            else
             {
-                setenv(iter.first.c_str(), iter.second.c_str(), 1);
+                Aws::Testing::SetEnv(iter.first.c_str(), iter.second.c_str(), 1);
             }
-	}
+        }
     }
 
     void SaveVariable(const char* variableName)
     {
-	auto variableValue = GetEnv(variableName);
-        m_environment[ Aws::String( variableName ) ] = GetEnv(variableName);
-    }	
+        auto variableValue = Aws::Utils::GetEnv(variableName);
+        m_environment[ Aws::String( variableName ) ] = Aws::Utils::GetEnv(variableName);
+    }
 
     Aws::Map<Aws::String, Aws::String> m_environment;
 };
@@ -187,11 +134,11 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
   
-    Aws::String oldValue = GetEnv("AWS_SHARED_CREDENTIALS_FILE");
-    setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = GetEnv("AWS_DEFAULT_PROFILE");
+    Aws::String oldValue = Aws::Utils::GetEnv("AWS_SHARED_CREDENTIALS_FILE");
+    Aws::Testing::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+    Aws::String oldProfileValue = Aws::Utils::GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
-    setenv("AWS_DEFAULT_PROFILE", profile, 1);
+    Aws::Testing::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[ someProfile]" << std::endl;
@@ -218,9 +165,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
 
-    setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+    Aws::Testing::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
     const char* profile = "someProfile";
-    setenv("AWS_DEFAULT_PROFILE", profile, 1);
+    Aws::Testing::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << " [ someProfile]" << std::endl;
@@ -256,9 +203,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 
     FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
-    unsetenv("AWS_ACCESS_KEY_ID");
-    unsetenv("AWS_SECRET_ACCESS_KEY");
-    unsetenv("AWS_SHARED_CREDENTIALS_FILE");
+    Aws::Testing::UnSetEnv("AWS_ACCESS_KEY_ID");
+    Aws::Testing::UnSetEnv("AWS_SECRET_ACCESS_KEY");
+    Aws::Testing::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
 
     ProfileConfigFileAWSCredentialsProvider provider;
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
@@ -273,9 +220,9 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    setenv("AWS_ACCESS_KEY_ID", "Access Key", 1);
-    setenv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
-    setenv("AWS_SESSION_TOKEN", "Session Token", 1);
+    Aws::Testing::SetEnv("AWS_ACCESS_KEY_ID", "Access Key", 1);
+    Aws::Testing::SetEnv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
+    Aws::Testing::SetEnv("AWS_SESSION_TOKEN", "Session Token", 1);
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId());
@@ -290,8 +237,8 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    unsetenv("AWS_ACCESS_KEY_ID");
-    unsetenv("AWS_SECRET_ACCESS_KEY");
+    Aws::Testing::UnSetEnv("AWS_ACCESS_KEY_ID");
+    Aws::Testing::UnSetEnv("AWS_SECRET_ACCESS_KEY");
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());

@@ -22,6 +22,33 @@ namespace Aws
 namespace Utils
 {
 
+Aws::String GetSysCommandOutput(const char* command)
+{
+    Aws::String outputStr;
+    FILE* outputStream;
+    const int maxBufferSize = 256;
+    char outputBuffer[maxBufferSize];
+
+    outputStream = popen(command, "r");
+
+    if (outputStream)
+    {
+        while (!feof(outputStream))
+        {
+            if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
+            {
+                outputStr.append(outputBuffer);
+            }
+        }
+
+        pclose(outputStream);
+
+        return StringUtils::Trim(outputStr.c_str());
+    }
+
+    return "";
+}
+
 Aws::String ComputeOSVersionString()
 {
     // regex is not allocator-aware, so technically we're breaking our memory contract here (http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3254.pdf)
@@ -39,6 +66,11 @@ Aws::String ComputeOSVersionString()
     }
 
     return Aws::String("Android/Unknown");
+}
+
+Aws::String GetEnv(const char* name)
+{
+    return std::getenv(variableName);
 }
 
 } // namespace Utils
