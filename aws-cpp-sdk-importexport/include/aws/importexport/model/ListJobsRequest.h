@@ -34,13 +34,13 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     
-    inline long GetMaxJobs() const{ return m_maxJobs; }
+    inline int GetMaxJobs() const{ return m_maxJobs; }
 
     
-    inline void SetMaxJobs(long value) { m_maxJobsHasBeenSet = true; m_maxJobs = value; }
+    inline void SetMaxJobs(int value) { m_maxJobsHasBeenSet = true; m_maxJobs = value; }
 
     
-    inline ListJobsRequest& WithMaxJobs(long value) { SetMaxJobs(value); return *this;}
+    inline ListJobsRequest& WithMaxJobs(int value) { SetMaxJobs(value); return *this;}
 
     
     inline const Aws::String& GetMarker() const{ return m_marker; }
@@ -85,7 +85,7 @@ namespace Model
     inline ListJobsRequest& WithAPIVersion(const char* value) { SetAPIVersion(value); return *this;}
 
   private:
-    long m_maxJobs;
+    int m_maxJobs;
     bool m_maxJobsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

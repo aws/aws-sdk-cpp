@@ -61,22 +61,22 @@ namespace Model
     inline DescribeSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
     
-    inline long GetStartAt() const{ return m_startAt; }
+    inline int GetStartAt() const{ return m_startAt; }
 
     
-    inline void SetStartAt(long value) { m_startAt = value; }
+    inline void SetStartAt(int value) { m_startAt = value; }
 
     
-    inline DescribeSnapshotScheduleResult& WithStartAt(long value) { SetStartAt(value); return *this;}
+    inline DescribeSnapshotScheduleResult& WithStartAt(int value) { SetStartAt(value); return *this;}
 
     
-    inline long GetRecurrenceInHours() const{ return m_recurrenceInHours; }
+    inline int GetRecurrenceInHours() const{ return m_recurrenceInHours; }
 
     
-    inline void SetRecurrenceInHours(long value) { m_recurrenceInHours = value; }
+    inline void SetRecurrenceInHours(int value) { m_recurrenceInHours = value; }
 
     
-    inline DescribeSnapshotScheduleResult& WithRecurrenceInHours(long value) { SetRecurrenceInHours(value); return *this;}
+    inline DescribeSnapshotScheduleResult& WithRecurrenceInHours(int value) { SetRecurrenceInHours(value); return *this;}
 
     
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -122,8 +122,8 @@ namespace Model
 
   private:
     Aws::String m_volumeARN;
-    long m_startAt;
-    long m_recurrenceInHours;
+    int m_startAt;
+    int m_recurrenceInHours;
     Aws::String m_description;
     Aws::String m_timezone;
   };

@@ -95,17 +95,17 @@ namespace Model
     /**
      * <p>The rule number of the entry to delete.</p>
      */
-    inline long GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const{ return m_ruleNumber; }
 
     /**
      * <p>The rule number of the entry to delete.</p>
      */
-    inline void SetRuleNumber(long value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
+    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
 
     /**
      * <p>The rule number of the entry to delete.</p>
      */
-    inline DeleteNetworkAclEntryRequest& WithRuleNumber(long value) { SetRuleNumber(value); return *this;}
+    inline DeleteNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
     /**
      * <p>Indicates whether the rule is an egress rule.</p>
@@ -127,7 +127,7 @@ namespace Model
     bool m_dryRunHasBeenSet;
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
-    long m_ruleNumber;
+    int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
     bool m_egress;
     bool m_egressHasBeenSet;

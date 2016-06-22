@@ -167,19 +167,19 @@ namespace Model
      * <p>Specifies that the number of VTL devices described be limited to the
      * specified number.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies that the number of VTL devices described be limited to the
      * specified number.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies that the number of VTL devices described be limited to the
      * specified number.</p>
      */
-    inline DescribeVTLDevicesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeVTLDevicesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_gatewayARN;
@@ -188,7 +188,7 @@ namespace Model
     bool m_vTLDeviceARNsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

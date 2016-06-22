@@ -245,32 +245,32 @@ namespace Model
     /**
      * <p>Target number of instances to run in the instance group. </p>
      */
-    inline long GetInstanceRequestCount() const{ return m_instanceRequestCount; }
+    inline int GetInstanceRequestCount() const{ return m_instanceRequestCount; }
 
     /**
      * <p>Target number of instances to run in the instance group. </p>
      */
-    inline void SetInstanceRequestCount(long value) { m_instanceRequestCountHasBeenSet = true; m_instanceRequestCount = value; }
+    inline void SetInstanceRequestCount(int value) { m_instanceRequestCountHasBeenSet = true; m_instanceRequestCount = value; }
 
     /**
      * <p>Target number of instances to run in the instance group. </p>
      */
-    inline InstanceGroupDetail& WithInstanceRequestCount(long value) { SetInstanceRequestCount(value); return *this;}
+    inline InstanceGroupDetail& WithInstanceRequestCount(int value) { SetInstanceRequestCount(value); return *this;}
 
     /**
      * <p>Actual count of running instances. </p>
      */
-    inline long GetInstanceRunningCount() const{ return m_instanceRunningCount; }
+    inline int GetInstanceRunningCount() const{ return m_instanceRunningCount; }
 
     /**
      * <p>Actual count of running instances. </p>
      */
-    inline void SetInstanceRunningCount(long value) { m_instanceRunningCountHasBeenSet = true; m_instanceRunningCount = value; }
+    inline void SetInstanceRunningCount(int value) { m_instanceRunningCountHasBeenSet = true; m_instanceRunningCount = value; }
 
     /**
      * <p>Actual count of running instances. </p>
      */
-    inline InstanceGroupDetail& WithInstanceRunningCount(long value) { SetInstanceRunningCount(value); return *this;}
+    inline InstanceGroupDetail& WithInstanceRunningCount(int value) { SetInstanceRunningCount(value); return *this;}
 
     /**
      * <p>State of instance group. The following values are deprecated: STARTING,
@@ -450,9 +450,9 @@ namespace Model
     bool m_bidPriceHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_instanceRequestCount;
+    int m_instanceRequestCount;
     bool m_instanceRequestCountHasBeenSet;
-    long m_instanceRunningCount;
+    int m_instanceRunningCount;
     bool m_instanceRunningCountHasBeenSet;
     InstanceGroupState m_state;
     bool m_stateHasBeenSet;

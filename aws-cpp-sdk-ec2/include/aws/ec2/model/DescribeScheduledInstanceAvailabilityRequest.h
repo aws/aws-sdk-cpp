@@ -117,7 +117,7 @@ namespace Model
      * minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100
      * hours.</p>
      */
-    inline long GetMinSlotDurationInHours() const{ return m_minSlotDurationInHours; }
+    inline int GetMinSlotDurationInHours() const{ return m_minSlotDurationInHours; }
 
     /**
      * <p>The minimum available duration, in hours. The minimum required duration is
@@ -125,7 +125,7 @@ namespace Model
      * minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100
      * hours.</p>
      */
-    inline void SetMinSlotDurationInHours(long value) { m_minSlotDurationInHoursHasBeenSet = true; m_minSlotDurationInHours = value; }
+    inline void SetMinSlotDurationInHours(int value) { m_minSlotDurationInHoursHasBeenSet = true; m_minSlotDurationInHours = value; }
 
     /**
      * <p>The minimum available duration, in hours. The minimum required duration is
@@ -133,25 +133,25 @@ namespace Model
      * minimum weekly schedule is 24 hours, and the minimum monthly schedule is 100
      * hours.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithMinSlotDurationInHours(long value) { SetMinSlotDurationInHours(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithMinSlotDurationInHours(int value) { SetMinSlotDurationInHours(value); return *this;}
 
     /**
      * <p>The maximum available duration, in hours. This value must be greater than
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
      */
-    inline long GetMaxSlotDurationInHours() const{ return m_maxSlotDurationInHours; }
+    inline int GetMaxSlotDurationInHours() const{ return m_maxSlotDurationInHours; }
 
     /**
      * <p>The maximum available duration, in hours. This value must be greater than
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
      */
-    inline void SetMaxSlotDurationInHours(long value) { m_maxSlotDurationInHoursHasBeenSet = true; m_maxSlotDurationInHours = value; }
+    inline void SetMaxSlotDurationInHours(int value) { m_maxSlotDurationInHoursHasBeenSet = true; m_maxSlotDurationInHours = value; }
 
     /**
      * <p>The maximum available duration, in hours. This value must be greater than
      * <code>MinSlotDurationInHours</code> and less than 1,720.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithMaxSlotDurationInHours(long value) { SetMaxSlotDurationInHours(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithMaxSlotDurationInHours(int value) { SetMaxSlotDurationInHours(value); return *this;}
 
     /**
      * <p>The token for the next set of results.</p>
@@ -193,21 +193,21 @@ namespace Model
      * between 5 and 300. The default value is 300. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 300. The default value is 300. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 300. The default value is 300. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline DescribeScheduledInstanceAvailabilityRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeScheduledInstanceAvailabilityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
@@ -293,13 +293,13 @@ namespace Model
     bool m_recurrenceHasBeenSet;
     SlotDateTimeRangeRequest m_firstSlotStartTimeRange;
     bool m_firstSlotStartTimeRangeHasBeenSet;
-    long m_minSlotDurationInHours;
+    int m_minSlotDurationInHours;
     bool m_minSlotDurationInHoursHasBeenSet;
-    long m_maxSlotDurationInHours;
+    int m_maxSlotDurationInHours;
     bool m_maxSlotDurationInHoursHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;

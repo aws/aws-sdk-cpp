@@ -121,17 +121,17 @@ namespace Model
     /**
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
-    inline long GetNetworkInterfacePort() const{ return m_networkInterfacePort; }
+    inline int GetNetworkInterfacePort() const{ return m_networkInterfacePort; }
 
     /**
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
-    inline void SetNetworkInterfacePort(long value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
+    inline void SetNetworkInterfacePort(int value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
 
     /**
      * <p>The port used to communicate with iSCSI VTL device targets.</p>
      */
-    inline DeviceiSCSIAttributes& WithNetworkInterfacePort(long value) { SetNetworkInterfacePort(value); return *this;}
+    inline DeviceiSCSIAttributes& WithNetworkInterfacePort(int value) { SetNetworkInterfacePort(value); return *this;}
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
@@ -153,7 +153,7 @@ namespace Model
     bool m_targetARNHasBeenSet;
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
-    long m_networkInterfacePort;
+    int m_networkInterfacePort;
     bool m_networkInterfacePortHasBeenSet;
     bool m_chapEnabled;
     bool m_chapEnabledHasBeenSet;

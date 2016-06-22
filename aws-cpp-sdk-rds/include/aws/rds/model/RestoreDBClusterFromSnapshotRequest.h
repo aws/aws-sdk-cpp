@@ -305,21 +305,21 @@ namespace Model
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline RestoreDBClusterFromSnapshotRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreDBClusterFromSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the DB subnet group to use for the new DB cluster.</p>
@@ -659,7 +659,7 @@ namespace Model
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;

@@ -126,7 +126,7 @@ namespace Model
      * error. You cannot specify this parameter and the host IDs parameter in the same
      * request.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -136,7 +136,7 @@ namespace Model
      * error. You cannot specify this parameter and the host IDs parameter in the same
      * request.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -146,7 +146,7 @@ namespace Model
      * error. You cannot specify this parameter and the host IDs parameter in the same
      * request.</p>
      */
-    inline DescribeHostsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeHostsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li><p><code>instance-type</code> - The
@@ -272,7 +272,7 @@ namespace Model
     bool m_hostIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;

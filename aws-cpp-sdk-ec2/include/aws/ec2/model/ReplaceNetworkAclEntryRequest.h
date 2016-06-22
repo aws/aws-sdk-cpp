@@ -98,17 +98,17 @@ namespace Model
     /**
      * <p>The rule number of the entry to replace.</p>
      */
-    inline long GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const{ return m_ruleNumber; }
 
     /**
      * <p>The rule number of the entry to replace.</p>
      */
-    inline void SetRuleNumber(long value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
+    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
 
     /**
      * <p>The rule number of the entry to replace.</p>
      */
-    inline ReplaceNetworkAclEntryRequest& WithRuleNumber(long value) { SetRuleNumber(value); return *this;}
+    inline ReplaceNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
     /**
      * <p>The IP protocol. You can specify <code>all</code> or <code>-1</code> to mean
@@ -295,7 +295,7 @@ namespace Model
     bool m_dryRunHasBeenSet;
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
-    long m_ruleNumber;
+    int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;

@@ -192,19 +192,19 @@ namespace Model
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline ReplicationInstance& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ReplicationInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>The time the replication instance was created.</p>
@@ -603,7 +603,7 @@ namespace Model
     bool m_replicationInstanceClassHasBeenSet;
     Aws::String m_replicationInstanceStatus;
     bool m_replicationInstanceStatusHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;

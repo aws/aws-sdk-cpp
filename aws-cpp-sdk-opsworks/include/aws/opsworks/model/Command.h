@@ -296,17 +296,17 @@ namespace Model
     /**
      * <p>The command exit code.</p>
      */
-    inline long GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const{ return m_exitCode; }
 
     /**
      * <p>The command exit code.</p>
      */
-    inline void SetExitCode(long value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
+    inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
      * <p>The command exit code.</p>
      */
-    inline Command& WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline Command& WithExitCode(int value) { SetExitCode(value); return *this;}
 
     /**
      * <p>The URL of the command log.</p>
@@ -435,7 +435,7 @@ namespace Model
     bool m_completedAtHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_exitCode;
+    int m_exitCode;
     bool m_exitCodeHasBeenSet;
     Aws::String m_logUrl;
     bool m_logUrlHasBeenSet;

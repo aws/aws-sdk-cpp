@@ -91,19 +91,19 @@ namespace Model
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline ReplicationPendingModifiedValues& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ReplicationPendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p> The engine version number of the replication instance. </p>
@@ -143,7 +143,7 @@ namespace Model
   private:
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;

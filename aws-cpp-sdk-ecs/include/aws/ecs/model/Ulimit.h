@@ -69,39 +69,39 @@ namespace Model
     /**
      * <p>The soft limit for the ulimit type.</p>
      */
-    inline long GetSoftLimit() const{ return m_softLimit; }
+    inline int GetSoftLimit() const{ return m_softLimit; }
 
     /**
      * <p>The soft limit for the ulimit type.</p>
      */
-    inline void SetSoftLimit(long value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
+    inline void SetSoftLimit(int value) { m_softLimitHasBeenSet = true; m_softLimit = value; }
 
     /**
      * <p>The soft limit for the ulimit type.</p>
      */
-    inline Ulimit& WithSoftLimit(long value) { SetSoftLimit(value); return *this;}
+    inline Ulimit& WithSoftLimit(int value) { SetSoftLimit(value); return *this;}
 
     /**
      * <p>The hard limit for the ulimit type.</p>
      */
-    inline long GetHardLimit() const{ return m_hardLimit; }
+    inline int GetHardLimit() const{ return m_hardLimit; }
 
     /**
      * <p>The hard limit for the ulimit type.</p>
      */
-    inline void SetHardLimit(long value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
+    inline void SetHardLimit(int value) { m_hardLimitHasBeenSet = true; m_hardLimit = value; }
 
     /**
      * <p>The hard limit for the ulimit type.</p>
      */
-    inline Ulimit& WithHardLimit(long value) { SetHardLimit(value); return *this;}
+    inline Ulimit& WithHardLimit(int value) { SetHardLimit(value); return *this;}
 
   private:
     UlimitName m_name;
     bool m_nameHasBeenSet;
-    long m_softLimit;
+    int m_softLimit;
     bool m_softLimitHasBeenSet;
-    long m_hardLimit;
+    int m_hardLimit;
     bool m_hardLimitHasBeenSet;
   };
 

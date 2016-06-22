@@ -255,7 +255,7 @@ namespace Model
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
      */
-    inline long GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+    inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
     /**
      * <p>The number of secondary private IP addresses to assign to a network
@@ -269,7 +269,7 @@ namespace Model
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
      */
-    inline void SetSecondaryPrivateIpAddressCount(long value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
+    inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
      * <p>The number of secondary private IP addresses to assign to a network
@@ -283,7 +283,7 @@ namespace Model
      * IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute
      * Cloud User Guide</i>.</p>
      */
-    inline CreateNetworkInterfaceRequest& WithSecondaryPrivateIpAddressCount(long value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+    inline CreateNetworkInterfaceRequest& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
      * <p>Checks whether you have the required permissions for the action, without
@@ -320,7 +320,7 @@ namespace Model
     bool m_groupsHasBeenSet;
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
-    long m_secondaryPrivateIpAddressCount;
+    int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

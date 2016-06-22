@@ -229,21 +229,21 @@ namespace Model
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
+    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
+    inline AssumeRoleWithWebIdentityResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
     /**
      * <p> The issuing authority of the web identity token presented. For OpenID
@@ -376,7 +376,7 @@ namespace Model
     Credentials m_credentials;
     Aws::String m_subjectFromWebIdentityToken;
     AssumedRoleUser m_assumedRoleUser;
-    long m_packedPolicySize;
+    int m_packedPolicySize;
     Aws::String m_provider;
     Aws::String m_audience;
     ResponseMetadata m_responseMetadata;

@@ -269,19 +269,19 @@ namespace Model
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline long GetNumberOfMountTargets() const{ return m_numberOfMountTargets; }
+    inline int GetNumberOfMountTargets() const{ return m_numberOfMountTargets; }
 
     /**
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline void SetNumberOfMountTargets(long value) { m_numberOfMountTargetsHasBeenSet = true; m_numberOfMountTargets = value; }
+    inline void SetNumberOfMountTargets(int value) { m_numberOfMountTargetsHasBeenSet = true; m_numberOfMountTargets = value; }
 
     /**
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline FileSystemDescription& WithNumberOfMountTargets(long value) { SetNumberOfMountTargets(value); return *this;}
+    inline FileSystemDescription& WithNumberOfMountTargets(int value) { SetNumberOfMountTargets(value); return *this;}
 
     /**
      * <p> This object provides the latest known metered size of data stored in the
@@ -366,7 +366,7 @@ namespace Model
     bool m_lifeCycleStateHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;
-    long m_numberOfMountTargets;
+    int m_numberOfMountTargets;
     bool m_numberOfMountTargetsHasBeenSet;
     FileSystemSize m_sizeInBytes;
     bool m_sizeInBytesHasBeenSet;

@@ -301,17 +301,17 @@ namespace Model
     /**
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
-    inline long GetProgress() const{ return m_progress; }
+    inline int GetProgress() const{ return m_progress; }
 
     /**
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
-    inline void SetProgress(long value) { m_progressHasBeenSet = true; m_progress = value; }
+    inline void SetProgress(int value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
      * <p>A value between 0 and 100 that indicates the progress of the activity.</p>
      */
-    inline Activity& WithProgress(long value) { SetProgress(value); return *this;}
+    inline Activity& WithProgress(int value) { SetProgress(value); return *this;}
 
     /**
      * <p>The details about the activity.</p>
@@ -365,7 +365,7 @@ namespace Model
     bool m_statusCodeHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-    long m_progress;
+    int m_progress;
     bool m_progressHasBeenSet;
     Aws::String m_details;
     bool m_detailsHasBeenSet;

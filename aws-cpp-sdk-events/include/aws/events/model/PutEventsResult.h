@@ -46,17 +46,17 @@ namespace Model
     /**
      * <p>The number of failed entries.</p>
      */
-    inline long GetFailedEntryCount() const{ return m_failedEntryCount; }
+    inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
 
     /**
      * <p>The number of failed entries.</p>
      */
-    inline void SetFailedEntryCount(long value) { m_failedEntryCount = value; }
+    inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
 
     /**
      * <p>The number of failed entries.</p>
      */
-    inline PutEventsResult& WithFailedEntryCount(long value) { SetFailedEntryCount(value); return *this;}
+    inline PutEventsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
 
     /**
      * <p>A list of successfully and unsuccessfully ingested events results. If the
@@ -115,7 +115,7 @@ namespace Model
     inline PutEventsResult& AddEntries(PutEventsResultEntry&& value) { m_entries.push_back(value); return *this; }
 
   private:
-    long m_failedEntryCount;
+    int m_failedEntryCount;
     Aws::Vector<PutEventsResultEntry> m_entries;
   };
 

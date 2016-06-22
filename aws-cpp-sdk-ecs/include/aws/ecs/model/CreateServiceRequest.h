@@ -251,19 +251,19 @@ namespace Model
      * <p>The number of instantiations of the specified task definition to place and
      * keep running on your cluster.</p>
      */
-    inline long GetDesiredCount() const{ return m_desiredCount; }
+    inline int GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
      * keep running on your cluster.</p>
      */
-    inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
+    inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
      * keep running on your cluster.</p>
      */
-    inline CreateServiceRequest& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline CreateServiceRequest& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
@@ -458,7 +458,7 @@ namespace Model
     bool m_taskDefinitionHasBeenSet;
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
-    long m_desiredCount;
+    int m_desiredCount;
     bool m_desiredCountHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

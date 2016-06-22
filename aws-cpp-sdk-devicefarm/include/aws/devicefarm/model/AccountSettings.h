@@ -88,86 +88,86 @@ namespace Model
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline const Aws::Map<DevicePlatform, long>& GetUnmeteredDevices() const{ return m_unmeteredDevices; }
+    inline const Aws::Map<DevicePlatform, int>& GetUnmeteredDevices() const{ return m_unmeteredDevices; }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline void SetUnmeteredDevices(const Aws::Map<DevicePlatform, long>& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
+    inline void SetUnmeteredDevices(const Aws::Map<DevicePlatform, int>& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline void SetUnmeteredDevices(Aws::Map<DevicePlatform, long>&& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
+    inline void SetUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices = value; }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredDevices(const Aws::Map<DevicePlatform, long>& value) { SetUnmeteredDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredDevices(const Aws::Map<DevicePlatform, int>& value) { SetUnmeteredDevices(value); return *this;}
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredDevices(Aws::Map<DevicePlatform, long>&& value) { SetUnmeteredDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredDevices(value); return *this;}
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredDevices(const DevicePlatform& key, long value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredDevices(const DevicePlatform& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
 
     /**
      * <p>Returns the unmetered devices you have purchased or want to purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredDevices(DevicePlatform&& key, long value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredDevices(DevicePlatform&& key, int value) { m_unmeteredDevicesHasBeenSet = true; m_unmeteredDevices[key] = value; return *this; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline const Aws::Map<DevicePlatform, long>& GetUnmeteredRemoteAccessDevices() const{ return m_unmeteredRemoteAccessDevices; }
+    inline const Aws::Map<DevicePlatform, int>& GetUnmeteredRemoteAccessDevices() const{ return m_unmeteredRemoteAccessDevices; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline void SetUnmeteredRemoteAccessDevices(const Aws::Map<DevicePlatform, long>& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = value; }
+    inline void SetUnmeteredRemoteAccessDevices(const Aws::Map<DevicePlatform, int>& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = value; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline void SetUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, long>&& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = value; }
+    inline void SetUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices = value; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredRemoteAccessDevices(const Aws::Map<DevicePlatform, long>& value) { SetUnmeteredRemoteAccessDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredRemoteAccessDevices(const Aws::Map<DevicePlatform, int>& value) { SetUnmeteredRemoteAccessDevices(value); return *this;}
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& WithUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, long>&& value) { SetUnmeteredRemoteAccessDevices(value); return *this;}
+    inline AccountSettings& WithUnmeteredRemoteAccessDevices(Aws::Map<DevicePlatform, int>&& value) { SetUnmeteredRemoteAccessDevices(value); return *this;}
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredRemoteAccessDevices(const DevicePlatform& key, long value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredRemoteAccessDevices(const DevicePlatform& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
 
     /**
      * <p>Returns the unmetered remote access devices you have purchased or want to
      * purchase.</p>
      */
-    inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, long value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
+    inline AccountSettings& AddUnmeteredRemoteAccessDevices(DevicePlatform&& key, int value) { m_unmeteredRemoteAccessDevicesHasBeenSet = true; m_unmeteredRemoteAccessDevices[key] = value; return *this; }
 
   private:
     Aws::String m_awsAccountNumber;
     bool m_awsAccountNumberHasBeenSet;
-    Aws::Map<DevicePlatform, long> m_unmeteredDevices;
+    Aws::Map<DevicePlatform, int> m_unmeteredDevices;
     bool m_unmeteredDevicesHasBeenSet;
-    Aws::Map<DevicePlatform, long> m_unmeteredRemoteAccessDevices;
+    Aws::Map<DevicePlatform, int> m_unmeteredRemoteAccessDevices;
     bool m_unmeteredRemoteAccessDevicesHasBeenSet;
   };
 

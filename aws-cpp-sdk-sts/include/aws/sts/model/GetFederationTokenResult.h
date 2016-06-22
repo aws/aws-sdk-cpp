@@ -140,21 +140,21 @@ namespace Model
      * service rejects policies for which the packed size is greater than 100 percent
      * of the allowed value.</p>
      */
-    inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
+    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
      * of the allowed value.</p>
      */
-    inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value indicating the size of the policy in packed form. The
      * service rejects policies for which the packed size is greater than 100 percent
      * of the allowed value.</p>
      */
-    inline GetFederationTokenResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
+    inline GetFederationTokenResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -174,7 +174,7 @@ namespace Model
   private:
     Credentials m_credentials;
     FederatedUser m_federatedUser;
-    long m_packedPolicySize;
+    int m_packedPolicySize;
     ResponseMetadata m_responseMetadata;
   };
 

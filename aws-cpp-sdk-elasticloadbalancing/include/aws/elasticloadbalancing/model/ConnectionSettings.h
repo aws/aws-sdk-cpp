@@ -47,22 +47,22 @@ namespace Model
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
      */
-    inline long GetIdleTimeout() const{ return m_idleTimeout; }
+    inline int GetIdleTimeout() const{ return m_idleTimeout; }
 
     /**
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
      */
-    inline void SetIdleTimeout(long value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
+    inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
 
     /**
      * <p>The time, in seconds, that the connection is allowed to be idle (no data has
      * been sent over the connection) before it is closed by the load balancer.</p>
      */
-    inline ConnectionSettings& WithIdleTimeout(long value) { SetIdleTimeout(value); return *this;}
+    inline ConnectionSettings& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
 
   private:
-    long m_idleTimeout;
+    int m_idleTimeout;
     bool m_idleTimeoutHasBeenSet;
   };
 

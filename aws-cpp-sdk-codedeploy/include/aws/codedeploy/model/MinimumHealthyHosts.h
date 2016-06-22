@@ -44,17 +44,17 @@ namespace Model
     /**
      * <p>The minimum healthy instance value.</p>
      */
-    inline long GetValue() const{ return m_value; }
+    inline int GetValue() const{ return m_value; }
 
     /**
      * <p>The minimum healthy instance value.</p>
      */
-    inline void SetValue(long value) { m_valueHasBeenSet = true; m_value = value; }
+    inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The minimum healthy instance value.</p>
      */
-    inline MinimumHealthyHosts& WithValue(long value) { SetValue(value); return *this;}
+    inline MinimumHealthyHosts& WithValue(int value) { SetValue(value); return *this;}
 
     /**
      * <p>The minimum healthy instance type:</p> <ul> <li>HOST_COUNT: The minimum
@@ -167,7 +167,7 @@ namespace Model
     inline MinimumHealthyHosts& WithType(MinimumHealthyHostsType&& value) { SetType(value); return *this;}
 
   private:
-    long m_value;
+    int m_value;
     bool m_valueHasBeenSet;
     MinimumHealthyHostsType m_type;
     bool m_typeHasBeenSet;

@@ -46,37 +46,37 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
-    inline long GetFrom() const{ return m_from; }
+    inline int GetFrom() const{ return m_from; }
 
     /**
      * <p>The first port in the range.</p>
      */
-    inline void SetFrom(long value) { m_fromHasBeenSet = true; m_from = value; }
+    inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
      * <p>The first port in the range.</p>
      */
-    inline PortRange& WithFrom(long value) { SetFrom(value); return *this;}
+    inline PortRange& WithFrom(int value) { SetFrom(value); return *this;}
 
     /**
      * <p>The last port in the range.</p>
      */
-    inline long GetTo() const{ return m_to; }
+    inline int GetTo() const{ return m_to; }
 
     /**
      * <p>The last port in the range.</p>
      */
-    inline void SetTo(long value) { m_toHasBeenSet = true; m_to = value; }
+    inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
      * <p>The last port in the range.</p>
      */
-    inline PortRange& WithTo(long value) { SetTo(value); return *this;}
+    inline PortRange& WithTo(int value) { SetTo(value); return *this;}
 
   private:
-    long m_from;
+    int m_from;
     bool m_fromHasBeenSet;
-    long m_to;
+    int m_to;
     bool m_toHasBeenSet;
   };
 

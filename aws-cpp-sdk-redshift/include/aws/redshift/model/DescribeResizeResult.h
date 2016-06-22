@@ -90,19 +90,19 @@ namespace Model
      * <p>The number of nodes that the cluster will have after the resize operation is
      * complete.</p>
      */
-    inline long GetTargetNumberOfNodes() const{ return m_targetNumberOfNodes; }
+    inline int GetTargetNumberOfNodes() const{ return m_targetNumberOfNodes; }
 
     /**
      * <p>The number of nodes that the cluster will have after the resize operation is
      * complete.</p>
      */
-    inline void SetTargetNumberOfNodes(long value) { m_targetNumberOfNodes = value; }
+    inline void SetTargetNumberOfNodes(int value) { m_targetNumberOfNodes = value; }
 
     /**
      * <p>The number of nodes that the cluster will have after the resize operation is
      * complete.</p>
      */
-    inline DescribeResizeResult& WithTargetNumberOfNodes(long value) { SetTargetNumberOfNodes(value); return *this;}
+    inline DescribeResizeResult& WithTargetNumberOfNodes(int value) { SetTargetNumberOfNodes(value); return *this;}
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
@@ -460,7 +460,7 @@ namespace Model
 
   private:
     Aws::String m_targetNodeType;
-    long m_targetNumberOfNodes;
+    int m_targetNumberOfNodes;
     Aws::String m_targetClusterType;
     Aws::String m_status;
     Aws::Vector<Aws::String> m_importTablesCompleted;

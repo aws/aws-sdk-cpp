@@ -82,32 +82,32 @@ namespace Model
     /**
      * The maximum number of results to be returned.
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * The maximum number of results to be returned.
      */
-    inline void SetMaxResults(long value) { m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResults = value; }
 
     /**
      * The maximum number of results to be returned.
      */
-    inline ListIdentityPoolUsageResult& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentityPoolUsageResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * Total number of identities for the identity pool.
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * Total number of identities for the identity pool.
      */
-    inline void SetCount(long value) { m_count = value; }
+    inline void SetCount(int value) { m_count = value; }
 
     /**
      * Total number of identities for the identity pool.
      */
-    inline ListIdentityPoolUsageResult& WithCount(long value) { SetCount(value); return *this;}
+    inline ListIdentityPoolUsageResult& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -146,8 +146,8 @@ namespace Model
 
   private:
     Aws::Vector<IdentityPoolUsage> m_identityPoolUsages;
-    long m_maxResults;
-    long m_count;
+    int m_maxResults;
+    int m_count;
     Aws::String m_nextToken;
   };
 

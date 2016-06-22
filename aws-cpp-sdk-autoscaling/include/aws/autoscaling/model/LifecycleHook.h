@@ -330,7 +330,7 @@ namespace Model
      * Auto Scaling performs the default action. You can prevent the lifecycle hook
      * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
-    inline long GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+    inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
@@ -338,7 +338,7 @@ namespace Model
      * Auto Scaling performs the default action. You can prevent the lifecycle hook
      * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
-    inline void SetHeartbeatTimeout(long value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
+    inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
@@ -346,28 +346,28 @@ namespace Model
      * Auto Scaling performs the default action. You can prevent the lifecycle hook
      * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
-    inline LifecycleHook& WithHeartbeatTimeout(long value) { SetHeartbeatTimeout(value); return *this;}
+    inline LifecycleHook& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
      * 172800 seconds (48 hours).</p>
      */
-    inline long GetGlobalTimeout() const{ return m_globalTimeout; }
+    inline int GetGlobalTimeout() const{ return m_globalTimeout; }
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
      * 172800 seconds (48 hours).</p>
      */
-    inline void SetGlobalTimeout(long value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
+    inline void SetGlobalTimeout(int value) { m_globalTimeoutHasBeenSet = true; m_globalTimeout = value; }
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
      * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The default is
      * 172800 seconds (48 hours).</p>
      */
-    inline LifecycleHook& WithGlobalTimeout(long value) { SetGlobalTimeout(value); return *this;}
+    inline LifecycleHook& WithGlobalTimeout(int value) { SetGlobalTimeout(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -438,9 +438,9 @@ namespace Model
     bool m_roleARNHasBeenSet;
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet;
-    long m_heartbeatTimeout;
+    int m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
-    long m_globalTimeout;
+    int m_globalTimeout;
     bool m_globalTimeoutHasBeenSet;
     Aws::String m_defaultResult;
     bool m_defaultResultHasBeenSet;

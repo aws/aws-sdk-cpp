@@ -351,19 +351,19 @@ namespace Model
      * <p>The AMI launch index, which can be used to find this instance in the launch
      * group.</p>
      */
-    inline long GetAmiLaunchIndex() const{ return m_amiLaunchIndex; }
+    inline int GetAmiLaunchIndex() const{ return m_amiLaunchIndex; }
 
     /**
      * <p>The AMI launch index, which can be used to find this instance in the launch
      * group.</p>
      */
-    inline void SetAmiLaunchIndex(long value) { m_amiLaunchIndexHasBeenSet = true; m_amiLaunchIndex = value; }
+    inline void SetAmiLaunchIndex(int value) { m_amiLaunchIndexHasBeenSet = true; m_amiLaunchIndex = value; }
 
     /**
      * <p>The AMI launch index, which can be used to find this instance in the launch
      * group.</p>
      */
-    inline Instance& WithAmiLaunchIndex(long value) { SetAmiLaunchIndex(value); return *this;}
+    inline Instance& WithAmiLaunchIndex(int value) { SetAmiLaunchIndex(value); return *this;}
 
     /**
      * <p>The product codes attached to this instance, if applicable.</p>
@@ -1284,7 +1284,7 @@ namespace Model
     bool m_stateTransitionReasonHasBeenSet;
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
-    long m_amiLaunchIndex;
+    int m_amiLaunchIndex;
     bool m_amiLaunchIndexHasBeenSet;
     Aws::Vector<ProductCode> m_productCodes;
     bool m_productCodesHasBeenSet;

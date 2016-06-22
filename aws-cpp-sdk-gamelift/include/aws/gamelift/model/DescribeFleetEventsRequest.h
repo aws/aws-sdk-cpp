@@ -155,19 +155,19 @@ namespace Model
      * <p>Maximum number of results to return. You can use this parameter with
      * <i>NextToken</i> to get results as a set of sequential pages.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Maximum number of results to return. You can use this parameter with
      * <i>NextToken</i> to get results as a set of sequential pages.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Maximum number of results to return. You can use this parameter with
      * <i>NextToken</i> to get results as a set of sequential pages.</p>
      */
-    inline DescribeFleetEventsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeFleetEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>Token indicating the start of the next sequential page of results. Use the
@@ -225,7 +225,7 @@ namespace Model
     bool m_startTimeHasBeenSet;
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

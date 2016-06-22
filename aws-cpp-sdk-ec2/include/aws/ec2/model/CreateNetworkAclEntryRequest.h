@@ -100,21 +100,21 @@ namespace Model
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
      * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
-    inline long GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const{ return m_ruleNumber; }
 
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
      * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
-    inline void SetRuleNumber(long value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
+    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
 
     /**
      * <p>The rule number for the entry (for example, 100). ACL entries are processed
      * in ascending order by rule number.</p> <p>Constraints: Positive integer from 1
      * to 32766. The range 32767 to 65535 is reserved for internal use. </p>
      */
-    inline CreateNetworkAclEntryRequest& WithRuleNumber(long value) { SetRuleNumber(value); return *this;}
+    inline CreateNetworkAclEntryRequest& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
     /**
      * <p>The protocol. A value of -1 means all protocols.</p>
@@ -296,7 +296,7 @@ namespace Model
     bool m_dryRunHasBeenSet;
     Aws::String m_networkAclId;
     bool m_networkAclIdHasBeenSet;
-    long m_ruleNumber;
+    int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;

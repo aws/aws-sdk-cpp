@@ -270,19 +270,19 @@ namespace Model
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline long GetNumberOfMountTargets() const{ return m_numberOfMountTargets; }
+    inline int GetNumberOfMountTargets() const{ return m_numberOfMountTargets; }
 
     /**
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline void SetNumberOfMountTargets(long value) { m_numberOfMountTargets = value; }
+    inline void SetNumberOfMountTargets(int value) { m_numberOfMountTargets = value; }
 
     /**
      * <p>The current number of mount targets (see <a>CreateMountTarget</a>) the file
      * system has.</p>
      */
-    inline CreateFileSystemResult& WithNumberOfMountTargets(long value) { SetNumberOfMountTargets(value); return *this;}
+    inline CreateFileSystemResult& WithNumberOfMountTargets(int value) { SetNumberOfMountTargets(value); return *this;}
 
     /**
      * <p> This object provides the latest known metered size of data stored in the
@@ -361,7 +361,7 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
     LifeCycleState m_lifeCycleState;
     Aws::String m_name;
-    long m_numberOfMountTargets;
+    int m_numberOfMountTargets;
     FileSystemSize m_sizeInBytes;
   };
 

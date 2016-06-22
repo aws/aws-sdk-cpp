@@ -43,32 +43,32 @@ namespace Model
     /**
      * <p>The maximum number of cloud directories allowed in the region.</p>
      */
-    inline long GetCloudOnlyDirectoriesLimit() const{ return m_cloudOnlyDirectoriesLimit; }
+    inline int GetCloudOnlyDirectoriesLimit() const{ return m_cloudOnlyDirectoriesLimit; }
 
     /**
      * <p>The maximum number of cloud directories allowed in the region.</p>
      */
-    inline void SetCloudOnlyDirectoriesLimit(long value) { m_cloudOnlyDirectoriesLimitHasBeenSet = true; m_cloudOnlyDirectoriesLimit = value; }
+    inline void SetCloudOnlyDirectoriesLimit(int value) { m_cloudOnlyDirectoriesLimitHasBeenSet = true; m_cloudOnlyDirectoriesLimit = value; }
 
     /**
      * <p>The maximum number of cloud directories allowed in the region.</p>
      */
-    inline DirectoryLimits& WithCloudOnlyDirectoriesLimit(long value) { SetCloudOnlyDirectoriesLimit(value); return *this;}
+    inline DirectoryLimits& WithCloudOnlyDirectoriesLimit(int value) { SetCloudOnlyDirectoriesLimit(value); return *this;}
 
     /**
      * <p>The current number of cloud directories in the region.</p>
      */
-    inline long GetCloudOnlyDirectoriesCurrentCount() const{ return m_cloudOnlyDirectoriesCurrentCount; }
+    inline int GetCloudOnlyDirectoriesCurrentCount() const{ return m_cloudOnlyDirectoriesCurrentCount; }
 
     /**
      * <p>The current number of cloud directories in the region.</p>
      */
-    inline void SetCloudOnlyDirectoriesCurrentCount(long value) { m_cloudOnlyDirectoriesCurrentCountHasBeenSet = true; m_cloudOnlyDirectoriesCurrentCount = value; }
+    inline void SetCloudOnlyDirectoriesCurrentCount(int value) { m_cloudOnlyDirectoriesCurrentCountHasBeenSet = true; m_cloudOnlyDirectoriesCurrentCount = value; }
 
     /**
      * <p>The current number of cloud directories in the region.</p>
      */
-    inline DirectoryLimits& WithCloudOnlyDirectoriesCurrentCount(long value) { SetCloudOnlyDirectoriesCurrentCount(value); return *this;}
+    inline DirectoryLimits& WithCloudOnlyDirectoriesCurrentCount(int value) { SetCloudOnlyDirectoriesCurrentCount(value); return *this;}
 
     /**
      * <p>Indicates if the cloud directory limit has been reached.</p>
@@ -88,32 +88,32 @@ namespace Model
     /**
      * The maximum number of Microsoft AD directories allowed in the region.
      */
-    inline long GetCloudOnlyMicrosoftADLimit() const{ return m_cloudOnlyMicrosoftADLimit; }
+    inline int GetCloudOnlyMicrosoftADLimit() const{ return m_cloudOnlyMicrosoftADLimit; }
 
     /**
      * The maximum number of Microsoft AD directories allowed in the region.
      */
-    inline void SetCloudOnlyMicrosoftADLimit(long value) { m_cloudOnlyMicrosoftADLimitHasBeenSet = true; m_cloudOnlyMicrosoftADLimit = value; }
+    inline void SetCloudOnlyMicrosoftADLimit(int value) { m_cloudOnlyMicrosoftADLimitHasBeenSet = true; m_cloudOnlyMicrosoftADLimit = value; }
 
     /**
      * The maximum number of Microsoft AD directories allowed in the region.
      */
-    inline DirectoryLimits& WithCloudOnlyMicrosoftADLimit(long value) { SetCloudOnlyMicrosoftADLimit(value); return *this;}
+    inline DirectoryLimits& WithCloudOnlyMicrosoftADLimit(int value) { SetCloudOnlyMicrosoftADLimit(value); return *this;}
 
     /**
      * The current number of Microsoft AD directories in the region.
      */
-    inline long GetCloudOnlyMicrosoftADCurrentCount() const{ return m_cloudOnlyMicrosoftADCurrentCount; }
+    inline int GetCloudOnlyMicrosoftADCurrentCount() const{ return m_cloudOnlyMicrosoftADCurrentCount; }
 
     /**
      * The current number of Microsoft AD directories in the region.
      */
-    inline void SetCloudOnlyMicrosoftADCurrentCount(long value) { m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = true; m_cloudOnlyMicrosoftADCurrentCount = value; }
+    inline void SetCloudOnlyMicrosoftADCurrentCount(int value) { m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = true; m_cloudOnlyMicrosoftADCurrentCount = value; }
 
     /**
      * The current number of Microsoft AD directories in the region.
      */
-    inline DirectoryLimits& WithCloudOnlyMicrosoftADCurrentCount(long value) { SetCloudOnlyMicrosoftADCurrentCount(value); return *this;}
+    inline DirectoryLimits& WithCloudOnlyMicrosoftADCurrentCount(int value) { SetCloudOnlyMicrosoftADCurrentCount(value); return *this;}
 
     /**
      * Indicates if the Microsoft AD directory limit has been reached.
@@ -133,32 +133,32 @@ namespace Model
     /**
      * <p>The maximum number of connected directories allowed in the region.</p>
      */
-    inline long GetConnectedDirectoriesLimit() const{ return m_connectedDirectoriesLimit; }
+    inline int GetConnectedDirectoriesLimit() const{ return m_connectedDirectoriesLimit; }
 
     /**
      * <p>The maximum number of connected directories allowed in the region.</p>
      */
-    inline void SetConnectedDirectoriesLimit(long value) { m_connectedDirectoriesLimitHasBeenSet = true; m_connectedDirectoriesLimit = value; }
+    inline void SetConnectedDirectoriesLimit(int value) { m_connectedDirectoriesLimitHasBeenSet = true; m_connectedDirectoriesLimit = value; }
 
     /**
      * <p>The maximum number of connected directories allowed in the region.</p>
      */
-    inline DirectoryLimits& WithConnectedDirectoriesLimit(long value) { SetConnectedDirectoriesLimit(value); return *this;}
+    inline DirectoryLimits& WithConnectedDirectoriesLimit(int value) { SetConnectedDirectoriesLimit(value); return *this;}
 
     /**
      * <p>The current number of connected directories in the region.</p>
      */
-    inline long GetConnectedDirectoriesCurrentCount() const{ return m_connectedDirectoriesCurrentCount; }
+    inline int GetConnectedDirectoriesCurrentCount() const{ return m_connectedDirectoriesCurrentCount; }
 
     /**
      * <p>The current number of connected directories in the region.</p>
      */
-    inline void SetConnectedDirectoriesCurrentCount(long value) { m_connectedDirectoriesCurrentCountHasBeenSet = true; m_connectedDirectoriesCurrentCount = value; }
+    inline void SetConnectedDirectoriesCurrentCount(int value) { m_connectedDirectoriesCurrentCountHasBeenSet = true; m_connectedDirectoriesCurrentCount = value; }
 
     /**
      * <p>The current number of connected directories in the region.</p>
      */
-    inline DirectoryLimits& WithConnectedDirectoriesCurrentCount(long value) { SetConnectedDirectoriesCurrentCount(value); return *this;}
+    inline DirectoryLimits& WithConnectedDirectoriesCurrentCount(int value) { SetConnectedDirectoriesCurrentCount(value); return *this;}
 
     /**
      * <p>Indicates if the connected directory limit has been reached.</p>
@@ -176,21 +176,21 @@ namespace Model
     inline DirectoryLimits& WithConnectedDirectoriesLimitReached(bool value) { SetConnectedDirectoriesLimitReached(value); return *this;}
 
   private:
-    long m_cloudOnlyDirectoriesLimit;
+    int m_cloudOnlyDirectoriesLimit;
     bool m_cloudOnlyDirectoriesLimitHasBeenSet;
-    long m_cloudOnlyDirectoriesCurrentCount;
+    int m_cloudOnlyDirectoriesCurrentCount;
     bool m_cloudOnlyDirectoriesCurrentCountHasBeenSet;
     bool m_cloudOnlyDirectoriesLimitReached;
     bool m_cloudOnlyDirectoriesLimitReachedHasBeenSet;
-    long m_cloudOnlyMicrosoftADLimit;
+    int m_cloudOnlyMicrosoftADLimit;
     bool m_cloudOnlyMicrosoftADLimitHasBeenSet;
-    long m_cloudOnlyMicrosoftADCurrentCount;
+    int m_cloudOnlyMicrosoftADCurrentCount;
     bool m_cloudOnlyMicrosoftADCurrentCountHasBeenSet;
     bool m_cloudOnlyMicrosoftADLimitReached;
     bool m_cloudOnlyMicrosoftADLimitReachedHasBeenSet;
-    long m_connectedDirectoriesLimit;
+    int m_connectedDirectoriesLimit;
     bool m_connectedDirectoriesLimitHasBeenSet;
-    long m_connectedDirectoriesCurrentCount;
+    int m_connectedDirectoriesCurrentCount;
     bool m_connectedDirectoriesCurrentCountHasBeenSet;
     bool m_connectedDirectoriesLimitReached;
     bool m_connectedDirectoriesLimitReachedHasBeenSet;

@@ -41,7 +41,7 @@ namespace Model
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
@@ -50,7 +50,7 @@ namespace Model
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
@@ -59,7 +59,7 @@ namespace Model
      * is optional. If you include a value, it must be between 1 and 100, inclusive. If
      * you do not include a value, it defaults to 50.</p>
      */
-    inline ListRetirableGrantsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListRetirableGrantsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
@@ -202,7 +202,7 @@ namespace Model
     inline ListRetirableGrantsRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
 
   private:
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

@@ -165,21 +165,21 @@ namespace Model
      * between 5 and 300. The default value is 100. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 300. The default value is 100. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. This value can be
      * between 5 and 300. The default value is 100. To retrieve the remaining results,
      * make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline DescribeScheduledInstancesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeScheduledInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p><code>availability-zone</code> - The
@@ -267,7 +267,7 @@ namespace Model
     bool m_slotStartTimeRangeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;

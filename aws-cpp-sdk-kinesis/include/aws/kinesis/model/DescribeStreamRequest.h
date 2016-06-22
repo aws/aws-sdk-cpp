@@ -73,17 +73,17 @@ namespace Model
     /**
      * <p>The maximum number of shards to return.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of shards to return.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of shards to return.</p>
      */
-    inline DescribeStreamRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>The shard ID of the shard to start with.</p>
@@ -123,7 +123,7 @@ namespace Model
   private:
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_exclusiveStartShardId;
     bool m_exclusiveStartShardIdHasBeenSet;

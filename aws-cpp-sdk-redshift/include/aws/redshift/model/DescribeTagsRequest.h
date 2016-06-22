@@ -181,7 +181,7 @@ namespace Model
      * can retrieve the next set of records by retrying the command with the returned
      * <code>marker</code> value. </p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number or response records to return in each call. If the number
@@ -190,7 +190,7 @@ namespace Model
      * can retrieve the next set of records by retrying the command with the returned
      * <code>marker</code> value. </p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number or response records to return in each call. If the number
@@ -199,7 +199,7 @@ namespace Model
      * can retrieve the next set of records by retrying the command with the returned
      * <code>marker</code> value. </p>
      */
-    inline DescribeTagsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeTagsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> A value that indicates the starting point for the next set of response
@@ -436,7 +436,7 @@ namespace Model
     bool m_resourceNameHasBeenSet;
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

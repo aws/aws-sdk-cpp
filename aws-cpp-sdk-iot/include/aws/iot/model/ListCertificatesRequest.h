@@ -42,17 +42,17 @@ namespace Model
     /**
      * <p>The result page size.</p>
      */
-    inline long GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The result page size.</p>
      */
-    inline void SetPageSize(long value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
+    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The result page size.</p>
      */
-    inline ListCertificatesRequest& WithPageSize(long value) { SetPageSize(value); return *this;}
+    inline ListCertificatesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -108,7 +108,7 @@ namespace Model
     inline ListCertificatesRequest& WithAscendingOrder(bool value) { SetAscendingOrder(value); return *this;}
 
   private:
-    long m_pageSize;
+    int m_pageSize;
     bool m_pageSizeHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

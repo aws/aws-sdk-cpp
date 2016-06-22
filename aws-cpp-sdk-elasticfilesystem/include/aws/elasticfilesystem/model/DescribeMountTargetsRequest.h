@@ -42,19 +42,19 @@ namespace Model
      * <p>Optional. Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional. Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional. Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
-    inline DescribeMountTargetsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline DescribeMountTargetsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>Optional. String. Opaque pagination token returned from a previous
@@ -204,7 +204,7 @@ namespace Model
     inline DescribeMountTargetsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
   private:
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

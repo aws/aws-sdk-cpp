@@ -46,19 +46,19 @@ namespace Model
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
      */
-    inline long GetDecommissionTimeout() const{ return m_decommissionTimeout; }
+    inline int GetDecommissionTimeout() const{ return m_decommissionTimeout; }
 
     /**
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
      */
-    inline void SetDecommissionTimeout(long value) { m_decommissionTimeoutHasBeenSet = true; m_decommissionTimeout = value; }
+    inline void SetDecommissionTimeout(int value) { m_decommissionTimeoutHasBeenSet = true; m_decommissionTimeout = value; }
 
     /**
      * <p>The desired timeout for decommissioning an instance. Overrides the default
      * YARN decommissioning timeout.</p>
      */
-    inline ShrinkPolicy& WithDecommissionTimeout(long value) { SetDecommissionTimeout(value); return *this;}
+    inline ShrinkPolicy& WithDecommissionTimeout(int value) { SetDecommissionTimeout(value); return *this;}
 
     /**
      * <p>Custom policy for requesting termination protection or termination of
@@ -91,7 +91,7 @@ namespace Model
     inline ShrinkPolicy& WithInstanceResizePolicy(InstanceResizePolicy&& value) { SetInstanceResizePolicy(value); return *this;}
 
   private:
-    long m_decommissionTimeout;
+    int m_decommissionTimeout;
     bool m_decommissionTimeoutHasBeenSet;
     InstanceResizePolicy m_instanceResizePolicy;
     bool m_instanceResizePolicyHasBeenSet;

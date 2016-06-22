@@ -745,7 +745,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
      * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic node group
@@ -754,7 +754,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
      * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic node group
@@ -763,7 +763,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <p> <b>Important</b> If the value
      * of SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      */
-    inline ModifyReplicationGroupRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline ModifyReplicationGroupRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
@@ -906,7 +906,7 @@ namespace Model
     bool m_engineVersionHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

@@ -131,21 +131,21 @@ namespace Model
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline long GetPackedPolicySize() const{ return m_packedPolicySize; }
+    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline void SetPackedPolicySize(long value) { m_packedPolicySize = value; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
 
     /**
      * <p>A percentage value that indicates the size of the policy in packed form. The
      * service rejects any policy with a packed size greater than 100 percent, which
      * means the policy exceeded the allowed space.</p>
      */
-    inline AssumeRoleWithSAMLResult& WithPackedPolicySize(long value) { SetPackedPolicySize(value); return *this;}
+    inline AssumeRoleWithSAMLResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 
     /**
      * <p>The value of the <code>NameID</code> element in the <code>Subject</code>
@@ -445,7 +445,7 @@ namespace Model
   private:
     Credentials m_credentials;
     AssumedRoleUser m_assumedRoleUser;
-    long m_packedPolicySize;
+    int m_packedPolicySize;
     Aws::String m_subject;
     Aws::String m_subjectType;
     Aws::String m_issuer;

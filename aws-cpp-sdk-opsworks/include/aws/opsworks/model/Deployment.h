@@ -221,17 +221,17 @@ namespace Model
     /**
      * <p>The deployment duration.</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The deployment duration.</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The deployment duration.</p>
      */
-    inline Deployment& WithDuration(long value) { SetDuration(value); return *this;}
+    inline Deployment& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>The user's IAM ARN.</p>
@@ -488,7 +488,7 @@ namespace Model
     bool m_createdAtHasBeenSet;
     Aws::String m_completedAt;
     bool m_completedAtHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     Aws::String m_iamUserArn;
     bool m_iamUserArnHasBeenSet;

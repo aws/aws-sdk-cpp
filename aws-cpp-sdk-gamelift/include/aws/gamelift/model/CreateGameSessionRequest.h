@@ -125,19 +125,19 @@ namespace Model
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline long GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline void SetMaximumPlayerSessionCount(long value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
+    inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(long value) { SetMaximumPlayerSessionCount(value); return *this;}
+    inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
     /**
      * <p>Descriptive label associated with this game session. Session names do not
@@ -228,7 +228,7 @@ namespace Model
     bool m_fleetIdHasBeenSet;
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
-    long m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;

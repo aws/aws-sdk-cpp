@@ -121,17 +121,17 @@ namespace Model
     /**
      * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of Amazon EC2 instances used to execute the job flow.</p>
      */
-    inline JobFlowInstancesConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline JobFlowInstancesConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>Configuration for the job flow's instance groups.</p>
@@ -611,7 +611,7 @@ namespace Model
     bool m_masterInstanceTypeHasBeenSet;
     Aws::String m_slaveInstanceType;
     bool m_slaveInstanceTypeHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;

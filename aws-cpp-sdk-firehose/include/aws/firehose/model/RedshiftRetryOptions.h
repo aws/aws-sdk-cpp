@@ -48,7 +48,7 @@ namespace Model
      * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
      * takes longer than the current value.</p>
      */
-    inline long GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
      * <p>The length of time during which Firehose retries delivery after a failure,
@@ -57,7 +57,7 @@ namespace Model
      * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
      * takes longer than the current value.</p>
      */
-    inline void SetDurationInSeconds(long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
+    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
      * <p>The length of time during which Firehose retries delivery after a failure,
@@ -66,10 +66,10 @@ namespace Model
      * <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt
      * takes longer than the current value.</p>
      */
-    inline RedshiftRetryOptions& WithDurationInSeconds(long value) { SetDurationInSeconds(value); return *this;}
+    inline RedshiftRetryOptions& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 
   private:
-    long m_durationInSeconds;
+    int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
   };
 

@@ -548,17 +548,17 @@ namespace Model
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
-    inline long GetEstimatedNumberOfUsers() const{ return m_estimatedNumberOfUsers; }
+    inline int GetEstimatedNumberOfUsers() const{ return m_estimatedNumberOfUsers; }
 
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
-    inline void SetEstimatedNumberOfUsers(long value) { m_estimatedNumberOfUsersHasBeenSet = true; m_estimatedNumberOfUsers = value; }
+    inline void SetEstimatedNumberOfUsers(int value) { m_estimatedNumberOfUsersHasBeenSet = true; m_estimatedNumberOfUsers = value; }
 
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
-    inline UserPoolType& WithEstimatedNumberOfUsers(long value) { SetEstimatedNumberOfUsers(value); return *this;}
+    inline UserPoolType& WithEstimatedNumberOfUsers(int value) { SetEstimatedNumberOfUsers(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -591,7 +591,7 @@ namespace Model
     bool m_smsAuthenticationMessageHasBeenSet;
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
-    long m_estimatedNumberOfUsers;
+    int m_estimatedNumberOfUsers;
     bool m_estimatedNumberOfUsersHasBeenSet;
   };
 

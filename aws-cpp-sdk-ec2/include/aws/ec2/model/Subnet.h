@@ -181,19 +181,19 @@ namespace Model
      * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
      * for any stopped instances are considered unavailable.</p>
      */
-    inline long GetAvailableIpAddressCount() const{ return m_availableIpAddressCount; }
+    inline int GetAvailableIpAddressCount() const{ return m_availableIpAddressCount; }
 
     /**
      * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
      * for any stopped instances are considered unavailable.</p>
      */
-    inline void SetAvailableIpAddressCount(long value) { m_availableIpAddressCountHasBeenSet = true; m_availableIpAddressCount = value; }
+    inline void SetAvailableIpAddressCount(int value) { m_availableIpAddressCountHasBeenSet = true; m_availableIpAddressCount = value; }
 
     /**
      * <p>The number of unused IP addresses in the subnet. Note that the IP addresses
      * for any stopped instances are considered unavailable.</p>
      */
-    inline Subnet& WithAvailableIpAddressCount(long value) { SetAvailableIpAddressCount(value); return *this;}
+    inline Subnet& WithAvailableIpAddressCount(int value) { SetAvailableIpAddressCount(value); return *this;}
 
     /**
      * <p>The Availability Zone of the subnet.</p>
@@ -307,7 +307,7 @@ namespace Model
     bool m_vpcIdHasBeenSet;
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;
-    long m_availableIpAddressCount;
+    int m_availableIpAddressCount;
     bool m_availableIpAddressCountHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;

@@ -226,53 +226,53 @@ namespace Model
     /**
      * Part number after which listing begins.
      */
-    inline long GetPartNumberMarker() const{ return m_partNumberMarker; }
+    inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
      * Part number after which listing begins.
      */
-    inline void SetPartNumberMarker(long value) { m_partNumberMarker = value; }
+    inline void SetPartNumberMarker(int value) { m_partNumberMarker = value; }
 
     /**
      * Part number after which listing begins.
      */
-    inline ListPartsResult& WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
+    inline ListPartsResult& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 
     /**
      * When a list is truncated, this element specifies the last part in the list, as
      * well as the value to use for the part-number-marker request parameter in a
      * subsequent request.
      */
-    inline long GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
+    inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
 
     /**
      * When a list is truncated, this element specifies the last part in the list, as
      * well as the value to use for the part-number-marker request parameter in a
      * subsequent request.
      */
-    inline void SetNextPartNumberMarker(long value) { m_nextPartNumberMarker = value; }
+    inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarker = value; }
 
     /**
      * When a list is truncated, this element specifies the last part in the list, as
      * well as the value to use for the part-number-marker request parameter in a
      * subsequent request.
      */
-    inline ListPartsResult& WithNextPartNumberMarker(long value) { SetNextPartNumberMarker(value); return *this;}
+    inline ListPartsResult& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
 
     /**
      * Maximum number of parts that were allowed in the response.
      */
-    inline long GetMaxParts() const{ return m_maxParts; }
+    inline int GetMaxParts() const{ return m_maxParts; }
 
     /**
      * Maximum number of parts that were allowed in the response.
      */
-    inline void SetMaxParts(long value) { m_maxParts = value; }
+    inline void SetMaxParts(int value) { m_maxParts = value; }
 
     /**
      * Maximum number of parts that were allowed in the response.
      */
-    inline ListPartsResult& WithMaxParts(long value) { SetMaxParts(value); return *this;}
+    inline ListPartsResult& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
     /**
      * Indicates whether the returned list of parts is truncated.
@@ -396,9 +396,9 @@ namespace Model
     Aws::String m_bucket;
     Aws::String m_key;
     Aws::String m_uploadId;
-    long m_partNumberMarker;
-    long m_nextPartNumberMarker;
-    long m_maxParts;
+    int m_partNumberMarker;
+    int m_nextPartNumberMarker;
+    int m_maxParts;
     bool m_isTruncated;
     Aws::Vector<Part> m_parts;
     Initiator m_initiator;

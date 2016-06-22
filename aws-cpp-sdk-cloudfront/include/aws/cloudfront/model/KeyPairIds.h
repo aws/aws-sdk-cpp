@@ -47,17 +47,17 @@ namespace Model
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.
      */
-    inline KeyPairIds& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline KeyPairIds& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * A complex type that lists the active CloudFront key pairs, if any, that are
@@ -108,7 +108,7 @@ namespace Model
     inline KeyPairIds& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;

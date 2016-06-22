@@ -78,24 +78,24 @@ namespace Model
      * Part number that identifies the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline long GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
      * Part number that identifies the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline void SetPartNumber(long value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
      * Part number that identifies the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline CompletedPart& WithPartNumber(long value) { SetPartNumber(value); return *this;}
+    inline CompletedPart& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
   private:
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    long m_partNumber;
+    int m_partNumber;
     bool m_partNumberHasBeenSet;
   };
 

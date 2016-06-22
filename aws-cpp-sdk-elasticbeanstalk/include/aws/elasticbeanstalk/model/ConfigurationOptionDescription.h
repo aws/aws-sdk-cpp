@@ -393,55 +393,55 @@ namespace Model
      * <p> If specified, the configuration option must be a numeric value greater than
      * this value. </p>
      */
-    inline long GetMinValue() const{ return m_minValue; }
+    inline int GetMinValue() const{ return m_minValue; }
 
     /**
      * <p> If specified, the configuration option must be a numeric value greater than
      * this value. </p>
      */
-    inline void SetMinValue(long value) { m_minValueHasBeenSet = true; m_minValue = value; }
+    inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
      * <p> If specified, the configuration option must be a numeric value greater than
      * this value. </p>
      */
-    inline ConfigurationOptionDescription& WithMinValue(long value) { SetMinValue(value); return *this;}
+    inline ConfigurationOptionDescription& WithMinValue(int value) { SetMinValue(value); return *this;}
 
     /**
      * <p> If specified, the configuration option must be a numeric value less than
      * this value. </p>
      */
-    inline long GetMaxValue() const{ return m_maxValue; }
+    inline int GetMaxValue() const{ return m_maxValue; }
 
     /**
      * <p> If specified, the configuration option must be a numeric value less than
      * this value. </p>
      */
-    inline void SetMaxValue(long value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
+    inline void SetMaxValue(int value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
 
     /**
      * <p> If specified, the configuration option must be a numeric value less than
      * this value. </p>
      */
-    inline ConfigurationOptionDescription& WithMaxValue(long value) { SetMaxValue(value); return *this;}
+    inline ConfigurationOptionDescription& WithMaxValue(int value) { SetMaxValue(value); return *this;}
 
     /**
      * <p> If specified, the configuration option must be a string value no longer than
      * this value. </p>
      */
-    inline long GetMaxLength() const{ return m_maxLength; }
+    inline int GetMaxLength() const{ return m_maxLength; }
 
     /**
      * <p> If specified, the configuration option must be a string value no longer than
      * this value. </p>
      */
-    inline void SetMaxLength(long value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
+    inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
 
     /**
      * <p> If specified, the configuration option must be a string value no longer than
      * this value. </p>
      */
-    inline ConfigurationOptionDescription& WithMaxLength(long value) { SetMaxLength(value); return *this;}
+    inline ConfigurationOptionDescription& WithMaxLength(int value) { SetMaxLength(value); return *this;}
 
     /**
      * <p> If specified, the configuration option must be a string value that satisfies
@@ -488,11 +488,11 @@ namespace Model
     bool m_valueTypeHasBeenSet;
     Aws::Vector<Aws::String> m_valueOptions;
     bool m_valueOptionsHasBeenSet;
-    long m_minValue;
+    int m_minValue;
     bool m_minValueHasBeenSet;
-    long m_maxValue;
+    int m_maxValue;
     bool m_maxValueHasBeenSet;
-    long m_maxLength;
+    int m_maxLength;
     bool m_maxLengthHasBeenSet;
     OptionRestrictionRegex m_regex;
     bool m_regexHasBeenSet;

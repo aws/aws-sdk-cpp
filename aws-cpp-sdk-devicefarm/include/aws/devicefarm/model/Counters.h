@@ -43,122 +43,122 @@ namespace Model
     /**
      * <p>The total number of entities.</p>
      */
-    inline long GetTotal() const{ return m_total; }
+    inline int GetTotal() const{ return m_total; }
 
     /**
      * <p>The total number of entities.</p>
      */
-    inline void SetTotal(long value) { m_totalHasBeenSet = true; m_total = value; }
+    inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
      * <p>The total number of entities.</p>
      */
-    inline Counters& WithTotal(long value) { SetTotal(value); return *this;}
+    inline Counters& WithTotal(int value) { SetTotal(value); return *this;}
 
     /**
      * <p>The number of passed entities.</p>
      */
-    inline long GetPassed() const{ return m_passed; }
+    inline int GetPassed() const{ return m_passed; }
 
     /**
      * <p>The number of passed entities.</p>
      */
-    inline void SetPassed(long value) { m_passedHasBeenSet = true; m_passed = value; }
+    inline void SetPassed(int value) { m_passedHasBeenSet = true; m_passed = value; }
 
     /**
      * <p>The number of passed entities.</p>
      */
-    inline Counters& WithPassed(long value) { SetPassed(value); return *this;}
+    inline Counters& WithPassed(int value) { SetPassed(value); return *this;}
 
     /**
      * <p>The number of failed entities.</p>
      */
-    inline long GetFailed() const{ return m_failed; }
+    inline int GetFailed() const{ return m_failed; }
 
     /**
      * <p>The number of failed entities.</p>
      */
-    inline void SetFailed(long value) { m_failedHasBeenSet = true; m_failed = value; }
+    inline void SetFailed(int value) { m_failedHasBeenSet = true; m_failed = value; }
 
     /**
      * <p>The number of failed entities.</p>
      */
-    inline Counters& WithFailed(long value) { SetFailed(value); return *this;}
+    inline Counters& WithFailed(int value) { SetFailed(value); return *this;}
 
     /**
      * <p>The number of warned entities.</p>
      */
-    inline long GetWarned() const{ return m_warned; }
+    inline int GetWarned() const{ return m_warned; }
 
     /**
      * <p>The number of warned entities.</p>
      */
-    inline void SetWarned(long value) { m_warnedHasBeenSet = true; m_warned = value; }
+    inline void SetWarned(int value) { m_warnedHasBeenSet = true; m_warned = value; }
 
     /**
      * <p>The number of warned entities.</p>
      */
-    inline Counters& WithWarned(long value) { SetWarned(value); return *this;}
+    inline Counters& WithWarned(int value) { SetWarned(value); return *this;}
 
     /**
      * <p>The number of errored entities.</p>
      */
-    inline long GetErrored() const{ return m_errored; }
+    inline int GetErrored() const{ return m_errored; }
 
     /**
      * <p>The number of errored entities.</p>
      */
-    inline void SetErrored(long value) { m_erroredHasBeenSet = true; m_errored = value; }
+    inline void SetErrored(int value) { m_erroredHasBeenSet = true; m_errored = value; }
 
     /**
      * <p>The number of errored entities.</p>
      */
-    inline Counters& WithErrored(long value) { SetErrored(value); return *this;}
+    inline Counters& WithErrored(int value) { SetErrored(value); return *this;}
 
     /**
      * <p>The number of stopped entities.</p>
      */
-    inline long GetStopped() const{ return m_stopped; }
+    inline int GetStopped() const{ return m_stopped; }
 
     /**
      * <p>The number of stopped entities.</p>
      */
-    inline void SetStopped(long value) { m_stoppedHasBeenSet = true; m_stopped = value; }
+    inline void SetStopped(int value) { m_stoppedHasBeenSet = true; m_stopped = value; }
 
     /**
      * <p>The number of stopped entities.</p>
      */
-    inline Counters& WithStopped(long value) { SetStopped(value); return *this;}
+    inline Counters& WithStopped(int value) { SetStopped(value); return *this;}
 
     /**
      * <p>The number of skipped entities.</p>
      */
-    inline long GetSkipped() const{ return m_skipped; }
+    inline int GetSkipped() const{ return m_skipped; }
 
     /**
      * <p>The number of skipped entities.</p>
      */
-    inline void SetSkipped(long value) { m_skippedHasBeenSet = true; m_skipped = value; }
+    inline void SetSkipped(int value) { m_skippedHasBeenSet = true; m_skipped = value; }
 
     /**
      * <p>The number of skipped entities.</p>
      */
-    inline Counters& WithSkipped(long value) { SetSkipped(value); return *this;}
+    inline Counters& WithSkipped(int value) { SetSkipped(value); return *this;}
 
   private:
-    long m_total;
+    int m_total;
     bool m_totalHasBeenSet;
-    long m_passed;
+    int m_passed;
     bool m_passedHasBeenSet;
-    long m_failed;
+    int m_failed;
     bool m_failedHasBeenSet;
-    long m_warned;
+    int m_warned;
     bool m_warnedHasBeenSet;
-    long m_errored;
+    int m_errored;
     bool m_erroredHasBeenSet;
-    long m_stopped;
+    int m_stopped;
     bool m_stoppedHasBeenSet;
-    long m_skipped;
+    int m_skipped;
     bool m_skippedHasBeenSet;
   };
 

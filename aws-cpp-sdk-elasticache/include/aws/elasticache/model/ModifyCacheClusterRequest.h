@@ -99,7 +99,7 @@ namespace Model
      * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
      * currently in the cache cluster.</p> </note>
      */
-    inline long GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes that the cache cluster should have. If the value
@@ -130,7 +130,7 @@ namespace Model
      * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
      * currently in the cache cluster.</p> </note>
      */
-    inline void SetNumCacheNodes(long value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
+    inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes that the cache cluster should have. If the value
@@ -161,7 +161,7 @@ namespace Model
      * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
      * currently in the cache cluster.</p> </note>
      */
-    inline ModifyCacheClusterRequest& WithNumCacheNodes(long value) { SetNumCacheNodes(value); return *this;}
+    inline ModifyCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
@@ -1212,7 +1212,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
@@ -1221,7 +1221,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
@@ -1230,7 +1230,7 @@ namespace Model
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
      */
-    inline ModifyCacheClusterRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline ModifyCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
@@ -1326,7 +1326,7 @@ namespace Model
   private:
     Aws::String m_cacheClusterId;
     bool m_cacheClusterIdHasBeenSet;
-    long m_numCacheNodes;
+    int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
     bool m_cacheNodeIdsToRemoveHasBeenSet;
@@ -1352,7 +1352,7 @@ namespace Model
     bool m_engineVersionHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

@@ -74,24 +74,24 @@ namespace Model
      * <p>The new retention period of the stream, in hours. Must be more than the
      * current retention period.</p>
      */
-    inline long GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+    inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
 
     /**
      * <p>The new retention period of the stream, in hours. Must be more than the
      * current retention period.</p>
      */
-    inline void SetRetentionPeriodHours(long value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
+    inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     /**
      * <p>The new retention period of the stream, in hours. Must be more than the
      * current retention period.</p>
      */
-    inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
+    inline IncreaseStreamRetentionPeriodRequest& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 
   private:
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
-    long m_retentionPeriodHours;
+    int m_retentionPeriodHours;
     bool m_retentionPeriodHoursHasBeenSet;
   };
 

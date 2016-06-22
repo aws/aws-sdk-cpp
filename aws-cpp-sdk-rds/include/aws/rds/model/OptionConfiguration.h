@@ -84,17 +84,17 @@ namespace Model
     /**
      * <p>The optional port for the option.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The optional port for the option.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The optional port for the option.</p>
      */
-    inline OptionConfiguration& WithPort(long value) { SetPort(value); return *this;}
+    inline OptionConfiguration& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>A list of DBSecurityGroupMemebrship name strings used for this option.</p>
@@ -214,7 +214,7 @@ namespace Model
   private:
     Aws::String m_optionName;
     bool m_optionNameHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;
     bool m_dBSecurityGroupMembershipsHasBeenSet;

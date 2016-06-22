@@ -42,19 +42,19 @@ namespace Model
      * <p>Optional. Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional. Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional. Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
-    inline DescribeTagsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline DescribeTagsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>Optional. String. Opaque pagination token returned from a previous
@@ -141,7 +141,7 @@ namespace Model
     inline DescribeTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
   private:
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

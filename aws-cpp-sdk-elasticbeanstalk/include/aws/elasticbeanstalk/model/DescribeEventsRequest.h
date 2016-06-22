@@ -381,19 +381,19 @@ namespace Model
      * <p> Specifies the maximum number of events that can be returned, beginning with
      * the most recent event. </p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> Specifies the maximum number of events that can be returned, beginning with
      * the most recent event. </p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> Specifies the maximum number of events that can be returned, beginning with
      * the most recent event. </p>
      */
-    inline DescribeEventsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> Pagination token. If specified, the events return the next batch of results.
@@ -456,7 +456,7 @@ namespace Model
     bool m_startTimeHasBeenSet;
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

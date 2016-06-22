@@ -277,39 +277,39 @@ namespace Model
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline long GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline FunctionConfiguration& WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline long GetMemorySize() const{ return m_memorySize; }
+    inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline void SetMemorySize(long value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
+    inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline FunctionConfiguration& WithMemorySize(long value) { SetMemorySize(value); return *this;}
+    inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
     /**
      * <p>The time stamp of the last time you updated the function.</p>
@@ -456,9 +456,9 @@ namespace Model
     bool m_codeSizeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    long m_timeout;
+    int m_timeout;
     bool m_timeoutHasBeenSet;
-    long m_memorySize;
+    int m_memorySize;
     bool m_memorySizeHasBeenSet;
     Aws::String m_lastModified;
     bool m_lastModifiedHasBeenSet;

@@ -208,74 +208,74 @@ namespace Model
     /**
      * <p>The number of container instances registered into the cluster.</p>
      */
-    inline long GetRegisteredContainerInstancesCount() const{ return m_registeredContainerInstancesCount; }
+    inline int GetRegisteredContainerInstancesCount() const{ return m_registeredContainerInstancesCount; }
 
     /**
      * <p>The number of container instances registered into the cluster.</p>
      */
-    inline void SetRegisteredContainerInstancesCount(long value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
+    inline void SetRegisteredContainerInstancesCount(int value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
 
     /**
      * <p>The number of container instances registered into the cluster.</p>
      */
-    inline Cluster& WithRegisteredContainerInstancesCount(long value) { SetRegisteredContainerInstancesCount(value); return *this;}
+    inline Cluster& WithRegisteredContainerInstancesCount(int value) { SetRegisteredContainerInstancesCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline long GetRunningTasksCount() const{ return m_runningTasksCount; }
+    inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline void SetRunningTasksCount(long value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
+    inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline Cluster& WithRunningTasksCount(long value) { SetRunningTasksCount(value); return *this;}
+    inline Cluster& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline long GetPendingTasksCount() const{ return m_pendingTasksCount; }
+    inline int GetPendingTasksCount() const{ return m_pendingTasksCount; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline void SetPendingTasksCount(long value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
+    inline void SetPendingTasksCount(int value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline Cluster& WithPendingTasksCount(long value) { SetPendingTasksCount(value); return *this;}
+    inline Cluster& WithPendingTasksCount(int value) { SetPendingTasksCount(value); return *this;}
 
     /**
      * <p>The number of services that are running on the cluster in an
      * <code>ACTIVE</code> state. You can view these services with
      * <a>ListServices</a>.</p>
      */
-    inline long GetActiveServicesCount() const{ return m_activeServicesCount; }
+    inline int GetActiveServicesCount() const{ return m_activeServicesCount; }
 
     /**
      * <p>The number of services that are running on the cluster in an
      * <code>ACTIVE</code> state. You can view these services with
      * <a>ListServices</a>.</p>
      */
-    inline void SetActiveServicesCount(long value) { m_activeServicesCountHasBeenSet = true; m_activeServicesCount = value; }
+    inline void SetActiveServicesCount(int value) { m_activeServicesCountHasBeenSet = true; m_activeServicesCount = value; }
 
     /**
      * <p>The number of services that are running on the cluster in an
      * <code>ACTIVE</code> state. You can view these services with
      * <a>ListServices</a>.</p>
      */
-    inline Cluster& WithActiveServicesCount(long value) { SetActiveServicesCount(value); return *this;}
+    inline Cluster& WithActiveServicesCount(int value) { SetActiveServicesCount(value); return *this;}
 
   private:
     Aws::String m_clusterArn;
@@ -284,13 +284,13 @@ namespace Model
     bool m_clusterNameHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_registeredContainerInstancesCount;
+    int m_registeredContainerInstancesCount;
     bool m_registeredContainerInstancesCountHasBeenSet;
-    long m_runningTasksCount;
+    int m_runningTasksCount;
     bool m_runningTasksCountHasBeenSet;
-    long m_pendingTasksCount;
+    int m_pendingTasksCount;
     bool m_pendingTasksCountHasBeenSet;
-    long m_activeServicesCount;
+    int m_activeServicesCount;
     bool m_activeServicesCountHasBeenSet;
   };
 

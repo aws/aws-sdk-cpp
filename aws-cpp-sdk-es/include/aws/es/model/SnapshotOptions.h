@@ -47,24 +47,24 @@ namespace Model
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
      * hours.</p>
      */
-    inline long GetAutomatedSnapshotStartHour() const{ return m_automatedSnapshotStartHour; }
+    inline int GetAutomatedSnapshotStartHour() const{ return m_automatedSnapshotStartHour; }
 
     /**
      * <p>Specifies the time, in UTC format, when the service takes a daily automated
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
      * hours.</p>
      */
-    inline void SetAutomatedSnapshotStartHour(long value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
+    inline void SetAutomatedSnapshotStartHour(int value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
 
     /**
      * <p>Specifies the time, in UTC format, when the service takes a daily automated
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
      * hours.</p>
      */
-    inline SnapshotOptions& WithAutomatedSnapshotStartHour(long value) { SetAutomatedSnapshotStartHour(value); return *this;}
+    inline SnapshotOptions& WithAutomatedSnapshotStartHour(int value) { SetAutomatedSnapshotStartHour(value); return *this;}
 
   private:
-    long m_automatedSnapshotStartHour;
+    int m_automatedSnapshotStartHour;
     bool m_automatedSnapshotStartHourHasBeenSet;
   };
 

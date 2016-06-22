@@ -176,13 +176,13 @@ namespace Model
     inline TrafficPolicyInstance& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
 
     
-    inline long GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
+    inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
 
     
-    inline void SetTrafficPolicyVersion(long value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
+    inline void SetTrafficPolicyVersion(int value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
 
     
-    inline TrafficPolicyInstance& WithTrafficPolicyVersion(long value) { SetTrafficPolicyVersion(value); return *this;}
+    inline TrafficPolicyInstance& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
 
     
     inline const RRType& GetTrafficPolicyType() const{ return m_trafficPolicyType; }
@@ -214,7 +214,7 @@ namespace Model
     bool m_messageHasBeenSet;
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
-    long m_trafficPolicyVersion;
+    int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
     RRType m_trafficPolicyType;
     bool m_trafficPolicyTypeHasBeenSet;

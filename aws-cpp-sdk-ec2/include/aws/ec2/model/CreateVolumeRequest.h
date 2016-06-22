@@ -66,7 +66,7 @@ namespace Model
      * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
      * specify a volume size, the default is the snapshot size.</p>
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
@@ -76,7 +76,7 @@ namespace Model
      * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
      * specify a volume size, the default is the snapshot size.</p>
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
@@ -86,7 +86,7 @@ namespace Model
      * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
      * specify a volume size, the default is the snapshot size.</p>
      */
-    inline CreateVolumeRequest& WithSize(long value) { SetSize(value); return *this;}
+    inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * <p>The snapshot from which to create the volume.</p>
@@ -218,7 +218,7 @@ namespace Model
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
@@ -226,7 +226,7 @@ namespace Model
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per
@@ -234,7 +234,7 @@ namespace Model
      * IOPS/GiB.</p> <p>Constraint: Range is 100 to 20000 for Provisioned IOPS SSD
      * volumes </p>
      */
-    inline CreateVolumeRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline CreateVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Specifies whether the volume should be encrypted. Encrypted Amazon EBS
@@ -366,7 +366,7 @@ namespace Model
   private:
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
@@ -374,7 +374,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

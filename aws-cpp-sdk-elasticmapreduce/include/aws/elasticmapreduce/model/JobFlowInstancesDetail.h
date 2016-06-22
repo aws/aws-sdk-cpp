@@ -189,21 +189,21 @@ namespace Model
      * same instance serves as both the master and slave node. If the value is greater
      * than 1, one instance is the master node and all others are slave nodes.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
      * same instance serves as both the master and slave node. If the value is greater
      * than 1, one instance is the master node and all others are slave nodes.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
      * same instance serves as both the master and slave node. If the value is greater
      * than 1, one instance is the master node and all others are slave nodes.</p>
      */
-    inline JobFlowInstancesDetail& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline JobFlowInstancesDetail& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>Details about the job flow's instance groups. </p>
@@ -248,7 +248,7 @@ namespace Model
      * four. This result is only an approximation and does not reflect the actual
      * billing rate.</p>
      */
-    inline long GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+    inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
@@ -258,7 +258,7 @@ namespace Model
      * four. This result is only an approximation and does not reflect the actual
      * billing rate.</p>
      */
-    inline void SetNormalizedInstanceHours(long value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
+    inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
@@ -268,7 +268,7 @@ namespace Model
      * four. This result is only an approximation and does not reflect the actual
      * billing rate.</p>
      */
-    inline JobFlowInstancesDetail& WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
+    inline JobFlowInstancesDetail& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 
     /**
      * <p>The name of an Amazon EC2 key pair that can be used to ssh to the master node
@@ -462,11 +462,11 @@ namespace Model
     bool m_masterInstanceIdHasBeenSet;
     Aws::String m_slaveInstanceType;
     bool m_slaveInstanceTypeHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<InstanceGroupDetail> m_instanceGroups;
     bool m_instanceGroupsHasBeenSet;
-    long m_normalizedInstanceHours;
+    int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
     Aws::String m_ec2KeyName;
     bool m_ec2KeyNameHasBeenSet;

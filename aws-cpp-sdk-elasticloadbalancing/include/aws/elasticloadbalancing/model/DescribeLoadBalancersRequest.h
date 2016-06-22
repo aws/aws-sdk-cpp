@@ -119,26 +119,26 @@ namespace Model
      * <p>The maximum number of results to return with this call (a number from 1 to
      * 400). The default is 400.</p>
      */
-    inline long GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The maximum number of results to return with this call (a number from 1 to
      * 400). The default is 400.</p>
      */
-    inline void SetPageSize(long value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
+    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The maximum number of results to return with this call (a number from 1 to
      * 400). The default is 400.</p>
      */
-    inline DescribeLoadBalancersRequest& WithPageSize(long value) { SetPageSize(value); return *this;}
+    inline DescribeLoadBalancersRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_loadBalancerNames;
     bool m_loadBalancerNamesHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_pageSize;
+    int m_pageSize;
     bool m_pageSizeHasBeenSet;
   };
 

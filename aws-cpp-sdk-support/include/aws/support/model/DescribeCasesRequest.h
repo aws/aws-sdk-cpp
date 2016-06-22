@@ -258,17 +258,17 @@ namespace Model
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return before paginating.</p>
      */
-    inline DescribeCasesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeCasesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
@@ -350,7 +350,7 @@ namespace Model
     bool m_includeResolvedCasesHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_language;
     bool m_languageHasBeenSet;

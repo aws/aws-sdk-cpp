@@ -53,7 +53,7 @@ namespace Model
      * the <code>Event</code> invocation type this status code will be 202. For the
      * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
-    inline long GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
      * <p>The HTTP status code will be in the 200 range for successful request. For the
@@ -61,7 +61,7 @@ namespace Model
      * the <code>Event</code> invocation type this status code will be 202. For the
      * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
-    inline void SetStatusCode(long value) { m_statusCode = value; }
+    inline void SetStatusCode(int value) { m_statusCode = value; }
 
     /**
      * <p>The HTTP status code will be in the 200 range for successful request. For the
@@ -69,7 +69,7 @@ namespace Model
      * the <code>Event</code> invocation type this status code will be 202. For the
      * <code>DryRun</code> invocation type the status code will be 204. </p>
      */
-    inline InvokeResult& WithStatusCode(long value) { SetStatusCode(value); return *this;}
+    inline InvokeResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
     /**
      * <p>Indicates whether an error occurred while executing the Lambda function. If
@@ -222,7 +222,7 @@ namespace Model
     inline Aws::IOStream& GetPayload() { return m_payload.GetUnderlyingStream(); }
 
   private:
-    long m_statusCode;
+    int m_statusCode;
     Aws::String m_functionError;
     Aws::String m_logResult;
     Utils::Stream::ResponseStream m_payload;

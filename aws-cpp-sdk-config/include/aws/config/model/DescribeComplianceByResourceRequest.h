@@ -195,21 +195,21 @@ namespace Model
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
      * uses the default.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
      * uses the default.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
      * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
      * uses the default.</p>
      */
-    inline DescribeComplianceByResourceRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeComplianceByResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
@@ -260,7 +260,7 @@ namespace Model
     bool m_resourceIdHasBeenSet;
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

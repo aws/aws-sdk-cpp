@@ -252,13 +252,13 @@ namespace Model
     inline GetStatusResult& WithLogKey(const char* value) { SetLogKey(value); return *this;}
 
     
-    inline long GetErrorCount() const{ return m_errorCount; }
+    inline int GetErrorCount() const{ return m_errorCount; }
 
     
-    inline void SetErrorCount(long value) { m_errorCount = value; }
+    inline void SetErrorCount(int value) { m_errorCount = value; }
 
     
-    inline GetStatusResult& WithErrorCount(long value) { SetErrorCount(value); return *this;}
+    inline GetStatusResult& WithErrorCount(int value) { SetErrorCount(value); return *this;}
 
     
     inline const Aws::String& GetSignature() const{ return m_signature; }
@@ -385,7 +385,7 @@ namespace Model
     Aws::String m_trackingNumber;
     Aws::String m_logBucket;
     Aws::String m_logKey;
-    long m_errorCount;
+    int m_errorCount;
     Aws::String m_signature;
     Aws::String m_signatureFileContents;
     Aws::String m_currentManifest;

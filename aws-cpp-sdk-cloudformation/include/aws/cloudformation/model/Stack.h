@@ -370,17 +370,17 @@ namespace Model
     /**
      * <p>The amount of time within which stack creation should complete.</p>
      */
-    inline long GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
      * <p>The amount of time within which stack creation should complete.</p>
      */
-    inline void SetTimeoutInMinutes(long value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
+    inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
      * <p>The amount of time within which stack creation should complete.</p>
      */
-    inline Stack& WithTimeoutInMinutes(long value) { SetTimeoutInMinutes(value); return *this;}
+    inline Stack& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
     /**
      * <p>The capabilities allowed in the stack.</p>
@@ -508,7 +508,7 @@ namespace Model
     bool m_disableRollbackHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;
-    long m_timeoutInMinutes;
+    int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
     Aws::Vector<Capability> m_capabilities;
     bool m_capabilitiesHasBeenSet;

@@ -120,7 +120,7 @@ namespace Model
      * <code>NextMarker</code> value that you can use to get another batch of
      * <code>Rules</code>.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to
@@ -129,7 +129,7 @@ namespace Model
      * <code>NextMarker</code> value that you can use to get another batch of
      * <code>Rules</code>.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to
@@ -138,12 +138,12 @@ namespace Model
      * <code>NextMarker</code> value that you can use to get another batch of
      * <code>Rules</code>.</p>
      */
-    inline ListXssMatchSetsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListXssMatchSetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

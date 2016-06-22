@@ -151,21 +151,21 @@ namespace Model
      * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an
      * integer.</p>
      */
-    inline long GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
+    inline int GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
 
     /**
      * <p>Specifies the throttling burst limit. The PATCH path for this setting is
      * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an
      * integer.</p>
      */
-    inline void SetThrottlingBurstLimit(long value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
+    inline void SetThrottlingBurstLimit(int value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
 
     /**
      * <p>Specifies the throttling burst limit. The PATCH path for this setting is
      * <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an
      * integer.</p>
      */
-    inline MethodSetting& WithThrottlingBurstLimit(long value) { SetThrottlingBurstLimit(value); return *this;}
+    inline MethodSetting& WithThrottlingBurstLimit(int value) { SetThrottlingBurstLimit(value); return *this;}
 
     /**
      * <p>Specifies the throttling rate limit. The PATCH path for this setting is
@@ -218,7 +218,7 @@ namespace Model
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
-    inline long GetCacheTtlInSeconds() const{ return m_cacheTtlInSeconds; }
+    inline int GetCacheTtlInSeconds() const{ return m_cacheTtlInSeconds; }
 
     /**
      * <p>Specifies the time to live (TTL) in seconds, for cached responses. The higher
@@ -226,7 +226,7 @@ namespace Model
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
-    inline void SetCacheTtlInSeconds(long value) { m_cacheTtlInSecondsHasBeenSet = true; m_cacheTtlInSeconds = value; }
+    inline void SetCacheTtlInSeconds(int value) { m_cacheTtlInSecondsHasBeenSet = true; m_cacheTtlInSeconds = value; }
 
     /**
      * <p>Specifies the time to live (TTL) in seconds, for cached responses. The higher
@@ -234,7 +234,7 @@ namespace Model
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
-    inline MethodSetting& WithCacheTtlInSeconds(long value) { SetCacheTtlInSeconds(value); return *this;}
+    inline MethodSetting& WithCacheTtlInSeconds(int value) { SetCacheTtlInSeconds(value); return *this;}
 
     /**
      * <p>Specifies whether the cached responses are encrypted. The PATCH path for this
@@ -338,13 +338,13 @@ namespace Model
     bool m_loggingLevelHasBeenSet;
     bool m_dataTraceEnabled;
     bool m_dataTraceEnabledHasBeenSet;
-    long m_throttlingBurstLimit;
+    int m_throttlingBurstLimit;
     bool m_throttlingBurstLimitHasBeenSet;
     double m_throttlingRateLimit;
     bool m_throttlingRateLimitHasBeenSet;
     bool m_cachingEnabled;
     bool m_cachingEnabledHasBeenSet;
-    long m_cacheTtlInSeconds;
+    int m_cacheTtlInSeconds;
     bool m_cacheTtlInSecondsHasBeenSet;
     bool m_cacheDataEncrypted;
     bool m_cacheDataEncryptedHasBeenSet;

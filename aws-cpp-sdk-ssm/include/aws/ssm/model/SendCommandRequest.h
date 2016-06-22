@@ -190,19 +190,19 @@ namespace Model
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline long GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline void SetTimeoutSeconds(long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
+    inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline SendCommandRequest& WithTimeoutSeconds(long value) { SetTimeoutSeconds(value); return *this;}
+    inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -405,7 +405,7 @@ namespace Model
     bool m_documentHashHasBeenSet;
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
-    long m_timeoutSeconds;
+    int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;

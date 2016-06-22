@@ -522,21 +522,21 @@ namespace Model
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline long GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes in the source cache cluster.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline void SetNumCacheNodes(long value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
+    inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes in the source cache cluster.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline Snapshot& WithNumCacheNodes(long value) { SetNumCacheNodes(value); return *this;}
+    inline Snapshot& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the source cache cluster is
@@ -734,17 +734,17 @@ namespace Model
     /**
      * <p>The port number used by each cache nodes in the source cache cluster.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number used by each cache nodes in the source cache cluster.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number used by each cache nodes in the source cache cluster.</p>
      */
-    inline Snapshot& WithPort(long value) { SetPort(value); return *this;}
+    inline Snapshot& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The cache parameter group that is associated with the source cache
@@ -896,7 +896,7 @@ namespace Model
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
      * backups are turned off.</p>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>For an automatic snapshot, the number of days for which ElastiCache will
@@ -907,7 +907,7 @@ namespace Model
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
      * backups are turned off.</p>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>For an automatic snapshot, the number of days for which ElastiCache will
@@ -918,7 +918,7 @@ namespace Model
      * <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
      * backups are turned off.</p>
      */
-    inline Snapshot& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline Snapshot& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range during which ElastiCache takes daily snapshots of the
@@ -1012,7 +1012,7 @@ namespace Model
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
-    long m_numCacheNodes;
+    int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
@@ -1022,7 +1022,7 @@ namespace Model
     bool m_preferredMaintenanceWindowHasBeenSet;
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_cacheParameterGroupName;
     bool m_cacheParameterGroupNameHasBeenSet;
@@ -1032,7 +1032,7 @@ namespace Model
     bool m_vpcIdHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

@@ -196,7 +196,7 @@ namespace Model
      * <code>DescribeScalingActivities</code> returns up to 50 results and a
      * <code>NextToken</code> value, if applicable.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of scaling activity results returned by
@@ -210,7 +210,7 @@ namespace Model
      * <code>DescribeScalingActivities</code> returns up to 50 results and a
      * <code>NextToken</code> value, if applicable.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of scaling activity results returned by
@@ -224,7 +224,7 @@ namespace Model
      * <code>DescribeScalingActivities</code> returns up to 50 results and a
      * <code>NextToken</code> value, if applicable.</p>
      */
-    inline DescribeScalingActivitiesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeScalingActivitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -289,7 +289,7 @@ namespace Model
     bool m_resourceIdHasBeenSet;
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

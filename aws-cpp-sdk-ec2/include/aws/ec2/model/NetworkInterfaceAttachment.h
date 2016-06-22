@@ -154,17 +154,17 @@ namespace Model
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
-    inline long GetDeviceIndex() const{ return m_deviceIndex; }
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
-    inline void SetDeviceIndex(long value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
      * <p>The device index of the network interface attachment on the instance.</p>
      */
-    inline NetworkInterfaceAttachment& WithDeviceIndex(long value) { SetDeviceIndex(value); return *this;}
+    inline NetworkInterfaceAttachment& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
     /**
      * <p>The attachment state.</p>
@@ -241,7 +241,7 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_instanceOwnerId;
     bool m_instanceOwnerIdHasBeenSet;
-    long m_deviceIndex;
+    int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
     AttachmentStatus m_status;
     bool m_statusHasBeenSet;

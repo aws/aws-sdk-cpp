@@ -127,7 +127,7 @@ namespace Model
      * <code>NextToken</code> value in a subsequent request to retrieve additional
      * items.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of
@@ -136,7 +136,7 @@ namespace Model
      * <code>NextToken</code> value in a subsequent request to retrieve additional
      * items.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of
@@ -145,14 +145,14 @@ namespace Model
      * <code>NextToken</code> value in a subsequent request to retrieve additional
      * items.</p>
      */
-    inline ListCertificatesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListCertificatesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::Vector<CertificateStatus> m_certificateStatuses;
     bool m_certificateStatusesHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

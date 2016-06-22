@@ -109,17 +109,17 @@ namespace Model
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline long GetRunOrder() const{ return m_runOrder; }
+    inline int GetRunOrder() const{ return m_runOrder; }
 
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline void SetRunOrder(long value) { m_runOrderHasBeenSet = true; m_runOrder = value; }
+    inline void SetRunOrder(int value) { m_runOrderHasBeenSet = true; m_runOrder = value; }
 
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline ActionDeclaration& WithRunOrder(long value) { SetRunOrder(value); return *this;}
+    inline ActionDeclaration& WithRunOrder(int value) { SetRunOrder(value); return *this;}
 
     /**
      * <p>The action declaration's configuration.</p>
@@ -312,7 +312,7 @@ namespace Model
     bool m_nameHasBeenSet;
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
-    long m_runOrder;
+    int m_runOrder;
     bool m_runOrderHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet;

@@ -82,17 +82,17 @@ namespace Model
     /**
      * Number of datasets returned.
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * Number of datasets returned.
      */
-    inline void SetCount(long value) { m_count = value; }
+    inline void SetCount(int value) { m_count = value; }
 
     /**
      * Number of datasets returned.
      */
-    inline ListDatasetsResult& WithCount(long value) { SetCount(value); return *this;}
+    inline ListDatasetsResult& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * A pagination token for obtaining the next page of results.
@@ -131,7 +131,7 @@ namespace Model
 
   private:
     Aws::Vector<Dataset> m_datasets;
-    long m_count;
+    int m_count;
     Aws::String m_nextToken;
   };
 

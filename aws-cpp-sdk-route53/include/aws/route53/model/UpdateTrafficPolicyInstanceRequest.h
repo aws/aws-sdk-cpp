@@ -133,19 +133,19 @@ namespace Model
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
      */
-    inline long GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
+    inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
 
     /**
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
      */
-    inline void SetTrafficPolicyVersion(long value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
+    inline void SetTrafficPolicyVersion(int value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
 
     /**
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
      */
-    inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(long value) { SetTrafficPolicyVersion(value); return *this;}
+    inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -154,7 +154,7 @@ namespace Model
     bool m_tTLHasBeenSet;
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
-    long m_trafficPolicyVersion;
+    int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
   };
 

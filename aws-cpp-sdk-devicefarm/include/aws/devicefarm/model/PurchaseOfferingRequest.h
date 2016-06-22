@@ -73,22 +73,22 @@ namespace Model
     /**
      * <p>The number of device slots you wish to purchase in an offering request.</p>
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of device slots you wish to purchase in an offering request.</p>
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of device slots you wish to purchase in an offering request.</p>
      */
-    inline PurchaseOfferingRequest& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
   private:
     Aws::String m_offeringId;
     bool m_offeringIdHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
   };
 

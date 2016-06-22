@@ -284,35 +284,35 @@ namespace Model
     /**
      * <p>The number of partitions across which the search index is spread.</p>
      */
-    inline long GetSearchPartitionCount() const{ return m_searchPartitionCount; }
+    inline int GetSearchPartitionCount() const{ return m_searchPartitionCount; }
 
     /**
      * <p>The number of partitions across which the search index is spread.</p>
      */
-    inline void SetSearchPartitionCount(long value) { m_searchPartitionCountHasBeenSet = true; m_searchPartitionCount = value; }
+    inline void SetSearchPartitionCount(int value) { m_searchPartitionCountHasBeenSet = true; m_searchPartitionCount = value; }
 
     /**
      * <p>The number of partitions across which the search index is spread.</p>
      */
-    inline DomainStatus& WithSearchPartitionCount(long value) { SetSearchPartitionCount(value); return *this;}
+    inline DomainStatus& WithSearchPartitionCount(int value) { SetSearchPartitionCount(value); return *this;}
 
     /**
      * <p>The number of search instances that are available to process search
      * requests.</p>
      */
-    inline long GetSearchInstanceCount() const{ return m_searchInstanceCount; }
+    inline int GetSearchInstanceCount() const{ return m_searchInstanceCount; }
 
     /**
      * <p>The number of search instances that are available to process search
      * requests.</p>
      */
-    inline void SetSearchInstanceCount(long value) { m_searchInstanceCountHasBeenSet = true; m_searchInstanceCount = value; }
+    inline void SetSearchInstanceCount(int value) { m_searchInstanceCountHasBeenSet = true; m_searchInstanceCount = value; }
 
     /**
      * <p>The number of search instances that are available to process search
      * requests.</p>
      */
-    inline DomainStatus& WithSearchInstanceCount(long value) { SetSearchInstanceCount(value); return *this;}
+    inline DomainStatus& WithSearchInstanceCount(int value) { SetSearchInstanceCount(value); return *this;}
 
     
     inline const Limits& GetLimits() const{ return m_limits; }
@@ -350,9 +350,9 @@ namespace Model
     bool m_processingHasBeenSet;
     Aws::String m_searchInstanceType;
     bool m_searchInstanceTypeHasBeenSet;
-    long m_searchPartitionCount;
+    int m_searchPartitionCount;
     bool m_searchPartitionCountHasBeenSet;
-    long m_searchInstanceCount;
+    int m_searchInstanceCount;
     bool m_searchInstanceCountHasBeenSet;
     Limits m_limits;
     bool m_limitsHasBeenSet;

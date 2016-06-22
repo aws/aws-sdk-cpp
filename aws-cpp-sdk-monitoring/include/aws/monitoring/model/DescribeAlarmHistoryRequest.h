@@ -147,17 +147,17 @@ namespace Model
     /**
      * <p> The maximum number of alarm history records to retrieve. </p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of alarm history records to retrieve. </p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of alarm history records to retrieve. </p>
      */
-    inline DescribeAlarmHistoryRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeAlarmHistoryRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> The token returned by a previous call to indicate that there is more data
@@ -210,7 +210,7 @@ namespace Model
     bool m_startDateHasBeenSet;
     Aws::Utils::DateTime m_endDate;
     bool m_endDateHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

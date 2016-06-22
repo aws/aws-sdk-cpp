@@ -221,32 +221,32 @@ namespace Model
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline long GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
+    inline int GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
 
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline void SetCurrentPlayerSessionCount(long value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
+    inline void SetCurrentPlayerSessionCount(int value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
 
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline GameSession& WithCurrentPlayerSessionCount(long value) { SetCurrentPlayerSessionCount(value); return *this;}
+    inline GameSession& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline long GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline void SetMaximumPlayerSessionCount(long value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
+    inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline GameSession& WithMaximumPlayerSessionCount(long value) { SetMaximumPlayerSessionCount(value); return *this;}
+    inline GameSession& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
     /**
      * <p>Current status of the game session. A game session must be in an ACTIVE state
@@ -384,9 +384,9 @@ namespace Model
     bool m_creationTimeHasBeenSet;
     Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
-    long m_currentPlayerSessionCount;
+    int m_currentPlayerSessionCount;
     bool m_currentPlayerSessionCountHasBeenSet;
-    long m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
     GameSessionStatus m_status;
     bool m_statusHasBeenSet;

@@ -186,55 +186,55 @@ namespace Model
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
      */
-    inline long GetDesiredCount() const{ return m_desiredCount; }
+    inline int GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
      */
-    inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
+    inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The most recent desired count of tasks that was specified for the service to
      * deploy or maintain.</p>
      */
-    inline Deployment& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline Deployment& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
      * status.</p>
      */
-    inline long GetPendingCount() const{ return m_pendingCount; }
+    inline int GetPendingCount() const{ return m_pendingCount; }
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
      * status.</p>
      */
-    inline void SetPendingCount(long value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
+    inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>PENDING</code>
      * status.</p>
      */
-    inline Deployment& WithPendingCount(long value) { SetPendingCount(value); return *this;}
+    inline Deployment& WithPendingCount(int value) { SetPendingCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
      */
-    inline long GetRunningCount() const{ return m_runningCount; }
+    inline int GetRunningCount() const{ return m_runningCount; }
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
      */
-    inline void SetRunningCount(long value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
+    inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
 
     /**
      * <p>The number of tasks in the deployment that are in the <code>RUNNING</code>
      * status.</p>
      */
-    inline Deployment& WithRunningCount(long value) { SetRunningCount(value); return *this;}
+    inline Deployment& WithRunningCount(int value) { SetRunningCount(value); return *this;}
 
     /**
      * <p>The Unix time in seconds and milliseconds when the service was created.</p>
@@ -298,11 +298,11 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;
-    long m_desiredCount;
+    int m_desiredCount;
     bool m_desiredCountHasBeenSet;
-    long m_pendingCount;
+    int m_pendingCount;
     bool m_pendingCountHasBeenSet;
-    long m_runningCount;
+    int m_runningCount;
     bool m_runningCountHasBeenSet;
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

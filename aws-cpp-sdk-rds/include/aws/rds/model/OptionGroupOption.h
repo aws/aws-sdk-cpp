@@ -239,17 +239,17 @@ namespace Model
     /**
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
-    inline long GetDefaultPort() const{ return m_defaultPort; }
+    inline int GetDefaultPort() const{ return m_defaultPort; }
 
     /**
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
-    inline void SetDefaultPort(long value) { m_defaultPortHasBeenSet = true; m_defaultPort = value; }
+    inline void SetDefaultPort(int value) { m_defaultPortHasBeenSet = true; m_defaultPort = value; }
 
     /**
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
-    inline OptionGroupOption& WithDefaultPort(long value) { SetDefaultPort(value); return *this;}
+    inline OptionGroupOption& WithDefaultPort(int value) { SetDefaultPort(value); return *this;}
 
     /**
      * <p>List of all options that are prerequisites for this option.</p>
@@ -391,7 +391,7 @@ namespace Model
     bool m_minimumRequiredMinorEngineVersionHasBeenSet;
     bool m_portRequired;
     bool m_portRequiredHasBeenSet;
-    long m_defaultPort;
+    int m_defaultPort;
     bool m_defaultPortHasBeenSet;
     Aws::Vector<Aws::String> m_optionsDependedOn;
     bool m_optionsDependedOnHasBeenSet;

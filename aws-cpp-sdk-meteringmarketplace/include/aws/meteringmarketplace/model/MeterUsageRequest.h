@@ -159,17 +159,17 @@ namespace Model
     /**
      * <p>Consumption value for the hour.</p>
      */
-    inline long GetUsageQuantity() const{ return m_usageQuantity; }
+    inline int GetUsageQuantity() const{ return m_usageQuantity; }
 
     /**
      * <p>Consumption value for the hour.</p>
      */
-    inline void SetUsageQuantity(long value) { m_usageQuantityHasBeenSet = true; m_usageQuantity = value; }
+    inline void SetUsageQuantity(int value) { m_usageQuantityHasBeenSet = true; m_usageQuantity = value; }
 
     /**
      * <p>Consumption value for the hour.</p>
      */
-    inline MeterUsageRequest& WithUsageQuantity(long value) { SetUsageQuantity(value); return *this;}
+    inline MeterUsageRequest& WithUsageQuantity(int value) { SetUsageQuantity(value); return *this;}
 
     /**
      * <p>Checks whether you have the permissions required for the action, but does not
@@ -199,7 +199,7 @@ namespace Model
     bool m_timestampHasBeenSet;
     Aws::String m_usageDimension;
     bool m_usageDimensionHasBeenSet;
-    long m_usageQuantity;
+    int m_usageQuantity;
     bool m_usageQuantityHasBeenSet;
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

@@ -117,17 +117,17 @@ namespace Model
     /**
      * Total number of records.
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * Total number of records.
      */
-    inline void SetCount(long value) { m_count = value; }
+    inline void SetCount(int value) { m_count = value; }
 
     /**
      * Total number of records.
      */
-    inline ListRecordsResult& WithCount(long value) { SetCount(value); return *this;}
+    inline ListRecordsResult& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * Server sync count for this dataset.
@@ -287,7 +287,7 @@ namespace Model
   private:
     Aws::Vector<Record> m_records;
     Aws::String m_nextToken;
-    long m_count;
+    int m_count;
     long long m_datasetSyncCount;
     Aws::String m_lastModifiedBy;
     Aws::Vector<Aws::String> m_mergedDatasetNames;

@@ -139,21 +139,21 @@ namespace Model
      * remaining results, make another call with the returned <code>NextToken</code>
      * value.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
      * value.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned <code>NextToken</code>
      * value.</p>
      */
-    inline DescribeImportImageTasksRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeImportImageTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>Filter tasks using the <code>task-state</code> filter and one of the
@@ -204,7 +204,7 @@ namespace Model
     bool m_importTaskIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;

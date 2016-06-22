@@ -50,19 +50,19 @@ namespace Model
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline long GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline StaleIpPermission& WithFromPort(long value) { SetFromPort(value); return *this;}
+    inline StaleIpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
@@ -212,19 +212,19 @@ namespace Model
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline long GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types. </p>
      */
-    inline StaleIpPermission& WithToPort(long value) { SetToPort(value); return *this;}
+    inline StaleIpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>One or more security group pairs. Returns the ID of the referenced security
@@ -269,7 +269,7 @@ namespace Model
     inline StaleIpPermission& AddUserIdGroupPairs(UserIdGroupPair&& value) { m_userIdGroupPairsHasBeenSet = true; m_userIdGroupPairs.push_back(value); return *this; }
 
   private:
-    long m_fromPort;
+    int m_fromPort;
     bool m_fromPortHasBeenSet;
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
@@ -277,7 +277,7 @@ namespace Model
     bool m_ipRangesHasBeenSet;
     Aws::Vector<Aws::String> m_prefixListIds;
     bool m_prefixListIdsHasBeenSet;
-    long m_toPort;
+    int m_toPort;
     bool m_toPortHasBeenSet;
     Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
     bool m_userIdGroupPairsHasBeenSet;

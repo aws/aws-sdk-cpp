@@ -125,17 +125,17 @@ namespace Model
     /**
      * <p>A numeric response code generated after executing the plugin. </p>
      */
-    inline long GetResponseCode() const{ return m_responseCode; }
+    inline int GetResponseCode() const{ return m_responseCode; }
 
     /**
      * <p>A numeric response code generated after executing the plugin. </p>
      */
-    inline void SetResponseCode(long value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
+    inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
 
     /**
      * <p>A numeric response code generated after executing the plugin. </p>
      */
-    inline CommandPlugin& WithResponseCode(long value) { SetResponseCode(value); return *this;}
+    inline CommandPlugin& WithResponseCode(int value) { SetResponseCode(value); return *this;}
 
     /**
      * <p>The time the plugin started executing. </p>
@@ -316,7 +316,7 @@ namespace Model
     bool m_nameHasBeenSet;
     CommandPluginStatus m_status;
     bool m_statusHasBeenSet;
-    long m_responseCode;
+    int m_responseCode;
     bool m_responseCodeHasBeenSet;
     Aws::Utils::DateTime m_responseStartDateTime;
     bool m_responseStartDateTimeHasBeenSet;
