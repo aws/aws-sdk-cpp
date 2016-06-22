@@ -77,17 +77,17 @@ namespace Model
     /**
      * <p>The maximum number of results.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results.</p>
      */
-    inline ListThingsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListThingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The attribute name.</p>
@@ -162,7 +162,7 @@ namespace Model
   private:
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_attributeName;
     bool m_attributeNameHasBeenSet;

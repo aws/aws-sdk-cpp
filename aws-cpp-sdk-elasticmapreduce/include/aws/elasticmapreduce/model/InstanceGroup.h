@@ -254,32 +254,32 @@ namespace Model
     /**
      * <p>The target number of instances for the instance group. </p>
      */
-    inline long GetRequestedInstanceCount() const{ return m_requestedInstanceCount; }
+    inline int GetRequestedInstanceCount() const{ return m_requestedInstanceCount; }
 
     /**
      * <p>The target number of instances for the instance group. </p>
      */
-    inline void SetRequestedInstanceCount(long value) { m_requestedInstanceCountHasBeenSet = true; m_requestedInstanceCount = value; }
+    inline void SetRequestedInstanceCount(int value) { m_requestedInstanceCountHasBeenSet = true; m_requestedInstanceCount = value; }
 
     /**
      * <p>The target number of instances for the instance group. </p>
      */
-    inline InstanceGroup& WithRequestedInstanceCount(long value) { SetRequestedInstanceCount(value); return *this;}
+    inline InstanceGroup& WithRequestedInstanceCount(int value) { SetRequestedInstanceCount(value); return *this;}
 
     /**
      * <p>The number of instances currently running in this instance group.</p>
      */
-    inline long GetRunningInstanceCount() const{ return m_runningInstanceCount; }
+    inline int GetRunningInstanceCount() const{ return m_runningInstanceCount; }
 
     /**
      * <p>The number of instances currently running in this instance group.</p>
      */
-    inline void SetRunningInstanceCount(long value) { m_runningInstanceCountHasBeenSet = true; m_runningInstanceCount = value; }
+    inline void SetRunningInstanceCount(int value) { m_runningInstanceCountHasBeenSet = true; m_runningInstanceCount = value; }
 
     /**
      * <p>The number of instances currently running in this instance group.</p>
      */
-    inline InstanceGroup& WithRunningInstanceCount(long value) { SetRunningInstanceCount(value); return *this;}
+    inline InstanceGroup& WithRunningInstanceCount(int value) { SetRunningInstanceCount(value); return *this;}
 
     /**
      * <p>The current status of the instance group.</p>
@@ -449,9 +449,9 @@ namespace Model
     bool m_bidPriceHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_requestedInstanceCount;
+    int m_requestedInstanceCount;
     bool m_requestedInstanceCountHasBeenSet;
-    long m_runningInstanceCount;
+    int m_runningInstanceCount;
     bool m_runningInstanceCountHasBeenSet;
     InstanceGroupStatus m_status;
     bool m_statusHasBeenSet;

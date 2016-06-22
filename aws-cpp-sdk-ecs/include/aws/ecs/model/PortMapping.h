@@ -53,7 +53,7 @@ namespace Model
      * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
-    inline long GetContainerPort() const{ return m_containerPort; }
+    inline int GetContainerPort() const{ return m_containerPort; }
 
     /**
      * <p>The port number on the container that is bound to the user-specified or
@@ -63,7 +63,7 @@ namespace Model
      * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
-    inline void SetContainerPort(long value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
+    inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
     /**
      * <p>The port number on the container that is bound to the user-specified or
@@ -73,7 +73,7 @@ namespace Model
      * automatically assigned in this way do not count toward the 100 reserved ports
      * limit of a container instance.</p>
      */
-    inline PortMapping& WithContainerPort(long value) { SetContainerPort(value); return *this;}
+    inline PortMapping& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
     /**
      * <p>The port number on the container instance to reserve for your container. You
@@ -98,7 +98,7 @@ namespace Model
      * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
-    inline long GetHostPort() const{ return m_hostPort; }
+    inline int GetHostPort() const{ return m_hostPort; }
 
     /**
      * <p>The port number on the container instance to reserve for your container. You
@@ -123,7 +123,7 @@ namespace Model
      * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
-    inline void SetHostPort(long value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
+    inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
 
     /**
      * <p>The port number on the container instance to reserve for your container. You
@@ -148,7 +148,7 @@ namespace Model
      * (automatically assigned ports do not count toward the 100 reserved ports
      * limit).</p>
      */
-    inline PortMapping& WithHostPort(long value) { SetHostPort(value); return *this;}
+    inline PortMapping& WithHostPort(int value) { SetHostPort(value); return *this;}
 
     /**
      * <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and
@@ -181,9 +181,9 @@ namespace Model
     inline PortMapping& WithProtocol(TransportProtocol&& value) { SetProtocol(value); return *this;}
 
   private:
-    long m_containerPort;
+    int m_containerPort;
     bool m_containerPortHasBeenSet;
-    long m_hostPort;
+    int m_hostPort;
     bool m_hostPortHasBeenSet;
     TransportProtocol m_protocol;
     bool m_protocolHasBeenSet;

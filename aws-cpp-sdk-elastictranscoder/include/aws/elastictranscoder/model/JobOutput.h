@@ -848,32 +848,32 @@ namespace Model
     /**
      * <p>Specifies the width of the output file in pixels.</p>
      */
-    inline long GetWidth() const{ return m_width; }
+    inline int GetWidth() const{ return m_width; }
 
     /**
      * <p>Specifies the width of the output file in pixels.</p>
      */
-    inline void SetWidth(long value) { m_widthHasBeenSet = true; m_width = value; }
+    inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
      * <p>Specifies the width of the output file in pixels.</p>
      */
-    inline JobOutput& WithWidth(long value) { SetWidth(value); return *this;}
+    inline JobOutput& WithWidth(int value) { SetWidth(value); return *this;}
 
     /**
      * <p>Height of the output file, in pixels.</p>
      */
-    inline long GetHeight() const{ return m_height; }
+    inline int GetHeight() const{ return m_height; }
 
     /**
      * <p>Height of the output file, in pixels.</p>
      */
-    inline void SetHeight(long value) { m_heightHasBeenSet = true; m_height = value; }
+    inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
      * <p>Height of the output file, in pixels.</p>
      */
-    inline JobOutput& WithHeight(long value) { SetHeight(value); return *this;}
+    inline JobOutput& WithHeight(int value) { SetHeight(value); return *this;}
 
     /**
      * <p>Frame rate of the output file, in frames per second.</p>
@@ -1432,9 +1432,9 @@ namespace Model
     bool m_statusDetailHasBeenSet;
     long long m_duration;
     bool m_durationHasBeenSet;
-    long m_width;
+    int m_width;
     bool m_widthHasBeenSet;
-    long m_height;
+    int m_height;
     bool m_heightHasBeenSet;
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;

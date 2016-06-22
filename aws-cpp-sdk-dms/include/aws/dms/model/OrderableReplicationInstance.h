@@ -161,73 +161,73 @@ namespace Model
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline long GetMinAllocatedStorage() const{ return m_minAllocatedStorage; }
+    inline int GetMinAllocatedStorage() const{ return m_minAllocatedStorage; }
 
     /**
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline void SetMinAllocatedStorage(long value) { m_minAllocatedStorageHasBeenSet = true; m_minAllocatedStorage = value; }
+    inline void SetMinAllocatedStorage(int value) { m_minAllocatedStorageHasBeenSet = true; m_minAllocatedStorage = value; }
 
     /**
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline OrderableReplicationInstance& WithMinAllocatedStorage(long value) { SetMinAllocatedStorage(value); return *this;}
+    inline OrderableReplicationInstance& WithMinAllocatedStorage(int value) { SetMinAllocatedStorage(value); return *this;}
 
     /**
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline long GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline void SetMaxAllocatedStorage(long value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
+    inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
      * <p> The minimum amount of storage (in gigabytes) that can be allocated for the
      * replication instance. </p>
      */
-    inline OrderableReplicationInstance& WithMaxAllocatedStorage(long value) { SetMaxAllocatedStorage(value); return *this;}
+    inline OrderableReplicationInstance& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 
     /**
      * <p> The default amount of storage (in gigabytes) that is allocated for the
      * replication instance. </p>
      */
-    inline long GetDefaultAllocatedStorage() const{ return m_defaultAllocatedStorage; }
+    inline int GetDefaultAllocatedStorage() const{ return m_defaultAllocatedStorage; }
 
     /**
      * <p> The default amount of storage (in gigabytes) that is allocated for the
      * replication instance. </p>
      */
-    inline void SetDefaultAllocatedStorage(long value) { m_defaultAllocatedStorageHasBeenSet = true; m_defaultAllocatedStorage = value; }
+    inline void SetDefaultAllocatedStorage(int value) { m_defaultAllocatedStorageHasBeenSet = true; m_defaultAllocatedStorage = value; }
 
     /**
      * <p> The default amount of storage (in gigabytes) that is allocated for the
      * replication instance. </p>
      */
-    inline OrderableReplicationInstance& WithDefaultAllocatedStorage(long value) { SetDefaultAllocatedStorage(value); return *this;}
+    inline OrderableReplicationInstance& WithDefaultAllocatedStorage(int value) { SetDefaultAllocatedStorage(value); return *this;}
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline long GetIncludedAllocatedStorage() const{ return m_includedAllocatedStorage; }
+    inline int GetIncludedAllocatedStorage() const{ return m_includedAllocatedStorage; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline void SetIncludedAllocatedStorage(long value) { m_includedAllocatedStorageHasBeenSet = true; m_includedAllocatedStorage = value; }
+    inline void SetIncludedAllocatedStorage(int value) { m_includedAllocatedStorageHasBeenSet = true; m_includedAllocatedStorage = value; }
 
     /**
      * <p> The amount of storage (in gigabytes) that is allocated for the replication
      * instance. </p>
      */
-    inline OrderableReplicationInstance& WithIncludedAllocatedStorage(long value) { SetIncludedAllocatedStorage(value); return *this;}
+    inline OrderableReplicationInstance& WithIncludedAllocatedStorage(int value) { SetIncludedAllocatedStorage(value); return *this;}
 
   private:
     Aws::String m_engineVersion;
@@ -236,13 +236,13 @@ namespace Model
     bool m_replicationInstanceClassHasBeenSet;
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;
-    long m_minAllocatedStorage;
+    int m_minAllocatedStorage;
     bool m_minAllocatedStorageHasBeenSet;
-    long m_maxAllocatedStorage;
+    int m_maxAllocatedStorage;
     bool m_maxAllocatedStorageHasBeenSet;
-    long m_defaultAllocatedStorage;
+    int m_defaultAllocatedStorage;
     bool m_defaultAllocatedStorageHasBeenSet;
-    long m_includedAllocatedStorage;
+    int m_includedAllocatedStorage;
     bool m_includedAllocatedStorageHasBeenSet;
   };
 

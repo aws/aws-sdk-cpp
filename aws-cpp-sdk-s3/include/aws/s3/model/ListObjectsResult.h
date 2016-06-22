@@ -244,13 +244,13 @@ namespace Model
     inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
     
-    inline long GetMaxKeys() const{ return m_maxKeys; }
+    inline int GetMaxKeys() const{ return m_maxKeys; }
 
     
-    inline void SetMaxKeys(long value) { m_maxKeys = value; }
+    inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
     
-    inline ListObjectsResult& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
+    inline ListObjectsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
     
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
@@ -306,7 +306,7 @@ namespace Model
     Aws::String m_name;
     Aws::String m_prefix;
     Aws::String m_delimiter;
-    long m_maxKeys;
+    int m_maxKeys;
     Aws::Vector<CommonPrefix> m_commonPrefixes;
     EncodingType m_encodingType;
   };

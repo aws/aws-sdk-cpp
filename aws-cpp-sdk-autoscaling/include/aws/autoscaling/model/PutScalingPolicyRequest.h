@@ -220,19 +220,19 @@ namespace Model
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
-    inline long GetMinAdjustmentStep() const{ return m_minAdjustmentStep; }
+    inline int GetMinAdjustmentStep() const{ return m_minAdjustmentStep; }
 
     /**
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
-    inline void SetMinAdjustmentStep(long value) { m_minAdjustmentStepHasBeenSet = true; m_minAdjustmentStep = value; }
+    inline void SetMinAdjustmentStep(int value) { m_minAdjustmentStepHasBeenSet = true; m_minAdjustmentStep = value; }
 
     /**
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
-    inline PutScalingPolicyRequest& WithMinAdjustmentStep(long value) { SetMinAdjustmentStep(value); return *this;}
+    inline PutScalingPolicyRequest& WithMinAdjustmentStep(int value) { SetMinAdjustmentStep(value); return *this;}
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -241,7 +241,7 @@ namespace Model
      * least this many instances. Otherwise, the error is
      * <code>ValidationError</code>.</p>
      */
-    inline long GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+    inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -250,7 +250,7 @@ namespace Model
      * least this many instances. Otherwise, the error is
      * <code>ValidationError</code>.</p>
      */
-    inline void SetMinAdjustmentMagnitude(long value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
+    inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
 
     /**
      * <p>The minimum number of instances to scale. If the value of
@@ -259,7 +259,7 @@ namespace Model
      * least this many instances. Otherwise, the error is
      * <code>ValidationError</code>.</p>
      */
-    inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(long value) { SetMinAdjustmentMagnitude(value); return *this;}
+    inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
@@ -267,7 +267,7 @@ namespace Model
      * the current capacity.</p> <p>This parameter is required if the policy type is
      * <code>SimpleScaling</code> and not supported otherwise.</p>
      */
-    inline long GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
@@ -275,7 +275,7 @@ namespace Model
      * the current capacity.</p> <p>This parameter is required if the policy type is
      * <code>SimpleScaling</code> and not supported otherwise.</p>
      */
-    inline void SetScalingAdjustment(long value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
+    inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
@@ -283,7 +283,7 @@ namespace Model
      * the current capacity.</p> <p>This parameter is required if the policy type is
      * <code>SimpleScaling</code> and not supported otherwise.</p>
      */
-    inline PutScalingPolicyRequest& WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
+    inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
@@ -294,7 +294,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline long GetCooldown() const{ return m_cooldown; }
+    inline int GetCooldown() const{ return m_cooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
@@ -305,7 +305,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline void SetCooldown(long value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
+    inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes and before
@@ -316,7 +316,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline PutScalingPolicyRequest& WithCooldown(long value) { SetCooldown(value); return *this;}
+    inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -436,7 +436,7 @@ namespace Model
      * for the default cooldown period for the group.</p> <p>This parameter is not
      * supported if the policy type is <code>SimpleScaling</code>.</p>
      */
-    inline long GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
+    inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
 
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
@@ -444,7 +444,7 @@ namespace Model
      * for the default cooldown period for the group.</p> <p>This parameter is not
      * supported if the policy type is <code>SimpleScaling</code>.</p>
      */
-    inline void SetEstimatedInstanceWarmup(long value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
+    inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can
@@ -452,7 +452,7 @@ namespace Model
      * for the default cooldown period for the group.</p> <p>This parameter is not
      * supported if the policy type is <code>SimpleScaling</code>.</p>
      */
-    inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(long value) { SetEstimatedInstanceWarmup(value); return *this;}
+    inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;
@@ -463,19 +463,19 @@ namespace Model
     bool m_policyTypeHasBeenSet;
     Aws::String m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet;
-    long m_minAdjustmentStep;
+    int m_minAdjustmentStep;
     bool m_minAdjustmentStepHasBeenSet;
-    long m_minAdjustmentMagnitude;
+    int m_minAdjustmentMagnitude;
     bool m_minAdjustmentMagnitudeHasBeenSet;
-    long m_scalingAdjustment;
+    int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
-    long m_cooldown;
+    int m_cooldown;
     bool m_cooldownHasBeenSet;
     Aws::String m_metricAggregationType;
     bool m_metricAggregationTypeHasBeenSet;
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet;
-    long m_estimatedInstanceWarmup;
+    int m_estimatedInstanceWarmup;
     bool m_estimatedInstanceWarmupHasBeenSet;
   };
 

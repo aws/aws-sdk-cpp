@@ -145,7 +145,7 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
-    inline long GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+    inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
@@ -155,7 +155,7 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
-    inline void SetNormalizedInstanceHours(long value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
+    inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
      * <p>An approximation of the cost of the job flow, represented in m1.small/hours.
@@ -165,7 +165,7 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
-    inline ClusterSummary& WithNormalizedInstanceHours(long value) { SetNormalizedInstanceHours(value); return *this;}
+    inline ClusterSummary& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -174,7 +174,7 @@ namespace Model
     bool m_nameHasBeenSet;
     ClusterStatus m_status;
     bool m_statusHasBeenSet;
-    long m_normalizedInstanceHours;
+    int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
   };
 

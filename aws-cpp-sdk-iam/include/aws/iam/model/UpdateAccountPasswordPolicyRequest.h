@@ -35,19 +35,19 @@ namespace Model
      * <p>The minimum number of characters allowed in an IAM user password.</p>
      * <p>Default value: 6</p>
      */
-    inline long GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
+    inline int GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
 
     /**
      * <p>The minimum number of characters allowed in an IAM user password.</p>
      * <p>Default value: 6</p>
      */
-    inline void SetMinimumPasswordLength(long value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
+    inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
 
     /**
      * <p>The minimum number of characters allowed in an IAM user password.</p>
      * <p>Default value: 6</p>
      */
-    inline UpdateAccountPasswordPolicyRequest& WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithMinimumPasswordLength(int value) { SetMinimumPasswordLength(value); return *this;}
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one of the
@@ -161,40 +161,40 @@ namespace Model
      * <p>The number of days that an IAM user password is valid. The default value of 0
      * means IAM user passwords never expire.</p> <p>Default value: 0</p>
      */
-    inline long GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+    inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
 
     /**
      * <p>The number of days that an IAM user password is valid. The default value of 0
      * means IAM user passwords never expire.</p> <p>Default value: 0</p>
      */
-    inline void SetMaxPasswordAge(long value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
+    inline void SetMaxPasswordAge(int value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
 
     /**
      * <p>The number of days that an IAM user password is valid. The default value of 0
      * means IAM user passwords never expire.</p> <p>Default value: 0</p>
      */
-    inline UpdateAccountPasswordPolicyRequest& WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithMaxPasswordAge(int value) { SetMaxPasswordAge(value); return *this;}
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing. The default value of 0 means IAM users are not prevented from reusing
      * previous passwords.</p> <p>Default value: 0</p>
      */
-    inline long GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
+    inline int GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing. The default value of 0 means IAM users are not prevented from reusing
      * previous passwords.</p> <p>Default value: 0</p>
      */
-    inline void SetPasswordReusePrevention(long value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
+    inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing. The default value of 0 means IAM users are not prevented from reusing
      * previous passwords.</p> <p>Default value: 0</p>
      */
-    inline UpdateAccountPasswordPolicyRequest& WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
+    inline UpdateAccountPasswordPolicyRequest& WithPasswordReusePrevention(int value) { SetPasswordReusePrevention(value); return *this;}
 
     /**
      * <p>Prevents IAM users from setting a new password after their password has
@@ -215,7 +215,7 @@ namespace Model
     inline UpdateAccountPasswordPolicyRequest& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 
   private:
-    long m_minimumPasswordLength;
+    int m_minimumPasswordLength;
     bool m_minimumPasswordLengthHasBeenSet;
     bool m_requireSymbols;
     bool m_requireSymbolsHasBeenSet;
@@ -227,9 +227,9 @@ namespace Model
     bool m_requireLowercaseCharactersHasBeenSet;
     bool m_allowUsersToChangePassword;
     bool m_allowUsersToChangePasswordHasBeenSet;
-    long m_maxPasswordAge;
+    int m_maxPasswordAge;
     bool m_maxPasswordAgeHasBeenSet;
-    long m_passwordReusePrevention;
+    int m_passwordReusePrevention;
     bool m_passwordReusePreventionHasBeenSet;
     bool m_hardExpiry;
     bool m_hardExpiryHasBeenSet;

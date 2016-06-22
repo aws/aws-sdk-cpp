@@ -123,26 +123,26 @@ namespace Model
      * <p>The percentage of work completed on the action, represented on a scale of
      * zero to one hundred percent.</p>
      */
-    inline long GetPercentComplete() const{ return m_percentComplete; }
+    inline int GetPercentComplete() const{ return m_percentComplete; }
 
     /**
      * <p>The percentage of work completed on the action, represented on a scale of
      * zero to one hundred percent.</p>
      */
-    inline void SetPercentComplete(long value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
+    inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
 
     /**
      * <p>The percentage of work completed on the action, represented on a scale of
      * zero to one hundred percent.</p>
      */
-    inline ExecutionDetails& WithPercentComplete(long value) { SetPercentComplete(value); return *this;}
+    inline ExecutionDetails& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
 
   private:
     Aws::String m_summary;
     bool m_summaryHasBeenSet;
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
-    long m_percentComplete;
+    int m_percentComplete;
     bool m_percentCompleteHasBeenSet;
   };
 

@@ -200,21 +200,21 @@ namespace Model
      * The same port as the original cluster.</p> <p>Constraints: Must be between
      * <code>1115</code> and <code>65535</code>.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p> The port number on which the cluster accepts connections. </p> <p>Default:
      * The same port as the original cluster.</p> <p>Constraints: Must be between
      * <code>1115</code> and <code>65535</code>.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p> The port number on which the cluster accepts connections. </p> <p>Default:
      * The same port as the original cluster.</p> <p>Constraints: Must be between
      * <code>1115</code> and <code>65535</code>.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p> The Amazon EC2 Availability Zone in which to restore the cluster. </p>
@@ -809,7 +809,7 @@ namespace Model
      * cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value
      * from 0 to 35.</p>
      */
-    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
      * <p>The number of days that automated snapshots are retained. If the value is 0,
@@ -819,7 +819,7 @@ namespace Model
      * cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value
      * from 0 to 35.</p>
      */
-    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+    inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The number of days that automated snapshots are retained. If the value is 0,
@@ -829,7 +829,7 @@ namespace Model
      * cluster from which the snapshot was taken. </p> <p>Constraints: Must be a value
      * from 0 to 35.</p>
      */
-    inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
@@ -1099,7 +1099,7 @@ namespace Model
     bool m_snapshotIdentifierHasBeenSet;
     Aws::String m_snapshotClusterIdentifier;
     bool m_snapshotClusterIdentifierHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -1125,7 +1125,7 @@ namespace Model
     bool m_vpcSecurityGroupIdsHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
-    long m_automatedSnapshotRetentionPeriod;
+    int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;

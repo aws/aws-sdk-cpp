@@ -230,7 +230,7 @@ namespace Model
      * the ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.</p>
      */
-    inline long GetNumCacheClusters() const{ return m_numCacheClusters; }
+    inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
 
     /**
      * <p>The number of cache clusters this replication group will initially have.</p>
@@ -240,7 +240,7 @@ namespace Model
      * the ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.</p>
      */
-    inline void SetNumCacheClusters(long value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
+    inline void SetNumCacheClusters(int value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
 
     /**
      * <p>The number of cache clusters this replication group will initially have.</p>
@@ -250,7 +250,7 @@ namespace Model
      * the ElastiCache Limit Increase Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request">http://aws.amazon.com/contact-us/elasticache-node-limit-request</a>.</p>
      */
-    inline CreateReplicationGroupRequest& WithNumCacheClusters(long value) { SetNumCacheClusters(value); return *this;}
+    inline CreateReplicationGroupRequest& WithNumCacheClusters(int value) { SetNumCacheClusters(value); return *this;}
 
     /**
      * <p>A list of EC2 availability zones in which the replication group's cache
@@ -1169,19 +1169,19 @@ namespace Model
      * <p>The port number on which each member of the replication group will accept
      * connections.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which each member of the replication group will accept
      * connections.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which each member of the replication group will accept
      * connections.</p>
      */
-    inline CreateReplicationGroupRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateReplicationGroupRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1256,7 +1256,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic snapshots
@@ -1267,7 +1267,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic snapshots
@@ -1278,7 +1278,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline CreateReplicationGroupRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline CreateReplicationGroupRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
@@ -1352,7 +1352,7 @@ namespace Model
     bool m_primaryClusterIdHasBeenSet;
     bool m_automaticFailoverEnabled;
     bool m_automaticFailoverEnabledHasBeenSet;
-    long m_numCacheClusters;
+    int m_numCacheClusters;
     bool m_numCacheClustersHasBeenSet;
     Aws::Vector<Aws::String> m_preferredCacheClusterAZs;
     bool m_preferredCacheClusterAZsHasBeenSet;
@@ -1378,13 +1378,13 @@ namespace Model
     bool m_snapshotNameHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

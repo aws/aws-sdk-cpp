@@ -46,22 +46,22 @@ namespace Model
      * <p>The number of traffic policy instances that are associated with the current
      * AWS account.</p>
      */
-    inline long GetTrafficPolicyInstanceCount() const{ return m_trafficPolicyInstanceCount; }
+    inline int GetTrafficPolicyInstanceCount() const{ return m_trafficPolicyInstanceCount; }
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
      * AWS account.</p>
      */
-    inline void SetTrafficPolicyInstanceCount(long value) { m_trafficPolicyInstanceCount = value; }
+    inline void SetTrafficPolicyInstanceCount(int value) { m_trafficPolicyInstanceCount = value; }
 
     /**
      * <p>The number of traffic policy instances that are associated with the current
      * AWS account.</p>
      */
-    inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(long value) { SetTrafficPolicyInstanceCount(value); return *this;}
+    inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(int value) { SetTrafficPolicyInstanceCount(value); return *this;}
 
   private:
-    long m_trafficPolicyInstanceCount;
+    int m_trafficPolicyInstanceCount;
   };
 
 } // namespace Model

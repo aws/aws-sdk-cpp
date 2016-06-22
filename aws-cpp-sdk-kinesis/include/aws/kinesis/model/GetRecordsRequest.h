@@ -89,26 +89,26 @@ namespace Model
      * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
      * <code>InvalidArgumentException</code>.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of records to return. Specify a value of up to 10,000. If
      * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
      * <code>InvalidArgumentException</code>.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of records to return. Specify a value of up to 10,000. If
      * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
      * <code>InvalidArgumentException</code>.</p>
      */
-    inline GetRecordsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline GetRecordsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_shardIterator;
     bool m_shardIteratorHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

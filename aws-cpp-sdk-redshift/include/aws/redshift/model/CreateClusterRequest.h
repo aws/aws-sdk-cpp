@@ -930,7 +930,7 @@ namespace Model
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: <code>1</code> </p>
      * <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
      * <p> The number of days that automated snapshots are retained. If the value is 0,
@@ -939,7 +939,7 @@ namespace Model
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: <code>1</code> </p>
      * <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+    inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
      * <p> The number of days that automated snapshots are retained. If the value is 0,
@@ -948,7 +948,7 @@ namespace Model
      * <a>CreateClusterSnapshot</a>. </p> <p> Default: <code>1</code> </p>
      * <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline CreateClusterRequest& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline CreateClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /**
      * <p> The port number on which the cluster accepts incoming connections. </p>
@@ -957,7 +957,7 @@ namespace Model
      * incoming connections.</p> <p> Default: <code>5439</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p> The port number on which the cluster accepts incoming connections. </p>
@@ -966,7 +966,7 @@ namespace Model
      * incoming connections.</p> <p> Default: <code>5439</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p> The port number on which the cluster accepts incoming connections. </p>
@@ -975,7 +975,7 @@ namespace Model
      * incoming connections.</p> <p> Default: <code>5439</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline CreateClusterRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p> The version of the Amazon Redshift engine software that you want to deploy
@@ -1074,7 +1074,7 @@ namespace Model
      * nodes that you want in the cluster.</p> <p>Default: <code>1</code></p>
      * <p>Constraints: Value must be at least 1 and no more than 100.</p>
      */
-    inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
      * <p> The number of compute nodes in the cluster. This parameter is required when
@@ -1087,7 +1087,7 @@ namespace Model
      * nodes that you want in the cluster.</p> <p>Default: <code>1</code></p>
      * <p>Constraints: Value must be at least 1 and no more than 100.</p>
      */
-    inline void SetNumberOfNodes(long value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
      * <p> The number of compute nodes in the cluster. This parameter is required when
@@ -1100,7 +1100,7 @@ namespace Model
      * nodes that you want in the cluster.</p> <p>Default: <code>1</code></p>
      * <p>Constraints: Value must be at least 1 and no more than 100.</p>
      */
-    inline CreateClusterRequest& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline CreateClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
@@ -1498,15 +1498,15 @@ namespace Model
     bool m_preferredMaintenanceWindowHasBeenSet;
     Aws::String m_clusterParameterGroupName;
     bool m_clusterParameterGroupNameHasBeenSet;
-    long m_automatedSnapshotRetentionPeriod;
+    int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
-    long m_numberOfNodes;
+    int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;

@@ -48,19 +48,19 @@ namespace Model
      * <p> The maximum processing rate for the real-time endpoint for
      * <code>MLModel</code>, measured in incoming requests per second.</p>
      */
-    inline long GetPeakRequestsPerSecond() const{ return m_peakRequestsPerSecond; }
+    inline int GetPeakRequestsPerSecond() const{ return m_peakRequestsPerSecond; }
 
     /**
      * <p> The maximum processing rate for the real-time endpoint for
      * <code>MLModel</code>, measured in incoming requests per second.</p>
      */
-    inline void SetPeakRequestsPerSecond(long value) { m_peakRequestsPerSecondHasBeenSet = true; m_peakRequestsPerSecond = value; }
+    inline void SetPeakRequestsPerSecond(int value) { m_peakRequestsPerSecondHasBeenSet = true; m_peakRequestsPerSecond = value; }
 
     /**
      * <p> The maximum processing rate for the real-time endpoint for
      * <code>MLModel</code>, measured in incoming requests per second.</p>
      */
-    inline RealtimeEndpointInfo& WithPeakRequestsPerSecond(long value) { SetPeakRequestsPerSecond(value); return *this;}
+    inline RealtimeEndpointInfo& WithPeakRequestsPerSecond(int value) { SetPeakRequestsPerSecond(value); return *this;}
 
     /**
      * <p>The time that the request to create the real-time endpoint for the
@@ -192,7 +192,7 @@ namespace Model
     inline RealtimeEndpointInfo& WithEndpointStatus(RealtimeEndpointStatus&& value) { SetEndpointStatus(value); return *this;}
 
   private:
-    long m_peakRequestsPerSecond;
+    int m_peakRequestsPerSecond;
     bool m_peakRequestsPerSecondHasBeenSet;
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

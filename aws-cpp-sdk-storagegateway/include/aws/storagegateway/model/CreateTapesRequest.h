@@ -161,17 +161,17 @@ namespace Model
     /**
      * <p>The number of virtual tapes that you want to create.</p>
      */
-    inline long GetNumTapesToCreate() const{ return m_numTapesToCreate; }
+    inline int GetNumTapesToCreate() const{ return m_numTapesToCreate; }
 
     /**
      * <p>The number of virtual tapes that you want to create.</p>
      */
-    inline void SetNumTapesToCreate(long value) { m_numTapesToCreateHasBeenSet = true; m_numTapesToCreate = value; }
+    inline void SetNumTapesToCreate(int value) { m_numTapesToCreateHasBeenSet = true; m_numTapesToCreate = value; }
 
     /**
      * <p>The number of virtual tapes that you want to create.</p>
      */
-    inline CreateTapesRequest& WithNumTapesToCreate(long value) { SetNumTapesToCreate(value); return *this;}
+    inline CreateTapesRequest& WithNumTapesToCreate(int value) { SetNumTapesToCreate(value); return *this;}
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
@@ -236,7 +236,7 @@ namespace Model
     bool m_tapeSizeInBytesHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
-    long m_numTapesToCreate;
+    int m_numTapesToCreate;
     bool m_numTapesToCreateHasBeenSet;
     Aws::String m_tapeBarcodePrefix;
     bool m_tapeBarcodePrefixHasBeenSet;

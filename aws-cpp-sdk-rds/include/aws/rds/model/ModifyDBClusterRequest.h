@@ -230,21 +230,21 @@ namespace Model
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline ModifyDBClusterRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline ModifyDBClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -326,21 +326,21 @@ namespace Model
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline ModifyDBClusterRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline ModifyDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The new password for the master database user. This password can contain any
@@ -692,13 +692,13 @@ namespace Model
     bool m_newDBClusterIdentifierHasBeenSet;
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_masterUserPassword;
     bool m_masterUserPasswordHasBeenSet;

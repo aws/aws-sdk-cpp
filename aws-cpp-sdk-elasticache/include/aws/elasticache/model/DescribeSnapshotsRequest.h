@@ -235,7 +235,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 50</p> <p>Constraints: minimum 20; maximum 50.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p>The maximum number of records to include in the response. If more records
@@ -243,7 +243,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 50</p> <p>Constraints: minimum 20; maximum 50.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p>The maximum number of records to include in the response. If more records
@@ -251,7 +251,7 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 50</p> <p>Constraints: minimum 20; maximum 50.</p>
      */
-    inline DescribeSnapshotsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
     Aws::String m_cacheClusterId;
@@ -262,7 +262,7 @@ namespace Model
     bool m_snapshotSourceHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };
 

@@ -166,19 +166,19 @@ namespace Model
      * <p>When the <code>integerValue</code> type is set, the value of the resource
      * must be an integer.</p>
      */
-    inline long GetIntegerValue() const{ return m_integerValue; }
+    inline int GetIntegerValue() const{ return m_integerValue; }
 
     /**
      * <p>When the <code>integerValue</code> type is set, the value of the resource
      * must be an integer.</p>
      */
-    inline void SetIntegerValue(long value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
+    inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
 
     /**
      * <p>When the <code>integerValue</code> type is set, the value of the resource
      * must be an integer.</p>
      */
-    inline Resource& WithIntegerValue(long value) { SetIntegerValue(value); return *this;}
+    inline Resource& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
 
     /**
      * <p>When the <code>stringSetValue</code> type is set, the value of the resource
@@ -237,7 +237,7 @@ namespace Model
     bool m_doubleValueHasBeenSet;
     long long m_longValue;
     bool m_longValueHasBeenSet;
-    long m_integerValue;
+    int m_integerValue;
     bool m_integerValueHasBeenSet;
     Aws::Vector<Aws::String> m_stringSetValue;
     bool m_stringSetValueHasBeenSet;

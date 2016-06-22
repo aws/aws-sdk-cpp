@@ -299,19 +299,19 @@ namespace Model
      * Maximum number of multipart uploads that could have been included in the
      * response.
      */
-    inline long GetMaxUploads() const{ return m_maxUploads; }
+    inline int GetMaxUploads() const{ return m_maxUploads; }
 
     /**
      * Maximum number of multipart uploads that could have been included in the
      * response.
      */
-    inline void SetMaxUploads(long value) { m_maxUploads = value; }
+    inline void SetMaxUploads(int value) { m_maxUploads = value; }
 
     /**
      * Maximum number of multipart uploads that could have been included in the
      * response.
      */
-    inline ListMultipartUploadsResult& WithMaxUploads(long value) { SetMaxUploads(value); return *this;}
+    inline ListMultipartUploadsResult& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
 
     /**
      * Indicates whether the returned list of multipart uploads is truncated. A value
@@ -412,7 +412,7 @@ namespace Model
     Aws::String m_prefix;
     Aws::String m_delimiter;
     Aws::String m_nextUploadIdMarker;
-    long m_maxUploads;
+    int m_maxUploads;
     bool m_isTruncated;
     Aws::Vector<MultipartUpload> m_uploads;
     Aws::Vector<CommonPrefix> m_commonPrefixes;

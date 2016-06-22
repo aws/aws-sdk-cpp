@@ -463,7 +463,7 @@ namespace Model
      * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
-    inline long GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The initial number of cache nodes that the cache cluster will have.</p>
@@ -473,7 +473,7 @@ namespace Model
      * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
-    inline void SetNumCacheNodes(long value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
+    inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The initial number of cache nodes that the cache cluster will have.</p>
@@ -483,7 +483,7 @@ namespace Model
      * Request form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
      */
-    inline CreateCacheClusterRequest& WithNumCacheNodes(long value) { SetNumCacheNodes(value); return *this;}
+    inline CreateCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>The compute and memory capacity of the nodes in the node group.</p> <p>Valid
@@ -1310,17 +1310,17 @@ namespace Model
     /**
      * <p>The port number on which each of the cache nodes will accept connections.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which each of the cache nodes will accept connections.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which each of the cache nodes will accept connections.</p>
      */
-    inline CreateCacheClusterRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateCacheClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -1395,7 +1395,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic snapshots
@@ -1406,7 +1406,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic snapshots
@@ -1417,7 +1417,7 @@ namespace Model
      * </note> <p>Default: 0 (i.e., automatic backups are disabled for this cache
      * cluster).</p>
      */
-    inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
@@ -1493,7 +1493,7 @@ namespace Model
     bool m_preferredAvailabilityZoneHasBeenSet;
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet;
-    long m_numCacheNodes;
+    int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
@@ -1517,13 +1517,13 @@ namespace Model
     bool m_snapshotNameHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_notificationTopicArn;
     bool m_notificationTopicArnHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

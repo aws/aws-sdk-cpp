@@ -55,17 +55,17 @@ namespace Model
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline long GetMaxBatchSize() const{ return m_maxBatchSize; }
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline void SetMaxBatchSize(long value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline PollForJobsRequest& WithMaxBatchSize(long value) { SetMaxBatchSize(value); return *this;}
+    inline PollForJobsRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
     /**
      * <p>A map of property names and values. For an action type with no queryable
@@ -166,7 +166,7 @@ namespace Model
   private:
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
-    long m_maxBatchSize;
+    int m_maxBatchSize;
     bool m_maxBatchSizeHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_queryParam;
     bool m_queryParamHasBeenSet;

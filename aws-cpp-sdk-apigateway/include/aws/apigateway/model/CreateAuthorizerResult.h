@@ -457,21 +457,21 @@ namespace Model
      * Gateway will cache authorizer responses. If this field is not set, the default
      * value is 300. The maximum value is 3600, or 1 hour.</p>
      */
-    inline long GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
+    inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
 
     /**
      * <p>The TTL in seconds of cached authorizer results. If greater than 0, API
      * Gateway will cache authorizer responses. If this field is not set, the default
      * value is 300. The maximum value is 3600, or 1 hour.</p>
      */
-    inline void SetAuthorizerResultTtlInSeconds(long value) { m_authorizerResultTtlInSeconds = value; }
+    inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSeconds = value; }
 
     /**
      * <p>The TTL in seconds of cached authorizer results. If greater than 0, API
      * Gateway will cache authorizer responses. If this field is not set, the default
      * value is 300. The maximum value is 3600, or 1 hour.</p>
      */
-    inline CreateAuthorizerResult& WithAuthorizerResultTtlInSeconds(long value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
+    inline CreateAuthorizerResult& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -482,7 +482,7 @@ namespace Model
     Aws::String m_authorizerCredentials;
     Aws::String m_identitySource;
     Aws::String m_identityValidationExpression;
-    long m_authorizerResultTtlInSeconds;
+    int m_authorizerResultTtlInSeconds;
   };
 
 } // namespace Model

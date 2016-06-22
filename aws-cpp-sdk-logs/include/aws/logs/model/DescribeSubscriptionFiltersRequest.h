@@ -133,13 +133,13 @@ namespace Model
     inline DescribeSubscriptionFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     
-    inline DescribeSubscriptionFiltersRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeSubscriptionFiltersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
@@ -148,7 +148,7 @@ namespace Model
     bool m_filterNamePrefixHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

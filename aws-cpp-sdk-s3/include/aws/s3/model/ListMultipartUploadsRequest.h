@@ -157,21 +157,21 @@ namespace Model
      * response body. 1,000 is the maximum number of uploads that can be returned in a
      * response.
      */
-    inline long GetMaxUploads() const{ return m_maxUploads; }
+    inline int GetMaxUploads() const{ return m_maxUploads; }
 
     /**
      * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
      * response body. 1,000 is the maximum number of uploads that can be returned in a
      * response.
      */
-    inline void SetMaxUploads(long value) { m_maxUploadsHasBeenSet = true; m_maxUploads = value; }
+    inline void SetMaxUploads(int value) { m_maxUploadsHasBeenSet = true; m_maxUploads = value; }
 
     /**
      * Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the
      * response body. 1,000 is the maximum number of uploads that can be returned in a
      * response.
      */
-    inline ListMultipartUploadsRequest& WithMaxUploads(long value) { SetMaxUploads(value); return *this;}
+    inline ListMultipartUploadsRequest& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
 
     /**
      * Lists in-progress uploads only for those keys that begin with the specified
@@ -273,7 +273,7 @@ namespace Model
     bool m_encodingTypeHasBeenSet;
     Aws::String m_keyMarker;
     bool m_keyMarkerHasBeenSet;
-    long m_maxUploads;
+    int m_maxUploads;
     bool m_maxUploadsHasBeenSet;
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;

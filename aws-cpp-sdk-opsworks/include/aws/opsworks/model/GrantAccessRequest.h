@@ -75,7 +75,7 @@ namespace Model
      * credentials to log in. If the user is logged in at the time, he or she
      * automatically will be logged out.</p>
      */
-    inline long GetValidForInMinutes() const{ return m_validForInMinutes; }
+    inline int GetValidForInMinutes() const{ return m_validForInMinutes; }
 
     /**
      * <p>The length of time (in minutes) that the grant is valid. When the grant
@@ -83,7 +83,7 @@ namespace Model
      * credentials to log in. If the user is logged in at the time, he or she
      * automatically will be logged out.</p>
      */
-    inline void SetValidForInMinutes(long value) { m_validForInMinutesHasBeenSet = true; m_validForInMinutes = value; }
+    inline void SetValidForInMinutes(int value) { m_validForInMinutesHasBeenSet = true; m_validForInMinutes = value; }
 
     /**
      * <p>The length of time (in minutes) that the grant is valid. When the grant
@@ -91,12 +91,12 @@ namespace Model
      * credentials to log in. If the user is logged in at the time, he or she
      * automatically will be logged out.</p>
      */
-    inline GrantAccessRequest& WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
+    inline GrantAccessRequest& WithValidForInMinutes(int value) { SetValidForInMinutes(value); return *this;}
 
   private:
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    long m_validForInMinutes;
+    int m_validForInMinutes;
     bool m_validForInMinutesHasBeenSet;
   };
 

@@ -48,17 +48,17 @@ namespace Model
     /**
      * <p>Minimum length to require for IAM user passwords.</p>
      */
-    inline long GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
+    inline int GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
 
     /**
      * <p>Minimum length to require for IAM user passwords.</p>
      */
-    inline void SetMinimumPasswordLength(long value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
+    inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
 
     /**
      * <p>Minimum length to require for IAM user passwords.</p>
      */
-    inline PasswordPolicy& WithMinimumPasswordLength(long value) { SetMinimumPasswordLength(value); return *this;}
+    inline PasswordPolicy& WithMinimumPasswordLength(int value) { SetMinimumPasswordLength(value); return *this;}
 
     /**
      * <p>Specifies whether to require symbols for IAM user passwords.</p>
@@ -159,35 +159,35 @@ namespace Model
     /**
      * <p>The number of days that an IAM user password is valid.</p>
      */
-    inline long GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+    inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
 
     /**
      * <p>The number of days that an IAM user password is valid.</p>
      */
-    inline void SetMaxPasswordAge(long value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
+    inline void SetMaxPasswordAge(int value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
 
     /**
      * <p>The number of days that an IAM user password is valid.</p>
      */
-    inline PasswordPolicy& WithMaxPasswordAge(long value) { SetMaxPasswordAge(value); return *this;}
+    inline PasswordPolicy& WithMaxPasswordAge(int value) { SetMaxPasswordAge(value); return *this;}
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing.</p>
      */
-    inline long GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
+    inline int GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing.</p>
      */
-    inline void SetPasswordReusePrevention(long value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
+    inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing.</p>
      */
-    inline PasswordPolicy& WithPasswordReusePrevention(long value) { SetPasswordReusePrevention(value); return *this;}
+    inline PasswordPolicy& WithPasswordReusePrevention(int value) { SetPasswordReusePrevention(value); return *this;}
 
     /**
      * <p>Specifies whether IAM users are prevented from setting a new password after
@@ -208,7 +208,7 @@ namespace Model
     inline PasswordPolicy& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 
   private:
-    long m_minimumPasswordLength;
+    int m_minimumPasswordLength;
     bool m_minimumPasswordLengthHasBeenSet;
     bool m_requireSymbols;
     bool m_requireSymbolsHasBeenSet;
@@ -222,9 +222,9 @@ namespace Model
     bool m_allowUsersToChangePasswordHasBeenSet;
     bool m_expirePasswords;
     bool m_expirePasswordsHasBeenSet;
-    long m_maxPasswordAge;
+    int m_maxPasswordAge;
     bool m_maxPasswordAgeHasBeenSet;
-    long m_passwordReusePrevention;
+    int m_passwordReusePrevention;
     bool m_passwordReusePreventionHasBeenSet;
     bool m_hardExpiry;
     bool m_hardExpiryHasBeenSet;

@@ -47,47 +47,47 @@ namespace Model
     /**
      * <p>The number of sockets on the Dedicated host.</p>
      */
-    inline long GetSockets() const{ return m_sockets; }
+    inline int GetSockets() const{ return m_sockets; }
 
     /**
      * <p>The number of sockets on the Dedicated host.</p>
      */
-    inline void SetSockets(long value) { m_socketsHasBeenSet = true; m_sockets = value; }
+    inline void SetSockets(int value) { m_socketsHasBeenSet = true; m_sockets = value; }
 
     /**
      * <p>The number of sockets on the Dedicated host.</p>
      */
-    inline HostProperties& WithSockets(long value) { SetSockets(value); return *this;}
+    inline HostProperties& WithSockets(int value) { SetSockets(value); return *this;}
 
     /**
      * <p>The number of cores on the Dedicated host.</p>
      */
-    inline long GetCores() const{ return m_cores; }
+    inline int GetCores() const{ return m_cores; }
 
     /**
      * <p>The number of cores on the Dedicated host.</p>
      */
-    inline void SetCores(long value) { m_coresHasBeenSet = true; m_cores = value; }
+    inline void SetCores(int value) { m_coresHasBeenSet = true; m_cores = value; }
 
     /**
      * <p>The number of cores on the Dedicated host.</p>
      */
-    inline HostProperties& WithCores(long value) { SetCores(value); return *this;}
+    inline HostProperties& WithCores(int value) { SetCores(value); return *this;}
 
     /**
      * <p>The number of vCPUs on the Dedicated host.</p>
      */
-    inline long GetTotalVCpus() const{ return m_totalVCpus; }
+    inline int GetTotalVCpus() const{ return m_totalVCpus; }
 
     /**
      * <p>The number of vCPUs on the Dedicated host.</p>
      */
-    inline void SetTotalVCpus(long value) { m_totalVCpusHasBeenSet = true; m_totalVCpus = value; }
+    inline void SetTotalVCpus(int value) { m_totalVCpusHasBeenSet = true; m_totalVCpus = value; }
 
     /**
      * <p>The number of vCPUs on the Dedicated host.</p>
      */
-    inline HostProperties& WithTotalVCpus(long value) { SetTotalVCpus(value); return *this;}
+    inline HostProperties& WithTotalVCpus(int value) { SetTotalVCpus(value); return *this;}
 
     /**
      * <p>The instance type size that the Dedicated host supports (for example,
@@ -132,11 +132,11 @@ namespace Model
     inline HostProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
   private:
-    long m_sockets;
+    int m_sockets;
     bool m_socketsHasBeenSet;
-    long m_cores;
+    int m_cores;
     bool m_coresHasBeenSet;
-    long m_totalVCpus;
+    int m_totalVCpus;
     bool m_totalVCpusHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;

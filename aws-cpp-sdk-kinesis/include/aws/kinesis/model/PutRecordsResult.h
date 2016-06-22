@@ -47,19 +47,19 @@ namespace Model
      * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
      * request.</p>
      */
-    inline long GetFailedRecordCount() const{ return m_failedRecordCount; }
+    inline int GetFailedRecordCount() const{ return m_failedRecordCount; }
 
     /**
      * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
      * request.</p>
      */
-    inline void SetFailedRecordCount(long value) { m_failedRecordCount = value; }
+    inline void SetFailedRecordCount(int value) { m_failedRecordCount = value; }
 
     /**
      * <p>The number of unsuccessfully processed records in a <code>PutRecords</code>
      * request.</p>
      */
-    inline PutRecordsResult& WithFailedRecordCount(long value) { SetFailedRecordCount(value); return *this;}
+    inline PutRecordsResult& WithFailedRecordCount(int value) { SetFailedRecordCount(value); return *this;}
 
     /**
      * <p>An array of successfully and unsuccessfully processed record results,
@@ -125,7 +125,7 @@ namespace Model
     inline PutRecordsResult& AddRecords(PutRecordsResultEntry&& value) { m_records.push_back(value); return *this; }
 
   private:
-    long m_failedRecordCount;
+    int m_failedRecordCount;
     Aws::Vector<PutRecordsResultEntry> m_records;
   };
 

@@ -228,21 +228,21 @@ namespace Model
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
      * parameter instead.</p>
      */
-    inline long GetNumberOfBytes() const{ return m_numberOfBytes; }
+    inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
 
     /**
      * <p>Integer that contains the number of bytes to generate. Common values are 128,
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
      * parameter instead.</p>
      */
-    inline void SetNumberOfBytes(long value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
+    inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
 
     /**
      * <p>Integer that contains the number of bytes to generate. Common values are 128,
      * 256, 512, 1024 and so on. We recommend that you use the <code>KeySpec</code>
      * parameter instead.</p>
      */
-    inline GenerateDataKeyWithoutPlaintextRequest& WithNumberOfBytes(long value) { SetNumberOfBytes(value); return *this;}
+    inline GenerateDataKeyWithoutPlaintextRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
     /**
      * <p>A list of grant tokens.</p> <p>For more information, see <a
@@ -307,7 +307,7 @@ namespace Model
     bool m_encryptionContextHasBeenSet;
     DataKeySpec m_keySpec;
     bool m_keySpecHasBeenSet;
-    long m_numberOfBytes;
+    int m_numberOfBytes;
     bool m_numberOfBytesHasBeenSet;
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;

@@ -261,17 +261,17 @@ namespace Model
     /**
      * <p>The volume size.</p>
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The volume size.</p>
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * <p>The volume size.</p>
      */
-    inline Volume& WithSize(long value) { SetSize(value); return *this;}
+    inline Volume& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * <p>The device name.</p>
@@ -479,17 +479,17 @@ namespace Model
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline Volume& WithIops(long value) { SetIops(value); return *this;}
+    inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
   private:
     Aws::String m_volumeId;
@@ -504,7 +504,7 @@ namespace Model
     bool m_instanceIdHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     Aws::String m_device;
     bool m_deviceHasBeenSet;
@@ -516,7 +516,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
   };
 

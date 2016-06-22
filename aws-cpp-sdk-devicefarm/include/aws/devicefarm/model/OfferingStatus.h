@@ -96,17 +96,17 @@ namespace Model
     /**
      * <p>The number of available devices in the offering.</p>
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of available devices in the offering.</p>
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of available devices in the offering.</p>
      */
-    inline OfferingStatus& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline OfferingStatus& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * <p>The date on which the offering is effective.</p>
@@ -138,7 +138,7 @@ namespace Model
     bool m_typeHasBeenSet;
     Offering m_offering;
     bool m_offeringHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Utils::DateTime m_effectiveOn;
     bool m_effectiveOnHasBeenSet;

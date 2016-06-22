@@ -322,17 +322,17 @@ namespace Model
     /**
      * <p>The TTL of cached authorizer results.</p>
      */
-    inline long GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
+    inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
 
     /**
      * <p>The TTL of cached authorizer results.</p>
      */
-    inline void SetAuthorizerResultTtlInSeconds(long value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
+    inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
 
     /**
      * <p>The TTL of cached authorizer results.</p>
      */
-    inline CreateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(long value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
+    inline CreateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
   private:
     Aws::String m_restApiId;
@@ -351,7 +351,7 @@ namespace Model
     bool m_identitySourceHasBeenSet;
     Aws::String m_identityValidationExpression;
     bool m_identityValidationExpressionHasBeenSet;
-    long m_authorizerResultTtlInSeconds;
+    int m_authorizerResultTtlInSeconds;
     bool m_authorizerResultTtlInSecondsHasBeenSet;
   };
 

@@ -84,19 +84,19 @@ namespace Model
      * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
      * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline long GetPipelineVersion() const{ return m_pipelineVersion; }
+    inline int GetPipelineVersion() const{ return m_pipelineVersion; }
 
     /**
      * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
      * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline void SetPipelineVersion(long value) { m_pipelineVersion = value; }
+    inline void SetPipelineVersion(int value) { m_pipelineVersion = value; }
 
     /**
      * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
      * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline GetPipelineStateResult& WithPipelineVersion(long value) { SetPipelineVersion(value); return *this;}
+    inline GetPipelineStateResult& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
@@ -192,7 +192,7 @@ namespace Model
 
   private:
     Aws::String m_pipelineName;
-    long m_pipelineVersion;
+    int m_pipelineVersion;
     Aws::Vector<StageState> m_stageStates;
     Aws::Utils::DateTime m_created;
     Aws::Utils::DateTime m_updated;

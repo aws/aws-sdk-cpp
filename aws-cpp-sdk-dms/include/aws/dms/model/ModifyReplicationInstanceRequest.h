@@ -73,19 +73,19 @@ namespace Model
      * <p> The amount of storage (in gigabytes) to be allocated for the replication
      * instance. </p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The amount of storage (in gigabytes) to be allocated for the replication
      * instance. </p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The amount of storage (in gigabytes) to be allocated for the replication
      * instance. </p>
      */
-    inline ModifyReplicationInstanceRequest& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ModifyReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p> Indicates whether the changes should be applied immediately or during the
@@ -378,7 +378,7 @@ namespace Model
   private:
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;

@@ -71,37 +71,37 @@ namespace Model
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline const Aws::Vector<long>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
+    inline const Aws::Vector<int>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
 
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline void SetLoadBalancerPorts(const Aws::Vector<long>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
+    inline void SetLoadBalancerPorts(const Aws::Vector<int>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
 
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline void SetLoadBalancerPorts(Aws::Vector<long>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
+    inline void SetLoadBalancerPorts(Aws::Vector<int>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
 
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<long>& value) { SetLoadBalancerPorts(value); return *this;}
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<int>& value) { SetLoadBalancerPorts(value); return *this;}
 
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<long>&& value) { SetLoadBalancerPorts(value); return *this;}
+    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<int>&& value) { SetLoadBalancerPorts(value); return *this;}
 
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(long value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
+    inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(int value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
 
   private:
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
-    Aws::Vector<long> m_loadBalancerPorts;
+    Aws::Vector<int> m_loadBalancerPorts;
     bool m_loadBalancerPortsHasBeenSet;
   };
 

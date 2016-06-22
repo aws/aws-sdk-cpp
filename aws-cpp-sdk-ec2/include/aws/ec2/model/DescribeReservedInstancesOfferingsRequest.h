@@ -534,7 +534,7 @@ namespace Model
      * with the returned <code>NextToken</code> value. The maximum is 100.</p>
      * <p>Default: 100</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -542,7 +542,7 @@ namespace Model
      * with the returned <code>NextToken</code> value. The maximum is 100.</p>
      * <p>Default: 100</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -550,7 +550,7 @@ namespace Model
      * with the returned <code>NextToken</code> value. The maximum is 100.</p>
      * <p>Default: 100</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>Include Reserved Instance Marketplace offerings in the response.</p>
@@ -607,19 +607,19 @@ namespace Model
      * <p>The maximum number of instances to filter when searching for offerings.</p>
      * <p>Default: 20</p>
      */
-    inline long GetMaxInstanceCount() const{ return m_maxInstanceCount; }
+    inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
 
     /**
      * <p>The maximum number of instances to filter when searching for offerings.</p>
      * <p>Default: 20</p>
      */
-    inline void SetMaxInstanceCount(long value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
+    inline void SetMaxInstanceCount(int value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
 
     /**
      * <p>The maximum number of instances to filter when searching for offerings.</p>
      * <p>Default: 20</p>
      */
-    inline DescribeReservedInstancesOfferingsRequest& WithMaxInstanceCount(long value) { SetMaxInstanceCount(value); return *this;}
+    inline DescribeReservedInstancesOfferingsRequest& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -640,7 +640,7 @@ namespace Model
     bool m_offeringTypeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     bool m_includeMarketplace;
     bool m_includeMarketplaceHasBeenSet;
@@ -648,7 +648,7 @@ namespace Model
     bool m_minDurationHasBeenSet;
     long long m_maxDuration;
     bool m_maxDurationHasBeenSet;
-    long m_maxInstanceCount;
+    int m_maxInstanceCount;
     bool m_maxInstanceCountHasBeenSet;
   };
 

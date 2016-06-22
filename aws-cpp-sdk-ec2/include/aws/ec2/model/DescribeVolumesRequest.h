@@ -433,7 +433,7 @@ namespace Model
      * returns all results. You cannot specify this parameter and the volume IDs
      * parameter in the same request.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
@@ -447,7 +447,7 @@ namespace Model
      * returns all results. You cannot specify this parameter and the volume IDs
      * parameter in the same request.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of volume results returned by <code>DescribeVolumes</code>
@@ -461,7 +461,7 @@ namespace Model
      * returns all results. You cannot specify this parameter and the volume IDs
      * parameter in the same request.</p>
      */
-    inline DescribeVolumesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeVolumesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -472,7 +472,7 @@ namespace Model
     bool m_filtersHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

@@ -257,21 +257,21 @@ namespace Model
      * must be at least 60 seconds and must be a multiple of 60. The default value is
      * 60. </p>
      */
-    inline long GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const{ return m_period; }
 
     /**
      * <p> The granularity, in seconds, of the returned datapoints. <code>Period</code>
      * must be at least 60 seconds and must be a multiple of 60. The default value is
      * 60. </p>
      */
-    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
      * <p> The granularity, in seconds, of the returned datapoints. <code>Period</code>
      * must be at least 60 seconds and must be a multiple of 60. The default value is
      * 60. </p>
      */
-    inline GetMetricStatisticsRequest& WithPeriod(long value) { SetPeriod(value); return *this;}
+    inline GetMetricStatisticsRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
      * <p> The metric statistics to return. For information about specific statistics
@@ -365,7 +365,7 @@ namespace Model
     bool m_startTimeHasBeenSet;
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
-    long m_period;
+    int m_period;
     bool m_periodHasBeenSet;
     Aws::Vector<Statistic> m_statistics;
     bool m_statisticsHasBeenSet;

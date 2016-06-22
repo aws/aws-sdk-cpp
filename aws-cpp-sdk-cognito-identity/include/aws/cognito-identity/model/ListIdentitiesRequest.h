@@ -73,17 +73,17 @@ namespace Model
     /**
      * The maximum number of identities to return.
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * The maximum number of identities to return.
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * The maximum number of identities to return.
      */
-    inline ListIdentitiesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListIdentitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * A pagination token.
@@ -144,7 +144,7 @@ namespace Model
   private:
     Aws::String m_identityPoolId;
     bool m_identityPoolIdHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

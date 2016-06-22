@@ -214,17 +214,17 @@ namespace Model
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline long GetPercentComplete() const{ return m_percentComplete; }
+    inline int GetPercentComplete() const{ return m_percentComplete; }
 
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline void SetPercentComplete(long value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
+    inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
 
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline ActionExecution& WithPercentComplete(long value) { SetPercentComplete(value); return *this;}
+    inline ActionExecution& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
 
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
@@ -262,7 +262,7 @@ namespace Model
     bool m_externalExecutionIdHasBeenSet;
     Aws::String m_externalExecutionUrl;
     bool m_externalExecutionUrlHasBeenSet;
-    long m_percentComplete;
+    int m_percentComplete;
     bool m_percentCompleteHasBeenSet;
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet;

@@ -122,17 +122,17 @@ namespace Model
     /**
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
-    inline long GetDBInstanceCount() const{ return m_dBInstanceCount; }
+    inline int GetDBInstanceCount() const{ return m_dBInstanceCount; }
 
     /**
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
-    inline void SetDBInstanceCount(long value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
+    inline void SetDBInstanceCount(int value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
 
     /**
      * <p>The number of instances to reserve.</p> <p>Default: <code>1</code> </p>
      */
-    inline PurchaseReservedDBInstancesOfferingRequest& WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
+    inline PurchaseReservedDBInstancesOfferingRequest& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
 
     
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -160,7 +160,7 @@ namespace Model
     bool m_reservedDBInstancesOfferingIdHasBeenSet;
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
-    long m_dBInstanceCount;
+    int m_dBInstanceCount;
     bool m_dBInstanceCountHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

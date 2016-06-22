@@ -321,21 +321,21 @@ namespace Model
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline long GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline CreateFunctionRequest& WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline CreateFunctionRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The amount of memory, in MB, your Lambda function is given. Lambda uses this
@@ -345,7 +345,7 @@ namespace Model
      * function. The default value is 128 MB. The value must be a multiple of 64
      * MB.</p>
      */
-    inline long GetMemorySize() const{ return m_memorySize; }
+    inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
      * <p>The amount of memory, in MB, your Lambda function is given. Lambda uses this
@@ -355,7 +355,7 @@ namespace Model
      * function. The default value is 128 MB. The value must be a multiple of 64
      * MB.</p>
      */
-    inline void SetMemorySize(long value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
+    inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
      * <p>The amount of memory, in MB, your Lambda function is given. Lambda uses this
@@ -365,7 +365,7 @@ namespace Model
      * function. The default value is 128 MB. The value must be a multiple of 64
      * MB.</p>
      */
-    inline CreateFunctionRequest& WithMemorySize(long value) { SetMemorySize(value); return *this;}
+    inline CreateFunctionRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
@@ -438,9 +438,9 @@ namespace Model
     bool m_codeHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    long m_timeout;
+    int m_timeout;
     bool m_timeoutHasBeenSet;
-    long m_memorySize;
+    int m_memorySize;
     bool m_memorySizeHasBeenSet;
     bool m_publish;
     bool m_publishHasBeenSet;

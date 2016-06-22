@@ -82,22 +82,22 @@ namespace Model
     /**
      * <p>The port that is used by the Listener.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port that is used by the Listener.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port that is used by the Listener.</p>
      */
-    inline Listener& WithPort(long value) { SetPort(value); return *this;}
+    inline Listener& WithPort(int value) { SetPort(value); return *this;}
 
   private:
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
   };
 

@@ -194,7 +194,7 @@ namespace Model
      * increases by one (even if you have deregistered previous revisions in this
      * family).</p>
      */
-    inline long GetRevision() const{ return m_revision; }
+    inline int GetRevision() const{ return m_revision; }
 
     /**
      * <p>The revision of the task in a particular family. The revision is a version
@@ -204,7 +204,7 @@ namespace Model
      * increases by one (even if you have deregistered previous revisions in this
      * family).</p>
      */
-    inline void SetRevision(long value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
      * <p>The revision of the task in a particular family. The revision is a version
@@ -214,7 +214,7 @@ namespace Model
      * increases by one (even if you have deregistered previous revisions in this
      * family).</p>
      */
-    inline TaskDefinition& WithRevision(long value) { SetRevision(value); return *this;}
+    inline TaskDefinition& WithRevision(int value) { SetRevision(value); return *this;}
 
     /**
      * <p>The list of volumes in a task. For more information about volume definition
@@ -346,7 +346,7 @@ namespace Model
     bool m_containerDefinitionsHasBeenSet;
     Aws::String m_family;
     bool m_familyHasBeenSet;
-    long m_revision;
+    int m_revision;
     bool m_revisionHasBeenSet;
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;

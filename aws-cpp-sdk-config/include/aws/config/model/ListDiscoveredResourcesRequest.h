@@ -171,21 +171,21 @@ namespace Model
      * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
      * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
      * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
-    inline ListDiscoveredResourcesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListDiscoveredResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>Specifies whether AWS Config includes deleted resources in the results. By
@@ -254,7 +254,7 @@ namespace Model
     bool m_resourceIdsHasBeenSet;
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     bool m_includeDeletedResources;
     bool m_includeDeletedResourcesHasBeenSet;

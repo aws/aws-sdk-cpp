@@ -261,17 +261,17 @@ namespace Model
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline CreateEndpointRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateEndpointRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the endpoint database.</p>
@@ -454,7 +454,7 @@ namespace Model
     bool m_passwordHasBeenSet;
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

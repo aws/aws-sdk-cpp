@@ -135,7 +135,7 @@ namespace Model
      * <p>Type: Integer</p> <p>Default: 1</p> <p>Valid values: Integer from 1 to 10</p>
      * <p>Required: Yes</p>
      */
-    inline long GetDurationInYears() const{ return m_durationInYears; }
+    inline int GetDurationInYears() const{ return m_durationInYears; }
 
     /**
      * <p>The number of years the domain will be registered. Domains are registered for
@@ -143,7 +143,7 @@ namespace Model
      * <p>Type: Integer</p> <p>Default: 1</p> <p>Valid values: Integer from 1 to 10</p>
      * <p>Required: Yes</p>
      */
-    inline void SetDurationInYears(long value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
+    inline void SetDurationInYears(int value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
 
     /**
      * <p>The number of years the domain will be registered. Domains are registered for
@@ -151,7 +151,7 @@ namespace Model
      * <p>Type: Integer</p> <p>Default: 1</p> <p>Valid values: Integer from 1 to 10</p>
      * <p>Required: Yes</p>
      */
-    inline TransferDomainRequest& WithDurationInYears(long value) { SetDurationInYears(value); return *this;}
+    inline TransferDomainRequest& WithDurationInYears(int value) { SetDurationInYears(value); return *this;}
 
     /**
      * <p>Contains details for the host and glue IP addresses.</p> <p>Type: Complex</p>
@@ -512,7 +512,7 @@ namespace Model
     bool m_domainNameHasBeenSet;
     Aws::String m_idnLangCode;
     bool m_idnLangCodeHasBeenSet;
-    long m_durationInYears;
+    int m_durationInYears;
     bool m_durationInYearsHasBeenSet;
     Aws::Vector<Nameserver> m_nameservers;
     bool m_nameserversHasBeenSet;

@@ -201,19 +201,19 @@ namespace Model
      * <p>The maximum number of stream records that can be sent to your Lambda function
      * for a single invocation.</p>
      */
-    inline long GetBatchSize() const{ return m_batchSize; }
+    inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
      * <p>The maximum number of stream records that can be sent to your Lambda function
      * for a single invocation.</p>
      */
-    inline void SetBatchSize(long value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
+    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
      * <p>The maximum number of stream records that can be sent to your Lambda function
      * for a single invocation.</p>
      */
-    inline UpdateEventSourceMappingRequest& WithBatchSize(long value) { SetBatchSize(value); return *this;}
+    inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
   private:
     Aws::String m_uUID;
@@ -222,7 +222,7 @@ namespace Model
     bool m_functionNameHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    long m_batchSize;
+    int m_batchSize;
     bool m_batchSizeHasBeenSet;
   };
 

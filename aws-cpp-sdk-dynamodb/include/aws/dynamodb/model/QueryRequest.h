@@ -550,7 +550,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
@@ -565,7 +565,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
@@ -580,7 +580,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline QueryRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline QueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>Determines the read consistency model: If set to <code>true</code>, then the
@@ -3310,7 +3310,7 @@ namespace Model
     bool m_selectHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     bool m_consistentRead;
     bool m_consistentReadHasBeenSet;

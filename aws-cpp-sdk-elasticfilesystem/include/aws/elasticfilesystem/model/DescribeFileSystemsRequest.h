@@ -45,7 +45,7 @@ namespace Model
      * specified in the request and the service's internal maximum number of items per
      * page. </p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of file systems to return in
@@ -54,7 +54,7 @@ namespace Model
      * specified in the request and the service's internal maximum number of items per
      * page. </p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of file systems to return in
@@ -63,7 +63,7 @@ namespace Model
      * specified in the request and the service's internal maximum number of items per
      * page. </p>
      */
-    inline DescribeFileSystemsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline DescribeFileSystemsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
      * <p> Optional string. Opaque pagination token returned from a previous
@@ -199,7 +199,7 @@ namespace Model
     inline DescribeFileSystemsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
   private:
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

@@ -183,21 +183,21 @@ namespace Model
      * specify a value, the request would return as many log events as can fit in a
      * response size of 1MB, up to 10,000 log events. </p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p> The maximum number of log events returned in the response. If you don't
      * specify a value, the request would return as many log events as can fit in a
      * response size of 1MB, up to 10,000 log events. </p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p> The maximum number of log events returned in the response. If you don't
      * specify a value, the request would return as many log events as can fit in a
      * response size of 1MB, up to 10,000 log events. </p>
      */
-    inline GetLogEventsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline GetLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>If set to true, the earliest log events would be returned first. The default
@@ -228,7 +228,7 @@ namespace Model
     bool m_endTimeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     bool m_startFromHead;
     bool m_startFromHeadHasBeenSet;

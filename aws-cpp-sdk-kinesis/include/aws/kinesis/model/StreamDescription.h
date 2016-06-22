@@ -246,17 +246,17 @@ namespace Model
     /**
      * <p>The current retention period, in hours.</p>
      */
-    inline long GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
+    inline int GetRetentionPeriodHours() const{ return m_retentionPeriodHours; }
 
     /**
      * <p>The current retention period, in hours.</p>
      */
-    inline void SetRetentionPeriodHours(long value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
+    inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     /**
      * <p>The current retention period, in hours.</p>
      */
-    inline StreamDescription& WithRetentionPeriodHours(long value) { SetRetentionPeriodHours(value); return *this;}
+    inline StreamDescription& WithRetentionPeriodHours(int value) { SetRetentionPeriodHours(value); return *this;}
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -304,7 +304,7 @@ namespace Model
     bool m_shardsHasBeenSet;
     bool m_hasMoreShards;
     bool m_hasMoreShardsHasBeenSet;
-    long m_retentionPeriodHours;
+    int m_retentionPeriodHours;
     bool m_retentionPeriodHoursHasBeenSet;
     Aws::Vector<EnhancedMetrics> m_enhancedMonitoring;
     bool m_enhancedMonitoringHasBeenSet;

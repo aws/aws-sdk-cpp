@@ -193,17 +193,17 @@ namespace Model
     /**
      * <p>The exit code returned for the state change request.</p>
      */
-    inline long GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const{ return m_exitCode; }
 
     /**
      * <p>The exit code returned for the state change request.</p>
      */
-    inline void SetExitCode(long value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
+    inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
      * <p>The exit code returned for the state change request.</p>
      */
-    inline SubmitContainerStateChangeRequest& WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline SubmitContainerStateChangeRequest& WithExitCode(int value) { SetExitCode(value); return *this;}
 
     /**
      * <p>The reason for the state change request.</p>
@@ -284,7 +284,7 @@ namespace Model
     bool m_containerNameHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_exitCode;
+    int m_exitCode;
     bool m_exitCodeHasBeenSet;
     Aws::String m_reason;
     bool m_reasonHasBeenSet;

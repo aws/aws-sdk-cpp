@@ -80,42 +80,42 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
      */
-    inline VolumeSpecification& WithIops(long value) { SetIops(value); return *this;}
+    inline VolumeSpecification& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
-    inline long GetSizeInGB() const{ return m_sizeInGB; }
+    inline int GetSizeInGB() const{ return m_sizeInGB; }
 
     /**
      * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
-    inline void SetSizeInGB(long value) { m_sizeInGBHasBeenSet = true; m_sizeInGB = value; }
+    inline void SetSizeInGB(int value) { m_sizeInGBHasBeenSet = true; m_sizeInGB = value; }
 
     /**
      * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
-    inline VolumeSpecification& WithSizeInGB(long value) { SetSizeInGB(value); return *this;}
+    inline VolumeSpecification& WithSizeInGB(int value) { SetSizeInGB(value); return *this;}
 
   private:
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
-    long m_sizeInGB;
+    int m_sizeInGB;
     bool m_sizeInGBHasBeenSet;
   };
 

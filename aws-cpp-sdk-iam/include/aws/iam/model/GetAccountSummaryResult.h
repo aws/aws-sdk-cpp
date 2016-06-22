@@ -48,43 +48,43 @@ namespace Model
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline const Aws::Map<SummaryKeyType, long>& GetSummaryMap() const{ return m_summaryMap; }
+    inline const Aws::Map<SummaryKeyType, int>& GetSummaryMap() const{ return m_summaryMap; }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline void SetSummaryMap(const Aws::Map<SummaryKeyType, long>& value) { m_summaryMap = value; }
+    inline void SetSummaryMap(const Aws::Map<SummaryKeyType, int>& value) { m_summaryMap = value; }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline void SetSummaryMap(Aws::Map<SummaryKeyType, long>&& value) { m_summaryMap = value; }
+    inline void SetSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { m_summaryMap = value; }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& WithSummaryMap(const Aws::Map<SummaryKeyType, long>& value) { SetSummaryMap(value); return *this;}
+    inline GetAccountSummaryResult& WithSummaryMap(const Aws::Map<SummaryKeyType, int>& value) { SetSummaryMap(value); return *this;}
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& WithSummaryMap(Aws::Map<SummaryKeyType, long>&& value) { SetSummaryMap(value); return *this;}
+    inline GetAccountSummaryResult& WithSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { SetSummaryMap(value); return *this;}
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& AddSummaryMap(const SummaryKeyType& key, long value) { m_summaryMap[key] = value; return *this; }
+    inline GetAccountSummaryResult& AddSummaryMap(const SummaryKeyType& key, int value) { m_summaryMap[key] = value; return *this; }
 
     /**
      * <p>A set of key value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
-    inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, long value) { m_summaryMap[key] = value; return *this; }
+    inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, int value) { m_summaryMap[key] = value; return *this; }
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -102,7 +102,7 @@ namespace Model
     inline GetAccountSummaryResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
-    Aws::Map<SummaryKeyType, long> m_summaryMap;
+    Aws::Map<SummaryKeyType, int> m_summaryMap;
     ResponseMetadata m_responseMetadata;
   };
 

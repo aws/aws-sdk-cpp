@@ -184,21 +184,21 @@ namespace Model
      * number of 1. This number is automatically incremented when a pipeline is
      * updated.</p>
      */
-    inline long GetVersion() const{ return m_version; }
+    inline int GetVersion() const{ return m_version; }
 
     /**
      * <p>The version number of the pipeline. A new pipeline always has a version
      * number of 1. This number is automatically incremented when a pipeline is
      * updated.</p>
      */
-    inline void SetVersion(long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version number of the pipeline. A new pipeline always has a version
      * number of 1. This number is automatically incremented when a pipeline is
      * updated.</p>
      */
-    inline PipelineDeclaration& WithVersion(long value) { SetVersion(value); return *this;}
+    inline PipelineDeclaration& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
     Aws::String m_name;
@@ -209,7 +209,7 @@ namespace Model
     bool m_artifactStoreHasBeenSet;
     Aws::Vector<StageDeclaration> m_stages;
     bool m_stagesHasBeenSet;
-    long m_version;
+    int m_version;
     bool m_versionHasBeenSet;
   };
 

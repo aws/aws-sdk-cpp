@@ -76,7 +76,7 @@ namespace Model
      * equal to the instance count associated with the Reserved Instance ID specified
      * in this call.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are a part of a Reserved Instance account to be
@@ -84,7 +84,7 @@ namespace Model
      * equal to the instance count associated with the Reserved Instance ID specified
      * in this call.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are a part of a Reserved Instance account to be
@@ -92,7 +92,7 @@ namespace Model
      * equal to the instance count associated with the Reserved Instance ID specified
      * in this call.</p>
      */
-    inline CreateReservedInstancesListingRequest& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline CreateReservedInstancesListingRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>A list specifying the price of the Reserved Instance for each month remaining
@@ -195,7 +195,7 @@ namespace Model
   private:
     Aws::String m_reservedInstancesId;
     bool m_reservedInstancesIdHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<PriceScheduleSpecification> m_priceSchedules;
     bool m_priceSchedulesHasBeenSet;

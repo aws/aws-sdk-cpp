@@ -546,17 +546,17 @@ namespace Model
     /**
      * <p>The duration for the Spot instance, in minutes.</p>
      */
-    inline long GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
+    inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
      * <p>The duration for the Spot instance, in minutes.</p>
      */
-    inline void SetBlockDurationMinutes(long value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
+    inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
      * <p>The duration for the Spot instance, in minutes.</p>
      */
-    inline SpotInstanceRequest& WithBlockDurationMinutes(long value) { SetBlockDurationMinutes(value); return *this;}
+    inline SpotInstanceRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
     /**
      * <p>If you specified a duration and your Spot instance request was fulfilled,
@@ -706,7 +706,7 @@ namespace Model
     bool m_createTimeHasBeenSet;
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;
-    long m_blockDurationMinutes;
+    int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
     Aws::String m_actualBlockHourlyPrice;
     bool m_actualBlockHourlyPriceHasBeenSet;

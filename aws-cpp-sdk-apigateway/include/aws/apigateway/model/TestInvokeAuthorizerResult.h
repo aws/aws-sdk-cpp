@@ -49,19 +49,19 @@ namespace Model
      * <p>The HTTP status code that the client would have received. Value is 0 if the
      * authorizer succeeded.</p>
      */
-    inline long GetClientStatus() const{ return m_clientStatus; }
+    inline int GetClientStatus() const{ return m_clientStatus; }
 
     /**
      * <p>The HTTP status code that the client would have received. Value is 0 if the
      * authorizer succeeded.</p>
      */
-    inline void SetClientStatus(long value) { m_clientStatus = value; }
+    inline void SetClientStatus(int value) { m_clientStatus = value; }
 
     /**
      * <p>The HTTP status code that the client would have received. Value is 0 if the
      * authorizer succeeded.</p>
      */
-    inline TestInvokeAuthorizerResult& WithClientStatus(long value) { SetClientStatus(value); return *this;}
+    inline TestInvokeAuthorizerResult& WithClientStatus(int value) { SetClientStatus(value); return *this;}
 
     /**
      * <p>The Amazon API Gateway execution log for the test authorizer request.</p>
@@ -217,7 +217,7 @@ namespace Model
     inline TestInvokeAuthorizerResult& AddAuthorization(const char* key, const Aws::Vector<Aws::String>& value) { m_authorization[key] = value; return *this; }
 
   private:
-    long m_clientStatus;
+    int m_clientStatus;
     Aws::String m_log;
     long long m_latency;
     Aws::String m_principalId;

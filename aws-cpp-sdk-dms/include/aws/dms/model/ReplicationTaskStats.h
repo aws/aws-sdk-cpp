@@ -40,17 +40,17 @@ namespace Model
     /**
      * <p>The percent complete for the full load migration task.</p>
      */
-    inline long GetFullLoadProgressPercent() const{ return m_fullLoadProgressPercent; }
+    inline int GetFullLoadProgressPercent() const{ return m_fullLoadProgressPercent; }
 
     /**
      * <p>The percent complete for the full load migration task.</p>
      */
-    inline void SetFullLoadProgressPercent(long value) { m_fullLoadProgressPercentHasBeenSet = true; m_fullLoadProgressPercent = value; }
+    inline void SetFullLoadProgressPercent(int value) { m_fullLoadProgressPercentHasBeenSet = true; m_fullLoadProgressPercent = value; }
 
     /**
      * <p>The percent complete for the full load migration task.</p>
      */
-    inline ReplicationTaskStats& WithFullLoadProgressPercent(long value) { SetFullLoadProgressPercent(value); return *this;}
+    inline ReplicationTaskStats& WithFullLoadProgressPercent(int value) { SetFullLoadProgressPercent(value); return *this;}
 
     /**
      * <p>The elapsed time of the task, in milliseconds.</p>
@@ -70,75 +70,75 @@ namespace Model
     /**
      * <p>The number of tables loaded for this task.</p>
      */
-    inline long GetTablesLoaded() const{ return m_tablesLoaded; }
+    inline int GetTablesLoaded() const{ return m_tablesLoaded; }
 
     /**
      * <p>The number of tables loaded for this task.</p>
      */
-    inline void SetTablesLoaded(long value) { m_tablesLoadedHasBeenSet = true; m_tablesLoaded = value; }
+    inline void SetTablesLoaded(int value) { m_tablesLoadedHasBeenSet = true; m_tablesLoaded = value; }
 
     /**
      * <p>The number of tables loaded for this task.</p>
      */
-    inline ReplicationTaskStats& WithTablesLoaded(long value) { SetTablesLoaded(value); return *this;}
+    inline ReplicationTaskStats& WithTablesLoaded(int value) { SetTablesLoaded(value); return *this;}
 
     /**
      * <p>The number of tables currently loading for this task.</p>
      */
-    inline long GetTablesLoading() const{ return m_tablesLoading; }
+    inline int GetTablesLoading() const{ return m_tablesLoading; }
 
     /**
      * <p>The number of tables currently loading for this task.</p>
      */
-    inline void SetTablesLoading(long value) { m_tablesLoadingHasBeenSet = true; m_tablesLoading = value; }
+    inline void SetTablesLoading(int value) { m_tablesLoadingHasBeenSet = true; m_tablesLoading = value; }
 
     /**
      * <p>The number of tables currently loading for this task.</p>
      */
-    inline ReplicationTaskStats& WithTablesLoading(long value) { SetTablesLoading(value); return *this;}
+    inline ReplicationTaskStats& WithTablesLoading(int value) { SetTablesLoading(value); return *this;}
 
     /**
      * <p>The number of tables queued for this task.</p>
      */
-    inline long GetTablesQueued() const{ return m_tablesQueued; }
+    inline int GetTablesQueued() const{ return m_tablesQueued; }
 
     /**
      * <p>The number of tables queued for this task.</p>
      */
-    inline void SetTablesQueued(long value) { m_tablesQueuedHasBeenSet = true; m_tablesQueued = value; }
+    inline void SetTablesQueued(int value) { m_tablesQueuedHasBeenSet = true; m_tablesQueued = value; }
 
     /**
      * <p>The number of tables queued for this task.</p>
      */
-    inline ReplicationTaskStats& WithTablesQueued(long value) { SetTablesQueued(value); return *this;}
+    inline ReplicationTaskStats& WithTablesQueued(int value) { SetTablesQueued(value); return *this;}
 
     /**
      * <p>The number of errors that have occurred during this task.</p>
      */
-    inline long GetTablesErrored() const{ return m_tablesErrored; }
+    inline int GetTablesErrored() const{ return m_tablesErrored; }
 
     /**
      * <p>The number of errors that have occurred during this task.</p>
      */
-    inline void SetTablesErrored(long value) { m_tablesErroredHasBeenSet = true; m_tablesErrored = value; }
+    inline void SetTablesErrored(int value) { m_tablesErroredHasBeenSet = true; m_tablesErrored = value; }
 
     /**
      * <p>The number of errors that have occurred during this task.</p>
      */
-    inline ReplicationTaskStats& WithTablesErrored(long value) { SetTablesErrored(value); return *this;}
+    inline ReplicationTaskStats& WithTablesErrored(int value) { SetTablesErrored(value); return *this;}
 
   private:
-    long m_fullLoadProgressPercent;
+    int m_fullLoadProgressPercent;
     bool m_fullLoadProgressPercentHasBeenSet;
     long long m_elapsedTimeMillis;
     bool m_elapsedTimeMillisHasBeenSet;
-    long m_tablesLoaded;
+    int m_tablesLoaded;
     bool m_tablesLoadedHasBeenSet;
-    long m_tablesLoading;
+    int m_tablesLoading;
     bool m_tablesLoadingHasBeenSet;
-    long m_tablesQueued;
+    int m_tablesQueued;
     bool m_tablesQueuedHasBeenSet;
-    long m_tablesErrored;
+    int m_tablesErrored;
     bool m_tablesErroredHasBeenSet;
   };
 

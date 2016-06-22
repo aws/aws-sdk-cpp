@@ -363,63 +363,63 @@ namespace Model
      * messages than this value but may return fewer. Values can be from 1 to 10.
      * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
      */
-    inline long GetMaxNumberOfMessages() const{ return m_maxNumberOfMessages; }
+    inline int GetMaxNumberOfMessages() const{ return m_maxNumberOfMessages; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value but may return fewer. Values can be from 1 to 10.
      * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
      */
-    inline void SetMaxNumberOfMessages(long value) { m_maxNumberOfMessagesHasBeenSet = true; m_maxNumberOfMessages = value; }
+    inline void SetMaxNumberOfMessages(int value) { m_maxNumberOfMessagesHasBeenSet = true; m_maxNumberOfMessages = value; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value but may return fewer. Values can be from 1 to 10.
      * Default is 1.</p> <p>All of the messages are not necessarily returned.</p>
      */
-    inline ReceiveMessageRequest& WithMaxNumberOfMessages(long value) { SetMaxNumberOfMessages(value); return *this;}
+    inline ReceiveMessageRequest& WithMaxNumberOfMessages(int value) { SetMaxNumberOfMessages(value); return *this;}
 
     /**
      * <p>The duration (in seconds) that the received messages are hidden from
      * subsequent retrieve requests after being retrieved by a
      * <code>ReceiveMessage</code> request.</p>
      */
-    inline long GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+    inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
 
     /**
      * <p>The duration (in seconds) that the received messages are hidden from
      * subsequent retrieve requests after being retrieved by a
      * <code>ReceiveMessage</code> request.</p>
      */
-    inline void SetVisibilityTimeout(long value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
+    inline void SetVisibilityTimeout(int value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
 
     /**
      * <p>The duration (in seconds) that the received messages are hidden from
      * subsequent retrieve requests after being retrieved by a
      * <code>ReceiveMessage</code> request.</p>
      */
-    inline ReceiveMessageRequest& WithVisibilityTimeout(long value) { SetVisibilityTimeout(value); return *this;}
+    inline ReceiveMessageRequest& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
     /**
      * <p>The duration (in seconds) for which the call will wait for a message to
      * arrive in the queue before returning. If a message is available, the call will
      * return sooner than WaitTimeSeconds.</p>
      */
-    inline long GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
+    inline int GetWaitTimeSeconds() const{ return m_waitTimeSeconds; }
 
     /**
      * <p>The duration (in seconds) for which the call will wait for a message to
      * arrive in the queue before returning. If a message is available, the call will
      * return sooner than WaitTimeSeconds.</p>
      */
-    inline void SetWaitTimeSeconds(long value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
+    inline void SetWaitTimeSeconds(int value) { m_waitTimeSecondsHasBeenSet = true; m_waitTimeSeconds = value; }
 
     /**
      * <p>The duration (in seconds) for which the call will wait for a message to
      * arrive in the queue before returning. If a message is available, the call will
      * return sooner than WaitTimeSeconds.</p>
      */
-    inline ReceiveMessageRequest& WithWaitTimeSeconds(long value) { SetWaitTimeSeconds(value); return *this;}
+    inline ReceiveMessageRequest& WithWaitTimeSeconds(int value) { SetWaitTimeSeconds(value); return *this;}
 
   private:
     Aws::String m_queueUrl;
@@ -428,11 +428,11 @@ namespace Model
     bool m_attributeNamesHasBeenSet;
     Aws::Vector<Aws::String> m_messageAttributeNames;
     bool m_messageAttributeNamesHasBeenSet;
-    long m_maxNumberOfMessages;
+    int m_maxNumberOfMessages;
     bool m_maxNumberOfMessagesHasBeenSet;
-    long m_visibilityTimeout;
+    int m_visibilityTimeout;
     bool m_visibilityTimeoutHasBeenSet;
-    long m_waitTimeSeconds;
+    int m_waitTimeSeconds;
     bool m_waitTimeSecondsHasBeenSet;
   };
 

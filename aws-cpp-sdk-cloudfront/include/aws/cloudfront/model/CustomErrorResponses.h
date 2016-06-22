@@ -46,17 +46,17 @@ namespace Model
     /**
      * The number of custom error responses for this distribution.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of custom error responses for this distribution.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of custom error responses for this distribution.
      */
-    inline CustomErrorResponses& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CustomErrorResponses& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * Optional: A complex type that contains custom error responses for this
@@ -101,7 +101,7 @@ namespace Model
     inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<CustomErrorResponse> m_items;
     bool m_itemsHasBeenSet;

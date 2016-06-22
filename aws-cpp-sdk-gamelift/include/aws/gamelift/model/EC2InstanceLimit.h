@@ -92,41 +92,41 @@ namespace Model
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline long GetCurrentInstances() const{ return m_currentInstances; }
+    inline int GetCurrentInstances() const{ return m_currentInstances; }
 
     /**
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline void SetCurrentInstances(long value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
+    inline void SetCurrentInstances(int value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
 
     /**
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline EC2InstanceLimit& WithCurrentInstances(long value) { SetCurrentInstances(value); return *this;}
+    inline EC2InstanceLimit& WithCurrentInstances(int value) { SetCurrentInstances(value); return *this;}
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline long GetInstanceLimit() const{ return m_instanceLimit; }
+    inline int GetInstanceLimit() const{ return m_instanceLimit; }
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline void SetInstanceLimit(long value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
+    inline void SetInstanceLimit(int value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline EC2InstanceLimit& WithInstanceLimit(long value) { SetInstanceLimit(value); return *this;}
+    inline EC2InstanceLimit& WithInstanceLimit(int value) { SetInstanceLimit(value); return *this;}
 
   private:
     EC2InstanceType m_eC2InstanceType;
     bool m_eC2InstanceTypeHasBeenSet;
-    long m_currentInstances;
+    int m_currentInstances;
     bool m_currentInstancesHasBeenSet;
-    long m_instanceLimit;
+    int m_instanceLimit;
     bool m_instanceLimitHasBeenSet;
   };
 

@@ -221,17 +221,17 @@ namespace Model
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -454,7 +454,7 @@ namespace Model
     bool m_usernameHasBeenSet;
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

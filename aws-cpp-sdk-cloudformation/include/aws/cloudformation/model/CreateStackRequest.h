@@ -330,21 +330,21 @@ namespace Model
      * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
      * <code>false</code>, the stack will be rolled back.</p>
      */
-    inline long GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
      * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
      * <code>false</code>, the stack will be rolled back.</p>
      */
-    inline void SetTimeoutInMinutes(long value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
+    inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
      * <p>The amount of time that can pass before the stack status becomes
      * CREATE_FAILED; if <code>DisableRollback</code> is not set or is set to
      * <code>false</code>, the stack will be rolled back.</p>
      */
-    inline CreateStackRequest& WithTimeoutInMinutes(long value) { SetTimeoutInMinutes(value); return *this;}
+    inline CreateStackRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
     /**
      * <p>The Simple Notification Service (SNS) topic ARNs to publish stack related
@@ -984,7 +984,7 @@ namespace Model
     bool m_parametersHasBeenSet;
     bool m_disableRollback;
     bool m_disableRollbackHasBeenSet;
-    long m_timeoutInMinutes;
+    int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
     Aws::Vector<Aws::String> m_notificationARNs;
     bool m_notificationARNsHasBeenSet;

@@ -274,19 +274,19 @@ namespace Model
      * <p>The number of principal entities (users, groups, and roles) that the policy
      * is attached to.</p>
      */
-    inline long GetAttachmentCount() const{ return m_attachmentCount; }
+    inline int GetAttachmentCount() const{ return m_attachmentCount; }
 
     /**
      * <p>The number of principal entities (users, groups, and roles) that the policy
      * is attached to.</p>
      */
-    inline void SetAttachmentCount(long value) { m_attachmentCountHasBeenSet = true; m_attachmentCount = value; }
+    inline void SetAttachmentCount(int value) { m_attachmentCountHasBeenSet = true; m_attachmentCount = value; }
 
     /**
      * <p>The number of principal entities (users, groups, and roles) that the policy
      * is attached to.</p>
      */
-    inline ManagedPolicyDetail& WithAttachmentCount(long value) { SetAttachmentCount(value); return *this;}
+    inline ManagedPolicyDetail& WithAttachmentCount(int value) { SetAttachmentCount(value); return *this;}
 
     /**
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
@@ -462,7 +462,7 @@ namespace Model
     bool m_pathHasBeenSet;
     Aws::String m_defaultVersionId;
     bool m_defaultVersionIdHasBeenSet;
-    long m_attachmentCount;
+    int m_attachmentCount;
     bool m_attachmentCountHasBeenSet;
     bool m_isAttachable;
     bool m_isAttachableHasBeenSet;

@@ -139,24 +139,24 @@ namespace Model
     /**
      * <p>The new value (in seconds) for the message's visibility timeout.</p>
      */
-    inline long GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+    inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
 
     /**
      * <p>The new value (in seconds) for the message's visibility timeout.</p>
      */
-    inline void SetVisibilityTimeout(long value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
+    inline void SetVisibilityTimeout(int value) { m_visibilityTimeoutHasBeenSet = true; m_visibilityTimeout = value; }
 
     /**
      * <p>The new value (in seconds) for the message's visibility timeout.</p>
      */
-    inline ChangeMessageVisibilityBatchRequestEntry& WithVisibilityTimeout(long value) { SetVisibilityTimeout(value); return *this;}
+    inline ChangeMessageVisibilityBatchRequestEntry& WithVisibilityTimeout(int value) { SetVisibilityTimeout(value); return *this;}
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
     Aws::String m_receiptHandle;
     bool m_receiptHandleHasBeenSet;
-    long m_visibilityTimeout;
+    int m_visibilityTimeout;
     bool m_visibilityTimeoutHasBeenSet;
   };
 

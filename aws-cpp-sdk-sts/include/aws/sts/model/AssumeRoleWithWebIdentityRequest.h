@@ -443,21 +443,21 @@ namespace Model
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds.</p>
      */
-    inline long GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds.</p>
      */
-    inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+    inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds.</p>
      */
-    inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
+    inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
     Aws::String m_roleArn;
@@ -470,7 +470,7 @@ namespace Model
     bool m_providerIdHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
-    long m_durationSeconds;
+    int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };
 

@@ -183,17 +183,17 @@ namespace Model
     /**
      * <p> The period in seconds over which the statistic is applied. </p>
      */
-    inline long GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const{ return m_period; }
 
     /**
      * <p> The period in seconds over which the statistic is applied. </p>
      */
-    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
      * <p> The period in seconds over which the statistic is applied. </p>
      */
-    inline DescribeAlarmsForMetricRequest& WithPeriod(long value) { SetPeriod(value); return *this;}
+    inline DescribeAlarmsForMetricRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
      * <p> The unit for the metric. </p>
@@ -229,7 +229,7 @@ namespace Model
     bool m_statisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
-    long m_period;
+    int m_period;
     bool m_periodHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;

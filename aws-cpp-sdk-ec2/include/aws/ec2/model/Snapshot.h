@@ -347,17 +347,17 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline long GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline void SetVolumeSize(long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline Snapshot& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline Snapshot& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
      * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
@@ -609,7 +609,7 @@ namespace Model
     bool m_ownerIdHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-    long m_volumeSize;
+    int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
     Aws::String m_ownerAlias;
     bool m_ownerAliasHasBeenSet;

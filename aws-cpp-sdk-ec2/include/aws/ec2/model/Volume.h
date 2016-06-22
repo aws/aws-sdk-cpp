@@ -89,17 +89,17 @@ namespace Model
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline Volume& WithSize(long value) { SetSize(value); return *this;}
+    inline Volume& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * <p>The snapshot from which the volume was created, if applicable.</p>
@@ -346,7 +346,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -363,7 +363,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -380,7 +380,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline Volume& WithIops(long value) { SetIops(value); return *this;}
+    inline Volume& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Indicates whether the volume will be encrypted.</p>
@@ -457,7 +457,7 @@ namespace Model
   private:
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
@@ -473,7 +473,7 @@ namespace Model
     bool m_tagsHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

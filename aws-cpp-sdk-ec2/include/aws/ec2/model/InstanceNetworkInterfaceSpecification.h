@@ -86,21 +86,21 @@ namespace Model
      * If you are specifying a network interface in a <a>RunInstances</a> request, you
      * must provide the device index.</p>
      */
-    inline long GetDeviceIndex() const{ return m_deviceIndex; }
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
      * <p>The index of the device on the instance for the network interface attachment.
      * If you are specifying a network interface in a <a>RunInstances</a> request, you
      * must provide the device index.</p>
      */
-    inline void SetDeviceIndex(long value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
      * <p>The index of the device on the instance for the network interface attachment.
      * If you are specifying a network interface in a <a>RunInstances</a> request, you
      * must provide the device index.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(long value) { SetDeviceIndex(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
     /**
      * <p>The ID of the subnet associated with the network string. Applies only if
@@ -344,21 +344,21 @@ namespace Model
      * and specify more than one private IP address using the private IP addresses
      * option.</p>
      */
-    inline long GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+    inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
     /**
      * <p>The number of secondary private IP addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option.</p>
      */
-    inline void SetSecondaryPrivateIpAddressCount(long value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
+    inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
      * <p>The number of secondary private IP addresses. You can't specify this option
      * and specify more than one private IP address using the private IP addresses
      * option.</p>
      */
-    inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(long value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+    inline InstanceNetworkInterfaceSpecification& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
      * <p>Indicates whether to assign a public IP address to an instance you launch in
@@ -390,7 +390,7 @@ namespace Model
   private:
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
-    long m_deviceIndex;
+    int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
@@ -404,7 +404,7 @@ namespace Model
     bool m_deleteOnTerminationHasBeenSet;
     Aws::Vector<PrivateIpAddressSpecification> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
-    long m_secondaryPrivateIpAddressCount;
+    int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;

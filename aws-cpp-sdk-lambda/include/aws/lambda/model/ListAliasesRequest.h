@@ -175,19 +175,19 @@ namespace Model
      * <p>Optional integer. Specifies the maximum number of aliases to return in
      * response. This parameter value must be greater than 0.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of aliases to return in
      * response. This parameter value must be greater than 0.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of aliases to return in
      * response. This parameter value must be greater than 0.</p>
      */
-    inline ListAliasesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListAliasesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_functionName;
@@ -196,7 +196,7 @@ namespace Model
     bool m_functionVersionHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

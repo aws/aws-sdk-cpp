@@ -168,17 +168,17 @@ namespace Model
     /**
      * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The maximum number of Spot instances to launch.</p> <p>Default: 1</p>
      */
-    inline RequestSpotInstancesRequest& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline RequestSpotInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The Spot instance request type.</p> <p>Default: <code>one-time</code></p>
@@ -492,7 +492,7 @@ namespace Model
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
-    inline long GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
+    inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
      * <p>The required duration for the Spot instances (also known as Spot blocks), in
@@ -504,7 +504,7 @@ namespace Model
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
-    inline void SetBlockDurationMinutes(long value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
+    inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
      * <p>The required duration for the Spot instances (also known as Spot blocks), in
@@ -516,7 +516,7 @@ namespace Model
      * you can't specify an Availability Zone group or a launch group if you specify a
      * duration.</p>
      */
-    inline RequestSpotInstancesRequest& WithBlockDurationMinutes(long value) { SetBlockDurationMinutes(value); return *this;}
+    inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
     
     inline const RequestSpotLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
@@ -540,7 +540,7 @@ namespace Model
     bool m_spotPriceHasBeenSet;
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     SpotInstanceType m_type;
     bool m_typeHasBeenSet;
@@ -552,7 +552,7 @@ namespace Model
     bool m_launchGroupHasBeenSet;
     Aws::String m_availabilityZoneGroup;
     bool m_availabilityZoneGroupHasBeenSet;
-    long m_blockDurationMinutes;
+    int m_blockDurationMinutes;
     bool m_blockDurationMinutesHasBeenSet;
     RequestSpotLaunchSpecification m_launchSpecification;
     bool m_launchSpecificationHasBeenSet;

@@ -70,17 +70,17 @@ namespace Model
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
-    inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
 
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
      * <p>The port that uses the specified SSL certificate.</p>
      */
-    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
+    inline SetLoadBalancerListenerSSLCertificateRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SSL certificate.</p>
@@ -120,7 +120,7 @@ namespace Model
   private:
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
-    long m_loadBalancerPort;
+    int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
     Aws::String m_sSLCertificateId;
     bool m_sSLCertificateIdHasBeenSet;

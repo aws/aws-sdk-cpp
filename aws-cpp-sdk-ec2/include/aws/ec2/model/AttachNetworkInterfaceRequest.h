@@ -130,17 +130,17 @@ namespace Model
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline long GetDeviceIndex() const{ return m_deviceIndex; }
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline void SetDeviceIndex(long value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline AttachNetworkInterfaceRequest& WithDeviceIndex(long value) { SetDeviceIndex(value); return *this;}
+    inline AttachNetworkInterfaceRequest& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -149,7 +149,7 @@ namespace Model
     bool m_networkInterfaceIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    long m_deviceIndex;
+    int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
   };
 

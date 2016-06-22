@@ -104,19 +104,19 @@ namespace Model
      * <p> The amount of storage (in gigabytes) to be initially allocated for the
      * replication instance. </p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The amount of storage (in gigabytes) to be initially allocated for the
      * replication instance. </p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The amount of storage (in gigabytes) to be initially allocated for the
      * replication instance. </p>
      */
-    inline CreateReplicationInstanceRequest& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline CreateReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p> The compute and memory capacity of the replication instance as specified by
@@ -509,7 +509,7 @@ namespace Model
   private:
     Aws::String m_replicationInstanceIdentifier;
     bool m_replicationInstanceIdentifierHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;

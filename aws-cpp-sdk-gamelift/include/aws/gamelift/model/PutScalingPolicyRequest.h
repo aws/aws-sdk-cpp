@@ -125,17 +125,17 @@ namespace Model
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
-    inline long GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
-    inline void SetScalingAdjustment(long value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
+    inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
      */
-    inline PutScalingPolicyRequest& WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
+    inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
@@ -246,19 +246,19 @@ namespace Model
      * <p>Length of time (in minutes) the metric must be at or beyond the threshold
      * before a scaling event is triggered.</p>
      */
-    inline long GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
      * <p>Length of time (in minutes) the metric must be at or beyond the threshold
      * before a scaling event is triggered.</p>
      */
-    inline void SetEvaluationPeriods(long value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
+    inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
      * <p>Length of time (in minutes) the metric must be at or beyond the threshold
      * before a scaling event is triggered.</p>
      */
-    inline PutScalingPolicyRequest& WithEvaluationPeriods(long value) { SetEvaluationPeriods(value); return *this;}
+    inline PutScalingPolicyRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
     /**
      * <p>Name of the Service-defined metric that is used to trigger an adjustment.
@@ -350,7 +350,7 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
-    long m_scalingAdjustment;
+    int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
     ScalingAdjustmentType m_scalingAdjustmentType;
     bool m_scalingAdjustmentTypeHasBeenSet;
@@ -358,7 +358,7 @@ namespace Model
     bool m_thresholdHasBeenSet;
     ComparisonOperatorType m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
-    long m_evaluationPeriods;
+    int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
     MetricName m_metricName;
     bool m_metricNameHasBeenSet;

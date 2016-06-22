@@ -50,82 +50,82 @@ namespace Model
      * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
      * (200, 201, etc.) status code.</p>
      */
-    inline long GetStatus2xx() const{ return m_status2xx; }
+    inline int GetStatus2xx() const{ return m_status2xx; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
      * (200, 201, etc.) status code.</p>
      */
-    inline void SetStatus2xx(long value) { m_status2xxHasBeenSet = true; m_status2xx = value; }
+    inline void SetStatus2xx(int value) { m_status2xxHasBeenSet = true; m_status2xx = value; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 2xx
      * (200, 201, etc.) status code.</p>
      */
-    inline StatusCodes& WithStatus2xx(long value) { SetStatus2xx(value); return *this;}
+    inline StatusCodes& WithStatus2xx(int value) { SetStatus2xx(value); return *this;}
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
      * (300, 301, etc.) status code.</p>
      */
-    inline long GetStatus3xx() const{ return m_status3xx; }
+    inline int GetStatus3xx() const{ return m_status3xx; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
      * (300, 301, etc.) status code.</p>
      */
-    inline void SetStatus3xx(long value) { m_status3xxHasBeenSet = true; m_status3xx = value; }
+    inline void SetStatus3xx(int value) { m_status3xxHasBeenSet = true; m_status3xx = value; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 3xx
      * (300, 301, etc.) status code.</p>
      */
-    inline StatusCodes& WithStatus3xx(long value) { SetStatus3xx(value); return *this;}
+    inline StatusCodes& WithStatus3xx(int value) { SetStatus3xx(value); return *this;}
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
      * (400, 401, etc.) status code.</p>
      */
-    inline long GetStatus4xx() const{ return m_status4xx; }
+    inline int GetStatus4xx() const{ return m_status4xx; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
      * (400, 401, etc.) status code.</p>
      */
-    inline void SetStatus4xx(long value) { m_status4xxHasBeenSet = true; m_status4xx = value; }
+    inline void SetStatus4xx(int value) { m_status4xxHasBeenSet = true; m_status4xx = value; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 4xx
      * (400, 401, etc.) status code.</p>
      */
-    inline StatusCodes& WithStatus4xx(long value) { SetStatus4xx(value); return *this;}
+    inline StatusCodes& WithStatus4xx(int value) { SetStatus4xx(value); return *this;}
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
      * (500, 501, etc.) status code.</p>
      */
-    inline long GetStatus5xx() const{ return m_status5xx; }
+    inline int GetStatus5xx() const{ return m_status5xx; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
      * (500, 501, etc.) status code.</p>
      */
-    inline void SetStatus5xx(long value) { m_status5xxHasBeenSet = true; m_status5xx = value; }
+    inline void SetStatus5xx(int value) { m_status5xxHasBeenSet = true; m_status5xx = value; }
 
     /**
      * <p>The percentage of requests over the last 10 seconds that resulted in a 5xx
      * (500, 501, etc.) status code.</p>
      */
-    inline StatusCodes& WithStatus5xx(long value) { SetStatus5xx(value); return *this;}
+    inline StatusCodes& WithStatus5xx(int value) { SetStatus5xx(value); return *this;}
 
   private:
-    long m_status2xx;
+    int m_status2xx;
     bool m_status2xxHasBeenSet;
-    long m_status3xx;
+    int m_status3xx;
     bool m_status3xxHasBeenSet;
-    long m_status4xx;
+    int m_status4xx;
     bool m_status4xxHasBeenSet;
-    long m_status5xx;
+    int m_status5xx;
     bool m_status5xxHasBeenSet;
   };
 

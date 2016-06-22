@@ -54,7 +54,7 @@ namespace Model
      * <code>stopping</code></p> </li> <li> <p><code>80</code> :
      * <code>stopped</code></p> </li> </ul>
      */
-    inline long GetCode() const{ return m_code; }
+    inline int GetCode() const{ return m_code; }
 
     /**
      * <p>The low byte represents the state. The high byte is an opaque internal value
@@ -66,7 +66,7 @@ namespace Model
      * <code>stopping</code></p> </li> <li> <p><code>80</code> :
      * <code>stopped</code></p> </li> </ul>
      */
-    inline void SetCode(long value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The low byte represents the state. The high byte is an opaque internal value
@@ -78,7 +78,7 @@ namespace Model
      * <code>stopping</code></p> </li> <li> <p><code>80</code> :
      * <code>stopped</code></p> </li> </ul>
      */
-    inline InstanceState& WithCode(long value) { SetCode(value); return *this;}
+    inline InstanceState& WithCode(int value) { SetCode(value); return *this;}
 
     /**
      * <p>The current state of the instance.</p>
@@ -106,7 +106,7 @@ namespace Model
     inline InstanceState& WithName(InstanceStateName&& value) { SetName(value); return *this;}
 
   private:
-    long m_code;
+    int m_code;
     bool m_codeHasBeenSet;
     InstanceStateName m_name;
     bool m_nameHasBeenSet;

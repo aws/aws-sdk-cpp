@@ -43,32 +43,32 @@ namespace Model
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
-    inline long GetManualSnapshotsLimit() const{ return m_manualSnapshotsLimit; }
+    inline int GetManualSnapshotsLimit() const{ return m_manualSnapshotsLimit; }
 
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
-    inline void SetManualSnapshotsLimit(long value) { m_manualSnapshotsLimitHasBeenSet = true; m_manualSnapshotsLimit = value; }
+    inline void SetManualSnapshotsLimit(int value) { m_manualSnapshotsLimitHasBeenSet = true; m_manualSnapshotsLimit = value; }
 
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
-    inline SnapshotLimits& WithManualSnapshotsLimit(long value) { SetManualSnapshotsLimit(value); return *this;}
+    inline SnapshotLimits& WithManualSnapshotsLimit(int value) { SetManualSnapshotsLimit(value); return *this;}
 
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
-    inline long GetManualSnapshotsCurrentCount() const{ return m_manualSnapshotsCurrentCount; }
+    inline int GetManualSnapshotsCurrentCount() const{ return m_manualSnapshotsCurrentCount; }
 
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
-    inline void SetManualSnapshotsCurrentCount(long value) { m_manualSnapshotsCurrentCountHasBeenSet = true; m_manualSnapshotsCurrentCount = value; }
+    inline void SetManualSnapshotsCurrentCount(int value) { m_manualSnapshotsCurrentCountHasBeenSet = true; m_manualSnapshotsCurrentCount = value; }
 
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
-    inline SnapshotLimits& WithManualSnapshotsCurrentCount(long value) { SetManualSnapshotsCurrentCount(value); return *this;}
+    inline SnapshotLimits& WithManualSnapshotsCurrentCount(int value) { SetManualSnapshotsCurrentCount(value); return *this;}
 
     /**
      * <p>Indicates if the manual snapshot limit has been reached.</p>
@@ -86,9 +86,9 @@ namespace Model
     inline SnapshotLimits& WithManualSnapshotsLimitReached(bool value) { SetManualSnapshotsLimitReached(value); return *this;}
 
   private:
-    long m_manualSnapshotsLimit;
+    int m_manualSnapshotsLimit;
     bool m_manualSnapshotsLimitHasBeenSet;
-    long m_manualSnapshotsCurrentCount;
+    int m_manualSnapshotsCurrentCount;
     bool m_manualSnapshotsCurrentCountHasBeenSet;
     bool m_manualSnapshotsLimitReached;
     bool m_manualSnapshotsLimitReachedHasBeenSet;

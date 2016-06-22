@@ -80,19 +80,19 @@ namespace Model
      * <p>The value of <code>Version</code> for the traffic policy for which you want
      * to update the comment.</p>
      */
-    inline long GetVersion() const{ return m_version; }
+    inline int GetVersion() const{ return m_version; }
 
     /**
      * <p>The value of <code>Version</code> for the traffic policy for which you want
      * to update the comment.</p>
      */
-    inline void SetVersion(long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The value of <code>Version</code> for the traffic policy for which you want
      * to update the comment.</p>
      */
-    inline UpdateTrafficPolicyCommentRequest& WithVersion(long value) { SetVersion(value); return *this;}
+    inline UpdateTrafficPolicyCommentRequest& WithVersion(int value) { SetVersion(value); return *this;}
 
     /**
      * <p>The new comment for the specified traffic policy and version.</p>
@@ -132,7 +132,7 @@ namespace Model
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
-    long m_version;
+    int m_version;
     bool m_versionHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;

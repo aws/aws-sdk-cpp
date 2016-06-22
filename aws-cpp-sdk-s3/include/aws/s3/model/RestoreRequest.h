@@ -41,20 +41,20 @@ namespace Model
     /**
      * Lifetime of the active copy in days
      */
-    inline long GetDays() const{ return m_days; }
+    inline int GetDays() const{ return m_days; }
 
     /**
      * Lifetime of the active copy in days
      */
-    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
+    inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * Lifetime of the active copy in days
      */
-    inline RestoreRequest& WithDays(long value) { SetDays(value); return *this;}
+    inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
 
   private:
-    long m_days;
+    int m_days;
     bool m_daysHasBeenSet;
   };
 

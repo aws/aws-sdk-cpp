@@ -44,17 +44,17 @@ namespace Model
     /**
      * <p>The number of tasks in the task list.</p>
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * <p>The number of tasks in the task list.</p>
      */
-    inline void SetCount(long value) { m_count = value; }
+    inline void SetCount(int value) { m_count = value; }
 
     /**
      * <p>The number of tasks in the task list.</p>
      */
-    inline CountPendingActivityTasksResult& WithCount(long value) { SetCount(value); return *this;}
+    inline CountPendingActivityTasksResult& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * <p>If set to true, indicates that the actual count was more than the maximum
@@ -75,7 +75,7 @@ namespace Model
     inline CountPendingActivityTasksResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
 
   private:
-    long m_count;
+    int m_count;
     bool m_truncated;
   };
 

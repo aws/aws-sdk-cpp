@@ -62,24 +62,24 @@ namespace Model
      * <p>The maximum time, in seconds, to keep the existing connections open before
      * deregistering the instances.</p>
      */
-    inline long GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The maximum time, in seconds, to keep the existing connections open before
      * deregistering the instances.</p>
      */
-    inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The maximum time, in seconds, to keep the existing connections open before
      * deregistering the instances.</p>
      */
-    inline ConnectionDraining& WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline ConnectionDraining& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    long m_timeout;
+    int m_timeout;
     bool m_timeoutHasBeenSet;
   };
 

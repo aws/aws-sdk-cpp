@@ -124,7 +124,7 @@ namespace Model
      * Your container instances must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.</p>
      */
-    inline long GetContainerPort() const{ return m_containerPort; }
+    inline int GetContainerPort() const{ return m_containerPort; }
 
     /**
      * <p>The port on the container to associate with the load balancer. This port must
@@ -132,7 +132,7 @@ namespace Model
      * Your container instances must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.</p>
      */
-    inline void SetContainerPort(long value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
+    inline void SetContainerPort(int value) { m_containerPortHasBeenSet = true; m_containerPort = value; }
 
     /**
      * <p>The port on the container to associate with the load balancer. This port must
@@ -140,14 +140,14 @@ namespace Model
      * Your container instances must allow ingress traffic on the <code>hostPort</code>
      * of the port mapping.</p>
      */
-    inline LoadBalancer& WithContainerPort(long value) { SetContainerPort(value); return *this;}
+    inline LoadBalancer& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
   private:
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
     Aws::String m_containerName;
     bool m_containerNameHasBeenSet;
-    long m_containerPort;
+    int m_containerPort;
     bool m_containerPortHasBeenSet;
   };
 

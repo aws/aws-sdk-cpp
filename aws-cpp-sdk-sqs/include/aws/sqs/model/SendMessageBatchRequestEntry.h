@@ -134,17 +134,17 @@ namespace Model
     /**
      * <p>The number of seconds for which the message has to be delayed.</p>
      */
-    inline long GetDelaySeconds() const{ return m_delaySeconds; }
+    inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
     /**
      * <p>The number of seconds for which the message has to be delayed.</p>
      */
-    inline void SetDelaySeconds(long value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
+    inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
     /**
      * <p>The number of seconds for which the message has to be delayed.</p>
      */
-    inline SendMessageBatchRequestEntry& WithDelaySeconds(long value) { SetDelaySeconds(value); return *this;}
+    inline SendMessageBatchRequestEntry& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
 
     /**
      * <p>Each message attribute consists of a Name, Type, and Value. For more
@@ -239,7 +239,7 @@ namespace Model
     bool m_idHasBeenSet;
     Aws::String m_messageBody;
     bool m_messageBodyHasBeenSet;
-    long m_delaySeconds;
+    int m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;

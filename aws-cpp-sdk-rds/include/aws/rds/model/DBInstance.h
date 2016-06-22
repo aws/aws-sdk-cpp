@@ -374,17 +374,17 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size specified in gigabytes.</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>Specifies the allocated storage size specified in gigabytes.</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>Specifies the allocated storage size specified in gigabytes.</p>
      */
-    inline DBInstance& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>Provides the date and time the DB instance was created.</p>
@@ -464,19 +464,19 @@ namespace Model
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline DBInstance& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline DBInstance& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p> Provides List of DB security group elements containing only
@@ -976,17 +976,17 @@ namespace Model
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
      */
-    inline DBInstance& WithIops(long value) { SetIops(value); return *this;}
+    inline DBInstance& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Provides the list of option group memberships for this DB instance.</p>
@@ -1278,19 +1278,19 @@ namespace Model
      * <p>Specifies the port that the DB instance listens on. If the DB instance is
      * part of a DB cluster, this can be a different port than the DB cluster port.</p>
      */
-    inline long GetDbInstancePort() const{ return m_dbInstancePort; }
+    inline int GetDbInstancePort() const{ return m_dbInstancePort; }
 
     /**
      * <p>Specifies the port that the DB instance listens on. If the DB instance is
      * part of a DB cluster, this can be a different port than the DB cluster port.</p>
      */
-    inline void SetDbInstancePort(long value) { m_dbInstancePortHasBeenSet = true; m_dbInstancePort = value; }
+    inline void SetDbInstancePort(int value) { m_dbInstancePortHasBeenSet = true; m_dbInstancePort = value; }
 
     /**
      * <p>Specifies the port that the DB instance listens on. If the DB instance is
      * part of a DB cluster, this can be a different port than the DB cluster port.</p>
      */
-    inline DBInstance& WithDbInstancePort(long value) { SetDbInstancePort(value); return *this;}
+    inline DBInstance& WithDbInstancePort(int value) { SetDbInstancePort(value); return *this;}
 
     /**
      * <p>If the DB instance is a member of a DB cluster, contains the name of the DB
@@ -1539,19 +1539,19 @@ namespace Model
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
      * collected for the DB instance.</p>
      */
-    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
      * collected for the DB instance.</p>
      */
-    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
      * collected for the DB instance.</p>
      */
-    inline DBInstance& WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+    inline DBInstance& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that
@@ -1644,7 +1644,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline long GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1653,7 +1653,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1662,7 +1662,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline DBInstance& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+    inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
@@ -1679,13 +1679,13 @@ namespace Model
     bool m_dBNameHasBeenSet;
     Endpoint m_endpoint;
     bool m_endpointHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
@@ -1715,7 +1715,7 @@ namespace Model
     bool m_readReplicaDBInstanceIdentifiersHasBeenSet;
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::Vector<OptionGroupMembership> m_optionGroupMemberships;
     bool m_optionGroupMembershipsHasBeenSet;
@@ -1731,7 +1731,7 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     Aws::String m_tdeCredentialArn;
     bool m_tdeCredentialArnHasBeenSet;
-    long m_dbInstancePort;
+    int m_dbInstancePort;
     bool m_dbInstancePortHasBeenSet;
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
@@ -1747,13 +1747,13 @@ namespace Model
     bool m_domainMembershipsHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
-    long m_monitoringInterval;
+    int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
     Aws::String m_enhancedMonitoringResourceArn;
     bool m_enhancedMonitoringResourceArnHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
-    long m_promotionTier;
+    int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };
 

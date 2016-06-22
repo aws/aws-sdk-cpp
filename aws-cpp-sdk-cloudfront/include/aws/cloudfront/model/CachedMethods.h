@@ -53,21 +53,21 @@ namespace Model
      * Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for
      * caching responses to GET, HEAD, and OPTIONS requests).
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of HTTP methods for which you want CloudFront to cache responses.
      * Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for
      * caching responses to GET, HEAD, and OPTIONS requests).
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of HTTP methods for which you want CloudFront to cache responses.
      * Valid values are 2 (for caching responses to GET and HEAD requests) and 3 (for
      * caching responses to GET, HEAD, and OPTIONS requests).
      */
-    inline CachedMethods& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CachedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * A complex type that contains the HTTP methods that you want CloudFront to cache
@@ -112,7 +112,7 @@ namespace Model
     inline CachedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Method> m_items;
     bool m_itemsHasBeenSet;

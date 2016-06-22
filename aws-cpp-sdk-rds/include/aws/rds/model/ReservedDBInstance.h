@@ -182,17 +182,17 @@ namespace Model
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline ReservedDBInstance& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedDBInstance& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>The fixed price charged for this reserved DB instance.</p>
@@ -262,17 +262,17 @@ namespace Model
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline long GetDBInstanceCount() const{ return m_dBInstanceCount; }
+    inline int GetDBInstanceCount() const{ return m_dBInstanceCount; }
 
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline void SetDBInstanceCount(long value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
+    inline void SetDBInstanceCount(int value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
 
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline ReservedDBInstance& WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
+    inline ReservedDBInstance& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
 
     /**
      * <p>The description of the reserved DB instance.</p>
@@ -438,7 +438,7 @@ namespace Model
     bool m_dBInstanceClassHasBeenSet;
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
@@ -446,7 +446,7 @@ namespace Model
     bool m_usagePriceHasBeenSet;
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
-    long m_dBInstanceCount;
+    int m_dBInstanceCount;
     bool m_dBInstanceCountHasBeenSet;
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;

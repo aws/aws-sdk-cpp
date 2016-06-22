@@ -125,17 +125,17 @@ namespace Model
     /**
      * <p>The number of modified Reserved Instances.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of modified Reserved Instances.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of modified Reserved Instances.</p>
      */
-    inline ReservedInstancesConfiguration& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline ReservedInstancesConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The instance type for the modified Reserved Instances.</p>
@@ -167,7 +167,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_platform;
     bool m_platformHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     InstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;

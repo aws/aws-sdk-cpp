@@ -48,35 +48,35 @@ namespace Model
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline long GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline IpPermission& WithFromPort(long value) { SetFromPort(value); return *this;}
+    inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
      */
-    inline long GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
      */
-    inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
      * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
      */
-    inline IpPermission& WithToPort(long value) { SetToPort(value); return *this;}
+    inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in <a
@@ -160,9 +160,9 @@ namespace Model
     inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(value); return *this;}
 
   private:
-    long m_fromPort;
+    int m_fromPort;
     bool m_fromPortHasBeenSet;
-    long m_toPort;
+    int m_toPort;
     bool m_toPortHasBeenSet;
     Aws::String m_ipRange;
     bool m_ipRangeHasBeenSet;

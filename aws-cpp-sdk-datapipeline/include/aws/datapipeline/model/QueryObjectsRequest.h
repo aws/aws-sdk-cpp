@@ -220,19 +220,19 @@ namespace Model
      * <p>The maximum number of object names that <code>QueryObjects</code> will return
      * in a single call. The default value is 100. </p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of object names that <code>QueryObjects</code> will return
      * in a single call. The default value is 100. </p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of object names that <code>QueryObjects</code> will return
      * in a single call. The default value is 100. </p>
      */
-    inline QueryObjectsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline QueryObjectsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_pipelineId;
@@ -243,7 +243,7 @@ namespace Model
     bool m_sphereHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

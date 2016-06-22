@@ -141,17 +141,17 @@ namespace Model
     /**
      * <p>The maximum number of items to return for a single request.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The maximum number of items to return for a single request.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>The maximum number of items to return for a single request.</p>
      */
-    inline DescribeEnvironmentManagedActionHistoryRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline DescribeEnvironmentManagedActionHistoryRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_environmentId;
@@ -160,7 +160,7 @@ namespace Model
     bool m_environmentNameHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

@@ -51,19 +51,19 @@ namespace Model
      * <p>The rule number for the entry. ACL entries are processed in ascending order
      * by rule number.</p>
      */
-    inline long GetRuleNumber() const{ return m_ruleNumber; }
+    inline int GetRuleNumber() const{ return m_ruleNumber; }
 
     /**
      * <p>The rule number for the entry. ACL entries are processed in ascending order
      * by rule number.</p>
      */
-    inline void SetRuleNumber(long value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
+    inline void SetRuleNumber(int value) { m_ruleNumberHasBeenSet = true; m_ruleNumber = value; }
 
     /**
      * <p>The rule number for the entry. ACL entries are processed in ascending order
      * by rule number.</p>
      */
-    inline NetworkAclEntry& WithRuleNumber(long value) { SetRuleNumber(value); return *this;}
+    inline NetworkAclEntry& WithRuleNumber(int value) { SetRuleNumber(value); return *this;}
 
     /**
      * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
@@ -229,7 +229,7 @@ namespace Model
     inline NetworkAclEntry& WithPortRange(PortRange&& value) { SetPortRange(value); return *this;}
 
   private:
-    long m_ruleNumber;
+    int m_ruleNumber;
     bool m_ruleNumberHasBeenSet;
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
