@@ -37,6 +37,11 @@ namespace Aws
          */
         AWS_CORE_API Aws::String GetEnv(const char* name);
 
+        /*
+         * Securely clears a block of memory
+         */
+        AWS_CORE_API void SecureMemClear(unsigned char *data, size_t length);
+
     } //namespace Utils
 } //namespace Aws
 

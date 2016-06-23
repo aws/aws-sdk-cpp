@@ -83,6 +83,10 @@ Aws::String GetEnv(const char *variableName)
     return result;
 }
 
+void SecureMemClear(unsigned char *data, size_t length)
+{
+    SecureZeroMemory(data, length);
+}
 
 } // namespace Utils
 } // namespace Aws

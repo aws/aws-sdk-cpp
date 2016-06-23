@@ -8288,7 +8288,7 @@ void FilePath::Normalize() {
 namespace testing {
 namespace internal {
 
-#if defined(GTEST_HAS_STREAM_REDIRECTION)
+#if GTEST_HAS_STREAM_REDIRECTION
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 // MSVC and C++Builder do not provide a definition of STDERR_FILENO.
 const int kStdOutFileno = 1;

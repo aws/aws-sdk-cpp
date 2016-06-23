@@ -69,7 +69,8 @@ target_link_libraries(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
 copyDlls(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
-if(NOT CROSS_COMPILING)
+if(NOT CMAKE_CROSSCOMPILING)
+    message(STATUS "Going to run unit tests")
     ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
     SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
 endif()
