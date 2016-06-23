@@ -227,6 +227,9 @@ elseif(PLATFORM_ANDROID)
     else()
         message(STATUS "Standalone toolchain disabled; this is not a well-supported option")
     endif()
+
+    add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
+
 elseif(PLATFORM_CUSTOM)
     if(NOT CUSTOM_PLATFORM_DIR )
         message(FATAL_ERROR "Custom platforms require the CUSTOM_PLATFORM_DIR parameter to be set")

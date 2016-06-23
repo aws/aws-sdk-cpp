@@ -24,12 +24,12 @@ namespace Testing
 
 int SetEnv(const char* name, const char* value, int overwrite)
 {
-    return ??setenv(name, value, overwrite);
+    return setenv(name, value, overwrite);
 }
 
 int UnSetEnv(const char* name)
 {
-    ??;
+    return unsetenv(name);
 }
 
 } // namespace Testing

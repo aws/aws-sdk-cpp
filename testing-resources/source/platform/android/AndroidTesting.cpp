@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-#include <aws/testing/android/AndroidTesting.h>
+#include <aws/testing/platform/android/AndroidTesting.h>
 
 #include <stdio.h>
 #include <unistd.h>

@@ -70,18 +70,16 @@ Aws::String ComputeOSVersionString()
 
 Aws::String GetEnv(const char* name)
 {
-    return std::getenv(variableName);
+    return getenv(name);
 }
 
 void SecureMemClear(unsigned char *data, size_t length)
 {
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
-    memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
-#else
-    unsigned char* data = GetUnderlyingData();
-    memset(data, 0, GetLength());
-    asm volatile("" : "+m" (data));
-#endif
+    volatile unsigned char* volData = (volatile unsigned char *)data;
+    for(size_t i = 0; i < length; ++i)
+    {
+        volData[i] = 0;
+    }
 }
 
 } // namespace Utils
