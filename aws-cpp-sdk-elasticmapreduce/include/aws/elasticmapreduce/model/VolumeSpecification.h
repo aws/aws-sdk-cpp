@@ -93,19 +93,19 @@ namespace Model
     inline VolumeSpecification& WithIops(int value) { SetIops(value); return *this;}
 
     /**
-     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 ? 1024. If
+     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
     inline int GetSizeInGB() const{ return m_sizeInGB; }
 
     /**
-     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 ? 1024. If
+     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
     inline void SetSizeInGB(int value) { m_sizeInGBHasBeenSet = true; m_sizeInGB = value; }
 
     /**
-     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 ? 1024. If
+     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 – 1024. If
      * the volume type is EBS-optimized, the minimum value is 10. </p>
      */
     inline VolumeSpecification& WithSizeInGB(int value) { SetSizeInGB(value); return *this;}
