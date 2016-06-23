@@ -70,7 +70,8 @@ Aws::String ComputeOSVersionString()
 
 Aws::String GetEnv(const char* name)
 {
-    return getenv(name);
+   auto value = getenv(name);
+   return Aws::String( value ? value : "" );
 }
 
 void SecureMemClear(unsigned char *data, size_t length)

@@ -66,7 +66,8 @@ Aws::String ComputeOSVersionString()
 
 Aws::String GetEnv(const char* variableName)
 {
-    return std::getenv(variableName);
+    auto variableValue = std::getenv(variableName);
+    return Aws::String( variableValue ? variableValue : "" );
 }
 
 void SecureMemClear(unsigned char *data, size_t length)
