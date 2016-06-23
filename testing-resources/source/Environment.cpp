@@ -19,6 +19,8 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
+#include <sstream>
+
 namespace Aws
 {
 namespace Testing

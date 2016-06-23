@@ -29,12 +29,12 @@ time_t DateTime::TimeGM(struct tm* const t)
 
 void DateTime::LocalTime(tm* t, std::time_t time)
 {
-    localtime_r(&time, &t);
+    localtime_r(&time, t);
 }
 
 void DateTime::GMTime(tm* t, std::time_t time)
 {
-    gmtime_r(&time, &t);
+    gmtime_r(&time, t);
 }
 
 } // namespace Utils

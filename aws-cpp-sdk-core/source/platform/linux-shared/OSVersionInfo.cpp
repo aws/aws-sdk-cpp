@@ -72,10 +72,9 @@ Aws::String GetEnv(const char* variableName)
 void SecureMemClear(unsigned char *data, size_t length)
 {
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
-    memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
+    memset_s(data, length, 0, length);
 #else
-    unsigned char* data = GetUnderlyingData();
-    memset(data, 0, GetLength());
+    memset(data, 0, length);
     asm volatile("" : "+m" (data));
 #endif
 }
