@@ -205,9 +205,9 @@ def ParseArguments(platformEnvironments):
     return argMap
 
 
-def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier):
+def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier, cpuArch):
 
-    destDirectory = os.path.join(installDirectoryPrefix, libDir, "windows", "intel64", platformInstallQualifier, config)
+    destDirectory = os.path.join(installDirectoryPrefix, libDir, "windows", cpuArch, platformInstallQualifier, config)
     
     for rootDir, dirNames, fileNames in os.walk( "." ):
         if rootDir == ".":
@@ -259,6 +259,10 @@ def Main():
     customMemoryManagement = arguments["customMemoryManagement"]
     enableRtti = arguments["enableRtti"]
     cpuArch = arguments["cpuArchitecture"]
+    windowsCpuArch = "intel64"
+
+    if cpuArch == "x86":
+        windowsCpuArch = "ia32"
 
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
@@ -323,7 +327,7 @@ def Main():
         
             # Copy Windows PDBs
             if architecture.startswith('Windows'):
-                 CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ] )
+                 CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ], windowsCpuArch )
 
             # Install Android auxiliary dependencies (zlib, openssl, curl)
             if architecture == 'Android':
