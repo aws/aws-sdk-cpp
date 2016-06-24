@@ -391,21 +391,21 @@ namespace Model
     inline InstanceGroup& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
 
     /**
-     * <p>If the instance group is EBS-optimized. An Amazon EBS?optimized instance uses
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
      * an optimized configuration stack and provides additional, dedicated capacity for
      * Amazon EBS I/O. </p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
     /**
-     * <p>If the instance group is EBS-optimized. An Amazon EBS?optimized instance uses
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
      * an optimized configuration stack and provides additional, dedicated capacity for
      * Amazon EBS I/O. </p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
-     * <p>If the instance group is EBS-optimized. An Amazon EBS?optimized instance uses
+     * <p>If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses
      * an optimized configuration stack and provides additional, dedicated capacity for
      * Amazon EBS I/O. </p>
      */

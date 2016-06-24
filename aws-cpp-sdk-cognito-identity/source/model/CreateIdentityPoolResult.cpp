@@ -89,6 +89,15 @@ CreateIdentityPoolResult& CreateIdentityPoolResult::operator =(const AmazonWebSe
     }
   }
 
+  if(jsonValue.ValueExists("SamlProviderARNs"))
+  {
+    Array<JsonValue> samlProviderARNsJsonList = jsonValue.GetArray("SamlProviderARNs");
+    for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
+    {
+      m_samlProviderARNs.push_back(samlProviderARNsJsonList[samlProviderARNsIndex].AsString());
+    }
+  }
+
 
 
   return *this;

@@ -971,9 +971,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
@@ -982,9 +980,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
@@ -993,9 +989,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
