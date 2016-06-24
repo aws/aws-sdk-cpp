@@ -72,6 +72,12 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const AmazonWebSe
 
   }
 
+  if(jsonValue.ValueExists("loaIssueTime"))
+  {
+    m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
+
+  }
+
 
 
   return *this;

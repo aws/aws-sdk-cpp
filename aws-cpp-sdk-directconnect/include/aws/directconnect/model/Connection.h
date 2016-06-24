@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/ConnectionState.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -270,6 +271,36 @@ namespace Model
      */
     inline Connection& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline Connection& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+
   private:
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet;
@@ -289,6 +320,8 @@ namespace Model
     bool m_vlanHasBeenSet;
     Aws::String m_partnerName;
     bool m_partnerNameHasBeenSet;
+    Aws::Utils::DateTime m_loaIssueTime;
+    bool m_loaIssueTimeHasBeenSet;
   };
 
 } // namespace Model
