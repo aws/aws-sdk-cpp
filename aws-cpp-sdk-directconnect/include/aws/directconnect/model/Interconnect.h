@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/InterconnectState.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -170,6 +171,36 @@ namespace Model
     
     inline Interconnect& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
+    /**
+     * <p>The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
+
+    /**
+     * <p>The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.</p>
+     */
+    inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.</p>
+     */
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.</p>
+     */
+    inline Interconnect& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
+
+    /**
+     * <p>The time of the most recent call to DescribeInterconnectLoa for this
+     * Interconnect.</p>
+     */
+    inline Interconnect& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+
   private:
     Aws::String m_interconnectId;
     bool m_interconnectIdHasBeenSet;
@@ -183,6 +214,8 @@ namespace Model
     bool m_locationHasBeenSet;
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet;
+    Aws::Utils::DateTime m_loaIssueTime;
+    bool m_loaIssueTimeHasBeenSet;
   };
 
 } // namespace Model

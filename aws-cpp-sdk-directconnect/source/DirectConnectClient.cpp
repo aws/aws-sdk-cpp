@@ -39,8 +39,10 @@
 #include <aws/directconnect/model/DeleteConnectionRequest.h>
 #include <aws/directconnect/model/DeleteInterconnectRequest.h>
 #include <aws/directconnect/model/DeleteVirtualInterfaceRequest.h>
+#include <aws/directconnect/model/DescribeConnectionLoaRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsRequest.h>
 #include <aws/directconnect/model/DescribeConnectionsOnInterconnectRequest.h>
+#include <aws/directconnect/model/DescribeInterconnectLoaRequest.h>
 #include <aws/directconnect/model/DescribeInterconnectsRequest.h>
 #include <aws/directconnect/model/DescribeVirtualInterfacesRequest.h>
 
@@ -513,6 +515,37 @@ void DirectConnectClient::DeleteVirtualInterfaceAsyncHelper(const DeleteVirtualI
   handler(this, request, DeleteVirtualInterface(request), context);
 }
 
+DescribeConnectionLoaOutcome DirectConnectClient::DescribeConnectionLoa(const DescribeConnectionLoaRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeConnectionLoaOutcome(DescribeConnectionLoaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeConnectionLoaOutcome(outcome.GetError());
+  }
+}
+
+DescribeConnectionLoaOutcomeCallable DirectConnectClient::DescribeConnectionLoaCallable(const DescribeConnectionLoaRequest& request) const
+{
+  return std::async(std::launch::async, &DirectConnectClient::DescribeConnectionLoa, this, request);
+}
+
+void DirectConnectClient::DescribeConnectionLoaAsync(const DescribeConnectionLoaRequest& request, const DescribeConnectionLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectConnectClient::DescribeConnectionLoaAsyncHelper, this, request, handler, context);
+}
+
+void DirectConnectClient::DescribeConnectionLoaAsyncHelper(const DescribeConnectionLoaRequest& request, const DescribeConnectionLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeConnectionLoa(request), context);
+}
+
 DescribeConnectionsOutcome DirectConnectClient::DescribeConnections(const DescribeConnectionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -573,6 +606,37 @@ void DirectConnectClient::DescribeConnectionsOnInterconnectAsync(const DescribeC
 void DirectConnectClient::DescribeConnectionsOnInterconnectAsyncHelper(const DescribeConnectionsOnInterconnectRequest& request, const DescribeConnectionsOnInterconnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeConnectionsOnInterconnect(request), context);
+}
+
+DescribeInterconnectLoaOutcome DirectConnectClient::DescribeInterconnectLoa(const DescribeInterconnectLoaRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInterconnectLoaOutcome(DescribeInterconnectLoaResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInterconnectLoaOutcome(outcome.GetError());
+  }
+}
+
+DescribeInterconnectLoaOutcomeCallable DirectConnectClient::DescribeInterconnectLoaCallable(const DescribeInterconnectLoaRequest& request) const
+{
+  return std::async(std::launch::async, &DirectConnectClient::DescribeInterconnectLoa, this, request);
+}
+
+void DirectConnectClient::DescribeInterconnectLoaAsync(const DescribeInterconnectLoaRequest& request, const DescribeInterconnectLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectConnectClient::DescribeInterconnectLoaAsyncHelper, this, request, handler, context);
+}
+
+void DirectConnectClient::DescribeInterconnectLoaAsyncHelper(const DescribeInterconnectLoaRequest& request, const DescribeInterconnectLoaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInterconnectLoa(request), context);
 }
 
 DescribeInterconnectsOutcome DirectConnectClient::DescribeInterconnects(const DescribeInterconnectsRequest& request) const

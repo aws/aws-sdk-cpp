@@ -143,11 +143,69 @@ namespace Model
      */
     inline GetCredentialsForIdentityRequest& AddLogins(const char* key, const char* value) { m_loginsHasBeenSet = true; m_logins[key] = value; return *this; }
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline const Aws::String& GetCustomRoleArn() const{ return m_customRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline void SetCustomRoleArn(const Aws::String& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline void SetCustomRoleArn(Aws::String&& value) { m_customRoleArnHasBeenSet = true; m_customRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline void SetCustomRoleArn(const char* value) { m_customRoleArnHasBeenSet = true; m_customRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline GetCredentialsForIdentityRequest& WithCustomRoleArn(const Aws::String& value) { SetCustomRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline GetCredentialsForIdentityRequest& WithCustomRoleArn(Aws::String&& value) { SetCustomRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles
+     * were received in the token from the identity provider. For example, a SAML-based
+     * identity provider. This parameter is optional for identity providers that do not
+     * support role customization.</p>
+     */
+    inline GetCredentialsForIdentityRequest& WithCustomRoleArn(const char* value) { SetCustomRoleArn(value); return *this;}
+
   private:
     Aws::String m_identityId;
     bool m_identityIdHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_logins;
     bool m_loginsHasBeenSet;
+    Aws::String m_customRoleArn;
+    bool m_customRoleArnHasBeenSet;
   };
 
 } // namespace Model

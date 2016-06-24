@@ -22,25 +22,18 @@ namespace DirectConnect
 {
 namespace Model
 {
-  enum class VirtualInterfaceState
+  enum class LoaContentType
   {
     NOT_SET,
-    confirming,
-    verifying,
-    pending,
-    available,
-    down,
-    deleting,
-    deleted,
-    rejected
+    application_pdf
   };
 
-namespace VirtualInterfaceStateMapper
+namespace LoaContentTypeMapper
 {
-AWS_DIRECTCONNECT_API VirtualInterfaceState GetVirtualInterfaceStateForName(const Aws::String& name);
+AWS_DIRECTCONNECT_API LoaContentType GetLoaContentTypeForName(const Aws::String& name);
 
-AWS_DIRECTCONNECT_API Aws::String GetNameForVirtualInterfaceState(VirtualInterfaceState value);
-} // namespace VirtualInterfaceStateMapper
+AWS_DIRECTCONNECT_API Aws::String GetNameForLoaContentType(LoaContentType value);
+} // namespace LoaContentTypeMapper
 } // namespace Model
 } // namespace DirectConnect
 } // namespace Aws

@@ -1350,28 +1350,19 @@ namespace Model
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
