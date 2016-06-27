@@ -15,6 +15,8 @@
 
 
 #include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/crypto/Hash.h>
+#include <aws/core/utils/crypto/HMAC.h>
 
 #if ENABLE_BCRYPT_ENCRYPTION
     #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
@@ -23,7 +25,6 @@
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
 #include <aws/core/utils/logging/LogMacros.h>
-
 #endif
 
 using namespace Aws::Utils;

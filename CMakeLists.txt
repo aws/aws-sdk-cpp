@@ -52,6 +52,7 @@ option(NO_HTTP_CLIENT "If enabled, no platform-default http client will be inclu
 option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
 option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
 option(ENABLE_TESTING "Flag to enable/disable building unit and integration tests" ON)
+set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")

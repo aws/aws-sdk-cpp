@@ -35,7 +35,9 @@ namespace Aws
         AP_SOUTHEAST_2,
         AP_NORTHEAST_1,
         AP_NORTHEAST_2,
-        SA_EAST_1
+        SA_EAST_1,
+        AP_SOUTH_1
+
     };
 
     namespace RegionMapper

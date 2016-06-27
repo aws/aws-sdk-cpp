@@ -61,21 +61,29 @@ You may also find the following link helpful for including the build in your pro
 https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
 
 ####Building for Android
-To build for Android, add -DTARGET_ARCH=ANDROID to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
+To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
 
 #####Android on Windows
 Building for Android on Windows requires some additional setup.  In particular, you will need to run cmake from a Visual Studio developer command prompt (2013 or higher).  Additionally, you will need 'git' and 'patch' in your path.  If you have git installed on a Windows system, then patch is likely found in a sibling directory (.../Git/usr/bin/).  Once you've verified these requirements, your cmake command line will change slightly to use nmake:
 
-cmake -G "NMake Makefiles" -DTARGET_ARCH=ANDROID <other options> ..
+```
+cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
+```
 
 Nmake builds targets in a serial fashion.  To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the cmake invocation to:
 
-cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
+```
+cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
+```
 
 ####General CMake Variables
 
 #####BUILD_ONLY
-Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-cpp-sdk-s3;aws-cpp-sdk-dynamodb;aws-cpp-sdk-cognito-identity"
+Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument.
+Example:
+```
+-DBUILD_ONLY="s3;dynamodb;cognito-identity"
+```
 
 #####ADD_CUSTOM_CLIENTS
 Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example: -DADD_CUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
@@ -199,7 +207,7 @@ Here are a few recipes:
 
 Just use defaults:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    Aws::InitAPI(options);
    .....
    Aws::ShutdownAPI(options);
@@ -207,7 +215,7 @@ Just use defaults:
 
 Turn logging on using the default logger:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
    Aws::InitAPI(options);
    .....
@@ -218,7 +226,7 @@ Install custom memory manager:
 ```
     MyMemoryManager memoryManager;
 
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.memoryManagementOptions.memoryManager = &memoryManager;
     Aws::InitAPI(options);
     .....
@@ -227,7 +235,7 @@ Install custom memory manager:
 
 Override default http client factory:
 ```
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
     Aws::InitAPI(options);
     .....
@@ -593,7 +601,7 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 * Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly accross builds so please be explicit.
 * Namespace names should be UpperCammelCase. Never put a using namespace statement in a header file unless it is scoped by a class. It is fine to use a using namespace statement in a cpp file.
 * Use enum class, not enum
-* prefer `#pragma once` for include guards.
+* Prefer `#pragma once` for include guards.
 * Forward declare whenever possible.
 * Use nullptr instead of NULL.
 
