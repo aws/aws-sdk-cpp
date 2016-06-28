@@ -48,6 +48,8 @@ namespace MarketplaceMeteringEndpoint
         return "metering.marketplace.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "metering.marketplace.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "metering.marketplace.ap-south-1.amazonaws.com";
      default:
         return "metering.marketplace.us-east-1.amazonaws.com";
     }

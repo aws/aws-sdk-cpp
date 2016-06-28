@@ -29,6 +29,7 @@ namespace Model
     eu_west_1,
     us_west_1,
     us_west_2,
+    ap_south_1,
     ap_southeast_1,
     ap_southeast_2,
     ap_northeast_1,

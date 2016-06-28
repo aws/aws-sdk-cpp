@@ -48,6 +48,8 @@ namespace ECREndpoint
         return "ecr.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "ecr.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "ecr.ap-south-1.amazonaws.com";
      default:
         return "ecr.us-east-1.amazonaws.com";
     }

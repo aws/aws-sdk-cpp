@@ -48,6 +48,8 @@ namespace DatabaseMigrationServiceEndpoint
         return "dms.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "dms.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "dms.ap-south-1.amazonaws.com";
      default:
         return "dms.us-east-1.amazonaws.com";
     }

@@ -48,6 +48,8 @@ namespace EFSEndpoint
         return "elasticfilesystem.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "elasticfilesystem.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "elasticfilesystem.ap-south-1.amazonaws.com";
      default:
         return "elasticfilesystem.us-east-1.amazonaws.com";
     }

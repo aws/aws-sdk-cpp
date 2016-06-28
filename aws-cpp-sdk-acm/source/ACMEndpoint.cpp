@@ -48,6 +48,8 @@ namespace ACMEndpoint
         return "acm.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "acm.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "acm.ap-south-1.amazonaws.com";
      default:
         return "acm.us-east-1.amazonaws.com";
     }

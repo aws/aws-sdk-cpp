@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CognitoIdentity;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20140630.15;
+        version : 0.12.20140630.16;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Cognito Identity);

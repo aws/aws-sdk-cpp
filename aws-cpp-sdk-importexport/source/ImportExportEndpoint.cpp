@@ -48,6 +48,8 @@ namespace ImportExportEndpoint
         return "importexport.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "importexport.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "importexport.ap-south-1.amazonaws.com";
      default:
         return "importexport.us-east-1.amazonaws.com";
     }
