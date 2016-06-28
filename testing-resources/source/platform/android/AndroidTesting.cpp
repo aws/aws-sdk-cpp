@@ -26,6 +26,7 @@
 
 #include <aws/external/gtest.h>
 
+#include <aws/core/Aws.h>
 #include <aws/core/platform/Platform.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/UnreferencedParam.h>
@@ -192,13 +193,18 @@ static jint RunAndroidTestsInternal()
   int dummy = 1;
   static char *dummy2 = "Stuff";
 
-  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Fatal));
+  Aws::SDKOptions options;
+  Aws::InitAPI(options);
+
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Trace));
   ::testing::InitGoogleTest(&dummy, &dummy2);
   auto result = RUN_ALL_TESTS();
 
   std::this_thread::sleep_for(std::chrono::seconds(3));
 
   Aws::Utils::Logging::ShutdownAWSLogging();
+
+  Aws::ShutdownAPI(options);
 
   return (jint) result;
 }
