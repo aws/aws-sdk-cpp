@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -13,27 +13,28 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/memory/stl/AWSString.h>
+#pragma once
 
-#include <regex>
+#include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
 namespace Platform
 {
-namespace Environment
+namespace OSVersionInfo
 {
+    /**
+    * computing the version string for the current running operating system.
+    */
+    AWS_CORE_API Aws::String ComputeOSVersionString();
 
-int SetEnv(const char* name, const char* value, int overwrite)
-{
-    return setenv(name, value, overwrite);
-}
+    /**
+    * runs a (shell) command string and returns the output; not needed on windows currently
+    */
+    AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);
 
-int UnSetEnv(const char* name)
-{
-    return unsetenv(name);
-}
-
-} // namespace Environment
+} // namespace OSVersionInfo
 } // namespace Platform
 } // namespace Aws
+

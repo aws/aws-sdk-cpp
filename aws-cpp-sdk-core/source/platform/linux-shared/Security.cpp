@@ -13,7 +13,25 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/Core_EXPORTS.h>
+#include <aws/core/platform/Security.h>
 
-#include <aws/core/platform/Android.h>
+namespace Aws
+{
+namespace Platform
+{
+namespace Security
+{
 
+void SecureMemClear(unsigned char *data, size_t length)
+{
+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
+    memset_s(data, length, 0, length);
+#else
+    memset(data, 0, length);
+    asm volatile("" : "+m" (data));
+#endif
+}
+
+} // namespace Security
+} // namespace Platform
+} // namespace Aws

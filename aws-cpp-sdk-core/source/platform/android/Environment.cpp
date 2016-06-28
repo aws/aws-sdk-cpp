@@ -13,7 +13,21 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/Core_EXPORTS.h>
+#include <aws/core/platform/Environment.h>
 
-#include <aws/core/platform/Android.h>
+namespace Aws
+{
+namespace Platform
+{
+namespace Environment
+{
 
+Aws::String GetEnv(const char* name)
+{
+   auto value = getenv(name);
+   return Aws::String( value ? value : "" );
+}
+
+} // namespace Environment
+} // namespace Platform
+} // namespace Aws

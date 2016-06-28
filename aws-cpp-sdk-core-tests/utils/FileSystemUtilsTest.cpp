@@ -13,7 +13,7 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 
@@ -24,14 +24,14 @@ using namespace Aws::Utils;
 
 TEST(FileTest, HomeDirectory)
 {
-    auto homeDirectory = Aws::Utils::FileSystemUtils::GetHomeDirectory();
+    auto homeDirectory = Aws::Platform::FileSystem::GetHomeDirectory();
 
     ASSERT_TRUE(homeDirectory.size() > 0);
 }
 
 TEST(FileTest, TempFile)
 {
-    auto tempFilePath = Aws::Utils::FileSystemUtils::CreateTempFilePath();
+    auto tempFilePath = Aws::Platform::FileSystem::CreateTempFilePath();
     ASSERT_TRUE(tempFilePath.size() > 0);
 
     std::ofstream testFile(tempFilePath.c_str());

@@ -20,7 +20,9 @@
 
 namespace Aws
 {
-namespace Testing
+namespace Platform
+{
+namespace Environment
 {
 
     /**
@@ -33,5 +35,6 @@ namespace Testing
     */
     AWS_TESTING_API int UnSetEnv(const char* name);
 
-} // namespace Testing
+} // namespace Environment
+} // namespace Platform
 } // namespace Aws

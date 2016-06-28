@@ -14,9 +14,9 @@
  */
 
 
-#include <aws/testing/Environment.h>
+#include <aws/testing/TestingEnvironment.h>
 
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
 #include <sstream>
@@ -33,11 +33,11 @@ void RedirectHomeToTempIfAppropriate()
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
         Aws::String dir = tempDir.str().c_str();
-        if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::Utils::FileSystemUtils::GetPathDelimiter())
+        if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::Platform::FileSystem::PATH_DELIM)
         {
-            tempDir << Aws::Utils::PATH_DELIM;
+            tempDir << Aws::Platform::FileSystem::PATH_DELIM;
         }
-        Aws::Testing::SetEnv("HOME", tempDir.str().c_str(), 1);
+        Aws::Platform::Environment::SetEnv("HOME", tempDir.str().c_str(), 1);
     #endif // !defined(DISABLE_HOME_DIR_REDIRECT)
 }
 

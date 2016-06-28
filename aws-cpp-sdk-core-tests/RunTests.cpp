@@ -17,7 +17,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Aws.h>
-#include <aws/testing/Environment.h>
+#include <aws/testing/TestingEnvironment.h>
 
 int main(int argc, char** argv)
 {

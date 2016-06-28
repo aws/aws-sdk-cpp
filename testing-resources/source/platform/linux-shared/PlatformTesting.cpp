@@ -17,7 +17,9 @@
 
 namespace Aws
 {
-namespace Testing
+namespace Platform
+{
+namespace Environment
 {
 
 int SetEnv(const char* name, const char* value, int overwrite)
@@ -30,5 +32,6 @@ int UnSetEnv(const char* name)
     return unsetenv(name);
 }
 
-} // namespace Testing 
+} // namespace Environment
+} // namespace Platform 
 } // namespace Aws

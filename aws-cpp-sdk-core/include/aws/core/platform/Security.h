@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -13,7 +13,25 @@
   * permissions and limitations under the License.
   */
 
+#pragma once
+
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/platform/Android.h>
+#include <stddef.h>
+
+namespace Aws
+{
+namespace Platform
+{
+namespace Security
+{
+
+    /*
+    * Securely clears a block of memory
+    */
+    AWS_CORE_API void SecureMemClear(unsigned char *data, size_t length);
+
+} // namespace Security
+} // namespace Platform
+} // namespace Aws
 

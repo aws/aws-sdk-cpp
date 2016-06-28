@@ -13,13 +13,15 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/OSVersionInfo.h>
+#include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <sys/utsname.h>
 
 namespace Aws
 {
-namespace Utils
+namespace Platform
+{
+namespace OSVersionInfo
 {
 
 Aws::String GetSysCommandOutput(const char* command)
@@ -64,21 +66,6 @@ Aws::String ComputeOSVersionString()
     return "non-windows/unknown";
 }
 
-Aws::String GetEnv(const char* variableName)
-{
-    auto variableValue = std::getenv(variableName);
-    return Aws::String( variableValue ? variableValue : "" );
-}
-
-void SecureMemClear(unsigned char *data, size_t length)
-{
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
-    memset_s(data, length, 0, length);
-#else
-    memset(data, 0, length);
-    asm volatile("" : "+m" (data));
-#endif
-}
-
-} // namespace Utils 
+} // namespace OSVersionInfo
+} // namespace Platform 
 } // namespace Aws

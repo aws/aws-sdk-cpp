@@ -13,13 +13,15 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/OSVersionInfo.h>
+#include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <regex>
 
 namespace Aws
 {
-namespace Utils
+namespace Platform
+{
+namespace OSVersionInfo
 {
 
 Aws::String GetSysCommandOutput(const char* command)
@@ -68,20 +70,6 @@ Aws::String ComputeOSVersionString()
     return Aws::String("Android/Unknown");
 }
 
-Aws::String GetEnv(const char* name)
-{
-   auto value = getenv(name);
-   return Aws::String( value ? value : "" );
-}
-
-void SecureMemClear(unsigned char *data, size_t length)
-{
-    volatile unsigned char* volData = (volatile unsigned char *)data;
-    for(size_t i = 0; i < length; ++i)
-    {
-        volData[i] = 0;
-    }
-}
-
-} // namespace Utils
+} // namespace OSVersionInfo
+} // namespace Platform
 } // namespace Aws

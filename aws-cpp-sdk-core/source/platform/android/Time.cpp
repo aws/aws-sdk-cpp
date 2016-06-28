@@ -13,13 +13,15 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/DateTime.h>
+#include <aws/core/platform/Time.h>
 
 #include <time.h>
 
 namespace Aws
 {
-namespace Utils
+namespace Platform
+{
+namespace Time
 {
 
 #if defined(__ANDROID__) && !defined(__LP64__)
@@ -98,5 +100,6 @@ void DateTime::GMTime(tm* t, std::time_t time)
     gmtime_r(&time, t);
 }
 
-} // namespace Utils
+} // namespace Time
+} // namespace Platform
 } // namespace Aws

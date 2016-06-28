@@ -20,28 +20,16 @@
 
 namespace Aws
 {
-    namespace Utils
-    {
-        /**
-         * computing the version string for the current running operating system.
-         */
-        AWS_CORE_API Aws::String ComputeOSVersionString();
+namespace Platform
+{
+namespace Environment
+{
+    /**
+    * shim for getenv
+    */
+    AWS_CORE_API Aws::String GetEnv(const char* name);
 
-        /**
-         * runs a (shell) command string and returns the output; not needed on windows currently
-         */
-        AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);
-
-        /**
-         * shim for getenv
-         */
-        AWS_CORE_API Aws::String GetEnv(const char* name);
-
-        /*
-         * Securely clears a block of memory
-         */
-        AWS_CORE_API void SecureMemClear(unsigned char *data, size_t length);
-
-    } //namespace Utils
-} //namespace Aws
+} // namespace Environment
+} // namespace Platform
+} // namespace Aws
 

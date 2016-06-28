@@ -14,6 +14,8 @@
   */
 
 #include <aws/core/utils/DateTime.h>
+
+#include <aws/core/platform/Time.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <time.h>
@@ -1110,7 +1112,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         std::time_t tt;
         if(isUtc)
         {
-	    tt = TimeGM(&timeStruct);
+            tt = Aws::Platform::Time::TimeGM(&timeStruct);
         }
         else
         {
@@ -1132,7 +1134,7 @@ tm DateTime::ConvertTimestampToLocalTimeStruct() const
     std::time_t time = std::chrono::system_clock::to_time_t(m_time);
     struct tm localTimeStamp;
 
-    LocalTime(&localTimeStamp, time);
+    Aws::Platform::Time::LocalTime(&localTimeStamp, time);
 
     return localTimeStamp;
 }
@@ -1141,7 +1143,7 @@ tm DateTime::ConvertTimestampToGmtStruct() const
 {
     std::time_t time = std::chrono::system_clock::to_time_t(m_time);
     struct tm gmtTimeStamp;
-    GMTime(&gmtTimeStamp, time);
+    Aws::Platform::Time::GMTime(&gmtTimeStamp, time);
 
     return gmtTimeStamp;
 }

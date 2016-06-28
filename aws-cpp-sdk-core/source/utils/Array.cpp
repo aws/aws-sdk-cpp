@@ -15,7 +15,7 @@
 
 #include <aws/core/utils/Array.h>
 
-#include <aws/core/utils/OSVersionInfo.h>
+#include <aws/core/platform/Security.h>
 
 namespace Aws
 {
@@ -68,7 +68,7 @@ namespace Aws
             {
                 if (GetUnderlyingData())
                 {
-                    Aws::Utils::SecureMemClear(GetUnderlyingData(), GetLength());
+                    Aws::Platform::Security::SecureMemClear(GetUnderlyingData(), GetLength());
                 }
             }
     }
