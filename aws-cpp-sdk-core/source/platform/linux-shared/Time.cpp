@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Platform
 {
-namespace Security
+namespace Time
 {
 
 time_t TimeGM(struct tm* const t)
@@ -39,6 +39,6 @@ void GMTime(tm* t, std::time_t time)
     gmtime_r(&time, t);
 }
 
-} // namespace Security
+} // namespace Time
 } // namespace Platform
 } // namespace Aws

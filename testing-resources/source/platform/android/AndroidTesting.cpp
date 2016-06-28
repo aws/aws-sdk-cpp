@@ -27,7 +27,7 @@
 #include <aws/external/gtest.h>
 
 #include <aws/core/platform/Platform.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/logging/AWSLogging.h>
@@ -207,7 +207,7 @@ static jint RunAndroidTestsInternal()
 void CacheFile(const Aws::String &fileName, const Aws::String& directory)
 {
     Aws::String destDirectory = Aws::Platform::GetCacheDirectory() + directory;
-    Aws::Utils::FileSystemUtils::CreateDirectoryIfNotExists(destDirectory.c_str());
+    Aws::Platform::FileSystem::CreateDirectoryIfNotExists(destDirectory.c_str());
 
     Aws::String sourceFileName = "/data/data/aws.coretests/" + directory + Aws::String( "/" ) + fileName;
     Aws::String destFileName = destDirectory + Aws::String( "/" ) + fileName;

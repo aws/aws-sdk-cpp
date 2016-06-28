@@ -15,6 +15,7 @@
 
 #include <aws/core/platform/Time.h>
 
+#include <limits.h>
 #include <time.h>
 
 namespace Aws
@@ -62,13 +63,12 @@ namespace Time
 
 // From src/base/os_compat_android.cc:
 
-#include <aws/core/utils/DateTime.h>
 
 #include <time64.h>
 
 // 32-bit Android has only timegm64() and not timegm().
 // We replicate the behaviour of timegm() when the result overflows time_t.
-time_t DateTime::TimeGM(struct tm* const t) 
+time_t TimeGM(struct tm* const t) 
 {
     // time_t is signed on Android.
     static const time_t kTimeMax = ~(1L << (sizeof(time_t) * CHAR_BIT - 1));
@@ -83,19 +83,19 @@ time_t DateTime::TimeGM(struct tm* const t)
 
 #else 
 
-time_t DateTime::TimeGM(struct tm* const t)
+time_t TimeGM(struct tm* const t)
 {
     return timegm(t);
 }
 
 #endif 
 
-void DateTime::LocalTime(tm* t, std::time_t time)
+void LocalTime(tm* t, std::time_t time)
 {
     localtime_r(&time, t);
 }
 
-void DateTime::GMTime(tm* t, std::time_t time)
+void GMTime(tm* t, std::time_t time)
 {
     gmtime_r(&time, t);
 }

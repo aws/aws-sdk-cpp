@@ -14,9 +14,9 @@
   */
 #include <aws/core/platform/FileSystem.h>
 
+#include <aws/core/platform/Android.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/platform/Platform.h>
 
 #include <unistd.h>
 #include <sys/stat.h>

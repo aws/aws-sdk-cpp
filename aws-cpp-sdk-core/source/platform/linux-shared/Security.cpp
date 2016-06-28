@@ -15,6 +15,8 @@
 
 #include <aws/core/platform/Security.h>
 
+#include <string.h>
+
 namespace Aws
 {
 namespace Platform

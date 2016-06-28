@@ -14,9 +14,9 @@
   */
 #include <aws/core/platform/FileSystem.h>
 
+#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/platform/Platform.h>
 
 #include <unistd.h>
 #include <pwd.h>
@@ -37,7 +37,7 @@ Aws::String GetHomeDirectory()
 
     AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Checking " << HOME_DIR_ENV_VAR << " for the home directory.");
 
-    Aws::String homeDir = Aws::Utils::GetEnv(HOME_DIR_ENV_VAR);
+    Aws::String homeDir = Aws::Platform::Environment::GetEnv(HOME_DIR_ENV_VAR);
 
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
 
@@ -57,7 +57,7 @@ Aws::String GetHomeDirectory()
         AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Pulled " << homeDir << " as home directory from the OS.");
     }
 
-    Aws::String retVal = homeDir.size() > 0 ? StringUtils::Trim(homeDir.c_str()) : "";
+    Aws::String retVal = homeDir.size() > 0 ? Aws::Utils::StringUtils::Trim(homeDir.c_str()) : "";
     if(!retVal.empty())
     {
         if(retVal.at(retVal.length() - 1) != PATH_DELIM)

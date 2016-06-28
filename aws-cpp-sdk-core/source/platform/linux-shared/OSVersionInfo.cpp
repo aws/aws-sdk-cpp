@@ -15,6 +15,7 @@
 
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/StringUtils.h>
 #include <sys/utsname.h>
 
 namespace Aws
@@ -45,7 +46,7 @@ Aws::String GetSysCommandOutput(const char* command)
 
         pclose(outputStream);
 
-        return StringUtils::Trim(outputStr.c_str());
+        return Aws::Utils::StringUtils::Trim(outputStr.c_str());
     }
 
     return "";
