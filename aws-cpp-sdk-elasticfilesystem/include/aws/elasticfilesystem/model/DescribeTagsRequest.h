@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_EFS_API DescribeTagsRequest : public EFSRequest
   {
@@ -39,104 +40,104 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p>Optional. Maximum number of file system tags to return in the response. It
+     * <p>(Optional) Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Optional. Maximum number of file system tags to return in the response. It
+     * <p>(Optional) Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Optional. Maximum number of file system tags to return in the response. It
+     * <p>(Optional) Maximum number of file system tags to return in the response. It
      * must be an integer with a value greater than zero.</p>
      */
     inline DescribeTagsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline DescribeTagsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeTags</code> operation. If present, it specifies to continue the
-     * list from where the previous call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeTags</code> operation (String). If present, it specifies to
+     * continue the list from where the previous call left off.</p>
      */
     inline DescribeTagsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the file system whose tag set you want to retrieve.</p>
+     * <p>ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 

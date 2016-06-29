@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Input for Subscribe action.
+   * <p>Input for Subscribe action.</p>
    */
   class AWS_SNS_API SubscribeRequest : public SNSRequest
   {
@@ -70,190 +70,218 @@ namespace Model
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li>
-     * <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li>
-     * <code>email</code> -- delivery of message via SMTP</li> <li>
-     * <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li>
-     * <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> --
-     * delivery of JSON-encoded message to an Amazon SQS queue</li> <li>
-     * <code>application</code> -- delivery of JSON-encoded message to an EndpointArn
-     * for a mobile app and device.</li> </ul>
+     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
+     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
+     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
-     * protocol:</p> <ul> <li>For the <code>http</code> protocol, the endpoint is an
-     * URL beginning with "http://"</li> <li>For the <code>https</code> protocol, the
-     * endpoint is a URL beginning with "https://"</li> <li>For the <code>email</code>
-     * protocol, the endpoint is an email address</li> <li>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</li> <li>For
-     * the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-     * device</li> <li>For the <code>sqs</code> protocol, the endpoint is the ARN of an
-     * Amazon SQS queue</li> <li>For the <code>application</code> protocol, the
-     * endpoint is the EndpointArn of a mobile app and device.</li> </ul>
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

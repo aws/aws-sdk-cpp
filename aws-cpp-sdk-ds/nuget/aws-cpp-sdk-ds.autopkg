@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DirectoryService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150416.15;
+        version : 0.12.20150416.16;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Directory Service);

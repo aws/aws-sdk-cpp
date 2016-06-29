@@ -48,6 +48,8 @@ namespace ElasticLoadBalancingEndpoint
         return "elasticloadbalancing.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "elasticloadbalancing.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "elasticloadbalancing.ap-south-1.amazonaws.com";
      default:
         return "elasticloadbalancing.us-east-1.amazonaws.com";
     }

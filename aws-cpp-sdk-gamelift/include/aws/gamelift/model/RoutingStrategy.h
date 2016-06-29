@@ -43,52 +43,52 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The
-     * alias resolves to one specific fleet. Use this type when routing to active
-     * fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can
-     * be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</li></ul></p>
+     * <p>Type of routing strategy. Possible routing types include the following:
+     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
+     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
+     * resolve to a fleet but instead can be used to display a message to the user. A
+     * terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</li></ul></p>
      */
     inline const RoutingStrategyType& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The
-     * alias resolves to one specific fleet. Use this type when routing to active
-     * fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can
-     * be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</li></ul></p>
+     * <p>Type of routing strategy. Possible routing types include the following:
+     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
+     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
+     * resolve to a fleet but instead can be used to display a message to the user. A
+     * terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</li></ul></p>
      */
     inline void SetType(const RoutingStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The
-     * alias resolves to one specific fleet. Use this type when routing to active
-     * fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can
-     * be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</li></ul></p>
+     * <p>Type of routing strategy. Possible routing types include the following:
+     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
+     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
+     * resolve to a fleet but instead can be used to display a message to the user. A
+     * terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</li></ul></p>
      */
     inline void SetType(RoutingStrategyType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The
-     * alias resolves to one specific fleet. Use this type when routing to active
-     * fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can
-     * be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</li></ul></p>
+     * <p>Type of routing strategy. Possible routing types include the following:
+     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
+     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
+     * resolve to a fleet but instead can be used to display a message to the user. A
+     * terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</li></ul></p>
      */
     inline RoutingStrategy& WithType(const RoutingStrategyType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of routing strategy. Possible routing types include: <ul><li>SIMPLE: The
-     * alias resolves to one specific fleet. Use this type when routing to active
-     * fleets.</li><li>TERMINAL: The alias does not resolve to a fleet but instead can
-     * be used to display a message to the user. A terminal alias throws a
-     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-     * embedded.</li></ul></p>
+     * <p>Type of routing strategy. Possible routing types include the following:
+     * <ul><li><b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type
+     * when routing to active fleets.</li><li><b>TERMINAL</b> – The alias does not
+     * resolve to a fleet but instead can be used to display a message to the user. A
+     * terminal alias throws a TerminalRoutingStrategyException with the
+     * <a>RoutingStrategy</a> message embedded.</li></ul></p>
      */
     inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(value); return *this;}
 

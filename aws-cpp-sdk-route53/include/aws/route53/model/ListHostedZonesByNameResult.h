@@ -181,254 +181,219 @@ namespace Model
     inline ListHostedZonesByNameResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline const Aws::String& GetNextDNSName() const{ return m_nextDNSName; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextDNSName(const Aws::String& value) { m_nextDNSName = value; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextDNSName(Aws::String&& value) { m_nextDNSName = value; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextDNSName(const char* value) { m_nextDNSName.assign(value); }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextDNSName(const Aws::String& value) { SetNextDNSName(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextDNSName(Aws::String&& value) { SetNextDNSName(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextDNSName(const char* value) { SetNextDNSName(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline const Aws::String& GetNextHostedZoneId() const{ return m_nextHostedZoneId; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextHostedZoneId(const Aws::String& value) { m_nextHostedZoneId = value; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextHostedZoneId(Aws::String&& value) { m_nextHostedZoneId = value; }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline void SetNextHostedZoneId(const char* value) { m_nextHostedZoneId.assign(value); }
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextHostedZoneId(const Aws::String& value) { SetNextHostedZoneId(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextHostedZoneId(Aws::String&& value) { SetNextHostedZoneId(value); return *this;}
 
     /**
-     * <p>If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>,
-     * there are more hosted zones associated with the current AWS account. To get the
-     * next page of results, make another request to
-     * <code>ListHostedZonesByName</code>. Specify the value of
-     * <a>ListHostedZonesByNameResponse$NextDNSName</a> in the
-     * <a>ListHostedZonesByNameRequest$DNSName</a> element and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the
-     * <a>ListHostedZonesByNameRequest$HostedZoneId</a> element.</p>
+     * <p>If the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>, there are more
+     * hosted zones associated with the current AWS account. To get the next page of
+     * results, make another request to <code>ListHostedZonesByName</code>. Specify the
+     * value of <code>NextDNSName</code> in the <code>DNSName</code> parameter. Specify
+     * <code>NextHostedZoneId</code> in the <code>HostedZoneId</code> parameter.</p>
      */
     inline ListHostedZonesByNameResult& WithNextHostedZoneId(const char* value) { SetNextHostedZoneId(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline ListHostedZonesByNameResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline ListHostedZonesByNameResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of
-     * <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is
-     * <code>true</code>. Call <code>ListHostedZonesByName</code> again and specify the
-     * value of <a>ListHostedZonesByNameResponse$NextDNSName</a> and
-     * <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-     * get the next page of results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the
+     * <code>ListHostedZonesByNameResponse</code> is <code>true</code>. Call
+     * <code>ListHostedZonesByName</code> again and specify the value of
+     * <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements from the
+     * previous response to get the next page of results.</p>
      */
     inline ListHostedZonesByNameResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

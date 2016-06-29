@@ -98,44 +98,44 @@ namespace Model
     inline UpdateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline UpdateGameSessionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline UpdateGameSessionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline UpdateGameSessionRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -166,41 +166,46 @@ namespace Model
 
     /**
      * <p>Game session protection policy to apply to this game session only.
-     * <ul><li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
-     * cannot be terminated during a scale-down event.</li></ul></p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.
-     * <ul><li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
-     * cannot be terminated during a scale-down event.</li></ul></p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.
-     * <ul><li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
-     * cannot be terminated during a scale-down event.</li></ul></p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
      * <p>Game session protection policy to apply to this game session only.
-     * <ul><li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
-     * cannot be terminated during a scale-down event.</li></ul></p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
 
     /**
      * <p>Game session protection policy to apply to this game session only.
-     * <ul><li>NoProtection: The game session can be terminated during a scale-down
-     * event.</li> <li>FullProtection: If the game session is in an ACTIVE status, it
-     * cannot be terminated during a scale-down event.</li></ul></p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(value); return *this;}
 

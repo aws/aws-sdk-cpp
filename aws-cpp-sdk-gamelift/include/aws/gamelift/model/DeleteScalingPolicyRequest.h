@@ -36,44 +36,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline DeleteScalingPolicyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline DeleteScalingPolicyRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline DeleteScalingPolicyRequest& WithName(const char* value) { SetName(value); return *this;}
 

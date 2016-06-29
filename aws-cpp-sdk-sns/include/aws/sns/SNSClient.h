@@ -20,20 +20,25 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sns/model/CheckIfPhoneNumberIsOptedOutResult.h>
 #include <aws/sns/model/ConfirmSubscriptionResult.h>
 #include <aws/sns/model/CreatePlatformApplicationResult.h>
 #include <aws/sns/model/CreatePlatformEndpointResult.h>
 #include <aws/sns/model/CreateTopicResult.h>
 #include <aws/sns/model/GetEndpointAttributesResult.h>
 #include <aws/sns/model/GetPlatformApplicationAttributesResult.h>
+#include <aws/sns/model/GetSMSAttributesResult.h>
 #include <aws/sns/model/GetSubscriptionAttributesResult.h>
 #include <aws/sns/model/GetTopicAttributesResult.h>
 #include <aws/sns/model/ListEndpointsByPlatformApplicationResult.h>
+#include <aws/sns/model/ListPhoneNumbersOptedOutResult.h>
 #include <aws/sns/model/ListPlatformApplicationsResult.h>
 #include <aws/sns/model/ListSubscriptionsResult.h>
 #include <aws/sns/model/ListSubscriptionsByTopicResult.h>
 #include <aws/sns/model/ListTopicsResult.h>
+#include <aws/sns/model/OptInPhoneNumberResult.h>
 #include <aws/sns/model/PublishResult.h>
+#include <aws/sns/model/SetSMSAttributesResult.h>
 #include <aws/sns/model/SubscribeResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -82,6 +87,7 @@ namespace SNS
 namespace Model
 {
         class AddPermissionRequest;
+        class CheckIfPhoneNumberIsOptedOutRequest;
         class ConfirmSubscriptionRequest;
         class CreatePlatformApplicationRequest;
         class CreatePlatformEndpointRequest;
@@ -91,23 +97,28 @@ namespace Model
         class DeleteTopicRequest;
         class GetEndpointAttributesRequest;
         class GetPlatformApplicationAttributesRequest;
+        class GetSMSAttributesRequest;
         class GetSubscriptionAttributesRequest;
         class GetTopicAttributesRequest;
         class ListEndpointsByPlatformApplicationRequest;
+        class ListPhoneNumbersOptedOutRequest;
         class ListPlatformApplicationsRequest;
         class ListSubscriptionsRequest;
         class ListSubscriptionsByTopicRequest;
         class ListTopicsRequest;
+        class OptInPhoneNumberRequest;
         class PublishRequest;
         class RemovePermissionRequest;
         class SetEndpointAttributesRequest;
         class SetPlatformApplicationAttributesRequest;
+        class SetSMSAttributesRequest;
         class SetSubscriptionAttributesRequest;
         class SetTopicAttributesRequest;
         class SubscribeRequest;
         class UnsubscribeRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, Aws::Client::AWSError<SNSErrors>> CheckIfPhoneNumberIsOptedOutOutcome;
         typedef Aws::Utils::Outcome<ConfirmSubscriptionResult, Aws::Client::AWSError<SNSErrors>> ConfirmSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreatePlatformApplicationResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformApplicationOutcome;
         typedef Aws::Utils::Outcome<CreatePlatformEndpointResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformEndpointOutcome;
@@ -117,23 +128,28 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> DeleteTopicOutcome;
         typedef Aws::Utils::Outcome<GetEndpointAttributesResult, Aws::Client::AWSError<SNSErrors>> GetEndpointAttributesOutcome;
         typedef Aws::Utils::Outcome<GetPlatformApplicationAttributesResult, Aws::Client::AWSError<SNSErrors>> GetPlatformApplicationAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> GetSMSAttributesOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionAttributesResult, Aws::Client::AWSError<SNSErrors>> GetSubscriptionAttributesOutcome;
         typedef Aws::Utils::Outcome<GetTopicAttributesResult, Aws::Client::AWSError<SNSErrors>> GetTopicAttributesOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsByPlatformApplicationResult, Aws::Client::AWSError<SNSErrors>> ListEndpointsByPlatformApplicationOutcome;
+        typedef Aws::Utils::Outcome<ListPhoneNumbersOptedOutResult, Aws::Client::AWSError<SNSErrors>> ListPhoneNumbersOptedOutOutcome;
         typedef Aws::Utils::Outcome<ListPlatformApplicationsResult, Aws::Client::AWSError<SNSErrors>> ListPlatformApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionsResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionsByTopicResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsByTopicOutcome;
         typedef Aws::Utils::Outcome<ListTopicsResult, Aws::Client::AWSError<SNSErrors>> ListTopicsOutcome;
+        typedef Aws::Utils::Outcome<OptInPhoneNumberResult, Aws::Client::AWSError<SNSErrors>> OptInPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<PublishResult, Aws::Client::AWSError<SNSErrors>> PublishOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetEndpointAttributesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetPlatformApplicationAttributesOutcome;
+        typedef Aws::Utils::Outcome<SetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> SetSMSAttributesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetSubscriptionAttributesOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> SetTopicAttributesOutcome;
         typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<SNSErrors>> SubscribeOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<SNSErrors>> UnsubscribeOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
+        typedef std::future<CheckIfPhoneNumberIsOptedOutOutcome> CheckIfPhoneNumberIsOptedOutOutcomeCallable;
         typedef std::future<ConfirmSubscriptionOutcome> ConfirmSubscriptionOutcomeCallable;
         typedef std::future<CreatePlatformApplicationOutcome> CreatePlatformApplicationOutcomeCallable;
         typedef std::future<CreatePlatformEndpointOutcome> CreatePlatformEndpointOutcomeCallable;
@@ -143,17 +159,21 @@ namespace Model
         typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
         typedef std::future<GetEndpointAttributesOutcome> GetEndpointAttributesOutcomeCallable;
         typedef std::future<GetPlatformApplicationAttributesOutcome> GetPlatformApplicationAttributesOutcomeCallable;
+        typedef std::future<GetSMSAttributesOutcome> GetSMSAttributesOutcomeCallable;
         typedef std::future<GetSubscriptionAttributesOutcome> GetSubscriptionAttributesOutcomeCallable;
         typedef std::future<GetTopicAttributesOutcome> GetTopicAttributesOutcomeCallable;
         typedef std::future<ListEndpointsByPlatformApplicationOutcome> ListEndpointsByPlatformApplicationOutcomeCallable;
+        typedef std::future<ListPhoneNumbersOptedOutOutcome> ListPhoneNumbersOptedOutOutcomeCallable;
         typedef std::future<ListPlatformApplicationsOutcome> ListPlatformApplicationsOutcomeCallable;
         typedef std::future<ListSubscriptionsOutcome> ListSubscriptionsOutcomeCallable;
         typedef std::future<ListSubscriptionsByTopicOutcome> ListSubscriptionsByTopicOutcomeCallable;
         typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
+        typedef std::future<OptInPhoneNumberOutcome> OptInPhoneNumberOutcomeCallable;
         typedef std::future<PublishOutcome> PublishOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<SetEndpointAttributesOutcome> SetEndpointAttributesOutcomeCallable;
         typedef std::future<SetPlatformApplicationAttributesOutcome> SetPlatformApplicationAttributesOutcomeCallable;
+        typedef std::future<SetSMSAttributesOutcome> SetSMSAttributesOutcomeCallable;
         typedef std::future<SetSubscriptionAttributesOutcome> SetSubscriptionAttributesOutcomeCallable;
         typedef std::future<SetTopicAttributesOutcome> SetTopicAttributesOutcomeCallable;
         typedef std::future<SubscribeOutcome> SubscribeOutcomeCallable;
@@ -163,6 +183,7 @@ namespace Model
   class SNSClient;
 
     typedef std::function<void(const SNSClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPermissionResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::CheckIfPhoneNumberIsOptedOutRequest&, const Model::CheckIfPhoneNumberIsOptedOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckIfPhoneNumberIsOptedOutResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ConfirmSubscriptionRequest&, const Model::ConfirmSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConfirmSubscriptionResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::CreatePlatformApplicationRequest&, const Model::CreatePlatformApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlatformApplicationResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::CreatePlatformEndpointRequest&, const Model::CreatePlatformEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePlatformEndpointResponseReceivedHandler;
@@ -172,17 +193,21 @@ namespace Model
     typedef std::function<void(const SNSClient*, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTopicResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::GetEndpointAttributesRequest&, const Model::GetEndpointAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEndpointAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::GetPlatformApplicationAttributesRequest&, const Model::GetPlatformApplicationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlatformApplicationAttributesResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::GetSMSAttributesRequest&, const Model::GetSMSAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSMSAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::GetSubscriptionAttributesRequest&, const Model::GetSubscriptionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::GetTopicAttributesRequest&, const Model::GetTopicAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTopicAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListEndpointsByPlatformApplicationRequest&, const Model::ListEndpointsByPlatformApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsByPlatformApplicationResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::ListPhoneNumbersOptedOutRequest&, const Model::ListPhoneNumbersOptedOutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersOptedOutResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListPlatformApplicationsRequest&, const Model::ListPlatformApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformApplicationsResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsRequest&, const Model::ListSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListSubscriptionsByTopicRequest&, const Model::ListSubscriptionsByTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionsByTopicResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::OptInPhoneNumberRequest&, const Model::OptInPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OptInPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::PublishRequest&, const Model::PublishOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SetEndpointAttributesRequest&, const Model::SetEndpointAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetEndpointAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SetPlatformApplicationAttributesRequest&, const Model::SetPlatformApplicationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetPlatformApplicationAttributesResponseReceivedHandler;
+    typedef std::function<void(const SNSClient*, const Model::SetSMSAttributesRequest&, const Model::SetSMSAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSMSAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SetSubscriptionAttributesRequest&, const Model::SetSubscriptionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSubscriptionAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SetTopicAttributesRequest&, const Model::SetTopicAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTopicAttributesResponseReceivedHandler;
     typedef std::function<void(const SNSClient*, const Model::SubscribeRequest&, const Model::SubscribeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeResponseReceivedHandler;
@@ -253,6 +278,34 @@ namespace Model
         virtual void AddPermissionAsync(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Accepts a phone number and indicates whether the phone holder has opted out
+         * of receiving SMS messages from your account. You cannot send SMS messages to a
+         * number that is opted out.</p> <p>To resume sending messages, you can opt in the
+         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         */
+        virtual Model::CheckIfPhoneNumberIsOptedOutOutcome CheckIfPhoneNumberIsOptedOut(const Model::CheckIfPhoneNumberIsOptedOutRequest& request) const;
+
+        /**
+         * <p>Accepts a phone number and indicates whether the phone holder has opted out
+         * of receiving SMS messages from your account. You cannot send SMS messages to a
+         * number that is opted out.</p> <p>To resume sending messages, you can opt in the
+         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CheckIfPhoneNumberIsOptedOutOutcomeCallable CheckIfPhoneNumberIsOptedOutCallable(const Model::CheckIfPhoneNumberIsOptedOutRequest& request) const;
+
+        /**
+         * <p>Accepts a phone number and indicates whether the phone holder has opted out
+         * of receiving SMS messages from your account. You cannot send SMS messages to a
+         * number that is opted out.</p> <p>To resume sending messages, you can opt in the
+         * number by using the <code>OptInPhoneNumber</code> action.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CheckIfPhoneNumberIsOptedOutAsync(const Model::CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Verifies an endpoint owner's intent to receive messages by validating the
          * token sent to the endpoint by an earlier <code>Subscribe</code> action. If the
          * token is valid, the action creates a new subscription and returns its Amazon
@@ -291,14 +344,32 @@ namespace Model
          * PlatformPrincipal is received from the notification service. For
          * APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
          * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id".
-         * The PlatformCredential is also received from the notification service. For
+         * The PlatformCredential is also received from the notification service. For WNS,
+         * PlatformPrincipal is "Package Security Identifier". For MPNS, PlatformPrincipal
+         * is "TLS certificate". For Baidu, PlatformPrincipal is "API key".</p> <p>For
          * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
          * PlatformCredential is "API key". For ADM, PlatformCredential is "client secret".
-         * The PlatformApplicationArn that is returned when using
+         * For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential is
+         * "private key". For Baidu, PlatformCredential is "secret key". The
+         * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For more information about obtaining the
+         * PlatformPrincipal and PlatformCredential for each of the supported push
+         * notification services, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * Started with Apple Push Notification Service</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * Started with Amazon Device Messaging</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * Started with Baidu Cloud Push</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * Started with Google Cloud Messaging for Android</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * Started with MPNS</a>, or <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * Started with WNS</a>. </p>
          */
         virtual Model::CreatePlatformApplicationOutcome CreatePlatformApplication(const Model::CreatePlatformApplicationRequest& request) const;
 
@@ -310,14 +381,32 @@ namespace Model
          * PlatformPrincipal is received from the notification service. For
          * APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
          * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id".
-         * The PlatformCredential is also received from the notification service. For
+         * The PlatformCredential is also received from the notification service. For WNS,
+         * PlatformPrincipal is "Package Security Identifier". For MPNS, PlatformPrincipal
+         * is "TLS certificate". For Baidu, PlatformPrincipal is "API key".</p> <p>For
          * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
          * PlatformCredential is "API key". For ADM, PlatformCredential is "client secret".
-         * The PlatformApplicationArn that is returned when using
+         * For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential is
+         * "private key". For Baidu, PlatformCredential is "secret key". The
+         * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For more information about obtaining the
+         * PlatformPrincipal and PlatformCredential for each of the supported push
+         * notification services, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * Started with Apple Push Notification Service</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * Started with Amazon Device Messaging</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * Started with Baidu Cloud Push</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * Started with Google Cloud Messaging for Android</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * Started with MPNS</a>, or <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * Started with WNS</a>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -331,14 +420,32 @@ namespace Model
          * PlatformPrincipal is received from the notification service. For
          * APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
          * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id".
-         * The PlatformCredential is also received from the notification service. For
+         * The PlatformCredential is also received from the notification service. For WNS,
+         * PlatformPrincipal is "Package Security Identifier". For MPNS, PlatformPrincipal
+         * is "TLS certificate". For Baidu, PlatformPrincipal is "API key".</p> <p>For
          * APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
          * PlatformCredential is "API key". For ADM, PlatformCredential is "client secret".
-         * The PlatformApplicationArn that is returned when using
+         * For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential is
+         * "private key". For Baidu, PlatformCredential is "secret key". The
+         * PlatformApplicationArn that is returned when using
          * <code>CreatePlatformApplication</code> is then used as an attribute for the
          * <code>CreatePlatformEndpoint</code> action. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For more information about obtaining the
+         * PlatformPrincipal and PlatformCredential for each of the supported push
+         * notification services, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-apns.html">Getting
+         * Started with Apple Push Notification Service</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-adm.html">Getting
+         * Started with Amazon Device Messaging</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-baidu.html">Getting
+         * Started with Baidu Cloud Push</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-gcm.html">Getting
+         * Started with Google Cloud Messaging for Android</a>, <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-mpns.html">Getting
+         * Started with MPNS</a>, or <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-wns.html">Getting
+         * Started with WNS</a>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -416,7 +523,7 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 3000 topics. For more information, see <a
+         * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p>
@@ -425,7 +532,7 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 3000 topics. For more information, see <a
+         * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p>
@@ -436,7 +543,7 @@ namespace Model
 
         /**
          * <p>Creates a topic to which notifications can be published. Users can create at
-         * most 3000 topics. For more information, see <a
+         * most 100,000 topics. For more information, see <a
          * href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a>. This action is
          * idempotent, so if the requester already owns a topic with the specified name,
          * that topic's ARN is returned without creating a new topic.</p>
@@ -446,28 +553,34 @@ namespace Model
         virtual void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the endpoint from Amazon SNS. This action is idempotent. For more
-         * information, see <a
+         * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
+         * is idempotent. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
+         * also subscribed to a topic, then you must also unsubscribe the endpoint from the
+         * topic. </p>
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes the endpoint from Amazon SNS. This action is idempotent. For more
-         * information, see <a
+         * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
+         * is idempotent. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
+         * also subscribed to a topic, then you must also unsubscribe the endpoint from the
+         * topic. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteEndpointOutcomeCallable DeleteEndpointCallable(const Model::DeleteEndpointRequest& request) const;
 
         /**
-         * <p>Deletes the endpoint from Amazon SNS. This action is idempotent. For more
-         * information, see <a
+         * <p>Deletes the endpoint for a device and mobile app from Amazon SNS. This action
+         * is idempotent. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
+         * also subscribed to a topic, then you must also unsubscribe the endpoint from the
+         * topic. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -586,6 +699,28 @@ namespace Model
         virtual void GetPlatformApplicationAttributesAsync(const Model::GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
+         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         */
+        virtual Model::GetSMSAttributesOutcome GetSMSAttributes(const Model::GetSMSAttributesRequest& request) const;
+
+        /**
+         * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
+         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSMSAttributesOutcomeCallable GetSMSAttributesCallable(const Model::GetSMSAttributesRequest& request) const;
+
+        /**
+         * <p>Returns the settings for sending SMS messages from your account.</p> <p>These
+         * settings are set with the <code>SetSMSAttributes</code> action.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSMSAttributesAsync(const Model::GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns all of the properties of a subscription.</p>
          */
         virtual Model::GetSubscriptionAttributesOutcome GetSubscriptionAttributes(const Model::GetSubscriptionAttributesRequest& request) const;
@@ -671,6 +806,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEndpointsByPlatformApplicationAsync(const Model::ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of phone numbers that are opted out, meaning you cannot send
+         * SMS messages to them.</p> <p>The results for
+         * <code>ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to
+         * 100 phone numbers. If additional phone numbers are available after the first
+         * page of results, then a <code>NextToken</code> string will be returned. To
+         * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
+         * using the <code>NextToken</code> string received from the previous call. When
+         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         */
+        virtual Model::ListPhoneNumbersOptedOutOutcome ListPhoneNumbersOptedOut(const Model::ListPhoneNumbersOptedOutRequest& request) const;
+
+        /**
+         * <p>Returns a list of phone numbers that are opted out, meaning you cannot send
+         * SMS messages to them.</p> <p>The results for
+         * <code>ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to
+         * 100 phone numbers. If additional phone numbers are available after the first
+         * page of results, then a <code>NextToken</code> string will be returned. To
+         * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
+         * using the <code>NextToken</code> string received from the previous call. When
+         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPhoneNumbersOptedOutOutcomeCallable ListPhoneNumbersOptedOutCallable(const Model::ListPhoneNumbersOptedOutRequest& request) const;
+
+        /**
+         * <p>Returns a list of phone numbers that are opted out, meaning you cannot send
+         * SMS messages to them.</p> <p>The results for
+         * <code>ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to
+         * 100 phone numbers. If additional phone numbers are available after the first
+         * page of results, then a <code>NextToken</code> string will be returned. To
+         * receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again
+         * using the <code>NextToken</code> string received from the previous call. When
+         * there are no more records to return, <code>NextToken</code> will be null.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPhoneNumbersOptedOutAsync(const Model::ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the platform application objects for the supported push notification
@@ -809,15 +984,43 @@ namespace Model
         virtual void ListTopicsAsync(const Model::ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this request to opt in a phone number that is opted out, which enables
+         * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
+         * number only once every 30 days.</p>
+         */
+        virtual Model::OptInPhoneNumberOutcome OptInPhoneNumber(const Model::OptInPhoneNumberRequest& request) const;
+
+        /**
+         * <p>Use this request to opt in a phone number that is opted out, which enables
+         * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
+         * number only once every 30 days.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::OptInPhoneNumberOutcomeCallable OptInPhoneNumberCallable(const Model::OptInPhoneNumberRequest& request) const;
+
+        /**
+         * <p>Use this request to opt in a phone number that is opted out, which enables
+         * you to resume sending SMS messages to the number.</p> <p>You can opt in a phone
+         * number only once every 30 days.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void OptInPhoneNumberAsync(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends a message to all of a topic's subscribed endpoints. When a
          * <code>messageId</code> is returned, the message has been saved and Amazon SNS
          * will attempt to deliver it to the topic's subscribers shortly. The format of the
          * outgoing message to each subscribed endpoint depends on the notification
-         * protocol selected.</p> <p>To use the <code>Publish</code> action for sending a
-         * message to a mobile endpoint, such as an app on a Kindle device or mobile phone,
-         * you must specify the EndpointArn. The EndpointArn is returned when making a call
-         * with the <code>CreatePlatformEndpoint</code> action. The second example below
-         * shows a request and response for publishing to a mobile endpoint. </p>
+         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
+         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
+         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
+         * second example below shows a request and response for publishing to a mobile
+         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          */
         virtual Model::PublishOutcome Publish(const Model::PublishRequest& request) const;
 
@@ -826,11 +1029,14 @@ namespace Model
          * <code>messageId</code> is returned, the message has been saved and Amazon SNS
          * will attempt to deliver it to the topic's subscribers shortly. The format of the
          * outgoing message to each subscribed endpoint depends on the notification
-         * protocol selected.</p> <p>To use the <code>Publish</code> action for sending a
-         * message to a mobile endpoint, such as an app on a Kindle device or mobile phone,
-         * you must specify the EndpointArn. The EndpointArn is returned when making a call
-         * with the <code>CreatePlatformEndpoint</code> action. The second example below
-         * shows a request and response for publishing to a mobile endpoint. </p>
+         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
+         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
+         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
+         * second example below shows a request and response for publishing to a mobile
+         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -841,11 +1047,14 @@ namespace Model
          * <code>messageId</code> is returned, the message has been saved and Amazon SNS
          * will attempt to deliver it to the topic's subscribers shortly. The format of the
          * outgoing message to each subscribed endpoint depends on the notification
-         * protocol selected.</p> <p>To use the <code>Publish</code> action for sending a
-         * message to a mobile endpoint, such as an app on a Kindle device or mobile phone,
-         * you must specify the EndpointArn. The EndpointArn is returned when making a call
-         * with the <code>CreatePlatformEndpoint</code> action. The second example below
-         * shows a request and response for publishing to a mobile endpoint. </p>
+         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
+         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
+         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
+         * second example below shows a request and response for publishing to a mobile
+         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
+         * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -902,7 +1111,10 @@ namespace Model
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For information on configuring attributes for
+         * message delivery status, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
+         * SNS Application Attributes for Message Delivery Status</a>. </p>
          */
         virtual Model::SetPlatformApplicationAttributesOutcome SetPlatformApplicationAttributes(const Model::SetPlatformApplicationAttributesRequest& request) const;
 
@@ -910,7 +1122,10 @@ namespace Model
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For information on configuring attributes for
+         * message delivery status, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
+         * SNS Application Attributes for Message Delivery Status</a>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -920,11 +1135,51 @@ namespace Model
          * <p>Sets the attributes of the platform application object for the supported push
          * notification services, such as APNS and GCM. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p>
+         * SNS Mobile Push Notifications</a>. For information on configuring attributes for
+         * message delivery status, see <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon
+         * SNS Application Attributes for Message Delivery Status</a>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetPlatformApplicationAttributesAsync(const Model::SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use this request to set the default settings for sending SMS messages and
+         * receiving daily SMS usage reports.</p> <p>You can override some of these
+         * settings for a single message when you use the <code>Publish</code> action with
+         * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
+         * <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         */
+        virtual Model::SetSMSAttributesOutcome SetSMSAttributes(const Model::SetSMSAttributesRequest& request) const;
+
+        /**
+         * <p>Use this request to set the default settings for sending SMS messages and
+         * receiving daily SMS usage reports.</p> <p>You can override some of these
+         * settings for a single message when you use the <code>Publish</code> action with
+         * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
+         * <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetSMSAttributesOutcomeCallable SetSMSAttributesCallable(const Model::SetSMSAttributesRequest& request) const;
+
+        /**
+         * <p>Use this request to set the default settings for sending SMS messages and
+         * receiving daily SMS usage reports.</p> <p>You can override some of these
+         * settings for a single message when you use the <code>Publish</code> action with
+         * the <code>MessageAttributes.entry.N</code> parameter. For more information, see
+         * <a
+         * href="http://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending
+         * an SMS Message</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetSMSAttributesAsync(const Model::SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Allows a subscription owner to set an attribute of the topic to a new
@@ -1038,6 +1293,7 @@ namespace Model
 
         /**Async helpers**/
         void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CheckIfPhoneNumberIsOptedOutAsyncHelper(const Model::CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConfirmSubscriptionAsyncHelper(const Model::ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlatformApplicationAsyncHelper(const Model::CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePlatformEndpointAsyncHelper(const Model::CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1047,17 +1303,21 @@ namespace Model
         void DeleteTopicAsyncHelper(const Model::DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEndpointAttributesAsyncHelper(const Model::GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPlatformApplicationAttributesAsyncHelper(const Model::GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSMSAttributesAsyncHelper(const Model::GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionAttributesAsyncHelper(const Model::GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTopicAttributesAsyncHelper(const Model::GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsByPlatformApplicationAsyncHelper(const Model::ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPhoneNumbersOptedOutAsyncHelper(const Model::ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformApplicationsAsyncHelper(const Model::ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionsAsyncHelper(const Model::ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionsByTopicAsyncHelper(const Model::ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTopicsAsyncHelper(const Model::ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void OptInPhoneNumberAsyncHelper(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PublishAsyncHelper(const Model::PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetEndpointAttributesAsyncHelper(const Model::SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetPlatformApplicationAttributesAsyncHelper(const Model::SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetSMSAttributesAsyncHelper(const Model::SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSubscriptionAttributesAsyncHelper(const Model::SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTopicAttributesAsyncHelper(const Model::SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SubscribeAsyncHelper(const Model::SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

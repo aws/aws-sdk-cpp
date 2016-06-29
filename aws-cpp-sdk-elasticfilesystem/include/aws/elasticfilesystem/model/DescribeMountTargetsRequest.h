@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_EFS_API DescribeMountTargetsRequest : public EFSRequest
   {
@@ -39,165 +40,165 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p>Optional. Maximum number of mount targets to return in the response. It must
+     * <p>(Optional) Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Optional. Maximum number of mount targets to return in the response. It must
+     * <p>(Optional) Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Optional. Maximum number of mount targets to return in the response. It must
+     * <p>(Optional) Maximum number of mount targets to return in the response. It must
      * be an integer with a value greater than zero.</p>
      */
     inline DescribeMountTargetsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline DescribeMountTargetsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline DescribeMountTargetsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Optional. String. Opaque pagination token returned from a previous
-     * <code>DescribeMountTargets</code> operation. If present, it specifies to
-     * continue the list from where the previous returning call left off.</p>
+     * <p>(Optional) Opaque pagination token returned from a previous
+     * <code>DescribeMountTargets</code> operation (String). If present, it specifies
+     * to continue the list from where the previous returning call left off.</p>
      */
     inline DescribeMountTargetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the file system whose mount targets you want to
-     * list. It must be included in your request if <code>MountTargetId</code> is not
-     * included.</p>
+     * <p>(Optional) ID of the file system whose mount targets you want to list
+     * (String). It must be included in your request if <code>MountTargetId</code> is
+     * not included.</p>
      */
     inline DescribeMountTargetsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline DescribeMountTargetsRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */
     inline DescribeMountTargetsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>Optional. String. The ID of the mount target that you want to have described.
+     * <p>(Optional) ID of the mount target that you want to have described (String).
      * It must be included in your request if <code>FileSystemId</code> is not
      * included.</p>
      */

@@ -36,7 +36,8 @@ FileSystemDescription::FileSystemDescription() :
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_performanceModeHasBeenSet(false)
 {
 }
 
@@ -49,7 +50,8 @@ FileSystemDescription::FileSystemDescription(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_numberOfMountTargets(0),
     m_numberOfMountTargetsHasBeenSet(false),
-    m_sizeInBytesHasBeenSet(false)
+    m_sizeInBytesHasBeenSet(false),
+    m_performanceModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ FileSystemDescription& FileSystemDescription::operator =(const JsonValue& jsonVa
     m_sizeInBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PerformanceMode"))
+  {
+    m_performanceMode = PerformanceModeMapper::GetPerformanceModeForName(jsonValue.GetString("PerformanceMode"));
+
+    m_performanceModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,11 @@ JsonValue FileSystemDescription::Jsonize() const
   {
    payload.WithObject("SizeInBytes", m_sizeInBytes.Jsonize());
 
+  }
+
+  if(m_performanceModeHasBeenSet)
+  {
+   payload.WithString("PerformanceMode", PerformanceModeMapper::GetNameForPerformanceMode(m_performanceMode));
   }
 
   return payload;

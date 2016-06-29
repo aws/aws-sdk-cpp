@@ -36,74 +36,158 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline PublishRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline PublishRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(value); return *this;}
 
     /**
-     * <p>The topic you want to publish to.</p>
+     * <p>The topic you want to publish to.</p> <p>If you don't specify a value for the
+     * <code>TopicArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
      */
     inline PublishRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline PublishRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline PublishRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>Either TopicArn or EndpointArn, but not both.</p>
+     * <p>Either TopicArn or EndpointArn, but not both.</p> <p>If you don't specify a
+     * value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.</p>
      */
     inline PublishRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline PublishRequest& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline PublishRequest& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(value); return *this;}
+
+    /**
+     * <p>The phone number to which you want to deliver an SMS message. Use E.164
+     * format.</p> <p>If you don't specify a value for the <code>PhoneNumber</code>
+     * parameter, you must specify a value for the <code>TargetArn</code> or
+     * <code>TopicArn</code> parameters.</p>
+     */
+    inline PublishRequest& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
     /**
      * <p>The message you want to send to the topic.</p> <p>If you want to send the
@@ -113,19 +197,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
@@ -137,19 +222,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
@@ -161,19 +247,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
@@ -185,19 +272,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
@@ -209,19 +297,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
@@ -233,19 +322,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
@@ -257,19 +347,20 @@ namespace Model
      * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
      * See the Examples section for the format of the JSON object. </p> <p>Constraints:
      * Messages must be UTF-8 encoded strings at most 256 KB in size (262144 bytes, not
-     * 262144 characters).</p> <p>JSON-specific constraints: <ul> <li>Keys in the JSON
-     * object that correspond to supported transport protocols must have simple JSON
-     * string values. </li> <li>The values will be parsed (unescaped) before they are
-     * used in outgoing messages.</li> <li>Outbound notifications are JSON encoded
-     * (meaning that the characters will be reescaped for sending).</li> <li>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</li> <li>Values
-     * have a maximum length bounded by the overall message size (so, including
-     * multiple protocols may limit message sizes).</li> <li>Non-string values will
-     * cause the key to be ignored.</li> <li>Keys that do not correspond to supported
-     * transport protocols are ignored.</li> <li>Duplicate keys are not allowed.</li>
-     * <li>Failure to parse or validate any key or value in the message will cause the
-     * <code>Publish</code> call to return an error (no partial delivery).</li> </ul>
-     * </p>
+     * 262144 characters).</p> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in
+     * the JSON object that correspond to supported transport protocols must have
+     * simple JSON string values. </p> </li> <li> <p>The values will be parsed
+     * (unescaped) before they are used in outgoing messages.</p> </li> <li>
+     * <p>Outbound notifications are JSON encoded (meaning that the characters will be
+     * reescaped for sending).</p> </li> <li> <p>Values have a minimum length of 0 (the
+     * empty string, "", is allowed).</p> </li> <li> <p>Values have a maximum length
+     * bounded by the overall message size (so, including multiple protocols may limit
+     * message sizes).</p> </li> <li> <p>Non-string values will cause the key to be
+     * ignored.</p> </li> <li> <p>Keys that do not correspond to supported transport
+     * protocols are ignored.</p> </li> <li> <p>Duplicate keys are not allowed.</p>
+     * </li> <li> <p>Failure to parse or validate any key or value in the message will
+     * cause the <code>Publish</code> call to return an error (no partial
+     * delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
 
@@ -349,12 +440,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -367,12 +458,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -385,12 +476,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -403,12 +494,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -421,12 +512,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -439,12 +530,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -457,12 +548,12 @@ namespace Model
      * can send a short message to your SMS subscribers and a longer message to your
      * email subscribers. If you set <code>MessageStructure</code> to
      * <code>json</code>, the value of the <code>Message</code> parameter must: </p>
-     * <ul> <li>be a syntactically valid JSON object; and</li> <li>contain at least a
-     * top-level JSON key of "default" with a value that is a string.</li> </ul> <p>
-     * You can define other top-level keys that define the message you want to send to
-     * a specific transport protocol (e.g., "http"). </p> <p>For information about
-     * sending different messages for each protocol using the AWS Management Console,
-     * go to <a
+     * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
+     * at least a top-level JSON key of "default" with a value that is a string.</p>
+     * </li> </ul> <p> You can define other top-level keys that define the message you
+     * want to send to a specific transport protocol (e.g., "http"). </p> <p>For
+     * information about sending different messages for each protocol using the AWS
+     * Management Console, go to <a
      * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
      * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code></p>
@@ -529,6 +620,8 @@ namespace Model
     bool m_topicArnHasBeenSet;
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+    Aws::String m_phoneNumber;
+    bool m_phoneNumberHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
     Aws::String m_subject;

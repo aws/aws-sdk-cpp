@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline DescribeBuildRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline DescribeBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the build you want to retrieve properties for. </p>
+     * <p>Unique identifier of the build that you want to retrieve properties for. </p>
      */
     inline DescribeBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 

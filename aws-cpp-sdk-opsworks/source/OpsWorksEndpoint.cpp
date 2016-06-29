@@ -48,6 +48,8 @@ namespace OpsWorksEndpoint
         return "opsworks.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "opsworks.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "opsworks.ap-south-1.amazonaws.com";
      default:
         return "opsworks.us-east-1.amazonaws.com";
     }

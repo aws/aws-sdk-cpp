@@ -30,6 +30,7 @@ namespace Model
 DynamoDBAction::DynamoDBAction() : 
     m_tableNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_operationHasBeenSet(false),
     m_hashKeyFieldHasBeenSet(false),
     m_hashKeyValueHasBeenSet(false),
     m_hashKeyTypeHasBeenSet(false),
@@ -43,6 +44,7 @@ DynamoDBAction::DynamoDBAction() :
 DynamoDBAction::DynamoDBAction(const JsonValue& jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_operationHasBeenSet(false),
     m_hashKeyFieldHasBeenSet(false),
     m_hashKeyValueHasBeenSet(false),
     m_hashKeyTypeHasBeenSet(false),
@@ -68,6 +70,13 @@ DynamoDBAction& DynamoDBAction::operator =(const JsonValue& jsonValue)
     m_roleArn = jsonValue.GetString("roleArn");
 
     m_roleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operation"))
+  {
+    m_operation = jsonValue.GetString("operation");
+
+    m_operationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hashKeyField"))
@@ -135,6 +144,12 @@ JsonValue DynamoDBAction::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_operationHasBeenSet)
+  {
+   payload.WithString("operation", m_operation);
 
   }
 

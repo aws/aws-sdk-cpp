@@ -48,6 +48,8 @@ namespace DeviceFarmEndpoint
         return "devicefarm.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "devicefarm.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "devicefarm.ap-south-1.amazonaws.com";
      default:
         return "devicefarm.us-east-1.amazonaws.com";
     }

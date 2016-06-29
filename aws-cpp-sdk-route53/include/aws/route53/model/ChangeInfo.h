@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>A complex type that describes change information about changes made to your
    * hosted zone.</p> <p>This element contains an ID that you use when performing a
-   * <a>GetChange</a> action to get detailed information about the change.</p>
+   * <code>GetChange</code> action to get detailed information about the change.</p>
    */
   class AWS_ROUTE53_API ChangeInfo
   {
@@ -166,49 +166,49 @@ namespace Model
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeInfo& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeInfo& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeInfo& WithComment(const char* value) { SetComment(value); return *this;}
 

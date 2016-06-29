@@ -48,6 +48,8 @@ namespace MobileAnalyticsEndpoint
         return "mobileanalytics.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "mobileanalytics.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "mobileanalytics.ap-south-1.amazonaws.com";
      default:
         return "mobileanalytics.us-east-1.amazonaws.com";
     }

@@ -48,6 +48,8 @@ namespace RedshiftEndpoint
         return "redshift.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "redshift.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "redshift.ap-south-1.amazonaws.com";
      default:
         return "redshift.us-east-1.amazonaws.com";
     }

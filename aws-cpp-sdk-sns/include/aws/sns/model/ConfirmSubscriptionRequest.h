@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Input for ConfirmSubscription action.
+   * <p>Input for ConfirmSubscription action.</p>
    */
   class AWS_SNS_API ConfirmSubscriptionRequest : public SNSRequest
   {

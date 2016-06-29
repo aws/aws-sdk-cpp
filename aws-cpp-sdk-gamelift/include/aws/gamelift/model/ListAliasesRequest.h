@@ -39,115 +39,120 @@ namespace Model
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
-     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
-     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
-     * The alias does not resolve to a fleet but instead can be used to display a
-     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
-     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     * Possible routing types include the following: <ul><li><b>SIMPLE</b> – The alias
+     * resolves to one specific fleet. Use this type when routing to active
+     * fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to a fleet but
+     * instead can be used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li></ul></p>
      */
     inline const RoutingStrategyType& GetRoutingStrategyType() const{ return m_routingStrategyType; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
-     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
-     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
-     * The alias does not resolve to a fleet but instead can be used to display a
-     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
-     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     * Possible routing types include the following: <ul><li><b>SIMPLE</b> – The alias
+     * resolves to one specific fleet. Use this type when routing to active
+     * fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to a fleet but
+     * instead can be used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li></ul></p>
      */
     inline void SetRoutingStrategyType(const RoutingStrategyType& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
-     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
-     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
-     * The alias does not resolve to a fleet but instead can be used to display a
-     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
-     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     * Possible routing types include the following: <ul><li><b>SIMPLE</b> – The alias
+     * resolves to one specific fleet. Use this type when routing to active
+     * fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to a fleet but
+     * instead can be used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li></ul></p>
      */
     inline void SetRoutingStrategyType(RoutingStrategyType&& value) { m_routingStrategyTypeHasBeenSet = true; m_routingStrategyType = value; }
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
-     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
-     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
-     * The alias does not resolve to a fleet but instead can be used to display a
-     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
-     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     * Possible routing types include the following: <ul><li><b>SIMPLE</b> – The alias
+     * resolves to one specific fleet. Use this type when routing to active
+     * fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to a fleet but
+     * instead can be used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li></ul></p>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(const RoutingStrategyType& value) { SetRoutingStrategyType(value); return *this;}
 
     /**
      * <p>Type of routing to filter results on. Use this parameter to retrieve only
      * aliases of a certain type. To retrieve all aliases, leave this parameter empty.
-     * Possible routing types include: <ul><li>SIMPLE: The alias resolves to one
-     * specific fleet. Use this type when routing to active fleets.</li><li>TERMINAL:
-     * The alias does not resolve to a fleet but instead can be used to display a
-     * message to the user. A terminal alias throws a TerminalRoutingStrategyException
-     * with the <a>RoutingStrategy</a> message embedded.</li></ul></p>
+     * Possible routing types include the following: <ul><li><b>SIMPLE</b> – The alias
+     * resolves to one specific fleet. Use this type when routing to active
+     * fleets.</li><li><b>TERMINAL</b> – The alias does not resolve to a fleet but
+     * instead can be used to display a message to the user. A terminal alias throws a
+     * TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.</li></ul></p>
      */
     inline ListAliasesRequest& WithRoutingStrategyType(RoutingStrategyType&& value) { SetRoutingStrategyType(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline ListAliasesRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline ListAliasesRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline ListAliasesRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline ListAliasesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

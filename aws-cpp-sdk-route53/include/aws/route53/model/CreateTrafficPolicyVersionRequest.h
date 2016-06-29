@@ -72,49 +72,70 @@ namespace Model
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The definition of a new traffic policy version, in JSON format. You must
      * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version.</p>
+     * the differences between the new version and a previous version. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 

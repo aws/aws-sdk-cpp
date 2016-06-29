@@ -134,7 +134,7 @@ namespace Model
      * Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code></p> <p>Values for Alias Resource Record Sets: <code>A</code> |
      * <code>AAAA</code></p> <p>Constraint: Specifying <code>type</code> without
-     * specifying <code>name</code> returns an <a>InvalidInput</a> error.</p>
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const RRType& GetStartRecordType() const{ return m_startRecordType; }
 
@@ -148,7 +148,7 @@ namespace Model
      * Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code></p> <p>Values for Alias Resource Record Sets: <code>A</code> |
      * <code>AAAA</code></p> <p>Constraint: Specifying <code>type</code> without
-     * specifying <code>name</code> returns an <a>InvalidInput</a> error.</p>
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(const RRType& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
 
@@ -162,7 +162,7 @@ namespace Model
      * Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code></p> <p>Values for Alias Resource Record Sets: <code>A</code> |
      * <code>AAAA</code></p> <p>Constraint: Specifying <code>type</code> without
-     * specifying <code>name</code> returns an <a>InvalidInput</a> error.</p>
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
 
@@ -176,7 +176,7 @@ namespace Model
      * Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code></p> <p>Values for Alias Resource Record Sets: <code>A</code> |
      * <code>AAAA</code></p> <p>Constraint: Specifying <code>type</code> without
-     * specifying <code>name</code> returns an <a>InvalidInput</a> error.</p>
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(const RRType& value) { SetStartRecordType(value); return *this;}
 
@@ -190,70 +190,63 @@ namespace Model
      * Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code></p> <p>Values for Alias Resource Record Sets: <code>A</code> |
      * <code>AAAA</code></p> <p>Constraint: Specifying <code>type</code> without
-     * specifying <code>name</code> returns an <a>InvalidInput</a> error.</p>
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(value); return *this;}
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline const Aws::String& GetStartRecordIdentifier() const{ return m_startRecordIdentifier; }
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline void SetStartRecordIdentifier(const Aws::String& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = value; }
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline void SetStartRecordIdentifier(Aws::String&& value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier = value; }
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline void SetStartRecordIdentifier(const char* value) { m_startRecordIdentifierHasBeenSet = true; m_startRecordIdentifier.assign(value); }
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(const Aws::String& value) { SetStartRecordIdentifier(value); return *this;}
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(Aws::String&& value) { SetStartRecordIdentifier(value); return *this;}
 
     /**
      * <p><i>Weighted resource record sets only:</i> If results were truncated for a
-     * given DNS name and type, specify the value of
-     * <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code> from the
-     * previous response to get the next resource record set that has the current DNS
-     * name and type.</p>
+     * given DNS name and type, specify the value of <code>NextRecordIdentifier</code>
+     * from the previous response to get the next resource record set that has the
+     * current DNS name and type.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordIdentifier(const char* value) { SetStartRecordIdentifier(value); return *this;}
 

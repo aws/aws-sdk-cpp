@@ -768,7 +768,8 @@ namespace Model
          * check. If you try to delete a health check that is associated with resource
          * record sets, Amazon Route 53 will deny your request with a
          * <code>HealthCheckInUse</code> error. For information about disassociating the
-         * records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+         * records from your health check, see
+         * <code>ChangeResourceRecordSets</code>.</important>
          */
         virtual Model::DeleteHealthCheckOutcome DeleteHealthCheck(const Model::DeleteHealthCheckRequest& request) const;
 
@@ -782,7 +783,8 @@ namespace Model
          * check. If you try to delete a health check that is associated with resource
          * record sets, Amazon Route 53 will deny your request with a
          * <code>HealthCheckInUse</code> error. For information about disassociating the
-         * records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+         * records from your health check, see
+         * <code>ChangeResourceRecordSets</code>.</important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -798,7 +800,8 @@ namespace Model
          * check. If you try to delete a health check that is associated with resource
          * record sets, Amazon Route 53 will deny your request with a
          * <code>HealthCheckInUse</code> error. For information about disassociating the
-         * records from your health check, see <a>ChangeResourceRecordSets</a>.</important>
+         * records from your health check, see
+         * <code>ChangeResourceRecordSets</code>.</important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -807,34 +810,28 @@ namespace Model
         /**
          * <p>This action deletes a hosted zone. To delete a hosted zone, send a
          * <code>DELETE</code> request to the <code>/<i>Route 53 API
-         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <p>For more
-         * information about deleting a hosted zone, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting
-         * a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <important>
-         * You can delete a hosted zone only if there are no resource record sets other
-         * than the default SOA record and NS resource record sets. If your hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * your hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 will deny your request with a
+         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <important>You
+         * can delete a hosted zone only if there are no resource record sets other than
+         * the default SOA record and NS resource record sets. If your hosted zone contains
+         * other resource record sets, you must delete them before you can delete your
+         * hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, Amazon Route 53 will deny your request with a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+         * from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
          */
         virtual Model::DeleteHostedZoneOutcome DeleteHostedZone(const Model::DeleteHostedZoneRequest& request) const;
 
         /**
          * <p>This action deletes a hosted zone. To delete a hosted zone, send a
          * <code>DELETE</code> request to the <code>/<i>Route 53 API
-         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <p>For more
-         * information about deleting a hosted zone, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting
-         * a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <important>
-         * You can delete a hosted zone only if there are no resource record sets other
-         * than the default SOA record and NS resource record sets. If your hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * your hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 will deny your request with a
+         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <important>You
+         * can delete a hosted zone only if there are no resource record sets other than
+         * the default SOA record and NS resource record sets. If your hosted zone contains
+         * other resource record sets, you must delete them before you can delete your
+         * hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, Amazon Route 53 will deny your request with a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+         * from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -843,17 +840,14 @@ namespace Model
         /**
          * <p>This action deletes a hosted zone. To delete a hosted zone, send a
          * <code>DELETE</code> request to the <code>/<i>Route 53 API
-         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <p>For more
-         * information about deleting a hosted zone, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting
-         * a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> <important>
-         * You can delete a hosted zone only if there are no resource record sets other
-         * than the default SOA record and NS resource record sets. If your hosted zone
-         * contains other resource record sets, you must delete them before you can delete
-         * your hosted zone. If you try to delete a hosted zone that contains other
-         * resource record sets, Amazon Route 53 will deny your request with a
+         * version</i>/hostedzone/<i>hosted zone ID</i></code> resource.</p> <important>You
+         * can delete a hosted zone only if there are no resource record sets other than
+         * the default SOA record and NS resource record sets. If your hosted zone contains
+         * other resource record sets, you must delete them before you can delete your
+         * hosted zone. If you try to delete a hosted zone that contains other resource
+         * record sets, Amazon Route 53 will deny your request with a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
-         * from your hosted zone, see <a>ChangeResourceRecordSets</a>.</important>
+         * from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1316,8 +1310,8 @@ namespace Model
          * resource.</p> <note>After you submit a <code>CreateTrafficPolicyInstance</code>
          * or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
          * while Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element. </note>
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note>
          */
         virtual Model::GetTrafficPolicyInstanceOutcome GetTrafficPolicyInstance(const Model::GetTrafficPolicyInstanceRequest& request) const;
 
@@ -1328,8 +1322,8 @@ namespace Model
          * resource.</p> <note>After you submit a <code>CreateTrafficPolicyInstance</code>
          * or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
          * while Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element. </note>
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1342,8 +1336,8 @@ namespace Model
          * resource.</p> <note>After you submit a <code>CreateTrafficPolicyInstance</code>
          * or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
          * while Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element. </note>
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1574,109 +1568,100 @@ namespace Model
         virtual void ListHostedZonesByNameAsync(const Model::ListHostedZonesByNameRequest& request, const ListHostedZonesByNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imagine all the resource record sets in a zone listed out in front of you.
-         * Imagine them sorted lexicographically first by DNS name (with the labels
-         * reversed, like "com.amazon.www" for example), and secondarily, lexicographically
-         * by record type. This operation retrieves at most MaxItems resource record sets
-         * from this list, in order, starting at a position specified by the Name and Type
-         * arguments:</p> <ul> <li>If both Name and Type are omitted, this means start the
-         * results at the first RRSET in the HostedZone.</li> <li>If Name is specified but
-         * Type is omitted, this means start the results at the first RRSET in the list
-         * whose name is greater than or equal to Name. </li> <li>If both Name and Type are
-         * specified, this means start the results at the first RRSET in the list whose
-         * name is greater than or equal to Name and whose type is greater than or equal to
-         * Type.</li> <li>It is an error to specify the Type but not the Name.</li> </ul>
-         * <p>Use ListResourceRecordSets to retrieve a single known record set by
-         * specifying the record set's name and type, and setting MaxItems = 1</p> <p>To
-         * retrieve all the records in a HostedZone, first pause any processes making calls
-         * to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a
-         * Name and Type to get the first page of record sets. For subsequent calls, set
-         * Name and Type to the NextName and NextType values returned by the previous
-         * response. </p> <p>In the presence of concurrent ChangeResourceRecordSets calls,
-         * there is no consistency of results across calls to ListResourceRecordSets. The
-         * only way to get a consistent multi-page snapshot of all RRSETs in a zone is to
-         * stop making changes while pagination is in progress.</p> <p>However, the results
-         * from ListResourceRecordSets are consistent within a page. If MakeChange calls
-         * are taking place concurrently, the result of each one will either be completely
-         * visible in your results or not at all. You will not see partial changes, or
-         * changes that do not ultimately succeed. (This follows from the fact that
-         * MakeChange is atomic) </p> <p>The results from ListResourceRecordSets are
-         * strongly consistent with ChangeResourceRecordSets. To be precise, if a single
-         * process makes a call to ChangeResourceRecordSets and receives a successful
-         * response, the effects of that change will be visible in a subsequent call to
-         * ListResourceRecordSets by that process.</p>
+         * <p>List the resource record sets in a specified hosted zone. Send a GET request
+         * to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/rrset</code>
+         * resource.</p> <p><code>ListResourceRecordSets</code> returns up to 100 resource
+         * record sets at a time in ASCII order, beginning at a position specified by the
+         * name and type elements. The action sorts results first by DNS name with the
+         * labels reversed, for example:</p> <p><code>com.example.www.</code></p> <p>Note
+         * the trailing dot, which can change the sort order in some circumstances. When
+         * multiple records have the same DNS name, the action sorts results by the record
+         * type.</p> <p>You can use the name and type elements to adjust the beginning
+         * position of the list of resource record sets returned:</p> <ul> <li><b>If you do
+         * not specify <code>Name</code> or <code>Type</code></b>: The results begin with
+         * the first resource record set that the hosted zone contains.</li> <li><b>If you
+         * specify <code>Name</code> but not <code>Type</code></b>: The results begin with
+         * the first resource record set in the list whose name is greater than or equal to
+         * Name.</li> <li><b>If you specify <code>Type</code> but not
+         * <code>Name</code></b>: Amazon Route 53 returns the <code>InvalidInput</code>
+         * error.</li> <li><b>If you specify both <code>Name</code> and
+         * <code>Type</code></b>: The results begin with the first resource record set in
+         * the list whose name is greater than or equal to <code>Name</code>, and whose
+         * type is greater than or equal to <code>Type</code>.</li> </ul> <p>This action
+         * returns the most current version of the records. This includes records that are
+         * <code>PENDING</code>, and that are not yet available on all Amazon Route 53 DNS
+         * servers.</p> <p>To ensure that you get an accurate listing of the resource
+         * record sets for a hosted zone at a point in time, do not submit a
+         * <code>ChangeResourceRecordSets</code> request while you are paging through the
+         * results of a <code>ListResourceRecordSets</code> request. If you do, some pages
+         * may display results without the latest changes while other pages display results
+         * with the latest changes.</p>
          */
         virtual Model::ListResourceRecordSetsOutcome ListResourceRecordSets(const Model::ListResourceRecordSetsRequest& request) const;
 
         /**
-         * <p>Imagine all the resource record sets in a zone listed out in front of you.
-         * Imagine them sorted lexicographically first by DNS name (with the labels
-         * reversed, like "com.amazon.www" for example), and secondarily, lexicographically
-         * by record type. This operation retrieves at most MaxItems resource record sets
-         * from this list, in order, starting at a position specified by the Name and Type
-         * arguments:</p> <ul> <li>If both Name and Type are omitted, this means start the
-         * results at the first RRSET in the HostedZone.</li> <li>If Name is specified but
-         * Type is omitted, this means start the results at the first RRSET in the list
-         * whose name is greater than or equal to Name. </li> <li>If both Name and Type are
-         * specified, this means start the results at the first RRSET in the list whose
-         * name is greater than or equal to Name and whose type is greater than or equal to
-         * Type.</li> <li>It is an error to specify the Type but not the Name.</li> </ul>
-         * <p>Use ListResourceRecordSets to retrieve a single known record set by
-         * specifying the record set's name and type, and setting MaxItems = 1</p> <p>To
-         * retrieve all the records in a HostedZone, first pause any processes making calls
-         * to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a
-         * Name and Type to get the first page of record sets. For subsequent calls, set
-         * Name and Type to the NextName and NextType values returned by the previous
-         * response. </p> <p>In the presence of concurrent ChangeResourceRecordSets calls,
-         * there is no consistency of results across calls to ListResourceRecordSets. The
-         * only way to get a consistent multi-page snapshot of all RRSETs in a zone is to
-         * stop making changes while pagination is in progress.</p> <p>However, the results
-         * from ListResourceRecordSets are consistent within a page. If MakeChange calls
-         * are taking place concurrently, the result of each one will either be completely
-         * visible in your results or not at all. You will not see partial changes, or
-         * changes that do not ultimately succeed. (This follows from the fact that
-         * MakeChange is atomic) </p> <p>The results from ListResourceRecordSets are
-         * strongly consistent with ChangeResourceRecordSets. To be precise, if a single
-         * process makes a call to ChangeResourceRecordSets and receives a successful
-         * response, the effects of that change will be visible in a subsequent call to
-         * ListResourceRecordSets by that process.</p>
+         * <p>List the resource record sets in a specified hosted zone. Send a GET request
+         * to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/rrset</code>
+         * resource.</p> <p><code>ListResourceRecordSets</code> returns up to 100 resource
+         * record sets at a time in ASCII order, beginning at a position specified by the
+         * name and type elements. The action sorts results first by DNS name with the
+         * labels reversed, for example:</p> <p><code>com.example.www.</code></p> <p>Note
+         * the trailing dot, which can change the sort order in some circumstances. When
+         * multiple records have the same DNS name, the action sorts results by the record
+         * type.</p> <p>You can use the name and type elements to adjust the beginning
+         * position of the list of resource record sets returned:</p> <ul> <li><b>If you do
+         * not specify <code>Name</code> or <code>Type</code></b>: The results begin with
+         * the first resource record set that the hosted zone contains.</li> <li><b>If you
+         * specify <code>Name</code> but not <code>Type</code></b>: The results begin with
+         * the first resource record set in the list whose name is greater than or equal to
+         * Name.</li> <li><b>If you specify <code>Type</code> but not
+         * <code>Name</code></b>: Amazon Route 53 returns the <code>InvalidInput</code>
+         * error.</li> <li><b>If you specify both <code>Name</code> and
+         * <code>Type</code></b>: The results begin with the first resource record set in
+         * the list whose name is greater than or equal to <code>Name</code>, and whose
+         * type is greater than or equal to <code>Type</code>.</li> </ul> <p>This action
+         * returns the most current version of the records. This includes records that are
+         * <code>PENDING</code>, and that are not yet available on all Amazon Route 53 DNS
+         * servers.</p> <p>To ensure that you get an accurate listing of the resource
+         * record sets for a hosted zone at a point in time, do not submit a
+         * <code>ChangeResourceRecordSets</code> request while you are paging through the
+         * results of a <code>ListResourceRecordSets</code> request. If you do, some pages
+         * may display results without the latest changes while other pages display results
+         * with the latest changes.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListResourceRecordSetsOutcomeCallable ListResourceRecordSetsCallable(const Model::ListResourceRecordSetsRequest& request) const;
 
         /**
-         * <p>Imagine all the resource record sets in a zone listed out in front of you.
-         * Imagine them sorted lexicographically first by DNS name (with the labels
-         * reversed, like "com.amazon.www" for example), and secondarily, lexicographically
-         * by record type. This operation retrieves at most MaxItems resource record sets
-         * from this list, in order, starting at a position specified by the Name and Type
-         * arguments:</p> <ul> <li>If both Name and Type are omitted, this means start the
-         * results at the first RRSET in the HostedZone.</li> <li>If Name is specified but
-         * Type is omitted, this means start the results at the first RRSET in the list
-         * whose name is greater than or equal to Name. </li> <li>If both Name and Type are
-         * specified, this means start the results at the first RRSET in the list whose
-         * name is greater than or equal to Name and whose type is greater than or equal to
-         * Type.</li> <li>It is an error to specify the Type but not the Name.</li> </ul>
-         * <p>Use ListResourceRecordSets to retrieve a single known record set by
-         * specifying the record set's name and type, and setting MaxItems = 1</p> <p>To
-         * retrieve all the records in a HostedZone, first pause any processes making calls
-         * to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a
-         * Name and Type to get the first page of record sets. For subsequent calls, set
-         * Name and Type to the NextName and NextType values returned by the previous
-         * response. </p> <p>In the presence of concurrent ChangeResourceRecordSets calls,
-         * there is no consistency of results across calls to ListResourceRecordSets. The
-         * only way to get a consistent multi-page snapshot of all RRSETs in a zone is to
-         * stop making changes while pagination is in progress.</p> <p>However, the results
-         * from ListResourceRecordSets are consistent within a page. If MakeChange calls
-         * are taking place concurrently, the result of each one will either be completely
-         * visible in your results or not at all. You will not see partial changes, or
-         * changes that do not ultimately succeed. (This follows from the fact that
-         * MakeChange is atomic) </p> <p>The results from ListResourceRecordSets are
-         * strongly consistent with ChangeResourceRecordSets. To be precise, if a single
-         * process makes a call to ChangeResourceRecordSets and receives a successful
-         * response, the effects of that change will be visible in a subsequent call to
-         * ListResourceRecordSets by that process.</p>
+         * <p>List the resource record sets in a specified hosted zone. Send a GET request
+         * to the <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/rrset</code>
+         * resource.</p> <p><code>ListResourceRecordSets</code> returns up to 100 resource
+         * record sets at a time in ASCII order, beginning at a position specified by the
+         * name and type elements. The action sorts results first by DNS name with the
+         * labels reversed, for example:</p> <p><code>com.example.www.</code></p> <p>Note
+         * the trailing dot, which can change the sort order in some circumstances. When
+         * multiple records have the same DNS name, the action sorts results by the record
+         * type.</p> <p>You can use the name and type elements to adjust the beginning
+         * position of the list of resource record sets returned:</p> <ul> <li><b>If you do
+         * not specify <code>Name</code> or <code>Type</code></b>: The results begin with
+         * the first resource record set that the hosted zone contains.</li> <li><b>If you
+         * specify <code>Name</code> but not <code>Type</code></b>: The results begin with
+         * the first resource record set in the list whose name is greater than or equal to
+         * Name.</li> <li><b>If you specify <code>Type</code> but not
+         * <code>Name</code></b>: Amazon Route 53 returns the <code>InvalidInput</code>
+         * error.</li> <li><b>If you specify both <code>Name</code> and
+         * <code>Type</code></b>: The results begin with the first resource record set in
+         * the list whose name is greater than or equal to <code>Name</code>, and whose
+         * type is greater than or equal to <code>Type</code>.</li> </ul> <p>This action
+         * returns the most current version of the records. This includes records that are
+         * <code>PENDING</code>, and that are not yet available on all Amazon Route 53 DNS
+         * servers.</p> <p>To ensure that you get an accurate listing of the resource
+         * record sets for a hosted zone at a point in time, do not submit a
+         * <code>ChangeResourceRecordSets</code> request while you are paging through the
+         * results of a <code>ListResourceRecordSets</code> request. If you do, some pages
+         * may display results without the latest changes while other pages display results
+         * with the latest changes.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1859,22 +1844,23 @@ namespace Model
          * the current AWS account.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * are associated with the current AWS account, send a <code>GET</code> request to
-         * the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
-         * value that you specified for the <code>MaxItems</code> parameter in the request
-         * that produced the current response.</p> <li><b>HostedZoneIdMarker</b>,
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that are associated with the current AWS account, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource.</p> <p>Amazon Route 53
+         * returns a maximum of 100 items in each response. If you have a lot of traffic
+         * policy instances, you can use the <code>MaxItems</code> parameter to list them
+         * in groups of up to 100.</p> <p>The response includes five values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of
+         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
+         * traffic policy instances associated with the current AWS account.</p> <p>If
+         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
+         * traffic policy instance that is associated with the current account.</p>
+         * <li><b>MaxItems</b></li> <p>The value that you specified for the
+         * <code>MaxItems</code> parameter in the request that produced the current
+         * response.</p> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and
          * <b>TrafficPolicyInstanceTypeMarker</b></li> <p>If <code>IsTruncated</code> is
          * <code>true</code>, these three values in the response represent the first
@@ -1891,22 +1877,23 @@ namespace Model
          * the current AWS account.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * are associated with the current AWS account, send a <code>GET</code> request to
-         * the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
-         * value that you specified for the <code>MaxItems</code> parameter in the request
-         * that produced the current response.</p> <li><b>HostedZoneIdMarker</b>,
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that are associated with the current AWS account, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource.</p> <p>Amazon Route 53
+         * returns a maximum of 100 items in each response. If you have a lot of traffic
+         * policy instances, you can use the <code>MaxItems</code> parameter to list them
+         * in groups of up to 100.</p> <p>The response includes five values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of
+         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
+         * traffic policy instances associated with the current AWS account.</p> <p>If
+         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
+         * traffic policy instance that is associated with the current account.</p>
+         * <li><b>MaxItems</b></li> <p>The value that you specified for the
+         * <code>MaxItems</code> parameter in the request that produced the current
+         * response.</p> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and
          * <b>TrafficPolicyInstanceTypeMarker</b></li> <p>If <code>IsTruncated</code> is
          * <code>true</code>, these three values in the response represent the first
@@ -1925,22 +1912,23 @@ namespace Model
          * the current AWS account.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * are associated with the current AWS account, send a <code>GET</code> request to
-         * the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each
-         * response. If you have a lot of traffic policy instances, you can use the
-         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
-         * response includes five values that help you navigate from one group of
-         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code>IsTruncated</code> in the
-         * response is <code>true</code>, there are more traffic policy instances
-         * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
-         * <code>false</code>, this response includes the last traffic policy instance that
-         * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
-         * value that you specified for the <code>MaxItems</code> parameter in the request
-         * that produced the current response.</p> <li><b>HostedZoneIdMarker</b>,
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that are associated with the current AWS account, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource.</p> <p>Amazon Route 53
+         * returns a maximum of 100 items in each response. If you have a lot of traffic
+         * policy instances, you can use the <code>MaxItems</code> parameter to list them
+         * in groups of up to 100.</p> <p>The response includes five values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of
+         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
+         * traffic policy instances associated with the current AWS account.</p> <p>If
+         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
+         * traffic policy instance that is associated with the current account.</p>
+         * <li><b>MaxItems</b></li> <p>The value that you specified for the
+         * <code>MaxItems</code> parameter in the request that produced the current
+         * response.</p> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and
          * <b>TrafficPolicyInstanceTypeMarker</b></li> <p>If <code>IsTruncated</code> is
          * <code>true</code>, these three values in the response represent the first
@@ -1959,17 +1947,17 @@ namespace Model
          * specified hosted zone.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created in a specified hosted zone, send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum of
-         * 100 items in each response. If you have a lot of traffic policy instances, you
-         * can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created in a specified hosted zone, send a <code>GET</code>
+         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+         * resource and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a
+         * maximum of 100 items in each response. If you have a lot of traffic policy
+         * instances, you can use the <code>MaxItems</code> parameter to list them in
+         * groups of up to 100.</p> <p>The response includes four values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated
+         * in the response is <code>true</code>, there are more traffic policy instances
          * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
          * <code>false</code>, this response includes the last traffic policy instance that
          * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
@@ -1991,17 +1979,17 @@ namespace Model
          * specified hosted zone.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created in a specified hosted zone, send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum of
-         * 100 items in each response. If you have a lot of traffic policy instances, you
-         * can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created in a specified hosted zone, send a <code>GET</code>
+         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+         * resource and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a
+         * maximum of 100 items in each response. If you have a lot of traffic policy
+         * instances, you can use the <code>MaxItems</code> parameter to list them in
+         * groups of up to 100.</p> <p>The response includes four values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated
+         * in the response is <code>true</code>, there are more traffic policy instances
          * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
          * <code>false</code>, this response includes the last traffic policy instance that
          * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
@@ -2025,17 +2013,17 @@ namespace Model
          * specified hosted zone.</p> <note>After you submit an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created in a specified hosted zone, send a <code>GET</code> request to the
-         * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and
-         * include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum of
-         * 100 items in each response. If you have a lot of traffic policy instances, you
-         * can use the <code>MaxItems</code> parameter to list them in groups of up to
-         * 100.</p> <p>The response includes four values that help you navigate from one
-         * group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
-         * <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated in the
-         * response is <code>true</code>, there are more traffic policy instances
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created in a specified hosted zone, send a <code>GET</code>
+         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+         * resource and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a
+         * maximum of 100 items in each response. If you have a lot of traffic policy
+         * instances, you can use the <code>MaxItems</code> parameter to list them in
+         * groups of up to 100.</p> <p>The response includes four values that help you
+         * navigate from one group of <code>MaxItems</code> traffic policy instances to the
+         * next:</p> <ul> <li><b>IsTruncated</b></li> <p>If the value of <code/>IsTruncated
+         * in the response is <code>true</code>, there are more traffic policy instances
          * associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is
          * <code>false</code>, this response includes the last traffic policy instance that
          * is associated with the current account.</p> <li><b>MaxItems</b></li> <p>The
@@ -2060,21 +2048,22 @@ namespace Model
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created by using a specify traffic policy version, send a <code>GET</code>
-         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource and include the ID and version of the traffic policy.</p> <p>Amazon
-         * Route 53 returns a maximum of 100 items in each response. If you have a lot of
-         * traffic policy instances, you can use the <code>MaxItems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes five values that
-         * help you navigate from one group of <code>MaxItems</code> traffic policy
-         * instances to the next:</p> <ul> <li><b>IsTruncated</b> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li><b>MaxItems</b> <p>The value that you specified for the
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created by using a specify traffic policy version, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource and include the ID and version
+         * of the traffic policy.</p> <p>Amazon Route 53 returns a maximum of 100 items in
+         * each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
+         * response includes five values that help you navigate from one group of
+         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
+         * <li><b>IsTruncated</b> <p>If the value of <code>IsTruncated</code> in the
+         * response is <code>true</code>, there are more traffic policy instances
+         * associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code>
+         * is <code>false</code>, this response includes the last traffic policy instance
+         * that is associated with the specified traffic policy.</p> </li>
+         * <li><b>MaxItems</b> <p>The value that you specified for the
          * <code>MaxItems</code> parameter in the request that produced the current
          * response.</p> </li> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and
@@ -2095,21 +2084,22 @@ namespace Model
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created by using a specify traffic policy version, send a <code>GET</code>
-         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource and include the ID and version of the traffic policy.</p> <p>Amazon
-         * Route 53 returns a maximum of 100 items in each response. If you have a lot of
-         * traffic policy instances, you can use the <code>MaxItems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes five values that
-         * help you navigate from one group of <code>MaxItems</code> traffic policy
-         * instances to the next:</p> <ul> <li><b>IsTruncated</b> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li><b>MaxItems</b> <p>The value that you specified for the
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created by using a specify traffic policy version, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource and include the ID and version
+         * of the traffic policy.</p> <p>Amazon Route 53 returns a maximum of 100 items in
+         * each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
+         * response includes five values that help you navigate from one group of
+         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
+         * <li><b>IsTruncated</b> <p>If the value of <code>IsTruncated</code> in the
+         * response is <code>true</code>, there are more traffic policy instances
+         * associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code>
+         * is <code>false</code>, this response includes the last traffic policy instance
+         * that is associated with the specified traffic policy.</p> </li>
+         * <li><b>MaxItems</b> <p>The value that you specified for the
          * <code>MaxItems</code> parameter in the request that produced the current
          * response.</p> </li> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and
@@ -2132,21 +2122,22 @@ namespace Model
          * <code>CreateTrafficPolicyInstance</code> or an
          * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
          * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <a>State</a> response
-         * element.</note> <p>To get information about the traffic policy instances that
-         * you created by using a specify traffic policy version, send a <code>GET</code>
-         * request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-         * resource and include the ID and version of the traffic policy.</p> <p>Amazon
-         * Route 53 returns a maximum of 100 items in each response. If you have a lot of
-         * traffic policy instances, you can use the <code>MaxItems</code> parameter to
-         * list them in groups of up to 100.</p> <p>The response includes five values that
-         * help you navigate from one group of <code>MaxItems</code> traffic policy
-         * instances to the next:</p> <ul> <li><b>IsTruncated</b> <p>If the value of
-         * <code>IsTruncated</code> in the response is <code>true</code>, there are more
-         * traffic policy instances associated with the specified traffic policy.</p> <p>If
-         * <code>IsTruncated</code> is <code>false</code>, this response includes the last
-         * traffic policy instance that is associated with the specified traffic
-         * policy.</p> </li> <li><b>MaxItems</b> <p>The value that you specified for the
+         * traffic policy definition. For more information, see the <code>State</code>
+         * response element.</note> <p>To get information about the traffic policy
+         * instances that you created by using a specify traffic policy version, send a
+         * <code>GET</code> request to the <code>/<i>Route 53 API
+         * version</i>/trafficpolicyinstance</code> resource and include the ID and version
+         * of the traffic policy.</p> <p>Amazon Route 53 returns a maximum of 100 items in
+         * each response. If you have a lot of traffic policy instances, you can use the
+         * <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The
+         * response includes five values that help you navigate from one group of
+         * <code>MaxItems</code> traffic policy instances to the next:</p> <ul>
+         * <li><b>IsTruncated</b> <p>If the value of <code>IsTruncated</code> in the
+         * response is <code>true</code>, there are more traffic policy instances
+         * associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code>
+         * is <code>false</code>, this response includes the last traffic policy instance
+         * that is associated with the specified traffic policy.</p> </li>
+         * <li><b>MaxItems</b> <p>The value that you specified for the
          * <code>MaxItems</code> parameter in the request that produced the current
          * response.</p> </li> <li><b>HostedZoneIdMarker</b>,
          * <b>TrafficPolicyInstanceNameMarker</b>, and

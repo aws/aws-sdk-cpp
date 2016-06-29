@@ -78,62 +78,82 @@ namespace Model
     inline FleetUtilization& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Number of active game sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * across all instances in the fleet</p>
+     */
+    inline int GetActiveServerProcessCount() const{ return m_activeServerProcessCount; }
+
+    /**
+     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * across all instances in the fleet</p>
+     */
+    inline void SetActiveServerProcessCount(int value) { m_activeServerProcessCountHasBeenSet = true; m_activeServerProcessCount = value; }
+
+    /**
+     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * across all instances in the fleet</p>
+     */
+    inline FleetUtilization& WithActiveServerProcessCount(int value) { SetActiveServerProcessCount(value); return *this;}
+
+    /**
+     * <p>Number of active game sessions currently being hosted on all instances in the
+     * fleet.</p>
      */
     inline int GetActiveGameSessionCount() const{ return m_activeGameSessionCount; }
 
     /**
-     * <p>Number of active game sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of active game sessions currently being hosted on all instances in the
+     * fleet.</p>
      */
     inline void SetActiveGameSessionCount(int value) { m_activeGameSessionCountHasBeenSet = true; m_activeGameSessionCount = value; }
 
     /**
-     * <p>Number of active game sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of active game sessions currently being hosted on all instances in the
+     * fleet.</p>
      */
     inline FleetUtilization& WithActiveGameSessionCount(int value) { SetActiveGameSessionCount(value); return *this;}
 
     /**
-     * <p>Number of active player sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of active player sessions currently being hosted on all instances in
+     * the fleet.</p>
      */
     inline int GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
 
     /**
-     * <p>Number of active player sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of active player sessions currently being hosted on all instances in
+     * the fleet.</p>
      */
     inline void SetCurrentPlayerSessionCount(int value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
 
     /**
-     * <p>Number of active player sessions currently being hosted on fleet game
-     * servers.</p>
+     * <p>Number of active player sessions currently being hosted on all instances in
+     * the fleet.</p>
      */
     inline FleetUtilization& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
 
     /**
-     * <p>Maximum players allowed across all game sessions currently hosted in the
-     * fleet.</p>
+     * <p>Maximum players allowed across all game sessions currently being hosted on
+     * all instances in the fleet.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
-     * <p>Maximum players allowed across all game sessions currently hosted in the
-     * fleet.</p>
+     * <p>Maximum players allowed across all game sessions currently being hosted on
+     * all instances in the fleet.</p>
      */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
-     * <p>Maximum players allowed across all game sessions currently hosted in the
-     * fleet.</p>
+     * <p>Maximum players allowed across all game sessions currently being hosted on
+     * all instances in the fleet.</p>
      */
     inline FleetUtilization& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
+    int m_activeServerProcessCount;
+    bool m_activeServerProcessCountHasBeenSet;
     int m_activeGameSessionCount;
     bool m_activeGameSessionCountHasBeenSet;
     int m_currentPlayerSessionCount;

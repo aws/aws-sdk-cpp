@@ -32,10 +32,11 @@ namespace Model
 {
 
   /**
-   * <p>IP addresses and port settings used to limit access by incoming traffic
-   * (players) to a fleet. Permissions specify a range of IP addresses and port
-   * settings that must be used to gain access to a game server on a fleet
-   * machine.</p>
+   * <p>A range of IP addresses and port settings that allow inbound traffic to
+   * connect to server processes on GameLift. Each game session hosted on a fleet is
+   * assigned a unique combination of IP address and port number, which must fall
+   * into the fleet's allowed ranges. This combination is included in the
+   * <a>GameSession</a> object. </p>
    */
   class AWS_GAMELIFT_API IpPermission
   {
@@ -62,19 +63,19 @@ namespace Model
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

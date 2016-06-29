@@ -47,6 +47,7 @@
 #include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionsRequest.h>
 #include <aws/gamelift/model/DescribePlayerSessionsRequest.h>
+#include <aws/gamelift/model/DescribeRuntimeConfigurationRequest.h>
 #include <aws/gamelift/model/DescribeScalingPoliciesRequest.h>
 #include <aws/gamelift/model/GetGameSessionLogUrlRequest.h>
 #include <aws/gamelift/model/ListAliasesRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/gamelift/model/UpdateFleetCapacityRequest.h>
 #include <aws/gamelift/model/UpdateFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionRequest.h>
+#include <aws/gamelift/model/UpdateRuntimeConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -779,6 +781,37 @@ void GameLiftClient::DescribePlayerSessionsAsyncHelper(const DescribePlayerSessi
   handler(this, request, DescribePlayerSessions(request), context);
 }
 
+DescribeRuntimeConfigurationOutcome GameLiftClient::DescribeRuntimeConfiguration(const DescribeRuntimeConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRuntimeConfigurationOutcome(DescribeRuntimeConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRuntimeConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DescribeRuntimeConfigurationOutcomeCallable GameLiftClient::DescribeRuntimeConfigurationCallable(const DescribeRuntimeConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::DescribeRuntimeConfiguration, this, request);
+}
+
+void GameLiftClient::DescribeRuntimeConfigurationAsync(const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::DescribeRuntimeConfigurationAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::DescribeRuntimeConfigurationAsyncHelper(const DescribeRuntimeConfigurationRequest& request, const DescribeRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRuntimeConfiguration(request), context);
+}
+
 DescribeScalingPoliciesOutcome GameLiftClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1211,5 +1244,36 @@ void GameLiftClient::UpdateGameSessionAsync(const UpdateGameSessionRequest& requ
 void GameLiftClient::UpdateGameSessionAsyncHelper(const UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateGameSession(request), context);
+}
+
+UpdateRuntimeConfigurationOutcome GameLiftClient::UpdateRuntimeConfiguration(const UpdateRuntimeConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRuntimeConfigurationOutcome(UpdateRuntimeConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRuntimeConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateRuntimeConfigurationOutcomeCallable GameLiftClient::UpdateRuntimeConfigurationCallable(const UpdateRuntimeConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, &GameLiftClient::UpdateRuntimeConfiguration, this, request);
+}
+
+void GameLiftClient::UpdateRuntimeConfigurationAsync(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&GameLiftClient::UpdateRuntimeConfigurationAsyncHelper, this, request, handler, context);
+}
+
+void GameLiftClient::UpdateRuntimeConfigurationAsyncHelper(const UpdateRuntimeConfigurationRequest& request, const UpdateRuntimeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRuntimeConfiguration(request), context);
 }
 

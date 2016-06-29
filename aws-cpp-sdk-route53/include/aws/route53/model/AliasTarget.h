@@ -40,10 +40,7 @@ namespace Model
    * CloudFront distributions, ELB load balancers, and Amazon S3 buckets is not
    * supported.</li> <li>You can't create alias resource record sets for failover,
    * geolocation, or latency resource record sets in a private hosted zone.</li>
-   * </ul> <p>For more information and an example, see <a
-   * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-   * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-   * Reference</i>.</p>
+   * </ul>
    */
   class AWS_ROUTE53_API AliasTarget
   {
@@ -71,10 +68,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
@@ -95,10 +89,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
@@ -119,10 +110,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
@@ -143,10 +131,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
@@ -167,10 +152,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline AliasTarget& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
@@ -191,10 +173,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline AliasTarget& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
@@ -215,10 +194,7 @@ namespace Model
      * General Reference</i>.</li> <li><b>Another Amazon Route 53 resource record set
      * in your hosted zone:</b> Specify the hosted zone ID of your hosted zone. (An
      * alias resource record set cannot reference a resource record set in a different
-     * hosted zone.)</li> </ul> <p>For more information and an example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * hosted zone.)</li> </ul>
      */
     inline AliasTarget& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
@@ -254,11 +230,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
 
@@ -294,11 +266,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
@@ -334,11 +302,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
@@ -374,11 +338,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline void SetDNSName(const char* value) { m_dNSNameHasBeenSet = true; m_dNSName.assign(value); }
 
@@ -414,11 +374,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline AliasTarget& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
 
@@ -454,11 +410,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline AliasTarget& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
 
@@ -494,11 +446,7 @@ namespace Model
      * a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</li> <li><b>Another Amazon Route 53 resource record
      * set:</b> Specify the value of the <code>Name</code> element for a resource
-     * record set in the current hosted zone.</li> </ul> <p>For more information and an
-     * example, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/CreateAliasRRSAPI.html">Example:
-     * Creating Alias Resource Record Sets</a> in the <i>Amazon Route 53 API
-     * Reference</i>.</p>
+     * record set in the current hosted zone.</li> </ul>
      */
     inline AliasTarget& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 
@@ -530,21 +478,17 @@ namespace Model
      * that you specify in <code>AliasTarget</code> is a resource record set or a group
      * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
-     * a health check with all of the resource record sets in the alias target. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
-     * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.</li> <li>If you specify an ELB load balancer in
-     * <code>AliasTarget</code>, Elastic Load Balancing routes queries only to the
-     * healthy Amazon EC2 instances that are registered with the load balancer. If no
-     * Amazon EC2 instances are healthy or if the load balancer itself is unhealthy,
-     * and if <code>EvaluateTargetHealth</code> is <code>true</code> for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources.</li> <li>When you create a load balancer, you configure settings for
-     * Elastic Load Balancing health checks; they're not Amazon Route 53 health checks,
-     * but they perform a similar function. Do not create Amazon Route 53 health checks
-     * for the Amazon EC2 instances that you register with an ELB load balancer. For
-     * more information, see <a
+     * a health check with all of the resource record sets in the alias target.</li>
+     * <li>If you specify an ELB load balancer in <code>AliasTarget</code>, Elastic
+     * Load Balancing routes queries only to the healthy Amazon EC2 instances that are
+     * registered with the load balancer. If no Amazon EC2 instances are healthy or if
+     * the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code>
+     * is <code>true</code> for the corresponding alias resource record set, Amazon
+     * Route 53 routes queries to other resources.</li> <li>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Amazon Route 53 health checks, but they perform a similar function.
+     * Do not create Amazon Route 53 health checks for the Amazon EC2 instances that
+     * you register with an ELB load balancer. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.</li> </ul> <p>We recommend that you set
@@ -585,21 +529,17 @@ namespace Model
      * that you specify in <code>AliasTarget</code> is a resource record set or a group
      * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
-     * a health check with all of the resource record sets in the alias target. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
-     * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.</li> <li>If you specify an ELB load balancer in
-     * <code>AliasTarget</code>, Elastic Load Balancing routes queries only to the
-     * healthy Amazon EC2 instances that are registered with the load balancer. If no
-     * Amazon EC2 instances are healthy or if the load balancer itself is unhealthy,
-     * and if <code>EvaluateTargetHealth</code> is <code>true</code> for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources.</li> <li>When you create a load balancer, you configure settings for
-     * Elastic Load Balancing health checks; they're not Amazon Route 53 health checks,
-     * but they perform a similar function. Do not create Amazon Route 53 health checks
-     * for the Amazon EC2 instances that you register with an ELB load balancer. For
-     * more information, see <a
+     * a health check with all of the resource record sets in the alias target.</li>
+     * <li>If you specify an ELB load balancer in <code>AliasTarget</code>, Elastic
+     * Load Balancing routes queries only to the healthy Amazon EC2 instances that are
+     * registered with the load balancer. If no Amazon EC2 instances are healthy or if
+     * the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code>
+     * is <code>true</code> for the corresponding alias resource record set, Amazon
+     * Route 53 routes queries to other resources.</li> <li>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Amazon Route 53 health checks, but they perform a similar function.
+     * Do not create Amazon Route 53 health checks for the Amazon EC2 instances that
+     * you register with an ELB load balancer. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.</li> </ul> <p>We recommend that you set
@@ -640,21 +580,17 @@ namespace Model
      * that you specify in <code>AliasTarget</code> is a resource record set or a group
      * of resource record sets (for example, a group of weighted resource record sets),
      * but it is not another alias resource record set, we recommend that you associate
-     * a health check with all of the resource record sets in the alias target. For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
-     * Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer
-     * Guide</i>.</li> <li>If you specify an ELB load balancer in
-     * <code>AliasTarget</code>, Elastic Load Balancing routes queries only to the
-     * healthy Amazon EC2 instances that are registered with the load balancer. If no
-     * Amazon EC2 instances are healthy or if the load balancer itself is unhealthy,
-     * and if <code>EvaluateTargetHealth</code> is <code>true</code> for the
-     * corresponding alias resource record set, Amazon Route 53 routes queries to other
-     * resources.</li> <li>When you create a load balancer, you configure settings for
-     * Elastic Load Balancing health checks; they're not Amazon Route 53 health checks,
-     * but they perform a similar function. Do not create Amazon Route 53 health checks
-     * for the Amazon EC2 instances that you register with an ELB load balancer. For
-     * more information, see <a
+     * a health check with all of the resource record sets in the alias target.</li>
+     * <li>If you specify an ELB load balancer in <code>AliasTarget</code>, Elastic
+     * Load Balancing routes queries only to the healthy Amazon EC2 instances that are
+     * registered with the load balancer. If no Amazon EC2 instances are healthy or if
+     * the load balancer itself is unhealthy, and if <code>EvaluateTargetHealth</code>
+     * is <code>true</code> for the corresponding alias resource record set, Amazon
+     * Route 53 routes queries to other resources.</li> <li>When you create a load
+     * balancer, you configure settings for Elastic Load Balancing health checks;
+     * they're not Amazon Route 53 health checks, but they perform a similar function.
+     * Do not create Amazon Route 53 health checks for the Amazon EC2 instances that
+     * you register with an ELB load balancer. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html">How
      * Health Checks Work in More Complex Amazon Route 53 Configurations</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.</li> </ul> <p>We recommend that you set

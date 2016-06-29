@@ -48,6 +48,8 @@ namespace DirectoryServiceEndpoint
         return "ds.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "ds.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "ds.ap-south-1.amazonaws.com";
      default:
         return "ds.us-east-1.amazonaws.com";
     }
