@@ -508,18 +508,21 @@ list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:aws-cpp-sdk-s3-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:aws-cpp-sdk-sqs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "transfer:aws-cpp-sdk-transfer-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "s3EncryptionClient:aws-cpp-sdk-s3EncryptionClient-tests")
 
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam")
 list(APPEND SDK_DEPENDENCY_LIST "identity-management:cognito-identity")
 list(APPEND SDK_DEPENDENCY_LIST "queues:sqs")
 list(APPEND SDK_DEPENDENCY_LIST "transfer:s3")
+list(APPEND SDK_DEPENDENCY_LIST "s3EncryptionClient:s3")
 
 set(TEST_DEPENDENCY_LIST "")
 list(APPEND TEST_DEPENDENCY_LIST "identity-management:cognito-identity")
 list(APPEND TEST_DEPENDENCY_LIST "lambda:access-management,cognito-identity,iam,kinesis")
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3")
+list(APPEND TEST_DEPENDENCY_LIST "s3EncryptionClient:s3")
 
 # make a list of the generated clients
 set(GENERATED_SERVICE_LIST "")
@@ -624,6 +627,8 @@ else()
     list(APPEND TEMP_SDK_BUILD_LIST "identity-management")
     list(APPEND TEMP_SDK_BUILD_LIST "queues")
     list(APPEND TEMP_SDK_BUILD_LIST "transfer")
+	list(APPEND TEMP_SDK_BUILD_LIST "s3EncryptionClient")
+	list(APPEND TEMP_SDK_BUILD_LIST "s3EncryptionClient2")
 
     set(SDK_BUILD_LIST ${TEMP_SDK_BUILD_LIST})
 
