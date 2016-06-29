@@ -34,7 +34,7 @@ namespace EFS
 namespace Model
 {
   /**
-   * <p>This object provides description of a mount target.</p>
+   * <p>Provides a description of a mount target.</p>
    */
   class AWS_EFS_API CreateMountTargetResult
   {
@@ -44,244 +44,244 @@ namespace Model
     CreateMountTargetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(Aws::String&& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>AWS account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetId = value; }
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetId = value; }
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline void SetMountTargetId(const char* value) { m_mountTargetId.assign(value); }
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline CreateMountTargetResult& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline CreateMountTargetResult& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>The system-assigned mount target ID. </p>
+     * <p>System-assigned mount target ID.</p>
      */
     inline CreateMountTargetResult& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = value; }
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline CreateMountTargetResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline CreateMountTargetResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the file system for which the mount target is intended.</p>
+     * <p>ID of the file system for which the mount target is intended.</p>
      */
     inline CreateMountTargetResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline CreateMountTargetResult& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline CreateMountTargetResult& WithSubnetId(Aws::String&& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet that the mount target is in.</p>
+     * <p>ID of the mount target's subnet.</p>
      */
     inline CreateMountTargetResult& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The lifecycle state the mount target is in.</p>
+     * <p>Lifecycle state of the mount target.</p>
      */
     inline const LifeCycleState& GetLifeCycleState() const{ return m_lifeCycleState; }
 
     /**
-     * <p>The lifecycle state the mount target is in.</p>
+     * <p>Lifecycle state of the mount target.</p>
      */
     inline void SetLifeCycleState(const LifeCycleState& value) { m_lifeCycleState = value; }
 
     /**
-     * <p>The lifecycle state the mount target is in.</p>
+     * <p>Lifecycle state of the mount target.</p>
      */
     inline void SetLifeCycleState(LifeCycleState&& value) { m_lifeCycleState = value; }
 
     /**
-     * <p>The lifecycle state the mount target is in.</p>
+     * <p>Lifecycle state of the mount target.</p>
      */
     inline CreateMountTargetResult& WithLifeCycleState(const LifeCycleState& value) { SetLifeCycleState(value); return *this;}
 
     /**
-     * <p>The lifecycle state the mount target is in.</p>
+     * <p>Lifecycle state of the mount target.</p>
      */
     inline CreateMountTargetResult& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(value); return *this;}
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddress = value; }
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddress = value; }
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddress.assign(value); }
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system may be mounted via the mount target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceId = value; }
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceId = value; }
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceId.assign(value); }
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
-     * <p>The ID of the network interface that Amazon EFS created when it created the
-     * mount target.</p>
+     * <p>ID of the network interface that Amazon EFS created when it created the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 

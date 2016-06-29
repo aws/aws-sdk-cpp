@@ -30,7 +30,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_logPathsHasBeenSet(false),
     m_eC2InstanceTypeHasBeenSet(false),
     m_eC2InboundPermissionsHasBeenSet(false),
-    m_newGameSessionProtectionPolicyHasBeenSet(false)
+    m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_runtimeConfigurationHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_newGameSessionProtectionPolicyHasBeenSet)
   {
    payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
+  }
+
+  if(m_runtimeConfigurationHasBeenSet)
+  {
+   payload.WithObject("RuntimeConfiguration", m_runtimeConfiguration.Jsonize());
+
   }
 
   return payload.WriteReadable();

@@ -34,6 +34,9 @@ namespace EFS
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_EFS_API DescribeTagsResult
   {
   public:

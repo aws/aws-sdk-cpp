@@ -46,217 +46,229 @@ namespace Model
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = value; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes[key] = value; return *this; }
 
     /**
      * <p>A map of the topic's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li>
-     * <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li>
-     * <code>Policy</code> -- the JSON serialization of the topic's access control
-     * policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the
-     * "From" field for notifications to email and email-json endpoints</li> <li>
-     * <code>SubscriptionsPending</code> -- the number of subscriptions pending
-     * confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the
-     * number of confirmed subscriptions on this topic</li> <li>
-     * <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this
-     * topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the
-     * topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the
-     * JSON serialization of the effective delivery policy that takes into account
-     * system defaults</li> </ul>
+     * following:</p> <ul> <li><p><code>TopicArn</code> -- the topic's ARN</p></li>
+     * <li><p><code>Owner</code> -- the AWS account ID of the topic's owner</p></li>
+     * <li><p><code>Policy</code> -- the JSON serialization of the topic's access
+     * control policy</p></li> <li><p><code>DisplayName</code> -- the human-readable
+     * name used in the "From" field for notifications to email and email-json
+     * endpoints</p></li> <li><p><code>SubscriptionsPending</code> -- the number of
+     * subscriptions pending confirmation on this topic</p></li>
+     * <li><p><code>SubscriptionsConfirmed</code> -- the number of confirmed
+     * subscriptions on this topic</p></li> <li><p><code>SubscriptionsDeleted</code> --
+     * the number of deleted subscriptions on this topic</p></li>
+     * <li><p><code>DeliveryPolicy</code> -- the JSON serialization of the topic's
+     * delivery policy</p></li> <li><p><code>EffectiveDeliveryPolicy</code> -- the JSON
+     * serialization of the effective delivery policy that takes into account system
+     * defaults</p></li> </ul>
      */
     inline GetTopicAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
 

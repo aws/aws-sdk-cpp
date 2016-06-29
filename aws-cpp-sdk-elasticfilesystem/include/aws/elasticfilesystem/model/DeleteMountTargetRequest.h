@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_EFS_API DeleteMountTargetRequest : public EFSRequest
   {
@@ -33,37 +34,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline DeleteMountTargetRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline DeleteMountTargetRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>String. The ID of the mount target to delete.</p>
+     * <p>ID of the mount target to delete (String).</p>
      */
     inline DeleteMountTargetRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 

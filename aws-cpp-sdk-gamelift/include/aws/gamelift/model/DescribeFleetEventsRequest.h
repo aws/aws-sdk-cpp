@@ -152,20 +152,20 @@ namespace Model
     inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeFleetEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

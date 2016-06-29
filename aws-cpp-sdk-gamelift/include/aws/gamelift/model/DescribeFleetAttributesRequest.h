@@ -38,70 +38,70 @@ namespace Model
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(value); return *this;}
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
      * <p>Unique identifiers for the fleet(s) that you want to retrieve attributes for.
-     * Leave this parameter empty to retrieve attributes for all fleets.</p>
+     * To request attributes for all fleets, leave this parameter empty.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This parameter is
-     * ignored when the request specifies one or a list of fleet IDs.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This parameter is
-     * ignored when the request specifies one or a list of fleet IDs.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. You can use this parameter with
-     * <i>NextToken</i> to get results as a set of sequential pages. This parameter is
-     * ignored when the request specifies one or a list of fleet IDs.</p>
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline DescribeFleetAttributesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

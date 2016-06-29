@@ -34,7 +34,7 @@ namespace SNS
 namespace Model
 {
   /**
-   * Response for Subscribe action.
+   * <p>Response for Subscribe action.</p>
    */
   class AWS_SNS_API SubscribeResult
   {

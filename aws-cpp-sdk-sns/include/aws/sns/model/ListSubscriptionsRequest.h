@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Input for ListSubscriptions action.
+   * <p>Input for ListSubscriptions action.</p>
    */
   class AWS_SNS_API ListSubscriptionsRequest : public SNSRequest
   {

@@ -37,86 +37,100 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
-     * unique. A build name can be changed later using <a>UpdateBuild</a>.</p>
+     * <p>Descriptive label associated with a build. Build names do not need to be
+     * unique. A build name can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(value); return *this;}
 
     /**
      * <p>Version associated with this build. Version strings do not need to be unique
-     * to a build. A build version can be changed later using <a>UpdateBuild</a>.</p>
+     * to a build. A build version can be changed later using
+     * <code><a>UpdateBuild</a></code>.</p>
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
