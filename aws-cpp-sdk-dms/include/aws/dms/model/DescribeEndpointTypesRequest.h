@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeEndpointTypesRequest : public DatabaseMigrationServiceRequest
   {

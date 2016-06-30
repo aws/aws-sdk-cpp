@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/dms/DatabaseMigrationServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -25,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationInstanceRequest : public DatabaseMigrationServiceRequest
   {
@@ -70,233 +72,289 @@ namespace Model
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p> The amount of storage (in gigabytes) to be allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) to be allocated for the replication
+     * instance.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p> The amount of storage (in gigabytes) to be allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) to be allocated for the replication
+     * instance.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p> The amount of storage (in gigabytes) to be allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) to be allocated for the replication
+     * instance.</p>
      */
     inline ModifyReplicationInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
-     * <p> Indicates whether the changes should be applied immediately or during the
-     * next maintenance window. </p>
+     * <p>Indicates whether the changes should be applied immediately or during the
+     * next maintenance window.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
-     * <p> Indicates whether the changes should be applied immediately or during the
-     * next maintenance window. </p>
+     * <p>Indicates whether the changes should be applied immediately or during the
+     * next maintenance window.</p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
-     * <p> Indicates whether the changes should be applied immediately or during the
-     * next maintenance window. </p>
+     * <p>Indicates whether the changes should be applied immediately or during the
+     * next maintenance window.</p>
      */
     inline ModifyReplicationInstanceRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ModifyReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline ModifyReplicationInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline ModifyReplicationInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The weekly time range (in UTC) during which system maintenance can occur,
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
      * which might result in an outage. Changing this parameter does not result in an
      * outage, except in the following situation, and the change is asynchronously
      * applied as soon as possible. If moving this window to the current time, there
      * must be at least 30 minutes between the current time and end of the window to
-     * ensure pending changes are applied. </p> <p>Default: Uses existing setting</p>
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline ModifyReplicationInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ModifyReplicationInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> Indicates that major version upgrades are allowed. Changing this parameter
+     * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * does not result in an outage and the change is asynchronously applied as soon as
-     * possible. </p> <p>Constraints: This parameter must be set to true when
-     * specifying a value for the <code>EngineVersion</code> parameter that is a
-     * different major version than the replication instance's current version.</p>
+     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
+     * a value for the <code>EngineVersion</code> parameter that is a different major
+     * version than the replication instance's current version.</p>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
-     * <p> Indicates that major version upgrades are allowed. Changing this parameter
+     * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * does not result in an outage and the change is asynchronously applied as soon as
-     * possible. </p> <p>Constraints: This parameter must be set to true when
-     * specifying a value for the <code>EngineVersion</code> parameter that is a
-     * different major version than the replication instance's current version.</p>
+     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
+     * a value for the <code>EngineVersion</code> parameter that is a different major
+     * version than the replication instance's current version.</p>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
-     * <p> Indicates that major version upgrades are allowed. Changing this parameter
+     * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * does not result in an outage and the change is asynchronously applied as soon as
-     * possible. </p> <p>Constraints: This parameter must be set to true when
-     * specifying a value for the <code>EngineVersion</code> parameter that is a
-     * different major version than the replication instance's current version.</p>
+     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
+     * a value for the <code>EngineVersion</code> parameter that is a different major
+     * version than the replication instance's current version.</p>
      */
     inline ModifyReplicationInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
@@ -384,6 +442,8 @@ namespace Model
     bool m_applyImmediatelyHasBeenSet;
     Aws::String m_replicationInstanceClass;
     bool m_replicationInstanceClassHasBeenSet;
+    Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+    bool m_vpcSecurityGroupIdsHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
     Aws::String m_engineVersion;

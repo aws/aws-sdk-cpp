@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTasksRequest : public DatabaseMigrationServiceRequest
   {
@@ -39,49 +40,49 @@ namespace Model
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

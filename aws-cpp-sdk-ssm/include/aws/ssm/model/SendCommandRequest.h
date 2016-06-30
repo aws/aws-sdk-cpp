@@ -38,42 +38,50 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
