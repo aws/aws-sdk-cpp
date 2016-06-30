@@ -213,19 +213,16 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 static const char* instanceLogTag = "InstanceProfileCredentialsProvider";
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
-        m_credentials(nullptr),
+        m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(instanceLogTag)),
         m_loadFrequencyMs(refreshRateMs)
 {
     AWS_LOGSTREAM_INFO(instanceLogTag, "Creating Instance with default EC2MetadataClient and refresh rate " << refreshRateMs);
-
-    m_metadataClient = Aws::MakeShared<EC2MetadataClient>(instanceLogTag);
 }
 
 
-InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<EC2MetadataClient>& mdClient,
+InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>& loader,
                                                                        long refreshRateMs) :
-        m_metadataClient(mdClient),
-        m_credentials(nullptr),
+        m_ec2MetadataConfigLoader(loader),
         m_loadFrequencyMs(refreshRateMs)
 {
     AWS_LOGSTREAM_INFO(instanceLogTag, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
@@ -235,7 +232,14 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
-    return *m_credentials;
+    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
+
+    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    {
+        return profileIter->second.GetCredentials();
+    }
+
+    return AWSCredentials();
 }
 
 
@@ -244,39 +248,10 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
     AWS_LOG_DEBUG(instanceLogTag, "Checking if latest credential pull has expired.");
 
     std::lock_guard<std::mutex> locker(m_reloadMutex);
-    if (!m_credentials || IsTimeToRefresh(m_loadFrequencyMs))
+    if (IsTimeToRefresh(m_loadFrequencyMs))
     {
         AWS_LOG_INFO(instanceLogTag, "Credentials have expired attempting to repull from EC2 Metadata Service.");
-        Aws::String mdRet = m_metadataClient->GetDefaultCredentials();
-
-        if (mdRet.empty())
-        {
-            AWS_LOG_WARN(instanceLogTag, "Not able to pull credentials from the metadata service, returning empty credentials.");
-            m_credentials = Aws::MakeShared<AWSCredentials>(instanceLogTag, "", "");
-            return;
-        }
-
-        const char* accessKeyId = "AccessKeyId";
-        const char* secretAccessKey = "SecretAccessKey";
-        Aws::String accessKey, secretKey, token;
-
-        using namespace Aws::Utils::Json;
-        JsonValue jsonValue(mdRet);
-
-        if (jsonValue.WasParseSuccessful())
-        {
-            accessKey = jsonValue.GetString(accessKeyId);
-            AWS_LOGSTREAM_INFO(instanceLogTag, "Successfully pulled credentials from metadata service with access key " << accessKey);
-
-            secretKey = jsonValue.GetString(secretAccessKey);
-            token = jsonValue.GetString("Token");
-        }
-        else
-        {
-            AWS_LOGSTREAM_ERROR(instanceLogTag, "Failed to parse output from Ec2MetadataService with error " << jsonValue.GetErrorMessage());
-        }
-
-        m_credentials = Aws::MakeShared<AWSCredentials>(instanceLogTag, accessKey, secretKey, token);
+        m_ec2MetadataConfigLoader->Load();
     }
 }
 

@@ -96,6 +96,7 @@ namespace Aws
         {
         public:
             AWSConfigFileProfileConfigLoader(const Aws::String& configFile, bool useProfilePrefix = false);
+            virtual ~AWSConfigFileProfileConfigLoader() = default;
 
             const Aws::String& GetFileName() const { return m_fileName; }
 
@@ -108,16 +109,20 @@ namespace Aws
             bool m_useProfilePrefix;
         };
 
-        class AWS_CORE_API Ec2InstanceProfileConfigLoader : public AWSProfileConfigLoader
+        static const char* const INSTANCE_PROFILE_KEY = "InstanceProfile";
+
+        class AWS_CORE_API EC2InstanceProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
-            Ec2InstanceProfileConfigLoader();
+            EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& = nullptr);
+
+            virtual ~EC2InstanceProfileConfigLoader() = default;
 
         protected:
             virtual bool LoadInternal() override;
 
         private:
-            Aws::Internal::EC2MetadataClient m_metadataClient;
+            std::shared_ptr<Aws::Internal::EC2MetadataClient> m_metadataClient;
         };
     }
 }

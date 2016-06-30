@@ -30,12 +30,9 @@ namespace Aws
     namespace Config
     {
         class AWSProfileConfigLoader;
+        class EC2InstanceProfileConfigLoader;
     }
 
-    namespace Internal
-    {
-        class EC2MetadataClient; //forward declaration;
-    } // namespace Internal
     namespace Auth
     {
         static int REFRESH_THRESHOLD = 1000 * 60 * 15;
@@ -305,7 +302,7 @@ namespace Aws
              * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes,
              * uses a supplied EC2MetadataClient.
              */
-            InstanceProfileCredentialsProvider(const std::shared_ptr<Internal::EC2MetadataClient>&, long refreshRateMs = REFRESH_THRESHOLD);
+            InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Retrieves the credentials if found, otherwise returns empty credential set.
@@ -315,8 +312,7 @@ namespace Aws
         private:
             void RefreshIfExpired();
 
-            std::shared_ptr<Internal::EC2MetadataClient> m_metadataClient;
-            std::shared_ptr<AWSCredentials> m_credentials;
+            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
             long m_loadFrequencyMs;
             mutable std::mutex m_reloadMutex;
         };

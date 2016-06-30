@@ -17,6 +17,8 @@
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <fstream>
 
 namespace Aws
@@ -26,13 +28,18 @@ namespace Aws
         using namespace Aws::Utils;
         using namespace Aws::Auth;
 
+        static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
+
         bool AWSProfileConfigLoader::Load()
         {
             if(LoadInternal())
             {
+                AWS_LOGSTREAM_INFO(CONFIG_LOADER_TAG, "Successfully reloaded configuration.");
                 m_lastLoadTime = DateTime::Now();
+                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "reloaded config at " << m_lastLoadTime.ToGmtString(DateFormat::ISO_8601));
                 return true;
             }
+            AWS_LOGSTREAM_INFO(CONFIG_LOADER_TAG, "Failed to reload configuration.");
 
             return false;
         }
@@ -41,11 +48,14 @@ namespace Aws
         {
             if(PersistInternal(profiles))
             {
+                AWS_LOGSTREAM_INFO(CONFIG_LOADER_TAG, "Successfully persisted configuration.");
                 m_profiles = profiles;
                 m_lastLoadTime = DateTime::Now();
+                AWS_LOGSTREAM_TRACE(CONFIG_LOADER_TAG, "persisted config at " << m_lastLoadTime.ToGmtString(DateFormat::ISO_8601));
                 return true;
             }
 
+            AWS_LOGSTREAM_WARN(CONFIG_LOADER_TAG, "Failed to persist configuration.");
             return false;
         }
 
@@ -59,6 +69,7 @@ namespace Aws
         static const char EQ = '=';
         static const char LEFT_BRACKET = '[';
         static const char RIGHT_BRACKET = ']';
+        static const char* const PARSER_TAG = "Aws::Config::ConfigFileProfileFSM";
 
         class ConfigFileProfileFSM
         {
@@ -133,6 +144,7 @@ namespace Aws
                     auto regionIter = m_profileKeyValuePairs.find(REGION_KEY);
                     if (regionIter != m_profileKeyValuePairs.end())
                     {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found region " << regionIter->second);
                         profile.SetRegion(regionIter->second);
                     }
 
@@ -141,6 +153,7 @@ namespace Aws
                     if (accessKeyIdIter != m_profileKeyValuePairs.end())
                     {
                         accessKey = accessKeyIdIter->second;
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found access key " << accessKey);
 
                         auto secretAccessKeyIter = m_profileKeyValuePairs.find(SECRET_KEY_KEY);
                         auto sessionTokenIter = m_profileKeyValuePairs.find(SESSION_TOKEN_KEY);
@@ -160,12 +173,14 @@ namespace Aws
                     auto assumeRoleArnIter = m_profileKeyValuePairs.find(ROLE_ARN_KEY);
                     if (assumeRoleArnIter != m_profileKeyValuePairs.end())
                     {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found role arn " << assumeRoleArnIter->second);
                         profile.SetRoleArn(assumeRoleArnIter->second);
                     }
 
                     auto sourceProfileIter = m_profileKeyValuePairs.find(SOURCE_PROFILE_KEY);
                     if (sourceProfileIter != m_profileKeyValuePairs.end())
                     {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found source profile " << sourceProfileIter->second);
                         profile.SetSourceProfile(sourceProfileIter->second);
                     }
 
@@ -178,6 +193,7 @@ namespace Aws
                 {
                     m_currentWorkingProfile = StringUtils::Trim(line.substr(openPos + 1, closePos - openPos - 1).c_str());
                     StringUtils::Replace(m_currentWorkingProfile, PROFILE_PREFIX, "");
+                    AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found profile " << m_currentWorkingProfile);
                 }
             }
 
@@ -195,9 +211,12 @@ namespace Aws
             Aws::Map<String, Profile> m_foundProfiles;
         };
 
+        static const char* const CONFIG_FILE_LOADER = "Aws::Config::AWSConfigFileProfileConfigLoader";
+
         AWSConfigFileProfileConfigLoader::AWSConfigFileProfileConfigLoader(const Aws::String& fileName, bool useProfilePrefix) :
                 m_fileName(fileName), m_useProfilePrefix(useProfilePrefix)
         {
+            AWS_LOGSTREAM_INFO(CONFIG_FILE_LOADER, "Initializing config loader against fileName " << fileName << " and using profilePrefix = " << useProfilePrefix);
         }
 
         bool AWSConfigFileProfileConfigLoader::LoadInternal()
@@ -213,6 +232,8 @@ namespace Aws
                 return m_profiles.size() > 0;
             }
 
+            AWS_LOGSTREAM_INFO(CONFIG_FILE_LOADER, "Unable to open config file " << m_fileName << " for reading.");
+
             return false;
         }
 
@@ -224,6 +245,9 @@ namespace Aws
                 for(auto& profile : profiles)
                 {
                     Aws::String prefix = m_useProfilePrefix ? PROFILE_PREFIX : "";
+
+                    AWS_LOGSTREAM_DEBUG(CONFIG_FILE_LOADER, "Writing profile " << profile.first << " to disk.");
+
                     outputFile << LEFT_BRACKET << prefix << profile.second.GetName() << RIGHT_BRACKET << std::endl;
                     const Aws::Auth::AWSCredentials& credentials = profile.second.GetCredentials();
                     outputFile << ACCESS_KEY_ID_KEY << EQ << credentials.GetAWSAccessKeyId() << std::endl;
@@ -252,7 +276,57 @@ namespace Aws
                     outputFile << std::endl;
                 }
 
+                AWS_LOGSTREAM_INFO(CONFIG_FILE_LOADER, "Profiles written to config file " << m_fileName);
+
                 return true;
+            }
+
+            AWS_LOGSTREAM_WARN(CONFIG_FILE_LOADER, "Unable to open config file " << m_fileName << " for writing.");
+
+            return false;
+        }
+
+        static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
+
+        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client)
+            : m_metadataClient(client == nullptr ? Aws::MakeShared<Aws::Internal::EC2MetadataClient>(EC2_INSTANCE_PROFILE_LOG_TAG) : client)
+        {
+        }
+
+        bool EC2InstanceProfileConfigLoader::LoadInternal()
+        {
+            auto credentialsStr = m_metadataClient->GetDefaultCredentials();
+            if(credentialsStr.length() > 0)
+            {
+                Json::JsonValue credentialsDoc(credentialsStr);
+
+                const char* accessKeyId = "AccessKeyId";
+                const char* secretAccessKey = "SecretAccessKey";
+                Aws::String accessKey, secretKey, token;
+
+                if (credentialsDoc.WasParseSuccessful())
+                {
+                    accessKey = credentialsDoc.GetString(accessKeyId);
+                    AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
+
+                    secretKey = credentialsDoc.GetString(secretAccessKey);
+                    token = credentialsDoc.GetString("Token");
+
+                    auto region = m_metadataClient->GetCurrentRegion();
+
+                    Profile profile;
+                    profile.SetCredentials(AWSCredentials(accessKey, secretKey, token));
+                    profile.SetRegion(region);
+                    profile.SetName(INSTANCE_PROFILE_KEY);
+
+                    m_profiles[INSTANCE_PROFILE_KEY] = profile;
+
+                    return true;
+                }
+                else
+                {
+                    AWS_LOGSTREAM_ERROR(EC2_INSTANCE_PROFILE_LOG_TAG, "Failed to parse output from EC2MetadataService with error " << credentialsDoc.GetErrorMessage());
+                }
             }
 
             return false;

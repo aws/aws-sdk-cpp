@@ -51,6 +51,12 @@ namespace Aws
             virtual Aws::String GetDefaultCredentials() const;
 
             /**
+             * connects to the Amazon EC2 Instance metadata Service to retrieve the region
+             * the current EC2 instance is running in.
+             */
+            virtual Aws::String GetCurrentRegion() const;
+
+            /**
              * Connects to the metadata service to read the specified resource and
              * returns the text contents.
              */
