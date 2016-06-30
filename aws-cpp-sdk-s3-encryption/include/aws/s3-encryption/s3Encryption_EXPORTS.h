@@ -22,14 +22,14 @@
 #if defined (_MSC_VER)
 #pragma warning(disable : 4251)
 	#ifdef USE_IMPORT_EXPORT
-		#ifdef AWS_S3ENCRYPTIONCLIENT_EXPORTS
-			#define AWS_S3ENCRYPTIONCLIENT_API __declspec(dllexport)
+		#ifdef AWS_S3ENCRYPTION_EXPORTS
+			#define AWS_S3ENCRYPTION_API __declspec(dllexport)
 		#else
-			#define AWS_S3ENCRYPTIONCLIENT_API __declspec(dllimport)
-		#endif /* AWS_S3ENCRYPTIONCLIENT_EXPORTS */
+			#define AWS_S3ENCRYPTION_API __declspec(dllimport)
+		#endif /* AWS_S3ENCRYPTION_EXPORTS */
 	#else
-		#define AWS_S3ENCRYPTIONCLIENT_API
+		#define AWS_S3ENCRYPTION_API
 	#endif //
 #else /* defined (_WIN32) */
-	#define AWS_S3ENCRYPTIONCLIENT_API
+	#define AWS_S3ENCRYPTION_API
 #endif

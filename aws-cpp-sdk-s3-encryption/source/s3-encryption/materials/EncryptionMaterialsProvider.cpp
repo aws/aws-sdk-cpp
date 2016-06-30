@@ -12,15 +12,20 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/s3EncryptionClient/EncryptionMaterialsProvider.h>
+#include <aws/s3-encryption/materials/EncryptionMaterialsProvider.h>
+#include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/Factories.h>
 
 namespace Aws
 {
-	namespace S3EncryptionClient
-	{
-		EncryptionMaterials::EncryptionMaterials(const Utils::CryptoBuffer & key, const Utils::CryptoBuffer & iv, const Utils::CryptoBuffer & tag) :
-			m_key(key), m_iv(iv), m_tag(tag)
-		{
-		}
-	}
+namespace S3Encryption
+{
+namespace Materials
+{
+EncryptionMaterials::EncryptionMaterials(const Utils::CryptoBuffer & key, const Utils::CryptoBuffer & iv, const Utils::CryptoBuffer & tag) :
+    m_key(key), m_iv(iv), m_tag(tag)
+{
 }
+}//namespace Materials
+}//namespace S3Encryption
+}//namespace Aws

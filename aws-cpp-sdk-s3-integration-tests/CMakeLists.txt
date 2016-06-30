@@ -18,8 +18,6 @@ set(AWS_S3_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
-project(${PROJECT_NAME})
-
 include_directories(${AWS_S3_INTEGRATION_TEST_APPLICATION_INCLUDES})
 add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 
