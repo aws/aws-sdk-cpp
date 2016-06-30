@@ -52,7 +52,7 @@ namespace Aws
         /**
          * Loads Configuration such as .aws/config, .aws/credentials or ec2 metadata service.
          */
-        class AWSProfileConfigLoader
+        class AWS_CORE_API AWSProfileConfigLoader
         {
         public:
             virtual ~AWSProfileConfigLoader() = default;
@@ -92,10 +92,10 @@ namespace Aws
             Aws::Utils::DateTime m_lastLoadTime;
         };
 
-        class AWSConfigFileProfileConfigLoader : public AWSProfileConfigLoader
+        class AWS_CORE_API AWSConfigFileProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
-            AWSConfigFileProfileConfigLoader(const Aws::String& configFile);
+            AWSConfigFileProfileConfigLoader(const Aws::String& configFile, bool useProfilePrefix = false);
 
             const Aws::String& GetFileName() const { return m_fileName; }
 
@@ -105,9 +105,10 @@ namespace Aws
 
         private:
             Aws::String m_fileName;
+            bool m_useProfilePrefix;
         };
 
-        class Ec2InstanceProfileConfigLoader : public AWSProfileConfigLoader
+        class AWS_CORE_API Ec2InstanceProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
             Ec2InstanceProfileConfigLoader();

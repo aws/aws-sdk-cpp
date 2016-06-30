@@ -95,7 +95,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
  
     FileSystemUtils::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
 
     FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
@@ -185,7 +185,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
   
     Aws::String oldValue = GetEnv("AWS_SHARED_CREDENTIALS_FILE");
     setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
@@ -216,7 +216,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
 
     setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
     const char* profile = "someProfile";
@@ -251,7 +251,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempNotSetup";
 
     FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
