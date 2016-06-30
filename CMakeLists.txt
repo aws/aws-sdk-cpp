@@ -627,7 +627,7 @@ else()
     list(APPEND TEMP_SDK_BUILD_LIST "identity-management")
     list(APPEND TEMP_SDK_BUILD_LIST "queues")
     list(APPEND TEMP_SDK_BUILD_LIST "transfer")
-	list(APPEND TEMP_SDK_BUILD_LIST "s3-encryption")
+    list(APPEND TEMP_SDK_BUILD_LIST "s3-encryption")
 
     set(SDK_BUILD_LIST ${TEMP_SDK_BUILD_LIST})
 
