@@ -17,7 +17,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -233,7 +232,8 @@ namespace Aws
         /**
         * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
         * Looks for environment variables AWS_SHARED_CREDENTIALS_FILE and AWS_PROFILE. If they aren't found, then it defaults
-        * to ~/.aws/credentials and default. Optionally a user can specify the profile and it will override the environment variable
+        * to ~/.aws/credentials and default; if nothing is found at that location, it will look for ~/.aws/config.
+        * Optionally a user can specify the profile and it will override the environment variable
         * and defaults. To alter the file this pulls from, then the user should alter the AWS_SHARED_CREDENTIALS_FILE variable.
         */
         class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider

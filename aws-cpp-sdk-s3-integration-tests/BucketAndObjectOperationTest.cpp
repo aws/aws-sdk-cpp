@@ -130,6 +130,7 @@ namespace
             Limiter = nullptr;
             Client = nullptr;
             oregonClient = nullptr;
+            m_HttpClient = nullptr;
         }
 
         static std::shared_ptr<Aws::StringStream> Create5MbStreamForUploadPart(const char* partTag)

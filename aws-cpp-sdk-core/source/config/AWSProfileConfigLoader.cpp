@@ -14,6 +14,7 @@
   */
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/internal/EC2MetadataClient.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/StringUtils.h>

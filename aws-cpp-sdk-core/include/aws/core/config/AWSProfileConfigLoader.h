@@ -17,11 +17,15 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/internal/EC2MetadataClient.h>
 #include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
+    namespace Internal
+    {
+        class EC2MetadataClient;
+    }
+
     namespace Config
     {
         /**
@@ -92,12 +96,23 @@ namespace Aws
             Aws::Utils::DateTime m_lastLoadTime;
         };
 
+        /**
+         * Reads configuration from a config file (e.g. $HOME/.aws/config or $HOME/.aws/credentials
+         */
         class AWS_CORE_API AWSConfigFileProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
+            /**
+             * configFile - file to load config from
+             * useProfilePrefix - whether or not the profiles are prefixed with "profile", credentials file is not
+             * while the config file is. Defaults to off.
+             */
             AWSConfigFileProfileConfigLoader(const Aws::String& configFile, bool useProfilePrefix = false);
             virtual ~AWSConfigFileProfileConfigLoader() = default;
 
+            /**
+             * File path being used for the config loader.
+             */
             const Aws::String& GetFileName() const { return m_fileName; }
 
         protected:
@@ -111,9 +126,15 @@ namespace Aws
 
         static const char* const INSTANCE_PROFILE_KEY = "InstanceProfile";
 
+        /**
+         * Loads configuration from the EC2 Metadata Service
+         */
         class AWS_CORE_API EC2InstanceProfileConfigLoader : public AWSProfileConfigLoader
         {
         public:
+            /**
+             * If client is nullptr, the default EC2MetadataClient will be created.
+             */
             EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& = nullptr);
 
             virtual ~EC2InstanceProfileConfigLoader() = default;

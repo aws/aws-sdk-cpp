@@ -46,6 +46,11 @@ namespace Aws
          * Converts a Region member to a string
          */
         AWS_CORE_API const char* GetRegionName(Region region);
+
+        /** Converts a string to a Region
+         *
+         */
+        AWS_CORE_API Region GetRegionFromName(const char* regionName);
     }
 
 } // namespace Aws
