@@ -14,7 +14,7 @@
   */
 
 #include <aws/core/utils/memory/AWSMemory.h>
-
+#include <aws/core/SDKConfig.h>
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 
 #include <atomic>
