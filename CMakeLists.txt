@@ -516,6 +516,7 @@ list(APPEND SDK_DEPENDENCY_LIST "identity-management:cognito-identity")
 list(APPEND SDK_DEPENDENCY_LIST "queues:sqs")
 list(APPEND SDK_DEPENDENCY_LIST "transfer:s3")
 list(APPEND SDK_DEPENDENCY_LIST "s3-encryption:s3")
+list(APPEND SDK_DEPENDENCY_LIST "s3-encryption:kms")
 
 set(TEST_DEPENDENCY_LIST "")
 list(APPEND TEST_DEPENDENCY_LIST "identity-management:cognito-identity")

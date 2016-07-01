@@ -13,8 +13,10 @@
 * permissions and limitations under the License.
 */
 #include <aws/s3-encryption/materials/EncryptionMaterialsProvider.h>
-#include <aws/core/utils/crypto/Cipher.h>
-#include <aws/core/utils/crypto/Factories.h>
+
+using namespace Aws::Utils;
+using namespace Aws::Utils::Crypto;
+
 
 namespace Aws
 {
@@ -22,7 +24,7 @@ namespace S3Encryption
 {
 namespace Materials
 {
-EncryptionMaterials::EncryptionMaterials(const Utils::CryptoBuffer & key, const Utils::CryptoBuffer & iv, const Utils::CryptoBuffer & tag) :
+EncryptionMaterials::EncryptionMaterials(const Aws::Utils::CryptoBuffer & key, const Aws::Utils::CryptoBuffer & iv, const Aws::Utils::CryptoBuffer & tag) :
     m_key(key), m_iv(iv), m_tag(tag)
 {
 }

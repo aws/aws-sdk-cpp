@@ -16,7 +16,6 @@
 
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
-#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
 namespace Aws
@@ -31,7 +30,7 @@ public:
     /**
     * Initialize with key, iv, and tag.
     */
-    EncryptionMaterials(const Aws::Utils::CryptoBuffer& key, const Aws::Utils::CryptoBuffer& iv, const Aws::Utils::CryptoBuffer& tag = 0);
+    EncryptionMaterials(const Aws::Utils::CryptoBuffer& key, const Aws::Utils::CryptoBuffer& iv = 0, const Aws::Utils::CryptoBuffer& tag = 0);
 
     /**
     * Key used as master key for encryption/decryption of the content encryption key.
@@ -61,7 +60,7 @@ public:
     /*
     * Override this method to control how encryption materials are fetched.
     */
-    virtual const EncryptionMaterials& FetchEncryptionMaterials() = 0;
+    virtual const EncryptionMaterials FetchEncryptionMaterials() = 0;
 
     /*
     * Override this method to encrypt the content key with the encryption materials.

@@ -34,6 +34,7 @@ file(GLOB ALL_S3ENCRYPTION
 set(S3ENCRYPTION_INCLUDES
     "${CMAKE_CURRENT_SOURCE_DIR}/include/"
     "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-s3/include/"
+    "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-kms/include/"
     "${CORE_DIR}/include/"
   )
 
