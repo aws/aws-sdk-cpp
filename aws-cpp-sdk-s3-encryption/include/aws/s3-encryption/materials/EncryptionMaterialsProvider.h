@@ -20,58 +20,58 @@
 
 namespace Aws
 {
-namespace S3Encryption
-{
-namespace Materials
-{
-class AWS_S3ENCRYPTION_API EncryptionMaterials
-{
-public:
-    /**
-    * Initialize with key, iv, and tag.
-    */
-    EncryptionMaterials(const Aws::Utils::CryptoBuffer& key, const Aws::Utils::CryptoBuffer& iv = 0, const Aws::Utils::CryptoBuffer& tag = 0);
+    namespace S3Encryption
+    {
+        namespace Materials
+        {
+            class AWS_S3ENCRYPTION_API EncryptionMaterials
+            {
+            public:
+                /**
+                * Initialize with key, iv, and tag.
+                */
+                EncryptionMaterials(const Aws::Utils::CryptoBuffer& key, const Aws::Utils::CryptoBuffer& iv = 0, const Aws::Utils::CryptoBuffer& tag = 0);
 
-    /**
-    * Key used as master key for encryption/decryption of the content encryption key.
-    */
-    inline const Aws::Utils::CryptoBuffer& GetKey() const { return m_key; }
+                /**
+                * Key used as master key for encryption/decryption of the content encryption key.
+                */
+                inline const Aws::Utils::CryptoBuffer& GetKey() const { return m_key; }
 
-    /**
-    * IV used for encryption/decryption
-    */
-    inline const Aws::Utils::CryptoBuffer& GetIV() const { return m_iv; }
+                /**
+                * IV used for encryption/decryption
+                */
+                inline const Aws::Utils::CryptoBuffer& GetIV() const { return m_iv; }
 
-    /**
-    * Tag used for encryption/decryption for authenticated encryption mode (GCM).
-    */
-    inline const Aws::Utils::CryptoBuffer& GetTag() const { return m_tag; }
+                /**
+                * Tag used for encryption/decryption for authenticated encryption mode (GCM).
+                */
+                inline const Aws::Utils::CryptoBuffer& GetTag() const { return m_tag; }
 
-private:
-    Aws::Utils::CryptoBuffer m_key;
-    Aws::Utils::CryptoBuffer m_iv;
-    Aws::Utils::CryptoBuffer m_tag;
-};
+            private:
+                Aws::Utils::CryptoBuffer m_key;
+                Aws::Utils::CryptoBuffer m_iv;
+                Aws::Utils::CryptoBuffer m_tag;
+            };
 
-class AWS_S3ENCRYPTION_API EncryptionMaterialsProvider
-{
-public:
-    virtual ~EncryptionMaterialsProvider() = default;
-    /*
-    * Override this method to control how encryption materials are fetched.
-    */
-    virtual const EncryptionMaterials FetchEncryptionMaterials() = 0;
+            class AWS_S3ENCRYPTION_API EncryptionMaterialsProvider
+            {
+            public:
+                virtual ~EncryptionMaterialsProvider() = default;
+                /*
+                * Override this method to control how encryption materials are fetched.
+                */
+                virtual const EncryptionMaterials FetchEncryptionMaterials() = 0;
 
-    /*
-    * Override this method to encrypt the content key with the encryption materials.
-    */
-    virtual Aws::Utils::CryptoBuffer EncryptCEK(Utils::CryptoBuffer contentKey) = 0;
+                /*
+                * Override this method to encrypt the content key with the encryption materials.
+                */
+                virtual Aws::Utils::CryptoBuffer EncryptCEK(Utils::CryptoBuffer contentKey) = 0;
 
-    /*
-    * Override this method to decrypt the content key with the encryption materials.
-    */
-    virtual Aws::Utils::CryptoBuffer DecryptCEK(Utils::CryptoBuffer contentKey) = 0;
-};
-}//namespace Materials
-}//namespace S3Encryption
+                /*
+                * Override this method to decrypt the content key with the encryption materials.
+                */
+                virtual Aws::Utils::CryptoBuffer DecryptCEK(Utils::CryptoBuffer contentKey) = 0;
+            };
+        }//namespace Materials
+    }//namespace S3Encryption
 }//namespace Aws
