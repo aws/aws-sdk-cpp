@@ -38,6 +38,7 @@ static std::shared_ptr<HMACFactory> s_Sha256HMACFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_CBCFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_CTRFactory(nullptr);
 static std::shared_ptr<SymmetricCipherFactory> s_AES_GCMFactory(nullptr);
+static std::shared_ptr<SymmetricCipherFactory> s_AES_KeyWrapFactory(nullptr);
 
 static std::shared_ptr<SecureRandomFactory> s_SecureRandomFactory(nullptr);
 
@@ -416,6 +417,8 @@ public:
     }
 };
 
+
+
 class DefaultSecureRandFactory : public SecureRandomFactory
 {
     /**
@@ -684,4 +687,25 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
     return s_SecureRandomFactory->CreateImplementation();
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(const CryptoBuffer& key)
+{
+    //This is what it will be. For Testing purposes we will return a nullptr
+    //return s_AES_KeyWrapFactory->CreateImplementation(key);
+    return nullptr;
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
+{
+    //This is what it will be. For Testing purposes we will return a nullptr
+    //return s_AES_KeyWrapFactory->CreateImplementation(key, iv);
+    return nullptr;
+}
+
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
+{
+    //This is what it will be. For Testing purposes we will return a nullptr
+    //return s_AES_KeyWrapFactory->CreateImplementation(std::move(key), std::move(iv));
+    return nullptr;
 }

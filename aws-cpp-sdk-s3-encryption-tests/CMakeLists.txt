@@ -13,6 +13,7 @@ set(S3ECRYPTION_TEST_APPLICATION_INCLUDES
   "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-s3/include/"
   "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-s3-encryption/include/"
   "${CMAKE_SOURCE_DIR}/testing-resources/include/"
+  "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-kms/include"
 )
 
 include_directories(${S3ECRYPTION_TEST_APPLICATION_INCLUDES})
@@ -30,4 +31,4 @@ else()
 endif()
 
 target_link_libraries(runS3EncryptionIntegrationTests aws-cpp-sdk-s3-encryption testing-resources)
-copyDlls(runS3EncryptionIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-s3-encryption testing-resources)
+copyDlls(runS3EncryptionIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-kms aws-cpp-sdk-s3-encryption testing-resources)

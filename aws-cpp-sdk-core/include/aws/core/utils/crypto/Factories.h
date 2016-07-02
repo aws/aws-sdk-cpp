@@ -107,6 +107,21 @@ namespace Aws
                                                                                       CryptoBuffer&& tag = CryptoBuffer(0));
 
             /**
+            * Create AES in Key Wrap mode off of a 256 bit key. Auto Generates a 16 byte IV in the format
+            * [nonce 4bytes ] [securely random iv 8 bytes] [ CTR init 4bytes ]
+            * This is currently used for testing purposes and will be implemented in the future.
+            */
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);
+            /**
+            * Create AES in Key Wrap mode off of a 256 bit key and 16 byte IV
+            */
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key, const CryptoBuffer& iv);
+            /**
+            * Create AES in Key Wrap mode off of a 256 bit key and 16 byte IV
+            */
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(CryptoBuffer&& key, CryptoBuffer&& iv);
+
+            /**
              * Create SecureRandomBytes instance
              */
             AWS_CORE_API std::shared_ptr<SecureRandomBytes> CreateSecureRandomBytesImplementation();
