@@ -34,6 +34,9 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeEndpointsResult
   {
   public:

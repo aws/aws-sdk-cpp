@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationSubnetGroupRequest : public DatabaseMigrationServiceRequest
   {
@@ -37,133 +38,133 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetReplicationSubnetGroupIdentifier() const{ return m_replicationSubnetGroupIdentifier; }
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetReplicationSubnetGroupIdentifier(Aws::String&& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetReplicationSubnetGroupIdentifier(const char* value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier.assign(value); }
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(const Aws::String& value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(Aws::String&& value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
     /**
-     * <p> The name for the replication subnet group. This value is stored as a
-     * lowercase string. </p> <p>Constraints: Must contain no more than 255
-     * alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be
-     * "default".</p> <p>Example: <code>mySubnetgroup</code></p>
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupIdentifier(const char* value) { SetReplicationSubnetGroupIdentifier(value); return *this;}
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline const Aws::String& GetReplicationSubnetGroupDescription() const{ return m_replicationSubnetGroupDescription; }
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(const Aws::String& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(Aws::String&& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline void SetReplicationSubnetGroupDescription(const char* value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription.assign(value); }
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupDescription(const Aws::String& value) { SetReplicationSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupDescription(Aws::String&& value) { SetReplicationSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> The description for the subnet group. </p>
+     * <p>The description for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithReplicationSubnetGroupDescription(const char* value) { SetReplicationSubnetGroupDescription(value); return *this;}
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> The EC2 subnet IDs for the subnet group. </p>
+     * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline CreateReplicationSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

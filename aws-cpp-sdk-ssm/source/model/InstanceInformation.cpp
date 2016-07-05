@@ -36,7 +36,14 @@ InstanceInformation::InstanceInformation() :
     m_isLatestVersionHasBeenSet(false),
     m_platformTypeHasBeenSet(false),
     m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false)
+    m_platformVersionHasBeenSet(false),
+    m_activationIdHasBeenSet(false),
+    m_iamRoleHasBeenSet(false),
+    m_registrationDateHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_iPAddressHasBeenSet(false),
+    m_computerNameHasBeenSet(false)
 {
 }
 
@@ -49,7 +56,14 @@ InstanceInformation::InstanceInformation(const JsonValue& jsonValue) :
     m_isLatestVersionHasBeenSet(false),
     m_platformTypeHasBeenSet(false),
     m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false)
+    m_platformVersionHasBeenSet(false),
+    m_activationIdHasBeenSet(false),
+    m_iamRoleHasBeenSet(false),
+    m_registrationDateHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_iPAddressHasBeenSet(false),
+    m_computerNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +126,55 @@ InstanceInformation& InstanceInformation::operator =(const JsonValue& jsonValue)
     m_platformVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ActivationId"))
+  {
+    m_activationId = jsonValue.GetString("ActivationId");
+
+    m_activationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IamRole"))
+  {
+    m_iamRole = jsonValue.GetString("IamRole");
+
+    m_iamRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegistrationDate"))
+  {
+    m_registrationDate = jsonValue.GetDouble("RegistrationDate");
+
+    m_registrationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
+
+    m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Name"))
+  {
+    m_name = jsonValue.GetString("Name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IPAddress"))
+  {
+    m_iPAddress = jsonValue.GetString("IPAddress");
+
+    m_iPAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ComputerName"))
+  {
+    m_computerName = jsonValue.GetString("ComputerName");
+
+    m_computerNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +224,46 @@ JsonValue InstanceInformation::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("PlatformVersion", m_platformVersion);
+
+  }
+
+  if(m_activationIdHasBeenSet)
+  {
+   payload.WithString("ActivationId", m_activationId);
+
+  }
+
+  if(m_iamRoleHasBeenSet)
+  {
+   payload.WithString("IamRole", m_iamRole);
+
+  }
+
+  if(m_registrationDateHasBeenSet)
+  {
+   payload.WithDouble("RegistrationDate", m_registrationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("Name", m_name);
+
+  }
+
+  if(m_iPAddressHasBeenSet)
+  {
+   payload.WithString("IPAddress", m_iPAddress);
+
+  }
+
+  if(m_computerNameHasBeenSet)
+  {
+   payload.WithString("ComputerName", m_computerName);
 
   }
 
