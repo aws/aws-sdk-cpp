@@ -29,7 +29,7 @@ namespace Aws
     namespace Config
     {
         /**
-         * POD for a Profile.
+         * Simple data container for a Profile.
          */
         class Profile
         {
@@ -69,12 +69,12 @@ namespace Aws
             /**
              * Over writes the entire config source with the newly configured profile data.
              */
-            bool PersistProfiles(const Aws::Map<Aws::String, Profile>& profiles);
+            bool PersistProfiles(const Aws::Map<Aws::String, Aws::Config::Profile>& profiles);
 
             /**
              * Gets all profiles from the configuration file.
              */
-            inline const Aws::Map<Aws::String, Profile>& GetProfiles() const { return m_profiles; };
+            inline const Aws::Map<Aws::String, Aws::Config::Profile>& GetProfiles() const { return m_profiles; };
 
             /**
              * the timestamp from the last time the profile information was loaded from file.
@@ -90,9 +90,9 @@ namespace Aws
             /**
              * Subclasses override this method to implement persisting the profiles. Default returns false.
              */
-            virtual bool PersistInternal(const Aws::Map<Aws::String, Profile>&) { return false; }
+            virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) { return false; }
 
-            Aws::Map<Aws::String, Profile> m_profiles;
+            Aws::Map<Aws::String, Aws::Config::Profile> m_profiles;
             Aws::Utils::DateTime m_lastLoadTime;
         };
 
@@ -103,11 +103,12 @@ namespace Aws
         {
         public:
             /**
-             * configFile - file to load config from
+             * fileName - file to load config from
              * useProfilePrefix - whether or not the profiles are prefixed with "profile", credentials file is not
              * while the config file is. Defaults to off.
              */
-            AWSConfigFileProfileConfigLoader(const Aws::String& configFile, bool useProfilePrefix = false);
+            AWSConfigFileProfileConfigLoader(const Aws::String& fileName, bool useProfilePrefix = false);
+
             virtual ~AWSConfigFileProfileConfigLoader() = default;
 
             /**
@@ -117,7 +118,7 @@ namespace Aws
 
         protected:
             virtual bool LoadInternal() override;
-            virtual bool PersistInternal(const Aws::Map<Aws::String, Profile>&) override;
+            virtual bool PersistInternal(const Aws::Map<Aws::String, Aws::Config::Profile>&) override;
 
         private:
             Aws::String m_fileName;

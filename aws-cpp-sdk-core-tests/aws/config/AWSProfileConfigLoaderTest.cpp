@@ -42,121 +42,100 @@ static void WriteDefaultConfigFile(Aws::OStream& stream, bool useProfilePrefix =
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
 {
-    auto configFileName = FileSystemUtils::CreateTempFilePath();
-    {
-        Aws::OFStream configFile(configFileName.c_str());
-        ASSERT_TRUE(configFile.good());
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
-        WriteDefaultConfigFile(configFile);
+    ASSERT_TRUE(configFile.good());
 
-        AWSConfigFileProfileConfigLoader loader(configFileName);
-        ASSERT_TRUE(loader.Load());
-        auto profiles = loader.GetProfiles();
-        ASSERT_EQ(2u, profiles.size());
-        ASSERT_NE(profiles.end(), profiles.find("default"));
-        ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
+    WriteDefaultConfigFile(configFile);
 
-        ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
-        ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
-        ASSERT_STREQ("tokentokentoken", profiles["default"].GetCredentials().GetSessionToken().c_str());
-        ASSERT_STREQ("us-east-1", profiles["default"].GetRegion().c_str());
-        ASSERT_TRUE(profiles["default"].GetRoleArn().empty());
-        ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    ASSERT_EQ(2u, profiles.size());
+    ASSERT_NE(profiles.end(), profiles.find("default"));
+    ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
 
-        ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
-        ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
-        ASSERT_STREQ("us-west-2", profiles["assumes_role"].GetRegion().c_str());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
-    }
+    ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
+    ASSERT_STREQ("tokentokentoken", profiles["default"].GetCredentials().GetSessionToken().c_str());
+    ASSERT_STREQ("us-east-1", profiles["default"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["default"].GetRoleArn().empty());
+    ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
 
-    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
+    ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
+    ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
+    ASSERT_STREQ("us-west-2", profiles["assumes_role"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
 {
-    auto configFileName = FileSystemUtils::CreateTempFilePath();
-    {
-        Aws::OFStream configFile(configFileName.c_str());
-        ASSERT_TRUE(configFile.good());
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
 
-        WriteDefaultConfigFile(configFile);
+    WriteDefaultConfigFile(configFile);
 
-        AWSConfigFileProfileConfigLoader loader(configFileName, true);
-        ASSERT_TRUE(loader.Load());
-        auto profiles = loader.GetProfiles();
-        ASSERT_EQ(2u, profiles.size());
-        ASSERT_NE(profiles.end(), profiles.find("default"));
-        ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName(), true);
+    ASSERT_TRUE(loader.Load());
+    auto profiles = loader.GetProfiles();
+    ASSERT_EQ(2u, profiles.size());
+    ASSERT_NE(profiles.end(), profiles.find("default"));
+    ASSERT_NE(profiles.end(), profiles.find("assumes_role"));
 
-        ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
-        ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
-        ASSERT_STREQ("tokentokentoken", profiles["default"].GetCredentials().GetSessionToken().c_str());
-        ASSERT_STREQ("us-east-1", profiles["default"].GetRegion().c_str());
-        ASSERT_TRUE(profiles["default"].GetRoleArn().empty());
-        ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
+    ASSERT_STREQ("AKIAKEY", profiles["default"].GetCredentials().GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ("foobarbarfoo", profiles["default"].GetCredentials().GetAWSSecretKey().c_str());
+    ASSERT_STREQ("tokentokentoken", profiles["default"].GetCredentials().GetSessionToken().c_str());
+    ASSERT_STREQ("us-east-1", profiles["default"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["default"].GetRoleArn().empty());
+    ASSERT_TRUE(profiles["default"].GetSourceProfile().empty());
 
-        ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
-        ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
-        ASSERT_STREQ("us-west-2", profiles["assumes_role"].GetRegion().c_str());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
-        ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
-    }
-
-    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
+    ASSERT_STREQ("arn:aws:iam::123456789:role/foo", profiles["assumes_role"].GetRoleArn().c_str());
+    ASSERT_STREQ("default", profiles["assumes_role"].GetSourceProfile().c_str());
+    ASSERT_STREQ("us-west-2", profiles["assumes_role"].GetRegion().c_str());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSAccessKeyId().empty());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetSessionToken().empty());
+    ASSERT_TRUE(profiles["assumes_role"].GetCredentials().GetAWSSecretKey().empty());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)
 {
-    auto configFileName = FileSystemUtils::CreateTempFilePath();
-    {
-        Aws::OFStream configFile(configFileName.c_str());
-        ASSERT_TRUE(configFile.good());
-        configFile << std::endl;
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << std::endl;
 
-        AWSConfigFileProfileConfigLoader loader(configFileName);
-        ASSERT_FALSE(loader.Load());
-        ASSERT_EQ(0u, loader.GetProfiles().size());
-    }
-
-    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileNotExists)
 {
     auto configFileName = "";
-    {
-        Aws::OFStream configFile(configFileName);
-        ASSERT_FALSE(configFile.good());
-        configFile << std::endl;
+    Aws::OFStream configFile(configFileName);
+    ASSERT_FALSE(configFile.good());
+    configFile << std::endl;
 
-        AWSConfigFileProfileConfigLoader loader(configFileName);
-        ASSERT_FALSE(loader.Load());
-        ASSERT_EQ(0u, loader.GetProfiles().size());
-    }
+    AWSConfigFileProfileConfigLoader loader(configFileName);
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
 {
-    auto configFileName = FileSystemUtils::CreateTempFilePath();
-    {
-        Aws::OFStream configFile(configFileName.c_str());
-        ASSERT_TRUE(configFile.good());
-        configFile << std::endl;
-        configFile << "[" << std::endl;
-        configFile << "blah blah blah" << std::endl;
-        configFile << "]" << std::endl;
-        configFile << "blah=blah" << std::endl;
-        configFile << "fjk;dsaifoewagtndsalkjds" << std::endl;
+    TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << std::endl;
+    configFile << "[" << std::endl;
+    configFile << "blah blah blah" << std::endl;
+    configFile << "]" << std::endl;
+    configFile << "blah=blah" << std::endl;
+    configFile << "fjk;dsaifoewagtndsalkjds" << std::endl;
 
-        AWSConfigFileProfileConfigLoader loader(configFileName);
-        ASSERT_FALSE(loader.Load());
-        ASSERT_EQ(0u, loader.GetProfiles().size());
-    }
-
-    FileSystemUtils::RemoveFileIfExists(configFileName.c_str());
+    AWSConfigFileProfileConfigLoader loader(configFile.GetFileName());
+    ASSERT_FALSE(loader.Load());
+    ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
 static const char* const ALLOCATION_TAG = "EC2InstanceProfileConfigLoaderTest";

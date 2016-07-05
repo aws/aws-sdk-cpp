@@ -105,6 +105,7 @@ namespace Aws
                         }
                         break;
 
+                    //fallthrough here is intentional to reduce duplicate logic
                     case PROFILE_KEY_VALUE_FOUND:
                         if(openPos != std::string::npos && closePos != std::string::npos)
                         {
@@ -162,11 +163,15 @@ namespace Aws
                         {
                             secretKey = secretAccessKeyIter->second;
                         }
+                        else
+                        {
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG, "No secret access key found even though an access key was specified. This will cause all signed AWS calls to fail.");
+                        }
 
                         if (sessionTokenIter != m_profileKeyValuePairs.end())
                         {
                             sessionToken = sessionTokenIter->second;
-                        }
+                        }                        
 
                         profile.SetCredentials(Aws::Auth::AWSCredentials(accessKey, secretKey, sessionToken));
                     }
@@ -217,7 +222,8 @@ namespace Aws
         AWSConfigFileProfileConfigLoader::AWSConfigFileProfileConfigLoader(const Aws::String& fileName, bool useProfilePrefix) :
                 m_fileName(fileName), m_useProfilePrefix(useProfilePrefix)
         {
-            AWS_LOGSTREAM_INFO(CONFIG_FILE_LOADER, "Initializing config loader against fileName " << fileName << " and using profilePrefix = " << useProfilePrefix);
+            AWS_LOGSTREAM_INFO(CONFIG_FILE_LOADER, "Initializing config loader against fileName " 
+                    << fileName << " and using profilePrefix = " << useProfilePrefix);
         }
 
         bool AWSConfigFileProfileConfigLoader::LoadInternal()
