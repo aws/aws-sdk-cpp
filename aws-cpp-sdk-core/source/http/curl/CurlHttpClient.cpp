@@ -136,13 +136,15 @@ struct CurlWriteCallbackContext
         m_client(client),
         m_request(request),
         m_response(response),
-        m_rateLimiter(rateLimiter)
+        m_rateLimiter(rateLimiter),
+        m_numBytesResponseReceived(0)
     {}
 
     const CurlHttpClient* m_client;
     HttpRequest* m_request;
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
+    int64_t m_numBytesResponseReceived;
 };
 
 struct CurlReadCallbackContext
@@ -423,6 +425,21 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
                 AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned content type " << contentType);
             }
 
+            if (request.GetMethod() != HttpMethod::HTTP_HEAD &&
+                writeContext.m_client->IsRequestProcessingEnabled() &&
+                response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+            {
+                const Aws::String& contentLength = response->GetHeader(Aws::Http::CONTENT_LENGTH_HEADER);
+                int64_t numBytesResponseReceived = writeContext.m_numBytesResponseReceived;
+                AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Response content-length header: " << contentLength);
+                AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Response body length: " << numBytesResponseReceived);
+                if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
+                {
+                    response = nullptr;
+                    AWS_LOG_ERROR(CURL_HTTP_CLIENT_TAG, "Response body length doesn't match the content-length header.");
+                }
+            }
+
             AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Releasing curl handle " << connectionHandle);
         }
 
@@ -470,6 +487,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
         }
 
         AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, sizeToWrite << " bytes written to response.");
+        context->m_numBytesResponseReceived += sizeToWrite;
         return sizeToWrite;
     }
     return 0;
