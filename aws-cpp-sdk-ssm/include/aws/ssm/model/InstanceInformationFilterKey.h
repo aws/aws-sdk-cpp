@@ -28,7 +28,10 @@ namespace Model
     InstanceIds,
     AgentVersion,
     PingStatus,
-    PlatformTypes
+    PlatformTypes,
+    ActivationIds,
+    IamRole,
+    ResourceType
   };
 
 namespace InstanceInformationFilterKeyMapper

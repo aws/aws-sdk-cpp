@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationInstancesRequest : public DatabaseMigrationServiceRequest
   {
@@ -39,49 +40,49 @@ namespace Model
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline DescribeReplicationInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline DescribeReplicationInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline DescribeReplicationInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-instance-arn | replication-instance-id | replication-instance-class
-     * | engine-version </p>
+     * | engine-version</p>
      */
     inline DescribeReplicationInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 

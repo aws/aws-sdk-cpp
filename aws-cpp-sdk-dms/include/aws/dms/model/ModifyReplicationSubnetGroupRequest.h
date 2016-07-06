@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ModifyReplicationSubnetGroupRequest : public DatabaseMigrationServiceRequest
   {

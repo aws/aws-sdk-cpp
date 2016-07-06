@@ -18,6 +18,7 @@
 #include <aws/ssm/model/PingStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/PlatformType.h>
+#include <aws/ssm/model/ResourceType.h>
 
 namespace Aws
 {
@@ -277,6 +278,243 @@ namespace Model
      */
     inline InstanceInformation& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline const Aws::String& GetActivationId() const{ return m_activationId; }
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline InstanceInformation& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline InstanceInformation& WithActivationId(Aws::String&& value) { SetActivationId(value); return *this;}
+
+    /**
+     * <p>The activation ID created by SSM when the server or VM was registered.</p>
+     */
+    inline InstanceInformation& WithActivationId(const char* value) { SetActivationId(value); return *this;}
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline const Aws::String& GetIamRole() const{ return m_iamRole; }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline InstanceInformation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline InstanceInformation& WithIamRole(Aws::String&& value) { SetIamRole(value); return *this;}
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
+     * instances or managed instances. </p>
+     */
+    inline InstanceInformation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
+
+    /**
+     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRegistrationDate() const{ return m_registrationDate; }
+
+    /**
+     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     */
+    inline void SetRegistrationDate(const Aws::Utils::DateTime& value) { m_registrationDateHasBeenSet = true; m_registrationDate = value; }
+
+    /**
+     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     */
+    inline void SetRegistrationDate(Aws::Utils::DateTime&& value) { m_registrationDateHasBeenSet = true; m_registrationDate = value; }
+
+    /**
+     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     */
+    inline InstanceInformation& WithRegistrationDate(const Aws::Utils::DateTime& value) { SetRegistrationDate(value); return *this;}
+
+    /**
+     * <p>The date the server or VM was registered with AWS as a managed instance.</p>
+     */
+    inline InstanceInformation& WithRegistrationDate(Aws::Utils::DateTime&& value) { SetRegistrationDate(value); return *this;}
+
+    /**
+     * <p>The type of instance. Instances are either EC2 instances or managed
+     * instances. </p>
+     */
+    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of instance. Instances are either EC2 instances or managed
+     * instances. </p>
+     */
+    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>The type of instance. Instances are either EC2 instances or managed
+     * instances. </p>
+     */
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>The type of instance. Instances are either EC2 instances or managed
+     * instances. </p>
+     */
+    inline InstanceInformation& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>The type of instance. Instances are either EC2 instances or managed
+     * instances. </p>
+     */
+    inline InstanceInformation& WithResourceType(ResourceType&& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithName(Aws::String&& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline void SetIPAddress(const Aws::String& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline void SetIPAddress(const char* value) { m_iPAddressHasBeenSet = true; m_iPAddress.assign(value); }
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline InstanceInformation& WithIPAddress(const Aws::String& value) { SetIPAddress(value); return *this;}
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline InstanceInformation& WithIPAddress(Aws::String&& value) { SetIPAddress(value); return *this;}
+
+    /**
+     * <p>The IP address of the managed instance.</p>
+     */
+    inline InstanceInformation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline const Aws::String& GetComputerName() const{ return m_computerName; }
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline void SetComputerName(const Aws::String& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline void SetComputerName(Aws::String&& value) { m_computerNameHasBeenSet = true; m_computerName = value; }
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline void SetComputerName(const char* value) { m_computerNameHasBeenSet = true; m_computerName.assign(value); }
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithComputerName(const Aws::String& value) { SetComputerName(value); return *this;}
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithComputerName(Aws::String&& value) { SetComputerName(value); return *this;}
+
+    /**
+     * <p>The fully qualified host name of the managed instance.</p>
+     */
+    inline InstanceInformation& WithComputerName(const char* value) { SetComputerName(value); return *this;}
+
   private:
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
@@ -294,6 +532,20 @@ namespace Model
     bool m_platformNameHasBeenSet;
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;
+    Aws::String m_activationId;
+    bool m_activationIdHasBeenSet;
+    Aws::String m_iamRole;
+    bool m_iamRoleHasBeenSet;
+    Aws::Utils::DateTime m_registrationDate;
+    bool m_registrationDateHasBeenSet;
+    ResourceType m_resourceType;
+    bool m_resourceTypeHasBeenSet;
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+    Aws::String m_iPAddress;
+    bool m_iPAddressHasBeenSet;
+    Aws::String m_computerName;
+    bool m_computerNameHasBeenSet;
   };
 
 } // namespace Model

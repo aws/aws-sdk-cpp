@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API CreateEndpointRequest : public DatabaseMigrationServiceRequest
   {
@@ -113,43 +114,43 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, SQLSERVER.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline CreateEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -344,65 +345,65 @@ namespace Model
     inline CreateEndpointRequest& WithExtraConnectionAttributes(const char* value) { SetExtraConnectionAttributes(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline CreateEndpointRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

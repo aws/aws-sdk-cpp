@@ -34,6 +34,7 @@ ReplicationInstance::ReplicationInstance() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_instanceCreateTimeHasBeenSet(false),
+    m_vpcSecurityGroupsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_replicationSubnetGroupHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
@@ -57,6 +58,7 @@ ReplicationInstance::ReplicationInstance(const JsonValue& jsonValue) :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_instanceCreateTimeHasBeenSet(false),
+    m_vpcSecurityGroupsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_replicationSubnetGroupHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
@@ -109,6 +111,16 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
     m_instanceCreateTime = jsonValue.GetDouble("InstanceCreateTime");
 
     m_instanceCreateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VpcSecurityGroups"))
+  {
+    Array<JsonValue> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
+    {
+      m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
+    }
+    m_vpcSecurityGroupsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AvailabilityZone"))
@@ -222,6 +234,17 @@ JsonValue ReplicationInstance::Jsonize() const
   if(m_instanceCreateTimeHasBeenSet)
   {
    payload.WithDouble("InstanceCreateTime", m_instanceCreateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_vpcSecurityGroupsHasBeenSet)
+  {
+   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
+   {
+     vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
+   }
+   payload.WithArray("VpcSecurityGroups", std::move(vpcSecurityGroupsJsonList));
+
   }
 
   if(m_availabilityZoneHasBeenSet)
