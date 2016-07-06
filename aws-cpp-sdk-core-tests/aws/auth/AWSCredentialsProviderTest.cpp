@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
 
 #include <stdlib.h>
 #include <thread>
@@ -95,7 +96,7 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
  
     FileSystemUtils::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
 
     FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
@@ -185,7 +186,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
   
     Aws::String oldValue = GetEnv("AWS_SHARED_CREDENTIALS_FILE");
     setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
@@ -216,7 +217,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename() + "_blah";
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
 
     setenv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
     const char* profile = "someProfile";
@@ -251,7 +252,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetProfileFilename();
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempNotSetup";
 
     FileSystemUtils::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
@@ -311,7 +312,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodDat
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
-    InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
@@ -328,7 +329,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
     const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
-    InstanceProfileCredentialsProvider provider(mockClient, 10);
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
@@ -350,7 +351,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientCouldntFindCre
     const char* emptyCredentials = "";
     mockClient->SetMockedCredentialsValue(emptyCredentials);
 
-    InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 
@@ -370,7 +371,7 @@ TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadData
     const char* badData = "blah blah blah, I'm bad";
     mockClient->SetMockedCredentialsValue(badData);
 
-    InstanceProfileCredentialsProvider provider(mockClient, 1000 * 60 * 15);
+    InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 

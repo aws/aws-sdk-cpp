@@ -16,7 +16,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/platform/Platform.h>
-
+#include <aws/core/utils/DateTime.h>
 #include <unistd.h>
 #include <pwd.h>
 #include <sys/stat.h>
@@ -97,39 +97,13 @@ bool FileSystemUtils::RelocateFileOrDirectory(const char* from, const char* to)
 
 Aws::String FileSystemUtils::CreateTempFilePath()
 {
-//since MAC isn't posix compliant, it likes to complain about std::tmpnam. Also, it the std:: function is supposed
-//to be different than the posix defined function.
-//turn it off because there isn't a better way to do it anyways.
-#ifdef __APPLE__
+    Aws::StringStream ss;
+    auto dt = Aws::Utils::DateTime::Now();
+    ss << dt.ToGmtString("%Y%m%dT%H%M%S") << dt.Millis();
+    Aws::String tempFile(ss.str());
 
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif // __clang__
+    AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);
 
-#ifdef __GNUC__
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // __GNUC__
-
-#endif // __APPLE__
-
-Aws::String tempFile(std::tmpnam(nullptr));
-
-AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "CreateTempFilePath generated: " << tempFile);
-
-return tempFile;
-
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic pop
-#endif // __GNUC__
-
-#endif // __APPLE__
+    return tempFile;
 }
 
