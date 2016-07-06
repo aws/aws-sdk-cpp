@@ -43,6 +43,7 @@
 #include <aws/codepipeline/model/PollForJobsRequest.h>
 #include <aws/codepipeline/model/PollForThirdPartyJobsRequest.h>
 #include <aws/codepipeline/model/PutActionRevisionRequest.h>
+#include <aws/codepipeline/model/PutApprovalResultRequest.h>
 #include <aws/codepipeline/model/PutJobFailureResultRequest.h>
 #include <aws/codepipeline/model/PutJobSuccessResultRequest.h>
 #include <aws/codepipeline/model/PutThirdPartyJobFailureResultRequest.h>
@@ -642,6 +643,37 @@ void CodePipelineClient::PutActionRevisionAsync(const PutActionRevisionRequest& 
 void CodePipelineClient::PutActionRevisionAsyncHelper(const PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutActionRevision(request), context);
+}
+
+PutApprovalResultOutcome CodePipelineClient::PutApprovalResult(const PutApprovalResultRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutApprovalResultOutcome(PutApprovalResultResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutApprovalResultOutcome(outcome.GetError());
+  }
+}
+
+PutApprovalResultOutcomeCallable CodePipelineClient::PutApprovalResultCallable(const PutApprovalResultRequest& request) const
+{
+  return std::async(std::launch::async, &CodePipelineClient::PutApprovalResult, this, request);
+}
+
+void CodePipelineClient::PutApprovalResultAsync(const PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CodePipelineClient::PutApprovalResultAsyncHelper, this, request, handler, context);
+}
+
+void CodePipelineClient::PutApprovalResultAsyncHelper(const PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutApprovalResult(request), context);
 }
 
 PutJobFailureResultOutcome CodePipelineClient::PutJobFailureResult(const PutJobFailureResultRequest& request) const

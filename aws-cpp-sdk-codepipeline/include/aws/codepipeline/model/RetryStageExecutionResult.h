@@ -33,7 +33,7 @@ namespace CodePipeline
 namespace Model
 {
   /**
-   * <p>Represents the output of a retry stage execution operation.</p>
+   * <p>Represents the output of a retry stage execution action.</p>
    */
   class AWS_CODEPIPELINE_API RetryStageExecutionResult
   {
