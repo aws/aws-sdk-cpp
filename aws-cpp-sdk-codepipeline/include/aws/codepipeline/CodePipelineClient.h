@@ -33,6 +33,7 @@
 #include <aws/codepipeline/model/PollForJobsResult.h>
 #include <aws/codepipeline/model/PollForThirdPartyJobsResult.h>
 #include <aws/codepipeline/model/PutActionRevisionResult.h>
+#include <aws/codepipeline/model/PutApprovalResultResult.h>
 #include <aws/codepipeline/model/RetryStageExecutionResult.h>
 #include <aws/codepipeline/model/StartPipelineExecutionResult.h>
 #include <aws/codepipeline/model/UpdatePipelineResult.h>
@@ -99,6 +100,7 @@ namespace Model
         class PollForJobsRequest;
         class PollForThirdPartyJobsRequest;
         class PutActionRevisionRequest;
+        class PutApprovalResultRequest;
         class PutJobFailureResultRequest;
         class PutJobSuccessResultRequest;
         class PutThirdPartyJobFailureResultRequest;
@@ -124,6 +126,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PollForJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForJobsOutcome;
         typedef Aws::Utils::Outcome<PollForThirdPartyJobsResult, Aws::Client::AWSError<CodePipelineErrors>> PollForThirdPartyJobsOutcome;
         typedef Aws::Utils::Outcome<PutActionRevisionResult, Aws::Client::AWSError<CodePipelineErrors>> PutActionRevisionOutcome;
+        typedef Aws::Utils::Outcome<PutApprovalResultResult, Aws::Client::AWSError<CodePipelineErrors>> PutApprovalResultOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobFailureResultOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutJobSuccessResultOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> PutThirdPartyJobFailureResultOutcome;
@@ -149,6 +152,7 @@ namespace Model
         typedef std::future<PollForJobsOutcome> PollForJobsOutcomeCallable;
         typedef std::future<PollForThirdPartyJobsOutcome> PollForThirdPartyJobsOutcomeCallable;
         typedef std::future<PutActionRevisionOutcome> PutActionRevisionOutcomeCallable;
+        typedef std::future<PutApprovalResultOutcome> PutApprovalResultOutcomeCallable;
         typedef std::future<PutJobFailureResultOutcome> PutJobFailureResultOutcomeCallable;
         typedef std::future<PutJobSuccessResultOutcome> PutJobSuccessResultOutcomeCallable;
         typedef std::future<PutThirdPartyJobFailureResultOutcome> PutThirdPartyJobFailureResultOutcomeCallable;
@@ -177,6 +181,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::PollForJobsRequest&, const Model::PollForJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForJobsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PollForThirdPartyJobsRequest&, const Model::PollForThirdPartyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PollForThirdPartyJobsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PutActionRevisionRequest&, const Model::PutActionRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutActionRevisionResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::PutApprovalResultRequest&, const Model::PutApprovalResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApprovalResultResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PutJobFailureResultRequest&, const Model::PutJobFailureResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutJobFailureResultResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PutJobSuccessResultRequest&, const Model::PutJobSuccessResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutJobSuccessResultResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::PutThirdPartyJobFailureResultRequest&, const Model::PutThirdPartyJobFailureResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutThirdPartyJobFailureResultResponseReceivedHandler;
@@ -699,6 +704,28 @@ namespace Model
         virtual void PutActionRevisionAsync(const Model::PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides the response to a manual approval request to AWS CodePipeline. Valid
+         * responses include Approved and Rejected.</p>
+         */
+        virtual Model::PutApprovalResultOutcome PutApprovalResult(const Model::PutApprovalResultRequest& request) const;
+
+        /**
+         * <p>Provides the response to a manual approval request to AWS CodePipeline. Valid
+         * responses include Approved and Rejected.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutApprovalResultOutcomeCallable PutApprovalResultCallable(const Model::PutApprovalResultRequest& request) const;
+
+        /**
+         * <p>Provides the response to a manual approval request to AWS CodePipeline. Valid
+         * responses include Approved and Rejected.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutApprovalResultAsync(const Model::PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Represents the failure of a job as returned to the pipeline by a job worker.
          * Only used for custom actions.</p>
          */
@@ -880,6 +907,7 @@ namespace Model
         void PollForJobsAsyncHelper(const Model::PollForJobsRequest& request, const PollForJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PollForThirdPartyJobsAsyncHelper(const Model::PollForThirdPartyJobsRequest& request, const PollForThirdPartyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutActionRevisionAsyncHelper(const Model::PutActionRevisionRequest& request, const PutActionRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutApprovalResultAsyncHelper(const Model::PutApprovalResultRequest& request, const PutApprovalResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutJobFailureResultAsyncHelper(const Model::PutJobFailureResultRequest& request, const PutJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutJobSuccessResultAsyncHelper(const Model::PutJobSuccessResultRequest& request, const PutJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutThirdPartyJobFailureResultAsyncHelper(const Model::PutThirdPartyJobFailureResultRequest& request, const PutThirdPartyJobFailureResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

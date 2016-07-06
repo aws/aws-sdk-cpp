@@ -2540,11 +2540,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a group, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM group.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM group can also
+         * have managed policies attached to it. To retrieve a managed policy document that
+         * is attached to a group, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
@@ -2552,11 +2557,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a group, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM group.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM group can also
+         * have managed policies attached to it. To retrieve a managed policy document that
+         * is attached to a group, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -2566,11 +2576,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM group.</p> <p>An IAM group can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a group, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM group.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM group can also
+         * have managed policies attached to it. To retrieve a managed policy document that
+         * is attached to a group, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -2713,10 +2728,16 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document.</p> <p>To list the available versions for
-         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
-         * about managed policies. To retrieve information about an inline policy that is
-         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * policy, including the policy document.</p> <note> <p>Policies returned by this
+         * API are URL-encoded compliant with <a
+         * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+         * decoding method to convert the policy back to plain JSON text. For example, if
+         * you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>To list the available
+         * versions for a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves
+         * information about managed policies. To retrieve information about an inline
+         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
          * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
          * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
@@ -2729,10 +2750,16 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document.</p> <p>To list the available versions for
-         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
-         * about managed policies. To retrieve information about an inline policy that is
-         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * policy, including the policy document.</p> <note> <p>Policies returned by this
+         * API are URL-encoded compliant with <a
+         * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+         * decoding method to convert the policy back to plain JSON text. For example, if
+         * you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>To list the available
+         * versions for a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves
+         * information about managed policies. To retrieve information about an inline
+         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
          * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
          * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
@@ -2747,10 +2774,16 @@ namespace Model
 
         /**
          * <p>Retrieves information about the specified version of the specified managed
-         * policy, including the policy document.</p> <p>To list the available versions for
-         * a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves information
-         * about managed policies. To retrieve information about an inline policy that is
-         * embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
+         * policy, including the policy document.</p> <note> <p>Policies returned by this
+         * API are URL-encoded compliant with <a
+         * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+         * decoding method to convert the policy back to plain JSON text. For example, if
+         * you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>To list the available
+         * versions for a policy, use <a>ListPolicyVersions</a>.</p> <p>This API retrieves
+         * information about managed policies. To retrieve information about an inline
+         * policy that is embedded in a user, group, or role, use the <a>GetUserPolicy</a>,
          * <a>GetGroupPolicy</a>, or <a>GetRolePolicy</a> API.</p> <p>For more information
          * about the types of policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
@@ -2768,7 +2801,12 @@ namespace Model
          * GUID, ARN, and the role's trust policy that grants permission to assume the
          * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>.</p>
+         * with Roles</a>.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note>
          */
         virtual Model::GetRoleOutcome GetRole(const Model::GetRoleRequest& request) const;
 
@@ -2777,7 +2815,12 @@ namespace Model
          * GUID, ARN, and the role's trust policy that grants permission to assume the
          * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>.</p>
+         * with Roles</a>.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -2788,7 +2831,12 @@ namespace Model
          * GUID, ARN, and the role's trust policy that grants permission to assume the
          * role. For more information about roles, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with Roles</a>.</p>
+         * with Roles</a>.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2796,11 +2844,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a role, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM role.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM role can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a role, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
          * information about roles, see <a
@@ -2811,11 +2864,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a role, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM role.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM role can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a role, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
          * information about roles, see <a
@@ -2828,11 +2886,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded with the
-         * specified IAM role.</p> <p>An IAM role can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a role, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM role.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM role can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a role, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
          * information about roles, see <a
@@ -2975,11 +3038,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a user, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM user.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM user can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a user, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          */
@@ -2987,11 +3055,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a user, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM user.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM user can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a user, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *
@@ -3001,11 +3074,16 @@ namespace Model
 
         /**
          * <p>Retrieves the specified inline policy document that is embedded in the
-         * specified IAM user.</p> <p>An IAM user can also have managed policies attached
-         * to it. To retrieve a managed policy document that is attached to a user, use
-         * <a>GetPolicy</a> to determine the policy's default version, then use
-         * <a>GetPolicyVersion</a> to retrieve the policy document.</p> <p>For more
-         * information about policies, see <a
+         * specified IAM user.</p> <note> <p>Policies returned by this API are URL-encoded
+         * compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You
+         * can use a URL decoding method to convert the policy back to plain JSON text. For
+         * example, if you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> </note> <p>An IAM user can also have
+         * managed policies attached to it. To retrieve a managed policy document that is
+         * attached to a user, use <a>GetPolicy</a> to determine the policy's default
+         * version, then use <a>GetPolicyVersion</a> to retrieve the policy document.</p>
+         * <p>For more information about policies, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.</p>
          *

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a retry stage execution operation.</p>
+   * <p>Represents the input of a retry stage execution action.</p>
    */
   class AWS_CODEPIPELINE_API RetryStageExecutionRequest : public CodePipelineRequest
   {

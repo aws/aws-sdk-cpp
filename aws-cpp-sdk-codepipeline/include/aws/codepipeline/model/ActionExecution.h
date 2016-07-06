@@ -135,6 +135,97 @@ namespace Model
     inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
 
     /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(const char* value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
      * <p>The external ID of the run of the action.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
@@ -258,6 +349,10 @@ namespace Model
     bool m_summaryHasBeenSet;
     Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
+    Aws::String m_token;
+    bool m_tokenHasBeenSet;
+    Aws::String m_lastUpdatedBy;
+    bool m_lastUpdatedByHasBeenSet;
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
     Aws::String m_externalExecutionUrl;
