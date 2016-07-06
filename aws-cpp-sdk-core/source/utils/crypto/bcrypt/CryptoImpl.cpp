@@ -1214,12 +1214,16 @@ namespace Aws
             {
                 CheckInitEncryptor();
                 m_operatingKeyBuffer = CryptoBuffer({(ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&unEncryptedData});
+
+                return CryptoBuffer();
             }
 
             CryptoBuffer AES_KeyWrap_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
                 CheckInitDecryptor();
                 m_operatingKeyBuffer = CryptoBuffer({ (ByteBuffer*)&m_operatingKeyBuffer, (ByteBuffer*)&encryptedData });
+
+                return CryptoBuffer();
             }
 
             void AES_KeyWrap_Cipher_BCrypt::InitEncryptor_Internal()
@@ -1258,7 +1262,7 @@ namespace Aws
                 
                 CryptoBuffer cipherText(static_cast<size_t>(sizeOfCipherText));
                 status = BCryptExportKey(keyHandleToEncrypt, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB,
-                    cipherText.GetUnderlyingData(), cipherText.GetLength(), &sizeOfCipherText, 0);
+                    cipherText.GetUnderlyingData(), static_cast<ULONG>(cipherText.GetLength()), &sizeOfCipherText, 0);
 
                 if (!NT_SUCCESS(status))
                 {
@@ -1288,6 +1292,12 @@ namespace Aws
                 }
 
                 return outputBuffer;
+            }
+
+            void AES_KeyWrap_Cipher_BCrypt::Reset()
+            {
+                BCryptSymmetricCipher::Reset();
+                m_operatingKeyBuffer = CryptoBuffer();
             }
 
             size_t AES_KeyWrap_Cipher_BCrypt::GetBlockSizeBytes() const
