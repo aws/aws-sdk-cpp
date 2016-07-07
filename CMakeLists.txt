@@ -394,6 +394,11 @@ elseif(ENABLE_INJECTED_ENCRYPTION)
     message(STATUS "You will need to inject an encryption implementation before making any http requests!")
 endif()
 
+# use response files to prevent command-line-too-big errors for large libraries like iam
+SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+SET(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+
 project(aws-sdk-cpp-all)
 
 if(PLATFORM_CUSTOM)
