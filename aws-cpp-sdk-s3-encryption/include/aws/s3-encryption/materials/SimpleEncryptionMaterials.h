@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/s3-encryption/materials/EncryptionMaterialsProvider.h>
+#include <aws/s3-encryption/materials/EncryptionMaterialsInterface.h>
 
 namespace Aws
 {
@@ -21,26 +21,27 @@ namespace Aws
     {
         namespace Materials
         {
-            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterialsProvider : public EncryptionMaterialsProvider {
+            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterialsInterface {
             public:
                 /*
                 Initialize with symmetric key and materials description. If a materials description is not provided, provide an empty string.
                 */
-                SimpleEncryptionMaterialsProvider(const Aws::Utils::CryptoBuffer& symmetricKey, const Aws::String& materialsDescription = "");
+                SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey);
 
-                Aws::Utils::CryptoBuffer EncryptCEK(Aws::Utils::CryptoBuffer contentKey) override;
-
-                Aws::Utils::CryptoBuffer DecryptCEK(Aws::Utils::CryptoBuffer contentKey) override;
-
-                const EncryptionMaterials FetchEncryptionMaterials() override;
-
-                /**
-                * Description used to identify master key.
+                /*
+                * This will encrypt the cek within the Content Crypto material and will populate the IV and cekEncryptionAlgorithm within the Content Crypto Material.
+                * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
-                inline const Aws::String& GetMaterialsDescription() const { return m_materialsDescription; }
+                void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+
+                /*
+                * This will decrypt the cek with the symmetric key using the IV stored within the content crypto material.
+                * This will occur in place and will directly manipulate the content crypto material passed to it.
+                */
+                void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+
             private:
                 Aws::Utils::CryptoBuffer m_symmetricKey;
-                Aws::String m_materialsDescription;
             };
         }//namespace Materials
     }//namespace S3Encryption

@@ -12,46 +12,59 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
-#include <aws/s3-encryption/materials/SimpleEncryptionMaterialsProvider.h>
+#include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
+using namespace Aws::S3Encryption;
 
 namespace Aws
 {
-namespace S3Encryption
-{
-namespace Materials
-{
-    SimpleEncryptionMaterialsProvider::SimpleEncryptionMaterialsProvider(const Aws::Utils::CryptoBuffer & symmetricKey, const Aws::String & materialsDescription):
-        m_symmetricKey(symmetricKey), m_materialsDescription(materialsDescription)
+    namespace S3Encryption
     {
-    }
+        namespace Materials
+        {
+            SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
+                m_symmetricKey(symmetricKey)
+            {
+            }
 
-    CryptoBuffer SimpleEncryptionMaterialsProvider::EncryptCEK(CryptoBuffer contentKey)
-    {
-        //use keywrap
-        std::shared_ptr<Utils::Crypto::SymmetricCipher> cipher; //This will change to encrypt using keywrap.
-        //auto cipher = CreateAES_CTRImplementation(m_symmetricKey);
-        auto part1 = cipher->EncryptBuffer(contentKey);
-        auto part2 = cipher->FinalizeEncryption();
-        return CryptoBuffer({ &part1, &part2 });
-    }
+            void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
+            {
+                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
+                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+                //if key wrap uses IV, take from cipher and store here within this class.
+                if (cipher)
+                {
+                    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+                    //encrypt here
+                    contentCryptoMaterial.SetContentEncryptionKey(contentEncryptionKey);
+                }
+                else
+                {
+                    //for testing purposes
+                    auto contentEncryptionKey = CryptoBuffer();
+                    contentCryptoMaterial.SetContentEncryptionKey(contentEncryptionKey);
+                }
+            }
 
-    CryptoBuffer SimpleEncryptionMaterialsProvider::DecryptCEK(CryptoBuffer contentKey)
-    {
-        //use keywrap
-        std::shared_ptr<Utils::Crypto::SymmetricCipher> cipher; 
-        //auto cipher = CreateAES_CTRImplementation(m_symmetricKey);
-        auto part1 = cipher->DecryptBuffer(contentKey);
-        auto part2 = cipher->FinalizeDecryption();
-        return CryptoBuffer({ &part1, &part2 });
-    }
-
-    const EncryptionMaterials SimpleEncryptionMaterialsProvider::FetchEncryptionMaterials() {
-        EncryptionMaterials materials(m_symmetricKey);
-        return materials;
-    }
-}
-}
-}
+            void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
+            {
+                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
+                //if key wrap uses IV, create cipher from key and iv instead.
+                if (cipher && contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_KEY_WRAP)
+                {
+                    auto encryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+                    //decrypt here
+                    contentCryptoMaterial.SetContentEncryptionKey(encryptedContentEncryptionKey);
+                }
+                else
+                {
+                    //for testing purposes
+                    auto encryptedContentEncryptionKey = CryptoBuffer();
+                    contentCryptoMaterial.SetContentEncryptionKey(encryptedContentEncryptionKey);
+                }
+            }
+        } //namespace Materials
+    } //namespace S3Encryption
+} //namespace Aws
