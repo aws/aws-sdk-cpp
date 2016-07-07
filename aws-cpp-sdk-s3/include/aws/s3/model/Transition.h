@@ -74,19 +74,19 @@ namespace Model
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline long GetDays() const{ return m_days; }
+    inline int GetDays() const{ return m_days; }
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
+    inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline Transition& WithDays(long value) { SetDays(value); return *this;}
+    inline Transition& WithDays(int value) { SetDays(value); return *this;}
 
     /**
      * The class of storage used to store the object.
@@ -116,7 +116,7 @@ namespace Model
   private:
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
-    long m_days;
+    int m_days;
     bool m_daysHasBeenSet;
     TransitionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

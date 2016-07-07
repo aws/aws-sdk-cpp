@@ -117,7 +117,7 @@ namespace Model
      * optional. If you include a value, it must be between 7 and 30, inclusive. If you
      * do not include a value, it defaults to 30.</p>
      */
-    inline long GetPendingWindowInDays() const{ return m_pendingWindowInDays; }
+    inline int GetPendingWindowInDays() const{ return m_pendingWindowInDays; }
 
     /**
      * <p>The waiting period, specified in number of days. After the waiting period
@@ -125,7 +125,7 @@ namespace Model
      * optional. If you include a value, it must be between 7 and 30, inclusive. If you
      * do not include a value, it defaults to 30.</p>
      */
-    inline void SetPendingWindowInDays(long value) { m_pendingWindowInDaysHasBeenSet = true; m_pendingWindowInDays = value; }
+    inline void SetPendingWindowInDays(int value) { m_pendingWindowInDaysHasBeenSet = true; m_pendingWindowInDays = value; }
 
     /**
      * <p>The waiting period, specified in number of days. After the waiting period
@@ -133,12 +133,12 @@ namespace Model
      * optional. If you include a value, it must be between 7 and 30, inclusive. If you
      * do not include a value, it defaults to 30.</p>
      */
-    inline ScheduleKeyDeletionRequest& WithPendingWindowInDays(long value) { SetPendingWindowInDays(value); return *this;}
+    inline ScheduleKeyDeletionRequest& WithPendingWindowInDays(int value) { SetPendingWindowInDays(value); return *this;}
 
   private:
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
-    long m_pendingWindowInDays;
+    int m_pendingWindowInDays;
     bool m_pendingWindowInDaysHasBeenSet;
   };
 

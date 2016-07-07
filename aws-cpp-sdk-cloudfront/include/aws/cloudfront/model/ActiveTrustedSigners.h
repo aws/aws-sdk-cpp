@@ -66,21 +66,21 @@ namespace Model
      * example, if three cache behaviors all list the same three AWS accounts, the
      * value of Quantity for ActiveTrustedSigners will be 3.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of unique trusted signers included in all cache behaviors. For
      * example, if three cache behaviors all list the same three AWS accounts, the
      * value of Quantity for ActiveTrustedSigners will be 3.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of unique trusted signers included in all cache behaviors. For
      * example, if three cache behaviors all list the same three AWS accounts, the
      * value of Quantity for ActiveTrustedSigners will be 3.
      */
-    inline ActiveTrustedSigners& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline ActiveTrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * A complex type that contains one Signer complex type for each unique trusted
@@ -134,7 +134,7 @@ namespace Model
   private:
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Signer> m_items;
     bool m_itemsHasBeenSet;

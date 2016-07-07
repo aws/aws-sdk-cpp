@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about the settings for an action type. </p>
+   * <p>Returns information about the settings for an action type.</p>
    */
   class AWS_CODEPIPELINE_API ActionTypeSettings
   {
@@ -43,43 +43,43 @@ namespace Model
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline const Aws::String& GetThirdPartyConfigurationUrl() const{ return m_thirdPartyConfigurationUrl; }
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline void SetThirdPartyConfigurationUrl(const Aws::String& value) { m_thirdPartyConfigurationUrlHasBeenSet = true; m_thirdPartyConfigurationUrl = value; }
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline void SetThirdPartyConfigurationUrl(Aws::String&& value) { m_thirdPartyConfigurationUrlHasBeenSet = true; m_thirdPartyConfigurationUrl = value; }
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline void SetThirdPartyConfigurationUrl(const char* value) { m_thirdPartyConfigurationUrlHasBeenSet = true; m_thirdPartyConfigurationUrl.assign(value); }
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline ActionTypeSettings& WithThirdPartyConfigurationUrl(const Aws::String& value) { SetThirdPartyConfigurationUrl(value); return *this;}
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline ActionTypeSettings& WithThirdPartyConfigurationUrl(Aws::String&& value) { SetThirdPartyConfigurationUrl(value); return *this;}
 
     /**
      * <p>The URL of a sign-up page where users can sign up for an external service and
-     * perform initial configuration of the action provided by that service. </p>
+     * perform initial configuration of the action provided by that service.</p>
      */
     inline ActionTypeSettings& WithThirdPartyConfigurationUrl(const char* value) { SetThirdPartyConfigurationUrl(value); return *this;}
 

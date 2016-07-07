@@ -71,17 +71,17 @@ namespace Model
     /**
      * <p>The port number associated with the back-end server.</p>
      */
-    inline long GetInstancePort() const{ return m_instancePort; }
+    inline int GetInstancePort() const{ return m_instancePort; }
 
     /**
      * <p>The port number associated with the back-end server.</p>
      */
-    inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
+    inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
      * <p>The port number associated with the back-end server.</p>
      */
-    inline SetLoadBalancerPoliciesForBackendServerRequest& WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline SetLoadBalancerPoliciesForBackendServerRequest& WithInstancePort(int value) { SetInstancePort(value); return *this;}
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
@@ -134,7 +134,7 @@ namespace Model
   private:
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
-    long m_instancePort;
+    int m_instancePort;
     bool m_instancePortHasBeenSet;
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;

@@ -37,7 +37,8 @@ Connection::Connection() :
     m_bandwidthHasBeenSet(false),
     m_vlan(0),
     m_vlanHasBeenSet(false),
-    m_partnerNameHasBeenSet(false)
+    m_partnerNameHasBeenSet(false),
+    m_loaIssueTimeHasBeenSet(false)
 {
 }
 
@@ -51,7 +52,8 @@ Connection::Connection(const JsonValue& jsonValue) :
     m_bandwidthHasBeenSet(false),
     m_vlan(0),
     m_vlanHasBeenSet(false),
-    m_partnerNameHasBeenSet(false)
+    m_partnerNameHasBeenSet(false),
+    m_loaIssueTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ Connection& Connection::operator =(const JsonValue& jsonValue)
     m_partnerNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("loaIssueTime"))
+  {
+    m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
+
+    m_loaIssueTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +188,11 @@ JsonValue Connection::Jsonize() const
   {
    payload.WithString("partnerName", m_partnerName);
 
+  }
+
+  if(m_loaIssueTimeHasBeenSet)
+  {
+   payload.WithDouble("loaIssueTime", m_loaIssueTime.SecondsWithMSPrecision());
   }
 
   return payload;

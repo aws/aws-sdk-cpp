@@ -80,126 +80,126 @@ namespace Model
      * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
      */
-    inline long GetRaidLevel() const{ return m_raidLevel; }
+    inline int GetRaidLevel() const{ return m_raidLevel; }
 
     /**
      * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
      */
-    inline void SetRaidLevel(long value) { m_raidLevelHasBeenSet = true; m_raidLevel = value; }
+    inline void SetRaidLevel(int value) { m_raidLevelHasBeenSet = true; m_raidLevel = value; }
 
     /**
      * <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      * level</a>.</p>
      */
-    inline VolumeConfiguration& WithRaidLevel(long value) { SetRaidLevel(value); return *this;}
+    inline VolumeConfiguration& WithRaidLevel(int value) { SetRaidLevel(value); return *this;}
 
     /**
      * <p>The number of disks in the volume.</p>
      */
-    inline long GetNumberOfDisks() const{ return m_numberOfDisks; }
+    inline int GetNumberOfDisks() const{ return m_numberOfDisks; }
 
     /**
      * <p>The number of disks in the volume.</p>
      */
-    inline void SetNumberOfDisks(long value) { m_numberOfDisksHasBeenSet = true; m_numberOfDisks = value; }
+    inline void SetNumberOfDisks(int value) { m_numberOfDisksHasBeenSet = true; m_numberOfDisks = value; }
 
     /**
      * <p>The number of disks in the volume.</p>
      */
-    inline VolumeConfiguration& WithNumberOfDisks(long value) { SetNumberOfDisks(value); return *this;}
+    inline VolumeConfiguration& WithNumberOfDisks(int value) { SetNumberOfDisks(value); return *this;}
 
     /**
      * <p>The volume size.</p>
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The volume size.</p>
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * <p>The volume size.</p>
      */
-    inline VolumeConfiguration& WithSize(long value) { SetSize(value); return *this;}
+    inline VolumeConfiguration& WithSize(int value) { SetSize(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(Aws::String&& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type:</p> <ul> <li><code>standard</code> - Magnetic</li>
-     * <li><code>io1</code> - Provisioned IOPS (SSD)</li> <li><code>gp2</code> -
-     * General Purpose (SSD)</li> </ul>
+     * <p>The volume type:</p> <ul> <li> <p> <code>standard</code> - Magnetic</p> </li>
+     * <li> <p> <code>io1</code> - Provisioned IOPS (SSD)</p> </li> <li> <p>
+     * <code>gp2</code> - General Purpose (SSD)</p> </li> </ul>
      */
     inline VolumeConfiguration& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>For PIOPS volumes, the IOPS per disk.</p>
      */
-    inline VolumeConfiguration& WithIops(long value) { SetIops(value); return *this;}
+    inline VolumeConfiguration& WithIops(int value) { SetIops(value); return *this;}
 
   private:
     Aws::String m_mountPoint;
     bool m_mountPointHasBeenSet;
-    long m_raidLevel;
+    int m_raidLevel;
     bool m_raidLevelHasBeenSet;
-    long m_numberOfDisks;
+    int m_numberOfDisks;
     bool m_numberOfDisksHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
   };
 

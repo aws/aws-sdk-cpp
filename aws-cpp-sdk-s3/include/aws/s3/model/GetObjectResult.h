@@ -280,7 +280,7 @@ namespace Model
      * supports more flexible metadata than the REST API. For example, using SOAP, you
      * can create metadata whose values are not legal HTTP headers.
      */
-    inline long GetMissingMeta() const{ return m_missingMeta; }
+    inline int GetMissingMeta() const{ return m_missingMeta; }
 
     /**
      * This is set to the number of metadata entries not returned in x-amz-meta
@@ -288,7 +288,7 @@ namespace Model
      * supports more flexible metadata than the REST API. For example, using SOAP, you
      * can create metadata whose values are not legal HTTP headers.
      */
-    inline void SetMissingMeta(long value) { m_missingMeta = value; }
+    inline void SetMissingMeta(int value) { m_missingMeta = value; }
 
     /**
      * This is set to the number of metadata entries not returned in x-amz-meta
@@ -296,7 +296,7 @@ namespace Model
      * supports more flexible metadata than the REST API. For example, using SOAP, you
      * can create metadata whose values are not legal HTTP headers.
      */
-    inline GetObjectResult& WithMissingMeta(long value) { SetMissingMeta(value); return *this;}
+    inline GetObjectResult& WithMissingMeta(int value) { SetMissingMeta(value); return *this;}
 
     /**
      * Version of the object.
@@ -908,7 +908,7 @@ namespace Model
     Aws::Utils::DateTime m_lastModified;
     long long m_contentLength;
     Aws::String m_eTag;
-    long m_missingMeta;
+    int m_missingMeta;
     Aws::String m_versionId;
     Aws::String m_cacheControl;
     Aws::String m_contentDisposition;

@@ -76,24 +76,24 @@ namespace Model
      * <p>Number of EBS volumes with specific volume configuration, that will be
      * associated with every instance in the instance group </p>
      */
-    inline long GetVolumesPerInstance() const{ return m_volumesPerInstance; }
+    inline int GetVolumesPerInstance() const{ return m_volumesPerInstance; }
 
     /**
      * <p>Number of EBS volumes with specific volume configuration, that will be
      * associated with every instance in the instance group </p>
      */
-    inline void SetVolumesPerInstance(long value) { m_volumesPerInstanceHasBeenSet = true; m_volumesPerInstance = value; }
+    inline void SetVolumesPerInstance(int value) { m_volumesPerInstanceHasBeenSet = true; m_volumesPerInstance = value; }
 
     /**
      * <p>Number of EBS volumes with specific volume configuration, that will be
      * associated with every instance in the instance group </p>
      */
-    inline EbsBlockDeviceConfig& WithVolumesPerInstance(long value) { SetVolumesPerInstance(value); return *this;}
+    inline EbsBlockDeviceConfig& WithVolumesPerInstance(int value) { SetVolumesPerInstance(value); return *this;}
 
   private:
     VolumeSpecification m_volumeSpecification;
     bool m_volumeSpecificationHasBeenSet;
-    long m_volumesPerInstance;
+    int m_volumesPerInstance;
     bool m_volumesPerInstanceHasBeenSet;
   };
 

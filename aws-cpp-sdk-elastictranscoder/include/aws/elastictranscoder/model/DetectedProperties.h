@@ -45,32 +45,32 @@ namespace Model
     /**
      * <p>The detected width of the input file, in pixels.</p>
      */
-    inline long GetWidth() const{ return m_width; }
+    inline int GetWidth() const{ return m_width; }
 
     /**
      * <p>The detected width of the input file, in pixels.</p>
      */
-    inline void SetWidth(long value) { m_widthHasBeenSet = true; m_width = value; }
+    inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
      * <p>The detected width of the input file, in pixels.</p>
      */
-    inline DetectedProperties& WithWidth(long value) { SetWidth(value); return *this;}
+    inline DetectedProperties& WithWidth(int value) { SetWidth(value); return *this;}
 
     /**
      * <p>The detected height of the input file, in pixels.</p>
      */
-    inline long GetHeight() const{ return m_height; }
+    inline int GetHeight() const{ return m_height; }
 
     /**
      * <p>The detected height of the input file, in pixels.</p>
      */
-    inline void SetHeight(long value) { m_heightHasBeenSet = true; m_height = value; }
+    inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
      * <p>The detected height of the input file, in pixels.</p>
      */
-    inline DetectedProperties& WithHeight(long value) { SetHeight(value); return *this;}
+    inline DetectedProperties& WithHeight(int value) { SetHeight(value); return *this;}
 
     /**
      * <p>The detected frame rate of the input file, in frames per second.</p>
@@ -138,9 +138,9 @@ namespace Model
     inline DetectedProperties& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
 
   private:
-    long m_width;
+    int m_width;
     bool m_widthHasBeenSet;
-    long m_height;
+    int m_height;
     bool m_heightHasBeenSet;
     Aws::String m_frameRate;
     bool m_frameRateHasBeenSet;

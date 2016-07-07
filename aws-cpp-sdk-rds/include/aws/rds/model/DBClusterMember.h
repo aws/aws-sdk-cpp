@@ -146,7 +146,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline long GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -155,7 +155,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -164,7 +164,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a>. </p>
      */
-    inline DBClusterMember& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+    inline DBClusterMember& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
@@ -173,7 +173,7 @@ namespace Model
     bool m_isClusterWriterHasBeenSet;
     Aws::String m_dBClusterParameterGroupStatus;
     bool m_dBClusterParameterGroupStatusHasBeenSet;
-    long m_promotionTier;
+    int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };
 

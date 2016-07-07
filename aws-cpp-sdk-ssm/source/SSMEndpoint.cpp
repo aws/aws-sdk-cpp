@@ -48,6 +48,8 @@ namespace SSMEndpoint
         return "ssm.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "ssm.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "ssm.ap-south-1.amazonaws.com";
      default:
         return "ssm.us-east-1.amazonaws.com";
     }

@@ -31,6 +31,9 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API Filter
   {
   public:

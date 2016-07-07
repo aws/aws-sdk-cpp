@@ -29,7 +29,8 @@ namespace Model
     Build,
     Deploy,
     Test,
-    Invoke
+    Invoke,
+    Approval
   };
 
 namespace ActionCategoryMapper

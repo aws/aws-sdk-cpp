@@ -83,21 +83,21 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of results.
      * </p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
      * </p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
      * </p>
      */
-    inline DescribeInstanceInformationRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeInstanceInformationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -144,7 +144,7 @@ namespace Model
   private:
     Aws::Vector<InstanceInformationFilter> m_instanceInformationFilterList;
     bool m_instanceInformationFilterListHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

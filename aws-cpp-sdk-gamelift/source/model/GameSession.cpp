@@ -40,6 +40,8 @@ GameSession::GameSession() :
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_playerSessionCreationPolicyHasBeenSet(false)
 {
 }
@@ -57,6 +59,8 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_playerSessionCreationPolicyHasBeenSet(false)
 {
   *this = jsonValue;
@@ -137,6 +141,13 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
     m_ipAddressHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Port"))
+  {
+    m_port = jsonValue.GetInteger("Port");
+
+    m_portHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PlayerSessionCreationPolicy"))
   {
     m_playerSessionCreationPolicy = PlayerSessionCreationPolicyMapper::GetPlayerSessionCreationPolicyForName(jsonValue.GetString("PlayerSessionCreationPolicy"));
@@ -210,6 +221,12 @@ JsonValue GameSession::Jsonize() const
   if(m_ipAddressHasBeenSet)
   {
    payload.WithString("IpAddress", m_ipAddress);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("Port", m_port);
 
   }
 

@@ -160,87 +160,87 @@ namespace Model
      * <p>The approximate interval, in seconds, between health checks of an individual
      * instance.</p>
      */
-    inline long GetInterval() const{ return m_interval; }
+    inline int GetInterval() const{ return m_interval; }
 
     /**
      * <p>The approximate interval, in seconds, between health checks of an individual
      * instance.</p>
      */
-    inline void SetInterval(long value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
      * <p>The approximate interval, in seconds, between health checks of an individual
      * instance.</p>
      */
-    inline HealthCheck& WithInterval(long value) { SetInterval(value); return *this;}
+    inline HealthCheck& WithInterval(int value) { SetInterval(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p> <p>This value must be less than the <code>Interval</code>
      * value.</p>
      */
-    inline long GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p> <p>This value must be less than the <code>Interval</code>
      * value.</p>
      */
-    inline void SetTimeout(long value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+    inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The amount of time, in seconds, during which no response means a failed
      * health check.</p> <p>This value must be less than the <code>Interval</code>
      * value.</p>
      */
-    inline HealthCheck& WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline HealthCheck& WithTimeout(int value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The number of consecutive health check failures required before moving the
      * instance to the <code>Unhealthy</code> state.</p>
      */
-    inline long GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
+    inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
 
     /**
      * <p>The number of consecutive health check failures required before moving the
      * instance to the <code>Unhealthy</code> state.</p>
      */
-    inline void SetUnhealthyThreshold(long value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
+    inline void SetUnhealthyThreshold(int value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
 
     /**
      * <p>The number of consecutive health check failures required before moving the
      * instance to the <code>Unhealthy</code> state.</p>
      */
-    inline HealthCheck& WithUnhealthyThreshold(long value) { SetUnhealthyThreshold(value); return *this;}
+    inline HealthCheck& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
 
     /**
      * <p>The number of consecutive health checks successes required before moving the
      * instance to the <code>Healthy</code> state.</p>
      */
-    inline long GetHealthyThreshold() const{ return m_healthyThreshold; }
+    inline int GetHealthyThreshold() const{ return m_healthyThreshold; }
 
     /**
      * <p>The number of consecutive health checks successes required before moving the
      * instance to the <code>Healthy</code> state.</p>
      */
-    inline void SetHealthyThreshold(long value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
+    inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
 
     /**
      * <p>The number of consecutive health checks successes required before moving the
      * instance to the <code>Healthy</code> state.</p>
      */
-    inline HealthCheck& WithHealthyThreshold(long value) { SetHealthyThreshold(value); return *this;}
+    inline HealthCheck& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
 
   private:
     Aws::String m_target;
     bool m_targetHasBeenSet;
-    long m_interval;
+    int m_interval;
     bool m_intervalHasBeenSet;
-    long m_timeout;
+    int m_timeout;
     bool m_timeoutHasBeenSet;
-    long m_unhealthyThreshold;
+    int m_unhealthyThreshold;
     bool m_unhealthyThresholdHasBeenSet;
-    long m_healthyThreshold;
+    int m_healthyThreshold;
     bool m_healthyThresholdHasBeenSet;
   };
 

@@ -90,7 +90,7 @@ namespace Model
      * the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.</p>
      */
-    inline long GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
@@ -102,7 +102,7 @@ namespace Model
      * the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.</p>
      */
-    inline void SetVolumeSize(long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
@@ -114,7 +114,7 @@ namespace Model
      * the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.</p>
      */
-    inline EbsBlockDevice& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
@@ -181,7 +181,7 @@ namespace Model
      * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -198,7 +198,7 @@ namespace Model
      * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -215,7 +215,7 @@ namespace Model
      * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline EbsBlockDevice& WithIops(long value) { SetIops(value); return *this;}
+    inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted Amazon EBS volumes
@@ -238,13 +238,13 @@ namespace Model
   private:
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
-    long m_volumeSize;
+    int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

@@ -87,41 +87,41 @@ namespace Model
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
-    inline long GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
-    inline void SetVolumeSize(long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p> Integer to specify the size of an EBS volume.</p>
      */
-    inline EBSOptions& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline EBSOptions& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>
      */
-    inline EBSOptions& WithIops(long value) { SetIops(value); return *this;}
+    inline EBSOptions& WithIops(int value) { SetIops(value); return *this;}
 
   private:
     bool m_eBSEnabled;
     bool m_eBSEnabledHasBeenSet;
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
-    long m_volumeSize;
+    int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
   };
 

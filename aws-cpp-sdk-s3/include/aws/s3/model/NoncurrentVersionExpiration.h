@@ -48,32 +48,35 @@ namespace Model
     /**
      * Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
-     * calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How
+     * calculations, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
      * Storage Service Developer Guide.
      */
-    inline long GetNoncurrentDays() const{ return m_noncurrentDays; }
+    inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
 
     /**
      * Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
-     * calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How
+     * calculations, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
      * Storage Service Developer Guide.
      */
-    inline void SetNoncurrentDays(long value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
+    inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
     /**
      * Specifies the number of days an object is noncurrent before Amazon S3 can
      * perform the associated action. For information about the noncurrent days
-     * calculations, see <a href="/AmazonS3/latest/dev/s3-access-control.html">How
+     * calculations, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How
      * Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple
      * Storage Service Developer Guide.
      */
-    inline NoncurrentVersionExpiration& WithNoncurrentDays(long value) { SetNoncurrentDays(value); return *this;}
+    inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 
   private:
-    long m_noncurrentDays;
+    int m_noncurrentDays;
     bool m_noncurrentDaysHasBeenSet;
   };
 

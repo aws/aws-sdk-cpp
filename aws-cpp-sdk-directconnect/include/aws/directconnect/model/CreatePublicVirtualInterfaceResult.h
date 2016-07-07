@@ -187,22 +187,22 @@ namespace Model
     inline CreatePublicVirtualInterfaceResult& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 
     
-    inline long GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const{ return m_vlan; }
 
     
-    inline void SetVlan(long value) { m_vlan = value; }
+    inline void SetVlan(int value) { m_vlan = value; }
 
     
-    inline CreatePublicVirtualInterfaceResult& WithVlan(long value) { SetVlan(value); return *this;}
+    inline CreatePublicVirtualInterfaceResult& WithVlan(int value) { SetVlan(value); return *this;}
 
     
-    inline long GetAsn() const{ return m_asn; }
+    inline int GetAsn() const{ return m_asn; }
 
     
-    inline void SetAsn(long value) { m_asn = value; }
+    inline void SetAsn(int value) { m_asn = value; }
 
     
-    inline CreatePublicVirtualInterfaceResult& WithAsn(long value) { SetAsn(value); return *this;}
+    inline CreatePublicVirtualInterfaceResult& WithAsn(int value) { SetAsn(value); return *this;}
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -366,8 +366,8 @@ namespace Model
     Aws::String m_connectionId;
     Aws::String m_virtualInterfaceType;
     Aws::String m_virtualInterfaceName;
-    long m_vlan;
-    long m_asn;
+    int m_vlan;
+    int m_asn;
     Aws::String m_authKey;
     Aws::String m_amazonAddress;
     Aws::String m_customerAddress;

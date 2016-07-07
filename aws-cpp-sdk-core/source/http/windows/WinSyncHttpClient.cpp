@@ -206,6 +206,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
     {
         char body[1024];
         uint64_t bodySize = sizeof(body);
+        int64_t numBytesResponseReceived = 0;
         read = 0;
         bool success = true;
 
@@ -214,6 +215,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
             response->GetResponseBody().write(body, read);
             if (read > 0)
             {
+                numBytesResponseReceived += read;
                 if (readLimiter != nullptr)
                 {
                     readLimiter->ApplyAndPayForCost(read);
@@ -226,6 +228,18 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
             }
 
             success = success && IsRequestProcessingEnabled();
+        }
+
+        if (response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))
+        {
+            const Aws::String& contentLength = response->GetHeader(Aws::Http::CONTENT_LENGTH_HEADER);
+            AWS_LOGSTREAM_TRACE(GetLogTag(), "Response content-length header: " << contentLength);
+            AWS_LOGSTREAM_TRACE(GetLogTag(), "Response body length: " << numBytesResponseReceived);
+            if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
+            {
+                success = false;
+                AWS_LOG_ERROR(GetLogTag(), "Response body length doesn't match the content-length header.");
+            }
         }
 
         if(!success)

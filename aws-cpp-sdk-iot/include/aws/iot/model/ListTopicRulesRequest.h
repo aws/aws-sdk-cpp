@@ -77,17 +77,17 @@ namespace Model
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline ListTopicRulesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListTopicRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -142,7 +142,7 @@ namespace Model
   private:
     Aws::String m_topic;
     bool m_topicHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

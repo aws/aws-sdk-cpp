@@ -114,17 +114,17 @@ namespace Model
     /**
      * <p>The result page size.</p>
      */
-    inline long GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The result page size.</p>
      */
-    inline void SetPageSize(long value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
+    inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The result page size.</p>
      */
-    inline ListPrincipalPoliciesRequest& WithPageSize(long value) { SetPageSize(value); return *this;}
+    inline ListPrincipalPoliciesRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
     /**
      * <p>Specifies the order for results. If true, results are returned in ascending
@@ -149,7 +149,7 @@ namespace Model
     bool m_principalHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_pageSize;
+    int m_pageSize;
     bool m_pageSizeHasBeenSet;
     bool m_ascendingOrder;
     bool m_ascendingOrderHasBeenSet;

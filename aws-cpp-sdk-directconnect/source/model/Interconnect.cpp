@@ -33,7 +33,8 @@ Interconnect::Interconnect() :
     m_interconnectStateHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_loaIssueTimeHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ Interconnect::Interconnect(const JsonValue& jsonValue) :
     m_interconnectStateHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_loaIssueTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ Interconnect& Interconnect::operator =(const JsonValue& jsonValue)
     m_bandwidthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("loaIssueTime"))
+  {
+    m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
+
+    m_loaIssueTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +141,11 @@ JsonValue Interconnect::Jsonize() const
   {
    payload.WithString("bandwidth", m_bandwidth);
 
+  }
+
+  if(m_loaIssueTimeHasBeenSet)
+  {
+   payload.WithDouble("loaIssueTime", m_loaIssueTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -79,43 +79,43 @@ namespace Model
     inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this build. Build names do not need to be
+     * <p>Descriptive label associated with a build. Build names do not need to be
      * unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const char* value) { SetName(value); return *this;}
@@ -170,75 +170,75 @@ namespace Model
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Current status of the build. Possible build states include:
-     * <ul><li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state. When a
-     * build is successfully created, the build state is set to this value.
-     * </li><li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li><li>FAILED: The game build upload failed.
-     * You cannot create new fleets for this build. </li></ul></p>
+     * <p>Current status of the build. Possible build states include the following:
+     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this state. When
+     * a build is successfully created, the build state is set to this value.
+     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+     * upload failed. You cannot create new fleets for this build. </li></ul></p>
      */
     inline const BuildStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the build. Possible build states include:
-     * <ul><li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state. When a
-     * build is successfully created, the build state is set to this value.
-     * </li><li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li><li>FAILED: The game build upload failed.
-     * You cannot create new fleets for this build. </li></ul></p>
+     * <p>Current status of the build. Possible build states include the following:
+     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this state. When
+     * a build is successfully created, the build state is set to this value.
+     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+     * upload failed. You cannot create new fleets for this build. </li></ul></p>
      */
     inline void SetStatus(const BuildStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the build. Possible build states include:
-     * <ul><li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state. When a
-     * build is successfully created, the build state is set to this value.
-     * </li><li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li><li>FAILED: The game build upload failed.
-     * You cannot create new fleets for this build. </li></ul></p>
+     * <p>Current status of the build. Possible build states include the following:
+     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this state. When
+     * a build is successfully created, the build state is set to this value.
+     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+     * upload failed. You cannot create new fleets for this build. </li></ul></p>
      */
     inline void SetStatus(BuildStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the build. Possible build states include:
-     * <ul><li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state. When a
-     * build is successfully created, the build state is set to this value.
-     * </li><li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li><li>FAILED: The game build upload failed.
-     * You cannot create new fleets for this build. </li></ul></p>
+     * <p>Current status of the build. Possible build states include the following:
+     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this state. When
+     * a build is successfully created, the build state is set to this value.
+     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+     * upload failed. You cannot create new fleets for this build. </li></ul></p>
      */
     inline Build& WithStatus(const BuildStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the build. Possible build states include:
-     * <ul><li>INITIALIZED: A new build has been defined, but no files have been
-     * uploaded. You cannot create fleets for builds that are in this state. When a
-     * build is successfully created, the build state is set to this value.
-     * </li><li>READY: The game build has been successfully uploaded. You can now
-     * create new fleets for this build.</li><li>FAILED: The game build upload failed.
-     * You cannot create new fleets for this build. </li></ul></p>
+     * <p>Current status of the build. Possible build states include the following:
+     * <ul><li><b>INITIALIZED</b> – A new build has been defined, but no files have
+     * been uploaded. You cannot create fleets for builds that are in this state. When
+     * a build is successfully created, the build state is set to this value.
+     * </li><li><b>READY</b> – The game build has been successfully uploaded. You can
+     * now create new fleets for this build.</li><li><b>FAILED</b> – The game build
+     * upload failed. You cannot create new fleets for this build. </li></ul></p>
      */
     inline Build& WithStatus(BuildStatus&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.</p>
+     * state is <code>INITIALIZED</code>, this value is 0.</p>
      */
     inline long long GetSizeOnDisk() const{ return m_sizeOnDisk; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.</p>
+     * state is <code>INITIALIZED</code>, this value is 0.</p>
      */
     inline void SetSizeOnDisk(long long value) { m_sizeOnDiskHasBeenSet = true; m_sizeOnDisk = value; }
 
     /**
      * <p>File size of the uploaded game build, expressed in bytes. When the build
-     * state is INITIALIZED, this value is 0.</p>
+     * state is <code>INITIALIZED</code>, this value is 0.</p>
      */
     inline Build& WithSizeOnDisk(long long value) { SetSizeOnDisk(value); return *this;}
 

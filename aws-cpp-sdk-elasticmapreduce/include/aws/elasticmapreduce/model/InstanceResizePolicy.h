@@ -143,26 +143,26 @@ namespace Model
      * <p>Decommissioning timeout override for the specific list of instances to be
      * terminated.</p>
      */
-    inline long GetInstanceTerminationTimeout() const{ return m_instanceTerminationTimeout; }
+    inline int GetInstanceTerminationTimeout() const{ return m_instanceTerminationTimeout; }
 
     /**
      * <p>Decommissioning timeout override for the specific list of instances to be
      * terminated.</p>
      */
-    inline void SetInstanceTerminationTimeout(long value) { m_instanceTerminationTimeoutHasBeenSet = true; m_instanceTerminationTimeout = value; }
+    inline void SetInstanceTerminationTimeout(int value) { m_instanceTerminationTimeoutHasBeenSet = true; m_instanceTerminationTimeout = value; }
 
     /**
      * <p>Decommissioning timeout override for the specific list of instances to be
      * terminated.</p>
      */
-    inline InstanceResizePolicy& WithInstanceTerminationTimeout(long value) { SetInstanceTerminationTimeout(value); return *this;}
+    inline InstanceResizePolicy& WithInstanceTerminationTimeout(int value) { SetInstanceTerminationTimeout(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_instancesToTerminate;
     bool m_instancesToTerminateHasBeenSet;
     Aws::Vector<Aws::String> m_instancesToProtect;
     bool m_instancesToProtectHasBeenSet;
-    long m_instanceTerminationTimeout;
+    int m_instanceTerminationTimeout;
     bool m_instanceTerminationTimeoutHasBeenSet;
   };
 

@@ -186,17 +186,17 @@ namespace Model
     /**
      * <p>The exit code returned from the container.</p>
      */
-    inline long GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const{ return m_exitCode; }
 
     /**
      * <p>The exit code returned from the container.</p>
      */
-    inline void SetExitCode(long value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
+    inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
      * <p>The exit code returned from the container.</p>
      */
-    inline Container& WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline Container& WithExitCode(int value) { SetExitCode(value); return *this;}
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -284,7 +284,7 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_lastStatus;
     bool m_lastStatusHasBeenSet;
-    long m_exitCode;
+    int m_exitCode;
     bool m_exitCodeHasBeenSet;
     Aws::String m_reason;
     bool m_reasonHasBeenSet;

@@ -37,11 +37,7 @@ namespace Model
    * default, the list of hosted zones is displayed on a single page. You can control
    * the length of the page that is displayed by using the <code>MaxItems</code>
    * parameter. You can use the <code>DNSName</code> and <code>HostedZoneId</code>
-   * parameters to control the hosted zone that the list begins with.</p> <p>For more
-   * information about listing hosted zones, see <a
-   * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html">Listing
-   * the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53 Developer
-   * Guide</i>.</p>
+   * parameters to control the hosted zone that the list begins with.</p>
    */
   class AWS_ROUTE53_API ListHostedZonesByNameRequest : public Route53Request
   {

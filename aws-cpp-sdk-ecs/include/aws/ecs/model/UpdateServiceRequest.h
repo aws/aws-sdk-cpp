@@ -123,19 +123,19 @@ namespace Model
      * <p>The number of instantiations of the task to place and keep running in your
      * service.</p>
      */
-    inline long GetDesiredCount() const{ return m_desiredCount; }
+    inline int GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The number of instantiations of the task to place and keep running in your
      * service.</p>
      */
-    inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
+    inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The number of instantiations of the task to place and keep running in your
      * service.</p>
      */
-    inline UpdateServiceRequest& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline UpdateServiceRequest& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 
     /**
      * <p>The <code>family</code> and <code>revision</code>
@@ -249,7 +249,7 @@ namespace Model
     bool m_clusterHasBeenSet;
     Aws::String m_service;
     bool m_serviceHasBeenSet;
-    long m_desiredCount;
+    int m_desiredCount;
     bool m_desiredCountHasBeenSet;
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;

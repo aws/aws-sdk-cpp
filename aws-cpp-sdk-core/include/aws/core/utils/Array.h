@@ -223,7 +223,7 @@ namespace Aws
                 return m_data.get();
             }
 
-        private:
+        protected:
             size_t m_size;
 
             Aws::UniqueArrayPtr<T> m_data;
@@ -244,7 +244,7 @@ namespace Aws
             CryptoBuffer(const ByteBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(const CryptoBuffer& other) : ByteBuffer(other) {}
             CryptoBuffer(CryptoBuffer&& other) : ByteBuffer(std::move(other)) {}
-            CryptoBuffer& operator=(const CryptoBuffer& other) = default;
+            CryptoBuffer& operator=(const CryptoBuffer&) = default;
             CryptoBuffer& operator=(CryptoBuffer&& other) { ByteBuffer::operator=(std::move(other)); return *this; }
             bool operator==(const CryptoBuffer& other) const { return ByteBuffer::operator==(other); }
             bool operator!=(const CryptoBuffer& other) const { return ByteBuffer::operator!=(other); }

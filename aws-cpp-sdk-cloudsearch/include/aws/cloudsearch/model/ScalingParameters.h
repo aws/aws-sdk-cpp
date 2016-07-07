@@ -78,42 +78,42 @@ namespace Model
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
-    inline long GetDesiredReplicationCount() const{ return m_desiredReplicationCount; }
+    inline int GetDesiredReplicationCount() const{ return m_desiredReplicationCount; }
 
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
-    inline void SetDesiredReplicationCount(long value) { m_desiredReplicationCountHasBeenSet = true; m_desiredReplicationCount = value; }
+    inline void SetDesiredReplicationCount(int value) { m_desiredReplicationCountHasBeenSet = true; m_desiredReplicationCount = value; }
 
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
-    inline ScalingParameters& WithDesiredReplicationCount(long value) { SetDesiredReplicationCount(value); return *this;}
+    inline ScalingParameters& WithDesiredReplicationCount(int value) { SetDesiredReplicationCount(value); return *this;}
 
     /**
      * <p>The number of partitions you want to preconfigure for your domain. Only valid
      * when you select <code>m2.2xlarge</code> as the desired instance type.</p>
      */
-    inline long GetDesiredPartitionCount() const{ return m_desiredPartitionCount; }
+    inline int GetDesiredPartitionCount() const{ return m_desiredPartitionCount; }
 
     /**
      * <p>The number of partitions you want to preconfigure for your domain. Only valid
      * when you select <code>m2.2xlarge</code> as the desired instance type.</p>
      */
-    inline void SetDesiredPartitionCount(long value) { m_desiredPartitionCountHasBeenSet = true; m_desiredPartitionCount = value; }
+    inline void SetDesiredPartitionCount(int value) { m_desiredPartitionCountHasBeenSet = true; m_desiredPartitionCount = value; }
 
     /**
      * <p>The number of partitions you want to preconfigure for your domain. Only valid
      * when you select <code>m2.2xlarge</code> as the desired instance type.</p>
      */
-    inline ScalingParameters& WithDesiredPartitionCount(long value) { SetDesiredPartitionCount(value); return *this;}
+    inline ScalingParameters& WithDesiredPartitionCount(int value) { SetDesiredPartitionCount(value); return *this;}
 
   private:
     PartitionInstanceType m_desiredInstanceType;
     bool m_desiredInstanceTypeHasBeenSet;
-    long m_desiredReplicationCount;
+    int m_desiredReplicationCount;
     bool m_desiredReplicationCountHasBeenSet;
-    long m_desiredPartitionCount;
+    int m_desiredPartitionCount;
     bool m_desiredPartitionCountHasBeenSet;
   };
 

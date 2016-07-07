@@ -71,17 +71,17 @@ namespace Model
     /**
      * <p>The external port of the load balancer for the policy.</p>
      */
-    inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
 
     /**
      * <p>The external port of the load balancer for the policy.</p>
      */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
      * <p>The external port of the load balancer for the policy.</p>
      */
-    inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
+    inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
 
     /**
      * <p>The names of the policies. If the list is empty, the current policy is
@@ -134,7 +134,7 @@ namespace Model
   private:
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
-    long m_loadBalancerPort;
+    int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;

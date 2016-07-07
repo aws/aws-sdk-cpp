@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-KMS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20141101.11;
+        version : 0.12.20141101.17;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Key Management Service);
@@ -34,63 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Key Management Service</fullname> <p>AWS Key Management Service
-   * (AWS KMS) is an encryption and key management web service. This guide describes
-   * the AWS KMS operations that you can call programmatically. For general
-   * information about AWS KMS, see the <a
-   * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management
-   * Service Developer Guide</a>.</p> <note> <p>AWS provides SDKs that consist of
-   * libraries and sample code for various programming languages and platforms (Java,
-   * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create
-   * programmatic access to AWS KMS and other AWS services. For example, the SDKs
-   * take care of tasks such as signing requests (see below), managing errors, and
-   * retrying requests automatically. For more information about the AWS SDKs,
-   * including how to download and install them, see <a
-   * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
-   * </note> <p>We recommend that you use the AWS SDKs to make programmatic API calls
-   * to AWS KMS.</p> <p>Clients must support TLS (Transport Layer Security) 1.0. We
-   * recommend TLS 1.2. Clients must also support cipher suites with Perfect Forward
-   * Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral
-   * Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support
-   * these modes.</p> <p> <b>Signing Requests</b> </p> <p>Requests must be signed by
-   * using an access key ID and a secret access key. We strongly recommend that you
-   * <i>do not</i> use your AWS account (root) access key ID and secret key for
-   * everyday work with AWS KMS. Instead, use the access key ID and secret access key
-   * for an IAM user, or you can use the AWS Security Token Service to generate
-   * temporary security credentials that you can use to sign requests.</p> <p>All AWS
-   * KMS operations require <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-   * Version 4</a>.</p> <p> <b>Logging API Requests</b> </p> <p>AWS KMS supports AWS
-   * CloudTrail, a service that logs AWS API calls and related events for your AWS
-   * account and delivers them to an Amazon S3 bucket that you specify. By using the
-   * information collected by CloudTrail, you can determine what requests were made
-   * to AWS KMS, who made the request, when it was made, and so on. To learn more
-   * about CloudTrail, including how to turn it on and find your log files, see the
-   * <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS
-   * CloudTrail User Guide</a>.</p> <p> <b>Additional Resources</b> </p> <p>For more
-   * information about credentials and request signing, see the following:</p> <ul>
-   * <li> <p> <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-   * Security Credentials</a> - This topic provides general information about the
-   * types of credentials used for accessing AWS.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary
-   * Security Credentials</a> - This section of the <i>IAM User Guide</i> describes
-   * how to create and use temporary security credentials.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-   * Version 4 Signing Process</a> - This set of topics walks you through the process
-   * of signing a request using an access key ID and a secret access key.</p> </li>
-   * </ul> <p> <b>Commonly Used APIs</b> </p> <p>Of the APIs discussed in this guide,
-   * the following will prove the most useful for most applications. You will likely
-   * perform actions other than these, such as creating keys and assigning policies,
-   * by using the console.</p> <ul> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-   * <a>Decrypt</a> </p> </li> <li> <p> <a>GenerateDataKey</a> </p> </li> <li> <p>
-   * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Key Management Service Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -106,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -122,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-kms.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-kms.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-kms.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-kms.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-kms.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-kms.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-kms.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-kms.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -153,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-kms.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-kms.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-kms.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-kms.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-kms.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-kms.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-kms.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-kms.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-kms.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-kms.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-kms.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-kms.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-kms.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-kms.lib };
         }
     };
 

@@ -104,21 +104,21 @@ namespace Model
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days for which automated backups are retained. You must specify
      * a minimum value of 1.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 1 to 35</p> </li> </ul>
      */
-    inline CreateDBClusterRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline CreateDBClusterRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p>A value that indicates that the DB cluster should be associated with the
@@ -521,19 +521,19 @@ namespace Model
      * <p>The port number on which the instances in the DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the instances in the DB cluster accept
      * connections.</p> <p> Default: <code>3306</code> </p>
      */
-    inline CreateDBClusterRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the master user for the client DB cluster.</p>
@@ -1064,7 +1064,7 @@ namespace Model
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
@@ -1082,7 +1082,7 @@ namespace Model
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

@@ -43,40 +43,40 @@ namespace Model
     /**
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
-    inline long GetMinimum() const{ return m_minimum; }
+    inline int GetMinimum() const{ return m_minimum; }
 
     /**
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
-    inline void SetMinimum(long value) { m_minimumHasBeenSet = true; m_minimum = value; }
+    inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
      * <p>The minimum value of the duration range. Must be greater than zero.</p>
      */
-    inline DurationRange& WithMinimum(long value) { SetMinimum(value); return *this;}
+    inline DurationRange& WithMinimum(int value) { SetMinimum(value); return *this;}
 
     /**
      * <p>The maximum value of the duration range. Must be less than or equal to 604800
      * seconds (1 week).</p>
      */
-    inline long GetMaximum() const{ return m_maximum; }
+    inline int GetMaximum() const{ return m_maximum; }
 
     /**
      * <p>The maximum value of the duration range. Must be less than or equal to 604800
      * seconds (1 week).</p>
      */
-    inline void SetMaximum(long value) { m_maximumHasBeenSet = true; m_maximum = value; }
+    inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
      * <p>The maximum value of the duration range. Must be less than or equal to 604800
      * seconds (1 week).</p>
      */
-    inline DurationRange& WithMaximum(long value) { SetMaximum(value); return *this;}
+    inline DurationRange& WithMaximum(int value) { SetMaximum(value); return *this;}
 
   private:
-    long m_minimum;
+    int m_minimum;
     bool m_minimumHasBeenSet;
-    long m_maximum;
+    int m_maximum;
     bool m_maximumHasBeenSet;
   };
 

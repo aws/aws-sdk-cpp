@@ -84,22 +84,22 @@ namespace Model
     /**
      * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of <a>ApiKeys</a> to get information about.</p>
      */
-    inline GetApiKeysRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline GetApiKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_position;
     bool m_positionHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

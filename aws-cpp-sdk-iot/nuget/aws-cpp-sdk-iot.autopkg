@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoT;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150528.11;
+        version : 0.12.20150528.17;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT);
@@ -34,22 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS IoT</fullname> <p>AWS IoT provides secure, bi-directional
-   * communication between Internet-connected things (such as sensors, actuators,
-   * embedded devices, or smart appliances) and the AWS cloud. You can discover your
-   * custom IoT-Data endpoint to communicate with, configure rules for data
-   * processing and integration with other services, organize resources associated
-   * with each thing (Thing Registry), configure logging, and create and manage
-   * policies and credentials to authenticate things.</p> <p>For more information
-   * about how AWS IoT works, see the <a
-   * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
-   * Guide</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS IoT Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -65,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -81,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-iot.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-iot.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-iot.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-iot.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-iot.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-iot.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-iot.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-iot.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -112,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-iot.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-iot.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-iot.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-iot.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-iot.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-iot.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-iot.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-iot.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-iot.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-iot.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-iot.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-iot.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-iot.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-iot.lib };
         }
     };
 

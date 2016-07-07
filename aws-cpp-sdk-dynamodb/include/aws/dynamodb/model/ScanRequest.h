@@ -274,7 +274,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
@@ -289,7 +289,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of items to evaluate (not necessarily the number of
@@ -304,7 +304,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
      * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline ScanRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ScanRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>The attributes to be returned in the result. You can retrieve all item
@@ -1046,7 +1046,7 @@ namespace Model
      * rather than parallel.</p> <p>If you specify <i>TotalSegments</i>, you must also
      * specify <i>Segment</i>.</p>
      */
-    inline long GetTotalSegments() const{ return m_totalSegments; }
+    inline int GetTotalSegments() const{ return m_totalSegments; }
 
     /**
      * <p>For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the total
@@ -1060,7 +1060,7 @@ namespace Model
      * rather than parallel.</p> <p>If you specify <i>TotalSegments</i>, you must also
      * specify <i>Segment</i>.</p>
      */
-    inline void SetTotalSegments(long value) { m_totalSegmentsHasBeenSet = true; m_totalSegments = value; }
+    inline void SetTotalSegments(int value) { m_totalSegmentsHasBeenSet = true; m_totalSegments = value; }
 
     /**
      * <p>For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the total
@@ -1074,7 +1074,7 @@ namespace Model
      * rather than parallel.</p> <p>If you specify <i>TotalSegments</i>, you must also
      * specify <i>Segment</i>.</p>
      */
-    inline ScanRequest& WithTotalSegments(long value) { SetTotalSegments(value); return *this;}
+    inline ScanRequest& WithTotalSegments(int value) { SetTotalSegments(value); return *this;}
 
     /**
      * <p>For a parallel <i>Scan</i> request, <i>Segment</i> identifies an individual
@@ -1089,7 +1089,7 @@ namespace Model
      * provided for <i>TotalSegments</i>.</p> <p>If you provide <i>Segment</i>, you
      * must also provide <i>TotalSegments</i>.</p>
      */
-    inline long GetSegment() const{ return m_segment; }
+    inline int GetSegment() const{ return m_segment; }
 
     /**
      * <p>For a parallel <i>Scan</i> request, <i>Segment</i> identifies an individual
@@ -1104,7 +1104,7 @@ namespace Model
      * provided for <i>TotalSegments</i>.</p> <p>If you provide <i>Segment</i>, you
      * must also provide <i>TotalSegments</i>.</p>
      */
-    inline void SetSegment(long value) { m_segmentHasBeenSet = true; m_segment = value; }
+    inline void SetSegment(int value) { m_segmentHasBeenSet = true; m_segment = value; }
 
     /**
      * <p>For a parallel <i>Scan</i> request, <i>Segment</i> identifies an individual
@@ -1119,7 +1119,7 @@ namespace Model
      * provided for <i>TotalSegments</i>.</p> <p>If you provide <i>Segment</i>, you
      * must also provide <i>TotalSegments</i>.</p>
      */
-    inline ScanRequest& WithSegment(long value) { SetSegment(value); return *this;}
+    inline ScanRequest& WithSegment(int value) { SetSegment(value); return *this;}
 
     /**
      * <p>A string that identifies one or more attributes to retrieve from the
@@ -1868,7 +1868,7 @@ namespace Model
     bool m_indexNameHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Select m_select;
     bool m_selectHasBeenSet;
@@ -1880,9 +1880,9 @@ namespace Model
     bool m_exclusiveStartKeyHasBeenSet;
     ReturnConsumedCapacity m_returnConsumedCapacity;
     bool m_returnConsumedCapacityHasBeenSet;
-    long m_totalSegments;
+    int m_totalSegments;
     bool m_totalSegmentsHasBeenSet;
-    long m_segment;
+    int m_segment;
     bool m_segmentHasBeenSet;
     Aws::String m_projectionExpression;
     bool m_projectionExpressionHasBeenSet;

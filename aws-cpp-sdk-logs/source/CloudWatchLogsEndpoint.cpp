@@ -48,6 +48,8 @@ namespace CloudWatchLogsEndpoint
         return "logs.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "logs.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "logs.ap-south-1.amazonaws.com";
      default:
         return "logs.us-east-1.amazonaws.com";
     }

@@ -31,6 +31,9 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API Endpoint
   {
   public:
@@ -221,17 +224,17 @@ namespace Model
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port value used to access the endpoint.</p>
      */
-    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the database at the endpoint.</p>
@@ -339,65 +342,65 @@ namespace Model
     inline Endpoint& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline Endpoint& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that will be used to encrypt the connection
+     * <p>The KMS key identifier that will be used to encrypt the connection
      * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
      * DMS will use your default encryption key. AWS KMS creates the default encryption
      * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region. </p>
+     * key for each AWS region.</p>
      */
     inline Endpoint& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -454,7 +457,7 @@ namespace Model
     bool m_usernameHasBeenSet;
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

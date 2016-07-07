@@ -98,17 +98,17 @@ namespace Model
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
-    inline long GetUpdateVersion() const{ return m_updateVersion; }
+    inline int GetUpdateVersion() const{ return m_updateVersion; }
 
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
-    inline void SetUpdateVersion(long value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
+    inline void SetUpdateVersion(int value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
 
     /**
      * <p>A unique integer that indicates when this option was last updated.</p>
      */
-    inline OptionStatus& WithUpdateVersion(long value) { SetUpdateVersion(value); return *this;}
+    inline OptionStatus& WithUpdateVersion(int value) { SetUpdateVersion(value); return *this;}
 
     /**
      * <p>The state of processing a change to an option. Possible values:</p> <ul> <li>
@@ -195,7 +195,7 @@ namespace Model
     bool m_creationDateHasBeenSet;
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
-    long m_updateVersion;
+    int m_updateVersion;
     bool m_updateVersionHasBeenSet;
     OptionState m_state;
     bool m_stateHasBeenSet;

@@ -48,6 +48,8 @@ namespace Route53DomainsEndpoint
         return "route53domains.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "route53domains.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "route53domains.ap-south-1.amazonaws.com";
      default:
         return "route53domains.us-east-1.amazonaws.com";
     }

@@ -220,19 +220,19 @@ namespace Model
      * The time in seconds that your browser is to cache the preflight response for the
      * specified resource.
      */
-    inline long GetMaxAgeSeconds() const{ return m_maxAgeSeconds; }
+    inline int GetMaxAgeSeconds() const{ return m_maxAgeSeconds; }
 
     /**
      * The time in seconds that your browser is to cache the preflight response for the
      * specified resource.
      */
-    inline void SetMaxAgeSeconds(long value) { m_maxAgeSecondsHasBeenSet = true; m_maxAgeSeconds = value; }
+    inline void SetMaxAgeSeconds(int value) { m_maxAgeSecondsHasBeenSet = true; m_maxAgeSeconds = value; }
 
     /**
      * The time in seconds that your browser is to cache the preflight response for the
      * specified resource.
      */
-    inline CORSRule& WithMaxAgeSeconds(long value) { SetMaxAgeSeconds(value); return *this;}
+    inline CORSRule& WithMaxAgeSeconds(int value) { SetMaxAgeSeconds(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_allowedHeaders;
@@ -243,7 +243,7 @@ namespace Model
     bool m_allowedOriginsHasBeenSet;
     Aws::Vector<Aws::String> m_exposeHeaders;
     bool m_exposeHeadersHasBeenSet;
-    long m_maxAgeSeconds;
+    int m_maxAgeSeconds;
     bool m_maxAgeSecondsHasBeenSet;
   };
 

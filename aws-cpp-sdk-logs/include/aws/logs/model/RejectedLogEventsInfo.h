@@ -38,38 +38,38 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     
-    inline long GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
+    inline int GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
 
     
-    inline void SetTooNewLogEventStartIndex(long value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
+    inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
     
-    inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(long value) { SetTooNewLogEventStartIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
 
     
-    inline long GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
+    inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
     
-    inline void SetTooOldLogEventEndIndex(long value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
+    inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     
-    inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(long value) { SetTooOldLogEventEndIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 
     
-    inline long GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
+    inline int GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
 
     
-    inline void SetExpiredLogEventEndIndex(long value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
+    inline void SetExpiredLogEventEndIndex(int value) { m_expiredLogEventEndIndexHasBeenSet = true; m_expiredLogEventEndIndex = value; }
 
     
-    inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(long value) { SetExpiredLogEventEndIndex(value); return *this;}
+    inline RejectedLogEventsInfo& WithExpiredLogEventEndIndex(int value) { SetExpiredLogEventEndIndex(value); return *this;}
 
   private:
-    long m_tooNewLogEventStartIndex;
+    int m_tooNewLogEventStartIndex;
     bool m_tooNewLogEventStartIndexHasBeenSet;
-    long m_tooOldLogEventEndIndex;
+    int m_tooOldLogEventEndIndex;
     bool m_tooOldLogEventEndIndexHasBeenSet;
-    long m_expiredLogEventEndIndex;
+    int m_expiredLogEventEndIndex;
     bool m_expiredLogEventEndIndexHasBeenSet;
   };
 

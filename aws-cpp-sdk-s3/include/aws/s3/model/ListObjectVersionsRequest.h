@@ -149,19 +149,19 @@ namespace Model
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline long GetMaxKeys() const{ return m_maxKeys; }
+    inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline void SetMaxKeys(long value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
+    inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline ListObjectVersionsRequest& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
+    inline ListObjectVersionsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
     /**
      * Limits the response to keys that begin with the specified prefix.
@@ -242,7 +242,7 @@ namespace Model
     bool m_encodingTypeHasBeenSet;
     Aws::String m_keyMarker;
     bool m_keyMarkerHasBeenSet;
-    long m_maxKeys;
+    int m_maxKeys;
     bool m_maxKeysHasBeenSet;
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;

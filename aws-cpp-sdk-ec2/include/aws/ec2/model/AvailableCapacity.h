@@ -83,22 +83,22 @@ namespace Model
     /**
      * <p>The number of vCPUs available on the Dedicated host.</p>
      */
-    inline long GetAvailableVCpus() const{ return m_availableVCpus; }
+    inline int GetAvailableVCpus() const{ return m_availableVCpus; }
 
     /**
      * <p>The number of vCPUs available on the Dedicated host.</p>
      */
-    inline void SetAvailableVCpus(long value) { m_availableVCpusHasBeenSet = true; m_availableVCpus = value; }
+    inline void SetAvailableVCpus(int value) { m_availableVCpusHasBeenSet = true; m_availableVCpus = value; }
 
     /**
      * <p>The number of vCPUs available on the Dedicated host.</p>
      */
-    inline AvailableCapacity& WithAvailableVCpus(long value) { SetAvailableVCpus(value); return *this;}
+    inline AvailableCapacity& WithAvailableVCpus(int value) { SetAvailableVCpus(value); return *this;}
 
   private:
     Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
     bool m_availableInstanceCapacityHasBeenSet;
-    long m_availableVCpus;
+    int m_availableVCpus;
     bool m_availableVCpusHasBeenSet;
   };
 

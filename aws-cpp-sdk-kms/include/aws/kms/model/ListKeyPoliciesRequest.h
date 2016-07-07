@@ -126,7 +126,7 @@ namespace Model
      * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
      * policy can be attached to a key.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
@@ -136,7 +136,7 @@ namespace Model
      * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
      * policy can be attached to a key.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>When paginating results, specify the maximum number of items to return in the
@@ -146,7 +146,7 @@ namespace Model
      * If you do not include a value, it defaults to 100.</p> <p>Currently only 1
      * policy can be attached to a key.</p>
      */
-    inline ListKeyPoliciesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListKeyPoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only in a subsequent
@@ -200,7 +200,7 @@ namespace Model
   private:
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

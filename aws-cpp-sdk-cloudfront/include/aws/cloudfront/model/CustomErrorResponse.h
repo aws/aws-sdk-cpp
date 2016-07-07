@@ -55,19 +55,19 @@ namespace Model
      * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP
      * status codes that you can customize, see CloudFront documentation.
      */
-    inline long GetErrorCode() const{ return m_errorCode; }
+    inline int GetErrorCode() const{ return m_errorCode; }
 
     /**
      * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP
      * status codes that you can customize, see CloudFront documentation.
      */
-    inline void SetErrorCode(long value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline void SetErrorCode(int value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP
      * status codes that you can customize, see CloudFront documentation.
      */
-    inline CustomErrorResponse& WithErrorCode(long value) { SetErrorCode(value); return *this;}
+    inline CustomErrorResponse& WithErrorCode(int value) { SetErrorCode(value); return *this;}
 
     /**
      * The path of the custom error page (for example, /custom_404.html). The path is
@@ -210,7 +210,7 @@ namespace Model
     inline CustomErrorResponse& WithErrorCachingMinTTL(long long value) { SetErrorCachingMinTTL(value); return *this;}
 
   private:
-    long m_errorCode;
+    int m_errorCode;
     bool m_errorCodeHasBeenSet;
     Aws::String m_responsePagePath;
     bool m_responsePagePathHasBeenSet;

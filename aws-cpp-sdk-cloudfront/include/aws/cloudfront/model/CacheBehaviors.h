@@ -46,17 +46,17 @@ namespace Model
     /**
      * The number of cache behaviors for this distribution.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of cache behaviors for this distribution.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of cache behaviors for this distribution.
      */
-    inline CacheBehaviors& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline CacheBehaviors& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * Optional: A complex type that contains cache behaviors for this distribution. If
@@ -101,7 +101,7 @@ namespace Model
     inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<CacheBehavior> m_items;
     bool m_itemsHasBeenSet;

@@ -74,17 +74,17 @@ namespace Model
     /**
      * The number of trusted signers for this cache behavior.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of trusted signers for this cache behavior.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of trusted signers for this cache behavior.
      */
-    inline TrustedSigners& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline TrustedSigners& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * Optional: A complex type that contains trusted signers for this cache behavior.
@@ -137,7 +137,7 @@ namespace Model
   private:
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;

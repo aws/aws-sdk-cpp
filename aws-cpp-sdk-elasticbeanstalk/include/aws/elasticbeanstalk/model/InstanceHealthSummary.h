@@ -50,159 +50,159 @@ namespace Model
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data
      * on an instance.</p>
      */
-    inline long GetNoData() const{ return m_noData; }
+    inline int GetNoData() const{ return m_noData; }
 
     /**
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data
      * on an instance.</p>
      */
-    inline void SetNoData(long value) { m_noDataHasBeenSet = true; m_noData = value; }
+    inline void SetNoData(int value) { m_noDataHasBeenSet = true; m_noData = value; }
 
     /**
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data
      * on an instance.</p>
      */
-    inline InstanceHealthSummary& WithNoData(long value) { SetNoData(value); return *this;}
+    inline InstanceHealthSummary& WithNoData(int value) { SetNoData(value); return *this;}
 
     /**
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
      * insufficient amount of data on an instance.</p>
      */
-    inline long GetUnknown() const{ return m_unknown; }
+    inline int GetUnknown() const{ return m_unknown; }
 
     /**
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
      * insufficient amount of data on an instance.</p>
      */
-    inline void SetUnknown(long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+    inline void SetUnknown(int value) { m_unknownHasBeenSet = true; m_unknown = value; }
 
     /**
      * <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an
      * insufficient amount of data on an instance.</p>
      */
-    inline InstanceHealthSummary& WithUnknown(long value) { SetUnknown(value); return *this;}
+    inline InstanceHealthSummary& WithUnknown(int value) { SetUnknown(value); return *this;}
 
     /**
      * <p><b>Grey.</b> An operation is in progress on an instance within the command
      * timeout.</p>
      */
-    inline long GetPending() const{ return m_pending; }
+    inline int GetPending() const{ return m_pending; }
 
     /**
      * <p><b>Grey.</b> An operation is in progress on an instance within the command
      * timeout.</p>
      */
-    inline void SetPending(long value) { m_pendingHasBeenSet = true; m_pending = value; }
+    inline void SetPending(int value) { m_pendingHasBeenSet = true; m_pending = value; }
 
     /**
      * <p><b>Grey.</b> An operation is in progress on an instance within the command
      * timeout.</p>
      */
-    inline InstanceHealthSummary& WithPending(long value) { SetPending(value); return *this;}
+    inline InstanceHealthSummary& WithPending(int value) { SetPending(value); return *this;}
 
     /**
      * <p><b>Green.</b> An instance is passing health checks and the health agent is
      * not reporting any problems.</p>
      */
-    inline long GetOk() const{ return m_ok; }
+    inline int GetOk() const{ return m_ok; }
 
     /**
      * <p><b>Green.</b> An instance is passing health checks and the health agent is
      * not reporting any problems.</p>
      */
-    inline void SetOk(long value) { m_okHasBeenSet = true; m_ok = value; }
+    inline void SetOk(int value) { m_okHasBeenSet = true; m_ok = value; }
 
     /**
      * <p><b>Green.</b> An instance is passing health checks and the health agent is
      * not reporting any problems.</p>
      */
-    inline InstanceHealthSummary& WithOk(long value) { SetOk(value); return *this;}
+    inline InstanceHealthSummary& WithOk(int value) { SetOk(value); return *this;}
 
     /**
      * <p><b>Green.</b> An operation is in progress on an instance.</p>
      */
-    inline long GetInfo() const{ return m_info; }
+    inline int GetInfo() const{ return m_info; }
 
     /**
      * <p><b>Green.</b> An operation is in progress on an instance.</p>
      */
-    inline void SetInfo(long value) { m_infoHasBeenSet = true; m_info = value; }
+    inline void SetInfo(int value) { m_infoHasBeenSet = true; m_info = value; }
 
     /**
      * <p><b>Green.</b> An operation is in progress on an instance.</p>
      */
-    inline InstanceHealthSummary& WithInfo(long value) { SetInfo(value); return *this;}
+    inline InstanceHealthSummary& WithInfo(int value) { SetInfo(value); return *this;}
 
     /**
      * <p><b>Yellow.</b> The health agent is reporting a moderate number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline long GetWarning() const{ return m_warning; }
+    inline int GetWarning() const{ return m_warning; }
 
     /**
      * <p><b>Yellow.</b> The health agent is reporting a moderate number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline void SetWarning(long value) { m_warningHasBeenSet = true; m_warning = value; }
+    inline void SetWarning(int value) { m_warningHasBeenSet = true; m_warning = value; }
 
     /**
      * <p><b>Yellow.</b> The health agent is reporting a moderate number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline InstanceHealthSummary& WithWarning(long value) { SetWarning(value); return *this;}
+    inline InstanceHealthSummary& WithWarning(int value) { SetWarning(value); return *this;}
 
     /**
      * <p><b>Red.</b> The health agent is reporting a high number of request failures
      * or other issues for an instance or environment.</p>
      */
-    inline long GetDegraded() const{ return m_degraded; }
+    inline int GetDegraded() const{ return m_degraded; }
 
     /**
      * <p><b>Red.</b> The health agent is reporting a high number of request failures
      * or other issues for an instance or environment.</p>
      */
-    inline void SetDegraded(long value) { m_degradedHasBeenSet = true; m_degraded = value; }
+    inline void SetDegraded(int value) { m_degradedHasBeenSet = true; m_degraded = value; }
 
     /**
      * <p><b>Red.</b> The health agent is reporting a high number of request failures
      * or other issues for an instance or environment.</p>
      */
-    inline InstanceHealthSummary& WithDegraded(long value) { SetDegraded(value); return *this;}
+    inline InstanceHealthSummary& WithDegraded(int value) { SetDegraded(value); return *this;}
 
     /**
      * <p><b>Red.</b> The health agent is reporting a very high number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline long GetSevere() const{ return m_severe; }
+    inline int GetSevere() const{ return m_severe; }
 
     /**
      * <p><b>Red.</b> The health agent is reporting a very high number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline void SetSevere(long value) { m_severeHasBeenSet = true; m_severe = value; }
+    inline void SetSevere(int value) { m_severeHasBeenSet = true; m_severe = value; }
 
     /**
      * <p><b>Red.</b> The health agent is reporting a very high number of request
      * failures or other issues for an instance or environment.</p>
      */
-    inline InstanceHealthSummary& WithSevere(long value) { SetSevere(value); return *this;}
+    inline InstanceHealthSummary& WithSevere(int value) { SetSevere(value); return *this;}
 
   private:
-    long m_noData;
+    int m_noData;
     bool m_noDataHasBeenSet;
-    long m_unknown;
+    int m_unknown;
     bool m_unknownHasBeenSet;
-    long m_pending;
+    int m_pending;
     bool m_pendingHasBeenSet;
-    long m_ok;
+    int m_ok;
     bool m_okHasBeenSet;
-    long m_info;
+    int m_info;
     bool m_infoHasBeenSet;
-    long m_warning;
+    int m_warning;
     bool m_warningHasBeenSet;
-    long m_degraded;
+    int m_degraded;
     bool m_degradedHasBeenSet;
-    long m_severe;
+    int m_severe;
     bool m_severeHasBeenSet;
   };
 

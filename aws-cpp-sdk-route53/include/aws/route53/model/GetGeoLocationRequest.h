@@ -46,7 +46,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline const Aws::String& GetContinentCode() const{ return m_continentCode; }
 
@@ -56,7 +56,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
@@ -66,7 +66,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
@@ -76,7 +76,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline void SetContinentCode(const char* value) { m_continentCodeHasBeenSet = true; m_continentCode.assign(value); }
 
@@ -86,7 +86,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithContinentCode(const Aws::String& value) { SetContinentCode(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithContinentCode(Aws::String&& value) { SetContinentCode(value); return *this;}
 
@@ -106,7 +106,7 @@ namespace Model
      * <code>AS</code> | <code>EU</code> | <code>OC</code> | <code>NA</code> |
      * <code>SA</code></p> <p>Constraint: Specifying <code>ContinentCode</code> with
      * either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
-     * <a>InvalidInput</a> error.</p>
+     * <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
 
@@ -170,7 +170,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
 
@@ -178,7 +178,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
@@ -194,7 +194,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
 
@@ -202,7 +202,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
 
@@ -210,7 +210,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(value); return *this;}
 
@@ -218,7 +218,7 @@ namespace Model
      * <p>The code for a country's subdivision (e.g., a province of Canada). A
      * subdivision code is only valid with the appropriate country code.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 

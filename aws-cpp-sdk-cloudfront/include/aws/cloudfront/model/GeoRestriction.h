@@ -104,21 +104,21 @@ namespace Model
      * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
      * you can omit Items.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * When geo restriction is enabled, this is the number of countries in your
      * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
      * you can omit Items.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * When geo restriction is enabled, this is the number of countries in your
      * whitelist or blacklist. Otherwise, when it is not enabled, Quantity is 0, and
      * you can omit Items.
      */
-    inline GeoRestriction& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline GeoRestriction& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * A complex type that contains a Location element for each country in which you
@@ -227,7 +227,7 @@ namespace Model
   private:
     GeoRestrictionType m_restrictionType;
     bool m_restrictionTypeHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;

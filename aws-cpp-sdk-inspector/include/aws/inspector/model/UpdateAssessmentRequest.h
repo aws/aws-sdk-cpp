@@ -108,26 +108,26 @@ namespace Model
      * <p>Assessment duration in seconds that you want to update. The default value is
      * 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
      */
-    inline long GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
      * <p>Assessment duration in seconds that you want to update. The default value is
      * 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
      */
-    inline void SetDurationInSeconds(long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
+    inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
      * <p>Assessment duration in seconds that you want to update. The default value is
      * 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
      */
-    inline UpdateAssessmentRequest& WithDurationInSeconds(long value) { SetDurationInSeconds(value); return *this;}
+    inline UpdateAssessmentRequest& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 
   private:
     Aws::String m_assessmentArn;
     bool m_assessmentArnHasBeenSet;
     Aws::String m_assessmentName;
     bool m_assessmentNameHasBeenSet;
-    long m_durationInSeconds;
+    int m_durationInSeconds;
     bool m_durationInSecondsHasBeenSet;
   };
 

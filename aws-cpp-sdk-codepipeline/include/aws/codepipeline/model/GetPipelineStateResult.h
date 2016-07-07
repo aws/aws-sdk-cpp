@@ -81,62 +81,62 @@ namespace Model
     inline GetPipelineStateResult& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 
     /**
-     * <p>The version number of the pipeline.</p> <note>A newly-created pipeline is
-     * always assigned a version number of <code>1</code>.</note>
+     * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
+     * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline long GetPipelineVersion() const{ return m_pipelineVersion; }
+    inline int GetPipelineVersion() const{ return m_pipelineVersion; }
 
     /**
-     * <p>The version number of the pipeline.</p> <note>A newly-created pipeline is
-     * always assigned a version number of <code>1</code>.</note>
+     * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
+     * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline void SetPipelineVersion(long value) { m_pipelineVersion = value; }
+    inline void SetPipelineVersion(int value) { m_pipelineVersion = value; }
 
     /**
-     * <p>The version number of the pipeline.</p> <note>A newly-created pipeline is
-     * always assigned a version number of <code>1</code>.</note>
+     * <p>The version number of the pipeline.</p> <note> <p>A newly-created pipeline is
+     * always assigned a version number of <code>1</code>.</p> </note>
      */
-    inline GetPipelineStateResult& WithPipelineVersion(long value) { SetPipelineVersion(value); return *this;}
+    inline GetPipelineStateResult& WithPipelineVersion(int value) { SetPipelineVersion(value); return *this;}
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline const Aws::Vector<StageState>& GetStageStates() const{ return m_stageStates; }
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline void SetStageStates(const Aws::Vector<StageState>& value) { m_stageStates = value; }
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline void SetStageStates(Aws::Vector<StageState>&& value) { m_stageStates = value; }
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline GetPipelineStateResult& WithStageStates(const Aws::Vector<StageState>& value) { SetStageStates(value); return *this;}
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline GetPipelineStateResult& WithStageStates(Aws::Vector<StageState>&& value) { SetStageStates(value); return *this;}
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline GetPipelineStateResult& AddStageStates(const StageState& value) { m_stageStates.push_back(value); return *this; }
 
     /**
      * <p>A list of the pipeline stage output information, including stage name, state,
-     * most recent run details, whether the stage is disabled, and other data. </p>
+     * most recent run details, whether the stage is disabled, and other data.</p>
      */
     inline GetPipelineStateResult& AddStageStates(StageState&& value) { m_stageStates.push_back(value); return *this; }
 
@@ -192,7 +192,7 @@ namespace Model
 
   private:
     Aws::String m_pipelineName;
-    long m_pipelineVersion;
+    int m_pipelineVersion;
     Aws::Vector<StageState> m_stageStates;
     Aws::Utils::DateTime m_created;
     Aws::Utils::DateTime m_updated;

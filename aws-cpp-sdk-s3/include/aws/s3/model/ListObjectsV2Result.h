@@ -205,19 +205,19 @@ namespace Model
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline long GetMaxKeys() const{ return m_maxKeys; }
+    inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline void SetMaxKeys(long value) { m_maxKeys = value; }
+    inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
     /**
      * Sets the maximum number of keys returned in the response. The response might
      * contain fewer keys but will never contain more.
      */
-    inline ListObjectsV2Result& WithMaxKeys(long value) { SetMaxKeys(value); return *this;}
+    inline ListObjectsV2Result& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
     /**
      * CommonPrefixes contains all (if there are any) keys between Prefix and the next
@@ -291,21 +291,21 @@ namespace Model
      * be less than equals to MaxKeys field. Say you ask for 50 keys, your result will
      * include less than equals 50 keys
      */
-    inline long GetKeyCount() const{ return m_keyCount; }
+    inline int GetKeyCount() const{ return m_keyCount; }
 
     /**
      * KeyCount is the number of keys returned with this request. KeyCount will always
      * be less than equals to MaxKeys field. Say you ask for 50 keys, your result will
      * include less than equals 50 keys
      */
-    inline void SetKeyCount(long value) { m_keyCount = value; }
+    inline void SetKeyCount(int value) { m_keyCount = value; }
 
     /**
      * KeyCount is the number of keys returned with this request. KeyCount will always
      * be less than equals to MaxKeys field. Say you ask for 50 keys, your result will
      * include less than equals 50 keys
      */
-    inline ListObjectsV2Result& WithKeyCount(long value) { SetKeyCount(value); return *this;}
+    inline ListObjectsV2Result& WithKeyCount(int value) { SetKeyCount(value); return *this;}
 
     /**
      * ContinuationToken indicates Amazon S3 that the list is being continued on this
@@ -453,10 +453,10 @@ namespace Model
     Aws::String m_name;
     Aws::String m_prefix;
     Aws::String m_delimiter;
-    long m_maxKeys;
+    int m_maxKeys;
     Aws::Vector<CommonPrefix> m_commonPrefixes;
     EncodingType m_encodingType;
-    long m_keyCount;
+    int m_keyCount;
     Aws::String m_continuationToken;
     Aws::String m_nextContinuationToken;
     Aws::String m_startAfter;

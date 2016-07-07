@@ -18,7 +18,7 @@
 class MockEC2MetadataClient : public Aws::Internal::EC2MetadataClient
 {
 public:
-    inline Aws::String GetDefaultCredentials() const
+    inline Aws::String GetDefaultCredentials() const override
     {
         return m_mockedValue;
     }
@@ -28,6 +28,17 @@ public:
         m_mockedValue = mockValue;
     }
 
+    inline Aws::String GetCurrentRegion() const override
+    {
+        return m_region;
+    }
+
+    inline void SetCurrentRegionValue(const Aws::String& mockValue)
+    {
+        m_region = mockValue;
+    }
+
 private:
     Aws::String m_mockedValue;
+    Aws::String m_region;
 };

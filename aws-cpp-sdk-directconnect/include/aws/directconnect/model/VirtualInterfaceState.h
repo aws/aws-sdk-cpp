@@ -29,6 +29,7 @@ namespace Model
     verifying,
     pending,
     available,
+    down,
     deleting,
     deleted,
     rejected

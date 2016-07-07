@@ -143,21 +143,21 @@ namespace Model
      * after they are copied from the source region. </p> <p> Default: 7. </p> <p>
      * Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline long GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p> The number of days to retain automated snapshots in the destination region
      * after they are copied from the source region. </p> <p> Default: 7. </p> <p>
      * Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline void SetRetentionPeriod(long value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
+    inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p> The number of days to retain automated snapshots in the destination region
      * after they are copied from the source region. </p> <p> Default: 7. </p> <p>
      * Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline EnableSnapshotCopyRequest& WithRetentionPeriod(long value) { SetRetentionPeriod(value); return *this;}
+    inline EnableSnapshotCopyRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 
     /**
      * <p>The name of the snapshot copy grant to use when snapshots of an AWS
@@ -206,7 +206,7 @@ namespace Model
     bool m_clusterIdentifierHasBeenSet;
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;
-    long m_retentionPeriod;
+    int m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;

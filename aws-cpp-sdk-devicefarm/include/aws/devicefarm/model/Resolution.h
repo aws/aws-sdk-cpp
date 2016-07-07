@@ -44,37 +44,37 @@ namespace Model
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
-    inline long GetWidth() const{ return m_width; }
+    inline int GetWidth() const{ return m_width; }
 
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
-    inline void SetWidth(long value) { m_widthHasBeenSet = true; m_width = value; }
+    inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
      * <p>The screen resolution's width, expressed in pixels.</p>
      */
-    inline Resolution& WithWidth(long value) { SetWidth(value); return *this;}
+    inline Resolution& WithWidth(int value) { SetWidth(value); return *this;}
 
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
-    inline long GetHeight() const{ return m_height; }
+    inline int GetHeight() const{ return m_height; }
 
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
-    inline void SetHeight(long value) { m_heightHasBeenSet = true; m_height = value; }
+    inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
      * <p>The screen resolution's height, expressed in pixels.</p>
      */
-    inline Resolution& WithHeight(long value) { SetHeight(value); return *this;}
+    inline Resolution& WithHeight(int value) { SetHeight(value); return *this;}
 
   private:
-    long m_width;
+    int m_width;
     bool m_widthHasBeenSet;
-    long m_height;
+    int m_height;
     bool m_heightHasBeenSet;
   };
 

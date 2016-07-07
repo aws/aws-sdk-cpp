@@ -42,79 +42,79 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline S3ArtifactLocation& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline S3ArtifactLocation& WithBucketName(Aws::String&& value) { SetBucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket. </p>
+     * <p>The name of the Amazon S3 bucket.</p>
      */
     inline S3ArtifactLocation& WithBucketName(const char* value) { SetBucketName(value); return *this;}
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline const Aws::String& GetObjectKey() const{ return m_objectKey; }
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline void SetObjectKey(const Aws::String& value) { m_objectKeyHasBeenSet = true; m_objectKey = value; }
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline void SetObjectKey(Aws::String&& value) { m_objectKeyHasBeenSet = true; m_objectKey = value; }
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline void SetObjectKey(const char* value) { m_objectKeyHasBeenSet = true; m_objectKey.assign(value); }
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline S3ArtifactLocation& WithObjectKey(const Aws::String& value) { SetObjectKey(value); return *this;}
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline S3ArtifactLocation& WithObjectKey(Aws::String&& value) { SetObjectKey(value); return *this;}
 
     /**
      * <p>The key of the object in the Amazon S3 bucket, which uniquely identifies the
-     * object in the bucket. </p>
+     * object in the bucket.</p>
      */
     inline S3ArtifactLocation& WithObjectKey(const char* value) { SetObjectKey(value); return *this;}
 

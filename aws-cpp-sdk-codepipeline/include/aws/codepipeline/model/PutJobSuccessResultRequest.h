@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a put job success result action. </p>
+   * <p>Represents the input of a put job success result action.</p>
    */
   class AWS_CODEPIPELINE_API PutJobSuccessResultRequest : public CodePipelineRequest
   {
@@ -81,31 +81,31 @@ namespace Model
 
     /**
      * <p>The ID of the current revision of the artifact successfully worked upon by
-     * the job. </p>
+     * the job.</p>
      */
     inline const CurrentRevision& GetCurrentRevision() const{ return m_currentRevision; }
 
     /**
      * <p>The ID of the current revision of the artifact successfully worked upon by
-     * the job. </p>
+     * the job.</p>
      */
     inline void SetCurrentRevision(const CurrentRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
 
     /**
      * <p>The ID of the current revision of the artifact successfully worked upon by
-     * the job. </p>
+     * the job.</p>
      */
     inline void SetCurrentRevision(CurrentRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
 
     /**
      * <p>The ID of the current revision of the artifact successfully worked upon by
-     * the job. </p>
+     * the job.</p>
      */
     inline PutJobSuccessResultRequest& WithCurrentRevision(const CurrentRevision& value) { SetCurrentRevision(value); return *this;}
 
     /**
      * <p>The ID of the current revision of the artifact successfully worked upon by
-     * the job. </p>
+     * the job.</p>
      */
     inline PutJobSuccessResultRequest& WithCurrentRevision(CurrentRevision&& value) { SetCurrentRevision(value); return *this;}
 
@@ -115,7 +115,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
@@ -125,7 +125,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
@@ -135,7 +135,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
@@ -145,7 +145,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
@@ -155,7 +155,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutJobSuccessResultRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
@@ -165,7 +165,7 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutJobSuccessResultRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(value); return *this;}
 
@@ -175,37 +175,37 @@ namespace Model
      * jobs will use this token in order to identify the running instance of the
      * action. It can be reused to return additional information about the progress of
      * the custom action. When the action is complete, no continuation token should be
-     * supplied. </p>
+     * supplied.</p>
      */
     inline PutJobSuccessResultRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
     /**
      * <p>The execution details of the successful job, such as the actions taken by the
-     * job worker. </p>
+     * job worker.</p>
      */
     inline const ExecutionDetails& GetExecutionDetails() const{ return m_executionDetails; }
 
     /**
      * <p>The execution details of the successful job, such as the actions taken by the
-     * job worker. </p>
+     * job worker.</p>
      */
     inline void SetExecutionDetails(const ExecutionDetails& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = value; }
 
     /**
      * <p>The execution details of the successful job, such as the actions taken by the
-     * job worker. </p>
+     * job worker.</p>
      */
     inline void SetExecutionDetails(ExecutionDetails&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = value; }
 
     /**
      * <p>The execution details of the successful job, such as the actions taken by the
-     * job worker. </p>
+     * job worker.</p>
      */
     inline PutJobSuccessResultRequest& WithExecutionDetails(const ExecutionDetails& value) { SetExecutionDetails(value); return *this;}
 
     /**
      * <p>The execution details of the successful job, such as the actions taken by the
-     * job worker. </p>
+     * job worker.</p>
      */
     inline PutJobSuccessResultRequest& WithExecutionDetails(ExecutionDetails&& value) { SetExecutionDetails(value); return *this;}
 

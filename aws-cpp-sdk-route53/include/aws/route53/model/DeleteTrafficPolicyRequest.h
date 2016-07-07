@@ -71,22 +71,22 @@ namespace Model
     /**
      * <p>The version number of the traffic policy that you want to delete.</p>
      */
-    inline long GetVersion() const{ return m_version; }
+    inline int GetVersion() const{ return m_version; }
 
     /**
      * <p>The version number of the traffic policy that you want to delete.</p>
      */
-    inline void SetVersion(long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version number of the traffic policy that you want to delete.</p>
      */
-    inline DeleteTrafficPolicyRequest& WithVersion(long value) { SetVersion(value); return *this;}
+    inline DeleteTrafficPolicyRequest& WithVersion(int value) { SetVersion(value); return *this;}
 
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
-    long m_version;
+    int m_version;
     bool m_versionHasBeenSet;
   };
 

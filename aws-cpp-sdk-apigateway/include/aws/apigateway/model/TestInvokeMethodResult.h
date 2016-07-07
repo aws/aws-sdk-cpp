@@ -46,17 +46,17 @@ namespace Model
     /**
      * <p>The HTTP status code.</p>
      */
-    inline long GetStatus() const{ return m_status; }
+    inline int GetStatus() const{ return m_status; }
 
     /**
      * <p>The HTTP status code.</p>
      */
-    inline void SetStatus(long value) { m_status = value; }
+    inline void SetStatus(int value) { m_status = value; }
 
     /**
      * <p>The HTTP status code.</p>
      */
-    inline TestInvokeMethodResult& WithStatus(long value) { SetStatus(value); return *this;}
+    inline TestInvokeMethodResult& WithStatus(int value) { SetStatus(value); return *this;}
 
     /**
      * <p>The body of HTTP response.</p>
@@ -204,7 +204,7 @@ namespace Model
     inline TestInvokeMethodResult& WithLatency(long long value) { SetLatency(value); return *this;}
 
   private:
-    long m_status;
+    int m_status;
     Aws::String m_body;
     Aws::Map<Aws::String, Aws::String> m_headers;
     Aws::String m_log;

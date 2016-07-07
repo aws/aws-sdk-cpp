@@ -61,22 +61,22 @@ namespace Model
     /**
      * <p>The number of reservations available for the price.</p>
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * <p>The number of reservations available for the price.</p>
      */
-    inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
      * <p>The number of reservations available for the price.</p>
      */
-    inline PricingDetail& WithCount(long value) { SetCount(value); return *this;}
+    inline PricingDetail& WithCount(int value) { SetCount(value); return *this;}
 
   private:
     double m_price;
     bool m_priceHasBeenSet;
-    long m_count;
+    int m_count;
     bool m_countHasBeenSet;
   };
 

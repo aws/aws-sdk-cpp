@@ -231,17 +231,17 @@ namespace Model
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline long GetSlotDurationInHours() const{ return m_slotDurationInHours; }
+    inline int GetSlotDurationInHours() const{ return m_slotDurationInHours; }
 
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline void SetSlotDurationInHours(long value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
+    inline void SetSlotDurationInHours(int value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
 
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline ScheduledInstanceAvailability& WithSlotDurationInHours(long value) { SetSlotDurationInHours(value); return *this;}
+    inline ScheduledInstanceAvailability& WithSlotDurationInHours(int value) { SetSlotDurationInHours(value); return *this;}
 
     /**
      * <p>The schedule recurrence.</p>
@@ -331,62 +331,62 @@ namespace Model
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline long GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
+    inline int GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline void SetTotalScheduledInstanceHours(long value) { m_totalScheduledInstanceHoursHasBeenSet = true; m_totalScheduledInstanceHours = value; }
+    inline void SetTotalScheduledInstanceHours(int value) { m_totalScheduledInstanceHoursHasBeenSet = true; m_totalScheduledInstanceHours = value; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline ScheduledInstanceAvailability& WithTotalScheduledInstanceHours(long value) { SetTotalScheduledInstanceHours(value); return *this;}
+    inline ScheduledInstanceAvailability& WithTotalScheduledInstanceHours(int value) { SetTotalScheduledInstanceHours(value); return *this;}
 
     /**
      * <p>The number of available instances.</p>
      */
-    inline long GetAvailableInstanceCount() const{ return m_availableInstanceCount; }
+    inline int GetAvailableInstanceCount() const{ return m_availableInstanceCount; }
 
     /**
      * <p>The number of available instances.</p>
      */
-    inline void SetAvailableInstanceCount(long value) { m_availableInstanceCountHasBeenSet = true; m_availableInstanceCount = value; }
+    inline void SetAvailableInstanceCount(int value) { m_availableInstanceCountHasBeenSet = true; m_availableInstanceCount = value; }
 
     /**
      * <p>The number of available instances.</p>
      */
-    inline ScheduledInstanceAvailability& WithAvailableInstanceCount(long value) { SetAvailableInstanceCount(value); return *this;}
+    inline ScheduledInstanceAvailability& WithAvailableInstanceCount(int value) { SetAvailableInstanceCount(value); return *this;}
 
     /**
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
-    inline long GetMinTermDurationInDays() const{ return m_minTermDurationInDays; }
+    inline int GetMinTermDurationInDays() const{ return m_minTermDurationInDays; }
 
     /**
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
-    inline void SetMinTermDurationInDays(long value) { m_minTermDurationInDaysHasBeenSet = true; m_minTermDurationInDays = value; }
+    inline void SetMinTermDurationInDays(int value) { m_minTermDurationInDaysHasBeenSet = true; m_minTermDurationInDays = value; }
 
     /**
      * <p>The minimum term. The only possible value is 365 days.</p>
      */
-    inline ScheduledInstanceAvailability& WithMinTermDurationInDays(long value) { SetMinTermDurationInDays(value); return *this;}
+    inline ScheduledInstanceAvailability& WithMinTermDurationInDays(int value) { SetMinTermDurationInDays(value); return *this;}
 
     /**
      * <p>The maximum term. The only possible value is 365 days.</p>
      */
-    inline long GetMaxTermDurationInDays() const{ return m_maxTermDurationInDays; }
+    inline int GetMaxTermDurationInDays() const{ return m_maxTermDurationInDays; }
 
     /**
      * <p>The maximum term. The only possible value is 365 days.</p>
      */
-    inline void SetMaxTermDurationInDays(long value) { m_maxTermDurationInDaysHasBeenSet = true; m_maxTermDurationInDays = value; }
+    inline void SetMaxTermDurationInDays(int value) { m_maxTermDurationInDaysHasBeenSet = true; m_maxTermDurationInDays = value; }
 
     /**
      * <p>The maximum term. The only possible value is 365 days.</p>
      */
-    inline ScheduledInstanceAvailability& WithMaxTermDurationInDays(long value) { SetMaxTermDurationInDays(value); return *this;}
+    inline ScheduledInstanceAvailability& WithMaxTermDurationInDays(int value) { SetMaxTermDurationInDays(value); return *this;}
 
   private:
     Aws::String m_instanceType;
@@ -399,7 +399,7 @@ namespace Model
     bool m_availabilityZoneHasBeenSet;
     Aws::String m_purchaseToken;
     bool m_purchaseTokenHasBeenSet;
-    long m_slotDurationInHours;
+    int m_slotDurationInHours;
     bool m_slotDurationInHoursHasBeenSet;
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
@@ -407,13 +407,13 @@ namespace Model
     bool m_firstSlotStartTimeHasBeenSet;
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
-    long m_totalScheduledInstanceHours;
+    int m_totalScheduledInstanceHours;
     bool m_totalScheduledInstanceHoursHasBeenSet;
-    long m_availableInstanceCount;
+    int m_availableInstanceCount;
     bool m_availableInstanceCountHasBeenSet;
-    long m_minTermDurationInDays;
+    int m_minTermDurationInDays;
     bool m_minTermDurationInDaysHasBeenSet;
-    long m_maxTermDurationInDays;
+    int m_maxTermDurationInDays;
     bool m_maxTermDurationInDaysHasBeenSet;
   };
 

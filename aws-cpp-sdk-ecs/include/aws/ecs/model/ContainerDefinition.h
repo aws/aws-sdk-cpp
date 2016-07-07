@@ -341,7 +341,7 @@ namespace Model
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
-    inline long GetCpu() const{ return m_cpu; }
+    inline int GetCpu() const{ return m_cpu; }
 
     /**
      * <p>The number of <code>cpu</code> units reserved for the container. A container
@@ -381,7 +381,7 @@ namespace Model
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
-    inline void SetCpu(long value) { m_cpuHasBeenSet = true; m_cpu = value; }
+    inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
      * <p>The number of <code>cpu</code> units reserved for the container. A container
@@ -421,7 +421,7 @@ namespace Model
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
-    inline ContainerDefinition& WithCpu(long value) { SetCpu(value); return *this;}
+    inline ContainerDefinition& WithCpu(int value) { SetCpu(value); return *this;}
 
     /**
      * <p>The number of MiB of memory to reserve for the container. You must specify a
@@ -436,7 +436,7 @@ namespace Model
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      */
-    inline long GetMemory() const{ return m_memory; }
+    inline int GetMemory() const{ return m_memory; }
 
     /**
      * <p>The number of MiB of memory to reserve for the container. You must specify a
@@ -451,7 +451,7 @@ namespace Model
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      */
-    inline void SetMemory(long value) { m_memoryHasBeenSet = true; m_memory = value; }
+    inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
      * <p>The number of MiB of memory to reserve for the container. You must specify a
@@ -466,7 +466,7 @@ namespace Model
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      */
-    inline ContainerDefinition& WithMemory(long value) { SetMemory(value); return *this;}
+    inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
 
     /**
      * <p>The <code>link</code> parameter allows containers to communicate with each
@@ -2518,9 +2518,9 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_image;
     bool m_imageHasBeenSet;
-    long m_cpu;
+    int m_cpu;
     bool m_cpuHasBeenSet;
-    long m_memory;
+    int m_memory;
     bool m_memoryHasBeenSet;
     Aws::Vector<Aws::String> m_links;
     bool m_linksHasBeenSet;

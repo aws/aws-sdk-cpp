@@ -48,6 +48,8 @@ namespace EC2Endpoint
         return "ec2.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "ec2.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "ec2.ap-south-1.amazonaws.com";
      default:
         return "ec2.us-east-1.amazonaws.com";
     }

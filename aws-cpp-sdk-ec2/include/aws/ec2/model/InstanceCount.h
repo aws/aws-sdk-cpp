@@ -73,24 +73,24 @@ namespace Model
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
-    inline InstanceCount& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
   private:
     ListingState m_state;
     bool m_stateHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
   };
 

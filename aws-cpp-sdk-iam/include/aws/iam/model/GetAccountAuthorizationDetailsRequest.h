@@ -35,58 +35,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline const Aws::Vector<EntityType>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline void SetFilter(const Aws::Vector<EntityType>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline void SetFilter(Aws::Vector<EntityType>&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline GetAccountAuthorizationDetailsRequest& WithFilter(const Aws::Vector<EntityType>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline GetAccountAuthorizationDetailsRequest& WithFilter(Aws::Vector<EntityType>&& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline GetAccountAuthorizationDetailsRequest& AddFilter(const EntityType& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
-     * <p>A list of entity types (user, group, role, local managed policy, or AWS
-     * managed policy) for filtering the results.</p> <p>The format for this parameter
-     * is a comma-separated (if more than one) list of strings. Each string value in
-     * the list must be one of the valid values listed below.</p>
+     * <p>A list of entity types used to filter the results. Only the entities that
+     * match the types you specify are included in the output. Use the value
+     * <code>LocalManagedPolicy</code> to include customer managed policies.</p> <p>The
+     * format for this parameter is a comma-separated (if more than one) list of
+     * strings. Each string value in the list must be one of the valid values listed
+     * below.</p>
      */
     inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType&& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
@@ -100,7 +114,7 @@ namespace Model
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Use this only when paginating results to indicate the maximum number of items
@@ -112,7 +126,7 @@ namespace Model
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Use this only when paginating results to indicate the maximum number of items
@@ -124,7 +138,7 @@ namespace Model
      * <code>true</code> and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline GetAccountAuthorizationDetailsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline GetAccountAuthorizationDetailsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>Use this parameter only when paginating results and only after you receive a
@@ -185,7 +199,7 @@ namespace Model
   private:
     Aws::Vector<EntityType> m_filter;
     bool m_filterHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

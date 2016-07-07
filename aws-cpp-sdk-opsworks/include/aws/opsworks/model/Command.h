@@ -252,61 +252,61 @@ namespace Model
     inline Command& WithCompletedAt(const char* value) { SetCompletedAt(value); return *this;}
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline Command& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline Command& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The command status:</p> <ul> <li>failed</li> <li>successful</li>
-     * <li>skipped</li> <li>pending</li> </ul>
+     * <p>The command status:</p> <ul> <li> <p>failed</p> </li> <li> <p>successful</p>
+     * </li> <li> <p>skipped</p> </li> <li> <p>pending</p> </li> </ul>
      */
     inline Command& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
      * <p>The command exit code.</p>
      */
-    inline long GetExitCode() const{ return m_exitCode; }
+    inline int GetExitCode() const{ return m_exitCode; }
 
     /**
      * <p>The command exit code.</p>
      */
-    inline void SetExitCode(long value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
+    inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
      * <p>The command exit code.</p>
      */
-    inline Command& WithExitCode(long value) { SetExitCode(value); return *this;}
+    inline Command& WithExitCode(int value) { SetExitCode(value); return *this;}
 
     /**
      * <p>The URL of the command log.</p>
@@ -344,72 +344,79 @@ namespace Model
     inline Command& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline Command& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline Command& WithType(Aws::String&& value) { SetType(value); return *this;}
 
     /**
-     * <p>The command type:</p> <ul> <li> <code>deploy</code> </li> <li>
-     * <code>rollback</code> </li> <li> <code>start</code> </li> <li> <code>stop</code>
-     * </li> <li> <code>restart</code> </li> <li> <code>undeploy</code> </li> <li>
-     * <code>update_dependencies</code> </li> <li> <code>install_dependencies</code>
-     * </li> <li> <code>update_custom_cookbooks</code> </li> <li>
-     * <code>execute_recipes</code> </li> </ul>
+     * <p>The command type:</p> <ul> <li> <p> <code>deploy</code> </p> </li> <li> <p>
+     * <code>rollback</code> </p> </li> <li> <p> <code>start</code> </p> </li> <li> <p>
+     * <code>stop</code> </p> </li> <li> <p> <code>restart</code> </p> </li> <li> <p>
+     * <code>undeploy</code> </p> </li> <li> <p> <code>update_dependencies</code> </p>
+     * </li> <li> <p> <code>install_dependencies</code> </p> </li> <li> <p>
+     * <code>update_custom_cookbooks</code> </p> </li> <li> <p>
+     * <code>execute_recipes</code> </p> </li> </ul>
      */
     inline Command& WithType(const char* value) { SetType(value); return *this;}
 
@@ -428,7 +435,7 @@ namespace Model
     bool m_completedAtHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_exitCode;
+    int m_exitCode;
     bool m_exitCodeHasBeenSet;
     Aws::String m_logUrl;
     bool m_logUrlHasBeenSet;

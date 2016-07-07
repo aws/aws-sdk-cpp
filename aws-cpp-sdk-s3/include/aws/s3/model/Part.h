@@ -44,19 +44,19 @@ namespace Model
      * Part number identifying the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline long GetPartNumber() const{ return m_partNumber; }
+    inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
      * Part number identifying the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline void SetPartNumber(long value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
      * Part number identifying the part. This is a positive integer between 1 and
      * 10,000.
      */
-    inline Part& WithPartNumber(long value) { SetPartNumber(value); return *this;}
+    inline Part& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 
     /**
      * Date and time at which the part was uploaded.
@@ -121,26 +121,26 @@ namespace Model
     /**
      * Size of the uploaded part data.
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * Size of the uploaded part data.
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * Size of the uploaded part data.
      */
-    inline Part& WithSize(long value) { SetSize(value); return *this;}
+    inline Part& WithSize(int value) { SetSize(value); return *this;}
 
   private:
-    long m_partNumber;
+    int m_partNumber;
     bool m_partNumberHasBeenSet;
     Aws::Utils::DateTime m_lastModified;
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
   };
 

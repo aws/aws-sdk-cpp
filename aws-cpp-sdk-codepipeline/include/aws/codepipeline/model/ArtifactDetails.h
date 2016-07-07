@@ -43,37 +43,37 @@ namespace Model
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
-    inline long GetMinimumCount() const{ return m_minimumCount; }
+    inline int GetMinimumCount() const{ return m_minimumCount; }
 
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
-    inline void SetMinimumCount(long value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
+    inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
 
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
-    inline ArtifactDetails& WithMinimumCount(long value) { SetMinimumCount(value); return *this;}
+    inline ArtifactDetails& WithMinimumCount(int value) { SetMinimumCount(value); return *this;}
 
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
-    inline long GetMaximumCount() const{ return m_maximumCount; }
+    inline int GetMaximumCount() const{ return m_maximumCount; }
 
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
-    inline void SetMaximumCount(long value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
+    inline void SetMaximumCount(int value) { m_maximumCountHasBeenSet = true; m_maximumCount = value; }
 
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
-    inline ArtifactDetails& WithMaximumCount(long value) { SetMaximumCount(value); return *this;}
+    inline ArtifactDetails& WithMaximumCount(int value) { SetMaximumCount(value); return *this;}
 
   private:
-    long m_minimumCount;
+    int m_minimumCount;
     bool m_minimumCountHasBeenSet;
-    long m_maximumCount;
+    int m_maximumCount;
     bool m_maximumCountHasBeenSet;
   };
 

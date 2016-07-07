@@ -87,7 +87,7 @@ namespace Model
      * <p>Default: If you create a volume from a snapshot and you don't specify a
      * volume size, the default is the snapshot size.</p>
      */
-    inline long GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The volume size, in GiB. For <code>standard</code> volumes, specify a value
@@ -97,7 +97,7 @@ namespace Model
      * <p>Default: If you create a volume from a snapshot and you don't specify a
      * volume size, the default is the snapshot size.</p>
      */
-    inline void SetVolumeSize(long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
      * <p>The volume size, in GiB. For <code>standard</code> volumes, specify a value
@@ -107,7 +107,7 @@ namespace Model
      * <p>Default: If you create a volume from a snapshot and you don't specify a
      * volume size, the default is the snapshot size.</p>
      */
-    inline Ebs& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
      * <p>The volume type. For more information, see <a
@@ -195,21 +195,21 @@ namespace Model
      * volume.</p> <p>Constraint: Required when the volume type is
      * <code>io1</code>.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the
      * volume.</p> <p>Constraint: Required when the volume type is
      * <code>io1</code>.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the
      * volume.</p> <p>Constraint: Required when the volume type is
      * <code>io1</code>.</p>
      */
-    inline Ebs& WithIops(long value) { SetIops(value); return *this;}
+    inline Ebs& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Indicates whether the volume should be encrypted. Encrypted EBS volumes must
@@ -247,13 +247,13 @@ namespace Model
   private:
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
-    long m_volumeSize;
+    int m_volumeSize;
     bool m_volumeSizeHasBeenSet;
     Aws::String m_volumeType;
     bool m_volumeTypeHasBeenSet;
     bool m_deleteOnTermination;
     bool m_deleteOnTerminationHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

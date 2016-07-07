@@ -187,17 +187,17 @@ namespace Model
     /**
      * <p> The duration of the node reservation in seconds. </p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p> The duration of the node reservation in seconds. </p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p> The duration of the node reservation in seconds. </p>
      */
-    inline ReservedNode& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedNode& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p> The fixed cost Amazon Redshift charges you for this reserved node. </p>
@@ -267,17 +267,17 @@ namespace Model
     /**
      * <p> The number of reserved compute nodes. </p>
      */
-    inline long GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const{ return m_nodeCount; }
 
     /**
      * <p> The number of reserved compute nodes. </p>
      */
-    inline void SetNodeCount(long value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
+    inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
     /**
      * <p> The number of reserved compute nodes. </p>
      */
-    inline ReservedNode& WithNodeCount(long value) { SetNodeCount(value); return *this;}
+    inline ReservedNode& WithNodeCount(int value) { SetNodeCount(value); return *this;}
 
     /**
      * <p> The state of the reserved compute node. </p> <p>Possible Values:</p> <ul>
@@ -428,7 +428,7 @@ namespace Model
     bool m_nodeTypeHasBeenSet;
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
@@ -436,7 +436,7 @@ namespace Model
     bool m_usagePriceHasBeenSet;
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
-    long m_nodeCount;
+    int m_nodeCount;
     bool m_nodeCountHasBeenSet;
     Aws::String m_state;
     bool m_stateHasBeenSet;

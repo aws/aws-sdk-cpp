@@ -91,111 +91,96 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * next page of results by using the <code>NextRecordName</code> element.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * next page of results by using the <code>NextRecordName</code> element.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more resource record sets to be
      * listed. If your results were truncated, you can make a follow-up request for the
-     * next page of results by using the
-     * <a>ListResourceRecordSetsResponse$NextRecordName</a> element.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * next page of results by using the <code>NextRecordName</code> element.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline ListResourceRecordSetsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline const Aws::String& GetNextRecordName() const{ return m_nextRecordName; }
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline void SetNextRecordName(const Aws::String& value) { m_nextRecordName = value; }
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline void SetNextRecordName(Aws::String&& value) { m_nextRecordName = value; }
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline void SetNextRecordName(const char* value) { m_nextRecordName.assign(value); }
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordName(const Aws::String& value) { SetNextRecordName(value); return *this;}
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordName(Aws::String&& value) { SetNextRecordName(value); return *this;}
 
     /**
      * <p>If the results were truncated, the name of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordName(const char* value) { SetNextRecordName(value); return *this;}
 
     /**
      * <p>If the results were truncated, the type of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline const RRType& GetNextRecordType() const{ return m_nextRecordType; }
 
     /**
      * <p>If the results were truncated, the type of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline void SetNextRecordType(const RRType& value) { m_nextRecordType = value; }
 
     /**
      * <p>If the results were truncated, the type of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline void SetNextRecordType(RRType&& value) { m_nextRecordType = value; }
 
     /**
      * <p>If the results were truncated, the type of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordType(const RRType& value) { SetNextRecordType(value); return *this;}
 
     /**
      * <p>If the results were truncated, the type of the next record in the list. This
-     * element is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is
-     * true. </p>
+     * element is present only if <code>IsTruncated</code> is true. </p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordType(RRType&& value) { SetNextRecordType(value); return *this;}
 

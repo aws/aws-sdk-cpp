@@ -109,7 +109,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline long GetMinCount() const{ return m_minCount; }
+    inline int GetMinCount() const{ return m_minCount; }
 
     /**
      * <p>The minimum number of instances to launch. If you specify a minimum that is
@@ -120,7 +120,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline void SetMinCount(long value) { m_minCountHasBeenSet = true; m_minCount = value; }
+    inline void SetMinCount(int value) { m_minCountHasBeenSet = true; m_minCount = value; }
 
     /**
      * <p>The minimum number of instances to launch. If you specify a minimum that is
@@ -131,7 +131,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 General FAQ.</p>
      */
-    inline RunInstancesRequest& WithMinCount(long value) { SetMinCount(value); return *this;}
+    inline RunInstancesRequest& WithMinCount(int value) { SetMinCount(value); return *this;}
 
     /**
      * <p>The maximum number of instances to launch. If you specify more instances than
@@ -143,7 +143,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline long GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const{ return m_maxCount; }
 
     /**
      * <p>The maximum number of instances to launch. If you specify more instances than
@@ -155,7 +155,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline void SetMaxCount(long value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
+    inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
 
     /**
      * <p>The maximum number of instances to launch. If you specify more instances than
@@ -167,7 +167,7 @@ namespace Model
      * href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How
      * many instances can I run in Amazon EC2</a> in the Amazon EC2 FAQ.</p>
      */
-    inline RunInstancesRequest& WithMaxCount(long value) { SetMaxCount(value); return *this;}
+    inline RunInstancesRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
 
     /**
      * <p>The name of the key pair. You can create a key pair using
@@ -1034,9 +1034,9 @@ namespace Model
     bool m_dryRunHasBeenSet;
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet;
-    long m_minCount;
+    int m_minCount;
     bool m_minCountHasBeenSet;
-    long m_maxCount;
+    int m_maxCount;
     bool m_maxCountHasBeenSet;
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;

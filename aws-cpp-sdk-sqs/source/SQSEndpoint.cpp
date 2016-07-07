@@ -48,6 +48,8 @@ namespace SQSEndpoint
         return "sqs.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "sqs.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "sqs.ap-south-1.amazonaws.com";
      default:
         return "sqs.us-east-1.amazonaws.com";
     }

@@ -270,7 +270,7 @@ namespace Model
      * the resize request. </p> <p>Valid Values: Integer greater than
      * <code>0</code>.</p>
      */
-    inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
      * <p> The new number of nodes of the cluster. If you specify a new number of
@@ -284,7 +284,7 @@ namespace Model
      * the resize request. </p> <p>Valid Values: Integer greater than
      * <code>0</code>.</p>
      */
-    inline void SetNumberOfNodes(long value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
      * <p> The new number of nodes of the cluster. If you specify a new number of
@@ -298,7 +298,7 @@ namespace Model
      * the resize request. </p> <p>Valid Values: Integer greater than
      * <code>0</code>.</p>
      */
-    inline ModifyClusterRequest& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline ModifyClusterRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
     /**
      * <p> A list of cluster security groups to be authorized on this cluster. This
@@ -620,7 +620,7 @@ namespace Model
      * outside of the new retention period will be immediately deleted.</p> <p>Default:
      * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
      * <p> The number of days that automated snapshots are retained. If the value is 0,
@@ -631,7 +631,7 @@ namespace Model
      * outside of the new retention period will be immediately deleted.</p> <p>Default:
      * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+    inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
      * <p> The number of days that automated snapshots are retained. If the value is 0,
@@ -642,7 +642,7 @@ namespace Model
      * outside of the new retention period will be immediately deleted.</p> <p>Default:
      * Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>
      */
-    inline ModifyClusterRequest& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline ModifyClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /**
      * <p> The weekly time range (in UTC) during which system maintenance can occur, if
@@ -1096,7 +1096,7 @@ namespace Model
     bool m_clusterTypeHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    long m_numberOfNodes;
+    int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
@@ -1106,7 +1106,7 @@ namespace Model
     bool m_masterUserPasswordHasBeenSet;
     Aws::String m_clusterParameterGroupName;
     bool m_clusterParameterGroupNameHasBeenSet;
-    long m_automatedSnapshotRetentionPeriod;
+    int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;

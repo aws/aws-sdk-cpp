@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-DataPipeline;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20121029.11;
+        version : 0.12.20121029.17;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Data Pipeline);
@@ -34,30 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>AWS Data Pipeline configures and manages a data-driven workflow called a
-   * pipeline. AWS Data Pipeline handles the details of scheduling and ensuring that
-   * data dependencies are met so that your application can focus on processing the
-   * data.</p> <p>AWS Data Pipeline provides a JAR implementation of a task runner
-   * called AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner provides
-   * logic for common data management scenarios, such as performing database queries
-   * and running data analysis using Amazon Elastic MapReduce (Amazon EMR). You can
-   * use AWS Data Pipeline Task Runner as your task runner, or you can write your own
-   * task runner to provide custom data management.</p> <p>AWS Data Pipeline
-   * implements two main sets of functionality. Use the first set to create a
-   * pipeline and define data sources, schedules, dependencies, and the transforms to
-   * be performed on the data. Use the second set in your task runner application to
-   * receive the next task ready for processing. The logic for performing the task,
-   * such as querying the data, running data analysis, or converting the data from
-   * one format to another, is contained within the task runner. The task runner
-   * performs the task assigned to it by the web service, reporting progress to the
-   * web service as it does so. When the task is done, the task runner reports the
-   * final success or failure of the task to the web service.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Data Pipeline Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -73,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -89,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-datapipeline.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-datapipeline.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-datapipeline.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-datapipeline.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-datapipeline.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-datapipeline.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-datapipeline.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-datapipeline.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -120,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-datapipeline.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-datapipeline.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-datapipeline.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-datapipeline.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-datapipeline.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-datapipeline.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-datapipeline.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-datapipeline.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-datapipeline.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-datapipeline.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-datapipeline.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-datapipeline.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-datapipeline.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-datapipeline.lib };
         }
     };
 

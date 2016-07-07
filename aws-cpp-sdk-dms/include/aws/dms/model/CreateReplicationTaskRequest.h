@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API CreateReplicationTaskRequest : public DatabaseMigrationServiceRequest
   {
@@ -39,58 +40,58 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetReplicationTaskIdentifier() const{ return m_replicationTaskIdentifier; }
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(Aws::String&& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline void SetReplicationTaskIdentifier(const char* value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier.assign(value); }
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskIdentifier(const Aws::String& value) { SetReplicationTaskIdentifier(value); return *this;}
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskIdentifier(Aws::String&& value) { SetReplicationTaskIdentifier(value); return *this;}
 
     /**
-     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li>Must
-     * contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</li> </ul>
+     * <p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * contain two consecutive hyphens.</p> </li> </ul>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskIdentifier(const char* value) { SetReplicationTaskIdentifier(value); return *this;}
 

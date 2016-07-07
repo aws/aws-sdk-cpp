@@ -92,6 +92,12 @@ CreateConnectionResult& CreateConnectionResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("loaIssueTime"))
+  {
+    m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
+
+  }
+
 
 
   return *this;

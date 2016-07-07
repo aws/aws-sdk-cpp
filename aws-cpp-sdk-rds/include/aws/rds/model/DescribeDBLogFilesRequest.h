@@ -213,21 +213,21 @@ namespace Model
      * exist than the specified MaxRecords value, a pagination token called a marker is
      * included in the response so that the remaining results can be retrieved.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified MaxRecords value, a pagination token called a marker is
      * included in the response so that the remaining results can be retrieved.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified MaxRecords value, a pagination token called a marker is
      * included in the response so that the remaining results can be retrieved.</p>
      */
-    inline DescribeDBLogFilesRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeDBLogFilesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p>The pagination token provided in the previous request. If this parameter is
@@ -289,7 +289,7 @@ namespace Model
     bool m_fileSizeHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

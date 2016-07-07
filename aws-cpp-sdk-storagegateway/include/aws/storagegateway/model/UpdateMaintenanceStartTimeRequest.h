@@ -64,66 +64,66 @@ namespace Model
      * where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
-    inline long GetHourOfDay() const{ return m_hourOfDay; }
+    inline int GetHourOfDay() const{ return m_hourOfDay; }
 
     /**
      * <p>The hour component of the maintenance start time represented as <i>hh</i>,
      * where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
-    inline void SetHourOfDay(long value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
+    inline void SetHourOfDay(int value) { m_hourOfDayHasBeenSet = true; m_hourOfDay = value; }
 
     /**
      * <p>The hour component of the maintenance start time represented as <i>hh</i>,
      * where <i>hh</i> is the hour (00 to 23). The hour of the day is in the time zone
      * of the gateway.</p>
      */
-    inline UpdateMaintenanceStartTimeRequest& WithHourOfDay(long value) { SetHourOfDay(value); return *this;}
+    inline UpdateMaintenanceStartTimeRequest& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
 
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
      * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
-    inline long GetMinuteOfHour() const{ return m_minuteOfHour; }
+    inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
 
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
      * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
-    inline void SetMinuteOfHour(long value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
+    inline void SetMinuteOfHour(int value) { m_minuteOfHourHasBeenSet = true; m_minuteOfHour = value; }
 
     /**
      * <p>The minute component of the maintenance start time represented as <i>mm</i>,
      * where <i>mm</i> is the minute (00 to 59). The minute of the hour is in the time
      * zone of the gateway.</p>
      */
-    inline UpdateMaintenanceStartTimeRequest& WithMinuteOfHour(long value) { SetMinuteOfHour(value); return *this;}
+    inline UpdateMaintenanceStartTimeRequest& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
 
     /**
      * <p>The maintenance start time day of the week.</p>
      */
-    inline long GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline int GetDayOfWeek() const{ return m_dayOfWeek; }
 
     /**
      * <p>The maintenance start time day of the week.</p>
      */
-    inline void SetDayOfWeek(long value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
+    inline void SetDayOfWeek(int value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
 
     /**
      * <p>The maintenance start time day of the week.</p>
      */
-    inline UpdateMaintenanceStartTimeRequest& WithDayOfWeek(long value) { SetDayOfWeek(value); return *this;}
+    inline UpdateMaintenanceStartTimeRequest& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
 
   private:
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
-    long m_hourOfDay;
+    int m_hourOfDay;
     bool m_hourOfDayHasBeenSet;
-    long m_minuteOfHour;
+    int m_minuteOfHour;
     bool m_minuteOfHourHasBeenSet;
-    long m_dayOfWeek;
+    int m_dayOfWeek;
     bool m_dayOfWeekHasBeenSet;
   };
 

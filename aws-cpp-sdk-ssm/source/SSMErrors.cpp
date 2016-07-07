@@ -27,28 +27,33 @@ namespace SSM
 namespace SSMErrorMapper
 {
 
-static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
-static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
 static const int INVALID_INSTANCE_ID_HASH = HashingUtils::HashString("InvalidInstanceId");
-static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
+static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
 static const int INVALID_OUTPUT_FOLDER_HASH = HashingUtils::HashString("InvalidOutputFolder");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
-static const int TOO_MANY_UPDATES_HASH = HashingUtils::HashString("TooManyUpdates");
-static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
-static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
-static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int INVALID_ACTIVATION_ID_HASH = HashingUtils::HashString("InvalidActivationId");
 static const int DOCUMENT_PERMISSION_LIMIT_HASH = HashingUtils::HashString("DocumentPermissionLimit");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
 static const int UNSUPPORTED_PLATFORM_TYPE_HASH = HashingUtils::HashString("UnsupportedPlatformType");
 static const int INVALID_FILTER_KEY_HASH = HashingUtils::HashString("InvalidFilterKey");
 static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
-static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
 static const int INVALID_COMMAND_ID_HASH = HashingUtils::HashString("InvalidCommandId");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParameters");
-static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
 static const int INVALID_DOCUMENT_CONTENT_HASH = HashingUtils::HashString("InvalidDocumentContent");
 static const int ASSOCIATED_INSTANCES_HASH = HashingUtils::HashString("AssociatedInstances");
+static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
+static const int INVALID_RESOURCE_ID_HASH = HashingUtils::HashString("InvalidResourceId");
+static const int DUPLICATE_INSTANCE_ID_HASH = HashingUtils::HashString("DuplicateInstanceId");
+static const int INVALID_ACTIVATION_HASH = HashingUtils::HashString("InvalidActivation");
+static const int ASSOCIATION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AssociationLimitExceeded");
+static const int TOO_MANY_UPDATES_HASH = HashingUtils::HashString("TooManyUpdates");
+static const int STATUS_UNCHANGED_HASH = HashingUtils::HashString("StatusUnchanged");
+static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
+static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
+static const int ASSOCIATION_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AssociationDoesNotExist");
+static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
+static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilter");
 static const int INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidInstanceInformationFilterValue");
 
 
@@ -56,21 +61,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == DOCUMENT_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), false);
-  }
-  else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
-  }
-  else if (hashCode == INVALID_INSTANCE_ID_HASH)
+  if (hashCode == INVALID_INSTANCE_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INSTANCE_ID), false);
   }
-  else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
+  else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
   }
   else if (hashCode == INVALID_OUTPUT_FOLDER_HASH)
   {
@@ -80,21 +77,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_NEXT_TOKEN), false);
   }
-  else if (hashCode == TOO_MANY_UPDATES_HASH)
+  else if (hashCode == INVALID_ACTIVATION_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), false);
-  }
-  else if (hashCode == STATUS_UNCHANGED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
-  }
-  else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
-  }
-  else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION_ID), false);
   }
   else if (hashCode == DOCUMENT_PERMISSION_LIMIT_HASH)
   {
@@ -116,10 +101,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PERMISSION_TYPE), false);
   }
-  else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), false);
-  }
   else if (hashCode == INVALID_COMMAND_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_COMMAND_ID), false);
@@ -127,10 +108,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETERS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_PARAMETERS), false);
-  }
-  else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
   }
   else if (hashCode == INVALID_DOCUMENT_HASH)
   {
@@ -143,6 +120,54 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ASSOCIATED_INSTANCES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATED_INSTANCES), false);
+  }
+  else if (hashCode == DOCUMENT_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_RESOURCE_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_ID), false);
+  }
+  else if (hashCode == DUPLICATE_INSTANCE_ID_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_INSTANCE_ID), false);
+  }
+  else if (hashCode == INVALID_ACTIVATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ACTIVATION), false);
+  }
+  else if (hashCode == ASSOCIATION_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == TOO_MANY_UPDATES_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TOO_MANY_UPDATES), false);
+  }
+  else if (hashCode == STATUS_UNCHANGED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::STATUS_UNCHANGED), false);
+  }
+  else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DOCUMENT_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == INVALID_DOCUMENT_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT_OPERATION), false);
+  }
+  else if (hashCode == ASSOCIATION_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::ASSOCIATION_DOES_NOT_EXIST), false);
+  }
+  else if (hashCode == MAX_DOCUMENT_SIZE_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::MAX_DOCUMENT_SIZE_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_FILTER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_FILTER), false);
   }
   else if (hashCode == INVALID_INSTANCE_INFORMATION_FILTER_VALUE_HASH)
   {

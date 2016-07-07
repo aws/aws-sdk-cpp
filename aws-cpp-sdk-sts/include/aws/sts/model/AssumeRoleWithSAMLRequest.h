@@ -342,7 +342,7 @@ namespace Model
      * 1 hour, and the minimum duration is 15 minutes, even if values outside this
      * range are specified.</p> </note>
      */
-    inline long GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
@@ -353,7 +353,7 @@ namespace Model
      * 1 hour, and the minimum duration is 15 minutes, even if values outside this
      * range are specified.</p> </note>
      */
-    inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+    inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
@@ -364,7 +364,7 @@ namespace Model
      * 1 hour, and the minimum duration is 15 minutes, even if values outside this
      * range are specified.</p> </note>
      */
-    inline AssumeRoleWithSAMLRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
+    inline AssumeRoleWithSAMLRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
     Aws::String m_roleArn;
@@ -375,7 +375,7 @@ namespace Model
     bool m_sAMLAssertionHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
-    long m_durationSeconds;
+    int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };
 

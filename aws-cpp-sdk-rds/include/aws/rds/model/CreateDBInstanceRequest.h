@@ -326,7 +326,7 @@ namespace Model
      * Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web
      * Edition)</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>The amount of storage (in gigabytes) to be initially allocated for the
@@ -339,7 +339,7 @@ namespace Model
      * Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web
      * Edition)</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>The amount of storage (in gigabytes) to be initially allocated for the
@@ -352,7 +352,7 @@ namespace Model
      * Edition and Enterprise Edition) or from 20 to 4096 (Express Edition and Web
      * Edition)</p>
      */
-    inline CreateDBInstanceRequest& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>The compute and memory capacity of the DB instance.</p> <p> Valid Values:
@@ -1151,7 +1151,7 @@ namespace Model
      * <p>Must be a value from 0 to 35</p> </li> <li> <p>Cannot be set to 0 if the DB
      * instance is a source to Read Replicas</p> </li> </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days for which automated backups are retained. Setting this
@@ -1160,7 +1160,7 @@ namespace Model
      * <p>Must be a value from 0 to 35</p> </li> <li> <p>Cannot be set to 0 if the DB
      * instance is a source to Read Replicas</p> </li> </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days for which automated backups are retained. Setting this
@@ -1169,7 +1169,7 @@ namespace Model
      * <p>Must be a value from 0 to 35</p> </li> <li> <p>Cannot be set to 0 if the DB
      * instance is a source to Read Replicas</p> </li> </ul>
      */
-    inline CreateDBInstanceRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -1312,7 +1312,7 @@ namespace Model
      * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
@@ -1329,7 +1329,7 @@ namespace Model
      * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
@@ -1346,32 +1346,23 @@ namespace Model
      * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
-    inline CreateDBInstanceRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateDBInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You cannot set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true. Do not set
-     * this value if you want a Multi-AZ deployment for a SQL Server DB instance.
-     * Multi-AZ for SQL Server is set using the Mirroring option in an option
-     * group.</p>
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -2184,7 +2175,7 @@ namespace Model
      * integer multiple of 1000. For example, if the size of your DB instance is 500
      * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
@@ -2193,7 +2184,7 @@ namespace Model
      * integer multiple of 1000. For example, if the size of your DB instance is 500
      * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
@@ -2202,7 +2193,7 @@ namespace Model
      * integer multiple of 1000. For example, if the size of your DB instance is 500
      * GB, then your <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
      */
-    inline CreateDBInstanceRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -2740,7 +2731,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -2749,7 +2740,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -2758,7 +2749,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline CreateDBInstanceRequest& WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+    inline CreateDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -2894,7 +2885,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline long GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -2904,7 +2895,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -2914,14 +2905,14 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline CreateDBInstanceRequest& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+    inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
@@ -2943,11 +2934,11 @@ namespace Model
     bool m_preferredMaintenanceWindowHasBeenSet;
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;
@@ -2957,7 +2948,7 @@ namespace Model
     bool m_autoMinorVersionUpgradeHasBeenSet;
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -2983,13 +2974,13 @@ namespace Model
     bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
-    long m_monitoringInterval;
+    int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
-    long m_promotionTier;
+    int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };
 

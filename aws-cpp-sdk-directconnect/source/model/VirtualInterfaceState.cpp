@@ -33,6 +33,7 @@ namespace Aws
         static const int verifying_HASH = HashingUtils::HashString("verifying");
         static const int pending_HASH = HashingUtils::HashString("pending");
         static const int available_HASH = HashingUtils::HashString("available");
+        static const int down_HASH = HashingUtils::HashString("down");
         static const int deleting_HASH = HashingUtils::HashString("deleting");
         static const int deleted_HASH = HashingUtils::HashString("deleted");
         static const int rejected_HASH = HashingUtils::HashString("rejected");
@@ -56,6 +57,10 @@ namespace Aws
           else if (hashCode == available_HASH)
           {
             return VirtualInterfaceState::available;
+          }
+          else if (hashCode == down_HASH)
+          {
+            return VirtualInterfaceState::down;
           }
           else if (hashCode == deleting_HASH)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "pending";
           case VirtualInterfaceState::available:
             return "available";
+          case VirtualInterfaceState::down:
+            return "down";
           case VirtualInterfaceState::deleting:
             return "deleting";
           case VirtualInterfaceState::deleted:

@@ -283,47 +283,47 @@ namespace Model
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline long GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const{ return m_minSize; }
 
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
+    inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline ScheduledUpdateGroupAction& WithMinSize(long value) { SetMinSize(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithMinSize(int value) { SetMinSize(value); return *this;}
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline long GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline void SetMaxSize(long value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
+    inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline ScheduledUpdateGroupAction& WithMaxSize(long value) { SetMaxSize(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
     /**
      * <p>The number of instances you prefer to maintain in the group.</p>
      */
-    inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The number of instances you prefer to maintain in the group.</p>
      */
-    inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
+    inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The number of instances you prefer to maintain in the group.</p>
      */
-    inline ScheduledUpdateGroupAction& WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
+    inline ScheduledUpdateGroupAction& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
   private:
     Aws::String m_autoScalingGroupName;
@@ -340,11 +340,11 @@ namespace Model
     bool m_endTimeHasBeenSet;
     Aws::String m_recurrence;
     bool m_recurrenceHasBeenSet;
-    long m_minSize;
+    int m_minSize;
     bool m_minSizeHasBeenSet;
-    long m_maxSize;
+    int m_maxSize;
     bool m_maxSizeHasBeenSet;
-    long m_desiredCapacity;
+    int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
   };
 

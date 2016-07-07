@@ -488,32 +488,32 @@ namespace Model
     /**
      * <p>The total number of jobs for the run.</p>
      */
-    inline long GetTotalJobs() const{ return m_totalJobs; }
+    inline int GetTotalJobs() const{ return m_totalJobs; }
 
     /**
      * <p>The total number of jobs for the run.</p>
      */
-    inline void SetTotalJobs(long value) { m_totalJobsHasBeenSet = true; m_totalJobs = value; }
+    inline void SetTotalJobs(int value) { m_totalJobsHasBeenSet = true; m_totalJobs = value; }
 
     /**
      * <p>The total number of jobs for the run.</p>
      */
-    inline Run& WithTotalJobs(long value) { SetTotalJobs(value); return *this;}
+    inline Run& WithTotalJobs(int value) { SetTotalJobs(value); return *this;}
 
     /**
      * <p>The total number of completed jobs.</p>
      */
-    inline long GetCompletedJobs() const{ return m_completedJobs; }
+    inline int GetCompletedJobs() const{ return m_completedJobs; }
 
     /**
      * <p>The total number of completed jobs.</p>
      */
-    inline void SetCompletedJobs(long value) { m_completedJobsHasBeenSet = true; m_completedJobs = value; }
+    inline void SetCompletedJobs(int value) { m_completedJobsHasBeenSet = true; m_completedJobs = value; }
 
     /**
      * <p>The total number of completed jobs.</p>
      */
-    inline Run& WithCompletedJobs(long value) { SetCompletedJobs(value); return *this;}
+    inline Run& WithCompletedJobs(int value) { SetCompletedJobs(value); return *this;}
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or
@@ -598,9 +598,9 @@ namespace Model
     bool m_countersHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
-    long m_totalJobs;
+    int m_totalJobs;
     bool m_totalJobsHasBeenSet;
-    long m_completedJobs;
+    int m_completedJobs;
     bool m_completedJobsHasBeenSet;
     BillingMethod m_billingMethod;
     bool m_billingMethodHasBeenSet;

@@ -48,6 +48,8 @@ namespace GlacierEndpoint
         return "glacier.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "glacier.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "glacier.ap-south-1.amazonaws.com";
      default:
         return "glacier.us-east-1.amazonaws.com";
     }

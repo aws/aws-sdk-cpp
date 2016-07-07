@@ -61,37 +61,37 @@ namespace Model
     inline PutActionRevisionResult& WithNewRevision(bool value) { SetNewRevision(value); return *this;}
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionId = value; }
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = value; }
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionId.assign(value); }
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline PutActionRevisionResult& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline PutActionRevisionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
 
     /**
-     * <p>The ID of the current workflow state of the pipeline. </p>
+     * <p>The ID of the current workflow state of the pipeline.</p>
      */
     inline PutActionRevisionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 

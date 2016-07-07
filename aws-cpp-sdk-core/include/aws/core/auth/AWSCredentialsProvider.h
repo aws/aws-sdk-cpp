@@ -17,7 +17,6 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -27,10 +26,12 @@
 
 namespace Aws
 {
-    namespace Internal
+    namespace Config
     {
-        class EC2MetadataClient; //forward declaration;
-    } // namespace Internal
+        class AWSProfileConfigLoader;
+        class EC2InstanceProfileConfigLoader;
+    }
+
     namespace Auth
     {
         static int REFRESH_THRESHOLD = 1000 * 60 * 15;
@@ -41,6 +42,10 @@ namespace Aws
         class AWS_CORE_API AWSCredentials
         {
         public:
+            AWSCredentials()
+            {
+            }
+
             /**
              * Initializes object with accessKeyId, secretKey, and sessionToken. Session token defaults to empty.
              */
@@ -227,7 +232,8 @@ namespace Aws
         /**
         * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
         * Looks for environment variables AWS_SHARED_CREDENTIALS_FILE and AWS_PROFILE. If they aren't found, then it defaults
-        * to ~/.aws/credentials and default. Optionally a user can specify the profile and it will override the environment variable
+        * to ~/.aws/credentials and default; if nothing is found at that location, it will look for ~/.aws/config.
+        * Optionally a user can specify the profile and it will override the environment variable
         * and defaults. To alter the file this pulls from, then the user should alter the AWS_SHARED_CREDENTIALS_FILE variable.
         */
         class AWS_CORE_API ProfileConfigFileAWSCredentialsProvider : public AWSCredentialsProvider
@@ -251,14 +257,14 @@ namespace Aws
             AWSCredentials GetAWSCredentials() override;
 
             /**
-             * Returns the fullpath of the calculated profile file
+             * Returns the fullpath of the calculated config profile file
              */
-            static Aws::String GetProfileFilename();
+            static Aws::String GetConfigProfileFilename();
 
             /**
-             * Returns the filename of the calculated profile file.
+             * Returns the fullpath of the calculated credentials profile file
              */
-            static Aws::String GetProfileFilenameNoPath();
+            static Aws::String GetCredentialsProfileFilename();
 
             /**
              * Returns the directory storing the profile file.
@@ -271,11 +277,10 @@ namespace Aws
             * Checks to see if the refresh interval has expired and reparses the file if it has.
             */
             void RefreshIfExpired();
-            static Aws::Map<Aws::String, Aws::String> ParseProfileConfigFile(const Aws::String& filename);
 
-            Aws::String m_fileName;
             Aws::String m_profileToUse;
-            std::shared_ptr<AWSCredentials> m_credentials;
+            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_configFileLoader;
+            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_credentialsFileLoader;
             mutable std::mutex m_reloadMutex;
             long m_loadFrequencyMs;
         };
@@ -297,7 +302,7 @@ namespace Aws
              * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes,
              * uses a supplied EC2MetadataClient.
              */
-            InstanceProfileCredentialsProvider(const std::shared_ptr<Internal::EC2MetadataClient>&, long refreshRateMs = REFRESH_THRESHOLD);
+            InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Retrieves the credentials if found, otherwise returns empty credential set.
@@ -307,8 +312,7 @@ namespace Aws
         private:
             void RefreshIfExpired();
 
-            std::shared_ptr<Internal::EC2MetadataClient> m_metadataClient;
-            std::shared_ptr<AWSCredentials> m_credentials;
+            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
             long m_loadFrequencyMs;
             mutable std::mutex m_reloadMutex;
         };

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CodeCommit;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20150413.11;
+        version : 0.12.20150413.17;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS CodeCommit);
@@ -34,44 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API
-   * Reference</i>. This reference provides descriptions of the operations and data
-   * types for AWS CodeCommit API.</p> <p>You can use the AWS CodeCommit API to work
-   * with the following objects:</p> <ul> <li>Repositories, by calling the following:
-   * <ul> <li><a>BatchGetRepositories</a>, which returns information about one or
-   * more repositories associated with your AWS account</li>
-   * <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
-   * <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li>
-   * <li><a>GetRepository</a>, which returns information about a specified
-   * repository</li> <li><a>ListRepositories</a>, which lists all AWS CodeCommit
-   * repositories associated with your AWS account</li>
-   * <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of
-   * the repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of
-   * the repository. If you change the name of a repository, no other users of that
-   * repository will be able to access it until you send them the new HTTPS or SSH
-   * URL to use.</li> </ul></li> <li>Branches, by calling the following: <ul>
-   * <li><a>CreateBranch</a>, which creates a new branch in a specified
-   * repository</li> <li><a>GetBranch</a>, which returns information about a
-   * specified branch</li> <li><a>ListBranches</a>, which lists all branches for a
-   * specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the
-   * default branch for a repository</li> </ul></li> <li>Information about committed
-   * code in a repository, by calling the following: <ul> <li><a>GetCommit</a>, which
-   * returns information about a commit, including commit messages and committer
-   * information.</li> </ul></li> <li>Triggers, by calling the following: <ul>
-   * <li><a>GetRepositoryTriggers</a>, which returns information about triggers
-   * configured for a repository</li> <li><a>PutRepositoryTriggers</a>, which
-   * replaces all triggers for a repository and can be used to create or delete
-   * triggers</li> <li><a>TestRepositoryTriggers</a>, which tests the functionality
-   * of a repository trigger by sending data to the trigger target</li> </ul> </li>
-   * </ul> <p>For information about how to use AWS CodeCommit, see the <a
-   * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-   * CodeCommit User Guide</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS CodeCommit Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -87,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -103,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-codecommit.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-codecommit.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-codecommit.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-codecommit.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-codecommit.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-codecommit.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-codecommit.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-codecommit.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -134,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-codecommit.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-codecommit.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-codecommit.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-codecommit.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-codecommit.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-codecommit.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-codecommit.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-codecommit.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-codecommit.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-codecommit.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-codecommit.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-codecommit.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-codecommit.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-codecommit.lib };
         }
     };
 

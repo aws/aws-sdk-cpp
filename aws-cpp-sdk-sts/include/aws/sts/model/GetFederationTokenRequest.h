@@ -313,7 +313,7 @@ namespace Model
      * (one hour). If the specified duration is longer than one hour, the session
      * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
-    inline long GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, that the session should last. Acceptable durations
@@ -323,7 +323,7 @@ namespace Model
      * (one hour). If the specified duration is longer than one hour, the session
      * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
-    inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+    inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, that the session should last. Acceptable durations
@@ -333,14 +333,14 @@ namespace Model
      * (one hour). If the specified duration is longer than one hour, the session
      * obtained by using AWS account (root) credentials defaults to one hour.</p>
      */
-    inline GetFederationTokenRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
+    inline GetFederationTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
     Aws::String m_policy;
     bool m_policyHasBeenSet;
-    long m_durationSeconds;
+    int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
   };
 

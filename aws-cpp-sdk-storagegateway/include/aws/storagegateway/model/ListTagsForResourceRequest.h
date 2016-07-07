@@ -123,26 +123,26 @@ namespace Model
      * <p>Specifies that the list of tags returned be limited to the specified number
      * of items.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies that the list of tags returned be limited to the specified number
      * of items.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies that the list of tags returned be limited to the specified number
      * of items.</p>
      */
-    inline ListTagsForResourceRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListTagsForResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_resourceARN;
     bool m_resourceARNHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

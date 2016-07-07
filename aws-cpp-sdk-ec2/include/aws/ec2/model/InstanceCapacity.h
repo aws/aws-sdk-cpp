@@ -83,44 +83,44 @@ namespace Model
      * <p>The number of instances that can still be launched onto the Dedicated
      * host.</p>
      */
-    inline long GetAvailableCapacity() const{ return m_availableCapacity; }
+    inline int GetAvailableCapacity() const{ return m_availableCapacity; }
 
     /**
      * <p>The number of instances that can still be launched onto the Dedicated
      * host.</p>
      */
-    inline void SetAvailableCapacity(long value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
+    inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
 
     /**
      * <p>The number of instances that can still be launched onto the Dedicated
      * host.</p>
      */
-    inline InstanceCapacity& WithAvailableCapacity(long value) { SetAvailableCapacity(value); return *this;}
+    inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
 
     /**
      * <p>The total number of instances that can be launched onto the Dedicated
      * host.</p>
      */
-    inline long GetTotalCapacity() const{ return m_totalCapacity; }
+    inline int GetTotalCapacity() const{ return m_totalCapacity; }
 
     /**
      * <p>The total number of instances that can be launched onto the Dedicated
      * host.</p>
      */
-    inline void SetTotalCapacity(long value) { m_totalCapacityHasBeenSet = true; m_totalCapacity = value; }
+    inline void SetTotalCapacity(int value) { m_totalCapacityHasBeenSet = true; m_totalCapacity = value; }
 
     /**
      * <p>The total number of instances that can be launched onto the Dedicated
      * host.</p>
      */
-    inline InstanceCapacity& WithTotalCapacity(long value) { SetTotalCapacity(value); return *this;}
+    inline InstanceCapacity& WithTotalCapacity(int value) { SetTotalCapacity(value); return *this;}
 
   private:
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_availableCapacity;
+    int m_availableCapacity;
     bool m_availableCapacityHasBeenSet;
-    long m_totalCapacity;
+    int m_totalCapacity;
     bool m_totalCapacityHasBeenSet;
   };
 

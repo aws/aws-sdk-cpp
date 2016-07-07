@@ -47,128 +47,128 @@ namespace Model
     /**
      * <p>Ideal number of active instances in the fleet.</p>
      */
-    inline long GetDESIRED() const{ return m_dESIRED; }
+    inline int GetDESIRED() const{ return m_dESIRED; }
 
     /**
      * <p>Ideal number of active instances in the fleet.</p>
      */
-    inline void SetDESIRED(long value) { m_dESIREDHasBeenSet = true; m_dESIRED = value; }
+    inline void SetDESIRED(int value) { m_dESIREDHasBeenSet = true; m_dESIRED = value; }
 
     /**
      * <p>Ideal number of active instances in the fleet.</p>
      */
-    inline EC2InstanceCounts& WithDESIRED(long value) { SetDESIRED(value); return *this;}
+    inline EC2InstanceCounts& WithDESIRED(int value) { SetDESIRED(value); return *this;}
 
     /**
      * <p>Minimum value allowed for the fleet's instance count.</p>
      */
-    inline long GetMINIMUM() const{ return m_mINIMUM; }
+    inline int GetMINIMUM() const{ return m_mINIMUM; }
 
     /**
      * <p>Minimum value allowed for the fleet's instance count.</p>
      */
-    inline void SetMINIMUM(long value) { m_mINIMUMHasBeenSet = true; m_mINIMUM = value; }
+    inline void SetMINIMUM(int value) { m_mINIMUMHasBeenSet = true; m_mINIMUM = value; }
 
     /**
      * <p>Minimum value allowed for the fleet's instance count.</p>
      */
-    inline EC2InstanceCounts& WithMINIMUM(long value) { SetMINIMUM(value); return *this;}
+    inline EC2InstanceCounts& WithMINIMUM(int value) { SetMINIMUM(value); return *this;}
 
     /**
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
-    inline long GetMAXIMUM() const{ return m_mAXIMUM; }
+    inline int GetMAXIMUM() const{ return m_mAXIMUM; }
 
     /**
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
-    inline void SetMAXIMUM(long value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
+    inline void SetMAXIMUM(int value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
 
     /**
      * <p>Maximum value allowed for the fleet's instance count.</p>
      */
-    inline EC2InstanceCounts& WithMAXIMUM(long value) { SetMAXIMUM(value); return *this;}
+    inline EC2InstanceCounts& WithMAXIMUM(int value) { SetMAXIMUM(value); return *this;}
 
     /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
      */
-    inline long GetPENDING() const{ return m_pENDING; }
+    inline int GetPENDING() const{ return m_pENDING; }
 
     /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
      */
-    inline void SetPENDING(long value) { m_pENDINGHasBeenSet = true; m_pENDING = value; }
+    inline void SetPENDING(int value) { m_pENDINGHasBeenSet = true; m_pENDING = value; }
 
     /**
      * <p>Number of instances in the fleet that are starting but not yet active.</p>
      */
-    inline EC2InstanceCounts& WithPENDING(long value) { SetPENDING(value); return *this;}
+    inline EC2InstanceCounts& WithPENDING(int value) { SetPENDING(value); return *this;}
 
     /**
      * <p>Actual number of active instances in the fleet.</p>
      */
-    inline long GetACTIVE() const{ return m_aCTIVE; }
+    inline int GetACTIVE() const{ return m_aCTIVE; }
 
     /**
      * <p>Actual number of active instances in the fleet.</p>
      */
-    inline void SetACTIVE(long value) { m_aCTIVEHasBeenSet = true; m_aCTIVE = value; }
+    inline void SetACTIVE(int value) { m_aCTIVEHasBeenSet = true; m_aCTIVE = value; }
 
     /**
      * <p>Actual number of active instances in the fleet.</p>
      */
-    inline EC2InstanceCounts& WithACTIVE(long value) { SetACTIVE(value); return *this;}
+    inline EC2InstanceCounts& WithACTIVE(int value) { SetACTIVE(value); return *this;}
 
     /**
      * <p>Number of active instances in the fleet that are not currently hosting a game
      * session.</p>
      */
-    inline long GetIDLE() const{ return m_iDLE; }
+    inline int GetIDLE() const{ return m_iDLE; }
 
     /**
      * <p>Number of active instances in the fleet that are not currently hosting a game
      * session.</p>
      */
-    inline void SetIDLE(long value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
+    inline void SetIDLE(int value) { m_iDLEHasBeenSet = true; m_iDLE = value; }
 
     /**
      * <p>Number of active instances in the fleet that are not currently hosting a game
      * session.</p>
      */
-    inline EC2InstanceCounts& WithIDLE(long value) { SetIDLE(value); return *this;}
+    inline EC2InstanceCounts& WithIDLE(int value) { SetIDLE(value); return *this;}
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
      * been terminated. </p>
      */
-    inline long GetTERMINATING() const{ return m_tERMINATING; }
+    inline int GetTERMINATING() const{ return m_tERMINATING; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
      * been terminated. </p>
      */
-    inline void SetTERMINATING(long value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
+    inline void SetTERMINATING(int value) { m_tERMINATINGHasBeenSet = true; m_tERMINATING = value; }
 
     /**
      * <p>Number of instances in the fleet that are no longer active but haven't yet
      * been terminated. </p>
      */
-    inline EC2InstanceCounts& WithTERMINATING(long value) { SetTERMINATING(value); return *this;}
+    inline EC2InstanceCounts& WithTERMINATING(int value) { SetTERMINATING(value); return *this;}
 
   private:
-    long m_dESIRED;
+    int m_dESIRED;
     bool m_dESIREDHasBeenSet;
-    long m_mINIMUM;
+    int m_mINIMUM;
     bool m_mINIMUMHasBeenSet;
-    long m_mAXIMUM;
+    int m_mAXIMUM;
     bool m_mAXIMUMHasBeenSet;
-    long m_pENDING;
+    int m_pENDING;
     bool m_pENDINGHasBeenSet;
-    long m_aCTIVE;
+    int m_aCTIVE;
     bool m_aCTIVEHasBeenSet;
-    long m_iDLE;
+    int m_iDLE;
     bool m_iDLEHasBeenSet;
-    long m_tERMINATING;
+    int m_tERMINATING;
     bool m_tERMINATINGHasBeenSet;
   };
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a put job failure result action. </p>
+   * <p>Represents the input of a put job failure result action.</p>
    */
   class AWS_CODEPIPELINE_API PutJobFailureResultRequest : public CodePipelineRequest
   {
@@ -79,27 +79,27 @@ namespace Model
     inline PutJobFailureResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The details about the failure of a job. </p>
+     * <p>The details about the failure of a job.</p>
      */
     inline const FailureDetails& GetFailureDetails() const{ return m_failureDetails; }
 
     /**
-     * <p>The details about the failure of a job. </p>
+     * <p>The details about the failure of a job.</p>
      */
     inline void SetFailureDetails(const FailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     /**
-     * <p>The details about the failure of a job. </p>
+     * <p>The details about the failure of a job.</p>
      */
     inline void SetFailureDetails(FailureDetails&& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     /**
-     * <p>The details about the failure of a job. </p>
+     * <p>The details about the failure of a job.</p>
      */
     inline PutJobFailureResultRequest& WithFailureDetails(const FailureDetails& value) { SetFailureDetails(value); return *this;}
 
     /**
-     * <p>The details about the failure of a job. </p>
+     * <p>The details about the failure of a job.</p>
      */
     inline PutJobFailureResultRequest& WithFailureDetails(FailureDetails&& value) { SetFailureDetails(value); return *this;}
 

@@ -95,21 +95,21 @@ namespace Model
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
-    inline long GetLoadBalancerPort() const{ return m_loadBalancerPort; }
+    inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
 
     /**
      * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
-    inline void SetLoadBalancerPort(long value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
+    inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
      * <p>The port on which the load balancer is listening. On EC2-VPC, you can specify
      * any port from the range 1-65535. On EC2-Classic, you can specify any port from
      * the following list: 25, 80, 443, 465, 587, 1024-65535.</p>
      */
-    inline Listener& WithLoadBalancerPort(long value) { SetLoadBalancerPort(value); return *this;}
+    inline Listener& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
 
     /**
      * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
@@ -205,17 +205,17 @@ namespace Model
     /**
      * <p>The port on which the instance is listening.</p>
      */
-    inline long GetInstancePort() const{ return m_instancePort; }
+    inline int GetInstancePort() const{ return m_instancePort; }
 
     /**
      * <p>The port on which the instance is listening.</p>
      */
-    inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
+    inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
      * <p>The port on which the instance is listening.</p>
      */
-    inline Listener& WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline Listener& WithInstancePort(int value) { SetInstancePort(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the server certificate.</p>
@@ -255,11 +255,11 @@ namespace Model
   private:
     Aws::String m_protocol;
     bool m_protocolHasBeenSet;
-    long m_loadBalancerPort;
+    int m_loadBalancerPort;
     bool m_loadBalancerPortHasBeenSet;
     Aws::String m_instanceProtocol;
     bool m_instanceProtocolHasBeenSet;
-    long m_instancePort;
+    int m_instancePort;
     bool m_instancePortHasBeenSet;
     Aws::String m_sSLCertificateId;
     bool m_sSLCertificateIdHasBeenSet;

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a list pipelines action. </p>
+   * <p>Represents the input of a list pipelines action.</p>
    */
   class AWS_CODEPIPELINE_API ListPipelinesRequest : public CodePipelineRequest
   {

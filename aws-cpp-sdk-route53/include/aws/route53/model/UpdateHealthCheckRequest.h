@@ -146,19 +146,19 @@ namespace Model
      * <p>The port on which you want Amazon Route 53 to open a connection to perform
      * health checks.</p> <p>Specify this value only if you want to change it.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port on which you want Amazon Route 53 to open a connection to perform
      * health checks.</p> <p>Specify this value only if you want to change it.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port on which you want Amazon Route 53 to open a connection to perform
      * health checks.</p> <p>Specify this value only if you want to change it.</p>
      */
-    inline UpdateHealthCheckRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline UpdateHealthCheckRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The path that you want Amazon Route 53 to request when performing health
@@ -343,7 +343,7 @@ namespace Model
      * Healthy" in the Amazon Route 53 Developer Guide.</p> <p>Specify this value only
      * if you want to change it.</p>
      */
-    inline long GetFailureThreshold() const{ return m_failureThreshold; }
+    inline int GetFailureThreshold() const{ return m_failureThreshold; }
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -353,7 +353,7 @@ namespace Model
      * Healthy" in the Amazon Route 53 Developer Guide.</p> <p>Specify this value only
      * if you want to change it.</p>
      */
-    inline void SetFailureThreshold(long value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
+    inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -363,7 +363,7 @@ namespace Model
      * Healthy" in the Amazon Route 53 Developer Guide.</p> <p>Specify this value only
      * if you want to change it.</p>
      */
-    inline UpdateHealthCheckRequest& WithFailureThreshold(long value) { SetFailureThreshold(value); return *this;}
+    inline UpdateHealthCheckRequest& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
 
     /**
      * <p>A boolean value that indicates whether the status of health check should be
@@ -395,7 +395,7 @@ namespace Model
      * integers between 0 and 256, inclusive.</p> <p>Specify this value only if you
      * want to change it.</p>
      */
-    inline long GetHealthThreshold() const{ return m_healthThreshold; }
+    inline int GetHealthThreshold() const{ return m_healthThreshold; }
 
     /**
      * <p>The minimum number of child health checks that must be healthy for Amazon
@@ -403,7 +403,7 @@ namespace Model
      * integers between 0 and 256, inclusive.</p> <p>Specify this value only if you
      * want to change it.</p>
      */
-    inline void SetHealthThreshold(long value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
+    inline void SetHealthThreshold(int value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
 
     /**
      * <p>The minimum number of child health checks that must be healthy for Amazon
@@ -411,7 +411,7 @@ namespace Model
      * integers between 0 and 256, inclusive.</p> <p>Specify this value only if you
      * want to change it.</p>
      */
-    inline UpdateHealthCheckRequest& WithHealthThreshold(long value) { SetHealthThreshold(value); return *this;}
+    inline UpdateHealthCheckRequest& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
 
     /**
      * <p>For a specified parent health check, a list of <code>HealthCheckId</code>
@@ -602,7 +602,7 @@ namespace Model
     bool m_healthCheckVersionHasBeenSet;
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_resourcePath;
     bool m_resourcePathHasBeenSet;
@@ -610,11 +610,11 @@ namespace Model
     bool m_fullyQualifiedDomainNameHasBeenSet;
     Aws::String m_searchString;
     bool m_searchStringHasBeenSet;
-    long m_failureThreshold;
+    int m_failureThreshold;
     bool m_failureThresholdHasBeenSet;
     bool m_inverted;
     bool m_invertedHasBeenSet;
-    long m_healthThreshold;
+    int m_healthThreshold;
     bool m_healthThresholdHasBeenSet;
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;

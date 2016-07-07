@@ -34,6 +34,9 @@ namespace DatabaseMigrationService
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeConnectionsResult
   {
   public:
@@ -91,37 +94,37 @@ namespace Model
     inline DescribeConnectionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline const Aws::Vector<Connection>& GetConnections() const{ return m_connections; }
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline void SetConnections(const Aws::Vector<Connection>& value) { m_connections = value; }
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = value; }
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline DescribeConnectionsResult& WithConnections(const Aws::Vector<Connection>& value) { SetConnections(value); return *this;}
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline DescribeConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(value); return *this;}
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline DescribeConnectionsResult& AddConnections(const Connection& value) { m_connections.push_back(value); return *this; }
 
     /**
-     * <p>A description of the connections. </p>
+     * <p>A description of the connections.</p>
      */
     inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(value); return *this; }
 

@@ -125,7 +125,7 @@ namespace Model
      * processing after the delay time is finished. If you don't specify a value, the
      * default value for the queue applies. </p>
      */
-    inline long GetDelaySeconds() const{ return m_delaySeconds; }
+    inline int GetDelaySeconds() const{ return m_delaySeconds; }
 
     /**
      * <p> The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
@@ -133,7 +133,7 @@ namespace Model
      * processing after the delay time is finished. If you don't specify a value, the
      * default value for the queue applies. </p>
      */
-    inline void SetDelaySeconds(long value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
+    inline void SetDelaySeconds(int value) { m_delaySecondsHasBeenSet = true; m_delaySeconds = value; }
 
     /**
      * <p> The number of seconds (0 to 900 - 15 minutes) to delay a specific message.
@@ -141,7 +141,7 @@ namespace Model
      * processing after the delay time is finished. If you don't specify a value, the
      * default value for the queue applies. </p>
      */
-    inline SendMessageRequest& WithDelaySeconds(long value) { SetDelaySeconds(value); return *this;}
+    inline SendMessageRequest& WithDelaySeconds(int value) { SetDelaySeconds(value); return *this;}
 
     /**
      * <p>Each message attribute consists of a Name, Type, and Value. For more
@@ -236,7 +236,7 @@ namespace Model
     bool m_queueUrlHasBeenSet;
     Aws::String m_messageBody;
     bool m_messageBodyHasBeenSet;
-    long m_delaySeconds;
+    int m_delaySeconds;
     bool m_delaySecondsHasBeenSet;
     Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
     bool m_messageAttributesHasBeenSet;

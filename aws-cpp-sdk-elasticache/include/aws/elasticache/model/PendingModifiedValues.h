@@ -51,21 +51,21 @@ namespace Model
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline long GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline void SetNumCacheNodes(long value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
+    inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The new number of cache nodes for the cache cluster.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
      * must be between 1 and 20.</p>
      */
-    inline PendingModifiedValues& WithNumCacheNodes(long value) { SetNumCacheNodes(value); return *this;}
+    inline PendingModifiedValues& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -193,7 +193,7 @@ namespace Model
     inline PendingModifiedValues& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
   private:
-    long m_numCacheNodes;
+    int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::Vector<Aws::String> m_cacheNodeIdsToRemove;
     bool m_cacheNodeIdsToRemoveHasBeenSet;

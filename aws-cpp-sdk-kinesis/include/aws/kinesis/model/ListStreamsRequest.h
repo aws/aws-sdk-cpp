@@ -38,17 +38,17 @@ namespace Model
     /**
      * <p>The maximum number of streams to list.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of streams to list.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of streams to list.</p>
      */
-    inline ListStreamsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>The name of the stream to start the list with.</p>
@@ -86,7 +86,7 @@ namespace Model
     inline ListStreamsRequest& WithExclusiveStartStreamName(const char* value) { SetExclusiveStartStreamName(value); return *this;}
 
   private:
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_exclusiveStartStreamName;
     bool m_exclusiveStartStreamNameHasBeenSet;

@@ -17,15 +17,38 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.sqs;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenerator;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.util.HashMap;
+
 public class SQSQueryXmlCppClientGenerator extends QueryCppClientGenerator {
 
     public SQSQueryXmlCppClientGenerator() throws Exception {
         super();
+    }
+
+    @Override
+    public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
+        Shape queueAttributeNameShape = serviceModel.getShapes().get("QueueAttributeName");
+
+        //currently SQS doesn't model some values that can be returned as "members" of the QueueAttributeName enum
+        //this is not the right solution. The right solution is to add a separate enum for use for ReceiveMessageRequest
+        //but backwards compatibility and all that...
+        //anyways, add the missing values here.
+        if(queueAttributeNameShape != null) {
+            queueAttributeNameShape.getEnumValues().add(0, "All");
+            queueAttributeNameShape.getEnumValues().add("SentTimestamp");
+            queueAttributeNameShape.getEnumValues().add("ApproximateFirstReceiveTimestamp");
+            queueAttributeNameShape.getEnumValues().add("ApproximateReceiveCount");
+            queueAttributeNameShape.getEnumValues().add("SenderId");
+        }
+
+        return super.generateSourceFiles(serviceModel);
     }
 
     @Override

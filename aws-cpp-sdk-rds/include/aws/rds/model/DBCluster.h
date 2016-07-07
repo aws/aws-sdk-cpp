@@ -58,17 +58,17 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline DBCluster& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBCluster& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
@@ -122,19 +122,19 @@ namespace Model
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>Specifies the number of days for which automatic DB snapshots are
      * retained.</p>
      */
-    inline DBCluster& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline DBCluster& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p>If present, specifies the name of the character set that this cluster is
@@ -591,17 +591,17 @@ namespace Model
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline DBCluster& WithPort(long value) { SetPort(value); return *this;}
+    inline DBCluster& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Contains the master username for the DB cluster.</p>
@@ -1073,11 +1073,11 @@ namespace Model
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
   private:
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_characterSetName;
     bool m_characterSetNameHasBeenSet;
@@ -1103,7 +1103,7 @@ namespace Model
     bool m_engineVersionHasBeenSet;
     Aws::Utils::DateTime m_latestRestorableTime;
     bool m_latestRestorableTimeHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_masterUsername;
     bool m_masterUsernameHasBeenSet;

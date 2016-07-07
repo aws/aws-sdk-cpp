@@ -81,19 +81,19 @@ namespace Model
      * <p>The maximum number of results you want the request to return when listing the
      * user pool clients.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results you want the request to return when listing the
      * user pool clients.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results you want the request to return when listing the
      * user pool clients.</p>
      */
-    inline ListUserPoolClientsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListUserPoolClientsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -140,7 +140,7 @@ namespace Model
   private:
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

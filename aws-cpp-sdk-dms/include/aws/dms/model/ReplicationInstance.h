@@ -16,8 +16,10 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dms/model/ReplicationSubnetGroup.h>
 #include <aws/dms/model/ReplicationPendingModifiedValues.h>
+#include <aws/dms/model/VpcSecurityGroupMembership.h>
 
 namespace Aws
 {
@@ -33,6 +35,9 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API ReplicationInstance
   {
   public:
@@ -43,113 +48,113 @@ namespace Model
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens.</li> <li>First character must be a letter.</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
-     * <p>Example: <code>myrepinstance</code></p>
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(value); return *this;}
 
     /**
-     * <p> The compute and memory capacity of the replication instance. </p> <p> Valid
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
      * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code></p>
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline ReplicationInstance& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -189,22 +194,22 @@ namespace Model
     inline ReplicationInstance& WithReplicationInstanceStatus(const char* value) { SetReplicationInstanceStatus(value); return *this;}
 
     /**
-     * <p> The amount of storage (in gigabytes) that is allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) that is allocated for the replication
+     * instance.</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p> The amount of storage (in gigabytes) that is allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) that is allocated for the replication
+     * instance.</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p> The amount of storage (in gigabytes) that is allocated for the replication
-     * instance. </p>
+     * <p>The amount of storage (in gigabytes) that is allocated for the replication
+     * instance.</p>
      */
-    inline ReplicationInstance& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ReplicationInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>The time the replication instance was created.</p>
@@ -230,6 +235,41 @@ namespace Model
      * <p>The time the replication instance was created.</p>
      */
     inline ReplicationInstance& WithInstanceCreateTime(Aws::Utils::DateTime&& value) { SetInstanceCreateTime(value); return *this;}
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroups() const{ return m_vpcSecurityGroups; }
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline void SetVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline void SetVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups = value; }
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline ReplicationInstance& WithVpcSecurityGroups(const Aws::Vector<VpcSecurityGroupMembership>& value) { SetVpcSecurityGroups(value); return *this;}
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline ReplicationInstance& WithVpcSecurityGroups(Aws::Vector<VpcSecurityGroupMembership>&& value) { SetVpcSecurityGroups(value); return *this;}
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline ReplicationInstance& AddVpcSecurityGroups(const VpcSecurityGroupMembership& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The VPC security group for the instance.</p>
+     */
+    inline ReplicationInstance& AddVpcSecurityGroups(VpcSecurityGroupMembership&& value) { m_vpcSecurityGroupsHasBeenSet = true; m_vpcSecurityGroups.push_back(value); return *this; }
 
     /**
      * <p>The Availability Zone for the instance.</p>
@@ -352,37 +392,37 @@ namespace Model
     inline ReplicationInstance& WithPendingModifiedValues(ReplicationPendingModifiedValues&& value) { SetPendingModifiedValues(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ReplicationInstance& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ReplicationInstance& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The engine version number of the replication instance. </p>
+     * <p>The engine version number of the replication instance.</p>
      */
     inline ReplicationInstance& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -405,65 +445,65 @@ namespace Model
     inline ReplicationInstance& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The KMS key identifier that is used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region. </p>
+     * <p>The KMS key identifier that is used to encrypt the content on the replication
+     * instance. If you do not specify a value for the KmsKeyId parameter, then AWS DMS
+     * will use your default encryption key. AWS KMS creates the default encryption key
+     * for your AWS account. Your AWS account has a different default encryption key
+     * for each AWS region.</p>
      */
     inline ReplicationInstance& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -603,10 +643,12 @@ namespace Model
     bool m_replicationInstanceClassHasBeenSet;
     Aws::String m_replicationInstanceStatus;
     bool m_replicationInstanceStatusHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::Utils::DateTime m_instanceCreateTime;
     bool m_instanceCreateTimeHasBeenSet;
+    Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
+    bool m_vpcSecurityGroupsHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
     ReplicationSubnetGroup m_replicationSubnetGroup;

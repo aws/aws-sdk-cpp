@@ -179,17 +179,17 @@ namespace Model
     /**
      * <p>The maximum number of objects to return.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of objects to return.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of objects to return.</p>
      */
-    inline DescribeSnapshotsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeSnapshotsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_directoryId;
@@ -198,7 +198,7 @@ namespace Model
     bool m_snapshotIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

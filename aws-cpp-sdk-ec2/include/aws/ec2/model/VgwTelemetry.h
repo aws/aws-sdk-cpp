@@ -176,17 +176,17 @@ namespace Model
     /**
      * <p>The number of accepted routes.</p>
      */
-    inline long GetAcceptedRouteCount() const{ return m_acceptedRouteCount; }
+    inline int GetAcceptedRouteCount() const{ return m_acceptedRouteCount; }
 
     /**
      * <p>The number of accepted routes.</p>
      */
-    inline void SetAcceptedRouteCount(long value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
+    inline void SetAcceptedRouteCount(int value) { m_acceptedRouteCountHasBeenSet = true; m_acceptedRouteCount = value; }
 
     /**
      * <p>The number of accepted routes.</p>
      */
-    inline VgwTelemetry& WithAcceptedRouteCount(long value) { SetAcceptedRouteCount(value); return *this;}
+    inline VgwTelemetry& WithAcceptedRouteCount(int value) { SetAcceptedRouteCount(value); return *this;}
 
   private:
     Aws::String m_outsideIpAddress;
@@ -197,7 +197,7 @@ namespace Model
     bool m_lastStatusChangeHasBeenSet;
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
-    long m_acceptedRouteCount;
+    int m_acceptedRouteCount;
     bool m_acceptedRouteCountHasBeenSet;
   };
 

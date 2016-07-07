@@ -283,7 +283,7 @@ namespace Model
      * this parameter is not used, then <code>ListTasks</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of task results returned by <code>ListTasks</code> in
@@ -295,7 +295,7 @@ namespace Model
      * this parameter is not used, then <code>ListTasks</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of task results returned by <code>ListTasks</code> in
@@ -307,7 +307,7 @@ namespace Model
      * this parameter is not used, then <code>ListTasks</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline ListTasksRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The <code>startedBy</code> value with which to filter the task results.
@@ -461,7 +461,7 @@ namespace Model
     bool m_familyHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;

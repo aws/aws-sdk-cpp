@@ -402,7 +402,7 @@ namespace Model
      * action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
-    inline long GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
+    inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
@@ -410,7 +410,7 @@ namespace Model
      * action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
-    inline void SetHeartbeatTimeout(long value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
+    inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
      * <p>The amount of time, in seconds, that can elapse before the lifecycle hook
@@ -418,7 +418,7 @@ namespace Model
      * action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>. The default is 3600 seconds (1 hour).</p>
      */
-    inline PutLifecycleHookRequest& WithHeartbeatTimeout(long value) { SetHeartbeatTimeout(value); return *this;}
+    inline PutLifecycleHookRequest& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
@@ -489,7 +489,7 @@ namespace Model
     bool m_notificationTargetARNHasBeenSet;
     Aws::String m_notificationMetadata;
     bool m_notificationMetadataHasBeenSet;
-    long m_heartbeatTimeout;
+    int m_heartbeatTimeout;
     bool m_heartbeatTimeoutHasBeenSet;
     Aws::String m_defaultResult;
     bool m_defaultResultHasBeenSet;

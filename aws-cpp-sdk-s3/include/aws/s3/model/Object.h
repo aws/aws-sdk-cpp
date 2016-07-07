@@ -100,13 +100,13 @@ namespace Model
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
     
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     
-    inline Object& WithSize(long value) { SetSize(value); return *this;}
+    inline Object& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * The class of storage used to store the object.
@@ -155,7 +155,7 @@ namespace Model
     bool m_lastModifiedHasBeenSet;
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     ObjectStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

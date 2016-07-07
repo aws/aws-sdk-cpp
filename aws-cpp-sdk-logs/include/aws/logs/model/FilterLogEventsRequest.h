@@ -255,19 +255,19 @@ namespace Model
      * <p>The maximum number of events to return in a page of results. Default is
      * 10,000 events.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of events to return in a page of results. Default is
      * 10,000 events.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of events to return in a page of results. Default is
      * 10,000 events.</p>
      */
-    inline FilterLogEventsRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline FilterLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>If provided, the API will make a best effort to provide responses that
@@ -306,7 +306,7 @@ namespace Model
     bool m_filterPatternHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     bool m_interleaved;
     bool m_interleavedHasBeenSet;

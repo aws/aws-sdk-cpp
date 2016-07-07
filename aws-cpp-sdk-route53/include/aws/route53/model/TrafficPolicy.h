@@ -62,13 +62,13 @@ namespace Model
     inline TrafficPolicy& WithId(const char* value) { SetId(value); return *this;}
 
     
-    inline long GetVersion() const{ return m_version; }
+    inline int GetVersion() const{ return m_version; }
 
     
-    inline void SetVersion(long value) { m_versionHasBeenSet = true; m_version = value; }
+    inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     
-    inline TrafficPolicy& WithVersion(long value) { SetVersion(value); return *this;}
+    inline TrafficPolicy& WithVersion(int value) { SetVersion(value); return *this;}
 
     
     inline const Aws::String& GetName() const{ return m_name; }
@@ -151,7 +151,7 @@ namespace Model
   private:
     Aws::String m_id;
     bool m_idHasBeenSet;
-    long m_version;
+    int m_version;
     bool m_versionHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;

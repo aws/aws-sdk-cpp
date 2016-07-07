@@ -38,42 +38,50 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -190,19 +198,19 @@ namespace Model
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline long GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline void SetTimeoutSeconds(long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
+    inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline SendCommandRequest& WithTimeoutSeconds(long value) { SetTimeoutSeconds(value); return *this;}
+    inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -405,7 +413,7 @@ namespace Model
     bool m_documentHashHasBeenSet;
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
-    long m_timeoutSeconds;
+    int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;

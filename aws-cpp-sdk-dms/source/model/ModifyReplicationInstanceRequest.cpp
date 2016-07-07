@@ -28,6 +28,7 @@ ModifyReplicationInstanceRequest::ModifyReplicationInstanceRequest() :
     m_applyImmediately(false),
     m_applyImmediatelyHasBeenSet(false),
     m_replicationInstanceClassHasBeenSet(false),
+    m_vpcSecurityGroupIdsHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_allowMajorVersionUpgrade(false),
@@ -63,6 +64,17 @@ Aws::String ModifyReplicationInstanceRequest::SerializePayload() const
   if(m_replicationInstanceClassHasBeenSet)
   {
    payload.WithString("ReplicationInstanceClass", m_replicationInstanceClass);
+
+  }
+
+  if(m_vpcSecurityGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
+   for(unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength(); ++vpcSecurityGroupIdsIndex)
+   {
+     vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString(m_vpcSecurityGroupIds[vpcSecurityGroupIdsIndex]);
+   }
+   payload.WithArray("VpcSecurityGroupIds", std::move(vpcSecurityGroupIdsJsonList));
 
   }
 

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticBeanstalk;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20101201.11;
+        version : 0.12.20101201.17;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Elastic Beanstalk);
@@ -34,26 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it
-   * easy for you to create, deploy, and manage scalable, fault-tolerant applications
-   * running on the Amazon Web Services cloud.</p> <p>For more information about this
-   * product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
-   * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
-   * WSDL is <a
-   * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
-   * To install the Software Development Kits (SDKs), Integrated Development
-   * Environment (IDE) Toolkits, and command line tools that enable you to access the
-   * API, go to <a href="https://aws.amazon.com/tools/">Tools for Amazon Web
-   * Services</a>.</p> <p><b>Endpoints</b></p> <p>For a list of region-specific
-   * endpoints that AWS Elastic Beanstalk supports, go to <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
-   * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Elastic Beanstalk Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -69,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -85,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-elasticbeanstalk.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-elasticbeanstalk.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-elasticbeanstalk.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-elasticbeanstalk.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -116,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-elasticbeanstalk.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-elasticbeanstalk.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-elasticbeanstalk.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-elasticbeanstalk.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-elasticbeanstalk.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-elasticbeanstalk.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-elasticbeanstalk.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-elasticbeanstalk.lib };
         }
     };
 

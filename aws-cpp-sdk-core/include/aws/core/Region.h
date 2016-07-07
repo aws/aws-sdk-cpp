@@ -35,7 +35,9 @@ namespace Aws
         AP_SOUTHEAST_2,
         AP_NORTHEAST_1,
         AP_NORTHEAST_2,
-        SA_EAST_1
+        SA_EAST_1,
+        AP_SOUTH_1
+
     };
 
     namespace RegionMapper
@@ -44,6 +46,11 @@ namespace Aws
          * Converts a Region member to a string
          */
         AWS_CORE_API const char* GetRegionName(Region region);
+
+        /** Converts a string to a Region
+         *
+         */
+        AWS_CORE_API Region GetRegionFromName(const char* regionName);
     }
 
 } // namespace Aws

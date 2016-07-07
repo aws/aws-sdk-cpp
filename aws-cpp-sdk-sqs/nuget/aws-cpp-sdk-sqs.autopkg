@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SQS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20121105.11;
+        version : 0.12.20121105.17;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Queue Service);
@@ -34,37 +34,10 @@ nuget {
         // under has use restrictions, set this to "true".
         requireLicenseAcceptance:false;
 
-        // Brief summary of the package contents. Keep it short!
         summary: "v120 and v140 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "<p>Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section
-   * describes who should read this guide, how the guide is organized, and other
-   * resources related to the Amazon Simple Queue Service (Amazon SQS).</p> <p>Amazon
-   * SQS offers reliable and scalable hosted queues for storing messages as they
-   * travel between computers. By using Amazon SQS, you can move data between
-   * distributed components of your applications that perform different tasks without
-   * losing messages or requiring each component to be always available.</p>
-   * <p>Helpful Links:</p> <ul> <li><p><a
-   * href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current WSDL
-   * (2012-11-05)</a></p></li> <li><p><a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
-   * API Requests</a></p></li> <li><p><a href="http://aws.amazon.com/sqs/">Amazon SQS
-   * product page</a></p></li> <li><p><a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
-   * Amazon SQS Message Attributes</a></p></li> <li><p><a
-   * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-   * Amazon SQS Dead Letter Queues</a></p></li> <li><p><a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
-   * and Endpoints</a></p></li> </ul> <p>We also provide SDKs that enable you to
-   * access Amazon SQS from your preferred programming language. The SDKs contain
-   * functionality that automatically takes care of tasks such as:</p> <ul>
-   * <li><p>Cryptographically signing your service requests</p></li> <li><p>Retrying
-   * requests</p></li> <li><p>Handling error responses</p></li> </ul> <p>For a list
-   * of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon
-   * Web Services</a>.</p>
-
-AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "Amazon Simple Queue Service Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2016;
@@ -80,10 +53,6 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
     }
 
     files {
-        // File location information.  This node is critical for all packages, and is
-        // where much of the effort is.  All file paths are relative to this .autopkg
-        // file's location.
-
         // All .h and .hpp  files in <src_root>\include, but not in subdirectories.
         // Included for all conditions.
         nestedInclude: {
@@ -96,21 +65,29 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
         [x64,release,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-sqs.lib };
             bin+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\release\aws-cpp-sdk-sqs.pdb };
         }
 
         [x64,release,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-sqs.lib };
             bin+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\release\aws-cpp-sdk-sqs.pdb };
         }
 
         [x64,debug,v140,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-sqs.lib };
             bin+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2015\debug\aws-cpp-sdk-sqs.pdb };
         }
 
         [x64,debug,v120,dynamic] {  // x64, dll (dynamic linking)
             lib+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-sqs.lib };
             bin+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\intel64\vs2013\debug\aws-cpp-sdk-sqs.pdb };
         }
 
         [x64,release,v140,static] {  // x64, static linking
@@ -127,6 +104,51 @@ AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Am
 
         [x64,debug,v120,static] {  // x64, static linking
             lib+= { ..\lib\windows\intel64\vs2013\debug\aws-cpp-sdk-sqs.lib };
+        }
+
+        [x86,release,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-sqs.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\release\aws-cpp-sdk-sqs.pdb };
+
+        }
+
+        [x86,release,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-sqs.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\release\aws-cpp-sdk-sqs.pdb };
+        }
+
+        [x86,debug,v140,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-sqs.lib };
+            bin+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2015\debug\aws-cpp-sdk-sqs.pdb };
+        }
+
+        [x86,debug,v120,dynamic] {  // x86, dll (dynamic linking)
+            lib+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-sqs.lib };
+            bin+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-sqs.dll };
+
+            symbols+= { ..\bin\windows\ia32\vs2013\debug\aws-cpp-sdk-sqs.pdb };
+        }
+
+        [x86,release,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\release\aws-cpp-sdk-sqs.lib };
+        }
+
+        [x86,release,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\release\aws-cpp-sdk-sqs.lib };
+        }
+
+        [x86,debug,v140,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2015\debug\aws-cpp-sdk-sqs.lib };
+        }
+
+        [x86,debug,v120,static] {  // x86, static linking
+            lib+= { ..\lib\windows\ia32\vs2013\debug\aws-cpp-sdk-sqs.lib };
         }
     };
 

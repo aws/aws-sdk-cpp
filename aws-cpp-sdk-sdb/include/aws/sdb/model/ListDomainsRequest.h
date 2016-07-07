@@ -36,19 +36,19 @@ namespace Model
      * The maximum number of domain names you want returned. The range is 1 to 100. The
      * default setting is 100.
      */
-    inline long GetMaxNumberOfDomains() const{ return m_maxNumberOfDomains; }
+    inline int GetMaxNumberOfDomains() const{ return m_maxNumberOfDomains; }
 
     /**
      * The maximum number of domain names you want returned. The range is 1 to 100. The
      * default setting is 100.
      */
-    inline void SetMaxNumberOfDomains(long value) { m_maxNumberOfDomainsHasBeenSet = true; m_maxNumberOfDomains = value; }
+    inline void SetMaxNumberOfDomains(int value) { m_maxNumberOfDomainsHasBeenSet = true; m_maxNumberOfDomains = value; }
 
     /**
      * The maximum number of domain names you want returned. The range is 1 to 100. The
      * default setting is 100.
      */
-    inline ListDomainsRequest& WithMaxNumberOfDomains(long value) { SetMaxNumberOfDomains(value); return *this;}
+    inline ListDomainsRequest& WithMaxNumberOfDomains(int value) { SetMaxNumberOfDomains(value); return *this;}
 
     /**
      * A string informing Amazon SimpleDB where to start the next list of domain names.
@@ -86,7 +86,7 @@ namespace Model
     inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
-    long m_maxNumberOfDomains;
+    int m_maxNumberOfDomains;
     bool m_maxNumberOfDomainsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

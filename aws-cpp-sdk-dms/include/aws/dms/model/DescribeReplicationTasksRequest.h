@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DescribeReplicationTasksRequest : public DatabaseMigrationServiceRequest
   {
@@ -39,49 +40,49 @@ namespace Model
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters applied to the describe action.</p> <p>Valid filter names:
      * replication-task-arn | replication-task-id | migration-type | endpoint-arn |
-     * replication-instance-arn </p>
+     * replication-instance-arn</p>
      */
     inline DescribeReplicationTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -91,7 +92,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -99,7 +100,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -107,7 +108,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline DescribeReplicationTasksRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeReplicationTasksRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous request. If this
@@ -161,7 +162,7 @@ namespace Model
   private:
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

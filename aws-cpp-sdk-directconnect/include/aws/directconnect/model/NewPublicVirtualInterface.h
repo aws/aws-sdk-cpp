@@ -65,22 +65,22 @@ namespace Model
     inline NewPublicVirtualInterface& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 
     
-    inline long GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const{ return m_vlan; }
 
     
-    inline void SetVlan(long value) { m_vlanHasBeenSet = true; m_vlan = value; }
+    inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
 
     
-    inline NewPublicVirtualInterface& WithVlan(long value) { SetVlan(value); return *this;}
+    inline NewPublicVirtualInterface& WithVlan(int value) { SetVlan(value); return *this;}
 
     
-    inline long GetAsn() const{ return m_asn; }
+    inline int GetAsn() const{ return m_asn; }
 
     
-    inline void SetAsn(long value) { m_asnHasBeenSet = true; m_asn = value; }
+    inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
     
-    inline NewPublicVirtualInterface& WithAsn(long value) { SetAsn(value); return *this;}
+    inline NewPublicVirtualInterface& WithAsn(int value) { SetAsn(value); return *this;}
 
     
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
@@ -169,9 +169,9 @@ namespace Model
   private:
     Aws::String m_virtualInterfaceName;
     bool m_virtualInterfaceNameHasBeenSet;
-    long m_vlan;
+    int m_vlan;
     bool m_vlanHasBeenSet;
-    long m_asn;
+    int m_asn;
     bool m_asnHasBeenSet;
     Aws::String m_authKey;
     bool m_authKeyHasBeenSet;

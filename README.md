@@ -61,21 +61,29 @@ You may also find the following link helpful for including the build in your pro
 https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
 
 ####Building for Android
-To build for Android, add -DTARGET_ARCH=ANDROID to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
+To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line.  We've included a cmake toolchain file that should cover what's needed, assuming you have the appropriate environment variables (ANDROID_NDK) set.
 
 #####Android on Windows
 Building for Android on Windows requires some additional setup.  In particular, you will need to run cmake from a Visual Studio developer command prompt (2013 or higher).  Additionally, you will need 'git' and 'patch' in your path.  If you have git installed on a Windows system, then patch is likely found in a sibling directory (.../Git/usr/bin/).  Once you've verified these requirements, your cmake command line will change slightly to use nmake:
 
-cmake -G "NMake Makefiles" -DTARGET_ARCH=ANDROID <other options> ..
+```
+cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
+```
 
 Nmake builds targets in a serial fashion.  To make things quicker, we recommend installing JOM as an alternative to nmake and then changing the cmake invocation to:
 
-cmake -G "NMake Makefiles JOM" -DTARGET_ARCH=ANDROID <other options> ..
+```
+cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
+```
 
-####CMake Variables
+####General CMake Variables
 
 #####BUILD_ONLY
-Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument. Example: -DBUILD_ONLY="aws-cpp-sdk-s3;aws-cpp-sdk-dynamodb;aws-cpp-sdk-cognito-identity"
+Allows you to only build the clients you want to use. This will resolve low level client dependencies if you set this to a high-level sdk such as aws-cpp-sdk-transfer. This will also build integration and unit tests related to the projects you select if they exist. aws-cpp-sdk-core always builds regardless of the value of this argument. This is a list argument.
+Example:
+```
+-DBUILD_ONLY="s3;dynamodb;cognito-identity"
+```
 
 #####ADD_CUSTOM_CLIENTS
 Allows you to build any arbitrary clients based on the api definition. Simply place your definition in the code-generation/api-definitions folder. Then pass this arg to cmake. The cmake configure step will generate your client and include it as a subdirectory in your build. This is particularly useful if you want to generate a C++ client for using one of your API Gateway services. To use this feature you need to have python 2.7, java, jdk1.8, and maven installed and in your executable path. Example: -DADD_CUSTOM_CLIENTS="serviceName=myCustomService; version=2015-12-21;serviceName=someOtherService; version=2015-08-15"
@@ -90,9 +98,6 @@ If static linking is enabled, custom memory management defaults to off. If dynam
 
 Note: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your build system.
 
-#####STATIC_LINKING 
-To use static linking, set the value to 1. By default the build creates shared libraries for each platform. If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
-
 #####TARGET_ARCH
 To cross compile or build for a mobile platform, you must specify the target platform. By default the build detects the host operating system and builds for that operating system. 
 Options: WINDOWS | LINUX | APPLE | ANDROID
@@ -104,6 +109,57 @@ Windows example:
 -G "Visual Studio 12 Win64"
 
 For more information, see the CMake documentation for your platform.
+
+#### General CMake Options
+CMake options are variables that can either be ON or OFF, with a controllable default.  You can set an option either with CMake Gui tools or the command line via -D.
+
+#####ENABLE_UNITY_BUILD 
+(Defaults to OFF) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
+
+#####MINIMIZE_SIZE 
+(Defaults to OFF) A superset of ENABLE_UNITY_BUILD, if enabled this option turns on ENABLE_UNITY_BUILD as well as some additional binary size reduction settings.  This is a work-in-progress and may change in the future (symbol stripping in particular).
+
+#####BUILD_SHARED_LIBS 
+(Defaults to ON) A built-in CMake option, reexposed here for visibility.  If enabled, shared libraries will be built, otherwise static libraries will be built.
+
+#####FORCE_SHARED_CRT 
+(Defaults to ON) If enabled, the SDK will link to the C runtime dynamically, otherwise it will use the BUILD_SHARED_LIBS setting (weird but necessary for backwards compatibility with older versions of the SDK)
+
+#####SIMPLE_INSTALL 
+(Defaults to ON) If enabled, the install process will not insert platform-specific intermediate directories underneath bin/ and lib/.  Turn OFF if you need to make multi-platform releases under a single install directory.
+
+#####NO_HTTP_CLIENT
+(Defaults to OFF) If enabled, prevents the default platform-specific http client from being built into the library.  Turn this ON if you wish to inject your own http client implementation.
+
+#####NO_ENCRYPTION
+(Defaults to OFF) If enabled, prevents the default platform-specific cryptography implementation from being built into the library.  Turn this ON if you wish to inject your own cryptography implementation.
+
+#####ENABLE_RTTI 
+(Defaults to ON) Controls whether or not the SDK is built with RTTI information
+
+#####ENABLE_TESTING 
+(Defaults to ON) Controls whether or not the unit and integration test projects are built
+
+#### Android CMake Variables/Options
+
+#####NDK_DIR
+An override path for where the build system should find the Android NDK.  By default, the build system will check environment variables (ANDROID_NDK) if this CMake variable is not set.
+
+#####DISABLE_ANDROID_STANDALONE_BUILD 
+(Defaults to OFF) By default, Android builds will use a standalone clang-based toolchain constructed via NDK scripts.  If you wish to use your own toolchain, turn this option ON.
+
+#####ANDROID_STL
+(Defaults to libc++_shared)  Controls what flavor of the C++ standard library the SDK will use.  Valid values are one of {libc++_shared, libc++_static, gnustl_shared, gnustl_static}.  There are severe performance problems within the SDK if gnustl is used, so we recommend libc++.
+
+#####ANDROID_ABI
+(Defaults to armeabi-v7a) Controls what abi to output code for.  Not all valid Android ABI values are currently supported, but we intend to provide full coverage in the future.  We welcome patches to our Openssl build wrapper that speed this process up.  Valid values are one of {arm64, armeabi-v7a, x86_64, x86, mips64, mips}. 
+
+#####ANDROID_TOOLCHAIN_NAME
+(Defaults to standalone-clang) Controls which compiler is used to build the SDK.  With GCC being deprecated by Android NDK, we recommend using the default (clang).
+
+#####ANDROID_NATIVE_API_LEVEL
+(Default varies by STL choice) Controls what API level the SDK will be built against.  If you use gnustl, you have complete freedom with the choice of API level.  If you use libc++, you must use an API level of at least 21.
+
 
 ###Running integration tests:
 Several directories are appended with *integration-tests. After building your project, you can run these executables to ensure everything works properly.
@@ -151,7 +207,7 @@ Here are a few recipes:
 
 Just use defaults:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    Aws::InitAPI(options);
    .....
    Aws::ShutdownAPI(options);
@@ -159,7 +215,7 @@ Just use defaults:
 
 Turn logging on using the default logger:
 ```
-   SDKOptions options;
+   Aws::SDKOptions options;
    options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
    Aws::InitAPI(options);
    .....
@@ -170,7 +226,7 @@ Install custom memory manager:
 ```
     MyMemoryManager memoryManager;
 
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.memoryManagementOptions.memoryManager = &memoryManager;
     Aws::InitAPI(options);
     .....
@@ -179,7 +235,7 @@ Install custom memory manager:
 
 Override default http client factory:
 ```
-    SDKOptions options;
+    Aws::SDKOptions options;
     options.httpOptions.httpClientFactory_create_fn = [](){ return Aws::MakeShared<MyCustomHttpClientFactory>("ALLOC_TAG", arg1); };
     Aws::InitAPI(options);
     .....
@@ -545,7 +601,7 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 * Always be const correct, and be mindful of when you need to support r-values. We don't trust compilers to optimize this uniformly accross builds so please be explicit.
 * Namespace names should be UpperCammelCase. Never put a using namespace statement in a header file unless it is scoped by a class. It is fine to use a using namespace statement in a cpp file.
 * Use enum class, not enum
-* prefer `#pragma once` for include guards.
+* Prefer `#pragma once` for include guards.
 * Forward declare whenever possible.
 * Use nullptr instead of NULL.
 

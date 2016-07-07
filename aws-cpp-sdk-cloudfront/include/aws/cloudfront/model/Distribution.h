@@ -157,17 +157,17 @@ namespace Model
     /**
      * The number of invalidation batches currently in progress.
      */
-    inline long GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
+    inline int GetInProgressInvalidationBatches() const{ return m_inProgressInvalidationBatches; }
 
     /**
      * The number of invalidation batches currently in progress.
      */
-    inline void SetInProgressInvalidationBatches(long value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
+    inline void SetInProgressInvalidationBatches(int value) { m_inProgressInvalidationBatchesHasBeenSet = true; m_inProgressInvalidationBatches = value; }
 
     /**
      * The number of invalidation batches currently in progress.
      */
-    inline Distribution& WithInProgressInvalidationBatches(long value) { SetInProgressInvalidationBatches(value); return *this;}
+    inline Distribution& WithInProgressInvalidationBatches(int value) { SetInProgressInvalidationBatches(value); return *this;}
 
     /**
      * The domain name corresponding to the distribution. For example:
@@ -303,7 +303,7 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
-    long m_inProgressInvalidationBatches;
+    int m_inProgressInvalidationBatches;
     bool m_inProgressInvalidationBatchesHasBeenSet;
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;

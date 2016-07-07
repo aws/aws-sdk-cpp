@@ -201,7 +201,7 @@ namespace Model
      * value that you can assign to the <code>NextToken</code> request parameter to get
      * the next set of results.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>To receive a paginated response, use this parameter to specify the maximum
@@ -210,7 +210,7 @@ namespace Model
      * value that you can assign to the <code>NextToken</code> request parameter to get
      * the next set of results.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>To receive a paginated response, use this parameter to specify the maximum
@@ -219,7 +219,7 @@ namespace Model
      * value that you can assign to the <code>NextToken</code> request parameter to get
      * the next set of results.</p>
      */
-    inline DescribeEcsClustersRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeEcsClustersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_ecsClusterArns;
@@ -228,7 +228,7 @@ namespace Model
     bool m_stackIdHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

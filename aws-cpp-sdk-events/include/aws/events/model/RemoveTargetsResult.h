@@ -46,17 +46,17 @@ namespace Model
     /**
      * <p>The number of failed entries.</p>
      */
-    inline long GetFailedEntryCount() const{ return m_failedEntryCount; }
+    inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
 
     /**
      * <p>The number of failed entries.</p>
      */
-    inline void SetFailedEntryCount(long value) { m_failedEntryCount = value; }
+    inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
 
     /**
      * <p>The number of failed entries.</p>
      */
-    inline RemoveTargetsResult& WithFailedEntryCount(long value) { SetFailedEntryCount(value); return *this;}
+    inline RemoveTargetsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}
 
     /**
      * <p>An array of failed target entries.</p>
@@ -94,7 +94,7 @@ namespace Model
     inline RemoveTargetsResult& AddFailedEntries(RemoveTargetsResultEntry&& value) { m_failedEntries.push_back(value); return *this; }
 
   private:
-    long m_failedEntryCount;
+    int m_failedEntryCount;
     Aws::Vector<RemoveTargetsResultEntry> m_failedEntries;
   };
 

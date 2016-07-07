@@ -146,21 +146,21 @@ namespace Model
      * terms of instances or a performance characteristic that is important to your
      * application workload, such as vCPUs, memory, or I/O.</p>
      */
-    inline long GetTargetCapacity() const{ return m_targetCapacity; }
+    inline int GetTargetCapacity() const{ return m_targetCapacity; }
 
     /**
      * <p>The number of units to request. You can choose to set the target capacity in
      * terms of instances or a performance characteristic that is important to your
      * application workload, such as vCPUs, memory, or I/O.</p>
      */
-    inline void SetTargetCapacity(long value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
+    inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
 
     /**
      * <p>The number of units to request. You can choose to set the target capacity in
      * terms of instances or a performance characteristic that is important to your
      * application workload, such as vCPUs, memory, or I/O.</p>
      */
-    inline SpotFleetRequestConfigData& WithTargetCapacity(long value) { SetTargetCapacity(value); return *this;}
+    inline SpotFleetRequestConfigData& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
 
     /**
      * <p>The start date and time of the request, in UTC format (for example,
@@ -494,7 +494,7 @@ namespace Model
     bool m_clientTokenHasBeenSet;
     Aws::String m_spotPrice;
     bool m_spotPriceHasBeenSet;
-    long m_targetCapacity;
+    int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
     Aws::Utils::DateTime m_validFrom;
     bool m_validFromHasBeenSet;

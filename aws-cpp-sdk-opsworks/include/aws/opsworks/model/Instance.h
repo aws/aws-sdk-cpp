@@ -100,49 +100,56 @@ namespace Model
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline void SetAmiId(const Aws::String& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline void SetAmiId(Aws::String&& value) { m_amiIdHasBeenSet = true; m_amiId = value; }
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline void SetAmiId(const char* value) { m_amiIdHasBeenSet = true; m_amiId.assign(value); }
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline Instance& WithAmiId(const Aws::String& value) { SetAmiId(value); return *this;}
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline Instance& WithAmiId(Aws::String&& value) { SetAmiId(value); return *this;}
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a></p>
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
      */
     inline Instance& WithAmiId(const char* value) { SetAmiId(value); return *this;}
 
@@ -1368,86 +1375,100 @@ namespace Model
     inline Instance& WithStackId(const char* value) { SetStackId(value); return *this;}
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline Instance& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline Instance& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The instance status:</p> <ul> <li> <code>booting</code> </li> <li>
-     * <code>connection_lost</code> </li> <li> <code>online</code> </li> <li>
-     * <code>pending</code> </li> <li> <code>rebooting</code> </li> <li>
-     * <code>requested</code> </li> <li> <code>running_setup</code> </li> <li>
-     * <code>setup_failed</code> </li> <li> <code>shutting_down</code> </li> <li>
-     * <code>start_failed</code> </li> <li> <code>stopped</code> </li> <li>
-     * <code>stopping</code> </li> <li> <code>terminated</code> </li> <li>
-     * <code>terminating</code> </li> </ul>
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
      */
     inline Instance& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API RemoveTagsFromResourceRequest : public DatabaseMigrationServiceRequest
   {
@@ -36,43 +37,43 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>>The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
     inline RemoveTagsFromResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
