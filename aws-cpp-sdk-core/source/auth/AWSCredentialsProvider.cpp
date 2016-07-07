@@ -17,6 +17,8 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>

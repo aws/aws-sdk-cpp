@@ -15,11 +15,13 @@
 
 #include <aws/core/utils/FileSystemUtils.h>
 
+#include <aws/core/platform/FileSystem.h>
+
 namespace Aws
 {
     namespace Utils
     {
-        Aws::String ComputeTempFileName(const char* prefix, const char* suffix)
+        static Aws::String ComputeTempFileName(const char* prefix, const char* suffix)
         {
             Aws::String prefixStr;
 
@@ -35,7 +37,7 @@ namespace Aws
                 suffixStr = suffix;
             }
 
-            return prefixStr + FileSystemUtils::CreateTempFilePath() + suffixStr;
+            return prefixStr + Aws::Platform::FileSystem::CreateTempFilePath() + suffixStr;
         }
 
         TempFile::TempFile(const char* prefix, const char* suffix, std::ios_base::openmode openFlags) :
@@ -56,7 +58,7 @@ namespace Aws
 
         TempFile::~TempFile()
         {
-            FileSystemUtils::RemoveFileIfExists(m_fileName.c_str());
+            Aws::Platform::FileSystem::RemoveFileIfExists(m_fileName.c_str());
         }
     }
 }
