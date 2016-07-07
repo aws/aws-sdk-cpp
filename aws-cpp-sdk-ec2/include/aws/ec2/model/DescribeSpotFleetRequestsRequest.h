@@ -138,21 +138,21 @@ namespace Model
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. Specify a value
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
-    inline DescribeSpotFleetRequestsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeSpotFleetRequestsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -161,7 +161,7 @@ namespace Model
     bool m_spotFleetRequestIdsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

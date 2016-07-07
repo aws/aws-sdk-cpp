@@ -244,62 +244,62 @@ namespace Model
     inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Current status of the player session. Possible player session states include:
-     * <ul><li>RESERVED: The player session request has been received, but the player
-     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
-     * The player has been validated by the game server and is currently
-     * connected.</li><li>COMPLETED: The player connection has been
-     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
-     * did not connect and/or was not validated within the time-out limit (60
-     * seconds).</li></ul></p>
+     * <p>Current status of the player session. Possible player session states include
+     * the following: <ul><li><b>RESERVED</b> – The player session request has been
+     * received, but the player has not yet connected to the server process and/or been
+     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
+     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
+     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
+     * was received, but the player did not connect and/or was not validated within the
+     * time-out limit (60 seconds).</li></ul></p>
      */
     inline const PlayerSessionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include:
-     * <ul><li>RESERVED: The player session request has been received, but the player
-     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
-     * The player has been validated by the game server and is currently
-     * connected.</li><li>COMPLETED: The player connection has been
-     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
-     * did not connect and/or was not validated within the time-out limit (60
-     * seconds).</li></ul></p>
+     * <p>Current status of the player session. Possible player session states include
+     * the following: <ul><li><b>RESERVED</b> – The player session request has been
+     * received, but the player has not yet connected to the server process and/or been
+     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
+     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
+     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
+     * was received, but the player did not connect and/or was not validated within the
+     * time-out limit (60 seconds).</li></ul></p>
      */
     inline void SetStatus(const PlayerSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include:
-     * <ul><li>RESERVED: The player session request has been received, but the player
-     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
-     * The player has been validated by the game server and is currently
-     * connected.</li><li>COMPLETED: The player connection has been
-     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
-     * did not connect and/or was not validated within the time-out limit (60
-     * seconds).</li></ul></p>
+     * <p>Current status of the player session. Possible player session states include
+     * the following: <ul><li><b>RESERVED</b> – The player session request has been
+     * received, but the player has not yet connected to the server process and/or been
+     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
+     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
+     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
+     * was received, but the player did not connect and/or was not validated within the
+     * time-out limit (60 seconds).</li></ul></p>
      */
     inline void SetStatus(PlayerSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include:
-     * <ul><li>RESERVED: The player session request has been received, but the player
-     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
-     * The player has been validated by the game server and is currently
-     * connected.</li><li>COMPLETED: The player connection has been
-     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
-     * did not connect and/or was not validated within the time-out limit (60
-     * seconds).</li></ul></p>
+     * <p>Current status of the player session. Possible player session states include
+     * the following: <ul><li><b>RESERVED</b> – The player session request has been
+     * received, but the player has not yet connected to the server process and/or been
+     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
+     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
+     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
+     * was received, but the player did not connect and/or was not validated within the
+     * time-out limit (60 seconds).</li></ul></p>
      */
     inline PlayerSession& WithStatus(const PlayerSessionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the player session. Possible player session states include:
-     * <ul><li>RESERVED: The player session request has been received, but the player
-     * has not yet connected to the game server and/or been validated. </li><li>ACTIVE:
-     * The player has been validated by the game server and is currently
-     * connected.</li><li>COMPLETED: The player connection has been
-     * dropped.</li><li>TIMEDOUT: A player session request was received, but the player
-     * did not connect and/or was not validated within the time-out limit (60
-     * seconds).</li></ul></p>
+     * <p>Current status of the player session. Possible player session states include
+     * the following: <ul><li><b>RESERVED</b> – The player session request has been
+     * received, but the player has not yet connected to the server process and/or been
+     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
+     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
+     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
+     * was received, but the player did not connect and/or was not validated within the
+     * time-out limit (60 seconds).</li></ul></p>
      */
     inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(value); return *this;}
 
@@ -345,6 +345,24 @@ namespace Model
      */
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline PlayerSession& WithPort(int value) { SetPort(value); return *this;}
+
   private:
     Aws::String m_playerSessionId;
     bool m_playerSessionIdHasBeenSet;
@@ -362,6 +380,8 @@ namespace Model
     bool m_statusHasBeenSet;
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+    int m_port;
+    bool m_portHasBeenSet;
   };
 
 } // namespace Model

@@ -42,17 +42,17 @@ namespace Model
     /**
      * The number of all items in the domain.
      */
-    inline long GetItemCount() const{ return m_itemCount; }
+    inline int GetItemCount() const{ return m_itemCount; }
 
     /**
      * The number of all items in the domain.
      */
-    inline void SetItemCount(long value) { m_itemCount = value; }
+    inline void SetItemCount(int value) { m_itemCount = value; }
 
     /**
      * The number of all items in the domain.
      */
-    inline DomainMetadataResult& WithItemCount(long value) { SetItemCount(value); return *this;}
+    inline DomainMetadataResult& WithItemCount(int value) { SetItemCount(value); return *this;}
 
     /**
      * The total size of all item names in the domain, in bytes.
@@ -72,17 +72,17 @@ namespace Model
     /**
      * The number of unique attribute names in the domain.
      */
-    inline long GetAttributeNameCount() const{ return m_attributeNameCount; }
+    inline int GetAttributeNameCount() const{ return m_attributeNameCount; }
 
     /**
      * The number of unique attribute names in the domain.
      */
-    inline void SetAttributeNameCount(long value) { m_attributeNameCount = value; }
+    inline void SetAttributeNameCount(int value) { m_attributeNameCount = value; }
 
     /**
      * The number of unique attribute names in the domain.
      */
-    inline DomainMetadataResult& WithAttributeNameCount(long value) { SetAttributeNameCount(value); return *this;}
+    inline DomainMetadataResult& WithAttributeNameCount(int value) { SetAttributeNameCount(value); return *this;}
 
     /**
      * The total size of all unique attribute names in the domain, in bytes.
@@ -102,17 +102,17 @@ namespace Model
     /**
      * The number of all attribute name/value pairs in the domain.
      */
-    inline long GetAttributeValueCount() const{ return m_attributeValueCount; }
+    inline int GetAttributeValueCount() const{ return m_attributeValueCount; }
 
     /**
      * The number of all attribute name/value pairs in the domain.
      */
-    inline void SetAttributeValueCount(long value) { m_attributeValueCount = value; }
+    inline void SetAttributeValueCount(int value) { m_attributeValueCount = value; }
 
     /**
      * The number of all attribute name/value pairs in the domain.
      */
-    inline DomainMetadataResult& WithAttributeValueCount(long value) { SetAttributeValueCount(value); return *this;}
+    inline DomainMetadataResult& WithAttributeValueCount(int value) { SetAttributeValueCount(value); return *this;}
 
     /**
      * The total size of all attribute values in the domain, in bytes.
@@ -132,17 +132,17 @@ namespace Model
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
-    inline long GetTimestamp() const{ return m_timestamp; }
+    inline int GetTimestamp() const{ return m_timestamp; }
 
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
-    inline void SetTimestamp(long value) { m_timestamp = value; }
+    inline void SetTimestamp(int value) { m_timestamp = value; }
 
     /**
      * The data and time when metadata was calculated, in Epoch (UNIX) seconds.
      */
-    inline DomainMetadataResult& WithTimestamp(long value) { SetTimestamp(value); return *this;}
+    inline DomainMetadataResult& WithTimestamp(int value) { SetTimestamp(value); return *this;}
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
@@ -160,13 +160,13 @@ namespace Model
     inline DomainMetadataResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(value); return *this;}
 
   private:
-    long m_itemCount;
+    int m_itemCount;
     long long m_itemNamesSizeBytes;
-    long m_attributeNameCount;
+    int m_attributeNameCount;
     long long m_attributeNamesSizeBytes;
-    long m_attributeValueCount;
+    int m_attributeValueCount;
     long long m_attributeValuesSizeBytes;
-    long m_timestamp;
+    int m_timestamp;
     ResponseMetadata m_responseMetadata;
   };
 

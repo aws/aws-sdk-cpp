@@ -82,44 +82,44 @@ namespace Model
     inline ActionDeclaration& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline ActionDeclaration& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
 
     /**
-     * <p>The configuration information for the action type. </p>
+     * <p>The configuration information for the action type.</p>
      */
     inline ActionDeclaration& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(value); return *this;}
 
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline long GetRunOrder() const{ return m_runOrder; }
+    inline int GetRunOrder() const{ return m_runOrder; }
 
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline void SetRunOrder(long value) { m_runOrderHasBeenSet = true; m_runOrder = value; }
+    inline void SetRunOrder(int value) { m_runOrderHasBeenSet = true; m_runOrder = value; }
 
     /**
      * <p>The order in which actions are run.</p>
      */
-    inline ActionDeclaration& WithRunOrder(long value) { SetRunOrder(value); return *this;}
+    inline ActionDeclaration& WithRunOrder(int value) { SetRunOrder(value); return *this;}
 
     /**
      * <p>The action declaration's configuration.</p>
@@ -312,7 +312,7 @@ namespace Model
     bool m_nameHasBeenSet;
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
-    long m_runOrder;
+    int m_runOrder;
     bool m_runOrderHasBeenSet;
     Aws::Map<Aws::String, Aws::String> m_configuration;
     bool m_configurationHasBeenSet;

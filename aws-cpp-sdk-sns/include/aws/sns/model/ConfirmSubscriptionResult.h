@@ -34,7 +34,7 @@ namespace SNS
 namespace Model
 {
   /**
-   * Response for ConfirmSubscriptions action.
+   * <p>Response for ConfirmSubscriptions action.</p>
    */
   class AWS_SNS_API ConfirmSubscriptionResult
   {

@@ -214,17 +214,17 @@ namespace Model
     /**
      * <p> The port that the cluster is listening on. </p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p> The port that the cluster is listening on. </p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p> The port that the cluster is listening on. </p>
      */
-    inline Snapshot& WithPort(long value) { SetPort(value); return *this;}
+    inline Snapshot& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p> The Availability Zone in which the cluster was created. </p>
@@ -443,17 +443,17 @@ namespace Model
     /**
      * <p>The number of nodes in the cluster.</p>
      */
-    inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
      * <p>The number of nodes in the cluster.</p>
      */
-    inline void SetNumberOfNodes(long value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
      * <p>The number of nodes in the cluster.</p>
      */
-    inline Snapshot& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline Snapshot& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
     /**
      * <p>The name of the database that was created when the cluster was created. </p>
@@ -940,7 +940,7 @@ namespace Model
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -954,7 +954,7 @@ namespace Model
     bool m_snapshotTypeHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    long m_numberOfNodes;
+    int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;

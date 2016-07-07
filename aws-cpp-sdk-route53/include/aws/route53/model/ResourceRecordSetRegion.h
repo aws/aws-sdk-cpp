@@ -35,7 +35,8 @@ namespace Model
     ap_northeast_1,
     ap_northeast_2,
     sa_east_1,
-    cn_north_1
+    cn_north_1,
+    ap_south_1
   };
 
 namespace ResourceRecordSetRegionMapper

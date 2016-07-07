@@ -143,26 +143,26 @@ namespace Model
      * <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code>
      * </p>
      */
-    inline long GetCacheNodeCount() const{ return m_cacheNodeCount; }
+    inline int GetCacheNodeCount() const{ return m_cacheNodeCount; }
 
     /**
      * <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code>
      * </p>
      */
-    inline void SetCacheNodeCount(long value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
+    inline void SetCacheNodeCount(int value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
 
     /**
      * <p>The number of cache node instances to reserve.</p> <p>Default: <code>1</code>
      * </p>
      */
-    inline PurchaseReservedCacheNodesOfferingRequest& WithCacheNodeCount(long value) { SetCacheNodeCount(value); return *this;}
+    inline PurchaseReservedCacheNodesOfferingRequest& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
 
   private:
     Aws::String m_reservedCacheNodesOfferingId;
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
     Aws::String m_reservedCacheNodeId;
     bool m_reservedCacheNodeIdHasBeenSet;
-    long m_cacheNodeCount;
+    int m_cacheNodeCount;
     bool m_cacheNodeCountHasBeenSet;
   };
 

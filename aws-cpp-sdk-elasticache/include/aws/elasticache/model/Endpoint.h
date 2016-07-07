@@ -83,22 +83,22 @@ namespace Model
     /**
      * <p>The port number that the cache engine is listening on.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number that the cache engine is listening on.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number that the cache engine is listening on.</p>
      */
-    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
   private:
     Aws::String m_address;
     bool m_addressHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
   };
 

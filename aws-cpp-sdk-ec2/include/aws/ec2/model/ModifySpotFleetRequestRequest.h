@@ -72,17 +72,17 @@ namespace Model
     /**
      * <p>The size of the fleet.</p>
      */
-    inline long GetTargetCapacity() const{ return m_targetCapacity; }
+    inline int GetTargetCapacity() const{ return m_targetCapacity; }
 
     /**
      * <p>The size of the fleet.</p>
      */
-    inline void SetTargetCapacity(long value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
+    inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
 
     /**
      * <p>The size of the fleet.</p>
      */
-    inline ModifySpotFleetRequestRequest& WithTargetCapacity(long value) { SetTargetCapacity(value); return *this;}
+    inline ModifySpotFleetRequestRequest& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
 
     /**
      * <p>Indicates whether running Spot instances should be terminated if the target
@@ -122,7 +122,7 @@ namespace Model
   private:
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet;
-    long m_targetCapacity;
+    int m_targetCapacity;
     bool m_targetCapacityHasBeenSet;
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
     bool m_excessCapacityTerminationPolicyHasBeenSet;

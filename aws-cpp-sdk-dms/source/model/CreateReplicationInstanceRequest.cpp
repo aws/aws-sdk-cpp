@@ -26,6 +26,7 @@ CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_replicationInstanceClassHasBeenSet(false),
+    m_vpcSecurityGroupIdsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_replicationSubnetGroupIdentifierHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
@@ -58,6 +59,17 @@ Aws::String CreateReplicationInstanceRequest::SerializePayload() const
   if(m_replicationInstanceClassHasBeenSet)
   {
    payload.WithString("ReplicationInstanceClass", m_replicationInstanceClass);
+
+  }
+
+  if(m_vpcSecurityGroupIdsHasBeenSet)
+  {
+   Array<JsonValue> vpcSecurityGroupIdsJsonList(m_vpcSecurityGroupIds.size());
+   for(unsigned vpcSecurityGroupIdsIndex = 0; vpcSecurityGroupIdsIndex < vpcSecurityGroupIdsJsonList.GetLength(); ++vpcSecurityGroupIdsIndex)
+   {
+     vpcSecurityGroupIdsJsonList[vpcSecurityGroupIdsIndex].AsString(m_vpcSecurityGroupIds[vpcSecurityGroupIdsIndex]);
+   }
+   payload.WithArray("VpcSecurityGroupIds", std::move(vpcSecurityGroupIdsJsonList));
 
   }
 

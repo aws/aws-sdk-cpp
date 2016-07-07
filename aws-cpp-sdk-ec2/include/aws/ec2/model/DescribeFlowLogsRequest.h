@@ -202,7 +202,7 @@ namespace Model
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -212,7 +212,7 @@ namespace Model
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -222,7 +222,7 @@ namespace Model
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
      */
-    inline DescribeFlowLogsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeFlowLogsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::Vector<Aws::String> m_flowLogIds;
@@ -231,7 +231,7 @@ namespace Model
     bool m_filterHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

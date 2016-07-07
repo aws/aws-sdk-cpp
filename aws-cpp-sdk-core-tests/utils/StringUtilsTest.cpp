@@ -193,9 +193,10 @@ TEST(StringUtilsTest, TestInt64Conversion)
 
 TEST(StringUtilsTest, TestInt32Conversion)
 {
-    long long intValue = LONG_MAX - 1;
+    long long intValue = INT_MAX - 1;
     std::stringstream ss;
     ss << intValue;
+
     ASSERT_EQ(0, StringUtils::ConvertToInt32(NULL));
     ASSERT_EQ(0, StringUtils::ConvertToInt32(""));
     ASSERT_EQ(intValue, StringUtils::ConvertToInt32(ss.str().c_str()));

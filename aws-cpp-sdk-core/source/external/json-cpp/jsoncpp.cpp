@@ -91,8 +91,8 @@ This file has been modified from its original version by Amazon:
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
-#ifndef LIB_JSONCPP_JSON_TOOL_H_INCLUDED
-#define LIB_JSONCPP_JSON_TOOL_H_INCLUDED
+#ifndef AWS_LIB_JSONCPP_JSON_TOOL_H_INCLUDED
+#define AWS_LIB_JSONCPP_JSON_TOOL_H_INCLUDED
 
 /* This header provides common string manipulation support, such as UTF-8,
  * portable conversion from/to string...
@@ -176,7 +176,7 @@ static inline void fixNumericLocale(char* begin, char* end) {
 } // namespace External
 } // namespace Aws
 
-#endif // LIB_JSONCPP_JSON_TOOL_H_INCLUDED
+#endif // AWS_LIB_JSONCPP_JSON_TOOL_H_INCLUDED
 
 // //////////////////////////////////////////////////////////////////////
 // End of content of file: src/lib_json/json_tool.h
@@ -196,12 +196,12 @@ static inline void fixNumericLocale(char* begin, char* end) {
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
-#if !defined(JSON_IS_AMALGAMATION)
+#if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <json/assertions.h>
 #include <json/reader.h>
 #include <json/value.h>
 #include "json_tool.h"
-#endif // if !defined(JSON_IS_AMALGAMATION)
+#endif // if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <utility>
 #include <cstdio>
 #include <cassert>
@@ -1090,7 +1090,7 @@ Aws::IStream& operator>>(Aws::IStream& sin, Value& root) {
             "Error from reader: %s",
             reader.getFormattedErrorMessages().c_str());
 
-    JSON_FAIL_MESSAGE("reader error");
+    AWS_JSON_FAIL_MESSAGE("reader error");
   }
   return sin;
 }
@@ -1117,13 +1117,13 @@ Aws::IStream& operator>>(Aws::IStream& sin, Value& root) {
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
-#ifndef JSONCPP_BATCHALLOCATOR_H_INCLUDED
-#define JSONCPP_BATCHALLOCATOR_H_INCLUDED
+#ifndef AWS_JSONCPP_BATCHALLOCATOR_H_INCLUDED
+#define AWS_JSONCPP_BATCHALLOCATOR_H_INCLUDED
 
 #include <stdlib.h>
 #include <assert.h>
 
-#ifndef JSONCPP_DOC_EXCLUDE_IMPLEMENTATION
+#ifndef AWS_JSONCPP_DOC_EXCLUDE_IMPLEMENTATION
 
 namespace Aws {
 namespace External {
@@ -1234,9 +1234,9 @@ private:
 } // namespace External
 } // namespace Aws
 
-#endif // ifndef JSONCPP_DOC_INCLUDE_IMPLEMENTATION
+#endif // ifndef AWS_JSONCPP_DOC_INCLUDE_IMPLEMENTATION
 
-#endif // JSONCPP_BATCHALLOCATOR_H_INCLUDED
+#endif // AWS_JSONCPP_BATCHALLOCATOR_H_INCLUDED
 
 // //////////////////////////////////////////////////////////////////////
 // End of content of file: src/lib_json/json_batchallocator.h
@@ -1271,7 +1271,7 @@ namespace Json {
 // //////////////////////////////////////////////////////////////////
 
 ValueIteratorBase::ValueIteratorBase()
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
     : current_(), isNull_(true) {
 }
 #else
@@ -1280,7 +1280,7 @@ ValueIteratorBase::ValueIteratorBase()
 }
 #endif
 
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
 ValueIteratorBase::ValueIteratorBase(
     const Value::ObjectValues::iterator& current)
     : current_(current), isNull_(false) {}
@@ -1299,7 +1299,7 @@ ValueIteratorBase::ValueIteratorBase(
 #endif
 
 Value& ValueIteratorBase::deref() const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   return current_->second;
 #else
   if (isArray_)
@@ -1309,7 +1309,7 @@ Value& ValueIteratorBase::deref() const {
 }
 
 void ValueIteratorBase::increment() {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   ++current_;
 #else
   if (isArray_)
@@ -1319,7 +1319,7 @@ void ValueIteratorBase::increment() {
 }
 
 void ValueIteratorBase::decrement() {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   --current_;
 #else
   if (isArray_)
@@ -1330,8 +1330,8 @@ void ValueIteratorBase::decrement() {
 
 ValueIteratorBase::difference_type
 ValueIteratorBase::computeDistance(const SelfType& other) const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
-#ifdef JSON_USE_CPPTL_SMALLMAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_USE_CPPTL_SMALLMAP
   return current_ - other.current_;
 #else
   // Iterator for null value are initialized using the default
@@ -1364,7 +1364,7 @@ ValueIteratorBase::computeDistance(const SelfType& other) const {
 }
 
 bool ValueIteratorBase::isEqual(const SelfType& other) const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   if (isNull_) {
     return other.isNull_;
   }
@@ -1377,7 +1377,7 @@ bool ValueIteratorBase::isEqual(const SelfType& other) const {
 }
 
 void ValueIteratorBase::copy(const SelfType& other) {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   current_ = other.current_;
   isNull_ = other.isNull_;
 #else
@@ -1388,7 +1388,7 @@ void ValueIteratorBase::copy(const SelfType& other) {
 }
 
 Value ValueIteratorBase::key() const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   const Value::CZString czstring = (*current_).first;
   if (czstring.c_str()) {
     if (czstring.isStaticString())
@@ -1408,7 +1408,7 @@ Value ValueIteratorBase::key() const {
 }
 
 UInt ValueIteratorBase::index() const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   const Value::CZString czstring = (*current_).first;
   if (!czstring.c_str())
     return czstring.index();
@@ -1421,7 +1421,7 @@ UInt ValueIteratorBase::index() const {
 }
 
 const char* ValueIteratorBase::memberName() const {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   const char* name = (*current_).first.c_str();
   return name ? name : "";
 #else
@@ -1441,7 +1441,7 @@ const char* ValueIteratorBase::memberName() const {
 
 ValueConstIterator::ValueConstIterator() {}
 
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
 ValueConstIterator::ValueConstIterator(
     const Value::ObjectValues::iterator& current)
     : ValueIteratorBase(current) {}
@@ -1471,7 +1471,7 @@ operator=(const ValueIteratorBase& other) {
 
 ValueIterator::ValueIterator() {}
 
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
 ValueIterator::ValueIterator(const Value::ObjectValues::iterator& current)
     : ValueIteratorBase(current) {}
 #else
@@ -1515,25 +1515,25 @@ ValueIterator& ValueIterator::operator=(const SelfType& other) {
 // recognized in your jurisdiction.
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
-#if !defined(JSON_IS_AMALGAMATION)
+#if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <json/assertions.h>
 #include <json/value.h>
 #include <json/writer.h>
-#ifndef JSON_USE_SIMPLE_INTERNAL_ALLOCATOR
+#ifndef AWS_JSON_USE_SIMPLE_INTERNAL_ALLOCATOR
 #include "json_batchallocator.h"
-#endif // #ifndef JSON_USE_SIMPLE_INTERNAL_ALLOCATOR
-#endif // if !defined(JSON_IS_AMALGAMATION)
+#endif // #ifndef AWS_JSON_USE_SIMPLE_INTERNAL_ALLOCATOR
+#endif // if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <math.h>
 #include <sstream>
 #include <utility>
 #include <cstring>
 #include <cassert>
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 #include <cpptl/conststring.h>
 #endif
 #include <cstddef> // size_t
 
-#define JSON_ASSERT_UNREACHABLE assert(false)
+#define AWS_JSON_ASSERT_UNREACHABLE assert(false)
 
 namespace Aws {
 namespace External {
@@ -1554,7 +1554,7 @@ const Value& Value::null = reinterpret_cast<const Value&>(kNullRef);
 const Int Value::minInt = Int(~(UInt(-1) / 2));
 const Int Value::maxInt = Int(UInt(-1) / 2);
 const UInt Value::maxUInt = UInt(-1);
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
 const Int64 Value::minInt64 = Int64(~(UInt64(-1) / 2));
 const Int64 Value::maxInt64 = Int64(UInt64(-1) / 2);
 const UInt64 Value::maxUInt64 = UInt64(-1);
@@ -1562,20 +1562,20 @@ const UInt64 Value::maxUInt64 = UInt64(-1);
 // converting Value::maxUInt64 to a double correctly (AIX/xlC).
 // Assumes that UInt64 is a 64 bits integer.
 static const double maxUInt64AsDouble = 18446744073709551615.0;
-#endif // defined(JSON_HAS_INT64)
+#endif // defined(AWS_JSON_HAS_INT64)
 const LargestInt Value::minLargestInt = LargestInt(~(LargestUInt(-1) / 2));
 const LargestInt Value::maxLargestInt = LargestInt(LargestUInt(-1) / 2);
 const LargestUInt Value::maxLargestUInt = LargestUInt(-1);
 
 /// Unknown size marker
-static const unsigned int unknown = (unsigned)-1;
+static const size_t unknown = (size_t)-1;
 
-#if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
 template <typename T, typename U>
 static inline bool InRange(double d, T min, U max) {
   return d >= min && d <= max;
 }
-#else  // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#else  // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
 static inline double integerToDouble(Json::UInt64 value) {
   return static_cast<double>(Int64(value / 2)) * 2.0 + Int64(value & 1);
 }
@@ -1588,7 +1588,7 @@ template <typename T, typename U>
 static inline bool InRange(double d, T min, U max) {
   return d >= integerToDouble(min) && d <= integerToDouble(max);
 }
-#endif // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#endif // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
 
 /** Duplicates the specified string value.
  * @param value Pointer to the string to duplicate. Must be zero-terminated if
@@ -1598,17 +1598,17 @@ static inline bool InRange(double d, T min, U max) {
  * @return Pointer on the duplicate instance of string.
  */
 static inline char* duplicateStringValue(const char* value,
-                                         unsigned int length = unknown) {
+                                         size_t length = unknown) {
   if (length == unknown)
-    length = (unsigned int)strlen(value);
+    length = strlen(value);
 
   // Avoid an integer overflow in the call to malloc below by limiting length
   // to a sane value.
-  if (length >= (unsigned)Value::maxInt)
-    length = Value::maxInt - 1;
+  if (length >= (size_t)Value::maxInt)
+    length = (size_t)Value::maxInt - 1;
 
   char* newString = static_cast<char*>(Aws::Malloc(JSON_CPP_ALLOCATION_TAG, length + 1));
-  JSON_ASSERT_MESSAGE(newString != 0,
+  AWS_JSON_ASSERT_MESSAGE(newString != 0,
                       "in Json::Value::duplicateStringValue(): "
                       "Failed to allocate string value buffer");
   memcpy(newString, value, length);
@@ -1631,14 +1631,14 @@ static inline void releaseStringValue(char* value) { Aws::Free(value); }
 // //////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
-#if !defined(JSON_IS_AMALGAMATION)
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#if !defined(AWS_JSON_IS_AMALGAMATION)
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
 #include <json_internalarray.inl>
 #include <json_internalmap.inl>
-#endif // JSON_VALUE_USE_INTERNAL_MAP
+#endif // AWS_JSON_VALUE_USE_INTERNAL_MAP
 
 #include <json_valueiterator.inl>
-#endif // if !defined(JSON_IS_AMALGAMATION)
+#endif // if !defined(AWS_JSON_IS_AMALGAMATION)
 
 namespace Aws {
 namespace External {
@@ -1664,8 +1664,8 @@ void Value::CommentInfo::setComment(const char* text, size_t len) {
     releaseStringValue(comment_);
     comment_ = 0;
   }
-  JSON_ASSERT(text != 0);
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT(text != 0);
+  AWS_JSON_ASSERT_MESSAGE(
       text[0] == '\0' || text[0] == '/',
       "in Json::Value::setComment(): Comments must start with /");
   // It seems that /**/ style comments are acceptable as well.
@@ -1679,7 +1679,7 @@ void Value::CommentInfo::setComment(const char* text, size_t len) {
 // //////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
 
 // Notes: index_ indicates if the string was allocated when
 // a string is stored.
@@ -1732,7 +1732,7 @@ const char* Value::CZString::c_str() const { return cstr_; }
 
 bool Value::CZString::isStaticString() const { return index_ == noDuplication; }
 
-#endif // ifndef JSON_VALUE_USE_INTERNAL_MAP
+#endif // ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
 
 // //////////////////////////////////////////////////////////////////
 // //////////////////////////////////////////////////////////////////
@@ -1761,7 +1761,7 @@ Value::Value(ValueType type) {
   case stringValue:
     value_.string_ = 0;
     break;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
     value_.map_ = Aws::New<ObjectValues>(JSON_CPP_ALLOCATION_TAG);
@@ -1778,7 +1778,7 @@ Value::Value(ValueType type) {
     value_.bool_ = false;
     break;
   default:
-    JSON_ASSERT_UNREACHABLE;
+    AWS_JSON_ASSERT_UNREACHABLE;
   }
 }
 
@@ -1791,7 +1791,7 @@ Value::Value(UInt value) {
   initBasic(uintValue);
   value_.uint_ = value;
 }
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
 Value::Value(Int64 value) {
   initBasic(intValue);
   value_.int_ = value;
@@ -1800,7 +1800,7 @@ Value::Value(UInt64 value) {
   initBasic(uintValue);
   value_.uint_ = value;
 }
-#endif // defined(JSON_HAS_INT64)
+#endif // defined(AWS_JSON_HAS_INT64)
 
 Value::Value(double value) {
   initBasic(realValue);
@@ -1815,13 +1815,13 @@ Value::Value(const char* value) {
 Value::Value(const char* beginValue, const char* endValue) {
   initBasic(stringValue, true);
   value_.string_ =
-      duplicateStringValue(beginValue, (unsigned int)(endValue - beginValue));
+      duplicateStringValue(beginValue, (size_t)(endValue - beginValue));
 }
 
 Value::Value(const Aws::String& value) {
   initBasic(stringValue, true);
   value_.string_ =
-      duplicateStringValue(value.c_str(), (unsigned int)value.length());
+      duplicateStringValue(value.c_str(), value.length());
 }
 
 Value::Value(const StaticString& value) {
@@ -1829,7 +1829,7 @@ Value::Value(const StaticString& value) {
   value_.string_ = const_cast<char*>(value.c_str());
 }
 
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 Value::Value(const CppTL::ConstString& value) {
   initBasic(stringValue, true);
   value_.string_ = duplicateStringValue(value, value.length());
@@ -1843,7 +1843,7 @@ Value::Value(bool value) {
 
 Value::Value(const Value& other)
     : type_(other.type_), allocated_(false)
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
       ,
       itemIsUsed_(0)
 #endif
@@ -1866,7 +1866,7 @@ Value::Value(const Value& other)
       allocated_ = false;
     }
     break;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
     value_.map_ = Aws::New<ObjectValues>(JSON_CPP_ALLOCATION_TAG, *other.value_.map_);
@@ -1880,7 +1880,7 @@ Value::Value(const Value& other)
     break;
 #endif
   default:
-    JSON_ASSERT_UNREACHABLE;
+    AWS_JSON_ASSERT_UNREACHABLE;
   }
   if (other.comments_) {
     comments_ = Aws::NewArray<CommentInfo>(numberOfCommentPlacement, JSON_CPP_ALLOCATION_TAG);
@@ -1905,7 +1905,7 @@ Value::~Value() {
     if (allocated_)
       releaseStringValue(value_.string_);
     break;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
     Aws::Delete(value_.map_);
@@ -1919,7 +1919,7 @@ Value::~Value() {
     break;
 #endif
   default:
-    JSON_ASSERT_UNREACHABLE;
+    AWS_JSON_ASSERT_UNREACHABLE;
   }
 
   if (comments_)
@@ -1977,7 +1977,7 @@ bool Value::operator<(const Value& other) const {
     return (value_.string_ == 0 && other.value_.string_) ||
            (other.value_.string_ && value_.string_ &&
             strcmp(value_.string_, other.value_.string_) < 0);
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue: {
     int delta = int(value_.map_->size() - other.value_.map_->size());
@@ -1992,7 +1992,7 @@ bool Value::operator<(const Value& other) const {
     return value_.map_->compare(*(other.value_.map_)) < 0;
 #endif
   default:
-    JSON_ASSERT_UNREACHABLE;
+    AWS_JSON_ASSERT_UNREACHABLE;
   }
   return false; // unreachable
 }
@@ -2026,7 +2026,7 @@ bool Value::operator==(const Value& other) const {
     return (value_.string_ == other.value_.string_) ||
            (other.value_.string_ && value_.string_ &&
             strcmp(value_.string_, other.value_.string_) == 0);
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
     return value_.map_->size() == other.value_.map_->size() &&
@@ -2038,7 +2038,7 @@ bool Value::operator==(const Value& other) const {
     return value_.map_->compare(*(other.value_.map_)) == 0;
 #endif
   default:
-    JSON_ASSERT_UNREACHABLE;
+    AWS_JSON_ASSERT_UNREACHABLE;
   }
   return false; // unreachable
 }
@@ -2046,7 +2046,7 @@ bool Value::operator==(const Value& other) const {
 bool Value::operator!=(const Value& other) const { return !(*this == other); }
 
 const char* Value::asCString() const {
-  JSON_ASSERT_MESSAGE(type_ == stringValue,
+  AWS_JSON_ASSERT_MESSAGE(type_ == stringValue,
                       "in Json::Value::asCString(): requires stringValue");
   return value_.string_;
 }
@@ -2066,11 +2066,11 @@ Aws::String Value::asString() const {
   case realValue:
     return valueToString(value_.real_);
   default:
-    JSON_FAIL_MESSAGE("Type is not convertible to string");
+  AWS_JSON_FAIL_MESSAGE("Type is not convertible to string");
   }
 }
 
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 CppTL::ConstString Value::asConstString() const {
   return CppTL::ConstString(asString().c_str());
 }
@@ -2079,13 +2079,13 @@ CppTL::ConstString Value::asConstString() const {
 Value::Int Value::asInt() const {
   switch (type_) {
   case intValue:
-    JSON_ASSERT_MESSAGE(isInt(), "LargestInt out of Int range");
+    AWS_JSON_ASSERT_MESSAGE(isInt(), "LargestInt out of Int range");
     return Int(value_.int_);
   case uintValue:
-    JSON_ASSERT_MESSAGE(isInt(), "LargestUInt out of Int range");
+    AWS_JSON_ASSERT_MESSAGE(isInt(), "LargestUInt out of Int range");
     return Int(value_.uint_);
   case realValue:
-    JSON_ASSERT_MESSAGE(InRange(value_.real_, minInt, maxInt),
+    AWS_JSON_ASSERT_MESSAGE(InRange(value_.real_, minInt, maxInt),
                         "double out of Int range");
     return Int(value_.real_);
   case nullValue:
@@ -2095,19 +2095,19 @@ Value::Int Value::asInt() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to Int.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to Int.");
 }
 
 Value::UInt Value::asUInt() const {
   switch (type_) {
   case intValue:
-    JSON_ASSERT_MESSAGE(isUInt(), "LargestInt out of UInt range");
+    AWS_JSON_ASSERT_MESSAGE(isUInt(), "LargestInt out of UInt range");
     return UInt(value_.int_);
   case uintValue:
-    JSON_ASSERT_MESSAGE(isUInt(), "LargestUInt out of UInt range");
+    AWS_JSON_ASSERT_MESSAGE(isUInt(), "LargestUInt out of UInt range");
     return UInt(value_.uint_);
   case realValue:
-    JSON_ASSERT_MESSAGE(InRange(value_.real_, 0, maxUInt),
+    AWS_JSON_ASSERT_MESSAGE(InRange(value_.real_, 0, maxUInt),
                         "double out of UInt range");
     return UInt(value_.real_);
   case nullValue:
@@ -2117,20 +2117,20 @@ Value::UInt Value::asUInt() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to UInt.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to UInt.");
 }
 
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
 
 Value::Int64 Value::asInt64() const {
   switch (type_) {
   case intValue:
     return Int64(value_.int_);
   case uintValue:
-    JSON_ASSERT_MESSAGE(isInt64(), "LargestUInt out of Int64 range");
+    AWS_JSON_ASSERT_MESSAGE(isInt64(), "LargestUInt out of Int64 range");
     return Int64(value_.uint_);
   case realValue:
-    JSON_ASSERT_MESSAGE(InRange(value_.real_, minInt64, maxInt64),
+    AWS_JSON_ASSERT_MESSAGE(InRange(value_.real_, minInt64, maxInt64),
                         "double out of Int64 range");
     return Int64(value_.real_);
   case nullValue:
@@ -2140,18 +2140,18 @@ Value::Int64 Value::asInt64() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to Int64.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to Int64.");
 }
 
 Value::UInt64 Value::asUInt64() const {
   switch (type_) {
   case intValue:
-    JSON_ASSERT_MESSAGE(isUInt64(), "LargestInt out of UInt64 range");
+    AWS_JSON_ASSERT_MESSAGE(isUInt64(), "LargestInt out of UInt64 range");
     return UInt64(value_.int_);
   case uintValue:
     return UInt64(value_.uint_);
   case realValue:
-    JSON_ASSERT_MESSAGE(InRange(value_.real_, 0, maxUInt64),
+    AWS_JSON_ASSERT_MESSAGE(InRange(value_.real_, 0, maxUInt64),
                         "double out of UInt64 range");
     return UInt64(value_.real_);
   case nullValue:
@@ -2161,12 +2161,12 @@ Value::UInt64 Value::asUInt64() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to UInt64.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to UInt64.");
 }
-#endif // if defined(JSON_HAS_INT64)
+#endif // if defined(AWS_JSON_HAS_INT64)
 
 LargestInt Value::asLargestInt() const {
-#if defined(JSON_NO_INT64)
+#if defined(AWS_JSON_NO_INT64)
   return asInt();
 #else
   return asInt64();
@@ -2174,7 +2174,7 @@ LargestInt Value::asLargestInt() const {
 }
 
 LargestUInt Value::asLargestUInt() const {
-#if defined(JSON_NO_INT64)
+#if defined(AWS_JSON_NO_INT64)
   return asUInt();
 #else
   return asUInt64();
@@ -2186,11 +2186,11 @@ double Value::asDouble() const {
   case intValue:
     return static_cast<double>(value_.int_);
   case uintValue:
-#if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
     return static_cast<double>(value_.uint_);
-#else  // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#else  // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
     return integerToDouble(value_.uint_);
-#endif // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#endif // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
   case realValue:
     return value_.real_;
   case nullValue:
@@ -2200,7 +2200,7 @@ double Value::asDouble() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to double.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to double.");
 }
 
 float Value::asFloat() const {
@@ -2208,11 +2208,11 @@ float Value::asFloat() const {
   case intValue:
     return static_cast<float>(value_.int_);
   case uintValue:
-#if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
     return static_cast<float>(value_.uint_);
-#else  // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#else  // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
     return integerToDouble(value_.uint_);
-#endif // if !defined(JSON_USE_INT64_DOUBLE_CONVERSION)
+#endif // if !defined(AWS_JSON_USE_INT64_DOUBLE_CONVERSION)
   case realValue:
     return static_cast<float>(value_.real_);
   case nullValue:
@@ -2222,7 +2222,7 @@ float Value::asFloat() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to float.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to float.");
 }
 
 bool Value::asBool() const {
@@ -2240,7 +2240,7 @@ bool Value::asBool() const {
   default:
     break;
   }
-  JSON_FAIL_MESSAGE("Value is not convertible to bool.");
+  AWS_JSON_FAIL_MESSAGE("Value is not convertible to bool.");
 }
 
 bool Value::isConvertibleTo(ValueType other) const {
@@ -2272,7 +2272,7 @@ bool Value::isConvertibleTo(ValueType other) const {
   case objectValue:
     return type_ == objectValue || type_ == nullValue;
   }
-  JSON_ASSERT_UNREACHABLE;
+  AWS_JSON_ASSERT_UNREACHABLE;
   return false;
 }
 
@@ -2286,7 +2286,7 @@ ArrayIndex Value::size() const {
   case booleanValue:
   case stringValue:
     return 0;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue: // size of the array is highest index + 1
     if (!value_.map_->empty()) {
       ObjectValues::const_iterator itLast = value_.map_->end();
@@ -2303,7 +2303,7 @@ ArrayIndex Value::size() const {
     return Int(value_.map_->size());
 #endif
   }
-  JSON_ASSERT_UNREACHABLE;
+  AWS_JSON_ASSERT_UNREACHABLE;
   return 0; // unreachable;
 }
 
@@ -2317,13 +2317,13 @@ bool Value::empty() const {
 bool Value::operator!() const { return isNull(); }
 
 void Value::clear() {
-  JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == arrayValue ||
+  AWS_JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == arrayValue ||
                           type_ == objectValue,
                       "in Json::Value::clear(): requires complex value");
   start_ = 0;
   limit_ = 0;
   switch (type_) {
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
   case objectValue:
     value_.map_->clear();
@@ -2342,11 +2342,11 @@ void Value::clear() {
 }
 
 void Value::resize(ArrayIndex newSize) {
-  JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == arrayValue,
+  AWS_JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == arrayValue,
                       "in Json::Value::resize(): requires arrayValue");
   if (type_ == nullValue)
     *this = Value(arrayValue);
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   ArrayIndex oldSize = size();
   if (newSize == 0)
     clear();
@@ -2364,12 +2364,12 @@ void Value::resize(ArrayIndex newSize) {
 }
 
 Value& Value::operator[](ArrayIndex index) {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       type_ == nullValue || type_ == arrayValue,
       "in Json::Value::operator[](ArrayIndex): requires arrayValue");
   if (type_ == nullValue)
     *this = Value(arrayValue);
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   CZString key(index);
   ObjectValues::iterator it = value_.map_->lower_bound(key);
   if (it != value_.map_->end() && (*it).first == key)
@@ -2384,19 +2384,19 @@ Value& Value::operator[](ArrayIndex index) {
 }
 
 Value& Value::operator[](int index) {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       index >= 0,
       "in Json::Value::operator[](int index): index cannot be negative");
   return (*this)[ArrayIndex(index)];
 }
 
 const Value& Value::operator[](ArrayIndex index) const {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       type_ == nullValue || type_ == arrayValue,
       "in Json::Value::operator[](ArrayIndex)const: requires arrayValue");
   if (type_ == nullValue)
     return null;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   CZString key(index);
   ObjectValues::const_iterator it = value_.map_->find(key);
   if (it == value_.map_->end())
@@ -2409,7 +2409,7 @@ const Value& Value::operator[](ArrayIndex index) const {
 }
 
 const Value& Value::operator[](int index) const {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       index >= 0,
       "in Json::Value::operator[](int index) const: index cannot be negative");
   return (*this)[ArrayIndex(index)];
@@ -2422,7 +2422,7 @@ Value& Value::operator[](const char* key) {
 void Value::initBasic(ValueType type, bool allocated) {
   type_ = type;
   allocated_ = allocated;
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
   itemIsUsed_ = 0;
 #endif
   comments_ = 0;
@@ -2431,12 +2431,12 @@ void Value::initBasic(ValueType type, bool allocated) {
 }
 
 Value& Value::resolveReference(const char* key, bool isStatic) {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       type_ == nullValue || type_ == objectValue,
       "in Json::Value::resolveReference(): requires objectValue");
   if (type_ == nullValue)
     *this = Value(objectValue);
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   CZString actualKey(
       key, isStatic ? CZString::noDuplication : CZString::duplicateOnCopy);
   ObjectValues::iterator it = value_.map_->lower_bound(actualKey);
@@ -2460,12 +2460,12 @@ Value Value::get(ArrayIndex index, const Value& defaultValue) const {
 bool Value::isValidIndex(ArrayIndex index) const { return index < size(); }
 
 const Value& Value::operator[](const char* key) const {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       type_ == nullValue || type_ == objectValue,
       "in Json::Value::operator[](char const*)const: requires objectValue");
   if (type_ == nullValue)
     return null;
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   CZString actualKey(key, CZString::noDuplication);
   ObjectValues::const_iterator it = value_.map_->find(actualKey);
   if (it == value_.map_->end())
@@ -2489,7 +2489,7 @@ Value& Value::operator[](const StaticString& key) {
   return resolveReference(key, true);
 }
 
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 Value& Value::operator[](const CppTL::ConstString& key) {
   return (*this)[key.c_str()];
 }
@@ -2515,7 +2515,7 @@ bool Value::removeMember(const char* key, Value* removed) {
   if (type_ != objectValue) {
     return false;
   }
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   CZString actualKey(key, CZString::noDuplication);
   ObjectValues::iterator it = value_.map_->find(actualKey);
   if (it == value_.map_->end())
@@ -2536,7 +2536,7 @@ bool Value::removeMember(const char* key, Value* removed) {
 }
 
 Value Value::removeMember(const char* key) {
-  JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == objectValue,
+  AWS_JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == objectValue,
                       "in Json::Value::removeMember(): requires objectValue");
   if (type_ == nullValue)
     return null;
@@ -2554,8 +2554,8 @@ bool Value::removeIndex(ArrayIndex index, Value* removed) {
   if (type_ != arrayValue) {
     return false;
   }
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
-  JSON_FAIL_MESSAGE("removeIndex is not implemented for ValueInternalArray.");
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
+  AWS_JSON_FAIL_MESSAGE("removeIndex is not implemented for ValueInternalArray.");
   return false;
 #else
   CZString key(index);
@@ -2578,7 +2578,7 @@ bool Value::removeIndex(ArrayIndex index, Value* removed) {
 #endif
 }
 
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 Value Value::get(const CppTL::ConstString& key,
                  const Value& defaultValue) const {
   return get(key.c_str(), defaultValue);
@@ -2594,21 +2594,21 @@ bool Value::isMember(const Aws::String& key) const {
   return isMember(key.c_str());
 }
 
-#ifdef JSON_USE_CPPTL
+#ifdef AWS_JSON_USE_CPPTL
 bool Value::isMember(const CppTL::ConstString& key) const {
   return isMember(key.c_str());
 }
 #endif
 
 Value::Members Value::getMemberNames() const {
-  JSON_ASSERT_MESSAGE(
+  AWS_JSON_ASSERT_MESSAGE(
       type_ == nullValue || type_ == objectValue,
       "in Json::Value::getMemberNames(), value must be objectValue");
   if (type_ == nullValue)
     return Value::Members();
   Members members;
   members.reserve(value_.map_->size());
-#ifndef JSON_VALUE_USE_INTERNAL_MAP
+#ifndef AWS_JSON_VALUE_USE_INTERNAL_MAP
   ObjectValues::const_iterator it = value_.map_->begin();
   ObjectValues::const_iterator itEnd = value_.map_->end();
   for (; it != itEnd; ++it)
@@ -2624,7 +2624,7 @@ Value::Members Value::getMemberNames() const {
   return members;
 }
 //
-//# ifdef JSON_USE_CPPTL
+//# ifdef AWS_JSON_USE_CPPTL
 // EnumMemberNames
 // Value::enumMemberNames() const
 //{
@@ -2689,7 +2689,7 @@ bool Value::isUInt() const {
 }
 
 bool Value::isInt64() const {
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
   switch (type_) {
   case intValue:
     return true;
@@ -2704,12 +2704,12 @@ bool Value::isInt64() const {
   default:
     break;
   }
-#endif // JSON_HAS_INT64
+#endif // AWS_JSON_HAS_INT64
   return false;
 }
 
 bool Value::isUInt64() const {
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
   switch (type_) {
   case intValue:
     return value_.int_ >= 0;
@@ -2724,12 +2724,12 @@ bool Value::isUInt64() const {
   default:
     break;
   }
-#endif // JSON_HAS_INT64
+#endif // AWS_JSON_HAS_INT64
   return false;
 }
 
 bool Value::isIntegral() const {
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
   return isInt64() || isUInt64();
 #else
   return isInt() || isUInt();
@@ -2789,7 +2789,7 @@ Aws::String Value::toStyledString() const {
 
 Value::const_iterator Value::begin() const {
   switch (type_) {
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
     if (value_.array_) {
       ValueInternalArray::IteratorState it;
@@ -2819,7 +2819,7 @@ Value::const_iterator Value::begin() const {
 
 Value::const_iterator Value::end() const {
   switch (type_) {
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
     if (value_.array_) {
       ValueInternalArray::IteratorState it;
@@ -2849,7 +2849,7 @@ Value::const_iterator Value::end() const {
 
 Value::iterator Value::begin() {
   switch (type_) {
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
     if (value_.array_) {
       ValueInternalArray::IteratorState it;
@@ -2879,7 +2879,7 @@ Value::iterator Value::begin() {
 
 Value::iterator Value::end() {
   switch (type_) {
-#ifdef JSON_VALUE_USE_INTERNAL_MAP
+#ifdef AWS_JSON_VALUE_USE_INTERNAL_MAP
   case arrayValue:
     if (value_.array_) {
       ValueInternalArray::IteratorState it;
@@ -3072,10 +3072,10 @@ Value& Path::make(Value& root) const {
 
 #include <cmath>
 
-#if !defined(JSON_IS_AMALGAMATION)
+#if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <json/writer.h>
 #include <json_tool.h>
-#endif // if !defined(JSON_IS_AMALGAMATION)
+#endif // if !defined(AWS_JSON_IS_AMALGAMATION)
 #include <iomanip>
 #include <memory>
 #include <sstream>
@@ -3142,7 +3142,7 @@ Aws::String valueToString(LargestUInt value) {
   return current;
 }
 
-#if defined(JSON_HAS_INT64)
+#if defined(AWS_JSON_HAS_INT64)
 
 Aws::String valueToString(Int value) {
   return valueToString(LargestInt(value));
@@ -3152,7 +3152,7 @@ Aws::String valueToString(UInt value) {
   return valueToString(LargestUInt(value));
 }
 
-#endif // # if defined(JSON_HAS_INT64)
+#endif // # if defined(AWS_JSON_HAS_INT64)
 
 Aws::String valueToString(double value) {
   // Allocate a buffer that is more than large enough to store the 16 digits of

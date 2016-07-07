@@ -289,49 +289,49 @@ namespace Model
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = value; }
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline CreateAppRequest& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline CreateAppRequest& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(value); return *this;}
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline CreateAppRequest& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline CreateAppRequest& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /**
      * <p>The app virtual host settings, with multiple domains separated by commas. For
-     * example: <code>'www.example.com, example.com'</code></p>
+     * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline CreateAppRequest& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
@@ -447,14 +447,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
 
@@ -464,14 +464,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline void SetEnvironment(const Aws::Vector<EnvironmentVariable>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -481,14 +481,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline void SetEnvironment(Aws::Vector<EnvironmentVariable>&& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
@@ -498,14 +498,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline CreateAppRequest& WithEnvironment(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironment(value); return *this;}
 
@@ -515,14 +515,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline CreateAppRequest& WithEnvironment(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironment(value); return *this;}
 
@@ -532,14 +532,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline CreateAppRequest& AddEnvironment(const EnvironmentVariable& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 
@@ -549,14 +549,14 @@ namespace Model
      * variables are defined on the associated app server instance. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
-     * Environment Variables</a>.</p> <p> There is no specific limit on the number of
+     * Environment Variables</a>.</p> <p>There is no specific limit on the number of
      * environment variables. However, the size of the associated data structure -
      * which includes the variables' names, values, and protected flag values - cannot
      * exceed 10 KB (10240 Bytes). This limit should accommodate most if not all use
      * cases. Exceeding it will cause an exception with the message, "Environment: is
-     * too large (maximum is 10KB)." </p> <note>This parameter is supported only by
+     * too large (maximum is 10KB)."</p> <note> <p>This parameter is supported only by
      * Chef 11.10 stacks. If you have specified one or more environment variables, you
-     * cannot modify the stack's Chef version.</note>
+     * cannot modify the stack's Chef version.</p> </note>
      */
     inline CreateAppRequest& AddEnvironment(EnvironmentVariable&& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
 

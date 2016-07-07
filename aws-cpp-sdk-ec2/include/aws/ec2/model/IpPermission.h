@@ -115,37 +115,37 @@ namespace Model
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types.</p>
      */
-    inline long GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types.</p>
      */
-    inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. A value of <code>-1</code> indicates all ICMP types.</p>
      */
-    inline IpPermission& WithFromPort(long value) { SetFromPort(value); return *this;}
+    inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code. A value
      * of <code>-1</code> indicates all ICMP codes for the specified ICMP type.</p>
      */
-    inline long GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code. A value
      * of <code>-1</code> indicates all ICMP codes for the specified ICMP type.</p>
      */
-    inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code. A value
      * of <code>-1</code> indicates all ICMP codes for the specified ICMP type.</p>
      */
-    inline IpPermission& WithToPort(long value) { SetToPort(value); return *this;}
+    inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>One or more security group and AWS account ID pairs.</p>
@@ -290,9 +290,9 @@ namespace Model
   private:
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
-    long m_fromPort;
+    int m_fromPort;
     bool m_fromPortHasBeenSet;
-    long m_toPort;
+    int m_toPort;
     bool m_toPortHasBeenSet;
     Aws::Vector<UserIdGroupPair> m_userIdGroupPairs;
     bool m_userIdGroupPairsHasBeenSet;

@@ -185,19 +185,19 @@ namespace Model
      * <p>The number of Dedicated hosts you want to allocate to your account with these
      * parameters.</p>
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of Dedicated hosts you want to allocate to your account with these
      * parameters.</p>
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of Dedicated hosts you want to allocate to your account with these
      * parameters.</p>
      */
-    inline AllocateHostsRequest& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * <p>The Availability Zone for the Dedicated hosts.</p>
@@ -241,7 +241,7 @@ namespace Model
     bool m_clientTokenHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;

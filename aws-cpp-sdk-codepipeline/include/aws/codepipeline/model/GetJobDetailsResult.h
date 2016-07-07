@@ -43,35 +43,35 @@ namespace Model
     GetJobDetailsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
     inline const JobDetails& GetJobDetails() const{ return m_jobDetails; }
 
     /**
-     * <p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
     inline void SetJobDetails(const JobDetails& value) { m_jobDetails = value; }
 
     /**
-     * <p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
     inline void SetJobDetails(JobDetails&& value) { m_jobDetails = value; }
 
     /**
-     * <p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */
     inline GetJobDetailsResult& WithJobDetails(const JobDetails& value) { SetJobDetails(value); return *this;}
 
     /**
-     * <p>The details of the job. </p> <note> <p>If AWSSessionCredentials is used, a
+     * <p>The details of the job.</p> <note> <p>If AWSSessionCredentials is used, a
      * long-running job can call GetJobDetails again to obtain new credentials.</p>
      * </note>
      */

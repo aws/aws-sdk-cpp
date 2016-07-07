@@ -234,21 +234,21 @@ namespace Model
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the new DB cluster accepts connections.</p>
      * <p>Constraints: Value must be <code>1150-65535</code> </p> <p>Default: The same
      * port as the original DB cluster.</p>
      */
-    inline RestoreDBClusterToPointInTimeRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreDBClusterToPointInTimeRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The DB subnet group name to use for the new DB cluster.</p> <p>Constraints:
@@ -551,7 +551,7 @@ namespace Model
     bool m_restoreToTimeHasBeenSet;
     bool m_useLatestRestorableTime;
     bool m_useLatestRestorableTimeHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;

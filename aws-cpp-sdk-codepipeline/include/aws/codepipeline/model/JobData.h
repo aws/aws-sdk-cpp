@@ -39,7 +39,7 @@ namespace Model
 
   /**
    * <p>Represents additional information about a job required for a job worker to
-   * complete the job. </p>
+   * complete the job.</p>
    */
   class AWS_CODEPIPELINE_API JobData
   {

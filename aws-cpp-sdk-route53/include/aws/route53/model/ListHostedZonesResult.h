@@ -160,142 +160,128 @@ namespace Model
     inline ListHostedZonesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = value; }
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline ListHostedZonesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline ListHostedZonesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>Indicates where to continue listing hosted zones. If
-     * <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make another
-     * request to <code>ListHostedZones</code> and include the value of the
-     * <code>NextMarker</code> element in the <code>Marker</code> element to get the
-     * next page of results.</p>
+     * <p>Indicates where to continue listing hosted zones. If <code>IsTruncated</code>
+     * is <code>true</code>, make another request to <code>ListHostedZones</code> and
+     * include the value of the <code>NextMarker</code> element in the
+     * <code>Marker</code> element to get the next page of results.</p>
      */
     inline ListHostedZonesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItems = value; }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline ListHostedZonesResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline ListHostedZonesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
     /**
      * <p>The maximum number of hosted zones to be included in the response body. If
      * the number of hosted zones associated with this AWS account exceeds
-     * <code>MaxItems</code>, the value of <a>ListHostedZonesResponse$IsTruncated</a>
-     * in the response is <code>true</code>. Call <code>ListHostedZones</code> again
-     * and specify the value of <a>ListHostedZonesResponse$NextMarker</a> in the
-     * <a>ListHostedZonesRequest$Marker</a> element to get the next page of
-     * results.</p>
+     * <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is
+     * <code>true</code>. Call <code>ListHostedZones</code> again and specify the value
+     * of <code>NextMarker</code> in the <code>Marker</code> parameter to get the next
+     * page of results.</p>
      */
     inline ListHostedZonesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

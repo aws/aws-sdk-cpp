@@ -70,18 +70,18 @@ namespace Model
     inline PutRetentionPolicyRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
     
-    inline long GetRetentionInDays() const{ return m_retentionInDays; }
+    inline int GetRetentionInDays() const{ return m_retentionInDays; }
 
     
-    inline void SetRetentionInDays(long value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
+    inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
 
     
-    inline PutRetentionPolicyRequest& WithRetentionInDays(long value) { SetRetentionInDays(value); return *this;}
+    inline PutRetentionPolicyRequest& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
 
   private:
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet;
-    long m_retentionInDays;
+    int m_retentionInDays;
     bool m_retentionInDaysHasBeenSet;
   };
 

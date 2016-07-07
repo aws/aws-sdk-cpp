@@ -177,19 +177,19 @@ namespace Model
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline ListAttachedAssessmentsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListAttachedAssessmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::String m_rulesPackageArn;
@@ -198,7 +198,7 @@ namespace Model
     bool m_filterHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

@@ -116,24 +116,24 @@ namespace Model
      * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
      * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
      * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Number of domains to be returned.</p> <p>Type: Integer</p> <p>Default: 20</p>
      * <p>Constraints: A value between 1 and 100.</p> <p>Required: No</p>
      */
-    inline ListOperationsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListOperationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

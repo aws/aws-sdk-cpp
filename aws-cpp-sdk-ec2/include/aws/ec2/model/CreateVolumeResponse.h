@@ -87,17 +87,17 @@ namespace Model
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline void SetSize(long value) { m_size = value; }
+    inline void SetSize(int value) { m_size = value; }
 
     /**
      * <p>The size of the volume, in GiBs.</p>
      */
-    inline CreateVolumeResponse& WithSize(long value) { SetSize(value); return *this;}
+    inline CreateVolumeResponse& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * <p>The snapshot from which the volume was created, if applicable.</p>
@@ -344,7 +344,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -361,7 +361,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline void SetIops(long value) { m_iops = value; }
+    inline void SetIops(int value) { m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
@@ -378,7 +378,7 @@ namespace Model
      * create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
      * <code>standard</code> volumes.</p>
      */
-    inline CreateVolumeResponse& WithIops(long value) { SetIops(value); return *this;}
+    inline CreateVolumeResponse& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Indicates whether the volume will be encrypted.</p>
@@ -454,7 +454,7 @@ namespace Model
 
   private:
     Aws::String m_volumeId;
-    long m_size;
+    int m_size;
     Aws::String m_snapshotId;
     Aws::String m_availabilityZone;
     VolumeState m_state;
@@ -462,7 +462,7 @@ namespace Model
     Aws::Vector<VolumeAttachment> m_attachments;
     Aws::Vector<Tag> m_tags;
     VolumeType m_volumeType;
-    long m_iops;
+    int m_iops;
     bool m_encrypted;
     Aws::String m_kmsKeyId;
     ResponseMetadata m_responseMetadata;

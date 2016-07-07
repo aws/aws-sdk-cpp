@@ -31,9 +31,9 @@ namespace Model
 {
 
   /**
-   * <p>A tag is a pair of key and value. The allowed characters in keys and values
-   * are letters, whitespace, and numbers, representable in UTF-8, and the characters
-   * '+', '-', '=', '.', '_', ':', and '/'. </p>
+   * <p>A tag is a key-value pair. Allowed characters: letters, whitespace, and
+   * numbers, representable in UTF-8, and the following characters:<code> + - = . _ :
+   * /</code> </p>
    */
   class AWS_EFS_API Tag
   {
@@ -44,37 +44,37 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Tag key, a string. The key must not start with "aws:".</p>
+     * <p>Tag key (String). The key can't start with <code>aws:</code>.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 

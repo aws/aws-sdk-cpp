@@ -304,57 +304,57 @@ namespace Model
      * on the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
      */
-    inline long GetDesiredCount() const{ return m_desiredCount; }
+    inline int GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p>The desired number of instantiations of the task definition to keep running
      * on the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
      */
-    inline void SetDesiredCount(long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
+    inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p>The desired number of instantiations of the task definition to keep running
      * on the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
      */
-    inline Service& WithDesiredCount(long value) { SetDesiredCount(value); return *this;}
+    inline Service& WithDesiredCount(int value) { SetDesiredCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline long GetRunningCount() const{ return m_runningCount; }
+    inline int GetRunningCount() const{ return m_runningCount; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline void SetRunningCount(long value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
+    inline void SetRunningCount(int value) { m_runningCountHasBeenSet = true; m_runningCount = value; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
-    inline Service& WithRunningCount(long value) { SetRunningCount(value); return *this;}
+    inline Service& WithRunningCount(int value) { SetRunningCount(value); return *this;}
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline long GetPendingCount() const{ return m_pendingCount; }
+    inline int GetPendingCount() const{ return m_pendingCount; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline void SetPendingCount(long value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
+    inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
-    inline Service& WithPendingCount(long value) { SetPendingCount(value); return *this;}
+    inline Service& WithPendingCount(int value) { SetPendingCount(value); return *this;}
 
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
@@ -597,11 +597,11 @@ namespace Model
     bool m_loadBalancersHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_desiredCount;
+    int m_desiredCount;
     bool m_desiredCountHasBeenSet;
-    long m_runningCount;
+    int m_runningCount;
     bool m_runningCountHasBeenSet;
-    long m_pendingCount;
+    int m_pendingCount;
     bool m_pendingCountHasBeenSet;
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet;

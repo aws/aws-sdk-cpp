@@ -82,63 +82,63 @@ namespace Model
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline ListBuildsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline ListBuildsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Token indicating where to resume retrieving results on the next call to this
      * action. If no token is returned, these results represent the end of the
-     * list.</p> <note><p>If a request has a limit that exactly matches the number of
+     * list.</p> <note> <p>If a request has a limit that exactly matches the number of
      * remaining results, a token is returned even though there are no more results to
-     * retrieve.</p></note>
+     * retrieve.</p> </note>
      */
     inline ListBuildsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

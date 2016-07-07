@@ -114,32 +114,32 @@ namespace Model
     /**
      * <p>The port used to communicate with iSCSI targets.</p>
      */
-    inline long GetNetworkInterfacePort() const{ return m_networkInterfacePort; }
+    inline int GetNetworkInterfacePort() const{ return m_networkInterfacePort; }
 
     /**
      * <p>The port used to communicate with iSCSI targets.</p>
      */
-    inline void SetNetworkInterfacePort(long value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
+    inline void SetNetworkInterfacePort(int value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
 
     /**
      * <p>The port used to communicate with iSCSI targets.</p>
      */
-    inline VolumeiSCSIAttributes& WithNetworkInterfacePort(long value) { SetNetworkInterfacePort(value); return *this;}
+    inline VolumeiSCSIAttributes& WithNetworkInterfacePort(int value) { SetNetworkInterfacePort(value); return *this;}
 
     /**
      * <p>The logical disk number.</p>
      */
-    inline long GetLunNumber() const{ return m_lunNumber; }
+    inline int GetLunNumber() const{ return m_lunNumber; }
 
     /**
      * <p>The logical disk number.</p>
      */
-    inline void SetLunNumber(long value) { m_lunNumberHasBeenSet = true; m_lunNumber = value; }
+    inline void SetLunNumber(int value) { m_lunNumberHasBeenSet = true; m_lunNumber = value; }
 
     /**
      * <p>The logical disk number.</p>
      */
-    inline VolumeiSCSIAttributes& WithLunNumber(long value) { SetLunNumber(value); return *this;}
+    inline VolumeiSCSIAttributes& WithLunNumber(int value) { SetLunNumber(value); return *this;}
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
@@ -161,9 +161,9 @@ namespace Model
     bool m_targetARNHasBeenSet;
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
-    long m_networkInterfacePort;
+    int m_networkInterfacePort;
     bool m_networkInterfacePortHasBeenSet;
-    long m_lunNumber;
+    int m_lunNumber;
     bool m_lunNumberHasBeenSet;
     bool m_chapEnabled;
     bool m_chapEnabledHasBeenSet;

@@ -30,6 +30,9 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
+  /**
+   * <p/>
+   */
   class AWS_DATABASEMIGRATIONSERVICE_API Connection
   {
   public:

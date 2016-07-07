@@ -55,7 +55,7 @@ namespace Model
      * integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the
      * values don't need to be consecutive.</p>
      */
-    inline long GetPriority() const{ return m_priority; }
+    inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code>
@@ -64,7 +64,7 @@ namespace Model
      * integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the
      * values don't need to be consecutive.</p>
      */
-    inline void SetPriority(long value) { m_priorityHasBeenSet = true; m_priority = value; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code>
@@ -73,7 +73,7 @@ namespace Model
      * integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the
      * values don't need to be consecutive.</p>
      */
-    inline ActivatedRule& WithPriority(long value) { SetPriority(value); return *this;}
+    inline ActivatedRule& WithPriority(int value) { SetPriority(value); return *this;}
 
     /**
      * <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code>
@@ -213,7 +213,7 @@ namespace Model
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(value); return *this;}
 
   private:
-    long m_priority;
+    int m_priority;
     bool m_priorityHasBeenSet;
     Aws::String m_ruleId;
     bool m_ruleIdHasBeenSet;

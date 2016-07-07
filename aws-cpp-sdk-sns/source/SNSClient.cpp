@@ -27,6 +27,7 @@
 #include <aws/sns/SNSEndpoint.h>
 #include <aws/sns/SNSErrorMarshaller.h>
 #include <aws/sns/model/AddPermissionRequest.h>
+#include <aws/sns/model/CheckIfPhoneNumberIsOptedOutRequest.h>
 #include <aws/sns/model/ConfirmSubscriptionRequest.h>
 #include <aws/sns/model/CreatePlatformApplicationRequest.h>
 #include <aws/sns/model/CreatePlatformEndpointRequest.h>
@@ -36,17 +37,21 @@
 #include <aws/sns/model/DeleteTopicRequest.h>
 #include <aws/sns/model/GetEndpointAttributesRequest.h>
 #include <aws/sns/model/GetPlatformApplicationAttributesRequest.h>
+#include <aws/sns/model/GetSMSAttributesRequest.h>
 #include <aws/sns/model/GetSubscriptionAttributesRequest.h>
 #include <aws/sns/model/GetTopicAttributesRequest.h>
 #include <aws/sns/model/ListEndpointsByPlatformApplicationRequest.h>
+#include <aws/sns/model/ListPhoneNumbersOptedOutRequest.h>
 #include <aws/sns/model/ListPlatformApplicationsRequest.h>
 #include <aws/sns/model/ListSubscriptionsRequest.h>
 #include <aws/sns/model/ListSubscriptionsByTopicRequest.h>
 #include <aws/sns/model/ListTopicsRequest.h>
+#include <aws/sns/model/OptInPhoneNumberRequest.h>
 #include <aws/sns/model/PublishRequest.h>
 #include <aws/sns/model/RemovePermissionRequest.h>
 #include <aws/sns/model/SetEndpointAttributesRequest.h>
 #include <aws/sns/model/SetPlatformApplicationAttributesRequest.h>
+#include <aws/sns/model/SetSMSAttributesRequest.h>
 #include <aws/sns/model/SetSubscriptionAttributesRequest.h>
 #include <aws/sns/model/SetTopicAttributesRequest.h>
 #include <aws/sns/model/SubscribeRequest.h>
@@ -147,6 +152,36 @@ void SNSClient::AddPermissionAsync(const AddPermissionRequest& request, const Ad
 void SNSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddPermission(request), context);
+}
+
+CheckIfPhoneNumberIsOptedOutOutcome SNSClient::CheckIfPhoneNumberIsOptedOut(const CheckIfPhoneNumberIsOptedOutRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CheckIfPhoneNumberIsOptedOutOutcome(CheckIfPhoneNumberIsOptedOutResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CheckIfPhoneNumberIsOptedOutOutcome(outcome.GetError());
+  }
+}
+
+CheckIfPhoneNumberIsOptedOutOutcomeCallable SNSClient::CheckIfPhoneNumberIsOptedOutCallable(const CheckIfPhoneNumberIsOptedOutRequest& request) const
+{
+  return std::async(std::launch::async, &SNSClient::CheckIfPhoneNumberIsOptedOut, this, request);
+}
+
+void SNSClient::CheckIfPhoneNumberIsOptedOutAsync(const CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SNSClient::CheckIfPhoneNumberIsOptedOutAsyncHelper, this, request, handler, context);
+}
+
+void SNSClient::CheckIfPhoneNumberIsOptedOutAsyncHelper(const CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CheckIfPhoneNumberIsOptedOut(request), context);
 }
 
 ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscriptionRequest& request) const
@@ -419,6 +454,36 @@ void SNSClient::GetPlatformApplicationAttributesAsyncHelper(const GetPlatformApp
   handler(this, request, GetPlatformApplicationAttributes(request), context);
 }
 
+GetSMSAttributesOutcome SNSClient::GetSMSAttributes(const GetSMSAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetSMSAttributesOutcome(GetSMSAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSMSAttributesOutcome(outcome.GetError());
+  }
+}
+
+GetSMSAttributesOutcomeCallable SNSClient::GetSMSAttributesCallable(const GetSMSAttributesRequest& request) const
+{
+  return std::async(std::launch::async, &SNSClient::GetSMSAttributes, this, request);
+}
+
+void SNSClient::GetSMSAttributesAsync(const GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SNSClient::GetSMSAttributesAsyncHelper, this, request, handler, context);
+}
+
+void SNSClient::GetSMSAttributesAsyncHelper(const GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSMSAttributes(request), context);
+}
+
 GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetSubscriptionAttributesRequest& request) const
 {
   Aws::StringStream ss;
@@ -507,6 +572,36 @@ void SNSClient::ListEndpointsByPlatformApplicationAsync(const ListEndpointsByPla
 void SNSClient::ListEndpointsByPlatformApplicationAsyncHelper(const ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEndpointsByPlatformApplication(request), context);
+}
+
+ListPhoneNumbersOptedOutOutcome SNSClient::ListPhoneNumbersOptedOut(const ListPhoneNumbersOptedOutRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListPhoneNumbersOptedOutOutcome(ListPhoneNumbersOptedOutResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPhoneNumbersOptedOutOutcome(outcome.GetError());
+  }
+}
+
+ListPhoneNumbersOptedOutOutcomeCallable SNSClient::ListPhoneNumbersOptedOutCallable(const ListPhoneNumbersOptedOutRequest& request) const
+{
+  return std::async(std::launch::async, &SNSClient::ListPhoneNumbersOptedOut, this, request);
+}
+
+void SNSClient::ListPhoneNumbersOptedOutAsync(const ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SNSClient::ListPhoneNumbersOptedOutAsyncHelper, this, request, handler, context);
+}
+
+void SNSClient::ListPhoneNumbersOptedOutAsyncHelper(const ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPhoneNumbersOptedOut(request), context);
 }
 
 ListPlatformApplicationsOutcome SNSClient::ListPlatformApplications(const ListPlatformApplicationsRequest& request) const
@@ -629,6 +724,36 @@ void SNSClient::ListTopicsAsyncHelper(const ListTopicsRequest& request, const Li
   handler(this, request, ListTopics(request), context);
 }
 
+OptInPhoneNumberOutcome SNSClient::OptInPhoneNumber(const OptInPhoneNumberRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return OptInPhoneNumberOutcome(OptInPhoneNumberResult(outcome.GetResult()));
+  }
+  else
+  {
+    return OptInPhoneNumberOutcome(outcome.GetError());
+  }
+}
+
+OptInPhoneNumberOutcomeCallable SNSClient::OptInPhoneNumberCallable(const OptInPhoneNumberRequest& request) const
+{
+  return std::async(std::launch::async, &SNSClient::OptInPhoneNumber, this, request);
+}
+
+void SNSClient::OptInPhoneNumberAsync(const OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SNSClient::OptInPhoneNumberAsyncHelper, this, request, handler, context);
+}
+
+void SNSClient::OptInPhoneNumberAsyncHelper(const OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, OptInPhoneNumber(request), context);
+}
+
 PublishOutcome SNSClient::Publish(const PublishRequest& request) const
 {
   Aws::StringStream ss;
@@ -747,6 +872,36 @@ void SNSClient::SetPlatformApplicationAttributesAsync(const SetPlatformApplicati
 void SNSClient::SetPlatformApplicationAttributesAsyncHelper(const SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetPlatformApplicationAttributes(request), context);
+}
+
+SetSMSAttributesOutcome SNSClient::SetSMSAttributes(const SetSMSAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetSMSAttributesOutcome(SetSMSAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetSMSAttributesOutcome(outcome.GetError());
+  }
+}
+
+SetSMSAttributesOutcomeCallable SNSClient::SetSMSAttributesCallable(const SetSMSAttributesRequest& request) const
+{
+  return std::async(std::launch::async, &SNSClient::SetSMSAttributes, this, request);
+}
+
+void SNSClient::SetSMSAttributesAsync(const SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&SNSClient::SetSMSAttributesAsyncHelper, this, request, handler, context);
+}
+
+void SNSClient::SetSMSAttributesAsyncHelper(const SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetSMSAttributes(request), context);
 }
 
 SetSubscriptionAttributesOutcome SNSClient::SetSubscriptionAttributes(const SetSubscriptionAttributesRequest& request) const

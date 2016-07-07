@@ -69,22 +69,22 @@ namespace Model
     inline LogGroup& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
 
     
-    inline long GetRetentionInDays() const{ return m_retentionInDays; }
+    inline int GetRetentionInDays() const{ return m_retentionInDays; }
 
     
-    inline void SetRetentionInDays(long value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
+    inline void SetRetentionInDays(int value) { m_retentionInDaysHasBeenSet = true; m_retentionInDays = value; }
 
     
-    inline LogGroup& WithRetentionInDays(long value) { SetRetentionInDays(value); return *this;}
+    inline LogGroup& WithRetentionInDays(int value) { SetRetentionInDays(value); return *this;}
 
     
-    inline long GetMetricFilterCount() const{ return m_metricFilterCount; }
+    inline int GetMetricFilterCount() const{ return m_metricFilterCount; }
 
     
-    inline void SetMetricFilterCount(long value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
+    inline void SetMetricFilterCount(int value) { m_metricFilterCountHasBeenSet = true; m_metricFilterCount = value; }
 
     
-    inline LogGroup& WithMetricFilterCount(long value) { SetMetricFilterCount(value); return *this;}
+    inline LogGroup& WithMetricFilterCount(int value) { SetMetricFilterCount(value); return *this;}
 
     
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -121,9 +121,9 @@ namespace Model
     bool m_logGroupNameHasBeenSet;
     long long m_creationTime;
     bool m_creationTimeHasBeenSet;
-    long m_retentionInDays;
+    int m_retentionInDays;
     bool m_retentionInDaysHasBeenSet;
-    long m_metricFilterCount;
+    int m_metricFilterCount;
     bool m_metricFilterCountHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;

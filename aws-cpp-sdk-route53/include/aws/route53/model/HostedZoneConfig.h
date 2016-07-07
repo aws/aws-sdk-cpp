@@ -94,13 +94,31 @@ namespace Model
      */
     inline HostedZoneConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
-    
+    /**
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
+     */
     inline bool GetPrivateZone() const{ return m_privateZone; }
 
-    
+    /**
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
+     */
     inline void SetPrivateZone(bool value) { m_privateZoneHasBeenSet = true; m_privateZone = value; }
 
-    
+    /**
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
+     */
     inline HostedZoneConfig& WithPrivateZone(bool value) { SetPrivateZone(value); return *this;}
 
   private:

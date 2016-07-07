@@ -109,7 +109,7 @@ namespace Model
      * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
      * from 0 to 8</p> </li> </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -117,7 +117,7 @@ namespace Model
      * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
      * from 0 to 8</p> </li> </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -125,7 +125,7 @@ namespace Model
      * backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value
      * from 0 to 8</p> </li> </ul>
      */
-    inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -235,7 +235,7 @@ namespace Model
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;

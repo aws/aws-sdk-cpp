@@ -65,9 +65,6 @@ project(aws-cpp-sdk-swf)
   
   target_link_libraries(aws-cpp-sdk-swf aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-swf
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-swf)
 
   install (FILES ${AWS_SWF_HEADERS} DESTINATION include/aws/swf)
   install (FILES ${AWS_SWF_MODEL_HEADERS} DESTINATION include/aws/swf/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-swf.autopkg DESTINATION nuget)
+  endif()
+
+
 

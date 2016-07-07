@@ -198,7 +198,7 @@ namespace Model
      * next request, continuing until the AdditionalDataPending response element
      * returns false.</p> </li> </ul>
      */
-    inline long GetNumberOfLines() const{ return m_numberOfLines; }
+    inline int GetNumberOfLines() const{ return m_numberOfLines; }
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
@@ -218,7 +218,7 @@ namespace Model
      * next request, continuing until the AdditionalDataPending response element
      * returns false.</p> </li> </ul>
      */
-    inline void SetNumberOfLines(long value) { m_numberOfLinesHasBeenSet = true; m_numberOfLines = value; }
+    inline void SetNumberOfLines(int value) { m_numberOfLinesHasBeenSet = true; m_numberOfLines = value; }
 
     /**
      * <p>The number of lines to download. If the number of lines specified results in
@@ -238,7 +238,7 @@ namespace Model
      * next request, continuing until the AdditionalDataPending response element
      * returns false.</p> </li> </ul>
      */
-    inline DownloadDBLogFilePortionRequest& WithNumberOfLines(long value) { SetNumberOfLines(value); return *this;}
+    inline DownloadDBLogFilePortionRequest& WithNumberOfLines(int value) { SetNumberOfLines(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
@@ -247,7 +247,7 @@ namespace Model
     bool m_logFileNameHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_numberOfLines;
+    int m_numberOfLines;
     bool m_numberOfLinesHasBeenSet;
   };
 

@@ -48,17 +48,17 @@ namespace Model
     /**
      * <p>The port on which the back-end server is listening.</p>
      */
-    inline long GetInstancePort() const{ return m_instancePort; }
+    inline int GetInstancePort() const{ return m_instancePort; }
 
     /**
      * <p>The port on which the back-end server is listening.</p>
      */
-    inline void SetInstancePort(long value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
+    inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
      * <p>The port on which the back-end server is listening.</p>
      */
-    inline BackendServerDescription& WithInstancePort(long value) { SetInstancePort(value); return *this;}
+    inline BackendServerDescription& WithInstancePort(int value) { SetInstancePort(value); return *this;}
 
     /**
      * <p>The names of the policies enabled for the back-end server.</p>
@@ -101,7 +101,7 @@ namespace Model
     inline BackendServerDescription& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
   private:
-    long m_instancePort;
+    int m_instancePort;
     bool m_instancePortHasBeenSet;
     Aws::Vector<Aws::String> m_policyNames;
     bool m_policyNamesHasBeenSet;

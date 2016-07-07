@@ -49,7 +49,7 @@ namespace Model
      * delivery stream in 10 seconds. For example, if you typically ingest data at 1
      * MB/sec set SizeInMBs to be 10 MB or higher.</p>
      */
-    inline long GetSizeInMBs() const{ return m_sizeInMBs; }
+    inline int GetSizeInMBs() const{ return m_sizeInMBs; }
 
     /**
      * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
@@ -58,7 +58,7 @@ namespace Model
      * delivery stream in 10 seconds. For example, if you typically ingest data at 1
      * MB/sec set SizeInMBs to be 10 MB or higher.</p>
      */
-    inline void SetSizeInMBs(long value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
+    inline void SetSizeInMBs(int value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
 
     /**
      * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
@@ -67,30 +67,30 @@ namespace Model
      * delivery stream in 10 seconds. For example, if you typically ingest data at 1
      * MB/sec set SizeInMBs to be 10 MB or higher.</p>
      */
-    inline BufferingHints& WithSizeInMBs(long value) { SetSizeInMBs(value); return *this;}
+    inline BufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
 
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300.</p>
      */
-    inline long GetIntervalInSeconds() const{ return m_intervalInSeconds; }
+    inline int GetIntervalInSeconds() const{ return m_intervalInSeconds; }
 
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300.</p>
      */
-    inline void SetIntervalInSeconds(long value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
+    inline void SetIntervalInSeconds(int value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
 
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300.</p>
      */
-    inline BufferingHints& WithIntervalInSeconds(long value) { SetIntervalInSeconds(value); return *this;}
+    inline BufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
 
   private:
-    long m_sizeInMBs;
+    int m_sizeInMBs;
     bool m_sizeInMBsHasBeenSet;
-    long m_intervalInSeconds;
+    int m_intervalInSeconds;
     bool m_intervalInSecondsHasBeenSet;
   };
 

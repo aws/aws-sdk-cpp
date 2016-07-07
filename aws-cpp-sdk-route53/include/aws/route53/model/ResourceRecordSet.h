@@ -981,58 +981,64 @@ namespace Model
 
     /**
      * <p>The cache time to live for the current resource record set. Note the
-     * following:</p> <ul> <li>If you're creating an alias resource record set, omit
-     * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the
-     * alias target. </li> <li>If you're associating this resource record set with a
-     * health check (if you're adding a <code>HealthCheckId</code> element), we
-     * recommend that you specify a <code>TTL</code> of 60 seconds or less so clients
-     * respond quickly to changes in health status.</li> <li>All of the resource record
-     * sets in a group of weighted, latency, geolocation, or failover resource record
-     * sets must have the same value for <code>TTL</code>.</li> <li>If a group of
-     * weighted resource record sets includes one or more weighted alias resource
-     * record sets for which the alias target is an ELB load balancer, we recommend
-     * that you specify a <code>TTL</code> of 60 seconds for all of the non-alias
-     * weighted resource record sets that have the same name and type. Values other
-     * than 60 seconds (the TTL for load balancers) will change the effect of the
-     * values that you specify for <code>Weight</code>.</li> </ul>
+     * following:</p> <ul> <li>If you're creating a non-alias resource record set,
+     * <code>TTL</code> is required. </li> <li>If you're creating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </li> <li>If you're associating this
+     * resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</li> <li>All of the resource record sets in a group of weighted,
+     * latency, geolocation, or failover resource record sets must have the same value
+     * for <code>TTL</code>.</li> <li>If a group of weighted resource record sets
+     * includes one or more weighted alias resource record sets for which the alias
+     * target is an ELB load balancer, we recommend that you specify a <code>TTL</code>
+     * of 60 seconds for all of the non-alias weighted resource record sets that have
+     * the same name and type. Values other than 60 seconds (the TTL for load
+     * balancers) will change the effect of the values that you specify for
+     * <code>Weight</code>.</li> </ul>
      */
     inline long long GetTTL() const{ return m_tTL; }
 
     /**
      * <p>The cache time to live for the current resource record set. Note the
-     * following:</p> <ul> <li>If you're creating an alias resource record set, omit
-     * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the
-     * alias target. </li> <li>If you're associating this resource record set with a
-     * health check (if you're adding a <code>HealthCheckId</code> element), we
-     * recommend that you specify a <code>TTL</code> of 60 seconds or less so clients
-     * respond quickly to changes in health status.</li> <li>All of the resource record
-     * sets in a group of weighted, latency, geolocation, or failover resource record
-     * sets must have the same value for <code>TTL</code>.</li> <li>If a group of
-     * weighted resource record sets includes one or more weighted alias resource
-     * record sets for which the alias target is an ELB load balancer, we recommend
-     * that you specify a <code>TTL</code> of 60 seconds for all of the non-alias
-     * weighted resource record sets that have the same name and type. Values other
-     * than 60 seconds (the TTL for load balancers) will change the effect of the
-     * values that you specify for <code>Weight</code>.</li> </ul>
+     * following:</p> <ul> <li>If you're creating a non-alias resource record set,
+     * <code>TTL</code> is required. </li> <li>If you're creating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </li> <li>If you're associating this
+     * resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</li> <li>All of the resource record sets in a group of weighted,
+     * latency, geolocation, or failover resource record sets must have the same value
+     * for <code>TTL</code>.</li> <li>If a group of weighted resource record sets
+     * includes one or more weighted alias resource record sets for which the alias
+     * target is an ELB load balancer, we recommend that you specify a <code>TTL</code>
+     * of 60 seconds for all of the non-alias weighted resource record sets that have
+     * the same name and type. Values other than 60 seconds (the TTL for load
+     * balancers) will change the effect of the values that you specify for
+     * <code>Weight</code>.</li> </ul>
      */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
     /**
      * <p>The cache time to live for the current resource record set. Note the
-     * following:</p> <ul> <li>If you're creating an alias resource record set, omit
-     * <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the
-     * alias target. </li> <li>If you're associating this resource record set with a
-     * health check (if you're adding a <code>HealthCheckId</code> element), we
-     * recommend that you specify a <code>TTL</code> of 60 seconds or less so clients
-     * respond quickly to changes in health status.</li> <li>All of the resource record
-     * sets in a group of weighted, latency, geolocation, or failover resource record
-     * sets must have the same value for <code>TTL</code>.</li> <li>If a group of
-     * weighted resource record sets includes one or more weighted alias resource
-     * record sets for which the alias target is an ELB load balancer, we recommend
-     * that you specify a <code>TTL</code> of 60 seconds for all of the non-alias
-     * weighted resource record sets that have the same name and type. Values other
-     * than 60 seconds (the TTL for load balancers) will change the effect of the
-     * values that you specify for <code>Weight</code>.</li> </ul>
+     * following:</p> <ul> <li>If you're creating a non-alias resource record set,
+     * <code>TTL</code> is required. </li> <li>If you're creating an alias resource
+     * record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
+     * <code>TTL</code> for the alias target. </li> <li>If you're associating this
+     * resource record set with a health check (if you're adding a
+     * <code>HealthCheckId</code> element), we recommend that you specify a
+     * <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in
+     * health status.</li> <li>All of the resource record sets in a group of weighted,
+     * latency, geolocation, or failover resource record sets must have the same value
+     * for <code>TTL</code>.</li> <li>If a group of weighted resource record sets
+     * includes one or more weighted alias resource record sets for which the alias
+     * target is an ELB load balancer, we recommend that you specify a <code>TTL</code>
+     * of 60 seconds for all of the non-alias weighted resource record sets that have
+     * the same name and type. Values other than 60 seconds (the TTL for load
+     * balancers) will change the effect of the values that you specify for
+     * <code>Weight</code>.</li> </ul>
      */
     inline ResourceRecordSet& WithTTL(long long value) { SetTTL(value); return *this;}
 

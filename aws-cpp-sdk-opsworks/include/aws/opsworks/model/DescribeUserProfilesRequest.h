@@ -36,42 +36,42 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamUserArns() const{ return m_iamUserArns; }
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline void SetIamUserArns(const Aws::Vector<Aws::String>& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = value; }
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline void SetIamUserArns(Aws::Vector<Aws::String>&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = value; }
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline DescribeUserProfilesRequest& WithIamUserArns(const Aws::Vector<Aws::String>& value) { SetIamUserArns(value); return *this;}
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline DescribeUserProfilesRequest& WithIamUserArns(Aws::Vector<Aws::String>&& value) { SetIamUserArns(value); return *this;}
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline DescribeUserProfilesRequest& AddIamUserArns(const Aws::String& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline DescribeUserProfilesRequest& AddIamUserArns(Aws::String&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of IAM user ARNs that identify the users to be described. </p>
+     * <p>An array of IAM user ARNs that identify the users to be described.</p>
      */
     inline DescribeUserProfilesRequest& AddIamUserArns(const char* value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
 

@@ -132,7 +132,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The new storage capacity of the RDS instance. Changing this setting does not
@@ -169,7 +169,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The new storage capacity of the RDS instance. Changing this setting does not
@@ -206,7 +206,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline ModifyDBInstanceRequest& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
@@ -739,7 +739,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -757,7 +757,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -775,7 +775,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -971,9 +971,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
@@ -982,9 +980,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
@@ -993,9 +989,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1176,7 +1170,7 @@ namespace Model
      * instance, deleting the instance, creating a Read Replica for the instance, and
      * creating a DB snapshot of the instance.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1204,7 +1198,7 @@ namespace Model
      * instance, deleting the instance, creating a Read Replica for the instance, and
      * creating a DB snapshot of the instance.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1232,7 +1226,7 @@ namespace Model
      * instance, deleting the instance, creating a Read Replica for the instance, and
      * creating a DB snapshot of the instance.</p>
      */
-    inline ModifyDBInstanceRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p> Indicates that the DB instance should be associated with the specified
@@ -1679,7 +1673,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1688,7 +1682,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1697,7 +1691,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline ModifyDBInstanceRequest& WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+    inline ModifyDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1717,7 +1711,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline long GetDBPortNumber() const{ return m_dBPortNumber; }
+    inline int GetDBPortNumber() const{ return m_dBPortNumber; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1737,7 +1731,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline void SetDBPortNumber(long value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
+    inline void SetDBPortNumber(int value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1757,7 +1751,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline ModifyDBInstanceRequest& WithDBPortNumber(long value) { SetDBPortNumber(value); return *this;}
+    inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
 
     /**
      * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
@@ -1935,7 +1929,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline long GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1945,7 +1939,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1955,12 +1949,12 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline ModifyDBInstanceRequest& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+    inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
@@ -1974,7 +1968,7 @@ namespace Model
     bool m_masterUserPasswordHasBeenSet;
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
@@ -1988,7 +1982,7 @@ namespace Model
     bool m_allowMajorVersionUpgradeHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -2006,9 +2000,9 @@ namespace Model
     bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
-    long m_monitoringInterval;
+    int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
-    long m_dBPortNumber;
+    int m_dBPortNumber;
     bool m_dBPortNumberHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
@@ -2016,7 +2010,7 @@ namespace Model
     bool m_monitoringRoleArnHasBeenSet;
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
-    long m_promotionTier;
+    int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };
 

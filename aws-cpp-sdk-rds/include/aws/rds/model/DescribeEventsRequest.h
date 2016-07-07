@@ -262,17 +262,17 @@ namespace Model
     /**
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The number of minutes to retrieve events for.</p> <p>Default: 60</p>
      */
-    inline DescribeEventsRequest& WithDuration(long value) { SetDuration(value); return *this;}
+    inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>A list of event categories that trigger notifications for a event
@@ -363,7 +363,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -371,7 +371,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -379,7 +379,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline DescribeEventsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous DescribeEvents request.
@@ -439,13 +439,13 @@ namespace Model
     bool m_startTimeHasBeenSet;
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     Aws::Vector<Aws::String> m_eventCategories;
     bool m_eventCategoriesHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

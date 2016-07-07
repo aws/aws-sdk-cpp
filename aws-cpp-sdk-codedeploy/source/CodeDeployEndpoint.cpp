@@ -48,6 +48,8 @@ namespace CodeDeployEndpoint
         return "codedeploy.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "codedeploy.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "codedeploy.ap-south-1.amazonaws.com";
      default:
         return "codedeploy.us-east-1.amazonaws.com";
     }

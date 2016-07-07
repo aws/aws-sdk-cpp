@@ -150,32 +150,32 @@ namespace Model
     /**
      * <p>The number of layers.</p>
      */
-    inline long GetLayersCount() const{ return m_layersCount; }
+    inline int GetLayersCount() const{ return m_layersCount; }
 
     /**
      * <p>The number of layers.</p>
      */
-    inline void SetLayersCount(long value) { m_layersCountHasBeenSet = true; m_layersCount = value; }
+    inline void SetLayersCount(int value) { m_layersCountHasBeenSet = true; m_layersCount = value; }
 
     /**
      * <p>The number of layers.</p>
      */
-    inline StackSummary& WithLayersCount(long value) { SetLayersCount(value); return *this;}
+    inline StackSummary& WithLayersCount(int value) { SetLayersCount(value); return *this;}
 
     /**
      * <p>The number of apps.</p>
      */
-    inline long GetAppsCount() const{ return m_appsCount; }
+    inline int GetAppsCount() const{ return m_appsCount; }
 
     /**
      * <p>The number of apps.</p>
      */
-    inline void SetAppsCount(long value) { m_appsCountHasBeenSet = true; m_appsCount = value; }
+    inline void SetAppsCount(int value) { m_appsCountHasBeenSet = true; m_appsCount = value; }
 
     /**
      * <p>The number of apps.</p>
      */
-    inline StackSummary& WithAppsCount(long value) { SetAppsCount(value); return *this;}
+    inline StackSummary& WithAppsCount(int value) { SetAppsCount(value); return *this;}
 
     /**
      * <p>An <code>InstancesCount</code> object with the number of instances in each
@@ -214,9 +214,9 @@ namespace Model
     bool m_nameHasBeenSet;
     Aws::String m_arn;
     bool m_arnHasBeenSet;
-    long m_layersCount;
+    int m_layersCount;
     bool m_layersCountHasBeenSet;
-    long m_appsCount;
+    int m_appsCount;
     bool m_appsCountHasBeenSet;
     InstancesCount m_instancesCount;
     bool m_instancesCountHasBeenSet;

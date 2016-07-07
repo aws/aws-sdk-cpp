@@ -386,7 +386,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter in the same call.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
@@ -394,7 +394,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter in the same call.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
@@ -402,7 +402,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter in the same call.</p>
      */
-    inline DescribeInstanceStatusRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeInstanceStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>When <code>true</code>, includes the health status for all instances. When
@@ -434,7 +434,7 @@ namespace Model
     bool m_filtersHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     bool m_includeAllInstances;
     bool m_includeAllInstancesHasBeenSet;

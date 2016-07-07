@@ -191,7 +191,7 @@ namespace Model
      * this parameter is not used, then <code>ListImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of image results returned by <code>ListImages</code> in
@@ -203,7 +203,7 @@ namespace Model
      * this parameter is not used, then <code>ListImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of image results returned by <code>ListImages</code> in
@@ -215,7 +215,7 @@ namespace Model
      * this parameter is not used, then <code>ListImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable.</p>
      */
-    inline ListImagesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::String m_registryId;
@@ -224,7 +224,7 @@ namespace Model
     bool m_repositoryNameHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

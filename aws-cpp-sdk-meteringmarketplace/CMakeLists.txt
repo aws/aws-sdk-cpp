@@ -65,9 +65,6 @@ project(aws-cpp-sdk-meteringmarketplace)
   
   target_link_libraries(aws-cpp-sdk-meteringmarketplace aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-meteringmarketplace
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-meteringmarketplace)
 
   install (FILES ${AWS_METERINGMARKETPLACE_HEADERS} DESTINATION include/aws/meteringmarketplace)
   install (FILES ${AWS_METERINGMARKETPLACE_MODEL_HEADERS} DESTINATION include/aws/meteringmarketplace/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-meteringmarketplace.autopkg DESTINATION nuget)
+  endif()
+
+
 

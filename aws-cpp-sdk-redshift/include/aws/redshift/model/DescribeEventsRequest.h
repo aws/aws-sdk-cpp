@@ -284,7 +284,7 @@ namespace Model
      * of 60, then only events which have occurred after 17:00 will be returned. </p>
      * <p>Default: <code>60</code></p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p> The number of minutes prior to the time of the request for which to retrieve
@@ -292,7 +292,7 @@ namespace Model
      * of 60, then only events which have occurred after 17:00 will be returned. </p>
      * <p>Default: <code>60</code></p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p> The number of minutes prior to the time of the request for which to retrieve
@@ -300,7 +300,7 @@ namespace Model
      * of 60, then only events which have occurred after 17:00 will be returned. </p>
      * <p>Default: <code>60</code></p>
      */
-    inline DescribeEventsRequest& WithDuration(long value) { SetDuration(value); return *this;}
+    inline DescribeEventsRequest& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p> The maximum number of response records to return in each call. If the number
@@ -310,7 +310,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of response records to return in each call. If the number
@@ -320,7 +320,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of response records to return in each call. If the number
@@ -330,7 +330,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code></p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline DescribeEventsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeEventsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> An optional parameter that specifies the starting point to return a set of
@@ -411,9 +411,9 @@ namespace Model
     bool m_startTimeHasBeenSet;
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

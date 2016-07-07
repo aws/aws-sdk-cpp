@@ -28,6 +28,10 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to send a single formatted email using Amazon SES. For
+   * more information, see the <a
+   * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon
+   * SES Developer Guide</a>.</p>
    */
   class AWS_SES_API SendEmailRequest : public SESRequest
   {
@@ -220,49 +224,49 @@ namespace Model
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline void SetReplyToAddresses(const Aws::Vector<Aws::String>& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline void SetReplyToAddresses(Aws::Vector<Aws::String>&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses = value; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& WithReplyToAddresses(const Aws::Vector<Aws::String>& value) { SetReplyToAddresses(value); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& WithReplyToAddresses(Aws::Vector<Aws::String>&& value) { SetReplyToAddresses(value); return *this;}
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& AddReplyToAddresses(const Aws::String& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& AddReplyToAddresses(Aws::String&& value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 
     /**
      * <p>The reply-to email address(es) for the message. If the recipient replies to
-     * the message, each reply-to address will receive the reply. </p>
+     * the message, each reply-to address will receive the reply.</p>
      */
     inline SendEmailRequest& AddReplyToAddresses(const char* value) { m_replyToAddressesHasBeenSet = true; m_replyToAddresses.push_back(value); return *this; }
 

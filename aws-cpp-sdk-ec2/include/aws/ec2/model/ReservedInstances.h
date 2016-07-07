@@ -247,17 +247,17 @@ namespace Model
     /**
      * <p>The number of reservations purchased.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of reservations purchased.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of reservations purchased.</p>
      */
-    inline ReservedInstances& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline ReservedInstances& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The Reserved Instance product platform description.</p>
@@ -481,7 +481,7 @@ namespace Model
     bool m_usagePriceHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     RIProductDescription m_productDescription;
     bool m_productDescriptionHasBeenSet;

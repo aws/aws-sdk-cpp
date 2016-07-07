@@ -154,7 +154,7 @@ namespace Model
      * results.</p> <p>Constraint: If the value specified is greater than 1000, we
      * return only 1000 items.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
@@ -162,7 +162,7 @@ namespace Model
      * results.</p> <p>Constraint: If the value specified is greater than 1000, we
      * return only 1000 items.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
@@ -170,7 +170,7 @@ namespace Model
      * results.</p> <p>Constraint: If the value specified is greater than 1000, we
      * return only 1000 items.</p>
      */
-    inline DescribePrefixListsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribePrefixListsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -221,7 +221,7 @@ namespace Model
     bool m_prefixListIdsHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

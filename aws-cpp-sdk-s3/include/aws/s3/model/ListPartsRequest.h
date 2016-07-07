@@ -86,35 +86,35 @@ namespace Model
     /**
      * Sets the maximum number of parts to return.
      */
-    inline long GetMaxParts() const{ return m_maxParts; }
+    inline int GetMaxParts() const{ return m_maxParts; }
 
     /**
      * Sets the maximum number of parts to return.
      */
-    inline void SetMaxParts(long value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
+    inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
 
     /**
      * Sets the maximum number of parts to return.
      */
-    inline ListPartsRequest& WithMaxParts(long value) { SetMaxParts(value); return *this;}
+    inline ListPartsRequest& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
     /**
      * Specifies the part after which listing should begin. Only parts with higher part
      * numbers will be listed.
      */
-    inline long GetPartNumberMarker() const{ return m_partNumberMarker; }
+    inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
      * Specifies the part after which listing should begin. Only parts with higher part
      * numbers will be listed.
      */
-    inline void SetPartNumberMarker(long value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
+    inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
     /**
      * Specifies the part after which listing should begin. Only parts with higher part
      * numbers will be listed.
      */
-    inline ListPartsRequest& WithPartNumberMarker(long value) { SetPartNumberMarker(value); return *this;}
+    inline ListPartsRequest& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 
     /**
      * Upload ID identifying the multipart upload whose parts are being listed.
@@ -171,9 +171,9 @@ namespace Model
     bool m_bucketHasBeenSet;
     Aws::String m_key;
     bool m_keyHasBeenSet;
-    long m_maxParts;
+    int m_maxParts;
     bool m_maxPartsHasBeenSet;
-    long m_partNumberMarker;
+    int m_partNumberMarker;
     bool m_partNumberMarkerHasBeenSet;
     Aws::String m_uploadId;
     bool m_uploadIdHasBeenSet;

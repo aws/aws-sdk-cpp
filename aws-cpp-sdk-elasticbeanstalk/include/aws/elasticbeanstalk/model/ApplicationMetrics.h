@@ -50,39 +50,39 @@ namespace Model
      * you might have 5 requests (<code>request_count</code>) within the most recent
      * time slice of 10 seconds (<code>duration</code>).</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The amount of time that the metrics cover (usually 10 seconds). For example,
      * you might have 5 requests (<code>request_count</code>) within the most recent
      * time slice of 10 seconds (<code>duration</code>).</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The amount of time that the metrics cover (usually 10 seconds). For example,
      * you might have 5 requests (<code>request_count</code>) within the most recent
      * time slice of 10 seconds (<code>duration</code>).</p>
      */
-    inline ApplicationMetrics& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ApplicationMetrics& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>Average number of requests handled by the web server per second over the last
      * 10 seconds.</p>
      */
-    inline long GetRequestCount() const{ return m_requestCount; }
+    inline int GetRequestCount() const{ return m_requestCount; }
 
     /**
      * <p>Average number of requests handled by the web server per second over the last
      * 10 seconds.</p>
      */
-    inline void SetRequestCount(long value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
+    inline void SetRequestCount(int value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
 
     /**
      * <p>Average number of requests handled by the web server per second over the last
      * 10 seconds.</p>
      */
-    inline ApplicationMetrics& WithRequestCount(long value) { SetRequestCount(value); return *this;}
+    inline ApplicationMetrics& WithRequestCount(int value) { SetRequestCount(value); return *this;}
 
     /**
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
@@ -145,9 +145,9 @@ namespace Model
     inline ApplicationMetrics& WithLatency(Latency&& value) { SetLatency(value); return *this;}
 
   private:
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
-    long m_requestCount;
+    int m_requestCount;
     bool m_requestCountHasBeenSet;
     StatusCodes m_statusCodes;
     bool m_statusCodesHasBeenSet;

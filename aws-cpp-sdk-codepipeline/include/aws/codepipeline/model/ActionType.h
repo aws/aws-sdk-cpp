@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns information about the details of an action type. </p>
+   * <p>Returns information about the details of an action type.</p>
    */
   class AWS_CODEPIPELINE_API ActionType
   {

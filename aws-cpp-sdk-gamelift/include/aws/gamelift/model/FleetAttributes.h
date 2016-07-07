@@ -116,43 +116,43 @@ namespace Model
     inline FleetAttributes& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline FleetAttributes& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline FleetAttributes& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this fleet. Fleet names do not need to be
+     * <p>Descriptive label associated with a fleet. Fleet names do not need to be
      * unique.</p>
      */
     inline FleetAttributes& WithName(const char* value) { SetName(value); return *this;}
@@ -218,62 +218,67 @@ namespace Model
     inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
-     * new fleet has been defined and hosts
-     * allocated.</li><li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is
-     * being set up with the game build, and new hosts are being
-     * started.</li><li>ACTIVE: Hosts can now accept game sessions.</li><li>ERROR: An
-     * error occurred when downloading, validating, building, or activating the
-     * fleet.</li><li>DELETING: Hosts are responding to a delete fleet
-     * request.</li><li>TERMINATED: The fleet no longer exists.</li></ul></p>
+     * <p>Current status of the fleet. Possible fleet states include the following:
+     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
+     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
+     * setting up the new fleet, creating new instances with the game build and
+     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
+     * longer exists.</li></ul></p>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
-     * new fleet has been defined and hosts
-     * allocated.</li><li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is
-     * being set up with the game build, and new hosts are being
-     * started.</li><li>ACTIVE: Hosts can now accept game sessions.</li><li>ERROR: An
-     * error occurred when downloading, validating, building, or activating the
-     * fleet.</li><li>DELETING: Hosts are responding to a delete fleet
-     * request.</li><li>TERMINATED: The fleet no longer exists.</li></ul></p>
+     * <p>Current status of the fleet. Possible fleet states include the following:
+     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
+     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
+     * setting up the new fleet, creating new instances with the game build and
+     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
+     * longer exists.</li></ul></p>
      */
     inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
-     * new fleet has been defined and hosts
-     * allocated.</li><li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is
-     * being set up with the game build, and new hosts are being
-     * started.</li><li>ACTIVE: Hosts can now accept game sessions.</li><li>ERROR: An
-     * error occurred when downloading, validating, building, or activating the
-     * fleet.</li><li>DELETING: Hosts are responding to a delete fleet
-     * request.</li><li>TERMINATED: The fleet no longer exists.</li></ul></p>
+     * <p>Current status of the fleet. Possible fleet states include the following:
+     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
+     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
+     * setting up the new fleet, creating new instances with the game build and
+     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
+     * longer exists.</li></ul></p>
      */
     inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
-     * new fleet has been defined and hosts
-     * allocated.</li><li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is
-     * being set up with the game build, and new hosts are being
-     * started.</li><li>ACTIVE: Hosts can now accept game sessions.</li><li>ERROR: An
-     * error occurred when downloading, validating, building, or activating the
-     * fleet.</li><li>DELETING: Hosts are responding to a delete fleet
-     * request.</li><li>TERMINATED: The fleet no longer exists.</li></ul></p>
+     * <p>Current status of the fleet. Possible fleet states include the following:
+     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
+     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
+     * setting up the new fleet, creating new instances with the game build and
+     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
+     * longer exists.</li></ul></p>
      */
     inline FleetAttributes& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include: <ul><li>NEW: A
-     * new fleet has been defined and hosts
-     * allocated.</li><li>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING: The new fleet is
-     * being set up with the game build, and new hosts are being
-     * started.</li><li>ACTIVE: Hosts can now accept game sessions.</li><li>ERROR: An
-     * error occurred when downloading, validating, building, or activating the
-     * fleet.</li><li>DELETING: Hosts are responding to a delete fleet
-     * request.</li><li>TERMINATED: The fleet no longer exists.</li></ul></p>
+     * <p>Current status of the fleet. Possible fleet states include the following:
+     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
+     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
+     * setting up the new fleet, creating new instances with the game build and
+     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
+     * longer exists.</li></ul></p>
      */
     inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(value); return *this;}
 
@@ -313,210 +318,219 @@ namespace Model
     inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Path to the launch executable for the game server. A game server is built
-     * into a <code>C:\game</code> drive. This value must be expressed as
-     * <code>C:\game\[launchpath]</code>. Example: If, when built, your game server
-     * files are in a folder called "MyGame", your log path should be
-     * <code>C:\game\MyGame\server.exe</code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Parameters required to launch your game server. These parameters should be
-     * expressed as a string of command-line parameters. Example: "+sv_port 33435
-     * +start_lobby".</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(value); return *this;}
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
-     * <p>Path to game-session log files generated by your game server. Once a game
-     * session has been terminated, Amazon GameLift captures and stores the logs on
-     * Amazon S3. Use the GameLift console to access the stored logs.</p>
+     * <p>Location of default log files. When a server process is shut down, Amazon
+     * GameLift captures and stores any log files in this location. These logs are in
+     * addition to game session logs; see more on game session logs in the <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
+     * GameLift will automatically upload logs stored on each instance at
+     * <code>C:\game\logs</code>. Use the GameLift console to access stored logs. </p>
      */
     inline FleetAttributes& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li>NoProtection: The game session can be terminated during a
-     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
-     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li>NoProtection: The game session can be terminated during a
-     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
-     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li>NoProtection: The game session can be terminated during a
-     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
-     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li>NoProtection: The game session can be terminated during a
-     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
-     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li>NoProtection: The game session can be terminated during a
-     * scale-down event.</li> <li>FullProtection: If the game session is in an ACTIVE
-     * status, it cannot be terminated during a scale-down event.</li></ul></p>
+     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul></p>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 

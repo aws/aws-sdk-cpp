@@ -87,26 +87,26 @@ namespace Model
      * get information about. The default limit is 25. It should be an integer between
      * 1 - 500.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of <a>ClientCertificate</a> resources in the collection to
      * get information about. The default limit is 25. It should be an integer between
      * 1 - 500.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of <a>ClientCertificate</a> resources in the collection to
      * get information about. The default limit is 25. It should be an integer between
      * 1 - 500.</p>
      */
-    inline GetClientCertificatesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline GetClientCertificatesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_position;
     bool m_positionHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

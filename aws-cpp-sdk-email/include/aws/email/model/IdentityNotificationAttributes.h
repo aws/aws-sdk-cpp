@@ -200,6 +200,87 @@ namespace Model
      */
     inline IdentityNotificationAttributes& WithForwardingEnabled(bool value) { SetForwardingEnabled(value); return *this;}
 
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Bounce</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in bounce notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in bounce notifications.</p>
+     */
+    inline bool GetHeadersInBounceNotificationsEnabled() const{ return m_headersInBounceNotificationsEnabled; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Bounce</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in bounce notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in bounce notifications.</p>
+     */
+    inline void SetHeadersInBounceNotificationsEnabled(bool value) { m_headersInBounceNotificationsEnabledHasBeenSet = true; m_headersInBounceNotificationsEnabled = value; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Bounce</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in bounce notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in bounce notifications.</p>
+     */
+    inline IdentityNotificationAttributes& WithHeadersInBounceNotificationsEnabled(bool value) { SetHeadersInBounceNotificationsEnabled(value); return *this;}
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Complaint</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in complaint notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in complaint notifications.</p>
+     */
+    inline bool GetHeadersInComplaintNotificationsEnabled() const{ return m_headersInComplaintNotificationsEnabled; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Complaint</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in complaint notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in complaint notifications.</p>
+     */
+    inline void SetHeadersInComplaintNotificationsEnabled(bool value) { m_headersInComplaintNotificationsEnabledHasBeenSet = true; m_headersInComplaintNotificationsEnabled = value; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Complaint</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in complaint notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in complaint notifications.</p>
+     */
+    inline IdentityNotificationAttributes& WithHeadersInComplaintNotificationsEnabled(bool value) { SetHeadersInComplaintNotificationsEnabled(value); return *this;}
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Delivery</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in delivery notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in delivery notifications.</p>
+     */
+    inline bool GetHeadersInDeliveryNotificationsEnabled() const{ return m_headersInDeliveryNotificationsEnabled; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Delivery</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in delivery notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in delivery notifications.</p>
+     */
+    inline void SetHeadersInDeliveryNotificationsEnabled(bool value) { m_headersInDeliveryNotificationsEnabledHasBeenSet = true; m_headersInDeliveryNotificationsEnabled = value; }
+
+    /**
+     * <p>Describes whether Amazon SES includes the original email headers in Amazon
+     * SNS notifications of type <code>Delivery</code>. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in delivery notifications, and a
+     * value of <code>false</code> specifies that Amazon SES will not include headers
+     * in delivery notifications.</p>
+     */
+    inline IdentityNotificationAttributes& WithHeadersInDeliveryNotificationsEnabled(bool value) { SetHeadersInDeliveryNotificationsEnabled(value); return *this;}
+
   private:
     Aws::String m_bounceTopic;
     bool m_bounceTopicHasBeenSet;
@@ -209,6 +290,12 @@ namespace Model
     bool m_deliveryTopicHasBeenSet;
     bool m_forwardingEnabled;
     bool m_forwardingEnabledHasBeenSet;
+    bool m_headersInBounceNotificationsEnabled;
+    bool m_headersInBounceNotificationsEnabledHasBeenSet;
+    bool m_headersInComplaintNotificationsEnabled;
+    bool m_headersInComplaintNotificationsEnabledHasBeenSet;
+    bool m_headersInDeliveryNotificationsEnabled;
+    bool m_headersInDeliveryNotificationsEnabledHasBeenSet;
   };
 
 } // namespace Model

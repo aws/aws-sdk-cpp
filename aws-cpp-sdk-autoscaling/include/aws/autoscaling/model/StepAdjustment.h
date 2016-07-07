@@ -124,28 +124,28 @@ namespace Model
      * positive value adds to the current capacity while a negative number removes from
      * the current capacity.</p>
      */
-    inline long GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
      * the current capacity.</p>
      */
-    inline void SetScalingAdjustment(long value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
+    inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
      * the current capacity.</p>
      */
-    inline StepAdjustment& WithScalingAdjustment(long value) { SetScalingAdjustment(value); return *this;}
+    inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
   private:
     double m_metricIntervalLowerBound;
     bool m_metricIntervalLowerBoundHasBeenSet;
     double m_metricIntervalUpperBound;
     bool m_metricIntervalUpperBoundHasBeenSet;
-    long m_scalingAdjustment;
+    int m_scalingAdjustment;
     bool m_scalingAdjustmentHasBeenSet;
   };
 

@@ -184,37 +184,37 @@ namespace Model
      * <p>The minimum value for this scalable target to scale in to in response to
      * scaling activities.</p>
      */
-    inline long GetMinCapacity() const{ return m_minCapacity; }
+    inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
      * <p>The minimum value for this scalable target to scale in to in response to
      * scaling activities.</p>
      */
-    inline void SetMinCapacity(long value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
+    inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
      * <p>The minimum value for this scalable target to scale in to in response to
      * scaling activities.</p>
      */
-    inline ScalableTarget& WithMinCapacity(long value) { SetMinCapacity(value); return *this;}
+    inline ScalableTarget& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
     /**
      * <p>The maximum value for this scalable target to scale out to in response to
      * scaling activities.</p>
      */
-    inline long GetMaxCapacity() const{ return m_maxCapacity; }
+    inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
      * <p>The maximum value for this scalable target to scale out to in response to
      * scaling activities.</p>
      */
-    inline void SetMaxCapacity(long value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+    inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
      * <p>The maximum value for this scalable target to scale out to in response to
      * scaling activities.</p>
      */
-    inline ScalableTarget& WithMaxCapacity(long value) { SetMaxCapacity(value); return *this;}
+    inline ScalableTarget& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 
     /**
      * <p>The ARN of the IAM role that allows Application Auto Scaling to modify your
@@ -290,9 +290,9 @@ namespace Model
     bool m_resourceIdHasBeenSet;
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
-    long m_minCapacity;
+    int m_minCapacity;
     bool m_minCapacityHasBeenSet;
-    long m_maxCapacity;
+    int m_maxCapacity;
     bool m_maxCapacityHasBeenSet;
     Aws::String m_roleARN;
     bool m_roleARNHasBeenSet;

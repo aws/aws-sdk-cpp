@@ -46,17 +46,17 @@ namespace Model
     /**
      * <p>The number of unsuccessfully written records.</p>
      */
-    inline long GetFailedPutCount() const{ return m_failedPutCount; }
+    inline int GetFailedPutCount() const{ return m_failedPutCount; }
 
     /**
      * <p>The number of unsuccessfully written records.</p>
      */
-    inline void SetFailedPutCount(long value) { m_failedPutCount = value; }
+    inline void SetFailedPutCount(int value) { m_failedPutCount = value; }
 
     /**
      * <p>The number of unsuccessfully written records.</p>
      */
-    inline PutRecordBatchResult& WithFailedPutCount(long value) { SetFailedPutCount(value); return *this;}
+    inline PutRecordBatchResult& WithFailedPutCount(int value) { SetFailedPutCount(value); return *this;}
 
     /**
      * <p>The results for the individual records. The index of each element matches the
@@ -101,7 +101,7 @@ namespace Model
     inline PutRecordBatchResult& AddRequestResponses(PutRecordBatchResponseEntry&& value) { m_requestResponses.push_back(value); return *this; }
 
   private:
-    long m_failedPutCount;
+    int m_failedPutCount;
     Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
   };
 

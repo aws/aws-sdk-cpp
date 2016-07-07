@@ -90,201 +90,174 @@ namespace Model
     /**
      * <p>A flag that indicates whether there are more geo locations to be listed. If
      * your results were truncated, you can make a follow-up request for the next page
-     * of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * of results by using the values included in the <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> elements.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
      * <p>A flag that indicates whether there are more geo locations to be listed. If
      * your results were truncated, you can make a follow-up request for the next page
-     * of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * of results by using the values included in the <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> elements.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
      * <p>A flag that indicates whether there are more geo locations to be listed. If
      * your results were truncated, you can make a follow-up request for the next page
-     * of results by using the values included in the
-     * <a>ListGeoLocationsResponse$NextContinentCode</a>,
-     * <a>ListGeoLocationsResponse$NextCountryCode</a> and
-     * <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.</p> <p>Valid
-     * Values: <code>true</code> | <code>false</code></p>
+     * of results by using the values included in the <code>NextContinentCode</code>,
+     * <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> elements.</p>
+     * <p>Valid Values: <code>true</code> | <code>false</code></p>
      */
     inline ListGeoLocationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline const Aws::String& GetNextContinentCode() const{ return m_nextContinentCode; }
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline void SetNextContinentCode(const Aws::String& value) { m_nextContinentCode = value; }
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline void SetNextContinentCode(Aws::String&& value) { m_nextContinentCode = value; }
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline void SetNextContinentCode(const char* value) { m_nextContinentCode.assign(value); }
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextContinentCode(const Aws::String& value) { SetNextContinentCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextContinentCode(Aws::String&& value) { SetNextContinentCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the continent code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextContinentCode(const char* value) { SetNextContinentCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline const Aws::String& GetNextCountryCode() const{ return m_nextCountryCode; }
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline void SetNextCountryCode(const Aws::String& value) { m_nextCountryCode = value; }
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline void SetNextCountryCode(Aws::String&& value) { m_nextCountryCode = value; }
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline void SetNextCountryCode(const char* value) { m_nextCountryCode.assign(value); }
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextCountryCode(const Aws::String& value) { SetNextCountryCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextCountryCode(Aws::String&& value) { SetNextCountryCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the country code of the next geo location in
-     * the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location to
-     * list is not a continent location. </p>
+     * the list. This element is present only if <code>IsTruncated</code> is true and
+     * the next geo location to list is not a continent location. </p>
      */
     inline ListGeoLocationsResult& WithNextCountryCode(const char* value) { SetNextCountryCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline const Aws::String& GetNextSubdivisionCode() const{ return m_nextSubdivisionCode; }
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline void SetNextSubdivisionCode(const Aws::String& value) { m_nextSubdivisionCode = value; }
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline void SetNextSubdivisionCode(Aws::String&& value) { m_nextSubdivisionCode = value; }
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline void SetNextSubdivisionCode(const char* value) { m_nextSubdivisionCode.assign(value); }
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline ListGeoLocationsResult& WithNextSubdivisionCode(const Aws::String& value) { SetNextSubdivisionCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline ListGeoLocationsResult& WithNextSubdivisionCode(Aws::String&& value) { SetNextSubdivisionCode(value); return *this;}
 
     /**
      * <p>If the results were truncated, the subdivision code of the next geo location
-     * in the list. This element is present only if
-     * <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next geo location
-     * has a subdivision. </p>
+     * in the list. This element is present only if <code>IsTruncated</code> is true
+     * and the next geo location has a subdivision. </p>
      */
     inline ListGeoLocationsResult& WithNextSubdivisionCode(const char* value) { SetNextSubdivisionCode(value); return *this;}
 

@@ -125,7 +125,7 @@ namespace Model
      * <code>true</code>. To list additional tags, set
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The number of tags to return. If this number is less than the total number of
@@ -133,7 +133,7 @@ namespace Model
      * <code>true</code>. To list additional tags, set
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The number of tags to return. If this number is less than the total number of
@@ -141,14 +141,14 @@ namespace Model
      * <code>true</code>. To list additional tags, set
      * <code>ExclusiveStartTagKey</code> to the last key in the response.</p>
      */
-    inline ListTagsForStreamRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListTagsForStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
     Aws::String m_exclusiveStartTagKey;
     bool m_exclusiveStartTagKeyHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

@@ -45,19 +45,19 @@ namespace Model
      * <p>The number of AWS resources or AWS Config rules responsible for the current
      * compliance of the item.</p>
      */
-    inline long GetCappedCount() const{ return m_cappedCount; }
+    inline int GetCappedCount() const{ return m_cappedCount; }
 
     /**
      * <p>The number of AWS resources or AWS Config rules responsible for the current
      * compliance of the item.</p>
      */
-    inline void SetCappedCount(long value) { m_cappedCountHasBeenSet = true; m_cappedCount = value; }
+    inline void SetCappedCount(int value) { m_cappedCountHasBeenSet = true; m_cappedCount = value; }
 
     /**
      * <p>The number of AWS resources or AWS Config rules responsible for the current
      * compliance of the item.</p>
      */
-    inline ComplianceContributorCount& WithCappedCount(long value) { SetCappedCount(value); return *this;}
+    inline ComplianceContributorCount& WithCappedCount(int value) { SetCappedCount(value); return *this;}
 
     /**
      * <p>Indicates whether the maximum count is reached.</p>
@@ -75,7 +75,7 @@ namespace Model
     inline ComplianceContributorCount& WithCapExceeded(bool value) { SetCapExceeded(value); return *this;}
 
   private:
-    long m_cappedCount;
+    int m_cappedCount;
     bool m_cappedCountHasBeenSet;
     bool m_capExceeded;
     bool m_capExceededHasBeenSet;

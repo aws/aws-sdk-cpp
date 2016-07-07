@@ -82,44 +82,44 @@ namespace Model
     inline GameSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline GameSession& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline GameSession& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline GameSession& WithName(const char* value) { SetName(value); return *this;}
 
@@ -221,60 +221,60 @@ namespace Model
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline long GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
+    inline int GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
 
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline void SetCurrentPlayerSessionCount(long value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
+    inline void SetCurrentPlayerSessionCount(int value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
 
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline GameSession& WithCurrentPlayerSessionCount(long value) { SetCurrentPlayerSessionCount(value); return *this;}
+    inline GameSession& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline long GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline void SetMaximumPlayerSessionCount(long value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
+    inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
      * <p>Maximum number of players allowed in the game session.</p>
      */
-    inline GameSession& WithMaximumPlayerSessionCount(long value) { SetMaximumPlayerSessionCount(value); return *this;}
+    inline GameSession& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
     /**
-     * <p>Current status of the game session. A game session must be in an ACTIVE state
-     * to have player sessions.</p>
+     * <p>Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.</p>
      */
     inline const GameSessionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the game session. A game session must be in an ACTIVE state
-     * to have player sessions.</p>
+     * <p>Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.</p>
      */
     inline void SetStatus(const GameSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the game session. A game session must be in an ACTIVE state
-     * to have player sessions.</p>
+     * <p>Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.</p>
      */
     inline void SetStatus(GameSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the game session. A game session must be in an ACTIVE state
-     * to have player sessions.</p>
+     * <p>Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.</p>
      */
     inline GameSession& WithStatus(const GameSessionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the game session. A game session must be in an ACTIVE state
-     * to have player sessions.</p>
+     * <p>Current status of the game session. A game session must be in an
+     * <code>ACTIVE</code> state to have player sessions.</p>
      */
     inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(value); return *this;}
 
@@ -314,39 +314,64 @@ namespace Model
     inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address of the game session.</p>
+     * <p>IP address of the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
+
+    /**
+     * <p>Port number for the game session. To connect to a GameLift server process, an
+     * app needs both the IP address and port number.</p>
+     */
+    inline GameSession& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Indicates whether or not the game session is accepting new players.</p>
@@ -384,9 +409,9 @@ namespace Model
     bool m_creationTimeHasBeenSet;
     Aws::Utils::DateTime m_terminationTime;
     bool m_terminationTimeHasBeenSet;
-    long m_currentPlayerSessionCount;
+    int m_currentPlayerSessionCount;
     bool m_currentPlayerSessionCountHasBeenSet;
-    long m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
     GameSessionStatus m_status;
     bool m_statusHasBeenSet;
@@ -394,6 +419,8 @@ namespace Model
     bool m_gamePropertiesHasBeenSet;
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet;
+    int m_port;
+    bool m_portHasBeenSet;
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
     bool m_playerSessionCreationPolicyHasBeenSet;
   };

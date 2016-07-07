@@ -65,9 +65,6 @@ project(aws-cpp-sdk-route53domains)
   
   target_link_libraries(aws-cpp-sdk-route53domains aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-route53domains
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-route53domains)
 
   install (FILES ${AWS_ROUTE53DOMAINS_HEADERS} DESTINATION include/aws/route53domains)
   install (FILES ${AWS_ROUTE53DOMAINS_MODEL_HEADERS} DESTINATION include/aws/route53domains/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-route53domains.autopkg DESTINATION nuget)
+  endif()
+
+
 

@@ -37,79 +37,79 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline CreateAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline CreateAliasRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this alias. Alias names do not need to be
+     * <p>Descriptive label associated with an alias. Alias names do not need to be
      * unique.</p>
      */
     inline CreateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline CreateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Human-readable description of the alias.</p>
+     * <p>Human-readable description of an alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

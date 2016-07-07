@@ -35,6 +35,11 @@ public class MainClientGenerator {
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
         ServiceModel serviceModel = new C2jModelToGeneratorModelTransformer(c2jModel).convert();
+
+        serviceModel.setRuntimeMajorVersion("@RUNTIME_MAJOR_VERSION@");
+        serviceModel.setRuntimeMajorVersionUpperBound("@RUNTIME_MAJOR_VERSION_UPPER_BOUND@");
+        serviceModel.setRuntimeMinorVersion("@RUNTIME_MINOR_VERSION@");
+
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
 
         String protocol = serviceModel.getMetadata().getProtocol();
@@ -84,5 +89,4 @@ public class MainClientGenerator {
             return gson.fromJson(inputJson.toString(), C2jServiceModel.class);
         }
     }
-
 }

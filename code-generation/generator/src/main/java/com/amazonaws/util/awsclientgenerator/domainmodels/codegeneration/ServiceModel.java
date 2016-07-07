@@ -25,6 +25,9 @@ import java.util.*;
 @Data
 public class ServiceModel {
     String version;
+    String runtimeMajorVersion;
+    String runtimeMajorVersionUpperBound;
+    String runtimeMinorVersion;
     Metadata metadata;
     String documentation;
     Map<String, Shape> shapes;

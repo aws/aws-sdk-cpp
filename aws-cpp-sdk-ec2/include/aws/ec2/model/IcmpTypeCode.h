@@ -46,37 +46,37 @@ namespace Model
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
-    inline long GetType() const{ return m_type; }
+    inline int GetType() const{ return m_type; }
 
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
-    inline void SetType(long value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetType(int value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
-    inline IcmpTypeCode& WithType(long value) { SetType(value); return *this;}
+    inline IcmpTypeCode& WithType(int value) { SetType(value); return *this;}
 
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
-    inline long GetCode() const{ return m_code; }
+    inline int GetCode() const{ return m_code; }
 
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
-    inline void SetCode(long value) { m_codeHasBeenSet = true; m_code = value; }
+    inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
-    inline IcmpTypeCode& WithCode(long value) { SetCode(value); return *this;}
+    inline IcmpTypeCode& WithCode(int value) { SetCode(value); return *this;}
 
   private:
-    long m_type;
+    int m_type;
     bool m_typeHasBeenSet;
-    long m_code;
+    int m_code;
     bool m_codeHasBeenSet;
   };
 

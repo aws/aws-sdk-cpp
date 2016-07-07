@@ -123,6 +123,62 @@ namespace Model
     inline DynamoDBAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
     /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline const Aws::String& GetOperation() const{ return m_operation; }
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = value; }
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline DynamoDBAction& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline DynamoDBAction& WithOperation(Aws::String&& value) { SetOperation(value); return *this;}
+
+    /**
+     * <p>The type of operation to be performed. This follows the substitution
+     * template, so it can be <code>${operation}</code>, but the substitution must
+     * result in one of the following: <code>INSERT</code>, <code>UPDATE</code>, or
+     * <code>DELETE</code>.</p>
+     */
+    inline DynamoDBAction& WithOperation(const char* value) { SetOperation(value); return *this;}
+
+    /**
      * <p>The hash key name.</p>
      */
     inline const Aws::String& GetHashKeyField() const{ return m_hashKeyField; }
@@ -352,6 +408,8 @@ namespace Model
     bool m_tableNameHasBeenSet;
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+    Aws::String m_operation;
+    bool m_operationHasBeenSet;
     Aws::String m_hashKeyField;
     bool m_hashKeyFieldHasBeenSet;
     Aws::String m_hashKeyValue;

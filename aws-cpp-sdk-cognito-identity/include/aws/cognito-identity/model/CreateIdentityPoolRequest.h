@@ -259,39 +259,87 @@ namespace Model
     inline CreateIdentityPoolRequest& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.push_back(value); return *this; }
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const{ return m_cognitoIdentityProviders; }
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline void SetCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { SetCognitoIdentityProviders(value); return *this;}
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(value); return *this;}
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(const CognitoIdentityProvider& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
 
     /**
-     * <p>A list representing a Cognito User Identity Pool and its client ID.</p>
+     * <p>An array of Amazon Cognito Identity user pools.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSamlProviderARNs() const{ return m_samlProviderARNs; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline void SetSamlProviderARNs(const Aws::Vector<Aws::String>& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs = value; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline void SetSamlProviderARNs(Aws::Vector<Aws::String>&& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs = value; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline CreateIdentityPoolRequest& WithSamlProviderARNs(const Aws::Vector<Aws::String>& value) { SetSamlProviderARNs(value); return *this;}
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline CreateIdentityPoolRequest& WithSamlProviderARNs(Aws::Vector<Aws::String>&& value) { SetSamlProviderARNs(value); return *this;}
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline CreateIdentityPoolRequest& AddSamlProviderARNs(const Aws::String& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.push_back(value); return *this; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline CreateIdentityPoolRequest& AddSamlProviderARNs(Aws::String&& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.push_back(value); return *this; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline CreateIdentityPoolRequest& AddSamlProviderARNs(const char* value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.push_back(value); return *this; }
 
   private:
     Aws::String m_identityPoolName;
@@ -306,6 +354,8 @@ namespace Model
     bool m_openIdConnectProviderARNsHasBeenSet;
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
     bool m_cognitoIdentityProvidersHasBeenSet;
+    Aws::Vector<Aws::String> m_samlProviderARNs;
+    bool m_samlProviderARNsHasBeenSet;
   };
 
 } // namespace Model

@@ -66,17 +66,17 @@ namespace Model
     /**
      * Size in bytes of the object.
      */
-    inline long GetSize() const{ return m_size; }
+    inline int GetSize() const{ return m_size; }
 
     /**
      * Size in bytes of the object.
      */
-    inline void SetSize(long value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
      * Size in bytes of the object.
      */
-    inline ObjectVersion& WithSize(long value) { SetSize(value); return *this;}
+    inline ObjectVersion& WithSize(int value) { SetSize(value); return *this;}
 
     /**
      * The class of storage used to store the object.
@@ -234,7 +234,7 @@ namespace Model
   private:
     Aws::String m_eTag;
     bool m_eTagHasBeenSet;
-    long m_size;
+    int m_size;
     bool m_sizeHasBeenSet;
     ObjectVersionStorageClass m_storageClass;
     bool m_storageClassHasBeenSet;

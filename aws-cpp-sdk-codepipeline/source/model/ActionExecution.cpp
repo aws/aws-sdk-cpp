@@ -31,6 +31,8 @@ ActionExecution::ActionExecution() :
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),
+    m_tokenHasBeenSet(false),
+    m_lastUpdatedByHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false),
     m_externalExecutionUrlHasBeenSet(false),
     m_percentComplete(0),
@@ -43,6 +45,8 @@ ActionExecution::ActionExecution(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_lastStatusChangeHasBeenSet(false),
+    m_tokenHasBeenSet(false),
+    m_lastUpdatedByHasBeenSet(false),
     m_externalExecutionIdHasBeenSet(false),
     m_externalExecutionUrlHasBeenSet(false),
     m_percentComplete(0),
@@ -73,6 +77,20 @@ ActionExecution& ActionExecution::operator =(const JsonValue& jsonValue)
     m_lastStatusChange = jsonValue.GetDouble("lastStatusChange");
 
     m_lastStatusChangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("token"))
+  {
+    m_token = jsonValue.GetString("token");
+
+    m_tokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastUpdatedBy"))
+  {
+    m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
+
+    m_lastUpdatedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("externalExecutionId"))
@@ -124,6 +142,18 @@ JsonValue ActionExecution::Jsonize() const
   if(m_lastStatusChangeHasBeenSet)
   {
    payload.WithDouble("lastStatusChange", m_lastStatusChange.SecondsWithMSPrecision());
+  }
+
+  if(m_tokenHasBeenSet)
+  {
+   payload.WithString("token", m_token);
+
+  }
+
+  if(m_lastUpdatedByHasBeenSet)
+  {
+   payload.WithString("lastUpdatedBy", m_lastUpdatedBy);
+
   }
 
   if(m_externalExecutionIdHasBeenSet)

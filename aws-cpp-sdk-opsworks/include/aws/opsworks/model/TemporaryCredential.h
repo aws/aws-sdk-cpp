@@ -118,7 +118,7 @@ namespace Model
      * credentials to log in. If they are logged in at the time, they will be
      * automatically logged out.</p>
      */
-    inline long GetValidForInMinutes() const{ return m_validForInMinutes; }
+    inline int GetValidForInMinutes() const{ return m_validForInMinutes; }
 
     /**
      * <p>The length of time (in minutes) that the grant is valid. When the grant
@@ -126,7 +126,7 @@ namespace Model
      * credentials to log in. If they are logged in at the time, they will be
      * automatically logged out.</p>
      */
-    inline void SetValidForInMinutes(long value) { m_validForInMinutesHasBeenSet = true; m_validForInMinutes = value; }
+    inline void SetValidForInMinutes(int value) { m_validForInMinutesHasBeenSet = true; m_validForInMinutes = value; }
 
     /**
      * <p>The length of time (in minutes) that the grant is valid. When the grant
@@ -134,7 +134,7 @@ namespace Model
      * credentials to log in. If they are logged in at the time, they will be
      * automatically logged out.</p>
      */
-    inline TemporaryCredential& WithValidForInMinutes(long value) { SetValidForInMinutes(value); return *this;}
+    inline TemporaryCredential& WithValidForInMinutes(int value) { SetValidForInMinutes(value); return *this;}
 
     /**
      * <p>The instance's AWS OpsWorks ID.</p>
@@ -176,7 +176,7 @@ namespace Model
     bool m_usernameHasBeenSet;
     Aws::String m_password;
     bool m_passwordHasBeenSet;
-    long m_validForInMinutes;
+    int m_validForInMinutes;
     bool m_validForInMinutesHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;

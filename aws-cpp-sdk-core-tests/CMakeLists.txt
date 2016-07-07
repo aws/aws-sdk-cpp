@@ -5,6 +5,7 @@ project(aws-cpp-sdk-core-tests)
 # They are included elsewhere for consistency.
 file(GLOB AWS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/*.cpp")
 file(GLOB AWS_AUTH_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/auth/*.cpp")
+file(GLOB AWS_CONFIG_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/config/*.cpp")
 file(GLOB AWS_CLIENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/client/*.cpp")
 file(GLOB HTTP_SRC "${CMAKE_CURRENT_SOURCE_DIR}/http/*.cpp")
 file(GLOB UTILS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/*.cpp")
@@ -19,6 +20,7 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
   ${AWS_SRC}
   ${AWS_AUTH_SRC}
+  ${AWS_CONFIG_SRC}
   ${AWS_CLIENT_SRC}
   ${HTTP_SRC}
   ${UTILS_SRC}
@@ -34,6 +36,7 @@ if(PLATFORM_WINDOWS)
   if(MSVC)
     source_group("Source Files\\aws" FILES ${AWS_SRC})
     source_group("Source Files\\aws\\auth" FILES ${AWS_AUTH_SRC})
+    source_group("Source Files\\aws\\config" FILES ${AWS_CONFIG_SRC})
     source_group("Source Files\\aws\\client" FILES ${AWS_CLIENT_SRC})
     source_group("Source Files\\http" FILES  ${HTTP_SRC})
     source_group("Source Files\\utils" FILES ${UTILS_SRC})

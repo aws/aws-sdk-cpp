@@ -48,6 +48,8 @@ namespace CloudTrailEndpoint
         return "cloudtrail.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "cloudtrail.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "cloudtrail.ap-south-1.amazonaws.com";
      default:
         return "cloudtrail.us-east-1.amazonaws.com";
     }

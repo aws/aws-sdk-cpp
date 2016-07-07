@@ -48,6 +48,8 @@ namespace STSEndpoint
         return "sts.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "sts.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "sts.ap-south-1.amazonaws.com";
      default:
         return "sts.us-east-1.amazonaws.com";
     }

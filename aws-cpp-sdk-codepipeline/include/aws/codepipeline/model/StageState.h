@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/TransitionState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codepipeline/model/StageExecution.h>
 #include <aws/codepipeline/model/ActionState.h>
 
 namespace Aws
@@ -139,6 +140,36 @@ namespace Model
      */
     inline StageState& AddActionStates(ActionState&& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(value); return *this; }
 
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline const StageExecution& GetLatestExecution() const{ return m_latestExecution; }
+
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline void SetLatestExecution(const StageExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
+
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline void SetLatestExecution(StageExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
+
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline StageState& WithLatestExecution(const StageExecution& value) { SetLatestExecution(value); return *this;}
+
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline StageState& WithLatestExecution(StageExecution&& value) { SetLatestExecution(value); return *this;}
+
   private:
     Aws::String m_stageName;
     bool m_stageNameHasBeenSet;
@@ -146,6 +177,8 @@ namespace Model
     bool m_inboundTransitionStateHasBeenSet;
     Aws::Vector<ActionState> m_actionStates;
     bool m_actionStatesHasBeenSet;
+    StageExecution m_latestExecution;
+    bool m_latestExecutionHasBeenSet;
   };
 
 } // namespace Model

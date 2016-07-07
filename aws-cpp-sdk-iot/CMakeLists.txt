@@ -65,9 +65,6 @@ project(aws-cpp-sdk-iot)
   
   target_link_libraries(aws-cpp-sdk-iot aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-iot
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-iot)
 
   install (FILES ${AWS_IOT_HEADERS} DESTINATION include/aws/iot)
   install (FILES ${AWS_IOT_MODEL_HEADERS} DESTINATION include/aws/iot/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-iot.autopkg DESTINATION nuget)
+  endif()
+
+
 

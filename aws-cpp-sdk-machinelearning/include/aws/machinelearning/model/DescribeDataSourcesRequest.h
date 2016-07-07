@@ -572,17 +572,17 @@ namespace Model
     /**
      * <p> The maximum number of <code>DataSource</code> to include in the result.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p> The maximum number of <code>DataSource</code> to include in the result.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p> The maximum number of <code>DataSource</code> to include in the result.</p>
      */
-    inline DescribeDataSourcesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeDataSourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     DataSourceFilterVariable m_filterVariable;
@@ -605,7 +605,7 @@ namespace Model
     bool m_sortOrderHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

@@ -47,17 +47,17 @@ namespace Model
     /**
      * The number of CNAMEs, if any, for this distribution.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of CNAMEs, if any, for this distribution.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of CNAMEs, if any, for this distribution.
      */
-    inline Aliases& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline Aliases& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * Optional: A complex type that contains CNAME elements, if any, for this
@@ -108,7 +108,7 @@ namespace Model
     inline Aliases& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
   private:
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<Aws::String> m_items;
     bool m_itemsHasBeenSet;

@@ -193,17 +193,17 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline DBSnapshot& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBSnapshot& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>Specifies the status of this DB snapshot.</p>
@@ -244,19 +244,19 @@ namespace Model
      * <p>Specifies the port that the database engine was listening on at the time of
      * the snapshot.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Specifies the port that the database engine was listening on at the time of
      * the snapshot.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Specifies the port that the database engine was listening on at the time of
      * the snapshot.</p>
      */
-    inline DBSnapshot& WithPort(long value) { SetPort(value); return *this;}
+    inline DBSnapshot& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Specifies the name of the Availability Zone the DB instance was located in at
@@ -509,19 +509,19 @@ namespace Model
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
      * instance at the time of the snapshot.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
      * instance at the time of the snapshot.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
      * instance at the time of the snapshot.</p>
      */
-    inline DBSnapshot& WithIops(long value) { SetIops(value); return *this;}
+    inline DBSnapshot& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>Provides the option group name for the DB snapshot.</p>
@@ -561,17 +561,17 @@ namespace Model
     /**
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
-    inline long GetPercentProgress() const{ return m_percentProgress; }
+    inline int GetPercentProgress() const{ return m_percentProgress; }
 
     /**
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
-    inline void SetPercentProgress(long value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
+    inline void SetPercentProgress(int value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
 
     /**
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
-    inline DBSnapshot& WithPercentProgress(long value) { SetPercentProgress(value); return *this;}
+    inline DBSnapshot& WithPercentProgress(int value) { SetPercentProgress(value); return *this;}
 
     /**
      * <p>The region that the DB snapshot was created in or copied from.</p>
@@ -793,11 +793,11 @@ namespace Model
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -813,11 +813,11 @@ namespace Model
     bool m_licenseModelHasBeenSet;
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
-    long m_percentProgress;
+    int m_percentProgress;
     bool m_percentProgressHasBeenSet;
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;

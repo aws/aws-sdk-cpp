@@ -134,19 +134,19 @@ namespace Model
      * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
      * 65000</p>
      */
-    inline long GetBgpAsn() const{ return m_bgpAsn; }
+    inline int GetBgpAsn() const{ return m_bgpAsn; }
 
     /**
      * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
      * 65000</p>
      */
-    inline void SetBgpAsn(long value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
+    inline void SetBgpAsn(int value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
     /**
      * <p>For devices that support BGP, the customer gateway's BGP ASN.</p> <p>Default:
      * 65000</p>
      */
-    inline CreateCustomerGatewayRequest& WithBgpAsn(long value) { SetBgpAsn(value); return *this;}
+    inline CreateCustomerGatewayRequest& WithBgpAsn(int value) { SetBgpAsn(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -155,7 +155,7 @@ namespace Model
     bool m_typeHasBeenSet;
     Aws::String m_publicIp;
     bool m_publicIpHasBeenSet;
-    long m_bgpAsn;
+    int m_bgpAsn;
     bool m_bgpAsnHasBeenSet;
   };
 

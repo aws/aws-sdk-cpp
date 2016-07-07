@@ -87,21 +87,21 @@ namespace Model
      * HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For
      * HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Port on which connection will be opened to the instance to health check. For
      * HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For
      * HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Port on which connection will be opened to the instance to health check. For
      * HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not specified. For
      * HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.</p>
      */
-    inline HealthCheckConfig& WithPort(long value) { SetPort(value); return *this;}
+    inline HealthCheckConfig& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The type of health check to be performed. Currently supported types are TCP,
@@ -277,7 +277,7 @@ namespace Model
      * <p>Each Amazon Route 53 health checker makes requests at this interval. Valid
      * values are 10 and 30. The default value is 30.</p>
      */
-    inline long GetRequestInterval() const{ return m_requestInterval; }
+    inline int GetRequestInterval() const{ return m_requestInterval; }
 
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
@@ -285,7 +285,7 @@ namespace Model
      * <p>Each Amazon Route 53 health checker makes requests at this interval. Valid
      * values are 10 and 30. The default value is 30.</p>
      */
-    inline void SetRequestInterval(long value) { m_requestIntervalHasBeenSet = true; m_requestInterval = value; }
+    inline void SetRequestInterval(int value) { m_requestIntervalHasBeenSet = true; m_requestInterval = value; }
 
     /**
      * <p>The number of seconds between the time that Amazon Route 53 gets a response
@@ -293,7 +293,7 @@ namespace Model
      * <p>Each Amazon Route 53 health checker makes requests at this interval. Valid
      * values are 10 and 30. The default value is 30.</p>
      */
-    inline HealthCheckConfig& WithRequestInterval(long value) { SetRequestInterval(value); return *this;}
+    inline HealthCheckConfig& WithRequestInterval(int value) { SetRequestInterval(value); return *this;}
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -302,7 +302,7 @@ namespace Model
      * more information, see "How Amazon Route 53 Determines Whether an Endpoint Is
      * Healthy" in the Amazon Route 53 Developer Guide.</p>
      */
-    inline long GetFailureThreshold() const{ return m_failureThreshold; }
+    inline int GetFailureThreshold() const{ return m_failureThreshold; }
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -311,7 +311,7 @@ namespace Model
      * more information, see "How Amazon Route 53 Determines Whether an Endpoint Is
      * Healthy" in the Amazon Route 53 Developer Guide.</p>
      */
-    inline void SetFailureThreshold(long value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
+    inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
 
     /**
      * <p>The number of consecutive health checks that an endpoint must pass or fail
@@ -320,7 +320,7 @@ namespace Model
      * more information, see "How Amazon Route 53 Determines Whether an Endpoint Is
      * Healthy" in the Amazon Route 53 Developer Guide.</p>
      */
-    inline HealthCheckConfig& WithFailureThreshold(long value) { SetFailureThreshold(value); return *this;}
+    inline HealthCheckConfig& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
 
     /**
      * <p>A Boolean value that indicates whether you want Amazon Route 53 to measure
@@ -372,21 +372,21 @@ namespace Model
      * Route 53 to consider the parent health check to be healthy. Valid values are
      * integers between 0 and 256, inclusive.</p>
      */
-    inline long GetHealthThreshold() const{ return m_healthThreshold; }
+    inline int GetHealthThreshold() const{ return m_healthThreshold; }
 
     /**
      * <p>The minimum number of child health checks that must be healthy for Amazon
      * Route 53 to consider the parent health check to be healthy. Valid values are
      * integers between 0 and 256, inclusive.</p>
      */
-    inline void SetHealthThreshold(long value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
+    inline void SetHealthThreshold(int value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
 
     /**
      * <p>The minimum number of child health checks that must be healthy for Amazon
      * Route 53 to consider the parent health check to be healthy. Valid values are
      * integers between 0 and 256, inclusive.</p>
      */
-    inline HealthCheckConfig& WithHealthThreshold(long value) { SetHealthThreshold(value); return *this;}
+    inline HealthCheckConfig& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
 
     /**
      * <p>For a specified parent health check, a list of <code>HealthCheckId</code>
@@ -583,7 +583,7 @@ namespace Model
   private:
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     HealthCheckType m_type;
     bool m_typeHasBeenSet;
@@ -593,15 +593,15 @@ namespace Model
     bool m_fullyQualifiedDomainNameHasBeenSet;
     Aws::String m_searchString;
     bool m_searchStringHasBeenSet;
-    long m_requestInterval;
+    int m_requestInterval;
     bool m_requestIntervalHasBeenSet;
-    long m_failureThreshold;
+    int m_failureThreshold;
     bool m_failureThresholdHasBeenSet;
     bool m_measureLatency;
     bool m_measureLatencyHasBeenSet;
     bool m_inverted;
     bool m_invertedHasBeenSet;
-    long m_healthThreshold;
+    int m_healthThreshold;
     bool m_healthThresholdHasBeenSet;
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet;

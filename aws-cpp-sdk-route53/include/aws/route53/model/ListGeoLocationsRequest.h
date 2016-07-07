@@ -46,7 +46,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const Aws::String& GetStartContinentCode() const{ return m_startContinentCode; }
 
@@ -57,7 +57,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartContinentCode(const Aws::String& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = value; }
 
@@ -68,7 +68,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartContinentCode(Aws::String&& value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartContinentCode(const char* value) { m_startContinentCodeHasBeenSet = true; m_startContinentCode.assign(value); }
 
@@ -90,7 +90,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartContinentCode(const Aws::String& value) { SetStartContinentCode(value); return *this;}
 
@@ -101,7 +101,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartContinentCode(Aws::String&& value) { SetStartContinentCode(value); return *this;}
 
@@ -112,7 +112,7 @@ namespace Model
      * <code>AN</code> | <code>AS</code> | <code>EU</code> | <code>OC</code> |
      * <code>NA</code> | <code>SA</code></p> <p>Constraint: Specifying
      * <code>ContinentCode</code> with either <code>CountryCode</code> or
-     * <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartContinentCode(const char* value) { SetStartContinentCode(value); return *this;}
 
@@ -176,7 +176,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const Aws::String& GetStartSubdivisionCode() const{ return m_startSubdivisionCode; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartSubdivisionCode(const Aws::String& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartSubdivisionCode(Aws::String&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartSubdivisionCode(const char* value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode.assign(value); }
 
@@ -208,7 +208,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(const Aws::String& value) { SetStartSubdivisionCode(value); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(Aws::String&& value) { SetStartSubdivisionCode(value); return *this;}
 
@@ -224,7 +224,7 @@ namespace Model
      * <p>The first subdivision code in the lexicographic ordering of geo locations
      * that you want the <code>ListGeoLocations</code> request to list.</p>
      * <p>Constraint: Specifying <code>SubdivisionCode</code> without
-     * <code>CountryCode</code> returns an <a>InvalidInput</a> error.</p>
+     * <code>CountryCode</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(const char* value) { SetStartSubdivisionCode(value); return *this;}
 

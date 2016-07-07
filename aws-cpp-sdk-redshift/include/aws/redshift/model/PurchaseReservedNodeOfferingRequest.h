@@ -72,24 +72,24 @@ namespace Model
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
-    inline long GetNodeCount() const{ return m_nodeCount; }
+    inline int GetNodeCount() const{ return m_nodeCount; }
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
-    inline void SetNodeCount(long value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
+    inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
      * <code>1</code></p>
      */
-    inline PurchaseReservedNodeOfferingRequest& WithNodeCount(long value) { SetNodeCount(value); return *this;}
+    inline PurchaseReservedNodeOfferingRequest& WithNodeCount(int value) { SetNodeCount(value); return *this;}
 
   private:
     Aws::String m_reservedNodeOfferingId;
     bool m_reservedNodeOfferingIdHasBeenSet;
-    long m_nodeCount;
+    int m_nodeCount;
     bool m_nodeCountHasBeenSet;
   };
 

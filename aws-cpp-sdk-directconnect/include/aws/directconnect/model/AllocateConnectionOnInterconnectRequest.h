@@ -208,19 +208,19 @@ namespace Model
      * <p>The dedicated VLAN provisioned to the connection.</p> <p>Example: 101</p>
      * <p>Default: None</p>
      */
-    inline long GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const{ return m_vlan; }
 
     /**
      * <p>The dedicated VLAN provisioned to the connection.</p> <p>Example: 101</p>
      * <p>Default: None</p>
      */
-    inline void SetVlan(long value) { m_vlanHasBeenSet = true; m_vlan = value; }
+    inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
 
     /**
      * <p>The dedicated VLAN provisioned to the connection.</p> <p>Example: 101</p>
      * <p>Default: None</p>
      */
-    inline AllocateConnectionOnInterconnectRequest& WithVlan(long value) { SetVlan(value); return *this;}
+    inline AllocateConnectionOnInterconnectRequest& WithVlan(int value) { SetVlan(value); return *this;}
 
   private:
     Aws::String m_bandwidth;
@@ -231,7 +231,7 @@ namespace Model
     bool m_ownerAccountHasBeenSet;
     Aws::String m_interconnectId;
     bool m_interconnectIdHasBeenSet;
-    long m_vlan;
+    int m_vlan;
     bool m_vlanHasBeenSet;
   };
 

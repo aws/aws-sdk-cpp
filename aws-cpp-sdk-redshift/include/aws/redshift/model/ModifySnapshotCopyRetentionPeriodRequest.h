@@ -97,7 +97,7 @@ namespace Model
      * copied to the destination region and that fall outside of the new retention
      * period. </p> <p> Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline long GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
      * <p> The number of days to retain automated snapshots in the destination region
@@ -107,7 +107,7 @@ namespace Model
      * copied to the destination region and that fall outside of the new retention
      * period. </p> <p> Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline void SetRetentionPeriod(long value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
+    inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
      * <p> The number of days to retain automated snapshots in the destination region
@@ -117,12 +117,12 @@ namespace Model
      * copied to the destination region and that fall outside of the new retention
      * period. </p> <p> Constraints: Must be at least 1 and no more than 35. </p>
      */
-    inline ModifySnapshotCopyRetentionPeriodRequest& WithRetentionPeriod(long value) { SetRetentionPeriod(value); return *this;}
+    inline ModifySnapshotCopyRetentionPeriodRequest& WithRetentionPeriod(int value) { SetRetentionPeriod(value); return *this;}
 
   private:
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
-    long m_retentionPeriod;
+    int m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
   };
 

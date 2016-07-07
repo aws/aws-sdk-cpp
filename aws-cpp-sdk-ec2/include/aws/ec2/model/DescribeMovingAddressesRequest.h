@@ -191,7 +191,7 @@ namespace Model
      * error is returned.</p> <p>Default: If no value is provided, the default is
      * 1000.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -201,7 +201,7 @@ namespace Model
      * error is returned.</p> <p>Default: If no value is provided, the default is
      * 1000.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -211,7 +211,7 @@ namespace Model
      * error is returned.</p> <p>Default: If no value is provided, the default is
      * 1000.</p>
      */
-    inline DescribeMovingAddressesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeMovingAddressesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -222,7 +222,7 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

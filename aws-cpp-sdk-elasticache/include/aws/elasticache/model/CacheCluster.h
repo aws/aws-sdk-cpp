@@ -507,21 +507,21 @@ namespace Model
      * Redis, this value must be 1. For clusters running Memcached, this value must be
      * between 1 and 20.</p>
      */
-    inline long GetNumCacheNodes() const{ return m_numCacheNodes; }
+    inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes in the cache cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
      * between 1 and 20.</p>
      */
-    inline void SetNumCacheNodes(long value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
+    inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes in the cache cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
      * between 1 and 20.</p>
      */
-    inline CacheCluster& WithNumCacheNodes(long value) { SetNumCacheNodes(value); return *this;}
+    inline CacheCluster& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>The name of the Availability Zone in which the cache cluster is located or
@@ -931,7 +931,7 @@ namespace Model
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      * </important>
      */
-    inline long GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
+    inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
@@ -941,7 +941,7 @@ namespace Model
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      * </important>
      */
-    inline void SetSnapshotRetentionLimit(long value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
+    inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
      * <p>The number of days for which ElastiCache will retain automatic cache cluster
@@ -951,7 +951,7 @@ namespace Model
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      * </important>
      */
-    inline CacheCluster& WithSnapshotRetentionLimit(long value) { SetSnapshotRetentionLimit(value); return *this;}
+    inline CacheCluster& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
@@ -1017,7 +1017,7 @@ namespace Model
     bool m_engineVersionHasBeenSet;
     Aws::String m_cacheClusterStatus;
     bool m_cacheClusterStatusHasBeenSet;
-    long m_numCacheNodes;
+    int m_numCacheNodes;
     bool m_numCacheNodesHasBeenSet;
     Aws::String m_preferredAvailabilityZone;
     bool m_preferredAvailabilityZoneHasBeenSet;
@@ -1043,7 +1043,7 @@ namespace Model
     bool m_securityGroupsHasBeenSet;
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet;
-    long m_snapshotRetentionLimit;
+    int m_snapshotRetentionLimit;
     bool m_snapshotRetentionLimitHasBeenSet;
     Aws::String m_snapshotWindow;
     bool m_snapshotWindowHasBeenSet;

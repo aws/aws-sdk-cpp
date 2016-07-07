@@ -110,7 +110,7 @@ public class CppViewHelperTest {
         shape.setType("long");
         assertEquals("long long", CppViewHelper.computeCppType(shape));
         shape.setType("integer");
-        assertEquals("long", CppViewHelper.computeCppType(shape));
+        assertEquals("int", CppViewHelper.computeCppType(shape));
         shape.setType("double");
         assertEquals("double", CppViewHelper.computeCppType(shape));
         shape.setType("float");

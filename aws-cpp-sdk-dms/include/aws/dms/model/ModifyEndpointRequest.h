@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API ModifyEndpointRequest : public DatabaseMigrationServiceRequest
   {
@@ -80,49 +81,49 @@ namespace Model
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
      * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens. </p>
+     * or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
@@ -153,43 +154,43 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE,
-     * POSTGRES.</p>
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -301,17 +302,17 @@ namespace Model
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port used by the endpoint database.</p>
      */
-    inline ModifyEndpointRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline ModifyEndpointRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The name of the endpoint database.</p>
@@ -398,7 +399,7 @@ namespace Model
     bool m_passwordHasBeenSet;
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

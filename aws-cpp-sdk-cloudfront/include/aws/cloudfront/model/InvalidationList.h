@@ -131,17 +131,17 @@ namespace Model
     /**
      * The value you provided for the MaxItems request parameter.
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * The value you provided for the MaxItems request parameter.
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * The value you provided for the MaxItems request parameter.
      */
-    inline InvalidationList& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline InvalidationList& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
     /**
      * A flag that indicates whether more invalidation batch requests remain to be
@@ -170,17 +170,17 @@ namespace Model
     /**
      * The number of invalidation batches that were created by the current AWS account.
      */
-    inline long GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * The number of invalidation batches that were created by the current AWS account.
      */
-    inline void SetQuantity(long value) { m_quantityHasBeenSet = true; m_quantity = value; }
+    inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * The number of invalidation batches that were created by the current AWS account.
      */
-    inline InvalidationList& WithQuantity(long value) { SetQuantity(value); return *this;}
+    inline InvalidationList& WithQuantity(int value) { SetQuantity(value); return *this;}
 
     /**
      * A complex type that contains one InvalidationSummary element for each
@@ -229,11 +229,11 @@ namespace Model
     bool m_markerHasBeenSet;
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
     bool m_isTruncated;
     bool m_isTruncatedHasBeenSet;
-    long m_quantity;
+    int m_quantity;
     bool m_quantityHasBeenSet;
     Aws::Vector<InvalidationSummary> m_items;
     bool m_itemsHasBeenSet;

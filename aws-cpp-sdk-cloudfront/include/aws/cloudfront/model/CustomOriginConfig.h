@@ -46,32 +46,32 @@ namespace Model
     /**
      * The HTTP port the custom origin listens on.
      */
-    inline long GetHTTPPort() const{ return m_hTTPPort; }
+    inline int GetHTTPPort() const{ return m_hTTPPort; }
 
     /**
      * The HTTP port the custom origin listens on.
      */
-    inline void SetHTTPPort(long value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
+    inline void SetHTTPPort(int value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
 
     /**
      * The HTTP port the custom origin listens on.
      */
-    inline CustomOriginConfig& WithHTTPPort(long value) { SetHTTPPort(value); return *this;}
+    inline CustomOriginConfig& WithHTTPPort(int value) { SetHTTPPort(value); return *this;}
 
     /**
      * The HTTPS port the custom origin listens on.
      */
-    inline long GetHTTPSPort() const{ return m_hTTPSPort; }
+    inline int GetHTTPSPort() const{ return m_hTTPSPort; }
 
     /**
      * The HTTPS port the custom origin listens on.
      */
-    inline void SetHTTPSPort(long value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
+    inline void SetHTTPSPort(int value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
 
     /**
      * The HTTPS port the custom origin listens on.
      */
-    inline CustomOriginConfig& WithHTTPSPort(long value) { SetHTTPSPort(value); return *this;}
+    inline CustomOriginConfig& WithHTTPSPort(int value) { SetHTTPSPort(value); return *this;}
 
     /**
      * The origin protocol policy to apply to your origin.
@@ -129,9 +129,9 @@ namespace Model
     inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(value); return *this;}
 
   private:
-    long m_hTTPPort;
+    int m_hTTPPort;
     bool m_hTTPPortHasBeenSet;
-    long m_hTTPSPort;
+    int m_hTTPSPort;
     bool m_hTTPSPortHasBeenSet;
     OriginProtocolPolicy m_originProtocolPolicy;
     bool m_originProtocolPolicyHasBeenSet;

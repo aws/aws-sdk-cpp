@@ -99,7 +99,7 @@ public:
     AttributeValue& AddBItem(const unsigned char* bItem, size_t size);
 
     /// returns the Attribute Map if the value is specialized to this type, otherwise an empty Map
-    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& GetM();
+    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& GetM() const;
     /// if already specialized to an Attribute Map, sets to these values
     /// if uninitialized, specializes the type to an Attribute Map with specified values
     /// if already specialized to another type then the behavior is undefined

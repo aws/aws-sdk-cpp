@@ -41,27 +41,27 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     
-    inline long GetMaximumReplicationCount() const{ return m_maximumReplicationCount; }
+    inline int GetMaximumReplicationCount() const{ return m_maximumReplicationCount; }
 
     
-    inline void SetMaximumReplicationCount(long value) { m_maximumReplicationCountHasBeenSet = true; m_maximumReplicationCount = value; }
+    inline void SetMaximumReplicationCount(int value) { m_maximumReplicationCountHasBeenSet = true; m_maximumReplicationCount = value; }
 
     
-    inline Limits& WithMaximumReplicationCount(long value) { SetMaximumReplicationCount(value); return *this;}
+    inline Limits& WithMaximumReplicationCount(int value) { SetMaximumReplicationCount(value); return *this;}
 
     
-    inline long GetMaximumPartitionCount() const{ return m_maximumPartitionCount; }
+    inline int GetMaximumPartitionCount() const{ return m_maximumPartitionCount; }
 
     
-    inline void SetMaximumPartitionCount(long value) { m_maximumPartitionCountHasBeenSet = true; m_maximumPartitionCount = value; }
+    inline void SetMaximumPartitionCount(int value) { m_maximumPartitionCountHasBeenSet = true; m_maximumPartitionCount = value; }
 
     
-    inline Limits& WithMaximumPartitionCount(long value) { SetMaximumPartitionCount(value); return *this;}
+    inline Limits& WithMaximumPartitionCount(int value) { SetMaximumPartitionCount(value); return *this;}
 
   private:
-    long m_maximumReplicationCount;
+    int m_maximumReplicationCount;
     bool m_maximumReplicationCountHasBeenSet;
-    long m_maximumPartitionCount;
+    int m_maximumPartitionCount;
     bool m_maximumPartitionCountHasBeenSet;
   };
 

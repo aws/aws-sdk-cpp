@@ -65,9 +65,6 @@ project(aws-cpp-sdk-apigateway)
   
   target_link_libraries(aws-cpp-sdk-apigateway aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-apigateway
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-apigateway)
 
   install (FILES ${AWS_APIGATEWAY_HEADERS} DESTINATION include/aws/apigateway)
   install (FILES ${AWS_APIGATEWAY_MODEL_HEADERS} DESTINATION include/aws/apigateway/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-apigateway.autopkg DESTINATION nuget)
+  endif()
+
+
 

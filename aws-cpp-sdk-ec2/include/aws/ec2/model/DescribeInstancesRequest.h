@@ -1316,7 +1316,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter or tag filters in the same call.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
@@ -1324,7 +1324,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter or tag filters in the same call.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the
@@ -1332,7 +1332,7 @@ namespace Model
      * value. This value can be between 5 and 1000. You cannot specify this parameter
      * and the instance IDs parameter or tag filters in the same call.</p>
      */
-    inline DescribeInstancesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     bool m_dryRun;
@@ -1343,7 +1343,7 @@ namespace Model
     bool m_filtersHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

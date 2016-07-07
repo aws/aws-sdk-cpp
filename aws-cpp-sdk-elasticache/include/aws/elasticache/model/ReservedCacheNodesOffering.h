@@ -294,17 +294,17 @@ namespace Model
     /**
      * <p>The duration of the offering. in seconds.</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The duration of the offering. in seconds.</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The duration of the offering. in seconds.</p>
      */
-    inline ReservedCacheNodesOffering& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedCacheNodesOffering& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>The fixed price charged for this offering.</p>
@@ -446,7 +446,7 @@ namespace Model
     bool m_reservedCacheNodesOfferingIdHasBeenSet;
     Aws::String m_cacheNodeType;
     bool m_cacheNodeTypeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;

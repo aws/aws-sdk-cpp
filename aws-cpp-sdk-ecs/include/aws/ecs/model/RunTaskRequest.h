@@ -210,21 +210,21 @@ namespace Model
      * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
      * tasks per call.</p> </important>
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * <p>The number of instantiations of the specified task to place on your
      * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
      * tasks per call.</p> </important>
      */
-    inline void SetCount(long value) { m_countHasBeenSet = true; m_count = value; }
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
      * <p>The number of instantiations of the specified task to place on your
      * cluster.</p> <important> <p>The <code>count</code> parameter is limited to 10
      * tasks per call.</p> </important>
      */
-    inline RunTaskRequest& WithCount(long value) { SetCount(value); return *this;}
+    inline RunTaskRequest& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * <p>An optional tag specified when a task is started. For example if you
@@ -324,7 +324,7 @@ namespace Model
     bool m_taskDefinitionHasBeenSet;
     TaskOverride m_overrides;
     bool m_overridesHasBeenSet;
-    long m_count;
+    int m_count;
     bool m_countHasBeenSet;
     Aws::String m_startedBy;
     bool m_startedByHasBeenSet;

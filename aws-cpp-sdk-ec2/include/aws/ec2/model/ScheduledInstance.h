@@ -224,17 +224,17 @@ namespace Model
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline long GetSlotDurationInHours() const{ return m_slotDurationInHours; }
+    inline int GetSlotDurationInHours() const{ return m_slotDurationInHours; }
 
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline void SetSlotDurationInHours(long value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
+    inline void SetSlotDurationInHours(int value) { m_slotDurationInHoursHasBeenSet = true; m_slotDurationInHours = value; }
 
     /**
      * <p>The number of hours in the schedule.</p>
      */
-    inline ScheduledInstance& WithSlotDurationInHours(long value) { SetSlotDurationInHours(value); return *this;}
+    inline ScheduledInstance& WithSlotDurationInHours(int value) { SetSlotDurationInHours(value); return *this;}
 
     /**
      * <p>The schedule recurrence.</p>
@@ -349,32 +349,32 @@ namespace Model
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline long GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
+    inline int GetTotalScheduledInstanceHours() const{ return m_totalScheduledInstanceHours; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline void SetTotalScheduledInstanceHours(long value) { m_totalScheduledInstanceHoursHasBeenSet = true; m_totalScheduledInstanceHours = value; }
+    inline void SetTotalScheduledInstanceHours(int value) { m_totalScheduledInstanceHoursHasBeenSet = true; m_totalScheduledInstanceHours = value; }
 
     /**
      * <p>The total number of hours for a single instance for the entire term.</p>
      */
-    inline ScheduledInstance& WithTotalScheduledInstanceHours(long value) { SetTotalScheduledInstanceHours(value); return *this;}
+    inline ScheduledInstance& WithTotalScheduledInstanceHours(int value) { SetTotalScheduledInstanceHours(value); return *this;}
 
     /**
      * <p>The number of instances.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances.</p>
      */
-    inline ScheduledInstance& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline ScheduledInstance& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The start date for the Scheduled Instance.</p>
@@ -462,7 +462,7 @@ namespace Model
     bool m_networkPlatformHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    long m_slotDurationInHours;
+    int m_slotDurationInHours;
     bool m_slotDurationInHoursHasBeenSet;
     ScheduledInstanceRecurrence m_recurrence;
     bool m_recurrenceHasBeenSet;
@@ -472,9 +472,9 @@ namespace Model
     bool m_nextSlotStartTimeHasBeenSet;
     Aws::String m_hourlyPrice;
     bool m_hourlyPriceHasBeenSet;
-    long m_totalScheduledInstanceHours;
+    int m_totalScheduledInstanceHours;
     bool m_totalScheduledInstanceHoursHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Utils::DateTime m_termStartDate;
     bool m_termStartDateHasBeenSet;

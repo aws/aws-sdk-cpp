@@ -61,31 +61,31 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
     
-    inline long GetHourOfDay() const{ return m_hourOfDay; }
+    inline int GetHourOfDay() const{ return m_hourOfDay; }
 
     
-    inline void SetHourOfDay(long value) { m_hourOfDay = value; }
+    inline void SetHourOfDay(int value) { m_hourOfDay = value; }
 
     
-    inline DescribeMaintenanceStartTimeResult& WithHourOfDay(long value) { SetHourOfDay(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithHourOfDay(int value) { SetHourOfDay(value); return *this;}
 
     
-    inline long GetMinuteOfHour() const{ return m_minuteOfHour; }
+    inline int GetMinuteOfHour() const{ return m_minuteOfHour; }
 
     
-    inline void SetMinuteOfHour(long value) { m_minuteOfHour = value; }
+    inline void SetMinuteOfHour(int value) { m_minuteOfHour = value; }
 
     
-    inline DescribeMaintenanceStartTimeResult& WithMinuteOfHour(long value) { SetMinuteOfHour(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithMinuteOfHour(int value) { SetMinuteOfHour(value); return *this;}
 
     
-    inline long GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline int GetDayOfWeek() const{ return m_dayOfWeek; }
 
     
-    inline void SetDayOfWeek(long value) { m_dayOfWeek = value; }
+    inline void SetDayOfWeek(int value) { m_dayOfWeek = value; }
 
     
-    inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(long value) { SetDayOfWeek(value); return *this;}
+    inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
 
     
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
@@ -110,9 +110,9 @@ namespace Model
 
   private:
     Aws::String m_gatewayARN;
-    long m_hourOfDay;
-    long m_minuteOfHour;
-    long m_dayOfWeek;
+    int m_hourOfDay;
+    int m_minuteOfHour;
+    int m_dayOfWeek;
     Aws::String m_timezone;
   };
 

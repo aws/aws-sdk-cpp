@@ -65,9 +65,6 @@ project(aws-cpp-sdk-opsworks)
   
   target_link_libraries(aws-cpp-sdk-opsworks aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-opsworks
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-opsworks)
 
   install (FILES ${AWS_OPSWORKS_HEADERS} DESTINATION include/aws/opsworks)
   install (FILES ${AWS_OPSWORKS_MODEL_HEADERS} DESTINATION include/aws/opsworks/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-opsworks.autopkg DESTINATION nuget)
+  endif()
+
+
 

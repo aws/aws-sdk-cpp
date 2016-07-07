@@ -97,54 +97,54 @@ namespace Model
      * on-premises network must allow inbound traffic over this port from the AWS
      * Directory Service servers.</p>
      */
-    inline long GetRadiusPort() const{ return m_radiusPort; }
+    inline int GetRadiusPort() const{ return m_radiusPort; }
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
      * on-premises network must allow inbound traffic over this port from the AWS
      * Directory Service servers.</p>
      */
-    inline void SetRadiusPort(long value) { m_radiusPortHasBeenSet = true; m_radiusPort = value; }
+    inline void SetRadiusPort(int value) { m_radiusPortHasBeenSet = true; m_radiusPort = value; }
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
      * on-premises network must allow inbound traffic over this port from the AWS
      * Directory Service servers.</p>
      */
-    inline RadiusSettings& WithRadiusPort(long value) { SetRadiusPort(value); return *this;}
+    inline RadiusSettings& WithRadiusPort(int value) { SetRadiusPort(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
      */
-    inline long GetRadiusTimeout() const{ return m_radiusTimeout; }
+    inline int GetRadiusTimeout() const{ return m_radiusTimeout; }
 
     /**
      * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
      */
-    inline void SetRadiusTimeout(long value) { m_radiusTimeoutHasBeenSet = true; m_radiusTimeout = value; }
+    inline void SetRadiusTimeout(int value) { m_radiusTimeoutHasBeenSet = true; m_radiusTimeout = value; }
 
     /**
      * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
      */
-    inline RadiusSettings& WithRadiusTimeout(long value) { SetRadiusTimeout(value); return *this;}
+    inline RadiusSettings& WithRadiusTimeout(int value) { SetRadiusTimeout(value); return *this;}
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
      * attempted. </p>
      */
-    inline long GetRadiusRetries() const{ return m_radiusRetries; }
+    inline int GetRadiusRetries() const{ return m_radiusRetries; }
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
      * attempted. </p>
      */
-    inline void SetRadiusRetries(long value) { m_radiusRetriesHasBeenSet = true; m_radiusRetries = value; }
+    inline void SetRadiusRetries(int value) { m_radiusRetriesHasBeenSet = true; m_radiusRetries = value; }
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
      * attempted. </p>
      */
-    inline RadiusSettings& WithRadiusRetries(long value) { SetRadiusRetries(value); return *this;}
+    inline RadiusSettings& WithRadiusRetries(int value) { SetRadiusRetries(value); return *this;}
 
     /**
      * <p>The shared secret code that was specified when your RADIUS endpoints were
@@ -266,11 +266,11 @@ namespace Model
   private:
     Aws::Vector<Aws::String> m_radiusServers;
     bool m_radiusServersHasBeenSet;
-    long m_radiusPort;
+    int m_radiusPort;
     bool m_radiusPortHasBeenSet;
-    long m_radiusTimeout;
+    int m_radiusTimeout;
     bool m_radiusTimeoutHasBeenSet;
-    long m_radiusRetries;
+    int m_radiusRetries;
     bool m_radiusRetriesHasBeenSet;
     Aws::String m_sharedSecret;
     bool m_sharedSecretHasBeenSet;

@@ -111,21 +111,21 @@ namespace Model
      * returns a token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>(Optional) The maximum number of items to return for this call. The call also
      * returns a token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline ListCommandsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListCommandsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -216,7 +216,7 @@ namespace Model
     bool m_commandIdHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

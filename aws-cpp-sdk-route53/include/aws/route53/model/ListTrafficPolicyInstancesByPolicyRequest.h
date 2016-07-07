@@ -88,21 +88,21 @@ namespace Model
      * instances. The version must be associated with the traffic policy that is
      * specified by <code>TrafficPolicyId</code>.</p>
      */
-    inline long GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
+    inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
 
     /**
      * <p>The version of the traffic policy for which you want to list traffic policy
      * instances. The version must be associated with the traffic policy that is
      * specified by <code>TrafficPolicyId</code>.</p>
      */
-    inline void SetTrafficPolicyVersion(long value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
+    inline void SetTrafficPolicyVersion(int value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
 
     /**
      * <p>The version of the traffic policy for which you want to list traffic policy
      * instances. The version must be associated with the traffic policy that is
      * specified by <code>TrafficPolicyId</code>.</p>
      */
-    inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyVersion(long value) { SetTrafficPolicyVersion(value); return *this;}
+    inline ListTrafficPolicyInstancesByPolicyRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
 
     /**
      * <p>For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>,
@@ -428,7 +428,7 @@ namespace Model
   private:
     Aws::String m_trafficPolicyId;
     bool m_trafficPolicyIdHasBeenSet;
-    long m_trafficPolicyVersion;
+    int m_trafficPolicyVersion;
     bool m_trafficPolicyVersionHasBeenSet;
     Aws::String m_hostedZoneIdMarker;
     bool m_hostedZoneIdMarkerHasBeenSet;

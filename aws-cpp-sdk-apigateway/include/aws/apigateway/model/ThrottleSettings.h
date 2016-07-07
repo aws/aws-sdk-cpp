@@ -43,17 +43,17 @@ namespace Model
     /**
      * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
      */
-    inline long GetBurstLimit() const{ return m_burstLimit; }
+    inline int GetBurstLimit() const{ return m_burstLimit; }
 
     /**
      * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
      */
-    inline void SetBurstLimit(long value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
+    inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
 
     /**
      * <p>Returns the burstLimit when <b>ThrottleSettings</b> is called.</p>
      */
-    inline ThrottleSettings& WithBurstLimit(long value) { SetBurstLimit(value); return *this;}
+    inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
 
     /**
      * <p>Returns the rateLimit when <b>ThrottleSettings</b> is called.</p>
@@ -71,7 +71,7 @@ namespace Model
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
 
   private:
-    long m_burstLimit;
+    int m_burstLimit;
     bool m_burstLimitHasBeenSet;
     double m_rateLimit;
     bool m_rateLimitHasBeenSet;

@@ -95,7 +95,7 @@ namespace Model
      * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
-    inline long GetCount() const{ return m_count; }
+    inline int GetCount() const{ return m_count; }
 
     /**
      * <p>The number of items in the response.</p> <p>If you used a <i>QueryFilter</i>
@@ -104,7 +104,7 @@ namespace Model
      * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
-    inline void SetCount(long value) { m_count = value; }
+    inline void SetCount(int value) { m_count = value; }
 
     /**
      * <p>The number of items in the response.</p> <p>If you used a <i>QueryFilter</i>
@@ -113,7 +113,7 @@ namespace Model
      * before the filter was applied.</p> <p>If you did not use a filter in the
      * request, then <i>Count</i> and <i>ScannedCount</i> are the same.</p>
      */
-    inline QueryResult& WithCount(long value) { SetCount(value); return *this;}
+    inline QueryResult& WithCount(int value) { SetCount(value); return *this;}
 
     /**
      * <p>The number of items evaluated, before any <i>QueryFilter</i> is applied. A
@@ -124,7 +124,7 @@ namespace Model
      * you did not use a filter in the request, then <i>ScannedCount</i> is the same as
      * <i>Count</i>.</p>
      */
-    inline long GetScannedCount() const{ return m_scannedCount; }
+    inline int GetScannedCount() const{ return m_scannedCount; }
 
     /**
      * <p>The number of items evaluated, before any <i>QueryFilter</i> is applied. A
@@ -135,7 +135,7 @@ namespace Model
      * you did not use a filter in the request, then <i>ScannedCount</i> is the same as
      * <i>Count</i>.</p>
      */
-    inline void SetScannedCount(long value) { m_scannedCount = value; }
+    inline void SetScannedCount(int value) { m_scannedCount = value; }
 
     /**
      * <p>The number of items evaluated, before any <i>QueryFilter</i> is applied. A
@@ -146,7 +146,7 @@ namespace Model
      * you did not use a filter in the request, then <i>ScannedCount</i> is the same as
      * <i>Count</i>.</p>
      */
-    inline QueryResult& WithScannedCount(long value) { SetScannedCount(value); return *this;}
+    inline QueryResult& WithScannedCount(int value) { SetScannedCount(value); return *this;}
 
     /**
      * <p>The primary key of the item where the operation stopped, inclusive of the
@@ -297,8 +297,8 @@ namespace Model
 
   private:
     Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
-    long m_count;
-    long m_scannedCount;
+    int m_count;
+    int m_scannedCount;
     Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
     ConsumedCapacity m_consumedCapacity;
   };

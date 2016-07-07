@@ -125,101 +125,101 @@ namespace Model
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline long GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline void SetMaximumPlayerSessionCount(long value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
+    inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session. </p>
      */
-    inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(long value) { SetMaximumPlayerSessionCount(value); return *this;}
+    inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this game session. Session names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a game session. Session names do not need
+     * to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline CreateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(value); return *this;}
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline CreateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
     /**
      * <p>Set of properties used to administer a game session. These properties are
-     * passed to your game server.</p>
+     * passed to the server process hosting it. </p>
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
 
@@ -228,7 +228,7 @@ namespace Model
     bool m_fleetIdHasBeenSet;
     Aws::String m_aliasId;
     bool m_aliasIdHasBeenSet;
-    long m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount;
     bool m_maximumPlayerSessionCountHasBeenSet;
     Aws::String m_name;
     bool m_nameHasBeenSet;

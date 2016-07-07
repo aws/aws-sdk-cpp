@@ -81,17 +81,17 @@ namespace Model
     /**
      * <p>Target size for the instance group.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>Target size for the instance group.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>Target size for the instance group.</p>
      */
-    inline InstanceGroupModifyConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline InstanceGroupModifyConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>The EC2 InstanceIds to terminate. Once you terminate the instances, the
@@ -169,7 +169,7 @@ namespace Model
   private:
     Aws::String m_instanceGroupId;
     bool m_instanceGroupIdHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
     bool m_eC2InstanceIdsToTerminateHasBeenSet;

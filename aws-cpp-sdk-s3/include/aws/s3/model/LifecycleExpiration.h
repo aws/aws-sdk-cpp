@@ -73,19 +73,19 @@ namespace Model
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline long GetDays() const{ return m_days; }
+    inline int GetDays() const{ return m_days; }
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline void SetDays(long value) { m_daysHasBeenSet = true; m_days = value; }
+    inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * Indicates the lifetime, in days, of the objects that are subject to the rule.
      * The value must be a non-zero positive integer.
      */
-    inline LifecycleExpiration& WithDays(long value) { SetDays(value); return *this;}
+    inline LifecycleExpiration& WithDays(int value) { SetDays(value); return *this;}
 
     /**
      * Indicates whether Amazon S3 will remove a delete marker with no noncurrent
@@ -114,7 +114,7 @@ namespace Model
   private:
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
-    long m_days;
+    int m_days;
     bool m_daysHasBeenSet;
     bool m_expiredObjectDeleteMarker;
     bool m_expiredObjectDeleteMarkerHasBeenSet;

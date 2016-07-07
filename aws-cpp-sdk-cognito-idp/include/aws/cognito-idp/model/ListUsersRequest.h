@@ -115,17 +115,17 @@ namespace Model
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline ListUsersRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListUsersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -219,7 +219,7 @@ namespace Model
     bool m_userPoolIdHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;

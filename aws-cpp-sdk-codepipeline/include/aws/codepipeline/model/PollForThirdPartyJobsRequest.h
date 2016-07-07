@@ -53,22 +53,22 @@ namespace Model
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline long GetMaxBatchSize() const{ return m_maxBatchSize; }
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline void SetMaxBatchSize(long value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline PollForThirdPartyJobsRequest& WithMaxBatchSize(long value) { SetMaxBatchSize(value); return *this;}
+    inline PollForThirdPartyJobsRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
   private:
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet;
-    long m_maxBatchSize;
+    int m_maxBatchSize;
     bool m_maxBatchSizeHasBeenSet;
   };
 

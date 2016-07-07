@@ -84,17 +84,17 @@ namespace Model
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline long GetDeviceIndex() const{ return m_deviceIndex; }
+    inline int GetDeviceIndex() const{ return m_deviceIndex; }
 
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline void SetDeviceIndex(long value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
+    inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
      * <p>The index of the device for the network interface attachment.</p>
      */
-    inline ScheduledInstancesNetworkInterface& WithDeviceIndex(long value) { SetDeviceIndex(value); return *this;}
+    inline ScheduledInstancesNetworkInterface& WithDeviceIndex(int value) { SetDeviceIndex(value); return *this;}
 
     /**
      * <p>The ID of the subnet.</p>
@@ -239,17 +239,17 @@ namespace Model
     /**
      * <p>The number of secondary private IP addresses.</p>
      */
-    inline long GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
+    inline int GetSecondaryPrivateIpAddressCount() const{ return m_secondaryPrivateIpAddressCount; }
 
     /**
      * <p>The number of secondary private IP addresses.</p>
      */
-    inline void SetSecondaryPrivateIpAddressCount(long value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
+    inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
      * <p>The number of secondary private IP addresses.</p>
      */
-    inline ScheduledInstancesNetworkInterface& WithSecondaryPrivateIpAddressCount(long value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
+    inline ScheduledInstancesNetworkInterface& WithSecondaryPrivateIpAddressCount(int value) { SetSecondaryPrivateIpAddressCount(value); return *this;}
 
     /**
      * <p>Indicates whether to assign a public IP address to instances launched in a
@@ -339,7 +339,7 @@ namespace Model
   private:
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;
-    long m_deviceIndex;
+    int m_deviceIndex;
     bool m_deviceIndexHasBeenSet;
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
@@ -349,7 +349,7 @@ namespace Model
     bool m_privateIpAddressHasBeenSet;
     Aws::Vector<ScheduledInstancesPrivateIpAddressConfig> m_privateIpAddressConfigs;
     bool m_privateIpAddressConfigsHasBeenSet;
-    long m_secondaryPrivateIpAddressCount;
+    int m_secondaryPrivateIpAddressCount;
     bool m_secondaryPrivateIpAddressCountHasBeenSet;
     bool m_associatePublicIpAddress;
     bool m_associatePublicIpAddressHasBeenSet;

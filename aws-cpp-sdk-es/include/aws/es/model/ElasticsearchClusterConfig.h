@@ -70,17 +70,17 @@ namespace Model
     /**
      * <p>The number of instances in the specified domain cluster.</p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances in the specified domain cluster.</p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances in the specified domain cluster.</p>
      */
-    inline ElasticsearchClusterConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline ElasticsearchClusterConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <p>A boolean value to indicate whether a dedicated master node is enabled. See
@@ -156,24 +156,24 @@ namespace Model
      * <p>Total number of dedicated master nodes, active and on standby, for the
      * cluster.</p>
      */
-    inline long GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
+    inline int GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
 
     /**
      * <p>Total number of dedicated master nodes, active and on standby, for the
      * cluster.</p>
      */
-    inline void SetDedicatedMasterCount(long value) { m_dedicatedMasterCountHasBeenSet = true; m_dedicatedMasterCount = value; }
+    inline void SetDedicatedMasterCount(int value) { m_dedicatedMasterCountHasBeenSet = true; m_dedicatedMasterCount = value; }
 
     /**
      * <p>Total number of dedicated master nodes, active and on standby, for the
      * cluster.</p>
      */
-    inline ElasticsearchClusterConfig& WithDedicatedMasterCount(long value) { SetDedicatedMasterCount(value); return *this;}
+    inline ElasticsearchClusterConfig& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
 
   private:
     ESPartitionInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     bool m_dedicatedMasterEnabled;
     bool m_dedicatedMasterEnabledHasBeenSet;
@@ -181,7 +181,7 @@ namespace Model
     bool m_zoneAwarenessEnabledHasBeenSet;
     ESPartitionInstanceType m_dedicatedMasterType;
     bool m_dedicatedMasterTypeHasBeenSet;
-    long m_dedicatedMasterCount;
+    int m_dedicatedMasterCount;
     bool m_dedicatedMasterCountHasBeenSet;
   };
 

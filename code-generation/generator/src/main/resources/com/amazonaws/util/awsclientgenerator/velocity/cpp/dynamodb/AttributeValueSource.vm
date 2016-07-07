@@ -167,7 +167,7 @@ AttributeValue& AttributeValue::AddBItem(const unsigned char* bItem, size_t size
     return AddBItem(ByteBuffer(bItem, size));
 }
 
-const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& AttributeValue::GetM()
+const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& AttributeValue::GetM() const
 {
     if (m_value)
     {

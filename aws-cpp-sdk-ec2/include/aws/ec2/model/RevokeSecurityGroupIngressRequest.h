@@ -337,42 +337,42 @@ namespace Model
      * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
      * types.</p>
      */
-    inline long GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
      * types.</p>
      */
-    inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>The start of port range for the TCP and UDP protocols, or an ICMP type
      * number. For the ICMP type number, use <code>-1</code> to specify all ICMP
      * types.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithFromPort(long value) { SetFromPort(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
      * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
      * ICMP type.</p>
      */
-    inline long GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
      * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
      * ICMP type.</p>
      */
-    inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of port range for the TCP and UDP protocols, or an ICMP code number.
      * For the ICMP code number, use <code>-1</code> to specify all ICMP codes for the
      * ICMP type.</p>
      */
-    inline RevokeSecurityGroupIngressRequest& WithToPort(long value) { SetToPort(value); return *this;}
+    inline RevokeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>The CIDR IP address range. You can't specify this parameter when specifying a
@@ -471,9 +471,9 @@ namespace Model
     bool m_sourceSecurityGroupOwnerIdHasBeenSet;
     Aws::String m_ipProtocol;
     bool m_ipProtocolHasBeenSet;
-    long m_fromPort;
+    int m_fromPort;
     bool m_fromPortHasBeenSet;
-    long m_toPort;
+    int m_toPort;
     bool m_toPortHasBeenSet;
     Aws::String m_cidrIp;
     bool m_cidrIpHasBeenSet;

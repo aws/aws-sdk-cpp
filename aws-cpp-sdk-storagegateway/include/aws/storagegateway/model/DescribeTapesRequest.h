@@ -175,21 +175,21 @@ namespace Model
      * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p> <note><p>Amazon Web Services may impose its own limit, if
      * this field is not set.</p> </note>
      */
-    inline DescribeTapesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline DescribeTapesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_gatewayARN;
@@ -198,7 +198,7 @@ namespace Model
     bool m_tapeARNsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

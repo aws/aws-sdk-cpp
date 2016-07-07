@@ -79,36 +79,36 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <a>GetChange</a> action
-     * to get the current status of the change request.</p>
+     * zone. This includes an ID that you use when you call the <code>GetChange</code>
+     * action to get the current status of the change request.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
      * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <a>GetChange</a> action
-     * to get the current status of the change request.</p>
+     * zone. This includes an ID that you use when you call the <code>GetChange</code>
+     * action to get the current status of the change request.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
      * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <a>GetChange</a> action
-     * to get the current status of the change request.</p>
+     * zone. This includes an ID that you use when you call the <code>GetChange</code>
+     * action to get the current status of the change request.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
 
     /**
      * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <a>GetChange</a> action
-     * to get the current status of the change request.</p>
+     * zone. This includes an ID that you use when you call the <code>GetChange</code>
+     * action to get the current status of the change request.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
      * <p>A complex type that contains information about the request to create a hosted
-     * zone. This includes an ID that you use when you call the <a>GetChange</a> action
-     * to get the current status of the change request.</p>
+     * zone. This includes an ID that you use when you call the <code>GetChange</code>
+     * action to get the current status of the change request.</p>
      */
     inline CreateHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
 

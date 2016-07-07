@@ -245,21 +245,21 @@ namespace Model
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records. The default is 100 records.</p>
      */
-    inline long GetBatchSize() const{ return m_batchSize; }
+    inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records. The default is 100 records.</p>
      */
-    inline void SetBatchSize(long value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
+    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records. The default is 100 records.</p>
      */
-    inline CreateEventSourceMappingRequest& WithBatchSize(long value) { SetBatchSize(value); return *this;}
+    inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
     /**
      * <p>The position in the stream where AWS Lambda should start reading. For more
@@ -308,7 +308,7 @@ namespace Model
     bool m_functionNameHasBeenSet;
     bool m_enabled;
     bool m_enabledHasBeenSet;
-    long m_batchSize;
+    int m_batchSize;
     bool m_batchSizeHasBeenSet;
     EventSourcePosition m_startingPosition;
     bool m_startingPositionHasBeenSet;

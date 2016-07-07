@@ -345,17 +345,17 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline long GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline void SetVolumeSize(long value) { m_volumeSize = value; }
+    inline void SetVolumeSize(int value) { m_volumeSize = value; }
 
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline CreateSnapshotResponse& WithVolumeSize(long value) { SetVolumeSize(value); return *this;}
+    inline CreateSnapshotResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
     /**
      * <p>The AWS account alias (for example, <code>amazon</code>, <code>self</code>)
@@ -599,7 +599,7 @@ namespace Model
     Aws::String m_progress;
     Aws::String m_ownerId;
     Aws::String m_description;
-    long m_volumeSize;
+    int m_volumeSize;
     Aws::String m_ownerAlias;
     Aws::Vector<Tag> m_tags;
     bool m_encrypted;

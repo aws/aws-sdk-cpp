@@ -86,6 +86,12 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const AmazonWebServic
 
   }
 
+  if(jsonValue.ValueExists("PerformanceMode"))
+  {
+    m_performanceMode = PerformanceModeMapper::GetPerformanceModeForName(jsonValue.GetString("PerformanceMode"));
+
+  }
+
 
 
   return *this;

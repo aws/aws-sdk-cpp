@@ -119,17 +119,17 @@ namespace Model
     /**
      * <p> The duration, in seconds, for which the offering will reserve the node. </p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p> The duration, in seconds, for which the offering will reserve the node. </p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p> The duration, in seconds, for which the offering will reserve the node. </p>
      */
-    inline ReservedNodeOffering& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedNodeOffering& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p> The upfront fixed charge you will pay to purchase the specific reserved node
@@ -298,7 +298,7 @@ namespace Model
     bool m_reservedNodeOfferingIdHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;

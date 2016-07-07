@@ -48,6 +48,8 @@ namespace MachineLearningEndpoint
         return "machinelearning.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "machinelearning.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "machinelearning.ap-south-1.amazonaws.com";
      default:
         return "machinelearning.us-east-1.amazonaws.com";
     }

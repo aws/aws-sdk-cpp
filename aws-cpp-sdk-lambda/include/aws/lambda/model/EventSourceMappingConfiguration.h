@@ -82,21 +82,21 @@ namespace Model
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records.</p>
      */
-    inline long GetBatchSize() const{ return m_batchSize; }
+    inline int GetBatchSize() const{ return m_batchSize; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records.</p>
      */
-    inline void SetBatchSize(long value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
+    inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
     /**
      * <p>The largest number of records that AWS Lambda will retrieve from your event
      * source at the time of invoking your function. Your function receives an event
      * with all the retrieved records.</p>
      */
-    inline EventSourceMappingConfiguration& WithBatchSize(long value) { SetBatchSize(value); return *this;}
+    inline EventSourceMappingConfiguration& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the
@@ -341,7 +341,7 @@ namespace Model
   private:
     Aws::String m_uUID;
     bool m_uUIDHasBeenSet;
-    long m_batchSize;
+    int m_batchSize;
     bool m_batchSizeHasBeenSet;
     Aws::String m_eventSourceArn;
     bool m_eventSourceArnHasBeenSet;

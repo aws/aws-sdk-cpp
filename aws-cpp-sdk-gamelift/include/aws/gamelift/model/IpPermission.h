@@ -32,10 +32,11 @@ namespace Model
 {
 
   /**
-   * <p>IP addresses and port settings used to limit access by incoming traffic
-   * (players) to a fleet. Permissions specify a range of IP addresses and port
-   * settings that must be used to gain access to a game server on a fleet
-   * machine.</p>
+   * <p>A range of IP addresses and port settings that allow inbound traffic to
+   * connect to server processes on GameLift. Each game session hosted on a fleet is
+   * assigned a unique combination of IP address and port number, which must fall
+   * into the fleet's allowed ranges. This combination is included in the
+   * <a>GameSession</a> object. </p>
    */
   class AWS_GAMELIFT_API IpPermission
   {
@@ -48,35 +49,35 @@ namespace Model
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline long GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline void SetFromPort(long value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
+    inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>Starting value for a range of allowed port numbers. </p>
      */
-    inline IpPermission& WithFromPort(long value) { SetFromPort(value); return *this;}
+    inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
-    inline long GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
-    inline void SetToPort(long value) { m_toPortHasBeenSet = true; m_toPort = value; }
+    inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>Ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <i>FromPort</i>.</p>
+     * end-inclusive. This value must be higher than <code>FromPort</code>.</p>
      */
-    inline IpPermission& WithToPort(long value) { SetToPort(value); return *this;}
+    inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 
     /**
      * <p>Range of allowed IP addresses. This value must be expressed in <a
@@ -160,9 +161,9 @@ namespace Model
     inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(value); return *this;}
 
   private:
-    long m_fromPort;
+    int m_fromPort;
     bool m_fromPortHasBeenSet;
-    long m_toPort;
+    int m_toPort;
     bool m_toPortHasBeenSet;
     Aws::String m_ipRange;
     bool m_ipRangeHasBeenSet;

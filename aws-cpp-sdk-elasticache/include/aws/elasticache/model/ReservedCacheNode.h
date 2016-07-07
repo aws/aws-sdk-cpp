@@ -356,17 +356,17 @@ namespace Model
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline ReservedCacheNode& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedCacheNode& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>The fixed price charged for this reserved cache node.</p>
@@ -401,17 +401,17 @@ namespace Model
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
-    inline long GetCacheNodeCount() const{ return m_cacheNodeCount; }
+    inline int GetCacheNodeCount() const{ return m_cacheNodeCount; }
 
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
-    inline void SetCacheNodeCount(long value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
+    inline void SetCacheNodeCount(int value) { m_cacheNodeCountHasBeenSet = true; m_cacheNodeCount = value; }
 
     /**
      * <p>The number of cache nodes that have been reserved.</p>
      */
-    inline ReservedCacheNode& WithCacheNodeCount(long value) { SetCacheNodeCount(value); return *this;}
+    inline ReservedCacheNode& WithCacheNodeCount(int value) { SetCacheNodeCount(value); return *this;}
 
     /**
      * <p>The description of the reserved cache node.</p>
@@ -562,13 +562,13 @@ namespace Model
     bool m_cacheNodeTypeHasBeenSet;
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;
-    long m_cacheNodeCount;
+    int m_cacheNodeCount;
     bool m_cacheNodeCountHasBeenSet;
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;

@@ -95,17 +95,17 @@ namespace Model
     /**
      * <p>Specifies the latest version for the entity.</p>
      */
-    inline long GetUpdateVersion() const{ return m_updateVersion; }
+    inline int GetUpdateVersion() const{ return m_updateVersion; }
 
     /**
      * <p>Specifies the latest version for the entity.</p>
      */
-    inline void SetUpdateVersion(long value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
+    inline void SetUpdateVersion(int value) { m_updateVersionHasBeenSet = true; m_updateVersion = value; }
 
     /**
      * <p>Specifies the latest version for the entity.</p>
      */
-    inline OptionStatus& WithUpdateVersion(long value) { SetUpdateVersion(value); return *this;}
+    inline OptionStatus& WithUpdateVersion(int value) { SetUpdateVersion(value); return *this;}
 
     /**
      * <p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>
@@ -152,7 +152,7 @@ namespace Model
     bool m_creationDateHasBeenSet;
     Aws::Utils::DateTime m_updateDate;
     bool m_updateDateHasBeenSet;
-    long m_updateVersion;
+    int m_updateVersion;
     bool m_updateVersionHasBeenSet;
     OptionState m_state;
     bool m_stateHasBeenSet;

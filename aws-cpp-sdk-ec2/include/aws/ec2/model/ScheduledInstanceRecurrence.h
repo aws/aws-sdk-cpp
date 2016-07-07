@@ -91,61 +91,61 @@ namespace Model
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline long GetInterval() const{ return m_interval; }
+    inline int GetInterval() const{ return m_interval; }
 
     /**
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline void SetInterval(long value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline ScheduledInstanceRecurrence& WithInterval(long value) { SetInterval(value); return *this;}
+    inline ScheduledInstanceRecurrence& WithInterval(int value) { SetInterval(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline const Aws::Vector<long>& GetOccurrenceDaySet() const{ return m_occurrenceDaySet; }
+    inline const Aws::Vector<int>& GetOccurrenceDaySet() const{ return m_occurrenceDaySet; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline void SetOccurrenceDaySet(const Aws::Vector<long>& value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet = value; }
+    inline void SetOccurrenceDaySet(const Aws::Vector<int>& value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet = value; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline void SetOccurrenceDaySet(Aws::Vector<long>&& value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet = value; }
+    inline void SetOccurrenceDaySet(Aws::Vector<int>&& value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet = value; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline ScheduledInstanceRecurrence& WithOccurrenceDaySet(const Aws::Vector<long>& value) { SetOccurrenceDaySet(value); return *this;}
+    inline ScheduledInstanceRecurrence& WithOccurrenceDaySet(const Aws::Vector<int>& value) { SetOccurrenceDaySet(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline ScheduledInstanceRecurrence& WithOccurrenceDaySet(Aws::Vector<long>&& value) { SetOccurrenceDaySet(value); return *this;}
+    inline ScheduledInstanceRecurrence& WithOccurrenceDaySet(Aws::Vector<int>&& value) { SetOccurrenceDaySet(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
      * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
      * 1 is Sunday).</p>
      */
-    inline ScheduledInstanceRecurrence& AddOccurrenceDaySet(long value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet.push_back(value); return *this; }
+    inline ScheduledInstanceRecurrence& AddOccurrenceDaySet(int value) { m_occurrenceDaySetHasBeenSet = true; m_occurrenceDaySet.push_back(value); return *this; }
 
     /**
      * <p>Indicates whether the occurrence is relative to the end of the specified week
@@ -210,9 +210,9 @@ namespace Model
   private:
     Aws::String m_frequency;
     bool m_frequencyHasBeenSet;
-    long m_interval;
+    int m_interval;
     bool m_intervalHasBeenSet;
-    Aws::Vector<long> m_occurrenceDaySet;
+    Aws::Vector<int> m_occurrenceDaySet;
     bool m_occurrenceDaySetHasBeenSet;
     bool m_occurrenceRelativeToEnd;
     bool m_occurrenceRelativeToEndHasBeenSet;

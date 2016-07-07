@@ -55,7 +55,8 @@ def GetPlatformBuildTargets():
                                                              'config' : 'Release' } },
                            'platform_install_qualifier' : "vs2013", 
                            'build_environment' : 'msbuild',
-                           'global_cmake_params' : "-G \"Visual Studio 12 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                           'gen_param' : { 'x86' : "-G \"Visual Studio 12 2013\"", 'x86_64' : "-G \"Visual Studio 12 2013 Win64\"" },
+                           'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Windows2015' : { 'buildPlatforms' : [ 'Windows' ],
                                'configs' : { 'DebugDynamic' : { 'directory' : '_build_windows_2015_dynamic_debug', 
                                                                 'cmake_params' : "-DSTATIC_LINKING=0",
@@ -75,7 +76,8 @@ def GetPlatformBuildTargets():
                                                                  'config' : 'Release' } },
                                'platform_install_qualifier' : "vs2015",
                                'build_environment' : 'msbuild',
-                               'global_cmake_params' : "-G \"Visual Studio 14 2015 Win64\" -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
+                               'gen_param' : { 'x86' : "-G \"Visual Studio 14 2015\"", 'x86_64' : "-G \"Visual Studio 14 2015 Win64\"" },
+                               'global_cmake_params' : "-DGENERATE_VERSION_INFO=0 -DSIMPLE_INSTALL=OFF -DENABLE_UNITY_BUILD=ON -DCMAKE_CONFIGURATION_TYPES=\"Debug;Release;MinSizeRel;RelWithDebInfo\" -DCMAKE_CXX_FLAGS_DEBUGOPT=\"\" -DCMAKE_EXE_LINKER_FLAGS_DEBUGOPT=\"\" -DCMAKE_SHARED_LINKER_FLAGS_DEBUGOPT=\"\"" },
              'Android' : { 'buildPlatforms' : [ 'Linux' ],
                            'configs' : { 'DebugDynamic' : { 'directory' : '_build_android_dynamic_debug', 
                                                             'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -95,10 +97,9 @@ def GetPlatformBuildTargets():
                                                              'config' : 'Release' } },
                            'platform_install_qualifier' : "",
                            'build_environment' : 'make',
+                           'gen_param' : { 'x86' : "-DCMAKE_CXX_FLAGS=-m32 -DCMAKE_C_FLAGS=-m32", 'x86_64' : "" },
                            'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
-                                                   "-DCUSTOM_MEMORY_MANAGEMENT=1 " \
                                                    "-DGENERATE_VERSION_INFO=0 " \
-                                                   "-DENABLE_RTTI=OFF " \
                                                    "-DMINIMIZE_SIZE=ON " \
                                                    "-DANDROID_STL=gnustl " \
                                                    "-DTARGET_ARCH=ANDROID "},
@@ -121,11 +122,9 @@ def GetPlatformBuildTargets():
                                                                     'config' : 'Release' } },
                                   'platform_install_qualifier' : "",
                                   'build_environment' : 'nmake',
-                                  'global_cmake_params' : "-G \"NMake Makefiles\" " \
-                                                          "-DSIMPLE_INSTALL=OFF " \
-                                                          "-DCUSTOM_MEMORY_MANAGEMENT=1 " \
+                                  'gen_param' : { 'x86' : "-G \"NMake Makefiles\" -DCMAKE_CXX_FLAGS=-m32", 'x86_64' : "-G \"NMake Makefiles\" " },
+                                  'global_cmake_params' : "-DSIMPLE_INSTALL=OFF " \
                                                           "-DGENERATE_VERSION_INFO=0 " \
-                                                          "-DENABLE_RTTI=OFF " \
                                                           "-DMINIMIZE_SIZE=ON " \
                                                           "-DANDROID_STL=gnustl " \
                                                           "-DTARGET_ARCH=ANDROID "},
@@ -148,7 +147,8 @@ def GetPlatformBuildTargets():
                                                            'config' : 'Release' } },
                          'platform_install_qualifier' : "",
                          'build_environment' : 'make',
-                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF -DENABLE_UNITY_BUILD=ON" },
+                         'gen_param' : { 'x86' : "-DCMAKE_CXX_FLAGS=-m32", 'x86_64' : "" },
+                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DGENERATE_VERSION_INFO=0 -DENABLE_UNITY_BUILD=ON" },
              'Darwin' : { 'buildPlatforms' : [ 'Darwin' ],
                                       'configs' : { 'DebugDynamic' : { 'directory' : '_build_darwin_dynamic_debug', 
                                                           'cmake_params' : "-DSTATIC_LINKING=0 -DCMAKE_BUILD_TYPE=Debug",
@@ -168,7 +168,8 @@ def GetPlatformBuildTargets():
                                                            'config' : 'Release' } },
                          'platform_install_qualifier' : "",
                          'build_environment' : 'make',
-                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DCUSTOM_MEMORY_MANAGEMENT=1 -DGENERATE_VERSION_INFO=0 -DENABLE_RTTI=OFF " } }
+                         'gen_param' : { 'x86' : "-DCMAKE_CXX_FLAGS=-m32", 'x86_64' : "" },
+                         'global_cmake_params' : "-DSIMPLE_INSTALL=OFF -DGENERATE_VERSION_INFO=0 " } }
 
 
 def ParseArguments(platformEnvironments):
@@ -185,6 +186,9 @@ def ParseArguments(platformEnvironments):
     parser.add_argument("--parallel", action="store")
     parser.add_argument("--generateClients", action="store")
     parser.add_argument("--sourcedir", action="store")
+    parser.add_argument("--customMemoryManagement", action="store")
+    parser.add_argument("--enableRtti", action="store")
+    parser.add_argument("--cpuArchitecture", action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "installDir" ] = args[ "installdir" ] or platformEnv['default_install_directory']
@@ -194,13 +198,16 @@ def ParseArguments(platformEnvironments):
     argMap[ "parallel" ] = args[ "parallel" ] or "2"
     argMap[ "generateClients" ] = args[ "generateClients" ] or "0"
     argMap[ "sourcedir" ] = args[ "sourcedir"] or ".."
+    argMap[ "customMemoryManagement" ] = args[ "customMemoryManagement"] or "1"
+    argMap[ "enableRtti" ] = args[ "enableRtti"] or "0"
+    argMap[ "cpuArchitecture" ] = args[ "cpuArchitecture" ] or "x86_64"
     
     return argMap
 
 
-def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier):
+def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier, cpuArch):
 
-    destDirectory = os.path.join(installDirectoryPrefix, libDir, "windows", "intel64", platformInstallQualifier, config)
+    destDirectory = os.path.join(installDirectoryPrefix, libDir, "windows", cpuArch, platformInstallQualifier, config)
     
     for rootDir, dirNames, fileNames in os.walk( "." ):
         if rootDir == ".":
@@ -249,6 +256,13 @@ def Main():
     quotedInstallDirectory = '"' + installDirectory + '"'
     generateClients = arguments[ "generateClients" ]
     sourceDir = arguments["sourcedir" ]
+    customMemoryManagement = arguments["customMemoryManagement"]
+    enableRtti = arguments["enableRtti"]
+    cpuArch = arguments["cpuArchitecture"]
+    windowsCpuArch = "intel64"
+
+    if cpuArch == "x86":
+        windowsCpuArch = "ia32"
 
     if os.path.exists( installDirectory ):
         shutil.rmtree( installDirectory )
@@ -273,6 +287,16 @@ def Main():
         sdk_directories.wipeGeneratedCode()
         customCmakeParams += "-DREGENERATE_CLIENTS=1 "
 
+    if customMemoryManagement == "0":
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=0 "
+    else:
+        customCmakeParams += "-DCUSTOM_MEMORY_MANAGEMENT=1 "
+
+    if enableRtti == "0":
+        customCmakeParams += "-DENABLE_RTTI=OFF "
+    else:
+        customCmakeParams += "-DENABLE_RTTI=ON "
+
     for targetConfig in targetConfigs:
         if targetConfig in archConfigs:
             archConfig = archConfigs[ targetConfig ]
@@ -282,8 +306,7 @@ def Main():
 
             os.mkdir( buildDirectory )
             os.chdir( buildDirectory )
-
-            cmake_call_list = "cmake " + customCmakeParams + " " + archConfig[ 'cmake_params' ] + " " + targetPlatformDef[ 'global_cmake_params' ]
+            cmake_call_list = "cmake " + customCmakeParams + " " + archConfig[ 'cmake_params' ] + " " + targetPlatformDef[ 'gen_param' ][cpuArch] + " " + targetPlatformDef[ 'global_cmake_params' ]
             if targetPlatformDef[ 'platform_install_qualifier' ] != "":
                  cmake_call_list = cmake_call_list + " -DPLATFORM_INSTALL_QUALIFIER=" + targetPlatformDef[ 'platform_install_qualifier' ]
  
@@ -304,7 +327,7 @@ def Main():
         
             # Copy Windows PDBs
             if architecture.startswith('Windows'):
-                 CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ] )
+                 CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ], windowsCpuArch )
 
             # Install Android auxiliary dependencies (zlib, openssl, curl)
             if architecture == 'Android':

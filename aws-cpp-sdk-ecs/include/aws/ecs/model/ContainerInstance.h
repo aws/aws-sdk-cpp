@@ -350,37 +350,37 @@ namespace Model
      * <p>The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.</p>
      */
-    inline long GetRunningTasksCount() const{ return m_runningTasksCount; }
+    inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
 
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.</p>
      */
-    inline void SetRunningTasksCount(long value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
+    inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
 
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>RUNNING</code> status.</p>
      */
-    inline ContainerInstance& WithRunningTasksCount(long value) { SetRunningTasksCount(value); return *this;}
+    inline ContainerInstance& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
 
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
      */
-    inline long GetPendingTasksCount() const{ return m_pendingTasksCount; }
+    inline int GetPendingTasksCount() const{ return m_pendingTasksCount; }
 
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
      */
-    inline void SetPendingTasksCount(long value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
+    inline void SetPendingTasksCount(int value) { m_pendingTasksCountHasBeenSet = true; m_pendingTasksCount = value; }
 
     /**
      * <p>The number of tasks on the container instance that are in the
      * <code>PENDING</code> status.</p>
      */
-    inline ContainerInstance& WithPendingTasksCount(long value) { SetPendingTasksCount(value); return *this;}
+    inline ContainerInstance& WithPendingTasksCount(int value) { SetPendingTasksCount(value); return *this;}
 
     /**
      * <p>The status of the most recent agent update. If an update has never been
@@ -469,9 +469,9 @@ namespace Model
     bool m_statusHasBeenSet;
     bool m_agentConnected;
     bool m_agentConnectedHasBeenSet;
-    long m_runningTasksCount;
+    int m_runningTasksCount;
     bool m_runningTasksCountHasBeenSet;
-    long m_pendingTasksCount;
+    int m_pendingTasksCount;
     bool m_pendingTasksCountHasBeenSet;
     AgentUpdateStatus m_agentUpdateStatus;
     bool m_agentUpdateStatusHasBeenSet;

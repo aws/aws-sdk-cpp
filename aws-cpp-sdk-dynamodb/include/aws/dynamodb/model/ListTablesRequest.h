@@ -88,24 +88,24 @@ namespace Model
      * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>A maximum number of table names to return. If this parameter is not
      * specified, the limit is 100.</p>
      */
-    inline ListTablesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListTablesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_exclusiveStartTableName;
     bool m_exclusiveStartTableNameHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

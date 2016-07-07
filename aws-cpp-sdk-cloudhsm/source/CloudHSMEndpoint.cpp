@@ -48,6 +48,8 @@ namespace CloudHSMEndpoint
         return "cloudhsm.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "cloudhsm.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "cloudhsm.ap-south-1.amazonaws.com";
      default:
         return "cloudhsm.us-east-1.amazonaws.com";
     }

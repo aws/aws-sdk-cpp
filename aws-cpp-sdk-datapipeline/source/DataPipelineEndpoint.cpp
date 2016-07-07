@@ -48,6 +48,8 @@ namespace DataPipelineEndpoint
         return "datapipeline.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "datapipeline.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "datapipeline.ap-south-1.amazonaws.com";
      default:
         return "datapipeline.us-east-1.amazonaws.com";
     }

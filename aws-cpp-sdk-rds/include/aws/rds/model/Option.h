@@ -151,17 +151,17 @@ namespace Model
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline Option& WithPort(long value) { SetPort(value); return *this;}
+    inline Option& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The option settings for this option.</p>
@@ -291,7 +291,7 @@ namespace Model
     bool m_persistentHasBeenSet;
     bool m_permanent;
     bool m_permanentHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::Vector<OptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;

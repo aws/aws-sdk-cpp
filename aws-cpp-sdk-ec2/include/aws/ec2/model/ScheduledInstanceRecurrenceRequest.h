@@ -91,19 +91,19 @@ namespace Model
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>Frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline long GetInterval() const{ return m_interval; }
+    inline int GetInterval() const{ return m_interval; }
 
     /**
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>Frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline void SetInterval(long value) { m_intervalHasBeenSet = true; m_interval = value; }
+    inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>Frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
-    inline ScheduledInstanceRecurrenceRequest& WithInterval(long value) { SetInterval(value); return *this;}
+    inline ScheduledInstanceRecurrenceRequest& WithInterval(int value) { SetInterval(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -112,7 +112,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline const Aws::Vector<long>& GetOccurrenceDays() const{ return m_occurrenceDays; }
+    inline const Aws::Vector<int>& GetOccurrenceDays() const{ return m_occurrenceDays; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -121,7 +121,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline void SetOccurrenceDays(const Aws::Vector<long>& value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays = value; }
+    inline void SetOccurrenceDays(const Aws::Vector<int>& value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays = value; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -130,7 +130,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline void SetOccurrenceDays(Aws::Vector<long>&& value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays = value; }
+    inline void SetOccurrenceDays(Aws::Vector<int>&& value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays = value; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -139,7 +139,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline ScheduledInstanceRecurrenceRequest& WithOccurrenceDays(const Aws::Vector<long>& value) { SetOccurrenceDays(value); return *this;}
+    inline ScheduledInstanceRecurrenceRequest& WithOccurrenceDays(const Aws::Vector<int>& value) { SetOccurrenceDays(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -148,7 +148,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline ScheduledInstanceRecurrenceRequest& WithOccurrenceDays(Aws::Vector<long>&& value) { SetOccurrenceDays(value); return *this;}
+    inline ScheduledInstanceRecurrenceRequest& WithOccurrenceDays(Aws::Vector<int>&& value) { SetOccurrenceDays(value); return *this;}
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -157,7 +157,7 @@ namespace Model
      * occurrence is relative to the end of the month, you can specify only a single
      * day.</p>
      */
-    inline ScheduledInstanceRecurrenceRequest& AddOccurrenceDays(long value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays.push_back(value); return *this; }
+    inline ScheduledInstanceRecurrenceRequest& AddOccurrenceDays(int value) { m_occurrenceDaysHasBeenSet = true; m_occurrenceDays.push_back(value); return *this; }
 
     /**
      * <p>Indicates whether the occurrence is relative to the end of the specified week
@@ -236,9 +236,9 @@ namespace Model
   private:
     Aws::String m_frequency;
     bool m_frequencyHasBeenSet;
-    long m_interval;
+    int m_interval;
     bool m_intervalHasBeenSet;
-    Aws::Vector<long> m_occurrenceDays;
+    Aws::Vector<int> m_occurrenceDays;
     bool m_occurrenceDaysHasBeenSet;
     bool m_occurrenceRelativeToEnd;
     bool m_occurrenceRelativeToEndHasBeenSet;

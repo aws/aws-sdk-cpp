@@ -131,7 +131,7 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
-    inline long GetMaximumPageSize() const{ return m_maximumPageSize; }
+    inline int GetMaximumPageSize() const{ return m_maximumPageSize; }
 
     /**
      * <p>The maximum number of results that will be returned per call.
@@ -141,7 +141,7 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
-    inline void SetMaximumPageSize(long value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
+    inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
      * <p>The maximum number of results that will be returned per call.
@@ -151,7 +151,7 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
-    inline ListDomainsRequest& WithMaximumPageSize(long value) { SetMaximumPageSize(value); return *this;}
+    inline ListDomainsRequest& WithMaximumPageSize(int value) { SetMaximumPageSize(value); return *this;}
 
     /**
      * <p>When set to <code>true</code>, returns the results in reverse order. By
@@ -179,7 +179,7 @@ namespace Model
     bool m_nextPageTokenHasBeenSet;
     RegistrationStatus m_registrationStatus;
     bool m_registrationStatusHasBeenSet;
-    long m_maximumPageSize;
+    int m_maximumPageSize;
     bool m_maximumPageSizeHasBeenSet;
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet;

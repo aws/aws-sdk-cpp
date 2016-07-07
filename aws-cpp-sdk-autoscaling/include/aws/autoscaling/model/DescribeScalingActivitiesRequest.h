@@ -143,17 +143,17 @@ namespace Model
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
-    inline DescribeScalingActivitiesRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeScalingActivitiesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -202,7 +202,7 @@ namespace Model
     bool m_activityIdsHasBeenSet;
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

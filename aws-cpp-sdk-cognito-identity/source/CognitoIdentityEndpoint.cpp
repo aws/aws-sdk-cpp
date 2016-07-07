@@ -48,6 +48,8 @@ namespace CognitoIdentityEndpoint
         return "cognito-identity.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "cognito-identity.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "cognito-identity.ap-south-1.amazonaws.com";
      default:
         return "cognito-identity.us-east-1.amazonaws.com";
     }

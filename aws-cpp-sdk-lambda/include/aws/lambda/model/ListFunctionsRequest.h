@@ -91,24 +91,24 @@ namespace Model
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
      * return in response. This parameter value must be greater than 0.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
      * return in response. This parameter value must be greater than 0.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
      * return in response. This parameter value must be greater than 0.</p>
      */
-    inline ListFunctionsRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     Aws::String m_marker;
     bool m_markerHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

@@ -161,17 +161,17 @@ namespace Model
     /**
      * The maximum number of results to be returned.
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * The maximum number of results to be returned.
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * The maximum number of results to be returned.
      */
-    inline ListDatasetsRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline ListDatasetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
     Aws::String m_identityPoolId;
@@ -180,7 +180,7 @@ namespace Model
     bool m_identityIdHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
   };
 

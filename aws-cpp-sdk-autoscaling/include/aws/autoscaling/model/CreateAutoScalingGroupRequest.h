@@ -212,53 +212,53 @@ namespace Model
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline long GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const{ return m_minSize; }
 
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline void SetMinSize(long value) { m_minSizeHasBeenSet = true; m_minSize = value; }
+    inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
      * <p>The minimum size of the group.</p>
      */
-    inline CreateAutoScalingGroupRequest& WithMinSize(long value) { SetMinSize(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline long GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline void SetMaxSize(long value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
+    inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
      * <p>The maximum size of the group.</p>
      */
-    inline CreateAutoScalingGroupRequest& WithMaxSize(long value) { SetMaxSize(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
      * equal to the maximum size of the group.</p>
      */
-    inline long GetDesiredCapacity() const{ return m_desiredCapacity; }
+    inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
      * equal to the maximum size of the group.</p>
      */
-    inline void SetDesiredCapacity(long value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
+    inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The number of EC2 instances that should be running in the group. This number
      * must be greater than or equal to the minimum size of the group and less than or
      * equal to the maximum size of the group.</p>
      */
-    inline CreateAutoScalingGroupRequest& WithDesiredCapacity(long value) { SetDesiredCapacity(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
@@ -267,7 +267,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline long GetDefaultCooldown() const{ return m_defaultCooldown; }
+    inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
@@ -276,7 +276,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline void SetDefaultCooldown(long value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
+    inline void SetDefaultCooldown(int value) { m_defaultCooldownHasBeenSet = true; m_defaultCooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes before
@@ -285,7 +285,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
      * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline CreateAutoScalingGroupRequest& WithDefaultCooldown(long value) { SetDefaultCooldown(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithDefaultCooldown(int value) { SetDefaultCooldown(value); return *this;}
 
     /**
      * <p>One or more Availability Zones for the group. This parameter is optional if
@@ -478,7 +478,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline long GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
+    inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
@@ -489,7 +489,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline void SetHealthCheckGracePeriod(long value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
+    inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
      * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
@@ -500,7 +500,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
      * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
      */
-    inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(long value) { SetHealthCheckGracePeriod(value); return *this;}
+    inline CreateAutoScalingGroupRequest& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
     /**
      * <p>The name of the placement group into which you'll launch your instances, if
@@ -796,13 +796,13 @@ namespace Model
     bool m_launchConfigurationNameHasBeenSet;
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
-    long m_minSize;
+    int m_minSize;
     bool m_minSizeHasBeenSet;
-    long m_maxSize;
+    int m_maxSize;
     bool m_maxSizeHasBeenSet;
-    long m_desiredCapacity;
+    int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
-    long m_defaultCooldown;
+    int m_defaultCooldown;
     bool m_defaultCooldownHasBeenSet;
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -810,7 +810,7 @@ namespace Model
     bool m_loadBalancerNamesHasBeenSet;
     Aws::String m_healthCheckType;
     bool m_healthCheckTypeHasBeenSet;
-    long m_healthCheckGracePeriod;
+    int m_healthCheckGracePeriod;
     bool m_healthCheckGracePeriodHasBeenSet;
     Aws::String m_placementGroup;
     bool m_placementGroupHasBeenSet;

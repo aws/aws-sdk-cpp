@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>A provider representing a Cognito User Identity Pool and its client ID.</p>
+   * <p>A provider representing an Amazon Cognito Identity User Pool and its client
+   * ID.</p>
    */
   class AWS_COGNITOIDENTITY_API CognitoIdentityProvider
   {
@@ -42,79 +43,79 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The provider name for a Cognito User Identity Pool. For example,
+     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The client ID for the Cognito User Identity Pool.</p>
+     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(const char* value) { SetClientId(value); return *this;}
 

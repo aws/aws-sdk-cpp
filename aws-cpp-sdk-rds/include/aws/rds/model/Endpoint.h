@@ -85,17 +85,17 @@ namespace Model
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Specifies the port that the database engine is listening on.</p>
      */
-    inline Endpoint& WithPort(long value) { SetPort(value); return *this;}
+    inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted
@@ -142,7 +142,7 @@ namespace Model
   private:
     Aws::String m_address;
     bool m_addressHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_hostedZoneId;
     bool m_hostedZoneIdHasBeenSet;

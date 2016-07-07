@@ -25,6 +25,7 @@ namespace Model
   enum class QueueAttributeName
   {
     NOT_SET,
+    All,
     Policy,
     VisibilityTimeout,
     MaximumMessageSize,
@@ -37,7 +38,11 @@ namespace Model
     ApproximateNumberOfMessagesDelayed,
     DelaySeconds,
     ReceiveMessageWaitTimeSeconds,
-    RedrivePolicy
+    RedrivePolicy,
+    SentTimestamp,
+    ApproximateFirstReceiveTimestamp,
+    ApproximateReceiveCount,
+    SenderId
   };
 
 namespace QueueAttributeNameMapper

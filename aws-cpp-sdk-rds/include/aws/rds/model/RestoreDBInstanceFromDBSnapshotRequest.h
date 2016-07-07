@@ -257,21 +257,21 @@ namespace Model
      * The same port as the original DB instance</p> <p>Constraints: Value must be
      * <code>1150-65535</code> </p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>Default:
      * The same port as the original DB instance</p> <p>Constraints: Value must be
      * <code>1150-65535</code> </p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>Default:
      * The same port as the original DB instance</p> <p>Constraints: Value must be
      * <code>1150-65535</code> </p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>The EC2 Availability Zone that the database instance will be created in.</p>
@@ -650,7 +650,7 @@ namespace Model
      * Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is
      * not supported.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
@@ -662,7 +662,7 @@ namespace Model
      * Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is
      * not supported.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in
@@ -674,7 +674,7 @@ namespace Model
      * Server</b> </p> <p>Setting the IOPS value for the SQL Server database engine is
      * not supported.</p>
      */
-    inline RestoreDBInstanceFromDBSnapshotRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>The name of the option group to be used for the restored DB instance.</p>
@@ -1002,7 +1002,7 @@ namespace Model
     bool m_dBSnapshotIdentifierHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
@@ -1020,7 +1020,7 @@ namespace Model
     bool m_dBNameHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;

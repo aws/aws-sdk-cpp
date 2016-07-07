@@ -117,7 +117,7 @@ namespace Model
      * specify for <code>Limit</code>, the response includes a <code>NextMarker</code>
      * value that you can use to get another batch of <code>Rules</code>.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return
@@ -125,7 +125,7 @@ namespace Model
      * specify for <code>Limit</code>, the response includes a <code>NextMarker</code>
      * value that you can use to get another batch of <code>Rules</code>.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return
@@ -133,12 +133,12 @@ namespace Model
      * specify for <code>Limit</code>, the response includes a <code>NextMarker</code>
      * value that you can use to get another batch of <code>Rules</code>.</p>
      */
-    inline ListRulesRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListRulesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
   private:
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
   };
 

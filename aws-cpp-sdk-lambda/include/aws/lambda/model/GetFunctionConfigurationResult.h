@@ -278,39 +278,39 @@ namespace Model
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline long GetTimeout() const{ return m_timeout; }
+    inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline void SetTimeout(long value) { m_timeout = value; }
+    inline void SetTimeout(int value) { m_timeout = value; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
      * value based on your expected execution time. The default is 3 seconds. </p>
      */
-    inline GetFunctionConfigurationResult& WithTimeout(long value) { SetTimeout(value); return *this;}
+    inline GetFunctionConfigurationResult& WithTimeout(int value) { SetTimeout(value); return *this;}
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline long GetMemorySize() const{ return m_memorySize; }
+    inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline void SetMemorySize(long value) { m_memorySize = value; }
+    inline void SetMemorySize(int value) { m_memorySize = value; }
 
     /**
      * <p>The memory size, in MB, you configured for the function. Must be a multiple
      * of 64 MB.</p>
      */
-    inline GetFunctionConfigurationResult& WithMemorySize(long value) { SetMemorySize(value); return *this;}
+    inline GetFunctionConfigurationResult& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
     /**
      * <p>The time stamp of the last time you updated the function.</p>
@@ -450,8 +450,8 @@ namespace Model
     Aws::String m_handler;
     long long m_codeSize;
     Aws::String m_description;
-    long m_timeout;
-    long m_memorySize;
+    int m_timeout;
+    int m_memorySize;
     Aws::String m_lastModified;
     Aws::String m_codeSha256;
     Aws::String m_version;

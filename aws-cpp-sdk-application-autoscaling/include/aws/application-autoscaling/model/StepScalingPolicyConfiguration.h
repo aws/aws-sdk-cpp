@@ -122,7 +122,7 @@ namespace Model
      * scaling policy changes the scalable dimension of the scalable target by this
      * amount.</p>
      */
-    inline long GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+    inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
 
     /**
      * <p>The minimum number to adjust your scalable dimension as a result of a scaling
@@ -130,7 +130,7 @@ namespace Model
      * scaling policy changes the scalable dimension of the scalable target by this
      * amount.</p>
      */
-    inline void SetMinAdjustmentMagnitude(long value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
+    inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
 
     /**
      * <p>The minimum number to adjust your scalable dimension as a result of a scaling
@@ -138,7 +138,7 @@ namespace Model
      * scaling policy changes the scalable dimension of the scalable target by this
      * amount.</p>
      */
-    inline StepScalingPolicyConfiguration& WithMinAdjustmentMagnitude(long value) { SetMinAdjustmentMagnitude(value); return *this;}
+    inline StepScalingPolicyConfiguration& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes where
@@ -161,7 +161,7 @@ namespace Model
      * a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.</p>
      */
-    inline long GetCooldown() const{ return m_cooldown; }
+    inline int GetCooldown() const{ return m_cooldown; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes where
@@ -184,7 +184,7 @@ namespace Model
      * a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.</p>
      */
-    inline void SetCooldown(long value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
+    inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
      * <p>The amount of time, in seconds, after a scaling activity completes where
@@ -207,7 +207,7 @@ namespace Model
      * a scale-in, Application Auto Scaling scales out your scalable target
      * immediately.</p>
      */
-    inline StepScalingPolicyConfiguration& WithCooldown(long value) { SetCooldown(value); return *this;}
+    inline StepScalingPolicyConfiguration& WithCooldown(int value) { SetCooldown(value); return *this;}
 
     /**
      * <p>The aggregation type for the CloudWatch metrics. Valid values are
@@ -244,9 +244,9 @@ namespace Model
     bool m_adjustmentTypeHasBeenSet;
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet;
-    long m_minAdjustmentMagnitude;
+    int m_minAdjustmentMagnitude;
     bool m_minAdjustmentMagnitudeHasBeenSet;
-    long m_cooldown;
+    int m_cooldown;
     bool m_cooldownHasBeenSet;
     MetricAggregationType m_metricAggregationType;
     bool m_metricAggregationTypeHasBeenSet;

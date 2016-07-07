@@ -211,17 +211,17 @@ namespace Model
     /**
      * <p>Target number of instances for the instance group. </p>
      */
-    inline long GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>Target number of instances for the instance group. </p>
      */
-    inline void SetInstanceCount(long value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
+    inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>Target number of instances for the instance group. </p>
      */
-    inline InstanceGroupConfig& WithInstanceCount(long value) { SetInstanceCount(value); return *this;}
+    inline InstanceGroupConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
      * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
@@ -313,7 +313,7 @@ namespace Model
     bool m_bidPriceHasBeenSet;
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
-    long m_instanceCount;
+    int m_instanceCount;
     bool m_instanceCountHasBeenSet;
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;

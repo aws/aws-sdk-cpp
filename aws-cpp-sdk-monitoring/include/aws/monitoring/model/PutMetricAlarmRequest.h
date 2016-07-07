@@ -729,17 +729,17 @@ namespace Model
     /**
      * <p> The period in seconds over which the specified statistic is applied. </p>
      */
-    inline long GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const{ return m_period; }
 
     /**
      * <p> The period in seconds over which the specified statistic is applied. </p>
      */
-    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
      * <p> The period in seconds over which the specified statistic is applied. </p>
      */
-    inline PutMetricAlarmRequest& WithPeriod(long value) { SetPeriod(value); return *this;}
+    inline PutMetricAlarmRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
      * <p> The statistic's unit of measure. For example, the units for the Amazon EC2
@@ -805,19 +805,19 @@ namespace Model
      * <p> The number of periods over which data is compared to the specified
      * threshold. </p>
      */
-    inline long GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
      * <p> The number of periods over which data is compared to the specified
      * threshold. </p>
      */
-    inline void SetEvaluationPeriods(long value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
+    inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
      * <p> The number of periods over which data is compared to the specified
      * threshold. </p>
      */
-    inline PutMetricAlarmRequest& WithEvaluationPeriods(long value) { SetEvaluationPeriods(value); return *this;}
+    inline PutMetricAlarmRequest& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
     /**
      * <p> The value against which the specified statistic is compared. </p>
@@ -890,11 +890,11 @@ namespace Model
     bool m_statisticHasBeenSet;
     Aws::Vector<Dimension> m_dimensions;
     bool m_dimensionsHasBeenSet;
-    long m_period;
+    int m_period;
     bool m_periodHasBeenSet;
     StandardUnit m_unit;
     bool m_unitHasBeenSet;
-    long m_evaluationPeriods;
+    int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
     double m_threshold;
     bool m_thresholdHasBeenSet;

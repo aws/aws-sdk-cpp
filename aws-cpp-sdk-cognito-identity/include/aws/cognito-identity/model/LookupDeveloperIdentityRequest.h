@@ -157,17 +157,17 @@ namespace Model
     /**
      * <p>The maximum number of identities to return.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of identities to return.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of identities to return.</p>
      */
-    inline LookupDeveloperIdentityRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline LookupDeveloperIdentityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>A pagination token. The first call you make will have <code>NextToken</code>
@@ -246,7 +246,7 @@ namespace Model
     bool m_identityIdHasBeenSet;
     Aws::String m_developerUserIdentifier;
     bool m_developerUserIdentifierHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

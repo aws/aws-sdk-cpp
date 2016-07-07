@@ -126,19 +126,19 @@ namespace Model
      * <p> The pending or in-progress change of the number of nodes in the cluster.
      * </p>
      */
-    inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
      * <p> The pending or in-progress change of the number of nodes in the cluster.
      * </p>
      */
-    inline void SetNumberOfNodes(long value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
      * <p> The pending or in-progress change of the number of nodes in the cluster.
      * </p>
      */
-    inline PendingModifiedValues& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline PendingModifiedValues& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
     /**
      * <p> The pending or in-progress change of the cluster type. </p>
@@ -214,19 +214,19 @@ namespace Model
      * <p> The pending or in-progress change of the automated snapshot retention
      * period. </p>
      */
-    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
      * <p> The pending or in-progress change of the automated snapshot retention
      * period. </p>
      */
-    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+    inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
      * <p> The pending or in-progress change of the automated snapshot retention
      * period. </p>
      */
-    inline PendingModifiedValues& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline PendingModifiedValues& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /**
      * <p>The pending or in-progress change of the new identifier for the cluster.</p>
@@ -286,13 +286,13 @@ namespace Model
     bool m_masterUserPasswordHasBeenSet;
     Aws::String m_nodeType;
     bool m_nodeTypeHasBeenSet;
-    long m_numberOfNodes;
+    int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
     Aws::String m_clusterType;
     bool m_clusterTypeHasBeenSet;
     Aws::String m_clusterVersion;
     bool m_clusterVersionHasBeenSet;
-    long m_automatedSnapshotRetentionPeriod;
+    int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;

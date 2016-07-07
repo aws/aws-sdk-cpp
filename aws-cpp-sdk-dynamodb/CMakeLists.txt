@@ -65,9 +65,6 @@ project(aws-cpp-sdk-dynamodb)
   
   target_link_libraries(aws-cpp-sdk-dynamodb aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-dynamodb
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-dynamodb)
 
   install (FILES ${AWS_DYNAMODB_HEADERS} DESTINATION include/aws/dynamodb)
   install (FILES ${AWS_DYNAMODB_MODEL_HEADERS} DESTINATION include/aws/dynamodb/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-dynamodb.autopkg DESTINATION nuget)
+  endif()
+
+
 

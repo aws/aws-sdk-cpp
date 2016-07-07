@@ -51,19 +51,19 @@ namespace Model
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
      */
-    inline long GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
      */
-    inline void SetEvaluationPeriods(long value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
+    inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithEvaluationPeriods(long value) { SetEvaluationPeriods(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 
     /**
      * <p>The value that the metric is compared with to determine the state of the
@@ -133,19 +133,19 @@ namespace Model
      * <p>An integer that represents the period in seconds over which the statistic is
      * applied.</p>
      */
-    inline long GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const{ return m_period; }
 
     /**
      * <p>An integer that represents the period in seconds over which the statistic is
      * applied.</p>
      */
-    inline void SetPeriod(long value) { m_periodHasBeenSet = true; m_period = value; }
+    inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
      * <p>An integer that represents the period in seconds over which the statistic is
      * applied.</p>
      */
-    inline CloudWatchAlarmConfiguration& WithPeriod(long value) { SetPeriod(value); return *this;}
+    inline CloudWatchAlarmConfiguration& WithPeriod(int value) { SetPeriod(value); return *this;}
 
     /**
      * <p>The name of the CloudWatch metric that is associated with the CloudWatch
@@ -335,13 +335,13 @@ namespace Model
     inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
   private:
-    long m_evaluationPeriods;
+    int m_evaluationPeriods;
     bool m_evaluationPeriodsHasBeenSet;
     double m_threshold;
     bool m_thresholdHasBeenSet;
     ComparisonOperator m_comparisonOperator;
     bool m_comparisonOperatorHasBeenSet;
-    long m_period;
+    int m_period;
     bool m_periodHasBeenSet;
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet;

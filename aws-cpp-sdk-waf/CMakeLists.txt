@@ -65,9 +65,6 @@ project(aws-cpp-sdk-waf)
   
   target_link_libraries(aws-cpp-sdk-waf aws-cpp-sdk-core)
 
-  #uncomment when unit tests are automatically generated
-  #add_test(run${metadata.namespace}Tests run${metadata.namespace}Tests)
-
   if(SIMPLE_INSTALL)
       install (TARGETS aws-cpp-sdk-waf
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
@@ -82,4 +79,10 @@ project(aws-cpp-sdk-waf)
 
   install (FILES ${AWS_WAF_HEADERS} DESTINATION include/aws/waf)
   install (FILES ${AWS_WAF_MODEL_HEADERS} DESTINATION include/aws/waf/model)
+
+  if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-waf.autopkg DESTINATION nuget)
+  endif()
+
+
 

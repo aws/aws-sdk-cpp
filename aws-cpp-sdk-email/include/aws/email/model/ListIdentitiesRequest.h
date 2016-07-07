@@ -26,6 +26,9 @@ namespace Model
 {
 
   /**
+   * <p>Represents a request to return a list of all identities (email addresses and
+   * domains) that you have attempted to verify under your AWS account, regardless of
+   * verification status.</p>
    */
   class AWS_SES_API ListIdentitiesRequest : public SESRequest
   {
@@ -102,26 +105,26 @@ namespace Model
      * <p>The maximum number of identities per page. Possible values are 1-1000
      * inclusive.</p>
      */
-    inline long GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>The maximum number of identities per page. Possible values are 1-1000
      * inclusive.</p>
      */
-    inline void SetMaxItems(long value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
+    inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>The maximum number of identities per page. Possible values are 1-1000
      * inclusive.</p>
      */
-    inline ListIdentitiesRequest& WithMaxItems(long value) { SetMaxItems(value); return *this;}
+    inline ListIdentitiesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
   private:
     IdentityType m_identityType;
     bool m_identityTypeHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
-    long m_maxItems;
+    int m_maxItems;
     bool m_maxItemsHasBeenSet;
   };
 

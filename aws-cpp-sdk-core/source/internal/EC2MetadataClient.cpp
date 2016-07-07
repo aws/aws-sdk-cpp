@@ -30,13 +30,14 @@ using namespace Aws::Http;
 using namespace Aws::Client;
 using namespace Aws::Internal;
 
-static const char* SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials/";
+static const char* SECURITY_CREDENTIALS_RESOURCE = "/latest/meta-data/iam/security-credentials";
+static const char* REGION_RESOURCE = "/latest/meta-data/placement/availability-zone";
 
 static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 
 EC2MetadataClient::EC2MetadataClient(const char* endpoint) :
-    m_httpClient(nullptr),
-    m_endpoint(endpoint)
+        m_httpClient(nullptr),
+        m_endpoint(endpoint)
 {
     AWS_LOG_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Creating HttpClient with max connections %d and scheme %s", 2, "http");
     ClientConfiguration clientConfiguration;
@@ -59,7 +60,10 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     {
         Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
         Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
-        AWS_LOG_DEBUG(EC2_METADATA_CLIENT_LOG_TAG, "Calling EC2MetatadaService resource %s, returned credential string %s", SECURITY_CREDENTIALS_RESOURCE, credentialsString.c_str());
+
+        AWS_LOGSTREAM_DEBUG(EC2_METADATA_CLIENT_LOG_TAG,
+                            "Calling EC2MetatadaService resource, " << SECURITY_CREDENTIALS_RESOURCE
+                                    << " returned credential string " << trimmedCredentialsString);
 
         if (securityCredentials.size() == 0)
         {
@@ -68,11 +72,49 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
         }
 
         Aws::StringStream ss;
-        ss << SECURITY_CREDENTIALS_RESOURCE << securityCredentials[0];
+        ss << SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
         AWS_LOG_DEBUG(EC2_METADATA_CLIENT_LOG_TAG, "Calling EC2MetatadaService resource %s", ss.str().c_str());
         return GetResource(ss.str().c_str());
     }
 
+    return "";
+}
+
+Aws::String EC2MetadataClient::GetCurrentRegion() const
+{
+    AWS_LOG_TRACE(EC2_METADATA_CLIENT_LOG_TAG, "Getting current region for ec2 instance");
+    Aws::String azString = GetResource(REGION_RESOURCE);
+
+    if (!azString.empty())
+    {
+        Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());
+
+        AWS_LOGSTREAM_DEBUG(EC2_METADATA_CLIENT_LOG_TAG, "Calling EC2MetatadaService resource " << REGION_RESOURCE <<
+                " , returned credential string " << trimmedAZString);
+
+        Aws::String region;
+        region.reserve(trimmedAZString.length());
+
+        bool digitFound = false;
+        for (auto character : trimmedAZString)
+        {
+            if(digitFound && !isdigit(character))
+            {
+                break;
+            }
+            if (isdigit(character))
+            {
+                digitFound = true;
+            }
+
+            region.append(1, character);
+        }
+
+        AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Detected current region as " << region);
+        return region;
+    }
+
+    AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Unable to pull region from instance metadata service ");
     return "";
 }
 
@@ -82,7 +124,8 @@ Aws::String EC2MetadataClient::GetResource(const char* resource) const
     ss << m_endpoint << resource;
     AWS_LOG_TRACE(EC2_METADATA_CLIENT_LOG_TAG, "Calling Ec2MetadataService at %s", ss.str().c_str());
 
-    std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    std::shared_ptr<HttpRequest> request(
+            CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(*request));
 
     if (response == nullptr)
@@ -91,7 +134,8 @@ Aws::String EC2MetadataClient::GetResource(const char* resource) const
     }
     else if (response->GetResponseCode() != HttpResponseCode::OK)
     {
-        AWS_LOG_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "Http request failed with error code %d", (int) response->GetResponseCode());
+        AWS_LOGSTREAM_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "Http request failed with error code " <<
+                      (int) response->GetResponseCode());
     }
     else
     {

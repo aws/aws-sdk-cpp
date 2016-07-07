@@ -36,7 +36,7 @@ public class CppViewHelper {
 
     static {
         CORAL_TO_CPP_TYPE_MAPPING.put("long", "long long");
-        CORAL_TO_CPP_TYPE_MAPPING.put("integer", "long");
+        CORAL_TO_CPP_TYPE_MAPPING.put("integer", "int");
         CORAL_TO_CPP_TYPE_MAPPING.put("string", "Aws::String");
         CORAL_TO_CPP_TYPE_MAPPING.put("timestamp", "Aws::Utils::DateTime");
         CORAL_TO_CPP_TYPE_MAPPING.put("boolean", "bool");

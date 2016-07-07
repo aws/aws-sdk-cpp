@@ -44,47 +44,52 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
-     * memory, storage, and networking capacity of the fleetaposs hosts. Amazon
-     * GameLift supports the EC2 instance types listed below. See <a
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. GameLift supports the
+     * following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions of each.</p>
+     * for detailed descriptions.</p>
      */
     inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
 
     /**
-     * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
-     * memory, storage, and networking capacity of the fleetaposs hosts. Amazon
-     * GameLift supports the EC2 instance types listed below. See <a
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. GameLift supports the
+     * following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions of each.</p>
+     * for detailed descriptions.</p>
      */
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
 
     /**
-     * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
-     * memory, storage, and networking capacity of the fleetaposs hosts. Amazon
-     * GameLift supports the EC2 instance types listed below. See <a
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. GameLift supports the
+     * following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions of each.</p>
+     * for detailed descriptions.</p>
      */
     inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
 
     /**
-     * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
-     * memory, storage, and networking capacity of the fleetaposs hosts. Amazon
-     * GameLift supports the EC2 instance types listed below. See <a
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. GameLift supports the
+     * following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions of each.</p>
+     * for detailed descriptions.</p>
      */
     inline EC2InstanceLimit& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
 
     /**
-     * <p>Type of EC2 instances used in the fleet. EC2 instance types define the CPU,
-     * memory, storage, and networking capacity of the fleetaposs hosts. Amazon
-     * GameLift supports the EC2 instance types listed below. See <a
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. GameLift supports the
+     * following EC2 instance types. See <a
      * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-     * for detailed descriptions of each.</p>
+     * for detailed descriptions.</p>
      */
     inline EC2InstanceLimit& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(value); return *this;}
 
@@ -92,41 +97,41 @@ namespace Model
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline long GetCurrentInstances() const{ return m_currentInstances; }
+    inline int GetCurrentInstances() const{ return m_currentInstances; }
 
     /**
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline void SetCurrentInstances(long value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
+    inline void SetCurrentInstances(int value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
 
     /**
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account. </p>
      */
-    inline EC2InstanceLimit& WithCurrentInstances(long value) { SetCurrentInstances(value); return *this;}
+    inline EC2InstanceLimit& WithCurrentInstances(int value) { SetCurrentInstances(value); return *this;}
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline long GetInstanceLimit() const{ return m_instanceLimit; }
+    inline int GetInstanceLimit() const{ return m_instanceLimit; }
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline void SetInstanceLimit(long value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
+    inline void SetInstanceLimit(int value) { m_instanceLimitHasBeenSet = true; m_instanceLimit = value; }
 
     /**
      * <p>Number of instances allowed.</p>
      */
-    inline EC2InstanceLimit& WithInstanceLimit(long value) { SetInstanceLimit(value); return *this;}
+    inline EC2InstanceLimit& WithInstanceLimit(int value) { SetInstanceLimit(value); return *this;}
 
   private:
     EC2InstanceType m_eC2InstanceType;
     bool m_eC2InstanceTypeHasBeenSet;
-    long m_currentInstances;
+    int m_currentInstances;
     bool m_currentInstancesHasBeenSet;
-    long m_instanceLimit;
+    int m_instanceLimit;
     bool m_instanceLimitHasBeenSet;
   };
 

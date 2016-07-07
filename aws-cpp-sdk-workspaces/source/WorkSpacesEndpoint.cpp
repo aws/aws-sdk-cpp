@@ -48,6 +48,8 @@ namespace WorkSpacesEndpoint
         return "workspaces.ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
         return "workspaces.sa-east-1.amazonaws.com";
+     case Region::AP_SOUTH_1:
+        return "workspaces.ap-south-1.amazonaws.com";
      default:
         return "workspaces.us-east-1.amazonaws.com";
     }

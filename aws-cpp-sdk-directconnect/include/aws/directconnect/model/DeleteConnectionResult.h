@@ -16,6 +16,7 @@
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/ConnectionState.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -221,13 +222,13 @@ namespace Model
     inline DeleteConnectionResult& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
     
-    inline long GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const{ return m_vlan; }
 
     
-    inline void SetVlan(long value) { m_vlan = value; }
+    inline void SetVlan(int value) { m_vlan = value; }
 
     
-    inline DeleteConnectionResult& WithVlan(long value) { SetVlan(value); return *this;}
+    inline DeleteConnectionResult& WithVlan(int value) { SetVlan(value); return *this;}
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -271,6 +272,36 @@ namespace Model
      */
     inline DeleteConnectionResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
 
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTime = value; }
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline DeleteConnectionResult& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
+
+    /**
+     * <p>The time of the most recent call to DescribeConnectionLoa for this
+     * Connection.</p>
+     */
+    inline DeleteConnectionResult& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(value); return *this;}
+
   private:
     Aws::String m_ownerAccount;
     Aws::String m_connectionId;
@@ -279,8 +310,9 @@ namespace Model
     Aws::String m_region;
     Aws::String m_location;
     Aws::String m_bandwidth;
-    long m_vlan;
+    int m_vlan;
     Aws::String m_partnerName;
+    Aws::Utils::DateTime m_loaIssueTime;
   };
 
 } // namespace Model

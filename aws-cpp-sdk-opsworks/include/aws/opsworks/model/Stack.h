@@ -390,37 +390,37 @@ namespace Model
     inline Stack& WithDefaultInstanceProfileArn(const char* value) { SetDefaultInstanceProfileArn(value); return *this;}
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline const Aws::String& GetDefaultOs() const{ return m_defaultOs; }
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline void SetDefaultOs(const Aws::String& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline void SetDefaultOs(Aws::String&& value) { m_defaultOsHasBeenSet = true; m_defaultOs = value; }
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline void SetDefaultOs(const char* value) { m_defaultOsHasBeenSet = true; m_defaultOs.assign(value); }
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline Stack& WithDefaultOs(const Aws::String& value) { SetDefaultOs(value); return *this;}
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline Stack& WithDefaultOs(Aws::String&& value) { SetDefaultOs(value); return *this;}
 
     /**
-     * <p>The stack's default operating system. </p>
+     * <p>The stack's default operating system.</p>
      */
     inline Stack& WithDefaultOs(const char* value) { SetDefaultOs(value); return *this;}
 

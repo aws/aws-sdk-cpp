@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about how an action runs.</p>
+   * <p>Represents information about the run of an action.</p>
    */
   class AWS_CODEPIPELINE_API ActionExecution
   {
@@ -135,6 +135,97 @@ namespace Model
     inline ActionExecution& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(value); return *this;}
 
     /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = value; }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(const Aws::String& value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(Aws::String&& value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The system-generated token used to identify a unique approval request. The
+     * token for each open approval request can be obtained using the GetPipelineState
+     * command and is used to validate that the approval request corresponding to this
+     * token is still valid.</p>
+     */
+    inline ActionExecution& WithToken(const char* value) { SetToken(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The ARN of the user who last changed the pipeline.</p>
+     */
+    inline ActionExecution& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
      * <p>The external ID of the run of the action.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
@@ -214,17 +305,17 @@ namespace Model
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline long GetPercentComplete() const{ return m_percentComplete; }
+    inline int GetPercentComplete() const{ return m_percentComplete; }
 
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline void SetPercentComplete(long value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
+    inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
 
     /**
      * <p>A percentage of completeness of the action as it runs.</p>
      */
-    inline ActionExecution& WithPercentComplete(long value) { SetPercentComplete(value); return *this;}
+    inline ActionExecution& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
 
     /**
      * <p>The details of an error returned by a URL external to AWS.</p>
@@ -258,11 +349,15 @@ namespace Model
     bool m_summaryHasBeenSet;
     Aws::Utils::DateTime m_lastStatusChange;
     bool m_lastStatusChangeHasBeenSet;
+    Aws::String m_token;
+    bool m_tokenHasBeenSet;
+    Aws::String m_lastUpdatedBy;
+    bool m_lastUpdatedByHasBeenSet;
     Aws::String m_externalExecutionId;
     bool m_externalExecutionIdHasBeenSet;
     Aws::String m_externalExecutionUrl;
     bool m_externalExecutionUrlHasBeenSet;
-    long m_percentComplete;
+    int m_percentComplete;
     bool m_percentCompleteHasBeenSet;
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet;

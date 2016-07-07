@@ -98,22 +98,22 @@ namespace Model
     inline TrafficPolicySummary& WithType(RRType&& value) { SetType(value); return *this;}
 
     
-    inline long GetLatestVersion() const{ return m_latestVersion; }
+    inline int GetLatestVersion() const{ return m_latestVersion; }
 
     
-    inline void SetLatestVersion(long value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
+    inline void SetLatestVersion(int value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     
-    inline TrafficPolicySummary& WithLatestVersion(long value) { SetLatestVersion(value); return *this;}
+    inline TrafficPolicySummary& WithLatestVersion(int value) { SetLatestVersion(value); return *this;}
 
     
-    inline long GetTrafficPolicyCount() const{ return m_trafficPolicyCount; }
+    inline int GetTrafficPolicyCount() const{ return m_trafficPolicyCount; }
 
     
-    inline void SetTrafficPolicyCount(long value) { m_trafficPolicyCountHasBeenSet = true; m_trafficPolicyCount = value; }
+    inline void SetTrafficPolicyCount(int value) { m_trafficPolicyCountHasBeenSet = true; m_trafficPolicyCount = value; }
 
     
-    inline TrafficPolicySummary& WithTrafficPolicyCount(long value) { SetTrafficPolicyCount(value); return *this;}
+    inline TrafficPolicySummary& WithTrafficPolicyCount(int value) { SetTrafficPolicyCount(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -122,9 +122,9 @@ namespace Model
     bool m_nameHasBeenSet;
     RRType m_type;
     bool m_typeHasBeenSet;
-    long m_latestVersion;
+    int m_latestVersion;
     bool m_latestVersionHasBeenSet;
-    long m_trafficPolicyCount;
+    int m_trafficPolicyCount;
     bool m_trafficPolicyCountHasBeenSet;
   };
 

@@ -405,17 +405,17 @@ namespace Model
     /**
      * <p> The number of days that automatic cluster snapshots are retained. </p>
      */
-    inline long GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
+    inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
     /**
      * <p> The number of days that automatic cluster snapshots are retained. </p>
      */
-    inline void SetAutomatedSnapshotRetentionPeriod(long value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
+    inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
     /**
      * <p> The number of days that automatic cluster snapshots are retained. </p>
      */
-    inline Cluster& WithAutomatedSnapshotRetentionPeriod(long value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+    inline Cluster& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
     /**
      * <p> A list of cluster security group that are associated with the cluster. Each
@@ -832,17 +832,17 @@ namespace Model
     /**
      * <p> The number of compute nodes in the cluster. </p>
      */
-    inline long GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
      * <p> The number of compute nodes in the cluster. </p>
      */
-    inline void SetNumberOfNodes(long value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
+    inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
      * <p> The number of compute nodes in the cluster. </p>
      */
-    inline Cluster& WithNumberOfNodes(long value) { SetNumberOfNodes(value); return *this;}
+    inline Cluster& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
 
     /**
      * <p>If <code>true</code>, the cluster can be accessed from a public network.</p>
@@ -1235,7 +1235,7 @@ namespace Model
     bool m_endpointHasBeenSet;
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
-    long m_automatedSnapshotRetentionPeriod;
+    int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
     Aws::Vector<ClusterSecurityGroupMembership> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
@@ -1257,7 +1257,7 @@ namespace Model
     bool m_clusterVersionHasBeenSet;
     bool m_allowVersionUpgrade;
     bool m_allowVersionUpgradeHasBeenSet;
-    long m_numberOfNodes;
+    int m_numberOfNodes;
     bool m_numberOfNodesHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;

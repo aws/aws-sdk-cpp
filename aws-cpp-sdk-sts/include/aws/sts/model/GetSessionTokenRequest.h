@@ -40,7 +40,7 @@ namespace Model
      * hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
-    inline long GetDurationSeconds() const{ return m_durationSeconds; }
+    inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
@@ -50,7 +50,7 @@ namespace Model
      * hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
-    inline void SetDurationSeconds(long value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
+    inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, that the credentials should remain valid.
@@ -60,7 +60,7 @@ namespace Model
      * hour). If the duration is longer than one hour, the session for AWS account
      * owners defaults to one hour.</p>
      */
-    inline GetSessionTokenRequest& WithDurationSeconds(long value) { SetDurationSeconds(value); return *this;}
+    inline GetSessionTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
     /**
      * <p>The identification number of the MFA device that is associated with the IAM
@@ -245,7 +245,7 @@ namespace Model
     inline GetSessionTokenRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
 
   private:
-    long m_durationSeconds;
+    int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
