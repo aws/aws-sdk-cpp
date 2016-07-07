@@ -56,23 +56,24 @@ namespace Aws
             void SecureRandomBytes_BCrypt::GetBytes(unsigned char* buffer, size_t bufferSize)
             {
                 assert(m_algHandle);
-                assert(buffer);
-                assert(bufferSize > 0);
-
-                if (m_algHandle)
+                if(bufferSize)
                 {
-                    NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
+                    assert(buffer);
+                    if (m_algHandle)
+                    {
+                        NTSTATUS status = BCryptGenRandom(m_algHandle, buffer, static_cast<ULONG>(bufferSize), 0);
 
-                    if (!NT_SUCCESS(status))
+                        if (!NT_SUCCESS(status))
+                        {
+                            m_failure = true;
+                            AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
+                        }
+                    }
+                    else
                     {
                         m_failure = true;
-                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Failed to generate random number with status " << status);
+                        AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
                     }
-                }
-                else
-                {
-                    m_failure = true;
-                    AWS_LOGSTREAM_FATAL(SecureRandom_BCrypt_Tag, "Algorithm handle not initialized ");
                 }
             }
 
@@ -347,8 +348,8 @@ namespace Aws
 
             static const char* SYM_CIPHER_TAG = "BCryptSymmetricCipherImpl";
 
-            BCryptSymmetricCipher::BCryptSymmetricCipher(const CryptoBuffer& key, size_t blockSizeBytes, bool ctrMode) :
-                SymmetricCipher(key, blockSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false),
+            BCryptSymmetricCipher::BCryptSymmetricCipher(const CryptoBuffer& key, size_t ivSizeBytes, bool ctrMode) :
+                SymmetricCipher(key, ivSizeBytes, ctrMode), m_encDecInitialized(false), m_encryptionMode(false),
                 m_decryptionMode(false), m_authInfoPtr(nullptr)
             {
                 Init();
@@ -428,7 +429,7 @@ namespace Aws
                         return;
                     }
 
-                    if(!m_authInfoPtr)
+                    if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
                     {                        
                         NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
 
@@ -1202,6 +1203,7 @@ namespace Aws
                 return TagLengthBytes;
             }
 
+            static const char* KEYWRAP_LOG_TAG = "AES_KeyWrap_Cipher_BCrypt";
             size_t AES_KeyWrap_Cipher_BCrypt::BlockSizeBytes = 8;
             size_t AES_KeyWrap_Cipher_BCrypt::KeyLengthBits = 256;
 
@@ -1233,7 +1235,7 @@ namespace Aws
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(CBC_LOG_TAG, "Failed to initialize encryptor with status code " << status);
+                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to initialize encryptor with status code " << status);
                 }
             }
 
@@ -1256,7 +1258,7 @@ namespace Aws
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to export symmetric key size with status code " << status);
+                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to export symmetric key size with status code " << status);
                     return CryptoBuffer();
                 }
                 
@@ -1264,10 +1266,15 @@ namespace Aws
                 status = BCryptExportKey(keyHandleToEncrypt, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB,
                     cipherText.GetUnderlyingData(), static_cast<ULONG>(cipherText.GetLength()), &sizeOfCipherText, 0);
 
+                if (keyHandleToEncrypt)
+                {
+                    BCryptDestroyKey(keyHandleToEncrypt);
+                }
+
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to export symmetric key with status code " << status);
+                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to export symmetric key with status code " << status);
                     return CryptoBuffer();
                 }
 
@@ -1277,21 +1284,40 @@ namespace Aws
             CryptoBuffer AES_KeyWrap_Cipher_BCrypt::FinalizeDecryption()
             {
                 CheckInitDecryptor();
-                     
-                CryptoBuffer outputBuffer(KeyLengthBits / 8);
-                BCRYPT_KEY_HANDLE importKey;
-                NTSTATUS status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
-                    outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()),
-                    m_operatingKeyBuffer.GetUnderlyingData(), static_cast<ULONG>(m_operatingKeyBuffer.GetLength()), 0);
+                CryptoBuffer returnBuffer;     
+                ULONG res(0);
+                DWORD keyLength(0);
+                NTSTATUS status = BCryptGetProperty(m_algHandle, BCRYPT_OBJECT_LENGTH, (PBYTE)&keyLength, sizeof(keyLength), &res, 0);
 
                 if (!NT_SUCCESS(status))
                 {
                     m_failure = true;
-                    AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to import symmetric key with status code " << status);
-                    return CryptoBuffer();
+                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to determine length of key to import" << status);
+                    return returnBuffer;
                 }
 
-                return outputBuffer;
+                CryptoBuffer outputBuffer(keyLength);
+
+                BCRYPT_KEY_HANDLE importKey(nullptr);
+                status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
+                    outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()),
+                    m_operatingKeyBuffer.GetUnderlyingData(), static_cast<ULONG>(m_operatingKeyBuffer.GetLength()), 0);
+                                    
+                static const size_t BCRYPT_OFFSET(92);
+                static const size_t BITS_PER_BYTE(8);
+
+                if (importKey && outputBuffer.GetLength() > (BCRYPT_OFFSET + KeyLengthBits / BITS_PER_BYTE))
+                {
+                    returnBuffer = CryptoBuffer(outputBuffer.GetUnderlyingData() + BCRYPT_OFFSET, KeyLengthBits / BITS_PER_BYTE);
+                    BCryptDestroyKey(importKey);
+                }
+                else               
+                {
+                    m_failure = true;
+                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to import symmetric key with status code " << status);
+                }
+
+                return returnBuffer;
             }
 
             void AES_KeyWrap_Cipher_BCrypt::Reset()

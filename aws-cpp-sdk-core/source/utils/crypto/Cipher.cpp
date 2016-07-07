@@ -52,9 +52,10 @@ namespace Aws
             void SymmetricCipher::Validate()
             {
                 assert(m_key.GetLength() >= SYMMETRIC_KEY_LENGTH);
-                assert(m_initializationVector.GetLength() >= MIN_IV_LENGTH);
+                assert(m_initializationVector.GetLength() == 0 || m_initializationVector.GetLength() >= MIN_IV_LENGTH);
 
-                if(m_key.GetLength() < SYMMETRIC_KEY_LENGTH || m_initializationVector.GetLength() < MIN_IV_LENGTH)
+                if(m_key.GetLength() < SYMMETRIC_KEY_LENGTH || 
+                    (m_initializationVector.GetLength() > 0 && m_initializationVector.GetLength() < MIN_IV_LENGTH))
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_FATAL(LOG_TAG, "Invalid state for symmetric cipher, key length is " << m_key.GetLength() <<

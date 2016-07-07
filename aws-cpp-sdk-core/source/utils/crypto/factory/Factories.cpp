@@ -762,6 +762,11 @@ std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation
     return s_AES_GCMFactory->CreateImplementation(std::move(key), std::move(iv), std::move(tag));
 }
 
+std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(const CryptoBuffer& key)
+{
+    return s_AES_KeyWrapFactory->CreateImplementation(key);
+}
+
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {
     return s_SecureRandomFactory->CreateImplementation();
