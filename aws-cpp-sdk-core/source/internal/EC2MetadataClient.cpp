@@ -72,7 +72,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
         }
 
         Aws::StringStream ss;
-        ss << SECURITY_CREDENTIALS_RESOURCE << securityCredentials[0];
+        ss << SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
         AWS_LOG_DEBUG(EC2_METADATA_CLIENT_LOG_TAG, "Calling EC2MetatadaService resource %s", ss.str().c_str());
         return GetResource(ss.str().c_str());
     }
