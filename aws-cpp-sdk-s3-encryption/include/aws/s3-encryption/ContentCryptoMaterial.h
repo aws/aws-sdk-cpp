@@ -34,7 +34,7 @@ namespace Aws
             AES_KEY_WRAP
         };
 
-        class ContentCryptoMaterial
+        class AWS_S3ENCRYPTION_API ContentCryptoMaterial
         {
         public:
             /*
