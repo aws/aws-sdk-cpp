@@ -26,13 +26,13 @@ namespace Aws
         namespace Materials
         {
             SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
-                m_symmetricKey(symmetricKey)
+                m_symmetricMasterKey(symmetricKey)
             {
             }
 
             void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
             {
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
+                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
                 auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
                 auto encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
@@ -46,7 +46,7 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_FATAL(SimpleEncryptionMaterials_Tag, "KeyWrapAlgorithm not AES_KEY_WRAP.");
                 }
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
+                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
                 auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
                 auto decryptResult = cipher->DecryptBuffer(contentEncryptionKey);
                 auto decryptFinalizeResult = cipher->FinalizeDecryption();

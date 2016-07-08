@@ -26,24 +26,24 @@ namespace Aws
             class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterialsInterface {
             public:
                 /*
-                Initialize with symmetric key and materials description. If a materials description is not provided, provide an empty string.
+                Initialize with symmetric key.
                 */
                 SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer& symmetricKey);
 
                 /*
-                * This will encrypt the cek within the Content Crypto material and will populate the IV and cekEncryptionAlgorithm within the Content Crypto Material.
+                * This will encrypt the cek within the Content Crypto material and KeyWrapAlgorithm within the Content Crypto Material.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
                 void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
 
                 /*
-                * This will decrypt the cek with the symmetric key using the IV stored within the content crypto material.
+                * This will decrypt the cek with the symmetric master key.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
                 void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
 
             private:
-                Aws::Utils::CryptoBuffer m_symmetricKey;
+                Aws::Utils::CryptoBuffer m_symmetricMasterKey;
             };
         }//namespace Materials
     }//namespace S3Encryption

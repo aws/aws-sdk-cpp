@@ -78,7 +78,8 @@ TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentMateri
     ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
 }
 
-//This tests Simple Encryption Materials by 
+//This tests Simple Encryption Materials by using different materials with different master keys
+//  and making sure the decrypted key is not correct.
 TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentKeys) {
     auto masterKey = SymmetricCipher::GenerateKey();
     auto otherMasterKey = SymmetricCipher::GenerateKey();
