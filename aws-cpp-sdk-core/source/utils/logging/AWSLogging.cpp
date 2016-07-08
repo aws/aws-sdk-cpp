@@ -24,7 +24,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
 static std::shared_ptr<LogSystemInterface> AWSLogSystem(nullptr);
-static Aws::Stack< std::shared_ptr< LogSystemInterface > > LoggerStack;
+static std::shared_ptr<LogSystemInterface> OldLogger(nullptr);
 
 namespace Aws
 {
@@ -46,19 +46,14 @@ LogSystemInterface *GetLogSystem() {
 
 void PushLogger(const std::shared_ptr<LogSystemInterface> &logSystem)
 {
-    LoggerStack.push(AWSLogSystem);
+    OldLogger = AWSLogSystem;
     AWSLogSystem = logSystem;
 }
 
 void PopLogger()
 {
-    if(LoggerStack.size() > 0)
-    {
-        auto nextLogger = LoggerStack.top();
-        LoggerStack.pop();
-
-        AWSLogSystem = nextLogger;
-    }
+    AWSLogSystem = OldLogger;
+    OldLogger = nullptr;
 }
 
 } // namespace Logging
