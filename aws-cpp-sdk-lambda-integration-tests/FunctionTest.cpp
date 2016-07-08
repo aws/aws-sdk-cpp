@@ -247,7 +247,7 @@ protected:
         //Get the ARN off the IAM role.  We'll need this for creating the functions.
         auto & roleARN = m_role->GetArn();
 
-	std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
+	    std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
 
         //Now attempt to create the function.
         CreateFunctionRequest createFunctionRequest;

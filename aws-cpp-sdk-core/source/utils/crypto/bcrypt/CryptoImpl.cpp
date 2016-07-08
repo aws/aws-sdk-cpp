@@ -1284,31 +1284,33 @@ namespace Aws
             CryptoBuffer AES_KeyWrap_Cipher_BCrypt::FinalizeDecryption()
             {
                 CheckInitDecryptor();
-                CryptoBuffer returnBuffer;     
-                ULONG res(0);
-                DWORD keyLength(0);
-                NTSTATUS status = BCryptGetProperty(m_algHandle, BCRYPT_OBJECT_LENGTH, (PBYTE)&keyLength, sizeof(keyLength), &res, 0);
-
-                if (!NT_SUCCESS(status))
-                {
-                    m_failure = true;
-                    AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to determine length of key to import" << status);
-                    return returnBuffer;
-                }
-
-                CryptoBuffer outputBuffer(keyLength);
-
+                CryptoBuffer returnBuffer;    
+                
                 BCRYPT_KEY_HANDLE importKey(nullptr);
-                status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
-                    outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()),
+                NTSTATUS status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
+                    nullptr, 0,
                     m_operatingKeyBuffer.GetUnderlyingData(), static_cast<ULONG>(m_operatingKeyBuffer.GetLength()), 0);
                                     
-                static const size_t BCRYPT_OFFSET(92);
                 static const size_t BITS_PER_BYTE(8);
 
-                if (importKey && outputBuffer.GetLength() > (BCRYPT_OFFSET + KeyLengthBits / BITS_PER_BYTE))
+                if (importKey)
                 {
-                    returnBuffer = CryptoBuffer(outputBuffer.GetUnderlyingData() + BCRYPT_OFFSET, KeyLengthBits / BITS_PER_BYTE);
+                    ULONG exportSize(0);
+                    CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + KeyLengthBits / BITS_PER_BYTE);
+                    status = BCryptExportKey(importKey, nullptr, BCRYPT_KEY_DATA_BLOB, 
+                                outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()), &exportSize, 0);
+
+                    if (NT_SUCCESS(status))
+                    {
+                        BCRYPT_KEY_DATA_BLOB_HEADER* streamHeader = (BCRYPT_KEY_DATA_BLOB_HEADER*)outputBuffer.GetUnderlyingData();
+                        returnBuffer = CryptoBuffer(outputBuffer.GetUnderlyingData() + sizeof(BCRYPT_KEY_DATA_BLOB_HEADER), streamHeader->cbKeyData);
+                    }
+                    else
+                    {
+                        m_failure = true;
+                        AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to re-export key with status code " << status);
+                    }
+
                     BCryptDestroyKey(importKey);
                 }
                 else               
