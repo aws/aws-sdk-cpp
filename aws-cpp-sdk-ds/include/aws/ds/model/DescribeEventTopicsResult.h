@@ -33,6 +33,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a DescribeEventTopic request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API DescribeEventTopicsResult
   {
   public:

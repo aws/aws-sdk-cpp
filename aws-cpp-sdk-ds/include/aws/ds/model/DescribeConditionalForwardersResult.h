@@ -33,6 +33,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a DescribeConditionalForwarder request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API DescribeConditionalForwardersResult
   {
   public:

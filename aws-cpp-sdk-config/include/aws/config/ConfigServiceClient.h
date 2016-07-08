@@ -83,6 +83,7 @@ namespace ConfigService
 namespace Model
 {
         class DeleteConfigRuleRequest;
+        class DeleteConfigurationRecorderRequest;
         class DeleteDeliveryChannelRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeComplianceByConfigRuleRequest;
@@ -106,6 +107,7 @@ namespace Model
         class StopConfigurationRecorderRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteDeliveryChannelOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByConfigRuleOutcome;
@@ -130,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
 
         typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
+        typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
         typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeComplianceByConfigRuleOutcome> DescribeComplianceByConfigRuleOutcomeCallable;
@@ -157,6 +160,7 @@ namespace Model
   class ConfigServiceClient;
 
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationRecorderRequest&, const Model::DeleteConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&, const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByConfigRuleRequest&, const Model::DescribeComplianceByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByConfigRuleResponseReceivedHandler;
@@ -268,28 +272,65 @@ namespace Model
         virtual void DeleteConfigRuleAsync(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be
-         * deleted if it is the only delivery channel and the configuration recorder is
-         * still running. To delete the delivery channel, stop the running configuration
-         * recorder using the <a>StopConfigurationRecorder</a> action.</p>
+         * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
+         * is deleted, AWS Config will not record resource configuration changes until you
+         * create a new configuration recorder.</p> <p>This action does not delete the
+         * configuration information that was previously recorded. You will be able to
+         * access the previously recorded information by using the
+         * <code>GetResourceConfigHistory</code> action, but you will not be able to access
+         * this information in the AWS Config console until you create a new configuration
+         * recorder.</p>
+         */
+        virtual Model::DeleteConfigurationRecorderOutcome DeleteConfigurationRecorder(const Model::DeleteConfigurationRecorderRequest& request) const;
+
+        /**
+         * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
+         * is deleted, AWS Config will not record resource configuration changes until you
+         * create a new configuration recorder.</p> <p>This action does not delete the
+         * configuration information that was previously recorded. You will be able to
+         * access the previously recorded information by using the
+         * <code>GetResourceConfigHistory</code> action, but you will not be able to access
+         * this information in the AWS Config console until you create a new configuration
+         * recorder.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConfigurationRecorderOutcomeCallable DeleteConfigurationRecorderCallable(const Model::DeleteConfigurationRecorderRequest& request) const;
+
+        /**
+         * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
+         * is deleted, AWS Config will not record resource configuration changes until you
+         * create a new configuration recorder.</p> <p>This action does not delete the
+         * configuration information that was previously recorded. You will be able to
+         * access the previously recorded information by using the
+         * <code>GetResourceConfigHistory</code> action, but you will not be able to access
+         * this information in the AWS Config console until you create a new configuration
+         * recorder.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConfigurationRecorderAsync(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
+         * channel, you must stop the configuration recorder by using the
+         * <a>StopConfigurationRecorder</a> action.</p>
          */
         virtual Model::DeleteDeliveryChannelOutcome DeleteDeliveryChannel(const Model::DeleteDeliveryChannelRequest& request) const;
 
         /**
-         * <p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be
-         * deleted if it is the only delivery channel and the configuration recorder is
-         * still running. To delete the delivery channel, stop the running configuration
-         * recorder using the <a>StopConfigurationRecorder</a> action.</p>
+         * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
+         * channel, you must stop the configuration recorder by using the
+         * <a>StopConfigurationRecorder</a> action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteDeliveryChannelOutcomeCallable DeleteDeliveryChannelCallable(const Model::DeleteDeliveryChannelRequest& request) const;
 
         /**
-         * <p>Deletes the specified delivery channel.</p> <p>The delivery channel cannot be
-         * deleted if it is the only delivery channel and the configuration recorder is
-         * still running. To delete the delivery channel, stop the running configuration
-         * recorder using the <a>StopConfigurationRecorder</a> action.</p>
+         * <p>Deletes the delivery channel.</p> <p>Before you can delete the delivery
+         * channel, you must stop the configuration recorder by using the
+         * <a>StopConfigurationRecorder</a> action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -339,9 +380,10 @@ namespace Model
          * comply with it, and it is noncompliant if any of these resources do not comply.
          * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
          * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
-         * check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
-         * action to get the <code>LastSuccessfulInvocationTime</code> and
+         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
+         * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+         * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
@@ -350,7 +392,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          */
         virtual Model::DescribeComplianceByConfigRuleOutcome DescribeComplianceByConfigRule(const Model::DescribeComplianceByConfigRuleRequest& request) const;
 
@@ -361,9 +403,10 @@ namespace Model
          * comply with it, and it is noncompliant if any of these resources do not comply.
          * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
          * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
-         * check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
-         * action to get the <code>LastSuccessfulInvocationTime</code> and
+         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
+         * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+         * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
@@ -372,7 +415,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -385,9 +428,10 @@ namespace Model
          * comply with it, and it is noncompliant if any of these resources do not comply.
          * </p> <p>If AWS Config has no current evaluation results for the rule, it returns
          * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
-         * conditions: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
-         * check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
-         * action to get the <code>LastSuccessfulInvocationTime</code> and
+         * conditions:</p> <ul> <li>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
+         * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+         * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
@@ -396,7 +440,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -410,8 +454,8 @@ namespace Model
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for
-         * the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
+         * for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
@@ -422,7 +466,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          */
         virtual Model::DescribeComplianceByResourceOutcome DescribeComplianceByResource(const Model::DescribeComplianceByResourceRequest& request) const;
 
@@ -434,8 +478,8 @@ namespace Model
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for
-         * the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
+         * for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
@@ -446,7 +490,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -460,8 +504,8 @@ namespace Model
          * not comply with one or more of these rules.</p> <p>If AWS Config has no current
          * evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
          * This result might indicate one of the following conditions about the rules that
-         * evaluate the resource: <ul> <li>AWS Config has never invoked an evaluation for
-         * the rule. To check whether it has, use the
+         * evaluate the resource:</p> <ul> <li>AWS Config has never invoked an evaluation
+         * for the rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
@@ -472,7 +516,7 @@ namespace Model
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
-         * scope.</li></ul></p>
+         * scope.</li> </ul>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -528,16 +572,16 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note>Currently, you can
-         * specify only one configuration recorder per account.</note>
+         * configuration recorder associated with the account.</p> <note> <p>Currently, you
+         * can specify only one configuration recorder per account.</p> </note>
          */
         virtual Model::DescribeConfigurationRecorderStatusOutcome DescribeConfigurationRecorderStatus(const Model::DescribeConfigurationRecorderStatusRequest& request) const;
 
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note>Currently, you can
-         * specify only one configuration recorder per account.</note>
+         * configuration recorder associated with the account.</p> <note> <p>Currently, you
+         * can specify only one configuration recorder per account.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -546,8 +590,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note>Currently, you can
-         * specify only one configuration recorder per account.</note>
+         * configuration recorder associated with the account.</p> <note> <p>Currently, you
+         * can specify only one configuration recorder per account.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -584,16 +628,16 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note>Currently, you can specify only
-         * one delivery channel per account.</note>
+         * channels associated with the account. </p> <note> <p>Currently, you can specify
+         * only one delivery channel per account.</p> </note>
          */
         virtual Model::DescribeDeliveryChannelStatusOutcome DescribeDeliveryChannelStatus(const Model::DescribeDeliveryChannelStatusRequest& request) const;
 
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note>Currently, you can specify only
-         * one delivery channel per account.</note>
+         * channels associated with the account. </p> <note> <p>Currently, you can specify
+         * only one delivery channel per account.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -602,8 +646,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified delivery channel. If a delivery
          * channel is not specified, this action returns the current status of all delivery
-         * channels associated with the account. </p> <note>Currently, you can specify only
-         * one delivery channel per account.</note>
+         * channels associated with the account. </p> <note> <p>Currently, you can specify
+         * only one delivery channel per account.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -788,13 +832,13 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note>You can specify either
-         * resource IDs or a resource name but not both in the same request.</note> <p>The
-         * response is paginated, and by default AWS Config lists 100 resource identifiers
-         * on each page. You can customize this number with the <code>limit</code>
-         * parameter. The response includes a <code>nextToken</code> string, and to get the
-         * next page of results, run the request again and enter this string for the
-         * <code>nextToken</code> parameter.</p>
+         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
+         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * identifiers on each page. You can customize this number with the
+         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string, and to get the next page of results, run the request again and enter
+         * this string for the <code>nextToken</code> parameter.</p>
          */
         virtual Model::ListDiscoveredResourcesOutcome ListDiscoveredResources(const Model::ListDiscoveredResourcesRequest& request) const;
 
@@ -804,13 +848,13 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note>You can specify either
-         * resource IDs or a resource name but not both in the same request.</note> <p>The
-         * response is paginated, and by default AWS Config lists 100 resource identifiers
-         * on each page. You can customize this number with the <code>limit</code>
-         * parameter. The response includes a <code>nextToken</code> string, and to get the
-         * next page of results, run the request again and enter this string for the
-         * <code>nextToken</code> parameter.</p>
+         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
+         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * identifiers on each page. You can customize this number with the
+         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string, and to get the next page of results, run the request again and enter
+         * this string for the <code>nextToken</code> parameter.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -822,13 +866,13 @@ namespace Model
          * and (if available) the custom resource name. The results consist of resources
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
-         * specific resource IDs or a resource name.</p> <note>You can specify either
-         * resource IDs or a resource name but not both in the same request.</note> <p>The
-         * response is paginated, and by default AWS Config lists 100 resource identifiers
-         * on each page. You can customize this number with the <code>limit</code>
-         * parameter. The response includes a <code>nextToken</code> string, and to get the
-         * next page of results, run the request again and enter this string for the
-         * <code>nextToken</code> parameter.</p>
+         * specific resource IDs or a resource name.</p> <note> <p>You can specify either
+         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * <p>The response is paginated, and by default AWS Config lists 100 resource
+         * identifiers on each page. You can customize this number with the
+         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
+         * string, and to get the next page of results, run the request again and enter
+         * this string for the <code>nextToken</code> parameter.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -975,43 +1019,43 @@ namespace Model
         virtual void PutConfigurationRecorderAsync(const Model::PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new delivery channel object to deliver the configuration
-         * information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can
-         * use this action to change the Amazon S3 bucket or an Amazon SNS topic of the
-         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
-         * topic, call this action and specify the changed values for the S3 bucket and the
-         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
-         * topic, this action will keep the existing value for the parameter that is not
-         * changed. </p> <note> <p>Currently, you can specify only one delivery channel per
-         * account.</p> </note>
+         * <p>Creates a delivery channel object to deliver configuration information to an
+         * Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery
+         * channel, you must create a configuration recorder.</p> <p>You can use this
+         * action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
+         * delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call
+         * this action and specify the changed values for the S3 bucket and the SNS topic.
+         * If you specify a different value for either the S3 bucket or the SNS topic, this
+         * action will keep the existing value for the parameter that is not changed.</p>
+         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
          */
         virtual Model::PutDeliveryChannelOutcome PutDeliveryChannel(const Model::PutDeliveryChannelRequest& request) const;
 
         /**
-         * <p>Creates a new delivery channel object to deliver the configuration
-         * information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can
-         * use this action to change the Amazon S3 bucket or an Amazon SNS topic of the
-         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
-         * topic, call this action and specify the changed values for the S3 bucket and the
-         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
-         * topic, this action will keep the existing value for the parameter that is not
-         * changed. </p> <note> <p>Currently, you can specify only one delivery channel per
-         * account.</p> </note>
+         * <p>Creates a delivery channel object to deliver configuration information to an
+         * Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery
+         * channel, you must create a configuration recorder.</p> <p>You can use this
+         * action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
+         * delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call
+         * this action and specify the changed values for the S3 bucket and the SNS topic.
+         * If you specify a different value for either the S3 bucket or the SNS topic, this
+         * action will keep the existing value for the parameter that is not changed.</p>
+         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutDeliveryChannelOutcomeCallable PutDeliveryChannelCallable(const Model::PutDeliveryChannelRequest& request) const;
 
         /**
-         * <p>Creates a new delivery channel object to deliver the configuration
-         * information to an Amazon S3 bucket, and to an Amazon SNS topic. </p> <p>You can
-         * use this action to change the Amazon S3 bucket or an Amazon SNS topic of the
-         * existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS
-         * topic, call this action and specify the changed values for the S3 bucket and the
-         * SNS topic. If you specify a different value for either the S3 bucket or the SNS
-         * topic, this action will keep the existing value for the parameter that is not
-         * changed. </p> <note> <p>Currently, you can specify only one delivery channel per
-         * account.</p> </note>
+         * <p>Creates a delivery channel object to deliver configuration information to an
+         * Amazon S3 bucket and Amazon SNS topic.</p> <p>Before you can create a delivery
+         * channel, you must create a configuration recorder.</p> <p>You can use this
+         * action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
+         * delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call
+         * this action and specify the changed values for the S3 bucket and the SNS topic.
+         * If you specify a different value for either the S3 bucket or the SNS topic, this
+         * action will keep the existing value for the parameter that is not changed.</p>
+         * <note> <p>You can have only one delivery channel per AWS account.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1095,6 +1139,7 @@ namespace Model
 
         /**Async helpers**/
         void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConfigurationRecorderAsyncHelper(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeliveryChannelAsyncHelper(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByConfigRuleAsyncHelper(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

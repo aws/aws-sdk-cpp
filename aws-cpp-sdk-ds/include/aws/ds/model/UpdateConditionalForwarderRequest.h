@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Updates a conditional forwarder.</p>
    */
   class AWS_DIRECTORYSERVICE_API UpdateConditionalForwarderRequest : public DirectoryServiceRequest
   {

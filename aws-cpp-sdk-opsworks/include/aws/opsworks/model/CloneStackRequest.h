@@ -575,14 +575,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -600,14 +600,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -625,14 +625,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -650,14 +650,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -675,14 +675,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -700,14 +700,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see
@@ -725,14 +725,14 @@ namespace Model
      * as <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
      * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
      * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>Red Hat
-     * Enterprise Linux 7</code> </p> </li> <li> <p> <code>Microsoft Windows Server
-     * 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information on
-     * how to use custom AMIs with OpsWorks, see <a
+     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
+     * 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
+     * <li> <p> <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft
+     * Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information on how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the parent stack's
      * operating system. For more information on the supported operating systems, see

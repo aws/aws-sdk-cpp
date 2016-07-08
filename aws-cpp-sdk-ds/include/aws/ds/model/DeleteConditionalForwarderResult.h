@@ -31,6 +31,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a DeleteConditionalForwarder request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderResult
   {
   public:

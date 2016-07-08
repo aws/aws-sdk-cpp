@@ -31,6 +31,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a CreateConditinalForwarder request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API CreateConditionalForwarderResult
   {
   public:

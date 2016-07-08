@@ -27,6 +27,7 @@
 #include <aws/config/ConfigServiceEndpoint.h>
 #include <aws/config/ConfigServiceErrorMarshaller.h>
 #include <aws/config/model/DeleteConfigRuleRequest.h>
+#include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleRequest.h>
@@ -144,6 +145,37 @@ void ConfigServiceClient::DeleteConfigRuleAsync(const DeleteConfigRuleRequest& r
 void ConfigServiceClient::DeleteConfigRuleAsyncHelper(const DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteConfigRule(request), context);
+}
+
+DeleteConfigurationRecorderOutcome ConfigServiceClient::DeleteConfigurationRecorder(const DeleteConfigurationRecorderRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConfigurationRecorderOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteConfigurationRecorderOutcome(outcome.GetError());
+  }
+}
+
+DeleteConfigurationRecorderOutcomeCallable ConfigServiceClient::DeleteConfigurationRecorderCallable(const DeleteConfigurationRecorderRequest& request) const
+{
+  return std::async(std::launch::async, &ConfigServiceClient::DeleteConfigurationRecorder, this, request);
+}
+
+void ConfigServiceClient::DeleteConfigurationRecorderAsync(const DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ConfigServiceClient::DeleteConfigurationRecorderAsyncHelper, this, request, handler, context);
+}
+
+void ConfigServiceClient::DeleteConfigurationRecorderAsyncHelper(const DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConfigurationRecorder(request), context);
 }
 
 DeleteDeliveryChannelOutcome ConfigServiceClient::DeleteDeliveryChannel(const DeleteDeliveryChannelRequest& request) const

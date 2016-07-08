@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * Describes the trust relationships for a particular Microsoft AD in the AWS
+   * <p>Describes the trust relationships for a particular Microsoft AD in the AWS
    * cloud. If no input parameters are are provided, such as directory ID or trust
-   * ID, this request describes all the trust relationships.
+   * ID, this request describes all the trust relationships.</p>
    */
   class AWS_DIRECTORYSERVICE_API DescribeTrustsRequest : public DirectoryServiceRequest
   {
@@ -39,44 +39,44 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline DescribeTrustsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline DescribeTrustsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the AWS directory that is a part of the requested trust
-     * relationship.
+     * <p>The Directory ID of the AWS directory that is a part of the requested trust
+     * relationship.</p>
      */
     inline DescribeTrustsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
@@ -187,17 +187,17 @@ namespace Model
     inline DescribeTrustsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * The maximum number of objects to return.
+     * <p>The maximum number of objects to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * The maximum number of objects to return.
+     * <p>The maximum number of objects to return.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * The maximum number of objects to return.
+     * <p>The maximum number of objects to return.</p>
      */
     inline DescribeTrustsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
