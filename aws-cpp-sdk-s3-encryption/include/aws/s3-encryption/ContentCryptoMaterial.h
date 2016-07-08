@@ -38,8 +38,14 @@ namespace Aws
             /*
             Initialize content crypto material with content crypto scheme. Constructor will also generate the cek automatically.
             Since the creation of the crypto content material will be within the S3 crypto modules, only the crypto scheme is needed for initialization.
+            The rest of the data will be set using the accessors below.
             */
             ContentCryptoMaterial(const ContentCryptoScheme& contentCryptoScheme);
+
+            /*
+            Intialize with content encryption key (cek) and content crypto scheme.
+            */
+            ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, const ContentCryptoScheme& contentCryptoScheme);
 
             /**
             * Gets the underlying content encryption key. Not returning const since the key will be encrypted/decrypted in place.

@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -33,37 +34,23 @@ namespace Aws
             {
                 auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
-                //if key wrap uses IV, take from cipher and store here within this class.
-                if (cipher)
-                {
-                    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
-                    //encrypt here
-                    contentCryptoMaterial.SetContentEncryptionKey(contentEncryptionKey);
-                }
-                else
-                {
-                    //for testing purposes
-                    auto contentEncryptionKey = CryptoBuffer();
-                    contentCryptoMaterial.SetContentEncryptionKey(contentEncryptionKey);
-                }
+                auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+                auto encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
+                auto encryptFinalizeResult = cipher->FinalizeEncryption();
+                contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
             }
 
             void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
             {
+                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
+                {
+                    AWS_LOGSTREAM_FATAL(SimpleEncryptionMaterials_Tag, "KeyWrapAlgorithm not AES_KEY_WRAP.");
+                }
                 auto cipher = CreateAES_KeyWrapImplementation(m_symmetricKey);
-                //if key wrap uses IV, create cipher from key and iv instead.
-                if (cipher && contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_KEY_WRAP)
-                {
-                    auto encryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
-                    //decrypt here
-                    contentCryptoMaterial.SetContentEncryptionKey(encryptedContentEncryptionKey);
-                }
-                else
-                {
-                    //for testing purposes
-                    auto encryptedContentEncryptionKey = CryptoBuffer();
-                    contentCryptoMaterial.SetContentEncryptionKey(encryptedContentEncryptionKey);
-                }
+                auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+                auto decryptResult = cipher->DecryptBuffer(contentEncryptionKey);
+                auto decryptFinalizeResult = cipher->FinalizeDecryption();
+                contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &decryptResult, &decryptFinalizeResult }));
             }
         } //namespace Materials
     } //namespace S3Encryption

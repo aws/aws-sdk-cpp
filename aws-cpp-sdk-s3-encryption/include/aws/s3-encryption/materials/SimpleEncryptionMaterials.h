@@ -21,6 +21,8 @@ namespace Aws
     {
         namespace Materials
         {
+            static const char* SimpleEncryptionMaterials_Tag = "SimpleEncryptionMaterials";
+
             class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterialsInterface {
             public:
                 /*

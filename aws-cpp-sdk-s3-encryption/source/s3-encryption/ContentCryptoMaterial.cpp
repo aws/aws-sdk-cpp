@@ -27,5 +27,10 @@ m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_contentCryptoScheme(co
 {
 }
 
+ContentCryptoMaterial::ContentCryptoMaterial(const Aws::Utils::CryptoBuffer & cek, const ContentCryptoScheme & contentCryptoScheme) :
+    m_contentEncryptionKey(cek), m_contentCryptoScheme(contentCryptoScheme)
+{
+}
+
 }
 }

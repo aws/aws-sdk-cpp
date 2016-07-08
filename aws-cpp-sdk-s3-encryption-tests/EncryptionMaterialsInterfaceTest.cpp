@@ -32,44 +32,74 @@ namespace
 class SimpleEncryptionMaterialsInterfaceTest : public ::testing::Test {};
 
 
-//This is a simple encryption materials encrypt test using a generated symmetric master key. This test is assuming the key wrap algorithm is not implemented yet, 
-//    and that the encrypt calls will return an emtpy crypto buffer. 
-TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptTest) {
+//This is a simple encryption materials encrypt test using a generated symmetric master key with the same encryption materials.
+TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecryptTest) {
     auto masterKey = SymmetricCipher::GenerateKey();
+    auto cek = SymmetricCipher::GenerateKey();
 
-    SimpleEncryptionMaterials encryptionMaterialsProvider(masterKey);
+    SimpleEncryptionMaterials encryptionMaterials(masterKey);
     //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
-    ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CTR);
+    ContentCryptoMaterial contentCryptoMaterial(cek, ContentCryptoScheme::CTR);
     auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
     
-    encryptionMaterialsProvider.EncryptCEK(contentCryptoMaterial);
+    encryptionMaterials.EncryptCEK(contentCryptoMaterial);
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
 
     ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);
-    ASSERT_NE(contentEncryptionKey, CryptoBuffer());
-    //Should be empty cryptobuffer for now until key wrap is implemented. 
-    ASSERT_EQ(encryptedContentEncryptionKey, CryptoBuffer());
+    
+    encryptionMaterials.DecryptCEK(contentCryptoMaterial);
+    auto decryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+    ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
 }
 
-//This is a simple encryption materials decrypt test using a generated symmetric master key. This test is assuming the key wrap algorithm is not implemented yet, 
-//    and that the encrypt calls will return an emtpy crypto buffer. 
-TEST_F(SimpleEncryptionMaterialsInterfaceTest, DecryptTest) {
+//This tests Simple Encryption Materials by attempting to encrypt and decrypt with seperate
+//    materials which have the same master key. 
+TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentMaterials) {
     auto masterKey = SymmetricCipher::GenerateKey();
 
-    SimpleEncryptionMaterials encryptionMaterialsProvider(masterKey);
+    SimpleEncryptionMaterials encryptionMaterials(masterKey);
     //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
     ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CTR);
     auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
 
-    encryptionMaterialsProvider.DecryptCEK(contentCryptoMaterial);
+    encryptionMaterials.EncryptCEK(contentCryptoMaterial);
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
 
     ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);
-    ASSERT_NE(contentEncryptionKey, CryptoBuffer());
-    //Should be empty cryptobuffer for now until key wrap is implemented. 
-    ASSERT_EQ(encryptedContentEncryptionKey, CryptoBuffer());
+
+    SimpleEncryptionMaterials otherEncryptionMaterials(masterKey);
+
+    otherEncryptionMaterials.DecryptCEK(contentCryptoMaterial);
+    auto decryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+    ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
+}
+
+//This tests Simple Encryption Materials by 
+TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentKeys) {
+    auto masterKey = SymmetricCipher::GenerateKey();
+    auto otherMasterKey = SymmetricCipher::GenerateKey();
+
+    SimpleEncryptionMaterials encryptionMaterials(masterKey);
+    //Crypto Scheme is arbituary at this point, can be CTR, CBC, or GCM
+    ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CTR);
+    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+    encryptionMaterials.EncryptCEK(contentCryptoMaterial);
+
+    auto encryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+
+    ASSERT_NE(contentEncryptionKey, encryptedContentEncryptionKey);
+
+    SimpleEncryptionMaterials otherEncryptionMaterials(otherMasterKey);
+
+    otherEncryptionMaterials.DecryptCEK(contentCryptoMaterial);
+    auto decryptedContentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+    ASSERT_EQ(decryptedContentEncryptionKey.GetLength(), 0u);
+    ASSERT_NE(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
 }
 }
 
