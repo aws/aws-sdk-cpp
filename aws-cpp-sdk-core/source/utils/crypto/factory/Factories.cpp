@@ -428,10 +428,7 @@ public:
 #elif ENABLE_OPENSSL_ENCRYPTION
         return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_LOGSTREAM_ERROR(s_allocationTag, "AES GCM is not implemented on this platform, returning null.");
-        assert(0);
-        return nullptr;
+        return Aws::MakeShared<AES_KeyWrap_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
         return nullptr;
 #endif
