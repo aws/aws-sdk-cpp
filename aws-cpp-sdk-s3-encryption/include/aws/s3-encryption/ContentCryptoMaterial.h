@@ -21,20 +21,20 @@ namespace Aws
 {
     namespace S3Encryption
     {
-        enum class AWS_S3ENCRYPTION_API ContentCryptoScheme 
+        enum class ContentCryptoScheme 
         {
             CBC,
             CTR,
             GCM
         };
 
-        enum class AWS_S3ENCRYPTION_API KeyWrapAlgorithm 
+        enum class KeyWrapAlgorithm 
         {
             KMS,
             AES_KEY_WRAP
         };
 
-        class AWS_S3ENCRYPTION_API ContentCryptoMaterial
+        class ContentCryptoMaterial
         {
         public:
             /*
