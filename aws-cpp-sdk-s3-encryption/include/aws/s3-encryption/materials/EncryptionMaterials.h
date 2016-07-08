@@ -25,10 +25,10 @@ namespace Aws
     {
         namespace Materials
         {
-            class AWS_S3ENCRYPTION_API EncryptionMaterialsInterface
+            class AWS_S3ENCRYPTION_API EncryptionMaterials
             {
             public:
-                virtual ~EncryptionMaterialsInterface() = default;
+                virtual ~EncryptionMaterials() = default;
                 /*
                 * Override this method to control how to encrypt the content encryption key (CEK). This occurs in place.
                 */

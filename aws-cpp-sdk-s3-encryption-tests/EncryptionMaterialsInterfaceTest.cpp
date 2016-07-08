@@ -17,7 +17,7 @@
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/s3-encryption/materials/EncryptionMaterialsInterface.h>
+#include <aws/s3-encryption/materials/EncryptionMaterials.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/ContentCryptoMaterial.h>
 
@@ -29,11 +29,12 @@ using namespace Aws::S3Encryption;
 namespace 
 {
 //No current functions.
-class SimpleEncryptionMaterialsInterfaceTest : public ::testing::Test {};
+class SimpleEncryptionMaterialsTest : public ::testing::Test {};
 
 
 //This is a simple encryption materials encrypt test using a generated symmetric master key with the same encryption materials.
-TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecryptTest) {
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptTest) 
+{
     auto masterKey = SymmetricCipher::GenerateKey();
     auto cek = SymmetricCipher::GenerateKey();
 
@@ -56,7 +57,8 @@ TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecryptTest) {
 
 //This tests Simple Encryption Materials by attempting to encrypt and decrypt with seperate
 //    materials which have the same master key. 
-TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentMaterials) {
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterials)
+{
     auto masterKey = SymmetricCipher::GenerateKey();
 
     SimpleEncryptionMaterials encryptionMaterials(masterKey);
@@ -80,7 +82,8 @@ TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentMateri
 
 //This tests Simple Encryption Materials by using different materials with different master keys
 //  and making sure the decrypted key is not correct.
-TEST_F(SimpleEncryptionMaterialsInterfaceTest, EncryptDecrypyWithDifferentKeys) {
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentKeys) 
+{
     auto masterKey = SymmetricCipher::GenerateKey();
     auto otherMasterKey = SymmetricCipher::GenerateKey();
 

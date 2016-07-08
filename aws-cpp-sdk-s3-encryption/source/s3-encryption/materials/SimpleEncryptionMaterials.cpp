@@ -21,37 +21,41 @@ using namespace Aws::S3Encryption;
 
 namespace Aws
 {
-    namespace S3Encryption
+namespace S3Encryption
+{
+namespace Materials
+{
+
+SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
+    m_symmetricMasterKey(symmetricKey)
+{
+
+}
+
+void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
+{
+    auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+    contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
+    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+    auto encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
+    auto encryptFinalizeResult = cipher->FinalizeEncryption();
+    contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
+}
+
+void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
+{
+    if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
     {
-        namespace Materials
-        {
-            SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
-                m_symmetricMasterKey(symmetricKey)
-            {
-            }
+        AWS_LOGSTREAM_FATAL(SimpleEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
+                    << " current encryption materials can not decrypt the content encryption key.");
+    }
+    auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+    auto decryptResult = cipher->DecryptBuffer(contentEncryptionKey);
+    auto decryptFinalizeResult = cipher->FinalizeDecryption();
+    contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &decryptResult, &decryptFinalizeResult }));
+}
 
-            void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
-            {
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
-                contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
-                auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
-                auto encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
-                auto encryptFinalizeResult = cipher->FinalizeEncryption();
-                contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
-            }
-
-            void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
-            {
-                if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
-                {
-                    AWS_LOGSTREAM_FATAL(SimpleEncryptionMaterials_Tag, "KeyWrapAlgorithm not AES_KEY_WRAP.");
-                }
-                auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
-                auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
-                auto decryptResult = cipher->DecryptBuffer(contentEncryptionKey);
-                auto decryptFinalizeResult = cipher->FinalizeDecryption();
-                contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &decryptResult, &decryptFinalizeResult }));
-            }
-        } //namespace Materials
-    } //namespace S3Encryption
+} //namespace Materials
+} //namespace S3Encryption
 } //namespace Aws

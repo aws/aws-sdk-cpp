@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 #pragma once
-#include <aws/s3-encryption/materials/EncryptionMaterialsInterface.h>
+#include <aws/s3-encryption/materials/EncryptionMaterials.h>
 
 namespace Aws
 {
@@ -23,7 +23,8 @@ namespace Aws
         {
             static const char* SimpleEncryptionMaterials_Tag = "SimpleEncryptionMaterials";
 
-            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterialsInterface {
+            class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterials 
+            {
             public:
                 /*
                 Initialize with symmetric key.
@@ -34,13 +35,13 @@ namespace Aws
                 * This will encrypt the cek within the Content Crypto material and KeyWrapAlgorithm within the Content Crypto Material.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
-                void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+                void EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial) override;
 
                 /*
                 * This will decrypt the cek with the symmetric master key.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
-                void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
+                void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial) override;
 
             private:
                 Aws::Utils::CryptoBuffer m_symmetricMasterKey;
