@@ -113,7 +113,7 @@ namespace Aws
             /**
             * Sets the underlying materials description. Copies from parameter materialsDescription.
             */
-            inline void GetMaterialsDescription(const Aws::String& materialsDescription) {
+            inline void SetMaterialsDescription(const Aws::String& materialsDescription) {
                 m_materialsDescription = materialsDescription;
             }
 
