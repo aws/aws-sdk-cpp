@@ -15,6 +15,8 @@
 
 #pragma once
 
+#include <aws/core/SDKConfig.h>
+
 #if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #ifdef _MSC_VER
         #pragma warning(disable : 4251)
