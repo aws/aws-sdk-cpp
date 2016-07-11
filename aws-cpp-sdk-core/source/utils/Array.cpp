@@ -15,9 +15,7 @@
 
 #include <aws/core/utils/Array.h>
 
-#ifdef _WIN32
-#include <Windows.h>
-#endif
+#include <aws/core/platform/Security.h>
 
 namespace Aws
 {
@@ -70,15 +68,7 @@ namespace Aws
             {
                 if (GetUnderlyingData())
                 {
-#ifdef _WIN32
-                    SecureZeroMemory(GetUnderlyingData(), GetLength());
-#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
-                    memset_s(GetUnderlyingData(), GetLength(), 0, GetLength()));
-#else
-                    unsigned char* data = GetUnderlyingData();
-                    memset(data, 0, GetLength());
-                    asm volatile("" : "+m" (data));
-#endif
+                    Aws::Security::SecureMemClear(GetUnderlyingData(), GetLength());
                 }
             }
     }

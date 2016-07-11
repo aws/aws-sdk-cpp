@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/core/platform/PlatformAndroid.h>
+#include <aws/core/platform/Android.h>
 
 #include <iostream>
 #include <chrono>

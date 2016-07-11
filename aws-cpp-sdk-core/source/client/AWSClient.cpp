@@ -413,7 +413,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
+        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
@@ -504,7 +504,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
+        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
@@ -545,7 +545,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
     // going to dump the XML parsing error and the http response code as a string
     Aws::StringStream ss;
-    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << httpResponse->GetResponseCode();
+    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
     return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
 
 }

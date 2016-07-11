@@ -24,7 +24,14 @@
     #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
     #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-#include <aws/core/utils/logging/LogMacros.h>
+    #include <aws/core/utils/logging/LogMacros.h>
+#else
+    // if you don't have any encryption you still need to pull in the interface definitions
+    #include <aws/core/utils/crypto/Hash.h>
+    #include <aws/core/utils/crypto/HMAC.h>
+    #include <aws/core/utils/crypto/Cipher.h>
+    #include <aws/core/utils/crypto/SecureRandom.h>
+    #define NO_ENCRYPTION
 #endif
 
 using namespace Aws::Utils;
@@ -191,6 +198,7 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
+        AWS_UNREFERENCED_PARAM(key);
         return nullptr;
 #endif
     }
@@ -206,6 +214,9 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+
         return nullptr;
 #endif
     }
@@ -221,6 +232,9 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+
         return nullptr;
 #endif
     }
@@ -266,6 +280,7 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
+        AWS_UNREFERENCED_PARAM(key);
         return nullptr;
 #endif
     }
@@ -281,6 +296,9 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+
         return nullptr;
 #endif
     }
@@ -296,6 +314,9 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+
         return nullptr;
 #endif
     }
@@ -344,6 +365,8 @@ public:
         assert(0);
         return nullptr;
 #else
+        AWS_UNREFERENCED_PARAM(key);
+
         return nullptr;
 #endif
     }
@@ -364,6 +387,9 @@ public:
         assert(0);
         return nullptr;
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
         return nullptr;
 #endif
     }
@@ -384,6 +410,9 @@ public:
         assert(0);
         return nullptr;
 #else
+        AWS_UNREFERENCED_PARAM(key);
+        AWS_UNREFERENCED_PARAM(iv);
+        AWS_UNREFERENCED_PARAM(tag);
         return nullptr;
 #endif
     }

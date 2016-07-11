@@ -4110,7 +4110,7 @@ void ColoredPrintf(GTestColor color, const char* fmt, ...) {
   va_list args;
   va_start(args, fmt);
 
-#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_SYMBIAN || GTEST_OS_ZOS || GTEST_OS_IOS
+#if GTEST_OS_WINDOWS_MOBILE || GTEST_OS_SYMBIAN || GTEST_OS_ZOS || GTEST_OS_IOS || OS_NO_ISATTY
   const bool use_color = false;
 #else
   static const bool in_color_mode =
@@ -7449,11 +7449,13 @@ static int ExecDeathTestChildMain(void* child_arg) {
   const char* const original_dir =
       UnitTest::GetInstance()->original_working_dir();
   // We can safely call chdir() as it's a direct system call.
+#if !defined(OS_NO_CHDIR)
   if (chdir(original_dir) != 0) {
     DeathTestAbort(std::string("chdir(\"") + original_dir + "\") failed: " +
                    GetLastErrnoDescription());
     return EXIT_FAILURE;
   }
+#endif
 
   // We can safely call execve() as it's a direct system call.  We
   // cannot use execvp() as it's a libc function and thus potentially
@@ -7936,7 +7938,7 @@ static bool IsPathSeparator(char c) {
 
 // Returns the current working directory, or "" if unsuccessful.
 FilePath FilePath::GetCurrentDir() {
-#if GTEST_OS_WINDOWS_MOBILE
+#if GTEST_OS_WINDOWS_MOBILE || OS_NO_GETCWD
   // Windows CE doesn't have a current directory, so we just return
   // something reasonable.
   return FilePath(kCurrentDirectoryString);
@@ -8286,6 +8288,7 @@ void FilePath::Normalize() {
 namespace testing {
 namespace internal {
 
+#if GTEST_HAS_STREAM_REDIRECTION
 #if defined(_MSC_VER) || defined(__BORLANDC__)
 // MSVC and C++Builder do not provide a definition of STDERR_FILENO.
 const int kStdOutFileno = 1;
@@ -8294,6 +8297,7 @@ const int kStdErrFileno = 2;
 const int kStdOutFileno = STDOUT_FILENO;
 const int kStdErrFileno = STDERR_FILENO;
 #endif  // _MSC_VER
+#endif // GTEST_HAS_STREAM_REDIRECTION
 
 #if GTEST_OS_MAC
 

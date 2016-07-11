@@ -24,7 +24,7 @@ namespace Aws
     /**
      * AWS Regions
      */
-    enum class AWS_CORE_API Region
+    enum class Region
     {
         US_EAST_1,
         US_WEST_1,
