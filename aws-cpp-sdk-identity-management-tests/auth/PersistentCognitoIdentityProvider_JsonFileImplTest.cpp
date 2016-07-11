@@ -42,7 +42,7 @@ public:
 
     void TearDown()
     {
-        Aws::Platform::FileSystem::RemoveFileIfExists(tempFile.c_str());
+        Aws::FileSystem::RemoveFileIfExists(tempFile.c_str());
     }
 
     Aws::String tempFile;
@@ -86,7 +86,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestConstructorWhenFileI
     identityFile.close();
 
     PersistentCognitoIdentityProvider_JsonFileImpl identityProvider("IdentityPoolWeWant", "accountId", filePath.c_str());
-    Aws::Platform::FileSystem::RemoveFileIfExists(filePath.c_str());
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(identityProvider.HasIdentityId());
     ASSERT_EQ(theIdentityPoolWeWant.GetString("IdentityId"), identityProvider.GetIdentityId());
@@ -105,7 +105,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     identityDoc.WithObject("SomeOtherIdentityPool", someOtherIdentityPool);
 
     Aws::String filePath = tempFile;
-    Aws::Platform::FileSystem::RemoveFileIfExists(filePath.c_str());
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
     std::ofstream identityFile(filePath.c_str());
     identityFile << identityDoc.WriteReadable();
     identityFile.close();
@@ -147,7 +147,7 @@ TEST_F(PersistentCognitoIdentityProvider_JsonImpl_Test, TestPersistance)
     std::ifstream identityFileInput(filePath.c_str());
     JsonValue finalIdentityDoc(identityFileInput);
     identityFileInput.close();
-    Aws::Platform::FileSystem::RemoveFileIfExists(filePath.c_str());
+    Aws::FileSystem::RemoveFileIfExists(filePath.c_str());
 
     ASSERT_TRUE(finalIdentityDoc.ValueExists("SomeOtherIdentityPool"));
     ASSERT_TRUE(finalIdentityDoc.ValueExists("IdentityPoolWeWant"));

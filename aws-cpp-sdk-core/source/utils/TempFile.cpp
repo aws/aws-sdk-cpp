@@ -37,7 +37,7 @@ namespace Aws
                 suffixStr = suffix;
             }
 
-            return prefixStr + Aws::Platform::FileSystem::CreateTempFilePath() + suffixStr;
+            return prefixStr + Aws::FileSystem::CreateTempFilePath() + suffixStr;
         }
 
         TempFile::TempFile(const char* prefix, const char* suffix, std::ios_base::openmode openFlags) :
@@ -58,7 +58,7 @@ namespace Aws
 
         TempFile::~TempFile()
         {
-            Aws::Platform::FileSystem::RemoveFileIfExists(m_fileName.c_str());
+            Aws::FileSystem::RemoveFileIfExists(m_fileName.c_str());
         }
     }
 }

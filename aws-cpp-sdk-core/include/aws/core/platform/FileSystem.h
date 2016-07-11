@@ -19,8 +19,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace FileSystem
 {
 
@@ -57,5 +55,4 @@ namespace FileSystem
     AWS_CORE_API Aws::String CreateTempFilePath();
 
 } // namespace FileSystem
-} // namespace Platform
 } // namespace Aws

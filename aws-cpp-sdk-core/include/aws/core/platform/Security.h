@@ -21,8 +21,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Security
 {
 
@@ -32,6 +30,5 @@ namespace Security
     AWS_CORE_API void SecureMemClear(unsigned char *data, size_t length);
 
 } // namespace Security
-} // namespace Platform
 } // namespace Aws
 

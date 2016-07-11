@@ -68,7 +68,7 @@ namespace Aws
             {
                 if (GetUnderlyingData())
                 {
-                    Aws::Platform::Security::SecureMemClear(GetUnderlyingData(), GetLength());
+                    Aws::Security::SecureMemClear(GetUnderlyingData(), GetLength());
                 }
             }
     }

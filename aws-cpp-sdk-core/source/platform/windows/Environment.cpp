@@ -20,8 +20,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Environment
 {
 
@@ -46,5 +44,4 @@ Aws::String GetEnv(const char *variableName)
 }
 
 } // namespace Environment
-} // namespace Platform
 } // namespace Aws

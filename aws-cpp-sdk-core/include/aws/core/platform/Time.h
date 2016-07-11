@@ -20,8 +20,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Time
 {
 
@@ -41,5 +39,4 @@ namespace Time
     AWS_CORE_API void GMTime(tm* t, std::time_t time);
 
 } // namespace Time
-} // namespace Platform
 } // namespace Aws

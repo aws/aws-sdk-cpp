@@ -73,7 +73,7 @@ static const char* environmentLogTag = "EnvironmentAWSCredentialsProvider";
 
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
-    auto accessKey = Aws::Platform::Environment::GetEnv(ACCESS_KEY_ENV_VARIABLE);
+    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VARIABLE);
     AWSCredentials credentials("", "", "");
 
     if (!accessKey.empty())
@@ -81,7 +81,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
         credentials.SetAWSAccessKeyId(accessKey);
 
         AWS_LOGSTREAM_INFO(environmentLogTag, "Found credential in environment with access key id " << accessKey);
-        auto secretKey = Aws::Platform::Environment::GetEnv(SECRET_KEY_ENV_VAR);
+        auto secretKey = Aws::Environment::GetEnv(SECRET_KEY_ENV_VAR);
 
         if (!secretKey.empty())
         {
@@ -89,7 +89,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOG_INFO(environmentLogTag, "Found secret key");
         }
 
-        auto sessionToken = Aws::Platform::Environment::GetEnv(SESSION_TOKEN_ENV_VARIABLE);
+        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VARIABLE);
 
         if(!sessionToken.empty())
         {
@@ -103,7 +103,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 
 static Aws::String GetBaseDirectory()
 {
-    return Aws::Platform::FileSystem::GetHomeDirectory();
+    return Aws::FileSystem::GetHomeDirectory();
 }
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename()
@@ -113,7 +113,7 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename()
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename()
 {
-    auto profileFileNameFromVar = Aws::Platform::Environment::GetEnv(AWS_CREDENTIAL_PROFILES_FILE);
+    auto profileFileNameFromVar = Aws::Environment::GetEnv(AWS_CREDENTIAL_PROFILES_FILE);
 
     if (!profileFileNameFromVar.empty())
     {
@@ -147,7 +147,7 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
         m_credentialsFileLoader(Aws::MakeShared<Aws::Config::AWSConfigFileProfileConfigLoader>(profileLogTag, GetCredentialsProfileFilename())),
         m_loadFrequencyMs(refreshRateMs)
 {
-    auto profileFromVar = Aws::Platform::Environment::GetEnv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
     if (!profileFromVar.empty())
     {
         m_profileToUse = profileFromVar;

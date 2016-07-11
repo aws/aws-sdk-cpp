@@ -20,8 +20,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace OSVersionInfo
 {
     /**
@@ -35,6 +33,5 @@ namespace OSVersionInfo
     AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);
 
 } // namespace OSVersionInfo
-} // namespace Platform
 } // namespace Aws
 

@@ -484,29 +484,29 @@ protected:
         std::this_thread::sleep_for(std::chrono::seconds(TEST_WAIT_TIMEOUT));
         AbortMultiPartUpload(GetTestBucketName(), BIG_FILE_KEY);
         DeleteBucket(GetTestBucketName());
-	    Aws::Platform::FileSystem::RemoveFileIfExists(m_testFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_smallTestFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_contentTestFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_bigTestFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_mediumTestFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_contentTestDownloadFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_cancelTestFileName.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_multiPartContentFile.c_str());
-        Aws::Platform::FileSystem::RemoveFileIfExists(m_multiPartContentDownload.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_testFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_smallTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_contentTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_bigTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_mediumTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_contentTestDownloadFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_cancelTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_multiPartContentFile.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_multiPartContentDownload.c_str());
 
         const uint32_t cConcurrentTestDownloads = 5;
         for (uint32_t i = 1; i <= cConcurrentTestDownloads; ++i)
         {
             Aws::String testFile(m_contentTestDownloadFileName);
             testFile += StringUtils::to_string(i);
-            Aws::Platform::FileSystem::RemoveFileIfExists(testFile.c_str());
+            Aws::FileSystem::RemoveFileIfExists(testFile.c_str());
         }
         const uint32_t cConcurrentBigTestDownloads = 3;
         for (uint32_t i = 1; i <= cConcurrentBigTestDownloads; ++i)
         {
             Aws::String testFile(m_bigTestFileName);
             testFile += StringUtils::to_string(i);
-            Aws::Platform::FileSystem::RemoveFileIfExists(testFile.c_str());
+            Aws::FileSystem::RemoveFileIfExists(testFile.c_str());
         }
         m_s3Client = nullptr;
         m_transferClient = nullptr;

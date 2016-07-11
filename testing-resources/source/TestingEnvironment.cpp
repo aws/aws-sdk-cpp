@@ -33,11 +33,11 @@ void RedirectHomeToTempIfAppropriate()
         std::stringstream tempDir; //( P_tmpdir );
         tempDir << P_tmpdir;
         Aws::String dir = tempDir.str().c_str();
-        if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::Platform::FileSystem::PATH_DELIM)
+        if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::FileSystem::PATH_DELIM)
         {
-            tempDir << Aws::Platform::FileSystem::PATH_DELIM;
+            tempDir << Aws::FileSystem::PATH_DELIM;
         }
-        Aws::Platform::Environment::SetEnv("HOME", tempDir.str().c_str(), 1);
+        Aws::Environment::SetEnv("HOME", tempDir.str().c_str(), 1);
     #endif // !defined(DISABLE_HOME_DIR_REDIRECT)
 }
 

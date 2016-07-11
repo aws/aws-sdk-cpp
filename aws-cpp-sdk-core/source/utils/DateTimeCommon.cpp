@@ -1112,7 +1112,7 @@ void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateForm
         std::time_t tt;
         if(isUtc)
         {
-            tt = Aws::Platform::Time::TimeGM(&timeStruct);
+            tt = Aws::Time::TimeGM(&timeStruct);
         }
         else
         {
@@ -1134,7 +1134,7 @@ tm DateTime::ConvertTimestampToLocalTimeStruct() const
     std::time_t time = std::chrono::system_clock::to_time_t(m_time);
     struct tm localTimeStamp;
 
-    Aws::Platform::Time::LocalTime(&localTimeStamp, time);
+    Aws::Time::LocalTime(&localTimeStamp, time);
 
     return localTimeStamp;
 }
@@ -1143,7 +1143,7 @@ tm DateTime::ConvertTimestampToGmtStruct() const
 {
     std::time_t time = std::chrono::system_clock::to_time_t(m_time);
     struct tm gmtTimeStamp;
-    Aws::Platform::Time::GMTime(&gmtTimeStamp, time);
+    Aws::Time::GMTime(&gmtTimeStamp, time);
 
     return gmtTimeStamp;
 }

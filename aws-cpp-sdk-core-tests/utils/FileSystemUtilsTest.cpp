@@ -25,7 +25,7 @@ using namespace Aws::Utils;
 
 TEST(FileTest, HomeDirectory)
 {
-    auto homeDirectory = Aws::Platform::FileSystem::GetHomeDirectory();
+    auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
 
     ASSERT_TRUE(homeDirectory.size() > 0);
 }

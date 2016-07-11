@@ -42,12 +42,12 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     AWS_BEGIN_MEMORY_TEST(16, 10)
     auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
  
-    Aws::Platform::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+    Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempMv";
 
-    Aws::Platform::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
+    Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
@@ -74,13 +74,13 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Platform::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Platform::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
+    Aws::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
@@ -91,7 +91,7 @@ public:
 
     static void SetUpTestCase()
     {
-        Aws::Platform::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
+        Aws::FileSystem::CreateDirectoryIfNotExists(ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory().c_str());
     }
 
     static void TearDownTestCase()
@@ -112,18 +112,18 @@ public:
         {
             if(iter.second.empty())
             {
-                Aws::Platform::Environment::UnSetEnv(iter.first.c_str());
+                Aws::Environment::UnSetEnv(iter.first.c_str());
             }
             else
             {
-                Aws::Platform::Environment::SetEnv(iter.first.c_str(), iter.second.c_str(), 1);
+                Aws::Environment::SetEnv(iter.first.c_str(), iter.second.c_str(), 1);
             }
         }
     }
 
     void SaveVariable(const char* variableName)
     {
-        m_environment[ Aws::String( variableName ) ] = Aws::Platform::Environment::GetEnv(variableName);
+        m_environment[ Aws::String( variableName ) ] = Aws::Environment::GetEnv(variableName);
     }
 
     Aws::Map<Aws::String, Aws::String> m_environment;
@@ -135,11 +135,11 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
   
-    Aws::String oldValue = Aws::Platform::Environment::GetEnv("AWS_SHARED_CREDENTIALS_FILE");
-    Aws::Platform::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = Aws::Platform::Environment::GetEnv("AWS_DEFAULT_PROFILE");
+    Aws::String oldValue = Aws::Environment::GetEnv("AWS_SHARED_CREDENTIALS_FILE");
+    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+    Aws::String oldProfileValue = Aws::Environment::GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
-    Aws::Platform::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << "[ someProfile]" << std::endl;
@@ -155,7 +155,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
     EXPECT_STREQ("SomeProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("SomeProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Platform::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
@@ -166,9 +166,9 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
 
-    Aws::Platform::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
     const char* profile = "someProfile";
-    Aws::Platform::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
     configFile << " [ someProfile]" << std::endl;
@@ -189,7 +189,7 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVarsButSpecifiedProfile
     EXPECT_STREQ("customProfileAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("customProfileSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Platform::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
@@ -202,17 +202,17 @@ TEST_F(EnvironmentModifyingTest, ProfileConfigTestNotSetup)
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
     Aws::String tempFileName = configFileName + "_tempNotSetup";
 
-    Aws::Platform::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
+    Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
 
-    Aws::Platform::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Platform::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
-    Aws::Platform::Environment::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
+    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
+    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
+    Aws::Environment::UnSetEnv("AWS_SHARED_CREDENTIALS_FILE");
 
     ProfileConfigFileAWSCredentialsProvider provider;
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::Platform::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
+    Aws::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
 
     AWS_END_MEMORY_TEST
 }
@@ -221,9 +221,9 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::Platform::Environment::SetEnv("AWS_ACCESS_KEY_ID", "Access Key", 1);
-    Aws::Platform::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
-    Aws::Platform::Environment::SetEnv("AWS_SESSION_TOKEN", "Session Token", 1);
+    Aws::Environment::SetEnv("AWS_ACCESS_KEY_ID", "Access Key", 1);
+    Aws::Environment::SetEnv("AWS_SECRET_ACCESS_KEY", "Secret Key", 1);
+    Aws::Environment::SetEnv("AWS_SESSION_TOKEN", "Session Token", 1);
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("Access Key", provider.GetAWSCredentials().GetAWSAccessKeyId());
@@ -238,8 +238,8 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
 
-    Aws::Platform::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
-    Aws::Platform::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
+    Aws::Environment::UnSetEnv("AWS_ACCESS_KEY_ID");
+    Aws::Environment::UnSetEnv("AWS_SECRET_ACCESS_KEY");
 
     EnvironmentAWSCredentialsProvider provider;
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());

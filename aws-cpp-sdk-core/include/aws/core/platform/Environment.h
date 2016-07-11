@@ -20,8 +20,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Environment
 {
     /**
@@ -30,6 +28,5 @@ namespace Environment
     AWS_CORE_API Aws::String GetEnv(const char* name);
 
 } // namespace Environment
-} // namespace Platform
 } // namespace Aws
 

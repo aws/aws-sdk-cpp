@@ -19,8 +19,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Security
 {
 
@@ -30,5 +28,4 @@ void SecureMemClear(unsigned char *data, size_t length)
 }
 
 } // namespace Security
-} // namespace Platform
 } // namespace Aws

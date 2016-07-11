@@ -39,11 +39,11 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
     m_accountId(accountId),
     m_disableCaching(disableCaching)
 {
-    Aws::String identitiesDir = Aws::Platform::FileSystem::GetHomeDirectory() + DIR;
+    Aws::String identitiesDir = Aws::FileSystem::GetHomeDirectory() + DIR;
 
-    if (Aws::Platform::FileSystem::CreateDirectoryIfNotExists(identitiesDir.c_str()))
+    if (Aws::FileSystem::CreateDirectoryIfNotExists(identitiesDir.c_str()))
     {
-        m_identityFilePath = identitiesDir + Aws::Platform::FileSystem::PATH_DELIM + FILENAME;
+        m_identityFilePath = identitiesDir + Aws::FileSystem::PATH_DELIM + FILENAME;
     }
 
     if(!m_disableCaching)

@@ -24,8 +24,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace FileSystem
 {
 
@@ -36,7 +34,7 @@ Aws::String GetHomeDirectory()
     static const char* HOME_DIR_ENV_VAR = "USERPROFILE";
 
     AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Checking " << HOME_DIR_ENV_VAR << " for the home directory.");
-    Aws::String homeDir = Aws::Platform::Environment::GetEnv(HOME_DIR_ENV_VAR);
+    Aws::String homeDir = Aws::Environment::GetEnv(HOME_DIR_ENV_VAR);
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
     if(homeDir.empty())
     {
@@ -61,9 +59,9 @@ Aws::String GetHomeDirectory()
 
     if (!retVal.empty())
     {
-        if (retVal.at(retVal.length() - 1) != Aws::Platform::FileSystem::PATH_DELIM)
+        if (retVal.at(retVal.length() - 1) != Aws::FileSystem::PATH_DELIM)
         {
-            retVal += Aws::Platform::FileSystem::PATH_DELIM;
+            retVal += Aws::FileSystem::PATH_DELIM;
         }
     }
     
@@ -149,5 +147,4 @@ Aws::String CreateTempFilePath()
 }
 
 } // namespace FileSystem
-} // namespace Platform
 } // namespace Aws
