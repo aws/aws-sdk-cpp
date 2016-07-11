@@ -610,6 +610,118 @@ namespace Aws
             {
                 return TagLengthBytes;
             }
+
+            size_t AES_KeyWrap_Cipher_OpenSSL::KeyLengthBits = 256;
+            size_t AES_KeyWrap_Cipher_OpenSSL::BlockSizeBytes = 8;
+
+            static const char* KEY_WRAP_TAG = "AES_KeyWrap_Cipher_OpenSSL";
+            static const uint64_t KEY_WRAP_DEFAULT_IV = 0xA6A6A6A6A6A6A6A6;
+            static const uint64_t KEY_WRAP_INVARIANT =  0x40; 
+            static const uint64_t MSB_CONST = 0x8000000000000000;
+            static const uint64_t LSB_CONST = 0x0000000000000001;            
+
+            static uint64_t Msb(uint8_t j, uint64_t buff)
+            {
+                uint8_t mask(0);
+	        for(size_t i = 0; i < j; ++i)
+                {
+                   mask >>= 1;
+                   mask |= MSB_CONST;
+                }
+
+                return buff & mask;
+            }
+
+            static uint64_t Lsb(uint8_t j, uint64_t buff)
+            {
+		uint8_t mask(0);
+                for(size_t i = 0; i < j; ++i)
+                {
+                    mask <<= 1;
+                    mask |= LSB_CONST;
+                }
+
+                return buff & mask;               
+            }
+
+            static uint64_t ConvertBufferto64BitInteger(const ByteBuffer& buffer)
+            {
+                assert(buffer.GetLength() >= sizeof(uint64_t));
+                uint64_t value(0);
+
+                for(size_t i = 0; i < sizeof(uint64_t); ++i)
+                {
+                    value <<= 8;
+                    value |= buffer[i];
+
+                }
+
+                return value;
+            }
+
+            static Aws::Vector<uint64_t> ConvertBufferTo8ByteSlices(const ByteBuffer& buffer)
+            {
+                Aws::Vector<uint64_t> values(buffer.GetLength() + (buffer.GetLength() % 8));;
+
+                for(size_t i = 0; i< values.size(); ++i)
+                {
+                   values[i] = ConvertBufferTo64BitInteger(CryptoBuffer(buffer.GetUnderlyingData() + (8 * i), 8));
+                }
+
+                return values;
+            }
+
+            AES_KeyWrap_Cipher_OpenSSL::AES_KeyWrap_Cipher_OpenSSL(const CryptoBuffer& key) : OpenSSLCipher(key, 0)
+            {
+            }
+
+            CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::EncryptBuffer(const CryptoBuffer& plainText)
+            {
+               CheckInitEncryptor();
+               m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&plainText});
+               return CryptoBuffer();
+            }
+
+	    CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeEncryption()
+            {
+               CheckInitEncryptor();
+               CryptoBuffer integrityCheckRegister(KEY_WRAP_DEFAULT_IV, KEY_WRAP_IV_SIZE);
+              
+               auto plainTextBlocks = integrityCheckRegister.Slice(BlockSizeBytes);
+               size_t n = plainTextBlocks.GetLength();
+               //rfc was worded weirdly, I think they meant assign the whole thing
+               auto registerBlocks = plainTextBlocks;
+
+               for(size_t j = 0; j < 5; ++j)
+               {
+                   //rfc was worded weirdly, I think they meant i = 0;
+                   for(size_t i = 0; i < n; ++i)
+                   {
+                       auto B = OpenSSLCipher::Encrypt(CryptoBuffer({&integrityCheckRegister, &registerBlocks[i]}));
+                       size_t t = (n * j) + i;
+                       
+                   }
+               }
+            }            
+
+            void AES_KeyWrap_Cipher_OpenSSL::InitEncryptor_Internal()
+            {
+                if (!EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr))
+                {
+                    m_failure = true;
+                    LogErrors(KEY_WRAP_TAG);
+                }
+            }
+
+            void AES_KeyWrap_Cipher_OpenSSL::InitDecryptor_Internal()
+            {
+                if (!EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr))
+                {
+                    m_failure = true;
+                    LogErrors(KEY_WRAP_TAG);
+                    return;
+                }
+            }
         }
     }
 }

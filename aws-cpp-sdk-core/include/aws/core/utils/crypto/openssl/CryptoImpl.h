@@ -343,6 +343,46 @@ namespace Aws
                 static size_t TagLengthBytes;
             };
 
+            /**
+             * OpenSSL implementation for AES in GCM mode
+             */
+            class AES_KeyWrap_Cipher_OpenSSL : public OpenSSLCipher
+            {
+            public:
+
+                /**
+                 * Create AES in Key Wrap mode off of a 256 bit key.
+                 */
+                AES_KeyWrap_Cipher_OpenSSL(const CryptoBuffer& key);
+
+                AES_KeyWrap_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL&) = delete;
+
+                AES_KeyWrap_Cipher_OpenSSL& operator=(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
+
+                AES_KeyWrap_Cipher_OpenSSL(AES_KeyWrap_Cipher_OpenSSL&&) = default;
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeEncryption() override;
+
+                CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+
+                void InitDecryptor_Internal() override;
+
+                size_t GetBlockSizeBytes() const override;
+
+                size_t GetKeyLengthBits() const override;
+
+            private:
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+
+                CryptoBuffer m_workingKeyBuffer;
+            };
+
         } // namespace Crypto
     } // namespace Utils
 } // namespace Aws
