@@ -42,12 +42,12 @@ namespace Aws
             Since the creation of the crypto content material will be within the S3 crypto modules, only the crypto scheme is needed for initialization.
             The rest of the data will be set using the accessors below.
             */
-            ContentCryptoMaterial(const ContentCryptoScheme& contentCryptoScheme);
+            ContentCryptoMaterial(ContentCryptoScheme contentCryptoScheme);
 
             /*
             Intialize with content encryption key (cek) and content crypto scheme.
             */
-            ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, const ContentCryptoScheme& contentCryptoScheme);
+            ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, ContentCryptoScheme contentCryptoScheme);
 
             /**
             * Gets the underlying content encryption key. Not returning const since the key will be encrypted/decrypted in place.
@@ -68,7 +68,7 @@ namespace Aws
             /**
             * Gets the underlying crypto tag length
             */
-            inline const size_t& GetCryptoTagLength() 
+            inline size_t GetCryptoTagLength() 
             {
                 return m_cryptoTagLength;
             }
@@ -92,7 +92,7 @@ namespace Aws
             /**
             * Gets the underlying key wrap algorithm
             */
-            inline const KeyWrapAlgorithm& GetKeyWrapAlgorithm() 
+            inline KeyWrapAlgorithm GetKeyWrapAlgorithm() 
             {
                 return m_keyWrapAlgorithm;
             }
@@ -100,7 +100,7 @@ namespace Aws
             /**
             * Gets the underlying content crypto scheme.
             */
-            inline const ContentCryptoScheme& GetContentCryptoScheme() 
+            inline ContentCryptoScheme GetContentCryptoScheme() 
             {
                 return m_contentCryptoScheme;
             }
@@ -124,7 +124,7 @@ namespace Aws
             /**
             * Sets the underlying crypto Tag Length. Copies from parameter cryptoTagLength.
             */
-            inline void SetCryptoTagLength(const size_t& cryptoTagLength) 
+            inline void SetCryptoTagLength(size_t cryptoTagLength) 
             {
                 m_cryptoTagLength = cryptoTagLength;
             }
@@ -140,7 +140,7 @@ namespace Aws
             /**
             * Sets the underlying Key Wrap Algorithm. Copies from parameter keyWrapAlgorithm.
             */
-            inline void SetKeyWrapAlgorithm(const KeyWrapAlgorithm& keyWrapAlgorithm) 
+            inline void SetKeyWrapAlgorithm(KeyWrapAlgorithm keyWrapAlgorithm) 
             {
                 m_keyWrapAlgorithm = keyWrapAlgorithm;
             }
@@ -148,7 +148,7 @@ namespace Aws
             /**
             * Sets the underlying content Crypto Scheme. Copies from parameter contentCryptoScheme.
             */
-            inline void SetContentCryptoScheme(const ContentCryptoScheme& contentCryptoScheme)
+            inline void SetContentCryptoScheme(ContentCryptoScheme contentCryptoScheme)
             {
                 m_contentCryptoScheme = contentCryptoScheme;
             }
