@@ -15,6 +15,8 @@
 
 #include <stdlib.h>
 
+#include <aws/testing/platform/PlatformTesting.h>
+
 namespace Aws
 {
 namespace Environment
