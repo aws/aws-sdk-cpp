@@ -17,13 +17,11 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Aws.h>
+#include <aws/testing/TestingEnvironment.h>
 
 int main(int argc, char** argv)
 {
-    #ifndef _WIN32
-        //Set $HOME to tmp on unix systems
-        setenv("HOME", P_tmpdir, 1);
-    #endif //__UNIX_SV__
+    Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);

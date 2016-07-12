@@ -16,7 +16,6 @@
 #include <aws/external/gtest.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
 #include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
-#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>

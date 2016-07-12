@@ -14,22 +14,12 @@
   */
 
 #include <aws/external/gtest.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/testing/TestingEnvironment.h>
 #include <aws/core/Aws.h>
 
 int main(int argc, char** argv)
 {
-    #ifndef _WIN32
-        //Set $HOME to tmp on unix systems
-        std::stringstream tempDir; //( P_tmpdir );
-        tempDir << P_tmpdir;
-	Aws::String dir = tempDir.str().c_str();
-	if (dir.size() > 0 && *(dir.c_str() + dir.size() - 1) != Aws::Utils::FileSystemUtils::GetPathDelimiter())
-	{
-	    tempDir << Aws::Utils::PATH_DELIM;
-	}
-        setenv("HOME", tempDir.str().c_str(), 1);
-    #endif //__UNIX_SV__
+    Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);

@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-#include <aws/testing/android/AndroidTesting.h>
+#include <aws/testing/platform/android/AndroidTesting.h>
 
 #include <stdio.h>
 #include <unistd.h>
@@ -26,8 +26,9 @@
 
 #include <aws/external/gtest.h>
 
+#include <aws/core/Aws.h>
 #include <aws/core/platform/Platform.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/logging/AWSLogging.h>
@@ -192,13 +193,18 @@ static jint RunAndroidTestsInternal()
   int dummy = 1;
   static char *dummy2 = "Stuff";
 
-  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Fatal));
+  Aws::SDKOptions options;
+  Aws::InitAPI(options);
+
+  Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::LogcatLogSystem>(ALLOCATION_TAG, Aws::Utils::Logging::LogLevel::Trace));
   ::testing::InitGoogleTest(&dummy, &dummy2);
   auto result = RUN_ALL_TESTS();
 
   std::this_thread::sleep_for(std::chrono::seconds(3));
 
   Aws::Utils::Logging::ShutdownAWSLogging();
+
+  Aws::ShutdownAPI(options);
 
   return (jint) result;
 }
@@ -207,7 +213,7 @@ static jint RunAndroidTestsInternal()
 void CacheFile(const Aws::String &fileName, const Aws::String& directory)
 {
     Aws::String destDirectory = Aws::Platform::GetCacheDirectory() + directory;
-    Aws::Utils::FileSystemUtils::CreateDirectoryIfNotExists(destDirectory.c_str());
+    Aws::FileSystem::CreateDirectoryIfNotExists(destDirectory.c_str());
 
     Aws::String sourceFileName = "/data/data/aws.coretests/" + directory + Aws::String( "/" ) + fileName;
     Aws::String destFileName = destDirectory + Aws::String( "/" ) + fileName;

@@ -14,8 +14,9 @@
   */
 
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
+
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
 #include <fstream>
@@ -38,11 +39,11 @@ PersistentCognitoIdentityProvider_JsonFileImpl::PersistentCognitoIdentityProvide
     m_accountId(accountId),
     m_disableCaching(disableCaching)
 {
-    Aws::String identitiesDir = FileSystemUtils::GetHomeDirectory() + DIR;
+    Aws::String identitiesDir = Aws::FileSystem::GetHomeDirectory() + DIR;
 
-    if (FileSystemUtils::CreateDirectoryIfNotExists(identitiesDir.c_str()))
+    if (Aws::FileSystem::CreateDirectoryIfNotExists(identitiesDir.c_str()))
     {
-        m_identityFilePath = identitiesDir + PATH_DELIM + FILENAME;
+        m_identityFilePath = identitiesDir + Aws::FileSystem::PATH_DELIM + FILENAME;
     }
 
     if(!m_disableCaching)

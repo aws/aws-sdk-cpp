@@ -23,7 +23,7 @@ namespace Aws
         template<typename ERROR_TYPE>
         class AWSError;
 
-        enum class AWS_CORE_API CoreErrors
+        enum class CoreErrors
         {
             INCOMPLETE_SIGNATURE = 0,
             INTERNAL_FAILURE = 1,

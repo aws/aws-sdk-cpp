@@ -12,11 +12,11 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 
+#include <aws/core/platform/Android.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/platform/Platform.h>
 
 #include <unistd.h>
 #include <sys/stat.h>
@@ -24,16 +24,19 @@
 
 #include <mutex>
 
-using namespace Aws::Utils;
+namespace Aws
+{
+namespace FileSystem
+{
 
-static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
+static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
 
-Aws::String FileSystemUtils::GetHomeDirectory()
+Aws::String GetHomeDirectory()
 {
     return Aws::Platform::GetCacheDirectory();
 }
 
-bool FileSystemUtils::CreateDirectoryIfNotExists(const char* path)
+bool CreateDirectoryIfNotExists(const char* path)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << path);
 
@@ -42,7 +45,7 @@ bool FileSystemUtils::CreateDirectoryIfNotExists(const char* path)
     return errorCode == 0 || errno == EEXIST;
 }
 
-bool FileSystemUtils::RemoveFileIfExists(const char* path)
+bool RemoveFileIfExists(const char* path)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Deleting file: " << path);
 
@@ -51,7 +54,7 @@ bool FileSystemUtils::RemoveFileIfExists(const char* path)
     return errorCode == 0 || errno == ENOENT;
 }
 
-bool FileSystemUtils::RelocateFileOrDirectory(const char* from, const char* to)
+bool RelocateFileOrDirectory(const char* from, const char* to)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Moving file at " << from << " to " << to);
 
@@ -64,7 +67,7 @@ bool FileSystemUtils::RelocateFileOrDirectory(const char* from, const char* to)
 std::mutex tempFileMutex;
 uint32_t tempFileIndex(0);
 
-Aws::String FileSystemUtils::CreateTempFilePath()
+Aws::String CreateTempFilePath()
 {
     std::lock_guard<std::mutex> tempFileLock(tempFileMutex);
 
@@ -77,4 +80,7 @@ Aws::String FileSystemUtils::CreateTempFilePath()
 
     return pathStream.str();
 }
+
+} // namespace FileSystem
+} // namespace Aws
 

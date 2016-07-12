@@ -15,5 +15,5 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/platform/PlatformAndroid.h>
+#include <aws/core/platform/Android.h>
 

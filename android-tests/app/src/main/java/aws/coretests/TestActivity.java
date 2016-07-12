@@ -129,7 +129,7 @@ public class TestActivity extends ActionBarActivity {
                 Log.i("AwsNativeSDK", "Loading common libraries ");
 
                 //System.loadLibrary("c");
-                System.loadLibrary("gnustl_shared");
+                System.loadLibrary("c++_shared");
                 System.loadLibrary("log");
                 System.loadLibrary("aws-cpp-sdk-core");
                 System.loadLibrary("testing-resources");
