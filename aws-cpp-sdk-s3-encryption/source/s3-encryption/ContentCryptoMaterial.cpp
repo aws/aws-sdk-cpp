@@ -21,9 +21,12 @@ namespace Aws
 {
 namespace S3Encryption
 {
+ContentCryptoMaterial::ContentCryptoMaterial()
+{
+}
 
 ContentCryptoMaterial::ContentCryptoMaterial(ContentCryptoScheme contentCryptoScheme) :
-m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_contentCryptoScheme(contentCryptoScheme)
+    m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_contentCryptoScheme(contentCryptoScheme)
 {
 
 }

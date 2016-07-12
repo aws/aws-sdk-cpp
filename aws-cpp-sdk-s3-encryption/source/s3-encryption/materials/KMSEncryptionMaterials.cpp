@@ -23,7 +23,7 @@ namespace Materials
 {
 
 KMSEncryptionMaterials::KMSEncryptionMaterials(const String& customerMasterKeyID, const ClientConfiguration& clientConfig) :
-    m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(std::make_shared<KMSClient>(clientConfig))
+    m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(Aws::MakeShared<KMSClient>(KMSEncryptionMaterials_Tag, clientConfig))
 {
 }
 
