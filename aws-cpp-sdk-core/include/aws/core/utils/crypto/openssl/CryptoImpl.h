@@ -193,10 +193,11 @@ namespace Aws
 
                 EVP_CIPHER_CTX m_ctx;
 
-            private:
-                void Init();
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();
+
+            private:
+                void Init();
                 void Cleanup();
 
                 bool m_encDecInitialized;
@@ -344,7 +345,8 @@ namespace Aws
             };
 
             /**
-             * OpenSSL implementation for AES in GCM mode
+             * OpenSSL implementation for AES in Key Wrap mode. The key for the c_tor is the Kek,
+             * it either encrypts a CEK or decrypts it.
              */
             class AES_KeyWrap_Cipher_OpenSSL : public OpenSSLCipher
             {
@@ -372,9 +374,9 @@ namespace Aws
 
                 void InitDecryptor_Internal() override;
 
-                size_t GetBlockSizeBytes() const override;
+                inline size_t GetBlockSizeBytes() const override { return BlockSizeBytes; }
 
-                size_t GetKeyLengthBits() const override;
+                inline size_t GetKeyLengthBits() const override { return KeyLengthBits; }
 
             private:
                 static size_t BlockSizeBytes;

@@ -123,7 +123,7 @@ namespace Aws
                 MD5_Init(&md5);
 
                 auto currentPos = stream.tellg();
-                if(currentPos == -1)
+                if (currentPos == -1)
                 {
                     currentPos = 0;
                     stream.clear();
@@ -169,7 +169,7 @@ namespace Aws
                 SHA256_Init(&sha256);
 
                 auto currentPos = stream.tellg();
-                if(currentPos == -1)
+                if (currentPos == -1)
                 {
                     currentPos = 0;
                     stream.clear();
@@ -411,7 +411,7 @@ namespace Aws
                 m_encryptionMode = false;
                 m_decryptionMode = false;
 
-                if(m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
+                if (m_ctx.cipher || m_ctx.cipher_data || m_ctx.engine)
                 {
                     EVP_CIPHER_CTX_cleanup(&m_ctx);
                 }
@@ -613,63 +613,9 @@ namespace Aws
 
             size_t AES_KeyWrap_Cipher_OpenSSL::KeyLengthBits = 256;
             size_t AES_KeyWrap_Cipher_OpenSSL::BlockSizeBytes = 8;
+            static const unsigned char INTEGRITY_VALUE = 0xA6;
 
             static const char* KEY_WRAP_TAG = "AES_KeyWrap_Cipher_OpenSSL";
-            static const uint64_t KEY_WRAP_DEFAULT_IV = 0xA6A6A6A6A6A6A6A6;
-            static const uint64_t KEY_WRAP_INVARIANT =  0x40; 
-            static const uint64_t MSB_CONST = 0x8000000000000000;
-            static const uint64_t LSB_CONST = 0x0000000000000001;            
-
-            static uint64_t Msb(uint8_t j, uint64_t buff)
-            {
-                uint8_t mask(0);
-	        for(size_t i = 0; i < j; ++i)
-                {
-                   mask >>= 1;
-                   mask |= MSB_CONST;
-                }
-
-                return buff & mask;
-            }
-
-            static uint64_t Lsb(uint8_t j, uint64_t buff)
-            {
-		uint8_t mask(0);
-                for(size_t i = 0; i < j; ++i)
-                {
-                    mask <<= 1;
-                    mask |= LSB_CONST;
-                }
-
-                return buff & mask;               
-            }
-
-            static uint64_t ConvertBufferto64BitInteger(const ByteBuffer& buffer)
-            {
-                assert(buffer.GetLength() >= sizeof(uint64_t));
-                uint64_t value(0);
-
-                for(size_t i = 0; i < sizeof(uint64_t); ++i)
-                {
-                    value <<= 8;
-                    value |= buffer[i];
-
-                }
-
-                return value;
-            }
-
-            static Aws::Vector<uint64_t> ConvertBufferTo8ByteSlices(const ByteBuffer& buffer)
-            {
-                Aws::Vector<uint64_t> values(buffer.GetLength() + (buffer.GetLength() % 8));;
-
-                for(size_t i = 0; i< values.size(); ++i)
-                {
-                   values[i] = ConvertBufferTo64BitInteger(CryptoBuffer(buffer.GetUnderlyingData() + (8 * i), 8));
-                }
-
-                return values;
-            }
 
             AES_KeyWrap_Cipher_OpenSSL::AES_KeyWrap_Cipher_OpenSSL(const CryptoBuffer& key) : OpenSSLCipher(key, 0)
             {
@@ -677,36 +623,168 @@ namespace Aws
 
             CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::EncryptBuffer(const CryptoBuffer& plainText)
             {
-               CheckInitEncryptor();
-               m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&plainText});
-               return CryptoBuffer();
+                CheckInitEncryptor();
+                m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*) &plainText});
+                return CryptoBuffer();
             }
 
-	    CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeEncryption()
+            CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeEncryption()
             {
-               CheckInitEncryptor();
-               CryptoBuffer integrityCheckRegister(KEY_WRAP_DEFAULT_IV, KEY_WRAP_IV_SIZE);
-              
-               auto plainTextBlocks = integrityCheckRegister.Slice(BlockSizeBytes);
-               size_t n = plainTextBlocks.GetLength();
-               //rfc was worded weirdly, I think they meant assign the whole thing
-               auto registerBlocks = plainTextBlocks;
+                CheckInitEncryptor();
+                if (m_workingKeyBuffer.GetLength() != KeyLengthBits / 8)
+                {
+                    AWS_LOGSTREAM_ERROR(KEY_WRAP_TAG, "Incorrect input length of " << m_workingKeyBuffer.GetLength());
+                    m_failure = true;
+                    return CryptoBuffer();
+                }
 
-               for(size_t j = 0; j < 5; ++j)
-               {
-                   //rfc was worded weirdly, I think they meant i = 0;
-                   for(size_t i = 0; i < n; ++i)
-                   {
-                       auto B = OpenSSLCipher::Encrypt(CryptoBuffer({&integrityCheckRegister, &registerBlocks[i]}));
-                       size_t t = (n * j) + i;
-                       
-                   }
-               }
-            }            
+                //the following is an in place implementation of
+                //RFC 3394 using the alternate in-place implementation.
+                //we use one in-place buffer instead of the copy at the end.
+                //the one letter variable names are meant to directly reflect the variables in the RFC
+                CryptoBuffer cipherText(m_workingKeyBuffer.GetLength() + BlockSizeBytes);
+
+                //put the integrity check register in the first 8 bytes of the final buffer.
+                memset(cipherText.GetUnderlyingData(), INTEGRITY_VALUE, BlockSizeBytes);
+                unsigned char* a = cipherText.GetUnderlyingData();
+
+                //put the register buffer after the integrity check register
+                memcpy(cipherText.GetUnderlyingData() + BlockSizeBytes, m_workingKeyBuffer.GetUnderlyingData(),
+                       m_workingKeyBuffer.GetLength());
+                unsigned char* r = cipherText.GetUnderlyingData() + BlockSizeBytes;
+
+                int n = static_cast<int>(m_workingKeyBuffer.GetLength() / BlockSizeBytes);
+
+                //temporary encryption buffer
+                CryptoBuffer b(BlockSizeBytes * 2);
+                int outLen = static_cast<int>(b.GetLength());
+
+                //concatenation buffer
+                CryptoBuffer tempInput(BlockSizeBytes * 2);
+
+                for (int j = 0; j <= 5; ++j)
+                {
+                    for (int i = 1; i <= n; ++i)
+                    {
+                        //concat A and R[i], A should be most significant and then R[i] should be least significant.
+                        memcpy(tempInput.GetUnderlyingData(), a, BlockSizeBytes);
+                        memcpy(tempInput.GetUnderlyingData() + BlockSizeBytes, r, BlockSizeBytes);
+
+                        //encrypt the concatenated A and R[I] and store it in B
+                        if (!EVP_EncryptUpdate(&m_ctx, b.GetUnderlyingData(), &outLen,
+                                               tempInput.GetUnderlyingData(), static_cast<int>(tempInput.GetLength())))
+                        {
+                            LogErrors(KEY_WRAP_TAG);
+                            m_failure = true;
+                            return CryptoBuffer();
+                        }
+
+                        unsigned char t = static_cast<unsigned char>((n * j) + i);
+                        //put the 64 MSB ^ T into A
+                        memcpy(a, b.GetUnderlyingData(), BlockSizeBytes);
+                        a[7] ^= t;
+                        //put the 64 LSB into R[i]
+                        memcpy(r, b.GetUnderlyingData() + BlockSizeBytes, BlockSizeBytes);
+                        //increment i -> R[i]
+                        r += BlockSizeBytes;
+                    }
+                    //reset R
+                    r = cipherText.GetUnderlyingData() + BlockSizeBytes;
+                }
+
+                return cipherText;
+            }
+
+            CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::DecryptBuffer(const CryptoBuffer& cipherText)
+            {
+                CheckInitDecryptor();
+                m_workingKeyBuffer = CryptoBuffer({&m_workingKeyBuffer, (CryptoBuffer*)&cipherText});
+
+                return CryptoBuffer();
+            }
+
+            CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeDecryption()
+            {
+                CheckInitDecryptor();
+                if (m_workingKeyBuffer.GetLength() != (KeyLengthBits / 8) + BlockSizeBytes)
+                {
+                    AWS_LOGSTREAM_ERROR(KEY_WRAP_TAG, "Incorrect input length of " << m_workingKeyBuffer.GetLength());
+                    m_failure = true;
+                    return CryptoBuffer();
+                }
+
+                //the following is an in place implementation of
+                //RFC 3394 using the alternate in-place implementation.
+                //we use one in-place buffer instead of the copy at the end.
+                //the one letter variable names are meant to directly reflect the variables in the RFC
+                CryptoBuffer plainText(m_workingKeyBuffer.GetLength() - BlockSizeBytes);
+                memcpy(plainText.GetUnderlyingData(), m_workingKeyBuffer.GetUnderlyingData() + BlockSizeBytes, plainText.GetLength());
+
+                //integrity register should be the first 8 bytes of the cipher text
+                unsigned char* a = m_workingKeyBuffer.GetUnderlyingData();
+
+                //in-place register is the plaintext. For decryption, start at the last array position (8 bytes before the end);
+                unsigned char* r = plainText.GetUnderlyingData() + plainText.GetLength() - BlockSizeBytes;
+
+                int n = static_cast<int>(plainText.GetLength() / BlockSizeBytes);
+
+                //temporary encryption buffer
+                CryptoBuffer b(BlockSizeBytes * 10);
+                int outLen = static_cast<int>(b.GetLength());
+
+                //concatenation buffer
+                CryptoBuffer tempInput(BlockSizeBytes * 2);
+
+                for(int j = 5; j >= 0; --j)
+                {
+                    for(int i = n; i >= 1; --i)
+                    {
+                        //concat
+                        //A ^ t
+                        memcpy(tempInput.GetUnderlyingData(), a, BlockSizeBytes);
+                        unsigned char t = static_cast<unsigned char>((n * j) + i);
+                        tempInput[7] ^= t;
+                        //R[i]
+                        memcpy(tempInput.GetUnderlyingData() + BlockSizeBytes, r, BlockSizeBytes);
+
+                        //Decrypt the concatenated buffer
+                        if(!EVP_DecryptUpdate(&m_ctx, b.GetUnderlyingData(), &outLen,
+                                              tempInput.GetUnderlyingData(), static_cast<int>(tempInput.GetLength())))
+                        {
+                            m_failure = true;
+                            LogErrors(KEY_WRAP_TAG);
+                            return CryptoBuffer();
+                        }
+
+                        //set A to MSB 64 bits of decrypted result
+                        memcpy(a, b.GetUnderlyingData(), BlockSizeBytes);
+                        //set R[i] to LSB 64 bits of decrypted result
+                        memcpy(r, b.GetUnderlyingData() + BlockSizeBytes, BlockSizeBytes);
+                        //decrement i -> R[i]
+                        r -= BlockSizeBytes;
+                    }
+
+                    r = plainText.GetUnderlyingData() + plainText.GetLength() - BlockSizeBytes;
+                }
+
+                //here we perform the integrity check to make sure A == 0xA6A6A6A6A6A6A6A6
+                for(size_t i = 0; i < BlockSizeBytes; ++i)
+                {
+                    if(a[i] != INTEGRITY_VALUE)
+                    {
+                        m_failure = true;
+                        AWS_LOGSTREAM_ERROR(KEY_WRAP_TAG, "Integrity check failed for key wrap decryption.");
+                        return CryptoBuffer();
+                    }
+                }
+
+                return plainText;
+            }
 
             void AES_KeyWrap_Cipher_OpenSSL::InitEncryptor_Internal()
             {
-                if (!EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr))
+                if (!EVP_EncryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr) &&
+                        EVP_CIPHER_CTX_set_padding(&m_ctx, 0))
                 {
                     m_failure = true;
                     LogErrors(KEY_WRAP_TAG);
@@ -715,7 +793,8 @@ namespace Aws
 
             void AES_KeyWrap_Cipher_OpenSSL::InitDecryptor_Internal()
             {
-                if (!EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr))
+                if (!(EVP_DecryptInit_ex(&m_ctx, EVP_aes_256_ecb(), nullptr, m_key.GetUnderlyingData(), nullptr) &&
+                        EVP_CIPHER_CTX_set_padding(&m_ctx, 0)))
                 {
                     m_failure = true;
                     LogErrors(KEY_WRAP_TAG);

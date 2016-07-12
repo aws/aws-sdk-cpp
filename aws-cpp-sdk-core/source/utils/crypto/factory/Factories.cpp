@@ -426,7 +426,7 @@ public:
 #if ENABLE_BCRYPT_ENCRYPTION
         return Aws::MakeShared<AES_KeyWrap_Cipher_BCrypt>(s_allocationTag, key);
 #elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
+        return Aws::MakeShared<AES_KeyWrap_Cipher_OpenSSL>(s_allocationTag, key);
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_KeyWrap_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
