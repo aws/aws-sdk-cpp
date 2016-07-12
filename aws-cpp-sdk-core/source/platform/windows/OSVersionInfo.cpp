@@ -27,9 +27,9 @@ namespace OSVersionInfo
 
 Aws::String ComputeOSVersionString() 
 {
-    OSVERSIONINFO versionInfo;
-    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFO));
-    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    OSVERSIONINFOA versionInfo;
+    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFOA));
+    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
     GetVersionExA(&versionInfo);
     Aws::StringStream ss;
     ss << "Windows/" << versionInfo.dwMajorVersion << "." << versionInfo.dwMinorVersion << "." << versionInfo.dwBuildNumber << "-" << versionInfo.szCSDVersion;
