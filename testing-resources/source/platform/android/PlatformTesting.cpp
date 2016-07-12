@@ -19,8 +19,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Environment
 {
 
@@ -35,5 +33,4 @@ int UnSetEnv(const char* name)
 }
 
 } // namespace Environment
-} // namespace Platform
 } // namespace Aws

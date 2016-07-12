@@ -21,8 +21,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace OSVersionInfo
 {
 
@@ -73,5 +71,4 @@ Aws::String ComputeOSVersionString()
 }
 
 } // namespace OSVersionInfo
-} // namespace Platform
 } // namespace Aws

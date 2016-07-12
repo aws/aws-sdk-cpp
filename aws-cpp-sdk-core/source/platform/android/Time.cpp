@@ -20,8 +20,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace Time
 {
 
@@ -101,5 +99,4 @@ void GMTime(tm* t, std::time_t time)
 }
 
 } // namespace Time
-} // namespace Platform
 } // namespace Aws

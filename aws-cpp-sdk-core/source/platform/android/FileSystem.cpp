@@ -26,8 +26,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace FileSystem
 {
 
@@ -84,6 +82,5 @@ Aws::String CreateTempFilePath()
 }
 
 } // namespace FileSystem
-} // namespace Platform
 } // namespace Aws
 

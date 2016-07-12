@@ -27,8 +27,6 @@
 
 namespace Aws
 {
-namespace Platform
-{
 namespace FileSystem
 {
 
@@ -40,7 +38,7 @@ Aws::String GetHomeDirectory()
 
     AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Checking " << HOME_DIR_ENV_VAR << " for the home directory.");
 
-    Aws::String homeDir = Aws::Platform::Environment::GetEnv(HOME_DIR_ENV_VAR);
+    Aws::String homeDir = Aws::Environment::GetEnv(HOME_DIR_ENV_VAR);
 
     AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Environment value for variable " << HOME_DIR_ENV_VAR << " is " << homeDir);
 
@@ -116,5 +114,4 @@ Aws::String CreateTempFilePath()
 }
 
 } // namespace FileSystem
-} // namespace Platform
 } // namespace Aws

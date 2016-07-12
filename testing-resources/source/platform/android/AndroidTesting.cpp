@@ -213,7 +213,7 @@ static jint RunAndroidTestsInternal()
 void CacheFile(const Aws::String &fileName, const Aws::String& directory)
 {
     Aws::String destDirectory = Aws::Platform::GetCacheDirectory() + directory;
-    Aws::Platform::FileSystem::CreateDirectoryIfNotExists(destDirectory.c_str());
+    Aws::FileSystem::CreateDirectoryIfNotExists(destDirectory.c_str());
 
     Aws::String sourceFileName = "/data/data/aws.coretests/" + directory + Aws::String( "/" ) + fileName;
     Aws::String destFileName = destDirectory + Aws::String( "/" ) + fileName;
