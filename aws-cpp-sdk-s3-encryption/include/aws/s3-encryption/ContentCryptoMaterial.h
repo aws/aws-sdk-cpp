@@ -25,20 +25,22 @@ namespace Aws
         {
             CBC,
             CTR,
-            GCM
+            GCM,
+            NONE
         };
 
         enum class KeyWrapAlgorithm 
         {
             KMS,
-            AES_KEY_WRAP
+            AES_KEY_WRAP,
+            NONE
         };
 
         class AWS_S3ENCRYPTION_API ContentCryptoMaterial
         {
         public:
             /*
-            Blank Initialization to allow initialization in steps. 
+            Default constructor.
             */
             ContentCryptoMaterial();
             /*
@@ -53,18 +55,30 @@ namespace Aws
             */
             ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, ContentCryptoScheme contentCryptoScheme);
 
-            /**
-            * Gets the underlying content encryption key. Not returning const since the key will be encrypted/decrypted in place.
+            /*
+            Resets the content crypto material by reseting the Key Wrap algorithm and material description.
             */
-            inline const Aws::Utils::CryptoBuffer& GetContentEncryptionKey()
+            void Reset();
+            /**
+            * Gets the underlying content encryption key.
+            */
+            inline const Aws::Utils::CryptoBuffer& GetContentEncryptionKey() const
             {
                 return m_contentEncryptionKey;
             }
 
             /**
+            * Gets the underlying encrypted content encryption key.
+            */
+            inline const Aws::Utils::CryptoBuffer& GetEncryptedContentEncryptionKey() const
+            {
+                return m_encryptedContentEncryptionKey;
+            }
+
+            /**
             * Gets the underlying initialization vector
             */
-            inline const Aws::Utils::CryptoBuffer& GetIV() 
+            inline const Aws::Utils::CryptoBuffer& GetIV() const
             {
                 return m_iv;
             }
@@ -72,7 +86,7 @@ namespace Aws
             /**
             * Gets the underlying crypto tag length
             */
-            inline size_t GetCryptoTagLength() 
+            inline size_t GetCryptoTagLength() const
             {
                 return m_cryptoTagLength;
             }
@@ -80,7 +94,7 @@ namespace Aws
             /**
             * Gets the underlying materials description map.
             */
-            inline const Aws::Map<Aws::String, Aws::String>& GetMaterialsDescription() 
+            inline const Aws::Map<Aws::String, Aws::String>& GetMaterialsDescription() const
             {
                 return m_materialsDescription;
             }
@@ -88,15 +102,15 @@ namespace Aws
             /*
             * Gets the value of the key in the current materials description map.
             */
-            inline const Aws::String& GetMaterialsDescription(const Aws::String& key)
+            inline const Aws::String& GetMaterialsDescription(const Aws::String& key) const
             {
-                return m_materialsDescription[key];
+                return m_materialsDescription.at(key);
             }
 
             /**
             * Gets the underlying key wrap algorithm
             */
-            inline KeyWrapAlgorithm GetKeyWrapAlgorithm() 
+            inline KeyWrapAlgorithm GetKeyWrapAlgorithm() const
             {
                 return m_keyWrapAlgorithm;
             }
@@ -104,7 +118,7 @@ namespace Aws
             /**
             * Gets the underlying content crypto scheme.
             */
-            inline ContentCryptoScheme GetContentCryptoScheme() 
+            inline ContentCryptoScheme GetContentCryptoScheme() const
             {
                 return m_contentCryptoScheme;
             }
@@ -112,9 +126,17 @@ namespace Aws
             /**
             * Sets the underlying content encryption key. Copies from parameter content encryption key.
             */
-            inline void SetContentEncryptionKey(const Aws::Utils::CryptoBuffer& contentEncryptionKey) 
+            inline void SetContentEncryptionKey(const Aws::Utils::CryptoBuffer& contentEncryptionKey)
             {
                 m_contentEncryptionKey = contentEncryptionKey;
+            }
+
+            /**
+            * Sets the underlying encrypted content encryption key. Copies from parameter encrypted content encryption key.
+            */
+            inline void SetEncryptedContentEncryptionKey(const Aws::Utils::CryptoBuffer& encryptedContentEncryptionKey)
+            {
+                m_encryptedContentEncryptionKey = encryptedContentEncryptionKey;
             }
 
             /**
@@ -142,6 +164,14 @@ namespace Aws
             }
 
             /**
+            * Sets the underlying materials description. Copies from parameter materials description.
+            */
+            inline void SetMaterialsDescription(const Aws::Map<Aws::String, Aws::String>& materialsDescription)
+            {
+                m_materialsDescription = materialsDescription;
+            }
+
+            /**
             * Sets the underlying Key Wrap Algorithm. Copies from parameter keyWrapAlgorithm.
             */
             inline void SetKeyWrapAlgorithm(KeyWrapAlgorithm keyWrapAlgorithm) 
@@ -159,6 +189,7 @@ namespace Aws
 
         private:
             Aws::Utils::CryptoBuffer m_contentEncryptionKey;
+            Aws::Utils::CryptoBuffer m_encryptedContentEncryptionKey;
             Aws::Utils::CryptoBuffer m_iv;
             size_t m_cryptoTagLength;
             Aws::Map<Aws::String, Aws::String> m_materialsDescription;

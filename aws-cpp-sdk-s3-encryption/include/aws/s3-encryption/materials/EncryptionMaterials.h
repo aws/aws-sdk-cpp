@@ -38,9 +38,6 @@ namespace Aws
                 * Override this method to control how to decrypt the content encryption key (CEK). This occurs in place.
                 */
                 virtual void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial) = 0;
-
-            protected:
-                bool m_failure;
             };
         }//namespace Materials
     }//namespace S3Encryption

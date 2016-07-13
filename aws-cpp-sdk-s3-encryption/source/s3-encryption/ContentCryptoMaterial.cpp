@@ -37,5 +37,11 @@ ContentCryptoMaterial::ContentCryptoMaterial(const Aws::Utils::CryptoBuffer & ce
 
 }
 
+void ContentCryptoMaterial::Reset()
+{
+    m_keyWrapAlgorithm = KeyWrapAlgorithm::NONE;
+    m_materialsDescription.clear();
+}
+
 }
 }

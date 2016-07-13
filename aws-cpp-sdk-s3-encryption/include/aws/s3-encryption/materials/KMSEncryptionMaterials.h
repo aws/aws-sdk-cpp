@@ -29,6 +29,13 @@ namespace Aws
             //identifier for materials description
             static const char* cmkID_Identifier = "kms_cmk_id";
 
+            /*
+            * KMS Encryption Materials is responsible for handling the encryption/decryption of
+            * content encryption keys using KMS. This class will use a user provided customer
+            * master key ID to encrypt/decrypt keys. It also allows the user to pass in their
+            * own KMS Client, or a Client Configuration where it will create a KMS Client 
+            * with that configuration.
+            */
             class AWS_S3ENCRYPTION_API KMSEncryptionMaterials : public EncryptionMaterials 
             {
             public:
@@ -60,8 +67,8 @@ namespace Aws
                 void DecryptCEK(Aws::S3Encryption::ContentCryptoMaterial& contentCryptoMaterial);
 
             private:
-                const Aws::String m_customerMasterKeyID;
-                const std::shared_ptr<Aws::KMS::KMSClient> m_kmsClient;
+                Aws::String m_customerMasterKeyID;
+                std::shared_ptr<Aws::KMS::KMSClient> m_kmsClient;
             };
         }//namespace Materials
     }//namespace S3Encryption

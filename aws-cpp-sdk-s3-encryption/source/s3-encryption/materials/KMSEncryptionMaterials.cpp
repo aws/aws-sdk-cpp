@@ -43,34 +43,61 @@ void KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMat
     request.SetPlaintext(contentCryptoMaterial.GetContentEncryptionKey());
 
     EncryptOutcome outcome = m_kmsClient->Encrypt(request);
+    if (!outcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "KMS encryption call not successful: "
+            << outcome.GetError().GetExceptionName() << outcome.GetError().GetMessage());
+        //return without changing the encrypted content encryption key and reset content crypto material changes
+        contentCryptoMaterial.Reset();
+        return;
+    }
 
     EncryptResult result = outcome.GetResult();
-    contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer(result.GetCiphertextBlob()));
+    contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(result.GetCiphertextBlob()));
+    //set plaintext key to empty cryptobuffer
+    contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer());
 }
 
 void KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
 {
-    m_failure = false;
     if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::KMS)
     {
-        AWS_LOGSTREAM_FATAL(KMSEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not KMS during decryption, therefore the"
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not KMS during decryption, therefore the"
             << " current encryption materials can not decrypt the content encryption key.");
-        m_failure = true;
+        //return without changing the encrypted content encryption key
+        return;
     }
-    if (contentCryptoMaterial.GetMaterialsDescription(cmkID_Identifier) != m_customerMasterKeyID) {
-        AWS_LOGSTREAM_FATAL(KMSEncryptionMaterials_Tag, "Materials Description does not match encrypted context.");
-        m_failure = true;
+    if (contentCryptoMaterial.GetMaterialsDescription(cmkID_Identifier) != m_customerMasterKeyID) 
+    {
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "Materials Description does not match encryption context.");
+        //return without changing the encrypted content encryption key
+        return;
+    }
+    auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+    if (encryptedContentEncryptionKey.GetLength() == 0)
+    {
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "Encrypted content encryption key does not exist.");
+        //return without changing the encrypted content encryption key
+        return;
     }
 
     DecryptRequest request;
     request.SetEncryptionContext(contentCryptoMaterial.GetMaterialsDescription());
-    request.SetCiphertextBlob(contentCryptoMaterial.GetContentEncryptionKey());
+    request.SetCiphertextBlob(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
 
-    assert(!m_failure);
     DecryptOutcome outcome = m_kmsClient->Decrypt(request);
+    if (!outcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "KMS decryption not successful: "
+            << outcome.GetError().GetExceptionName() << outcome.GetError().GetMessage());
+        //return without changing the encrypted content encryption key
+        return;
+    }
 
     DecryptResult result = outcome.GetResult();
     contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer(result.GetPlaintext()));
+    //set encrypted key to empty cryptobuffer
+    contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer());
 }
 
 }//namespace Materials
