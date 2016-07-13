@@ -36,37 +36,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline TestConnectionRequest& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline TestConnectionRequest& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the replication instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline TestConnectionRequest& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 

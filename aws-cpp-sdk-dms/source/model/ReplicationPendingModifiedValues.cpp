@@ -31,6 +31,8 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues() :
     m_replicationInstanceClassHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_engineVersionHasBeenSet(false)
 {
 }
@@ -39,6 +41,8 @@ ReplicationPendingModifiedValues::ReplicationPendingModifiedValues(const JsonVal
     m_replicationInstanceClassHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -58,6 +62,13 @@ ReplicationPendingModifiedValues& ReplicationPendingModifiedValues::operator =(c
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
 
     m_allocatedStorageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiAZ"))
+  {
+    m_multiAZ = jsonValue.GetBool("MultiAZ");
+
+    m_multiAZHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EngineVersion"))
@@ -83,6 +94,12 @@ JsonValue ReplicationPendingModifiedValues::Jsonize() const
   if(m_allocatedStorageHasBeenSet)
   {
    payload.WithInteger("AllocatedStorage", m_allocatedStorage);
+
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+   payload.WithBool("MultiAZ", m_multiAZ);
 
   }
 

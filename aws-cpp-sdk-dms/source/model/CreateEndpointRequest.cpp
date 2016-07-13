@@ -33,7 +33,9 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_databaseNameHasBeenSet(false),
     m_extraConnectionAttributesHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_certificateArnHasBeenSet(false),
+    m_sslModeHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,17 @@ Aws::String CreateEndpointRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_certificateArnHasBeenSet)
+  {
+   payload.WithString("CertificateArn", m_certificateArn);
+
+  }
+
+  if(m_sslModeHasBeenSet)
+  {
+   payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
   }
 
   return payload.WriteReadable();

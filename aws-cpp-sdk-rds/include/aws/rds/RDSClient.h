@@ -23,6 +23,7 @@
 #include <aws/rds/model/AddSourceIdentifierToSubscriptionResult.h>
 #include <aws/rds/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressResult.h>
+#include <aws/rds/model/CopyDBClusterParameterGroupResult.h>
 #include <aws/rds/model/CopyDBClusterSnapshotResult.h>
 #include <aws/rds/model/CopyDBParameterGroupResult.h>
 #include <aws/rds/model/CopyDBSnapshotResult.h>
@@ -144,6 +145,7 @@ namespace Model
         class AddTagsToResourceRequest;
         class ApplyPendingMaintenanceActionRequest;
         class AuthorizeDBSecurityGroupIngressRequest;
+        class CopyDBClusterParameterGroupRequest;
         class CopyDBClusterSnapshotRequest;
         class CopyDBParameterGroupRequest;
         class CopyDBSnapshotRequest;
@@ -226,6 +228,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<RDSErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, Aws::Client::AWSError<RDSErrors>> ApplyPendingMaintenanceActionOutcome;
         typedef Aws::Utils::Outcome<AuthorizeDBSecurityGroupIngressResult, Aws::Client::AWSError<RDSErrors>> AuthorizeDBSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<CopyDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> CopyDBSnapshotOutcome;
@@ -308,6 +311,7 @@ namespace Model
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
         typedef std::future<AuthorizeDBSecurityGroupIngressOutcome> AuthorizeDBSecurityGroupIngressOutcomeCallable;
+        typedef std::future<CopyDBClusterParameterGroupOutcome> CopyDBClusterParameterGroupOutcomeCallable;
         typedef std::future<CopyDBClusterSnapshotOutcome> CopyDBClusterSnapshotOutcomeCallable;
         typedef std::future<CopyDBParameterGroupOutcome> CopyDBParameterGroupOutcomeCallable;
         typedef std::future<CopyDBSnapshotOutcome> CopyDBSnapshotOutcomeCallable;
@@ -393,6 +397,7 @@ namespace Model
     typedef std::function<void(const RDSClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AuthorizeDBSecurityGroupIngressRequest&, const Model::AuthorizeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeDBSecurityGroupIngressResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::CopyDBClusterParameterGroupRequest&, const Model::CopyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBClusterSnapshotRequest&, const Model::CopyDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBSnapshotRequest&, const Model::CopyDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBSnapshotResponseReceivedHandler;
@@ -669,6 +674,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AuthorizeDBSecurityGroupIngressAsync(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Copies the specified DB cluster parameter group.</p>
+         */
+        virtual Model::CopyDBClusterParameterGroupOutcome CopyDBClusterParameterGroup(const Model::CopyDBClusterParameterGroupRequest& request) const;
+
+        /**
+         * <p>Copies the specified DB cluster parameter group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyDBClusterParameterGroupOutcomeCallable CopyDBClusterParameterGroupCallable(const Model::CopyDBClusterParameterGroupRequest& request) const;
+
+        /**
+         * <p>Copies the specified DB cluster parameter group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyDBClusterParameterGroupAsync(const Model::CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora,
@@ -3180,6 +3204,7 @@ namespace Model
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ApplyPendingMaintenanceActionAsyncHelper(const Model::ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeDBSecurityGroupIngressAsyncHelper(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CopyDBClusterParameterGroupAsyncHelper(const Model::CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBClusterSnapshotAsyncHelper(const Model::CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBParameterGroupAsyncHelper(const Model::CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBSnapshotAsyncHelper(const Model::CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

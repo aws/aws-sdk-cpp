@@ -31,6 +31,7 @@ TaskDefinition::TaskDefinition() :
     m_taskDefinitionArnHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -43,6 +44,7 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_taskDefinitionArnHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -76,6 +78,13 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_family = jsonValue.GetString("family");
 
     m_familyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRoleArn"))
+  {
+    m_taskRoleArn = jsonValue.GetString("taskRoleArn");
+
+    m_taskRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("revision"))
@@ -139,6 +148,12 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_familyHasBeenSet)
   {
    payload.WithString("family", m_family);
+
+  }
+
+  if(m_taskRoleArnHasBeenSet)
+  {
+   payload.WithString("taskRoleArn", m_taskRoleArn);
 
   }
 

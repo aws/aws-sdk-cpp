@@ -30,6 +30,7 @@
 #include <aws/rds/model/AddTagsToResourceRequest.h>
 #include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressRequest.h>
+#include <aws/rds/model/CopyDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/CopyDBClusterSnapshotRequest.h>
 #include <aws/rds/model/CopyDBParameterGroupRequest.h>
 #include <aws/rds/model/CopyDBSnapshotRequest.h>
@@ -293,6 +294,36 @@ void RDSClient::AuthorizeDBSecurityGroupIngressAsync(const AuthorizeDBSecurityGr
 void RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper(const AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AuthorizeDBSecurityGroupIngress(request), context);
+}
+
+CopyDBClusterParameterGroupOutcome RDSClient::CopyDBClusterParameterGroup(const CopyDBClusterParameterGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CopyDBClusterParameterGroupOutcome(CopyDBClusterParameterGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyDBClusterParameterGroupOutcome(outcome.GetError());
+  }
+}
+
+CopyDBClusterParameterGroupOutcomeCallable RDSClient::CopyDBClusterParameterGroupCallable(const CopyDBClusterParameterGroupRequest& request) const
+{
+  return std::async(std::launch::async, &RDSClient::CopyDBClusterParameterGroup, this, request);
+}
+
+void RDSClient::CopyDBClusterParameterGroupAsync(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&RDSClient::CopyDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+}
+
+void RDSClient::CopyDBClusterParameterGroupAsyncHelper(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyDBClusterParameterGroup(request), context);
 }
 
 CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBClusterSnapshotRequest& request) const

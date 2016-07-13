@@ -33,9 +33,10 @@ namespace Model
 
   /**
    * <p>Contains the result of a successful invocation of the
-   * <a>CreateDBClusterParameterGroup</a> action. </p> <p>This data type is used as a
-   * request parameter in the <a>DeleteDBClusterParameterGroup</a> action, and as a
-   * response element in the <a>DescribeDBClusterParameterGroups</a> action. </p>
+   * <a>CreateDBClusterParameterGroup</a> or <a>CopyDBClusterParameterGroup</a>
+   * action. </p> <p>This data type is used as a request parameter in the
+   * <a>DeleteDBClusterParameterGroup</a> action, and as a response element in the
+   * <a>DescribeDBClusterParameterGroups</a> action. </p>
    */
   class AWS_RDS_API DBClusterParameterGroup
   {

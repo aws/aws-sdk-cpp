@@ -864,7 +864,9 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p>
+         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * appear in the returned results. Currently, stopped tasks appear in the returned
+         * results for at least one hour. </p>
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
@@ -872,7 +874,9 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p>
+         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * appear in the returned results. Currently, stopped tasks appear in the returned
+         * results for at least one hour. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -882,7 +886,9 @@ namespace Model
          * <p>Returns a list of tasks for a specified cluster. You can filter the results
          * by family name, by a particular container instance, or by the desired status of
          * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p>
+         * <code>desiredStatus</code> parameters.</p> <p>Recently-stopped tasks might
+         * appear in the returned results. Currently, stopped tasks appear in the returned
+         * results for at least one hour. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -923,6 +929,13 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
+         * containers can then use the latest versions of the AWS CLI or SDKs to make API
+         * requests to the AWS services that are specified in the IAM policy associated
+         * with the role. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
          * Guide</i>.</p>
          */
         virtual Model::RegisterTaskDefinitionOutcome RegisterTaskDefinition(const Model::RegisterTaskDefinitionRequest& request) const;
@@ -934,6 +947,13 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
+         * containers can then use the latest versions of the AWS CLI or SDKs to make API
+         * requests to the AWS services that are specified in the IAM policy associated
+         * with the role. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -947,6 +967,13 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
+         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
+         * containers can then use the latest versions of the AWS CLI or SDKs to make API
+         * requests to the AWS services that are specified in the IAM policy associated
+         * with the role. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

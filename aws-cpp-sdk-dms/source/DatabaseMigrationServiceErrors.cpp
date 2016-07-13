@@ -27,15 +27,16 @@ namespace DatabaseMigrationService
 namespace DatabaseMigrationServiceErrorMapper
 {
 
+static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
+static const int STORAGE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("StorageQuotaExceededFault");
 static const int ACCESS_DENIED_FAULT_HASH = HashingUtils::HashString("AccessDeniedFault");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
 static const int RESOURCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ResourceAlreadyExistsFault");
-static const int INVALID_RESOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidResourceStateFault");
-static const int STORAGE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("StorageQuotaExceededFault");
 static const int K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH = HashingUtils::HashString("KMSKeyNotAccessibleFault");
 static const int REPLICATION_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = HashingUtils::HashString("ReplicationSubnetGroupDoesNotCoverEnoughAZs");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
 static const int INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientResourceCapacityFault");
+static const int INVALID_CERTIFICATE_FAULT_HASH = HashingUtils::HashString("InvalidCertificateFault");
 static const int UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = HashingUtils::HashString("UpgradeDependencyFailureFault");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
 static const int RESOURCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ResourceQuotaExceededFault");
@@ -45,7 +46,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == ACCESS_DENIED_FAULT_HASH)
+  if (hashCode == INVALID_RESOURCE_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), false);
+  }
+  else if (hashCode == STORAGE_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::STORAGE_QUOTA_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == ACCESS_DENIED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::ACCESS_DENIED_FAULT), false);
   }
@@ -56,14 +65,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::RESOURCE_ALREADY_EXISTS_FAULT), false);
-  }
-  else if (hashCode == INVALID_RESOURCE_STATE_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_RESOURCE_STATE_FAULT), false);
-  }
-  else if (hashCode == STORAGE_QUOTA_EXCEEDED_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::STORAGE_QUOTA_EXCEEDED_FAULT), false);
   }
   else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
   {
@@ -80,6 +81,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INSUFFICIENT_RESOURCE_CAPACITY_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INSUFFICIENT_RESOURCE_CAPACITY_FAULT), false);
+  }
+  else if (hashCode == INVALID_CERTIFICATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DatabaseMigrationServiceErrors::INVALID_CERTIFICATE_FAULT), false);
   }
   else if (hashCode == UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH)
   {

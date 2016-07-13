@@ -162,12 +162,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
@@ -184,12 +184,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -206,12 +206,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -228,12 +228,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
@@ -250,12 +250,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
@@ -272,12 +272,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(value); return *this;}
 
@@ -294,12 +294,12 @@ namespace Model
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>IMAGE</code> parameter of <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
-     * <ul> <li><p>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li><p>Images in
-     * other repositories on Docker Hub are qualified with an organization name (for
-     * example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li><p>Images in other
-     * online repositories are qualified further by a domain name (for example,
-     * <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     * <ul> <li> <p>Images in official repositories on Docker Hub use a single name
+     * (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -334,10 +334,10 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * agent version:</p> <ul> <li> <p> <b>Agent versions less than or equal to
      * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
      * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
-     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p> <b>Agent versions
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
@@ -374,10 +374,10 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * agent version:</p> <ul> <li> <p> <b>Agent versions less than or equal to
      * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
      * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
-     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p> <b>Agent versions
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
@@ -414,10 +414,10 @@ namespace Model
      * that the Linux kernel allows is 2; however, the CPU parameter is not required,
      * and you can use CPU values below 2 in your container definitions. For CPU values
      * below 2 (including null), the behavior varies based on your Amazon ECS container
-     * agent version:</p> <ul> <li><p> <b>Agent versions less than or equal to
+     * agent version:</p> <ul> <li> <p> <b>Agent versions less than or equal to
      * 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which Docker then
      * converts to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1, which
-     * the Linux kernel converts to 2 CPU shares.</p> </li> <li><p> <b>Agent versions
+     * the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p> <b>Agent versions
      * greater than or equal to 1.2.0:</b> Null, zero, and CPU values of 1 are passed
      * to Docker as 2.</p> </li> </ul>
      */
@@ -482,11 +482,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline const Aws::Vector<Aws::String>& GetLinks() const{ return m_links; }
 
@@ -504,11 +504,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline void SetLinks(const Aws::Vector<Aws::String>& value) { m_linksHasBeenSet = true; m_links = value; }
 
@@ -526,11 +526,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = value; }
 
@@ -548,11 +548,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& WithLinks(const Aws::Vector<Aws::String>& value) { SetLinks(value); return *this;}
 
@@ -570,11 +570,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(value); return *this;}
 
@@ -592,11 +592,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(const Aws::String& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
@@ -614,11 +614,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
@@ -636,11 +636,11 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> <code>docker
-     * run</code> </a>.</p> <important> <p>Containers that are collocated on a single
-     * container instance may be able to communicate with each other without requiring
-     * links or host port mappings. Network isolation is achieved on the container
-     * instance using security groups and VPC settings.</p> </important>
+     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * <important> <p>Containers that are collocated on a single container instance may
+     * be able to communicate with each other without requiring links or host port
+     * mappings. Network isolation is achieved on the container instance using security
+     * groups and VPC settings.</p> </important>
      */
     inline ContainerDefinition& AddLinks(const char* value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
