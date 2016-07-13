@@ -55,10 +55,6 @@ namespace Aws
             */
             ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, ContentCryptoScheme contentCryptoScheme);
 
-            /*
-            Resets the content crypto material by reseting the Key Wrap algorithm and material description.
-            */
-            void Reset();
             /**
             * Gets the underlying content encryption key.
             */

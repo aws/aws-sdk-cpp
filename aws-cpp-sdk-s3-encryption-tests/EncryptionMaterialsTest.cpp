@@ -34,6 +34,7 @@ using namespace Aws::S3Encryption;
 using namespace Aws::KMS;
 using namespace Aws::KMS::Model;
 
+static const char* AllocationTag = "EncryptionMaterialsTest";
 static Aws::String TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
 
 //mock KMS client to handle encrypt and decrypt calls
@@ -102,7 +103,7 @@ class SimpleEncryptionMaterialsTest : public ::testing::Test {};
 class KMSEncryptionMaterialsTest : public ::testing::Test {};
 
 //This is a simple encryption materials encrypt test using a generated symmetric master key with the same encryption materials.
-TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptTest) 
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptSuccessTest) 
 {
     auto masterKey = SymmetricCipher::GenerateKey();
     auto cek = SymmetricCipher::GenerateKey();
@@ -116,6 +117,12 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptTest)
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
 
+    //test against key wrap cipher
+    auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto encryptBuffer = cipher->EncryptBuffer(cek);
+    auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+    ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
+
     //creating a new content crypto material since this is how encryption and decryption will be implemented
     ContentCryptoMaterial encryptedContentCryptoMaterial;
     encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
@@ -126,13 +133,20 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptTest)
     encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
+    //test against key wrap cipher
+    cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
+    auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_EQ(finalizeDecryptBuffer, decryptedContentEncryptionKey);
+
     ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
+    //Test for success by comparing decrypted key to original key
     ASSERT_EQ(decryptedContentEncryptionKey, contentEncryptionKey);
 }
 
 //This tests Simple Encryption Materials by attempting to encrypt and decrypt with seperate
 //    materials which have the same master key. 
-TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterials)
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterialsSuccess)
 {
     auto masterKey = SymmetricCipher::GenerateKey();
 
@@ -144,6 +158,12 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterials)
     encryptionMaterials.EncryptCEK(contentCryptoMaterial);
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+
+    //test against key wrap cipher
+    auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto encryptBuffer = cipher->EncryptBuffer(contentEncryptionKey);
+    auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+    ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
 
     //creating a new content crypto material since this is how encryption and decryption will be implemented
     ContentCryptoMaterial encryptedContentCryptoMaterial;
@@ -157,13 +177,20 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterials)
     otherEncryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
+    //test against key wrap cipher
+    cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
+    auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_EQ(finalizeDecryptBuffer, decryptedContentEncryptionKey);
+
     ASSERT_EQ(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
+    //Test for success by comparing decrypted key to original key
     ASSERT_EQ(decryptedContentEncryptionKey, contentEncryptionKey);
 }
 
 //This tests Simple Encryption Materials by using different materials with different master keys
 //  and making sure the decrypted key is not correct.
-TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithDifferentKeys) 
+TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithDifferentKeysFailure) 
 {
     auto masterKey = SymmetricCipher::GenerateKey();
     auto otherMasterKey = SymmetricCipher::GenerateKey();
@@ -177,6 +204,12 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithDifferentKeys)
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
 
+    //test against key wrap cipher
+    auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto encryptBuffer = cipher->EncryptBuffer(contentEncryptionKey);
+    auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+    ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
+
     //creating a new content crypto material since this is how encryption and decryption will be implemented
     ContentCryptoMaterial encryptedContentCryptoMaterial;
     encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
@@ -188,8 +221,16 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithDifferentKeys)
 
     otherEncryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+
+    //test against key wrap cipher
+    cipher = CreateAES_KeyWrapImplementation(otherMasterKey);
+    auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
+    auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
+    ASSERT_EQ(finalizeDecryptBuffer, decryptedContentEncryptionKey);
+
     ASSERT_EQ(decryptedContentEncryptionKey.GetLength(), 0u);
     ASSERT_NE(contentEncryptionKey.GetLength(), decryptedContentEncryptionKey.GetLength());
+    //Test for failure by comparing decrypted key to original key
     ASSERT_NE(decryptedContentEncryptionKey, contentEncryptionKey);
 }
 
@@ -209,6 +250,12 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
 
     auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
 
+    //test against key wrap cipher
+    auto cipher = CreateAES_KeyWrapImplementation(masterKey);
+    auto encryptBuffer = cipher->EncryptBuffer(contentEncryptionKey);
+    auto finalizeEncryptBuffer = cipher->FinalizeEncryption();
+    ASSERT_EQ(finalizeEncryptBuffer, encryptedContentEncryptionKey);
+
     //creating a new content crypto material since this is how encryption and decryption will be implemented
     ContentCryptoMaterial encryptedContentCryptoMaterial;
     encryptedContentCryptoMaterial.SetEncryptedContentEncryptionKey(encryptedContentEncryptionKey);
@@ -218,6 +265,7 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
 
     encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
+
     ASSERT_EQ(decryptedContentEncryptionKey.GetLength(), 0u);
     ASSERT_EQ(encryptedContentCryptoMaterial.GetEncryptedContentEncryptionKey(), encryptedContentEncryptionKey);
 }
@@ -227,7 +275,7 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithWrongKeyWrapAlgorithm)
 TEST_F(KMSEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
 {
     Aws::String testCmkID = "someRandomCustomerMasterKeyID";
-    auto myClient = std::make_shared<KMSClient>(ClientConfiguration());
+    auto myClient = Aws::MakeShared<KMSClient>(AllocationTag, ClientConfiguration());
     KMSEncryptionMaterials encryptionMaterials(testCmkID, myClient);
 
     ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::CBC);
@@ -250,7 +298,7 @@ TEST_F(KMSEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
 // This also test for a successful outcome for encrypt and decrypt calls.
 TEST_F(KMSEncryptionMaterialsTest, TestMockEncryptDecryptCEK) 
 {
-    auto myClient = std::make_shared<MockKMSClient>(ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
     InitMockKMSClient(myClient);
 
     KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
@@ -260,7 +308,6 @@ TEST_F(KMSEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
     encryptionMaterials.EncryptCEK(contentCryptoMaterial);
     auto encryptedContentKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
     ASSERT_NE(contentEncryptionKey, encryptedContentKey);
-    ASSERT_EQ(contentCryptoMaterial.GetContentEncryptionKey().GetLength(), 0u);
 
     //Use separate crypto material for decryption but add fields to test
     ContentCryptoMaterial encryptedContentCryptoMaterial;
@@ -271,7 +318,6 @@ TEST_F(KMSEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
     encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentKey = contentCryptoMaterial.GetContentEncryptionKey();
     ASSERT_NE(encryptedContentKey, decryptedContentKey);
-    ASSERT_EQ(encryptedContentCryptoMaterial.GetEncryptedContentEncryptionKey().GetLength(), 0u);
 
     ASSERT_EQ(myClient->m_encryptCalledCount, 1);
     ASSERT_EQ(myClient->m_decryptCalledCount, 1);
@@ -282,7 +328,7 @@ TEST_F(KMSEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
 //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid customer master key.
 TEST_F(KMSEncryptionMaterialsTest, TestInvalidKeyWrapAlgorithmDecryptCEK)
 {
-    auto myClient = std::make_shared<MockKMSClient>(Aws::Client::ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
     KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
     ContentCryptoMaterial contentCryptoMaterial;
@@ -307,7 +353,7 @@ TEST_F(KMSEncryptionMaterialsTest, TestInvalidKeyWrapAlgorithmDecryptCEK)
 //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid materials description.
 TEST_F(KMSEncryptionMaterialsTest, TestInvalidMaterialsDescriptionDecryptCEK)
 {
-    auto myClient = std::make_shared<MockKMSClient>(Aws::Client::ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
     KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
     ContentCryptoMaterial contentCryptoMaterial;
@@ -333,7 +379,7 @@ TEST_F(KMSEncryptionMaterialsTest, TestInvalidMaterialsDescriptionDecryptCEK)
 //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with a missing encrypted key.
 TEST_F(KMSEncryptionMaterialsTest, TestMissingEncryptedContentKeyDecryptCEK)
 {
-    auto myClient = std::make_shared<MockKMSClient>(Aws::Client::ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
     KMSEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
     ContentCryptoMaterial contentCryptoMaterial;

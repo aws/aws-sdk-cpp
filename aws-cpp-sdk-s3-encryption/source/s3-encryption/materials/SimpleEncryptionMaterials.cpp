@@ -35,9 +35,9 @@ void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMater
 {
     auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
     contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
-    auto contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
-    auto encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
-    auto encryptFinalizeResult = cipher->FinalizeEncryption();
+    const CryptoBuffer& contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
+    CryptoBuffer&& encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
+    CryptoBuffer&& encryptFinalizeResult = cipher->FinalizeEncryption();
     contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
 }
 
@@ -45,15 +45,15 @@ void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMater
 {
     if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
     {
-        AWS_LOGSTREAM_FATAL(SimpleEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
+        AWS_LOGSTREAM_ERROR(SimpleEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
                     << " current encryption materials can not decrypt the content encryption key.");
         //return without changing the encrypted content encryption key
         return;
     }
     auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
-    auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
-    auto decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
-    auto decryptFinalizeResult = cipher->FinalizeDecryption();
+    const CryptoBuffer& encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
+    CryptoBuffer&& decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
+    CryptoBuffer&& decryptFinalizeResult = cipher->FinalizeDecryption();
     contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &decryptResult, &decryptFinalizeResult }));
 }
 
