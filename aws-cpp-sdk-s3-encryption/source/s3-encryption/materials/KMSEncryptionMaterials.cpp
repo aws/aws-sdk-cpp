@@ -44,7 +44,7 @@ void KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMat
     {
         AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "KMS encryption call not successful: "
             << outcome.GetError().GetExceptionName() << " : " << outcome.GetError().GetMessage());
-        //return without changing the encrypted content encryption key and reset content crypto material changes
+        //return without changing the encrypted content encryption key
         return;
     }
 
@@ -63,20 +63,11 @@ void KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMat
         //return without changing the encrypted content encryption key
         return;
     }
-    //to prevent possible seg fault search for key first
     auto materialDescription = contentCryptoMaterial.GetMaterialsDescription();
     auto iterator = materialDescription.find(cmkID_Identifier);
-    if (iterator != materialDescription.end())
+    if (iterator != materialDescription.end() && iterator->second != m_customerMasterKeyID)
     {
-        if (contentCryptoMaterial.GetMaterialsDescription(cmkID_Identifier) != m_customerMasterKeyID)
-        {
-            AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "Materials Description does not match encryption context.");
-            return;
-        }
-    }
-    else
-    {
-        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "Materials Description does not exist.");
+        AWS_LOGSTREAM_ERROR(KMSEncryptionMaterials_Tag, "Materials Description does not match encryption context.");
         return;
     }
 

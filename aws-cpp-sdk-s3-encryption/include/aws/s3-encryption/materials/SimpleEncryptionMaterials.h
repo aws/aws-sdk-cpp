@@ -23,6 +23,11 @@ namespace Aws
         {
             static const char* SimpleEncryptionMaterials_Tag = "SimpleEncryptionMaterials";
 
+            /*
+            * Simple Encryption Materials is responsible for handling the encryption/decryption of
+            * content encryption keys. This class will use a user provided symmetric
+            * master key to encrypt/decrypt keys with AES Key Wrap.
+            */
             class AWS_S3ENCRYPTION_API SimpleEncryptionMaterials : public EncryptionMaterials 
             {
             public:

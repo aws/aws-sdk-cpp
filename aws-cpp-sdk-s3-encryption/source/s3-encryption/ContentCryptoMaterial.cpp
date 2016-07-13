@@ -22,18 +22,18 @@ namespace Aws
 namespace S3Encryption
 {
 ContentCryptoMaterial::ContentCryptoMaterial() :
-    m_contentCryptoScheme(ContentCryptoScheme::NONE), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE)
+    m_cryptoTagLength(0), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE), m_contentCryptoScheme(ContentCryptoScheme::NONE)
 {
 }
 
 ContentCryptoMaterial::ContentCryptoMaterial(ContentCryptoScheme contentCryptoScheme) :
-    m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_contentCryptoScheme(contentCryptoScheme), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE)
+    m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_cryptoTagLength(0), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE), m_contentCryptoScheme(contentCryptoScheme)
 {
 
 }
 
 ContentCryptoMaterial::ContentCryptoMaterial(const Aws::Utils::CryptoBuffer & cek, ContentCryptoScheme contentCryptoScheme) :
-    m_contentEncryptionKey(cek), m_contentCryptoScheme(contentCryptoScheme), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE)
+    m_contentEncryptionKey(cek), m_cryptoTagLength(0), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE), m_contentCryptoScheme(contentCryptoScheme)
 {
 
 }

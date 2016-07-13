@@ -133,7 +133,6 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptSuccessTest)
     encryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
-    //test against key wrap cipher
     cipher = CreateAES_KeyWrapImplementation(masterKey);
     auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
     auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
@@ -177,7 +176,6 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecrypyWithDifferentMaterialsSucces
     otherEncryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
-    //test against key wrap cipher
     cipher = CreateAES_KeyWrapImplementation(masterKey);
     auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
     auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
@@ -222,7 +220,6 @@ TEST_F(SimpleEncryptionMaterialsTest, EncryptDecryptWithDifferentKeysFailure)
     otherEncryptionMaterials.DecryptCEK(encryptedContentCryptoMaterial);
     auto decryptedContentEncryptionKey = encryptedContentCryptoMaterial.GetContentEncryptionKey();
 
-    //test against key wrap cipher
     cipher = CreateAES_KeyWrapImplementation(otherMasterKey);
     auto decryptBuffer = cipher->DecryptBuffer(finalizeEncryptBuffer);
     auto finalizeDecryptBuffer = cipher->FinalizeDecryption();
@@ -288,10 +285,6 @@ TEST_F(KMSEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
     //make sure that the content encryption key never changed since KMS will fail
     // with an invalid customer master key ID
     ASSERT_EQ(contentEncryptionKey, newContentEncryptionKey);
-
-    //Ensure content crypto material was reset after encryption attempt
-    ASSERT_EQ(contentCryptoMaterial.GetKeyWrapAlgorithm(), KeyWrapAlgorithm::NONE);
-    ASSERT_TRUE(contentCryptoMaterial.GetMaterialsDescription().empty());
 }
 
 //This tests KMS Encryption Materials Encrypt CEK by using a mock KMS Client to count encrypt and decrypt calls.
