@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DatabaseMigrationService
 {
-enum class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceErrors
+enum class DatabaseMigrationServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

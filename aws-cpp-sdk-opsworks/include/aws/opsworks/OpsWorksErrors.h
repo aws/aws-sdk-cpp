@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace OpsWorks
 {
-enum class AWS_OPSWORKS_API OpsWorksErrors
+enum class OpsWorksErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

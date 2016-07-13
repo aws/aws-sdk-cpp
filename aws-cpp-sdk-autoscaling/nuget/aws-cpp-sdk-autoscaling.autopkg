@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-AutoScaling;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.12.20110101.18;
+        version : 0.13.20110101.2;
 
         // Display name for package.
         title: AWS SDK for C++ (Auto Scaling);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/0.12.1
+            AWSSDKCPP-Core/0.13.1
        }
     }
 

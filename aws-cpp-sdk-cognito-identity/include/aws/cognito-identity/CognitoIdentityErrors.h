@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CognitoIdentity
 {
-enum class AWS_COGNITOIDENTITY_API CognitoIdentityErrors
+enum class CognitoIdentityErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

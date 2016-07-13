@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ImportExport
 {
-enum class AWS_IMPORTEXPORT_API ImportExportErrors
+enum class ImportExportErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

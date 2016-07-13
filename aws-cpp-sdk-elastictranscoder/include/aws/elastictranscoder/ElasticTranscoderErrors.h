@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElasticTranscoder
 {
-enum class AWS_ELASTICTRANSCODER_API ElasticTranscoderErrors
+enum class ElasticTranscoderErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

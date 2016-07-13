@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Redshift
 {
-enum class AWS_REDSHIFT_API RedshiftErrors
+enum class RedshiftErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

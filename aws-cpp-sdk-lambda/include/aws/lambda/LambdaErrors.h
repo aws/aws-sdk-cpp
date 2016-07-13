@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Lambda
 {
-enum class AWS_LAMBDA_API LambdaErrors
+enum class LambdaErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

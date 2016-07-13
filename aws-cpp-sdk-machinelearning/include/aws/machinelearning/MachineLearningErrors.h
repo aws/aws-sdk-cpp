@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace MachineLearning
 {
-enum class AWS_MACHINELEARNING_API MachineLearningErrors
+enum class MachineLearningErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ConfigService
 {
-enum class AWS_CONFIGSERVICE_API ConfigServiceErrors
+enum class ConfigServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CodeDeploy
 {
-enum class AWS_CODEDEPLOY_API CodeDeployErrors
+enum class CodeDeployErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

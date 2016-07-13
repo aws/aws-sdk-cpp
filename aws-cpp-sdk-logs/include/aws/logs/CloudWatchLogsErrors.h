@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudWatchLogs
 {
-enum class AWS_CLOUDWATCHLOGS_API CloudWatchLogsErrors
+enum class CloudWatchLogsErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
