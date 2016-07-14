@@ -16,26 +16,13 @@
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/crypto/CryptoBuf.h>
+#include <aws/s3-encryption/ContentCryptoScheme.h>
+#include <aws/s3-encryption/KeyWrapAlgorithm.h>
 
 namespace Aws
 {
     namespace S3Encryption
     {
-        enum class ContentCryptoScheme 
-        {
-            CBC,
-            CTR,
-            GCM,
-            NONE
-        };
-
-        enum class KeyWrapAlgorithm 
-        {
-            KMS,
-            AES_KEY_WRAP,
-            NONE
-        };
-
         class AWS_S3ENCRYPTION_API ContentCryptoMaterial
         {
         public:
