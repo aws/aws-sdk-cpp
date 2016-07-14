@@ -101,22 +101,27 @@ void LiteralArrayOptions::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_sourceFieldsHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
   }
+
   if(m_facetEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".FacetEnabled=" << m_facetEnabled << "&";
   }
+
   if(m_searchEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".SearchEnabled=" << m_searchEnabled << "&";
   }
+
   if(m_returnEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
+
 }
 
 void LiteralArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

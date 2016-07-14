@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DataPipeline
 {
-enum class AWS_DATAPIPELINE_API DataPipelineErrors
+enum class DataPipelineErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -33,6 +33,7 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -42,6 +43,7 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

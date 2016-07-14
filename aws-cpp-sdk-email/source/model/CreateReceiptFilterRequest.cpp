@@ -32,6 +32,7 @@ Aws::String CreateReceiptFilterRequest::SerializePayload() const
   {
     m_filter.OutputToStream(ss, "Filter.");
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

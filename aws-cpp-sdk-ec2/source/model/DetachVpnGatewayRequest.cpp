@@ -35,14 +35,17 @@ Aws::String DetachVpnGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpnGatewayIdHasBeenSet)
   {
     ss << "VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

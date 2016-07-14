@@ -38,6 +38,7 @@ Aws::String DescribeDomainsRequest::SerializePayload() const
       domainNamesCount++;
     }
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

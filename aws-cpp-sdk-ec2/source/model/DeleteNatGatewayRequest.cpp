@@ -32,6 +32,7 @@ Aws::String DeleteNatGatewayRequest::SerializePayload() const
   {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

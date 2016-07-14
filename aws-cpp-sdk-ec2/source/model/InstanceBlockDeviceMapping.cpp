@@ -71,12 +71,14 @@ void InstanceBlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+
   if(m_ebsHasBeenSet)
   {
       Aws::StringStream ebsLocationAndMemberSs;
       ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstanceBlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* location) const

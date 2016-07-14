@@ -32,6 +32,7 @@ Aws::String DeleteEndpointRequest::SerializePayload() const
   {
     ss << "EndpointArn=" << StringUtils::URLEncode(m_endpointArn.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

@@ -32,6 +32,7 @@ Aws::String PromoteReadReplicaDBClusterRequest::SerializePayload() const
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

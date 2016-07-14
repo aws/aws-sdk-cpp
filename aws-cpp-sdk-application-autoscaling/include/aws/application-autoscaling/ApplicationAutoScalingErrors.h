@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ApplicationAutoScaling
 {
-enum class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingErrors
+enum class ApplicationAutoScalingErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

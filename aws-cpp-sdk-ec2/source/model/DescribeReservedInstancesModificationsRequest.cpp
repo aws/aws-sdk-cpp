@@ -40,10 +40,12 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
       reservedInstancesModificationIdsCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -53,6 +55,7 @@ Aws::String DescribeReservedInstancesModificationsRequest::SerializePayload() co
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

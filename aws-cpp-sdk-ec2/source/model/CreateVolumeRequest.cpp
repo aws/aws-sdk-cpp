@@ -43,34 +43,42 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_sizeHasBeenSet)
   {
     ss << "Size=" << m_size << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_volumeTypeHasBeenSet)
   {
     ss << "VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
+
   if(m_iopsHasBeenSet)
   {
     ss << "Iops=" << m_iops << "&";
   }
+
   if(m_encryptedHasBeenSet)
   {
     ss << "Encrypted=" << m_encrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

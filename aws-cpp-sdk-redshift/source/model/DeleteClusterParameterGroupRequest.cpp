@@ -32,6 +32,7 @@ Aws::String DeleteClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

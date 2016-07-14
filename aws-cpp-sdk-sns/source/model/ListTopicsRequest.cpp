@@ -32,6 +32,7 @@ Aws::String ListTopicsRequest::SerializePayload() const
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

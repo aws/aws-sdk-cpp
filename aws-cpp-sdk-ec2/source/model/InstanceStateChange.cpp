@@ -79,18 +79,21 @@ void InstanceStateChange::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_currentStateHasBeenSet)
   {
       Aws::StringStream currentStateLocationAndMemberSs;
       currentStateLocationAndMemberSs << location << index << locationValue << ".CurrentState";
       m_currentState.OutputToStream(oStream, currentStateLocationAndMemberSs.str().c_str());
   }
+
   if(m_previousStateHasBeenSet)
   {
       Aws::StringStream previousStateLocationAndMemberSs;
       previousStateLocationAndMemberSs << location << index << locationValue << ".PreviousState";
       m_previousState.OutputToStream(oStream, previousStateLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstanceStateChange::OutputToStream(Aws::OStream& oStream, const char* location) const

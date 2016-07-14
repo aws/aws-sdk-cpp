@@ -33,6 +33,7 @@ Aws::String PutMetricDataRequest::SerializePayload() const
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_metricDataHasBeenSet)
   {
     unsigned metricDataCount = 1;
@@ -42,6 +43,7 @@ Aws::String PutMetricDataRequest::SerializePayload() const
       metricDataCount++;
     }
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

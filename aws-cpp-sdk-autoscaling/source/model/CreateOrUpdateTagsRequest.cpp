@@ -37,6 +37,7 @@ Aws::String CreateOrUpdateTagsRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

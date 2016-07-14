@@ -34,10 +34,12 @@ Aws::String RejectVpcPeeringConnectionRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

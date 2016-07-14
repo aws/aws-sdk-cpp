@@ -33,6 +33,7 @@ Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -42,6 +43,7 @@ Aws::String ModifyClusterParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

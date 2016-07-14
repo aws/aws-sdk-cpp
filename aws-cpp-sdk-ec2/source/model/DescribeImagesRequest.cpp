@@ -37,6 +37,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_imageIdsHasBeenSet)
   {
     unsigned imageIdsCount = 1;
@@ -47,6 +48,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
       imageIdsCount++;
     }
   }
+
   if(m_ownersHasBeenSet)
   {
     unsigned ownersCount = 1;
@@ -57,6 +59,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
       ownersCount++;
     }
   }
+
   if(m_executableUsersHasBeenSet)
   {
     unsigned executableUsersCount = 1;
@@ -67,6 +70,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
       executableUsersCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -76,6 +80,7 @@ Aws::String DescribeImagesRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

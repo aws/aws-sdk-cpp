@@ -63,6 +63,7 @@ void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
+
 }
 
 void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location) const

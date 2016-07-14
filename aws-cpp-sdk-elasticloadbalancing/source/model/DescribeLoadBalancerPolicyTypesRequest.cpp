@@ -38,6 +38,7 @@ Aws::String DescribeLoadBalancerPolicyTypesRequest::SerializePayload() const
       policyTypeNamesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Route53Domains
 {
-enum class AWS_ROUTE53DOMAINS_API Route53DomainsErrors
+enum class Route53DomainsErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

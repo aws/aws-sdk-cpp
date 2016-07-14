@@ -93,14 +93,17 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_cacheSecurityGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupsHasBeenSet)
   {
       unsigned eC2SecurityGroupsIdx = 1;
@@ -111,6 +114,7 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
+
 }
 
 void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

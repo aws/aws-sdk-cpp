@@ -89,18 +89,22 @@ void DBInstanceStatusInfo::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".StatusType=" << StringUtils::URLEncode(m_statusType.c_str()) << "&";
   }
+
   if(m_normalHasBeenSet)
   {
       oStream << location << index << locationValue << ".Normal=" << m_normal << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void DBInstanceStatusInfo::OutputToStream(Aws::OStream& oStream, const char* location) const

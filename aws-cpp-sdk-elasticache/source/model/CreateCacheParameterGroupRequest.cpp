@@ -34,14 +34,17 @@ Aws::String CreateCacheParameterGroupRequest::SerializePayload() const
   {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   if(m_cacheParameterGroupFamilyHasBeenSet)
   {
     ss << "CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

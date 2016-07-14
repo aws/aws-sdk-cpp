@@ -71,10 +71,12 @@ void StopAction::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Scope=" << StopScopeMapper::GetNameForStopScope(m_scope) << "&";
   }
+
   if(m_topicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
 }
 
 void StopAction::OutputToStream(Aws::OStream& oStream, const char* location) const

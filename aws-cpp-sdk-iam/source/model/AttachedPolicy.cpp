@@ -71,10 +71,12 @@ void AttachedPolicy::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
 }
 
 void AttachedPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -75,10 +75,12 @@ void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, cons
   {
       oStream << location << index << locationValue << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
   }
+
   if(m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
+
 }
 
 void PeeringConnectionOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -103,24 +103,28 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
       crossZoneLoadBalancingLocationAndMemberSs << location << index << locationValue << ".CrossZoneLoadBalancing";
       m_crossZoneLoadBalancing.OutputToStream(oStream, crossZoneLoadBalancingLocationAndMemberSs.str().c_str());
   }
+
   if(m_accessLogHasBeenSet)
   {
       Aws::StringStream accessLogLocationAndMemberSs;
       accessLogLocationAndMemberSs << location << index << locationValue << ".AccessLog";
       m_accessLog.OutputToStream(oStream, accessLogLocationAndMemberSs.str().c_str());
   }
+
   if(m_connectionDrainingHasBeenSet)
   {
       Aws::StringStream connectionDrainingLocationAndMemberSs;
       connectionDrainingLocationAndMemberSs << location << index << locationValue << ".ConnectionDraining";
       m_connectionDraining.OutputToStream(oStream, connectionDrainingLocationAndMemberSs.str().c_str());
   }
+
   if(m_connectionSettingsHasBeenSet)
   {
       Aws::StringStream connectionSettingsLocationAndMemberSs;
       connectionSettingsLocationAndMemberSs << location << index << locationValue << ".ConnectionSettings";
       m_connectionSettings.OutputToStream(oStream, connectionSettingsLocationAndMemberSs.str().c_str());
   }
+
   if(m_additionalAttributesHasBeenSet)
   {
       unsigned additionalAttributesIdx = 1;
@@ -131,6 +135,7 @@ void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* l
         item.OutputToStream(oStream, additionalAttributesSs.str().c_str());
       }
   }
+
 }
 
 void LoadBalancerAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const

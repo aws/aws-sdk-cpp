@@ -32,6 +32,7 @@ Aws::String CheckDNSAvailabilityRequest::SerializePayload() const
   {
     ss << "CNAMEPrefix=" << StringUtils::URLEncode(m_cNAMEPrefix.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

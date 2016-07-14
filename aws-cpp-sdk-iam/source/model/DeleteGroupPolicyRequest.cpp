@@ -33,10 +33,12 @@ Aws::String DeleteGroupPolicyRequest::SerializePayload() const
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

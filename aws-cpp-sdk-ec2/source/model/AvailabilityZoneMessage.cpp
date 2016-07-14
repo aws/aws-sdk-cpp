@@ -63,6 +63,7 @@ void AvailabilityZoneMessage::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void AvailabilityZoneMessage::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -37,14 +37,17 @@ Aws::String DescribeSnapshotCopyGrantsRequest::SerializePayload() const
   {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_tagKeysHasBeenSet)
   {
     unsigned tagKeysCount = 1;
@@ -55,6 +58,7 @@ Aws::String DescribeSnapshotCopyGrantsRequest::SerializePayload() const
       tagKeysCount++;
     }
   }
+
   if(m_tagValuesHasBeenSet)
   {
     unsigned tagValuesCount = 1;
@@ -65,6 +69,7 @@ Aws::String DescribeSnapshotCopyGrantsRequest::SerializePayload() const
       tagValuesCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

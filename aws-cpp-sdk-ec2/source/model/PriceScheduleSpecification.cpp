@@ -83,14 +83,17 @@ void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".Term=" << m_term << "&";
   }
+
   if(m_priceHasBeenSet)
   {
         oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
 }
 
 void PriceScheduleSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const

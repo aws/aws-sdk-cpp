@@ -143,22 +143,27 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
   }
+
   if(m_optionDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptionDescription=" << StringUtils::URLEncode(m_optionDescription.c_str()) << "&";
   }
+
   if(m_persistentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
   }
+
   if(m_permanentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
   }
+
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
       unsigned optionSettingsIdx = 1;
@@ -169,6 +174,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
+
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
       unsigned dBSecurityGroupMembershipsIdx = 1;
@@ -179,6 +185,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, dBSecurityGroupMembershipsSs.str().c_str());
       }
   }
+
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
       unsigned vpcSecurityGroupMembershipsIdx = 1;
@@ -189,6 +196,7 @@ void Option::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, vpcSecurityGroupMembershipsSs.str().c_str());
       }
   }
+
 }
 
 void Option::OutputToStream(Aws::OStream& oStream, const char* location) const

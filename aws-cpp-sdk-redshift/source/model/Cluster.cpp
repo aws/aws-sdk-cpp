@@ -357,40 +357,49 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_clusterStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterStatus=" << StringUtils::URLEncode(m_clusterStatus.c_str()) << "&";
   }
+
   if(m_modifyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ModifyStatus=" << StringUtils::URLEncode(m_modifyStatus.c_str()) << "&";
   }
+
   if(m_masterUsernameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
   }
+
   if(m_dBNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
       Aws::StringStream endpointLocationAndMemberSs;
       endpointLocationAndMemberSs << location << index << locationValue << ".Endpoint";
       m_endpoint.OutputToStream(oStream, endpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
   }
+
   if(m_clusterSecurityGroupsHasBeenSet)
   {
       unsigned clusterSecurityGroupsIdx = 1;
@@ -401,6 +410,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, clusterSecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_vpcSecurityGroupsHasBeenSet)
   {
       unsigned vpcSecurityGroupsIdx = 1;
@@ -411,6 +421,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_clusterParameterGroupsHasBeenSet)
   {
       unsigned clusterParameterGroupsIdx = 1;
@@ -421,70 +432,85 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, clusterParameterGroupsSs.str().c_str());
       }
   }
+
   if(m_clusterSubnetGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_pendingModifiedValuesHasBeenSet)
   {
       Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
       pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
       m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
   }
+
   if(m_clusterVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_allowVersionUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowVersionUpgrade=" << m_allowVersionUpgrade << "&";
   }
+
   if(m_numberOfNodesHasBeenSet)
   {
       oStream << location << index << locationValue << ".NumberOfNodes=" << m_numberOfNodes << "&";
   }
+
   if(m_publiclyAccessibleHasBeenSet)
   {
       oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
+
   if(m_encryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
   }
+
   if(m_restoreStatusHasBeenSet)
   {
       Aws::StringStream restoreStatusLocationAndMemberSs;
       restoreStatusLocationAndMemberSs << location << index << locationValue << ".RestoreStatus";
       m_restoreStatus.OutputToStream(oStream, restoreStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_hsmStatusHasBeenSet)
   {
       Aws::StringStream hsmStatusLocationAndMemberSs;
       hsmStatusLocationAndMemberSs << location << index << locationValue << ".HsmStatus";
       m_hsmStatus.OutputToStream(oStream, hsmStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_clusterSnapshotCopyStatusHasBeenSet)
   {
       Aws::StringStream clusterSnapshotCopyStatusLocationAndMemberSs;
       clusterSnapshotCopyStatusLocationAndMemberSs << location << index << locationValue << ".ClusterSnapshotCopyStatus";
       m_clusterSnapshotCopyStatus.OutputToStream(oStream, clusterSnapshotCopyStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_clusterPublicKeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterPublicKey=" << StringUtils::URLEncode(m_clusterPublicKey.c_str()) << "&";
   }
+
   if(m_clusterNodesHasBeenSet)
   {
       unsigned clusterNodesIdx = 1;
@@ -495,16 +521,19 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, clusterNodesSs.str().c_str());
       }
   }
+
   if(m_elasticIpStatusHasBeenSet)
   {
       Aws::StringStream elasticIpStatusLocationAndMemberSs;
       elasticIpStatusLocationAndMemberSs << location << index << locationValue << ".ElasticIpStatus";
       m_elasticIpStatus.OutputToStream(oStream, elasticIpStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_clusterRevisionNumberHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterRevisionNumber=" << StringUtils::URLEncode(m_clusterRevisionNumber.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -515,10 +544,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_iamRolesHasBeenSet)
   {
       unsigned iamRolesIdx = 1;
@@ -529,6 +560,7 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, iamRolesSs.str().c_str());
       }
   }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const

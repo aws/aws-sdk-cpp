@@ -103,26 +103,32 @@ void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_sSHPublicKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SSHPublicKeyId=" << StringUtils::URLEncode(m_sSHPublicKeyId.c_str()) << "&";
   }
+
   if(m_fingerprintHasBeenSet)
   {
       oStream << location << index << locationValue << ".Fingerprint=" << StringUtils::URLEncode(m_fingerprint.c_str()) << "&";
   }
+
   if(m_sSHPublicKeyBodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".SSHPublicKeyBody=" << StringUtils::URLEncode(m_sSHPublicKeyBody.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
+
   if(m_uploadDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadDate=" << StringUtils::URLEncode(m_uploadDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void SSHPublicKey::OutputToStream(Aws::OStream& oStream, const char* location) const

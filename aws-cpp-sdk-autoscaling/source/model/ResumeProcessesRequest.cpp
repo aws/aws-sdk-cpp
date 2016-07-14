@@ -33,6 +33,7 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_scalingProcessesHasBeenSet)
   {
     unsigned scalingProcessesCount = 1;
@@ -43,6 +44,7 @@ Aws::String ResumeProcessesRequest::SerializePayload() const
       scalingProcessesCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

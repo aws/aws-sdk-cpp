@@ -35,10 +35,12 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
   {
     ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
+
   if(m_resetAllParametersHasBeenSet)
   {
     ss << "ResetAllParameters=" << m_resetAllParameters << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -48,6 +50,7 @@ Aws::String ResetDBParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

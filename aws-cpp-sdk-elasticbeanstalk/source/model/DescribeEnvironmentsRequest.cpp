@@ -38,10 +38,12 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_environmentIdsHasBeenSet)
   {
     unsigned environmentIdsCount = 1;
@@ -52,6 +54,7 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
       environmentIdsCount++;
     }
   }
+
   if(m_environmentNamesHasBeenSet)
   {
     unsigned environmentNamesCount = 1;
@@ -62,14 +65,17 @@ Aws::String DescribeEnvironmentsRequest::SerializePayload() const
       environmentNamesCount++;
     }
   }
+
   if(m_includeDeletedHasBeenSet)
   {
     ss << "IncludeDeleted=" << m_includeDeleted << "&";
   }
+
   if(m_includedDeletedBackToHasBeenSet)
   {
     ss << "IncludedDeletedBackTo=" << StringUtils::URLEncode(m_includedDeletedBackTo.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

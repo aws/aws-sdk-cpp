@@ -40,10 +40,12 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_metricNameHasBeenSet)
   {
     ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -53,18 +55,22 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
+
   if(m_startTimeHasBeenSet)
   {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_periodHasBeenSet)
   {
     ss << "Period=" << m_period << "&";
   }
+
   if(m_statisticsHasBeenSet)
   {
     unsigned statisticsCount = 1;
@@ -75,10 +81,12 @@ Aws::String GetMetricStatisticsRequest::SerializePayload() const
       statisticsCount++;
     }
   }
+
   if(m_unitHasBeenSet)
   {
     ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

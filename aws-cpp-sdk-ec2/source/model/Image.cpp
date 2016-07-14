@@ -259,26 +259,32 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_imageLocationHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << ImageStateMapper::GetNameForImageState(m_state) << "&";
   }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_creationDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.c_str()) << "&";
   }
+
   if(m_publicHasBeenSet)
   {
       oStream << location << index << locationValue << ".Public=" << m_public << "&";
   }
+
   if(m_productCodesHasBeenSet)
   {
       unsigned productCodesIdx = 1;
@@ -289,56 +295,69 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
         item.OutputToStream(oStream, productCodesSs.str().c_str());
       }
   }
+
   if(m_architectureHasBeenSet)
   {
       oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
   }
+
   if(m_imageTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageType=" << ImageTypeValuesMapper::GetNameForImageTypeValues(m_imageType) << "&";
   }
+
   if(m_kernelIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
+
   if(m_sriovNetSupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
+
   if(m_stateReasonHasBeenSet)
   {
       Aws::StringStream stateReasonLocationAndMemberSs;
       stateReasonLocationAndMemberSs << location << index << locationValue << ".StateReason";
       m_stateReason.OutputToStream(oStream, stateReasonLocationAndMemberSs.str().c_str());
   }
+
   if(m_imageOwnerAliasHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageOwnerAlias=" << StringUtils::URLEncode(m_imageOwnerAlias.c_str()) << "&";
   }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_rootDeviceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".RootDeviceType=" << DeviceTypeMapper::GetNameForDeviceType(m_rootDeviceType) << "&";
   }
+
   if(m_rootDeviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
       unsigned blockDeviceMappingsIdx = 1;
@@ -349,10 +368,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
+
   if(m_virtualizationTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -363,10 +384,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_hypervisorHasBeenSet)
   {
       oStream << location << index << locationValue << ".Hypervisor=" << HypervisorTypeMapper::GetNameForHypervisorType(m_hypervisor) << "&";
   }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const

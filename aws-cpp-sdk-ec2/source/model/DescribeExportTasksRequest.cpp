@@ -38,6 +38,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
       exportTaskIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

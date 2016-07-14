@@ -89,18 +89,22 @@ void ResourceChangeDetail::OutputToStream(Aws::OStream& oStream, const char* loc
       targetLocationAndMemberSs << location << index << locationValue << ".Target";
       m_target.OutputToStream(oStream, targetLocationAndMemberSs.str().c_str());
   }
+
   if(m_evaluationHasBeenSet)
   {
       oStream << location << index << locationValue << ".Evaluation=" << EvaluationTypeMapper::GetNameForEvaluationType(m_evaluation) << "&";
   }
+
   if(m_changeSourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeSource=" << ChangeSourceMapper::GetNameForChangeSource(m_changeSource) << "&";
   }
+
   if(m_causingEntityHasBeenSet)
   {
       oStream << location << index << locationValue << ".CausingEntity=" << StringUtils::URLEncode(m_causingEntity.c_str()) << "&";
   }
+
 }
 
 void ResourceChangeDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

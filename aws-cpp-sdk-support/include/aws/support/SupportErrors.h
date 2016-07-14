@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Support
 {
-enum class AWS_SUPPORT_API SupportErrors
+enum class SupportErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -71,10 +71,12 @@ void Content::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
   }
+
   if(m_charsetHasBeenSet)
   {
       oStream << location << index << locationValue << ".Charset=" << StringUtils::URLEncode(m_charset.c_str()) << "&";
   }
+
 }
 
 void Content::OutputToStream(Aws::OStream& oStream, const char* location) const

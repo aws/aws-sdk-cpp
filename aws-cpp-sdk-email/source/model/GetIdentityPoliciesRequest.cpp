@@ -33,6 +33,7 @@ Aws::String GetIdentityPoliciesRequest::SerializePayload() const
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
     unsigned policyNamesCount = 1;
@@ -43,6 +44,7 @@ Aws::String GetIdentityPoliciesRequest::SerializePayload() const
       policyNamesCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

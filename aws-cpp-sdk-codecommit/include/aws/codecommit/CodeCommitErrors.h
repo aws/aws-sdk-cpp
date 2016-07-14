@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CodeCommit
 {
-enum class AWS_CODECOMMIT_API CodeCommitErrors
+enum class CodeCommitErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -33,10 +33,12 @@ Aws::String DeleteSuggesterRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_suggesterNameHasBeenSet)
   {
     ss << "SuggesterName=" << StringUtils::URLEncode(m_suggesterName.c_str()) << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

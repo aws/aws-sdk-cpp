@@ -63,6 +63,7 @@ void IpRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
+
 }
 
 void IpRange::OutputToStream(Aws::OStream& oStream, const char* location) const

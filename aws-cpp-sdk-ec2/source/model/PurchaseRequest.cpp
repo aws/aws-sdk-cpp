@@ -73,10 +73,12 @@ void PurchaseRequest::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
   }
+
 }
 
 void PurchaseRequest::OutputToStream(Aws::OStream& oStream, const char* location) const

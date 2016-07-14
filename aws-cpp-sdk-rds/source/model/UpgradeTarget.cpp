@@ -99,22 +99,27 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_autoUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoUpgrade=" << m_autoUpgrade << "&";
   }
+
   if(m_isMajorVersionUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsMajorVersionUpgrade=" << m_isMajorVersionUpgrade << "&";
   }
+
 }
 
 void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) const

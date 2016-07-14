@@ -34,6 +34,7 @@ Aws::String DescribeAccountAttributesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_attributeNamesHasBeenSet)
   {
     unsigned attributeNamesCount = 1;
@@ -44,6 +45,7 @@ Aws::String DescribeAccountAttributesRequest::SerializePayload() const
       attributeNamesCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

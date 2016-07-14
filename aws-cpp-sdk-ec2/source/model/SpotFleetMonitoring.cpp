@@ -65,6 +65,7 @@ void SpotFleetMonitoring::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void SpotFleetMonitoring::OutputToStream(Aws::OStream& oStream, const char* location) const

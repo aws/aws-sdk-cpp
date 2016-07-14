@@ -40,6 +40,7 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdsHasBeenSet)
   {
     unsigned instanceIdsCount = 1;
@@ -50,6 +51,7 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -59,18 +61,22 @@ Aws::String DescribeInstanceStatusRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_includeAllInstancesHasBeenSet)
   {
     ss << "IncludeAllInstances=" << m_includeAllInstances << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DirectoryService
 {
-enum class AWS_DIRECTORYSERVICE_API DirectoryServiceErrors
+enum class DirectoryServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

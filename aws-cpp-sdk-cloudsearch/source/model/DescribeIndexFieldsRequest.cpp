@@ -35,6 +35,7 @@ Aws::String DescribeIndexFieldsRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_fieldNamesHasBeenSet)
   {
     unsigned fieldNamesCount = 1;
@@ -45,10 +46,12 @@ Aws::String DescribeIndexFieldsRequest::SerializePayload() const
       fieldNamesCount++;
     }
   }
+
   if(m_deployedHasBeenSet)
   {
     ss << "Deployed=" << m_deployed << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

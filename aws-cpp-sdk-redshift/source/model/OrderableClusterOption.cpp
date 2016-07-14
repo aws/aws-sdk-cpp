@@ -93,14 +93,17 @@ void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_clusterTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterType=" << StringUtils::URLEncode(m_clusterType.c_str()) << "&";
   }
+
   if(m_nodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NodeType=" << StringUtils::URLEncode(m_nodeType.c_str()) << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -111,6 +114,7 @@ void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* l
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
+
 }
 
 void OrderableClusterOption::OutputToStream(Aws::OStream& oStream, const char* location) const

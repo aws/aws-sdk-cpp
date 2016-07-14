@@ -46,14 +46,14 @@ S3KeyFilter& S3KeyFilter::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode filterRulesNode = resultNode.FirstChild("FilterRules");
+    XmlNode filterRulesNode = resultNode.FirstChild("FilterRule");
     if(!filterRulesNode.IsNull())
     {
-      XmlNode filterRulesMember = filterRulesNode;
-      while(!filterRulesMember.IsNull())
+      XmlNode filterRuleMember = filterRulesNode;
+      while(!filterRuleMember.IsNull())
       {
-        m_filterRules.push_back(filterRulesMember);
-        filterRulesMember = filterRulesMember.NextNode("FilterRule");
+        m_filterRules.push_back(filterRuleMember);
+        filterRuleMember = filterRuleMember.NextNode("FilterRule");
       }
 
       m_filterRulesHasBeenSet = true;

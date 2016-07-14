@@ -34,10 +34,12 @@ Aws::String PurchaseReservedNodeOfferingRequest::SerializePayload() const
   {
     ss << "ReservedNodeOfferingId=" << StringUtils::URLEncode(m_reservedNodeOfferingId.c_str()) << "&";
   }
+
   if(m_nodeCountHasBeenSet)
   {
     ss << "NodeCount=" << m_nodeCount << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

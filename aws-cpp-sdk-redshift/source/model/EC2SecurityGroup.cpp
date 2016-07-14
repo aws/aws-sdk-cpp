@@ -93,14 +93,17 @@ void EC2SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -111,6 +114,7 @@ void EC2SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void EC2SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

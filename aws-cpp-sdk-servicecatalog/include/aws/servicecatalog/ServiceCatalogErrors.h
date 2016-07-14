@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ServiceCatalog
 {
-enum class AWS_SERVICECATALOG_API ServiceCatalogErrors
+enum class ServiceCatalogErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

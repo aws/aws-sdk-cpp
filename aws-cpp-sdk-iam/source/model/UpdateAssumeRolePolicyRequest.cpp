@@ -33,10 +33,12 @@ Aws::String UpdateAssumeRolePolicyRequest::SerializePayload() const
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

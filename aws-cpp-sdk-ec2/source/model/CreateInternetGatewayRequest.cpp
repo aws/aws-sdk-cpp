@@ -33,6 +33,7 @@ Aws::String CreateInternetGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

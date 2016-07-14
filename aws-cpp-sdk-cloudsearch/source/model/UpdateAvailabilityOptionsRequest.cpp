@@ -34,10 +34,12 @@ Aws::String UpdateAvailabilityOptionsRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_multiAZHasBeenSet)
   {
     ss << "MultiAZ=" << m_multiAZ << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

@@ -181,38 +181,47 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyARN=" << StringUtils::URLEncode(m_policyARN.c_str()) << "&";
   }
+
   if(m_policyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyType=" << StringUtils::URLEncode(m_policyType.c_str()) << "&";
   }
+
   if(m_adjustmentTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
   }
+
   if(m_minAdjustmentStepHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinAdjustmentStep=" << m_minAdjustmentStep << "&";
   }
+
   if(m_minAdjustmentMagnitudeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinAdjustmentMagnitude=" << m_minAdjustmentMagnitude << "&";
   }
+
   if(m_scalingAdjustmentHasBeenSet)
   {
       oStream << location << index << locationValue << ".ScalingAdjustment=" << m_scalingAdjustment << "&";
   }
+
   if(m_cooldownHasBeenSet)
   {
       oStream << location << index << locationValue << ".Cooldown=" << m_cooldown << "&";
   }
+
   if(m_stepAdjustmentsHasBeenSet)
   {
       unsigned stepAdjustmentsIdx = 1;
@@ -223,14 +232,17 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, stepAdjustmentsSs.str().c_str());
       }
   }
+
   if(m_metricAggregationTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MetricAggregationType=" << StringUtils::URLEncode(m_metricAggregationType.c_str()) << "&";
   }
+
   if(m_estimatedInstanceWarmupHasBeenSet)
   {
       oStream << location << index << locationValue << ".EstimatedInstanceWarmup=" << m_estimatedInstanceWarmup << "&";
   }
+
   if(m_alarmsHasBeenSet)
   {
       unsigned alarmsIdx = 1;
@@ -241,6 +253,7 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, alarmsSs.str().c_str());
       }
   }
+
 }
 
 void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const

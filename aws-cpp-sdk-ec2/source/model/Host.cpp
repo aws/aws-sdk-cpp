@@ -133,32 +133,39 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   {
       oStream << location << index << locationValue << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
+
   if(m_autoPlacementHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
+
   if(m_hostReservationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".HostReservationId=" << StringUtils::URLEncode(m_hostReservationId.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_hostPropertiesHasBeenSet)
   {
       Aws::StringStream hostPropertiesLocationAndMemberSs;
       hostPropertiesLocationAndMemberSs << location << index << locationValue << ".HostProperties";
       m_hostProperties.OutputToStream(oStream, hostPropertiesLocationAndMemberSs.str().c_str());
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
       unsigned instancesIdx = 1;
@@ -169,12 +176,14 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_availableCapacityHasBeenSet)
   {
       Aws::StringStream availableCapacityLocationAndMemberSs;
       availableCapacityLocationAndMemberSs << location << index << locationValue << ".AvailableCapacity";
       m_availableCapacity.OutputToStream(oStream, availableCapacityLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const

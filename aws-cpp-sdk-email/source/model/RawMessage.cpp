@@ -64,6 +64,7 @@ void RawMessage::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_data).c_str()) << "&";
   }
+
 }
 
 void RawMessage::OutputToStream(Aws::OStream& oStream, const char* location) const

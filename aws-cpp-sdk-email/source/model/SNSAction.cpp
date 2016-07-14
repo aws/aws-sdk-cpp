@@ -71,10 +71,12 @@ void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_encodingHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encoding=" << SNSActionEncodingMapper::GetNameForSNSActionEncoding(m_encoding) << "&";
   }
+
 }
 
 void SNSAction::OutputToStream(Aws::OStream& oStream, const char* location) const

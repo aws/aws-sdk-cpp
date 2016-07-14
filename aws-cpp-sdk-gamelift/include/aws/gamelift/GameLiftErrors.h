@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace GameLift
 {
-enum class AWS_GAMELIFT_API GameLiftErrors
+enum class GameLiftErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

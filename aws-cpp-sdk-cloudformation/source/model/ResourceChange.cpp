@@ -123,22 +123,27 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".Action=" << ChangeActionMapper::GetNameForChangeAction(m_action) << "&";
   }
+
   if(m_logicalResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
+
   if(m_physicalResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
   if(m_replacementHasBeenSet)
   {
       oStream << location << index << locationValue << ".Replacement=" << ReplacementMapper::GetNameForReplacement(m_replacement) << "&";
   }
+
   if(m_scopeHasBeenSet)
   {
       unsigned scopeIdx = 1;
@@ -147,6 +152,7 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
         oStream << location << index << locationValue << ".Scope.member." << scopeIdx++ << "=" << ResourceAttributeMapper::GetNameForResourceAttribute(item) << "&";
       }
   }
+
   if(m_detailsHasBeenSet)
   {
       unsigned detailsIdx = 1;
@@ -157,6 +163,7 @@ void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
+
 }
 
 void ResourceChange::OutputToStream(Aws::OStream& oStream, const char* location) const

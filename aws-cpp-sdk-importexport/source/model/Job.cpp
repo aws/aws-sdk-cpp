@@ -89,18 +89,22 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
   {
       oStream << location << index << locationValue << ".JobId=" << StringUtils::URLEncode(m_jobId.c_str()) << "&";
   }
+
   if(m_creationDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_isCanceledHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsCanceled=" << m_isCanceled << "&";
   }
+
   if(m_jobTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
   }
+
 }
 
 void Job::OutputToStream(Aws::OStream& oStream, const char* location) const

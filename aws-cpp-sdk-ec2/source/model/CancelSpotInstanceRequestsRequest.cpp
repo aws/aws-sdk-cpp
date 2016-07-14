@@ -34,6 +34,7 @@ Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_spotInstanceRequestIdsHasBeenSet)
   {
     unsigned spotInstanceRequestIdsCount = 1;
@@ -44,6 +45,7 @@ Aws::String CancelSpotInstanceRequestsRequest::SerializePayload() const
       spotInstanceRequestIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

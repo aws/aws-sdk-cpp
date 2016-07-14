@@ -41,34 +41,42 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_sourceRegionHasBeenSet)
   {
     ss << "SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
   }
+
   if(m_sourceSnapshotIdHasBeenSet)
   {
     ss << "SourceSnapshotId=" << StringUtils::URLEncode(m_sourceSnapshotId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_destinationRegionHasBeenSet)
   {
     ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
   }
+
   if(m_presignedUrlHasBeenSet)
   {
     ss << "PresignedUrl=" << StringUtils::URLEncode(m_presignedUrl.c_str()) << "&";
   }
+
   if(m_encryptedHasBeenSet)
   {
     ss << "Encrypted=" << m_encrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

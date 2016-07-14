@@ -109,26 +109,32 @@ void TextOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_sourceFieldHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceField=" << StringUtils::URLEncode(m_sourceField.c_str()) << "&";
   }
+
   if(m_returnEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
+
   if(m_sortEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".SortEnabled=" << m_sortEnabled << "&";
   }
+
   if(m_highlightEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".HighlightEnabled=" << m_highlightEnabled << "&";
   }
+
   if(m_analysisSchemeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AnalysisScheme=" << StringUtils::URLEncode(m_analysisScheme.c_str()) << "&";
   }
+
 }
 
 void TextOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

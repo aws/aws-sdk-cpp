@@ -35,14 +35,17 @@ Aws::String ListPolicyVersionsRequest::SerializePayload() const
   {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_maxItemsHasBeenSet)
   {
     ss << "MaxItems=" << m_maxItems << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -37,6 +37,7 @@ Aws::String DescribeSpotFleetRequestsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_spotFleetRequestIdsHasBeenSet)
   {
     unsigned spotFleetRequestIdsCount = 1;
@@ -47,14 +48,17 @@ Aws::String DescribeSpotFleetRequestsRequest::SerializePayload() const
       spotFleetRequestIdsCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

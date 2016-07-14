@@ -109,10 +109,12 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_eventsHasBeenSet)
   {
       unsigned eventsIdx = 1;
@@ -123,24 +125,28 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+
   if(m_instanceStateHasBeenSet)
   {
       Aws::StringStream instanceStateLocationAndMemberSs;
       instanceStateLocationAndMemberSs << location << index << locationValue << ".InstanceState";
       m_instanceState.OutputToStream(oStream, instanceStateLocationAndMemberSs.str().c_str());
   }
+
   if(m_systemStatusHasBeenSet)
   {
       Aws::StringStream systemStatusLocationAndMemberSs;
       systemStatusLocationAndMemberSs << location << index << locationValue << ".SystemStatus";
       m_systemStatus.OutputToStream(oStream, systemStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_instanceStatusHasBeenSet)
   {
       Aws::StringStream instanceStatusLocationAndMemberSs;
       instanceStatusLocationAndMemberSs << location << index << locationValue << ".InstanceStatus";
       m_instanceStatus.OutputToStream(oStream, instanceStatusLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

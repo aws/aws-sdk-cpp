@@ -71,10 +71,12 @@ void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_topicStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".TopicStatus=" << StringUtils::URLEncode(m_topicStatus.c_str()) << "&";
   }
+
 }
 
 void NotificationConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

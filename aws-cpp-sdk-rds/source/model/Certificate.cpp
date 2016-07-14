@@ -95,22 +95,27 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".CertificateIdentifier=" << StringUtils::URLEncode(m_certificateIdentifier.c_str()) << "&";
   }
+
   if(m_certificateTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CertificateType=" << StringUtils::URLEncode(m_certificateType.c_str()) << "&";
   }
+
   if(m_thumbprintHasBeenSet)
   {
       oStream << location << index << locationValue << ".Thumbprint=" << StringUtils::URLEncode(m_thumbprint.c_str()) << "&";
   }
+
   if(m_validFromHasBeenSet)
   {
       oStream << location << index << locationValue << ".ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_validTillHasBeenSet)
   {
       oStream << location << index << locationValue << ".ValidTill=" << StringUtils::URLEncode(m_validTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) const

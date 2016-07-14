@@ -35,14 +35,17 @@ Aws::String DeleteDBInstanceRequest::SerializePayload() const
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_skipFinalSnapshotHasBeenSet)
   {
     ss << "SkipFinalSnapshot=" << m_skipFinalSnapshot << "&";
   }
+
   if(m_finalDBSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalDBSnapshotIdentifier=" << StringUtils::URLEncode(m_finalDBSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

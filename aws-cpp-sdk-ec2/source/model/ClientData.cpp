@@ -89,18 +89,22 @@ void ClientData::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".UploadStart=" << StringUtils::URLEncode(m_uploadStart.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_uploadEndHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadEnd=" << StringUtils::URLEncode(m_uploadEnd.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_uploadSizeHasBeenSet)
   {
         oStream << location << index << locationValue << ".UploadSize=" << StringUtils::URLEncode(m_uploadSize) << "&";
   }
+
   if(m_commentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Comment=" << StringUtils::URLEncode(m_comment.c_str()) << "&";
   }
+
 }
 
 void ClientData::OutputToStream(Aws::OStream& oStream, const char* location) const

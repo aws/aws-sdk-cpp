@@ -32,6 +32,7 @@ Aws::String GetPolicyRequest::SerializePayload() const
   {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

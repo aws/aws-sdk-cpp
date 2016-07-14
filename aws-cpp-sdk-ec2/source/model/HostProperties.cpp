@@ -93,18 +93,22 @@ void HostProperties::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".Sockets=" << m_sockets << "&";
   }
+
   if(m_coresHasBeenSet)
   {
       oStream << location << index << locationValue << ".Cores=" << m_cores << "&";
   }
+
   if(m_totalVCpusHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalVCpus=" << m_totalVCpus << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
 }
 
 void HostProperties::OutputToStream(Aws::OStream& oStream, const char* location) const

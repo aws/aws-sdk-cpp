@@ -32,6 +32,7 @@ Aws::String DeleteRoleRequest::SerializePayload() const
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

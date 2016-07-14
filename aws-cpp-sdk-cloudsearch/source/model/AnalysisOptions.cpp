@@ -95,22 +95,27 @@ void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Synonyms=" << StringUtils::URLEncode(m_synonyms.c_str()) << "&";
   }
+
   if(m_stopwordsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Stopwords=" << StringUtils::URLEncode(m_stopwords.c_str()) << "&";
   }
+
   if(m_stemmingDictionaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".StemmingDictionary=" << StringUtils::URLEncode(m_stemmingDictionary.c_str()) << "&";
   }
+
   if(m_japaneseTokenizationDictionaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".JapaneseTokenizationDictionary=" << StringUtils::URLEncode(m_japaneseTokenizationDictionary.c_str()) << "&";
   }
+
   if(m_algorithmicStemmingHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlgorithmicStemming=" << AlgorithmicStemmingMapper::GetNameForAlgorithmicStemming(m_algorithmicStemming) << "&";
   }
+
 }
 
 void AnalysisOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

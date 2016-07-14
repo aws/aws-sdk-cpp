@@ -38,26 +38,32 @@ Aws::String AssumeRoleWithWebIdentityRequest::SerializePayload() const
   {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
+
   if(m_roleSessionNameHasBeenSet)
   {
     ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
   }
+
   if(m_webIdentityTokenHasBeenSet)
   {
     ss << "WebIdentityToken=" << StringUtils::URLEncode(m_webIdentityToken.c_str()) << "&";
   }
+
   if(m_providerIdHasBeenSet)
   {
     ss << "ProviderId=" << StringUtils::URLEncode(m_providerId.c_str()) << "&";
   }
+
   if(m_policyHasBeenSet)
   {
     ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";
   }
+
   if(m_durationSecondsHasBeenSet)
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

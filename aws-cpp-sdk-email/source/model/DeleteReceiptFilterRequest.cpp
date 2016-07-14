@@ -32,6 +32,7 @@ Aws::String DeleteReceiptFilterRequest::SerializePayload() const
   {
     ss << "FilterName=" << StringUtils::URLEncode(m_filterName.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

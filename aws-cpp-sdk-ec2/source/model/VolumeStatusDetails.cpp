@@ -71,10 +71,12 @@ void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".Name=" << VolumeStatusNameMapper::GetNameForVolumeStatusName(m_name) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void VolumeStatusDetails::OutputToStream(Aws::OStream& oStream, const char* location) const

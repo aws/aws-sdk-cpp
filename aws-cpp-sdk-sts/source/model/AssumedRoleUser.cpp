@@ -71,10 +71,12 @@ void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".AssumedRoleId=" << StringUtils::URLEncode(m_assumedRoleId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
 }
 
 void AssumedRoleUser::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -58,58 +58,72 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_dBSnapshotIdentifierHasBeenSet)
   {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupNameHasBeenSet)
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_multiAZHasBeenSet)
   {
     ss << "MultiAZ=" << m_multiAZ << "&";
   }
+
   if(m_publiclyAccessibleHasBeenSet)
   {
     ss << "PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
+
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
     ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
   }
+
   if(m_licenseModelHasBeenSet)
   {
     ss << "LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
+
   if(m_dBNameHasBeenSet)
   {
     ss << "DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_iopsHasBeenSet)
   {
     ss << "Iops=" << m_iops << "&";
   }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -119,30 +133,37 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_storageTypeHasBeenSet)
   {
     ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
+
   if(m_tdeCredentialArnHasBeenSet)
   {
     ss << "TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
   }
+
   if(m_tdeCredentialPasswordHasBeenSet)
   {
     ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
   }
+
   if(m_domainHasBeenSet)
   {
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
   }
+
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

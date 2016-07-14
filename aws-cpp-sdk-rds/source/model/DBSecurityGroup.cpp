@@ -115,18 +115,22 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_dBSecurityGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
   }
+
   if(m_dBSecurityGroupDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBSecurityGroupDescription=" << StringUtils::URLEncode(m_dBSecurityGroupDescription.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupsHasBeenSet)
   {
       unsigned eC2SecurityGroupsIdx = 1;
@@ -137,6 +141,7 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_iPRangesHasBeenSet)
   {
       unsigned iPRangesIdx = 1;
@@ -147,6 +152,7 @@ void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, iPRangesSs.str().c_str());
       }
   }
+
 }
 
 void DBSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

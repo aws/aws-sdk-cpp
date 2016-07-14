@@ -32,6 +32,7 @@ Aws::String VerifyEmailIdentityRequest::SerializePayload() const
   {
     ss << "EmailAddress=" << StringUtils::URLEncode(m_emailAddress.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

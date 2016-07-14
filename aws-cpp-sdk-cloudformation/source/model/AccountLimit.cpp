@@ -73,10 +73,12 @@ void AccountLimit::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << m_value << "&";
   }
+
 }
 
 void AccountLimit::OutputToStream(Aws::OStream& oStream, const char* location) const

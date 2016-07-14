@@ -43,38 +43,47 @@ Aws::String PutScheduledUpdateGroupActionRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_scheduledActionNameHasBeenSet)
   {
     ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
   }
+
   if(m_timeHasBeenSet)
   {
     ss << "Time=" << StringUtils::URLEncode(m_time.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_recurrenceHasBeenSet)
   {
     ss << "Recurrence=" << StringUtils::URLEncode(m_recurrence.c_str()) << "&";
   }
+
   if(m_minSizeHasBeenSet)
   {
     ss << "MinSize=" << m_minSize << "&";
   }
+
   if(m_maxSizeHasBeenSet)
   {
     ss << "MaxSize=" << m_maxSize << "&";
   }
+
   if(m_desiredCapacityHasBeenSet)
   {
     ss << "DesiredCapacity=" << m_desiredCapacity << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

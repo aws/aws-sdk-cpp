@@ -63,6 +63,7 @@ void ReservedInstancesId::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
+
 }
 
 void ReservedInstancesId::OutputToStream(Aws::OStream& oStream, const char* location) const

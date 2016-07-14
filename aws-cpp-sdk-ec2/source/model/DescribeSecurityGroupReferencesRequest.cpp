@@ -34,6 +34,7 @@ Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_groupIdHasBeenSet)
   {
     unsigned groupIdCount = 1;
@@ -44,6 +45,7 @@ Aws::String DescribeSecurityGroupReferencesRequest::SerializePayload() const
       groupIdCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

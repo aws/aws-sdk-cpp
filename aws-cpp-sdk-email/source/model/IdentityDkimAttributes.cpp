@@ -87,10 +87,12 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".DkimEnabled=" << m_dkimEnabled << "&";
   }
+
   if(m_dkimVerificationStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DkimVerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_dkimVerificationStatus) << "&";
   }
+
   if(m_dkimTokensHasBeenSet)
   {
       unsigned dkimTokensIdx = 1;
@@ -99,6 +101,7 @@ void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* l
         oStream << location << index << locationValue << ".DkimTokens.member." << dkimTokensIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void IdentityDkimAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -34,10 +34,12 @@ Aws::String ModifySnapshotCopyRetentionPeriodRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_retentionPeriodHasBeenSet)
   {
     ss << "RetentionPeriod=" << m_retentionPeriod << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

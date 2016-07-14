@@ -111,32 +111,39 @@ void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
   }
+
   if(m_cacheNodeStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeStatus=" << StringUtils::URLEncode(m_cacheNodeStatus.c_str()) << "&";
   }
+
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
       Aws::StringStream endpointLocationAndMemberSs;
       endpointLocationAndMemberSs << location << index << locationValue << ".Endpoint";
       m_endpoint.OutputToStream(oStream, endpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_parameterGroupStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterGroupStatus=" << StringUtils::URLEncode(m_parameterGroupStatus.c_str()) << "&";
   }
+
   if(m_sourceCacheNodeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceCacheNodeId=" << StringUtils::URLEncode(m_sourceCacheNodeId.c_str()) << "&";
   }
+
   if(m_customerAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerAvailabilityZone=" << StringUtils::URLEncode(m_customerAvailabilityZone.c_str()) << "&";
   }
+
 }
 
 void CacheNode::OutputToStream(Aws::OStream& oStream, const char* location) const

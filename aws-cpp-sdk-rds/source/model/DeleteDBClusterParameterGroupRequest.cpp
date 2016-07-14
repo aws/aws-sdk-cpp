@@ -32,6 +32,7 @@ Aws::String DeleteDBClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

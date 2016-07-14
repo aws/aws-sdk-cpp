@@ -255,22 +255,27 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmArn=" << StringUtils::URLEncode(m_alarmArn.c_str()) << "&";
   }
+
   if(m_alarmDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
   }
+
   if(m_alarmConfigurationUpdatedTimestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmConfigurationUpdatedTimestamp=" << StringUtils::URLEncode(m_alarmConfigurationUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_actionsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionsEnabled=" << m_actionsEnabled << "&";
   }
+
   if(m_oKActionsHasBeenSet)
   {
       unsigned oKActionsIdx = 1;
@@ -279,6 +284,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".OKActions.member." << oKActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_alarmActionsHasBeenSet)
   {
       unsigned alarmActionsIdx = 1;
@@ -287,6 +293,7 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".AlarmActions.member." << alarmActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_insufficientDataActionsHasBeenSet)
   {
       unsigned insufficientDataActionsIdx = 1;
@@ -295,34 +302,42 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".InsufficientDataActions.member." << insufficientDataActionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_stateValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
   }
+
   if(m_stateReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
+
   if(m_stateReasonDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
   }
+
   if(m_stateUpdatedTimestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateUpdatedTimestamp=" << StringUtils::URLEncode(m_stateUpdatedTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_metricNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_statisticHasBeenSet)
   {
       oStream << location << index << locationValue << ".Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
       unsigned dimensionsIdx = 1;
@@ -333,26 +348,32 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
+
   if(m_periodHasBeenSet)
   {
       oStream << location << index << locationValue << ".Period=" << m_period << "&";
   }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   if(m_evaluationPeriodsHasBeenSet)
   {
       oStream << location << index << locationValue << ".EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
+
   if(m_thresholdHasBeenSet)
   {
         oStream << location << index << locationValue << ".Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
+
   if(m_comparisonOperatorHasBeenSet)
   {
       oStream << location << index << locationValue << ".ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
+
 }
 
 void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const

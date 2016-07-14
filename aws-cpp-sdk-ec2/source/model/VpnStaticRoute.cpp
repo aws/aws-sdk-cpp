@@ -79,14 +79,17 @@ void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
+
   if(m_sourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Source=" << VpnStaticRouteSourceMapper::GetNameForVpnStaticRouteSource(m_source) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
   }
+
 }
 
 void VpnStaticRoute::OutputToStream(Aws::OStream& oStream, const char* location) const

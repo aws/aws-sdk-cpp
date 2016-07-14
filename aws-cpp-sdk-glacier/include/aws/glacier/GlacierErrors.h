@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Glacier
 {
-enum class AWS_GLACIER_API GlacierErrors
+enum class GlacierErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

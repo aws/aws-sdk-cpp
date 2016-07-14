@@ -35,18 +35,22 @@ Aws::String ModifyInstancePlacementRequest::SerializePayload() const
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_tenancyHasBeenSet)
   {
     ss << "Tenancy=" << HostTenancyMapper::GetNameForHostTenancy(m_tenancy) << "&";
   }
+
   if(m_affinityHasBeenSet)
   {
     ss << "Affinity=" << AffinityMapper::GetNameForAffinity(m_affinity) << "&";
   }
+
   if(m_hostIdHasBeenSet)
   {
     ss << "HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

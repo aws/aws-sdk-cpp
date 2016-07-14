@@ -155,7 +155,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.mapValue.shape.structure)
   ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
   ${spaces}  ${lowerCaseVarName}Ss << location << index << locationValue << ".${mapLocationName}." << ${lowerCaseVarName}Idx << ".${mapValueLocationName}";
-  ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
+  ${spaces}  item.second.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.mapValue.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.second) << "&";
 #else
@@ -271,7 +271,7 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #elseif($member.shape.mapValue.shape.structure)
   ${spaces}  Aws::StringStream ${lowerCaseVarName}Ss;
   ${spaces}  ${lowerCaseVarName}Ss << location << ".${mapLocationName}." << ${lowerCaseVarName}Idx << ".${mapValueLocationName}";
-  ${spaces}  item.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
+  ${spaces}  item.second.OutputToStream(oStream, ${lowerCaseVarName}Ss.str().c_str());
 #elseif($member.shape.mapValue.shape.double)
   ${spaces}      << StringUtils::URLEncode(item.second) << "&";
 #else

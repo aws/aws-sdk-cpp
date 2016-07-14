@@ -32,6 +32,7 @@ Aws::String DeleteHsmClientCertificateRequest::SerializePayload() const
   {
     ss << "HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

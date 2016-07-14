@@ -35,10 +35,12 @@ Aws::String ResetClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_resetAllParametersHasBeenSet)
   {
     ss << "ResetAllParameters=" << m_resetAllParameters << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -48,6 +50,7 @@ Aws::String ResetClusterParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

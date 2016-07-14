@@ -35,6 +35,7 @@ Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_analysisSchemeNamesHasBeenSet)
   {
     unsigned analysisSchemeNamesCount = 1;
@@ -45,10 +46,12 @@ Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
       analysisSchemeNamesCount++;
     }
   }
+
   if(m_deployedHasBeenSet)
   {
     ss << "Deployed=" << m_deployed << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

@@ -32,6 +32,7 @@ Aws::String DeleteCacheSubnetGroupRequest::SerializePayload() const
   {
     ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

@@ -115,18 +115,22 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_subnetGroupStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetGroupStatus=" << StringUtils::URLEncode(m_subnetGroupStatus.c_str()) << "&";
   }
+
   if(m_subnetsHasBeenSet)
   {
       unsigned subnetsIdx = 1;
@@ -137,6 +141,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -147,6 +152,7 @@ void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ClusterSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

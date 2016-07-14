@@ -71,10 +71,12 @@ void CancelledSpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << CancelSpotInstanceRequestStateMapper::GetNameForCancelSpotInstanceRequestState(m_state) << "&";
   }
+
 }
 
 void CancelledSpotInstanceRequest::OutputToStream(Aws::OStream& oStream, const char* location) const

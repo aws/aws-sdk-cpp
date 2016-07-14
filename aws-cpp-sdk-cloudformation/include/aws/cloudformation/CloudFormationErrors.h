@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudFormation
 {
-enum class AWS_CLOUDFORMATION_API CloudFormationErrors
+enum class CloudFormationErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

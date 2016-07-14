@@ -33,6 +33,7 @@ Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
   {
     ss << "PolicySourceArn=" << StringUtils::URLEncode(m_policySourceArn.c_str()) << "&";
   }
+
   if(m_policyInputListHasBeenSet)
   {
     unsigned policyInputListCount = 1;
@@ -43,6 +44,7 @@ Aws::String GetContextKeysForPrincipalPolicyRequest::SerializePayload() const
       policyInputListCount++;
     }
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

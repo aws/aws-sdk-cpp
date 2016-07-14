@@ -12,7 +12,11 @@
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
 #if($member.shape.list)##member is list
 #if($member.shape.flattened || $member.flattened)##list member uses flattened serialization
-#if($member.shape.listMember.locationName)##a location is specified for the serilization member
+#if($member.locationName)
+#set($listVarName = $CppViewHelper.computeVariableName($member.locationName) + "Member")
+#set($listMemberName = $member.locationName)
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${listMemberName}");
+#elseif($member.shape.listMember.locationName)##a location is specified for the serilization member
 #set($listVarName = $CppViewHelper.computeVariableName($member.shape.listMember.locationName) + "Member")
 #set($listMemberName = $member.shape.listMember.locationName)
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${listMemberName}");

@@ -141,26 +141,32 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".CustomerAwsId=" << StringUtils::URLEncode(m_customerAwsId.c_str()) << "&";
   }
+
   if(m_custSubscriptionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustSubscriptionId=" << StringUtils::URLEncode(m_custSubscriptionId.c_str()) << "&";
   }
+
   if(m_snsTopicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_subscriptionCreationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubscriptionCreationTime=" << StringUtils::URLEncode(m_subscriptionCreationTime.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_sourceIdsListHasBeenSet)
   {
       unsigned sourceIdsListIdx = 1;
@@ -169,6 +175,7 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
         oStream << location << index << locationValue << ".SourceId." << sourceIdsListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_eventCategoriesListHasBeenSet)
   {
       unsigned eventCategoriesListIdx = 1;
@@ -177,10 +184,12 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
         oStream << location << index << locationValue << ".EventCategory." << eventCategoriesListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_enabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const

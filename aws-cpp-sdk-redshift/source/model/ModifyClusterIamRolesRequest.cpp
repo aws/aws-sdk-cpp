@@ -34,6 +34,7 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_addIamRolesHasBeenSet)
   {
     unsigned addIamRolesCount = 1;
@@ -44,6 +45,7 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
       addIamRolesCount++;
     }
   }
+
   if(m_removeIamRolesHasBeenSet)
   {
     unsigned removeIamRolesCount = 1;
@@ -54,6 +56,7 @@ Aws::String ModifyClusterIamRolesRequest::SerializePayload() const
       removeIamRolesCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

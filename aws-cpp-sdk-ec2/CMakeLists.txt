@@ -53,7 +53,7 @@ project(aws-cpp-sdk-ec2)
 
   include_directories(${EC2_INCLUDES})
 
-  if(MSVC AND BUILD_SHARED_LIBS)
+  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_EC2_EXPORTS")
   endif()
 
@@ -71,10 +71,14 @@ project(aws-cpp-sdk-ec2)
                LIBRARY DESTINATION lib
                RUNTIME DESTINATION bin)
   else()
+    if(PLATFORM_CUSTOM)
+      install_custom_library(aws-cpp-sdk-ec2)
+    else()
       install (TARGETS aws-cpp-sdk-ec2
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+    endif()
   endif()
 
   install (FILES ${AWS_EC2_HEADERS} DESTINATION include/aws/ec2)

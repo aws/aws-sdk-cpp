@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudFront
 {
-enum class AWS_CLOUDFRONT_API CloudFrontErrors
+enum class CloudFrontErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

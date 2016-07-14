@@ -91,18 +91,22 @@ void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
   if(m_s3BucketNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3BucketName=" << StringUtils::URLEncode(m_s3BucketName.c_str()) << "&";
   }
+
   if(m_emitIntervalHasBeenSet)
   {
       oStream << location << index << locationValue << ".EmitInterval=" << m_emitInterval << "&";
   }
+
   if(m_s3BucketPrefixHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3BucketPrefix=" << StringUtils::URLEncode(m_s3BucketPrefix.c_str()) << "&";
   }
+
 }
 
 void AccessLog::OutputToStream(Aws::OStream& oStream, const char* location) const

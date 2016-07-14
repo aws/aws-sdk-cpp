@@ -32,6 +32,7 @@ Aws::String VerifyDomainIdentityRequest::SerializePayload() const
   {
     ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

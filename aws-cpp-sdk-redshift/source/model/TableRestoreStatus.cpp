@@ -171,58 +171,72 @@ void TableRestoreStatus::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".TableRestoreRequestId=" << StringUtils::URLEncode(m_tableRestoreRequestId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << TableRestoreStatusTypeMapper::GetNameForTableRestoreStatusType(m_status) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_requestTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_progressInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProgressInMegaBytes=" << m_progressInMegaBytes << "&";
   }
+
   if(m_totalDataInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalDataInMegaBytes=" << m_totalDataInMegaBytes << "&";
   }
+
   if(m_clusterIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
+
   if(m_sourceDatabaseNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceDatabaseName=" << StringUtils::URLEncode(m_sourceDatabaseName.c_str()) << "&";
   }
+
   if(m_sourceSchemaNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceSchemaName=" << StringUtils::URLEncode(m_sourceSchemaName.c_str()) << "&";
   }
+
   if(m_sourceTableNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceTableName=" << StringUtils::URLEncode(m_sourceTableName.c_str()) << "&";
   }
+
   if(m_targetDatabaseNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TargetDatabaseName=" << StringUtils::URLEncode(m_targetDatabaseName.c_str()) << "&";
   }
+
   if(m_targetSchemaNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TargetSchemaName=" << StringUtils::URLEncode(m_targetSchemaName.c_str()) << "&";
   }
+
   if(m_newTableNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".NewTableName=" << StringUtils::URLEncode(m_newTableName.c_str()) << "&";
   }
+
 }
 
 void TableRestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

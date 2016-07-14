@@ -36,14 +36,17 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_groupsHasBeenSet)
   {
     unsigned groupsCount = 1;
@@ -54,6 +57,7 @@ Aws::String AttachClassicLinkVpcRequest::SerializePayload() const
       groupsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

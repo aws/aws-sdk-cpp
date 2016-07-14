@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudHSM
 {
-enum class AWS_CLOUDHSM_API CloudHSMErrors
+enum class CloudHSMErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

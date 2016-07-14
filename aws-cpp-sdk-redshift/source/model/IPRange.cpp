@@ -85,10 +85,12 @@ void IPRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_cIDRIPHasBeenSet)
   {
       oStream << location << index << locationValue << ".CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -99,6 +101,7 @@ void IPRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void IPRange::OutputToStream(Aws::OStream& oStream, const char* location) const

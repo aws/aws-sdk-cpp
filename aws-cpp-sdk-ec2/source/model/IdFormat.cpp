@@ -81,14 +81,17 @@ void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
   }
+
   if(m_useLongIdsHasBeenSet)
   {
       oStream << location << index << locationValue << ".UseLongIds=" << m_useLongIds << "&";
   }
+
   if(m_deadlineHasBeenSet)
   {
       oStream << location << index << locationValue << ".Deadline=" << StringUtils::URLEncode(m_deadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void IdFormat::OutputToStream(Aws::OStream& oStream, const char* location) const

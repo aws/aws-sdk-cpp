@@ -63,6 +63,7 @@ void ProcessType::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
   }
+
 }
 
 void ProcessType::OutputToStream(Aws::OStream& oStream, const char* location) const

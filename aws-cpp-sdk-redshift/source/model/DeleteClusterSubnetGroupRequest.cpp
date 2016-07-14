@@ -32,6 +32,7 @@ Aws::String DeleteClusterSubnetGroupRequest::SerializePayload() const
   {
     ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -34,10 +34,12 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

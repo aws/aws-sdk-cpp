@@ -169,18 +169,22 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_dBInstanceClassHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -191,34 +195,42 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
         item.OutputToStream(oStream, availabilityZonesSs.str().c_str());
       }
   }
+
   if(m_multiAZCapableHasBeenSet)
   {
       oStream << location << index << locationValue << ".MultiAZCapable=" << m_multiAZCapable << "&";
   }
+
   if(m_readReplicaCapableHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReadReplicaCapable=" << m_readReplicaCapable << "&";
   }
+
   if(m_vpcHasBeenSet)
   {
       oStream << location << index << locationValue << ".Vpc=" << m_vpc << "&";
   }
+
   if(m_supportsStorageEncryptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsStorageEncryption=" << m_supportsStorageEncryption << "&";
   }
+
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
+
   if(m_supportsIopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsIops=" << m_supportsIops << "&";
   }
+
   if(m_supportsEnhancedMonitoringHasBeenSet)
   {
       oStream << location << index << locationValue << ".SupportsEnhancedMonitoring=" << m_supportsEnhancedMonitoring << "&";
   }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -32,6 +32,7 @@ Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
   {
     ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

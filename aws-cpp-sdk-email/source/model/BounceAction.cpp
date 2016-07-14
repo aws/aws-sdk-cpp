@@ -95,22 +95,27 @@ void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_smtpReplyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SmtpReplyCode=" << StringUtils::URLEncode(m_smtpReplyCode.c_str()) << "&";
   }
+
   if(m_statusCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusCode=" << StringUtils::URLEncode(m_statusCode.c_str()) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_senderHasBeenSet)
   {
       oStream << location << index << locationValue << ".Sender=" << StringUtils::URLEncode(m_sender.c_str()) << "&";
   }
+
 }
 
 void BounceAction::OutputToStream(Aws::OStream& oStream, const char* location) const

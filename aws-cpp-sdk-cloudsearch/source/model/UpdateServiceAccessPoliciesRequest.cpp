@@ -33,10 +33,12 @@ Aws::String UpdateServiceAccessPoliciesRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_accessPoliciesHasBeenSet)
   {
     ss << "AccessPolicies=" << StringUtils::URLEncode(m_accessPolicies.c_str()) << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

@@ -32,6 +32,7 @@ Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
   {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

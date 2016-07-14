@@ -32,6 +32,7 @@ Aws::String DescribeEventCategoriesRequest::SerializePayload() const
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

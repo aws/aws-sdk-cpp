@@ -51,6 +51,7 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_reservedInstancesOfferingIdsHasBeenSet)
   {
     unsigned reservedInstancesOfferingIdsCount = 1;
@@ -61,18 +62,22 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
       reservedInstancesOfferingIdsCount++;
     }
   }
+
   if(m_instanceTypeHasBeenSet)
   {
     ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_productDescriptionHasBeenSet)
   {
     ss << "ProductDescription=" << RIProductDescriptionMapper::GetNameForRIProductDescription(m_productDescription) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -82,38 +87,47 @@ Aws::String DescribeReservedInstancesOfferingsRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_instanceTenancyHasBeenSet)
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
+
   if(m_offeringTypeHasBeenSet)
   {
     ss << "OfferingType=" << OfferingTypeValuesMapper::GetNameForOfferingTypeValues(m_offeringType) << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_includeMarketplaceHasBeenSet)
   {
     ss << "IncludeMarketplace=" << m_includeMarketplace << "&";
   }
+
   if(m_minDurationHasBeenSet)
   {
     ss << "MinDuration=" << m_minDuration << "&";
   }
+
   if(m_maxDurationHasBeenSet)
   {
     ss << "MaxDuration=" << m_maxDuration << "&";
   }
+
   if(m_maxInstanceCountHasBeenSet)
   {
     ss << "MaxInstanceCount=" << m_maxInstanceCount << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

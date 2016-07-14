@@ -34,10 +34,12 @@ Aws::String DeleteAutoScalingGroupRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_forceDeleteHasBeenSet)
   {
     ss << "ForceDelete=" << m_forceDelete << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

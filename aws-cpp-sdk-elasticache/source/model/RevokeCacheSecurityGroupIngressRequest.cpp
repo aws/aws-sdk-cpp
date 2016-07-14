@@ -34,14 +34,17 @@ Aws::String RevokeCacheSecurityGroupIngressRequest::SerializePayload() const
   {
     ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupNameHasBeenSet)
   {
     ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupOwnerIdHasBeenSet)
   {
     ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

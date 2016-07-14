@@ -103,22 +103,27 @@ void HealthCheck::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".Target=" << StringUtils::URLEncode(m_target.c_str()) << "&";
   }
+
   if(m_intervalHasBeenSet)
   {
       oStream << location << index << locationValue << ".Interval=" << m_interval << "&";
   }
+
   if(m_timeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
   }
+
   if(m_unhealthyThresholdHasBeenSet)
   {
       oStream << location << index << locationValue << ".UnhealthyThreshold=" << m_unhealthyThreshold << "&";
   }
+
   if(m_healthyThresholdHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthyThreshold=" << m_healthyThreshold << "&";
   }
+
 }
 
 void HealthCheck::OutputToStream(Aws::OStream& oStream, const char* location) const

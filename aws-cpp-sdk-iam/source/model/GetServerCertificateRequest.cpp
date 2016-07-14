@@ -32,6 +32,7 @@ Aws::String GetServerCertificateRequest::SerializePayload() const
   {
     ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

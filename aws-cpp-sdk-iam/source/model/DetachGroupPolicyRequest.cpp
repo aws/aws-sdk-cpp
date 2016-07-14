@@ -33,10 +33,12 @@ Aws::String DetachGroupPolicyRequest::SerializePayload() const
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_policyArnHasBeenSet)
   {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

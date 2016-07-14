@@ -91,6 +91,7 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
   }
+
   if(m_dhcpConfigurationsHasBeenSet)
   {
       unsigned dhcpConfigurationsIdx = 1;
@@ -101,6 +102,7 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, dhcpConfigurationsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -111,6 +113,7 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

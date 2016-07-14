@@ -32,6 +32,7 @@ Aws::String DescribeDBClusterSnapshotAttributesRequest::SerializePayload() const
   {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

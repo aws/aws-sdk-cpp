@@ -38,6 +38,7 @@ Aws::String DeleteFlowLogsRequest::SerializePayload() const
       flowLogIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

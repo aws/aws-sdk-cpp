@@ -65,6 +65,7 @@ void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const char* location) const

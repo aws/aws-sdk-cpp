@@ -79,14 +79,17 @@ void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".NodeRole=" << StringUtils::URLEncode(m_nodeRole.c_str()) << "&";
   }
+
   if(m_privateIPAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIPAddress=" << StringUtils::URLEncode(m_privateIPAddress.c_str()) << "&";
   }
+
   if(m_publicIPAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PublicIPAddress=" << StringUtils::URLEncode(m_publicIPAddress.c_str()) << "&";
   }
+
 }
 
 void ClusterNode::OutputToStream(Aws::OStream& oStream, const char* location) const

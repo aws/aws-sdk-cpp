@@ -83,14 +83,17 @@ void InstanceCapacity::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_availableCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailableCapacity=" << m_availableCapacity << "&";
   }
+
   if(m_totalCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalCapacity=" << m_totalCapacity << "&";
   }
+
 }
 
 void InstanceCapacity::OutputToStream(Aws::OStream& oStream, const char* location) const

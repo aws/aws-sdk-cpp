@@ -32,6 +32,7 @@ Aws::String DeleteOptionGroupRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -33,10 +33,12 @@ Aws::String DeleteMessageRequest::SerializePayload() const
   {
     ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
+
   if(m_receiptHandleHasBeenSet)
   {
     ss << "ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
+
   ss << "Version=2012-11-05";
   return ss.str();
 }
