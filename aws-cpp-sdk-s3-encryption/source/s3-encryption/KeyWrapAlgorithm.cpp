@@ -39,12 +39,7 @@ KeyWrapAlgorithm GetKeyWrapAlgorithmForName(const Aws::String& name)
     {
         return KeyWrapAlgorithm::AES_KEY_WRAP;
     }
-    EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-    if (overflowContainer)
-    {
-        assert(0);
-    }
-
+    assert(0);
     return KeyWrapAlgorithm::NONE;
 }
 
@@ -57,13 +52,9 @@ Aws::String GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm enumValue)
     case KeyWrapAlgorithm::AES_KEY_WRAP:
         return "AESWrap";
     default:
-        EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-        if (overflowContainer)
-        {
-            assert(0);
-        }
-        return "";
+        assert(0);
     }
+    return "";
 }
 }//namespace KeyWrapAlgorithmMapper
 }//namespace S3Encryption

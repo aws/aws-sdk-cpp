@@ -44,12 +44,7 @@ ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name)
     {
         return ContentCryptoScheme::GCM;
     }
-    EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-    if (overflowContainer)
-    {
-        assert(0);
-    }
-
+    assert(0);
     return ContentCryptoScheme::NONE;
 }
 
@@ -64,11 +59,7 @@ Aws::String GetNameForContentCryptoScheme(ContentCryptoScheme enumValue)
     case ContentCryptoScheme::GCM:
         return "AES/GCM/NoPadding";
     default:
-        EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
-        if (overflowContainer)
-        {
-            assert(0);
-        }
+        assert(0);
         return "";
     }
 }
