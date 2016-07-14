@@ -47,8 +47,7 @@ ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name)
     EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
     if (overflowContainer)
     {
-        overflowContainer->StoreOverflow(hashcode, name);
-        return static_cast<ContentCryptoScheme>(hashcode);
+        assert(0);
     }
 
     return ContentCryptoScheme::NONE;
@@ -68,7 +67,7 @@ Aws::String GetNameForContentCryptoScheme(ContentCryptoScheme enumValue)
         EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
         if (overflowContainer)
         {
-            return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+            assert(0);
         }
         return "";
     }
