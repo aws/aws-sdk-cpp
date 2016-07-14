@@ -33,10 +33,12 @@ Aws::String FailoverDBClusterRequest::SerializePayload() const
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_targetDBInstanceIdentifierHasBeenSet)
   {
     ss << "TargetDBInstanceIdentifier=" << StringUtils::URLEncode(m_targetDBInstanceIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

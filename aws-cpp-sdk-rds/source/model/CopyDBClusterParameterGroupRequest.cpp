@@ -35,14 +35,17 @@ Aws::String CopyDBClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "SourceDBClusterParameterGroupIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterParameterGroupIdentifier.c_str()) << "&";
   }
+
   if(m_targetDBClusterParameterGroupIdentifierHasBeenSet)
   {
     ss << "TargetDBClusterParameterGroupIdentifier=" << StringUtils::URLEncode(m_targetDBClusterParameterGroupIdentifier.c_str()) << "&";
   }
+
   if(m_targetDBClusterParameterGroupDescriptionHasBeenSet)
   {
     ss << "TargetDBClusterParameterGroupDescription=" << StringUtils::URLEncode(m_targetDBClusterParameterGroupDescription.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -52,6 +55,7 @@ Aws::String CopyDBClusterParameterGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }
