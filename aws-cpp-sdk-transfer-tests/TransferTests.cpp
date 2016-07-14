@@ -807,11 +807,9 @@ TEST_F(TransferTests, CancelTest)
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
 
-    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
+    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 1u);
 
     ASSERT_FALSE(requestPtr->CompletedSuccessfully());
-
-    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
 }
 
 // This is a complete cycle - we upload a file, then download it, and compare content
