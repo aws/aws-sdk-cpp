@@ -35,14 +35,17 @@ Aws::String GetSessionTokenRequest::SerializePayload() const
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
+
   if(m_serialNumberHasBeenSet)
   {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   if(m_tokenCodeHasBeenSet)
   {
     ss << "TokenCode=" << StringUtils::URLEncode(m_tokenCode.c_str()) << "&";
   }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

@@ -135,42 +135,52 @@ void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
+
   if(m_eventIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
   }
+
   if(m_stackNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_logicalResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
+
   if(m_physicalResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PhysicalResourceId=" << StringUtils::URLEncode(m_physicalResourceId.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
   if(m_timestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_resourceStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceStatus=" << ResourceStatusMapper::GetNameForResourceStatus(m_resourceStatus) << "&";
   }
+
   if(m_resourceStatusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
   }
+
   if(m_resourcePropertiesHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceProperties=" << StringUtils::URLEncode(m_resourceProperties.c_str()) << "&";
   }
+
 }
 
 void StackEvent::OutputToStream(Aws::OStream& oStream, const char* location) const

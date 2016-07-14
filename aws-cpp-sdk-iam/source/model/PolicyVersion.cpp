@@ -89,18 +89,22 @@ void PolicyVersion::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Document=" << StringUtils::URLEncode(m_document.c_str()) << "&";
   }
+
   if(m_versionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VersionId=" << StringUtils::URLEncode(m_versionId.c_str()) << "&";
   }
+
   if(m_isDefaultVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsDefaultVersion=" << m_isDefaultVersion << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void PolicyVersion::OutputToStream(Aws::OStream& oStream, const char* location) const

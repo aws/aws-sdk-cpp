@@ -63,6 +63,7 @@ void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
   }
+
 }
 
 void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const

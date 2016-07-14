@@ -87,10 +87,12 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_classicLinkEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClassicLinkEnabled=" << m_classicLinkEnabled << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -101,6 +103,7 @@ void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void VpcClassicLink::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,6 +33,7 @@ Aws::String SetEndpointAttributesRequest::SerializePayload() const
   {
     ss << "EndpointArn=" << StringUtils::URLEncode(m_endpointArn.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;
@@ -45,6 +46,7 @@ Aws::String SetEndpointAttributesRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

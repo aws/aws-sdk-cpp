@@ -73,10 +73,12 @@ void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, 
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
 }
 
 void EbsInstanceBlockDeviceSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const

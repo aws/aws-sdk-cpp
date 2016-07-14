@@ -49,38 +49,47 @@ Aws::String UpdateAccountPasswordPolicyRequest::SerializePayload() const
   {
     ss << "MinimumPasswordLength=" << m_minimumPasswordLength << "&";
   }
+
   if(m_requireSymbolsHasBeenSet)
   {
     ss << "RequireSymbols=" << m_requireSymbols << "&";
   }
+
   if(m_requireNumbersHasBeenSet)
   {
     ss << "RequireNumbers=" << m_requireNumbers << "&";
   }
+
   if(m_requireUppercaseCharactersHasBeenSet)
   {
     ss << "RequireUppercaseCharacters=" << m_requireUppercaseCharacters << "&";
   }
+
   if(m_requireLowercaseCharactersHasBeenSet)
   {
     ss << "RequireLowercaseCharacters=" << m_requireLowercaseCharacters << "&";
   }
+
   if(m_allowUsersToChangePasswordHasBeenSet)
   {
     ss << "AllowUsersToChangePassword=" << m_allowUsersToChangePassword << "&";
   }
+
   if(m_maxPasswordAgeHasBeenSet)
   {
     ss << "MaxPasswordAge=" << m_maxPasswordAge << "&";
   }
+
   if(m_passwordReusePreventionHasBeenSet)
   {
     ss << "PasswordReusePrevention=" << m_passwordReusePrevention << "&";
   }
+
   if(m_hardExpiryHasBeenSet)
   {
     ss << "HardExpiry=" << m_hardExpiry << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

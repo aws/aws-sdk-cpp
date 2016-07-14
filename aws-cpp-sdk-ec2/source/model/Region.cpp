@@ -71,10 +71,12 @@ void Region::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
       oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
+
 }
 
 void Region::OutputToStream(Aws::OStream& oStream, const char* location) const

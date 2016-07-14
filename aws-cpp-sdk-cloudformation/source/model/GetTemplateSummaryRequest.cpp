@@ -34,14 +34,17 @@ Aws::String GetTemplateSummaryRequest::SerializePayload() const
   {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
+
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
+
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

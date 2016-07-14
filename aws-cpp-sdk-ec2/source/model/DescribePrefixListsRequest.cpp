@@ -38,6 +38,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_prefixListIdsHasBeenSet)
   {
     unsigned prefixListIdsCount = 1;
@@ -48,6 +49,7 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
       prefixListIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -57,14 +59,17 @@ Aws::String DescribePrefixListsRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

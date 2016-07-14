@@ -79,14 +79,17 @@ void LambdaAction::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_functionArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".FunctionArn=" << StringUtils::URLEncode(m_functionArn.c_str()) << "&";
   }
+
   if(m_invocationTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InvocationType=" << InvocationTypeMapper::GetNameForInvocationType(m_invocationType) << "&";
   }
+
 }
 
 void LambdaAction::OutputToStream(Aws::OStream& oStream, const char* location) const

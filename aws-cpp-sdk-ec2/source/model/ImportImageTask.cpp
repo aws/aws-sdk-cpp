@@ -149,26 +149,32 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
   }
+
   if(m_architectureHasBeenSet)
   {
       oStream << location << index << locationValue << ".Architecture=" << StringUtils::URLEncode(m_architecture.c_str()) << "&";
   }
+
   if(m_licenseTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseType=" << StringUtils::URLEncode(m_licenseType.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_hypervisorHasBeenSet)
   {
       oStream << location << index << locationValue << ".Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_snapshotDetailsHasBeenSet)
   {
       unsigned snapshotDetailsIdx = 1;
@@ -179,22 +185,27 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, snapshotDetailsSs.str().c_str());
       }
   }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_progressHasBeenSet)
   {
       oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location) const

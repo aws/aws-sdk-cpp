@@ -79,14 +79,17 @@ void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_spotInstanceRequestIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotInstanceRequestId=" << StringUtils::URLEncode(m_spotInstanceRequestId.c_str()) << "&";
   }
+
 }
 
 void ActiveInstance::OutputToStream(Aws::OStream& oStream, const char* location) const

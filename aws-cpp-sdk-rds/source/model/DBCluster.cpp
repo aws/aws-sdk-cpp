@@ -317,6 +317,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -325,66 +326,82 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         oStream << location << index << locationValue << ".AvailabilityZone." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_backupRetentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
+
   if(m_characterSetNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
+
   if(m_databaseNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
   }
+
   if(m_dBClusterIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_dBClusterParameterGroupHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBClusterParameterGroup=" << StringUtils::URLEncode(m_dBClusterParameterGroup.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBSubnetGroup=" << StringUtils::URLEncode(m_dBSubnetGroup.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_percentProgressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PercentProgress=" << StringUtils::URLEncode(m_percentProgress.c_str()) << "&";
   }
+
   if(m_earliestRestorableTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EarliestRestorableTime=" << StringUtils::URLEncode(m_earliestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
       oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_latestRestorableTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
+
   if(m_masterUsernameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
   }
+
   if(m_dBClusterOptionGroupMembershipsHasBeenSet)
   {
       unsigned dBClusterOptionGroupMembershipsIdx = 1;
@@ -395,18 +412,22 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         item.OutputToStream(oStream, dBClusterOptionGroupMembershipsSs.str().c_str());
       }
   }
+
   if(m_preferredBackupWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_replicationSourceIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReplicationSourceIdentifier=" << StringUtils::URLEncode(m_replicationSourceIdentifier.c_str()) << "&";
   }
+
   if(m_readReplicaIdentifiersHasBeenSet)
   {
       unsigned readReplicaIdentifiersIdx = 1;
@@ -415,6 +436,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         oStream << location << index << locationValue << ".ReadReplicaIdentifier." << readReplicaIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_dBClusterMembersHasBeenSet)
   {
       unsigned dBClusterMembersIdx = 1;
@@ -425,6 +447,7 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         item.OutputToStream(oStream, dBClusterMembersSs.str().c_str());
       }
   }
+
   if(m_vpcSecurityGroupsHasBeenSet)
   {
       unsigned vpcSecurityGroupsIdx = 1;
@@ -435,22 +458,27 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_hostedZoneIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".HostedZoneId=" << StringUtils::URLEncode(m_hostedZoneId.c_str()) << "&";
   }
+
   if(m_storageEncryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_dbClusterResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
   }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const

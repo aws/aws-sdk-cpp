@@ -79,14 +79,17 @@ void ClusterParameterStatus::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_parameterApplyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
+
   if(m_parameterApplyErrorDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyErrorDescription=" << StringUtils::URLEncode(m_parameterApplyErrorDescription.c_str()) << "&";
   }
+
 }
 
 void ClusterParameterStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

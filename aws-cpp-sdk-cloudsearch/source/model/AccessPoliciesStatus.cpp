@@ -71,12 +71,14 @@ void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Options=" << StringUtils::URLEncode(m_options.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       Aws::StringStream statusLocationAndMemberSs;
       statusLocationAndMemberSs << location << index << locationValue << ".Status";
       m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void AccessPoliciesStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

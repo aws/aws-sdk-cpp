@@ -32,6 +32,7 @@ Aws::String DomainMetadataRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   ss << "Version=2009-04-15";
   return ss.str();
 }

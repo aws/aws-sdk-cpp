@@ -35,14 +35,17 @@ Aws::String CreateDBClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
+
   if(m_dBParameterGroupFamilyHasBeenSet)
   {
     ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -52,6 +55,7 @@ Aws::String CreateDBClusterParameterGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -84,26 +84,26 @@ LifecycleRule& LifecycleRule::operator =(const XmlNode& xmlNode)
       m_status = ExpirationStatusMapper::GetExpirationStatusForName(StringUtils::Trim(statusNode.GetText().c_str()).c_str());
       m_statusHasBeenSet = true;
     }
-    XmlNode transitionsNode = resultNode.FirstChild("Transitions");
+    XmlNode transitionsNode = resultNode.FirstChild("Transition");
     if(!transitionsNode.IsNull())
     {
-      XmlNode transitionsMember = transitionsNode;
-      while(!transitionsMember.IsNull())
+      XmlNode transitionMember = transitionsNode;
+      while(!transitionMember.IsNull())
       {
-        m_transitions.push_back(transitionsMember);
-        transitionsMember = transitionsMember.NextNode("Transition");
+        m_transitions.push_back(transitionMember);
+        transitionMember = transitionMember.NextNode("Transition");
       }
 
       m_transitionsHasBeenSet = true;
     }
-    XmlNode noncurrentVersionTransitionsNode = resultNode.FirstChild("NoncurrentVersionTransitions");
+    XmlNode noncurrentVersionTransitionsNode = resultNode.FirstChild("NoncurrentVersionTransition");
     if(!noncurrentVersionTransitionsNode.IsNull())
     {
-      XmlNode noncurrentVersionTransitionsMember = noncurrentVersionTransitionsNode;
-      while(!noncurrentVersionTransitionsMember.IsNull())
+      XmlNode noncurrentVersionTransitionMember = noncurrentVersionTransitionsNode;
+      while(!noncurrentVersionTransitionMember.IsNull())
       {
-        m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionsMember);
-        noncurrentVersionTransitionsMember = noncurrentVersionTransitionsMember.NextNode("NoncurrentVersionTransition");
+        m_noncurrentVersionTransitions.push_back(noncurrentVersionTransitionMember);
+        noncurrentVersionTransitionMember = noncurrentVersionTransitionMember.NextNode("NoncurrentVersionTransition");
       }
 
       m_noncurrentVersionTransitionsHasBeenSet = true;

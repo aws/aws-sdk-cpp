@@ -35,14 +35,17 @@ Aws::String DeleteClusterRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_skipFinalClusterSnapshotHasBeenSet)
   {
     ss << "SkipFinalClusterSnapshot=" << m_skipFinalClusterSnapshot << "&";
   }
+
   if(m_finalClusterSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_finalClusterSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

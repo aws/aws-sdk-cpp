@@ -34,10 +34,12 @@ Aws::String EstimateTemplateCostRequest::SerializePayload() const
   {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
+
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -47,6 +49,7 @@ Aws::String EstimateTemplateCostRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

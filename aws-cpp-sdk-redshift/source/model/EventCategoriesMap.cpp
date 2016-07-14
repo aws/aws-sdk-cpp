@@ -77,6 +77,7 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_eventsHasBeenSet)
   {
       unsigned eventsIdx = 1;
@@ -87,6 +88,7 @@ void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+
 }
 
 void EventCategoriesMap::OutputToStream(Aws::OStream& oStream, const char* location) const

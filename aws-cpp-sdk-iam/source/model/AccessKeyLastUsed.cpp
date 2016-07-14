@@ -79,14 +79,17 @@ void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".LastUsedDate=" << StringUtils::URLEncode(m_lastUsedDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_serviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
+
   if(m_regionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Region=" << StringUtils::URLEncode(m_region.c_str()) << "&";
   }
+
 }
 
 void AccessKeyLastUsed::OutputToStream(Aws::OStream& oStream, const char* location) const

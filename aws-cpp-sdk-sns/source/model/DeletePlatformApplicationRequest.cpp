@@ -32,6 +32,7 @@ Aws::String DeletePlatformApplicationRequest::SerializePayload() const
   {
     ss << "PlatformApplicationArn=" << StringUtils::URLEncode(m_platformApplicationArn.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

@@ -121,30 +121,37 @@ void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_sampleCountHasBeenSet)
   {
         oStream << location << index << locationValue << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
+
   if(m_averageHasBeenSet)
   {
         oStream << location << index << locationValue << ".Average=" << StringUtils::URLEncode(m_average) << "&";
   }
+
   if(m_sumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
+
   if(m_minimumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
+
   if(m_maximumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
+
   if(m_unitHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
 }
 
 void Datapoint::OutputToStream(Aws::OStream& oStream, const char* location) const

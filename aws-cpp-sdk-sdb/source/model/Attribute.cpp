@@ -87,18 +87,22 @@ void Attribute::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_alternateNameEncodingHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlternateNameEncoding=" << StringUtils::URLEncode(m_alternateNameEncoding.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
   if(m_alternateValueEncodingHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlternateValueEncoding=" << StringUtils::URLEncode(m_alternateValueEncoding.c_str()) << "&";
   }
+
 }
 
 void Attribute::OutputToStream(Aws::OStream& oStream, const char* location) const

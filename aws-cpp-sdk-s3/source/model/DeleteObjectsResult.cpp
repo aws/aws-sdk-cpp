@@ -52,14 +52,14 @@ DeleteObjectsResult& DeleteObjectsResult::operator =(const AmazonWebServiceResul
       }
 
     }
-    XmlNode errorsNode = resultNode.FirstChild("Errors");
+    XmlNode errorsNode = resultNode.FirstChild("Error");
     if(!errorsNode.IsNull())
     {
-      XmlNode errorsMember = errorsNode;
-      while(!errorsMember.IsNull())
+      XmlNode errorMember = errorsNode;
+      while(!errorMember.IsNull())
       {
-        m_errors.push_back(errorsMember);
-        errorsMember = errorsMember.NextNode("Error");
+        m_errors.push_back(errorMember);
+        errorMember = errorMember.NextNode("Error");
       }
 
     }

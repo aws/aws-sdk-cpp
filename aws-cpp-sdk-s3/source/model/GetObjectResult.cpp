@@ -139,6 +139,7 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& lastModifiedIter = headers.find("last-modified");
   if(lastModifiedIter != headers.end())
   {
+    m_lastModified = DateTime(lastModifiedIter->second, DateFormat::RFC822);
   }
 
   const auto& contentLengthIter = headers.find("content-length");
@@ -204,6 +205,7 @@ GetObjectResult& GetObjectResult::operator =(AmazonWebServiceResult<ResponseStre
   const auto& expiresIter = headers.find("expires");
   if(expiresIter != headers.end())
   {
+    m_expires = DateTime(expiresIter->second, DateFormat::RFC822);
   }
 
   const auto& websiteRedirectLocationIter = headers.find("x-amz-website-redirect-location");

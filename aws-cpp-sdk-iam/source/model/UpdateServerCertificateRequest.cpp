@@ -34,14 +34,17 @@ Aws::String UpdateServerCertificateRequest::SerializePayload() const
   {
     ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
   }
+
   if(m_newPathHasBeenSet)
   {
     ss << "NewPath=" << StringUtils::URLEncode(m_newPath.c_str()) << "&";
   }
+
   if(m_newServerCertificateNameHasBeenSet)
   {
     ss << "NewServerCertificateName=" << StringUtils::URLEncode(m_newServerCertificateName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

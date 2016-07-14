@@ -34,10 +34,12 @@ Aws::String DeleteApplicationRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_terminateEnvByForceHasBeenSet)
   {
     ss << "TerminateEnvByForce=" << m_terminateEnvByForce << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

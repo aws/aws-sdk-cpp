@@ -97,22 +97,27 @@ void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".OutsideIpAddress=" << StringUtils::URLEncode(m_outsideIpAddress.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << TelemetryStatusMapper::GetNameForTelemetryStatus(m_status) << "&";
   }
+
   if(m_lastStatusChangeHasBeenSet)
   {
       oStream << location << index << locationValue << ".LastStatusChange=" << StringUtils::URLEncode(m_lastStatusChange.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_acceptedRouteCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AcceptedRouteCount=" << m_acceptedRouteCount << "&";
   }
+
 }
 
 void VgwTelemetry::OutputToStream(Aws::OStream& oStream, const char* location) const

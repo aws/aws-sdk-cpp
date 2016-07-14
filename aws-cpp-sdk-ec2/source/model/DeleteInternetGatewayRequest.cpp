@@ -34,10 +34,12 @@ Aws::String DeleteInternetGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_internetGatewayIdHasBeenSet)
   {
     ss << "InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -75,10 +75,12 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
         oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
+
   if(m_countHasBeenSet)
   {
       oStream << location << index << locationValue << ".Count=" << m_count << "&";
   }
+
 }
 
 void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

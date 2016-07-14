@@ -35,14 +35,17 @@ Aws::String CreateVpcRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_instanceTenancyHasBeenSet)
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

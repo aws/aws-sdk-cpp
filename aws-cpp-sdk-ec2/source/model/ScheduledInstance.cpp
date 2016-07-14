@@ -181,64 +181,79 @@ void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".ScheduledInstanceId=" << StringUtils::URLEncode(m_scheduledInstanceId.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_networkPlatformHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_slotDurationInHoursHasBeenSet)
   {
       oStream << location << index << locationValue << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
   }
+
   if(m_recurrenceHasBeenSet)
   {
       Aws::StringStream recurrenceLocationAndMemberSs;
       recurrenceLocationAndMemberSs << location << index << locationValue << ".Recurrence";
       m_recurrence.OutputToStream(oStream, recurrenceLocationAndMemberSs.str().c_str());
   }
+
   if(m_previousSlotEndTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreviousSlotEndTime=" << StringUtils::URLEncode(m_previousSlotEndTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_nextSlotStartTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".NextSlotStartTime=" << StringUtils::URLEncode(m_nextSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_hourlyPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
+
   if(m_totalScheduledInstanceHoursHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
   }
+
   if(m_termStartDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".TermStartDate=" << StringUtils::URLEncode(m_termStartDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_termEndDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".TermEndDate=" << StringUtils::URLEncode(m_termEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void ScheduledInstance::OutputToStream(Aws::OStream& oStream, const char* location) const

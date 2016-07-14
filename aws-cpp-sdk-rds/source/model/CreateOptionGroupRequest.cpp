@@ -36,18 +36,22 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_engineNameHasBeenSet)
   {
     ss << "EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
   }
+
   if(m_majorEngineVersionHasBeenSet)
   {
     ss << "MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
+
   if(m_optionGroupDescriptionHasBeenSet)
   {
     ss << "OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -57,6 +61,7 @@ Aws::String CreateOptionGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

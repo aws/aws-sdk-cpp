@@ -33,6 +33,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
   {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_tagKeysHasBeenSet)
   {
     unsigned tagKeysCount = 1;
@@ -43,6 +44,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
       tagKeysCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

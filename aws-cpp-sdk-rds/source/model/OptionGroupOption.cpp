@@ -163,30 +163,37 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_engineNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
   }
+
   if(m_majorEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
+
   if(m_minimumRequiredMinorEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinimumRequiredMinorEngineVersion=" << StringUtils::URLEncode(m_minimumRequiredMinorEngineVersion.c_str()) << "&";
   }
+
   if(m_portRequiredHasBeenSet)
   {
       oStream << location << index << locationValue << ".PortRequired=" << m_portRequired << "&";
   }
+
   if(m_defaultPortHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultPort=" << m_defaultPort << "&";
   }
+
   if(m_optionsDependedOnHasBeenSet)
   {
       unsigned optionsDependedOnIdx = 1;
@@ -195,14 +202,17 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
         oStream << location << index << locationValue << ".OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_persistentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
   }
+
   if(m_permanentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Permanent=" << m_permanent << "&";
   }
+
   if(m_optionGroupOptionSettingsHasBeenSet)
   {
       unsigned optionGroupOptionSettingsIdx = 1;
@@ -213,6 +223,7 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
         item.OutputToStream(oStream, optionGroupOptionSettingsSs.str().c_str());
       }
   }
+
 }
 
 void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -141,14 +141,17 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_healthStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthStatus=" << StringUtils::URLEncode(m_healthStatus.c_str()) << "&";
   }
+
   if(m_colorHasBeenSet)
   {
       oStream << location << index << locationValue << ".Color=" << StringUtils::URLEncode(m_color.c_str()) << "&";
   }
+
   if(m_causesHasBeenSet)
   {
       unsigned causesIdx = 1;
@@ -157,36 +160,43 @@ void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* loc
         oStream << location << index << locationValue << ".Causes.member." << causesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_launchedAtHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchedAt=" << StringUtils::URLEncode(m_launchedAt.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_applicationMetricsHasBeenSet)
   {
       Aws::StringStream applicationMetricsLocationAndMemberSs;
       applicationMetricsLocationAndMemberSs << location << index << locationValue << ".ApplicationMetrics";
       m_applicationMetrics.OutputToStream(oStream, applicationMetricsLocationAndMemberSs.str().c_str());
   }
+
   if(m_systemHasBeenSet)
   {
       Aws::StringStream systemLocationAndMemberSs;
       systemLocationAndMemberSs << location << index << locationValue << ".System";
       m_system.OutputToStream(oStream, systemLocationAndMemberSs.str().c_str());
   }
+
   if(m_deploymentHasBeenSet)
   {
       Aws::StringStream deploymentLocationAndMemberSs;
       deploymentLocationAndMemberSs << location << index << locationValue << ".Deployment";
       m_deployment.OutputToStream(oStream, deploymentLocationAndMemberSs.str().c_str());
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
 }
 
 void SingleInstanceHealth::OutputToStream(Aws::OStream& oStream, const char* location) const

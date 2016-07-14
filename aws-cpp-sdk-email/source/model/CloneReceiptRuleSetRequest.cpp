@@ -33,10 +33,12 @@ Aws::String CloneReceiptRuleSetRequest::SerializePayload() const
   {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
+
   if(m_originalRuleSetNameHasBeenSet)
   {
     ss << "OriginalRuleSetName=" << StringUtils::URLEncode(m_originalRuleSetName.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

@@ -115,10 +115,12 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
+
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
       unsigned dBSecurityGroupMembershipsIdx = 1;
@@ -127,6 +129,7 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".DBSecurityGroupName." << dBSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_vpcSecurityGroupMembershipsHasBeenSet)
   {
       unsigned vpcSecurityGroupMembershipsIdx = 1;
@@ -135,6 +138,7 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".VpcSecurityGroupId." << vpcSecurityGroupMembershipsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_optionSettingsHasBeenSet)
   {
       unsigned optionSettingsIdx = 1;
@@ -145,6 +149,7 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, optionSettingsSs.str().c_str());
       }
   }
+
 }
 
 void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

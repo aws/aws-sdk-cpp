@@ -32,6 +32,7 @@ Aws::String DeleteDBSecurityGroupRequest::SerializePayload() const
   {
     ss << "DBSecurityGroupName=" << StringUtils::URLEncode(m_dBSecurityGroupName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

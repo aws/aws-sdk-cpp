@@ -34,14 +34,17 @@ Aws::String UpdateApplicationVersionRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

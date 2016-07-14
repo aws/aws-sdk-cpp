@@ -40,14 +40,17 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_groupsHasBeenSet)
   {
     unsigned groupsCount = 1;
@@ -58,6 +61,7 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
       groupsCount++;
     }
   }
+
   if(m_privateIpAddressesHasBeenSet)
   {
     unsigned privateIpAddressesCount = 1;
@@ -67,14 +71,17 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
       privateIpAddressesCount++;
     }
   }
+
   if(m_secondaryPrivateIpAddressCountHasBeenSet)
   {
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

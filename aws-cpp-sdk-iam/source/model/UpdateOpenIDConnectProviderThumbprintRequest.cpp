@@ -33,6 +33,7 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
   {
     ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
   }
+
   if(m_thumbprintListHasBeenSet)
   {
     unsigned thumbprintListCount = 1;
@@ -43,6 +44,7 @@ Aws::String UpdateOpenIDConnectProviderThumbprintRequest::SerializePayload() con
       thumbprintListCount++;
     }
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

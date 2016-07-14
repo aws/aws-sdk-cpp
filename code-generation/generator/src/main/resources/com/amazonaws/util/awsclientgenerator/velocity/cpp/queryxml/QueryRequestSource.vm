@@ -143,6 +143,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 #if(!$member.value.required)
   }
+
 #end
 #end
 #end

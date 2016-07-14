@@ -63,6 +63,7 @@ void ServiceEndpoint::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
+
 }
 
 void ServiceEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const

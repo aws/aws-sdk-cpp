@@ -65,6 +65,7 @@ void ScheduledInstancesMonitoring::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void ScheduledInstancesMonitoring::OutputToStream(Aws::OStream& oStream, const char* location) const

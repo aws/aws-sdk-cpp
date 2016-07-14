@@ -73,10 +73,12 @@ void PrivateIpAddressSpecification::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_primaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
   }
+
 }
 
 void PrivateIpAddressSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,6 +33,7 @@ Aws::String UnassignPrivateIpAddressesRequest::SerializePayload() const
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_privateIpAddressesHasBeenSet)
   {
     unsigned privateIpAddressesCount = 1;
@@ -43,6 +44,7 @@ Aws::String UnassignPrivateIpAddressesRequest::SerializePayload() const
       privateIpAddressesCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

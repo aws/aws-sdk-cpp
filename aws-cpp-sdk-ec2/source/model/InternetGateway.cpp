@@ -91,6 +91,7 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
   }
+
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -101,6 +102,7 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -111,6 +113,7 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location) const

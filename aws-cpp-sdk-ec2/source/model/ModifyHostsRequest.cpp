@@ -39,10 +39,12 @@ Aws::String ModifyHostsRequest::SerializePayload() const
       hostIdsCount++;
     }
   }
+
   if(m_autoPlacementHasBeenSet)
   {
     ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

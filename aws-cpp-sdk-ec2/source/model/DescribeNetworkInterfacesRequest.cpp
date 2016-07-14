@@ -35,6 +35,7 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkInterfaceIdsHasBeenSet)
   {
     unsigned networkInterfaceIdsCount = 1;
@@ -45,6 +46,7 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const
       networkInterfaceIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -54,6 +56,7 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

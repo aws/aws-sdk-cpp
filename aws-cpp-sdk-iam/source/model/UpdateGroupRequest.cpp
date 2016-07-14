@@ -34,14 +34,17 @@ Aws::String UpdateGroupRequest::SerializePayload() const
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_newPathHasBeenSet)
   {
     ss << "NewPath=" << StringUtils::URLEncode(m_newPath.c_str()) << "&";
   }
+
   if(m_newGroupNameHasBeenSet)
   {
     ss << "NewGroupName=" << StringUtils::URLEncode(m_newGroupName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

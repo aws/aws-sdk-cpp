@@ -131,38 +131,47 @@ void LifecycleHook::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_lifecycleTransitionHasBeenSet)
   {
       oStream << location << index << locationValue << ".LifecycleTransition=" << StringUtils::URLEncode(m_lifecycleTransition.c_str()) << "&";
   }
+
   if(m_notificationTargetARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".NotificationTargetARN=" << StringUtils::URLEncode(m_notificationTargetARN.c_str()) << "&";
   }
+
   if(m_roleARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
+
   if(m_notificationMetadataHasBeenSet)
   {
       oStream << location << index << locationValue << ".NotificationMetadata=" << StringUtils::URLEncode(m_notificationMetadata.c_str()) << "&";
   }
+
   if(m_heartbeatTimeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".HeartbeatTimeout=" << m_heartbeatTimeout << "&";
   }
+
   if(m_globalTimeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".GlobalTimeout=" << m_globalTimeout << "&";
   }
+
   if(m_defaultResultHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultResult=" << StringUtils::URLEncode(m_defaultResult.c_str()) << "&";
   }
+
 }
 
 void LifecycleHook::OutputToStream(Aws::OStream& oStream, const char* location) const

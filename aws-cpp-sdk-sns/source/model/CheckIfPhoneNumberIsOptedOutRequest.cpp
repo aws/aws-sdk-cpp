@@ -32,6 +32,7 @@ Aws::String CheckIfPhoneNumberIsOptedOutRequest::SerializePayload() const
   {
     ss << "phoneNumber=" << StringUtils::URLEncode(m_phoneNumber.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

@@ -71,10 +71,12 @@ void CacheNodeTypeSpecificValue::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
 }
 
 void CacheNodeTypeSpecificValue::OutputToStream(Aws::OStream& oStream, const char* location) const

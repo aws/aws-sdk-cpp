@@ -179,42 +179,52 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_volumeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << SnapshotStateMapper::GetNameForSnapshotState(m_state) << "&";
   }
+
   if(m_stateMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StateMessage=" << StringUtils::URLEncode(m_stateMessage.c_str()) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_progressHasBeenSet)
   {
       oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
   }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_volumeSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeSize=" << m_volumeSize << "&";
   }
+
   if(m_ownerAliasHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerAlias=" << StringUtils::URLEncode(m_ownerAlias.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -225,24 +235,29 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_encryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_dataEncryptionKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DataEncryptionKeyId=" << StringUtils::URLEncode(m_dataEncryptionKeyId.c_str()) << "&";
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const

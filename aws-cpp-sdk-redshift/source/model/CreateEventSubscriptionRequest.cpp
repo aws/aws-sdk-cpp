@@ -40,14 +40,17 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
   {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
+
   if(m_snsTopicArnHasBeenSet)
   {
     ss << "SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_sourceIdsHasBeenSet)
   {
     unsigned sourceIdsCount = 1;
@@ -58,6 +61,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
       sourceIdsCount++;
     }
   }
+
   if(m_eventCategoriesHasBeenSet)
   {
     unsigned eventCategoriesCount = 1;
@@ -68,14 +72,17 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
       eventCategoriesCount++;
     }
   }
+
   if(m_severityHasBeenSet)
   {
     ss << "Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
+
   if(m_enabledHasBeenSet)
   {
     ss << "Enabled=" << m_enabled << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -85,6 +92,7 @@ Aws::String CreateEventSubscriptionRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -37,14 +37,17 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
   {
     ss << "SourceDBSnapshotIdentifier=" << StringUtils::URLEncode(m_sourceDBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_targetDBSnapshotIdentifierHasBeenSet)
   {
     ss << "TargetDBSnapshotIdentifier=" << StringUtils::URLEncode(m_targetDBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -54,10 +57,12 @@ Aws::String CopyDBSnapshotRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_copyTagsHasBeenSet)
   {
     ss << "CopyTags=" << m_copyTags << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

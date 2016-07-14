@@ -73,10 +73,12 @@ void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       errorLocationAndMemberSs << location << index << locationValue << ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMemberSs.str().c_str());
   }
+
   if(m_resourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
+
 }
 
 void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* location) const

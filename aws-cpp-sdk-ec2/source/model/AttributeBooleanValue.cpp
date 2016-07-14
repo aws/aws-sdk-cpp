@@ -65,6 +65,7 @@ void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".Value=" << m_value << "&";
   }
+
 }
 
 void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* location) const

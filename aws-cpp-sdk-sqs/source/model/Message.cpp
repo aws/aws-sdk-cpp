@@ -129,28 +129,54 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
   }
+
   if(m_receiptHandleHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
+
   if(m_mD5OfBodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".MD5OfBody=" << StringUtils::URLEncode(m_mD5OfBody.c_str()) << "&";
   }
+
   if(m_bodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".Body=" << StringUtils::URLEncode(m_body.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
+      for(auto& item : m_attributes)
+      {
+        oStream << location << index << locationValue << ".Attribute." << attributesIdx << ".Name="
+            << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+        oStream << location << index << locationValue << ".Attribute." << attributesIdx << ".Value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        attributesIdx++;
+      }
   }
+
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
       oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
+
   if(m_messageAttributesHasBeenSet)
   {
+      unsigned messageAttributesIdx = 1;
+      for(auto& item : m_messageAttributes)
+      {
+        oStream << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Name="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        Aws::StringStream messageAttributesSs;
+        messageAttributesSs << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
+        messageAttributesIdx++;
+      }
   }
+
 }
 
 void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -173,6 +199,16 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_attributesHasBeenSet)
   {
+      unsigned attributesIdx = 1;
+      for(auto& item : m_attributes)
+      {
+        oStream << location << ".Attribute."  << attributesIdx << ".Name="
+            << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+        oStream << location <<  ".Attribute." << attributesIdx << ".Value="
+            << StringUtils::URLEncode(item.second.c_str()) << "&";
+        attributesIdx++;
+      }
+
   }
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
@@ -180,6 +216,17 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_messageAttributesHasBeenSet)
   {
+      unsigned messageAttributesIdx = 1;
+      for(auto& item : m_messageAttributes)
+      {
+        oStream << location << ".MessageAttribute."  << messageAttributesIdx << ".Name="
+            << StringUtils::URLEncode(item.first.c_str()) << "&";
+        Aws::StringStream messageAttributesSs;
+        messageAttributesSs << location << ".MessageAttribute." << messageAttributesIdx << ".Value";
+        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
+        messageAttributesIdx++;
+      }
+
   }
 }
 

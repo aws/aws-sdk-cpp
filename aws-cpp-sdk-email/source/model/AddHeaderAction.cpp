@@ -71,10 +71,12 @@ void AddHeaderAction::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".HeaderName=" << StringUtils::URLEncode(m_headerName.c_str()) << "&";
   }
+
   if(m_headerValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".HeaderValue=" << StringUtils::URLEncode(m_headerValue.c_str()) << "&";
   }
+
 }
 
 void AddHeaderAction::OutputToStream(Aws::OStream& oStream, const char* location) const

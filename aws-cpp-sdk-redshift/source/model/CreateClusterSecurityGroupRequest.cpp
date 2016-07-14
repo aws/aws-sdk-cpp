@@ -34,10 +34,12 @@ Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
   {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -47,6 +49,7 @@ Aws::String CreateClusterSecurityGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

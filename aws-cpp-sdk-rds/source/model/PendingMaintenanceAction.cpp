@@ -103,26 +103,32 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".Action=" << StringUtils::URLEncode(m_action.c_str()) << "&";
   }
+
   if(m_autoAppliedAfterDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_forcedApplyDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_optInStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptInStatus=" << StringUtils::URLEncode(m_optInStatus.c_str()) << "&";
   }
+
   if(m_currentApplyDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char* location) const

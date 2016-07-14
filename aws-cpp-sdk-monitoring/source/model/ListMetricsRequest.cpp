@@ -35,10 +35,12 @@ Aws::String ListMetricsRequest::SerializePayload() const
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_metricNameHasBeenSet)
   {
     ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -48,10 +50,12 @@ Aws::String ListMetricsRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

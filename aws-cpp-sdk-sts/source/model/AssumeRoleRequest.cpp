@@ -39,30 +39,37 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   {
     ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
   }
+
   if(m_roleSessionNameHasBeenSet)
   {
     ss << "RoleSessionName=" << StringUtils::URLEncode(m_roleSessionName.c_str()) << "&";
   }
+
   if(m_policyHasBeenSet)
   {
     ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";
   }
+
   if(m_durationSecondsHasBeenSet)
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
   }
+
   if(m_externalIdHasBeenSet)
   {
     ss << "ExternalId=" << StringUtils::URLEncode(m_externalId.c_str()) << "&";
   }
+
   if(m_serialNumberHasBeenSet)
   {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   if(m_tokenCodeHasBeenSet)
   {
     ss << "TokenCode=" << StringUtils::URLEncode(m_tokenCode.c_str()) << "&";
   }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

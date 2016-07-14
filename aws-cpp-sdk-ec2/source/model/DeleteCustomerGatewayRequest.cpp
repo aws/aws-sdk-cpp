@@ -34,10 +34,12 @@ Aws::String DeleteCustomerGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_customerGatewayIdHasBeenSet)
   {
     ss << "CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

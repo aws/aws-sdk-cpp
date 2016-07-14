@@ -37,22 +37,27 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
     ss << "JobType=" << JobTypeMapper::GetNameForJobType(m_jobType) << "&";
   }
+
   if(m_manifestHasBeenSet)
   {
     ss << "Manifest=" << StringUtils::URLEncode(m_manifest.c_str()) << "&";
   }
+
   if(m_manifestAddendumHasBeenSet)
   {
     ss << "ManifestAddendum=" << StringUtils::URLEncode(m_manifestAddendum.c_str()) << "&";
   }
+
   if(m_validateOnlyHasBeenSet)
   {
     ss << "ValidateOnly=" << m_validateOnly << "&";
   }
+
   if(m_aPIVersionHasBeenSet)
   {
     ss << "APIVersion=" << StringUtils::URLEncode(m_aPIVersion.c_str()) << "&";
   }
+
   ss << "Version=2010-06-01";
   return ss.str();
 }

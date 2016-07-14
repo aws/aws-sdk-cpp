@@ -32,6 +32,7 @@ Aws::String DeleteHsmConfigurationRequest::SerializePayload() const
   {
     ss << "HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

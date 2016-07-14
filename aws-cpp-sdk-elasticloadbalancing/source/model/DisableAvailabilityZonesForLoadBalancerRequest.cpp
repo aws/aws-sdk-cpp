@@ -33,6 +33,7 @@ Aws::String DisableAvailabilityZonesForLoadBalancerRequest::SerializePayload() c
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
     unsigned availabilityZonesCount = 1;
@@ -43,6 +44,7 @@ Aws::String DisableAvailabilityZonesForLoadBalancerRequest::SerializePayload() c
       availabilityZonesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

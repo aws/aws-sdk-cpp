@@ -89,20 +89,24 @@ void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, con
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
+
   if(m_primaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
   }
+
   if(m_associationHasBeenSet)
   {
       Aws::StringStream associationLocationAndMemberSs;
       associationLocationAndMemberSs << location << index << locationValue << ".Association";
       m_association.OutputToStream(oStream, associationLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void NetworkInterfacePrivateIpAddress::OutputToStream(Aws::OStream& oStream, const char* location) const

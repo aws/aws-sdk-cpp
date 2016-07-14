@@ -89,18 +89,22 @@ void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << AttachmentStatusMapper::GetNameForAttachmentStatus(m_status) << "&";
   }
+
   if(m_attachTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachTime=" << StringUtils::URLEncode(m_attachTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
 }
 
 void EbsInstanceBlockDevice::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -36,6 +36,7 @@ Aws::String DescribeDBClustersRequest::SerializePayload() const
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -45,14 +46,17 @@ Aws::String DescribeDBClustersRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

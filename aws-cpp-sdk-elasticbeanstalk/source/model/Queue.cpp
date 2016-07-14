@@ -71,10 +71,12 @@ void Queue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_uRLHasBeenSet)
   {
       oStream << location << index << locationValue << ".URL=" << StringUtils::URLEncode(m_uRL.c_str()) << "&";
   }
+
 }
 
 void Queue::OutputToStream(Aws::OStream& oStream, const char* location) const

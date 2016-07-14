@@ -77,6 +77,7 @@ void ResourcePendingMaintenanceActions::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << index << locationValue << ".ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
   }
+
   if(m_pendingMaintenanceActionDetailsHasBeenSet)
   {
       unsigned pendingMaintenanceActionDetailsIdx = 1;
@@ -87,6 +88,7 @@ void ResourcePendingMaintenanceActions::OutputToStream(Aws::OStream& oStream, co
         item.OutputToStream(oStream, pendingMaintenanceActionDetailsSs.str().c_str());
       }
   }
+
 }
 
 void ResourcePendingMaintenanceActions::OutputToStream(Aws::OStream& oStream, const char* location) const

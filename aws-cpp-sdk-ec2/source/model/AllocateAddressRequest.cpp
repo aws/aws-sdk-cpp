@@ -34,10 +34,12 @@ Aws::String AllocateAddressRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_domainHasBeenSet)
   {
     ss << "Domain=" << DomainTypeMapper::GetNameForDomainType(m_domain) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

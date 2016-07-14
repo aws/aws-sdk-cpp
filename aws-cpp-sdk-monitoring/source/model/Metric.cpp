@@ -85,10 +85,12 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_metricNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
       unsigned dimensionsIdx = 1;
@@ -99,6 +101,7 @@ void Metric::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, dimensionsSs.str().c_str());
       }
   }
+
 }
 
 void Metric::OutputToStream(Aws::OStream& oStream, const char* location) const

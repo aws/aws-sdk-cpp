@@ -40,30 +40,37 @@ Aws::String AssociateAddressRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_publicIpHasBeenSet)
   {
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
+
   if(m_allocationIdHasBeenSet)
   {
     ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_allowReassociationHasBeenSet)
   {
     ss << "AllowReassociation=" << m_allowReassociation << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

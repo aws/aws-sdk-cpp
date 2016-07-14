@@ -101,6 +101,7 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".ToAddresses.member." << toAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_ccAddressesHasBeenSet)
   {
       unsigned ccAddressesIdx = 1;
@@ -109,6 +110,7 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".CcAddresses.member." << ccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_bccAddressesHasBeenSet)
   {
       unsigned bccAddressesIdx = 1;
@@ -117,6 +119,7 @@ void Destination::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".BccAddresses.member." << bccAddressesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void Destination::OutputToStream(Aws::OStream& oStream, const char* location) const

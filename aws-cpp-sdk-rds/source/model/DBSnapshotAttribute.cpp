@@ -77,6 +77,7 @@ void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_attributeValuesHasBeenSet)
   {
       unsigned attributeValuesIdx = 1;
@@ -85,6 +86,7 @@ void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".AttributeValue." << attributeValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void DBSnapshotAttribute::OutputToStream(Aws::OStream& oStream, const char* location) const

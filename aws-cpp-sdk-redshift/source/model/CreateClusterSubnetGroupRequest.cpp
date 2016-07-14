@@ -35,10 +35,12 @@ Aws::String CreateClusterSubnetGroupRequest::SerializePayload() const
   {
     ss << "ClusterSubnetGroupName=" << StringUtils::URLEncode(m_clusterSubnetGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_subnetIdsHasBeenSet)
   {
     unsigned subnetIdsCount = 1;
@@ -49,6 +51,7 @@ Aws::String CreateClusterSubnetGroupRequest::SerializePayload() const
       subnetIdsCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -58,6 +61,7 @@ Aws::String CreateClusterSubnetGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -36,22 +36,27 @@ Aws::String CompleteLifecycleActionRequest::SerializePayload() const
   {
     ss << "LifecycleHookName=" << StringUtils::URLEncode(m_lifecycleHookName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupNameHasBeenSet)
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_lifecycleActionTokenHasBeenSet)
   {
     ss << "LifecycleActionToken=" << StringUtils::URLEncode(m_lifecycleActionToken.c_str()) << "&";
   }
+
   if(m_lifecycleActionResultHasBeenSet)
   {
     ss << "LifecycleActionResult=" << StringUtils::URLEncode(m_lifecycleActionResult.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

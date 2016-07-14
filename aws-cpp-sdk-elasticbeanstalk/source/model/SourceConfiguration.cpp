@@ -71,10 +71,12 @@ void SourceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
 }
 
 void SourceConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

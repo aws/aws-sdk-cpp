@@ -63,6 +63,7 @@ void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
 }
 
 void LoadBalancer::OutputToStream(Aws::OStream& oStream, const char* location) const

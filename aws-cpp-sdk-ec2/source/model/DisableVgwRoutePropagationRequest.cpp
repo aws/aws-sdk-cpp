@@ -33,10 +33,12 @@ Aws::String DisableVgwRoutePropagationRequest::SerializePayload() const
   {
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
+
   if(m_gatewayIdHasBeenSet)
   {
     ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

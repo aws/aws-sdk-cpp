@@ -33,10 +33,12 @@ Aws::String DeleteIdentityPolicyRequest::SerializePayload() const
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

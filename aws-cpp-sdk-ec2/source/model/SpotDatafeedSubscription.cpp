@@ -95,24 +95,29 @@ void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_bucketHasBeenSet)
   {
       oStream << location << index << locationValue << ".Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
+
   if(m_prefixHasBeenSet)
   {
       oStream << location << index << locationValue << ".Prefix=" << StringUtils::URLEncode(m_prefix.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << DatafeedSubscriptionStateMapper::GetNameForDatafeedSubscriptionState(m_state) << "&";
   }
+
   if(m_faultHasBeenSet)
   {
       Aws::StringStream faultLocationAndMemberSs;
       faultLocationAndMemberSs << location << index << locationValue << ".Fault";
       m_fault.OutputToStream(oStream, faultLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void SpotDatafeedSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const

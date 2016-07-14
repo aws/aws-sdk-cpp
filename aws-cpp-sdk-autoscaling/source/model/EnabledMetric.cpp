@@ -71,10 +71,12 @@ void EnabledMetric::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(m_metric.c_str()) << "&";
   }
+
   if(m_granularityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Granularity=" << StringUtils::URLEncode(m_granularity.c_str()) << "&";
   }
+
 }
 
 void EnabledMetric::OutputToStream(Aws::OStream& oStream, const char* location) const

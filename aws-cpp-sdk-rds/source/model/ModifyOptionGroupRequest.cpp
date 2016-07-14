@@ -36,6 +36,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_optionsToIncludeHasBeenSet)
   {
     unsigned optionsToIncludeCount = 1;
@@ -45,6 +46,7 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
       optionsToIncludeCount++;
     }
   }
+
   if(m_optionsToRemoveHasBeenSet)
   {
     unsigned optionsToRemoveCount = 1;
@@ -55,10 +57,12 @@ Aws::String ModifyOptionGroupRequest::SerializePayload() const
       optionsToRemoveCount++;
     }
   }
+
   if(m_applyImmediatelyHasBeenSet)
   {
     ss << "ApplyImmediately=" << m_applyImmediately << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

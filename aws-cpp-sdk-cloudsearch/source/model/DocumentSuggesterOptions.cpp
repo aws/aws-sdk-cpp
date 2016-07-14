@@ -79,14 +79,17 @@ void DocumentSuggesterOptions::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".SourceField=" << StringUtils::URLEncode(m_sourceField.c_str()) << "&";
   }
+
   if(m_fuzzyMatchingHasBeenSet)
   {
       oStream << location << index << locationValue << ".FuzzyMatching=" << SuggesterFuzzyMatchingMapper::GetNameForSuggesterFuzzyMatching(m_fuzzyMatching) << "&";
   }
+
   if(m_sortExpressionHasBeenSet)
   {
       oStream << location << index << locationValue << ".SortExpression=" << StringUtils::URLEncode(m_sortExpression.c_str()) << "&";
   }
+
 }
 
 void DocumentSuggesterOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

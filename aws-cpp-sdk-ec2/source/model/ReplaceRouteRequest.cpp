@@ -40,34 +40,42 @@ Aws::String ReplaceRouteRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_routeTableIdHasBeenSet)
   {
     ss << "RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
+
   if(m_destinationCidrBlockHasBeenSet)
   {
     ss << "DestinationCidrBlock=" << StringUtils::URLEncode(m_destinationCidrBlock.c_str()) << "&";
   }
+
   if(m_gatewayIdHasBeenSet)
   {
     ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
+
   if(m_natGatewayIdHasBeenSet)
   {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

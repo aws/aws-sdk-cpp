@@ -141,22 +141,27 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_natGatewayIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
+
   if(m_createTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deleteTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteTime=" << StringUtils::URLEncode(m_deleteTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_natGatewayAddressesHasBeenSet)
   {
       unsigned natGatewayAddressesIdx = 1;
@@ -167,24 +172,29 @@ void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, natGatewayAddressesSs.str().c_str());
       }
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << NatGatewayStateMapper::GetNameForNatGatewayState(m_state) << "&";
   }
+
   if(m_failureCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".FailureCode=" << StringUtils::URLEncode(m_failureCode.c_str()) << "&";
   }
+
   if(m_failureMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".FailureMessage=" << StringUtils::URLEncode(m_failureMessage.c_str()) << "&";
   }
+
   if(m_provisionedBandwidthHasBeenSet)
   {
       Aws::StringStream provisionedBandwidthLocationAndMemberSs;
       provisionedBandwidthLocationAndMemberSs << location << index << locationValue << ".ProvisionedBandwidth";
       m_provisionedBandwidth.OutputToStream(oStream, provisionedBandwidthLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void NatGateway::OutputToStream(Aws::OStream& oStream, const char* location) const

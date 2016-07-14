@@ -33,10 +33,12 @@ Aws::String CreateCacheSecurityGroupRequest::SerializePayload() const
   {
     ss << "CacheSecurityGroupName=" << StringUtils::URLEncode(m_cacheSecurityGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

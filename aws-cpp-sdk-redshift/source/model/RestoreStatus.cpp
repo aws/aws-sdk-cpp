@@ -113,26 +113,32 @@ void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_currentRestoreRateInMegaBytesPerSecondHasBeenSet)
   {
         oStream << location << index << locationValue << ".CurrentRestoreRateInMegaBytesPerSecond=" << StringUtils::URLEncode(m_currentRestoreRateInMegaBytesPerSecond) << "&";
   }
+
   if(m_snapshotSizeInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotSizeInMegaBytes=" << m_snapshotSizeInMegaBytes << "&";
   }
+
   if(m_progressInMegaBytesHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProgressInMegaBytes=" << m_progressInMegaBytes << "&";
   }
+
   if(m_elapsedTimeInSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".ElapsedTimeInSeconds=" << m_elapsedTimeInSeconds << "&";
   }
+
   if(m_estimatedTimeToCompletionInSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".EstimatedTimeToCompletionInSeconds=" << m_estimatedTimeToCompletionInSeconds << "&";
   }
+
 }
 
 void RestoreStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

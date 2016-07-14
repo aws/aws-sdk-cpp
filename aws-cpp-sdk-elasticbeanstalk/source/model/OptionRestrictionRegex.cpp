@@ -71,10 +71,12 @@ void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".Pattern=" << StringUtils::URLEncode(m_pattern.c_str()) << "&";
   }
+
   if(m_labelHasBeenSet)
   {
       oStream << location << index << locationValue << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
+
 }
 
 void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -32,6 +32,7 @@ Aws::String DeleteDBSubnetGroupRequest::SerializePayload() const
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

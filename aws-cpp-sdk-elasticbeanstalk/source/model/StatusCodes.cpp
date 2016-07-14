@@ -95,18 +95,22 @@ void StatusCodes::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".Status2xx=" << m_status2xx << "&";
   }
+
   if(m_status3xxHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status3xx=" << m_status3xx << "&";
   }
+
   if(m_status4xxHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status4xx=" << m_status4xx << "&";
   }
+
   if(m_status5xxHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status5xx=" << m_status5xx << "&";
   }
+
 }
 
 void StatusCodes::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -73,10 +73,12 @@ void ClassicLinkDnsSupport::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_classicLinkDnsSupportedHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClassicLinkDnsSupported=" << m_classicLinkDnsSupported << "&";
   }
+
 }
 
 void ClassicLinkDnsSupport::OutputToStream(Aws::OStream& oStream, const char* location) const

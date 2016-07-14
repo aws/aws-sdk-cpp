@@ -34,14 +34,17 @@ Aws::String UpdateSigningCertificateRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_certificateIdHasBeenSet)
   {
     ss << "CertificateId=" << StringUtils::URLEncode(m_certificateId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
     ss << "Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

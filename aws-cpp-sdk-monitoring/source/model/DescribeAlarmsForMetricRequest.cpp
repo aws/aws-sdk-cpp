@@ -38,14 +38,17 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
   {
     ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_statisticHasBeenSet)
   {
     ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -55,14 +58,17 @@ Aws::String DescribeAlarmsForMetricRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
+
   if(m_periodHasBeenSet)
   {
     ss << "Period=" << m_period << "&";
   }
+
   if(m_unitHasBeenSet)
   {
     ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

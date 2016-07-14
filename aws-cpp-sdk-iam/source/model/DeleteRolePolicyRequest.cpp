@@ -33,10 +33,12 @@ Aws::String DeleteRolePolicyRequest::SerializePayload() const
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -95,22 +95,27 @@ void CacheEngineVersion::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_cacheParameterGroupFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheParameterGroupFamily=" << StringUtils::URLEncode(m_cacheParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_cacheEngineDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheEngineDescription=" << StringUtils::URLEncode(m_cacheEngineDescription.c_str()) << "&";
   }
+
   if(m_cacheEngineVersionDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheEngineVersionDescription=" << StringUtils::URLEncode(m_cacheEngineVersionDescription.c_str()) << "&";
   }
+
 }
 
 void CacheEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const

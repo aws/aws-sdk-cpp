@@ -77,6 +77,7 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
   }
+
   if(m_valuesHasBeenSet)
   {
       unsigned valuesIdx = 1;
@@ -87,6 +88,7 @@ void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* locati
         item.OutputToStream(oStream, valuesSs.str().c_str());
       }
   }
+
 }
 
 void DhcpConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

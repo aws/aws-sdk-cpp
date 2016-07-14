@@ -65,6 +65,7 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << m_staticRoutesOnly << "&";
   }
+
 }
 
 void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

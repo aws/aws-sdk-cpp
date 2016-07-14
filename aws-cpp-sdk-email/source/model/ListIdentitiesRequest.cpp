@@ -35,14 +35,17 @@ Aws::String ListIdentitiesRequest::SerializePayload() const
   {
     ss << "IdentityType=" << IdentityTypeMapper::GetNameForIdentityType(m_identityType) << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxItemsHasBeenSet)
   {
     ss << "MaxItems=" << m_maxItems << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

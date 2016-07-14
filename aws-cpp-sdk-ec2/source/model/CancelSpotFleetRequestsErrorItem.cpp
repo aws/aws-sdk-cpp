@@ -71,12 +71,14 @@ void CancelSpotFleetRequestsErrorItem::OutputToStream(Aws::OStream& oStream, con
   {
       oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
+
   if(m_errorHasBeenSet)
   {
       Aws::StringStream errorLocationAndMemberSs;
       errorLocationAndMemberSs << location << index << locationValue << ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void CancelSpotFleetRequestsErrorItem::OutputToStream(Aws::OStream& oStream, const char* location) const

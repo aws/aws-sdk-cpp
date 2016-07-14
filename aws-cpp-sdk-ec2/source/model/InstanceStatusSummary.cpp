@@ -77,6 +77,7 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".Status=" << SummaryStatusMapper::GetNameForSummaryStatus(m_status) << "&";
   }
+
   if(m_detailsHasBeenSet)
   {
       unsigned detailsIdx = 1;
@@ -87,6 +88,7 @@ void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* lo
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
+
 }
 
 void InstanceStatusSummary::OutputToStream(Aws::OStream& oStream, const char* location) const

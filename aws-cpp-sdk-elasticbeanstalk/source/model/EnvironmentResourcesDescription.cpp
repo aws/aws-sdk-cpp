@@ -65,6 +65,7 @@ void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, cons
       loadBalancerLocationAndMemberSs << location << index << locationValue << ".LoadBalancer";
       m_loadBalancer.OutputToStream(oStream, loadBalancerLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void EnvironmentResourcesDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

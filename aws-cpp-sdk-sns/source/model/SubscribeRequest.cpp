@@ -34,14 +34,17 @@ Aws::String SubscribeRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_protocolHasBeenSet)
   {
     ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
     ss << "Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

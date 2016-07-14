@@ -63,6 +63,7 @@ void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

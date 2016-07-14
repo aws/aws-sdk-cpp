@@ -113,10 +113,12 @@ void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupsHasBeenSet)
   {
       unsigned eC2SecurityGroupsIdx = 1;
@@ -127,6 +129,7 @@ void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loc
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_iPRangesHasBeenSet)
   {
       unsigned iPRangesIdx = 1;
@@ -137,6 +140,7 @@ void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loc
         item.OutputToStream(oStream, iPRangesSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -147,6 +151,7 @@ void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loc
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ClusterSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

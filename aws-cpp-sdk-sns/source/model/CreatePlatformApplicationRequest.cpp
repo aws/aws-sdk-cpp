@@ -34,10 +34,12 @@ Aws::String CreatePlatformApplicationRequest::SerializePayload() const
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;
@@ -50,6 +52,7 @@ Aws::String CreatePlatformApplicationRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

@@ -34,10 +34,12 @@ Aws::String CancelBundleTaskRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_bundleIdHasBeenSet)
   {
     ss << "BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

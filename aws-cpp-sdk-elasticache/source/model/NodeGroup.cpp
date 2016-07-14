@@ -93,16 +93,19 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_primaryEndpointHasBeenSet)
   {
       Aws::StringStream primaryEndpointLocationAndMemberSs;
       primaryEndpointLocationAndMemberSs << location << index << locationValue << ".PrimaryEndpoint";
       m_primaryEndpoint.OutputToStream(oStream, primaryEndpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_nodeGroupMembersHasBeenSet)
   {
       unsigned nodeGroupMembersIdx = 1;
@@ -113,6 +116,7 @@ void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location, unsi
         item.OutputToStream(oStream, nodeGroupMembersSs.str().c_str());
       }
   }
+
 }
 
 void NodeGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

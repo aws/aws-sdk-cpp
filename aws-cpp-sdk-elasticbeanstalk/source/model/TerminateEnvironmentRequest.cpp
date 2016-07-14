@@ -37,18 +37,22 @@ Aws::String TerminateEnvironmentRequest::SerializePayload() const
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_terminateResourcesHasBeenSet)
   {
     ss << "TerminateResources=" << m_terminateResources << "&";
   }
+
   if(m_forceTerminateHasBeenSet)
   {
     ss << "ForceTerminate=" << m_forceTerminate << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

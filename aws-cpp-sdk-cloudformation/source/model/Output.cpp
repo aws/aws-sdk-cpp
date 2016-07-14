@@ -79,14 +79,17 @@ void Output::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".OutputKey=" << StringUtils::URLEncode(m_outputKey.c_str()) << "&";
   }
+
   if(m_outputValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".OutputValue=" << StringUtils::URLEncode(m_outputValue.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void Output::OutputToStream(Aws::OStream& oStream, const char* location) const

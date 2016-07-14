@@ -82,6 +82,10 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(AmazonWebServiceResult<
     ${memberVarName} = ${varName}Iter->second;
 #elseif($memberEntry.value.shape.enum)
     ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
+#elseif($memberEntry.value.shape.timeStamp)
+    ${memberVarName} = DateTime(${varName}Iter->second, DateFormat::RFC822);
+#elseif($memberEntry.value.shape.blob)
+    ${memberVarName} = HashingUtils::Base64Decode(StringUtils::Trim(${varName}Iter->second.c_str()));
 #elseif($memberEntry.value.shape.primitive)
      ${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($memberEntry.value.shape)}(${varName}Iter->second.c_str());
 #end

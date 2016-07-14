@@ -50,38 +50,47 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       availabilityZonesCount++;
     }
   }
+
   if(m_dBClusterIdentifierHasBeenSet)
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
   }
+
   if(m_dBSubnetGroupNameHasBeenSet)
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_databaseNameHasBeenSet)
   {
     ss << "DatabaseName=" << StringUtils::URLEncode(m_databaseName.c_str()) << "&";
   }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
     unsigned vpcSecurityGroupIdsCount = 1;
@@ -92,6 +101,7 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       vpcSecurityGroupIdsCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -101,10 +111,12 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

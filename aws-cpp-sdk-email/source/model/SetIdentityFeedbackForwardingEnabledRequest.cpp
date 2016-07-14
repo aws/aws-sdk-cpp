@@ -34,10 +34,12 @@ Aws::String SetIdentityFeedbackForwardingEnabledRequest::SerializePayload() cons
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_forwardingEnabledHasBeenSet)
   {
     ss << "ForwardingEnabled=" << m_forwardingEnabled << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

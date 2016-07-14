@@ -38,18 +38,22 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_serviceNameHasBeenSet)
   {
     ss << "ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   if(m_routeTableIdsHasBeenSet)
   {
     unsigned routeTableIdsCount = 1;
@@ -60,10 +64,12 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
       routeTableIdsCount++;
     }
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

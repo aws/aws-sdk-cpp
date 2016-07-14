@@ -119,14 +119,17 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_enabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
   if(m_tlsPolicyHasBeenSet)
   {
       oStream << location << index << locationValue << ".TlsPolicy=" << TlsPolicyMapper::GetNameForTlsPolicy(m_tlsPolicy) << "&";
   }
+
   if(m_recipientsHasBeenSet)
   {
       unsigned recipientsIdx = 1;
@@ -135,6 +138,7 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".Recipients.member." << recipientsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_actionsHasBeenSet)
   {
       unsigned actionsIdx = 1;
@@ -145,10 +149,12 @@ void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
+
   if(m_scanEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ScanEnabled=" << m_scanEnabled << "&";
   }
+
 }
 
 void ReceiptRule::OutputToStream(Aws::OStream& oStream, const char* location) const

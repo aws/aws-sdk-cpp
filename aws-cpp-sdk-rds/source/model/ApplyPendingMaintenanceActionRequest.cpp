@@ -34,14 +34,17 @@ Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
   {
     ss << "ResourceIdentifier=" << StringUtils::URLEncode(m_resourceIdentifier.c_str()) << "&";
   }
+
   if(m_applyActionHasBeenSet)
   {
     ss << "ApplyAction=" << StringUtils::URLEncode(m_applyAction.c_str()) << "&";
   }
+
   if(m_optInTypeHasBeenSet)
   {
     ss << "OptInType=" << StringUtils::URLEncode(m_optInType.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

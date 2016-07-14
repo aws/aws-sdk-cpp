@@ -79,16 +79,19 @@ void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_eventTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventType=" << EventTypeMapper::GetNameForEventType(m_eventType) << "&";
   }
+
   if(m_eventInformationHasBeenSet)
   {
       Aws::StringStream eventInformationLocationAndMemberSs;
       eventInformationLocationAndMemberSs << location << index << locationValue << ".EventInformation";
       m_eventInformation.OutputToStream(oStream, eventInformationLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void HistoryRecord::OutputToStream(Aws::OStream& oStream, const char* location) const

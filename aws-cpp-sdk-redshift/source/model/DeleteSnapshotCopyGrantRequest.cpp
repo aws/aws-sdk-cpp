@@ -32,6 +32,7 @@ Aws::String DeleteSnapshotCopyGrantRequest::SerializePayload() const
   {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

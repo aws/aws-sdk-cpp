@@ -63,6 +63,7 @@ void AdjustmentType::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".AdjustmentType=" << StringUtils::URLEncode(m_adjustmentType.c_str()) << "&";
   }
+
 }
 
 void AdjustmentType::OutputToStream(Aws::OStream& oStream, const char* location) const

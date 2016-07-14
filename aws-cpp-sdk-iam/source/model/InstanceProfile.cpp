@@ -109,22 +109,27 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_instanceProfileNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
   }
+
   if(m_instanceProfileIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceProfileId=" << StringUtils::URLEncode(m_instanceProfileId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_rolesHasBeenSet)
   {
       unsigned rolesIdx = 1;
@@ -135,6 +140,7 @@ void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, rolesSs.str().c_str());
       }
   }
+
 }
 
 void InstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location) const

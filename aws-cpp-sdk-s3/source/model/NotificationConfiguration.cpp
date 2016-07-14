@@ -50,38 +50,38 @@ NotificationConfiguration& NotificationConfiguration::operator =(const XmlNode& 
 
   if(!resultNode.IsNull())
   {
-    XmlNode topicConfigurationsNode = resultNode.FirstChild("TopicConfigurations");
+    XmlNode topicConfigurationsNode = resultNode.FirstChild("TopicConfiguration");
     if(!topicConfigurationsNode.IsNull())
     {
-      XmlNode topicConfigurationsMember = topicConfigurationsNode;
-      while(!topicConfigurationsMember.IsNull())
+      XmlNode topicConfigurationMember = topicConfigurationsNode;
+      while(!topicConfigurationMember.IsNull())
       {
-        m_topicConfigurations.push_back(topicConfigurationsMember);
-        topicConfigurationsMember = topicConfigurationsMember.NextNode("TopicConfiguration");
+        m_topicConfigurations.push_back(topicConfigurationMember);
+        topicConfigurationMember = topicConfigurationMember.NextNode("TopicConfiguration");
       }
 
       m_topicConfigurationsHasBeenSet = true;
     }
-    XmlNode queueConfigurationsNode = resultNode.FirstChild("QueueConfigurations");
+    XmlNode queueConfigurationsNode = resultNode.FirstChild("QueueConfiguration");
     if(!queueConfigurationsNode.IsNull())
     {
-      XmlNode queueConfigurationsMember = queueConfigurationsNode;
-      while(!queueConfigurationsMember.IsNull())
+      XmlNode queueConfigurationMember = queueConfigurationsNode;
+      while(!queueConfigurationMember.IsNull())
       {
-        m_queueConfigurations.push_back(queueConfigurationsMember);
-        queueConfigurationsMember = queueConfigurationsMember.NextNode("QueueConfiguration");
+        m_queueConfigurations.push_back(queueConfigurationMember);
+        queueConfigurationMember = queueConfigurationMember.NextNode("QueueConfiguration");
       }
 
       m_queueConfigurationsHasBeenSet = true;
     }
-    XmlNode lambdaFunctionConfigurationsNode = resultNode.FirstChild("LambdaFunctionConfigurations");
+    XmlNode lambdaFunctionConfigurationsNode = resultNode.FirstChild("CloudFunctionConfiguration");
     if(!lambdaFunctionConfigurationsNode.IsNull())
     {
-      XmlNode lambdaFunctionConfigurationsMember = lambdaFunctionConfigurationsNode;
-      while(!lambdaFunctionConfigurationsMember.IsNull())
+      XmlNode cloudFunctionConfigurationMember = lambdaFunctionConfigurationsNode;
+      while(!cloudFunctionConfigurationMember.IsNull())
       {
-        m_lambdaFunctionConfigurations.push_back(lambdaFunctionConfigurationsMember);
-        lambdaFunctionConfigurationsMember = lambdaFunctionConfigurationsMember.NextNode("CloudFunctionConfiguration");
+        m_lambdaFunctionConfigurations.push_back(cloudFunctionConfigurationMember);
+        cloudFunctionConfigurationMember = cloudFunctionConfigurationMember.NextNode("CloudFunctionConfiguration");
       }
 
       m_lambdaFunctionConfigurationsHasBeenSet = true;

@@ -33,10 +33,12 @@ Aws::String RemovePermissionRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_labelHasBeenSet)
   {
     ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

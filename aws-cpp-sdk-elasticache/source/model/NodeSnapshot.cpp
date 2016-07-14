@@ -87,18 +87,22 @@ void NodeSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
   }
+
   if(m_cacheSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheSize=" << StringUtils::URLEncode(m_cacheSize.c_str()) << "&";
   }
+
   if(m_cacheNodeCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeCreateTime=" << StringUtils::URLEncode(m_cacheNodeCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_snapshotCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotCreateTime=" << StringUtils::URLEncode(m_snapshotCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void NodeSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const

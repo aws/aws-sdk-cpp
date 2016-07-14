@@ -64,6 +64,7 @@ void BlobAttributeValue::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_value).c_str()) << "&";
   }
+
 }
 
 void BlobAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const

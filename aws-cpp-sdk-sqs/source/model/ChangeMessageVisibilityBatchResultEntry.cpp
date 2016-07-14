@@ -63,6 +63,7 @@ void ChangeMessageVisibilityBatchResultEntry::OutputToStream(Aws::OStream& oStre
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void ChangeMessageVisibilityBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

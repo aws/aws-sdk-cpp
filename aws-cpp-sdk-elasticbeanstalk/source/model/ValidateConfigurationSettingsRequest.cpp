@@ -35,14 +35,17 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
     unsigned optionSettingsCount = 1;
@@ -52,6 +55,7 @@ Aws::String ValidateConfigurationSettingsRequest::SerializePayload() const
       optionSettingsCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

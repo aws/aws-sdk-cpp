@@ -39,22 +39,27 @@ Aws::String CreateImageRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_nameHasBeenSet)
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_noRebootHasBeenSet)
   {
     ss << "NoReboot=" << m_noReboot << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
     unsigned blockDeviceMappingsCount = 1;
@@ -64,6 +69,7 @@ Aws::String CreateImageRequest::SerializePayload() const
       blockDeviceMappingsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

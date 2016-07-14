@@ -119,30 +119,37 @@ void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".BounceTopic=" << StringUtils::URLEncode(m_bounceTopic.c_str()) << "&";
   }
+
   if(m_complaintTopicHasBeenSet)
   {
       oStream << location << index << locationValue << ".ComplaintTopic=" << StringUtils::URLEncode(m_complaintTopic.c_str()) << "&";
   }
+
   if(m_deliveryTopicHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliveryTopic=" << StringUtils::URLEncode(m_deliveryTopic.c_str()) << "&";
   }
+
   if(m_forwardingEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ForwardingEnabled=" << m_forwardingEnabled << "&";
   }
+
   if(m_headersInBounceNotificationsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".HeadersInBounceNotificationsEnabled=" << m_headersInBounceNotificationsEnabled << "&";
   }
+
   if(m_headersInComplaintNotificationsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".HeadersInComplaintNotificationsEnabled=" << m_headersInComplaintNotificationsEnabled << "&";
   }
+
   if(m_headersInDeliveryNotificationsEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".HeadersInDeliveryNotificationsEnabled=" << m_headersInDeliveryNotificationsEnabled << "&";
   }
+
 }
 
 void IdentityNotificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const

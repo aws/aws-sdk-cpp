@@ -91,22 +91,26 @@ void ApplicationMetrics::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Duration=" << m_duration << "&";
   }
+
   if(m_requestCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequestCount=" << m_requestCount << "&";
   }
+
   if(m_statusCodesHasBeenSet)
   {
       Aws::StringStream statusCodesLocationAndMemberSs;
       statusCodesLocationAndMemberSs << location << index << locationValue << ".StatusCodes";
       m_statusCodes.OutputToStream(oStream, statusCodesLocationAndMemberSs.str().c_str());
   }
+
   if(m_latencyHasBeenSet)
   {
       Aws::StringStream latencyLocationAndMemberSs;
       latencyLocationAndMemberSs << location << index << locationValue << ".Latency";
       m_latency.OutputToStream(oStream, latencyLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ApplicationMetrics::OutputToStream(Aws::OStream& oStream, const char* location) const

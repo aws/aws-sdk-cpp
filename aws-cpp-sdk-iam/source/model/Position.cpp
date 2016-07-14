@@ -75,10 +75,12 @@ void Position::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Line=" << m_line << "&";
   }
+
   if(m_columnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Column=" << m_column << "&";
   }
+
 }
 
 void Position::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -42,26 +42,32 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
   {
     ss << "ReservedDBInstancesOfferingId=" << StringUtils::URLEncode(m_reservedDBInstancesOfferingId.c_str()) << "&";
   }
+
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+
   if(m_durationHasBeenSet)
   {
     ss << "Duration=" << StringUtils::URLEncode(m_duration.c_str()) << "&";
   }
+
   if(m_productDescriptionHasBeenSet)
   {
     ss << "ProductDescription=" << StringUtils::URLEncode(m_productDescription.c_str()) << "&";
   }
+
   if(m_offeringTypeHasBeenSet)
   {
     ss << "OfferingType=" << StringUtils::URLEncode(m_offeringType.c_str()) << "&";
   }
+
   if(m_multiAZHasBeenSet)
   {
     ss << "MultiAZ=" << m_multiAZ << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -71,14 +77,17 @@ Aws::String DescribeReservedDBInstancesOfferingsRequest::SerializePayload() cons
       filtersCount++;
     }
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

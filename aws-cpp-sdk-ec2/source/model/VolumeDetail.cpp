@@ -65,6 +65,7 @@ void VolumeDetail::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
 }
 
 void VolumeDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

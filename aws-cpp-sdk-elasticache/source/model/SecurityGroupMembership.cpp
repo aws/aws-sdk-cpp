@@ -71,10 +71,12 @@ void SecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".SecurityGroupId=" << StringUtils::URLEncode(m_securityGroupId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void SecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -36,6 +36,7 @@ Aws::String DescribeEngineDefaultParametersRequest::SerializePayload() const
   {
     ss << "DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -45,14 +46,17 @@ Aws::String DescribeEngineDefaultParametersRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

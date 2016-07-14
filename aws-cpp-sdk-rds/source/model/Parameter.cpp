@@ -137,42 +137,52 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_parameterValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_sourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
+
   if(m_applyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyType=" << StringUtils::URLEncode(m_applyType.c_str()) << "&";
   }
+
   if(m_dataTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
+
   if(m_allowedValuesHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(m_allowedValues.c_str()) << "&";
   }
+
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
   }
+
   if(m_minimumEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
+
   if(m_applyMethodHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyMethod=" << ApplyMethodMapper::GetNameForApplyMethod(m_applyMethod) << "&";
   }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const

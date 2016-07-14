@@ -169,56 +169,69 @@ void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_networkPlatformHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkPlatform=" << StringUtils::URLEncode(m_networkPlatform.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_purchaseTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
   }
+
   if(m_slotDurationInHoursHasBeenSet)
   {
       oStream << location << index << locationValue << ".SlotDurationInHours=" << m_slotDurationInHours << "&";
   }
+
   if(m_recurrenceHasBeenSet)
   {
       Aws::StringStream recurrenceLocationAndMemberSs;
       recurrenceLocationAndMemberSs << location << index << locationValue << ".Recurrence";
       m_recurrence.OutputToStream(oStream, recurrenceLocationAndMemberSs.str().c_str());
   }
+
   if(m_firstSlotStartTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".FirstSlotStartTime=" << StringUtils::URLEncode(m_firstSlotStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_hourlyPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".HourlyPrice=" << StringUtils::URLEncode(m_hourlyPrice.c_str()) << "&";
   }
+
   if(m_totalScheduledInstanceHoursHasBeenSet)
   {
       oStream << location << index << locationValue << ".TotalScheduledInstanceHours=" << m_totalScheduledInstanceHours << "&";
   }
+
   if(m_availableInstanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailableInstanceCount=" << m_availableInstanceCount << "&";
   }
+
   if(m_minTermDurationInDaysHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinTermDurationInDays=" << m_minTermDurationInDays << "&";
   }
+
   if(m_maxTermDurationInDaysHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxTermDurationInDays=" << m_maxTermDurationInDays << "&";
   }
+
 }
 
 void ScheduledInstanceAvailability::OutputToStream(Aws::OStream& oStream, const char* location) const

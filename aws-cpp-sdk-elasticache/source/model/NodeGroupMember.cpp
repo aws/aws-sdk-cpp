@@ -95,24 +95,29 @@ void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_cacheNodeIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeId=" << StringUtils::URLEncode(m_cacheNodeId.c_str()) << "&";
   }
+
   if(m_readEndpointHasBeenSet)
   {
       Aws::StringStream readEndpointLocationAndMemberSs;
       readEndpointLocationAndMemberSs << location << index << locationValue << ".ReadEndpoint";
       m_readEndpoint.OutputToStream(oStream, readEndpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
+
   if(m_currentRoleHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentRole=" << StringUtils::URLEncode(m_currentRole.c_str()) << "&";
   }
+
 }
 
 void NodeGroupMember::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -34,10 +34,12 @@ Aws::String DeregisterImageRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

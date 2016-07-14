@@ -79,14 +79,17 @@ void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, c
   {
       oStream << location << index << locationValue << ".SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
+
   if(m_currentSpotFleetRequestStateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrentSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_currentSpotFleetRequestState) << "&";
   }
+
   if(m_previousSpotFleetRequestStateHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreviousSpotFleetRequestState=" << BatchStateMapper::GetNameForBatchState(m_previousSpotFleetRequestState) << "&";
   }
+
 }
 
 void CancelSpotFleetRequestsSuccessItem::OutputToStream(Aws::OStream& oStream, const char* location) const

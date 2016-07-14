@@ -117,30 +117,36 @@ void ConversionTask::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".ConversionTaskId=" << StringUtils::URLEncode(m_conversionTaskId.c_str()) << "&";
   }
+
   if(m_expirationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ExpirationTime=" << StringUtils::URLEncode(m_expirationTime.c_str()) << "&";
   }
+
   if(m_importInstanceHasBeenSet)
   {
       Aws::StringStream importInstanceLocationAndMemberSs;
       importInstanceLocationAndMemberSs << location << index << locationValue << ".ImportInstance";
       m_importInstance.OutputToStream(oStream, importInstanceLocationAndMemberSs.str().c_str());
   }
+
   if(m_importVolumeHasBeenSet)
   {
       Aws::StringStream importVolumeLocationAndMemberSs;
       importVolumeLocationAndMemberSs << location << index << locationValue << ".ImportVolume";
       m_importVolume.OutputToStream(oStream, importVolumeLocationAndMemberSs.str().c_str());
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << ConversionTaskStateMapper::GetNameForConversionTaskState(m_state) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -151,6 +157,7 @@ void ConversionTask::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ConversionTask::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -171,26 +171,32 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_sizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VolumeStateMapper::GetNameForVolumeState(m_state) << "&";
   }
+
   if(m_createTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_attachmentsHasBeenSet)
   {
       unsigned attachmentsIdx = 1;
@@ -201,6 +207,7 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, attachmentsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -211,28 +218,34 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
+
   if(m_encryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Encrypted=" << m_encrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const

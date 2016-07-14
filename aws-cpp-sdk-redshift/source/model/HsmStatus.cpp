@@ -79,14 +79,17 @@ void HsmStatus::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
+
   if(m_hsmConfigurationIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".HsmConfigurationIdentifier=" << StringUtils::URLEncode(m_hsmConfigurationIdentifier.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void HsmStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

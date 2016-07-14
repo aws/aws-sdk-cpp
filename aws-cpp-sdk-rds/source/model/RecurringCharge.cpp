@@ -73,10 +73,12 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
   {
         oStream << location << index << locationValue << ".RecurringChargeAmount=" << StringUtils::URLEncode(m_recurringChargeAmount) << "&";
   }
+
   if(m_recurringChargeFrequencyHasBeenSet)
   {
       oStream << location << index << locationValue << ".RecurringChargeFrequency=" << StringUtils::URLEncode(m_recurringChargeFrequency.c_str()) << "&";
   }
+
 }
 
 void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location) const

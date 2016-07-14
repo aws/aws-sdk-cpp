@@ -85,10 +85,12 @@ void CacheParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterApplyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
+
   if(m_cacheNodeIdsToRebootHasBeenSet)
   {
       unsigned cacheNodeIdsToRebootIdx = 1;
@@ -97,6 +99,7 @@ void CacheParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char
         oStream << location << index << locationValue << ".CacheNodeId." << cacheNodeIdsToRebootIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void CacheParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -39,34 +39,42 @@ Aws::String RestoreTableFromClusterSnapshotRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotIdentifierHasBeenSet)
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
+
   if(m_sourceDatabaseNameHasBeenSet)
   {
     ss << "SourceDatabaseName=" << StringUtils::URLEncode(m_sourceDatabaseName.c_str()) << "&";
   }
+
   if(m_sourceSchemaNameHasBeenSet)
   {
     ss << "SourceSchemaName=" << StringUtils::URLEncode(m_sourceSchemaName.c_str()) << "&";
   }
+
   if(m_sourceTableNameHasBeenSet)
   {
     ss << "SourceTableName=" << StringUtils::URLEncode(m_sourceTableName.c_str()) << "&";
   }
+
   if(m_targetDatabaseNameHasBeenSet)
   {
     ss << "TargetDatabaseName=" << StringUtils::URLEncode(m_targetDatabaseName.c_str()) << "&";
   }
+
   if(m_targetSchemaNameHasBeenSet)
   {
     ss << "TargetSchemaName=" << StringUtils::URLEncode(m_targetSchemaName.c_str()) << "&";
   }
+
   if(m_newTableNameHasBeenSet)
   {
     ss << "NewTableName=" << StringUtils::URLEncode(m_newTableName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

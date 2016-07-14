@@ -36,18 +36,22 @@ Aws::String CreateVpcPeeringConnectionRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_peerVpcIdHasBeenSet)
   {
     ss << "PeerVpcId=" << StringUtils::URLEncode(m_peerVpcId.c_str()) << "&";
   }
+
   if(m_peerOwnerIdHasBeenSet)
   {
     ss << "PeerOwnerId=" << StringUtils::URLEncode(m_peerOwnerId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

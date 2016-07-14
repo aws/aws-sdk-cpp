@@ -137,18 +137,22 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_groupIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_ipPermissionsHasBeenSet)
   {
       unsigned ipPermissionsIdx = 1;
@@ -159,6 +163,7 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, ipPermissionsSs.str().c_str());
       }
   }
+
   if(m_ipPermissionsEgressHasBeenSet)
   {
       unsigned ipPermissionsEgressIdx = 1;
@@ -169,10 +174,12 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, ipPermissionsEgressSs.str().c_str());
       }
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -183,6 +190,7 @@ void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void SecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

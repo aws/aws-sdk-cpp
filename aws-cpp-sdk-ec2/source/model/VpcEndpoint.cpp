@@ -117,22 +117,27 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_serviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServiceName=" << StringUtils::URLEncode(m_serviceName.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StateMapper::GetNameForState(m_state) << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   if(m_routeTableIdsHasBeenSet)
   {
       unsigned routeTableIdsIdx = 1;
@@ -141,10 +146,12 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
         oStream << location << index << locationValue << ".RouteTableIdSet." << routeTableIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_creationTimestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const

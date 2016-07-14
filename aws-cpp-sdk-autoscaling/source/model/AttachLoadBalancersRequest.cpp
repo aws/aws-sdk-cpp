@@ -33,6 +33,7 @@ Aws::String AttachLoadBalancersRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_loadBalancerNamesHasBeenSet)
   {
     unsigned loadBalancerNamesCount = 1;
@@ -43,6 +44,7 @@ Aws::String AttachLoadBalancersRequest::SerializePayload() const
       loadBalancerNamesCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

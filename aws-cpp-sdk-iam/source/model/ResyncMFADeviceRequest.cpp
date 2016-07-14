@@ -35,18 +35,22 @@ Aws::String ResyncMFADeviceRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_serialNumberHasBeenSet)
   {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   if(m_authenticationCode1HasBeenSet)
   {
     ss << "AuthenticationCode1=" << StringUtils::URLEncode(m_authenticationCode1.c_str()) << "&";
   }
+
   if(m_authenticationCode2HasBeenSet)
   {
     ss << "AuthenticationCode2=" << StringUtils::URLEncode(m_authenticationCode2.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

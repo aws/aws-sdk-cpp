@@ -35,14 +35,17 @@ Aws::String CreateClusterParameterGroupRequest::SerializePayload() const
   {
     ss << "ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterGroupFamilyHasBeenSet)
   {
     ss << "ParameterGroupFamily=" << StringUtils::URLEncode(m_parameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -52,6 +55,7 @@ Aws::String CreateClusterParameterGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

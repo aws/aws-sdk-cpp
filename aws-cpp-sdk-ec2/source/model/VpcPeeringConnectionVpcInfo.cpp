@@ -87,20 +87,24 @@ void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_peeringOptionsHasBeenSet)
   {
       Aws::StringStream peeringOptionsLocationAndMemberSs;
       peeringOptionsLocationAndMemberSs << location << index << locationValue << ".PeeringOptions";
       m_peeringOptions.OutputToStream(oStream, peeringOptionsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void VpcPeeringConnectionVpcInfo::OutputToStream(Aws::OStream& oStream, const char* location) const

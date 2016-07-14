@@ -125,30 +125,37 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location,
   {
         oStream << location << index << locationValue << ".User=" << StringUtils::URLEncode(m_user) << "&";
   }
+
   if(m_niceHasBeenSet)
   {
         oStream << location << index << locationValue << ".Nice=" << StringUtils::URLEncode(m_nice) << "&";
   }
+
   if(m_systemHasBeenSet)
   {
         oStream << location << index << locationValue << ".System=" << StringUtils::URLEncode(m_system) << "&";
   }
+
   if(m_idleHasBeenSet)
   {
         oStream << location << index << locationValue << ".Idle=" << StringUtils::URLEncode(m_idle) << "&";
   }
+
   if(m_iOWaitHasBeenSet)
   {
         oStream << location << index << locationValue << ".IOWait=" << StringUtils::URLEncode(m_iOWait) << "&";
   }
+
   if(m_iRQHasBeenSet)
   {
         oStream << location << index << locationValue << ".IRQ=" << StringUtils::URLEncode(m_iRQ) << "&";
   }
+
   if(m_softIRQHasBeenSet)
   {
         oStream << location << index << locationValue << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
+
 }
 
 void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location) const
