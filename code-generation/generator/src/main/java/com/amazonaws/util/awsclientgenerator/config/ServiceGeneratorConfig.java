@@ -29,6 +29,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.glacier.GlacierRestJ
 import com.amazonaws.util.awsclientgenerator.generators.cpp.iam.IamCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.r53.Route53CppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
 
@@ -62,6 +63,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2", new Ec2CppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-apigateway", new APIGatewayRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-route53", new Route53CppClientGenerator());
         } catch (Exception e) {
             e.printStackTrace();
         }
