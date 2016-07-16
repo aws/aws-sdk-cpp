@@ -42,7 +42,7 @@ Aws::String CreateReceiptRuleRequest::SerializePayload() const
 
   if(m_ruleHasBeenSet)
   {
-    m_rule.OutputToStream(ss, "Rule.");
+    m_rule.OutputToStream(ss, "Rule");
   }
 
   ss << "Version=2010-12-01";

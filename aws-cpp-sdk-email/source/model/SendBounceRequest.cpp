@@ -50,7 +50,7 @@ Aws::String SendBounceRequest::SerializePayload() const
 
   if(m_messageDsnHasBeenSet)
   {
-    m_messageDsn.OutputToStream(ss, "MessageDsn.");
+    m_messageDsn.OutputToStream(ss, "MessageDsn");
   }
 
   if(m_bouncedRecipientInfoListHasBeenSet)

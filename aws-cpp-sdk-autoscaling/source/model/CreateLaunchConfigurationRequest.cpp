@@ -126,7 +126,7 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
 
   if(m_instanceMonitoringHasBeenSet)
   {
-    m_instanceMonitoring.OutputToStream(ss, "InstanceMonitoring.");
+    m_instanceMonitoring.OutputToStream(ss, "InstanceMonitoring");
   }
 
   if(m_spotPriceHasBeenSet)

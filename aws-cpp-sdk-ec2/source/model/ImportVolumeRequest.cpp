@@ -45,7 +45,7 @@ Aws::String ImportVolumeRequest::SerializePayload() const
 
   if(m_imageHasBeenSet)
   {
-    m_image.OutputToStream(ss, "Image.");
+    m_image.OutputToStream(ss, "Image");
   }
 
   if(m_descriptionHasBeenSet)
@@ -55,7 +55,7 @@ Aws::String ImportVolumeRequest::SerializePayload() const
 
   if(m_volumeHasBeenSet)
   {
-    m_volume.OutputToStream(ss, "Volume.");
+    m_volume.OutputToStream(ss, "Volume");
   }
 
   ss << "Version=2015-10-01";

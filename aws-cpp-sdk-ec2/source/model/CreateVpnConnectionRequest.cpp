@@ -55,7 +55,7 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
 
   if(m_optionsHasBeenSet)
   {
-    m_options.OutputToStream(ss, "Options.");
+    m_options.OutputToStream(ss, "Options");
   }
 
   ss << "Version=2015-10-01";

@@ -98,12 +98,12 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
 
   if(m_launchPermissionHasBeenSet)
   {
-    m_launchPermission.OutputToStream(ss, "LaunchPermission.");
+    m_launchPermission.OutputToStream(ss, "LaunchPermission");
   }
 
   if(m_descriptionHasBeenSet)
   {
-    m_description.OutputToStream(ss, "Description.");
+    m_description.OutputToStream(ss, "Description");
   }
 
   ss << "Version=2015-10-01";

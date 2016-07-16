@@ -114,7 +114,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_placementHasBeenSet)
   {
-    m_placement.OutputToStream(ss, "Placement.");
+    m_placement.OutputToStream(ss, "Placement");
   }
 
   if(m_kernelIdHasBeenSet)
@@ -139,7 +139,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_monitoringHasBeenSet)
   {
-    m_monitoring.OutputToStream(ss, "Monitoring.");
+    m_monitoring.OutputToStream(ss, "Monitoring");
   }
 
   if(m_subnetIdHasBeenSet)
@@ -184,7 +184,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
 
   if(m_iamInstanceProfileHasBeenSet)
   {
-    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile.");
+    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
   }
 
   if(m_ebsOptimizedHasBeenSet)

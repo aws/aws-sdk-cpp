@@ -80,7 +80,7 @@ Aws::String ImportImageRequest::SerializePayload() const
 
   if(m_clientDataHasBeenSet)
   {
-    m_clientData.OutputToStream(ss, "ClientData.");
+    m_clientData.OutputToStream(ss, "ClientData");
   }
 
   if(m_clientTokenHasBeenSet)

@@ -46,12 +46,12 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
 
   if(m_descriptionHasBeenSet)
   {
-    m_description.OutputToStream(ss, "Description.");
+    m_description.OutputToStream(ss, "Description");
   }
 
   if(m_sourceDestCheckHasBeenSet)
   {
-    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck.");
+    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck");
   }
 
   if(m_groupsHasBeenSet)
@@ -67,7 +67,7 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
 
   if(m_attachmentHasBeenSet)
   {
-    m_attachment.OutputToStream(ss, "Attachment.");
+    m_attachment.OutputToStream(ss, "Attachment");
   }
 
   ss << "Version=2015-10-01";

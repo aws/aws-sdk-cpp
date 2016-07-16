@@ -36,7 +36,7 @@ Aws::String UpdateScalingParametersRequest::SerializePayload() const
 
   if(m_scalingParametersHasBeenSet)
   {
-    m_scalingParameters.OutputToStream(ss, "ScalingParameters.");
+    m_scalingParameters.OutputToStream(ss, "ScalingParameters");
   }
 
   ss << "Version=2013-01-01";

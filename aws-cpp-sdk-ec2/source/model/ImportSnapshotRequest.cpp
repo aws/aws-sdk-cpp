@@ -46,12 +46,12 @@ Aws::String ImportSnapshotRequest::SerializePayload() const
 
   if(m_diskContainerHasBeenSet)
   {
-    m_diskContainer.OutputToStream(ss, "DiskContainer.");
+    m_diskContainer.OutputToStream(ss, "DiskContainer");
   }
 
   if(m_clientDataHasBeenSet)
   {
-    m_clientData.OutputToStream(ss, "ClientData.");
+    m_clientData.OutputToStream(ss, "ClientData");
   }
 
   if(m_clientTokenHasBeenSet)

@@ -50,7 +50,7 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
 
   if(m_limitPriceHasBeenSet)
   {
-    m_limitPrice.OutputToStream(ss, "LimitPrice.");
+    m_limitPrice.OutputToStream(ss, "LimitPrice");
   }
 
   ss << "Version=2015-10-01";

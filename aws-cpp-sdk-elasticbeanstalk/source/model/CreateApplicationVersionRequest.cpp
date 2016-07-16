@@ -52,7 +52,7 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
 
   if(m_sourceBundleHasBeenSet)
   {
-    m_sourceBundle.OutputToStream(ss, "SourceBundle.");
+    m_sourceBundle.OutputToStream(ss, "SourceBundle");
   }
 
   if(m_autoCreateApplicationHasBeenSet)

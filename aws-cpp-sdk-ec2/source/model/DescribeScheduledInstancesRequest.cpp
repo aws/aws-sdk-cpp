@@ -53,7 +53,7 @@ Aws::String DescribeScheduledInstancesRequest::SerializePayload() const
 
   if(m_slotStartTimeRangeHasBeenSet)
   {
-    m_slotStartTimeRange.OutputToStream(ss, "SlotStartTimeRange.");
+    m_slotStartTimeRange.OutputToStream(ss, "SlotStartTimeRange");
   }
 
   if(m_nextTokenHasBeenSet)

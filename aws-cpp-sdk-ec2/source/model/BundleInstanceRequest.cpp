@@ -43,7 +43,7 @@ Aws::String BundleInstanceRequest::SerializePayload() const
 
   if(m_storageHasBeenSet)
   {
-    m_storage.OutputToStream(ss, "Storage.");
+    m_storage.OutputToStream(ss, "Storage");
   }
 
   ss << "Version=2015-10-01";

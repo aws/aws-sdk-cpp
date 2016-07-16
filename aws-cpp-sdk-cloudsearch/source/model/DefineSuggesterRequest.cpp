@@ -36,7 +36,7 @@ Aws::String DefineSuggesterRequest::SerializePayload() const
 
   if(m_suggesterHasBeenSet)
   {
-    m_suggester.OutputToStream(ss, "Suggester.");
+    m_suggester.OutputToStream(ss, "Suggester");
   }
 
   ss << "Version=2013-01-01";

@@ -76,12 +76,12 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
 
   if(m_icmpTypeCodeHasBeenSet)
   {
-    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode.");
+    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode");
   }
 
   if(m_portRangeHasBeenSet)
   {
-    m_portRange.OutputToStream(ss, "PortRange.");
+    m_portRange.OutputToStream(ss, "PortRange");
   }
 
   ss << "Version=2015-10-01";
