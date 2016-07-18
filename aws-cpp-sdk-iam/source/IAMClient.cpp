@@ -152,6 +152,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "iam";
 static const char* ALLOCATION_TAG = "IAMClient";
 
+
 IAMClient::IAMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

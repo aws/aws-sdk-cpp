@@ -337,20 +337,20 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
         virtual ~S3Client();
 

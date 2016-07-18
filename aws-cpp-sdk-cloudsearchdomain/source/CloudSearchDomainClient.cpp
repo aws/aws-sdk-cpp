@@ -41,6 +41,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "cloudsearch";
 static const char* ALLOCATION_TAG = "CloudSearchDomainClient";
 
+
 CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

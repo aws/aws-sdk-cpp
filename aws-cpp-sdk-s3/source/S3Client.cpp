@@ -93,6 +93,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
 
+
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, bool signPayloads) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

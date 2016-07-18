@@ -75,6 +75,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "elasticbeanstalk";
 static const char* ALLOCATION_TAG = "ElasticBeanstalkClient";
 
+
 ElasticBeanstalkClient::ElasticBeanstalkClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
