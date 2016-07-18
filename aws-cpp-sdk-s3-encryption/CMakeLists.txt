@@ -3,27 +3,33 @@ project(aws-cpp-sdk-s3-encryption)
 
 file( GLOB S3ENCRYPTION_HEADERS "include/aws/s3-encryption/*.h" )
 file( GLOB S3ENCRYPTION_MATERIALS_HEADERS "include/aws/s3-encryption/materials/*.h" )
+file( GLOB S3ENCRYPTION_HANDLERS_HEADERS "include/aws/s3-encryption/handlers/*.h" )
 
 file( GLOB S3ENCRYPTION_SOURCE "source/s3-encryption/*.cpp" )
 file( GLOB S3ENCRYPTION_MATERIALS_SOURCE "source/s3-encryption/materials/*.cpp" )
+file( GLOB S3ENCRYPTION_HANDLERS_SOURCE "source/s3-encryption/handlers/*.cpp" )
 
 if(MSVC)
     source_group("Header Files\\aws\\s3-encryption" FILES ${S3ENCRYPTION_HEADERS})
     source_group("Header Files\\aws\\s3-encryption\\materials" FILES ${S3ENCRYPTION_MATERIALS_HEADERS})
+    source_group("Header Files\\aws\\s3-encryption\\handlers" FILES ${S3ENCRYPTION_HANDLERS_HEADERS})
 
     source_group("Source Files\\s3-encryption" FILES ${S3ENCRYPTION_SOURCE})
     source_group("Source Files\\s3-encryption\\materials" FILES ${S3ENCRYPTION_MATERIALS_SOURCE})
+    source_group("Source Files\\s3-encryption\\handlers" FILES ${S3ENCRYPTION_HANDLERS_SOURCE})
     
 endif()
 
 file(GLOB ALL_S3ENCRYPTION_HEADERS
     ${S3ENCRYPTION_HEADERS}
     ${S3ENCRYPTION_MATERIALS_HEADERS}
+    ${S3ENCRYPTION_HANDLERS_HEADERS}
 )
 
 file(GLOB ALL_S3ENCRYPTION_SOURCE
     ${S3ENCRYPTION_SOURCE}
     ${S3ENCRYPTION_MATERIALS_SOURCE}
+    ${S3ENCRYPTION_HANDLERS_SOURCE}
 )
 
 file(GLOB ALL_S3ENCRYPTION

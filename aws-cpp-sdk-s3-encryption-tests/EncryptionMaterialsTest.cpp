@@ -390,7 +390,5 @@ TEST_F(KMSEncryptionMaterialsTest, TestMissingEncryptedContentKeyDecryptCEK)
     //Decrypt returns early, so counter not incremented
     ASSERT_EQ(myClient->m_decryptCalledCount, 0);
     ASSERT_EQ(myClient->m_encryptCalledCount, 0);
+}   
 }
-    
-}
-
