@@ -88,6 +88,7 @@ public:
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
     static std::shared_ptr<Aws::IAM::Model::Role> m_role;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
+    static Aws::Map<Aws::String, Aws::String> functionArnMapping;
 
 protected:
 
@@ -247,7 +248,7 @@ protected:
         //Get the ARN off the IAM role.  We'll need this for creating the functions.
         auto & roleARN = m_role->GetArn();
 
-	std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
+	    std::cout << "Creating function " << functionName << " from location " << zipLocation << " with role arn " << roleARN << std::endl;
 
         //Now attempt to create the function.
         CreateFunctionRequest createFunctionRequest;
@@ -261,7 +262,7 @@ protected:
         Aws::StringStream buffer;
         buffer << fc.rdbuf();
 
-	std::cout << "read zip file " << filePath << " of length " << buffer.str().length() << std::endl;
+	    std::cout << "read zip file " << filePath << " of length " << buffer.str().length() << std::endl;
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
@@ -273,6 +274,7 @@ protected:
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
         ASSERT_EQ("nodejs", Aws::Lambda::Model::RuntimeMapper::GetNameForRuntime(createFunctionOutcome.GetResult().GetRuntime()));
+        functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
     }
@@ -374,6 +376,7 @@ std::shared_ptr<KinesisClient> FunctionTest::m_kinesis_client(nullptr);
 std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> FunctionTest::m_limiter(nullptr);
 std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
 std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
+Aws::Map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
 
 
 TEST_F(FunctionTest, TestListFunction)
@@ -427,6 +430,17 @@ TEST_F(FunctionTest, TestInvokeEvent)
 {
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(SIMPLE_FUNCTION);
+    invokeRequest.SetInvocationType(InvocationType::Event);
+
+    InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
+    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_EQ(202,invokeOutcome.GetResult().GetStatusCode());
+}
+
+TEST_F(FunctionTest, TestInvokeEventFromARN)
+{
+    InvokeRequest invokeRequest;
+    invokeRequest.SetFunctionName(functionArnMapping[SIMPLE_FUNCTION]);
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);

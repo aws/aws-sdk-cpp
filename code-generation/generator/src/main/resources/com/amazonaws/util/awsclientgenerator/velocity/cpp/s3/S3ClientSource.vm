@@ -1,4 +1,5 @@
 #set($signPayloadsOptional = true)
+#set($doNotDoubleUrlEncode = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
 Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Http::HttpMethod method, long long expirationInSeconds)
