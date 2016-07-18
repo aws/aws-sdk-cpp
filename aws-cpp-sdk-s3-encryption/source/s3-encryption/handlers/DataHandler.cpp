@@ -14,6 +14,7 @@
 */
 #include <aws/s3-encryption/handlers/DataHandler.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::Utils::Json;
 
@@ -34,16 +35,24 @@ const Aws::String DataHandler::SerializeMap(const Aws::Map<Aws::String, Aws::Str
     return jsonMap.WriteCompact();
 }
 
-const Aws::Map<Aws::String, Aws::String> DataHandler::DeSerializeMap(const Aws::String& jsonString)
+const Aws::Map<Aws::String, Aws::String> DataHandler::DeserializeMap(const Aws::String& jsonString)
 {
-    JsonValue jsonObject(jsonString);
-    Aws::Map<Aws::String, JsonValue> jsonMap = jsonObject.GetAllObjects();
     Aws::Map<Aws::String, Aws::String> materialsDescriptionMap;
-    for (auto& mapItem : jsonMap)
+    JsonValue jsonObject(jsonString);
+    if (jsonObject.WasParseSuccessful())
     {
-        materialsDescriptionMap[mapItem.first] = mapItem.second.AsString();
+        Aws::Map<Aws::String, JsonValue> jsonMap = jsonObject.GetAllObjects();
+        for (auto& mapItem : jsonMap)
+        {
+            materialsDescriptionMap[mapItem.first] = mapItem.second.AsString();
+        }
+        return materialsDescriptionMap;
     }
-    return materialsDescriptionMap;
+    else
+    {
+        AWS_LOGSTREAM_ERROR(MetadataHandler_Tag, "Json Parse was not successful.");
+        return materialsDescriptionMap;
+    }
 }
 
 }//namespace Handlers

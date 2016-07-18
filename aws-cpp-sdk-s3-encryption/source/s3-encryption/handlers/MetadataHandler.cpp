@@ -14,6 +14,7 @@
 */
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 
 using namespace Aws::S3::Model;
 using namespace Aws::Utils;
@@ -42,10 +43,7 @@ void MetadataHandler::WriteData(Aws::S3::Model::PutObjectRequest& request, const
     ContentCryptoScheme scheme = contentCryptoMaterial.GetContentCryptoScheme();
     request.AddMetadata(CONTENT_CRYPTO_SCHEME_HEADER, GetNameForContentCryptoScheme(scheme));
 
-    size_t cryptoTagLength = contentCryptoMaterial.GetCryptoTagLength();
-    Aws::StringStream ss;
-    ss << cryptoTagLength;
-    request.AddMetadata(CRYPTO_TAG_LENGTH_HEADER, ss.str());
+    request.AddMetadata(CRYPTO_TAG_LENGTH_HEADER, StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength()));
 
     KeyWrapAlgorithm keyWrapAlgorithm = contentCryptoMaterial.GetKeyWrapAlgorithm();
     request.AddMetadata(KEY_WRAP_ALGORITHM, GetNameForKeyWrapAlgorithm(keyWrapAlgorithm));
@@ -58,7 +56,7 @@ ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::GetObjectResult&
 
     contentCryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]));
     contentCryptoMaterial.SetIV(HashingUtils::Base64Decode(metadata[IV_HEADER]));
-    contentCryptoMaterial.SetMaterialsDescription(DeSerializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]));
+    contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]));
 
     Aws::String schemeAsString = metadata[CONTENT_CRYPTO_SCHEME_HEADER];
     contentCryptoMaterial.SetContentCryptoScheme(GetContentCryptoSchemeForName(schemeAsString));
@@ -66,12 +64,7 @@ ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::GetObjectResult&
     Aws::String keyWrapAlgorithmAsString = metadata[KEY_WRAP_ALGORITHM];
     contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
 
-    Aws::StringStream ss;
-    size_t cryptoTag;
-    ss << metadata[CRYPTO_TAG_LENGTH_HEADER];
-    ss >> cryptoTag;
-    contentCryptoMaterial.SetCryptoTagLength(cryptoTag);
-
+    contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str())));
     return contentCryptoMaterial;
 }
 

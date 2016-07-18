@@ -23,16 +23,17 @@ namespace Aws
 {
     namespace S3Encryption
     {
+        static const char* MetadataHandler_Tag = "MetadataHandler";
+        static const char* const CONTENT_KEY_HEADER = "x-amz-key-v2";
+        static const char* const IV_HEADER = "x-amz-iv";
+        static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
+        static const char* const CONTENT_CRYPTO_SCHEME_HEADER = "x-amz-cek=alg";
+        static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
+        static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
+        static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";
+
         namespace Handlers
         {
-            static Aws::String CONTENT_KEY_HEADER = "x-amz-key-v2";
-            static Aws::String IV_HEADER = "x-amz-iv";
-            static Aws::String MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
-            static Aws::String CONTENT_CRYPTO_SCHEME_HEADER = "x-amz-cek=alg";
-            static Aws::String CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
-            static Aws::String KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
-            static Aws::String INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";
-
             /*
             Data handler class will be responsible for reading and writing metadata and instruction files to and from S3 object using a Put object
             request or a Get object result.
@@ -58,7 +59,7 @@ namespace Aws
                 /*
                 Function to deserialize a string to map.
                 */
-                const Aws::Map<Aws::String, Aws::String> DeSerializeMap(const Aws::String& jsonString);
+                const Aws::Map<Aws::String, Aws::String> DeserializeMap(const Aws::String& jsonString);
             };
         }
     }

@@ -18,6 +18,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/s3-encryption/ContentCryptoMaterial.h>
 #include <aws/s3-encryption/handlers/DataHandler.h>
 #include <aws/s3-encryption/handlers/InstructionFileHandler.h>
@@ -30,8 +31,8 @@
 #include <aws/s3/model/PutObjectResult.h>
 
 static const char* AllocationTag = "DataHandlersTest";
-static size_t cryptoTagLength = 16;
-static size_t ivSize = 16;
+static size_t CryptoTagLength = 16;
+static size_t IVSize = 12;
 
 class MockS3Client : public Aws::S3::S3Client
 {
@@ -44,7 +45,7 @@ public:
     Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const
     {
         m_putObjectCalled++;
-        m_metadataMap = request.GetMetadata();
+        m_metadata = request.GetMetadata();
         m_body = request.GetBody();
         Aws::S3::Model::PutObjectOutcome outcome;
         Aws::S3::Model::PutObjectResult result(outcome.GetResultWithOwnership());
@@ -54,39 +55,33 @@ public:
     Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override
     {
         m_getObjectCalled++;
-        if (m_body == nullptr)
+        auto factory = request.GetResponseStreamFactory();
+        Aws::Utils::Stream::ResponseStream responseStream(factory);
+        if (m_body != nullptr)
         {
-            Aws::S3::Model::GetObjectOutcome outcome;
-            Aws::S3::Model::GetObjectResult result(outcome.GetResultWithOwnership());
-            result.SetMetadata(m_metadataMap);
-            return result;
-        }
-        else
-        {
-            auto factory = request.GetResponseStreamFactory();
-            Aws::Utils::Stream::ResponseStream responseStream(factory);
             responseStream.GetUnderlyingStream() << m_body->rdbuf();
-            Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
-            Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
-            return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
         }
+        Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
+        Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
+        getObjectResult.SetMetadata(m_metadata);
+        return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
     }
 
     mutable size_t m_putObjectCalled;
     mutable size_t m_getObjectCalled;
-    mutable Aws::Map<Aws::String, Aws::String> m_metadataMap;
+    mutable Aws::Map<Aws::String, Aws::String> m_metadata;
     mutable std::shared_ptr<Aws::IOStream> m_body;
 };
 
 namespace
 {
 
-    using namespace Aws::Client;
-    using namespace Aws::S3::Model;
-    using namespace Aws::S3Encryption;
-    using namespace Aws::S3Encryption::Handlers;
-    using namespace Aws::Utils;
-    using namespace Aws::Utils::Crypto;
+using namespace Aws::Client;
+using namespace Aws::S3::Model;
+using namespace Aws::S3Encryption;
+using namespace Aws::S3Encryption::Handlers;
+using namespace Aws::Utils;
+using namespace Aws::Utils::Crypto;
 
 static const char* ALLOCATION_TAG = "HandlersTest";
 static const char* TEST_BUCKET_NAME = "TestBucketName";
@@ -101,9 +96,9 @@ protected:
     static void PopulateContentCryptoMaterial(ContentCryptoMaterial& contentCryptoMaterial)
     {
         contentCryptoMaterial.SetEncryptedContentEncryptionKey(SymmetricCipher::GenerateKey());
-        contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(ivSize));
+        contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IVSize));
         contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
-        contentCryptoMaterial.SetCryptoTagLength(cryptoTagLength);
+        contentCryptoMaterial.SetCryptoTagLength(CryptoTagLength);
         contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
         Aws::Map<Aws::String, Aws::String> testMap;
         testMap[TEST_KEY] = TEST_VALUE;
@@ -114,19 +109,12 @@ protected:
     {
         auto metadata = result.GetMetadata();
         metadata[CONTENT_KEY_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateKey());
-        metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(ivSize));
+        metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IVSize));
         metadata[CONTENT_CRYPTO_SCHEME_HEADER] = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
-        metadata[CRYPTO_TAG_LENGTH_HEADER] = SizeToString(cryptoTagLength);
+        metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CryptoTagLength);
         metadata[KEY_WRAP_ALGORITHM] = KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
         metadata[MATERIALS_DESCRIPTION_HEADER] = "";
         result.SetMetadata(metadata);
-    }
-
-    static Aws::String SizeToString(size_t sizeValue)
-    {
-        Aws::StringStream ss;
-        ss << sizeValue;
-        return ss.str();
     }
 };
 
@@ -139,16 +127,27 @@ TEST_F(HandlerTest, WriteReadMetadataTest)
     PopulateContentCryptoMaterial(contentCryptoMaterial);
     
     handler.WriteData(request, contentCryptoMaterial);
-    auto metaDataMap = request.GetMetadata();
-    ASSERT_EQ(HashingUtils::Base64Decode(metaDataMap[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
-    ASSERT_EQ(HashingUtils::Base64Decode(metaDataMap[IV_HEADER]), contentCryptoMaterial.GetIV());
-    ASSERT_EQ(metaDataMap[CONTENT_CRYPTO_SCHEME_HEADER], ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()));
-    ASSERT_EQ(metaDataMap[CRYPTO_TAG_LENGTH_HEADER], SizeToString(contentCryptoMaterial.GetCryptoTagLength()));
-    ASSERT_EQ(metaDataMap[KEY_WRAP_ALGORITHM], KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()));
-    ASSERT_EQ(metaDataMap[MATERIALS_DESCRIPTION_HEADER], handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()));
+    auto metadata = request.GetMetadata();
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+
+    ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
+    ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), contentCryptoMaterial.GetIV());
+
+    ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
+
+    ASSERT_NE(metadata.find(CRYPTO_TAG_LENGTH_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str(), StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength()).c_str());
+
+    ASSERT_NE(metadata.find(KEY_WRAP_ALGORITHM), metadata.end());
+    ASSERT_STREQ(metadata[KEY_WRAP_ALGORITHM].c_str(), KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()).c_str());
+
+    ASSERT_NE(metadata.find(MATERIALS_DESCRIPTION_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
 
     GetObjectResult result;
-    result.SetMetadata(metaDataMap);
+    result.SetMetadata(metadata);
     ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(result);
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
     ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
@@ -167,12 +166,24 @@ TEST_F(HandlerTest, ReadMetadataTest)
 
     ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(result);
     auto metadata = result.GetMetadata();
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
     ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
     ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), readContentCryptoMaterial.GetIV());
-    ASSERT_EQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER], ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(readContentCryptoMaterial.GetContentCryptoScheme()));
-    ASSERT_EQ(metadata[CRYPTO_TAG_LENGTH_HEADER], SizeToString(readContentCryptoMaterial.GetCryptoTagLength()));
-    ASSERT_EQ(metadata[KEY_WRAP_ALGORITHM], KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(readContentCryptoMaterial.GetKeyWrapAlgorithm()));
-    ASSERT_EQ(handler.DeSerializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]),readContentCryptoMaterial.GetMaterialsDescription());
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(readContentCryptoMaterial.GetContentCryptoScheme()).c_str());
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str(), StringUtils::to_string(readContentCryptoMaterial.GetCryptoTagLength()).c_str());
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[KEY_WRAP_ALGORITHM].c_str(), KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(readContentCryptoMaterial.GetKeyWrapAlgorithm()).c_str());
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_EQ(handler.DeserializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]),readContentCryptoMaterial.GetMaterialsDescription());
 }
 
 //This tests the write metadata functionaliy of the handler without a mock client.
@@ -184,18 +195,30 @@ TEST_F(HandlerTest, WriteMetadataTest)
     MetadataHandler handler;
     handler.WriteData(request, contentCryptoMaterial);
 
-    auto metaDataMap = request.GetMetadata();
-    ASSERT_EQ(HashingUtils::Base64Decode(metaDataMap[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
-    ASSERT_EQ(HashingUtils::Base64Decode(metaDataMap[IV_HEADER]), contentCryptoMaterial.GetIV());
-    ASSERT_EQ(metaDataMap[CONTENT_CRYPTO_SCHEME_HEADER], ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()));
-    ASSERT_EQ(metaDataMap[CRYPTO_TAG_LENGTH_HEADER], SizeToString(contentCryptoMaterial.GetCryptoTagLength()));
-    ASSERT_EQ(metaDataMap[KEY_WRAP_ALGORITHM], KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()));
-    ASSERT_EQ(metaDataMap[MATERIALS_DESCRIPTION_HEADER], handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()));
+    auto metadata = request.GetMetadata();
+
+    ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
+    ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+
+    ASSERT_NE(metadata.find(IV_HEADER), metadata.end());
+    ASSERT_EQ(HashingUtils::Base64Decode(metadata[IV_HEADER]), contentCryptoMaterial.GetIV());
+
+    ASSERT_NE(metadata.find(CONTENT_CRYPTO_SCHEME_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
+
+    ASSERT_NE(metadata.find(CRYPTO_TAG_LENGTH_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str(), StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength()).c_str());
+
+    ASSERT_NE(metadata.find(KEY_WRAP_ALGORITHM), metadata.end());
+    ASSERT_STREQ(metadata[KEY_WRAP_ALGORITHM].c_str(), KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()).c_str());
+
+    ASSERT_NE(metadata.find(MATERIALS_DESCRIPTION_HEADER), metadata.end());
+    ASSERT_STREQ(metadata[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
 }
 
 //This test the metadata read/write functionality using a mock S3 Client which stores the metadata on a put object request and 
 //  uses the metadata to populate a get object result.
-TEST_F(HandlerTest, MetadataS3ClientTest)
+TEST_F(HandlerTest, MetadataMockS3ClientTest)
 {
     auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;
@@ -245,18 +268,29 @@ TEST_F(HandlerTest, WriteInstructionFileTest)
     auto bodyStream = request.GetBody();
     Aws::String jsonString;
     (*bodyStream) >> jsonString;
-    Aws::Map<Aws::String, Aws::String> cryptoContentMap = handler.DeSerializeMap(jsonString);
+    Aws::Map<Aws::String, Aws::String> cryptoContentMap = handler.DeserializeMap(jsonString);
 
+    ASSERT_NE(cryptoContentMap.find(CONTENT_KEY_HEADER), cryptoContentMap.end());
     ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+
+    ASSERT_NE(cryptoContentMap.find(IV_HEADER), cryptoContentMap.end());
     ASSERT_EQ(HashingUtils::Base64Decode(cryptoContentMap[IV_HEADER]), contentCryptoMaterial.GetIV());
-    ASSERT_EQ(cryptoContentMap[CONTENT_CRYPTO_SCHEME_HEADER], ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()));
-    ASSERT_EQ(cryptoContentMap[CRYPTO_TAG_LENGTH_HEADER], SizeToString(contentCryptoMaterial.GetCryptoTagLength()));
-    ASSERT_EQ(cryptoContentMap[KEY_WRAP_ALGORITHM], KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()));
-    ASSERT_EQ(cryptoContentMap[MATERIALS_DESCRIPTION_HEADER], handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()));
+
+    ASSERT_NE(cryptoContentMap.find(CONTENT_CRYPTO_SCHEME_HEADER), cryptoContentMap.end());
+    ASSERT_STREQ(cryptoContentMap[CONTENT_CRYPTO_SCHEME_HEADER].c_str(), ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme()).c_str());
+
+    ASSERT_NE(cryptoContentMap.find(CRYPTO_TAG_LENGTH_HEADER), cryptoContentMap.end());
+    ASSERT_STREQ(cryptoContentMap[CRYPTO_TAG_LENGTH_HEADER].c_str(), StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength()).c_str());
+
+    ASSERT_NE(cryptoContentMap.find(KEY_WRAP_ALGORITHM), cryptoContentMap.end());
+    ASSERT_STREQ(cryptoContentMap[KEY_WRAP_ALGORITHM].c_str(), KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(contentCryptoMaterial.GetKeyWrapAlgorithm()).c_str());
+
+    ASSERT_NE(cryptoContentMap.find(MATERIALS_DESCRIPTION_HEADER), cryptoContentMap.end());
+    ASSERT_STREQ(cryptoContentMap[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
 }
 
 //This tests the instruction file read/write functionality by using a mock S3 client.
-TEST_F(HandlerTest, InstructionFileS3ClientTest)
+TEST_F(HandlerTest, InstructionFileMockS3ClientTest)
 {
     auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;
@@ -283,6 +317,9 @@ TEST_F(HandlerTest, InstructionFileS3ClientTest)
     GetObjectResult& getObjectResult = getObjectOutcome.GetResult();
 
     ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(getObjectResult);
+
+    auto metadata = getObjectResult.GetMetadata();
+    ASSERT_STREQ(metadata[INSTRUCTION_FILE_HEADER].c_str(), "");
 
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
     ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
