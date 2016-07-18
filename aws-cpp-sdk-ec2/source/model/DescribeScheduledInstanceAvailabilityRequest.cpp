@@ -46,12 +46,12 @@ Aws::String DescribeScheduledInstanceAvailabilityRequest::SerializePayload() con
 
   if(m_recurrenceHasBeenSet)
   {
-    m_recurrence.OutputToStream(ss, "Recurrence.");
+    m_recurrence.OutputToStream(ss, "Recurrence");
   }
 
   if(m_firstSlotStartTimeRangeHasBeenSet)
   {
-    m_firstSlotStartTimeRange.OutputToStream(ss, "FirstSlotStartTimeRange.");
+    m_firstSlotStartTimeRange.OutputToStream(ss, "FirstSlotStartTimeRange");
   }
 
   if(m_minSlotDurationInHoursHasBeenSet)

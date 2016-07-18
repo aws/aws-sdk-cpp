@@ -51,7 +51,7 @@ Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
 
   if(m_sourceConfigurationHasBeenSet)
   {
-    m_sourceConfiguration.OutputToStream(ss, "SourceConfiguration.");
+    m_sourceConfiguration.OutputToStream(ss, "SourceConfiguration");
   }
 
   if(m_environmentIdHasBeenSet)

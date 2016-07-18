@@ -41,12 +41,12 @@ Aws::String SendEmailRequest::SerializePayload() const
 
   if(m_destinationHasBeenSet)
   {
-    m_destination.OutputToStream(ss, "Destination.");
+    m_destination.OutputToStream(ss, "Destination");
   }
 
   if(m_messageHasBeenSet)
   {
-    m_message.OutputToStream(ss, "Message.");
+    m_message.OutputToStream(ss, "Message");
   }
 
   if(m_replyToAddressesHasBeenSet)

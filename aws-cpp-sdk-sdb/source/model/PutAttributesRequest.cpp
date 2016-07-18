@@ -53,7 +53,7 @@ Aws::String PutAttributesRequest::SerializePayload() const
 
   if(m_expectedHasBeenSet)
   {
-    m_expected.OutputToStream(ss, "Expected.");
+    m_expected.OutputToStream(ss, "Expected");
   }
 
   ss << "Version=2009-04-15";

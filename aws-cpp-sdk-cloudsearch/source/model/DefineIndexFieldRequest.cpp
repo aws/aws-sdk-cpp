@@ -36,7 +36,7 @@ Aws::String DefineIndexFieldRequest::SerializePayload() const
 
   if(m_indexFieldHasBeenSet)
   {
-    m_indexField.OutputToStream(ss, "IndexField.");
+    m_indexField.OutputToStream(ss, "IndexField");
   }
 
   ss << "Version=2013-01-01";

@@ -51,7 +51,7 @@ Aws::String SendRawEmailRequest::SerializePayload() const
 
   if(m_rawMessageHasBeenSet)
   {
-    m_rawMessage.OutputToStream(ss, "RawMessage.");
+    m_rawMessage.OutputToStream(ss, "RawMessage");
   }
 
   if(m_fromArnHasBeenSet)

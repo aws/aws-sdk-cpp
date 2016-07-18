@@ -36,7 +36,7 @@ Aws::String DefineExpressionRequest::SerializePayload() const
 
   if(m_expressionHasBeenSet)
   {
-    m_expression.OutputToStream(ss, "Expression.");
+    m_expression.OutputToStream(ss, "Expression");
   }
 
   ss << "Version=2013-01-01";

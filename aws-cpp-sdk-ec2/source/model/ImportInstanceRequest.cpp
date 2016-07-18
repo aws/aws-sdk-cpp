@@ -45,7 +45,7 @@ Aws::String ImportInstanceRequest::SerializePayload() const
 
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
   if(m_diskImagesHasBeenSet)

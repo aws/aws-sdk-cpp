@@ -36,7 +36,7 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
 
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
-    m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch.");
+    m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch");
   }
 
   ss << "Version=2015-10-01";

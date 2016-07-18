@@ -37,12 +37,12 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
 
   if(m_enableDnsSupportHasBeenSet)
   {
-    m_enableDnsSupport.OutputToStream(ss, "EnableDnsSupport.");
+    m_enableDnsSupport.OutputToStream(ss, "EnableDnsSupport");
   }
 
   if(m_enableDnsHostnamesHasBeenSet)
   {
-    m_enableDnsHostnames.OutputToStream(ss, "EnableDnsHostnames.");
+    m_enableDnsHostnames.OutputToStream(ss, "EnableDnsHostnames");
   }
 
   ss << "Version=2015-10-01";

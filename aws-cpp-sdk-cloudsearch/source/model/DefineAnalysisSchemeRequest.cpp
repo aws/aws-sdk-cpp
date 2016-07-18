@@ -36,7 +36,7 @@ Aws::String DefineAnalysisSchemeRequest::SerializePayload() const
 
   if(m_analysisSchemeHasBeenSet)
   {
-    m_analysisScheme.OutputToStream(ss, "AnalysisScheme.");
+    m_analysisScheme.OutputToStream(ss, "AnalysisScheme");
   }
 
   ss << "Version=2013-01-01";

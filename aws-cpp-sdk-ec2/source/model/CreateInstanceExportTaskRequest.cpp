@@ -48,7 +48,7 @@ Aws::String CreateInstanceExportTaskRequest::SerializePayload() const
 
   if(m_exportToS3TaskHasBeenSet)
   {
-    m_exportToS3Task.OutputToStream(ss, "ExportToS3Task.");
+    m_exportToS3Task.OutputToStream(ss, "ExportToS3Task");
   }
 
   ss << "Version=2015-10-01";

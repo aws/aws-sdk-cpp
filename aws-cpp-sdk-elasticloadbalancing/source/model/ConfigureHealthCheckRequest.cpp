@@ -36,7 +36,7 @@ Aws::String ConfigureHealthCheckRequest::SerializePayload() const
 
   if(m_healthCheckHasBeenSet)
   {
-    m_healthCheck.OutputToStream(ss, "HealthCheck.");
+    m_healthCheck.OutputToStream(ss, "HealthCheck");
   }
 
   ss << "Version=2012-06-01";

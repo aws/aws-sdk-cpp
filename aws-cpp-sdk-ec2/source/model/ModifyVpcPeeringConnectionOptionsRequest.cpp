@@ -44,12 +44,12 @@ Aws::String ModifyVpcPeeringConnectionOptionsRequest::SerializePayload() const
 
   if(m_requesterPeeringConnectionOptionsHasBeenSet)
   {
-    m_requesterPeeringConnectionOptions.OutputToStream(ss, "RequesterPeeringConnectionOptions.");
+    m_requesterPeeringConnectionOptions.OutputToStream(ss, "RequesterPeeringConnectionOptions");
   }
 
   if(m_accepterPeeringConnectionOptionsHasBeenSet)
   {
-    m_accepterPeeringConnectionOptions.OutputToStream(ss, "AccepterPeeringConnectionOptions.");
+    m_accepterPeeringConnectionOptions.OutputToStream(ss, "AccepterPeeringConnectionOptions");
   }
 
   ss << "Version=2015-10-01";

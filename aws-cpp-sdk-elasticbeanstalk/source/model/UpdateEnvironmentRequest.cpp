@@ -65,7 +65,7 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
 
   if(m_tierHasBeenSet)
   {
-    m_tier.OutputToStream(ss, "Tier.");
+    m_tier.OutputToStream(ss, "Tier");
   }
 
   if(m_versionLabelHasBeenSet)

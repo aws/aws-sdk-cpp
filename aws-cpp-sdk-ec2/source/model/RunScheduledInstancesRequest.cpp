@@ -56,7 +56,7 @@ Aws::String RunScheduledInstancesRequest::SerializePayload() const
 
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
 
   ss << "Version=2015-10-01";
