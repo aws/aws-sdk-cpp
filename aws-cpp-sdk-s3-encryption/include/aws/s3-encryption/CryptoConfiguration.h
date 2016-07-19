@@ -35,24 +35,24 @@ namespace Aws
         {
         public:
             /*
-            Default constructor.
+            * Default constructor.
             */
             CryptoConfiguration();
 
             /*
-            Constructor that accepts a storage method and defaults the cryptoMode to authenticated encryption.
+            * Constructor that accepts a storage method and defaults the cryptoMode to authenticated encryption.
             */
             CryptoConfiguration(StorageMethod storageMethod);
 
             /*
-            Constructor that accepts a crypto mode and defaults the storage method to metadata.
+            * Constructor that accepts a crypto mode and defaults the storage method to metadata.
             */
             CryptoConfiguration(CryptoMode cryptoMode);
 
             /*
-            Constructor that accepts storage method and crypto mdoe. Default storage method is metadata and default crypto mode is authenticated encryption.
+            * Constructor that accepts storage method and crypto mode. Default storage method is metadata and default crypto mode is authenticated encryption.
             */
-            CryptoConfiguration(StorageMethod storageMode = StorageMethod::METADATA, CryptoMode cryptoMode = CryptoMode::AUTHENTICATED_ENCRYPTION);
+            CryptoConfiguration(StorageMethod storageMode, CryptoMode cryptoMode);
 
             /**
             * Gets the underlying storage mode.
