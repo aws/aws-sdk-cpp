@@ -218,7 +218,7 @@ TEST_F(HandlerTest, WriteMetadataTest)
 
 //This test the metadata read/write functionality using a mock S3 Client which stores the metadata on a put object request and 
 //  uses the metadata to populate a get object result.
-TEST_F(HandlerTest, MetadataMockS3ClientTest)
+TEST_F(HandlerTest, MetadataS3OperationsTest)
 {
     auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;
@@ -290,7 +290,7 @@ TEST_F(HandlerTest, WriteInstructionFileTest)
 }
 
 //This tests the instruction file read/write functionality by using a mock S3 client.
-TEST_F(HandlerTest, InstructionFileMockS3ClientTest)
+TEST_F(HandlerTest, InstructionFileS3OperationsTest)
 {
     auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;

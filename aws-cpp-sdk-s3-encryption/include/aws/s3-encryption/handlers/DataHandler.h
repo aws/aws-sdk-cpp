@@ -23,7 +23,7 @@ namespace Aws
 {
     namespace S3Encryption
     {
-        static const char* MetadataHandler_Tag = "MetadataHandler";
+        static const char* const MetadataHandler_Tag = "MetadataHandler";
         static const char* const CONTENT_KEY_HEADER = "x-amz-key-v2";
         static const char* const IV_HEADER = "x-amz-iv";
         static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";

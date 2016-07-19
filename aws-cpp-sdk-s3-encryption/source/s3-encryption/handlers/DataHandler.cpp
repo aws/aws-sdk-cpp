@@ -50,7 +50,7 @@ const Aws::Map<Aws::String, Aws::String> DataHandler::DeserializeMap(const Aws::
     }
     else
     {
-        AWS_LOGSTREAM_ERROR(MetadataHandler_Tag, "Json Parse was not successful.");
+        AWS_LOGSTREAM_ERROR(MetadataHandler_Tag, "Json Parse failed with message: " << jsonObject.GetErrorMessage());
         return materialsDescriptionMap;
     }
 }
