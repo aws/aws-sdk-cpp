@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentHashType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/NotificationConfig.h>
 
 namespace Aws
 {
@@ -404,6 +405,66 @@ namespace Model
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline SendCommandRequest& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
@@ -423,6 +484,10 @@ namespace Model
     bool m_outputS3BucketNameHasBeenSet;
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+    Aws::String m_serviceRoleArn;
+    bool m_serviceRoleArnHasBeenSet;
+    NotificationConfig m_notificationConfig;
+    bool m_notificationConfigHasBeenSet;
   };
 
 } // namespace Model

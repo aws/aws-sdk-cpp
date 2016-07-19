@@ -203,9 +203,10 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateManagedInstanceRoleRequest&, const Model::UpdateManagedInstanceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedInstanceRoleResponseReceivedHandler;
 
   /**
-   * <p>This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
-   * you to remotely manage the configuration of your on-premises servers and virtual
-   * machines (VMs) and your Amazon EC2 instances using scripts, commands, or the
+   * <p>This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM
+   * enables you to remotely manage the configuration of your Amazon EC2 instances,
+   * virtual machines (VMs), or servers in your on-premises environment or in an
+   * environment provided by other cloud providers using scripts, commands, or the
    * Amazon EC2 console. SSM includes an on-demand solution called <i>Amazon EC2 Run
    * Command</i> and a lightweight instance configuration solution called <i>SSM
    * Config</i>. </p> <p>This references is intended to be used with the EC2 Run

@@ -14,6 +14,7 @@
 */
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/CommandStatus.h>
+#include <aws/ssm/model/NotificationConfig.h>
 
 namespace Aws
 {
@@ -432,6 +433,73 @@ namespace Model
      */
     inline Command& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline Command& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline Command& WithServiceRole(Aws::String&& value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>The IAM service role that SSM uses to act on your behalf when sending
+     * notifications about command status changes. </p>
+     */
+    inline Command& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
+    inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
+    inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
+    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
+    inline Command& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications about command status changes. </p>
+     */
+    inline Command& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(value); return *this;}
+
   private:
     Aws::String m_commandId;
     bool m_commandIdHasBeenSet;
@@ -453,6 +521,10 @@ namespace Model
     bool m_outputS3BucketNameHasBeenSet;
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+    Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet;
+    NotificationConfig m_notificationConfig;
+    bool m_notificationConfigHasBeenSet;
   };
 
 } // namespace Model

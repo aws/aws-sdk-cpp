@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 

@@ -28,7 +28,8 @@ namespace Model
     ARN,
     PLATFORM,
     FORM_FACTOR,
-    MANUFACTURER
+    MANUFACTURER,
+    REMOTE_ACCESS_ENABLED
   };
 
 namespace DeviceAttributeMapper
