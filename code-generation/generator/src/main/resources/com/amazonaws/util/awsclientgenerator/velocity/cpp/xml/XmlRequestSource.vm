@@ -3,6 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #if($shape.hasQueryStringMembers())
 \#include <aws/core/http/URI.h>
 #end
