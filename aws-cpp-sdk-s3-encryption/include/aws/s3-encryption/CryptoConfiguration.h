@@ -14,24 +14,26 @@
 */
 #pragma once
 
+#include <aws/s3-encryption/s3Encryption_EXPORTS.h>
+
 namespace Aws
 {
     namespace S3Encryption
     {
-        enum class StorageMethod
+        enum class AWS_S3ENCRYPTION_API StorageMethod
         {
             METADATA,
             INSTRUCTION_FILE
         };
 
-        enum class CryptoMode
+        enum class AWS_S3ENCRYPTION_API CryptoMode
         {
             ENCRYPTION_ONLY,
             AUTHENTICATED_ENCRYPTION,
             STRICT_AUTHENTICATED_ENCRYPTION
         };
 
-        class CryptoConfiguration
+        class AWS_S3ENCRYPTION_API CryptoConfiguration
         {
         public:
             /*
