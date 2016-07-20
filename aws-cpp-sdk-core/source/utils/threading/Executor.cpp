@@ -107,3 +107,43 @@ bool PooledThreadExecutor::HasTasks()
     std::lock_guard<std::mutex> locker(m_queueLock);
     return m_tasks.size() > 0;
 }
+
+BlockingExecutor::BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize) :
+m_executor(executor), m_poolSize(poolSize)
+{
+    m_numTasksRunning = 0;
+}
+
+BlockingExecutor::~BlockingExecutor()
+{
+}
+
+bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
+{
+    std::unique_lock<std::mutex> locker(m_syncPointLock);
+    if (m_numTasksRunning < m_poolSize)
+    {
+        m_numTasksRunning++;
+    }
+    else
+    {
+        m_syncPoint.wait(locker);
+    }
+    locker.release();
+    m_executor->Submit(&BlockingExecutor::ExecuteTask, fn);
+    return true;
+}
+
+void BlockingExecutor::ExecuteTask(std::function<void()>&& fn)
+{
+    fn();
+    OnTaskComplete();
+}
+
+void BlockingExecutor::OnTaskComplete()
+{
+    std::unique_lock<std::mutex> locker(m_syncPointLock);
+    m_numTasksRunning--;
+    locker.release();
+    m_syncPoint.notify_one();
+}

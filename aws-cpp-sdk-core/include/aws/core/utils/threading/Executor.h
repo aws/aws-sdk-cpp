@@ -113,6 +113,44 @@ namespace Aws
 
                 friend class ThreadTask;
             };
+            
+            /**
+             * Executor extension that limits number of simultaneously running tasks by forcing
+             * additional tasks to wait if the number of running tasks reaches the specified maximum.
+             */
+            class AWS_CORE_API BlockingExecutor : public Executor
+            {
+            public:
+                /** Constructor that takes an Executor to delegate thread execution to and the max
+                 *  number of tasks that can run at once */
+                BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize);
+                ~BlockingExecutor();
+                
+                /**
+                 * Rule of 5 stuff.
+                 * Don't copy or move
+                 */
+                BlockingExecutor(const BlockingExecutor&) = delete;
+                BlockingExecutor& operator =(const BlockingExecutor&) = delete;
+                BlockingExecutor(BlockingExecutor&&) = delete;
+                BlockingExecutor& operator =(BlockingExecutor&&) = delete;
+                
+            protected:
+                bool SubmitToThread(std::function<void()>&&) override;
+                /** Runs fn and then informs the executor of task completion. */
+                void ExecuteTask(std::function<void()>&& fn);
+                /** Handler for when a task finishes */
+                void OnTaskComplete();
+                
+            private:
+                std::mutex m_syncPointLock;
+                std::condition_variable m_syncPoint;
+                
+                std::shared_ptr<Executor> m_executor;
+                size_t m_poolSize;
+                
+                size_t m_numTasksRunning;
+            };
 
 
         } // namespace Threading
