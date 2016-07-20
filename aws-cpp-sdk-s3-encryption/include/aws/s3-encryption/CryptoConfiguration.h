@@ -67,7 +67,7 @@ namespace Aws
             /**
             * Gets the underlying crypto mode.
             */
-            inline CryptoMode GetCryptMode() const
+            inline CryptoMode GetCryptoMode() const
             {
                 return m_cryptoMode;
             }

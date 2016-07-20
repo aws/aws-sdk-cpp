@@ -23,19 +23,17 @@ namespace Modules
 {
 static const char* const Allocation_Tag = "CryptoModuleFactory";
 
-Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> CryptoModuleFactory::m_cryptoFactories;
 
-std::shared_ptr<CryptoModuleFactory> CryptoModuleFactory::FetchFactory(CryptoMode cryptoMode)
+CryptoModuleBuilder::CryptoModuleBuilder()
 {
-    //Populate crypto factory map
-    if (m_cryptoFactories.empty())
-    {
-        m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoMode::ENCRYPTION_ONLY, Aws::MakeShared<CryptoModuleFactoryEO>(Allocation_Tag, CryptoModuleFactoryEO())));
-        m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoMode::AUTHENTICATED_ENCRYPTION, Aws::MakeShared<CryptoModuleFactoryAE>(Allocation_Tag, CryptoModuleFactoryAE())));
-        m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION, Aws::MakeShared<CryptoModuleFactoryStrictAE>(Allocation_Tag, CryptoModuleFactoryStrictAE())));
-    }
+    m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoModuleFactoryEO().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryEO>(Allocation_Tag, CryptoModuleFactoryEO())));
+    m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoModuleFactoryAE().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryAE>(Allocation_Tag, CryptoModuleFactoryAE())));
+    m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoModuleFactoryStrictAE().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryStrictAE>(Allocation_Tag, CryptoModuleFactoryStrictAE())));
+}
 
-    auto entry = m_cryptoFactories.find(cryptoMode);
+std::shared_ptr<CryptoModule> CryptoModuleBuilder::FetchCryptoModule(const CryptoConfiguration& cryptoConfig, const Aws::S3Encryption::Materials::EncryptionMaterials& , const Aws::Auth::AWSCredentialsProvider& )
+{
+    auto entry = m_cryptoFactories.find(cryptoConfig.GetCryptoMode());
     if (entry == m_cryptoFactories.end())
     {
         AWS_LOGSTREAM_ERROR(Allocation_Tag, "Crypto Module Factory not found. Factory does not exist for current crypto mode.")
@@ -43,7 +41,8 @@ std::shared_ptr<CryptoModuleFactory> CryptoModuleFactory::FetchFactory(CryptoMod
     }
     else
     {
-        return entry->second;
+        std::shared_ptr<CryptoModuleFactory> factory = entry->second;
+        return factory->CreateModule(); //pass in all parameters here once modules are implemented
     }
 }
 
@@ -67,6 +66,11 @@ std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule()
     }
 }
 
+CryptoMode CryptoModuleFactoryEO::HandlesMode() const
+{
+    return CryptoMode::ENCRYPTION_ONLY;
+}
+
 CryptoModuleFactoryAE::CryptoModuleFactoryAE() :
     m_cryptoModuleAE(nullptr)
 {
@@ -87,6 +91,11 @@ std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule()
     }
 }
 
+CryptoMode CryptoModuleFactoryAE::HandlesMode() const
+{
+    return CryptoMode::AUTHENTICATED_ENCRYPTION;
+}
+
 CryptoModuleFactoryStrictAE::CryptoModuleFactoryStrictAE() :
     m_cryptoModuleStrictAE(nullptr)
 {
@@ -105,6 +114,11 @@ std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule()
         //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
         return m_cryptoModuleStrictAE;
     }
+}
+
+CryptoMode CryptoModuleFactoryStrictAE::HandlesMode() const
+{
+    return CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION;
 }
 
 }

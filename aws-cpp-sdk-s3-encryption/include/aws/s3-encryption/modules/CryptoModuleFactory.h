@@ -33,20 +33,42 @@ namespace Aws
             class AWS_S3ENCRYPTION_API CryptoModuleFactory
             {
             public:
-                static std::shared_ptr<CryptoModuleFactory> FetchFactory(CryptoMode cryptoMode);
-
                 /*
                 * Override this method to create a specific crypto module.
                 */
                 virtual std::shared_ptr<CryptoModule> CreateModule() = 0;
+
+                /*
+                * Returns the crypto mode each sub class handles.
+                */
+                virtual CryptoMode HandlesMode() const = 0;
+            };
+
+            /*
+            * This class will be responsible for the functionality for fetching a crypto module using the map of crypto
+            * module factories. It will take parameters, crypto configuration, encryption materials, and credentials provider in
+            * or to create an appropriate crypto module.
+            */
+            class AWS_S3ENCRYPTION_API CryptoModuleBuilder
+            {
+            public:
+                /*
+                * Default Constructor. Populates map with Crypto Modules Factories and their CryptoModes.
+                */
+                CryptoModuleBuilder();
+
+                /*
+                * Determines which module to use and returns a specific factory for that module.
+                */
+                std::shared_ptr<CryptoModule> FetchCryptoModule(const CryptoConfiguration& cryptoConfig, const Aws::S3Encryption::Materials::EncryptionMaterials& encryptionMaterials, const Aws::Auth::AWSCredentialsProvider& crednetialsProvider);
+
             private:
-                //typedef Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> FactoryMap;
-                static Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> m_cryptoFactories;
+                Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> m_cryptoFactories;
             };
 
             /*
             * This class is repsonsible for creating or returning an existing encryption only crypto module.
-            * This module will be created with the encryption materials, crypto configuration, and AWS credntials
+            * This module will be created with the encryption materials, crypto configuration, and AWS credentials
             * provider.
             */
             class AWS_S3ENCRYPTION_API CryptoModuleFactoryEO : public CryptoModuleFactory
@@ -62,6 +84,8 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule() override;
+
+                CryptoMode HandlesMode() const;
 
             private:
                 std::shared_ptr<CryptoModuleEO> m_cryptoModuleEO;
@@ -86,6 +110,8 @@ namespace Aws
                 */
                 std::shared_ptr<CryptoModule> CreateModule() override;
 
+                CryptoMode HandlesMode() const;
+
             private:
                 std::shared_ptr<CryptoModuleAE> m_cryptoModuleAE;
             };
@@ -108,6 +134,8 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule() override;
+
+                CryptoMode HandlesMode() const;
 
             private:
                 std::shared_ptr<CryptoModuleStrictAE> m_cryptoModuleStrictAE;

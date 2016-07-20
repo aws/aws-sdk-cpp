@@ -35,7 +35,8 @@ namespace
         KMSEncryptionMaterials kmsMaterials("exmapleCMKID");
         CryptoConfiguration cryptoConfig;
         ProfileConfigFileAWSCredentialsProvider credentials;
-        std::shared_ptr<CryptoModuleFactory> factory = CryptoModuleFactory::FetchFactory(cryptoConfig.GetCryptMode());
-        auto module = factory->CreateModule(); //here is where I will pass in encryption materials, crypto config, and AWS Credentials.     
+        CryptoModuleBuilder builder;
+        auto module = builder.FetchCryptoModule(cryptoConfig, kmsMaterials, credentials);
+
     }
 }
