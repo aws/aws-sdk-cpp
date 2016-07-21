@@ -109,9 +109,8 @@ bool PooledThreadExecutor::HasTasks()
 }
 
 BlockingExecutor::BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize) :
-m_executor(executor), m_poolSize(poolSize)
+m_executor(executor), m_poolSize(poolSize), m_numTasksRunning(0)
 {
-    m_numTasksRunning = 0;
 }
 
 BlockingExecutor::~BlockingExecutor()
@@ -129,8 +128,8 @@ bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
     {
         m_syncPoint.wait(locker);
     }
-    locker.release();
-    m_executor->Submit(&BlockingExecutor::ExecuteTask, fn);
+    locker.unlock();
+    m_executor->Submit(&BlockingExecutor::ExecuteTask, std::move(fn));
     return true;
 }
 
@@ -144,6 +143,6 @@ void BlockingExecutor::OnTaskComplete()
 {
     std::unique_lock<std::mutex> locker(m_syncPointLock);
     m_numTasksRunning--;
-    locker.release();
+    locker.unlock();
     m_syncPoint.notify_one();
 }

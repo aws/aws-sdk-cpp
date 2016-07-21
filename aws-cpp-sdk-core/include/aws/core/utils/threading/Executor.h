@@ -135,21 +135,20 @@ namespace Aws
                 BlockingExecutor(BlockingExecutor&&) = delete;
                 BlockingExecutor& operator =(BlockingExecutor&&) = delete;
                 
-            protected:
+            private:
                 bool SubmitToThread(std::function<void()>&&) override;
                 /** Runs fn and then informs the executor of task completion. */
                 void ExecuteTask(std::function<void()>&& fn);
                 /** Handler for when a task finishes */
                 void OnTaskComplete();
                 
-            private:
                 std::mutex m_syncPointLock;
                 std::condition_variable m_syncPoint;
                 
                 std::shared_ptr<Executor> m_executor;
                 size_t m_poolSize;
                 
-                size_t m_numTasksRunning;
+                std::atomic<size_t> m_numTasksRunning;
             };
 
 
