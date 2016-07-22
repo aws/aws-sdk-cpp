@@ -29,6 +29,7 @@
 #include <aws/config/model/DeleteConfigRuleRequest.h>
 #include <aws/config/model/DeleteConfigurationRecorderRequest.h>
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
+#include <aws/config/model/DeleteEvaluationResultsRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleRequest.h>
 #include <aws/config/model/DescribeComplianceByResourceRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
+#include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/StartConfigurationRecorderRequest.h>
 #include <aws/config/model/StopConfigurationRecorderRequest.h>
 
@@ -208,6 +210,37 @@ void ConfigServiceClient::DeleteDeliveryChannelAsync(const DeleteDeliveryChannel
 void ConfigServiceClient::DeleteDeliveryChannelAsyncHelper(const DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDeliveryChannel(request), context);
+}
+
+DeleteEvaluationResultsOutcome ConfigServiceClient::DeleteEvaluationResults(const DeleteEvaluationResultsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteEvaluationResultsOutcome(DeleteEvaluationResultsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteEvaluationResultsOutcome(outcome.GetError());
+  }
+}
+
+DeleteEvaluationResultsOutcomeCallable ConfigServiceClient::DeleteEvaluationResultsCallable(const DeleteEvaluationResultsRequest& request) const
+{
+  return std::async(std::launch::async, &ConfigServiceClient::DeleteEvaluationResults, this, request);
+}
+
+void ConfigServiceClient::DeleteEvaluationResultsAsync(const DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ConfigServiceClient::DeleteEvaluationResultsAsyncHelper, this, request, handler, context);
+}
+
+void ConfigServiceClient::DeleteEvaluationResultsAsyncHelper(const DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteEvaluationResults(request), context);
 }
 
 DeliverConfigSnapshotOutcome ConfigServiceClient::DeliverConfigSnapshot(const DeliverConfigSnapshotRequest& request) const
@@ -797,6 +830,37 @@ void ConfigServiceClient::PutEvaluationsAsync(const PutEvaluationsRequest& reque
 void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEvaluations(request), context);
+}
+
+StartConfigRulesEvaluationOutcome ConfigServiceClient::StartConfigRulesEvaluation(const StartConfigRulesEvaluationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartConfigRulesEvaluationOutcome(StartConfigRulesEvaluationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartConfigRulesEvaluationOutcome(outcome.GetError());
+  }
+}
+
+StartConfigRulesEvaluationOutcomeCallable ConfigServiceClient::StartConfigRulesEvaluationCallable(const StartConfigRulesEvaluationRequest& request) const
+{
+  return std::async(std::launch::async, &ConfigServiceClient::StartConfigRulesEvaluation, this, request);
+}
+
+void ConfigServiceClient::StartConfigRulesEvaluationAsync(const StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&ConfigServiceClient::StartConfigRulesEvaluationAsyncHelper, this, request, handler, context);
+}
+
+void ConfigServiceClient::StartConfigRulesEvaluationAsyncHelper(const StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartConfigRulesEvaluation(request), context);
 }
 
 StartConfigurationRecorderOutcome ConfigServiceClient::StartConfigurationRecorder(const StartConfigurationRecorderRequest& request) const

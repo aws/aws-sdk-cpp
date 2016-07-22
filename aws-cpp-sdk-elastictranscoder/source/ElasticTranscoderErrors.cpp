@@ -27,9 +27,9 @@ namespace ElasticTranscoder
 namespace ElasticTranscoderErrorMapper
 {
 
-static const int INCOMPATIBLE_VERSION_HASH = HashingUtils::HashString("IncompatibleVersionException");
-static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INCOMPATIBLE_VERSION_HASH = HashingUtils::HashString("IncompatibleVersionException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 
 
@@ -37,17 +37,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INCOMPATIBLE_VERSION_HASH)
+  if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INCOMPATIBLE_VERSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::RESOURCE_IN_USE), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
+  else if (hashCode == INCOMPATIBLE_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INCOMPATIBLE_VERSION), false);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {

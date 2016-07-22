@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleResult.h>
 #include <aws/config/model/DescribeComplianceByResourceResult.h>
@@ -36,6 +37,7 @@
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
+#include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -85,6 +87,7 @@ namespace Model
         class DeleteConfigRuleRequest;
         class DeleteConfigurationRecorderRequest;
         class DeleteDeliveryChannelRequest;
+        class DeleteEvaluationResultsRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeComplianceByConfigRuleRequest;
         class DescribeComplianceByResourceRequest;
@@ -103,12 +106,14 @@ namespace Model
         class PutConfigurationRecorderRequest;
         class PutDeliveryChannelRequest;
         class PutEvaluationsRequest;
+        class StartConfigRulesEvaluationRequest;
         class StartConfigurationRecorderRequest;
         class StopConfigurationRecorderRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteDeliveryChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteEvaluationResultsOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByResourceOutcome;
@@ -128,12 +133,14 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutDeliveryChannelOutcome;
         typedef Aws::Utils::Outcome<PutEvaluationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutEvaluationsOutcome;
+        typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
 
         typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
         typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
         typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
+        typedef std::future<DeleteEvaluationResultsOutcome> DeleteEvaluationResultsOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeComplianceByConfigRuleOutcome> DescribeComplianceByConfigRuleOutcomeCallable;
         typedef std::future<DescribeComplianceByResourceOutcome> DescribeComplianceByResourceOutcomeCallable;
@@ -153,6 +160,7 @@ namespace Model
         typedef std::future<PutConfigurationRecorderOutcome> PutConfigurationRecorderOutcomeCallable;
         typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
+        typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
         typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
         typedef std::future<StopConfigurationRecorderOutcome> StopConfigurationRecorderOutcomeCallable;
 } // namespace Model
@@ -162,6 +170,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationRecorderRequest&, const Model::DeleteConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&, const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryChannelResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteEvaluationResultsRequest&, const Model::DeleteEvaluationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationResultsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByConfigRuleRequest&, const Model::DescribeComplianceByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByResourceRequest&, const Model::DescribeComplianceByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByResourceResponseReceivedHandler;
@@ -181,6 +190,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigurationRecorderRequest&, const Model::PutConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StopConfigurationRecorderRequest&, const Model::StopConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopConfigurationRecorderResponseReceivedHandler;
 
@@ -337,6 +347,34 @@ namespace Model
         virtual void DeleteDeliveryChannelAsync(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the evaluation results for the specified Config rule. You can specify
+         * one Config rule per request. After you delete the evaluation results, you can
+         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
+         * resources against the rule.</p>
+         */
+        virtual Model::DeleteEvaluationResultsOutcome DeleteEvaluationResults(const Model::DeleteEvaluationResultsRequest& request) const;
+
+        /**
+         * <p>Deletes the evaluation results for the specified Config rule. You can specify
+         * one Config rule per request. After you delete the evaluation results, you can
+         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
+         * resources against the rule.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteEvaluationResultsOutcomeCallable DeleteEvaluationResultsCallable(const Model::DeleteEvaluationResultsRequest& request) const;
+
+        /**
+         * <p>Deletes the evaluation results for the specified Config rule. You can specify
+         * one Config rule per request. After you delete the evaluation results, you can
+         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
+         * resources against the rule.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteEvaluationResultsAsync(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
          * specified delivery channel. After the delivery has started, AWS Config sends
          * following notifications using an Amazon SNS topic that you have specified.</p>
@@ -387,8 +425,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -410,8 +448,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -435,8 +473,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -461,8 +499,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -485,8 +523,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -511,8 +549,8 @@ namespace Model
          * <code>LastFailedInvocationTime</code>.</li> <li>The rule's AWS Lambda function
          * is failing to send evaluation results to AWS Config. Verify that the role that
          * you assigned to your configuration recorder includes the
-         * <code>config:PutEvaluations</code> permission. If the rule is a customer managed
-         * rule, verify that the AWS Lambda execution role includes the
+         * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
+         * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</li> <li>The rule's AWS Lambda
          * function has returned <code>NOT_APPLICABLE</code> for all evaluation results.
          * This can occur if the resources were deleted or removed from the rule's
@@ -881,18 +919,18 @@ namespace Model
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations. </p> <p>You can use this action for
-         * customer managed Config rules and AWS managed Config rules. A customer managed
-         * Config rule is a custom rule that you develop and maintain. An AWS managed
-         * Config rule is a customizable, predefined rule that is provided by AWS
-         * Config.</p> <p>If you are adding a new customer managed Config rule, you must
-         * first create the AWS Lambda function that the rule invokes to evaluate your
-         * resources. When you use the <code>PutConfigRule</code> action to add the rule to
-         * AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
-         * assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
-         * key. This key is part of the <code>Source</code> object, which is part of the
-         * <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed
-         * Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-         * key. To reference AWS managed Config rule identifiers, see <a
+         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
+         * that you develop and maintain. An AWS managed Config rule is a customizable,
+         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
+         * Config rule, you must first create the AWS Lambda function that the rule invokes
+         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
+         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+         * that AWS Lambda assigns to the function. Specify the ARN for the
+         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
+         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
+         * adding a new AWS managed Config rule, specify the rule's identifier for the
+         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
+         * identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -913,18 +951,18 @@ namespace Model
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations. </p> <p>You can use this action for
-         * customer managed Config rules and AWS managed Config rules. A customer managed
-         * Config rule is a custom rule that you develop and maintain. An AWS managed
-         * Config rule is a customizable, predefined rule that is provided by AWS
-         * Config.</p> <p>If you are adding a new customer managed Config rule, you must
-         * first create the AWS Lambda function that the rule invokes to evaluate your
-         * resources. When you use the <code>PutConfigRule</code> action to add the rule to
-         * AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
-         * assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
-         * key. This key is part of the <code>Source</code> object, which is part of the
-         * <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed
-         * Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-         * key. To reference AWS managed Config rule identifiers, see <a
+         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
+         * that you develop and maintain. An AWS managed Config rule is a customizable,
+         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
+         * Config rule, you must first create the AWS Lambda function that the rule invokes
+         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
+         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+         * that AWS Lambda assigns to the function. Specify the ARN for the
+         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
+         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
+         * adding a new AWS managed Config rule, specify the rule's identifier for the
+         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
+         * identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -947,18 +985,18 @@ namespace Model
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations. </p> <p>You can use this action for
-         * customer managed Config rules and AWS managed Config rules. A customer managed
-         * Config rule is a custom rule that you develop and maintain. An AWS managed
-         * Config rule is a customizable, predefined rule that is provided by AWS
-         * Config.</p> <p>If you are adding a new customer managed Config rule, you must
-         * first create the AWS Lambda function that the rule invokes to evaluate your
-         * resources. When you use the <code>PutConfigRule</code> action to add the rule to
-         * AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda
-         * assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
-         * key. This key is part of the <code>Source</code> object, which is part of the
-         * <code>ConfigRule</code> object. </p> <p>If you are adding a new AWS managed
-         * Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
-         * key. To reference AWS managed Config rule identifiers, see <a
+         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
+         * that you develop and maintain. An AWS managed Config rule is a customizable,
+         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
+         * Config rule, you must first create the AWS Lambda function that the rule invokes
+         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
+         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+         * that AWS Lambda assigns to the function. Specify the ARN for the
+         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
+         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
+         * adding a new AWS managed Config rule, specify the rule's identifier for the
+         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
+         * identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -1087,6 +1125,40 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Evaluates your resources against the specified Config rules. You can specify
+         * up to 25 Config rules per request.</p> <p>An existing
+         * <a>StartConfigRulesEvaluation</a> call must complete for the rules that you
+         * specified before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a notification when the
+         * evaluation starts.</p>
+         */
+        virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
+
+        /**
+         * <p>Evaluates your resources against the specified Config rules. You can specify
+         * up to 25 Config rules per request.</p> <p>An existing
+         * <a>StartConfigRulesEvaluation</a> call must complete for the rules that you
+         * specified before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a notification when the
+         * evaluation starts.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const Model::StartConfigRulesEvaluationRequest& request) const;
+
+        /**
+         * <p>Evaluates your resources against the specified Config rules. You can specify
+         * up to 25 Config rules per request.</p> <p>An existing
+         * <a>StartConfigRulesEvaluation</a> call must complete for the rules that you
+         * specified before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a notification when the
+         * evaluation starts.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartConfigRulesEvaluationAsync(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts recording configurations of the AWS resources you have selected to
          * record in your AWS account.</p> <p>You must have created at least one delivery
          * channel to successfully start the configuration recorder.</p>
@@ -1141,6 +1213,7 @@ namespace Model
         void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationRecorderAsyncHelper(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeliveryChannelAsyncHelper(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteEvaluationResultsAsyncHelper(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByConfigRuleAsyncHelper(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByResourceAsyncHelper(const Model::DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1160,6 +1233,7 @@ namespace Model
         void PutConfigurationRecorderAsyncHelper(const Model::PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliveryChannelAsyncHelper(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigurationRecorderAsyncHelper(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopConfigurationRecorderAsyncHelper(const Model::StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

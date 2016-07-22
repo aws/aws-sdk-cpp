@@ -331,7 +331,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline const Aws::String& GetLicenseAcquisitionUrl() const{ return m_licenseAcquisitionUrl; }
 
@@ -341,7 +341,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline void SetLicenseAcquisitionUrl(const Aws::String& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = value; }
 
@@ -351,7 +351,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline void SetLicenseAcquisitionUrl(Aws::String&& value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl = value; }
 
@@ -361,7 +361,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline void SetLicenseAcquisitionUrl(const char* value) { m_licenseAcquisitionUrlHasBeenSet = true; m_licenseAcquisitionUrl.assign(value); }
 
@@ -371,7 +371,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline PlayReadyDrm& WithLicenseAcquisitionUrl(const Aws::String& value) { SetLicenseAcquisitionUrl(value); return *this;}
 
@@ -381,7 +381,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline PlayReadyDrm& WithLicenseAcquisitionUrl(Aws::String&& value) { SetLicenseAcquisitionUrl(value); return *this;}
 
@@ -391,7 +391,7 @@ namespace Model
      * header is referenced in the protection header of the client manifest for Smooth
      * Streaming outputs, and in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for
      * HLS playlist outputs. An example URL looks like this:
-     * <programlisting>https://www.example.com/exampleKey/</programlisting></p>
+     * <code>https://www.example.com/exampleKey/</code></p>
      */
     inline PlayReadyDrm& WithLicenseAcquisitionUrl(const char* value) { SetLicenseAcquisitionUrl(value); return *this;}
 

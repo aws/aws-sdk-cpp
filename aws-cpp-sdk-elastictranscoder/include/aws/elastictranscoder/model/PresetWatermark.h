@@ -262,184 +262,184 @@ namespace Model
     inline PresetWatermark& WithMaxHeight(const char* value) { SetMaxHeight(value); return *this;}
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline const Aws::String& GetSizingPolicy() const{ return m_sizingPolicy; }
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline void SetSizingPolicy(const Aws::String& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline void SetSizingPolicy(Aws::String&& value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy = value; }
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline void SetSizingPolicy(const char* value) { m_sizingPolicyHasBeenSet = true; m_sizingPolicy.assign(value); }
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline PresetWatermark& WithSizingPolicy(const Aws::String& value) { SetSizingPolicy(value); return *this;}
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline PresetWatermark& WithSizingPolicy(Aws::String&& value) { SetSizingPolicy(value); return *this;}
 
     /**
-     * <p>A value that controls scaling of the watermark: <ul> <li> <b>Fit</b>: Elastic
+     * <p>A value that controls scaling of the watermark: <ul> <li><b>Fit</b>: Elastic
      * Transcoder scales the watermark so it matches the value that you specified in
      * either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the
-     * other value.</li> <li> <b>Stretch</b>: Elastic Transcoder stretches the
-     * watermark to match the values that you specified for <code>MaxWidth</code> and
+     * other value.</li> <li><b>Stretch</b>: Elastic Transcoder stretches the watermark
+     * to match the values that you specified for <code>MaxWidth</code> and
      * <code>MaxHeight</code>. If the relative proportions of the watermark and the
      * values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the
-     * watermark will be distorted.</li> <li> <b>ShrinkToFit</b>: Elastic Transcoder
+     * watermark will be distorted.</li> <li><b>ShrinkToFit</b>: Elastic Transcoder
      * scales the watermark down so that its dimensions match the values that you
      * specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code>
      * without exceeding either value. If you specify this option, Elastic Transcoder
-     * does not scale the watermark up.</li> </ul> </p>
+     * does not scale the watermark up.</li></ul> </p>
      */
     inline PresetWatermark& WithSizingPolicy(const char* value) { SetSizingPolicy(value); return *this;}
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline const Aws::String& GetHorizontalAlign() const{ return m_horizontalAlign; }
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline void SetHorizontalAlign(const Aws::String& value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign = value; }
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline void SetHorizontalAlign(Aws::String&& value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign = value; }
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline void SetHorizontalAlign(const char* value) { m_horizontalAlignHasBeenSet = true; m_horizontalAlign.assign(value); }
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline PresetWatermark& WithHorizontalAlign(const Aws::String& value) { SetHorizontalAlign(value); return *this;}
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline PresetWatermark& WithHorizontalAlign(Aws::String&& value) { SetHorizontalAlign(value); return *this;}
 
     /**
      * <p>The horizontal position of the watermark unless you specify a non-zero value
-     * for <code>HorizontalOffset</code>: <ul> <li> <b>Left</b>: The left edge of the
-     * watermark is aligned with the left border of the video.</li> <li> <b>Right</b>:
+     * for <code>HorizontalOffset</code>: <ul> <li><b>Left</b>: The left edge of the
+     * watermark is aligned with the left border of the video.</li> <li><b>Right</b>:
      * The right edge of the watermark is aligned with the right border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the left and
-     * right borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the left and
+     * right borders.</li></ul></p>
      */
     inline PresetWatermark& WithHorizontalAlign(const char* value) { SetHorizontalAlign(value); return *this;}
 
@@ -585,71 +585,71 @@ namespace Model
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline const Aws::String& GetVerticalAlign() const{ return m_verticalAlign; }
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline void SetVerticalAlign(const Aws::String& value) { m_verticalAlignHasBeenSet = true; m_verticalAlign = value; }
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline void SetVerticalAlign(Aws::String&& value) { m_verticalAlignHasBeenSet = true; m_verticalAlign = value; }
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline void SetVerticalAlign(const char* value) { m_verticalAlignHasBeenSet = true; m_verticalAlign.assign(value); }
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline PresetWatermark& WithVerticalAlign(const Aws::String& value) { SetVerticalAlign(value); return *this;}
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline PresetWatermark& WithVerticalAlign(Aws::String&& value) { SetVerticalAlign(value); return *this;}
 
     /**
      * <p>The vertical position of the watermark unless you specify a non-zero value
-     * for <code>VerticalOffset</code>: <ul> <li> <b>Top</b>: The top edge of the
-     * watermark is aligned with the top border of the video.</li> <li> <b>Bottom</b>:
+     * for <code>VerticalOffset</code>: <ul> <li><b>Top</b>: The top edge of the
+     * watermark is aligned with the top border of the video.</li> <li><b>Bottom</b>:
      * The bottom edge of the watermark is aligned with the bottom border of the
-     * video.</li> <li> <b>Center</b>: The watermark is centered between the top and
-     * bottom borders.</li> </ul></p>
+     * video.</li> <li><b>Center</b>: The watermark is centered between the top and
+     * bottom borders.</li></ul></p>
      */
     inline PresetWatermark& WithVerticalAlign(const char* value) { SetVerticalAlign(value); return *this;}
 
@@ -880,13 +880,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -898,13 +898,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -916,13 +916,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -934,13 +934,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -952,13 +952,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -970,13 +970,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a
@@ -988,13 +988,13 @@ namespace Model
     /**
      * <p>A value that determines how Elastic Transcoder interprets values that you
      * specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>,
-     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul> <li> <b>Content</b>:
+     * <code>MaxWidth</code>, and <code>MaxHeight</code>: <ul><li><b>Content</b>:
      * <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are
      * calculated based on the borders of the video excluding black bars added by
      * Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and
      * <code>MaxHeight</code>, if specified as a percentage, are calculated based on
      * the borders of the video excluding black bars added by Elastic Transcoder, if
-     * any.</li> <li> <b>Frame</b>: <code>HorizontalOffset</code> and
+     * any.</li> <li><b>Frame</b>: <code>HorizontalOffset</code> and
      * <code>VerticalOffset</code> values are calculated based on the borders of the
      * video including black bars added by Elastic Transcoder, if any.</li> In
      * addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a

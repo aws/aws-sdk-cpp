@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Lambda;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.13.20150331.7;
+        version : 0.13.20150331.8;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Lambda);

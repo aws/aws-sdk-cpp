@@ -79,9 +79,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
@@ -89,9 +88,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -99,9 +97,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
@@ -109,9 +106,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
@@ -119,9 +115,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline Source& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
@@ -129,9 +124,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline Source& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(value); return *this;}
 
@@ -139,9 +133,8 @@ namespace Model
      * <p>For AWS managed Config rules, a pre-defined identifier from a list. To
      * reference the list, see <a
      * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
-     * AWS Managed Config Rules</a>.</p> <p>For customer managed Config rules, the
-     * identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda
-     * function.</p>
+     * AWS Managed Config Rules</a>.</p> <p>For custom Config rules, the identifier is
+     * the Amazon Resource Name (ARN) of the rule's AWS Lambda function.</p>
      */
     inline Source& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
