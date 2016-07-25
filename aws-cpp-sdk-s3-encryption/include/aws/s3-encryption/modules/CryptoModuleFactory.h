@@ -31,14 +31,14 @@ namespace Aws
             /*
             * This class is an abstract class for the crypto module factories. 
             */
-            class AWS_S3ENCRYPTION_API CryptoModuleFactory
+            class AWS_S3ENCRYPTION_API CryptoModuleAbstractFactory
             {
             public:
                 /*
                 * Override this method to create a specific crypto module.
                 */
                 virtual std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) = 0;
+                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) = 0;
 
                 /*
                 * Returns the crypto mode each sub class handles.
@@ -51,22 +51,22 @@ namespace Aws
             * module factories. It will take parameters, crypto configuration, encryption materials, and credentials provider in
             * or to create an appropriate crypto module.
             */
-            class AWS_S3ENCRYPTION_API CryptoModuleBuilder
+            class AWS_S3ENCRYPTION_API CryptoModuleFactory
             {
             public:
                 /*
                 * Default Constructor. Populates map with Crypto Modules Factories and their CryptoModes.
                 */
-                CryptoModuleBuilder();
+                CryptoModuleFactory();
 
                 /*
                 * Determines which module to use and returns a specific factory for that module.
                 */
                 std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig = Client::ClientConfiguration());
+                    const std::shared_ptr<Aws::S3::S3Client>& s3Client);
 
             private:
-                Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> m_cryptoFactories;
+                Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleAbstractFactory>> m_cryptoFactories;
             };
 
             /*
@@ -74,7 +74,7 @@ namespace Aws
             * This module will be created with the encryption materials, crypto configuration, and AWS credentials
             * provider.
             */
-            class AWS_S3ENCRYPTION_API CryptoModuleFactoryEO : public CryptoModuleFactory
+            class AWS_S3ENCRYPTION_API CryptoModuleFactoryEO : public CryptoModuleAbstractFactory
             {
             public:
                 /*
@@ -87,7 +87,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
+                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -100,7 +100,7 @@ namespace Aws
             * This module will be created with the encryption materials, crypto configuration, and AWS credntials
             * provider.
             */
-            class AWS_S3ENCRYPTION_API CryptoModuleFactoryAE : public CryptoModuleFactory
+            class AWS_S3ENCRYPTION_API CryptoModuleFactoryAE : public CryptoModuleAbstractFactory
             {
             public:
                 /*
@@ -113,7 +113,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
+                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -126,7 +126,7 @@ namespace Aws
             * This module will be created with the encryption materials, crypto configuration, and AWS credntials
             * provider.
             */
-            class AWS_S3ENCRYPTION_API CryptoModuleFactoryStrictAE : public CryptoModuleFactory
+            class AWS_S3ENCRYPTION_API CryptoModuleFactoryStrictAE : public CryptoModuleAbstractFactory
             {
             public:
                 /*
@@ -139,7 +139,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
+                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 
