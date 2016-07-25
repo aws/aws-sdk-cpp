@@ -23,7 +23,6 @@ namespace Modules
 {
 static const char* const Allocation_Tag = "CryptoModuleFactory";
 
-
 CryptoModuleBuilder::CryptoModuleBuilder()
 {
     m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoModuleFactoryEO().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryEO>(Allocation_Tag, CryptoModuleFactoryEO())));
@@ -31,7 +30,8 @@ CryptoModuleBuilder::CryptoModuleBuilder()
     m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleFactory>>(CryptoModuleFactoryStrictAE().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryStrictAE>(Allocation_Tag, CryptoModuleFactoryStrictAE())));
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleBuilder::FetchCryptoModule(const CryptoConfiguration& cryptoConfig, const Aws::S3Encryption::Materials::EncryptionMaterials& , const Aws::Auth::AWSCredentialsProvider& )
+std::shared_ptr<CryptoModule> CryptoModuleBuilder::FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig)
 {
     auto entry = m_cryptoFactories.find(cryptoConfig.GetCryptoMode());
     if (entry == m_cryptoFactories.end())
@@ -42,26 +42,32 @@ std::shared_ptr<CryptoModule> CryptoModuleBuilder::FetchCryptoModule(const Crypt
     else
     {
         std::shared_ptr<CryptoModuleFactory> factory = entry->second;
-        return factory->CreateModule(); //pass in all parameters here once modules are implemented
+        return factory->CreateModule(encryptionMaterials, cryptoConfig, credentialsProvider, clientConfig);
     }
 }
+
 
 CryptoModuleFactoryEO::CryptoModuleFactoryEO() :
     m_cryptoModuleEO(nullptr)
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule()
+std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig)
 {
     if (m_cryptoModuleEO == nullptr)
     {
-        m_cryptoModuleEO = Aws::MakeShared<CryptoModuleEO>(Allocation_Tag, CryptoModuleEO());
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleEO = Aws::MakeShared<CryptoModuleEO>(Allocation_Tag);
+        m_cryptoModuleEO->SetEncryptionMaterials(encryptionMaterials);
+        m_cryptoModuleEO->SetCryptoConfiguration(cryptoConfig);
+        m_cryptoModuleEO->SetS3ClientParameters(credentialsProvider, clientConfig);
         return m_cryptoModuleEO;
     }
     else
     {
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleEO->SetEncryptionMaterials(encryptionMaterials);
+        m_cryptoModuleEO->SetCryptoConfiguration(cryptoConfig);
+        m_cryptoModuleEO->SetS3ClientParameters(credentialsProvider, clientConfig);
         return m_cryptoModuleEO;
     }
 }
@@ -76,17 +82,19 @@ CryptoModuleFactoryAE::CryptoModuleFactoryAE() :
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule()
+std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig)
 {
     if (m_cryptoModuleAE == nullptr)
     {
-        m_cryptoModuleAE = Aws::MakeShared<CryptoModuleAE>(Allocation_Tag, CryptoModuleAE());
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleAE = Aws::MakeShared<CryptoModuleAE>(Allocation_Tag, encryptionMaterials, cryptoConfig, credentialsProvider, clientConfig);
         return m_cryptoModuleAE;
     }
     else
     {
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleAE->SetEncryptionMaterials(encryptionMaterials);
+        m_cryptoModuleAE->SetCryptoConfiguration(cryptoConfig);
+        m_cryptoModuleAE->SetS3ClientParameters(credentialsProvider, clientConfig);
         return m_cryptoModuleAE;
     }
 }
@@ -101,17 +109,19 @@ CryptoModuleFactoryStrictAE::CryptoModuleFactoryStrictAE() :
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule()
+std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig)
 {
     if (m_cryptoModuleStrictAE == nullptr)
     {
-        m_cryptoModuleStrictAE = Aws::MakeShared<CryptoModuleStrictAE>(Allocation_Tag, CryptoModuleStrictAE());
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleStrictAE = Aws::MakeShared<CryptoModuleStrictAE>(Allocation_Tag, encryptionMaterials, cryptoConfig, credentialsProvider, clientConfig);
         return m_cryptoModuleStrictAE;
     }
     else
     {
-        //This is where I will set the encryption materials, crypto config, and aws credntials provider for the module
+        m_cryptoModuleStrictAE->SetEncryptionMaterials(encryptionMaterials);
+        m_cryptoModuleStrictAE->SetCryptoConfiguration(cryptoConfig);
+        m_cryptoModuleStrictAE->SetS3ClientParameters(credentialsProvider, clientConfig);
         return m_cryptoModuleStrictAE;
     }
 }
@@ -121,6 +131,6 @@ CryptoMode CryptoModuleFactoryStrictAE::HandlesMode() const
     return CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION;
 }
 
-}
-}
-}
+} //namespace Modules
+} //namespace S3Encryption
+} //namespace Aws

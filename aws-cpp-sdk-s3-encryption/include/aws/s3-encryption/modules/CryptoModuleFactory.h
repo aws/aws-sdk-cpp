@@ -14,12 +14,13 @@
 */
 #pragma once
 
+#include <aws/core/Aws.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 #include <aws/s3-encryption/CryptoConfiguration.h>
 #include <aws/s3-encryption/materials/EncryptionMaterials.h>
 #include <aws/s3-encryption/modules/CryptoModule.h>
-#include <aws/core/Aws.h>
-#include <aws/core/auth/AWSCredentialsProvider.h>
+
 
 namespace Aws
 {
@@ -36,7 +37,8 @@ namespace Aws
                 /*
                 * Override this method to create a specific crypto module.
                 */
-                virtual std::shared_ptr<CryptoModule> CreateModule() = 0;
+                virtual std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) = 0;
 
                 /*
                 * Returns the crypto mode each sub class handles.
@@ -60,7 +62,8 @@ namespace Aws
                 /*
                 * Determines which module to use and returns a specific factory for that module.
                 */
-                std::shared_ptr<CryptoModule> FetchCryptoModule(const CryptoConfiguration& cryptoConfig, const Aws::S3Encryption::Materials::EncryptionMaterials& encryptionMaterials, const Aws::Auth::AWSCredentialsProvider& crednetialsProvider);
+                std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig = Client::ClientConfiguration());
 
             private:
                 Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleFactory>> m_cryptoFactories;
@@ -83,7 +86,8 @@ namespace Aws
                 * Creates a encryption only crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule() override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -108,7 +112,8 @@ namespace Aws
                 * Creates a authenticated encryption crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule() override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -133,7 +138,8 @@ namespace Aws
                 * Creates a strict authenticated encryption crypto module or returns an existing one using
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
-                std::shared_ptr<CryptoModule> CreateModule() override;
+                std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
+                    const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfig) override;
 
                 CryptoMode HandlesMode() const;
 
