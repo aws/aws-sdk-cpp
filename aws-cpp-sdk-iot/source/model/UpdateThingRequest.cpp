@@ -23,7 +23,12 @@ using namespace Aws::Utils;
 
 UpdateThingRequest::UpdateThingRequest() : 
     m_thingNameHasBeenSet(false),
-    m_attributePayloadHasBeenSet(false)
+    m_thingTypeNameHasBeenSet(false),
+    m_attributePayloadHasBeenSet(false),
+    m_expectedVersion(0),
+    m_expectedVersionHasBeenSet(false),
+    m_removeThingType(false),
+    m_removeThingTypeHasBeenSet(false)
 {
 }
 
@@ -31,9 +36,27 @@ Aws::String UpdateThingRequest::SerializePayload() const
 {
   JsonValue payload;
 
+  if(m_thingTypeNameHasBeenSet)
+  {
+   payload.WithString("thingTypeName", m_thingTypeName);
+
+  }
+
   if(m_attributePayloadHasBeenSet)
   {
    payload.WithObject("attributePayload", m_attributePayload.Jsonize());
+
+  }
+
+  if(m_expectedVersionHasBeenSet)
+  {
+   payload.WithInt64("expectedVersion", m_expectedVersion);
+
+  }
+
+  if(m_removeThingTypeHasBeenSet)
+  {
+   payload.WithBool("removeThingType", m_removeThingType);
 
   }
 

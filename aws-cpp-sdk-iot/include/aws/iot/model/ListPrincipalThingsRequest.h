@@ -42,52 +42,59 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The maximum number of principals to return.</p>
+     * <p>The maximum number of results to return in this operation.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of principals to return.</p>
+     * <p>The maximum number of results to return in this operation.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of principals to return.</p>
+     * <p>The maximum number of results to return in this operation.</p>
      */
     inline ListPrincipalThingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

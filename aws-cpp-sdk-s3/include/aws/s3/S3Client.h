@@ -809,19 +809,19 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

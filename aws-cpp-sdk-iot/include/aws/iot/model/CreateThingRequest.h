@@ -35,73 +35,115 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline CreateThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline CreateThingRequest& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the thing to create.</p>
      */
     inline CreateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
-     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline CreateThingRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline CreateThingRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The name of the thing type associated with the new thing.</p>
+     */
+    inline CreateThingRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p>
+     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
 
     /**
-     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
-     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p>
+     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
      */
     inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
-     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p>
+     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
      */
     inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
 
     /**
-     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
-     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p>
+     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
      */
     inline CreateThingRequest& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
 
     /**
-     * <p>The attribute payload, which consists of up to 3 name/value pairs in a JSON
-     * document (for example, {\"attributes\":{\"string1\":\"string2\"}}).</p>
+     * <p>The attribute payload, which consists of up to three name/value pairs in a
+     * JSON document. For example:</p>
+     * <p><code>{\"attributes\":{\"string1\":\"string2\"}})</code></p>
      */
     inline CreateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(value); return *this;}
 
   private:
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+    Aws::String m_thingTypeName;
+    bool m_thingTypeNameHasBeenSet;
     AttributePayload m_attributePayload;
     bool m_attributePayloadHasBeenSet;
   };

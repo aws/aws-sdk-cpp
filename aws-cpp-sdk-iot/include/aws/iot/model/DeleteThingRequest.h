@@ -19,6 +19,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace IoT
 {
 namespace Model
@@ -33,44 +37,72 @@ namespace Model
     DeleteThingRequest();
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline DeleteThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline DeleteThingRequest& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The thing name.</p>
+     * <p>The name of the thing to delete.</p>
      */
     inline DeleteThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
+
+    /**
+     * <p>The expected version of the thing record in the registry. If the version of
+     * the record in the registry does not match the expected version specified in the
+     * request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.</p>
+     */
+    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the thing record in the registry. If the version of
+     * the record in the registry does not match the expected version specified in the
+     * request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.</p>
+     */
+    inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
+
+    /**
+     * <p>The expected version of the thing record in the registry. If the version of
+     * the record in the registry does not match the expected version specified in the
+     * request, the <code>DeleteThing</code> request is rejected with a
+     * <code>VersionConflictException</code>.</p>
+     */
+    inline DeleteThingRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
 
   private:
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet;
+    long long m_expectedVersion;
+    bool m_expectedVersionHasBeenSet;
   };
 
 } // namespace Model

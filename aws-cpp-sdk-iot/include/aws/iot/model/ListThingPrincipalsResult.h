@@ -44,42 +44,42 @@ namespace Model
     ListThingPrincipalsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principals = value; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principals = value; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline ListThingPrincipalsResult& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline ListThingPrincipalsResult& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline ListThingPrincipalsResult& AddPrincipals(const Aws::String& value) { m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline ListThingPrincipalsResult& AddPrincipals(Aws::String&& value) { m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals associated with the thing.</p>
      */
     inline ListThingPrincipalsResult& AddPrincipals(const char* value) { m_principals.push_back(value); return *this; }
 
