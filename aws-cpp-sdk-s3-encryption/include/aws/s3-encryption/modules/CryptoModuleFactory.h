@@ -90,9 +90,6 @@ namespace Aws
                     const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
-
-            private:
-                std::shared_ptr<CryptoModuleEO> m_cryptoModuleEO;
             };
 
             /*
@@ -116,9 +113,6 @@ namespace Aws
                     const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
-
-            private:
-                std::shared_ptr<CryptoModuleAE> m_cryptoModuleAE;
             };
 
             /*
@@ -142,9 +136,6 @@ namespace Aws
                     const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
-
-            private:
-                std::shared_ptr<CryptoModuleStrictAE> m_cryptoModuleStrictAE;
             };
         }
     }
