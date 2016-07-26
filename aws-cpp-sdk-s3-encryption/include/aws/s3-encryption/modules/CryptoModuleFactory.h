@@ -38,7 +38,7 @@ namespace Aws
                 * Override this method to create a specific crypto module.
                 */
                 virtual std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) = 0;
+                    const Aws::S3::S3Client& s3Client) = 0;
 
                 /*
                 * Returns the crypto mode each sub class handles.
@@ -63,7 +63,7 @@ namespace Aws
                 * Determines which module to use and returns a specific factory for that module.
                 */
                 std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::S3::S3Client>& s3Client);
+                    const Aws::S3::S3Client& s3Client);
 
             private:
                 Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleAbstractFactory>> m_cryptoFactories;
@@ -87,7 +87,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
+                    const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -113,7 +113,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
+                    const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 
@@ -139,7 +139,7 @@ namespace Aws
                 * the encryption materials, crypto configuration, and AWS credentials provider.
                 */
                 std::shared_ptr<CryptoModule> CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-                    const std::shared_ptr<Aws::S3::S3Client>& s3Client) override;
+                    const Aws::S3::S3Client& s3Client) override;
 
                 CryptoMode HandlesMode() const;
 

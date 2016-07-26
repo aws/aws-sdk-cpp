@@ -32,7 +32,7 @@ CryptoModuleFactory::CryptoModuleFactory()
 }
 
 std::shared_ptr<CryptoModule> CryptoModuleFactory::FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-    const std::shared_ptr<Aws::S3::S3Client>& s3Client)
+    const Aws::S3::S3Client& s3Client)
 {
     auto entry = m_cryptoFactories.find(cryptoConfig.GetCryptoMode());
     if (entry == m_cryptoFactories.end())
@@ -49,28 +49,17 @@ std::shared_ptr<CryptoModule> CryptoModuleFactory::FetchCryptoModule(const std::
 
 
 CryptoModuleFactoryEO::CryptoModuleFactoryEO() :
-    m_cryptoModuleEO(nullptr)
+    m_cryptoModuleEO(Aws::MakeShared<CryptoModuleEO>(Allocation_Tag))
 {
 }
 
 std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-    const std::shared_ptr<Aws::S3::S3Client>& s3Client)
+    const Aws::S3::S3Client& s3Client)
 {
-    if (m_cryptoModuleEO == nullptr)
-    {
-        m_cryptoModuleEO = Aws::MakeShared<CryptoModuleEO>(Allocation_Tag);
         m_cryptoModuleEO->SetEncryptionMaterials(encryptionMaterials);
         m_cryptoModuleEO->SetCryptoConfiguration(cryptoConfig);
         m_cryptoModuleEO->SetS3Client(s3Client);
         return m_cryptoModuleEO;
-    }
-    else
-    {
-        m_cryptoModuleEO->SetEncryptionMaterials(encryptionMaterials);
-        m_cryptoModuleEO->SetCryptoConfiguration(cryptoConfig);
-        m_cryptoModuleEO->SetS3Client(s3Client);
-        return m_cryptoModuleEO;
-    }
 }
 
 CryptoMode CryptoModuleFactoryEO::HandlesMode() const
@@ -79,25 +68,17 @@ CryptoMode CryptoModuleFactoryEO::HandlesMode() const
 }
 
 CryptoModuleFactoryAE::CryptoModuleFactoryAE() :
-    m_cryptoModuleAE(nullptr)
+    m_cryptoModuleAE(Aws::MakeShared<CryptoModuleAE>(Allocation_Tag))
 {
 }
 
 std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-    const std::shared_ptr<Aws::S3::S3Client>& s3Client)
+    const Aws::S3::S3Client& s3Client)
 {
-    if (m_cryptoModuleAE == nullptr)
-    {
-        m_cryptoModuleAE = Aws::MakeShared<CryptoModuleAE>(Allocation_Tag, encryptionMaterials, cryptoConfig, s3Client);
-        return m_cryptoModuleAE;
-    }
-    else
-    {
-        m_cryptoModuleAE->SetEncryptionMaterials(encryptionMaterials);
-        m_cryptoModuleAE->SetCryptoConfiguration(cryptoConfig);
-        m_cryptoModuleAE->SetS3Client(s3Client);
-        return m_cryptoModuleAE;
-    }
+    m_cryptoModuleAE->SetEncryptionMaterials(encryptionMaterials);
+    m_cryptoModuleAE->SetCryptoConfiguration(cryptoConfig);
+    m_cryptoModuleAE->SetS3Client(s3Client);
+    return m_cryptoModuleAE;
 }
 
 CryptoMode CryptoModuleFactoryAE::HandlesMode() const
@@ -106,25 +87,17 @@ CryptoMode CryptoModuleFactoryAE::HandlesMode() const
 }
 
 CryptoModuleFactoryStrictAE::CryptoModuleFactoryStrictAE() :
-    m_cryptoModuleStrictAE(nullptr)
+    m_cryptoModuleStrictAE(Aws::MakeShared<CryptoModuleStrictAE>(Allocation_Tag))
 {
 }
 
 std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-    const std::shared_ptr<Aws::S3::S3Client>& s3Client)
+    const Aws::S3::S3Client& s3Client)
 {
-    if (m_cryptoModuleStrictAE == nullptr)
-    {
-        m_cryptoModuleStrictAE = Aws::MakeShared<CryptoModuleStrictAE>(Allocation_Tag, encryptionMaterials, cryptoConfig, s3Client);
-        return m_cryptoModuleStrictAE;
-    }
-    else
-    {
-        m_cryptoModuleStrictAE->SetEncryptionMaterials(encryptionMaterials);
-        m_cryptoModuleStrictAE->SetCryptoConfiguration(cryptoConfig);
-        m_cryptoModuleStrictAE->SetS3Client(s3Client);
-        return m_cryptoModuleStrictAE;
-    }
+    m_cryptoModuleStrictAE->SetEncryptionMaterials(encryptionMaterials);
+    m_cryptoModuleStrictAE->SetCryptoConfiguration(cryptoConfig);
+    m_cryptoModuleStrictAE->SetS3Client(s3Client);
+    return m_cryptoModuleStrictAE;
 }
 
 CryptoMode CryptoModuleFactoryStrictAE::HandlesMode() const

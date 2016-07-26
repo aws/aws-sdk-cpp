@@ -20,13 +20,13 @@ namespace Aws
 {
     namespace S3Encryption
     {
-        enum class AWS_S3ENCRYPTION_API StorageMethod
+        enum class StorageMethod
         {
             METADATA,
             INSTRUCTION_FILE
         };
 
-        enum class AWS_S3ENCRYPTION_API CryptoMode
+        enum class CryptoMode
         {
             ENCRYPTION_ONLY,
             AUTHENTICATED_ENCRYPTION,
