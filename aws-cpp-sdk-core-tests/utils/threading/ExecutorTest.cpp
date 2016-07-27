@@ -20,7 +20,7 @@
 
 using namespace Aws::Utils::Threading;
 
-const char* ALLOCATION_TAG = "ExecutorTest";
+const char* EXECUTOR_TEST_ALLOCATION_TAG = "ExecutorTest";
 
 /** Mock executor that immediately runs a submitted function without using threads */
 class ThreadlessMockExecutor : public Executor
@@ -49,10 +49,10 @@ TEST(BlockingExecutorTest, TestExecuteSingleTask)
     AWS_BEGIN_MEMORY_TEST(16, 10)
     
     std::shared_ptr<ThreadlessMockExecutor> mockExecutor =
-            Aws::MakeShared<ThreadlessMockExecutor>(ALLOCATION_TAG);
+            Aws::MakeShared<ThreadlessMockExecutor>(EXECUTOR_TEST_ALLOCATION_TAG);
     BlockingExecutor blockingExecutor(mockExecutor, 5);
     
-    std::vector<u_int> taskOrder;
+    Aws::Vector<u_int> taskOrder;
     size_t FINAL_SIZE = 1;
     
     auto executeTask = [&taskOrder](u_int id)
@@ -74,10 +74,10 @@ TEST(BlockingExecutorTest, TestExecuteMoreTasksThanPoolSize)
     AWS_BEGIN_MEMORY_TEST(16, 10)
     
     std::shared_ptr<ThreadlessMockExecutor> mockExecutor =
-    Aws::MakeShared<ThreadlessMockExecutor>(ALLOCATION_TAG);
+    Aws::MakeShared<ThreadlessMockExecutor>(EXECUTOR_TEST_ALLOCATION_TAG);
     BlockingExecutor blockingExecutor(mockExecutor, 5);
     
-    std::vector<u_long> taskOrder;
+    Aws::Vector<u_long> taskOrder;
     size_t FINAL_SIZE = 7;
     
     auto executeTask = [&taskOrder](u_long id)
@@ -184,92 +184,93 @@ TEST(BlockingExecutorTest, TestExecuteMoreTasksThanPoolSize)
 //    
 //};
 
-/** Test whether a task gets blocked properly if max pool size is exceeded */
-TEST(BlockingExecutorTest, TestBlockSingleTask)
-{
-    AWS_BEGIN_MEMORY_TEST(16, 10)
-    
-//    std::shared_ptr<MockExecutor> mockExecutor = Aws::MakeShared<MockExecutor>(ALLOCATION_TAG);
+///** Test whether a task gets blocked properly if max pool size is exceeded */
+//TEST(BlockingExecutorTest, TestBlockSingleTask)
+//{
+//    AWS_BEGIN_MEMORY_TEST(16, 10)
+//    
+////    std::shared_ptr<MockExecutor> mockExecutor = Aws::MakeShared<MockExecutor>(ALLOCATION_TAG);
+////    BlockingExecutor blockingExecutor(mockExecutor, 3);
+//    
+//    std::shared_ptr<DefaultExecutor> mockExecutor =
+//            Aws::MakeShared<DefaultExecutor>(EXECUTOR_TEST_ALLOCATION_TAG);
 //    BlockingExecutor blockingExecutor(mockExecutor, 3);
-    
-    std::shared_ptr<DefaultExecutor> mockExecutor = Aws::MakeShared<DefaultExecutor>(ALLOCATION_TAG);
-    BlockingExecutor blockingExecutor(mockExecutor, 3);
-    
-    std::vector<u_long> taskOrder;
-    size_t FINAL_SIZE = 4;
-    
-    std::mutex taskLock;
-    std::condition_variable startSignal;
-    std::condition_variable taskSignal;
-    std::condition_variable doneSignal;
-    
-    const u_int8_t WAIT_FOR_START_SIGNAL = 1 << 0;
-    const u_int8_t WAIT_FOR_TASK_SIGNAL = 1 << 1;
-    const u_int8_t SIGNAL_OTHER_TASKS = 1 << 2;
-    
-    auto executeTask = [&](u_long id, u_int8_t flags)
-    {
-        std::unique_lock<std::mutex> locker(taskLock);
-        
-        if ((flags & WAIT_FOR_START_SIGNAL) == WAIT_FOR_START_SIGNAL)
-        {
-            startSignal.wait(locker);
-        }
-        if ((flags & WAIT_FOR_TASK_SIGNAL) == WAIT_FOR_TASK_SIGNAL)
-        {
-            taskSignal.wait(locker);
-        }
-//        // TODO: This tight coupling with the task needing to access the executor
-//        // is probably not the best code architecture.
-//        std::unique_lock<std::mutex> isolatedLocker(mockExecutor->)
-//        if (mockExecutor->IsIsolatedTaskRunning())
+//    
+//    Aws::Vector<u_long> taskOrder;
+//    size_t FINAL_SIZE = 4;
+//    
+//    std::mutex taskLock;
+//    std::condition_variable startSignal;
+//    std::condition_variable taskSignal;
+//    std::condition_variable doneSignal;
+//    
+//    const u_int8_t WAIT_FOR_START_SIGNAL = 1 << 0;
+//    const u_int8_t WAIT_FOR_TASK_SIGNAL = 1 << 1;
+//    const u_int8_t SIGNAL_OTHER_TASKS = 1 << 2;
+//    
+//    auto executeTask = [&](u_long id, u_int8_t flags)
+//    {
+//        std::unique_lock<std::mutex> locker(taskLock);
+//        
+//        if ((flags & WAIT_FOR_START_SIGNAL) == WAIT_FOR_START_SIGNAL)
 //        {
-//            
+//            startSignal.wait(locker);
 //        }
-        taskOrder.emplace_back(id);
-        if (taskOrder.size() == FINAL_SIZE)
-        {
-            locker.unlock();
-            doneSignal.notify_all();
-        }
-        else
-        {
-            if ((flags & SIGNAL_OTHER_TASKS) == SIGNAL_OTHER_TASKS)
-            {
-                locker.unlock();
-                taskSignal.notify_all();
-                locker.lock();
-            }
-        }
-    };
-    
-    // Tasks 0 and 1 wait until they are signaled by another task
-    blockingExecutor.Submit(executeTask, 0, WAIT_FOR_TASK_SIGNAL);
-    blockingExecutor.Submit(executeTask, 1, WAIT_FOR_TASK_SIGNAL);
-    
-    // Task 2 waits for a start signal
-    blockingExecutor.Submit(executeTask, 2, WAIT_FOR_START_SIGNAL);
-    
-    // Task 3 starts on its own and then signals other tasks
-//    mockExecutor->StartCreateIsolatedTask();
-    blockingExecutor.Submit(executeTask, 3, SIGNAL_OTHER_TASKS);
-//    mockExecutor->StopCreateIsolatedTask();
-    
-    startSignal.notify_all();
-    
-    std::unique_lock<std::mutex> locker(taskLock);
-    doneSignal.wait(locker);
-    
-    ASSERT_TRUE(taskOrder.size() == FINAL_SIZE);
-    
-    /* Max pool size is 3, so task 3 should get blocked. If blocking did not work properly,
-     * task 3 would likely finish first because it would start without needing to wait for a signal */
-//     * it would prevent task 2 from finishing execution until it was done since it's an
-//     * isolated task. */
-    ASSERT_TRUE(taskOrder.at(0) == 2);
-    ASSERT_TRUE(taskOrder.at(1) == 3);
-    ASSERT_TRUE(taskOrder.at(2) == 0 || taskOrder.at(2) == 1);
-    ASSERT_TRUE(taskOrder.at(3) == 1 || taskOrder.at(3) == 0);
-    
-    AWS_END_MEMORY_TEST
-}
+//        if ((flags & WAIT_FOR_TASK_SIGNAL) == WAIT_FOR_TASK_SIGNAL)
+//        {
+//            taskSignal.wait(locker);
+//        }
+////        // TODO: This tight coupling with the task needing to access the executor
+////        // is probably not the best code architecture.
+////        std::unique_lock<std::mutex> isolatedLocker(mockExecutor->)
+////        if (mockExecutor->IsIsolatedTaskRunning())
+////        {
+////            
+////        }
+//        taskOrder.emplace_back(id);
+//        if (taskOrder.size() == FINAL_SIZE)
+//        {
+//            locker.unlock();
+//            doneSignal.notify_all();
+//        }
+//        else
+//        {
+//            if ((flags & SIGNAL_OTHER_TASKS) == SIGNAL_OTHER_TASKS)
+//            {
+//                locker.unlock();
+//                taskSignal.notify_all();
+//                locker.lock();
+//            }
+//        }
+//    };
+//    
+//    // Tasks 0 and 1 wait until they are signaled by another task
+//    blockingExecutor.Submit(executeTask, 0, WAIT_FOR_TASK_SIGNAL);
+//    blockingExecutor.Submit(executeTask, 1, WAIT_FOR_TASK_SIGNAL);
+//    
+//    // Task 2 waits for a start signal
+//    blockingExecutor.Submit(executeTask, 2, WAIT_FOR_START_SIGNAL);
+//    
+//    // Task 3 starts on its own and then signals other tasks
+////    mockExecutor->StartCreateIsolatedTask();
+//    blockingExecutor.Submit(executeTask, 3, SIGNAL_OTHER_TASKS);
+////    mockExecutor->StopCreateIsolatedTask();
+//    
+//    startSignal.notify_all();
+//    
+//    std::unique_lock<std::mutex> locker(taskLock);
+//    doneSignal.wait(locker);
+//    
+//    ASSERT_TRUE(taskOrder.size() == FINAL_SIZE);
+//    
+//    /* Max pool size is 3, so task 3 should get blocked. If blocking did not work properly,
+//     * task 3 would likely finish first because it would start without needing to wait for a signal */
+////     * it would prevent task 2 from finishing execution until it was done since it's an
+////     * isolated task. */
+//    ASSERT_TRUE(taskOrder.at(0) == 2);
+//    ASSERT_TRUE(taskOrder.at(1) == 3);
+//    ASSERT_TRUE(taskOrder.at(2) == 0 || taskOrder.at(2) == 1);
+//    ASSERT_TRUE(taskOrder.at(3) == 1 || taskOrder.at(3) == 0);
+//    
+//    AWS_END_MEMORY_TEST
+//}

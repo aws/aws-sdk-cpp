@@ -129,7 +129,13 @@ bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
         m_syncPoint.wait(locker);
     }
     locker.unlock();
-    m_executor->Submit(&BlockingExecutor::ExecuteTask, std::move(fn));
+    
+    std::function<void()> executeTask = [&]() {
+        fn();
+        this->OnTaskComplete();
+    };
+    
+    m_executor->Submit(executeTask);
     return true;
 }
 
