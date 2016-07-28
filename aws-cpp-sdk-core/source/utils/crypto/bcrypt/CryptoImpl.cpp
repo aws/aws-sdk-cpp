@@ -1294,7 +1294,7 @@ namespace Aws
                 if (importKey)
                 {
                     ULONG exportSize(0);
-                    CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + m_workingIv.GetLength());
+                    CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + m_operatingKeyBuffer.GetLength());
                     status = BCryptExportKey(importKey, nullptr, BCRYPT_KEY_DATA_BLOB, 
                                 outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()), &exportSize, 0);
 
