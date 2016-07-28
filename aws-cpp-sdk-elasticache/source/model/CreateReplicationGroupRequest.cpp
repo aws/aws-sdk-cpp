@@ -58,22 +58,27 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
+
   if(m_replicationGroupDescriptionHasBeenSet)
   {
     ss << "ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
   }
+
   if(m_primaryClusterIdHasBeenSet)
   {
     ss << "PrimaryClusterId=" << StringUtils::URLEncode(m_primaryClusterId.c_str()) << "&";
   }
+
   if(m_automaticFailoverEnabledHasBeenSet)
   {
     ss << "AutomaticFailoverEnabled=" << m_automaticFailoverEnabled << "&";
   }
+
   if(m_numCacheClustersHasBeenSet)
   {
     ss << "NumCacheClusters=" << m_numCacheClusters << "&";
   }
+
   if(m_preferredCacheClusterAZsHasBeenSet)
   {
     unsigned preferredCacheClusterAZsCount = 1;
@@ -84,26 +89,32 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       preferredCacheClusterAZsCount++;
     }
   }
+
   if(m_cacheNodeTypeHasBeenSet)
   {
     ss << "CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
     ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_cacheParameterGroupNameHasBeenSet)
   {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   if(m_cacheSubnetGroupNameHasBeenSet)
   {
     ss << "CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
+
   if(m_cacheSecurityGroupNamesHasBeenSet)
   {
     unsigned cacheSecurityGroupNamesCount = 1;
@@ -114,6 +125,7 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       cacheSecurityGroupNamesCount++;
     }
   }
+
   if(m_securityGroupIdsHasBeenSet)
   {
     unsigned securityGroupIdsCount = 1;
@@ -124,6 +136,7 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       securityGroupIdsCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -133,6 +146,7 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_snapshotArnsHasBeenSet)
   {
     unsigned snapshotArnsCount = 1;
@@ -143,34 +157,42 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       snapshotArnsCount++;
     }
   }
+
   if(m_snapshotNameHasBeenSet)
   {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
     ss << "PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
   }
+
   if(m_notificationTopicArnHasBeenSet)
   {
     ss << "NotificationTopicArn=" << StringUtils::URLEncode(m_notificationTopicArn.c_str()) << "&";
   }
+
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
     ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
   }
+
   if(m_snapshotRetentionLimitHasBeenSet)
   {
     ss << "SnapshotRetentionLimit=" << m_snapshotRetentionLimit << "&";
   }
+
   if(m_snapshotWindowHasBeenSet)
   {
     ss << "SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

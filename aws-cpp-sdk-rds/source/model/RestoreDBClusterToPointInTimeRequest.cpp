@@ -43,30 +43,37 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   {
     ss << "DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_sourceDBClusterIdentifierHasBeenSet)
   {
     ss << "SourceDBClusterIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_restoreToTimeHasBeenSet)
   {
     ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_useLatestRestorableTimeHasBeenSet)
   {
     ss << "UseLatestRestorableTime=" << m_useLatestRestorableTime << "&";
   }
+
   if(m_portHasBeenSet)
   {
     ss << "Port=" << m_port << "&";
   }
+
   if(m_dBSubnetGroupNameHasBeenSet)
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_optionGroupNameHasBeenSet)
   {
     ss << "OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
     unsigned vpcSecurityGroupIdsCount = 1;
@@ -77,6 +84,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
       vpcSecurityGroupIdsCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -86,10 +94,12 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

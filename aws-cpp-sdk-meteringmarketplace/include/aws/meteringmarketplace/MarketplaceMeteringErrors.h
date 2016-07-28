@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace MarketplaceMetering
 {
-enum class AWS_MARKETPLACEMETERING_API MarketplaceMeteringErrors
+enum class MarketplaceMeteringErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

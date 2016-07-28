@@ -101,14 +101,17 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceType=" << SourceTypeMapper::GetNameForSourceType(m_sourceType) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
   if(m_eventCategoriesHasBeenSet)
   {
       unsigned eventCategoriesIdx = 1;
@@ -117,10 +120,12 @@ void Event::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
         oStream << location << index << locationValue << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_dateHasBeenSet)
   {
       oStream << location << index << locationValue << ".Date=" << StringUtils::URLEncode(m_date.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void Event::OutputToStream(Aws::OStream& oStream, const char* location) const

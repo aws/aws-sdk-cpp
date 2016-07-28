@@ -38,6 +38,7 @@ Aws::String ReleaseHostsRequest::SerializePayload() const
       hostIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

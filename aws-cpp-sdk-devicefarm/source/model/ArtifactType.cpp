@@ -33,6 +33,7 @@ namespace Aws
         static const int SCREENSHOT_HASH = HashingUtils::HashString("SCREENSHOT");
         static const int DEVICE_LOG_HASH = HashingUtils::HashString("DEVICE_LOG");
         static const int MESSAGE_LOG_HASH = HashingUtils::HashString("MESSAGE_LOG");
+        static const int VIDEO_LOG_HASH = HashingUtils::HashString("VIDEO_LOG");
         static const int RESULT_LOG_HASH = HashingUtils::HashString("RESULT_LOG");
         static const int SERVICE_LOG_HASH = HashingUtils::HashString("SERVICE_LOG");
         static const int WEBKIT_LOG_HASH = HashingUtils::HashString("WEBKIT_LOG");
@@ -73,6 +74,10 @@ namespace Aws
           else if (hashCode == MESSAGE_LOG_HASH)
           {
             return ArtifactType::MESSAGE_LOG;
+          }
+          else if (hashCode == VIDEO_LOG_HASH)
+          {
+            return ArtifactType::VIDEO_LOG;
           }
           else if (hashCode == RESULT_LOG_HASH)
           {
@@ -176,6 +181,8 @@ namespace Aws
             return "DEVICE_LOG";
           case ArtifactType::MESSAGE_LOG:
             return "MESSAGE_LOG";
+          case ArtifactType::VIDEO_LOG:
+            return "VIDEO_LOG";
           case ArtifactType::RESULT_LOG:
             return "RESULT_LOG";
           case ArtifactType::SERVICE_LOG:

@@ -63,6 +63,7 @@ void MetricGranularityType::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".Granularity=" << StringUtils::URLEncode(m_granularity.c_str()) << "&";
   }
+
 }
 
 void MetricGranularityType::OutputToStream(Aws::OStream& oStream, const char* location) const

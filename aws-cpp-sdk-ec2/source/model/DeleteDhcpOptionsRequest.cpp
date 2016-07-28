@@ -34,10 +34,12 @@ Aws::String DeleteDhcpOptionsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_dhcpOptionsIdHasBeenSet)
   {
     ss << "DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

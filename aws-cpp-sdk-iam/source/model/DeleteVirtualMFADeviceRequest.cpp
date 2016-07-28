@@ -32,6 +32,7 @@ Aws::String DeleteVirtualMFADeviceRequest::SerializePayload() const
   {
     ss << "SerialNumber=" << StringUtils::URLEncode(m_serialNumber.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

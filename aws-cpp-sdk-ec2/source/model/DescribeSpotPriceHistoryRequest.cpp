@@ -42,14 +42,17 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
     ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_endTimeHasBeenSet)
   {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_instanceTypesHasBeenSet)
   {
     unsigned instanceTypesCount = 1;
@@ -60,6 +63,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       instanceTypesCount++;
     }
   }
+
   if(m_productDescriptionsHasBeenSet)
   {
     unsigned productDescriptionsCount = 1;
@@ -70,6 +74,7 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       productDescriptionsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -79,18 +84,22 @@ Aws::String DescribeSpotPriceHistoryRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -32,6 +32,7 @@ Aws::String DisableVpcClassicLinkDnsSupportRequest::SerializePayload() const
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

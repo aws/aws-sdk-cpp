@@ -153,26 +153,32 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
   }
+
   if(m_customerGatewayConfigurationHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerGatewayConfiguration=" << StringUtils::URLEncode(m_customerGatewayConfiguration.c_str()) << "&";
   }
+
   if(m_typeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
+
   if(m_customerGatewayIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
+
   if(m_vpnGatewayIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -183,6 +189,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_vgwTelemetryHasBeenSet)
   {
       unsigned vgwTelemetryIdx = 1;
@@ -193,12 +200,14 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, vgwTelemetrySs.str().c_str());
       }
   }
+
   if(m_optionsHasBeenSet)
   {
       Aws::StringStream optionsLocationAndMemberSs;
       optionsLocationAndMemberSs << location << index << locationValue << ".Options";
       m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
   }
+
   if(m_routesHasBeenSet)
   {
       unsigned routesIdx = 1;
@@ -209,6 +218,7 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, routesSs.str().c_str());
       }
   }
+
 }
 
 void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) const

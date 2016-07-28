@@ -32,6 +32,7 @@ Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const
   {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

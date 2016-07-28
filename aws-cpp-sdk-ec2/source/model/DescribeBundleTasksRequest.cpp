@@ -35,6 +35,7 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_bundleIdsHasBeenSet)
   {
     unsigned bundleIdsCount = 1;
@@ -45,6 +46,7 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
       bundleIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -54,6 +56,7 @@ Aws::String DescribeBundleTasksRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

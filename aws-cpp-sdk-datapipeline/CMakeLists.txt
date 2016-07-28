@@ -53,7 +53,7 @@ project(aws-cpp-sdk-datapipeline)
 
   include_directories(${DATAPIPELINE_INCLUDES})
 
-  if(MSVC AND BUILD_SHARED_LIBS)
+  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_DATAPIPELINE_EXPORTS")
   endif()
 
@@ -71,10 +71,14 @@ project(aws-cpp-sdk-datapipeline)
                LIBRARY DESTINATION lib
                RUNTIME DESTINATION bin)
   else()
+    if(PLATFORM_CUSTOM)
+      install_custom_library(aws-cpp-sdk-datapipeline)
+    else()
       install (TARGETS aws-cpp-sdk-datapipeline
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+    endif()
   endif()
 
   install (FILES ${AWS_DATAPIPELINE_HEADERS} DESTINATION include/aws/datapipeline)

@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeThingResult::DescribeThingResult()
+DescribeThingResult::DescribeThingResult() : 
+    m_version(0)
 {
 }
 
-DescribeThingResult::DescribeThingResult(const AmazonWebServiceResult<JsonValue>& result)
+DescribeThingResult::DescribeThingResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_version(0)
 {
   *this = result;
 }
@@ -48,6 +50,12 @@ DescribeThingResult& DescribeThingResult::operator =(const AmazonWebServiceResul
 
   }
 
+  if(jsonValue.ValueExists("thingTypeName"))
+  {
+    m_thingTypeName = jsonValue.GetString("thingTypeName");
+
+  }
+
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -55,6 +63,12 @@ DescribeThingResult& DescribeThingResult::operator =(const AmazonWebServiceResul
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
   }
 
 

@@ -71,10 +71,12 @@ void Expression::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".ExpressionName=" << StringUtils::URLEncode(m_expressionName.c_str()) << "&";
   }
+
   if(m_expressionValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ExpressionValue=" << StringUtils::URLEncode(m_expressionValue.c_str()) << "&";
   }
+
 }
 
 void Expression::OutputToStream(Aws::OStream& oStream, const char* location) const

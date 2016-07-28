@@ -39,18 +39,22 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_attributeHasBeenSet)
   {
     ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
   }
+
   if(m_operationTypeHasBeenSet)
   {
     ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
   }
+
   if(m_userIdsHasBeenSet)
   {
     unsigned userIdsCount = 1;
@@ -61,6 +65,7 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
       userIdsCount++;
     }
   }
+
   if(m_groupNamesHasBeenSet)
   {
     unsigned groupNamesCount = 1;
@@ -71,10 +76,12 @@ Aws::String ModifySnapshotAttributeRequest::SerializePayload() const
       groupNamesCount++;
     }
   }
+
   if(m_createVolumePermissionHasBeenSet)
   {
-    m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission.");
+    m_createVolumePermission.OutputToStream(ss, "CreateVolumePermission");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

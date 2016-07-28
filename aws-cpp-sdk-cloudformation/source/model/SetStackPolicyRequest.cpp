@@ -34,14 +34,17 @@ Aws::String SetStackPolicyRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_stackPolicyBodyHasBeenSet)
   {
     ss << "StackPolicyBody=" << StringUtils::URLEncode(m_stackPolicyBody.c_str()) << "&";
   }
+
   if(m_stackPolicyURLHasBeenSet)
   {
     ss << "StackPolicyURL=" << StringUtils::URLEncode(m_stackPolicyURL.c_str()) << "&";
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

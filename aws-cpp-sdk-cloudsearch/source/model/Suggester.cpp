@@ -71,12 +71,14 @@ void Suggester::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".SuggesterName=" << StringUtils::URLEncode(m_suggesterName.c_str()) << "&";
   }
+
   if(m_documentSuggesterOptionsHasBeenSet)
   {
       Aws::StringStream documentSuggesterOptionsLocationAndMemberSs;
       documentSuggesterOptionsLocationAndMemberSs << location << index << locationValue << ".DocumentSuggesterOptions";
       m_documentSuggesterOptions.OutputToStream(oStream, documentSuggesterOptionsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Suggester::OutputToStream(Aws::OStream& oStream, const char* location) const

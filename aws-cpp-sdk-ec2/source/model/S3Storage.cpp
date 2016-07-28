@@ -96,22 +96,27 @@ void S3Storage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
+
   if(m_prefixHasBeenSet)
   {
       oStream << location << index << locationValue << ".Prefix=" << StringUtils::URLEncode(m_prefix.c_str()) << "&";
   }
+
   if(m_aWSAccessKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AWSAccessKeyId=" << StringUtils::URLEncode(m_aWSAccessKeyId.c_str()) << "&";
   }
+
   if(m_uploadPolicyHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadPolicy=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_uploadPolicy).c_str()) << "&";
   }
+
   if(m_uploadPolicySignatureHasBeenSet)
   {
       oStream << location << index << locationValue << ".UploadPolicySignature=" << StringUtils::URLEncode(m_uploadPolicySignature.c_str()) << "&";
   }
+
 }
 
 void S3Storage::OutputToStream(Aws::OStream& oStream, const char* location) const

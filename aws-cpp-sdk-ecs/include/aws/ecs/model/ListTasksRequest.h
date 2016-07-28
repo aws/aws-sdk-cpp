@@ -412,7 +412,12 @@ namespace Model
      * Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the
      * results to tasks that are in the <code>STOPPED</code> status, which can be
      * useful for debugging tasks that are not starting properly or have died or
-     * finished. The default status filter is <code>RUNNING</code>.</p>
+     * finished. The default status filter is status filter is <code>RUNNING</code>,
+     * which shows tasks that ECS has set the desired status to
+     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
+     * desired status of <code>PENDING</code>, this will not return any results because
+     * ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
      */
     inline const DesiredStatus& GetDesiredStatus() const{ return m_desiredStatus; }
 
@@ -421,7 +426,12 @@ namespace Model
      * Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the
      * results to tasks that are in the <code>STOPPED</code> status, which can be
      * useful for debugging tasks that are not starting properly or have died or
-     * finished. The default status filter is <code>RUNNING</code>.</p>
+     * finished. The default status filter is status filter is <code>RUNNING</code>,
+     * which shows tasks that ECS has set the desired status to
+     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
+     * desired status of <code>PENDING</code>, this will not return any results because
+     * ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
      */
     inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
@@ -430,7 +440,12 @@ namespace Model
      * Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the
      * results to tasks that are in the <code>STOPPED</code> status, which can be
      * useful for debugging tasks that are not starting properly or have died or
-     * finished. The default status filter is <code>RUNNING</code>.</p>
+     * finished. The default status filter is status filter is <code>RUNNING</code>,
+     * which shows tasks that ECS has set the desired status to
+     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
+     * desired status of <code>PENDING</code>, this will not return any results because
+     * ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
      */
     inline void SetDesiredStatus(DesiredStatus&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
@@ -439,7 +454,12 @@ namespace Model
      * Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the
      * results to tasks that are in the <code>STOPPED</code> status, which can be
      * useful for debugging tasks that are not starting properly or have died or
-     * finished. The default status filter is <code>RUNNING</code>.</p>
+     * finished. The default status filter is status filter is <code>RUNNING</code>,
+     * which shows tasks that ECS has set the desired status to
+     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
+     * desired status of <code>PENDING</code>, this will not return any results because
+     * ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
      */
     inline ListTasksRequest& WithDesiredStatus(const DesiredStatus& value) { SetDesiredStatus(value); return *this;}
 
@@ -448,7 +468,12 @@ namespace Model
      * Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the
      * results to tasks that are in the <code>STOPPED</code> status, which can be
      * useful for debugging tasks that are not starting properly or have died or
-     * finished. The default status filter is <code>RUNNING</code>.</p>
+     * finished. The default status filter is status filter is <code>RUNNING</code>,
+     * which shows tasks that ECS has set the desired status to
+     * <code>RUNNING</code>.</p> <note> <p>Although you can filter results based on a
+     * desired status of <code>PENDING</code>, this will not return any results because
+     * ECS never sets the desired status of a task to that value (only a task's
+     * <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> </note>
      */
     inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(value); return *this;}
 

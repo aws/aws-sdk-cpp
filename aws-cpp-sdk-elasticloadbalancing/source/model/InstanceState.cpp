@@ -87,18 +87,22 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
+
   if(m_reasonCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReasonCode=" << StringUtils::URLEncode(m_reasonCode.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) const

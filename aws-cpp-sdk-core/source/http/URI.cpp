@@ -129,7 +129,7 @@ Aws::String URI::URLEncodePath(const Aws::String& path)
 
 void URI::SetPath(const Aws::String& value)
 {    
-   m_path = value;    
+   m_path = value;
 }
 
 QueryStringParameterCollection URI::GetQueryStringParameters(bool decode) const
@@ -248,7 +248,9 @@ Aws::String URI::GetURIString(bool includeQueryString) const
     }
 
     if(includeQueryString)
+    {
         ss << m_queryString;
+    }
 
     return ss.str();
 }

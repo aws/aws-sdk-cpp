@@ -63,6 +63,7 @@ void MetricCollectionType::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Metric=" << StringUtils::URLEncode(m_metric.c_str()) << "&";
   }
+
 }
 
 void MetricCollectionType::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,10 +33,12 @@ Aws::String AddClientIDToOpenIDConnectProviderRequest::SerializePayload() const
   {
     ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
   }
+
   if(m_clientIDHasBeenSet)
   {
     ss << "ClientID=" << StringUtils::URLEncode(m_clientID.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -37,7 +37,9 @@ Command::Command() :
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false)
+    m_outputS3KeyPrefixHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
+    m_notificationConfigHasBeenSet(false)
 {
 }
 
@@ -51,7 +53,9 @@ Command::Command(const JsonValue& jsonValue) :
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputS3BucketNameHasBeenSet(false),
-    m_outputS3KeyPrefixHasBeenSet(false)
+    m_outputS3KeyPrefixHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
+    m_notificationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +144,20 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_outputS3KeyPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceRole"))
+  {
+    m_serviceRole = jsonValue.GetString("ServiceRole");
+
+    m_serviceRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationConfig"))
+  {
+    m_notificationConfig = jsonValue.GetObject("NotificationConfig");
+
+    m_notificationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -216,6 +234,18 @@ JsonValue Command::Jsonize() const
   if(m_outputS3KeyPrefixHasBeenSet)
   {
    payload.WithString("OutputS3KeyPrefix", m_outputS3KeyPrefix);
+
+  }
+
+  if(m_serviceRoleHasBeenSet)
+  {
+   payload.WithString("ServiceRole", m_serviceRole);
+
+  }
+
+  if(m_notificationConfigHasBeenSet)
+  {
+   payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
 
   }
 

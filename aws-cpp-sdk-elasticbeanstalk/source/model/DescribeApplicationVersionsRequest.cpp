@@ -33,6 +33,7 @@ Aws::String DescribeApplicationVersionsRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelsHasBeenSet)
   {
     unsigned versionLabelsCount = 1;
@@ -43,6 +44,7 @@ Aws::String DescribeApplicationVersionsRequest::SerializePayload() const
       versionLabelsCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

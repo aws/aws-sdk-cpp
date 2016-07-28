@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace MarketplaceCommerceAnalytics
 {
-enum class AWS_MARKETPLACECOMMERCEANALYTICS_API MarketplaceCommerceAnalyticsErrors
+enum class MarketplaceCommerceAnalyticsErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

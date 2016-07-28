@@ -107,16 +107,19 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_volumeStatusHasBeenSet)
   {
       Aws::StringStream volumeStatusLocationAndMemberSs;
       volumeStatusLocationAndMemberSs << location << index << locationValue << ".VolumeStatus";
       m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMemberSs.str().c_str());
   }
+
   if(m_eventsHasBeenSet)
   {
       unsigned eventsIdx = 1;
@@ -127,6 +130,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, eventsSs.str().c_str());
       }
   }
+
   if(m_actionsHasBeenSet)
   {
       unsigned actionsIdx = 1;
@@ -137,6 +141,7 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, actionsSs.str().c_str());
       }
   }
+
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const

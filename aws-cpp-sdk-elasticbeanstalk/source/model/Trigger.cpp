@@ -63,6 +63,7 @@ void Trigger::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
 }
 
 void Trigger::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -465,6 +465,101 @@ namespace Model
      */
     inline Device& WithRadio(const char* value) { SetRadio(value); return *this;}
 
+    /**
+     * <p>Specifies whether remote access has been enabled for the specified
+     * device.</p>
+     */
+    inline bool GetRemoteAccessEnabled() const{ return m_remoteAccessEnabled; }
+
+    /**
+     * <p>Specifies whether remote access has been enabled for the specified
+     * device.</p>
+     */
+    inline void SetRemoteAccessEnabled(bool value) { m_remoteAccessEnabledHasBeenSet = true; m_remoteAccessEnabled = value; }
+
+    /**
+     * <p>Specifies whether remote access has been enabled for the specified
+     * device.</p>
+     */
+    inline Device& WithRemoteAccessEnabled(bool value) { SetRemoteAccessEnabled(value); return *this;}
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline const Aws::String& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline void SetFleetType(const Aws::String& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline void SetFleetType(Aws::String&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline void SetFleetType(const char* value) { m_fleetTypeHasBeenSet = true; m_fleetType.assign(value); }
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline Device& WithFleetType(const Aws::String& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline Device& WithFleetType(Aws::String&& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline Device& WithFleetType(const char* value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline const Aws::String& GetFleetName() const{ return m_fleetName; }
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline Device& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline Device& WithFleetName(Aws::String&& value) { SetFleetName(value); return *this;}
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
+    inline Device& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+
   private:
     Aws::String m_arn;
     bool m_arnHasBeenSet;
@@ -494,6 +589,12 @@ namespace Model
     bool m_carrierHasBeenSet;
     Aws::String m_radio;
     bool m_radioHasBeenSet;
+    bool m_remoteAccessEnabled;
+    bool m_remoteAccessEnabledHasBeenSet;
+    Aws::String m_fleetType;
+    bool m_fleetTypeHasBeenSet;
+    Aws::String m_fleetName;
+    bool m_fleetNameHasBeenSet;
   };
 
 } // namespace Model

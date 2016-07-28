@@ -31,11 +31,13 @@
 #include <aws/dms/model/CreateReplicationInstanceRequest.h>
 #include <aws/dms/model/CreateReplicationSubnetGroupRequest.h>
 #include <aws/dms/model/CreateReplicationTaskRequest.h>
+#include <aws/dms/model/DeleteCertificateRequest.h>
 #include <aws/dms/model/DeleteEndpointRequest.h>
 #include <aws/dms/model/DeleteReplicationInstanceRequest.h>
 #include <aws/dms/model/DeleteReplicationSubnetGroupRequest.h>
 #include <aws/dms/model/DeleteReplicationTaskRequest.h>
 #include <aws/dms/model/DescribeAccountAttributesRequest.h>
+#include <aws/dms/model/DescribeCertificatesRequest.h>
 #include <aws/dms/model/DescribeConnectionsRequest.h>
 #include <aws/dms/model/DescribeEndpointTypesRequest.h>
 #include <aws/dms/model/DescribeEndpointsRequest.h>
@@ -46,6 +48,7 @@
 #include <aws/dms/model/DescribeReplicationTasksRequest.h>
 #include <aws/dms/model/DescribeSchemasRequest.h>
 #include <aws/dms/model/DescribeTableStatisticsRequest.h>
+#include <aws/dms/model/ImportCertificateRequest.h>
 #include <aws/dms/model/ListTagsForResourceRequest.h>
 #include <aws/dms/model/ModifyEndpointRequest.h>
 #include <aws/dms/model/ModifyReplicationInstanceRequest.h>
@@ -66,6 +69,7 @@ using namespace Aws::Utils::Json;
 
 static const char* SERVICE_NAME = "dms";
 static const char* ALLOCATION_TAG = "DatabaseMigrationServiceClient";
+
 
 DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -277,6 +281,37 @@ void DatabaseMigrationServiceClient::CreateReplicationTaskAsyncHelper(const Crea
   handler(this, request, CreateReplicationTask(request), context);
 }
 
+DeleteCertificateOutcome DatabaseMigrationServiceClient::DeleteCertificate(const DeleteCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCertificateOutcome(DeleteCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteCertificateOutcome(outcome.GetError());
+  }
+}
+
+DeleteCertificateOutcomeCallable DatabaseMigrationServiceClient::DeleteCertificateCallable(const DeleteCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteCertificate, this, request);
+}
+
+void DatabaseMigrationServiceClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteCertificateAsyncHelper, this, request, handler, context);
+}
+
+void DatabaseMigrationServiceClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCertificate(request), context);
+}
+
 DeleteEndpointOutcome DatabaseMigrationServiceClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
   Aws::StringStream ss;
@@ -430,6 +465,37 @@ void DatabaseMigrationServiceClient::DescribeAccountAttributesAsync(const Descri
 void DatabaseMigrationServiceClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAccountAttributes(request), context);
+}
+
+DescribeCertificatesOutcome DatabaseMigrationServiceClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCertificatesOutcome(DescribeCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCertificatesOutcome(outcome.GetError());
+  }
+}
+
+DescribeCertificatesOutcomeCallable DatabaseMigrationServiceClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
+{
+  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeCertificates, this, request);
+}
+
+void DatabaseMigrationServiceClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeCertificatesAsyncHelper, this, request, handler, context);
+}
+
+void DatabaseMigrationServiceClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCertificates(request), context);
 }
 
 DescribeConnectionsOutcome DatabaseMigrationServiceClient::DescribeConnections(const DescribeConnectionsRequest& request) const
@@ -740,6 +806,37 @@ void DatabaseMigrationServiceClient::DescribeTableStatisticsAsync(const Describe
 void DatabaseMigrationServiceClient::DescribeTableStatisticsAsyncHelper(const DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTableStatistics(request), context);
+}
+
+ImportCertificateOutcome DatabaseMigrationServiceClient::ImportCertificate(const ImportCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ImportCertificateOutcome(ImportCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportCertificateOutcome(outcome.GetError());
+  }
+}
+
+ImportCertificateOutcomeCallable DatabaseMigrationServiceClient::ImportCertificateCallable(const ImportCertificateRequest& request) const
+{
+  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ImportCertificate, this, request);
+}
+
+void DatabaseMigrationServiceClient::ImportCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DatabaseMigrationServiceClient::ImportCertificateAsyncHelper, this, request, handler, context);
+}
+
+void DatabaseMigrationServiceClient::ImportCertificateAsyncHelper(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportCertificate(request), context);
 }
 
 ListTagsForResourceOutcome DatabaseMigrationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

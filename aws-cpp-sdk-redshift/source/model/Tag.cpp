@@ -71,10 +71,12 @@ void Tag::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
   {
       oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
 }
 
 void Tag::OutputToStream(Aws::OStream& oStream, const char* location) const

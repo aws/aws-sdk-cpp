@@ -33,10 +33,12 @@ Aws::String DeleteEnvironmentConfigurationRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

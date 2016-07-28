@@ -83,14 +83,17 @@ void AccountQuota::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".AccountQuotaName=" << StringUtils::URLEncode(m_accountQuotaName.c_str()) << "&";
   }
+
   if(m_usedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Used=" << m_used << "&";
   }
+
   if(m_maxHasBeenSet)
   {
       oStream << location << index << locationValue << ".Max=" << m_max << "&";
   }
+
 }
 
 void AccountQuota::OutputToStream(Aws::OStream& oStream, const char* location) const

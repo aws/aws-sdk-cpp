@@ -33,6 +33,7 @@ Aws::String RegisterInstancesWithLoadBalancerRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
     unsigned instancesCount = 1;
@@ -42,6 +43,7 @@ Aws::String RegisterInstancesWithLoadBalancerRequest::SerializePayload() const
       instancesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

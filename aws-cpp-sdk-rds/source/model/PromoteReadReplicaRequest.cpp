@@ -35,14 +35,17 @@ Aws::String PromoteReadReplicaRequest::SerializePayload() const
   {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_backupRetentionPeriodHasBeenSet)
   {
     ss << "BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
+
   if(m_preferredBackupWindowHasBeenSet)
   {
     ss << "PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

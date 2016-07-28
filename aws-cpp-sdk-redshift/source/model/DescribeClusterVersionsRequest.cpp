@@ -36,18 +36,22 @@ Aws::String DescribeClusterVersionsRequest::SerializePayload() const
   {
     ss << "ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_clusterParameterGroupFamilyHasBeenSet)
   {
     ss << "ClusterParameterGroupFamily=" << StringUtils::URLEncode(m_clusterParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

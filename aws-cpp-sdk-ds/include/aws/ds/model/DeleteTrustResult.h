@@ -32,6 +32,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a DeleteTrust request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API DeleteTrustResult
   {
   public:
@@ -40,37 +43,37 @@ namespace Model
     DeleteTrustResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline void SetTrustId(const Aws::String& value) { m_trustId = value; }
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline void SetTrustId(Aws::String&& value) { m_trustId = value; }
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline void SetTrustId(const char* value) { m_trustId.assign(value); }
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline DeleteTrustResult& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline DeleteTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
 
     /**
-     * The Trust ID of the trust relationship that was deleted.
+     * <p>The Trust ID of the trust relationship that was deleted.</p>
      */
     inline DeleteTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 

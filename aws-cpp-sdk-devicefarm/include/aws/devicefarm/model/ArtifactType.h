@@ -29,6 +29,7 @@ namespace Model
     SCREENSHOT,
     DEVICE_LOG,
     MESSAGE_LOG,
+    VIDEO_LOG,
     RESULT_LOG,
     SERVICE_LOG,
     WEBKIT_LOG,

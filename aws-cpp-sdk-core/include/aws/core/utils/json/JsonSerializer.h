@@ -62,6 +62,8 @@ namespace Aws
                 */
                 JsonValue(JsonValue&& value);
 
+                ~JsonValue();
+
                 JsonValue& operator=(const JsonValue& other);
 
                 JsonValue& operator=(JsonValue&& other);

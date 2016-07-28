@@ -29,6 +29,7 @@ find_package(Git)
 #   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourserviceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
 #                          to use these arguments, you should add the api definition .normal.json file for your service to the api-description folder in the generator.
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
+#   CUSTOM_PLATFORM_DIR - directory where custom platform scripts, modules, and source resides
 
 # Settings to pull in an external, non-system install of Curl
 # On platforms that by default build these libraries (Android), you must define these for both Curl and Openssl; partial building isn't supported
@@ -73,6 +74,7 @@ SET(PLATFORM_WINDOWS 0)
 SET(PLATFORM_LINUX 0)
 SET(PLATFORM_ANDROID 0)
 SET(PLATFORM_APPLE 0)
+SET(PLATFORM_CUSTOM 0)
 
 if("${TARGET_ARCH}" STREQUAL "WINDOWS")
     SET(PLATFORM_WINDOWS 1)
@@ -88,6 +90,8 @@ elseif("${TARGET_ARCH}" STREQUAL "ANDROID")
     endif()
     # TODO: check for patch, it's required to build zlib/curl/openssl
     # TODO: check for sh, it's required to generate the standalone toolchains
+elseif(TARGET_ARCH)
+    SET(PLATFORM_CUSTOM 1)
 else()
     message(STATUS "TARGET_ARCH not specified; inferring host OS to be platform compilation target")
     if(WIN32)
@@ -113,6 +117,7 @@ endif()
 if(PLATFORM_WINDOWS)
     message(STATUS "Generating windows build config")
     set(SDK_INSTALL_BINARY_PREFIX "windows")
+    set(USE_WINDOWS_DLL_SEMANTICS 1)
 elseif(PLATFORM_LINUX)
     message(STATUS "Generating linux build config")
     set(SDK_INSTALL_BINARY_PREFIX "linux")
@@ -223,6 +228,33 @@ elseif(PLATFORM_ANDROID)
     else()
         message(STATUS "Standalone toolchain disabled; this is not a well-supported option")
     endif()
+
+    add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
+
+elseif(PLATFORM_CUSTOM)
+    if(NOT CUSTOM_PLATFORM_DIR )
+        message(FATAL_ERROR "Custom platforms require the CUSTOM_PLATFORM_DIR parameter to be set")
+    endif()
+
+    file(TO_CMAKE_PATH "${CUSTOM_PLATFORM_DIR}" __custom_platform_dir)
+    if(NOT IS_DIRECTORY "${__custom_platform_dir}")
+        message(FATAL_ERROR "${CUSTOM_PLATFORM_DIR} is not a valid directory for a custom platform")
+    endif()
+
+    set(__toolchain_file ${__custom_platform_dir}/${TARGET_ARCH}.toolchain.cmake)
+    IF(NOT (EXISTS ${__toolchain_file}))
+        message(FATAL "Custom architecture target ${TARGET_ARCH} requires a cmake toolchain file at: ${__toolchain_file}")
+    endif()
+    SET(CMAKE_TOOLCHAIN_FILE ${__toolchain_file})
+
+    set(CUSTOM_PLATFORM_SOURCE_PATH "${__custom_platform_dir}/src")
+    list(APPEND CMAKE_MODULE_PATH "${__custom_platform_dir}/modules")
+
+    string(TOLOWER "${TARGET_ARCH}" __lower_arch)
+    set(SDK_INSTALL_BINARY_PREFIX ${__lower_arch})
+    include(${__custom_platform_dir}/${__lower_arch}_platform.cmake)
+
+    message(STATUS "Generating ${__lower_arch} build config")
 else()
     message(FATAL_ERROR "Unknown target platform.  How did this happen?")
 endif()
@@ -231,7 +263,6 @@ if(BUILD_SHARED_LIBS)
     SET(ARCHIVE_DIRECTORY "bin")
     SET(LIBTYPE SHARED)
     if(PLATFORM_WINDOWS)
-        add_definitions("-DUSE_IMPORT_EXPORT")
         SET(SUFFIX dll)
     elseif(PLATFORM_LINUX OR PLATFORM_ANDROID)
         SET(SUFFIX so)
@@ -363,7 +394,16 @@ elseif(ENABLE_INJECTED_ENCRYPTION)
     message(STATUS "You will need to inject an encryption implementation before making any http requests!")
 endif()
 
+# use response files to prevent command-line-too-big errors for large libraries like iam
+SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+SET(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG "@")
+
 project(aws-sdk-cpp-all)
+
+if(PLATFORM_CUSTOM)
+    apply_custom_post_toolchain_settings()
+endif()
 
 # install setup
 # This install section must come after the initial "project(..)" declaration since that's when the compiler settings are discovered; prior to that CMAKE_SIZEOF_VOID_P is empty
@@ -407,7 +447,12 @@ SET(COMPILER_GCC 0)
 if(MSVC)
     SET(COMPILER_MSVC 1)
 else()
-    SET(COMPILER_GCC 1)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+        SET(COMPILER_CLANG 1)
+    else()
+        SET(COMPILER_GCC 1)
+    endif()
+    SET(USE_GCC_FLAGS 1)
 endif()
 
 # Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
@@ -500,6 +545,7 @@ list(APPEND C2J_LIST "waf:2015-08-24")
 list(APPEND C2J_LIST "workspaces:2015-04-08")
 list(APPEND C2J_LIST "cognito-idp:2016-04-18")
 list(APPEND C2J_LIST "application-autoscaling:2016-02-06")
+list(APPEND C2J_LIST "servicecatalog:2015-12-10")
 
 set(SDK_TEST_PROJECT_LIST "")
 list(APPEND SDK_TEST_PROJECT_LIST "cognito-identity:aws-cpp-sdk-cognitoidentity-integration-tests")
@@ -735,20 +781,29 @@ set(CMAKE_CONFIGURATION_TYPES
 # pass this flag to the jsoncpp amalgamated source
 add_definitions(-DJSON_USE_EXCEPTION=0)
 
-if(NOT PLATFORM_WINDOWS)
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
-    if(NOT BUILD_SHARED_LIBS)
-        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+# cmake warnings
+if(MSVC)
+    #remove bogus errors at generation time if these variables haven't been manually set
+    if(NOT CMAKE_CONFIGURATION_TYPES)
+        set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
+    endif()
+    
+    if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
+        set(CMAKE_CXX_FLAGS_DEBUGOPT "")
+    endif()
+
+    if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
+        set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
+    endif()
+
+    if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
+        set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
     endif()
 endif()
 
-# warning control
+# compiler warning control
 if(PLATFORM_WINDOWS)
     if(MSVC)
-        # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
-
         # warnings as errors, max warning level (4)
         if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
@@ -760,45 +815,69 @@ if(PLATFORM_WINDOWS)
         else()
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
         endif()
-
-        #remove bogus errors at generation time if these variables haven't been manually set
-        if(NOT CMAKE_CONFIGURATION_TYPES)
-            set(CMAKE_CONFIGURATION_TYPES "Debug;Release;MinSizeRel;RelWithDebInfo")
-        endif()
-    
-        if(NOT CMAKE_CXX_FLAGS_DEBUGOPT)
-            set(CMAKE_CXX_FLAGS_DEBUGOPT "")
-        endif()
-
-        if(NOT CMAKE_EXE_LINKER_FLAGS_DEBUGOPT)
-            set(CMAKE_EXE_LINKER_FLAGS_DEBUGOPT "")
-        endif()
-
-        if(NOT CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT)
-            set(CMAKE_SHARED_LINKER_FLAGS_DEBUGOPT "")
-        endif()
     endif()
-elseif(PLATFORM_LINUX OR PLATFORM_ANDROID OR PLATFORM_APPLE)
+elseif(USE_GCC_FLAGS)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pedantic -Wextra")
 
-    if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    if(COMPILER_CLANG)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-private-field")
+        if(PLATFORM_ANDROID AND ANDROID_ABI MATCHES "mips*")
+            string(REGEX REPLACE "-finline-functions" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+        endif()
     endif()
 endif()
 
-if(PLATFORM_WINDOWS)
+# other compiler flags
+if(MSVC)
+    # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
+
     if(NOT ENABLE_RTTI)
         string(REGEX REPLACE "/GR " " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /GR-")
     endif()
-else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+
+    # special windows build options:
+    #   debug info: pdbs with dlls, embedded in static libs
+    #   release optimisations to purely focus on size, override debug info settings as necessary
+    if(BUILD_SHARED_LIBS)
+        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
+        set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
+    else()
+        if(CMAKE_CXX_FLAGS MATCHES "/Zi")
+            string(REGEX REPLACE "/Zi" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+        endif()
+        if(CMAKE_CXX_FLAGS_DEBUG MATCHES "/Zi")
+            message(STATUS "Clearing pdb setting")
+            string(REGEX REPLACE "/Zi" "" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+        endif()
+
+        # put Z7 in config-specific flags so we can strip from release if we're concerned about size
+        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /Z7")
+        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Z7")
+    endif()
+
+    if(MINIMIZE_SIZE)
+        # strip debug info from release
+        string(REGEX REPLACE "/Z[a-zA-Z0-9]" "" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+        string(REGEX REPLACE "/DEBUG" "" CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE}")
+
+        # strip optimization settings and replace with
+        string(REGEX REPLACE "/O[a-zA-Z0-9]*" "" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+
+        # pure size flags
+        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O1 /Ob0 /Os")
+    endif()
+elseif(USE_GCC_FLAGS)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
+
+    if(NOT BUILD_SHARED_LIBS)
+        SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+    endif()
+
     if(MINIMIZE_SIZE)
         set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
-    endif()
-    if(NOT ENABLE_RTTI)
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
     endif()
 endif()
 
@@ -944,40 +1023,13 @@ if(BUILD_CURL OR BUILD_OPENSSL)
     set_property(TARGET curl PROPERTY IMPORTED_LOCATION ${CURL_LIBRARY_DIR}/libcurl.a)
 endif()
 
-# special windows build options:
-#   debug info: pdbs with dlls, embedded in static libs
-#   release optimisations to purely focus on size, override debug info settings as necessary
-if(PLATFORM_WINDOWS)
+if(USE_WINDOWS_DLL_SEMANTICS)
     if(BUILD_SHARED_LIBS)
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
-        set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
-    else()
-        if(CMAKE_CXX_FLAGS MATCHES "/Zi")
-            string(REGEX REPLACE "/Zi" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-        endif()
-        if(CMAKE_CXX_FLAGS_DEBUG MATCHES "/Zi")
-            message(STATUS "Clearing pdb setting")
-            string(REGEX REPLACE "/Zi" "" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
-        endif()
-
-        # put Z7 in config-specific flags so we can strip from release if we're concerned about size
-        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /Z7")
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Z7")
+        add_definitions("-DUSE_IMPORT_EXPORT")
     endif()
 
-    if(MINIMIZE_SIZE)
-        # strip debug info from release
-        string(REGEX REPLACE "/Z[a-zA-Z0-9]" "" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
-        string(REGEX REPLACE "/DEBUG" "" CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE}")
-
-        # strip optimization settings and replace with
-        string(REGEX REPLACE "/O[a-zA-Z0-9]*" "" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
-
-        # pure size flags
-        set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O1 /Ob0 /Os")
-    endif()
+    add_definitions(-DUSE_WINDOWS_DLL_SEMANTICS)
 endif()
-
 
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
@@ -1007,6 +1059,10 @@ elseif(ENABLE_WINDOWS_CLIENT)
 endif()
 
 LIST(APPEND EXPORTS "")
+
+if(PLATFORM_CUSTOM)
+    apply_custom_platform_settings()
+endif()
 
 #sdks
 add_subdirectory(aws-cpp-sdk-core)

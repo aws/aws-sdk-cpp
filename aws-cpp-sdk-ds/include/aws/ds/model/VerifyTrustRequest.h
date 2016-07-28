@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * Initiates the verification of an existing trust relationship between a Microsoft
-   * AD in the AWS cloud and an external domain.
+   * <p>Initiates the verification of an existing trust relationship between a
+   * Microsoft AD in the AWS cloud and an external domain.</p>
    */
   class AWS_DIRECTORYSERVICE_API VerifyTrustRequest : public DirectoryServiceRequest
   {
@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline VerifyTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline VerifyTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique Trust ID of the trust relationship to verify.
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
     inline VerifyTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 

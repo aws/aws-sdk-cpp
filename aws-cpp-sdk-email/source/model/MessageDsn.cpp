@@ -85,10 +85,12 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".ReportingMta=" << StringUtils::URLEncode(m_reportingMta.c_str()) << "&";
   }
+
   if(m_arrivalDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".ArrivalDate=" << StringUtils::URLEncode(m_arrivalDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_extensionFieldsHasBeenSet)
   {
       unsigned extensionFieldsIdx = 1;
@@ -99,6 +101,7 @@ void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }
+
 }
 
 void MessageDsn::OutputToStream(Aws::OStream& oStream, const char* location) const

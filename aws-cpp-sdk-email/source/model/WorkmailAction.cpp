@@ -71,10 +71,12 @@ void WorkmailAction::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_organizationArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".OrganizationArn=" << StringUtils::URLEncode(m_organizationArn.c_str()) << "&";
   }
+
 }
 
 void WorkmailAction::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,10 +33,12 @@ Aws::String DeleteCacheClusterRequest::SerializePayload() const
   {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_finalSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalSnapshotIdentifier=" << StringUtils::URLEncode(m_finalSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

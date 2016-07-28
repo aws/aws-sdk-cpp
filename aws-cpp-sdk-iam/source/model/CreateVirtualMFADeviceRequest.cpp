@@ -33,10 +33,12 @@ Aws::String CreateVirtualMFADeviceRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_virtualMFADeviceNameHasBeenSet)
   {
     ss << "VirtualMFADeviceName=" << StringUtils::URLEncode(m_virtualMFADeviceName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

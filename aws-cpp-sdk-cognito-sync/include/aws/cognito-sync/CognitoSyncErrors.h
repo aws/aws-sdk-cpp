@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CognitoSync
 {
-enum class AWS_COGNITOSYNC_API CognitoSyncErrors
+enum class CognitoSyncErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

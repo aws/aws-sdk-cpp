@@ -32,6 +32,7 @@ Aws::String DeleteLaunchConfigurationRequest::SerializePayload() const
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

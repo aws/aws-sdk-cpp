@@ -45,46 +45,57 @@ Aws::String RequestSpotInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_spotPriceHasBeenSet)
   {
     ss << "SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
+
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << SpotInstanceTypeMapper::GetNameForSpotInstanceType(m_type) << "&";
   }
+
   if(m_validFromHasBeenSet)
   {
     ss << "ValidFrom=" << StringUtils::URLEncode(m_validFrom.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_validUntilHasBeenSet)
   {
     ss << "ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_launchGroupHasBeenSet)
   {
     ss << "LaunchGroup=" << StringUtils::URLEncode(m_launchGroup.c_str()) << "&";
   }
+
   if(m_availabilityZoneGroupHasBeenSet)
   {
     ss << "AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
+
   if(m_blockDurationMinutesHasBeenSet)
   {
     ss << "BlockDurationMinutes=" << m_blockDurationMinutes << "&";
   }
+
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

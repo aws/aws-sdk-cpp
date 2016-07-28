@@ -33,6 +33,7 @@ Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_subnetsHasBeenSet)
   {
     unsigned subnetsCount = 1;
@@ -43,6 +44,7 @@ Aws::String DetachLoadBalancerFromSubnetsRequest::SerializePayload() const
       subnetsCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

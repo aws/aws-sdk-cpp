@@ -73,12 +73,14 @@ void AnalysisSchemeStatus::OutputToStream(Aws::OStream& oStream, const char* loc
       optionsLocationAndMemberSs << location << index << locationValue << ".Options";
       m_options.OutputToStream(oStream, optionsLocationAndMemberSs.str().c_str());
   }
+
   if(m_statusHasBeenSet)
   {
       Aws::StringStream statusLocationAndMemberSs;
       statusLocationAndMemberSs << location << index << locationValue << ".Status";
       m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void AnalysisSchemeStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

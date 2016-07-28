@@ -41,14 +41,17 @@ Aws::String GetAccountAuthorizationDetailsRequest::SerializePayload() const
       filterCount++;
     }
   }
+
   if(m_maxItemsHasBeenSet)
   {
     ss << "MaxItems=" << m_maxItems << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

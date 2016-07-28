@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace MobileAnalytics
 {
-enum class AWS_MOBILEANALYTICS_API MobileAnalyticsErrors
+enum class MobileAnalyticsErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

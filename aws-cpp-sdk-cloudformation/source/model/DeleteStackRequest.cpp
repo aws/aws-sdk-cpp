@@ -33,6 +33,7 @@ Aws::String DeleteStackRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_retainResourcesHasBeenSet)
   {
     unsigned retainResourcesCount = 1;
@@ -43,6 +44,7 @@ Aws::String DeleteStackRequest::SerializePayload() const
       retainResourcesCount++;
     }
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

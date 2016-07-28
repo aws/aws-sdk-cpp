@@ -37,22 +37,27 @@ Aws::String AllocateHostsRequest::SerializePayload() const
   {
     ss << "AutoPlacement=" << AutoPlacementMapper::GetNameForAutoPlacement(m_autoPlacement) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
     ss << "InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_quantityHasBeenSet)
   {
     ss << "Quantity=" << m_quantity << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

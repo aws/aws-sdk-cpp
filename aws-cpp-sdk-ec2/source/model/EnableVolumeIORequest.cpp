@@ -34,10 +34,12 @@ Aws::String EnableVolumeIORequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_volumeIdHasBeenSet)
   {
     ss << "VolumeId=" << StringUtils::URLEncode(m_volumeId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

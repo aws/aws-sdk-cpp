@@ -114,93 +114,130 @@ namespace Model
     inline DescribeThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing type name.</p>
+     */
+    inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline void SetThingTypeName(const Aws::String& value) { m_thingTypeName = value; }
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline void SetThingTypeName(Aws::String&& value) { m_thingTypeName = value; }
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline void SetThingTypeName(const char* value) { m_thingTypeName.assign(value); }
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline DescribeThingResult& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline DescribeThingResult& WithThingTypeName(Aws::String&& value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The thing type name.</p>
+     */
+    inline DescribeThingResult& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+
+    /**
+     * <p>The thing attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = value; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes[key] = value; return *this; }
 
     /**
-     * <p>The attributes, which are name/value pairs in JSON format (for example:
-     * {\"attributes\":{\"some-name1\":\"some-value1\"},
-     * {\"some-name2\":\"some-value2\"}, {\"some-name3\":\"some-value3\"}})</p>
+     * <p>The thing attributes.</p>
      */
     inline DescribeThingResult& AddAttributes(const char* key, const char* value) { m_attributes[key] = value; return *this; }
+
+    /**
+     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * avoid unintentional changes to the information in the registry, you can pass the
+     * version information in the <code>expectedVersion</code> parameter of the
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     */
+    inline long long GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * avoid unintentional changes to the information in the registry, you can pass the
+     * version information in the <code>expectedVersion</code> parameter of the
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     */
+    inline void SetVersion(long long value) { m_version = value; }
+
+    /**
+     * <p>The current version of the thing record in the registry.</p> <note> <p>To
+     * avoid unintentional changes to the information in the registry, you can pass the
+     * version information in the <code>expectedVersion</code> parameter of the
+     * <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+     */
+    inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
 
   private:
     Aws::String m_defaultClientId;
     Aws::String m_thingName;
+    Aws::String m_thingTypeName;
     Aws::Map<Aws::String, Aws::String> m_attributes;
+    long long m_version;
   };
 
 } // namespace Model

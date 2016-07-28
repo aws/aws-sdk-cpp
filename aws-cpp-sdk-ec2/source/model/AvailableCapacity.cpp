@@ -85,10 +85,12 @@ void AvailableCapacity::OutputToStream(Aws::OStream& oStream, const char* locati
         item.OutputToStream(oStream, availableInstanceCapacitySs.str().c_str());
       }
   }
+
   if(m_availableVCpusHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailableVCpus=" << m_availableVCpus << "&";
   }
+
 }
 
 void AvailableCapacity::OutputToStream(Aws::OStream& oStream, const char* location) const

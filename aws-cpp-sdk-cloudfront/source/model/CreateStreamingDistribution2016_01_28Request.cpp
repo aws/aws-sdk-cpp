@@ -14,6 +14,7 @@
 */
 #include <aws/cloudfront/model/CreateStreamingDistribution2016_01_28Request.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -30,11 +31,11 @@ Aws::String CreateStreamingDistribution2016_01_28Request::SerializePayload() con
 {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("StreamingDistributionConfig");
 
-  XmlNode rootNode = payloadDoc.GetRootElement();
-  rootNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2016-01-28/");
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2016-01-28/");
 
-  m_streamingDistributionConfig.AddToNode(rootNode);
-  if(rootNode.HasChildren())
+  m_streamingDistributionConfig.AddToNode(parentNode);
+  if(parentNode.HasChildren())
   {
     return payloadDoc.ConvertToString();
   }

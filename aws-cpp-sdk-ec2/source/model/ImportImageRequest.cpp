@@ -42,10 +42,12 @@ Aws::String ImportImageRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_diskContainersHasBeenSet)
   {
     unsigned diskContainersCount = 1;
@@ -55,34 +57,42 @@ Aws::String ImportImageRequest::SerializePayload() const
       diskContainersCount++;
     }
   }
+
   if(m_licenseTypeHasBeenSet)
   {
     ss << "LicenseType=" << StringUtils::URLEncode(m_licenseType.c_str()) << "&";
   }
+
   if(m_hypervisorHasBeenSet)
   {
     ss << "Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
   }
+
   if(m_architectureHasBeenSet)
   {
     ss << "Architecture=" << StringUtils::URLEncode(m_architecture.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << StringUtils::URLEncode(m_platform.c_str()) << "&";
   }
+
   if(m_clientDataHasBeenSet)
   {
-    m_clientData.OutputToStream(ss, "ClientData.");
+    m_clientData.OutputToStream(ss, "ClientData");
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_roleNameHasBeenSet)
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -48,6 +48,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "workspaces";
 static const char* ALLOCATION_TAG = "WorkSpacesClient";
 
+
 WorkSpacesClient::WorkSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

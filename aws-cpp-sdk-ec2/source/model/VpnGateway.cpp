@@ -115,18 +115,22 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << VpnStateMapper::GetNameForVpnState(m_state) << "&";
   }
+
   if(m_typeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_vpcAttachmentsHasBeenSet)
   {
       unsigned vpcAttachmentsIdx = 1;
@@ -137,6 +141,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, vpcAttachmentsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -147,6 +152,7 @@ void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void VpnGateway::OutputToStream(Aws::OStream& oStream, const char* location) const

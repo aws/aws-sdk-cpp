@@ -59,22 +59,27 @@ Aws::String RunInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_minCountHasBeenSet)
   {
     ss << "MinCount=" << m_minCount << "&";
   }
+
   if(m_maxCountHasBeenSet)
   {
     ss << "MaxCount=" << m_maxCount << "&";
   }
+
   if(m_keyNameHasBeenSet)
   {
     ss << "KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
+
   if(m_securityGroupsHasBeenSet)
   {
     unsigned securityGroupsCount = 1;
@@ -85,6 +90,7 @@ Aws::String RunInstancesRequest::SerializePayload() const
       securityGroupsCount++;
     }
   }
+
   if(m_securityGroupIdsHasBeenSet)
   {
     unsigned securityGroupIdsCount = 1;
@@ -95,26 +101,32 @@ Aws::String RunInstancesRequest::SerializePayload() const
       securityGroupIdsCount++;
     }
   }
+
   if(m_userDataHasBeenSet)
   {
     ss << "UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
     ss << "InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
+
   if(m_placementHasBeenSet)
   {
-    m_placement.OutputToStream(ss, "Placement.");
+    m_placement.OutputToStream(ss, "Placement");
   }
+
   if(m_kernelIdHasBeenSet)
   {
     ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
     ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
     unsigned blockDeviceMappingsCount = 1;
@@ -124,34 +136,42 @@ Aws::String RunInstancesRequest::SerializePayload() const
       blockDeviceMappingsCount++;
     }
   }
+
   if(m_monitoringHasBeenSet)
   {
-    m_monitoring.OutputToStream(ss, "Monitoring.");
+    m_monitoring.OutputToStream(ss, "Monitoring");
   }
+
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_disableApiTerminationHasBeenSet)
   {
     ss << "DisableApiTermination=" << m_disableApiTermination << "&";
   }
+
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
     ss << "InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
     ss << "PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_additionalInfoHasBeenSet)
   {
     ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
+
   if(m_networkInterfacesHasBeenSet)
   {
     unsigned networkInterfacesCount = 1;
@@ -161,14 +181,17 @@ Aws::String RunInstancesRequest::SerializePayload() const
       networkInterfacesCount++;
     }
   }
+
   if(m_iamInstanceProfileHasBeenSet)
   {
-    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile.");
+    m_iamInstanceProfile.OutputToStream(ss, "IamInstanceProfile");
   }
+
   if(m_ebsOptimizedHasBeenSet)
   {
     ss << "EbsOptimized=" << m_ebsOptimized << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

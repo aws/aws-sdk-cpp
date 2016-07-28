@@ -95,22 +95,27 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".ActionId=" << StringUtils::URLEncode(m_actionId.c_str()) << "&";
   }
+
   if(m_actionDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionDescription=" << StringUtils::URLEncode(m_actionDescription.c_str()) << "&";
   }
+
   if(m_actionTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << ActionStatusMapper::GetNameForActionStatus(m_status) << "&";
   }
+
   if(m_windowStartTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location) const

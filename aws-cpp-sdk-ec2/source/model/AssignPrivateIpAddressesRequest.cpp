@@ -37,6 +37,7 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_privateIpAddressesHasBeenSet)
   {
     unsigned privateIpAddressesCount = 1;
@@ -47,14 +48,17 @@ Aws::String AssignPrivateIpAddressesRequest::SerializePayload() const
       privateIpAddressesCount++;
     }
   }
+
   if(m_secondaryPrivateIpAddressCountHasBeenSet)
   {
     ss << "SecondaryPrivateIpAddressCount=" << m_secondaryPrivateIpAddressCount << "&";
   }
+
   if(m_allowReassignmentHasBeenSet)
   {
     ss << "AllowReassignment=" << m_allowReassignment << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

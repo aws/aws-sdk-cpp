@@ -63,6 +63,7 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
 }
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

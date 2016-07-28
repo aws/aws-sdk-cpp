@@ -93,6 +93,7 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".EventId=" << StringUtils::URLEncode(m_eventId.c_str()) << "&";
   }
+
   if(m_eventCategoriesHasBeenSet)
   {
       unsigned eventCategoriesIdx = 1;
@@ -101,14 +102,17 @@ void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location, u
         oStream << location << index << locationValue << ".EventCategory." << eventCategoriesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_eventDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
+
   if(m_severityHasBeenSet)
   {
       oStream << location << index << locationValue << ".Severity=" << StringUtils::URLEncode(m_severity.c_str()) << "&";
   }
+
 }
 
 void EventInfoMap::OutputToStream(Aws::OStream& oStream, const char* location) const

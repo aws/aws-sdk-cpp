@@ -99,10 +99,12 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_groupsHasBeenSet)
   {
       unsigned groupsIdx = 1;
@@ -113,6 +115,7 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -123,6 +126,7 @@ void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ClassicLinkInstance::OutputToStream(Aws::OStream& oStream, const char* location) const

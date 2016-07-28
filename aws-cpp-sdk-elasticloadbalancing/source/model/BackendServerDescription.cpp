@@ -79,6 +79,7 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
       unsigned policyNamesIdx = 1;
@@ -87,6 +88,7 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
         oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

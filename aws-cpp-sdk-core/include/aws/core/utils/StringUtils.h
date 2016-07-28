@@ -63,6 +63,13 @@ namespace Aws
             static Aws::String URLEncode(const char* unsafe);
 
             /**
+            * Http Clients tend to escape some characters but not all. Escaping all of them causes problems, because the client
+            * will also try to escape them.
+            * So this only escapes non-ascii characters and the + character
+            */
+            static Aws::String UTF8Escape(const char* unicodeString, const char* delimiter);
+
+            /**
             * URL encodes a double (if it ends up going to scientific notation) otherwise it just returns it as a string.
             */
             static Aws::String URLEncode(double unsafe);

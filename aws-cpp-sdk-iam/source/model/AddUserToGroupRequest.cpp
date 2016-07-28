@@ -33,10 +33,12 @@ Aws::String AddUserToGroupRequest::SerializePayload() const
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_userNameHasBeenSet)
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

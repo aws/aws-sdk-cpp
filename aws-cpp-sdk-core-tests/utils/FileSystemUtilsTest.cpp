@@ -13,6 +13,7 @@
   * permissions and limitations under the License.
   */
 
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/external/gtest.h>
 #include <aws/testing/MemoryTesting.h>
@@ -24,7 +25,7 @@ using namespace Aws::Utils;
 
 TEST(FileTest, HomeDirectory)
 {
-    auto homeDirectory = Aws::Utils::FileSystemUtils::GetHomeDirectory();
+    auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
 
     ASSERT_TRUE(homeDirectory.size() > 0);
 }

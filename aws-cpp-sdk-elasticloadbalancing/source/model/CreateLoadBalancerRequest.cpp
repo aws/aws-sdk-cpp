@@ -38,6 +38,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_listenersHasBeenSet)
   {
     unsigned listenersCount = 1;
@@ -47,6 +48,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       listenersCount++;
     }
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
     unsigned availabilityZonesCount = 1;
@@ -57,6 +59,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       availabilityZonesCount++;
     }
   }
+
   if(m_subnetsHasBeenSet)
   {
     unsigned subnetsCount = 1;
@@ -67,6 +70,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       subnetsCount++;
     }
   }
+
   if(m_securityGroupsHasBeenSet)
   {
     unsigned securityGroupsCount = 1;
@@ -77,10 +81,12 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       securityGroupsCount++;
     }
   }
+
   if(m_schemeHasBeenSet)
   {
     ss << "Scheme=" << StringUtils::URLEncode(m_scheme.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -90,6 +96,7 @@ Aws::String CreateLoadBalancerRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

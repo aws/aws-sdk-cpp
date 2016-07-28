@@ -71,10 +71,12 @@ void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".ProductCodeId=" << StringUtils::URLEncode(m_productCodeId.c_str()) << "&";
   }
+
   if(m_productCodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProductCodeType=" << ProductCodeValuesMapper::GetNameForProductCodeValues(m_productCodeType) << "&";
   }
+
 }
 
 void ProductCode::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -77,6 +77,7 @@ void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
       unsigned attributesIdx = 1;
@@ -87,6 +88,7 @@ void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
+
 }
 
 void ReplaceableItem::OutputToStream(Aws::OStream& oStream, const char* location) const

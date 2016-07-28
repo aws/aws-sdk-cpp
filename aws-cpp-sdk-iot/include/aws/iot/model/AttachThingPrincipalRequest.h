@@ -71,37 +71,37 @@ namespace Model
     inline AttachThingPrincipalRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline AttachThingPrincipalRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline AttachThingPrincipalRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal (certificate or other credential).</p>
+     * <p>The principal, such as a certificate or other credential.</p>
      */
     inline AttachThingPrincipalRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

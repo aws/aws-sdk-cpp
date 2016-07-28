@@ -33,10 +33,12 @@ Aws::String UpdateSAMLProviderRequest::SerializePayload() const
   {
     ss << "SAMLMetadataDocument=" << StringUtils::URLEncode(m_sAMLMetadataDocument.c_str()) << "&";
   }
+
   if(m_sAMLProviderArnHasBeenSet)
   {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

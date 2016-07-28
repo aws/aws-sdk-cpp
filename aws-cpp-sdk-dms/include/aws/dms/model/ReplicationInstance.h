@@ -392,6 +392,27 @@ namespace Model
     inline ReplicationInstance& WithPendingModifiedValues(ReplicationPendingModifiedValues&& value) { SetPendingModifiedValues(value); return *this;}
 
     /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline ReplicationInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
+    /**
      * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
@@ -545,72 +566,82 @@ namespace Model
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline const Aws::String& GetReplicationInstancePublicIpAddress() const{ return m_replicationInstancePublicIpAddress; }
+    inline const Aws::Vector<Aws::String>& GetReplicationInstancePublicIpAddresses() const{ return m_replicationInstancePublicIpAddresses; }
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePublicIpAddress(const Aws::String& value) { m_replicationInstancePublicIpAddressHasBeenSet = true; m_replicationInstancePublicIpAddress = value; }
+    inline void SetReplicationInstancePublicIpAddresses(const Aws::Vector<Aws::String>& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses = value; }
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePublicIpAddress(Aws::String&& value) { m_replicationInstancePublicIpAddressHasBeenSet = true; m_replicationInstancePublicIpAddress = value; }
+    inline void SetReplicationInstancePublicIpAddresses(Aws::Vector<Aws::String>&& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses = value; }
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePublicIpAddress(const char* value) { m_replicationInstancePublicIpAddressHasBeenSet = true; m_replicationInstancePublicIpAddress.assign(value); }
+    inline ReplicationInstance& WithReplicationInstancePublicIpAddresses(const Aws::Vector<Aws::String>& value) { SetReplicationInstancePublicIpAddresses(value); return *this;}
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePublicIpAddress(const Aws::String& value) { SetReplicationInstancePublicIpAddress(value); return *this;}
+    inline ReplicationInstance& WithReplicationInstancePublicIpAddresses(Aws::Vector<Aws::String>&& value) { SetReplicationInstancePublicIpAddresses(value); return *this;}
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePublicIpAddress(Aws::String&& value) { SetReplicationInstancePublicIpAddress(value); return *this;}
+    inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(const Aws::String& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
 
     /**
      * <p>The public IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePublicIpAddress(const char* value) { SetReplicationInstancePublicIpAddress(value); return *this;}
+    inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(Aws::String&& value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The public IP address of the replication instance.</p>
+     */
+    inline ReplicationInstance& AddReplicationInstancePublicIpAddresses(const char* value) { m_replicationInstancePublicIpAddressesHasBeenSet = true; m_replicationInstancePublicIpAddresses.push_back(value); return *this; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline const Aws::String& GetReplicationInstancePrivateIpAddress() const{ return m_replicationInstancePrivateIpAddress; }
+    inline const Aws::Vector<Aws::String>& GetReplicationInstancePrivateIpAddresses() const{ return m_replicationInstancePrivateIpAddresses; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePrivateIpAddress(const Aws::String& value) { m_replicationInstancePrivateIpAddressHasBeenSet = true; m_replicationInstancePrivateIpAddress = value; }
+    inline void SetReplicationInstancePrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses = value; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePrivateIpAddress(Aws::String&& value) { m_replicationInstancePrivateIpAddressHasBeenSet = true; m_replicationInstancePrivateIpAddress = value; }
+    inline void SetReplicationInstancePrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses = value; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline void SetReplicationInstancePrivateIpAddress(const char* value) { m_replicationInstancePrivateIpAddressHasBeenSet = true; m_replicationInstancePrivateIpAddress.assign(value); }
+    inline ReplicationInstance& WithReplicationInstancePrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetReplicationInstancePrivateIpAddresses(value); return *this;}
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePrivateIpAddress(const Aws::String& value) { SetReplicationInstancePrivateIpAddress(value); return *this;}
+    inline ReplicationInstance& WithReplicationInstancePrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetReplicationInstancePrivateIpAddresses(value); return *this;}
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePrivateIpAddress(Aws::String&& value) { SetReplicationInstancePrivateIpAddress(value); return *this;}
+    inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(const Aws::String& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
 
     /**
      * <p>The private IP address of the replication instance.</p>
      */
-    inline ReplicationInstance& WithReplicationInstancePrivateIpAddress(const char* value) { SetReplicationInstancePrivateIpAddress(value); return *this;}
+    inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(Aws::String&& value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The private IP address of the replication instance.</p>
+     */
+    inline ReplicationInstance& AddReplicationInstancePrivateIpAddresses(const char* value) { m_replicationInstancePrivateIpAddressesHasBeenSet = true; m_replicationInstancePrivateIpAddresses.push_back(value); return *this; }
 
     /**
      * <p> Specifies the accessibility options for the replication instance. A value of
@@ -657,6 +688,8 @@ namespace Model
     bool m_preferredMaintenanceWindowHasBeenSet;
     ReplicationPendingModifiedValues m_pendingModifiedValues;
     bool m_pendingModifiedValuesHasBeenSet;
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
     bool m_autoMinorVersionUpgrade;
@@ -665,10 +698,10 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_replicationInstanceArn;
     bool m_replicationInstanceArnHasBeenSet;
-    Aws::String m_replicationInstancePublicIpAddress;
-    bool m_replicationInstancePublicIpAddressHasBeenSet;
-    Aws::String m_replicationInstancePrivateIpAddress;
-    bool m_replicationInstancePrivateIpAddressHasBeenSet;
+    Aws::Vector<Aws::String> m_replicationInstancePublicIpAddresses;
+    bool m_replicationInstancePublicIpAddressesHasBeenSet;
+    Aws::Vector<Aws::String> m_replicationInstancePrivateIpAddresses;
+    bool m_replicationInstancePrivateIpAddressesHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
   };

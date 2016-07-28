@@ -38,6 +38,7 @@ Aws::String GetContextKeysForCustomPolicyRequest::SerializePayload() const
       policyInputListCount++;
     }
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

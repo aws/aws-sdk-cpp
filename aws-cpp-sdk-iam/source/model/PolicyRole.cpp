@@ -71,10 +71,12 @@ void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   if(m_roleIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
   }
+
 }
 
 void PolicyRole::OutputToStream(Aws::OStream& oStream, const char* location) const

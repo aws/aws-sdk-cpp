@@ -71,12 +71,14 @@ void ReservedInstancesModificationResponse::OutputToStream(Aws::OStream& oStream
   {
       oStream << location << index << locationValue << ".ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
+
   if(m_targetConfigurationHasBeenSet)
   {
       Aws::StringStream targetConfigurationLocationAndMemberSs;
       targetConfigurationLocationAndMemberSs << location << index << locationValue << ".TargetConfiguration";
       m_targetConfiguration.OutputToStream(oStream, targetConfigurationLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ReservedInstancesModificationResponse::OutputToStream(Aws::OStream& oStream, const char* location) const

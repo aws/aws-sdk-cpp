@@ -43,72 +43,72 @@ namespace Model
     CreateThingResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingName = value; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingName = value; }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline void SetThingName(const char* value) { m_thingName.assign(value); }
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline CreateThingResult& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline CreateThingResult& WithThingName(Aws::String&& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing.</p>
+     * <p>The name of the new thing.</p>
      */
     inline CreateThingResult& WithThingName(const char* value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline void SetThingArn(const Aws::String& value) { m_thingArn = value; }
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline void SetThingArn(Aws::String&& value) { m_thingArn = value; }
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline void SetThingArn(const char* value) { m_thingArn.assign(value); }
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline CreateThingResult& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline CreateThingResult& WithThingArn(Aws::String&& value) { SetThingArn(value); return *this;}
 
     /**
-     * <p>The thing ARN.</p>
+     * <p>The ARN of the new thing.</p>
      */
     inline CreateThingResult& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 

@@ -85,10 +85,12 @@ void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyTypeNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyTypeName=" << StringUtils::URLEncode(m_policyTypeName.c_str()) << "&";
   }
+
   if(m_policyAttributeDescriptionsHasBeenSet)
   {
       unsigned policyAttributeDescriptionsIdx = 1;
@@ -99,6 +101,7 @@ void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* locati
         item.OutputToStream(oStream, policyAttributeDescriptionsSs.str().c_str());
       }
   }
+
 }
 
 void PolicyDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

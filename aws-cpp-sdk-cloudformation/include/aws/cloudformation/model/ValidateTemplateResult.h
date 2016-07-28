@@ -117,65 +117,79 @@ namespace Model
     inline ValidateTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = value; }
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(value); return *this;}
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
 
     /**
-     * <p>The capabilities found within the template. Currently, AWS CloudFormation
-     * supports only the CAPABILITY_IAM capability. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM value for this parameter when you
-     * use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
-     * otherwise, those actions return an InsufficientCapabilities error.</p>
+     * <p>The capabilities found within the template. If your template contains IAM
+     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
+     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
+     * with your template; otherwise, those actions return an InsufficientCapabilities
+     * error.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+     * IAM Resources in AWS CloudFormation Templates</a>.</p>
      */
     inline ValidateTemplateResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(value); return *this; }
 

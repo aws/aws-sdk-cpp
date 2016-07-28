@@ -61,6 +61,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "cloudfront";
 static const char* ALLOCATION_TAG = "CloudFrontClient";
 
+
 CloudFrontClient::CloudFrontClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

@@ -37,14 +37,17 @@ Aws::String ImportInstanceRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
+
   if(m_diskImagesHasBeenSet)
   {
     unsigned diskImagesCount = 1;
@@ -54,10 +57,12 @@ Aws::String ImportInstanceRequest::SerializePayload() const
       diskImagesCount++;
     }
   }
+
   if(m_platformHasBeenSet)
   {
     ss << "Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

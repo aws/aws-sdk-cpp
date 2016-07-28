@@ -99,22 +99,27 @@ void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".UpdateVersion=" << m_updateVersion << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << OptionStateMapper::GetNameForOptionState(m_state) << "&";
   }
+
   if(m_pendingDeletionHasBeenSet)
   {
       oStream << location << index << locationValue << ".PendingDeletion=" << m_pendingDeletion << "&";
   }
+
 }
 
 void OptionStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

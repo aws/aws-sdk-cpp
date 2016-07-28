@@ -63,6 +63,7 @@ void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
   }
+
 }
 
 void AccountWithRestoreAccess::OutputToStream(Aws::OStream& oStream, const char* location) const

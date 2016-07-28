@@ -71,10 +71,12 @@ void ReceiptIpFilter::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Policy=" << ReceiptFilterPolicyMapper::GetNameForReceiptFilterPolicy(m_policy) << "&";
   }
+
   if(m_cidrHasBeenSet)
   {
       oStream << location << index << locationValue << ".Cidr=" << StringUtils::URLEncode(m_cidr.c_str()) << "&";
   }
+
 }
 
 void ReceiptIpFilter::OutputToStream(Aws::OStream& oStream, const char* location) const

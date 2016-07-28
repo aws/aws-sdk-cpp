@@ -33,10 +33,12 @@ Aws::String DefineAnalysisSchemeRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_analysisSchemeHasBeenSet)
   {
-    m_analysisScheme.OutputToStream(ss, "AnalysisScheme.");
+    m_analysisScheme.OutputToStream(ss, "AnalysisScheme");
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

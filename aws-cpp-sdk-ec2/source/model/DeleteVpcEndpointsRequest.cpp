@@ -34,6 +34,7 @@ Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpcEndpointIdsHasBeenSet)
   {
     unsigned vpcEndpointIdsCount = 1;
@@ -44,6 +45,7 @@ Aws::String DeleteVpcEndpointsRequest::SerializePayload() const
       vpcEndpointIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

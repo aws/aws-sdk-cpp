@@ -23,11 +23,7 @@ namespace Aws
 {
     namespace Utils
     {
-#ifdef _WIN32
-        static const char PATH_DELIM = '\\';
-#else
-        static const char PATH_DELIM = '/';
-#endif
+
         class AWS_CORE_API FStreamWithFileName : public Aws::FStream
         {
             public:
@@ -65,43 +61,5 @@ namespace Aws
             ~TempFile();
         };
 
-        /**
-         * Various utilities for working with a file system.
-         */ 
-        class AWS_CORE_API FileSystemUtils
-        {
-        public:
-            /**
-             * Returns the directory path for the home dir env variable
-             */
-            static Aws::String GetHomeDirectory();
-
-            /**
-             * Creates directory if it doesn't exist. Returns true if the directory was created
-             * or already exists. False for failure.
-             */
-            static bool CreateDirectoryIfNotExists(const char* path);
-
-            /**
-             * Deletes file if it exists. Returns true if file doesn't exist or on success.
-             */
-            static bool RemoveFileIfExists(const char* fileName);
-
-            /**
-             * Moves the file. Returns true on success
-             */
-            static bool RelocateFileOrDirectory(const char* from, const char* to);
-
-            /**
-             * Gets path delimiter for the current platform
-             */
-            static char GetPathDelimiter() { return PATH_DELIM; }
-
-            /**
-             * Computes a unique tmp file path
-             */
-            static Aws::String CreateTempFilePath();
-
-        };
     }
 }

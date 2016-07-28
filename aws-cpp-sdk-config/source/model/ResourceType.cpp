@@ -48,6 +48,12 @@ namespace Aws
         static const int AWS_IAM_Policy_HASH = HashingUtils::HashString("AWS::IAM::Policy");
         static const int AWS_IAM_Role_HASH = HashingUtils::HashString("AWS::IAM::Role");
         static const int AWS_IAM_User_HASH = HashingUtils::HashString("AWS::IAM::User");
+        static const int AWS_ACM_Certificate_HASH = HashingUtils::HashString("AWS::ACM::Certificate");
+        static const int AWS_RDS_DBInstance_HASH = HashingUtils::HashString("AWS::RDS::DBInstance");
+        static const int AWS_RDS_DBSubnetGroup_HASH = HashingUtils::HashString("AWS::RDS::DBSubnetGroup");
+        static const int AWS_RDS_DBSecurityGroup_HASH = HashingUtils::HashString("AWS::RDS::DBSecurityGroup");
+        static const int AWS_RDS_DBSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBSnapshot");
+        static const int AWS_RDS_EventSubscription_HASH = HashingUtils::HashString("AWS::RDS::EventSubscription");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -129,6 +135,30 @@ namespace Aws
           {
             return ResourceType::AWS_IAM_User;
           }
+          else if (hashCode == AWS_ACM_Certificate_HASH)
+          {
+            return ResourceType::AWS_ACM_Certificate;
+          }
+          else if (hashCode == AWS_RDS_DBInstance_HASH)
+          {
+            return ResourceType::AWS_RDS_DBInstance;
+          }
+          else if (hashCode == AWS_RDS_DBSubnetGroup_HASH)
+          {
+            return ResourceType::AWS_RDS_DBSubnetGroup;
+          }
+          else if (hashCode == AWS_RDS_DBSecurityGroup_HASH)
+          {
+            return ResourceType::AWS_RDS_DBSecurityGroup;
+          }
+          else if (hashCode == AWS_RDS_DBSnapshot_HASH)
+          {
+            return ResourceType::AWS_RDS_DBSnapshot;
+          }
+          else if (hashCode == AWS_RDS_EventSubscription_HASH)
+          {
+            return ResourceType::AWS_RDS_EventSubscription;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -181,6 +211,18 @@ namespace Aws
             return "AWS::IAM::Role";
           case ResourceType::AWS_IAM_User:
             return "AWS::IAM::User";
+          case ResourceType::AWS_ACM_Certificate:
+            return "AWS::ACM::Certificate";
+          case ResourceType::AWS_RDS_DBInstance:
+            return "AWS::RDS::DBInstance";
+          case ResourceType::AWS_RDS_DBSubnetGroup:
+            return "AWS::RDS::DBSubnetGroup";
+          case ResourceType::AWS_RDS_DBSecurityGroup:
+            return "AWS::RDS::DBSecurityGroup";
+          case ResourceType::AWS_RDS_DBSnapshot:
+            return "AWS::RDS::DBSnapshot";
+          case ResourceType::AWS_RDS_EventSubscription:
+            return "AWS::RDS::EventSubscription";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

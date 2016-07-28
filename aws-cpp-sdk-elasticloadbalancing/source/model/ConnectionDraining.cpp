@@ -75,10 +75,12 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
   if(m_timeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
   }
+
 }
 
 void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* location) const

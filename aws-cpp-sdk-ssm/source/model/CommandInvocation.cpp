@@ -35,7 +35,9 @@ CommandInvocation::CommandInvocation() :
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
-    m_commandPluginsHasBeenSet(false)
+    m_commandPluginsHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
+    m_notificationConfigHasBeenSet(false)
 {
 }
 
@@ -47,7 +49,9 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
     m_requestedDateTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_traceOutputHasBeenSet(false),
-    m_commandPluginsHasBeenSet(false)
+    m_commandPluginsHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
+    m_notificationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,20 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_commandPluginsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceRole"))
+  {
+    m_serviceRole = jsonValue.GetString("ServiceRole");
+
+    m_serviceRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationConfig"))
+  {
+    m_notificationConfig = jsonValue.GetObject("NotificationConfig");
+
+    m_notificationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +186,18 @@ JsonValue CommandInvocation::Jsonize() const
      commandPluginsJsonList[commandPluginsIndex].AsObject(m_commandPlugins[commandPluginsIndex].Jsonize());
    }
    payload.WithArray("CommandPlugins", std::move(commandPluginsJsonList));
+
+  }
+
+  if(m_serviceRoleHasBeenSet)
+  {
+   payload.WithString("ServiceRole", m_serviceRole);
+
+  }
+
+  if(m_notificationConfigHasBeenSet)
+  {
+   payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
 
   }
 

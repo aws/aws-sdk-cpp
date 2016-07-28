@@ -71,10 +71,12 @@ void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".IamRoleArn=" << StringUtils::URLEncode(m_iamRoleArn.c_str()) << "&";
   }
+
   if(m_applyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyStatus=" << StringUtils::URLEncode(m_applyStatus.c_str()) << "&";
   }
+
 }
 
 void ClusterIamRole::OutputToStream(Aws::OStream& oStream, const char* location) const

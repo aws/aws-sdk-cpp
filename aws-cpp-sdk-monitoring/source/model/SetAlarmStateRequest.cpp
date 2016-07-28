@@ -35,18 +35,22 @@ Aws::String SetAlarmStateRequest::SerializePayload() const
   {
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_stateValueHasBeenSet)
   {
     ss << "StateValue=" << StateValueMapper::GetNameForStateValue(m_stateValue) << "&";
   }
+
   if(m_stateReasonHasBeenSet)
   {
     ss << "StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
   }
+
   if(m_stateReasonDataHasBeenSet)
   {
     ss << "StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

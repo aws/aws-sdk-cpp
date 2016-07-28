@@ -33,10 +33,12 @@ Aws::String UploadSSHPublicKeyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_sSHPublicKeyBodyHasBeenSet)
   {
     ss << "SSHPublicKeyBody=" << StringUtils::URLEncode(m_sSHPublicKeyBody.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

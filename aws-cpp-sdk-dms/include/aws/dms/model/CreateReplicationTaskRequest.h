@@ -240,37 +240,44 @@ namespace Model
     inline CreateReplicationTaskRequest& WithMigrationType(MigrationTypeValue&& value) { SetMigrationType(value); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(value); return *this;}
 
     /**
-     * <p>The path of the JSON file that contains the table mappings.</p>
+     * <p>The path of the JSON file that contains the table mappings. Preceed the path
+     * with "file://".</p> <p>For example, --table-mappings file://mappingfile.json</p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 

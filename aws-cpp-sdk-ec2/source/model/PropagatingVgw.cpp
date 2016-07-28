@@ -63,6 +63,7 @@ void PropagatingVgw::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
+
 }
 
 void PropagatingVgw::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -71,10 +71,12 @@ void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
+
   if(m_keyFingerprintHasBeenSet)
   {
       oStream << location << index << locationValue << ".KeyFingerprint=" << StringUtils::URLEncode(m_keyFingerprint.c_str()) << "&";
   }
+
 }
 
 void KeyPairInfo::OutputToStream(Aws::OStream& oStream, const char* location) const

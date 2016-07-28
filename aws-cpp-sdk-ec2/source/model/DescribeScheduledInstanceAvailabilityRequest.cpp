@@ -43,30 +43,37 @@ Aws::String DescribeScheduledInstanceAvailabilityRequest::SerializePayload() con
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_recurrenceHasBeenSet)
   {
-    m_recurrence.OutputToStream(ss, "Recurrence.");
+    m_recurrence.OutputToStream(ss, "Recurrence");
   }
+
   if(m_firstSlotStartTimeRangeHasBeenSet)
   {
-    m_firstSlotStartTimeRange.OutputToStream(ss, "FirstSlotStartTimeRange.");
+    m_firstSlotStartTimeRange.OutputToStream(ss, "FirstSlotStartTimeRange");
   }
+
   if(m_minSlotDurationInHoursHasBeenSet)
   {
     ss << "MinSlotDurationInHours=" << m_minSlotDurationInHours << "&";
   }
+
   if(m_maxSlotDurationInHoursHasBeenSet)
   {
     ss << "MaxSlotDurationInHours=" << m_maxSlotDurationInHours << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -76,6 +83,7 @@ Aws::String DescribeScheduledInstanceAvailabilityRequest::SerializePayload() con
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

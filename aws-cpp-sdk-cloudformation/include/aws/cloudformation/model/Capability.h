@@ -25,7 +25,8 @@ namespace Model
   enum class Capability
   {
     NOT_SET,
-    CAPABILITY_IAM
+    CAPABILITY_IAM,
+    CAPABILITY_NAMED_IAM
   };
 
 namespace CapabilityMapper

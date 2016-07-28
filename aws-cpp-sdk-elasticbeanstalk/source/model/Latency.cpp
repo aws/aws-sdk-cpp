@@ -135,34 +135,42 @@ void Latency::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
         oStream << location << index << locationValue << ".P999=" << StringUtils::URLEncode(m_p999) << "&";
   }
+
   if(m_p99HasBeenSet)
   {
         oStream << location << index << locationValue << ".P99=" << StringUtils::URLEncode(m_p99) << "&";
   }
+
   if(m_p95HasBeenSet)
   {
         oStream << location << index << locationValue << ".P95=" << StringUtils::URLEncode(m_p95) << "&";
   }
+
   if(m_p90HasBeenSet)
   {
         oStream << location << index << locationValue << ".P90=" << StringUtils::URLEncode(m_p90) << "&";
   }
+
   if(m_p85HasBeenSet)
   {
         oStream << location << index << locationValue << ".P85=" << StringUtils::URLEncode(m_p85) << "&";
   }
+
   if(m_p75HasBeenSet)
   {
         oStream << location << index << locationValue << ".P75=" << StringUtils::URLEncode(m_p75) << "&";
   }
+
   if(m_p50HasBeenSet)
   {
         oStream << location << index << locationValue << ".P50=" << StringUtils::URLEncode(m_p50) << "&";
   }
+
   if(m_p10HasBeenSet)
   {
         oStream << location << index << locationValue << ".P10=" << StringUtils::URLEncode(m_p10) << "&";
   }
+
 }
 
 void Latency::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -71,10 +71,12 @@ void SourceSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".OwnerAlias=" << StringUtils::URLEncode(m_ownerAlias.c_str()) << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
 }
 
 void SourceSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

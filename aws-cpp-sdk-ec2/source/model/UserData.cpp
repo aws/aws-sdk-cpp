@@ -63,6 +63,7 @@ void UserData::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Data=" << StringUtils::URLEncode(m_data.c_str()) << "&";
   }
+
 }
 
 void UserData::OutputToStream(Aws::OStream& oStream, const char* location) const

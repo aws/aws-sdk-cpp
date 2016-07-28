@@ -28,7 +28,7 @@
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
-#include <aws/core/utils/FileSystemUtils.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/platform/Platform.h>
@@ -484,29 +484,29 @@ protected:
         std::this_thread::sleep_for(std::chrono::seconds(TEST_WAIT_TIMEOUT));
         AbortMultiPartUpload(GetTestBucketName(), BIG_FILE_KEY);
         DeleteBucket(GetTestBucketName());
-	    FileSystemUtils::RemoveFileIfExists(m_testFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_smallTestFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_contentTestFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_bigTestFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_mediumTestFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_contentTestDownloadFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_cancelTestFileName.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_multiPartContentFile.c_str());
-        FileSystemUtils::RemoveFileIfExists(m_multiPartContentDownload.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_testFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_smallTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_contentTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_bigTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_mediumTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_contentTestDownloadFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_cancelTestFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_multiPartContentFile.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_multiPartContentDownload.c_str());
 
         const uint32_t cConcurrentTestDownloads = 5;
         for (uint32_t i = 1; i <= cConcurrentTestDownloads; ++i)
         {
             Aws::String testFile(m_contentTestDownloadFileName);
             testFile += StringUtils::to_string(i);
-            FileSystemUtils::RemoveFileIfExists(testFile.c_str());
+            Aws::FileSystem::RemoveFileIfExists(testFile.c_str());
         }
         const uint32_t cConcurrentBigTestDownloads = 3;
         for (uint32_t i = 1; i <= cConcurrentBigTestDownloads; ++i)
         {
             Aws::String testFile(m_bigTestFileName);
             testFile += StringUtils::to_string(i);
-            FileSystemUtils::RemoveFileIfExists(testFile.c_str());
+            Aws::FileSystem::RemoveFileIfExists(testFile.c_str());
         }
         m_s3Client = nullptr;
         m_transferClient = nullptr;
@@ -807,11 +807,9 @@ TEST_F(TransferTests, CancelTest)
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
 
-    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
+    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 1u);
 
     ASSERT_FALSE(requestPtr->CompletedSuccessfully());
-
-    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 0u);
 }
 
 // This is a complete cycle - we upload a file, then download it, and compare content

@@ -50,14 +50,17 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   {
     ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmDescriptionHasBeenSet)
   {
     ss << "AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
   }
+
   if(m_actionsEnabledHasBeenSet)
   {
     ss << "ActionsEnabled=" << m_actionsEnabled << "&";
   }
+
   if(m_oKActionsHasBeenSet)
   {
     unsigned oKActionsCount = 1;
@@ -68,6 +71,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       oKActionsCount++;
     }
   }
+
   if(m_alarmActionsHasBeenSet)
   {
     unsigned alarmActionsCount = 1;
@@ -78,6 +82,7 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       alarmActionsCount++;
     }
   }
+
   if(m_insufficientDataActionsHasBeenSet)
   {
     unsigned insufficientDataActionsCount = 1;
@@ -88,18 +93,22 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       insufficientDataActionsCount++;
     }
   }
+
   if(m_metricNameHasBeenSet)
   {
     ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
     ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_statisticHasBeenSet)
   {
     ss << "Statistic=" << StatisticMapper::GetNameForStatistic(m_statistic) << "&";
   }
+
   if(m_dimensionsHasBeenSet)
   {
     unsigned dimensionsCount = 1;
@@ -109,26 +118,32 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
       dimensionsCount++;
     }
   }
+
   if(m_periodHasBeenSet)
   {
     ss << "Period=" << m_period << "&";
   }
+
   if(m_unitHasBeenSet)
   {
     ss << "Unit=" << StandardUnitMapper::GetNameForStandardUnit(m_unit) << "&";
   }
+
   if(m_evaluationPeriodsHasBeenSet)
   {
     ss << "EvaluationPeriods=" << m_evaluationPeriods << "&";
   }
+
   if(m_thresholdHasBeenSet)
   {
     ss << "Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
   }
+
   if(m_comparisonOperatorHasBeenSet)
   {
     ss << "ComparisonOperator=" << ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator) << "&";
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

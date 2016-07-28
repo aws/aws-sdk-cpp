@@ -35,18 +35,22 @@ Aws::String AuthorizeClusterSecurityGroupIngressRequest::SerializePayload() cons
   {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
+
   if(m_cIDRIPHasBeenSet)
   {
     ss << "CIDRIP=" << StringUtils::URLEncode(m_cIDRIP.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupNameHasBeenSet)
   {
     ss << "EC2SecurityGroupName=" << StringUtils::URLEncode(m_eC2SecurityGroupName.c_str()) << "&";
   }
+
   if(m_eC2SecurityGroupOwnerIdHasBeenSet)
   {
     ss << "EC2SecurityGroupOwnerId=" << StringUtils::URLEncode(m_eC2SecurityGroupOwnerId.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

@@ -95,22 +95,27 @@ void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
+
   if(m_publicDnsNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PublicDnsName=" << StringUtils::URLEncode(m_publicDnsName.c_str()) << "&";
   }
+
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";
   }
+
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
+
   if(m_associationIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
+
 }
 
 void NetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const

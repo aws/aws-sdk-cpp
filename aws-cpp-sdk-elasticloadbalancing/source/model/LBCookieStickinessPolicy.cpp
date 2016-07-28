@@ -73,10 +73,12 @@ void LBCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_cookieExpirationPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".CookieExpirationPeriod=" << m_cookieExpirationPeriod << "&";
   }
+
 }
 
 void LBCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const

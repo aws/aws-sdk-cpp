@@ -117,26 +117,32 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".FinalRecipient=" << StringUtils::URLEncode(m_finalRecipient.c_str()) << "&";
   }
+
   if(m_actionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Action=" << DsnActionMapper::GetNameForDsnAction(m_action) << "&";
   }
+
   if(m_remoteMtaHasBeenSet)
   {
       oStream << location << index << locationValue << ".RemoteMta=" << StringUtils::URLEncode(m_remoteMta.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_diagnosticCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DiagnosticCode=" << StringUtils::URLEncode(m_diagnosticCode.c_str()) << "&";
   }
+
   if(m_lastAttemptDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".LastAttemptDate=" << StringUtils::URLEncode(m_lastAttemptDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_extensionFieldsHasBeenSet)
   {
       unsigned extensionFieldsIdx = 1;
@@ -147,6 +153,7 @@ void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, extensionFieldsSs.str().c_str());
       }
   }
+
 }
 
 void RecipientDsnFields::OutputToStream(Aws::OStream& oStream, const char* location) const

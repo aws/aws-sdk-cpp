@@ -53,30 +53,37 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_launchConfigurationNameHasBeenSet)
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_minSizeHasBeenSet)
   {
     ss << "MinSize=" << m_minSize << "&";
   }
+
   if(m_maxSizeHasBeenSet)
   {
     ss << "MaxSize=" << m_maxSize << "&";
   }
+
   if(m_desiredCapacityHasBeenSet)
   {
     ss << "DesiredCapacity=" << m_desiredCapacity << "&";
   }
+
   if(m_defaultCooldownHasBeenSet)
   {
     ss << "DefaultCooldown=" << m_defaultCooldown << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
     unsigned availabilityZonesCount = 1;
@@ -87,6 +94,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       availabilityZonesCount++;
     }
   }
+
   if(m_loadBalancerNamesHasBeenSet)
   {
     unsigned loadBalancerNamesCount = 1;
@@ -97,22 +105,27 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       loadBalancerNamesCount++;
     }
   }
+
   if(m_healthCheckTypeHasBeenSet)
   {
     ss << "HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
   }
+
   if(m_healthCheckGracePeriodHasBeenSet)
   {
     ss << "HealthCheckGracePeriod=" << m_healthCheckGracePeriod << "&";
   }
+
   if(m_placementGroupHasBeenSet)
   {
     ss << "PlacementGroup=" << StringUtils::URLEncode(m_placementGroup.c_str()) << "&";
   }
+
   if(m_vPCZoneIdentifierHasBeenSet)
   {
     ss << "VPCZoneIdentifier=" << StringUtils::URLEncode(m_vPCZoneIdentifier.c_str()) << "&";
   }
+
   if(m_terminationPoliciesHasBeenSet)
   {
     unsigned terminationPoliciesCount = 1;
@@ -123,10 +136,12 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       terminationPoliciesCount++;
     }
   }
+
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
     ss << "NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -136,6 +151,7 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

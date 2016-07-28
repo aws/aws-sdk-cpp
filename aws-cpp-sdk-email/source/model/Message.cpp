@@ -73,12 +73,14 @@ void Message::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       subjectLocationAndMemberSs << location << index << locationValue << ".Subject";
       m_subject.OutputToStream(oStream, subjectLocationAndMemberSs.str().c_str());
   }
+
   if(m_bodyHasBeenSet)
   {
       Aws::StringStream bodyLocationAndMemberSs;
       bodyLocationAndMemberSs << location << index << locationValue << ".Body";
       m_body.OutputToStream(oStream, bodyLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Message::OutputToStream(Aws::OStream& oStream, const char* location) const

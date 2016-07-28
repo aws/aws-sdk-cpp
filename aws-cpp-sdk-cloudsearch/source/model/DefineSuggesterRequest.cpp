@@ -33,10 +33,12 @@ Aws::String DefineSuggesterRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_suggesterHasBeenSet)
   {
-    m_suggester.OutputToStream(ss, "Suggester.");
+    m_suggester.OutputToStream(ss, "Suggester");
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

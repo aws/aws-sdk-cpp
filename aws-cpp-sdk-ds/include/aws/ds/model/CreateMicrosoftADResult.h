@@ -32,6 +32,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>Result of a CreateMicrosoftAD request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API CreateMicrosoftADResult
   {
   public:
@@ -40,37 +43,37 @@ namespace Model
     CreateMicrosoftADResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryId = value; }
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline CreateMicrosoftADResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline CreateMicrosoftADResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The identifier of the directory that was created.
+     * <p>The identifier of the directory that was created.</p>
      */
     inline CreateMicrosoftADResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 

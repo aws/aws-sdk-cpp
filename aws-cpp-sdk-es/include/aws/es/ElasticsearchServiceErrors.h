@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElasticsearchService
 {
-enum class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceErrors
+enum class ElasticsearchServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

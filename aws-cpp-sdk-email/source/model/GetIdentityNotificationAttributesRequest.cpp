@@ -38,6 +38,7 @@ Aws::String GetIdentityNotificationAttributesRequest::SerializePayload() const
       identitiesCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

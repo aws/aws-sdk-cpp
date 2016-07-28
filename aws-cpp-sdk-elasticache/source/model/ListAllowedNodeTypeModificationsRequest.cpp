@@ -33,10 +33,12 @@ Aws::String ListAllowedNodeTypeModificationsRequest::SerializePayload() const
   {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_replicationGroupIdHasBeenSet)
   {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

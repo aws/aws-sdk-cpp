@@ -32,6 +32,7 @@ Aws::String DeleteClusterSecurityGroupRequest::SerializePayload() const
   {
     ss << "ClusterSecurityGroupName=" << StringUtils::URLEncode(m_clusterSecurityGroupName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

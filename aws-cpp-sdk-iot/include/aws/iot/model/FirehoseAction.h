@@ -112,11 +112,62 @@ namespace Model
      */
     inline FirehoseAction& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline const Aws::String& GetSeparator() const{ return m_separator; }
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline void SetSeparator(const Aws::String& value) { m_separatorHasBeenSet = true; m_separator = value; }
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline void SetSeparator(Aws::String&& value) { m_separatorHasBeenSet = true; m_separator = value; }
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline void SetSeparator(const char* value) { m_separatorHasBeenSet = true; m_separator.assign(value); }
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline FirehoseAction& WithSeparator(const Aws::String& value) { SetSeparator(value); return *this;}
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline FirehoseAction& WithSeparator(Aws::String&& value) { SetSeparator(value); return *this;}
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline FirehoseAction& WithSeparator(const char* value) { SetSeparator(value); return *this;}
+
   private:
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+    Aws::String m_separator;
+    bool m_separatorHasBeenSet;
   };
 
 } // namespace Model

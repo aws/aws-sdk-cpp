@@ -46,14 +46,17 @@ Aws::String CreateStackRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_templateBodyHasBeenSet)
   {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
+
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -63,14 +66,17 @@ Aws::String CreateStackRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   if(m_disableRollbackHasBeenSet)
   {
     ss << "DisableRollback=" << m_disableRollback << "&";
   }
+
   if(m_timeoutInMinutesHasBeenSet)
   {
     ss << "TimeoutInMinutes=" << m_timeoutInMinutes << "&";
   }
+
   if(m_notificationARNsHasBeenSet)
   {
     unsigned notificationARNsCount = 1;
@@ -81,6 +87,7 @@ Aws::String CreateStackRequest::SerializePayload() const
       notificationARNsCount++;
     }
   }
+
   if(m_capabilitiesHasBeenSet)
   {
     unsigned capabilitiesCount = 1;
@@ -91,6 +98,7 @@ Aws::String CreateStackRequest::SerializePayload() const
       capabilitiesCount++;
     }
   }
+
   if(m_resourceTypesHasBeenSet)
   {
     unsigned resourceTypesCount = 1;
@@ -101,18 +109,22 @@ Aws::String CreateStackRequest::SerializePayload() const
       resourceTypesCount++;
     }
   }
+
   if(m_onFailureHasBeenSet)
   {
     ss << "OnFailure=" << OnFailureMapper::GetNameForOnFailure(m_onFailure) << "&";
   }
+
   if(m_stackPolicyBodyHasBeenSet)
   {
     ss << "StackPolicyBody=" << StringUtils::URLEncode(m_stackPolicyBody.c_str()) << "&";
   }
+
   if(m_stackPolicyURLHasBeenSet)
   {
     ss << "StackPolicyURL=" << StringUtils::URLEncode(m_stackPolicyURL.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -122,6 +134,7 @@ Aws::String CreateStackRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

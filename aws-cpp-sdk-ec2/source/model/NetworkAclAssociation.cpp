@@ -79,14 +79,17 @@ void NetworkAclAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".NetworkAclAssociationId=" << StringUtils::URLEncode(m_networkAclAssociationId.c_str()) << "&";
   }
+
   if(m_networkAclIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
 }
 
 void NetworkAclAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const

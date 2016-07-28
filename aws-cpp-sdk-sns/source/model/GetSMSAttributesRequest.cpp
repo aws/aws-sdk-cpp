@@ -38,6 +38,7 @@ Aws::String GetSMSAttributesRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

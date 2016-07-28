@@ -229,78 +229,97 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
+
   if(m_cacheClusterIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_snapshotStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotStatus=" << StringUtils::URLEncode(m_snapshotStatus.c_str()) << "&";
   }
+
   if(m_snapshotSourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotSource=" << StringUtils::URLEncode(m_snapshotSource.c_str()) << "&";
   }
+
   if(m_cacheNodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_numCacheNodesHasBeenSet)
   {
       oStream << location << index << locationValue << ".NumCacheNodes=" << m_numCacheNodes << "&";
   }
+
   if(m_preferredAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredAvailabilityZone=" << StringUtils::URLEncode(m_preferredAvailabilityZone.c_str()) << "&";
   }
+
   if(m_cacheClusterCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheClusterCreateTime=" << StringUtils::URLEncode(m_cacheClusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_topicArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_portHasBeenSet)
   {
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
+
   if(m_cacheParameterGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   if(m_cacheSubnetGroupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheSubnetGroupName=" << StringUtils::URLEncode(m_cacheSubnetGroupName.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
   }
+
   if(m_snapshotRetentionLimitHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotRetentionLimit=" << m_snapshotRetentionLimit << "&";
   }
+
   if(m_snapshotWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotWindow=" << StringUtils::URLEncode(m_snapshotWindow.c_str()) << "&";
   }
+
   if(m_nodeSnapshotsHasBeenSet)
   {
       unsigned nodeSnapshotsIdx = 1;
@@ -311,6 +330,7 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         item.OutputToStream(oStream, nodeSnapshotsSs.str().c_str());
       }
   }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const

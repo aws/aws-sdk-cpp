@@ -75,10 +75,12 @@ void PortRange::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".From=" << m_from << "&";
   }
+
   if(m_toHasBeenSet)
   {
       oStream << location << index << locationValue << ".To=" << m_to << "&";
   }
+
 }
 
 void PortRange::OutputToStream(Aws::OStream& oStream, const char* location) const

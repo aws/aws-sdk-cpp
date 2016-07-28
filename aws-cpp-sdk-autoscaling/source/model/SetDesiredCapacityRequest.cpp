@@ -36,14 +36,17 @@ Aws::String SetDesiredCapacityRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_desiredCapacityHasBeenSet)
   {
     ss << "DesiredCapacity=" << m_desiredCapacity << "&";
   }
+
   if(m_honorCooldownHasBeenSet)
   {
     ss << "HonorCooldown=" << m_honorCooldown << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

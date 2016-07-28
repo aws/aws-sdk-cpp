@@ -63,6 +63,7 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace APIGateway
 {
-enum class AWS_APIGATEWAY_API APIGatewayErrors
+enum class APIGatewayErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

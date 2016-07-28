@@ -30,8 +30,9 @@ Aws::String CreateReceiptFilterRequest::SerializePayload() const
   ss << "Action=CreateReceiptFilter&";
   if(m_filterHasBeenSet)
   {
-    m_filter.OutputToStream(ss, "Filter.");
+    m_filter.OutputToStream(ss, "Filter");
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

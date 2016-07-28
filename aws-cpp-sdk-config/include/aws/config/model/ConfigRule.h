@@ -37,9 +37,13 @@ namespace Model
   /**
    * <p>An AWS Lambda function that evaluates configuration items to assess whether
    * your AWS resources comply with your desired configurations. This function can
-   * run when AWS Config detects a configuration change to an AWS resource, or when
-   * it delivers a configuration snapshot of the resources in the account.</p> <p>For
-   * more information about developing and using AWS Config rules, see <a
+   * run when AWS Config detects a configuration change to an AWS resource and at a
+   * periodic frequency that you choose (for example, every 24 hours).</p> <note>
+   * <p>You can use the AWS CLI and AWS SDKs if you want to create a rule that
+   * triggers evaluations for your resources when AWS Config delivers the
+   * configuration snapshot. For more information, see
+   * <a>ConfigSnapshotDeliveryProperties</a>.</p> </note> <p>For more information
+   * about developing and using AWS Config rules, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
    * AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer
    * Guide</i>.</p>
@@ -251,31 +255,31 @@ namespace Model
 
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
-     * events that cause the function to evaluate your AWS resources.</p>
+     * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
 
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
-     * events that cause the function to evaluate your AWS resources.</p>
+     * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
-     * events that cause the function to evaluate your AWS resources.</p>
+     * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
-     * events that cause the function to evaluate your AWS resources.</p>
+     * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline ConfigRule& WithSource(const Source& value) { SetSource(value); return *this;}
 
     /**
      * <p>Provides the rule owner (AWS or customer), the rule identifier, and the
-     * events that cause the function to evaluate your AWS resources.</p>
+     * notifications that cause the function to evaluate your AWS resources.</p>
      */
     inline ConfigRule& WithSource(Source&& value) { SetSource(value); return *this;}
 
@@ -322,122 +326,162 @@ namespace Model
     inline ConfigRule& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
 
     /**
-     * <p>The maximum frequency at which the AWS Config rule runs evaluations.</p>
-     * <p>If your rule is periodic, meaning it runs an evaluation when AWS Config
-     * delivers a configuration snapshot, then it cannot run evaluations more
-     * frequently than AWS Config delivers the snapshots. For periodic rules, set the
-     * value of the <code>MaximumExecutionFrequency</code> key to be equal to or
-     * greater than the value of the <code>deliveryFrequency</code> key, which is part
-     * of <code>ConfigSnapshotDeliveryProperties</code>. To update the frequency with
-     * which AWS Config delivers your snapshots, use the
-     * <code>PutDeliveryChannel</code> action.</p>
+     * <p>If you want to create a rule that evaluates at a frequency that is
+     * independent of the configuration snapshot delivery, use the
+     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
+     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
+     * your resources when AWS Config delivers the configuration snapshot, see the
+     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
+     * delivers a configuration snapshot cannot run evaluations more frequently than
+     * AWS Config delivers the snapshots. Set the value of the
+     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
+     * of the <code>deliveryFrequency</code> key, which is part of
+     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>The maximum frequency at which the AWS Config rule runs evaluations.</p>
-     * <p>If your rule is periodic, meaning it runs an evaluation when AWS Config
-     * delivers a configuration snapshot, then it cannot run evaluations more
-     * frequently than AWS Config delivers the snapshots. For periodic rules, set the
-     * value of the <code>MaximumExecutionFrequency</code> key to be equal to or
-     * greater than the value of the <code>deliveryFrequency</code> key, which is part
-     * of <code>ConfigSnapshotDeliveryProperties</code>. To update the frequency with
-     * which AWS Config delivers your snapshots, use the
-     * <code>PutDeliveryChannel</code> action.</p>
+     * <p>If you want to create a rule that evaluates at a frequency that is
+     * independent of the configuration snapshot delivery, use the
+     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
+     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
+     * your resources when AWS Config delivers the configuration snapshot, see the
+     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
+     * delivers a configuration snapshot cannot run evaluations more frequently than
+     * AWS Config delivers the snapshots. Set the value of the
+     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
+     * of the <code>deliveryFrequency</code> key, which is part of
+     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The maximum frequency at which the AWS Config rule runs evaluations.</p>
-     * <p>If your rule is periodic, meaning it runs an evaluation when AWS Config
-     * delivers a configuration snapshot, then it cannot run evaluations more
-     * frequently than AWS Config delivers the snapshots. For periodic rules, set the
-     * value of the <code>MaximumExecutionFrequency</code> key to be equal to or
-     * greater than the value of the <code>deliveryFrequency</code> key, which is part
-     * of <code>ConfigSnapshotDeliveryProperties</code>. To update the frequency with
-     * which AWS Config delivers your snapshots, use the
-     * <code>PutDeliveryChannel</code> action.</p>
+     * <p>If you want to create a rule that evaluates at a frequency that is
+     * independent of the configuration snapshot delivery, use the
+     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
+     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
+     * your resources when AWS Config delivers the configuration snapshot, see the
+     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
+     * delivers a configuration snapshot cannot run evaluations more frequently than
+     * AWS Config delivers the snapshots. Set the value of the
+     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
+     * of the <code>deliveryFrequency</code> key, which is part of
+     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The maximum frequency at which the AWS Config rule runs evaluations.</p>
-     * <p>If your rule is periodic, meaning it runs an evaluation when AWS Config
-     * delivers a configuration snapshot, then it cannot run evaluations more
-     * frequently than AWS Config delivers the snapshots. For periodic rules, set the
-     * value of the <code>MaximumExecutionFrequency</code> key to be equal to or
-     * greater than the value of the <code>deliveryFrequency</code> key, which is part
-     * of <code>ConfigSnapshotDeliveryProperties</code>. To update the frequency with
-     * which AWS Config delivers your snapshots, use the
-     * <code>PutDeliveryChannel</code> action.</p>
+     * <p>If you want to create a rule that evaluates at a frequency that is
+     * independent of the configuration snapshot delivery, use the
+     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
+     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
+     * your resources when AWS Config delivers the configuration snapshot, see the
+     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
+     * delivers a configuration snapshot cannot run evaluations more frequently than
+     * AWS Config delivers the snapshots. Set the value of the
+     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
+     * of the <code>deliveryFrequency</code> key, which is part of
+     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>The maximum frequency at which the AWS Config rule runs evaluations.</p>
-     * <p>If your rule is periodic, meaning it runs an evaluation when AWS Config
-     * delivers a configuration snapshot, then it cannot run evaluations more
-     * frequently than AWS Config delivers the snapshots. For periodic rules, set the
-     * value of the <code>MaximumExecutionFrequency</code> key to be equal to or
-     * greater than the value of the <code>deliveryFrequency</code> key, which is part
-     * of <code>ConfigSnapshotDeliveryProperties</code>. To update the frequency with
-     * which AWS Config delivers your snapshots, use the
-     * <code>PutDeliveryChannel</code> action.</p>
+     * <p>If you want to create a rule that evaluates at a frequency that is
+     * independent of the configuration snapshot delivery, use the
+     * <code>MaximumExecutionFrequency</code> parameter in the <a>SourceDetail</a>
+     * object.</p> <note> <p>If you want to create a rule that triggers evaluations for
+     * your resources when AWS Config delivers the configuration snapshot, see the
+     * following:</p> </note> <p>A rule that runs an evaluation when AWS Config
+     * delivers a configuration snapshot cannot run evaluations more frequently than
+     * AWS Config delivers the snapshots. Set the value of the
+     * <code>MaximumExecutionFrequency</code> to be equal to or greater than the value
+     * of the <code>deliveryFrequency</code> key, which is part of
+     * <code>ConfigSnapshotDeliveryProperties</code>.</p> <p>For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.</p>
      */
     inline ConfigRule& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>Indicates whether the AWS Config rule is active or currently being deleted by
-     * AWS Config.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code>
-     * temporarily after you use the <code>DeleteConfigRule</code> request to delete
-     * the rule. After AWS Config finishes deleting a rule, the rule and all of its
-     * evaluations are erased and no longer available.</p> <p>You cannot add a rule to
-     * AWS Config that has the state set to <code>DELETING</code>. If you want to
-     * delete a rule, you must use the <code>DeleteConfigRule</code> request.</p>
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
+     * <code>DELETING</code> temporarily after you use the
+     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
+     * deletes the rule, the rule and all of its evaluations are erased and are no
+     * longer available.</p>
      */
     inline const ConfigRuleState& GetConfigRuleState() const{ return m_configRuleState; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is active or currently being deleted by
-     * AWS Config.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code>
-     * temporarily after you use the <code>DeleteConfigRule</code> request to delete
-     * the rule. After AWS Config finishes deleting a rule, the rule and all of its
-     * evaluations are erased and no longer available.</p> <p>You cannot add a rule to
-     * AWS Config that has the state set to <code>DELETING</code>. If you want to
-     * delete a rule, you must use the <code>DeleteConfigRule</code> request.</p>
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
+     * <code>DELETING</code> temporarily after you use the
+     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
+     * deletes the rule, the rule and all of its evaluations are erased and are no
+     * longer available.</p>
      */
     inline void SetConfigRuleState(const ConfigRuleState& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is active or currently being deleted by
-     * AWS Config.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code>
-     * temporarily after you use the <code>DeleteConfigRule</code> request to delete
-     * the rule. After AWS Config finishes deleting a rule, the rule and all of its
-     * evaluations are erased and no longer available.</p> <p>You cannot add a rule to
-     * AWS Config that has the state set to <code>DELETING</code>. If you want to
-     * delete a rule, you must use the <code>DeleteConfigRule</code> request.</p>
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
+     * <code>DELETING</code> temporarily after you use the
+     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
+     * deletes the rule, the rule and all of its evaluations are erased and are no
+     * longer available.</p>
      */
     inline void SetConfigRuleState(ConfigRuleState&& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is active or currently being deleted by
-     * AWS Config.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code>
-     * temporarily after you use the <code>DeleteConfigRule</code> request to delete
-     * the rule. After AWS Config finishes deleting a rule, the rule and all of its
-     * evaluations are erased and no longer available.</p> <p>You cannot add a rule to
-     * AWS Config that has the state set to <code>DELETING</code>. If you want to
-     * delete a rule, you must use the <code>DeleteConfigRule</code> request.</p>
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
+     * <code>DELETING</code> temporarily after you use the
+     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
+     * deletes the rule, the rule and all of its evaluations are erased and are no
+     * longer available.</p>
      */
     inline ConfigRule& WithConfigRuleState(const ConfigRuleState& value) { SetConfigRuleState(value); return *this;}
 
     /**
-     * <p>Indicates whether the AWS Config rule is active or currently being deleted by
-     * AWS Config.</p> <p>AWS Config sets the state of a rule to <code>DELETING</code>
-     * temporarily after you use the <code>DeleteConfigRule</code> request to delete
-     * the rule. After AWS Config finishes deleting a rule, the rule and all of its
-     * evaluations are erased and no longer available.</p> <p>You cannot add a rule to
-     * AWS Config that has the state set to <code>DELETING</code>. If you want to
-     * delete a rule, you must use the <code>DeleteConfigRule</code> request.</p>
+     * <p>Indicates whether the AWS Config rule is active or is currently being deleted
+     * by AWS Config. It can also indicate the evaluation status for the Config
+     * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
+     * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
+     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation
+     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
+     * <code>DELETING</code> temporarily after you use the
+     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
+     * deletes the rule, the rule and all of its evaluations are erased and are no
+     * longer available.</p>
      */
     inline ConfigRule& WithConfigRuleState(ConfigRuleState&& value) { SetConfigRuleState(value); return *this;}
 

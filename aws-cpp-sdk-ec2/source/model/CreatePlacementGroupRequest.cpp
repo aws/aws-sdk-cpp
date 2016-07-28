@@ -35,14 +35,17 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_strategyHasBeenSet)
   {
     ss << "Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

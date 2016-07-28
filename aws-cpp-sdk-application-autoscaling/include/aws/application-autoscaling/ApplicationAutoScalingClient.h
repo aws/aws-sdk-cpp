@@ -118,8 +118,11 @@ namespace Model
    * <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View
    * history of your scaling events </p> </li> </ul> <p>Application Auto Scaling is
    * available in the following regions:</p> <ul> <li> <p> <code>us-east-1</code>
-   * </p> </li> <li> <p> <code>us-west-2</code> </p> </li> <li> <p>
-   * <code>eu-west-1</code> </p> </li> </ul>
+   * </p> </li> <li> <p> <code>us-west-1</code> </p> </li> <li> <p>
+   * <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-1</code> </p>
+   * </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p>
+   * <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-central-1</code> </p>
+   * </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>
    */
   class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
   {
@@ -248,23 +251,25 @@ namespace Model
 
         /**
          * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>Scaling activities are triggered by CloudWatch alarms that are associated
-         * with scaling policies. To view the existing scaling policies for a service
-         * namespace, see <a>DescribeScalingPolicies</a>. To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * service namespace for the previous six weeks.</p> <p>You can filter the results
+         * in a service namespace with the <code>ResourceId</code> and
+         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
+         * triggered by CloudWatch alarms that are associated with scaling policies. To
+         * view the existing scaling policies for a service namespace, see
+         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          */
         virtual Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
         /**
          * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>Scaling activities are triggered by CloudWatch alarms that are associated
-         * with scaling policies. To view the existing scaling policies for a service
-         * namespace, see <a>DescribeScalingPolicies</a>. To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * service namespace for the previous six weeks.</p> <p>You can filter the results
+         * in a service namespace with the <code>ResourceId</code> and
+         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
+         * triggered by CloudWatch alarms that are associated with scaling policies. To
+         * view the existing scaling policies for a service namespace, see
+         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -272,12 +277,13 @@ namespace Model
 
         /**
          * <p>Provides descriptive information for scaling activities with a specified
-         * service namespace.</p> <p>You can filter the results in a service namespace with
-         * the <code>ResourceId</code> and <code>ScalableDimension</code> parameters.</p>
-         * <p>Scaling activities are triggered by CloudWatch alarms that are associated
-         * with scaling policies. To view the existing scaling policies for a service
-         * namespace, see <a>DescribeScalingPolicies</a>. To create a new scaling policy or
-         * update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * service namespace for the previous six weeks.</p> <p>You can filter the results
+         * in a service namespace with the <code>ResourceId</code> and
+         * <code>ScalableDimension</code> parameters.</p> <p>Scaling activities are
+         * triggered by CloudWatch alarms that are associated with scaling policies. To
+         * view the existing scaling policies for a service namespace, see
+         * <a>DescribeScalingPolicies</a>. To create a new scaling policy or update an
+         * existing one, see <a>PutScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

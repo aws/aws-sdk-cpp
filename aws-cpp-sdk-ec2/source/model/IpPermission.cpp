@@ -125,14 +125,17 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".IpProtocol=" << StringUtils::URLEncode(m_ipProtocol.c_str()) << "&";
   }
+
   if(m_fromPortHasBeenSet)
   {
       oStream << location << index << locationValue << ".FromPort=" << m_fromPort << "&";
   }
+
   if(m_toPortHasBeenSet)
   {
       oStream << location << index << locationValue << ".ToPort=" << m_toPort << "&";
   }
+
   if(m_userIdGroupPairsHasBeenSet)
   {
       unsigned userIdGroupPairsIdx = 1;
@@ -143,6 +146,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
         item.OutputToStream(oStream, userIdGroupPairsSs.str().c_str());
       }
   }
+
   if(m_ipRangesHasBeenSet)
   {
       unsigned ipRangesIdx = 1;
@@ -153,6 +157,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
         item.OutputToStream(oStream, ipRangesSs.str().c_str());
       }
   }
+
   if(m_prefixListIdsHasBeenSet)
   {
       unsigned prefixListIdsIdx = 1;
@@ -163,6 +168,7 @@ void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location, u
         item.OutputToStream(oStream, prefixListIdsSs.str().c_str());
       }
   }
+
 }
 
 void IpPermission::OutputToStream(Aws::OStream& oStream, const char* location) const

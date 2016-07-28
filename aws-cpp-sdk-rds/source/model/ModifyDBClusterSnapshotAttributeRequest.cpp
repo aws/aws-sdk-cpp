@@ -35,10 +35,12 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
   {
     ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_attributeNameHasBeenSet)
   {
     ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_valuesToAddHasBeenSet)
   {
     unsigned valuesToAddCount = 1;
@@ -49,6 +51,7 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
       valuesToAddCount++;
     }
   }
+
   if(m_valuesToRemoveHasBeenSet)
   {
     unsigned valuesToRemoveCount = 1;
@@ -59,6 +62,7 @@ Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const
       valuesToRemoveCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

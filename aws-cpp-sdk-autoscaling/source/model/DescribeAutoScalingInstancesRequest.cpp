@@ -41,14 +41,17 @@ Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

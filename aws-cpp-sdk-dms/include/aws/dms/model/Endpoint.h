@@ -16,6 +16,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/ReplicationEndpointTypeValue.h>
+#include <aws/dms/model/DmsSslModeValue.h>
 
 namespace Aws
 {
@@ -446,6 +447,76 @@ namespace Model
      */
     inline Endpoint& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline Endpoint& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline Endpoint& WithCertificateArn(Aws::String&& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
+     */
+    inline Endpoint& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
+    inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
+    inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
+    inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
+    inline Endpoint& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
+
+    /**
+     * <p>The SSL mode used to connect to the endpoint.</p> <p>SSL mode can be one of
+     * four values: none, require, verify-ca, verify-full. </p> <p>The default value is
+     * none.</p>
+     */
+    inline Endpoint& WithSslMode(DmsSslModeValue&& value) { SetSslMode(value); return *this;}
+
   private:
     Aws::String m_endpointIdentifier;
     bool m_endpointIdentifierHasBeenSet;
@@ -469,6 +540,10 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet;
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
+    DmsSslModeValue m_sslMode;
+    bool m_sslModeHasBeenSet;
   };
 
 } // namespace Model

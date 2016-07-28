@@ -43,26 +43,32 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
       resourceIdsCount++;
     }
   }
+
   if(m_resourceTypeHasBeenSet)
   {
     ss << "ResourceType=" << FlowLogsResourceTypeMapper::GetNameForFlowLogsResourceType(m_resourceType) << "&";
   }
+
   if(m_trafficTypeHasBeenSet)
   {
     ss << "TrafficType=" << TrafficTypeMapper::GetNameForTrafficType(m_trafficType) << "&";
   }
+
   if(m_logGroupNameHasBeenSet)
   {
     ss << "LogGroupName=" << StringUtils::URLEncode(m_logGroupName.c_str()) << "&";
   }
+
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
     ss << "DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

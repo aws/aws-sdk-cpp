@@ -29,13 +29,15 @@ namespace Model
 
 SourceDetail::SourceDetail() : 
     m_eventSourceHasBeenSet(false),
-    m_messageTypeHasBeenSet(false)
+    m_messageTypeHasBeenSet(false),
+    m_maximumExecutionFrequencyHasBeenSet(false)
 {
 }
 
 SourceDetail::SourceDetail(const JsonValue& jsonValue) : 
     m_eventSourceHasBeenSet(false),
-    m_messageTypeHasBeenSet(false)
+    m_messageTypeHasBeenSet(false),
+    m_maximumExecutionFrequencyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ SourceDetail& SourceDetail::operator =(const JsonValue& jsonValue)
     m_messageTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaximumExecutionFrequency"))
+  {
+    m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
+
+    m_maximumExecutionFrequencyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,11 @@ JsonValue SourceDetail::Jsonize() const
   if(m_messageTypeHasBeenSet)
   {
    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  }
+
+  if(m_maximumExecutionFrequencyHasBeenSet)
+  {
+   payload.WithString("MaximumExecutionFrequency", MaximumExecutionFrequencyMapper::GetNameForMaximumExecutionFrequency(m_maximumExecutionFrequency));
   }
 
   return payload;

@@ -36,22 +36,27 @@ Aws::String UploadServerCertificateRequest::SerializePayload() const
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_serverCertificateNameHasBeenSet)
   {
     ss << "ServerCertificateName=" << StringUtils::URLEncode(m_serverCertificateName.c_str()) << "&";
   }
+
   if(m_certificateBodyHasBeenSet)
   {
     ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
   }
+
   if(m_privateKeyHasBeenSet)
   {
     ss << "PrivateKey=" << StringUtils::URLEncode(m_privateKey.c_str()) << "&";
   }
+
   if(m_certificateChainHasBeenSet)
   {
     ss << "CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

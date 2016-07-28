@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() : 
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_volumesHasBeenSet(false)
 {
@@ -35,6 +36,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_familyHasBeenSet)
   {
    payload.WithString("family", m_family);
+
+  }
+
+  if(m_taskRoleArnHasBeenSet)
+  {
+   payload.WithString("taskRoleArn", m_taskRoleArn);
 
   }
 

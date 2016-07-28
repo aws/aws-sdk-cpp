@@ -33,10 +33,12 @@ Aws::String DeleteScheduledActionRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_scheduledActionNameHasBeenSet)
   {
     ss << "ScheduledActionName=" << StringUtils::URLEncode(m_scheduledActionName.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

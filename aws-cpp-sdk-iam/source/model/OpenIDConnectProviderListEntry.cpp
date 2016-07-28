@@ -63,6 +63,7 @@ void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
 }
 
 void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

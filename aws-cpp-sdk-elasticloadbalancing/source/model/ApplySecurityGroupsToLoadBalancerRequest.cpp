@@ -33,6 +33,7 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_securityGroupsHasBeenSet)
   {
     unsigned securityGroupsCount = 1;
@@ -43,6 +44,7 @@ Aws::String ApplySecurityGroupsToLoadBalancerRequest::SerializePayload() const
       securityGroupsCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

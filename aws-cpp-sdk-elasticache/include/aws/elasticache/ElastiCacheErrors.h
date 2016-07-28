@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElastiCache
 {
-enum class AWS_ELASTICACHE_API ElastiCacheErrors
+enum class ElastiCacheErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

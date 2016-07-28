@@ -26,7 +26,9 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    DELETING
+    DELETING,
+    DELETING_RESULTS,
+    EVALUATING
   };
 
 namespace ConfigRuleStateMapper

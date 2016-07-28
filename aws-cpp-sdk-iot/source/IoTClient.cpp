@@ -35,6 +35,7 @@
 #include <aws/iot/model/CreatePolicyRequest.h>
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
 #include <aws/iot/model/CreateThingRequest.h>
+#include <aws/iot/model/CreateThingTypeRequest.h>
 #include <aws/iot/model/CreateTopicRuleRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
@@ -42,11 +43,14 @@
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
 #include <aws/iot/model/DeleteRegistrationCodeRequest.h>
 #include <aws/iot/model/DeleteThingRequest.h>
+#include <aws/iot/model/DeleteThingTypeRequest.h>
 #include <aws/iot/model/DeleteTopicRuleRequest.h>
+#include <aws/iot/model/DeprecateThingTypeRequest.h>
 #include <aws/iot/model/DescribeCACertificateRequest.h>
 #include <aws/iot/model/DescribeCertificateRequest.h>
 #include <aws/iot/model/DescribeEndpointRequest.h>
 #include <aws/iot/model/DescribeThingRequest.h>
+#include <aws/iot/model/DescribeThingTypeRequest.h>
 #include <aws/iot/model/DetachPrincipalPolicyRequest.h>
 #include <aws/iot/model/DetachThingPrincipalRequest.h>
 #include <aws/iot/model/DisableTopicRuleRequest.h>
@@ -65,6 +69,7 @@
 #include <aws/iot/model/ListPrincipalPoliciesRequest.h>
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
 #include <aws/iot/model/ListThingPrincipalsRequest.h>
+#include <aws/iot/model/ListThingTypesRequest.h>
 #include <aws/iot/model/ListThingsRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
 #include <aws/iot/model/RegisterCACertificateRequest.h>
@@ -88,6 +93,7 @@ using namespace Aws::Utils::Json;
 
 static const char* SERVICE_NAME = "execute-api";
 static const char* ALLOCATION_TAG = "IoTClient";
+
 
 IoTClient::IoTClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -432,6 +438,38 @@ void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const 
   handler(this, request, CreateThing(request), context);
 }
 
+CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/thing-types/";
+  ss << request.GetThingTypeName();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateThingTypeOutcome(CreateThingTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateThingTypeOutcome(outcome.GetError());
+  }
+}
+
+CreateThingTypeOutcomeCallable IoTClient::CreateThingTypeCallable(const CreateThingTypeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::CreateThingType, this, request);
+}
+
+void IoTClient::CreateThingTypeAsync(const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::CreateThingTypeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::CreateThingTypeAsyncHelper(const CreateThingTypeRequest& request, const CreateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateThingType(request), context);
+}
+
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -657,6 +695,38 @@ void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const 
   handler(this, request, DeleteThing(request), context);
 }
 
+DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/thing-types/";
+  ss << request.GetThingTypeName();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteThingTypeOutcome(DeleteThingTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteThingTypeOutcome(outcome.GetError());
+  }
+}
+
+DeleteThingTypeOutcomeCallable IoTClient::DeleteThingTypeCallable(const DeleteThingTypeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DeleteThingType, this, request);
+}
+
+void IoTClient::DeleteThingTypeAsync(const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DeleteThingTypeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DeleteThingTypeAsyncHelper(const DeleteThingTypeRequest& request, const DeleteThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteThingType(request), context);
+}
+
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
 {
   Aws::StringStream ss;
@@ -687,6 +757,39 @@ void IoTClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, cons
 void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTopicRule(request), context);
+}
+
+DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/thing-types/";
+  ss << request.GetThingTypeName();
+  ss << "/deprecate";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeprecateThingTypeOutcome(DeprecateThingTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeprecateThingTypeOutcome(outcome.GetError());
+  }
+}
+
+DeprecateThingTypeOutcomeCallable IoTClient::DeprecateThingTypeCallable(const DeprecateThingTypeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DeprecateThingType, this, request);
+}
+
+void IoTClient::DeprecateThingTypeAsync(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DeprecateThingTypeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& request, const DeprecateThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeprecateThingType(request), context);
 }
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
@@ -814,6 +917,38 @@ void IoTClient::DescribeThingAsync(const DescribeThingRequest& request, const De
 void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, const DescribeThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeThing(request), context);
+}
+
+DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/thing-types/";
+  ss << request.GetThingTypeName();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return DescribeThingTypeOutcome(DescribeThingTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeThingTypeOutcome(outcome.GetError());
+  }
+}
+
+DescribeThingTypeOutcomeCallable IoTClient::DescribeThingTypeCallable(const DescribeThingTypeRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::DescribeThingType, this, request);
+}
+
+void IoTClient::DescribeThingTypeAsync(const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::DescribeThingTypeAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& request, const DescribeThingTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeThingType(request), context);
 }
 
 DetachPrincipalPolicyOutcome IoTClient::DetachPrincipalPolicy(const DetachPrincipalPolicyRequest& request) const
@@ -1389,6 +1524,37 @@ void IoTClient::ListThingPrincipalsAsync(const ListThingPrincipalsRequest& reque
 void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest& request, const ListThingPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListThingPrincipals(request), context);
+}
+
+ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/thing-types";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ListThingTypesOutcome(ListThingTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingTypesOutcome(outcome.GetError());
+  }
+}
+
+ListThingTypesOutcomeCallable IoTClient::ListThingTypesCallable(const ListThingTypesRequest& request) const
+{
+  return std::async(std::launch::async, &IoTClient::ListThingTypes, this, request);
+}
+
+void IoTClient::ListThingTypesAsync(const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&IoTClient::ListThingTypesAsyncHelper, this, request, handler, context);
+}
+
+void IoTClient::ListThingTypesAsyncHelper(const ListThingTypesRequest& request, const ListThingTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingTypes(request), context);
 }
 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const

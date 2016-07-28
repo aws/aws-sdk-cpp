@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElasticLoadBalancing
 {
-enum class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingErrors
+enum class ElasticLoadBalancingErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

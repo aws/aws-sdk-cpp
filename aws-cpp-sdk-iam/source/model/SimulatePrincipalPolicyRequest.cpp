@@ -43,6 +43,7 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
   {
     ss << "PolicySourceArn=" << StringUtils::URLEncode(m_policySourceArn.c_str()) << "&";
   }
+
   if(m_policyInputListHasBeenSet)
   {
     unsigned policyInputListCount = 1;
@@ -53,6 +54,7 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
       policyInputListCount++;
     }
   }
+
   if(m_actionNamesHasBeenSet)
   {
     unsigned actionNamesCount = 1;
@@ -63,6 +65,7 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
       actionNamesCount++;
     }
   }
+
   if(m_resourceArnsHasBeenSet)
   {
     unsigned resourceArnsCount = 1;
@@ -73,18 +76,22 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
       resourceArnsCount++;
     }
   }
+
   if(m_resourcePolicyHasBeenSet)
   {
     ss << "ResourcePolicy=" << StringUtils::URLEncode(m_resourcePolicy.c_str()) << "&";
   }
+
   if(m_resourceOwnerHasBeenSet)
   {
     ss << "ResourceOwner=" << StringUtils::URLEncode(m_resourceOwner.c_str()) << "&";
   }
+
   if(m_callerArnHasBeenSet)
   {
     ss << "CallerArn=" << StringUtils::URLEncode(m_callerArn.c_str()) << "&";
   }
+
   if(m_contextEntriesHasBeenSet)
   {
     unsigned contextEntriesCount = 1;
@@ -94,18 +101,22 @@ Aws::String SimulatePrincipalPolicyRequest::SerializePayload() const
       contextEntriesCount++;
     }
   }
+
   if(m_resourceHandlingOptionHasBeenSet)
   {
     ss << "ResourceHandlingOption=" << StringUtils::URLEncode(m_resourceHandlingOption.c_str()) << "&";
   }
+
   if(m_maxItemsHasBeenSet)
   {
     ss << "MaxItems=" << m_maxItems << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

@@ -113,26 +113,32 @@ void IntOptions::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".DefaultValue=" << m_defaultValue << "&";
   }
+
   if(m_sourceFieldHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceField=" << StringUtils::URLEncode(m_sourceField.c_str()) << "&";
   }
+
   if(m_facetEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".FacetEnabled=" << m_facetEnabled << "&";
   }
+
   if(m_searchEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".SearchEnabled=" << m_searchEnabled << "&";
   }
+
   if(m_returnEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
+
   if(m_sortEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".SortEnabled=" << m_sortEnabled << "&";
   }
+
 }
 
 void IntOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,10 +33,12 @@ Aws::String ChangePasswordRequest::SerializePayload() const
   {
     ss << "OldPassword=" << StringUtils::URLEncode(m_oldPassword.c_str()) << "&";
   }
+
   if(m_newPasswordHasBeenSet)
   {
     ss << "NewPassword=" << StringUtils::URLEncode(m_newPassword.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

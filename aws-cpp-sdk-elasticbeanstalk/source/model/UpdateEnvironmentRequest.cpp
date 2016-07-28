@@ -42,38 +42,47 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_tierHasBeenSet)
   {
-    m_tier.OutputToStream(ss, "Tier.");
+    m_tier.OutputToStream(ss, "Tier");
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
     unsigned optionSettingsCount = 1;
@@ -83,6 +92,7 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
       optionSettingsCount++;
     }
   }
+
   if(m_optionsToRemoveHasBeenSet)
   {
     unsigned optionsToRemoveCount = 1;
@@ -92,6 +102,7 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
       optionsToRemoveCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

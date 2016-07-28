@@ -103,30 +103,36 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".ExportTaskId=" << StringUtils::URLEncode(m_exportTaskId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << ExportTaskStateMapper::GetNameForExportTaskState(m_state) << "&";
   }
+
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
+
   if(m_instanceExportDetailsHasBeenSet)
   {
       Aws::StringStream instanceExportDetailsLocationAndMemberSs;
       instanceExportDetailsLocationAndMemberSs << location << index << locationValue << ".InstanceExportDetails";
       m_instanceExportDetails.OutputToStream(oStream, instanceExportDetailsLocationAndMemberSs.str().c_str());
   }
+
   if(m_exportToS3TaskHasBeenSet)
   {
       Aws::StringStream exportToS3TaskLocationAndMemberSs;
       exportToS3TaskLocationAndMemberSs << location << index << locationValue << ".ExportToS3Task";
       m_exportToS3Task.OutputToStream(oStream, exportToS3TaskLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) const

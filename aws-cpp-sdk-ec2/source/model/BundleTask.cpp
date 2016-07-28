@@ -119,38 +119,46 @@ void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_bundleIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".BundleId=" << StringUtils::URLEncode(m_bundleId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << BundleTaskStateMapper::GetNameForBundleTaskState(m_state) << "&";
   }
+
   if(m_startTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".UpdateTime=" << StringUtils::URLEncode(m_updateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_storageHasBeenSet)
   {
       Aws::StringStream storageLocationAndMemberSs;
       storageLocationAndMemberSs << location << index << locationValue << ".Storage";
       m_storage.OutputToStream(oStream, storageLocationAndMemberSs.str().c_str());
   }
+
   if(m_progressHasBeenSet)
   {
       oStream << location << index << locationValue << ".Progress=" << StringUtils::URLEncode(m_progress.c_str()) << "&";
   }
+
   if(m_bundleTaskErrorHasBeenSet)
   {
       Aws::StringStream bundleTaskErrorLocationAndMemberSs;
       bundleTaskErrorLocationAndMemberSs << location << index << locationValue << ".BundleTaskError";
       m_bundleTaskError.OutputToStream(oStream, bundleTaskErrorLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void BundleTask::OutputToStream(Aws::OStream& oStream, const char* location) const

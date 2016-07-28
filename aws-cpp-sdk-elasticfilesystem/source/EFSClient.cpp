@@ -49,6 +49,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "elasticfilesystem";
 static const char* ALLOCATION_TAG = "EFSClient";
 
+
 EFSClient::EFSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

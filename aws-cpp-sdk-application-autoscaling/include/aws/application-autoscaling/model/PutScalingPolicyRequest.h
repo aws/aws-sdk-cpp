@@ -210,66 +210,76 @@ namespace Model
     inline PutScalingPolicyRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a new
-     * policy.</p>
+     * <p>The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a new
-     * policy.</p>
+     * <p>The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a new
-     * policy.</p>
+     * <p>The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a new
-     * policy.</p>
+     * <p>The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. This parameter is required if you are creating a new
-     * policy.</p>
+     * <p>The policy type. If you are creating a new policy, this parameter is
+     * required. If you are updating an existing policy, this parameter is not
+     * required.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see
+     * <p>The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing policy, this
+     * parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline const StepScalingPolicyConfiguration& GetStepScalingPolicyConfiguration() const{ return m_stepScalingPolicyConfiguration; }
 
     /**
-     * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see
+     * <p>The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing policy, this
+     * parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
-     * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see
+     * <p>The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing policy, this
+     * parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline void SetStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { m_stepScalingPolicyConfigurationHasBeenSet = true; m_stepScalingPolicyConfiguration = value; }
 
     /**
-     * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see
+     * <p>The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing policy, this
+     * parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(const StepScalingPolicyConfiguration& value) { SetStepScalingPolicyConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for the step scaling policy. This parameter is required if
-     * you are creating a new policy. For more information, see
+     * <p>The configuration for the step scaling policy. If you are creating a new
+     * policy, this parameter is required. If you are updating an existing policy, this
+     * parameter is not required. For more information, see
      * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.</p>
      */
     inline PutScalingPolicyRequest& WithStepScalingPolicyConfiguration(StepScalingPolicyConfiguration&& value) { SetStepScalingPolicyConfiguration(value); return *this;}

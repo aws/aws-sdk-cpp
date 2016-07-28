@@ -53,6 +53,10 @@ JsonValue::JsonValue(JsonValue&& value) : m_value(std::move(value.m_value))
 {
 }
 
+JsonValue::~JsonValue()
+{
+}
+
 JsonValue& JsonValue::operator=(const JsonValue& other)
 {
     if (this == &other)

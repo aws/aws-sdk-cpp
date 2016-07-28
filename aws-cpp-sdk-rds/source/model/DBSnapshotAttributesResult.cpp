@@ -77,6 +77,7 @@ void DBSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_dBSnapshotAttributesHasBeenSet)
   {
       unsigned dBSnapshotAttributesIdx = 1;
@@ -87,6 +88,7 @@ void DBSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, const cha
         item.OutputToStream(oStream, dBSnapshotAttributesSs.str().c_str());
       }
   }
+
 }
 
 void DBSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, const char* location) const

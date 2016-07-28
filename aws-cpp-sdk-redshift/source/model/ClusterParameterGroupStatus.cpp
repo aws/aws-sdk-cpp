@@ -85,10 +85,12 @@ void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterApplyStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterApplyStatus=" << StringUtils::URLEncode(m_parameterApplyStatus.c_str()) << "&";
   }
+
   if(m_clusterParameterStatusListHasBeenSet)
   {
       unsigned clusterParameterStatusListIdx = 1;
@@ -99,6 +101,7 @@ void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const ch
         item.OutputToStream(oStream, clusterParameterStatusListSs.str().c_str());
       }
   }
+
 }
 
 void ClusterParameterGroupStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

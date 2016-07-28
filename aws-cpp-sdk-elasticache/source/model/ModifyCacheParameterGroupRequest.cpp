@@ -33,6 +33,7 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
   {
     ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterNameValuesHasBeenSet)
   {
     unsigned parameterNameValuesCount = 1;
@@ -42,6 +43,7 @@ Aws::String ModifyCacheParameterGroupRequest::SerializePayload() const
       parameterNameValuesCount++;
     }
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

@@ -695,6 +695,90 @@ namespace Model
      */
     inline ConfigurationItem& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSupplementaryConfiguration() const{ return m_supplementaryConfiguration; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline void SetSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = value; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline void SetSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration = value; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& WithSupplementaryConfiguration(const Aws::Map<Aws::String, Aws::String>& value) { SetSupplementaryConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& WithSupplementaryConfiguration(Aws::Map<Aws::String, Aws::String>&& value) { SetSupplementaryConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const Aws::String& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(const Aws::String& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, Aws::String&& value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(Aws::String&& key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
+    /**
+     * <p>Configuration attributes that AWS Config returns for certain resource types
+     * to supplement the information returned for the <code>configuration</code>
+     * parameter.</p>
+     */
+    inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration[key] = value; return *this; }
+
   private:
     Aws::String m_version;
     bool m_versionHasBeenSet;
@@ -730,6 +814,8 @@ namespace Model
     bool m_relationshipsHasBeenSet;
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;
+    Aws::Map<Aws::String, Aws::String> m_supplementaryConfiguration;
+    bool m_supplementaryConfigurationHasBeenSet;
   };
 
 } // namespace Model

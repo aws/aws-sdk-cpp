@@ -32,6 +32,7 @@ Aws::String CancelExportTaskRequest::SerializePayload() const
   {
     ss << "ExportTaskId=" << StringUtils::URLEncode(m_exportTaskId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

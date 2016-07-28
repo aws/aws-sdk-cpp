@@ -226,11 +226,6 @@ namespace Aws
              */
             static double ComputeCurrentTimestampInAmazonFormat();
 
-	    /*
-	     * A platform-agnostic implementation of the timegm function from gnu extensions
-	     */
-	    static time_t TimeGM(tm* const t);
-
         private:
             std::chrono::system_clock::time_point m_time;
             bool m_valid;

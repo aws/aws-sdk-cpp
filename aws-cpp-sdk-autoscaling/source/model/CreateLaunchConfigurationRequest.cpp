@@ -51,14 +51,17 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
   {
     ss << "LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_keyNameHasBeenSet)
   {
     ss << "KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
+
   if(m_securityGroupsHasBeenSet)
   {
     unsigned securityGroupsCount = 1;
@@ -69,10 +72,12 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
       securityGroupsCount++;
     }
   }
+
   if(m_classicLinkVPCIdHasBeenSet)
   {
     ss << "ClassicLinkVPCId=" << StringUtils::URLEncode(m_classicLinkVPCId.c_str()) << "&";
   }
+
   if(m_classicLinkVPCSecurityGroupsHasBeenSet)
   {
     unsigned classicLinkVPCSecurityGroupsCount = 1;
@@ -83,26 +88,32 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
       classicLinkVPCSecurityGroupsCount++;
     }
   }
+
   if(m_userDataHasBeenSet)
   {
     ss << "UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
     ss << "InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_kernelIdHasBeenSet)
   {
     ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
     ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
     unsigned blockDeviceMappingsCount = 1;
@@ -112,30 +123,37 @@ Aws::String CreateLaunchConfigurationRequest::SerializePayload() const
       blockDeviceMappingsCount++;
     }
   }
+
   if(m_instanceMonitoringHasBeenSet)
   {
-    m_instanceMonitoring.OutputToStream(ss, "InstanceMonitoring.");
+    m_instanceMonitoring.OutputToStream(ss, "InstanceMonitoring");
   }
+
   if(m_spotPriceHasBeenSet)
   {
     ss << "SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
+
   if(m_iamInstanceProfileHasBeenSet)
   {
     ss << "IamInstanceProfile=" << StringUtils::URLEncode(m_iamInstanceProfile.c_str()) << "&";
   }
+
   if(m_ebsOptimizedHasBeenSet)
   {
     ss << "EbsOptimized=" << m_ebsOptimized << "&";
   }
+
   if(m_associatePublicIpAddressHasBeenSet)
   {
     ss << "AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
   }
+
   if(m_placementTenancyHasBeenSet)
   {
     ss << "PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

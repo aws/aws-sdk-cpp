@@ -32,6 +32,7 @@ Aws::String CreateAccountAliasRequest::SerializePayload() const
   {
     ss << "AccountAlias=" << StringUtils::URLEncode(m_accountAlias.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

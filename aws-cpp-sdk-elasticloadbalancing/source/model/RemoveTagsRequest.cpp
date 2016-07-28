@@ -39,6 +39,7 @@ Aws::String RemoveTagsRequest::SerializePayload() const
       loadBalancerNamesCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -48,6 +49,7 @@ Aws::String RemoveTagsRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

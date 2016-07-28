@@ -79,14 +79,17 @@ void ClusterVersion::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".ClusterVersion=" << StringUtils::URLEncode(m_clusterVersion.c_str()) << "&";
   }
+
   if(m_clusterParameterGroupFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClusterParameterGroupFamily=" << StringUtils::URLEncode(m_clusterParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ClusterVersion::OutputToStream(Aws::OStream& oStream, const char* location) const

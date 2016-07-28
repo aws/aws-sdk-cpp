@@ -39,26 +39,32 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
     ss << "VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_sourceBundleHasBeenSet)
   {
-    m_sourceBundle.OutputToStream(ss, "SourceBundle.");
+    m_sourceBundle.OutputToStream(ss, "SourceBundle");
   }
+
   if(m_autoCreateApplicationHasBeenSet)
   {
     ss << "AutoCreateApplication=" << m_autoCreateApplication << "&";
   }
+
   if(m_processHasBeenSet)
   {
     ss << "Process=" << m_process << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

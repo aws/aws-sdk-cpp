@@ -32,6 +32,7 @@ Aws::String DescribeIdFormatRequest::SerializePayload() const
   {
     ss << "Resource=" << StringUtils::URLEncode(m_resource.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

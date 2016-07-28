@@ -35,14 +35,17 @@ Aws::String ReplaceNetworkAclAssociationRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_associationIdHasBeenSet)
   {
     ss << "AssociationId=" << StringUtils::URLEncode(m_associationId.c_str()) << "&";
   }
+
   if(m_networkAclIdHasBeenSet)
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

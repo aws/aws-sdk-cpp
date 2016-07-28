@@ -110,12 +110,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -168,13 +168,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -199,12 +199,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -257,13 +257,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -288,12 +288,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -346,13 +346,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -377,12 +377,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -435,13 +435,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -466,12 +466,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -524,13 +524,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -555,12 +555,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -613,13 +613,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -644,12 +644,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -702,13 +702,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -733,12 +733,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -791,13 +791,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -822,12 +822,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -880,13 +880,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -911,12 +911,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -969,13 +969,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -1000,12 +1000,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -1058,13 +1058,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -1089,12 +1089,12 @@ namespace Model
     /**
      * <p> <b>Profile (H.264/VP8 Only)</b> </p> <p>The H.264 profile that you want to
      * use for the output file. Elastic Transcoder supports the following profiles:</p>
-     * <ul> <li> <code>baseline</code>: The profile most commonly used for
-     * videoconferencing and for mobile applications.</li> <li> <code>main</code>: The
-     * profile used for standard-definition digital TV broadcasts.</li> <li>
-     * <code>high</code>: The profile used for high-definition digital TV broadcasts
-     * and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p> <p>The
-     * H.264 level that you want to use for the output file. Elastic Transcoder
+     * <ul> <li><code>baseline</code>: The profile most commonly used for
+     * videoconferencing and for mobile applications.</li> <li><code>main</code>: The
+     * profile used for standard-definition digital TV broadcasts.</li>
+     * <li><code>high</code>: The profile used for high-definition digital TV
+     * broadcasts and for Blu-ray discs.</li> </ul> <p> <b>Level (H.264 Only)</b> </p>
+     * <p>The H.264 level that you want to use for the output file. Elastic Transcoder
      * supports the following levels:</p> <p><code>1</code>, <code>1b</code>,
      * <code>1.1</code>, <code>1.2</code>, <code>1.3</code>, <code>2</code>,
      * <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
@@ -1147,13 +1147,13 @@ namespace Model
      * <code>29.97</code>, <code>50</code>, or <code>60</code>, your
      * <code>SegmentDuration</code> is null, and you are using one of the resolution
      * changes from the list below, Elastic Transcoder applies the following color
-     * space conversions:</p> <ul> <li> <i>Standard to HD, 720x480 to 1920x1080</i> -
-     * Elastic Transcoder applies <code>Bt601ToBt709</code> </li> <li> <i>Standard to
-     * HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies
-     * <code>Bt601ToBt709</code> </li> <li> <i>HD to Standard, 1920x1080 to 720x480</i>
-     * - Elastic Transcoder applies <code>Bt709ToBt601</code> </li> <li> <i>HD to
-     * Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies
-     * <code>Bt709ToBt601</code> </li> </ul> <note>Elastic Transcoder may change the
+     * space conversions:</p> <ul> <li><i>Standard to HD, 720x480 to 1920x1080</i> -
+     * Elastic Transcoder applies <code>Bt601ToBt709</code></li> <li><i>Standard to HD,
+     * 720x576 to 1920x1080</i> - Elastic Transcoder applies
+     * <code>Bt601ToBt709</code></li> <li><i>HD to Standard, 1920x1080 to 720x480</i> -
+     * Elastic Transcoder applies <code>Bt709ToBt601</code></li> <li><i>HD to Standard,
+     * 1920x1080 to 720x576</i> - Elastic Transcoder applies
+     * <code>Bt709ToBt601</code></li> </ul> <note>Elastic Transcoder may change the
      * behavior of the <code>ColorspaceConversionMode</code> <code>Auto</code> mode in
      * the future. All outputs in a playlist must use the same
      * <code>ColorSpaceConversionMode</code>.</note> <p>If you do not specify a
@@ -1326,9 +1326,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1339,9 +1339,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1352,9 +1352,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1365,9 +1365,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1378,9 +1378,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1391,9 +1391,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1404,9 +1404,9 @@ namespace Model
      * <p>Applicable only when the value of Video:Codec is one of <code>H.264</code>,
      * <code>MPEG2</code>, or <code>VP8</code>.</p> <p>Whether to use a fixed value for
      * <code>FixedGOP</code>. Valid values are <code>true</code> and
-     * <code>false</code>:</p> <ul> <li> <code>true</code>: Elastic Transcoder uses the
+     * <code>false</code>:</p> <ul> <li><code>true</code>: Elastic Transcoder uses the
      * value of <code>KeyframesMaxDist</code> for the distance between key frames (the
-     * number of frames in a group of pictures, or GOP).</li> <li> <code>false</code>:
+     * number of frames in a group of pictures, or GOP).</li> <li><code>false</code>:
      * The distance between key frames can vary.</li> </ul>
      * <important><p><code>FixedGOP</code> must be set to <code>true</code> for
      * <code>fmp4</code> containers.</p></important>
@@ -1534,8 +1534,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1557,8 +1557,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1580,8 +1580,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1603,8 +1603,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1626,8 +1626,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1649,8 +1649,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1672,8 +1672,8 @@ namespace Model
      * specify a frame rate, we recommend that you perform the following
      * calculation:</p> <p> <code>Frame rate = maximum recommended decoding speed in
      * luma samples/second / (width in pixels * height in pixels)</code> </p>
-     * <p>where:</p> <ul> <li> <i>width in pixels</i> and <i>height in pixels</i>
-     * represent the Resolution of the output video.</li> <li> <i>maximum recommended
+     * <p>where:</p> <ul> <li><i>width in pixels</i> and <i>height in pixels</i>
+     * represent the Resolution of the output video.</li> <li><i>maximum recommended
      * decoding speed in Luma samples/second</i> is less than or equal to the maximum
      * value listed in the following table, based on the value that you specified for
      * Level.</li> </ul> <p>The maximum recommended decoding speed in Luma
@@ -1771,9 +1771,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1799,9 +1799,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1827,9 +1827,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1855,9 +1855,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1883,9 +1883,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1911,9 +1911,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -1939,9 +1939,9 @@ namespace Model
      * <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
      * not use them together.</p> </important> <p>The width and height of the video in
      * the output file, in pixels. Valid values are <code>auto</code> and <i>width</i>
-     * x <i>height</i>:</p> <ul> <li> <code>auto</code>: Elastic Transcoder attempts to
+     * x <i>height</i>:</p> <ul> <li><code>auto</code>: Elastic Transcoder attempts to
      * preserve the width and height of the input file, subject to the following
-     * rules.</li> <li> <code><i>width</i> x <i>height</i></code>: The width and height
+     * rules.</li> <li><code><i>width</i> x <i>height</i></code>: The width and height
      * of the output video in pixels.</li> </ul> <p>Note the following about specifying
      * the width and height:</p> <ul> <li>The width must be an even integer between 128
      * and 4096, inclusive.</li> <li>The height must be an even integer between 96 and
@@ -2227,27 +2227,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2256,27 +2256,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2285,27 +2285,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2314,27 +2314,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2343,27 +2343,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2372,27 +2372,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>
@@ -2401,27 +2401,27 @@ namespace Model
 
     /**
      * <p>Specify one of the following values to control scaling of the output
-     * video:</p> <p> <ul> <li> <code>Fit</code>: Elastic Transcoder scales the output
+     * video:</p> <p> <ul> <li><code>Fit</code>: Elastic Transcoder scales the output
      * video so it matches the value that you specified in either <code>MaxWidth</code>
-     * or <code>MaxHeight</code> without exceeding the other value.</li> <li>
-     * <code>Fill</code>: Elastic Transcoder scales the output video so it matches the
-     * value that you specified in either <code>MaxWidth</code> or
+     * or <code>MaxHeight</code> without exceeding the other value.</li>
+     * <li><code>Fill</code>: Elastic Transcoder scales the output video so it matches
+     * the value that you specified in either <code>MaxWidth</code> or
      * <code>MaxHeight</code> and matches or exceeds the other value. Elastic
      * Transcoder centers the output video and then crops it in the dimension (if any)
-     * that exceeds the maximum value.</li> <li> <code>Stretch</code>: Elastic
+     * that exceeds the maximum value.</li> <li><code>Stretch</code>: Elastic
      * Transcoder stretches the output video to match the values that you specified for
      * <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of
      * the input video and the output video are different, the output video will be
-     * distorted.</li> <li> <code>Keep</code>: Elastic Transcoder does not scale the
+     * distorted.</li> <li><code>Keep</code>: Elastic Transcoder does not scale the
      * output video. If either dimension of the input video exceeds the values that you
      * specified for <code>MaxWidth</code> and <code>MaxHeight</code>, Elastic
-     * Transcoder crops the output video.</li> <li> <code>ShrinkToFit</code>: Elastic
+     * Transcoder crops the output video.</li> <li><code>ShrinkToFit</code>: Elastic
      * Transcoder scales the output video down so that its dimensions match the values
      * that you specified for at least one of <code>MaxWidth</code> and
      * <code>MaxHeight</code> without exceeding either value. If you specify this
-     * option, Elastic Transcoder does not scale the video up.</li> <li>
-     * <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so
-     * that its dimensions match the values that you specified for at least one of
+     * option, Elastic Transcoder does not scale the video up.</li>
+     * <li><code>ShrinkToFill</code>: Elastic Transcoder scales the output video down
+     * so that its dimensions match the values that you specified for at least one of
      * <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either
      * value. If you specify this option, Elastic Transcoder does not scale the video
      * up.</li> </ul> </p>

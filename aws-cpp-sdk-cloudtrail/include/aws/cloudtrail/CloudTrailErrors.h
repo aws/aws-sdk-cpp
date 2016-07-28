@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudTrail
 {
-enum class AWS_CLOUDTRAIL_API CloudTrailErrors
+enum class CloudTrailErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

@@ -34,14 +34,17 @@ Aws::String RevokeSnapshotAccessRequest::SerializePayload() const
   {
     ss << "SnapshotIdentifier=" << StringUtils::URLEncode(m_snapshotIdentifier.c_str()) << "&";
   }
+
   if(m_snapshotClusterIdentifierHasBeenSet)
   {
     ss << "SnapshotClusterIdentifier=" << StringUtils::URLEncode(m_snapshotClusterIdentifier.c_str()) << "&";
   }
+
   if(m_accountWithRestoreAccessHasBeenSet)
   {
     ss << "AccountWithRestoreAccess=" << StringUtils::URLEncode(m_accountWithRestoreAccess.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

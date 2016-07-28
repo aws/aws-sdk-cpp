@@ -73,10 +73,12 @@ void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << index << locationValue << ".AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
   }
+
   if(m_deleteOnTerminationHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeleteOnTermination=" << m_deleteOnTermination << "&";
   }
+
 }
 
 void NetworkInterfaceAttachmentChanges::OutputToStream(Aws::OStream& oStream, const char* location) const

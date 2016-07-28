@@ -79,14 +79,17 @@ void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, 
   {
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
+
   if(m_publicDnsNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".PublicDnsName=" << StringUtils::URLEncode(m_publicDnsName.c_str()) << "&";
   }
+
   if(m_ipOwnerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpOwnerId=" << StringUtils::URLEncode(m_ipOwnerId.c_str()) << "&";
   }
+
 }
 
 void InstanceNetworkInterfaceAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -20,6 +20,7 @@
 #include <aws/acm/model/CertificateStatus.h>
 #include <aws/acm/model/RevocationReason.h>
 #include <aws/acm/model/KeyAlgorithm.h>
+#include <aws/acm/model/FailureReason.h>
 #include <aws/acm/model/DomainValidation.h>
 
 namespace Aws
@@ -684,6 +685,51 @@ namespace Model
      */
     inline CertificateDetail& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline CertificateDetail& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * structure's <code>Status</code> is <code>FAILED</code>. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>
+     */
+    inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(value); return *this;}
+
   private:
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
@@ -719,6 +765,8 @@ namespace Model
     bool m_signatureAlgorithmHasBeenSet;
     Aws::Vector<Aws::String> m_inUseBy;
     bool m_inUseByHasBeenSet;
+    FailureReason m_failureReason;
+    bool m_failureReasonHasBeenSet;
   };
 
 } // namespace Model

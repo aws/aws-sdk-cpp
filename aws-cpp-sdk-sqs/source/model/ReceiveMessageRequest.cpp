@@ -40,6 +40,7 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
   {
     ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
+
   if(m_attributeNamesHasBeenSet)
   {
     unsigned attributeNamesCount = 1;
@@ -50,6 +51,7 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
       attributeNamesCount++;
     }
   }
+
   if(m_messageAttributeNamesHasBeenSet)
   {
     unsigned messageAttributeNamesCount = 1;
@@ -60,18 +62,22 @@ Aws::String ReceiveMessageRequest::SerializePayload() const
       messageAttributeNamesCount++;
     }
   }
+
   if(m_maxNumberOfMessagesHasBeenSet)
   {
     ss << "MaxNumberOfMessages=" << m_maxNumberOfMessages << "&";
   }
+
   if(m_visibilityTimeoutHasBeenSet)
   {
     ss << "VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
+
   if(m_waitTimeSecondsHasBeenSet)
   {
     ss << "WaitTimeSeconds=" << m_waitTimeSeconds << "&";
   }
+
   ss << "Version=2012-11-05";
   return ss.str();
 }

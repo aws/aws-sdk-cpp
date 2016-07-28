@@ -109,14 +109,17 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".ReservationId=" << StringUtils::URLEncode(m_reservationId.c_str()) << "&";
   }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
+
   if(m_requesterIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequesterId=" << StringUtils::URLEncode(m_requesterId.c_str()) << "&";
   }
+
   if(m_groupsHasBeenSet)
   {
       unsigned groupsIdx = 1;
@@ -127,6 +130,7 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, groupsSs.str().c_str());
       }
   }
+
   if(m_instancesHasBeenSet)
   {
       unsigned instancesIdx = 1;
@@ -137,12 +141,14 @@ void Reservation::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Reservation::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -41,17 +41,18 @@ namespace Model
    * Examples of regional resources are EC2 instances and EBS volumes.</p> <p>You can
    * also have AWS Config record configuration changes for supported types of global
    * resources (for example, IAM resources). Global resources are not tied to an
-   * individual region and can be used in all regions.</p> <important>The
+   * individual region and can be used in all regions.</p> <important> <p>The
    * configuration details for any global resource are the same in all regions. If
    * you customize AWS Config in multiple regions to record global resources, it will
    * create multiple configuration items each time a global resource changes: one
    * configuration item for each region. These configuration items will contain
    * identical data. To prevent duplicate configuration items, you should consider
    * customizing AWS Config in only one region to record global resources, unless you
-   * want the configuration items to be available in multiple regions.</important>
-   * <p>If you don't want AWS Config to record all resources, you can specify which
-   * types of resources it will record with the <code>resourceTypes</code>
-   * parameter.</p> <p>For a list of supported resource types, see <a
+   * want the configuration items to be available in multiple regions.</p>
+   * </important> <p>If you don't want AWS Config to record all resources, you can
+   * specify which types of resources it will record with the
+   * <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource
+   * types, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * resource types</a>.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting

@@ -81,14 +81,17 @@ void Parameter::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".ParameterKey=" << StringUtils::URLEncode(m_parameterKey.c_str()) << "&";
   }
+
   if(m_parameterValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
+
   if(m_usePreviousValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".UsePreviousValue=" << m_usePreviousValue << "&";
   }
+
 }
 
 void Parameter::OutputToStream(Aws::OStream& oStream, const char* location) const

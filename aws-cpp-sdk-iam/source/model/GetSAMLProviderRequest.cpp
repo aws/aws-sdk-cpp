@@ -32,6 +32,7 @@ Aws::String GetSAMLProviderRequest::SerializePayload() const
   {
     ss << "SAMLProviderArn=" << StringUtils::URLEncode(m_sAMLProviderArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

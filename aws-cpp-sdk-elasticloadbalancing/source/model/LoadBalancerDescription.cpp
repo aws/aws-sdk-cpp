@@ -219,18 +219,22 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_dNSNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DNSName=" << StringUtils::URLEncode(m_dNSName.c_str()) << "&";
   }
+
   if(m_canonicalHostedZoneNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CanonicalHostedZoneName=" << StringUtils::URLEncode(m_canonicalHostedZoneName.c_str()) << "&";
   }
+
   if(m_canonicalHostedZoneNameIDHasBeenSet)
   {
       oStream << location << index << locationValue << ".CanonicalHostedZoneNameID=" << StringUtils::URLEncode(m_canonicalHostedZoneNameID.c_str()) << "&";
   }
+
   if(m_listenerDescriptionsHasBeenSet)
   {
       unsigned listenerDescriptionsIdx = 1;
@@ -241,12 +245,14 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         item.OutputToStream(oStream, listenerDescriptionsSs.str().c_str());
       }
   }
+
   if(m_policiesHasBeenSet)
   {
       Aws::StringStream policiesLocationAndMemberSs;
       policiesLocationAndMemberSs << location << index << locationValue << ".Policies";
       m_policies.OutputToStream(oStream, policiesLocationAndMemberSs.str().c_str());
   }
+
   if(m_backendServerDescriptionsHasBeenSet)
   {
       unsigned backendServerDescriptionsIdx = 1;
@@ -257,6 +263,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         item.OutputToStream(oStream, backendServerDescriptionsSs.str().c_str());
       }
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -265,6 +272,7 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         oStream << location << index << locationValue << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_subnetsHasBeenSet)
   {
       unsigned subnetsIdx = 1;
@@ -273,10 +281,12 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         oStream << location << index << locationValue << ".Subnets.member." << subnetsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_vPCIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VPCId=" << StringUtils::URLEncode(m_vPCId.c_str()) << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
       unsigned instancesIdx = 1;
@@ -287,18 +297,21 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_healthCheckHasBeenSet)
   {
       Aws::StringStream healthCheckLocationAndMemberSs;
       healthCheckLocationAndMemberSs << location << index << locationValue << ".HealthCheck";
       m_healthCheck.OutputToStream(oStream, healthCheckLocationAndMemberSs.str().c_str());
   }
+
   if(m_sourceSecurityGroupHasBeenSet)
   {
       Aws::StringStream sourceSecurityGroupLocationAndMemberSs;
       sourceSecurityGroupLocationAndMemberSs << location << index << locationValue << ".SourceSecurityGroup";
       m_sourceSecurityGroup.OutputToStream(oStream, sourceSecurityGroupLocationAndMemberSs.str().c_str());
   }
+
   if(m_securityGroupsHasBeenSet)
   {
       unsigned securityGroupsIdx = 1;
@@ -307,14 +320,17 @@ void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* 
         oStream << location << index << locationValue << ".SecurityGroups.member." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_createdTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_schemeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Scheme=" << StringUtils::URLEncode(m_scheme.c_str()) << "&";
   }
+
 }
 
 void LoadBalancerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

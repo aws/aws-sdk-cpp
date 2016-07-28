@@ -77,6 +77,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "elasticache";
 static const char* ALLOCATION_TAG = "ElastiCacheClient";
 
+
 ElastiCacheClient::ElastiCacheClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

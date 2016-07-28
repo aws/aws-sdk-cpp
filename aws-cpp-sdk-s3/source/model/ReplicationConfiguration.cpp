@@ -54,14 +54,14 @@ ReplicationConfiguration& ReplicationConfiguration::operator =(const XmlNode& xm
       m_role = StringUtils::Trim(roleNode.GetText().c_str());
       m_roleHasBeenSet = true;
     }
-    XmlNode rulesNode = resultNode.FirstChild("Rules");
+    XmlNode rulesNode = resultNode.FirstChild("Rule");
     if(!rulesNode.IsNull())
     {
-      XmlNode rulesMember = rulesNode;
-      while(!rulesMember.IsNull())
+      XmlNode ruleMember = rulesNode;
+      while(!ruleMember.IsNull())
       {
-        m_rules.push_back(rulesMember);
-        rulesMember = rulesMember.NextNode("Rule");
+        m_rules.push_back(ruleMember);
+        ruleMember = ruleMember.NextNode("Rule");
       }
 
       m_rulesHasBeenSet = true;

@@ -81,14 +81,17 @@ void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* locati
       serverCertificateMetadataLocationAndMemberSs << location << index << locationValue << ".ServerCertificateMetadata";
       m_serverCertificateMetadata.OutputToStream(oStream, serverCertificateMetadataLocationAndMemberSs.str().c_str());
   }
+
   if(m_certificateBodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
   }
+
   if(m_certificateChainHasBeenSet)
   {
       oStream << location << index << locationValue << ".CertificateChain=" << StringUtils::URLEncode(m_certificateChain.c_str()) << "&";
   }
+
 }
 
 void ServerCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const

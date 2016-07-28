@@ -32,6 +32,7 @@ Aws::String GetAccessKeyLastUsedRequest::SerializePayload() const
   {
     ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

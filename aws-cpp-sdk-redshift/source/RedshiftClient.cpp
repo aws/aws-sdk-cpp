@@ -101,6 +101,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "redshift";
 static const char* ALLOCATION_TAG = "RedshiftClient";
 
+
 RedshiftClient::RedshiftClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

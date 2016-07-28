@@ -32,7 +32,9 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_port(0),
     m_portHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_extraConnectionAttributesHasBeenSet(false)
+    m_extraConnectionAttributesHasBeenSet(false),
+    m_certificateArnHasBeenSet(false),
+    m_sslModeHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,17 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   {
    payload.WithString("ExtraConnectionAttributes", m_extraConnectionAttributes);
 
+  }
+
+  if(m_certificateArnHasBeenSet)
+  {
+   payload.WithString("CertificateArn", m_certificateArn);
+
+  }
+
+  if(m_sslModeHasBeenSet)
+  {
+   payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
   }
 
   return payload.WriteReadable();

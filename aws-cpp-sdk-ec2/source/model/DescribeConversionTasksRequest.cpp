@@ -35,6 +35,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -44,6 +45,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_conversionTaskIdsHasBeenSet)
   {
     unsigned conversionTaskIdsCount = 1;
@@ -54,6 +56,7 @@ Aws::String DescribeConversionTasksRequest::SerializePayload() const
       conversionTaskIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

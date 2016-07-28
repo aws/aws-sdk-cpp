@@ -34,14 +34,17 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   {
     ss << "SourceSnapshotName=" << StringUtils::URLEncode(m_sourceSnapshotName.c_str()) << "&";
   }
+
   if(m_targetSnapshotNameHasBeenSet)
   {
     ss << "TargetSnapshotName=" << StringUtils::URLEncode(m_targetSnapshotName.c_str()) << "&";
   }
+
   if(m_targetBucketHasBeenSet)
   {
     ss << "TargetBucket=" << StringUtils::URLEncode(m_targetBucket.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

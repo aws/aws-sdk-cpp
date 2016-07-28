@@ -36,14 +36,17 @@ Aws::String DetachNetworkInterfaceRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_attachmentIdHasBeenSet)
   {
     ss << "AttachmentId=" << StringUtils::URLEncode(m_attachmentId.c_str()) << "&";
   }
+
   if(m_forceHasBeenSet)
   {
     ss << "Force=" << m_force << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

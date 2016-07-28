@@ -35,14 +35,17 @@ Aws::String ConfirmProductInstanceRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_productCodeHasBeenSet)
   {
     ss << "ProductCode=" << StringUtils::URLEncode(m_productCode.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

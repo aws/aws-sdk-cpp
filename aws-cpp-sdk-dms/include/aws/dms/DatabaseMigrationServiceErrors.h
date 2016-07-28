@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DatabaseMigrationService
 {
-enum class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceErrors
+enum class DatabaseMigrationServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -50,6 +50,7 @@ enum class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceErrors
 
   ACCESS_DENIED_FAULT= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INSUFFICIENT_RESOURCE_CAPACITY_FAULT,
+  INVALID_CERTIFICATE_FAULT,
   INVALID_RESOURCE_STATE_FAULT,
   INVALID_SUBNET,
   K_M_S_KEY_NOT_ACCESSIBLE_FAULT,

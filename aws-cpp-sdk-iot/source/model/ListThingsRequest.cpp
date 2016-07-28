@@ -29,7 +29,8 @@ ListThingsRequest::ListThingsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
+    m_attributeValueHasBeenSet(false),
+    m_thingTypeNameHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,13 @@ void ListThingsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_attributeValue;
       uri.AddQueryStringParameter("attributeValue", ss.str());
+      ss.str("");
+    }
+
+    if(m_thingTypeNameHasBeenSet)
+    {
+      ss << m_thingTypeName;
+      uri.AddQueryStringParameter("thingTypeName", ss.str());
       ss.str("");
     }
 

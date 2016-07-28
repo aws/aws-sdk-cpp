@@ -33,6 +33,7 @@ Aws::String DescribeLifecycleHooksRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_lifecycleHookNamesHasBeenSet)
   {
     unsigned lifecycleHookNamesCount = 1;
@@ -43,6 +44,7 @@ Aws::String DescribeLifecycleHooksRequest::SerializePayload() const
       lifecycleHookNamesCount++;
     }
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

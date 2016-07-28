@@ -224,64 +224,57 @@ namespace Model
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline const Aws::String& GetAccessUrl() const{ return m_accessUrl; }
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline void SetAccessUrl(const Aws::String& value) { m_accessUrlHasBeenSet = true; m_accessUrl = value; }
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline void SetAccessUrl(Aws::String&& value) { m_accessUrlHasBeenSet = true; m_accessUrl = value; }
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline void SetAccessUrl(const char* value) { m_accessUrlHasBeenSet = true; m_accessUrl.assign(value); }
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline DirectoryDescription& WithAccessUrl(const Aws::String& value) { SetAccessUrl(value); return *this;}
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline DirectoryDescription& WithAccessUrl(Aws::String&& value) { SetAccessUrl(value); return *this;}
 
     /**
      * <p>The access URL for the directory, such as
-     * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>. If no
-     * alias has been created for the directory,
-     * <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the directory
-     * identifier, such as <code>d-XXXXXXXXXX</code>.</p>
+     * <code>http://&lt;alias&gt;.awsapps.com</code>. If no alias has been created for
+     * the directory, <code>&lt;alias&gt;</code> is the directory identifier, such as
+     * <code>d-XXXXXXXXXX</code>.</p>
      */
     inline DirectoryDescription& WithAccessUrl(const char* value) { SetAccessUrl(value); return *this;}
 

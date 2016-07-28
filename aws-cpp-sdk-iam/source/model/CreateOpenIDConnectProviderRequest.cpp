@@ -34,6 +34,7 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
   {
     ss << "Url=" << StringUtils::URLEncode(m_url.c_str()) << "&";
   }
+
   if(m_clientIDListHasBeenSet)
   {
     unsigned clientIDListCount = 1;
@@ -44,6 +45,7 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
       clientIDListCount++;
     }
   }
+
   if(m_thumbprintListHasBeenSet)
   {
     unsigned thumbprintListCount = 1;
@@ -54,6 +56,7 @@ Aws::String CreateOpenIDConnectProviderRequest::SerializePayload() const
       thumbprintListCount++;
     }
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

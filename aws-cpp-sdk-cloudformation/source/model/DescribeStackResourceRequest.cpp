@@ -33,10 +33,12 @@ Aws::String DescribeStackResourceRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_logicalResourceIdHasBeenSet)
   {
     ss << "LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

@@ -44,7 +44,8 @@ CertificateDetail::CertificateDetail() :
     m_notAfterHasBeenSet(false),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
-    m_inUseByHasBeenSet(false)
+    m_inUseByHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_notAfterHasBeenSet(false),
     m_keyAlgorithmHasBeenSet(false),
     m_signatureAlgorithmHasBeenSet(false),
-    m_inUseByHasBeenSet(false)
+    m_inUseByHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,13 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
     m_inUseByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("FailureReason"));
+
+    m_failureReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +323,11 @@ JsonValue CertificateDetail::Jsonize() const
    }
    payload.WithArray("InUseBy", std::move(inUseByJsonList));
 
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("FailureReason", FailureReasonMapper::GetNameForFailureReason(m_failureReason));
   }
 
   return payload;

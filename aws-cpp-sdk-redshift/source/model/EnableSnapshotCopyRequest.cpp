@@ -36,18 +36,22 @@ Aws::String EnableSnapshotCopyRequest::SerializePayload() const
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
+
   if(m_destinationRegionHasBeenSet)
   {
     ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
   }
+
   if(m_retentionPeriodHasBeenSet)
   {
     ss << "RetentionPeriod=" << m_retentionPeriod << "&";
   }
+
   if(m_snapshotCopyGrantNameHasBeenSet)
   {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

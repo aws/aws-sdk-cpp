@@ -34,10 +34,12 @@ Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_attributeNamesHasBeenSet)
   {
     unsigned attributeNamesCount = 1;
@@ -48,6 +50,7 @@ Aws::String DescribeEnvironmentHealthRequest::SerializePayload() const
       attributeNamesCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

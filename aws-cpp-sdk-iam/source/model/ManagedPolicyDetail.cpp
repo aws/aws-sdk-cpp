@@ -153,42 +153,52 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_policyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".PolicyId=" << StringUtils::URLEncode(m_policyId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_pathHasBeenSet)
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_defaultVersionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultVersionId=" << StringUtils::URLEncode(m_defaultVersionId.c_str()) << "&";
   }
+
   if(m_attachmentCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttachmentCount=" << m_attachmentCount << "&";
   }
+
   if(m_isAttachableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsAttachable=" << m_isAttachable << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_updateDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_policyVersionListHasBeenSet)
   {
       unsigned policyVersionListIdx = 1;
@@ -199,6 +209,7 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, policyVersionListSs.str().c_str());
       }
   }
+
 }
 
 void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

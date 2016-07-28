@@ -49,6 +49,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "sdb";
 static const char* ALLOCATION_TAG = "SimpleDBClient";
 
+
 SimpleDBClient::SimpleDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

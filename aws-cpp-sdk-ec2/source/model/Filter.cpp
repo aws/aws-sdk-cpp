@@ -77,6 +77,7 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_valuesHasBeenSet)
   {
       unsigned valuesIdx = 1;
@@ -85,6 +86,7 @@ void Filter::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
         oStream << location << index << locationValue << ".Value." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void Filter::OutputToStream(Aws::OStream& oStream, const char* location) const

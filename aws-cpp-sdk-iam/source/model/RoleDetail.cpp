@@ -145,26 +145,32 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_roleNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   if(m_roleIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RoleId=" << StringUtils::URLEncode(m_roleId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_assumeRolePolicyDocumentHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssumeRolePolicyDocument=" << StringUtils::URLEncode(m_assumeRolePolicyDocument.c_str()) << "&";
   }
+
   if(m_instanceProfileListHasBeenSet)
   {
       unsigned instanceProfileListIdx = 1;
@@ -175,6 +181,7 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, instanceProfileListSs.str().c_str());
       }
   }
+
   if(m_rolePolicyListHasBeenSet)
   {
       unsigned rolePolicyListIdx = 1;
@@ -185,6 +192,7 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, rolePolicyListSs.str().c_str());
       }
   }
+
   if(m_attachedManagedPoliciesHasBeenSet)
   {
       unsigned attachedManagedPoliciesIdx = 1;
@@ -195,6 +203,7 @@ void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
+
 }
 
 void RoleDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

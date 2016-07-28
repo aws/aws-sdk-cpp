@@ -35,10 +35,12 @@ Aws::String PutAttributesRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_itemNameHasBeenSet)
   {
     ss << "ItemName=" << StringUtils::URLEncode(m_itemName.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;
@@ -48,10 +50,12 @@ Aws::String PutAttributesRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   if(m_expectedHasBeenSet)
   {
-    m_expected.OutputToStream(ss, "Expected.");
+    m_expected.OutputToStream(ss, "Expected");
   }
+
   ss << "Version=2009-04-15";
   return ss.str();
 }

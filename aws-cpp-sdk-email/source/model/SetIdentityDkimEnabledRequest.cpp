@@ -34,10 +34,12 @@ Aws::String SetIdentityDkimEnabledRequest::SerializePayload() const
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_dkimEnabledHasBeenSet)
   {
     ss << "DkimEnabled=" << m_dkimEnabled << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

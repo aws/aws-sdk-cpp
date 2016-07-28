@@ -81,14 +81,17 @@ void ClusterSnapshotCopyStatus::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
   }
+
   if(m_retentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".RetentionPeriod=" << m_retentionPeriod << "&";
   }
+
   if(m_snapshotCopyGrantNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
+
 }
 
 void ClusterSnapshotCopyStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

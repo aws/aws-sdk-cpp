@@ -87,20 +87,24 @@ void BouncedRecipientInfo::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Recipient=" << StringUtils::URLEncode(m_recipient.c_str()) << "&";
   }
+
   if(m_recipientArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".RecipientArn=" << StringUtils::URLEncode(m_recipientArn.c_str()) << "&";
   }
+
   if(m_bounceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".BounceType=" << BounceTypeMapper::GetNameForBounceType(m_bounceType) << "&";
   }
+
   if(m_recipientDsnFieldsHasBeenSet)
   {
       Aws::StringStream recipientDsnFieldsLocationAndMemberSs;
       recipientDsnFieldsLocationAndMemberSs << location << index << locationValue << ".RecipientDsnFields";
       m_recipientDsnFields.OutputToStream(oStream, recipientDsnFieldsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void BouncedRecipientInfo::OutputToStream(Aws::OStream& oStream, const char* location) const

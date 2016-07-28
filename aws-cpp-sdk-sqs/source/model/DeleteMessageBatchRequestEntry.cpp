@@ -71,10 +71,12 @@ void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_receiptHandleHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
+
 }
 
 void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

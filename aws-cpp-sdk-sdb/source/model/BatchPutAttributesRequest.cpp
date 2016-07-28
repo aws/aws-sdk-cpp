@@ -33,6 +33,7 @@ Aws::String BatchPutAttributesRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_itemsHasBeenSet)
   {
     unsigned itemsCount = 1;
@@ -42,6 +43,7 @@ Aws::String BatchPutAttributesRequest::SerializePayload() const
       itemsCount++;
     }
   }
+
   ss << "Version=2009-04-15";
   return ss.str();
 }

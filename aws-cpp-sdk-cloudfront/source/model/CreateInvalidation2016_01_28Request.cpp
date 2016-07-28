@@ -14,6 +14,7 @@
 */
 #include <aws/cloudfront/model/CreateInvalidation2016_01_28Request.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -31,11 +32,11 @@ Aws::String CreateInvalidation2016_01_28Request::SerializePayload() const
 {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("InvalidationBatch");
 
-  XmlNode rootNode = payloadDoc.GetRootElement();
-  rootNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2016-01-28/");
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "http://cloudfront.amazonaws.com/doc/2016-01-28/");
 
-  m_invalidationBatch.AddToNode(rootNode);
-  if(rootNode.HasChildren())
+  m_invalidationBatch.AddToNode(parentNode);
+  if(parentNode.HasChildren())
   {
     return payloadDoc.ConvertToString();
   }

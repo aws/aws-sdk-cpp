@@ -85,10 +85,12 @@ void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".ParameterGroupFamily=" << StringUtils::URLEncode(m_parameterGroupFamily.c_str()) << "&";
   }
+
   if(m_markerHasBeenSet)
   {
       oStream << location << index << locationValue << ".Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
       unsigned parametersIdx = 1;
@@ -99,6 +101,7 @@ void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char*
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
+
 }
 
 void DefaultClusterParameters::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -71,10 +71,12 @@ void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_createdTimestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreatedTimestamp=" << StringUtils::URLEncode(m_createdTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void ReceiptRuleSetMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const

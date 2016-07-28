@@ -33,10 +33,12 @@ Aws::String DeleteNotificationConfigurationRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_topicARNHasBeenSet)
   {
     ss << "TopicARN=" << StringUtils::URLEncode(m_topicARN.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

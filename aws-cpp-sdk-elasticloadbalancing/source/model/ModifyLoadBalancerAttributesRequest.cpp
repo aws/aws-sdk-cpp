@@ -33,10 +33,12 @@ Aws::String ModifyLoadBalancerAttributesRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_loadBalancerAttributesHasBeenSet)
   {
-    m_loadBalancerAttributes.OutputToStream(ss, "LoadBalancerAttributes.");
+    m_loadBalancerAttributes.OutputToStream(ss, "LoadBalancerAttributes");
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }
