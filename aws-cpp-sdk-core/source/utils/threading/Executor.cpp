@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ BlockingExecutor::~BlockingExecutor()
 
 bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
 {
-    std::unique_lock<std::mutex> locker(m_syncPointLock);
+    std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
     if (m_numTasksRunning < m_poolSize)
     {
         m_numTasksRunning++;
@@ -130,16 +130,11 @@ bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
     }
     locker.unlock();
     
-    std::function<void()> executeTask = [&]() {
-        fn();
-        this->OnTaskComplete();
-    };
-    
-    m_executor->Submit(executeTask);
+    m_executor->Submit(&BlockingExecutor::ExecuteTask, this, fn);
     return true;
 }
 
-void BlockingExecutor::ExecuteTask(std::function<void()>&& fn)
+void BlockingExecutor::ExecuteTask(std::function<void()> fn)
 {
     fn();
     OnTaskComplete();
@@ -147,7 +142,7 @@ void BlockingExecutor::ExecuteTask(std::function<void()>&& fn)
 
 void BlockingExecutor::OnTaskComplete()
 {
-    std::unique_lock<std::mutex> locker(m_syncPointLock);
+    std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
     m_numTasksRunning--;
     locker.unlock();
     m_syncPoint.notify_one();
