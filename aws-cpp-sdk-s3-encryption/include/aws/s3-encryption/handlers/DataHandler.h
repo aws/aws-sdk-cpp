@@ -18,6 +18,7 @@
 #include <aws/s3-encryption/ContentCryptoMaterial.h>
 #include <aws/s3/model/GetObjectResult.h>
 #include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/HeadObjectResult.h>
 
 namespace Aws
 {
@@ -27,7 +28,7 @@ namespace Aws
         static const char* const CONTENT_KEY_HEADER = "x-amz-key-v2";
         static const char* const IV_HEADER = "x-amz-iv";
         static const char* const MATERIALS_DESCRIPTION_HEADER = "x-amz-matdesc";
-        static const char* const CONTENT_CRYPTO_SCHEME_HEADER = "x-amz-cek=alg";
+        static const char* const CONTENT_CRYPTO_SCHEME_HEADER = "x-amz-cek-alg";
         static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
         static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
         static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";

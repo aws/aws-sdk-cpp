@@ -21,6 +21,7 @@ namespace Aws
     {
         namespace Handlers
         {
+            static const char* const DEFAULT_INSTRUCTION_FILE_SUFFIX = ".instruction";
             /*
             Instruction file handler will be responsible for reading and writing instruction files to and from S3 object using a Put object
             request or a Get object result.

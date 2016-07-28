@@ -27,7 +27,6 @@ namespace S3Encryption
 namespace Handlers
 {
 
-static const char* const DEFAULT_INSTRUCTION_FILE_SUFFIX = ".instruction";
 static const char* const ALLOCATION_TAG = "InstructionFileHandler";
 
 void InstructionFileHandler::WriteData(Aws::S3::Model::PutObjectRequest & request, const ContentCryptoMaterial & contentCryptoMaterial)

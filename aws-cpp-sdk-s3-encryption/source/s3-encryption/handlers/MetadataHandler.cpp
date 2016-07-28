@@ -15,6 +15,7 @@
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 using namespace Aws::S3::Model;
 using namespace Aws::Utils;
@@ -28,6 +29,7 @@ namespace S3Encryption
 {
 namespace Handlers
 {
+static const char* const Allocation_Tag = "MetadataHandler";
 
 void MetadataHandler::WriteData(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial)
 {
@@ -51,21 +53,46 @@ void MetadataHandler::WriteData(Aws::S3::Model::PutObjectRequest& request, const
 
 ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::GetObjectResult& result)
 {
-    Aws::Map<Aws::String, Aws::String> metadata = result.GetMetadata();
-    ContentCryptoMaterial contentCryptoMaterial;
+	Aws::Map<Aws::String, Aws::String> metadata = result.GetMetadata();
+	return ReadMetadata(metadata);
+}
 
-    contentCryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]));
-    contentCryptoMaterial.SetIV(HashingUtils::Base64Decode(metadata[IV_HEADER]));
-    contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(metadata[MATERIALS_DESCRIPTION_HEADER]));
+ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::HeadObjectResult & result)
+{
+	Aws::Map<Aws::String, Aws::String> metadata = result.GetMetadata();
+	return ReadMetadata(metadata);
+}
 
-    Aws::String schemeAsString = metadata[CONTENT_CRYPTO_SCHEME_HEADER];
-    contentCryptoMaterial.SetContentCryptoScheme(GetContentCryptoSchemeForName(schemeAsString));
+ContentCryptoMaterial MetadataHandler::ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata)
+{
+	auto keyIterator = metadata.find(CONTENT_KEY_HEADER);
+	auto ivIterator = metadata.find(IV_HEADER);
+	auto materialsDescriptionIterator = metadata.find(MATERIALS_DESCRIPTION_HEADER);
+	auto schemeIterator = metadata.find(CONTENT_CRYPTO_SCHEME_HEADER);
+	auto keyWrapIterator = metadata.find(KEY_WRAP_ALGORITHM);
+	auto cryptoTagIterator = metadata.find(CRYPTO_TAG_LENGTH_HEADER);
 
-    Aws::String keyWrapAlgorithmAsString = metadata[KEY_WRAP_ALGORITHM];
-    contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
+	if (keyIterator == metadata.end() || keyIterator == metadata.end() ||
+		keyIterator == metadata.end() || keyIterator == metadata.end() ||
+		keyIterator == metadata.end() || keyIterator == metadata.end())
+	{
+		AWS_LOGSTREAM_ERROR(Allocation_Tag, "One or more metadata fields do not exist for decryption.");
+		return ContentCryptoMaterial();
+	}
 
-    contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str())));
-    return contentCryptoMaterial;
+	ContentCryptoMaterial contentCryptoMaterial;
+	contentCryptoMaterial.SetEncryptedContentEncryptionKey(HashingUtils::Base64Decode(keyIterator->second));
+	contentCryptoMaterial.SetIV(HashingUtils::Base64Decode(ivIterator->second));
+	contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(materialsDescriptionIterator->second));
+
+	Aws::String schemeAsString = schemeIterator->second;
+	contentCryptoMaterial.SetContentCryptoScheme(GetContentCryptoSchemeForName(schemeAsString));
+
+	Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
+	contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
+
+	contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
+	return contentCryptoMaterial;
 }
 
 }//namespace Handlers
