@@ -276,13 +276,14 @@ namespace Aws
             };
 
             /**
-             * CommonCrypto implementation for AES in CTR mode
+             * CommonCrypto implementation for AES in KeyWrap mode. The key for the c_tor is the Kek,
+             * it either encrypts a CEK or decrypts it.
              */
             class AES_KeyWrap_Cipher_CommonCrypto : public CommonCryptoCipher
             {
             public:
                 /**
-                 * Create AES in Key Wrap mode off of a 256 bit key.
+                 * Create AES in KeyWrap mode off of a 256 bit key.
                  */
                 AES_KeyWrap_Cipher_CommonCrypto(const CryptoBuffer& key);
 

@@ -614,6 +614,7 @@ namespace Aws
             size_t AES_KeyWrap_Cipher_OpenSSL::KeyLengthBits = 256;
             size_t AES_KeyWrap_Cipher_OpenSSL::BlockSizeBytes = 8;
             static const unsigned char INTEGRITY_VALUE = 0xA6;
+            static const size_t MIN_CEK_LENGTH_BYTES = 128 / 8;
 
             static const char* KEY_WRAP_TAG = "AES_KeyWrap_Cipher_OpenSSL";
 
@@ -631,7 +632,7 @@ namespace Aws
             CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeEncryption()
             {
                 CheckInitEncryptor();
-                if (m_workingKeyBuffer.GetLength() != KeyLengthBits / 8)
+                if (m_workingKeyBuffer.GetLength() < MIN_CEK_LENGTH_BYTES)
                 {
                     AWS_LOGSTREAM_ERROR(KEY_WRAP_TAG, "Incorrect input length of " << m_workingKeyBuffer.GetLength());
                     m_failure = true;
@@ -706,7 +707,7 @@ namespace Aws
             CryptoBuffer AES_KeyWrap_Cipher_OpenSSL::FinalizeDecryption()
             {
                 CheckInitDecryptor();
-                if (m_workingKeyBuffer.GetLength() != (KeyLengthBits / 8) + BlockSizeBytes)
+                if (m_workingKeyBuffer.GetLength() < MIN_CEK_LENGTH_BYTES + BlockSizeBytes)
                 {
                     AWS_LOGSTREAM_ERROR(KEY_WRAP_TAG, "Incorrect input length of " << m_workingKeyBuffer.GetLength());
                     m_failure = true;

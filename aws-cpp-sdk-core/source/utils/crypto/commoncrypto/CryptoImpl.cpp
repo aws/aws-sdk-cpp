@@ -22,7 +22,7 @@
 #include <CommonCrypto/CommonCryptor.h>
 #include <CommonCrypto/CommonSymmetricKeywrap.h>
 
-//fofor OSX < 10.10 compatibility
+//for OSX < 10.10 compatibility
 typedef int32_t CCStatus;
 typedef int32_t CCCryptorStatus;
 

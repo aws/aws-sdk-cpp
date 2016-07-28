@@ -394,7 +394,7 @@ namespace Aws
                 m_workingIv = m_initializationVector;
             }
 
-            BCRYPT_KEY_HANDLE BCryptSymmetricCipher::ImportKeyBlob(BCRYPT_ALG_HANDLE handle, CryptoBuffer& key)
+            BCRYPT_KEY_HANDLE BCryptSymmetricCipher::ImportKeyBlob(BCRYPT_ALG_HANDLE algHandle, CryptoBuffer& key)
             {
                 NTSTATUS status = 0;
 
@@ -408,9 +408,9 @@ namespace Aws
                 memcpy(pbInputBuffer.GetUnderlyingData() + sizeof(keyData), key.GetUnderlyingData(), key.GetLength());
 
                 BCRYPT_KEY_HANDLE keyHandle;
-                status = BCryptImportKey(handle, nullptr, BCRYPT_KEY_DATA_BLOB, &keyHandle, nullptr, 0, pbInputBuffer.GetUnderlyingData(), static_cast<ULONG>(pbInputBuffer.GetLength()), 0);
+                status = BCryptImportKey(algHandle, nullptr, BCRYPT_KEY_DATA_BLOB, &keyHandle, nullptr, 0, pbInputBuffer.GetUnderlyingData(), static_cast<ULONG>(pbInputBuffer.GetLength()), 0);
                 if (!NT_SUCCESS(status))
-                {                   
+                {
                     AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symmetric key with status code " << status);
                     return nullptr;
                 }
@@ -1290,13 +1290,11 @@ namespace Aws
                 NTSTATUS status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
                     nullptr, 0,
                     m_operatingKeyBuffer.GetUnderlyingData(), static_cast<ULONG>(m_operatingKeyBuffer.GetLength()), 0);
-                                    
-                static const size_t BITS_PER_BYTE(8);
 
                 if (importKey)
                 {
                     ULONG exportSize(0);
-                    CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + KeyLengthBits / BITS_PER_BYTE);
+                    CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + m_workingIv.GetLength());
                     status = BCryptExportKey(importKey, nullptr, BCRYPT_KEY_DATA_BLOB, 
                                 outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()), &exportSize, 0);
 

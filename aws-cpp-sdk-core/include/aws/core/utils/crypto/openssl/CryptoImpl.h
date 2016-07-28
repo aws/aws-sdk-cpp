@@ -357,7 +357,7 @@ namespace Aws
                  */
                 AES_KeyWrap_Cipher_OpenSSL(const CryptoBuffer& key);
 
-                AES_KeyWrap_Cipher_OpenSSL(const AES_GCM_Cipher_OpenSSL&) = delete;
+                AES_KeyWrap_Cipher_OpenSSL(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
 
                 AES_KeyWrap_Cipher_OpenSSL& operator=(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
 
