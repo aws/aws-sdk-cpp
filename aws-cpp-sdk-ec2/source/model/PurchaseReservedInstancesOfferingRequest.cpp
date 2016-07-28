@@ -37,18 +37,22 @@ Aws::String PurchaseReservedInstancesOfferingRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_reservedInstancesOfferingIdHasBeenSet)
   {
     ss << "ReservedInstancesOfferingId=" << StringUtils::URLEncode(m_reservedInstancesOfferingId.c_str()) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
+
   if(m_limitPriceHasBeenSet)
   {
-    m_limitPrice.OutputToStream(ss, "LimitPrice.");
+    m_limitPrice.OutputToStream(ss, "LimitPrice");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

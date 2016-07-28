@@ -71,10 +71,12 @@ void AppCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_cookieNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CookieName=" << StringUtils::URLEncode(m_cookieName.c_str()) << "&";
   }
+
 }
 
 void AppCookieStickinessPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const

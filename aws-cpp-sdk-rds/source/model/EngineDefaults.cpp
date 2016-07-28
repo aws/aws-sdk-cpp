@@ -85,10 +85,12 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_markerHasBeenSet)
   {
       oStream << location << index << locationValue << ".Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
       unsigned parametersIdx = 1;
@@ -99,6 +101,7 @@ void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, parametersSs.str().c_str());
       }
   }
+
 }
 
 void EngineDefaults::OutputToStream(Aws::OStream& oStream, const char* location) const

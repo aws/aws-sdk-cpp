@@ -42,18 +42,22 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
     ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_attributeHasBeenSet)
   {
     ss << "Attribute=" << StringUtils::URLEncode(m_attribute.c_str()) << "&";
   }
+
   if(m_operationTypeHasBeenSet)
   {
     ss << "OperationType=" << OperationTypeMapper::GetNameForOperationType(m_operationType) << "&";
   }
+
   if(m_userIdsHasBeenSet)
   {
     unsigned userIdsCount = 1;
@@ -64,6 +68,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
       userIdsCount++;
     }
   }
+
   if(m_userGroupsHasBeenSet)
   {
     unsigned userGroupsCount = 1;
@@ -74,6 +79,7 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
       userGroupsCount++;
     }
   }
+
   if(m_productCodesHasBeenSet)
   {
     unsigned productCodesCount = 1;
@@ -84,18 +90,22 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
       productCodesCount++;
     }
   }
+
   if(m_valueHasBeenSet)
   {
     ss << "Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
   if(m_launchPermissionHasBeenSet)
   {
-    m_launchPermission.OutputToStream(ss, "LaunchPermission.");
+    m_launchPermission.OutputToStream(ss, "LaunchPermission");
   }
+
   if(m_descriptionHasBeenSet)
   {
-    m_description.OutputToStream(ss, "Description.");
+    m_description.OutputToStream(ss, "Description");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

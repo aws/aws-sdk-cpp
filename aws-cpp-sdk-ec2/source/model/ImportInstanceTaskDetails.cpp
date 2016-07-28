@@ -99,18 +99,22 @@ void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char
         item.OutputToStream(oStream, volumesSs.str().c_str());
       }
   }
+
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_platformHasBeenSet)
   {
       oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ImportInstanceTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -42,6 +42,7 @@ Aws::String DescribeFlowLogsRequest::SerializePayload() const
       flowLogIdsCount++;
     }
   }
+
   if(m_filterHasBeenSet)
   {
     unsigned filterCount = 1;
@@ -51,14 +52,17 @@ Aws::String DescribeFlowLogsRequest::SerializePayload() const
       filterCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

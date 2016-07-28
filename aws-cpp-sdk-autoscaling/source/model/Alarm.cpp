@@ -71,10 +71,12 @@ void Alarm::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
+
   if(m_alarmARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlarmARN=" << StringUtils::URLEncode(m_alarmARN.c_str()) << "&";
   }
+
 }
 
 void Alarm::OutputToStream(Aws::OStream& oStream, const char* location) const

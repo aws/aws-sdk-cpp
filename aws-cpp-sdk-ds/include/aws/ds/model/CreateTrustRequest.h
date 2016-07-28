@@ -32,7 +32,7 @@ namespace Model
    * trust relationships. For example, you can establish a trust between your
    * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
    * Directory. This would allow you to provide users and groups access to resources
-   * in either domain, with a single set of credentials.</p><p>This action initiates
+   * in either domain, with a single set of credentials.</p> <p>This action initiates
    * the creation of the AWS side of a trust relationship between a Microsoft AD in
    * the AWS cloud and an external domain.</p>
    */
@@ -45,203 +45,227 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the
-     * trust relationship.
+     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
+     * the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline void SetRemoteDomainName(const Aws::String& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline void SetRemoteDomainName(const char* value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName.assign(value); }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline CreateTrustRequest& WithRemoteDomainName(const Aws::String& value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline CreateTrustRequest& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain for which to
-     * create the trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to
+     * create the trust relationship.</p>
      */
     inline CreateTrustRequest& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline const Aws::String& GetTrustPassword() const{ return m_trustPassword; }
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline void SetTrustPassword(const Aws::String& value) { m_trustPasswordHasBeenSet = true; m_trustPassword = value; }
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline void SetTrustPassword(Aws::String&& value) { m_trustPasswordHasBeenSet = true; m_trustPassword = value; }
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline void SetTrustPassword(const char* value) { m_trustPasswordHasBeenSet = true; m_trustPassword.assign(value); }
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline CreateTrustRequest& WithTrustPassword(const Aws::String& value) { SetTrustPassword(value); return *this;}
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline CreateTrustRequest& WithTrustPassword(Aws::String&& value) { SetTrustPassword(value); return *this;}
 
     /**
-     * The trust password. The must be the same password that was used when creating
-     * the trust relationship on the external domain.
+     * <p>The trust password. The must be the same password that was used when creating
+     * the trust relationship on the external domain.</p>
      */
     inline CreateTrustRequest& WithTrustPassword(const char* value) { SetTrustPassword(value); return *this;}
 
     /**
-     * The direction of the trust relationship.
+     * <p>The direction of the trust relationship.</p>
      */
     inline const TrustDirection& GetTrustDirection() const{ return m_trustDirection; }
 
     /**
-     * The direction of the trust relationship.
+     * <p>The direction of the trust relationship.</p>
      */
     inline void SetTrustDirection(const TrustDirection& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
 
     /**
-     * The direction of the trust relationship.
+     * <p>The direction of the trust relationship.</p>
      */
     inline void SetTrustDirection(TrustDirection&& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
 
     /**
-     * The direction of the trust relationship.
+     * <p>The direction of the trust relationship.</p>
      */
     inline CreateTrustRequest& WithTrustDirection(const TrustDirection& value) { SetTrustDirection(value); return *this;}
 
     /**
-     * The direction of the trust relationship.
+     * <p>The direction of the trust relationship.</p>
      */
     inline CreateTrustRequest& WithTrustDirection(TrustDirection&& value) { SetTrustDirection(value); return *this;}
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline const TrustType& GetTrustType() const{ return m_trustType; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline void SetTrustType(const TrustType& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline void SetTrustType(TrustType&& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline CreateTrustRequest& WithTrustType(const TrustType& value) { SetTrustType(value); return *this;}
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline CreateTrustRequest& WithTrustType(TrustType&& value) { SetTrustType(value); return *this;}
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetConditionalForwarderIpAddrs() const{ return m_conditionalForwarderIpAddrs; }
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline void SetConditionalForwarderIpAddrs(const Aws::Vector<Aws::String>& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs = value; }
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline void SetConditionalForwarderIpAddrs(Aws::Vector<Aws::String>&& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs = value; }
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline CreateTrustRequest& WithConditionalForwarderIpAddrs(const Aws::Vector<Aws::String>& value) { SetConditionalForwarderIpAddrs(value); return *this;}
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline CreateTrustRequest& WithConditionalForwarderIpAddrs(Aws::Vector<Aws::String>&& value) { SetConditionalForwarderIpAddrs(value); return *this;}
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const Aws::String& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline CreateTrustRequest& AddConditionalForwarderIpAddrs(Aws::String&& value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The IP addresses of the remote DNS server associated with
+     * RemoteDomainName.</p>
+     */
     inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const char* value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
 
   private:

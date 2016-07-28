@@ -71,10 +71,12 @@ void CreateVolumePermission::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
+
   if(m_groupHasBeenSet)
   {
       oStream << location << index << locationValue << ".Group=" << PermissionGroupMapper::GetNameForPermissionGroup(m_group) << "&";
   }
+
 }
 
 void CreateVolumePermission::OutputToStream(Aws::OStream& oStream, const char* location) const

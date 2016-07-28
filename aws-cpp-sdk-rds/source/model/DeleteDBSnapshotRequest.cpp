@@ -32,6 +32,7 @@ Aws::String DeleteDBSnapshotRequest::SerializePayload() const
   {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

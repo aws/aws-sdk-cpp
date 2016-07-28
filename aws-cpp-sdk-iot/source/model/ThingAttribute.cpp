@@ -29,13 +29,19 @@ namespace Model
 
 ThingAttribute::ThingAttribute() : 
     m_thingNameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_thingTypeNameHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
 }
 
 ThingAttribute::ThingAttribute(const JsonValue& jsonValue) : 
     m_thingNameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_thingTypeNameHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +55,13 @@ ThingAttribute& ThingAttribute::operator =(const JsonValue& jsonValue)
     m_thingNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thingTypeName"))
+  {
+    m_thingTypeName = jsonValue.GetString("thingTypeName");
+
+    m_thingTypeNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -57,6 +70,13 @@ ThingAttribute& ThingAttribute::operator =(const JsonValue& jsonValue)
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
   }
 
   return *this;
@@ -72,6 +92,12 @@ JsonValue ThingAttribute::Jsonize() const
 
   }
 
+  if(m_thingTypeNameHasBeenSet)
+  {
+   payload.WithString("thingTypeName", m_thingTypeName);
+
+  }
+
   if(m_attributesHasBeenSet)
   {
    JsonValue attributesJsonMap;
@@ -80,6 +106,12 @@ JsonValue ThingAttribute::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

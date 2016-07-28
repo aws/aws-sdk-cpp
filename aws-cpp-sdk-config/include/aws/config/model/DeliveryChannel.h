@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>A logical container used for storing the configuration changes of an AWS
-   * resource.</p>
+   * <p>The channel through which AWS Config delivers notifications and updated
+   * configuration states.</p>
    */
   class AWS_CONFIGSERVICE_API DeliveryChannel
   {
@@ -44,93 +44,135 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the delivery channel. By default, AWS Config automatically
-     * assigns the name &quot;default&quot; when creating the delivery channel. You
-     * cannot change the assigned name. </p>
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * &quot;default&quot; when creating the delivery channel. To change the delivery
+     * channel name, you must use the DeleteDeliveryChannel action to delete your
+     * current delivery channel, and then you must use the PutDeliveryChannel command
+     * to create a delivery channel that has the desired name.</p>
      */
     inline DeliveryChannel& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket used to store configuration history for the
-     * delivery channel.</p>
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -170,44 +212,72 @@ namespace Model
     inline DeliveryChannel& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the SNS topic that AWS Config delivers
-     * notifications to.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 

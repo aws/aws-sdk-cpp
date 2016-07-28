@@ -79,14 +79,17 @@ void IdentityMailFromDomainAttributes::OutputToStream(Aws::OStream& oStream, con
   {
       oStream << location << index << locationValue << ".MailFromDomain=" << StringUtils::URLEncode(m_mailFromDomain.c_str()) << "&";
   }
+
   if(m_mailFromDomainStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".MailFromDomainStatus=" << CustomMailFromStatusMapper::GetNameForCustomMailFromStatus(m_mailFromDomainStatus) << "&";
   }
+
   if(m_behaviorOnMXFailureHasBeenSet)
   {
       oStream << location << index << locationValue << ".BehaviorOnMXFailure=" << BehaviorOnMXFailureMapper::GetNameForBehaviorOnMXFailure(m_behaviorOnMXFailure) << "&";
   }
+
 }
 
 void IdentityMailFromDomainAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const

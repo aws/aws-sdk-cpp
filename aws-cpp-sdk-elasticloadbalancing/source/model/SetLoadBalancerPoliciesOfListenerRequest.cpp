@@ -35,10 +35,12 @@ Aws::String SetLoadBalancerPoliciesOfListenerRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_loadBalancerPortHasBeenSet)
   {
     ss << "LoadBalancerPort=" << m_loadBalancerPort << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
     unsigned policyNamesCount = 1;
@@ -49,6 +51,7 @@ Aws::String SetLoadBalancerPoliciesOfListenerRequest::SerializePayload() const
       policyNamesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

@@ -101,18 +101,22 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_subnetGroupStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetGroupStatus=" << StringUtils::URLEncode(m_subnetGroupStatus.c_str()) << "&";
   }
+
   if(m_subnetsHasBeenSet)
   {
       unsigned subnetsIdx = 1;
@@ -123,6 +127,7 @@ void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location, 
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
   }
+
 }
 
 void DBSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -43,7 +43,11 @@ Device::Device() :
     m_memoryHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_carrierHasBeenSet(false),
-    m_radioHasBeenSet(false)
+    m_radioHasBeenSet(false),
+    m_remoteAccessEnabled(false),
+    m_remoteAccessEnabledHasBeenSet(false),
+    m_fleetTypeHasBeenSet(false),
+    m_fleetNameHasBeenSet(false)
 {
 }
 
@@ -63,7 +67,11 @@ Device::Device(const JsonValue& jsonValue) :
     m_memoryHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_carrierHasBeenSet(false),
-    m_radioHasBeenSet(false)
+    m_radioHasBeenSet(false),
+    m_remoteAccessEnabled(false),
+    m_remoteAccessEnabledHasBeenSet(false),
+    m_fleetTypeHasBeenSet(false),
+    m_fleetNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +176,27 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_radioHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("remoteAccessEnabled"))
+  {
+    m_remoteAccessEnabled = jsonValue.GetBool("remoteAccessEnabled");
+
+    m_remoteAccessEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleetType"))
+  {
+    m_fleetType = jsonValue.GetString("fleetType");
+
+    m_fleetTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleetName"))
+  {
+    m_fleetName = jsonValue.GetString("fleetName");
+
+    m_fleetNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -254,6 +283,24 @@ JsonValue Device::Jsonize() const
   if(m_radioHasBeenSet)
   {
    payload.WithString("radio", m_radio);
+
+  }
+
+  if(m_remoteAccessEnabledHasBeenSet)
+  {
+   payload.WithBool("remoteAccessEnabled", m_remoteAccessEnabled);
+
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("fleetType", m_fleetType);
+
+  }
+
+  if(m_fleetNameHasBeenSet)
+  {
+   payload.WithString("fleetName", m_fleetName);
 
   }
 

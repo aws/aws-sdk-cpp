@@ -139,6 +139,32 @@ Aws::String StringUtils::URLEncode(const char* unsafe)
     return escaped.str();
 }
 
+Aws::String StringUtils::UTF8Escape(const char* unicodeString, const char* delimiter)
+{
+    Aws::StringStream escaped;
+    escaped.fill('0');
+    escaped << std::hex << std::uppercase;
+
+    size_t unsafeLength = strlen(unicodeString);
+    for (auto i = unicodeString, n = unicodeString + unsafeLength; i != n; ++i)
+    {
+        int c = *i;
+        //MSVC 2015 has an assertion that c is positive in isalnum(). This breaks unicode support.
+        //bypass that with the first check.
+        if (c >= ' ' && c < 127 )
+        {
+            escaped << (char)c;
+        }
+        else
+        {
+            //this unsigned char cast allows us to handle unicode characters.
+            escaped << delimiter << std::setw(2) << int((unsigned char)c) << std::setw(0);
+        }
+    }
+
+    return escaped.str();
+}
+
 Aws::String StringUtils::URLEncode(double unsafe)
 {
     char buffer[32];

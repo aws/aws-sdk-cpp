@@ -33,10 +33,12 @@ Aws::String DeleteExpressionRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_expressionNameHasBeenSet)
   {
     ss << "ExpressionName=" << StringUtils::URLEncode(m_expressionName.c_str()) << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

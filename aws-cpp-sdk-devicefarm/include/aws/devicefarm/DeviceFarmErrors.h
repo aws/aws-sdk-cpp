@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DeviceFarm
 {
-enum class AWS_DEVICEFARM_API DeviceFarmErrors
+enum class DeviceFarmErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

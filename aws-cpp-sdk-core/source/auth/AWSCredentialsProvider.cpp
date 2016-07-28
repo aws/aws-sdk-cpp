@@ -15,7 +15,10 @@
 
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
+
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -24,12 +27,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
-
-#ifdef _WIN32
-    //Windows likes to complain about std::getenv, we are using it in a secure context and the string we are returning is not being
-    //fed to any other processes.
-    #pragma warning( disable : 4996)
-#endif
 
 
 using namespace Aws::Utils;
@@ -76,25 +73,25 @@ static const char* environmentLogTag = "EnvironmentAWSCredentialsProvider";
 
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
-    char* accessKey = std::getenv(ACCESS_KEY_ENV_VARIABLE);
+    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VARIABLE);
     AWSCredentials credentials("", "", "");
 
-    if (accessKey != nullptr)
+    if (!accessKey.empty())
     {
         credentials.SetAWSAccessKeyId(accessKey);
 
         AWS_LOGSTREAM_INFO(environmentLogTag, "Found credential in environment with access key id " << accessKey);
-        char* secretKey = std::getenv(SECRET_KEY_ENV_VAR);
+        auto secretKey = Aws::Environment::GetEnv(SECRET_KEY_ENV_VAR);
 
-        if (secretKey)
+        if (!secretKey.empty())
         {
             credentials.SetAWSSecretKey(secretKey);
             AWS_LOG_INFO(environmentLogTag, "Found secret key");
         }
 
-        char* sessionToken = std::getenv(SESSION_TOKEN_ENV_VARIABLE);
+        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VARIABLE);
 
-        if(sessionToken)
+        if(!sessionToken.empty())
         {
             credentials.SetSessionToken(sessionToken);
             AWS_LOG_INFO(environmentLogTag, "Found sessionToken");
@@ -106,7 +103,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 
 static Aws::String GetBaseDirectory()
 {
-    return FileSystemUtils::GetHomeDirectory();
+    return Aws::FileSystem::GetHomeDirectory();
 }
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename()
@@ -116,11 +113,11 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename()
 
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename()
 {
-    char* profileFileNameFromVar = std::getenv(AWS_CREDENTIAL_PROFILES_FILE);
+    auto profileFileNameFromVar = Aws::Environment::GetEnv(AWS_CREDENTIAL_PROFILES_FILE);
 
-    if (profileFileNameFromVar)
+    if (!profileFileNameFromVar.empty())
     {
-        return Aws::String(profileFileNameFromVar);
+        return profileFileNameFromVar;
     }
     else
     {
@@ -150,8 +147,8 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
         m_credentialsFileLoader(Aws::MakeShared<Aws::Config::AWSConfigFileProfileConfigLoader>(profileLogTag, GetCredentialsProfileFilename())),
         m_loadFrequencyMs(refreshRateMs)
 {
-    char* profileFromVar = std::getenv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
-    if (profileFromVar)
+    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+    if (!profileFromVar.empty())
     {
         m_profileToUse = profileFromVar;
     }

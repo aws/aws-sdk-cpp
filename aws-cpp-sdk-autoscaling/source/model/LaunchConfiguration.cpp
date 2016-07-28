@@ -229,18 +229,22 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_launchConfigurationARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchConfigurationARN=" << StringUtils::URLEncode(m_launchConfigurationARN.c_str()) << "&";
   }
+
   if(m_imageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
   if(m_keyNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
   }
+
   if(m_securityGroupsHasBeenSet)
   {
       unsigned securityGroupsIdx = 1;
@@ -249,10 +253,12 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".SecurityGroups.member." << securityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_classicLinkVPCIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ClassicLinkVPCId=" << StringUtils::URLEncode(m_classicLinkVPCId.c_str()) << "&";
   }
+
   if(m_classicLinkVPCSecurityGroupsHasBeenSet)
   {
       unsigned classicLinkVPCSecurityGroupsIdx = 1;
@@ -261,22 +267,27 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".ClassicLinkVPCSecurityGroups.member." << classicLinkVPCSecurityGroupsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_userDataHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserData=" << StringUtils::URLEncode(m_userData.c_str()) << "&";
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
+
   if(m_kernelIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
       unsigned blockDeviceMappingsIdx = 1;
@@ -287,36 +298,44 @@ void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
         item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
       }
   }
+
   if(m_instanceMonitoringHasBeenSet)
   {
       Aws::StringStream instanceMonitoringLocationAndMemberSs;
       instanceMonitoringLocationAndMemberSs << location << index << locationValue << ".InstanceMonitoring";
       m_instanceMonitoring.OutputToStream(oStream, instanceMonitoringLocationAndMemberSs.str().c_str());
   }
+
   if(m_spotPriceHasBeenSet)
   {
       oStream << location << index << locationValue << ".SpotPrice=" << StringUtils::URLEncode(m_spotPrice.c_str()) << "&";
   }
+
   if(m_iamInstanceProfileHasBeenSet)
   {
       oStream << location << index << locationValue << ".IamInstanceProfile=" << StringUtils::URLEncode(m_iamInstanceProfile.c_str()) << "&";
   }
+
   if(m_createdTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_ebsOptimizedHasBeenSet)
   {
       oStream << location << index << locationValue << ".EbsOptimized=" << m_ebsOptimized << "&";
   }
+
   if(m_associatePublicIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssociatePublicIpAddress=" << m_associatePublicIpAddress << "&";
   }
+
   if(m_placementTenancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".PlacementTenancy=" << StringUtils::URLEncode(m_placementTenancy.c_str()) << "&";
   }
+
 }
 
 void LaunchConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const

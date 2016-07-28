@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Kinesis
 {
-enum class AWS_KINESIS_API KinesisErrors
+enum class KinesisErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

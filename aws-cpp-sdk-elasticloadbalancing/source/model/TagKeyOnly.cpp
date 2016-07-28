@@ -63,6 +63,7 @@ void TagKeyOnly::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".Key=" << StringUtils::URLEncode(m_key.c_str()) << "&";
   }
+
 }
 
 void TagKeyOnly::OutputToStream(Aws::OStream& oStream, const char* location) const

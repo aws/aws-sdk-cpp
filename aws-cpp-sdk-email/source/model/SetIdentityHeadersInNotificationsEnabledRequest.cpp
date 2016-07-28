@@ -35,14 +35,17 @@ Aws::String SetIdentityHeadersInNotificationsEnabledRequest::SerializePayload() 
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   if(m_notificationTypeHasBeenSet)
   {
     ss << "NotificationType=" << NotificationTypeMapper::GetNameForNotificationType(m_notificationType) << "&";
   }
+
   if(m_enabledHasBeenSet)
   {
     ss << "Enabled=" << m_enabled << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

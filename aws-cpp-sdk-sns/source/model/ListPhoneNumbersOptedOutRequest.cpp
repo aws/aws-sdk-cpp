@@ -32,6 +32,7 @@ Aws::String ListPhoneNumbersOptedOutRequest::SerializePayload() const
   {
     ss << "nextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

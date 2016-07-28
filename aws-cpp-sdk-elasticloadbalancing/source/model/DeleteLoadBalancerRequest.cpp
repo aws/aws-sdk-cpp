@@ -32,6 +32,7 @@ Aws::String DeleteLoadBalancerRequest::SerializePayload() const
   {
     ss << "LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

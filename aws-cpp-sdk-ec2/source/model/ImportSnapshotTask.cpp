@@ -79,16 +79,19 @@ void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
   }
+
   if(m_snapshotTaskDetailHasBeenSet)
   {
       Aws::StringStream snapshotTaskDetailLocationAndMemberSs;
       snapshotTaskDetailLocationAndMemberSs << location << index << locationValue << ".SnapshotTaskDetail";
       m_snapshotTaskDetail.OutputToStream(oStream, snapshotTaskDetailLocationAndMemberSs.str().c_str());
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ImportSnapshotTask::OutputToStream(Aws::OStream& oStream, const char* location) const

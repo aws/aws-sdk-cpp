@@ -119,34 +119,42 @@ void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".ActionId=" << StringUtils::URLEncode(m_actionId.c_str()) << "&";
   }
+
   if(m_actionTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
   }
+
   if(m_actionDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".ActionDescription=" << StringUtils::URLEncode(m_actionDescription.c_str()) << "&";
   }
+
   if(m_failureTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".FailureType=" << FailureTypeMapper::GetNameForFailureType(m_failureType) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << ActionHistoryStatusMapper::GetNameForActionHistoryStatus(m_status) << "&";
   }
+
   if(m_failureDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".FailureDescription=" << StringUtils::URLEncode(m_failureDescription.c_str()) << "&";
   }
+
   if(m_executedTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ExecutedTime=" << StringUtils::URLEncode(m_executedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_finishedTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".FinishedTime=" << StringUtils::URLEncode(m_finishedTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void ManagedActionHistoryItem::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -33,6 +33,7 @@ Aws::String CreateQueueRequest::SerializePayload() const
   {
     ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
     unsigned attributesCount = 1;
@@ -45,6 +46,7 @@ Aws::String CreateQueueRequest::SerializePayload() const
       attributesCount++;
     }
   }
+
   ss << "Version=2012-11-05";
   return ss.str();
 }

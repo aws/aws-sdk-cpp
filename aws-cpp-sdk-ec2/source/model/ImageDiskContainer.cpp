@@ -103,28 +103,34 @@ void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_formatHasBeenSet)
   {
       oStream << location << index << locationValue << ".Format=" << StringUtils::URLEncode(m_format.c_str()) << "&";
   }
+
   if(m_urlHasBeenSet)
   {
       oStream << location << index << locationValue << ".Url=" << StringUtils::URLEncode(m_url.c_str()) << "&";
   }
+
   if(m_userBucketHasBeenSet)
   {
       Aws::StringStream userBucketLocationAndMemberSs;
       userBucketLocationAndMemberSs << location << index << locationValue << ".UserBucket";
       m_userBucket.OutputToStream(oStream, userBucketLocationAndMemberSs.str().c_str());
   }
+
   if(m_deviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
 }
 
 void ImageDiskContainer::OutputToStream(Aws::OStream& oStream, const char* location) const

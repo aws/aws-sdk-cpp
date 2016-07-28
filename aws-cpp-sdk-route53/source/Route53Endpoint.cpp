@@ -29,29 +29,29 @@ namespace Route53Endpoint
     switch(region)
     {
      case Region::US_EAST_1:
-        return "route53.us-east-1.amazonaws.com";
+        return "route53.amazonaws.com";
      case Region::US_WEST_1:
-        return "route53.us-west-1.amazonaws.com";
+        return "route53-us-west-1.amazonaws.com";
      case Region::US_WEST_2:
-        return "route53.us-west-2.amazonaws.com";
+        return "route53-us-west-2.amazonaws.com";
      case Region::EU_WEST_1:
-        return "route53.eu-west-1.amazonaws.com";
+        return "route53-eu-west-1.amazonaws.com";
      case Region::EU_CENTRAL_1:
-        return "route53.eu-central-1.amazonaws.com";
+        return "route53-eu-central-1.amazonaws.com";
      case Region::AP_SOUTHEAST_1:
-        return "route53.ap-southeast-1.amazonaws.com";
+        return "route53-ap-southeast-1.amazonaws.com";
      case Region::AP_SOUTHEAST_2:
-        return "route53.ap-southeast-2.amazonaws.com";
+        return "route53-ap-southeast-2.amazonaws.com";
      case Region::AP_NORTHEAST_1:
-        return "route53.ap-northeast-1.amazonaws.com";
+        return "route53-ap-northeast-1.amazonaws.com";
      case Region::AP_NORTHEAST_2:
-        return "route53.ap-northeast-2.amazonaws.com";
+        return "route53-ap-northeast-2.amazonaws.com";
      case Region::SA_EAST_1:
-        return "route53.sa-east-1.amazonaws.com";
+        return "route53-sa-east-1.amazonaws.com";
      case Region::AP_SOUTH_1:
-        return "route53.ap-south-1.amazonaws.com";
+        return "route53-ap-south-1.amazonaws.com";
      default:
-        return "route53.us-east-1.amazonaws.com";
+        return "route53.amazonaws.com";
     }
   }
 

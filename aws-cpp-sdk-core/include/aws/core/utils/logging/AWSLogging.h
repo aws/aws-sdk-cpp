@@ -46,12 +46,12 @@ namespace Aws
             // Testing interface
 
             /**
-             * Replaces the current logger with a new one, while pushing the old one onto a stack; primarily for testing
+             * Replaces the current logger with a new one, while pushing the old one onto a 1-deep stack; primarily for testing
              */
             AWS_CORE_API void PushLogger(const std::shared_ptr<LogSystemInterface> &logSystem);
 
             /**
-             * Pops the top logger off the logger stack and replaces the current logger with it.  Disables logging if the top logger is actually a nullptr
+             * Pops the logger off the logger stack and replaces the current logger with it.  Disables logging if the top logger is actually a nullptr
              */
             AWS_CORE_API void PopLogger();
 

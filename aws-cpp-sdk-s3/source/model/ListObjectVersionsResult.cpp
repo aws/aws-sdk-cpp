@@ -69,25 +69,25 @@ ListObjectVersionsResult& ListObjectVersionsResult::operator =(const AmazonWebSe
     {
       m_nextVersionIdMarker = StringUtils::Trim(nextVersionIdMarkerNode.GetText().c_str());
     }
-    XmlNode versionsNode = resultNode.FirstChild("Versions");
+    XmlNode versionsNode = resultNode.FirstChild("Version");
     if(!versionsNode.IsNull())
     {
-      XmlNode versionsMember = versionsNode;
-      while(!versionsMember.IsNull())
+      XmlNode versionMember = versionsNode;
+      while(!versionMember.IsNull())
       {
-        m_versions.push_back(versionsMember);
-        versionsMember = versionsMember.NextNode("Version");
+        m_versions.push_back(versionMember);
+        versionMember = versionMember.NextNode("Version");
       }
 
     }
-    XmlNode deleteMarkersNode = resultNode.FirstChild("DeleteMarkers");
+    XmlNode deleteMarkersNode = resultNode.FirstChild("DeleteMarker");
     if(!deleteMarkersNode.IsNull())
     {
-      XmlNode deleteMarkersMember = deleteMarkersNode;
-      while(!deleteMarkersMember.IsNull())
+      XmlNode deleteMarkerMember = deleteMarkersNode;
+      while(!deleteMarkerMember.IsNull())
       {
-        m_deleteMarkers.push_back(deleteMarkersMember);
-        deleteMarkersMember = deleteMarkersMember.NextNode("DeleteMarker");
+        m_deleteMarkers.push_back(deleteMarkerMember);
+        deleteMarkerMember = deleteMarkerMember.NextNode("DeleteMarker");
       }
 
     }

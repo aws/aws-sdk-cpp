@@ -36,6 +36,7 @@ public class Shape {
     private String documentation;
     private String locationName;
     private String payload;
+    private String xmlNamespace;
     private boolean isRequest;
     private boolean isResult;
     private boolean isReferenced;
@@ -90,7 +91,8 @@ public class Shape {
     }
 
     public boolean hasStreamMembers() {
-      return members.values().parallelStream().anyMatch(member -> member.isStreaming()) || (payload != null && !members.get(payload).getShape().isStructure());
+      return members.values().parallelStream()
+              .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure());
     }
 
     public boolean hasPayloadMembers() {

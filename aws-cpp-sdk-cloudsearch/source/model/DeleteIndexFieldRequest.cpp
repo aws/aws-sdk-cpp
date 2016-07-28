@@ -33,10 +33,12 @@ Aws::String DeleteIndexFieldRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_indexFieldNameHasBeenSet)
   {
     ss << "IndexFieldName=" << StringUtils::URLEncode(m_indexFieldName.c_str()) << "&";
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

@@ -44,18 +44,22 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_templateBodyHasBeenSet)
   {
     ss << "TemplateBody=" << StringUtils::URLEncode(m_templateBody.c_str()) << "&";
   }
+
   if(m_templateURLHasBeenSet)
   {
     ss << "TemplateURL=" << StringUtils::URLEncode(m_templateURL.c_str()) << "&";
   }
+
   if(m_usePreviousTemplateHasBeenSet)
   {
     ss << "UsePreviousTemplate=" << m_usePreviousTemplate << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -65,6 +69,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   if(m_capabilitiesHasBeenSet)
   {
     unsigned capabilitiesCount = 1;
@@ -75,6 +80,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       capabilitiesCount++;
     }
   }
+
   if(m_resourceTypesHasBeenSet)
   {
     unsigned resourceTypesCount = 1;
@@ -85,6 +91,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       resourceTypesCount++;
     }
   }
+
   if(m_notificationARNsHasBeenSet)
   {
     unsigned notificationARNsCount = 1;
@@ -95,6 +102,7 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       notificationARNsCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -104,18 +112,22 @@ Aws::String CreateChangeSetRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   if(m_changeSetNameHasBeenSet)
   {
     ss << "ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

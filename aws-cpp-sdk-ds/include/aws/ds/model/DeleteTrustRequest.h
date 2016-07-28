@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * Deletes the local side of an existing trust relationship between the Microsoft
-   * AD in the AWS cloud and the external domain.
+   * <p>Deletes the local side of an existing trust relationship between the
+   * Microsoft AD in the AWS cloud and the external domain.</p>
    */
   class AWS_DIRECTORYSERVICE_API DeleteTrustRequest : public DirectoryServiceRequest
   {
@@ -37,47 +37,53 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline DeleteTrustRequest& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline DeleteTrustRequest& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
 
     /**
-     * The Trust ID of the trust relationship to be deleted.
+     * <p>The Trust ID of the trust relationship to be deleted.</p>
      */
     inline DeleteTrustRequest& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
-    
+    /**
+     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+     */
     inline bool GetDeleteAssociatedConditionalForwarder() const{ return m_deleteAssociatedConditionalForwarder; }
 
-    
+    /**
+     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+     */
     inline void SetDeleteAssociatedConditionalForwarder(bool value) { m_deleteAssociatedConditionalForwarderHasBeenSet = true; m_deleteAssociatedConditionalForwarder = value; }
 
-    
+    /**
+     * <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
+     */
     inline DeleteTrustRequest& WithDeleteAssociatedConditionalForwarder(bool value) { SetDeleteAssociatedConditionalForwarder(value); return *this;}
 
   private:

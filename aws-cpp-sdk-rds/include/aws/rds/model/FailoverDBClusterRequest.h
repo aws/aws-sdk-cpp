@@ -96,9 +96,60 @@ namespace Model
      */
     inline FailoverDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(value); return *this;}
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Aurora Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline FailoverDBClusterRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
+
   private:
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet;
+    Aws::String m_targetDBInstanceIdentifier;
+    bool m_targetDBInstanceIdentifierHasBeenSet;
   };
 
 } // namespace Model

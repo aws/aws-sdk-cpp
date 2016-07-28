@@ -131,38 +131,47 @@ void OptionSetting::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_applyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyType=" << StringUtils::URLEncode(m_applyType.c_str()) << "&";
   }
+
   if(m_dataTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
+
   if(m_allowedValuesHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(m_allowedValues.c_str()) << "&";
   }
+
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
   }
+
   if(m_isCollectionHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsCollection=" << m_isCollection << "&";
   }
+
 }
 
 void OptionSetting::OutputToStream(Aws::OStream& oStream, const char* location) const

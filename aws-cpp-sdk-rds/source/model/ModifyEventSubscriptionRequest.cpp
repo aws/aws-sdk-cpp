@@ -37,14 +37,17 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
   {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
+
   if(m_snsTopicArnHasBeenSet)
   {
     ss << "SnsTopicArn=" << StringUtils::URLEncode(m_snsTopicArn.c_str()) << "&";
   }
+
   if(m_sourceTypeHasBeenSet)
   {
     ss << "SourceType=" << StringUtils::URLEncode(m_sourceType.c_str()) << "&";
   }
+
   if(m_eventCategoriesHasBeenSet)
   {
     unsigned eventCategoriesCount = 1;
@@ -55,10 +58,12 @@ Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
       eventCategoriesCount++;
     }
   }
+
   if(m_enabledHasBeenSet)
   {
     ss << "Enabled=" << m_enabled << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

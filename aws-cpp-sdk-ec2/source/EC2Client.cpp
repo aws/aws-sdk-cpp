@@ -243,6 +243,7 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "ec2";
 static const char* ALLOCATION_TAG = "EC2Client";
 
+
 EC2Client::EC2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

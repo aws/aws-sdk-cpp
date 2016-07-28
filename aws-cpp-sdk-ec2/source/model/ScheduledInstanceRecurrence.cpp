@@ -105,10 +105,12 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".Frequency=" << StringUtils::URLEncode(m_frequency.c_str()) << "&";
   }
+
   if(m_intervalHasBeenSet)
   {
       oStream << location << index << locationValue << ".Interval=" << m_interval << "&";
   }
+
   if(m_occurrenceDaySetHasBeenSet)
   {
       unsigned occurrenceDaySetIdx = 1;
@@ -117,14 +119,17 @@ void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const ch
         oStream << location << index << locationValue << ".OccurrenceDaySet." << occurrenceDaySetIdx++ << "=" << item << "&";
       }
   }
+
   if(m_occurrenceRelativeToEndHasBeenSet)
   {
       oStream << location << index << locationValue << ".OccurrenceRelativeToEnd=" << m_occurrenceRelativeToEnd << "&";
   }
+
   if(m_occurrenceUnitHasBeenSet)
   {
       oStream << location << index << locationValue << ".OccurrenceUnit=" << StringUtils::URLEncode(m_occurrenceUnit.c_str()) << "&";
   }
+
 }
 
 void ScheduledInstanceRecurrence::OutputToStream(Aws::OStream& oStream, const char* location) const

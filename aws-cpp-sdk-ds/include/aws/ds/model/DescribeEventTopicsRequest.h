@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Describes event topics.</p>
    */
   class AWS_DIRECTORYSERVICE_API DescribeEventTopicsRequest : public DirectoryServiceRequest
   {

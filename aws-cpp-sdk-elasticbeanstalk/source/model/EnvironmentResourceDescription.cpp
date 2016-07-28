@@ -147,6 +147,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupsHasBeenSet)
   {
       unsigned autoScalingGroupsIdx = 1;
@@ -157,6 +158,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, autoScalingGroupsSs.str().c_str());
       }
   }
+
   if(m_instancesHasBeenSet)
   {
       unsigned instancesIdx = 1;
@@ -167,6 +169,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_launchConfigurationsHasBeenSet)
   {
       unsigned launchConfigurationsIdx = 1;
@@ -177,6 +180,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, launchConfigurationsSs.str().c_str());
       }
   }
+
   if(m_loadBalancersHasBeenSet)
   {
       unsigned loadBalancersIdx = 1;
@@ -187,6 +191,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, loadBalancersSs.str().c_str());
       }
   }
+
   if(m_triggersHasBeenSet)
   {
       unsigned triggersIdx = 1;
@@ -197,6 +202,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, triggersSs.str().c_str());
       }
   }
+
   if(m_queuesHasBeenSet)
   {
       unsigned queuesIdx = 1;
@@ -207,6 +213,7 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, queuesSs.str().c_str());
       }
   }
+
 }
 
 void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

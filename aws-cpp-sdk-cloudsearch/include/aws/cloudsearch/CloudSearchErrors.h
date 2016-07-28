@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudSearch
 {
-enum class AWS_CLOUDSEARCH_API CloudSearchErrors
+enum class CloudSearchErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

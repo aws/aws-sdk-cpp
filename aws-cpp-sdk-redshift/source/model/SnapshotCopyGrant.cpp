@@ -85,10 +85,12 @@ void SnapshotCopyGrant::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -99,6 +101,7 @@ void SnapshotCopyGrant::OutputToStream(Aws::OStream& oStream, const char* locati
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void SnapshotCopyGrant::OutputToStream(Aws::OStream& oStream, const char* location) const

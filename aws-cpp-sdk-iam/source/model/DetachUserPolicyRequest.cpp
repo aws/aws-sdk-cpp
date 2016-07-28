@@ -33,10 +33,12 @@ Aws::String DetachUserPolicyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_policyArnHasBeenSet)
   {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

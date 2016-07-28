@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace IoT
 {
-enum class AWS_IOT_API IoTErrors
+enum class IoTErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,8 @@ enum class AWS_IOT_API IoTErrors
   TRANSFER_ALREADY_COMPLETED,
   TRANSFER_CONFLICT,
   UNAUTHORIZED,
-  VERSIONS_LIMIT_EXCEEDED
+  VERSIONS_LIMIT_EXCEEDED,
+  VERSION_CONFLICT
 };
 namespace IoTErrorMapper
 {

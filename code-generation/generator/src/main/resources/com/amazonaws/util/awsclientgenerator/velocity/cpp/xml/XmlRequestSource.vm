@@ -3,6 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
 \#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #if($shape.hasQueryStringMembers())
 \#include <aws/core/http/URI.h>
 #end
@@ -28,23 +29,38 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 Aws::String ${typeInfo.className}::SerializePayload() const
 {
 #if($shape.hasPayloadMembers() && $shape.payload)
+#if($shape.name == $shape.payload)
+#set($xmlNamespace = $shape.xmlNamespace)
+#set($locationName = $shape.locationName)
+#else
 #set($payloadMember = $shape.members.get($shape.payload))
-#if($payloadMember.locationName)
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${payloadMember.locationName}");
+#set($xmlNamespace = ${payloadMember.xmlnsUri})
+#set($locationName = $payloadMember.locationName)
+#end
+#if($locationName)
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${locationName}");
 #else
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${shape.payload}");
 #end
 
-  XmlNode rootNode = payloadDoc.GetRootElement();
-  rootNode.SetAttributeValue("xmlns", "${payloadMember.xmlnsUri}");
+  XmlNode parentNode = payloadDoc.GetRootElement();
+#if($xmlNamespace)
+  parentNode.SetAttributeValue("xmlns", "${xmlNamespace}");
+#end
 
-  ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(rootNode);
-  if(rootNode.HasChildren())
+#if($payloadMember)
+  ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
+  if(parentNode.HasChildren())
   {
     return payloadDoc.ConvertToString();
   }
 
   return "";
+#else
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
+  return payloadDoc.ConvertToString();
+#end
 #else
   return "";
 #end

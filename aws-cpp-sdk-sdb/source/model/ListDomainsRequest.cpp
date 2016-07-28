@@ -34,10 +34,12 @@ Aws::String ListDomainsRequest::SerializePayload() const
   {
     ss << "MaxNumberOfDomains=" << m_maxNumberOfDomains << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   ss << "Version=2009-04-15";
   return ss.str();
 }

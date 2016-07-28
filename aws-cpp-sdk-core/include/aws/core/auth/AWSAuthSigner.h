@@ -86,7 +86,7 @@ namespace Aws
              *    Https is not used then this flag will be ignored.
              */
             AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-                            const char* serviceName, const Aws::String& region, bool signPayloads = true);
+                            const char* serviceName, const Aws::String& region, bool signPayloads = true, bool urlEscapePath = true);
 
             virtual ~AWSAuthV4Signer();
 
@@ -115,6 +115,7 @@ namespace Aws
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
             bool m_signPayloads;
+            bool m_urlEscapePath;
         };
 
     } // namespace Client

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Describes a conditional forwarder.</p>
    */
   class AWS_DIRECTORYSERVICE_API DescribeConditionalForwardersRequest : public DirectoryServiceRequest
   {

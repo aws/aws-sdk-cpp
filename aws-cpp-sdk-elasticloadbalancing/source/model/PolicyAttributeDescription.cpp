@@ -71,10 +71,12 @@ void PolicyAttributeDescription::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
   }
+
   if(m_attributeValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";
   }
+
 }
 
 void PolicyAttributeDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

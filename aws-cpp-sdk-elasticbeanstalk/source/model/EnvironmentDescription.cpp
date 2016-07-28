@@ -209,74 +209,91 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_environmentIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_solutionStackNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_endpointURLHasBeenSet)
   {
       oStream << location << index << locationValue << ".EndpointURL=" << StringUtils::URLEncode(m_endpointURL.c_str()) << "&";
   }
+
   if(m_cNAMEHasBeenSet)
   {
       oStream << location << index << locationValue << ".CNAME=" << StringUtils::URLEncode(m_cNAME.c_str()) << "&";
   }
+
   if(m_dateCreatedHasBeenSet)
   {
       oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_dateUpdatedHasBeenSet)
   {
       oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << EnvironmentStatusMapper::GetNameForEnvironmentStatus(m_status) << "&";
   }
+
   if(m_abortableOperationInProgressHasBeenSet)
   {
       oStream << location << index << locationValue << ".AbortableOperationInProgress=" << m_abortableOperationInProgress << "&";
   }
+
   if(m_healthHasBeenSet)
   {
       oStream << location << index << locationValue << ".Health=" << EnvironmentHealthMapper::GetNameForEnvironmentHealth(m_health) << "&";
   }
+
   if(m_healthStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthStatus=" << EnvironmentHealthStatusMapper::GetNameForEnvironmentHealthStatus(m_healthStatus) << "&";
   }
+
   if(m_resourcesHasBeenSet)
   {
       Aws::StringStream resourcesLocationAndMemberSs;
       resourcesLocationAndMemberSs << location << index << locationValue << ".Resources";
       m_resources.OutputToStream(oStream, resourcesLocationAndMemberSs.str().c_str());
   }
+
   if(m_tierHasBeenSet)
   {
       Aws::StringStream tierLocationAndMemberSs;
       tierLocationAndMemberSs << location << index << locationValue << ".Tier";
       m_tier.OutputToStream(oStream, tierLocationAndMemberSs.str().c_str());
   }
+
   if(m_environmentLinksHasBeenSet)
   {
       unsigned environmentLinksIdx = 1;
@@ -287,12 +304,14 @@ void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* l
         item.OutputToStream(oStream, environmentLinksSs.str().c_str());
       }
   }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
       responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
       m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void EnvironmentDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

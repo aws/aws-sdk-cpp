@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DynamoDB
 {
-enum class AWS_DYNAMODB_API DynamoDBErrors
+enum class DynamoDBErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

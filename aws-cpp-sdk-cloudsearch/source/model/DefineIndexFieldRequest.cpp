@@ -33,10 +33,12 @@ Aws::String DefineIndexFieldRequest::SerializePayload() const
   {
     ss << "DomainName=" << StringUtils::URLEncode(m_domainName.c_str()) << "&";
   }
+
   if(m_indexFieldHasBeenSet)
   {
-    m_indexField.OutputToStream(ss, "IndexField.");
+    m_indexField.OutputToStream(ss, "IndexField");
   }
+
   ss << "Version=2013-01-01";
   return ss.str();
 }

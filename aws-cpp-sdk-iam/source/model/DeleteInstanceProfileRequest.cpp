@@ -32,6 +32,7 @@ Aws::String DeleteInstanceProfileRequest::SerializePayload() const
   {
     ss << "InstanceProfileName=" << StringUtils::URLEncode(m_instanceProfileName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

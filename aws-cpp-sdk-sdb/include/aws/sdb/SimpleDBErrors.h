@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace SimpleDB
 {
-enum class AWS_SIMPLEDB_API SimpleDBErrors
+enum class SimpleDBErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

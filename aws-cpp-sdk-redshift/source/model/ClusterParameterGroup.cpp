@@ -93,14 +93,17 @@ void ClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".ParameterGroupName=" << StringUtils::URLEncode(m_parameterGroupName.c_str()) << "&";
   }
+
   if(m_parameterGroupFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterGroupFamily=" << StringUtils::URLEncode(m_parameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -111,6 +114,7 @@ void ClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* lo
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void ClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

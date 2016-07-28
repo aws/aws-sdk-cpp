@@ -130,19 +130,19 @@ namespace Model
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
-     * attempted. </p>
+     * attempted.</p>
      */
     inline int GetRadiusRetries() const{ return m_radiusRetries; }
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
-     * attempted. </p>
+     * attempted.</p>
      */
     inline void SetRadiusRetries(int value) { m_radiusRetriesHasBeenSet = true; m_radiusRetries = value; }
 
     /**
      * <p>The maximum number of times that communication with the RADIUS server is
-     * attempted. </p>
+     * attempted.</p>
      */
     inline RadiusSettings& WithRadiusRetries(int value) { SetRadiusRetries(value); return *this;}
 

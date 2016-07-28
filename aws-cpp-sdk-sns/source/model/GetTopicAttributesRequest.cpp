@@ -32,6 +32,7 @@ Aws::String GetTopicAttributesRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

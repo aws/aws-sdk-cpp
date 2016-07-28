@@ -87,18 +87,22 @@ void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const ch
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_messageIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".MessageId=" << StringUtils::URLEncode(m_messageId.c_str()) << "&";
   }
+
   if(m_mD5OfMessageBodyHasBeenSet)
   {
       oStream << location << index << locationValue << ".MD5OfMessageBody=" << StringUtils::URLEncode(m_mD5OfMessageBody.c_str()) << "&";
   }
+
   if(m_mD5OfMessageAttributesHasBeenSet)
   {
       oStream << location << index << locationValue << ".MD5OfMessageAttributes=" << StringUtils::URLEncode(m_mD5OfMessageAttributes.c_str()) << "&";
   }
+
 }
 
 void SendMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

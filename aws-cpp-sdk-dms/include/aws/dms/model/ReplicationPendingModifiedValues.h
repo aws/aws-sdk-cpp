@@ -109,6 +109,27 @@ namespace Model
     inline ReplicationPendingModifiedValues& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline bool GetMultiAZ() const{ return m_multiAZ; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
+    inline ReplicationPendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
+
+    /**
      * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
@@ -148,6 +169,8 @@ namespace Model
     bool m_replicationInstanceClassHasBeenSet;
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
+    bool m_multiAZ;
+    bool m_multiAZHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
   };

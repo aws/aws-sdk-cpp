@@ -35,6 +35,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_spotInstanceRequestIdsHasBeenSet)
   {
     unsigned spotInstanceRequestIdsCount = 1;
@@ -45,6 +46,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
       spotInstanceRequestIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -54,6 +56,7 @@ Aws::String DescribeSpotInstanceRequestsRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

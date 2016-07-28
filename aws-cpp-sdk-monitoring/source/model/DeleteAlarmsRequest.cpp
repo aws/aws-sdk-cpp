@@ -38,6 +38,7 @@ Aws::String DeleteAlarmsRequest::SerializePayload() const
       alarmNamesCount++;
     }
   }
+
   ss << "Version=2010-08-01";
   return ss.str();
 }

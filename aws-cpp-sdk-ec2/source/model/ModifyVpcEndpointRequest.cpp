@@ -39,18 +39,22 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpcEndpointIdHasBeenSet)
   {
     ss << "VpcEndpointId=" << StringUtils::URLEncode(m_vpcEndpointId.c_str()) << "&";
   }
+
   if(m_resetPolicyHasBeenSet)
   {
     ss << "ResetPolicy=" << m_resetPolicy << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   if(m_addRouteTableIdsHasBeenSet)
   {
     unsigned addRouteTableIdsCount = 1;
@@ -61,6 +65,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
       addRouteTableIdsCount++;
     }
   }
+
   if(m_removeRouteTableIdsHasBeenSet)
   {
     unsigned removeRouteTableIdsCount = 1;
@@ -71,6 +76,7 @@ Aws::String ModifyVpcEndpointRequest::SerializePayload() const
       removeRouteTableIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

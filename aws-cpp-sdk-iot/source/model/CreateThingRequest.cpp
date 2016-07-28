@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateThingRequest::CreateThingRequest() : 
     m_thingNameHasBeenSet(false),
+    m_thingTypeNameHasBeenSet(false),
     m_attributePayloadHasBeenSet(false)
 {
 }
@@ -30,6 +31,12 @@ CreateThingRequest::CreateThingRequest() :
 Aws::String CreateThingRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_thingTypeNameHasBeenSet)
+  {
+   payload.WithString("thingTypeName", m_thingTypeName);
+
+  }
 
   if(m_attributePayloadHasBeenSet)
   {

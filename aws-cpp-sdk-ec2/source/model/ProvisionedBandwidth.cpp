@@ -95,22 +95,27 @@ void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Provisioned=" << StringUtils::URLEncode(m_provisioned.c_str()) << "&";
   }
+
   if(m_requestedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Requested=" << StringUtils::URLEncode(m_requested.c_str()) << "&";
   }
+
   if(m_requestTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".RequestTime=" << StringUtils::URLEncode(m_requestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_provisionTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ProvisionTime=" << StringUtils::URLEncode(m_provisionTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void ProvisionedBandwidth::OutputToStream(Aws::OStream& oStream, const char* location) const

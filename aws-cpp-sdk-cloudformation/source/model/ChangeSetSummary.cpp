@@ -127,38 +127,47 @@ void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
   }
+
   if(m_stackNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_changeSetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeSetId=" << StringUtils::URLEncode(m_changeSetId.c_str()) << "&";
   }
+
   if(m_changeSetNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeSetName=" << StringUtils::URLEncode(m_changeSetName.c_str()) << "&";
   }
+
   if(m_executionStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".ExecutionStatus=" << ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << ChangeSetStatusMapper::GetNameForChangeSetStatus(m_status) << "&";
   }
+
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
+
   if(m_creationTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void ChangeSetSummary::OutputToStream(Aws::OStream& oStream, const char* location) const

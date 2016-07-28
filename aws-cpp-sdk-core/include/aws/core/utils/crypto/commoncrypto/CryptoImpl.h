@@ -178,14 +178,14 @@ namespace Aws
 
                 virtual size_t GetKeyLengthBits() const = 0;
 
+                void CheckInitEncryptor();
+
+                void CheckInitDecryptor();
+
                 _CCCryptor* m_cryptoHandle;
 
             private:
                 void Init();
-
-                void CheckInitEncryptor();
-
-                void CheckInitDecryptor();
 
                 bool m_encDecInitialized;
                 bool m_encryptionMode;
@@ -273,6 +273,50 @@ namespace Aws
             private:
                 static size_t BlockSizeBytes;
                 static size_t KeyLengthBits;
+            };
+
+            /**
+             * CommonCrypto implementation for AES in KeyWrap mode. The key for the c_tor is the Kek,
+             * it either encrypts a CEK or decrypts it.
+             */
+            class AES_KeyWrap_Cipher_CommonCrypto : public CommonCryptoCipher
+            {
+            public:
+                /**
+                 * Create AES in KeyWrap mode off of a 256 bit key.
+                 */
+                AES_KeyWrap_Cipher_CommonCrypto(const CryptoBuffer& key);
+
+                AES_KeyWrap_Cipher_CommonCrypto(const AES_KeyWrap_Cipher_CommonCrypto&) = delete;
+
+                AES_KeyWrap_Cipher_CommonCrypto& operator=(const AES_KeyWrap_Cipher_CommonCrypto&) = delete;
+
+                AES_KeyWrap_Cipher_CommonCrypto(AES_KeyWrap_Cipher_CommonCrypto&&) = default;
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
+
+                CryptoBuffer FinalizeEncryption() override;
+
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
+
+                CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
+
+            protected:
+                void InitEncryptor_Internal() override {};
+
+                void InitDecryptor_Internal() override {};
+
+                inline size_t GetBlockSizeBytes() const override { return BlockSizeBytes; }
+
+                inline size_t GetKeyLengthBits() const override { return KeyLengthBits; }
+
+            private:
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+
+                CryptoBuffer m_workingKeyBuffer;
             };
 
         } // namespace Crypto

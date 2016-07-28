@@ -95,6 +95,7 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".NumCacheNodes=" << m_numCacheNodes << "&";
   }
+
   if(m_cacheNodeIdsToRemoveHasBeenSet)
   {
       unsigned cacheNodeIdsToRemoveIdx = 1;
@@ -103,14 +104,17 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
         oStream << location << index << locationValue << ".CacheNodeId." << cacheNodeIdsToRemoveIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_cacheNodeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CacheNodeType=" << StringUtils::URLEncode(m_cacheNodeType.c_str()) << "&";
   }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const

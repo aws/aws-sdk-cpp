@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CodePipeline
 {
-enum class AWS_CODEPIPELINE_API CodePipelineErrors
+enum class CodePipelineErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

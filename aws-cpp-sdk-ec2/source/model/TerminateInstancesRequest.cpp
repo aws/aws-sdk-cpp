@@ -34,6 +34,7 @@ Aws::String TerminateInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdsHasBeenSet)
   {
     unsigned instanceIdsCount = 1;
@@ -44,6 +45,7 @@ Aws::String TerminateInstancesRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

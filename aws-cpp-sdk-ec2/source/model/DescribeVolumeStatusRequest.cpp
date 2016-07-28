@@ -38,6 +38,7 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_volumeIdsHasBeenSet)
   {
     unsigned volumeIdsCount = 1;
@@ -48,6 +49,7 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
       volumeIdsCount++;
     }
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -57,14 +59,17 @@ Aws::String DescribeVolumeStatusRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -37,6 +37,7 @@ Aws::String DescribePoliciesRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
     unsigned policyNamesCount = 1;
@@ -47,6 +48,7 @@ Aws::String DescribePoliciesRequest::SerializePayload() const
       policyNamesCount++;
     }
   }
+
   if(m_policyTypesHasBeenSet)
   {
     unsigned policyTypesCount = 1;
@@ -57,14 +59,17 @@ Aws::String DescribePoliciesRequest::SerializePayload() const
       policyTypesCount++;
     }
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

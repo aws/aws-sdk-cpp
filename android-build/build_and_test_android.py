@@ -168,12 +168,14 @@ def SetupJniDirectory(abi, clean):
 
 def CopyNativeLibraries(buildSharedObjects, jniDir, buildDir, abi):
     if buildSharedObjects:
-        platformLibDir = os.path.join(os.environ['ANDROID_NDK'], "platforms", "android-21", "arch-arm", "usr", "lib")
-
+        toolchainName = abi + "-standalone-clang-android-21-libc++_shared"
+        toolchainDir = os.path.join('toolchains', 'android', toolchainName)
+ 
+        platformLibDir = os.path.join(toolchainDir, "sysroot", "usr", "lib")
         shutil.copy(os.path.join(platformLibDir, "liblog.so"), jniDir)
 
-        stdLibDir = os.path.join(os.environ['ANDROID_NDK'], "sources", "cxx-stl", "gnu-libstdc++", "4.9", "libs", abi)
-        shutil.copy(os.path.join(stdLibDir, "libgnustl_shared.so"), jniDir)
+        stdLibDir = os.path.join(toolchainDir, 'arm-linux-androideabi', 'lib')
+        shutil.copy(os.path.join(stdLibDir, "libc++_shared.so"), jniDir)
 
         soPattern = re.compile(".*\.so$")
 
@@ -218,6 +220,7 @@ def BuildNative(abi, clean, buildDir, jniDir, installDir, buildType, buildShared
                                  "-DTARGET_ARCH=ANDROID", 
                                  "-DANDROID_ABI=" + abi, 
                                  "-DCMAKE_BUILD_TYPE=" + buildType,
+                                 "-DENABLE_UNITY_BUILD=ON",
                                  '-DTEST_CERT_PATH="/data/data/aws.coretests/certs"',
                                  '-DBUILD_ONLY=dynamodb;sqs;s3;lambda;kinesis;cognito-identity;transfer;iam;identity-management;access-management',
                                  ".."] )

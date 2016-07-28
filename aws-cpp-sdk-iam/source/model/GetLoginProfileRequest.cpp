@@ -32,6 +32,7 @@ Aws::String GetLoginProfileRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

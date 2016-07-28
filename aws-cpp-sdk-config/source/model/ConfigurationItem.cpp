@@ -44,7 +44,8 @@ ConfigurationItem::ConfigurationItem() :
     m_tagsHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_supplementaryConfigurationHasBeenSet(false)
 {
 }
 
@@ -65,7 +66,8 @@ ConfigurationItem::ConfigurationItem(const JsonValue& jsonValue) :
     m_tagsHasBeenSet(false),
     m_relatedEventsHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_supplementaryConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,16 @@ ConfigurationItem& ConfigurationItem::operator =(const JsonValue& jsonValue)
     m_configurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supplementaryConfiguration"))
+  {
+    Aws::Map<Aws::String, JsonValue> supplementaryConfigurationJsonMap = jsonValue.GetObject("supplementaryConfiguration").GetAllObjects();
+    for(auto& supplementaryConfigurationItem : supplementaryConfigurationJsonMap)
+    {
+      m_supplementaryConfiguration[supplementaryConfigurationItem.first] = supplementaryConfigurationItem.second.AsString();
+    }
+    m_supplementaryConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +329,17 @@ JsonValue ConfigurationItem::Jsonize() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("configuration", m_configuration);
+
+  }
+
+  if(m_supplementaryConfigurationHasBeenSet)
+  {
+   JsonValue supplementaryConfigurationJsonMap;
+   for(auto& supplementaryConfigurationItem : m_supplementaryConfiguration)
+   {
+     supplementaryConfigurationJsonMap.WithString(supplementaryConfigurationItem.first, supplementaryConfigurationItem.second);
+   }
+   payload.WithObject("supplementaryConfiguration", std::move(supplementaryConfigurationJsonMap));
 
   }
 

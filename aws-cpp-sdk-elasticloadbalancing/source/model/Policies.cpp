@@ -103,6 +103,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         item.OutputToStream(oStream, appCookieStickinessPoliciesSs.str().c_str());
       }
   }
+
   if(m_lBCookieStickinessPoliciesHasBeenSet)
   {
       unsigned lBCookieStickinessPoliciesIdx = 1;
@@ -113,6 +114,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         item.OutputToStream(oStream, lBCookieStickinessPoliciesSs.str().c_str());
       }
   }
+
   if(m_otherPoliciesHasBeenSet)
   {
       unsigned otherPoliciesIdx = 1;
@@ -121,6 +123,7 @@ void Policies::OutputToStream(Aws::OStream& oStream, const char* location, unsig
         oStream << location << index << locationValue << ".OtherPolicies.member." << otherPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void Policies::OutputToStream(Aws::OStream& oStream, const char* location) const

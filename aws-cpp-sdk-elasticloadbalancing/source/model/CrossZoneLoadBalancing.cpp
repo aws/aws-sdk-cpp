@@ -65,6 +65,7 @@ void CrossZoneLoadBalancing::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void CrossZoneLoadBalancing::OutputToStream(Aws::OStream& oStream, const char* location) const

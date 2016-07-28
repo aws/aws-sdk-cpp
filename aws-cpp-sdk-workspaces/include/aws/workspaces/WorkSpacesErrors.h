@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace WorkSpaces
 {
-enum class AWS_WORKSPACES_API WorkSpacesErrors
+enum class WorkSpacesErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

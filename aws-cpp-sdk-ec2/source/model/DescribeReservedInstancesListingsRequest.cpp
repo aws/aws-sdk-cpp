@@ -34,10 +34,12 @@ Aws::String DescribeReservedInstancesListingsRequest::SerializePayload() const
   {
     ss << "ReservedInstancesId=" << StringUtils::URLEncode(m_reservedInstancesId.c_str()) << "&";
   }
+
   if(m_reservedInstancesListingIdHasBeenSet)
   {
     ss << "ReservedInstancesListingId=" << StringUtils::URLEncode(m_reservedInstancesListingId.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -47,6 +49,7 @@ Aws::String DescribeReservedInstancesListingsRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

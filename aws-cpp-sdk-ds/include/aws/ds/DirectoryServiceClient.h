@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/AddTagsToResourceResult.h>
 #include <aws/ds/model/ConnectDirectoryResult.h>
 #include <aws/ds/model/CreateAliasResult.h>
 #include <aws/ds/model/CreateComputerResult.h>
@@ -44,7 +45,9 @@
 #include <aws/ds/model/EnableSsoResult.h>
 #include <aws/ds/model/GetDirectoryLimitsResult.h>
 #include <aws/ds/model/GetSnapshotLimitsResult.h>
+#include <aws/ds/model/ListTagsForResourceResult.h>
 #include <aws/ds/model/RegisterEventTopicResult.h>
+#include <aws/ds/model/RemoveTagsFromResourceResult.h>
 #include <aws/ds/model/RestoreFromSnapshotResult.h>
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
 #include <aws/ds/model/UpdateRadiusResult.h>
@@ -94,6 +97,7 @@ namespace DirectoryService
 
 namespace Model
 {
+        class AddTagsToResourceRequest;
         class ConnectDirectoryRequest;
         class CreateAliasRequest;
         class CreateComputerRequest;
@@ -118,12 +122,15 @@ namespace Model
         class EnableSsoRequest;
         class GetDirectoryLimitsRequest;
         class GetSnapshotLimitsRequest;
+        class ListTagsForResourceRequest;
         class RegisterEventTopicRequest;
+        class RemoveTagsFromResourceRequest;
         class RestoreFromSnapshotRequest;
         class UpdateConditionalForwarderRequest;
         class UpdateRadiusRequest;
         class VerifyTrustRequest;
 
+        typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<ConnectDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> ConnectDirectoryOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateComputerResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateComputerOutcome;
@@ -148,12 +155,15 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableSsoResult, Aws::Client::AWSError<DirectoryServiceErrors>> EnableSsoOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetDirectoryLimitsOutcome;
         typedef Aws::Utils::Outcome<GetSnapshotLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetSnapshotLimitsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> RegisterEventTopicOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<RestoreFromSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> RestoreFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<UpdateRadiusResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateRadiusOutcome;
         typedef Aws::Utils::Outcome<VerifyTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> VerifyTrustOutcome;
 
+        typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ConnectDirectoryOutcome> ConnectDirectoryOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateComputerOutcome> CreateComputerOutcomeCallable;
@@ -178,7 +188,9 @@ namespace Model
         typedef std::future<EnableSsoOutcome> EnableSsoOutcomeCallable;
         typedef std::future<GetDirectoryLimitsOutcome> GetDirectoryLimitsOutcomeCallable;
         typedef std::future<GetSnapshotLimitsOutcome> GetSnapshotLimitsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterEventTopicOutcome> RegisterEventTopicOutcomeCallable;
+        typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<RestoreFromSnapshotOutcome> RestoreFromSnapshotOutcomeCallable;
         typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
         typedef std::future<UpdateRadiusOutcome> UpdateRadiusOutcomeCallable;
@@ -187,6 +199,7 @@ namespace Model
 
   class DirectoryServiceClient;
 
+    typedef std::function<void(const DirectoryServiceClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ConnectDirectoryRequest&, const Model::ConnectDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConnectDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateComputerRequest&, const Model::CreateComputerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComputerResponseReceivedHandler;
@@ -211,7 +224,9 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableSsoRequest&, const Model::EnableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSsoResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetDirectoryLimitsRequest&, const Model::GetDirectoryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryLimitsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetSnapshotLimitsRequest&, const Model::GetSnapshotLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotLimitsResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RegisterEventTopicRequest&, const Model::RegisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEventTopicResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RestoreFromSnapshotRequest&, const Model::RestoreFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateRadiusRequest&, const Model::UpdateRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRadiusResponseReceivedHandler;
@@ -249,6 +264,31 @@ namespace Model
         virtual ~DirectoryServiceClient();
 
         /**
+         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
+         * Services directory. Each directory can have a maximum of 10 tags. Each tag
+         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         */
+        virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
+         * Services directory. Each directory can have a maximum of 10 tags. Each tag
+         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddTagsToResourceOutcomeCallable AddTagsToResourceCallable(const Model::AddTagsToResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites one or more tags for the specified Amazon Directory
+         * Services directory. Each directory can have a maximum of 10 tags. Each tag
+         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an AD Connector to connect to an on-premises directory.</p>
          */
         virtual Model::ConnectDirectoryOutcome ConnectDirectory(const Model::ConnectDirectoryRequest& request) const;
@@ -270,20 +310,18 @@ namespace Model
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.</p>
-         * <important> <p>After an alias has been created, it cannot be deleted or reused,
-         * so this operation should only be used when absolutely necessary.</p>
-         * </important>
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * has been created, it cannot be deleted or reused, so this operation should only
+         * be used when absolutely necessary.</p> </important>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.</p>
-         * <important> <p>After an alias has been created, it cannot be deleted or reused,
-         * so this operation should only be used when absolutely necessary.</p>
-         * </important>
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * has been created, it cannot be deleted or reused, so this operation should only
+         * be used when absolutely necessary.</p> </important>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -292,10 +330,9 @@ namespace Model
         /**
          * <p>Creates an alias for a directory and assigns the alias to the directory. The
          * alias is used to construct the access URL for the directory, such as
-         * <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.</p>
-         * <important> <p>After an alias has been created, it cannot be deleted or reused,
-         * so this operation should only be used when absolutely necessary.</p>
-         * </important>
+         * <code>http://&lt;alias&gt;.awsapps.com</code>.</p> <important> <p>After an alias
+         * has been created, it cannot be deleted or reused, so this operation should only
+         * be used when absolutely necessary.</p> </important>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -368,19 +405,19 @@ namespace Model
         virtual void CreateDirectoryAsync(const Model::CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a Microsoft AD in the AWS cloud.
+         * <p>Creates a Microsoft AD in the AWS cloud.</p>
          */
         virtual Model::CreateMicrosoftADOutcome CreateMicrosoftAD(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * Creates a Microsoft AD in the AWS cloud.
+         * <p>Creates a Microsoft AD in the AWS cloud.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateMicrosoftADOutcomeCallable CreateMicrosoftADCallable(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * Creates a Microsoft AD in the AWS cloud.
+         * <p>Creates a Microsoft AD in the AWS cloud.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -416,7 +453,7 @@ namespace Model
          * trust relationships. For example, you can establish a trust between your
          * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
-         * in either domain, with a single set of credentials.</p><p>This action initiates
+         * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
          * the AWS cloud and an external domain.</p>
          */
@@ -427,7 +464,7 @@ namespace Model
          * trust relationships. For example, you can establish a trust between your
          * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
-         * in either domain, with a single set of credentials.</p><p>This action initiates
+         * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
          * the AWS cloud and an external domain.</p>
          *
@@ -440,7 +477,7 @@ namespace Model
          * trust relationships. For example, you can establish a trust between your
          * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
-         * in either domain, with a single set of credentials.</p><p>This action initiates
+         * in either domain, with a single set of credentials.</p> <p>This action initiates
          * the creation of the AWS side of a trust relationship between a Microsoft AD in
          * the AWS cloud and an external domain.</p>
          *
@@ -509,22 +546,22 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.
+         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
+         * cloud and an external domain.</p>
          */
         virtual Model::DeleteTrustOutcome DeleteTrust(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.
+         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
+         * cloud and an external domain.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteTrustOutcomeCallable DeleteTrustCallable(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.
+         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
+         * cloud and an external domain.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -834,11 +871,30 @@ namespace Model
         virtual void GetSnapshotLimitsAsync(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags on an Amazon Directory Services directory.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associates a directory with an SNS topic. This establishes the directory as a
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status. </p>
+         * also receive a notification when the directory returns to an Active status.</p>
          */
         virtual Model::RegisterEventTopicOutcome RegisterEventTopic(const Model::RegisterEventTopicRequest& request) const;
 
@@ -847,7 +903,7 @@ namespace Model
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status. </p>
+         * also receive a notification when the directory returns to an Active status.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -858,11 +914,30 @@ namespace Model
          * publisher to the specified SNS topic. You can then receive email or text (SMS)
          * messages when the status of your directory changes. You get notified if your
          * directory goes from an Active status to an Impaired or Inoperable status. You
-         * also receive a notification when the directory returns to an Active status. </p>
+         * also receive a notification when the directory returns to an Active status.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterEventTopicAsync(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         */
+        virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an Amazon Directory Services directory.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores a directory using an existing directory snapshot.</p> <p>When you
@@ -947,14 +1022,14 @@ namespace Model
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships. </p><p>This action verifies a trust relationship
+         * and verify trust relationships.</p> <p>This action verifies a trust relationship
          * between your Microsoft AD in the AWS cloud and an external domain.</p>
          */
         virtual Model::VerifyTrustOutcome VerifyTrust(const Model::VerifyTrustRequest& request) const;
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships. </p><p>This action verifies a trust relationship
+         * and verify trust relationships.</p> <p>This action verifies a trust relationship
          * between your Microsoft AD in the AWS cloud and an external domain.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -963,7 +1038,7 @@ namespace Model
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * and verify trust relationships. </p><p>This action verifies a trust relationship
+         * and verify trust relationships.</p> <p>This action verifies a trust relationship
          * between your Microsoft AD in the AWS cloud and an external domain.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -975,6 +1050,7 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConnectDirectoryAsyncHelper(const Model::ConnectDirectoryRequest& request, const ConnectDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateComputerAsyncHelper(const Model::CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -999,7 +1075,9 @@ namespace Model
         void EnableSsoAsyncHelper(const Model::EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryLimitsAsyncHelper(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnapshotLimitsAsyncHelper(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterEventTopicAsyncHelper(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromSnapshotAsyncHelper(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConditionalForwarderAsyncHelper(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRadiusAsyncHelper(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

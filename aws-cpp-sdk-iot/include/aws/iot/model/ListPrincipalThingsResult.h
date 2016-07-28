@@ -84,37 +84,44 @@ namespace Model
     inline ListPrincipalThingsResult& AddThings(const char* value) { m_things.push_back(value); return *this; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token used to retrieve the next value.</p>
+     * <p>The token for the next set of results, or <b>null</b> if there are no
+     * additional results.</p>
      */
     inline ListPrincipalThingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

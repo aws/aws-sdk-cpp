@@ -15,6 +15,7 @@
 #include <aws/cloudfront/model/DeleteCloudFrontOriginAccessIdentity2016_01_28Request.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 

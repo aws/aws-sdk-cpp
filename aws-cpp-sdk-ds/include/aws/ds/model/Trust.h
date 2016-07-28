@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * Describes a trust relationship between an Microsoft AD in the AWS cloud and an
-   * external domain.
+   * <p>Describes a trust relationship between an Microsoft AD in the AWS cloud and
+   * an external domain.</p>
    */
   class AWS_DIRECTORYSERVICE_API Trust
   {
@@ -47,264 +47,264 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline Trust& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline Trust& WithDirectoryId(Aws::String&& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The Directory ID of the AWS directory involved in the trust relationship.
+     * <p>The Directory ID of the AWS directory involved in the trust relationship.</p>
      */
     inline Trust& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline void SetTrustId(Aws::String&& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline void SetTrustId(const char* value) { m_trustIdHasBeenSet = true; m_trustId.assign(value); }
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline Trust& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline Trust& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique ID of the trust relationship.
+     * <p>The unique ID of the trust relationship.</p>
      */
     inline Trust& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline const Aws::String& GetRemoteDomainName() const{ return m_remoteDomainName; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline void SetRemoteDomainName(const Aws::String& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline void SetRemoteDomainName(Aws::String&& value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName = value; }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline void SetRemoteDomainName(const char* value) { m_remoteDomainNameHasBeenSet = true; m_remoteDomainName.assign(value); }
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline Trust& WithRemoteDomainName(const Aws::String& value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline Trust& WithRemoteDomainName(Aws::String&& value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The Fully Qualified Domain Name (FQDN) of the external domain involved in the
-     * trust relationship.
+     * <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the
+     * trust relationship.</p>
      */
     inline Trust& WithRemoteDomainName(const char* value) { SetRemoteDomainName(value); return *this;}
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline const TrustType& GetTrustType() const{ return m_trustType; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline void SetTrustType(const TrustType& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline void SetTrustType(TrustType&& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline Trust& WithTrustType(const TrustType& value) { SetTrustType(value); return *this;}
 
     /**
-     * The trust relationship type.
+     * <p>The trust relationship type.</p>
      */
     inline Trust& WithTrustType(TrustType&& value) { SetTrustType(value); return *this;}
 
     /**
-     * The trust relationship direction.
+     * <p>The trust relationship direction.</p>
      */
     inline const TrustDirection& GetTrustDirection() const{ return m_trustDirection; }
 
     /**
-     * The trust relationship direction.
+     * <p>The trust relationship direction.</p>
      */
     inline void SetTrustDirection(const TrustDirection& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
 
     /**
-     * The trust relationship direction.
+     * <p>The trust relationship direction.</p>
      */
     inline void SetTrustDirection(TrustDirection&& value) { m_trustDirectionHasBeenSet = true; m_trustDirection = value; }
 
     /**
-     * The trust relationship direction.
+     * <p>The trust relationship direction.</p>
      */
     inline Trust& WithTrustDirection(const TrustDirection& value) { SetTrustDirection(value); return *this;}
 
     /**
-     * The trust relationship direction.
+     * <p>The trust relationship direction.</p>
      */
     inline Trust& WithTrustDirection(TrustDirection&& value) { SetTrustDirection(value); return *this;}
 
     /**
-     * The trust relationship state.
+     * <p>The trust relationship state.</p>
      */
     inline const TrustState& GetTrustState() const{ return m_trustState; }
 
     /**
-     * The trust relationship state.
+     * <p>The trust relationship state.</p>
      */
     inline void SetTrustState(const TrustState& value) { m_trustStateHasBeenSet = true; m_trustState = value; }
 
     /**
-     * The trust relationship state.
+     * <p>The trust relationship state.</p>
      */
     inline void SetTrustState(TrustState&& value) { m_trustStateHasBeenSet = true; m_trustState = value; }
 
     /**
-     * The trust relationship state.
+     * <p>The trust relationship state.</p>
      */
     inline Trust& WithTrustState(const TrustState& value) { SetTrustState(value); return *this;}
 
     /**
-     * The trust relationship state.
+     * <p>The trust relationship state.</p>
      */
     inline Trust& WithTrustState(TrustState&& value) { SetTrustState(value); return *this;}
 
     /**
-     * The date and time that the trust relationship was created.
+     * <p>The date and time that the trust relationship was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDateTime() const{ return m_createdDateTime; }
 
     /**
-     * The date and time that the trust relationship was created.
+     * <p>The date and time that the trust relationship was created.</p>
      */
     inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
-     * The date and time that the trust relationship was created.
+     * <p>The date and time that the trust relationship was created.</p>
      */
     inline void SetCreatedDateTime(Aws::Utils::DateTime&& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
-     * The date and time that the trust relationship was created.
+     * <p>The date and time that the trust relationship was created.</p>
      */
     inline Trust& WithCreatedDateTime(const Aws::Utils::DateTime& value) { SetCreatedDateTime(value); return *this;}
 
     /**
-     * The date and time that the trust relationship was created.
+     * <p>The date and time that the trust relationship was created.</p>
      */
     inline Trust& WithCreatedDateTime(Aws::Utils::DateTime&& value) { SetCreatedDateTime(value); return *this;}
 
     /**
-     * The date and time that the trust relationship was last updated.
+     * <p>The date and time that the trust relationship was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
 
     /**
-     * The date and time that the trust relationship was last updated.
+     * <p>The date and time that the trust relationship was last updated.</p>
      */
     inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
 
     /**
-     * The date and time that the trust relationship was last updated.
+     * <p>The date and time that the trust relationship was last updated.</p>
      */
     inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
 
     /**
-     * The date and time that the trust relationship was last updated.
+     * <p>The date and time that the trust relationship was last updated.</p>
      */
     inline Trust& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
 
     /**
-     * The date and time that the trust relationship was last updated.
+     * <p>The date and time that the trust relationship was last updated.</p>
      */
     inline Trust& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(value); return *this;}
 
     /**
-     * The date and time that the TrustState was last updated.
+     * <p>The date and time that the TrustState was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetStateLastUpdatedDateTime() const{ return m_stateLastUpdatedDateTime; }
 
     /**
-     * The date and time that the TrustState was last updated.
+     * <p>The date and time that the TrustState was last updated.</p>
      */
     inline void SetStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
 
     /**
-     * The date and time that the TrustState was last updated.
+     * <p>The date and time that the TrustState was last updated.</p>
      */
     inline void SetStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_stateLastUpdatedDateTimeHasBeenSet = true; m_stateLastUpdatedDateTime = value; }
 
     /**
-     * The date and time that the TrustState was last updated.
+     * <p>The date and time that the TrustState was last updated.</p>
      */
     inline Trust& WithStateLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetStateLastUpdatedDateTime(value); return *this;}
 
     /**
-     * The date and time that the TrustState was last updated.
+     * <p>The date and time that the TrustState was last updated.</p>
      */
     inline Trust& WithStateLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetStateLastUpdatedDateTime(value); return *this;}
 

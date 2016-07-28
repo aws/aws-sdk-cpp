@@ -86,47 +86,47 @@ namespace Model
     inline DirectoryLimits& WithCloudOnlyDirectoriesLimitReached(bool value) { SetCloudOnlyDirectoriesLimitReached(value); return *this;}
 
     /**
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * <p>The maximum number of Microsoft AD directories allowed in the region.</p>
      */
     inline int GetCloudOnlyMicrosoftADLimit() const{ return m_cloudOnlyMicrosoftADLimit; }
 
     /**
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * <p>The maximum number of Microsoft AD directories allowed in the region.</p>
      */
     inline void SetCloudOnlyMicrosoftADLimit(int value) { m_cloudOnlyMicrosoftADLimitHasBeenSet = true; m_cloudOnlyMicrosoftADLimit = value; }
 
     /**
-     * The maximum number of Microsoft AD directories allowed in the region.
+     * <p>The maximum number of Microsoft AD directories allowed in the region.</p>
      */
     inline DirectoryLimits& WithCloudOnlyMicrosoftADLimit(int value) { SetCloudOnlyMicrosoftADLimit(value); return *this;}
 
     /**
-     * The current number of Microsoft AD directories in the region.
+     * <p>The current number of Microsoft AD directories in the region.</p>
      */
     inline int GetCloudOnlyMicrosoftADCurrentCount() const{ return m_cloudOnlyMicrosoftADCurrentCount; }
 
     /**
-     * The current number of Microsoft AD directories in the region.
+     * <p>The current number of Microsoft AD directories in the region.</p>
      */
     inline void SetCloudOnlyMicrosoftADCurrentCount(int value) { m_cloudOnlyMicrosoftADCurrentCountHasBeenSet = true; m_cloudOnlyMicrosoftADCurrentCount = value; }
 
     /**
-     * The current number of Microsoft AD directories in the region.
+     * <p>The current number of Microsoft AD directories in the region.</p>
      */
     inline DirectoryLimits& WithCloudOnlyMicrosoftADCurrentCount(int value) { SetCloudOnlyMicrosoftADCurrentCount(value); return *this;}
 
     /**
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * <p>Indicates if the Microsoft AD directory limit has been reached.</p>
      */
     inline bool GetCloudOnlyMicrosoftADLimitReached() const{ return m_cloudOnlyMicrosoftADLimitReached; }
 
     /**
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * <p>Indicates if the Microsoft AD directory limit has been reached.</p>
      */
     inline void SetCloudOnlyMicrosoftADLimitReached(bool value) { m_cloudOnlyMicrosoftADLimitReachedHasBeenSet = true; m_cloudOnlyMicrosoftADLimitReached = value; }
 
     /**
-     * Indicates if the Microsoft AD directory limit has been reached.
+     * <p>Indicates if the Microsoft AD directory limit has been reached.</p>
      */
     inline DirectoryLimits& WithCloudOnlyMicrosoftADLimitReached(bool value) { SetCloudOnlyMicrosoftADLimitReached(value); return *this;}
 

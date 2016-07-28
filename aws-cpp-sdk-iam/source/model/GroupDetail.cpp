@@ -123,22 +123,27 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_groupIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
+
   if(m_arnHasBeenSet)
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_createDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_groupPolicyListHasBeenSet)
   {
       unsigned groupPolicyListIdx = 1;
@@ -149,6 +154,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, groupPolicyListSs.str().c_str());
       }
   }
+
   if(m_attachedManagedPoliciesHasBeenSet)
   {
       unsigned attachedManagedPoliciesIdx = 1;
@@ -159,6 +165,7 @@ void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
+
 }
 
 void GroupDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

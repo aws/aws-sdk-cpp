@@ -34,10 +34,12 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupDescriptionHasBeenSet)
   {
     ss << "DBSubnetGroupDescription=" << StringUtils::URLEncode(m_dBSubnetGroupDescription.c_str()) << "&";
   }
+
   if(m_subnetIdsHasBeenSet)
   {
     unsigned subnetIdsCount = 1;
@@ -48,6 +50,7 @@ Aws::String ModifyDBSubnetGroupRequest::SerializePayload() const
       subnetIdsCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -72,37 +72,37 @@ namespace Model
     inline CreateUploadRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline CreateUploadRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline CreateUploadRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The upload's file name.</p>
+     * <p>The upload's file name. The name should not contain the '/' character.</p>
      */
     inline CreateUploadRequest& WithName(const char* value) { SetName(value); return *this;}
 

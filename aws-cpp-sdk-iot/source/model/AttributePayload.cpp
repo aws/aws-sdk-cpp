@@ -28,12 +28,16 @@ namespace Model
 {
 
 AttributePayload::AttributePayload() : 
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_merge(false),
+    m_mergeHasBeenSet(false)
 {
 }
 
 AttributePayload::AttributePayload(const JsonValue& jsonValue) : 
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_merge(false),
+    m_mergeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ AttributePayload& AttributePayload::operator =(const JsonValue& jsonValue)
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
     }
     m_attributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("merge"))
+  {
+    m_merge = jsonValue.GetBool("merge");
+
+    m_mergeHasBeenSet = true;
   }
 
   return *this;
@@ -65,6 +76,12 @@ JsonValue AttributePayload::Jsonize() const
      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
    }
    payload.WithObject("attributes", std::move(attributesJsonMap));
+
+  }
+
+  if(m_mergeHasBeenSet)
+  {
+   payload.WithBool("merge", m_merge);
 
   }
 

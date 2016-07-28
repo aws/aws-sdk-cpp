@@ -38,6 +38,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
       loadBalancerNamesCount++;
     }
   }
+
   ss << "Version=2012-06-01";
   return ss.str();
 }

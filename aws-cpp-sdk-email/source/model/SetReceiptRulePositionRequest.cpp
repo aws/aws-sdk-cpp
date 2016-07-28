@@ -34,14 +34,17 @@ Aws::String SetReceiptRulePositionRequest::SerializePayload() const
   {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
+
   if(m_ruleNameHasBeenSet)
   {
     ss << "RuleName=" << StringUtils::URLEncode(m_ruleName.c_str()) << "&";
   }
+
   if(m_afterHasBeenSet)
   {
     ss << "After=" << StringUtils::URLEncode(m_after.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

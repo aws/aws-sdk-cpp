@@ -119,18 +119,22 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
   {
       oStream << location << index << locationValue << ".OptionGroupName=" << StringUtils::URLEncode(m_optionGroupName.c_str()) << "&";
   }
+
   if(m_optionGroupDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptionGroupDescription=" << StringUtils::URLEncode(m_optionGroupDescription.c_str()) << "&";
   }
+
   if(m_engineNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineName=" << StringUtils::URLEncode(m_engineName.c_str()) << "&";
   }
+
   if(m_majorEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
   }
+
   if(m_optionsHasBeenSet)
   {
       unsigned optionsIdx = 1;
@@ -141,14 +145,17 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
         item.OutputToStream(oStream, optionsSs.str().c_str());
       }
   }
+
   if(m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowsVpcAndNonVpcInstanceMemberships=" << m_allowsVpcAndNonVpcInstanceMemberships << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
 }
 
 void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

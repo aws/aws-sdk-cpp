@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Deletes a conditional forwarder.</p>
    */
   class AWS_DIRECTORYSERVICE_API DeleteConditionalForwarderRequest : public DirectoryServiceRequest
   {

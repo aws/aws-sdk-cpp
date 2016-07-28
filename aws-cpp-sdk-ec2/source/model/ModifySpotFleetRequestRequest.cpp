@@ -35,14 +35,17 @@ Aws::String ModifySpotFleetRequestRequest::SerializePayload() const
   {
     ss << "SpotFleetRequestId=" << StringUtils::URLEncode(m_spotFleetRequestId.c_str()) << "&";
   }
+
   if(m_targetCapacityHasBeenSet)
   {
     ss << "TargetCapacity=" << m_targetCapacity << "&";
   }
+
   if(m_excessCapacityTerminationPolicyHasBeenSet)
   {
     ss << "ExcessCapacityTerminationPolicy=" << ExcessCapacityTerminationPolicyMapper::GetNameForExcessCapacityTerminationPolicy(m_excessCapacityTerminationPolicy) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -479,48 +479,59 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_dBInstanceClassHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
   }
+
   if(m_engineHasBeenSet)
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
+
   if(m_dBInstanceStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBInstanceStatus=" << StringUtils::URLEncode(m_dBInstanceStatus.c_str()) << "&";
   }
+
   if(m_masterUsernameHasBeenSet)
   {
       oStream << location << index << locationValue << ".MasterUsername=" << StringUtils::URLEncode(m_masterUsername.c_str()) << "&";
   }
+
   if(m_dBNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBName=" << StringUtils::URLEncode(m_dBName.c_str()) << "&";
   }
+
   if(m_endpointHasBeenSet)
   {
       Aws::StringStream endpointLocationAndMemberSs;
       endpointLocationAndMemberSs << location << index << locationValue << ".Endpoint";
       m_endpoint.OutputToStream(oStream, endpointLocationAndMemberSs.str().c_str());
   }
+
   if(m_allocatedStorageHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
+
   if(m_instanceCreateTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCreateTime=" << StringUtils::URLEncode(m_instanceCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_preferredBackupWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredBackupWindow=" << StringUtils::URLEncode(m_preferredBackupWindow.c_str()) << "&";
   }
+
   if(m_backupRetentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".BackupRetentionPeriod=" << m_backupRetentionPeriod << "&";
   }
+
   if(m_dBSecurityGroupsHasBeenSet)
   {
       unsigned dBSecurityGroupsIdx = 1;
@@ -531,6 +542,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, dBSecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_vpcSecurityGroupsHasBeenSet)
   {
       unsigned vpcSecurityGroupsIdx = 1;
@@ -541,6 +553,7 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, vpcSecurityGroupsSs.str().c_str());
       }
   }
+
   if(m_dBParameterGroupsHasBeenSet)
   {
       unsigned dBParameterGroupsIdx = 1;
@@ -551,46 +564,56 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, dBParameterGroupsSs.str().c_str());
       }
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_dBSubnetGroupHasBeenSet)
   {
       Aws::StringStream dBSubnetGroupLocationAndMemberSs;
       dBSubnetGroupLocationAndMemberSs << location << index << locationValue << ".DBSubnetGroup";
       m_dBSubnetGroup.OutputToStream(oStream, dBSubnetGroupLocationAndMemberSs.str().c_str());
   }
+
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
       oStream << location << index << locationValue << ".PreferredMaintenanceWindow=" << StringUtils::URLEncode(m_preferredMaintenanceWindow.c_str()) << "&";
   }
+
   if(m_pendingModifiedValuesHasBeenSet)
   {
       Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
       pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
       m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
   }
+
   if(m_latestRestorableTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".LatestRestorableTime=" << StringUtils::URLEncode(m_latestRestorableTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_multiAZHasBeenSet)
   {
       oStream << location << index << locationValue << ".MultiAZ=" << m_multiAZ << "&";
   }
+
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
+
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
   }
+
   if(m_readReplicaSourceDBInstanceIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReadReplicaSourceDBInstanceIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_readReplicaDBInstanceIdentifiersHasBeenSet)
   {
       unsigned readReplicaDBInstanceIdentifiersIdx = 1;
@@ -599,14 +622,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         oStream << location << index << locationValue << ".ReadReplicaDBInstanceIdentifier." << readReplicaDBInstanceIdentifiersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
   }
+
   if(m_optionGroupMembershipsHasBeenSet)
   {
       unsigned optionGroupMembershipsIdx = 1;
@@ -617,18 +643,22 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, optionGroupMembershipsSs.str().c_str());
       }
   }
+
   if(m_characterSetNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
+
   if(m_secondaryAvailabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".SecondaryAvailabilityZone=" << StringUtils::URLEncode(m_secondaryAvailabilityZone.c_str()) << "&";
   }
+
   if(m_publiclyAccessibleHasBeenSet)
   {
       oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
+
   if(m_statusInfosHasBeenSet)
   {
       unsigned statusInfosIdx = 1;
@@ -639,38 +669,47 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, statusInfosSs.str().c_str());
       }
   }
+
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
+
   if(m_tdeCredentialArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".TdeCredentialArn=" << StringUtils::URLEncode(m_tdeCredentialArn.c_str()) << "&";
   }
+
   if(m_dbInstancePortHasBeenSet)
   {
       oStream << location << index << locationValue << ".DbInstancePort=" << m_dbInstancePort << "&";
   }
+
   if(m_dBClusterIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBClusterIdentifier=" << StringUtils::URLEncode(m_dBClusterIdentifier.c_str()) << "&";
   }
+
   if(m_storageEncryptedHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageEncrypted=" << m_storageEncrypted << "&";
   }
+
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
+
   if(m_dbiResourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
   }
+
   if(m_cACertificateIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
+
   if(m_domainMembershipsHasBeenSet)
   {
       unsigned domainMembershipsIdx = 1;
@@ -681,26 +720,32 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
         item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
       }
   }
+
   if(m_copyTagsToSnapshotHasBeenSet)
   {
       oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << m_copyTagsToSnapshot << "&";
   }
+
   if(m_monitoringIntervalHasBeenSet)
   {
       oStream << location << index << locationValue << ".MonitoringInterval=" << m_monitoringInterval << "&";
   }
+
   if(m_enhancedMonitoringResourceArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".EnhancedMonitoringResourceArn=" << StringUtils::URLEncode(m_enhancedMonitoringResourceArn.c_str()) << "&";
   }
+
   if(m_monitoringRoleArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".MonitoringRoleArn=" << StringUtils::URLEncode(m_monitoringRoleArn.c_str()) << "&";
   }
+
   if(m_promotionTierHasBeenSet)
   {
       oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
   }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -99,22 +99,27 @@ void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_sourceFieldsHasBeenSet)
   {
       oStream << location << index << locationValue << ".SourceFields=" << StringUtils::URLEncode(m_sourceFields.c_str()) << "&";
   }
+
   if(m_returnEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReturnEnabled=" << m_returnEnabled << "&";
   }
+
   if(m_highlightEnabledHasBeenSet)
   {
       oStream << location << index << locationValue << ".HighlightEnabled=" << m_highlightEnabled << "&";
   }
+
   if(m_analysisSchemeHasBeenSet)
   {
       oStream << location << index << locationValue << ".AnalysisScheme=" << StringUtils::URLEncode(m_analysisScheme.c_str()) << "&";
   }
+
 }
 
 void TextArrayOptions::OutputToStream(Aws::OStream& oStream, const char* location) const

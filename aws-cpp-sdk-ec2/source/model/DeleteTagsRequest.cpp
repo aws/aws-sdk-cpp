@@ -35,6 +35,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_resourcesHasBeenSet)
   {
     unsigned resourcesCount = 1;
@@ -45,6 +46,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
       resourcesCount++;
     }
   }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -54,6 +56,7 @@ Aws::String DeleteTagsRequest::SerializePayload() const
       tagsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

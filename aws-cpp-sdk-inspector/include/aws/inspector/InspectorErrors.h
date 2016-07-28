@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace Inspector
 {
-enum class AWS_INSPECTOR_API InspectorErrors
+enum class InspectorErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

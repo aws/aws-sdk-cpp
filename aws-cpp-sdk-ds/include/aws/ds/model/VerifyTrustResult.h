@@ -32,6 +32,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>Result of a VerifyTrust request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API VerifyTrustResult
   {
   public:
@@ -40,37 +43,37 @@ namespace Model
     VerifyTrustResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline const Aws::String& GetTrustId() const{ return m_trustId; }
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline void SetTrustId(const Aws::String& value) { m_trustId = value; }
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline void SetTrustId(Aws::String&& value) { m_trustId = value; }
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline void SetTrustId(const char* value) { m_trustId.assign(value); }
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline VerifyTrustResult& WithTrustId(const Aws::String& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline VerifyTrustResult& WithTrustId(Aws::String&& value) { SetTrustId(value); return *this;}
 
     /**
-     * The unique Trust ID of the trust relationship that was verified.
+     * <p>The unique Trust ID of the trust relationship that was verified.</p>
      */
     inline VerifyTrustResult& WithTrustId(const char* value) { SetTrustId(value); return *this;}
 

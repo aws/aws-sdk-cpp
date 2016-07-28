@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudWatch
 {
-enum class AWS_CLOUDWATCH_API CloudWatchErrors
+enum class CloudWatchErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

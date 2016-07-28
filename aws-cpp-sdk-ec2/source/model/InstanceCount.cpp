@@ -73,10 +73,12 @@ void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".State=" << ListingStateMapper::GetNameForListingState(m_state) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
   }
+
 }
 
 void InstanceCount::OutputToStream(Aws::OStream& oStream, const char* location) const

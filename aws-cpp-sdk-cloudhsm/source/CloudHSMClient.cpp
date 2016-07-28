@@ -58,6 +58,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "cloudhsm";
 static const char* ALLOCATION_TAG = "CloudHSMClient";
 
+
 CloudHSMClient::CloudHSMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

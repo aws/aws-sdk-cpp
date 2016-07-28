@@ -35,14 +35,17 @@ Aws::String DescribeSnapshotAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_snapshotIdHasBeenSet)
   {
     ss << "SnapshotId=" << StringUtils::URLEncode(m_snapshotId.c_str()) << "&";
   }
+
   if(m_attributeHasBeenSet)
   {
     ss << "Attribute=" << SnapshotAttributeNameMapper::GetNameForSnapshotAttributeName(m_attribute) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

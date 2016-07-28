@@ -71,10 +71,12 @@ void S3Location::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
   }
+
   if(m_s3KeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
   }
+
 }
 
 void S3Location::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace AutoScaling
 {
-enum class AWS_AUTOSCALING_API AutoScalingErrors
+enum class AutoScalingErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

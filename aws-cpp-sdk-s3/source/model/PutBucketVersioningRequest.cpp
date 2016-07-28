@@ -15,6 +15,7 @@
 #include <aws/s3/model/PutBucketVersioningRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -34,11 +35,11 @@ Aws::String PutBucketVersioningRequest::SerializePayload() const
 {
   XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("VersioningConfiguration");
 
-  XmlNode rootNode = payloadDoc.GetRootElement();
-  rootNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "http://s3.amazonaws.com/doc/2006-03-01/");
 
-  m_versioningConfiguration.AddToNode(rootNode);
-  if(rootNode.HasChildren())
+  m_versioningConfiguration.AddToNode(parentNode);
+  if(parentNode.HasChildren())
   {
     return payloadDoc.ConvertToString();
   }

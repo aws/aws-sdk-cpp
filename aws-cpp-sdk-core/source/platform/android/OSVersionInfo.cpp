@@ -13,14 +13,43 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/OSVersionInfo.h>
+#include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/StringUtils.h>
+
 #include <regex>
 
 namespace Aws
 {
-namespace Utils
+namespace OSVersionInfo
 {
+
+Aws::String GetSysCommandOutput(const char* command)
+{
+    Aws::String outputStr;
+    FILE* outputStream;
+    const int maxBufferSize = 256;
+    char outputBuffer[maxBufferSize];
+
+    outputStream = popen(command, "r");
+
+    if (outputStream)
+    {
+        while (!feof(outputStream))
+        {
+            if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
+            {
+                outputStr.append(outputBuffer);
+            }
+        }
+
+        pclose(outputStream);
+
+        return Aws::Utils::StringUtils::Trim(outputStr.c_str());
+    }
+
+    return "";
+}
 
 Aws::String ComputeOSVersionString()
 {
@@ -41,5 +70,5 @@ Aws::String ComputeOSVersionString()
     return Aws::String("Android/Unknown");
 }
 
-} // namespace Utils
+} // namespace OSVersionInfo
 } // namespace Aws

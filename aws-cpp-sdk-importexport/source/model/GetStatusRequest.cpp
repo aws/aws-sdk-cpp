@@ -33,10 +33,12 @@ Aws::String GetStatusRequest::SerializePayload() const
   {
     ss << "JobId=" << StringUtils::URLEncode(m_jobId.c_str()) << "&";
   }
+
   if(m_aPIVersionHasBeenSet)
   {
     ss << "APIVersion=" << StringUtils::URLEncode(m_aPIVersion.c_str()) << "&";
   }
+
   ss << "Version=2010-06-01";
   return ss.str();
 }

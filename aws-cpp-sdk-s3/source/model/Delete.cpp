@@ -50,14 +50,14 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode objectsNode = resultNode.FirstChild("Objects");
+    XmlNode objectsNode = resultNode.FirstChild("Object");
     if(!objectsNode.IsNull())
     {
-      XmlNode objectsMember = objectsNode;
-      while(!objectsMember.IsNull())
+      XmlNode objectMember = objectsNode;
+      while(!objectMember.IsNull())
       {
-        m_objects.push_back(objectsMember);
-        objectsMember = objectsMember.NextNode("Object");
+        m_objects.push_back(objectMember);
+        objectMember = objectMember.NextNode("Object");
       }
 
       m_objectsHasBeenSet = true;

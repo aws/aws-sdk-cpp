@@ -53,7 +53,7 @@ project(aws-cpp-sdk-application-autoscaling)
 
   include_directories(${APPLICATION-AUTOSCALING_INCLUDES})
 
-  if(MSVC AND BUILD_SHARED_LIBS)
+  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_APPLICATIONAUTOSCALING_EXPORTS")
   endif()
 
@@ -71,10 +71,14 @@ project(aws-cpp-sdk-application-autoscaling)
                LIBRARY DESTINATION lib
                RUNTIME DESTINATION bin)
   else()
+    if(PLATFORM_CUSTOM)
+      install_custom_library(aws-cpp-sdk-application-autoscaling)
+    else()
       install (TARGETS aws-cpp-sdk-application-autoscaling
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+    endif()
   endif()
 
   install (FILES ${AWS_APPLICATION-AUTOSCALING_HEADERS} DESTINATION include/aws/application-autoscaling)

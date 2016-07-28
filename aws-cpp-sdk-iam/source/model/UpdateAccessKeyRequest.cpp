@@ -34,14 +34,17 @@ Aws::String UpdateAccessKeyRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_accessKeyIdHasBeenSet)
   {
     ss << "AccessKeyId=" << StringUtils::URLEncode(m_accessKeyId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
     ss << "Status=" << StatusTypeMapper::GetNameForStatusType(m_status) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

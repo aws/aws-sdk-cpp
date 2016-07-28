@@ -34,10 +34,12 @@ Aws::String TerminateInstanceInAutoScalingGroupRequest::SerializePayload() const
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_shouldDecrementDesiredCapacityHasBeenSet)
   {
     ss << "ShouldDecrementDesiredCapacity=" << m_shouldDecrementDesiredCapacity << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

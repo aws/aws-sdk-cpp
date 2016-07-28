@@ -71,10 +71,12 @@ void ParameterNameValue::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_parameterValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterValue=" << StringUtils::URLEncode(m_parameterValue.c_str()) << "&";
   }
+
 }
 
 void ParameterNameValue::OutputToStream(Aws::OStream& oStream, const char* location) const

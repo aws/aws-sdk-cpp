@@ -87,18 +87,22 @@ void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_fQDNHasBeenSet)
   {
       oStream << location << index << locationValue << ".FQDN=" << StringUtils::URLEncode(m_fQDN.c_str()) << "&";
   }
+
   if(m_iAMRoleNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".IAMRoleName=" << StringUtils::URLEncode(m_iAMRoleName.c_str()) << "&";
   }
+
 }
 
 void DomainMembership::OutputToStream(Aws::OStream& oStream, const char* location) const

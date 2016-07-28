@@ -32,6 +32,7 @@ Aws::String GetSubscriptionAttributesRequest::SerializePayload() const
   {
     ss << "SubscriptionArn=" << StringUtils::URLEncode(m_subscriptionArn.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

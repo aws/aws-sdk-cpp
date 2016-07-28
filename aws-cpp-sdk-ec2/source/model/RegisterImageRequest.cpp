@@ -43,34 +43,42 @@ Aws::String RegisterImageRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_imageLocationHasBeenSet)
   {
     ss << "ImageLocation=" << StringUtils::URLEncode(m_imageLocation.c_str()) << "&";
   }
+
   if(m_nameHasBeenSet)
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_architectureHasBeenSet)
   {
     ss << "Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
   }
+
   if(m_kernelIdHasBeenSet)
   {
     ss << "KernelId=" << StringUtils::URLEncode(m_kernelId.c_str()) << "&";
   }
+
   if(m_ramdiskIdHasBeenSet)
   {
     ss << "RamdiskId=" << StringUtils::URLEncode(m_ramdiskId.c_str()) << "&";
   }
+
   if(m_rootDeviceNameHasBeenSet)
   {
     ss << "RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
     unsigned blockDeviceMappingsCount = 1;
@@ -80,14 +88,17 @@ Aws::String RegisterImageRequest::SerializePayload() const
       blockDeviceMappingsCount++;
     }
   }
+
   if(m_virtualizationTypeHasBeenSet)
   {
     ss << "VirtualizationType=" << StringUtils::URLEncode(m_virtualizationType.c_str()) << "&";
   }
+
   if(m_sriovNetSupportHasBeenSet)
   {
     ss << "SriovNetSupport=" << StringUtils::URLEncode(m_sriovNetSupport.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

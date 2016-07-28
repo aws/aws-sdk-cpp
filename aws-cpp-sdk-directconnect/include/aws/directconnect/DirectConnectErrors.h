@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace DirectConnect
 {
-enum class AWS_DIRECTCONNECT_API DirectConnectErrors
+enum class DirectConnectErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

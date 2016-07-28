@@ -35,14 +35,17 @@ Aws::String CreateVpnGatewayRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << GatewayTypeMapper::GetNameForGatewayType(m_type) << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
     ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

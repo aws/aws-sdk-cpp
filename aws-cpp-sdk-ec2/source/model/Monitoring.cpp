@@ -63,6 +63,7 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".State=" << MonitoringStateMapper::GetNameForMonitoringState(m_state) << "&";
   }
+
 }
 
 void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) const

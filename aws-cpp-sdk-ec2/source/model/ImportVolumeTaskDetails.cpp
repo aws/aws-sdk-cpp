@@ -97,26 +97,31 @@ void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".BytesConverted=" << m_bytesConverted << "&";
   }
+
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_imageHasBeenSet)
   {
       Aws::StringStream imageLocationAndMemberSs;
       imageLocationAndMemberSs << location << index << locationValue << ".Image";
       m_image.OutputToStream(oStream, imageLocationAndMemberSs.str().c_str());
   }
+
   if(m_volumeHasBeenSet)
   {
       Aws::StringStream volumeLocationAndMemberSs;
       volumeLocationAndMemberSs << location << index << locationValue << ".Volume";
       m_volume.OutputToStream(oStream, volumeLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ImportVolumeTaskDetails::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -93,14 +93,17 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(m_state) << "&";
   }
+
   if(m_regionNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RegionName=" << StringUtils::URLEncode(m_regionName.c_str()) << "&";
   }
+
   if(m_messagesHasBeenSet)
   {
       unsigned messagesIdx = 1;
@@ -111,6 +114,7 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, messagesSs.str().c_str());
       }
   }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const

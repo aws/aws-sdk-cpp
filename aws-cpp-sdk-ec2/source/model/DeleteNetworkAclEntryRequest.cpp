@@ -38,18 +38,22 @@ Aws::String DeleteNetworkAclEntryRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkAclIdHasBeenSet)
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
+
   if(m_ruleNumberHasBeenSet)
   {
     ss << "RuleNumber=" << m_ruleNumber << "&";
   }
+
   if(m_egressHasBeenSet)
   {
     ss << "Egress=" << m_egress << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

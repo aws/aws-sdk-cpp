@@ -89,18 +89,22 @@ void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".Format=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_format) << "&";
   }
+
   if(m_sizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
   if(m_importManifestUrlHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImportManifestUrl=" << StringUtils::URLEncode(m_importManifestUrl.c_str()) << "&";
   }
+
   if(m_checksumHasBeenSet)
   {
       oStream << location << index << locationValue << ".Checksum=" << StringUtils::URLEncode(m_checksum.c_str()) << "&";
   }
+
 }
 
 void DiskImageDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

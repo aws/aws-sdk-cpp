@@ -109,22 +109,27 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".CustomerGatewayId=" << StringUtils::URLEncode(m_customerGatewayId.c_str()) << "&";
   }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
+
   if(m_typeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
+
   if(m_ipAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".IpAddress=" << StringUtils::URLEncode(m_ipAddress.c_str()) << "&";
   }
+
   if(m_bgpAsnHasBeenSet)
   {
       oStream << location << index << locationValue << ".BgpAsn=" << StringUtils::URLEncode(m_bgpAsn.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -135,6 +140,7 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location) const

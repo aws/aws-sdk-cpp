@@ -73,10 +73,12 @@ void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
   if(m_idHasBeenSet)
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

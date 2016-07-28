@@ -79,14 +79,17 @@ void DBClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
+
   if(m_dBParameterGroupFamilyHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBParameterGroupFamily=" << StringUtils::URLEncode(m_dBParameterGroupFamily.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
 }
 
 void DBClusterParameterGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -35,10 +35,12 @@ Aws::String AddPermissionRequest::SerializePayload() const
   {
     ss << "TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_labelHasBeenSet)
   {
     ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
+
   if(m_aWSAccountIdHasBeenSet)
   {
     unsigned aWSAccountIdCount = 1;
@@ -49,6 +51,7 @@ Aws::String AddPermissionRequest::SerializePayload() const
       aWSAccountIdCount++;
     }
   }
+
   if(m_actionNameHasBeenSet)
   {
     unsigned actionNameCount = 1;
@@ -59,6 +62,7 @@ Aws::String AddPermissionRequest::SerializePayload() const
       actionNameCount++;
     }
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

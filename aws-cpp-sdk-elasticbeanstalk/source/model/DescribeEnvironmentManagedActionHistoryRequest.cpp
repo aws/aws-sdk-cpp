@@ -36,18 +36,22 @@ Aws::String DescribeEnvironmentManagedActionHistoryRequest::SerializePayload() c
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_environmentNameHasBeenSet)
   {
     ss << "EnvironmentName=" << StringUtils::URLEncode(m_environmentName.c_str()) << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxItemsHasBeenSet)
   {
     ss << "MaxItems=" << m_maxItems << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

@@ -651,7 +651,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -672,7 +672,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -693,7 +693,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -714,7 +714,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -735,7 +735,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -756,7 +756,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -777,7 +777,7 @@ namespace Model
     /**
      * <p> The status of one output in a job. If you specified only one output for the
      * job, <code>Outputs:Status</code> is always the same as <code>Job:Status</code>.
-     * If you specified more than one output: <ul> <li> <code>Job:Status</code> and
+     * If you specified more than one output: <ul> <li><code>Job:Status</code> and
      * <code>Outputs:Status</code> for all of the outputs is Submitted until Elastic
      * Transcoder starts to process the first output.</li> <li>When Elastic Transcoder
      * starts to process the first output, <code>Outputs:Status</code> for that output
@@ -946,12 +946,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline const Aws::Vector<JobWatermark>& GetWatermarks() const{ return m_watermarks; }
 
@@ -961,12 +960,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline void SetWatermarks(const Aws::Vector<JobWatermark>& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
 
@@ -976,12 +974,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline void SetWatermarks(Aws::Vector<JobWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
 
@@ -991,12 +988,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline JobOutput& WithWatermarks(const Aws::Vector<JobWatermark>& value) { SetWatermarks(value); return *this;}
 
@@ -1006,12 +1002,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline JobOutput& WithWatermarks(Aws::Vector<JobWatermark>&& value) { SetWatermarks(value); return *this;}
 
@@ -1021,12 +1016,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline JobOutput& AddWatermarks(const JobWatermark& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
 
@@ -1036,12 +1030,11 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output&#x2014;the first watermark in the list is added to the output video
-     * first, the second watermark in the list is added next, and so on. As a result,
-     * if the settings in a preset cause Elastic Transcoder to place all watermarks in
-     * the same location, the second watermark that you add will cover the first one,
-     * the third one will cover the second, and the fourth one will cover the
-     * third.</p>
+     * output—the first watermark in the list is added to the output video first, the
+     * second watermark in the list is added next, and so on. As a result, if the
+     * settings in a preset cause Elastic Transcoder to place all watermarks in the
+     * same location, the second watermark that you add will cover the first one, the
+     * third one will cover the second, and the fourth one will cover the third.</p>
      */
     inline JobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
 
@@ -1136,29 +1129,29 @@ namespace Model
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
      * from one format to another. All captions must be in UTF-8. Elastic Transcoder
-     * supports two types of captions:</p> <ul> <li> <p><b>Embedded:</b> Embedded
+     * supports two types of captions:</p> <ul> <li><p><b>Embedded:</b> Embedded
      * captions are included in the same file as the audio and video. Elastic
      * Transcoder supports only one embedded caption per language, to a maximum of 300
      * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
      * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
      * first non-empty channel only), and <code>mov-text</code></p> <p>Valid outputs
      * include: <code>mov-text</code></p> <p>Elastic Transcoder supports a maximum of
-     * one embedded format per output.</p> </li> <li> <p><b>Sidecar:</b> Sidecar
-     * captions are kept in a separate metadata file from the audio and video data.
-     * Sidecar captions require a player that is capable of understanding the
-     * relationship between the video file and the sidecar file. Elastic Transcoder
-     * supports only one sidecar caption per language, to a maximum of 20 sidecar
-     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
-     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * one embedded format per output.</p></li> <li><p><b>Sidecar:</b> Sidecar captions
+     * are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship
+     * between the video file and the sidecar file. Elastic Transcoder supports only
+     * one sidecar caption per language, to a maximum of 20 sidecar captions per
+     * file.</p> <p>Valid input values include: <code>dfxp</code> (first div element
+     * only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
      * <code>srt</code>, <code>ttml</code> (first div element only), and
      * <code>webvtt</code></p> <p>Valid outputs include: <code>dfxp</code> (first div
-     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
-     * </li> </ul> <p> If you want ttml or smpte-tt compatible captions, specify dfxp
-     * as your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
-     * Character Recognition), does not accept pictures as a valid input for captions,
-     * and is not available for audio-only transcoding. Elastic Transcoder does not
-     * preserve text formatting (for example, italics) during the transcoding
-     * process.</p> <p>To remove captions or leave the captions empty, set
+     * element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.</p></li> </ul> <p> If you want ttml or smpte-tt compatible
+     * captions, specify dfxp as your output format.</p> <p>Elastic Transcoder does not
+     * support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic
+     * Transcoder does not preserve text formatting (for example, italics) during the
+     * transcoding process.</p> <p>To remove captions or leave the captions empty, set
      * <code>Captions</code> to null. To pass through existing captions unchanged, set
      * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
      * <code>CaptionSources</code> array.</p> <p>For more information on embedded
@@ -1171,29 +1164,29 @@ namespace Model
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
      * from one format to another. All captions must be in UTF-8. Elastic Transcoder
-     * supports two types of captions:</p> <ul> <li> <p><b>Embedded:</b> Embedded
+     * supports two types of captions:</p> <ul> <li><p><b>Embedded:</b> Embedded
      * captions are included in the same file as the audio and video. Elastic
      * Transcoder supports only one embedded caption per language, to a maximum of 300
      * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
      * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
      * first non-empty channel only), and <code>mov-text</code></p> <p>Valid outputs
      * include: <code>mov-text</code></p> <p>Elastic Transcoder supports a maximum of
-     * one embedded format per output.</p> </li> <li> <p><b>Sidecar:</b> Sidecar
-     * captions are kept in a separate metadata file from the audio and video data.
-     * Sidecar captions require a player that is capable of understanding the
-     * relationship between the video file and the sidecar file. Elastic Transcoder
-     * supports only one sidecar caption per language, to a maximum of 20 sidecar
-     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
-     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * one embedded format per output.</p></li> <li><p><b>Sidecar:</b> Sidecar captions
+     * are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship
+     * between the video file and the sidecar file. Elastic Transcoder supports only
+     * one sidecar caption per language, to a maximum of 20 sidecar captions per
+     * file.</p> <p>Valid input values include: <code>dfxp</code> (first div element
+     * only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
      * <code>srt</code>, <code>ttml</code> (first div element only), and
      * <code>webvtt</code></p> <p>Valid outputs include: <code>dfxp</code> (first div
-     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
-     * </li> </ul> <p> If you want ttml or smpte-tt compatible captions, specify dfxp
-     * as your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
-     * Character Recognition), does not accept pictures as a valid input for captions,
-     * and is not available for audio-only transcoding. Elastic Transcoder does not
-     * preserve text formatting (for example, italics) during the transcoding
-     * process.</p> <p>To remove captions or leave the captions empty, set
+     * element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.</p></li> </ul> <p> If you want ttml or smpte-tt compatible
+     * captions, specify dfxp as your output format.</p> <p>Elastic Transcoder does not
+     * support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic
+     * Transcoder does not preserve text formatting (for example, italics) during the
+     * transcoding process.</p> <p>To remove captions or leave the captions empty, set
      * <code>Captions</code> to null. To pass through existing captions unchanged, set
      * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
      * <code>CaptionSources</code> array.</p> <p>For more information on embedded
@@ -1206,29 +1199,29 @@ namespace Model
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
      * from one format to another. All captions must be in UTF-8. Elastic Transcoder
-     * supports two types of captions:</p> <ul> <li> <p><b>Embedded:</b> Embedded
+     * supports two types of captions:</p> <ul> <li><p><b>Embedded:</b> Embedded
      * captions are included in the same file as the audio and video. Elastic
      * Transcoder supports only one embedded caption per language, to a maximum of 300
      * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
      * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
      * first non-empty channel only), and <code>mov-text</code></p> <p>Valid outputs
      * include: <code>mov-text</code></p> <p>Elastic Transcoder supports a maximum of
-     * one embedded format per output.</p> </li> <li> <p><b>Sidecar:</b> Sidecar
-     * captions are kept in a separate metadata file from the audio and video data.
-     * Sidecar captions require a player that is capable of understanding the
-     * relationship between the video file and the sidecar file. Elastic Transcoder
-     * supports only one sidecar caption per language, to a maximum of 20 sidecar
-     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
-     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * one embedded format per output.</p></li> <li><p><b>Sidecar:</b> Sidecar captions
+     * are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship
+     * between the video file and the sidecar file. Elastic Transcoder supports only
+     * one sidecar caption per language, to a maximum of 20 sidecar captions per
+     * file.</p> <p>Valid input values include: <code>dfxp</code> (first div element
+     * only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
      * <code>srt</code>, <code>ttml</code> (first div element only), and
      * <code>webvtt</code></p> <p>Valid outputs include: <code>dfxp</code> (first div
-     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
-     * </li> </ul> <p> If you want ttml or smpte-tt compatible captions, specify dfxp
-     * as your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
-     * Character Recognition), does not accept pictures as a valid input for captions,
-     * and is not available for audio-only transcoding. Elastic Transcoder does not
-     * preserve text formatting (for example, italics) during the transcoding
-     * process.</p> <p>To remove captions or leave the captions empty, set
+     * element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.</p></li> </ul> <p> If you want ttml or smpte-tt compatible
+     * captions, specify dfxp as your output format.</p> <p>Elastic Transcoder does not
+     * support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic
+     * Transcoder does not preserve text formatting (for example, italics) during the
+     * transcoding process.</p> <p>To remove captions or leave the captions empty, set
      * <code>Captions</code> to null. To pass through existing captions unchanged, set
      * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
      * <code>CaptionSources</code> array.</p> <p>For more information on embedded
@@ -1241,29 +1234,29 @@ namespace Model
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
      * from one format to another. All captions must be in UTF-8. Elastic Transcoder
-     * supports two types of captions:</p> <ul> <li> <p><b>Embedded:</b> Embedded
+     * supports two types of captions:</p> <ul> <li><p><b>Embedded:</b> Embedded
      * captions are included in the same file as the audio and video. Elastic
      * Transcoder supports only one embedded caption per language, to a maximum of 300
      * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
      * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
      * first non-empty channel only), and <code>mov-text</code></p> <p>Valid outputs
      * include: <code>mov-text</code></p> <p>Elastic Transcoder supports a maximum of
-     * one embedded format per output.</p> </li> <li> <p><b>Sidecar:</b> Sidecar
-     * captions are kept in a separate metadata file from the audio and video data.
-     * Sidecar captions require a player that is capable of understanding the
-     * relationship between the video file and the sidecar file. Elastic Transcoder
-     * supports only one sidecar caption per language, to a maximum of 20 sidecar
-     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
-     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * one embedded format per output.</p></li> <li><p><b>Sidecar:</b> Sidecar captions
+     * are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship
+     * between the video file and the sidecar file. Elastic Transcoder supports only
+     * one sidecar caption per language, to a maximum of 20 sidecar captions per
+     * file.</p> <p>Valid input values include: <code>dfxp</code> (first div element
+     * only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
      * <code>srt</code>, <code>ttml</code> (first div element only), and
      * <code>webvtt</code></p> <p>Valid outputs include: <code>dfxp</code> (first div
-     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
-     * </li> </ul> <p> If you want ttml or smpte-tt compatible captions, specify dfxp
-     * as your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
-     * Character Recognition), does not accept pictures as a valid input for captions,
-     * and is not available for audio-only transcoding. Elastic Transcoder does not
-     * preserve text formatting (for example, italics) during the transcoding
-     * process.</p> <p>To remove captions or leave the captions empty, set
+     * element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.</p></li> </ul> <p> If you want ttml or smpte-tt compatible
+     * captions, specify dfxp as your output format.</p> <p>Elastic Transcoder does not
+     * support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic
+     * Transcoder does not preserve text formatting (for example, italics) during the
+     * transcoding process.</p> <p>To remove captions or leave the captions empty, set
      * <code>Captions</code> to null. To pass through existing captions unchanged, set
      * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
      * <code>CaptionSources</code> array.</p> <p>For more information on embedded
@@ -1276,29 +1269,29 @@ namespace Model
     /**
      * <p>You can configure Elastic Transcoder to transcode captions, or subtitles,
      * from one format to another. All captions must be in UTF-8. Elastic Transcoder
-     * supports two types of captions:</p> <ul> <li> <p><b>Embedded:</b> Embedded
+     * supports two types of captions:</p> <ul> <li><p><b>Embedded:</b> Embedded
      * captions are included in the same file as the audio and video. Elastic
      * Transcoder supports only one embedded caption per language, to a maximum of 300
      * embedded captions per file.</p> <p>Valid input values include: <code>CEA-608
      * (EIA-608</code>, first non-empty channel only), <code>CEA-708 (EIA-708</code>,
      * first non-empty channel only), and <code>mov-text</code></p> <p>Valid outputs
      * include: <code>mov-text</code></p> <p>Elastic Transcoder supports a maximum of
-     * one embedded format per output.</p> </li> <li> <p><b>Sidecar:</b> Sidecar
-     * captions are kept in a separate metadata file from the audio and video data.
-     * Sidecar captions require a player that is capable of understanding the
-     * relationship between the video file and the sidecar file. Elastic Transcoder
-     * supports only one sidecar caption per language, to a maximum of 20 sidecar
-     * captions per file.</p> <p>Valid input values include: <code>dfxp</code> (first
-     * div element only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
+     * one embedded format per output.</p></li> <li><p><b>Sidecar:</b> Sidecar captions
+     * are kept in a separate metadata file from the audio and video data. Sidecar
+     * captions require a player that is capable of understanding the relationship
+     * between the video file and the sidecar file. Elastic Transcoder supports only
+     * one sidecar caption per language, to a maximum of 20 sidecar captions per
+     * file.</p> <p>Valid input values include: <code>dfxp</code> (first div element
+     * only), <code>ebu-tt</code>, <code>scc</code>, <code>smpt</code>,
      * <code>srt</code>, <code>ttml</code> (first div element only), and
      * <code>webvtt</code></p> <p>Valid outputs include: <code>dfxp</code> (first div
-     * element only), <code>scc</code>, <code>srt</code>, and <code>webvtt</code>.</p>
-     * </li> </ul> <p> If you want ttml or smpte-tt compatible captions, specify dfxp
-     * as your output format.</p> <p>Elastic Transcoder does not support OCR (Optical
-     * Character Recognition), does not accept pictures as a valid input for captions,
-     * and is not available for audio-only transcoding. Elastic Transcoder does not
-     * preserve text formatting (for example, italics) during the transcoding
-     * process.</p> <p>To remove captions or leave the captions empty, set
+     * element only), <code>scc</code>, <code>srt</code>, and
+     * <code>webvtt</code>.</p></li> </ul> <p> If you want ttml or smpte-tt compatible
+     * captions, specify dfxp as your output format.</p> <p>Elastic Transcoder does not
+     * support OCR (Optical Character Recognition), does not accept pictures as a valid
+     * input for captions, and is not available for audio-only transcoding. Elastic
+     * Transcoder does not preserve text formatting (for example, italics) during the
+     * transcoding process.</p> <p>To remove captions or leave the captions empty, set
      * <code>Captions</code> to null. To pass through existing captions unchanged, set
      * the <code>MergePolicy</code> to <code>MergeRetain</code>, and pass in a null
      * <code>CaptionSources</code> array.</p> <p>For more information on embedded

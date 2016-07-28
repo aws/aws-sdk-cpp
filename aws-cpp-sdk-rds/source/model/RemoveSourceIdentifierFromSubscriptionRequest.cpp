@@ -33,10 +33,12 @@ Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() co
   {
     ss << "SubscriptionName=" << StringUtils::URLEncode(m_subscriptionName.c_str()) << "&";
   }
+
   if(m_sourceIdentifierHasBeenSet)
   {
     ss << "SourceIdentifier=" << StringUtils::URLEncode(m_sourceIdentifier.c_str()) << "&";
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace CloudSearchDomain
 {
-enum class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainErrors
+enum class CloudSearchDomainErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

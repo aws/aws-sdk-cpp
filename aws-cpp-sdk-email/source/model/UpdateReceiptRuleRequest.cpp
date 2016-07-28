@@ -33,10 +33,12 @@ Aws::String UpdateReceiptRuleRequest::SerializePayload() const
   {
     ss << "RuleSetName=" << StringUtils::URLEncode(m_ruleSetName.c_str()) << "&";
   }
+
   if(m_ruleHasBeenSet)
   {
-    m_rule.OutputToStream(ss, "Rule.");
+    m_rule.OutputToStream(ss, "Rule");
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

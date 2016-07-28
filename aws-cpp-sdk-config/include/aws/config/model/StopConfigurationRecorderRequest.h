@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> <p>The input for the <a>StopConfigurationRecorder</a> action.</p> </p>
+   * <p>The input for the <a>StopConfigurationRecorder</a> action.</p>
    */
   class AWS_CONFIGSERVICE_API StopConfigurationRecorderRequest : public ConfigServiceRequest
   {

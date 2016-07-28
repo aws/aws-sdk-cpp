@@ -35,14 +35,17 @@ Aws::String CreatePolicyVersionRequest::SerializePayload() const
   {
     ss << "PolicyArn=" << StringUtils::URLEncode(m_policyArn.c_str()) << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   if(m_setAsDefaultHasBeenSet)
   {
     ss << "SetAsDefault=" << m_setAsDefault << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

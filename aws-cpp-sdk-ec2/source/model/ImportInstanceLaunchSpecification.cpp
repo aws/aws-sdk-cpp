@@ -157,6 +157,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << index << locationValue << ".Architecture=" << ArchitectureValuesMapper::GetNameForArchitectureValues(m_architecture) << "&";
   }
+
   if(m_groupNamesHasBeenSet)
   {
       unsigned groupNamesIdx = 1;
@@ -165,6 +166,7 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
         oStream << location << index << locationValue << ".GroupName." << groupNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_groupIdsHasBeenSet)
   {
       unsigned groupIdsIdx = 1;
@@ -173,42 +175,51 @@ void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, co
         oStream << location << index << locationValue << ".GroupId." << groupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_additionalInfoHasBeenSet)
   {
       oStream << location << index << locationValue << ".AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
+
   if(m_userDataHasBeenSet)
   {
       Aws::StringStream userDataLocationAndMemberSs;
       userDataLocationAndMemberSs << location << index << locationValue << ".UserData";
       m_userData.OutputToStream(oStream, userDataLocationAndMemberSs.str().c_str());
   }
+
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceType=" << InstanceTypeMapper::GetNameForInstanceType(m_instanceType) << "&";
   }
+
   if(m_placementHasBeenSet)
   {
       Aws::StringStream placementLocationAndMemberSs;
       placementLocationAndMemberSs << location << index << locationValue << ".Placement";
       m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
   }
+
   if(m_monitoringHasBeenSet)
   {
       oStream << location << index << locationValue << ".Monitoring=" << m_monitoring << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceInitiatedShutdownBehavior=" << ShutdownBehaviorMapper::GetNameForShutdownBehavior(m_instanceInitiatedShutdownBehavior) << "&";
   }
+
   if(m_privateIpAddressHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
 }
 
 void ImportInstanceLaunchSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const

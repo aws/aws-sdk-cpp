@@ -83,14 +83,17 @@ void ScalingParameters::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << index << locationValue << ".DesiredInstanceType=" << PartitionInstanceTypeMapper::GetNameForPartitionInstanceType(m_desiredInstanceType) << "&";
   }
+
   if(m_desiredReplicationCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredReplicationCount=" << m_desiredReplicationCount << "&";
   }
+
   if(m_desiredPartitionCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredPartitionCount=" << m_desiredPartitionCount << "&";
   }
+
 }
 
 void ScalingParameters::OutputToStream(Aws::OStream& oStream, const char* location) const

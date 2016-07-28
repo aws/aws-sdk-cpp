@@ -63,6 +63,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "logs";
 static const char* ALLOCATION_TAG = "CloudWatchLogsClient";
 
+
 CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

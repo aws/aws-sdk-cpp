@@ -34,6 +34,9 @@ namespace DirectoryService
 {
 namespace Model
 {
+  /**
+   * <p>The result of a DescribeTrust request.</p>
+   */
   class AWS_DIRECTORYSERVICE_API DescribeTrustsResult
   {
   public:

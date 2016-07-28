@@ -32,6 +32,7 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
   {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

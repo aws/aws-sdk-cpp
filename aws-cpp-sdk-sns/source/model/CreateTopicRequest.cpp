@@ -32,6 +32,7 @@ Aws::String CreateTopicRequest::SerializePayload() const
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   ss << "Version=2010-03-31";
   return ss.str();
 }

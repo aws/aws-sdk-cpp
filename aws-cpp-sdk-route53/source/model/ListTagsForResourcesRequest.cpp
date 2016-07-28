@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/ListTagsForResourcesRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -29,7 +30,23 @@ ListTagsForResourcesRequest::ListTagsForResourcesRequest() :
 
 Aws::String ListTagsForResourcesRequest::SerializePayload() const
 {
-  return "";
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("ListTagsForResourcesRequest");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "https://route53.amazonaws.com/doc/2013-04-01/");
+
+  Aws::StringStream ss;
+  if(m_resourceIdsHasBeenSet)
+  {
+   XmlNode resourceIdsParentNode = parentNode.CreateChildElement("ResourceIds");
+   for(const auto& item : m_resourceIds)
+   {
+     XmlNode resourceIdsNode = resourceIdsParentNode.CreateChildElement("TagResourceId");
+     resourceIdsNode.SetText(item);
+   }
+  }
+
+  return payloadDoc.ConvertToString();
 }
 
 

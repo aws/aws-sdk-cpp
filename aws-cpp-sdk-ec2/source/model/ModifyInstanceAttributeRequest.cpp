@@ -47,18 +47,22 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_attributeHasBeenSet)
   {
     ss << "Attribute=" << InstanceAttributeNameMapper::GetNameForInstanceAttributeName(m_attribute) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
     ss << "Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
   if(m_blockDeviceMappingsHasBeenSet)
   {
     unsigned blockDeviceMappingsCount = 1;
@@ -68,34 +72,42 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
       blockDeviceMappingsCount++;
     }
   }
+
   if(m_sourceDestCheckHasBeenSet)
   {
-    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck.");
+    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck");
   }
+
   if(m_disableApiTerminationHasBeenSet)
   {
-    m_disableApiTermination.OutputToStream(ss, "DisableApiTermination.");
+    m_disableApiTermination.OutputToStream(ss, "DisableApiTermination");
   }
+
   if(m_instanceTypeHasBeenSet)
   {
-    m_instanceType.OutputToStream(ss, "InstanceType.");
+    m_instanceType.OutputToStream(ss, "InstanceType");
   }
+
   if(m_kernelHasBeenSet)
   {
-    m_kernel.OutputToStream(ss, "Kernel.");
+    m_kernel.OutputToStream(ss, "Kernel");
   }
+
   if(m_ramdiskHasBeenSet)
   {
-    m_ramdisk.OutputToStream(ss, "Ramdisk.");
+    m_ramdisk.OutputToStream(ss, "Ramdisk");
   }
+
   if(m_userDataHasBeenSet)
   {
-    m_userData.OutputToStream(ss, "UserData.");
+    m_userData.OutputToStream(ss, "UserData");
   }
+
   if(m_instanceInitiatedShutdownBehaviorHasBeenSet)
   {
-    m_instanceInitiatedShutdownBehavior.OutputToStream(ss, "InstanceInitiatedShutdownBehavior.");
+    m_instanceInitiatedShutdownBehavior.OutputToStream(ss, "InstanceInitiatedShutdownBehavior");
   }
+
   if(m_groupsHasBeenSet)
   {
     unsigned groupsCount = 1;
@@ -106,14 +118,17 @@ Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
       groupsCount++;
     }
   }
+
   if(m_ebsOptimizedHasBeenSet)
   {
-    m_ebsOptimized.OutputToStream(ss, "EbsOptimized.");
+    m_ebsOptimized.OutputToStream(ss, "EbsOptimized");
   }
+
   if(m_sriovNetSupportHasBeenSet)
   {
-    m_sriovNetSupport.OutputToStream(ss, "SriovNetSupport.");
+    m_sriovNetSupport.OutputToStream(ss, "SriovNetSupport");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

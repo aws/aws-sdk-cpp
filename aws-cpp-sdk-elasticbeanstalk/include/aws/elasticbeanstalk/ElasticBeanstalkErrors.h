@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ElasticBeanstalk
 {
-enum class AWS_ELASTICBEANSTALK_API ElasticBeanstalkErrors
+enum class ElasticBeanstalkErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

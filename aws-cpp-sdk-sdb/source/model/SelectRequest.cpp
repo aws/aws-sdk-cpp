@@ -35,14 +35,17 @@ Aws::String SelectRequest::SerializePayload() const
   {
     ss << "SelectExpression=" << StringUtils::URLEncode(m_selectExpression.c_str()) << "&";
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_consistentReadHasBeenSet)
   {
     ss << "ConsistentRead=" << m_consistentRead << "&";
   }
+
   ss << "Version=2009-04-15";
   return ss.str();
 }

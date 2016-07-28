@@ -113,42 +113,49 @@ void ReceiptAction::OutputToStream(Aws::OStream& oStream, const char* location, 
       s3ActionLocationAndMemberSs << location << index << locationValue << ".S3Action";
       m_s3Action.OutputToStream(oStream, s3ActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_bounceActionHasBeenSet)
   {
       Aws::StringStream bounceActionLocationAndMemberSs;
       bounceActionLocationAndMemberSs << location << index << locationValue << ".BounceAction";
       m_bounceAction.OutputToStream(oStream, bounceActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_workmailActionHasBeenSet)
   {
       Aws::StringStream workmailActionLocationAndMemberSs;
       workmailActionLocationAndMemberSs << location << index << locationValue << ".WorkmailAction";
       m_workmailAction.OutputToStream(oStream, workmailActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_lambdaActionHasBeenSet)
   {
       Aws::StringStream lambdaActionLocationAndMemberSs;
       lambdaActionLocationAndMemberSs << location << index << locationValue << ".LambdaAction";
       m_lambdaAction.OutputToStream(oStream, lambdaActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_stopActionHasBeenSet)
   {
       Aws::StringStream stopActionLocationAndMemberSs;
       stopActionLocationAndMemberSs << location << index << locationValue << ".StopAction";
       m_stopAction.OutputToStream(oStream, stopActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_addHeaderActionHasBeenSet)
   {
       Aws::StringStream addHeaderActionLocationAndMemberSs;
       addHeaderActionLocationAndMemberSs << location << index << locationValue << ".AddHeaderAction";
       m_addHeaderAction.OutputToStream(oStream, addHeaderActionLocationAndMemberSs.str().c_str());
   }
+
   if(m_sNSActionHasBeenSet)
   {
       Aws::StringStream sNSActionLocationAndMemberSs;
       sNSActionLocationAndMemberSs << location << index << locationValue << ".SNSAction";
       m_sNSAction.OutputToStream(oStream, sNSActionLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ReceiptAction::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -37,6 +37,7 @@ Aws::String SendRawEmailRequest::SerializePayload() const
   {
     ss << "Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
+
   if(m_destinationsHasBeenSet)
   {
     unsigned destinationsCount = 1;
@@ -47,22 +48,27 @@ Aws::String SendRawEmailRequest::SerializePayload() const
       destinationsCount++;
     }
   }
+
   if(m_rawMessageHasBeenSet)
   {
-    m_rawMessage.OutputToStream(ss, "RawMessage.");
+    m_rawMessage.OutputToStream(ss, "RawMessage");
   }
+
   if(m_fromArnHasBeenSet)
   {
     ss << "FromArn=" << StringUtils::URLEncode(m_fromArn.c_str()) << "&";
   }
+
   if(m_sourceArnHasBeenSet)
   {
     ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
   }
+
   if(m_returnPathArnHasBeenSet)
   {
     ss << "ReturnPathArn=" << StringUtils::URLEncode(m_returnPathArn.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

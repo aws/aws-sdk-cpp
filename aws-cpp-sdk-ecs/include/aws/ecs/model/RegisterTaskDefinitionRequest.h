@@ -101,6 +101,55 @@ namespace Model
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+
+    /**
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task.</p>
      */
@@ -187,6 +236,8 @@ namespace Model
   private:
     Aws::String m_family;
     bool m_familyHasBeenSet;
+    Aws::String m_taskRoleArn;
+    bool m_taskRoleArnHasBeenSet;
     Aws::Vector<ContainerDefinition> m_containerDefinitions;
     bool m_containerDefinitionsHasBeenSet;
     Aws::Vector<Volume> m_volumes;

@@ -35,18 +35,22 @@ Aws::String CreatePolicyRequest::SerializePayload() const
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   if(m_pathHasBeenSet)
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
   }
+
   if(m_policyDocumentHasBeenSet)
   {
     ss << "PolicyDocument=" << StringUtils::URLEncode(m_policyDocument.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

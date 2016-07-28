@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace SSM
 {
-enum class AWS_SSM_API SSMErrors
+enum class SSMErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -67,11 +67,13 @@ enum class AWS_SSM_API SSMErrors
   INVALID_INSTANCE_ID,
   INVALID_INSTANCE_INFORMATION_FILTER_VALUE,
   INVALID_NEXT_TOKEN,
+  INVALID_NOTIFICATION_CONFIG,
   INVALID_OUTPUT_FOLDER,
   INVALID_PARAMETERS,
   INVALID_PERMISSION_TYPE,
   INVALID_RESOURCE_ID,
   INVALID_RESOURCE_TYPE,
+  INVALID_ROLE,
   MAX_DOCUMENT_SIZE_EXCEEDED,
   STATUS_UNCHANGED,
   TOO_MANY_UPDATES,

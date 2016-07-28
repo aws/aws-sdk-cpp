@@ -37,22 +37,27 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   {
     ss << "CacheClusterId=" << StringUtils::URLEncode(m_cacheClusterId.c_str()) << "&";
   }
+
   if(m_snapshotNameHasBeenSet)
   {
     ss << "SnapshotName=" << StringUtils::URLEncode(m_snapshotName.c_str()) << "&";
   }
+
   if(m_snapshotSourceHasBeenSet)
   {
     ss << "SnapshotSource=" << StringUtils::URLEncode(m_snapshotSource.c_str()) << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   ss << "Version=2015-02-02";
   return ss.str();
 }

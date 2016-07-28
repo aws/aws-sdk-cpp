@@ -79,14 +79,17 @@ void EnvironmentTier::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_typeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
+
   if(m_versionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Version=" << StringUtils::URLEncode(m_version.c_str()) << "&";
   }
+
 }
 
 void EnvironmentTier::OutputToStream(Aws::OStream& oStream, const char* location) const

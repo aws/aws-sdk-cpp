@@ -37,18 +37,22 @@ Aws::String AttachNetworkInterfaceRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_instanceIdHasBeenSet)
   {
     ss << "InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_deviceIndexHasBeenSet)
   {
     ss << "DeviceIndex=" << m_deviceIndex << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

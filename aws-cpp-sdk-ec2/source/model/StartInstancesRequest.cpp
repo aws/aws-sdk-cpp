@@ -41,14 +41,17 @@ Aws::String StartInstancesRequest::SerializePayload() const
       instanceIdsCount++;
     }
   }
+
   if(m_additionalInfoHasBeenSet)
   {
     ss << "AdditionalInfo=" << StringUtils::URLEncode(m_additionalInfo.c_str()) << "&";
   }
+
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

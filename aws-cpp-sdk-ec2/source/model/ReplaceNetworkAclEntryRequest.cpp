@@ -43,38 +43,47 @@ Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkAclIdHasBeenSet)
   {
     ss << "NetworkAclId=" << StringUtils::URLEncode(m_networkAclId.c_str()) << "&";
   }
+
   if(m_ruleNumberHasBeenSet)
   {
     ss << "RuleNumber=" << m_ruleNumber << "&";
   }
+
   if(m_protocolHasBeenSet)
   {
     ss << "Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
+
   if(m_ruleActionHasBeenSet)
   {
     ss << "RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
   }
+
   if(m_egressHasBeenSet)
   {
     ss << "Egress=" << m_egress << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
     ss << "CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_icmpTypeCodeHasBeenSet)
   {
-    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode.");
+    m_icmpTypeCode.OutputToStream(ss, "IcmpTypeCode");
   }
+
   if(m_portRangeHasBeenSet)
   {
-    m_portRange.OutputToStream(ss, "PortRange.");
+    m_portRange.OutputToStream(ss, "PortRange");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

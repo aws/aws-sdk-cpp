@@ -39,6 +39,7 @@ Aws::String DescribeScheduledInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_scheduledInstanceIdsHasBeenSet)
   {
     unsigned scheduledInstanceIdsCount = 1;
@@ -49,18 +50,22 @@ Aws::String DescribeScheduledInstancesRequest::SerializePayload() const
       scheduledInstanceIdsCount++;
     }
   }
+
   if(m_slotStartTimeRangeHasBeenSet)
   {
-    m_slotStartTimeRange.OutputToStream(ss, "SlotStartTimeRange.");
+    m_slotStartTimeRange.OutputToStream(ss, "SlotStartTimeRange");
   }
+
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
+
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -70,6 +75,7 @@ Aws::String DescribeScheduledInstancesRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

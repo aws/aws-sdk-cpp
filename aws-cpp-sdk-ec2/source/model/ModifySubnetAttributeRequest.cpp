@@ -33,10 +33,12 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
-    m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch.");
+    m_mapPublicIpOnLaunch.OutputToStream(ss, "MapPublicIpOnLaunch");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

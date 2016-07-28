@@ -53,7 +53,7 @@ project(aws-cpp-sdk-route53domains)
 
   include_directories(${ROUTE53DOMAINS_INCLUDES})
 
-  if(MSVC AND BUILD_SHARED_LIBS)
+  if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions("-DAWS_ROUTE53DOMAINS_EXPORTS")
   endif()
 
@@ -71,10 +71,14 @@ project(aws-cpp-sdk-route53domains)
                LIBRARY DESTINATION lib
                RUNTIME DESTINATION bin)
   else()
+    if(PLATFORM_CUSTOM)
+      install_custom_library(aws-cpp-sdk-route53domains)
+    else()
       install (TARGETS aws-cpp-sdk-route53domains
                ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
                RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+    endif()
   endif()
 
   install (FILES ${AWS_ROUTE53DOMAINS_HEADERS} DESTINATION include/aws/route53domains)

@@ -135,30 +135,37 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".ParameterName=" << StringUtils::URLEncode(m_parameterName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_sourceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Source=" << StringUtils::URLEncode(m_source.c_str()) << "&";
   }
+
   if(m_dataTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
+
   if(m_allowedValuesHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(m_allowedValues.c_str()) << "&";
   }
+
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
   }
+
   if(m_minimumEngineVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinimumEngineVersion=" << StringUtils::URLEncode(m_minimumEngineVersion.c_str()) << "&";
   }
+
   if(m_cacheNodeTypeSpecificValuesHasBeenSet)
   {
       unsigned cacheNodeTypeSpecificValuesIdx = 1;
@@ -169,10 +176,12 @@ void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const
         item.OutputToStream(oStream, cacheNodeTypeSpecificValuesSs.str().c_str());
       }
   }
+
   if(m_changeTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeType=" << ChangeTypeMapper::GetNameForChangeType(m_changeType) << "&";
   }
+
 }
 
 void CacheNodeTypeSpecificParameter::OutputToStream(Aws::OStream& oStream, const char* location) const

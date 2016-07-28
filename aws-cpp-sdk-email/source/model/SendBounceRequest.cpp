@@ -37,18 +37,22 @@ Aws::String SendBounceRequest::SerializePayload() const
   {
     ss << "OriginalMessageId=" << StringUtils::URLEncode(m_originalMessageId.c_str()) << "&";
   }
+
   if(m_bounceSenderHasBeenSet)
   {
     ss << "BounceSender=" << StringUtils::URLEncode(m_bounceSender.c_str()) << "&";
   }
+
   if(m_explanationHasBeenSet)
   {
     ss << "Explanation=" << StringUtils::URLEncode(m_explanation.c_str()) << "&";
   }
+
   if(m_messageDsnHasBeenSet)
   {
-    m_messageDsn.OutputToStream(ss, "MessageDsn.");
+    m_messageDsn.OutputToStream(ss, "MessageDsn");
   }
+
   if(m_bouncedRecipientInfoListHasBeenSet)
   {
     unsigned bouncedRecipientInfoListCount = 1;
@@ -58,10 +62,12 @@ Aws::String SendBounceRequest::SerializePayload() const
       bouncedRecipientInfoListCount++;
     }
   }
+
   if(m_bounceSenderArnHasBeenSet)
   {
     ss << "BounceSenderArn=" << StringUtils::URLEncode(m_bounceSenderArn.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

@@ -157,26 +157,32 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_changeSeverityHasBeenSet)
   {
       oStream << location << index << locationValue << ".ChangeSeverity=" << StringUtils::URLEncode(m_changeSeverity.c_str()) << "&";
   }
+
   if(m_userDefinedHasBeenSet)
   {
       oStream << location << index << locationValue << ".UserDefined=" << m_userDefined << "&";
   }
+
   if(m_valueTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ValueType=" << ConfigurationOptionValueTypeMapper::GetNameForConfigurationOptionValueType(m_valueType) << "&";
   }
+
   if(m_valueOptionsHasBeenSet)
   {
       unsigned valueOptionsIdx = 1;
@@ -185,24 +191,29 @@ void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const
         oStream << location << index << locationValue << ".ValueOptions.member." << valueOptionsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_minValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinValue=" << m_minValue << "&";
   }
+
   if(m_maxValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxValue=" << m_maxValue << "&";
   }
+
   if(m_maxLengthHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxLength=" << m_maxLength << "&";
   }
+
   if(m_regexHasBeenSet)
   {
       Aws::StringStream regexLocationAndMemberSs;
       regexLocationAndMemberSs << location << index << locationValue << ".Regex";
       m_regex.OutputToStream(oStream, regexLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ConfigurationOptionDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -28,9 +28,11 @@
 #include <aws/devicefarm/DeviceFarmErrorMarshaller.h>
 #include <aws/devicefarm/model/CreateDevicePoolRequest.h>
 #include <aws/devicefarm/model/CreateProjectRequest.h>
+#include <aws/devicefarm/model/CreateRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/CreateUploadRequest.h>
 #include <aws/devicefarm/model/DeleteDevicePoolRequest.h>
 #include <aws/devicefarm/model/DeleteProjectRequest.h>
+#include <aws/devicefarm/model/DeleteRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/DeleteRunRequest.h>
 #include <aws/devicefarm/model/DeleteUploadRequest.h>
 #include <aws/devicefarm/model/GetAccountSettingsRequest.h>
@@ -40,10 +42,12 @@
 #include <aws/devicefarm/model/GetJobRequest.h>
 #include <aws/devicefarm/model/GetOfferingStatusRequest.h>
 #include <aws/devicefarm/model/GetProjectRequest.h>
+#include <aws/devicefarm/model/GetRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/GetRunRequest.h>
 #include <aws/devicefarm/model/GetSuiteRequest.h>
 #include <aws/devicefarm/model/GetTestRequest.h>
 #include <aws/devicefarm/model/GetUploadRequest.h>
+#include <aws/devicefarm/model/InstallToRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/ListArtifactsRequest.h>
 #include <aws/devicefarm/model/ListDevicePoolsRequest.h>
 #include <aws/devicefarm/model/ListDevicesRequest.h>
@@ -51,6 +55,7 @@
 #include <aws/devicefarm/model/ListOfferingTransactionsRequest.h>
 #include <aws/devicefarm/model/ListOfferingsRequest.h>
 #include <aws/devicefarm/model/ListProjectsRequest.h>
+#include <aws/devicefarm/model/ListRemoteAccessSessionsRequest.h>
 #include <aws/devicefarm/model/ListRunsRequest.h>
 #include <aws/devicefarm/model/ListSamplesRequest.h>
 #include <aws/devicefarm/model/ListSuitesRequest.h>
@@ -60,6 +65,7 @@
 #include <aws/devicefarm/model/PurchaseOfferingRequest.h>
 #include <aws/devicefarm/model/RenewOfferingRequest.h>
 #include <aws/devicefarm/model/ScheduleRunRequest.h>
+#include <aws/devicefarm/model/StopRemoteAccessSessionRequest.h>
 #include <aws/devicefarm/model/StopRunRequest.h>
 #include <aws/devicefarm/model/UpdateDevicePoolRequest.h>
 #include <aws/devicefarm/model/UpdateProjectRequest.h>
@@ -74,6 +80,7 @@ using namespace Aws::Utils::Json;
 
 static const char* SERVICE_NAME = "devicefarm";
 static const char* ALLOCATION_TAG = "DeviceFarmClient";
+
 
 DeviceFarmClient::DeviceFarmClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -192,6 +199,37 @@ void DeviceFarmClient::CreateProjectAsyncHelper(const CreateProjectRequest& requ
   handler(this, request, CreateProject(request), context);
 }
 
+CreateRemoteAccessSessionOutcome DeviceFarmClient::CreateRemoteAccessSession(const CreateRemoteAccessSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateRemoteAccessSessionOutcome(CreateRemoteAccessSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRemoteAccessSessionOutcome(outcome.GetError());
+  }
+}
+
+CreateRemoteAccessSessionOutcomeCallable DeviceFarmClient::CreateRemoteAccessSessionCallable(const CreateRemoteAccessSessionRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::CreateRemoteAccessSession, this, request);
+}
+
+void DeviceFarmClient::CreateRemoteAccessSessionAsync(const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::CreateRemoteAccessSessionAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::CreateRemoteAccessSessionAsyncHelper(const CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRemoteAccessSession(request), context);
+}
+
 CreateUploadOutcome DeviceFarmClient::CreateUpload(const CreateUploadRequest& request) const
 {
   Aws::StringStream ss;
@@ -283,6 +321,37 @@ void DeviceFarmClient::DeleteProjectAsync(const DeleteProjectRequest& request, c
 void DeviceFarmClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteProject(request), context);
+}
+
+DeleteRemoteAccessSessionOutcome DeviceFarmClient::DeleteRemoteAccessSession(const DeleteRemoteAccessSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRemoteAccessSessionOutcome(DeleteRemoteAccessSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRemoteAccessSessionOutcome(outcome.GetError());
+  }
+}
+
+DeleteRemoteAccessSessionOutcomeCallable DeviceFarmClient::DeleteRemoteAccessSessionCallable(const DeleteRemoteAccessSessionRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::DeleteRemoteAccessSession, this, request);
+}
+
+void DeviceFarmClient::DeleteRemoteAccessSessionAsync(const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::DeleteRemoteAccessSessionAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::DeleteRemoteAccessSessionAsyncHelper(const DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRemoteAccessSession(request), context);
 }
 
 DeleteRunOutcome DeviceFarmClient::DeleteRun(const DeleteRunRequest& request) const
@@ -564,6 +633,37 @@ void DeviceFarmClient::GetProjectAsyncHelper(const GetProjectRequest& request, c
   handler(this, request, GetProject(request), context);
 }
 
+GetRemoteAccessSessionOutcome DeviceFarmClient::GetRemoteAccessSession(const GetRemoteAccessSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetRemoteAccessSessionOutcome(GetRemoteAccessSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRemoteAccessSessionOutcome(outcome.GetError());
+  }
+}
+
+GetRemoteAccessSessionOutcomeCallable DeviceFarmClient::GetRemoteAccessSessionCallable(const GetRemoteAccessSessionRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::GetRemoteAccessSession, this, request);
+}
+
+void DeviceFarmClient::GetRemoteAccessSessionAsync(const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::GetRemoteAccessSessionAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::GetRemoteAccessSessionAsyncHelper(const GetRemoteAccessSessionRequest& request, const GetRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRemoteAccessSession(request), context);
+}
+
 GetRunOutcome DeviceFarmClient::GetRun(const GetRunRequest& request) const
 {
   Aws::StringStream ss;
@@ -686,6 +786,37 @@ void DeviceFarmClient::GetUploadAsync(const GetUploadRequest& request, const Get
 void DeviceFarmClient::GetUploadAsyncHelper(const GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetUpload(request), context);
+}
+
+InstallToRemoteAccessSessionOutcome DeviceFarmClient::InstallToRemoteAccessSession(const InstallToRemoteAccessSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return InstallToRemoteAccessSessionOutcome(InstallToRemoteAccessSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return InstallToRemoteAccessSessionOutcome(outcome.GetError());
+  }
+}
+
+InstallToRemoteAccessSessionOutcomeCallable DeviceFarmClient::InstallToRemoteAccessSessionCallable(const InstallToRemoteAccessSessionRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::InstallToRemoteAccessSession, this, request);
+}
+
+void DeviceFarmClient::InstallToRemoteAccessSessionAsync(const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::InstallToRemoteAccessSessionAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::InstallToRemoteAccessSessionAsyncHelper(const InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, InstallToRemoteAccessSession(request), context);
 }
 
 ListArtifactsOutcome DeviceFarmClient::ListArtifacts(const ListArtifactsRequest& request) const
@@ -903,6 +1034,37 @@ void DeviceFarmClient::ListProjectsAsync(const ListProjectsRequest& request, con
 void DeviceFarmClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListProjects(request), context);
+}
+
+ListRemoteAccessSessionsOutcome DeviceFarmClient::ListRemoteAccessSessions(const ListRemoteAccessSessionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListRemoteAccessSessionsOutcome(ListRemoteAccessSessionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRemoteAccessSessionsOutcome(outcome.GetError());
+  }
+}
+
+ListRemoteAccessSessionsOutcomeCallable DeviceFarmClient::ListRemoteAccessSessionsCallable(const ListRemoteAccessSessionsRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::ListRemoteAccessSessions, this, request);
+}
+
+void DeviceFarmClient::ListRemoteAccessSessionsAsync(const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::ListRemoteAccessSessionsAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::ListRemoteAccessSessionsAsyncHelper(const ListRemoteAccessSessionsRequest& request, const ListRemoteAccessSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRemoteAccessSessions(request), context);
 }
 
 ListRunsOutcome DeviceFarmClient::ListRuns(const ListRunsRequest& request) const
@@ -1182,6 +1344,37 @@ void DeviceFarmClient::ScheduleRunAsync(const ScheduleRunRequest& request, const
 void DeviceFarmClient::ScheduleRunAsyncHelper(const ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ScheduleRun(request), context);
+}
+
+StopRemoteAccessSessionOutcome DeviceFarmClient::StopRemoteAccessSession(const StopRemoteAccessSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopRemoteAccessSessionOutcome(StopRemoteAccessSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopRemoteAccessSessionOutcome(outcome.GetError());
+  }
+}
+
+StopRemoteAccessSessionOutcomeCallable DeviceFarmClient::StopRemoteAccessSessionCallable(const StopRemoteAccessSessionRequest& request) const
+{
+  return std::async(std::launch::async, &DeviceFarmClient::StopRemoteAccessSession, this, request);
+}
+
+void DeviceFarmClient::StopRemoteAccessSessionAsync(const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DeviceFarmClient::StopRemoteAccessSessionAsyncHelper, this, request, handler, context);
+}
+
+void DeviceFarmClient::StopRemoteAccessSessionAsyncHelper(const StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopRemoteAccessSession(request), context);
 }
 
 StopRunOutcome DeviceFarmClient::StopRun(const StopRunRequest& request) const

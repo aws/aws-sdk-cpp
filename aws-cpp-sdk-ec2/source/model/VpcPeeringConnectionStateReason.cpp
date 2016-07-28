@@ -71,10 +71,12 @@ void VpcPeeringConnectionStateReason::OutputToStream(Aws::OStream& oStream, cons
   {
       oStream << location << index << locationValue << ".Code=" << VpcPeeringConnectionStateReasonCodeMapper::GetNameForVpcPeeringConnectionStateReasonCode(m_code) << "&";
   }
+
   if(m_messageHasBeenSet)
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void VpcPeeringConnectionStateReason::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -71,10 +71,12 @@ void IamInstanceProfile::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
   if(m_idHasBeenSet)
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void IamInstanceProfile::OutputToStream(Aws::OStream& oStream, const char* location) const

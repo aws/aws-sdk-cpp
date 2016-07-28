@@ -33,6 +33,7 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
   {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_filtersHasBeenSet)
   {
     unsigned filtersCount = 1;
@@ -42,6 +43,7 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
       filtersCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

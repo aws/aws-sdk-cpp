@@ -91,18 +91,22 @@ void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
+
   if(m_isClusterWriterHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsClusterWriter=" << m_isClusterWriter << "&";
   }
+
   if(m_dBClusterParameterGroupStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DBClusterParameterGroupStatus=" << StringUtils::URLEncode(m_dBClusterParameterGroupStatus.c_str()) << "&";
   }
+
   if(m_promotionTierHasBeenSet)
   {
       oStream << location << index << locationValue << ".PromotionTier=" << m_promotionTier << "&";
   }
+
 }
 
 void DBClusterMember::OutputToStream(Aws::OStream& oStream, const char* location) const

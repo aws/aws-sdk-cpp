@@ -32,6 +32,7 @@ Aws::String DeleteGroupRequest::SerializePayload() const
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

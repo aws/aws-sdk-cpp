@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace ConfigService
 {
-enum class AWS_CONFIGSERVICE_API ConfigServiceErrors
+enum class ConfigServiceErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////
@@ -61,6 +61,7 @@ enum class AWS_CONFIGSERVICE_API ConfigServiceErrors
   INVALID_S_N_S_TOPIC_A_R_N,
   INVALID_TIME_RANGE,
   LAST_DELIVERY_CHANNEL_DELETE_FAILED,
+  LIMIT_EXCEEDED,
   MAX_NUMBER_OF_CONFIGURATION_RECORDERS_EXCEEDED,
   MAX_NUMBER_OF_CONFIG_RULES_EXCEEDED,
   MAX_NUMBER_OF_DELIVERY_CHANNELS_EXCEEDED,

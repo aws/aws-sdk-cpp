@@ -5,11 +5,17 @@
 #set($signPayloads = "")
 #set($signPayloadsParam = "")
 #end
+#if($doNotDoubleUrlEncode)
+#set($doubleEncodeValue = ", false")
+#else
+#set($doubleEncodeValue = "")
+#end
+
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}),
+                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -20,7 +26,7 @@ ${className}::${className}(const AWSCredentials& credentials, const Client::Clie
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}),
+                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -32,7 +38,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}),
+                                                                        : clientConfiguration.authenticationRegion${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {

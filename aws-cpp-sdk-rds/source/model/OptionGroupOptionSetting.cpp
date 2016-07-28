@@ -105,26 +105,32 @@ void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".SettingName=" << StringUtils::URLEncode(m_settingName.c_str()) << "&";
   }
+
   if(m_settingDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".SettingDescription=" << StringUtils::URLEncode(m_settingDescription.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_applyTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplyType=" << StringUtils::URLEncode(m_applyType.c_str()) << "&";
   }
+
   if(m_allowedValuesHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowedValues=" << StringUtils::URLEncode(m_allowedValues.c_str()) << "&";
   }
+
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsModifiable=" << m_isModifiable << "&";
   }
+
 }
 
 void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char* location) const

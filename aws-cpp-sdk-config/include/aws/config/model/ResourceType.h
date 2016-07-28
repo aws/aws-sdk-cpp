@@ -43,7 +43,13 @@ namespace Model
     AWS_IAM_Group,
     AWS_IAM_Policy,
     AWS_IAM_Role,
-    AWS_IAM_User
+    AWS_IAM_User,
+    AWS_ACM_Certificate,
+    AWS_RDS_DBInstance,
+    AWS_RDS_DBSubnetGroup,
+    AWS_RDS_DBSecurityGroup,
+    AWS_RDS_DBSnapshot,
+    AWS_RDS_EventSubscription
   };
 
 namespace ResourceTypeMapper

@@ -38,26 +38,32 @@ Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
   {
     ss << "ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_templateNameHasBeenSet)
   {
     ss << "TemplateName=" << StringUtils::URLEncode(m_templateName.c_str()) << "&";
   }
+
   if(m_solutionStackNameHasBeenSet)
   {
     ss << "SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_sourceConfigurationHasBeenSet)
   {
-    m_sourceConfiguration.OutputToStream(ss, "SourceConfiguration.");
+    m_sourceConfiguration.OutputToStream(ss, "SourceConfiguration");
   }
+
   if(m_environmentIdHasBeenSet)
   {
     ss << "EnvironmentId=" << StringUtils::URLEncode(m_environmentId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_optionSettingsHasBeenSet)
   {
     unsigned optionSettingsCount = 1;
@@ -67,6 +73,7 @@ Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
       optionSettingsCount++;
     }
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

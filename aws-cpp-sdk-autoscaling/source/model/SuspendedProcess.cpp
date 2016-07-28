@@ -71,10 +71,12 @@ void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ProcessName=" << StringUtils::URLEncode(m_processName.c_str()) << "&";
   }
+
   if(m_suspensionReasonHasBeenSet)
   {
       oStream << location << index << locationValue << ".SuspensionReason=" << StringUtils::URLEncode(m_suspensionReason.c_str()) << "&";
   }
+
 }
 
 void SuspendedProcess::OutputToStream(Aws::OStream& oStream, const char* location) const

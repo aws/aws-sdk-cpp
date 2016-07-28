@@ -31,6 +31,7 @@ namespace Aws
 
         static const int ConfigurationItemChangeNotification_HASH = HashingUtils::HashString("ConfigurationItemChangeNotification");
         static const int ConfigurationSnapshotDeliveryCompleted_HASH = HashingUtils::HashString("ConfigurationSnapshotDeliveryCompleted");
+        static const int ScheduledNotification_HASH = HashingUtils::HashString("ScheduledNotification");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == ConfigurationSnapshotDeliveryCompleted_HASH)
           {
             return MessageType::ConfigurationSnapshotDeliveryCompleted;
+          }
+          else if (hashCode == ScheduledNotification_HASH)
+          {
+            return MessageType::ScheduledNotification;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "ConfigurationItemChangeNotification";
           case MessageType::ConfigurationSnapshotDeliveryCompleted:
             return "ConfigurationSnapshotDeliveryCompleted";
+          case MessageType::ScheduledNotification:
+            return "ScheduledNotification";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

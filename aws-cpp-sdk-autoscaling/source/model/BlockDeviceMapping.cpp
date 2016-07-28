@@ -89,20 +89,24 @@ void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".VirtualName=" << StringUtils::URLEncode(m_virtualName.c_str()) << "&";
   }
+
   if(m_deviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+
   if(m_ebsHasBeenSet)
   {
       Aws::StringStream ebsLocationAndMemberSs;
       ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
+
   if(m_noDeviceHasBeenSet)
   {
       oStream << location << index << locationValue << ".NoDevice=" << m_noDevice << "&";
   }
+
 }
 
 void BlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -87,18 +87,22 @@ void ConfigurationOptionSetting::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_namespaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
   }
+
   if(m_optionNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".OptionName=" << StringUtils::URLEncode(m_optionName.c_str()) << "&";
   }
+
   if(m_valueHasBeenSet)
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value.c_str()) << "&";
   }
+
 }
 
 void ConfigurationOptionSetting::OutputToStream(Aws::OStream& oStream, const char* location) const

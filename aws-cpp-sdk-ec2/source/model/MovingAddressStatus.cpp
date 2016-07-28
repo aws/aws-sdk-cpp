@@ -71,10 +71,12 @@ void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << index << locationValue << ".PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
   }
+
   if(m_moveStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".MoveStatus=" << MoveStatusMapper::GetNameForMoveStatus(m_moveStatus) << "&";
   }
+
 }
 
 void MovingAddressStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

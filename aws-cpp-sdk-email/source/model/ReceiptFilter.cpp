@@ -71,12 +71,14 @@ void ReceiptFilter::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_ipFilterHasBeenSet)
   {
       Aws::StringStream ipFilterLocationAndMemberSs;
       ipFilterLocationAndMemberSs << location << index << locationValue << ".IpFilter";
       m_ipFilter.OutputToStream(oStream, ipFilterLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ReceiptFilter::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -65,6 +65,7 @@ void Storage::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       s3LocationAndMemberSs << location << index << locationValue << ".S3";
       m_s3.OutputToStream(oStream, s3LocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Storage::OutputToStream(Aws::OStream& oStream, const char* location) const

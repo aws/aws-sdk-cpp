@@ -63,6 +63,7 @@ void AccountAttributeValue::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".AttributeValue=" << StringUtils::URLEncode(m_attributeValue.c_str()) << "&";
   }
+
 }
 
 void AccountAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const

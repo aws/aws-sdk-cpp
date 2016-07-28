@@ -34,10 +34,12 @@ Aws::String DeleteVpnConnectionRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_vpnConnectionIdHasBeenSet)
   {
     ss << "VpnConnectionId=" << StringUtils::URLEncode(m_vpnConnectionId.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

@@ -36,58 +36,58 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClusters() const{ return m_clusters; }
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline void SetClusters(const Aws::Vector<Aws::String>& value) { m_clustersHasBeenSet = true; m_clusters = value; }
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline void SetClusters(Aws::Vector<Aws::String>&& value) { m_clustersHasBeenSet = true; m_clusters = value; }
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline DescribeClustersRequest& WithClusters(const Aws::Vector<Aws::String>& value) { SetClusters(value); return *this;}
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline DescribeClustersRequest& WithClusters(Aws::Vector<Aws::String>&& value) { SetClusters(value); return *this;}
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(const Aws::String& value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(Aws::String&& value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 
     /**
-     * <p>A space-separated list of cluster names or full cluster Amazon Resource Name
-     * (ARN) entries. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>A space-separated list of up to 100 cluster names or full cluster Amazon
+     * Resource Name (ARN) entries. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
      */
     inline DescribeClustersRequest& AddClusters(const char* value) { m_clustersHasBeenSet = true; m_clusters.push_back(value); return *this; }
 

@@ -71,10 +71,12 @@ void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".VpcSecurityGroupId=" << StringUtils::URLEncode(m_vpcSecurityGroupId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void VpcSecurityGroupMembership::OutputToStream(Aws::OStream& oStream, const char* location) const

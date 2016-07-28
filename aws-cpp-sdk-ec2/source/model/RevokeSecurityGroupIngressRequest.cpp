@@ -44,38 +44,47 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
     ss << "GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_groupIdHasBeenSet)
   {
     ss << "GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
+
   if(m_sourceSecurityGroupNameHasBeenSet)
   {
     ss << "SourceSecurityGroupName=" << StringUtils::URLEncode(m_sourceSecurityGroupName.c_str()) << "&";
   }
+
   if(m_sourceSecurityGroupOwnerIdHasBeenSet)
   {
     ss << "SourceSecurityGroupOwnerId=" << StringUtils::URLEncode(m_sourceSecurityGroupOwnerId.c_str()) << "&";
   }
+
   if(m_ipProtocolHasBeenSet)
   {
     ss << "IpProtocol=" << StringUtils::URLEncode(m_ipProtocol.c_str()) << "&";
   }
+
   if(m_fromPortHasBeenSet)
   {
     ss << "FromPort=" << m_fromPort << "&";
   }
+
   if(m_toPortHasBeenSet)
   {
     ss << "ToPort=" << m_toPort << "&";
   }
+
   if(m_cidrIpHasBeenSet)
   {
     ss << "CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
+
   if(m_ipPermissionsHasBeenSet)
   {
     unsigned ipPermissionsCount = 1;
@@ -85,6 +94,7 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
       ipPermissionsCount++;
     }
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

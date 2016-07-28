@@ -32,6 +32,7 @@ Aws::String GetOpenIDConnectProviderRequest::SerializePayload() const
   {
     ss << "OpenIDConnectProviderArn=" << StringUtils::URLEncode(m_openIDConnectProviderArn.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

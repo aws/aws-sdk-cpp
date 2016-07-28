@@ -38,22 +38,27 @@ Aws::String RunScheduledInstancesRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
     ss << "InstanceCount=" << m_instanceCount << "&";
   }
+
   if(m_scheduledInstanceIdHasBeenSet)
   {
     ss << "ScheduledInstanceId=" << StringUtils::URLEncode(m_scheduledInstanceId.c_str()) << "&";
   }
+
   if(m_launchSpecificationHasBeenSet)
   {
-    m_launchSpecification.OutputToStream(ss, "LaunchSpecification.");
+    m_launchSpecification.OutputToStream(ss, "LaunchSpecification");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

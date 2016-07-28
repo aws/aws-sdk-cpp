@@ -35,14 +35,17 @@ Aws::String CreateSpotDatafeedSubscriptionRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_bucketHasBeenSet)
   {
     ss << "Bucket=" << StringUtils::URLEncode(m_bucket.c_str()) << "&";
   }
+
   if(m_prefixHasBeenSet)
   {
     ss << "Prefix=" << StringUtils::URLEncode(m_prefix.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

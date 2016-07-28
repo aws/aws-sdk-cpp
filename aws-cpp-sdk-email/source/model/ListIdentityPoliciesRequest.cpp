@@ -32,6 +32,7 @@ Aws::String ListIdentityPoliciesRequest::SerializePayload() const
   {
     ss << "Identity=" << StringUtils::URLEncode(m_identity.c_str()) << "&";
   }
+
   ss << "Version=2010-12-01";
   return ss.str();
 }

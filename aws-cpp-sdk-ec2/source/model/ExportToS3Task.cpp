@@ -87,18 +87,22 @@ void ExportToS3Task::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".DiskImageFormat=" << DiskImageFormatMapper::GetNameForDiskImageFormat(m_diskImageFormat) << "&";
   }
+
   if(m_containerFormatHasBeenSet)
   {
       oStream << location << index << locationValue << ".ContainerFormat=" << ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat) << "&";
   }
+
   if(m_s3BucketHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3Bucket=" << StringUtils::URLEncode(m_s3Bucket.c_str()) << "&";
   }
+
   if(m_s3KeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".S3Key=" << StringUtils::URLEncode(m_s3Key.c_str()) << "&";
   }
+
 }
 
 void ExportToS3Task::OutputToStream(Aws::OStream& oStream, const char* location) const

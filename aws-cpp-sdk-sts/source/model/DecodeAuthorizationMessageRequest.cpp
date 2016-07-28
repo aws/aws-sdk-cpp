@@ -32,6 +32,7 @@ Aws::String DecodeAuthorizationMessageRequest::SerializePayload() const
   {
     ss << "EncodedMessage=" << StringUtils::URLEncode(m_encodedMessage.c_str()) << "&";
   }
+
   ss << "Version=2011-06-15";
   return ss.str();
 }

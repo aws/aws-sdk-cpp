@@ -38,26 +38,32 @@ Aws::String ImportSnapshotRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_diskContainerHasBeenSet)
   {
-    m_diskContainer.OutputToStream(ss, "DiskContainer.");
+    m_diskContainer.OutputToStream(ss, "DiskContainer");
   }
+
   if(m_clientDataHasBeenSet)
   {
-    m_clientData.OutputToStream(ss, "ClientData.");
+    m_clientData.OutputToStream(ss, "ClientData");
   }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
+
   if(m_roleNameHasBeenSet)
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

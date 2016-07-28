@@ -337,20 +337,20 @@ namespace Aws
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+        S3Client(const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+        S3Client(const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         S3Client(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = true);
+            const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration(), bool signPayloads = false);
 
         virtual ~S3Client();
 
@@ -809,19 +809,19 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * Deprecated, see the GetBucketReplicationConfiguration operation.
+         * Returns the replication configuration of a bucket.
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

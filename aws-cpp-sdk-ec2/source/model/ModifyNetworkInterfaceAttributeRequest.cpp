@@ -38,18 +38,22 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
   {
     ss << "DryRun=" << m_dryRun << "&";
   }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
     ss << "NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
-    m_description.OutputToStream(ss, "Description.");
+    m_description.OutputToStream(ss, "Description");
   }
+
   if(m_sourceDestCheckHasBeenSet)
   {
-    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck.");
+    m_sourceDestCheck.OutputToStream(ss, "SourceDestCheck");
   }
+
   if(m_groupsHasBeenSet)
   {
     unsigned groupsCount = 1;
@@ -60,10 +64,12 @@ Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
       groupsCount++;
     }
   }
+
   if(m_attachmentHasBeenSet)
   {
-    m_attachment.OutputToStream(ss, "Attachment.");
+    m_attachment.OutputToStream(ss, "Attachment");
   }
+
   ss << "Version=2015-10-01";
   return ss.str();
 }

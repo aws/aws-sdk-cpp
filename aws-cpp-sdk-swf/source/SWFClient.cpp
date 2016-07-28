@@ -69,6 +69,7 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "swf";
 static const char* ALLOCATION_TAG = "SWFClient";
 
+
 SWFClient::SWFClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

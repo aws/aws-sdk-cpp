@@ -21,7 +21,7 @@ namespace Aws
 {
 namespace StorageGateway
 {
-enum class AWS_STORAGEGATEWAY_API StorageGatewayErrors
+enum class StorageGatewayErrors
 {
   //From Core//
   //////////////////////////////////////////////////////////////////////////////////////////

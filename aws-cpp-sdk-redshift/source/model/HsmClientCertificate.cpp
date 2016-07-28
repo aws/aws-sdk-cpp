@@ -85,10 +85,12 @@ void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".HsmClientCertificateIdentifier=" << StringUtils::URLEncode(m_hsmClientCertificateIdentifier.c_str()) << "&";
   }
+
   if(m_hsmClientCertificatePublicKeyHasBeenSet)
   {
       oStream << location << index << locationValue << ".HsmClientCertificatePublicKey=" << StringUtils::URLEncode(m_hsmClientCertificatePublicKey.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -99,6 +101,7 @@ void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* loc
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void HsmClientCertificate::OutputToStream(Aws::OStream& oStream, const char* location) const

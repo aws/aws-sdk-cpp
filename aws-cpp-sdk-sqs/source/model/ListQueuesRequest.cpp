@@ -32,6 +32,7 @@ Aws::String ListQueuesRequest::SerializePayload() const
   {
     ss << "QueueNamePrefix=" << StringUtils::URLEncode(m_queueNamePrefix.c_str()) << "&";
   }
+
   ss << "Version=2012-11-05";
   return ss.str();
 }

@@ -33,10 +33,12 @@ Aws::String DeletePolicyRequest::SerializePayload() const
   {
     ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_policyNameHasBeenSet)
   {
     ss << "PolicyName=" << StringUtils::URLEncode(m_policyName.c_str()) << "&";
   }
+
   ss << "Version=2011-01-01";
   return ss.str();
 }

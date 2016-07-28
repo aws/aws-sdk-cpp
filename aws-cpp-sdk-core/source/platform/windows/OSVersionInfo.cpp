@@ -13,26 +13,23 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/utils/OSVersionInfo.h>
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/platform/OSVersionInfo.h>
 
-#include <stdio.h>
-#include <utility>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #pragma warning(disable: 4996)
 #include <windows.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 namespace Aws
 {
-namespace Utils
+namespace OSVersionInfo
 {
 
 Aws::String ComputeOSVersionString() 
 {
-    OSVERSIONINFO versionInfo;
-    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFO));
-    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    OSVERSIONINFOA versionInfo;
+    ZeroMemory(&versionInfo, sizeof(OSVERSIONINFOA));
+    versionInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
     GetVersionExA(&versionInfo);
     Aws::StringStream ss;
     ss << "Windows/" << versionInfo.dwMajorVersion << "." << versionInfo.dwMinorVersion << "." << versionInfo.dwBuildNumber << "-" << versionInfo.szCSDVersion;
@@ -63,5 +60,6 @@ Aws::String ComputeOSVersionString()
     return ss.str();
 }
 
-} // namespace Utils
+
+} // namespace OSVersionInfo
 } // namespace Aws

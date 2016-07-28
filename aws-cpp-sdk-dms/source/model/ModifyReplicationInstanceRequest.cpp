@@ -30,6 +30,8 @@ ModifyReplicationInstanceRequest::ModifyReplicationInstanceRequest() :
     m_replicationInstanceClassHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
+    m_multiAZ(false),
+    m_multiAZHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_allowMajorVersionUpgrade(false),
     m_allowMajorVersionUpgradeHasBeenSet(false),
@@ -81,6 +83,12 @@ Aws::String ModifyReplicationInstanceRequest::SerializePayload() const
   if(m_preferredMaintenanceWindowHasBeenSet)
   {
    payload.WithString("PreferredMaintenanceWindow", m_preferredMaintenanceWindow);
+
+  }
+
+  if(m_multiAZHasBeenSet)
+  {
+   payload.WithBool("MultiAZ", m_multiAZ);
 
   }
 

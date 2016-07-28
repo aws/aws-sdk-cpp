@@ -33,6 +33,7 @@ Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
   {
     ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
+
   if(m_parametersHasBeenSet)
   {
     unsigned parametersCount = 1;
@@ -42,6 +43,7 @@ Aws::String ModifyDBParameterGroupRequest::SerializePayload() const
       parametersCount++;
     }
   }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

@@ -115,34 +115,41 @@ void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".RuleNumber=" << m_ruleNumber << "&";
   }
+
   if(m_protocolHasBeenSet)
   {
       oStream << location << index << locationValue << ".Protocol=" << StringUtils::URLEncode(m_protocol.c_str()) << "&";
   }
+
   if(m_ruleActionHasBeenSet)
   {
       oStream << location << index << locationValue << ".RuleAction=" << RuleActionMapper::GetNameForRuleAction(m_ruleAction) << "&";
   }
+
   if(m_egressHasBeenSet)
   {
       oStream << location << index << locationValue << ".Egress=" << m_egress << "&";
   }
+
   if(m_cidrBlockHasBeenSet)
   {
       oStream << location << index << locationValue << ".CidrBlock=" << StringUtils::URLEncode(m_cidrBlock.c_str()) << "&";
   }
+
   if(m_icmpTypeCodeHasBeenSet)
   {
       Aws::StringStream icmpTypeCodeLocationAndMemberSs;
       icmpTypeCodeLocationAndMemberSs << location << index << locationValue << ".IcmpTypeCode";
       m_icmpTypeCode.OutputToStream(oStream, icmpTypeCodeLocationAndMemberSs.str().c_str());
   }
+
   if(m_portRangeHasBeenSet)
   {
       Aws::StringStream portRangeLocationAndMemberSs;
       portRangeLocationAndMemberSs << location << index << locationValue << ".PortRange";
       m_portRange.OutputToStream(oStream, portRangeLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void NetworkAclEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

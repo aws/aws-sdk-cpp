@@ -15,18 +15,23 @@
 
 #pragma once
 
-#if defined (_MSC_VER)
-    #pragma warning(disable : 4251)
+#include <aws/core/SDKConfig.h>
+
+#if defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
+    #ifdef _MSC_VER
+        #pragma warning(disable : 4251)
+    #endif // _MSC_VER
+
     #ifdef USE_IMPORT_EXPORT
         #ifdef AWS_CORE_EXPORTS
             #define  AWS_CORE_API __declspec(dllexport)
-        #else
+        #else // AWS_CORE_EXPORTS
             #define  AWS_CORE_API __declspec(dllimport)
-        #endif /* AWS_CORE_EXPORTS */
-    #else
+        #endif // AWS_CORE_EXPORTS
+    #else // USE_IMPORT_EXPORT
         #define AWS_CORE_API
     #endif // USE_IMPORT_EXPORT
-#else /* defined (_WIN32) */
+#else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_CORE_API
-#endif
+#endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
 

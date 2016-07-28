@@ -64,14 +64,14 @@ TopicConfiguration& TopicConfiguration::operator =(const XmlNode& xmlNode)
       m_topicArn = StringUtils::Trim(topicArnNode.GetText().c_str());
       m_topicArnHasBeenSet = true;
     }
-    XmlNode eventsNode = resultNode.FirstChild("Events");
+    XmlNode eventsNode = resultNode.FirstChild("Event");
     if(!eventsNode.IsNull())
     {
-      XmlNode eventsMember = eventsNode;
-      while(!eventsMember.IsNull())
+      XmlNode eventMember = eventsNode;
+      while(!eventMember.IsNull())
       {
-        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventsMember.GetText().c_str())));
-        eventsMember = eventsMember.NextNode("Event");
+        m_events.push_back(EventMapper::GetEventForName(StringUtils::Trim(eventMember.GetText().c_str())));
+        eventMember = eventMember.NextNode("Event");
       }
 
       m_eventsHasBeenSet = true;

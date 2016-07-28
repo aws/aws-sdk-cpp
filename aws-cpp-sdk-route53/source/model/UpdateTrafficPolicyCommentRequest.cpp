@@ -14,6 +14,7 @@
 */
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -31,7 +32,19 @@ UpdateTrafficPolicyCommentRequest::UpdateTrafficPolicyCommentRequest() :
 
 Aws::String UpdateTrafficPolicyCommentRequest::SerializePayload() const
 {
-  return "";
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("UpdateTrafficPolicyCommentRequest");
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+  parentNode.SetAttributeValue("xmlns", "https://route53.amazonaws.com/doc/2013-04-01/");
+
+  Aws::StringStream ss;
+  if(m_commentHasBeenSet)
+  {
+   XmlNode commentNode = parentNode.CreateChildElement("Comment");
+   commentNode.SetText(m_comment);
+  }
+
+  return payloadDoc.ConvertToString();
 }
 
 

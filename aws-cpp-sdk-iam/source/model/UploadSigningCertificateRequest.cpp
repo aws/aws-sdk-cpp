@@ -33,10 +33,12 @@ Aws::String UploadSigningCertificateRequest::SerializePayload() const
   {
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
+
   if(m_certificateBodyHasBeenSet)
   {
     ss << "CertificateBody=" << StringUtils::URLEncode(m_certificateBody.c_str()) << "&";
   }
+
   ss << "Version=2010-05-08";
   return ss.str();
 }

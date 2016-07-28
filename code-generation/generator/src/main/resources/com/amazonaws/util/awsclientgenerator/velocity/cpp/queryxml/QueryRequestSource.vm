@@ -135,7 +135,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   ${spaces}  ${varName}Count++;
   ${spaces}}
 #elseif($member.value.shape.structure)
-  ${spaces}${memberVarName}.OutputToStream(ss, "${member.key}.");
+  ${spaces}${memberVarName}.OutputToStream(ss, "${member.key}");
 #elseif($member.value.shape.double)
   ${spaces}ss << "${member.key}=" << StringUtils::URLEncode(${memberVarName}) << "&";
 #else
@@ -143,6 +143,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #end
 #if(!$member.value.required)
   }
+
 #end
 #end
 #end

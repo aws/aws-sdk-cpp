@@ -71,10 +71,12 @@ void Artifact::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_uRLHasBeenSet)
   {
       oStream << location << index << locationValue << ".URL=" << StringUtils::URLEncode(m_uRL.c_str()) << "&";
   }
+
 }
 
 void Artifact::OutputToStream(Aws::OStream& oStream, const char* location) const

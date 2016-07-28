@@ -131,20 +131,24 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_pendingModifiedValuesHasBeenSet)
   {
       Aws::StringStream pendingModifiedValuesLocationAndMemberSs;
       pendingModifiedValuesLocationAndMemberSs << location << index << locationValue << ".PendingModifiedValues";
       m_pendingModifiedValues.OutputToStream(oStream, pendingModifiedValuesLocationAndMemberSs.str().c_str());
   }
+
   if(m_memberClustersHasBeenSet)
   {
       unsigned memberClustersIdx = 1;
@@ -153,6 +157,7 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".ClusterId." << memberClustersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_nodeGroupsHasBeenSet)
   {
       unsigned nodeGroupsIdx = 1;
@@ -163,14 +168,17 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, nodeGroupsSs.str().c_str());
       }
   }
+
   if(m_snapshottingClusterIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshottingClusterId=" << StringUtils::URLEncode(m_snapshottingClusterId.c_str()) << "&";
   }
+
   if(m_automaticFailoverHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutomaticFailover=" << AutomaticFailoverStatusMapper::GetNameForAutomaticFailoverStatus(m_automaticFailover) << "&";
   }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

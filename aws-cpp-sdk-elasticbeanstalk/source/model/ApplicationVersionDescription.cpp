@@ -111,32 +111,39 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_versionLabelHasBeenSet)
   {
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_sourceBundleHasBeenSet)
   {
       Aws::StringStream sourceBundleLocationAndMemberSs;
       sourceBundleLocationAndMemberSs << location << index << locationValue << ".SourceBundle";
       m_sourceBundle.OutputToStream(oStream, sourceBundleLocationAndMemberSs.str().c_str());
   }
+
   if(m_dateCreatedHasBeenSet)
   {
       oStream << location << index << locationValue << ".DateCreated=" << StringUtils::URLEncode(m_dateCreated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_dateUpdatedHasBeenSet)
   {
       oStream << location << index << locationValue << ".DateUpdated=" << StringUtils::URLEncode(m_dateUpdated.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << ApplicationVersionStatusMapper::GetNameForApplicationVersionStatus(m_status) << "&";
   }
+
 }
 
 void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -79,14 +79,17 @@ void SecurityGroupReference::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
+
   if(m_referencingVpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReferencingVpcId=" << StringUtils::URLEncode(m_referencingVpcId.c_str()) << "&";
   }
+
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
+
 }
 
 void SecurityGroupReference::OutputToStream(Aws::OStream& oStream, const char* location) const

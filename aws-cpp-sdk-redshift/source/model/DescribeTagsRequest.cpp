@@ -38,18 +38,22 @@ Aws::String DescribeTagsRequest::SerializePayload() const
   {
     ss << "ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
     ss << "ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }
+
   if(m_markerHasBeenSet)
   {
     ss << "Marker=" << StringUtils::URLEncode(m_marker.c_str()) << "&";
   }
+
   if(m_tagKeysHasBeenSet)
   {
     unsigned tagKeysCount = 1;
@@ -60,6 +64,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
       tagKeysCount++;
     }
   }
+
   if(m_tagValuesHasBeenSet)
   {
     unsigned tagValuesCount = 1;
@@ -70,6 +75,7 @@ Aws::String DescribeTagsRequest::SerializePayload() const
       tagValuesCount++;
     }
   }
+
   ss << "Version=2012-12-01";
   return ss.str();
 }

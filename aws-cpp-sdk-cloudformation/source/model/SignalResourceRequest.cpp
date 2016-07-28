@@ -35,18 +35,22 @@ Aws::String SignalResourceRequest::SerializePayload() const
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
   }
+
   if(m_logicalResourceIdHasBeenSet)
   {
     ss << "LogicalResourceId=" << StringUtils::URLEncode(m_logicalResourceId.c_str()) << "&";
   }
+
   if(m_uniqueIdHasBeenSet)
   {
     ss << "UniqueId=" << StringUtils::URLEncode(m_uniqueId.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
     ss << "Status=" << ResourceSignalStatusMapper::GetNameForResourceSignalStatus(m_status) << "&";
   }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

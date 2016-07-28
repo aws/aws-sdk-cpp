@@ -63,6 +63,7 @@ void Topic::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
 }
 
 void Topic::OutputToStream(Aws::OStream& oStream, const char* location) const
