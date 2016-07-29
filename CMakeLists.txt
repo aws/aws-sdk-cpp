@@ -1042,7 +1042,7 @@ endif()
 
 # encryption related libraries
 if(ENABLE_BCRYPT_ENCRYPTION)
-    set(CRYPTO_LIBS Bcrypt)
+    set(CRYPTO_LIBS Bcrypt Rpcrt4)
 elseif(ENABLE_OPENSSL_ENCRYPTION)
     set(CRYPTO_LIBS ssl crypto z )
 endif()

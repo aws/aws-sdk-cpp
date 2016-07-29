@@ -24,7 +24,7 @@
 
 using namespace Aws::Utils;
 
-void StringUtils::Replace(Aws::String &s, const char* search, const char* replace)
+void StringUtils::Replace(Aws::String& s, const char* search, const char* replace)
 {
     if(!search || !replace)
     {
