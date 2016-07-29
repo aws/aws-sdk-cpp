@@ -37,40 +37,40 @@ static size_t IVSize = 12;
 class MockS3Client : public Aws::S3::S3Client
 {
 public:
-    MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
-        S3Client(clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
-    {
-    }
+	MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
+		S3Client(clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+	{
+	}
 
-    Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const
-    {
-        m_putObjectCalled++;
-        m_metadata = request.GetMetadata();
-        m_body = request.GetBody();
-        Aws::S3::Model::PutObjectOutcome outcome;
-        Aws::S3::Model::PutObjectResult result(outcome.GetResultWithOwnership());
-        return result;
-    }
+	Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const override
+	{
+		m_putObjectCalled++;
+		m_metadata = request.GetMetadata();
+		m_body = request.GetBody();
+		Aws::S3::Model::PutObjectOutcome outcome;
+		Aws::S3::Model::PutObjectResult result(outcome.GetResultWithOwnership());
+		return result;
+	}
 
-    Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override
-    {
-        m_getObjectCalled++;
-        auto factory = request.GetResponseStreamFactory();
-        Aws::Utils::Stream::ResponseStream responseStream(factory);
-        if (m_body != nullptr)
-        {
-            responseStream.GetUnderlyingStream() << m_body->rdbuf();
-        }
-        Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
-        Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
-        getObjectResult.SetMetadata(m_metadata);
-        return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
-    }
+	Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override
+	{
+		m_getObjectCalled++;
+		auto factory = request.GetResponseStreamFactory();
+		Aws::Utils::Stream::ResponseStream responseStream(factory);
+		if (m_body != nullptr)
+		{
+			responseStream.GetUnderlyingStream() << m_body->rdbuf();
+		}
+		Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
+		Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
+		getObjectResult.SetMetadata(m_metadata);
+		return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
+	}
 
-    mutable size_t m_putObjectCalled;
-    mutable size_t m_getObjectCalled;
-    mutable Aws::Map<Aws::String, Aws::String> m_metadata;
-    mutable std::shared_ptr<Aws::IOStream> m_body;
+	mutable size_t m_putObjectCalled;
+	mutable size_t m_getObjectCalled;
+	mutable Aws::Map<Aws::String, Aws::String> m_metadata;
+	mutable std::shared_ptr<Aws::IOStream> m_body;
 };
 
 namespace

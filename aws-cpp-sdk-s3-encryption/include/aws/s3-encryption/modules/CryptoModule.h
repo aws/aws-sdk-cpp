@@ -40,11 +40,6 @@ namespace Aws
             {
             public:
                 /*
-                * Default Constructor.
-                */
-                CryptoModule();
-
-                /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
                 CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
@@ -60,63 +55,64 @@ namespace Aws
                 */
                 Aws::S3::Model::GetObjectOutcome GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request);
 
-                /**
-                * Sets the underlying encryption materials. Copies from parameter encryption materials.
-                */
-                virtual void SetEncryptionMaterials(const std::shared_ptr<Materials::EncryptionMaterials> encryptionMaterials);
-
-                /**
-                * Sets the underlying crypto configuration. Copies from parameter cryptoConfig.
-                */
-                virtual void SetCryptoConfiguration(const CryptoConfiguration& cryptoConfig);
-
-                /**
-                * Sets the underlying s3 client using the parameters, credentials and client config.
-                */
-                virtual void SetS3Client(const Aws::S3::S3Client& s3Client);
-
 			private:
 				/*
 				* This function is used to encrypt the given S3 PutObjectRequest.
 				*/
-				virtual const Aws::S3::Model::PutObjectRequest& EncryptS3Object(Aws::S3::Model::PutObjectRequest& request);
+				const Aws::S3::Model::PutObjectRequest& WrapRequestWithCipher(Aws::S3::Model::PutObjectRequest& request);
 
 				/*
 				* This function is used to decrypt the given S3 GetObjectResult.
 				*/
-				virtual const Aws::S3::Model::GetObjectOutcome DecryptS3Object(Aws::S3::Model::GetObjectRequest& request);
+				const Aws::S3::Model::GetObjectOutcome UnwrapRequestWithCipher(Aws::S3::Model::GetObjectRequest& request);
+
+				/*
+				* Function to set content length of request if padding is needed according to CryptoMode.
+				*/
+				const Aws::S3::Model::PutObjectRequest& PadRequestContentLength(Aws::S3::Model::PutObjectRequest& request);
+
+				/*
+				* Function to check if strict authenticated is used and if so, prohibits range-get operations 
+				*    and decryption of non GCM encrypted requests.
+				*/
+				void StrictAuthenticatedEncryptionCheck(const Aws::S3::Model::GetObjectRequest& request);
+
+				/*
+				* Gets the tag from the end of the request body if the encryption method was GCM.
+				*/
+				Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request);
 
             protected:
 				/**
-				* Override this to initialize the cipher for encryption or decryption using the crypto content material.
+				* Override this Function to initialize the cipher for encryption using the crypto content material.
 				*/
-				virtual void InitCipher() = 0;
+				virtual void InitEncryptionCipher() = 0;
+
+				/**
+				* Override this Function to initialize the cipher for decryption using the crypto content material.
+				*/
+				virtual void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
 
                 /*
                 * Override this function to populate the crypto content member variable.
                 */
                 virtual void PopulateCryptoContentMaterial() = 0;
 
-                Aws::S3::S3Client m_s3Client;
+                const Aws::S3::S3Client& m_s3Client;
                 std::shared_ptr<Materials::EncryptionMaterials> m_encryptionMaterials;
                 ContentCryptoMaterial m_contentCryptoMaterial;
                 CryptoConfiguration m_cryptoConfig;
-				std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> cipher;
+				std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> m_cipher;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleEO : public CryptoModule
             {
             public:
                 /*
-                * Default Constructor.
-                */
-                CryptoModuleEO();
-
-                /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
                 CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+					const Aws::S3::S3Client& s3Client);
 
             private:
                 /*
@@ -125,24 +121,24 @@ namespace Aws
                 void PopulateCryptoContentMaterial() override;
 
 				/**
-				* Function to initialize the cipher for encryption or decryption using the crypto content material.
+				* Function to initialize the cipher for encryption using the crypto content material.
 				*/
-				void InitCipher() override;
+				void InitEncryptionCipher() override;
+
+				/**
+				* Function to initialize the cipher for decryption using the crypto content material.
+				*/
+				void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleAE : public CryptoModule
             {
             public:
                 /*
-                * Default Constructor.
-                */
-                CryptoModuleAE();
-
-                /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
                 CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+					const Aws::S3::S3Client& s3Client);
 
             private:
                 /*
@@ -151,9 +147,14 @@ namespace Aws
                 void PopulateCryptoContentMaterial() override;
 
 				/**
-				* Function to initialize the cipher for encryption or decryption using the crypto content material.
+				* Function to initialize the cipher for encryption using the crypto content material.
 				*/
-				void InitCipher() override;
+				void InitEncryptionCipher() override;
+
+				/**
+				* Function to initialize the cipher for decryption using the crypto content material.
+				*/
+				void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
 
 				
             };
@@ -162,15 +163,10 @@ namespace Aws
             {
             public:
                 /*
-                * Default Constructor.
-                */
-                CryptoModuleStrictAE();
-
-                /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
                 CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+					const Aws::S3::S3Client& s3Client);
                 
             private:
                 /*
@@ -179,9 +175,15 @@ namespace Aws
                 void PopulateCryptoContentMaterial() override;
 
 				/**
-				* Function to initialize the cipher for encryption or decryption using the crypto content material.
+				* Function to initialize the cipher for encryption using the crypto content material.
 				*/
-				void InitCipher() override;
+				void InitEncryptionCipher() override;
+
+				/**
+				* Function to initialize the cipher for decryption using the crypto content material.
+				*/
+				void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) override;
+
             };           
 
             /**
