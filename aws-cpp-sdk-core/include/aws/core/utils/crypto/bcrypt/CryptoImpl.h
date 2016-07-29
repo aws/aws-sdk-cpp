@@ -189,8 +189,8 @@ namespace Aws
                 */
                 BCryptSymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
 
-                BCryptSymmetricCipher(const BCryptSymmetricCipher& other) = delete;
-                BCryptSymmetricCipher& operator=(const BCryptSymmetricCipher& other) = delete;
+                BCryptSymmetricCipher(const BCryptSymmetricCipher&) = delete;
+                BCryptSymmetricCipher& operator=(const BCryptSymmetricCipher&) = delete;
 
                 /**
                 * Normally we don't work around VS 2013 not auto-generating these, but they are kind of expensive,
@@ -252,6 +252,8 @@ namespace Aws
                 bool m_encryptionMode;
                 bool m_decryptionMode;
 
+                static BCRYPT_KEY_HANDLE ImportKeyBlob(BCRYPT_ALG_HANDLE handle, CryptoBuffer& key);
+
             private:
                 void Init();
                 void InitKey();
@@ -279,9 +281,9 @@ namespace Aws
                 */
                 AES_CBC_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
 
-                AES_CBC_Cipher_BCrypt(const AES_CBC_Cipher_BCrypt& other) = delete;
+                AES_CBC_Cipher_BCrypt(const AES_CBC_Cipher_BCrypt&) = delete;
 
-                AES_CBC_Cipher_BCrypt& operator=(const AES_CBC_Cipher_BCrypt& other) = delete;
+                AES_CBC_Cipher_BCrypt& operator=(const AES_CBC_Cipher_BCrypt&) = delete;
 
                 AES_CBC_Cipher_BCrypt(AES_CBC_Cipher_BCrypt&& toMove) : BCryptSymmetricCipher(std::move(toMove)), m_blockOverflow(std::move(toMove.m_blockOverflow)) {}
 
@@ -329,9 +331,9 @@ namespace Aws
                 */
                 AES_CTR_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector);
 
-                AES_CTR_Cipher_BCrypt(const AES_CTR_Cipher_BCrypt& other) = delete;
+                AES_CTR_Cipher_BCrypt(const AES_CTR_Cipher_BCrypt&) = delete;
 
-                AES_CTR_Cipher_BCrypt& operator=(const AES_CTR_Cipher_BCrypt& other) = delete;
+                AES_CTR_Cipher_BCrypt& operator=(const AES_CTR_Cipher_BCrypt&) = delete;
 
                 AES_CTR_Cipher_BCrypt(AES_CTR_Cipher_BCrypt&& toMove) : BCryptSymmetricCipher(std::move(toMove)), m_blockOverflow(std::move(toMove.m_blockOverflow)) {}
 
@@ -383,9 +385,9 @@ namespace Aws
                 */
                 AES_GCM_Cipher_BCrypt(const CryptoBuffer& key, const CryptoBuffer& initializationVector, const CryptoBuffer& tag = CryptoBuffer());
 
-                AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt& other) = delete;
+                AES_GCM_Cipher_BCrypt(const AES_GCM_Cipher_BCrypt&) = delete;
 
-                AES_GCM_Cipher_BCrypt& operator=(const AES_GCM_Cipher_BCrypt& other) = delete;
+                AES_GCM_Cipher_BCrypt& operator=(const AES_GCM_Cipher_BCrypt&) = delete;
 
                 AES_GCM_Cipher_BCrypt(AES_GCM_Cipher_BCrypt&& toMove) : 
                     BCryptSymmetricCipher(std::move(toMove)), m_macBuffer(std::move(toMove.m_macBuffer)), m_finalBuffer(std::move(toMove.m_finalBuffer)),
@@ -417,6 +419,46 @@ namespace Aws
                 CryptoBuffer m_macBuffer;
                 CryptoBuffer m_finalBuffer;
                 BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO m_authInfo;
+            };
+
+            /**
+             * BCrypt implementation for AES in KeyWrap mode. The key for the c_tor is the Kek,
+             * it either encrypts a CEK or decrypts it.
+            */
+            class AES_KeyWrap_Cipher_BCrypt : public BCryptSymmetricCipher
+            {
+            public:
+                /**
+                 * Create AES in KeyWrap mode off of a 256 bit key.
+                 * key - key encryption key               
+                 */
+                AES_KeyWrap_Cipher_BCrypt(const CryptoBuffer& key);
+
+                AES_KeyWrap_Cipher_BCrypt(const AES_KeyWrap_Cipher_BCrypt&) = delete;
+
+                AES_KeyWrap_Cipher_BCrypt& operator=(const AES_KeyWrap_Cipher_BCrypt&) = delete;
+
+                AES_KeyWrap_Cipher_BCrypt(AES_CTR_Cipher_BCrypt&& toMove) : BCryptSymmetricCipher(std::move(toMove)) {}
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override;
+                CryptoBuffer FinalizeEncryption() override;
+                CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+                void InitDecryptor_Internal() override;
+
+                size_t GetBlockSizeBytes() const override;
+                size_t GetKeyLengthBits() const override; 
+                
+            private:
+                static size_t BlockSizeBytes; 
+                static size_t KeyLengthBits;
+                
+                CryptoBuffer m_operatingKeyBuffer;
             };
         } // namespace Crypto
     } // namespace Utils

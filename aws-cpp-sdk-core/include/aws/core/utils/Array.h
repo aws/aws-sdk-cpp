@@ -223,7 +223,7 @@ namespace Aws
                 return m_data.get();
             }
 
-        private:
+        protected:
             size_t m_size;
 
             Aws::UniqueArrayPtr<T> m_data;

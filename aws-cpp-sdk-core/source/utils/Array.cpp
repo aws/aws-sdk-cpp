@@ -48,7 +48,7 @@ namespace Aws
                 slices[slices.GetLength() - 1] = std::move(lastArray);
 
                 return slices;
-            }
+            }            
 
             CryptoBuffer& CryptoBuffer::operator^(const CryptoBuffer& operand)
             {

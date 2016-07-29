@@ -105,6 +105,10 @@ namespace Aws
              */
             AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv,
                                                                                       CryptoBuffer&& tag = CryptoBuffer(0));
+            /**
+             * Create AES in Key Wrap mode off of a 256 bit key.
+             */
+            AWS_CORE_API std::shared_ptr<SymmetricCipher> CreateAES_KeyWrapImplementation(const CryptoBuffer& key);
 
             /**
              * Create SecureRandomBytes instance
@@ -135,6 +139,10 @@ namespace Aws
              * Set the global factory for AES in GCM mode providers
              */
             AWS_CORE_API void SetAES_GCMFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
+            /**
+             * Set the global factory for AES in Key Wrap mode providers
+             */
+            AWS_CORE_API void SetAES_KeyWrapFactory(const std::shared_ptr<SymmetricCipherFactory>& factory);
             /**
              * Set the global factory for secure random bytes
              */

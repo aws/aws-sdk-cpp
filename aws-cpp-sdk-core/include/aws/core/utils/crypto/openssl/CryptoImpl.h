@@ -193,10 +193,11 @@ namespace Aws
 
                 EVP_CIPHER_CTX m_ctx;
 
-            private:
-                void Init();
                 void CheckInitEncryptor();
                 void CheckInitDecryptor();
+
+            private:
+                void Init();
                 void Cleanup();
 
                 bool m_encDecInitialized;
@@ -341,6 +342,47 @@ namespace Aws
                 static size_t IVLengthBytes;
                 static size_t KeyLengthBits;
                 static size_t TagLengthBytes;
+            };
+
+            /**
+             * OpenSSL implementation for AES in Key Wrap mode. The key for the c_tor is the Kek,
+             * it either encrypts a CEK or decrypts it.
+             */
+            class AES_KeyWrap_Cipher_OpenSSL : public OpenSSLCipher
+            {
+            public:
+
+                /**
+                 * Create AES in Key Wrap mode off of a 256 bit key.
+                 */
+                AES_KeyWrap_Cipher_OpenSSL(const CryptoBuffer& key);
+
+                AES_KeyWrap_Cipher_OpenSSL(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
+
+                AES_KeyWrap_Cipher_OpenSSL& operator=(const AES_KeyWrap_Cipher_OpenSSL&) = delete;
+
+                AES_KeyWrap_Cipher_OpenSSL(AES_KeyWrap_Cipher_OpenSSL&&) = default;
+
+                CryptoBuffer EncryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeEncryption() override;
+
+                CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;
+                CryptoBuffer FinalizeDecryption() override;
+
+            protected:
+                void InitEncryptor_Internal() override;
+
+                void InitDecryptor_Internal() override;
+
+                inline size_t GetBlockSizeBytes() const override { return BlockSizeBytes; }
+
+                inline size_t GetKeyLengthBits() const override { return KeyLengthBits; }
+
+            private:
+                static size_t BlockSizeBytes;
+                static size_t KeyLengthBits;
+
+                CryptoBuffer m_workingKeyBuffer;
             };
 
         } // namespace Crypto

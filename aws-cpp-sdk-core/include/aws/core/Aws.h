@@ -118,6 +118,10 @@ namespace Aws
          */
         std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_GCMFactory_create_fn;
         /**
+        * If set, this closure will be used to create and install the factory.
+        */
+        std::function<std::shared_ptr<Aws::Utils::Crypto::SymmetricCipherFactory>()> aes_KeyWrapFactory_create_fn;
+        /**
          * If set, this closure will be used to create and install the factory.
          */
         std::function<std::shared_ptr<Aws::Utils::Crypto::SecureRandomFactory>()> secureRandomFactory_create_fn;
