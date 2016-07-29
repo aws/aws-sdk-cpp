@@ -22,6 +22,7 @@
 #include <aws/s3-encryption/handlers/InstructionFileHandler.h>
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/utils/crypto/Cipher.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
@@ -181,7 +182,52 @@ namespace Aws
 				* Function to initialize the cipher for encryption or decryption using the crypto content material.
 				*/
 				void InitCipher() override;
+            };           
+
+            /**
+             * This isn't a normal GCM Cipher. It appends the tag to the stream so that the tag can be sent as part of the stream
+             * in the Crypto Modules. This is only useful for encryption in the CryptoModules.
+             */
+            class AWS_S3ENCRYPTION_API AES_GCM_AppendedTag : public Aws::Utils::Crypto::SymmetricCipher
+            {
+            public:
+                /**
+                 * This will create a GCM cipher under the hood, passing the specified key. 
+                 */
+                AES_GCM_AppendedTag(const Aws::Utils::CryptoBuffer& key);
+
+                operator bool() const override;
+
+                /**
+                 * Calls straight through to internal cipher.
+                 */
+                Aws::Utils::CryptoBuffer EncryptBuffer(const Aws::Utils::CryptoBuffer& unEncryptedData) override;
+
+                /**
+                 * Finalize Encryption, returns whatever is left in the cipher, computes the tag, and appends the tag to the output.
+                 *  Calls FinalizeEncryption on the underlying cipher first. 
+                 */
+                Aws::Utils::CryptoBuffer FinalizeEncryption() override;
+
+                /**
+                 * Do not use for decryption mode. It will assert(0)
+                 */
+                Aws::Utils::CryptoBuffer DecryptBuffer(const Aws::Utils::CryptoBuffer& unEncryptedData) override;
+
+                /**
+                 *  Do not use for decryption mode. It will assert(0)
+                 */
+                Aws::Utils::CryptoBuffer FinalizeDecryption() override;
+
+                /**
+                 * Calls reset on internal cipher
+                 */
+                void Reset() override;
+
+            private:
+                std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> m_cipher;
             };
+
         }
     }
 }

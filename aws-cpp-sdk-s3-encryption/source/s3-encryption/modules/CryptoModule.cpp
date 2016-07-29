@@ -141,7 +141,6 @@ const Aws::S3::Model::PutObjectRequest & CryptoModule::EncryptS3Object(Aws::S3::
 const Aws::S3::Model::GetObjectOutcome CryptoModule::DecryptS3Object(Aws::S3::Model::GetObjectRequest& request)
 {
 	auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
-	//This is currently causing a bad function call.
 	auto userSuppliedStream = userSuppliedStreamFactory();
 
 	request.SetResponseStreamFactory(
@@ -156,9 +155,11 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::DecryptS3Object(Aws::S3::Mo
 
 	GetObjectResult&& result = outcome.GetResultWithOwnership();
 	((SymmetricCryptoStream&)result.GetBody()).Finalize();
-
-	//result.GetBody() = userSuppliedStream;
-	//result.GetBody() << userSuppliedStream;
+    userSuppliedStream->clear();
+    userSuppliedStream->seekg(0, std::ios_base::beg);
+    //replacing the stream here will free the memory from the crypto stream, and then set it to the previously allocated stream.
+    //result now owns the stream and will free the memory when finished.
+    result.ReplaceBody(userSuppliedStream);
 
 	return GetObjectOutcome(GetObjectResult(std::move(result)));
 }
@@ -244,6 +245,52 @@ void CryptoModuleStrictAE::InitCipher()
 {
 	//here we need to use the tag if we are decrypting. Will use once GCM cipher is implemented
 	cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
+}
+
+AES_GCM_AppendedTag::AES_GCM_AppendedTag(const CryptoBuffer& key) : Aws::Utils::Crypto::SymmetricCipher(),
+    m_cipher(CreateAES_GCMImplementation(key))
+{
+    m_key = key;
+    m_initializationVector = m_cipher->GetIV();
+}
+
+AES_GCM_AppendedTag::operator bool() const
+{
+    return *m_cipher && !m_failure;
+}
+
+CryptoBuffer AES_GCM_AppendedTag::EncryptBuffer(const CryptoBuffer& unEncryptedData)
+{
+    return m_cipher->EncryptBuffer(unEncryptedData);
+}
+
+CryptoBuffer AES_GCM_AppendedTag::FinalizeEncryption()
+{
+    CryptoBuffer&& finalizeBuffer = m_cipher->FinalizeEncryption();
+    m_tag = m_cipher->GetTag();
+    return CryptoBuffer({(ByteBuffer*)&finalizeBuffer, (ByteBuffer*)&m_tag});
+}
+
+CryptoBuffer AES_GCM_AppendedTag::DecryptBuffer(const CryptoBuffer&)
+{
+    //don't use this in decryption mode.
+    assert(0);
+    m_failure = true;
+    return CryptoBuffer();
+}
+
+CryptoBuffer AES_GCM_AppendedTag::FinalizeDecryption()
+{
+    //don't use this in decryption mode.
+    assert(0);
+    m_failure = true;
+    return CryptoBuffer();
+}
+
+void AES_GCM_AppendedTag::Reset()
+{
+    m_cipher->Reset();
+    m_failure = false;
 }
 
 }

@@ -94,7 +94,7 @@ namespace Aws
                  * Whether or not the cipher is in a good state. If this ever returns false, throw away all buffers
                  * it has vended.
                  */
-                operator bool() const { return Good(); }
+                virtual operator bool() const { return Good(); }
 
                 /**
                  * Encrypt a buffer of data. Part of the contract for this interface is that intention that 
@@ -149,6 +149,8 @@ namespace Aws
                 static CryptoBuffer GenerateKey(size_t keyLengthBytes = SYMMETRIC_KEY_LENGTH);
 
             protected:
+                SymmetricCipher() {}
+
                 CryptoBuffer m_key;
                 CryptoBuffer m_initializationVector;
                 CryptoBuffer m_tag;
