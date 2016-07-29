@@ -139,8 +139,8 @@ void BlockingExecutor::ExecuteTask(std::function<void()> fn)
 
 void BlockingExecutor::OnTaskComplete()
 {
-    m_syncPoint.notify_one();
     std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
     m_numTasksRunning--;
+    m_syncPoint.notify_one();
     locker.unlock();
 }
