@@ -100,7 +100,7 @@ TEST(BlockingExecutorTest, TestExecuteMoreTasksThanPoolSize)
     AWS_END_MEMORY_TEST
 }
 
-// TODO: moved these variables outside temporarily for testing
+// TODO: is it fine to have these variables outside like this?
 std::atomic<std::size_t> numReceivedTasks;
 std::atomic<std::size_t> numFinishedTasks;
 
@@ -131,7 +131,7 @@ protected:
     {
         numReceivedTasks++;
         
-        auto taskWrapper = [&]()
+        auto taskWrapper = [fn]()
         {
             fn();
             numFinishedTasks++;
@@ -147,7 +147,6 @@ protected:
         };
         
         std::thread t(taskWrapper);
-        //        std::thread t(fn);
         t.detach();
         return true;
     }
@@ -166,71 +165,82 @@ TEST(BlockingExecutorTest, TestBlockSingleTask)
     
     numReceivedTasks = 0;
     numFinishedTasks = 0;
+    const size_t POOL_SIZE = 3;
     
     std::shared_ptr<MockExecutor> mockExecutor =
             Aws::MakeShared<MockExecutor>(EXECUTOR_TEST_ALLOCATION_TAG);
-    BlockingExecutor blockingExecutor(mockExecutor, 3);
+    BlockingExecutor blockingExecutor(mockExecutor, POOL_SIZE);
     
     Aws::Vector<u_long> taskOrder;
     std::mutex vectorLock;
-    std::mutex taskLock;
     std::condition_variable taskSignal;
-    std::atomic<bool> tasksStarted;
-    tasksStarted = false;
     
+    std::atomic<bool> lastTaskWaiting;
+    lastTaskWaiting = false;
+    
+    /* Each tasks waits for a "task signal" before proceeding. The last task will set a
+     * special flag. */
     auto executeTask = [&](u_long id)
     {
-        std::unique_lock<std::mutex> taskLocker(taskLock);
-        taskSignal.wait(taskLocker);
-    
-        tasksStarted = true;
         std::unique_lock<std::mutex> locker(vectorLock);
+        if (id == FINAL_SIZE - 1)
+        {
+            lastTaskWaiting = true;
+        }
+        taskSignal.wait(locker);
         taskOrder.emplace_back(id);
     };
     
+    // Submit POOL_SIZE tasks to fill up the thread pool
     blockingExecutor.Submit(executeTask, 0);
     blockingExecutor.Submit(executeTask, 1);
     blockingExecutor.Submit(executeTask, 2);
     
+    // Submit an additional task. This one should get blocked, so we submit it in a separate thread.
     auto submitLastTask = [&] ()
     {
         blockingExecutor.Submit(executeTask, 3);
     };
-    
     std::thread t(submitLastTask);
     t.detach();
     
+    /* Check that we've received all tasks but the last one (since it should have been blocked
+     * in the blocking executor before being received by the mock executor) */
 //    ASSERT_TRUE(*mockExecutor->GetNumReceivedTasks() == CHECKPOINT_SIZE);
     ASSERT_TRUE(numReceivedTasks == CHECKPOINT_SIZE);
-    ASSERT_FALSE(tasksStarted);
     std::unique_lock<std::mutex> locker(vectorLock);
     ASSERT_TRUE(taskOrder.size() == 0);
     locker.unlock();
     
+    // Signal the currently queued tasks to run.
     //    mockExecutor->GetTaskSignal()->notify_all();
     taskSignal.notify_all();
-    //    std::unique_lock<std::mutex> taskLocker(*mockExecutor->GetTaskLock());
     locker.lock();
-    
     
     checkpointSignal.wait(locker);
     
+    // Check that all those tasks ran successfully.
     ASSERT_TRUE(taskOrder.size() == CHECKPOINT_SIZE);
     for (size_t i = 0; i < taskOrder.size(); i++)
     {
         ASSERT_FALSE(taskOrder.at(i) == 3);
     }
     locker.unlock();
+    
+    /* Additionally, the last task should now have been queued up (i.e. received by the mock executor
+     * , now that the others have finished. */
 //    ASSERT_TRUE(*mockExecutor->GetNumReceivedTasks() == FINAL_SIZE);
     ASSERT_TRUE(numReceivedTasks == FINAL_SIZE);
     
+    // Busy wait for the last task to let us know it's ready, then signal it.
+    while (!lastTaskWaiting);
     //    mockExecutor->GetTaskSignal()->notify_all();
     taskSignal.notify_all();
     
     locker.lock();
-    
     doneSignal.wait(locker);
     
+    // Check completion and ordering of tasks.
     ASSERT_TRUE(taskOrder.size() == FINAL_SIZE);
     ASSERT_TRUE(taskOrder.at(3) == 3);
     locker.unlock();
