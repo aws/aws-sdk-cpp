@@ -32,11 +32,19 @@
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminDisableUserRequest.h>
 #include <aws/cognito-idp/model/AdminEnableUserRequest.h>
+#include <aws/cognito-idp/model/AdminForgetDeviceRequest.h>
+#include <aws/cognito-idp/model/AdminGetDeviceRequest.h>
 #include <aws/cognito-idp/model/AdminGetUserRequest.h>
+#include <aws/cognito-idp/model/AdminInitiateAuthRequest.h>
+#include <aws/cognito-idp/model/AdminListDevicesRequest.h>
 #include <aws/cognito-idp/model/AdminResetUserPasswordRequest.h>
+#include <aws/cognito-idp/model/AdminRespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/AdminSetUserSettingsRequest.h>
+#include <aws/cognito-idp/model/AdminUpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/AdminUpdateUserAttributesRequest.h>
+#include <aws/cognito-idp/model/AdminUserGlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/ChangePasswordRequest.h>
+#include <aws/cognito-idp/model/ConfirmDeviceRequest.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
@@ -47,15 +55,22 @@
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientRequest.h>
+#include <aws/cognito-idp/model/ForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/ForgotPasswordRequest.h>
+#include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetUserRequest.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeRequest.h>
+#include <aws/cognito-idp/model/GlobalSignOutRequest.h>
+#include <aws/cognito-idp/model/InitiateAuthRequest.h>
+#include <aws/cognito-idp/model/ListDevicesRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUsersRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
+#include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/SetUserSettingsRequest.h>
 #include <aws/cognito-idp/model/SignUpRequest.h>
+#include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientRequest.h>
@@ -314,6 +329,68 @@ void CognitoIdentityProviderClient::AdminEnableUserAsyncHelper(const AdminEnable
   handler(this, request, AdminEnableUser(request), context);
 }
 
+AdminForgetDeviceOutcome CognitoIdentityProviderClient::AdminForgetDevice(const AdminForgetDeviceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminForgetDeviceOutcome(NoResult());
+  }
+  else
+  {
+    return AdminForgetDeviceOutcome(outcome.GetError());
+  }
+}
+
+AdminForgetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminForgetDeviceCallable(const AdminForgetDeviceRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminForgetDevice, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminForgetDeviceAsync(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminForgetDeviceAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminForgetDeviceAsyncHelper(const AdminForgetDeviceRequest& request, const AdminForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminForgetDevice(request), context);
+}
+
+AdminGetDeviceOutcome CognitoIdentityProviderClient::AdminGetDevice(const AdminGetDeviceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminGetDeviceOutcome(AdminGetDeviceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminGetDeviceOutcome(outcome.GetError());
+  }
+}
+
+AdminGetDeviceOutcomeCallable CognitoIdentityProviderClient::AdminGetDeviceCallable(const AdminGetDeviceRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminGetDevice, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminGetDeviceAsync(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminGetDeviceAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminGetDeviceAsyncHelper(const AdminGetDeviceRequest& request, const AdminGetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminGetDevice(request), context);
+}
+
 AdminGetUserOutcome CognitoIdentityProviderClient::AdminGetUser(const AdminGetUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -343,6 +420,68 @@ void CognitoIdentityProviderClient::AdminGetUserAsync(const AdminGetUserRequest&
 void CognitoIdentityProviderClient::AdminGetUserAsyncHelper(const AdminGetUserRequest& request, const AdminGetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AdminGetUser(request), context);
+}
+
+AdminInitiateAuthOutcome CognitoIdentityProviderClient::AdminInitiateAuth(const AdminInitiateAuthRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminInitiateAuthOutcome(AdminInitiateAuthResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminInitiateAuthOutcome(outcome.GetError());
+  }
+}
+
+AdminInitiateAuthOutcomeCallable CognitoIdentityProviderClient::AdminInitiateAuthCallable(const AdminInitiateAuthRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminInitiateAuth, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminInitiateAuthAsync(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminInitiateAuthAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminInitiateAuthAsyncHelper(const AdminInitiateAuthRequest& request, const AdminInitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminInitiateAuth(request), context);
+}
+
+AdminListDevicesOutcome CognitoIdentityProviderClient::AdminListDevices(const AdminListDevicesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminListDevicesOutcome(AdminListDevicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminListDevicesOutcome(outcome.GetError());
+  }
+}
+
+AdminListDevicesOutcomeCallable CognitoIdentityProviderClient::AdminListDevicesCallable(const AdminListDevicesRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminListDevices, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminListDevicesAsync(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminListDevicesAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminListDevicesAsyncHelper(const AdminListDevicesRequest& request, const AdminListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminListDevices(request), context);
 }
 
 AdminResetUserPasswordOutcome CognitoIdentityProviderClient::AdminResetUserPassword(const AdminResetUserPasswordRequest& request) const
@@ -376,6 +515,37 @@ void CognitoIdentityProviderClient::AdminResetUserPasswordAsyncHelper(const Admi
   handler(this, request, AdminResetUserPassword(request), context);
 }
 
+AdminRespondToAuthChallengeOutcome CognitoIdentityProviderClient::AdminRespondToAuthChallenge(const AdminRespondToAuthChallengeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminRespondToAuthChallengeOutcome(AdminRespondToAuthChallengeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminRespondToAuthChallengeOutcome(outcome.GetError());
+  }
+}
+
+AdminRespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::AdminRespondToAuthChallengeCallable(const AdminRespondToAuthChallengeRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminRespondToAuthChallenge, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsync(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminRespondToAuthChallengeAsyncHelper(const AdminRespondToAuthChallengeRequest& request, const AdminRespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminRespondToAuthChallenge(request), context);
+}
+
 AdminSetUserSettingsOutcome CognitoIdentityProviderClient::AdminSetUserSettings(const AdminSetUserSettingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -405,6 +575,37 @@ void CognitoIdentityProviderClient::AdminSetUserSettingsAsync(const AdminSetUser
 void CognitoIdentityProviderClient::AdminSetUserSettingsAsyncHelper(const AdminSetUserSettingsRequest& request, const AdminSetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AdminSetUserSettings(request), context);
+}
+
+AdminUpdateDeviceStatusOutcome CognitoIdentityProviderClient::AdminUpdateDeviceStatus(const AdminUpdateDeviceStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminUpdateDeviceStatusOutcome(AdminUpdateDeviceStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminUpdateDeviceStatusOutcome(outcome.GetError());
+  }
+}
+
+AdminUpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::AdminUpdateDeviceStatusCallable(const AdminUpdateDeviceStatusRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminUpdateDeviceStatus, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsync(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminUpdateDeviceStatusAsyncHelper(const AdminUpdateDeviceStatusRequest& request, const AdminUpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminUpdateDeviceStatus(request), context);
 }
 
 AdminUpdateUserAttributesOutcome CognitoIdentityProviderClient::AdminUpdateUserAttributes(const AdminUpdateUserAttributesRequest& request) const
@@ -438,6 +639,37 @@ void CognitoIdentityProviderClient::AdminUpdateUserAttributesAsyncHelper(const A
   handler(this, request, AdminUpdateUserAttributes(request), context);
 }
 
+AdminUserGlobalSignOutOutcome CognitoIdentityProviderClient::AdminUserGlobalSignOut(const AdminUserGlobalSignOutRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminUserGlobalSignOutOutcome(AdminUserGlobalSignOutResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminUserGlobalSignOutOutcome(outcome.GetError());
+  }
+}
+
+AdminUserGlobalSignOutOutcomeCallable CognitoIdentityProviderClient::AdminUserGlobalSignOutCallable(const AdminUserGlobalSignOutRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::AdminUserGlobalSignOut, this, request);
+}
+
+void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsync(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::AdminUserGlobalSignOutAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::AdminUserGlobalSignOutAsyncHelper(const AdminUserGlobalSignOutRequest& request, const AdminUserGlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminUserGlobalSignOut(request), context);
+}
+
 ChangePasswordOutcome CognitoIdentityProviderClient::ChangePassword(const ChangePasswordRequest& request) const
 {
   Aws::StringStream ss;
@@ -467,6 +699,37 @@ void CognitoIdentityProviderClient::ChangePasswordAsync(const ChangePasswordRequ
 void CognitoIdentityProviderClient::ChangePasswordAsyncHelper(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ChangePassword(request), context);
+}
+
+ConfirmDeviceOutcome CognitoIdentityProviderClient::ConfirmDevice(const ConfirmDeviceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ConfirmDeviceOutcome(ConfirmDeviceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ConfirmDeviceOutcome(outcome.GetError());
+  }
+}
+
+ConfirmDeviceOutcomeCallable CognitoIdentityProviderClient::ConfirmDeviceCallable(const ConfirmDeviceRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::ConfirmDevice, this, request);
+}
+
+void CognitoIdentityProviderClient::ConfirmDeviceAsync(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::ConfirmDeviceAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::ConfirmDeviceAsyncHelper(const ConfirmDeviceRequest& request, const ConfirmDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfirmDevice(request), context);
 }
 
 ConfirmForgotPasswordOutcome CognitoIdentityProviderClient::ConfirmForgotPassword(const ConfirmForgotPasswordRequest& request) const
@@ -779,6 +1042,37 @@ void CognitoIdentityProviderClient::DescribeUserPoolClientAsyncHelper(const Desc
   handler(this, request, DescribeUserPoolClient(request), context);
 }
 
+ForgetDeviceOutcome CognitoIdentityProviderClient::ForgetDevice(const ForgetDeviceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ForgetDeviceOutcome(NoResult());
+  }
+  else
+  {
+    return ForgetDeviceOutcome(outcome.GetError());
+  }
+}
+
+ForgetDeviceOutcomeCallable CognitoIdentityProviderClient::ForgetDeviceCallable(const ForgetDeviceRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::ForgetDevice, this, request);
+}
+
+void CognitoIdentityProviderClient::ForgetDeviceAsync(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::ForgetDeviceAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::ForgetDeviceAsyncHelper(const ForgetDeviceRequest& request, const ForgetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ForgetDevice(request), context);
+}
+
 ForgotPasswordOutcome CognitoIdentityProviderClient::ForgotPassword(const ForgotPasswordRequest& request) const
 {
   Aws::StringStream ss;
@@ -808,6 +1102,37 @@ void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequ
 void CognitoIdentityProviderClient::ForgotPasswordAsyncHelper(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ForgotPassword(request), context);
+}
+
+GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetDeviceOutcome(GetDeviceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDeviceOutcome(outcome.GetError());
+  }
+}
+
+GetDeviceOutcomeCallable CognitoIdentityProviderClient::GetDeviceCallable(const GetDeviceRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::GetDevice, this, request);
+}
+
+void CognitoIdentityProviderClient::GetDeviceAsync(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::GetDeviceAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::GetDeviceAsyncHelper(const GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDevice(request), context);
 }
 
 GetUserOutcome CognitoIdentityProviderClient::GetUser(const GetUserRequest& request) const
@@ -870,6 +1195,99 @@ void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsync(const 
 void CognitoIdentityProviderClient::GetUserAttributeVerificationCodeAsyncHelper(const GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetUserAttributeVerificationCode(request), context);
+}
+
+GlobalSignOutOutcome CognitoIdentityProviderClient::GlobalSignOut(const GlobalSignOutRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GlobalSignOutOutcome(GlobalSignOutResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GlobalSignOutOutcome(outcome.GetError());
+  }
+}
+
+GlobalSignOutOutcomeCallable CognitoIdentityProviderClient::GlobalSignOutCallable(const GlobalSignOutRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::GlobalSignOut, this, request);
+}
+
+void CognitoIdentityProviderClient::GlobalSignOutAsync(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::GlobalSignOutAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::GlobalSignOutAsyncHelper(const GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GlobalSignOut(request), context);
+}
+
+InitiateAuthOutcome CognitoIdentityProviderClient::InitiateAuth(const InitiateAuthRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return InitiateAuthOutcome(InitiateAuthResult(outcome.GetResult()));
+  }
+  else
+  {
+    return InitiateAuthOutcome(outcome.GetError());
+  }
+}
+
+InitiateAuthOutcomeCallable CognitoIdentityProviderClient::InitiateAuthCallable(const InitiateAuthRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::InitiateAuth, this, request);
+}
+
+void CognitoIdentityProviderClient::InitiateAuthAsync(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::InitiateAuthAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::InitiateAuthAsyncHelper(const InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, InitiateAuth(request), context);
+}
+
+ListDevicesOutcome CognitoIdentityProviderClient::ListDevices(const ListDevicesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListDevicesOutcome(ListDevicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDevicesOutcome(outcome.GetError());
+  }
+}
+
+ListDevicesOutcomeCallable CognitoIdentityProviderClient::ListDevicesCallable(const ListDevicesRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::ListDevices, this, request);
+}
+
+void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::ListDevicesAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDevices(request), context);
 }
 
 ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(const ListUserPoolClientsRequest& request) const
@@ -996,6 +1414,37 @@ void CognitoIdentityProviderClient::ResendConfirmationCodeAsyncHelper(const Rese
   handler(this, request, ResendConfirmationCode(request), context);
 }
 
+RespondToAuthChallengeOutcome CognitoIdentityProviderClient::RespondToAuthChallenge(const RespondToAuthChallengeRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RespondToAuthChallengeOutcome(RespondToAuthChallengeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RespondToAuthChallengeOutcome(outcome.GetError());
+  }
+}
+
+RespondToAuthChallengeOutcomeCallable CognitoIdentityProviderClient::RespondToAuthChallengeCallable(const RespondToAuthChallengeRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::RespondToAuthChallenge, this, request);
+}
+
+void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::RespondToAuthChallengeAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::RespondToAuthChallengeAsyncHelper(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RespondToAuthChallenge(request), context);
+}
+
 SetUserSettingsOutcome CognitoIdentityProviderClient::SetUserSettings(const SetUserSettingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1056,6 +1505,37 @@ void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, co
 void CognitoIdentityProviderClient::SignUpAsyncHelper(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SignUp(request), context);
+}
+
+UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDeviceStatusOutcome(UpdateDeviceStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDeviceStatusOutcome(outcome.GetError());
+  }
+}
+
+UpdateDeviceStatusOutcomeCallable CognitoIdentityProviderClient::UpdateDeviceStatusCallable(const UpdateDeviceStatusRequest& request) const
+{
+  return std::async(std::launch::async, &CognitoIdentityProviderClient::UpdateDeviceStatus, this, request);
+}
+
+void CognitoIdentityProviderClient::UpdateDeviceStatusAsync(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&CognitoIdentityProviderClient::UpdateDeviceStatusAsyncHelper, this, request, handler, context);
+}
+
+void CognitoIdentityProviderClient::UpdateDeviceStatusAsyncHelper(const UpdateDeviceStatusRequest& request, const UpdateDeviceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDeviceStatus(request), context);
 }
 
 UpdateUserAttributesOutcome CognitoIdentityProviderClient::UpdateUserAttributes(const UpdateUserAttributesRequest& request) const

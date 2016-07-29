@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ds/model/AddIpRoutesResult.h>
 #include <aws/ds/model/AddTagsToResourceResult.h>
 #include <aws/ds/model/ConnectDirectoryResult.h>
 #include <aws/ds/model/CreateAliasResult.h>
@@ -45,8 +46,10 @@
 #include <aws/ds/model/EnableSsoResult.h>
 #include <aws/ds/model/GetDirectoryLimitsResult.h>
 #include <aws/ds/model/GetSnapshotLimitsResult.h>
+#include <aws/ds/model/ListIpRoutesResult.h>
 #include <aws/ds/model/ListTagsForResourceResult.h>
 #include <aws/ds/model/RegisterEventTopicResult.h>
+#include <aws/ds/model/RemoveIpRoutesResult.h>
 #include <aws/ds/model/RemoveTagsFromResourceResult.h>
 #include <aws/ds/model/RestoreFromSnapshotResult.h>
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
@@ -97,6 +100,7 @@ namespace DirectoryService
 
 namespace Model
 {
+        class AddIpRoutesRequest;
         class AddTagsToResourceRequest;
         class ConnectDirectoryRequest;
         class CreateAliasRequest;
@@ -122,14 +126,17 @@ namespace Model
         class EnableSsoRequest;
         class GetDirectoryLimitsRequest;
         class GetSnapshotLimitsRequest;
+        class ListIpRoutesRequest;
         class ListTagsForResourceRequest;
         class RegisterEventTopicRequest;
+        class RemoveIpRoutesRequest;
         class RemoveTagsFromResourceRequest;
         class RestoreFromSnapshotRequest;
         class UpdateConditionalForwarderRequest;
         class UpdateRadiusRequest;
         class VerifyTrustRequest;
 
+        typedef Aws::Utils::Outcome<AddIpRoutesResult, Aws::Client::AWSError<DirectoryServiceErrors>> AddIpRoutesOutcome;
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<ConnectDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> ConnectDirectoryOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateAliasOutcome;
@@ -155,14 +162,17 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableSsoResult, Aws::Client::AWSError<DirectoryServiceErrors>> EnableSsoOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetDirectoryLimitsOutcome;
         typedef Aws::Utils::Outcome<GetSnapshotLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetSnapshotLimitsOutcome;
+        typedef Aws::Utils::Outcome<ListIpRoutesResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListIpRoutesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> RegisterEventTopicOutcome;
+        typedef Aws::Utils::Outcome<RemoveIpRoutesResult, Aws::Client::AWSError<DirectoryServiceErrors>> RemoveIpRoutesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> RemoveTagsFromResourceOutcome;
         typedef Aws::Utils::Outcome<RestoreFromSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> RestoreFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<UpdateRadiusResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateRadiusOutcome;
         typedef Aws::Utils::Outcome<VerifyTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> VerifyTrustOutcome;
 
+        typedef std::future<AddIpRoutesOutcome> AddIpRoutesOutcomeCallable;
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ConnectDirectoryOutcome> ConnectDirectoryOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
@@ -188,8 +198,10 @@ namespace Model
         typedef std::future<EnableSsoOutcome> EnableSsoOutcomeCallable;
         typedef std::future<GetDirectoryLimitsOutcome> GetDirectoryLimitsOutcomeCallable;
         typedef std::future<GetSnapshotLimitsOutcome> GetSnapshotLimitsOutcomeCallable;
+        typedef std::future<ListIpRoutesOutcome> ListIpRoutesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterEventTopicOutcome> RegisterEventTopicOutcomeCallable;
+        typedef std::future<RemoveIpRoutesOutcome> RemoveIpRoutesOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
         typedef std::future<RestoreFromSnapshotOutcome> RestoreFromSnapshotOutcomeCallable;
         typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
@@ -199,6 +211,7 @@ namespace Model
 
   class DirectoryServiceClient;
 
+    typedef std::function<void(const DirectoryServiceClient*, const Model::AddIpRoutesRequest&, const Model::AddIpRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddIpRoutesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ConnectDirectoryRequest&, const Model::ConnectDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConnectDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
@@ -224,8 +237,10 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::EnableSsoRequest&, const Model::EnableSsoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSsoResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetDirectoryLimitsRequest&, const Model::GetDirectoryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryLimitsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetSnapshotLimitsRequest&, const Model::GetSnapshotLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotLimitsResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::ListIpRoutesRequest&, const Model::ListIpRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIpRoutesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RegisterEventTopicRequest&, const Model::RegisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEventTopicResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::RemoveIpRoutesRequest&, const Model::RemoveIpRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveIpRoutesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RestoreFromSnapshotRequest&, const Model::RestoreFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
@@ -264,16 +279,49 @@ namespace Model
         virtual ~DirectoryServiceClient();
 
         /**
+         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * address, you must add a CIDR address block to correctly route traffic to and
+         * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
+         * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
+         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
+         */
+        virtual Model::AddIpRoutesOutcome AddIpRoutes(const Model::AddIpRoutesRequest& request) const;
+
+        /**
+         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * address, you must add a CIDR address block to correctly route traffic to and
+         * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
+         * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
+         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddIpRoutesOutcomeCallable AddIpRoutesCallable(const Model::AddIpRoutesRequest& request) const;
+
+        /**
+         * <p>If the DNS server for your on-premises domain uses a publicly addressable IP
+         * address, you must add a CIDR address block to correctly route traffic to and
+         * from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this
+         * address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic
+         * that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddIpRoutesAsync(const Model::AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 10 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         * consists of a key and optional value. Tag keys must be unique to each
+         * resource.</p>
          */
         virtual Model::AddTagsToResourceOutcome AddTagsToResource(const Model::AddTagsToResourceRequest& request) const;
 
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 10 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         * consists of a key and optional value. Tag keys must be unique to each
+         * resource.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -282,7 +330,8 @@ namespace Model
         /**
          * <p>Adds or overwrites one or more tags for the specified Amazon Directory
          * Services directory. Each directory can have a maximum of 10 tags. Each tag
-         * consists of a key and optional value. Tag keys must be unique per resource.</p>
+         * consists of a key and optional value. Tag keys must be unique to each
+         * resource.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -871,6 +920,25 @@ namespace Model
         virtual void GetSnapshotLimitsAsync(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the address blocks that you have added to a directory.</p>
+         */
+        virtual Model::ListIpRoutesOutcome ListIpRoutes(const Model::ListIpRoutesRequest& request) const;
+
+        /**
+         * <p>Lists the address blocks that you have added to a directory.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListIpRoutesOutcomeCallable ListIpRoutesCallable(const Model::ListIpRoutesRequest& request) const;
+
+        /**
+         * <p>Lists the address blocks that you have added to a directory.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListIpRoutesAsync(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all tags on an Amazon Directory Services directory.</p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
@@ -919,6 +987,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterEventTopicAsync(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes IP address blocks from a directory.</p>
+         */
+        virtual Model::RemoveIpRoutesOutcome RemoveIpRoutes(const Model::RemoveIpRoutesRequest& request) const;
+
+        /**
+         * <p>Removes IP address blocks from a directory.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveIpRoutesOutcomeCallable RemoveIpRoutesCallable(const Model::RemoveIpRoutesRequest& request) const;
+
+        /**
+         * <p>Removes IP address blocks from a directory.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveIpRoutesAsync(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an Amazon Directory Services directory.</p>
@@ -1050,6 +1137,7 @@ namespace Model
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddIpRoutesAsyncHelper(const Model::AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ConnectDirectoryAsyncHelper(const Model::ConnectDirectoryRequest& request, const ConnectDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1075,8 +1163,10 @@ namespace Model
         void EnableSsoAsyncHelper(const Model::EnableSsoRequest& request, const EnableSsoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryLimitsAsyncHelper(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnapshotLimitsAsyncHelper(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListIpRoutesAsyncHelper(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterEventTopicAsyncHelper(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveIpRoutesAsyncHelper(const Model::RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreFromSnapshotAsyncHelper(const Model::RestoreFromSnapshotRequest& request, const RestoreFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConditionalForwarderAsyncHelper(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

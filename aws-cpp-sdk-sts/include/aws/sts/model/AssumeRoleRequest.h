@@ -77,8 +77,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleSessionName() const{ return m_roleSessionName; }
 
@@ -92,8 +92,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -107,8 +107,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -122,8 +122,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
@@ -137,8 +137,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(const Aws::String& value) { SetRoleSessionName(value); return *this;}
 
@@ -152,8 +152,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(value); return *this;}
 
@@ -167,8 +167,8 @@ namespace Model
      * security credentials will expose the role session name to the external account
      * in their CloudTrail logs.</p> <p>The format for this parameter, as described by
      * its regex pattern, is a string of characters consisting of upper- and lower-case
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * alphanumeric characters with no spaces. You can also include underscores or any
+     * of the following characters: =,.@-</p>
      */
     inline AssumeRoleRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 
@@ -343,21 +343,45 @@ namespace Model
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
@@ -373,8 +397,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -390,8 +414,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -407,8 +431,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -424,8 +448,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -441,8 +465,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -458,8 +482,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(Aws::String&& value) { SetExternalId(value); return *this;}
 
@@ -475,8 +499,8 @@ namespace Model
      * to Use an External ID When Granting Access to Your AWS Resources to a Third
      * Party</a> in the <i>IAM User Guide</i>.</p> <p>The format for this parameter, as
      * described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include any
-     * of the following characters: =,.@:\/-</p>
+     * and lower-case alphanumeric characters with no spaces. You can also include
+     * underscores or any of the following characters: =,.@:\/-</p>
      */
     inline AssumeRoleRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
@@ -489,7 +513,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -502,7 +527,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -515,7 +541,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -528,7 +555,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -541,7 +569,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -554,7 +583,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(value); return *this;}
 
@@ -567,7 +597,8 @@ namespace Model
      * virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      * <p>The format for this parameter, as described by its regex pattern, is a string
      * of characters consisting of upper- and lower-case alphanumeric characters with
-     * no spaces. You can also include any of the following characters: =,.@-</p>
+     * no spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

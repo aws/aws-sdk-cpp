@@ -16,6 +16,8 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
 
 namespace Aws
 {
@@ -130,6 +132,136 @@ namespace Model
      */
     inline CreateUserPoolClientRequest& WithGenerateSecret(bool value) { SetGenerateSecret(value); return *this;}
 
+    /**
+     * <p>Refreshes the token validity.</p>
+     */
+    inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
+
+    /**
+     * <p>Refreshes the token validity.</p>
+     */
+    inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
+
+    /**
+     * <p>Refreshes the token validity.</p>
+     */
+    inline CreateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReadAttributes() const{ return m_readAttributes; }
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline void SetReadAttributes(const Aws::Vector<Aws::String>& value) { m_readAttributesHasBeenSet = true; m_readAttributes = value; }
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline void SetReadAttributes(Aws::Vector<Aws::String>&& value) { m_readAttributesHasBeenSet = true; m_readAttributes = value; }
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& WithReadAttributes(const Aws::Vector<Aws::String>& value) { SetReadAttributes(value); return *this;}
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& WithReadAttributes(Aws::Vector<Aws::String>&& value) { SetReadAttributes(value); return *this;}
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddReadAttributes(const Aws::String& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddReadAttributes(Aws::String&& value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The read attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddReadAttributes(const char* value) { m_readAttributesHasBeenSet = true; m_readAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWriteAttributes() const{ return m_writeAttributes; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline void SetWriteAttributes(const Aws::Vector<Aws::String>& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline void SetWriteAttributes(Aws::Vector<Aws::String>&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes = value; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& WithWriteAttributes(const Aws::Vector<Aws::String>& value) { SetWriteAttributes(value); return *this;}
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& WithWriteAttributes(Aws::Vector<Aws::String>&& value) { SetWriteAttributes(value); return *this;}
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddWriteAttributes(const Aws::String& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddWriteAttributes(Aws::String&& value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The write attributes.</p>
+     */
+    inline CreateUserPoolClientRequest& AddWriteAttributes(const char* value) { m_writeAttributesHasBeenSet = true; m_writeAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline const Aws::Vector<ExplicitAuthFlowsType>& GetExplicitAuthFlows() const{ return m_explicitAuthFlows; }
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline void SetExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { SetExplicitAuthFlows(value); return *this;}
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline CreateUserPoolClientRequest& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(value); return *this;}
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(const ExplicitAuthFlowsType& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
+
+    /**
+     * <p>The explicit authentication flows.</p>
+     */
+    inline CreateUserPoolClientRequest& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
+
   private:
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
@@ -137,6 +269,14 @@ namespace Model
     bool m_clientNameHasBeenSet;
     bool m_generateSecret;
     bool m_generateSecretHasBeenSet;
+    int m_refreshTokenValidity;
+    bool m_refreshTokenValidityHasBeenSet;
+    Aws::Vector<Aws::String> m_readAttributes;
+    bool m_readAttributesHasBeenSet;
+    Aws::Vector<Aws::String> m_writeAttributes;
+    bool m_writeAttributesHasBeenSet;
+    Aws::Vector<ExplicitAuthFlowsType> m_explicitAuthFlows;
+    bool m_explicitAuthFlowsHasBeenSet;
   };
 
 } // namespace Model

@@ -75,7 +75,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline const Aws::String& GetRoleSessionName() const{ return m_roleSessionName; }
 
@@ -87,7 +88,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetRoleSessionName(const Aws::String& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -99,7 +101,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetRoleSessionName(Aws::String&& value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName = value; }
 
@@ -111,7 +114,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline void SetRoleSessionName(const char* value) { m_roleSessionNameHasBeenSet = true; m_roleSessionName.assign(value); }
 
@@ -123,7 +127,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(const Aws::String& value) { SetRoleSessionName(value); return *this;}
 
@@ -135,7 +140,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(Aws::String&& value) { SetRoleSessionName(value); return *this;}
 
@@ -147,7 +153,8 @@ namespace Model
      * assumed role ID in the <code>AssumedRoleUser</code> response element.</p> <p>The
      * format for this parameter, as described by its regex pattern, is a string of
      * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@-</p>
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-</p>
      */
     inline AssumeRoleWithWebIdentityRequest& WithRoleSessionName(const char* value) { SetRoleSessionName(value); return *this;}
 
@@ -441,21 +448,45 @@ namespace Model
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>The duration, in seconds, of the role session. The value can range from 900
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
-     * 3600 seconds.</p>
+     * 3600 seconds.</p> <note> <p>This is separate from the duration of a console
+     * session that you might request using the returned credentials. The request to
+     * the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+     * a URL that Enables Federated Users to Access the AWS Management Console</a> in
+     * the <i>IAM User Guide</i>.</p> </note>
      */
     inline AssumeRoleWithWebIdentityRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

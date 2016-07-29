@@ -31,6 +31,7 @@ Authorizer::Authorizer() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_providerARNsHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
@@ -45,6 +46,7 @@ Authorizer::Authorizer(const JsonValue& jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_providerARNsHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
@@ -77,6 +79,16 @@ Authorizer& Authorizer::operator =(const JsonValue& jsonValue)
     m_type = AuthorizerTypeMapper::GetAuthorizerTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("providerARNs"))
+  {
+    Array<JsonValue> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
+    {
+      m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());
+    }
+    m_providerARNsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("authType"))
@@ -143,6 +155,17 @@ JsonValue Authorizer::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AuthorizerTypeMapper::GetNameForAuthorizerType(m_type));
+  }
+
+  if(m_providerARNsHasBeenSet)
+  {
+   Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
+   for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
+   {
+     providerARNsJsonList[providerARNsIndex].AsString(m_providerARNs[providerARNsIndex]);
+   }
+   payload.WithArray("providerARNs", std::move(providerARNsJsonList));
+
   }
 
   if(m_authTypeHasBeenSet)

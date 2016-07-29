@@ -1390,10 +1390,11 @@ namespace Model
          * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
          * and BCC: headers in the raw message can contain a group list. Note that each
          * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>For every message that you send, the total number of recipients (To:, CC: and
-         * BCC:) is counted against your sending quota - the maximum number of emails you
-         * can send in a 24-hour period. For information about your sending quota, go to
-         * the <a
+         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
+         * <li> <p>For every message that you send, the total number of recipients (To:,
+         * CC: and BCC:) is counted against your sending quota - the maximum number of
+         * emails you can send in a 24-hour period. For information about your sending
+         * quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
          * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
          * authorization to send on behalf of another user, <code>SendRawEmail</code>
@@ -1440,10 +1441,11 @@ namespace Model
          * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
          * and BCC: headers in the raw message can contain a group list. Note that each
          * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>For every message that you send, the total number of recipients (To:, CC: and
-         * BCC:) is counted against your sending quota - the maximum number of emails you
-         * can send in a 24-hour period. For information about your sending quota, go to
-         * the <a
+         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
+         * <li> <p>For every message that you send, the total number of recipients (To:,
+         * CC: and BCC:) is counted against your sending quota - the maximum number of
+         * emails you can send in a 24-hour period. For information about your sending
+         * quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
          * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
          * authorization to send on behalf of another user, <code>SendRawEmail</code>
@@ -1492,10 +1494,11 @@ namespace Model
          * repeatedly to send the message to each group.</p> </li> <li> <p>The To:, CC:,
          * and BCC: headers in the raw message can contain a group list. Note that each
          * recipient in a group list counts towards the 50-recipient limit.</p> </li> <li>
-         * <p>For every message that you send, the total number of recipients (To:, CC: and
-         * BCC:) is counted against your sending quota - the maximum number of emails you
-         * can send in a 24-hour period. For information about your sending quota, go to
-         * the <a
+         * <p>Amazon SES overrides any Message-ID and Date headers you provide.</p> </li>
+         * <li> <p>For every message that you send, the total number of recipients (To:,
+         * CC: and BCC:) is counted against your sending quota - the maximum number of
+         * emails you can send in a 24-hour period. For information about your sending
+         * quota, go to the <a
          * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
          * SES Developer Guide</a>.</p> </li> <li> <p>If you are using sending
          * authorization to send on behalf of another user, <code>SendRawEmail</code>

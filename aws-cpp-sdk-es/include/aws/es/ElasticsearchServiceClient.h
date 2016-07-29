@@ -127,7 +127,7 @@ namespace Model
    * region-specific: es.<i>region</i>.amazonaws.com. For example,
    * es.us-east-1.amazonaws.com. For a current list of supported regions and
    * endpoints, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"
+   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
    * target="_blank">Regions and Endpoints</a>.</p>
    */
   class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceClient : public Aws::Client::AWSJsonClient

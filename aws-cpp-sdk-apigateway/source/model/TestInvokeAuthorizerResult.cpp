@@ -85,6 +85,15 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const AmazonW
     }
   }
 
+  if(jsonValue.ValueExists("claims"))
+  {
+    Aws::Map<Aws::String, JsonValue> claimsJsonMap = jsonValue.GetObject("claims").GetAllObjects();
+    for(auto& claimsItem : claimsJsonMap)
+    {
+      m_claims[claimsItem.first] = claimsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

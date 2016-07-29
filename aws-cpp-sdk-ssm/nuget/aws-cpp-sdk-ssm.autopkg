@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SSM;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.13.20141106.9;
+        version : 0.13.20141106.10;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Systems Management Service);

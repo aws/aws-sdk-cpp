@@ -29,7 +29,8 @@ namespace Model
     CONFIRMED,
     ARCHIVED,
     COMPROMISED,
-    UNKNOWN
+    UNKNOWN,
+    RESET_REQUIRED
   };
 
 namespace UserStatusTypeMapper

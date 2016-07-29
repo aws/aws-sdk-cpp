@@ -199,8 +199,8 @@ namespace Model
      * formatted properly.</p> </li> <li> <p>MIME content types must be among those
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
-     * SES Developer Guide</a>.</p> </li> <li> <p>Content must be base64-encoded, if
-     * MIME requires it.</p> </li> </ul>
+     * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
+     * </ul>
      */
     inline const RawMessage& GetRawMessage() const{ return m_rawMessage; }
 
@@ -212,8 +212,8 @@ namespace Model
      * formatted properly.</p> </li> <li> <p>MIME content types must be among those
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
-     * SES Developer Guide</a>.</p> </li> <li> <p>Content must be base64-encoded, if
-     * MIME requires it.</p> </li> </ul>
+     * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
+     * </ul>
      */
     inline void SetRawMessage(const RawMessage& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
 
@@ -225,8 +225,8 @@ namespace Model
      * formatted properly.</p> </li> <li> <p>MIME content types must be among those
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
-     * SES Developer Guide</a>.</p> </li> <li> <p>Content must be base64-encoded, if
-     * MIME requires it.</p> </li> </ul>
+     * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
+     * </ul>
      */
     inline void SetRawMessage(RawMessage&& value) { m_rawMessageHasBeenSet = true; m_rawMessage = value; }
 
@@ -238,8 +238,8 @@ namespace Model
      * formatted properly.</p> </li> <li> <p>MIME content types must be among those
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
-     * SES Developer Guide</a>.</p> </li> <li> <p>Content must be base64-encoded, if
-     * MIME requires it.</p> </li> </ul>
+     * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
+     * </ul>
      */
     inline SendRawEmailRequest& WithRawMessage(const RawMessage& value) { SetRawMessage(value); return *this;}
 
@@ -251,8 +251,8 @@ namespace Model
      * formatted properly.</p> </li> <li> <p>MIME content types must be among those
      * supported by Amazon SES. For more information, go to the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon
-     * SES Developer Guide</a>.</p> </li> <li> <p>Content must be base64-encoded, if
-     * MIME requires it.</p> </li> </ul>
+     * SES Developer Guide</a>.</p> </li> <li> <p>Must be base64-encoded.</p> </li>
+     * </ul>
      */
     inline SendRawEmailRequest& WithRawMessage(RawMessage&& value) { SetRawMessage(value); return *this;}
 

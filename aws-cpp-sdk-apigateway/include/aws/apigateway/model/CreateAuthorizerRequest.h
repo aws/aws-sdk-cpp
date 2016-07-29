@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/AuthorizerType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -136,6 +137,30 @@ namespace Model
      * <p>[Required] The type of the authorizer.</p>
      */
     inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(value); return *this;}
+
+    
+    inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
+
+    
+    inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
+
+    
+    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
+
+    
+    inline CreateAuthorizerRequest& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
+
+    
+    inline CreateAuthorizerRequest& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
+
+    
+    inline CreateAuthorizerRequest& AddProviderARNs(const Aws::String& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
+
+    
+    inline CreateAuthorizerRequest& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
+
+    
+    inline CreateAuthorizerRequest& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -341,6 +366,8 @@ namespace Model
     bool m_nameHasBeenSet;
     AuthorizerType m_type;
     bool m_typeHasBeenSet;
+    Aws::Vector<Aws::String> m_providerARNs;
+    bool m_providerARNsHasBeenSet;
     Aws::String m_authType;
     bool m_authTypeHasBeenSet;
     Aws::String m_authorizerUri;

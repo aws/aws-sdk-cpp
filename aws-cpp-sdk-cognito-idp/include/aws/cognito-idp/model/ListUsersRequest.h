@@ -17,7 +17,6 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cognito-idp/model/UserStatusType.h>
 
 namespace Aws
 {
@@ -170,49 +169,39 @@ namespace Model
     inline ListUsersRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
+    inline const Aws::String& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline ListUsersRequest& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
+    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline ListUsersRequest& WithUserStatus(UserStatusType&& value) { SetUserStatus(value); return *this;}
+    inline ListUsersRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>The filter for the list users request.</p>
+     */
+    inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>The filter for the list users request.</p>
+     */
+    inline ListUsersRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
 
   private:
     Aws::String m_userPoolId;
@@ -223,8 +212,8 @@ namespace Model
     bool m_limitHasBeenSet;
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
-    UserStatusType m_userStatus;
-    bool m_userStatusHasBeenSet;
+    Aws::String m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model

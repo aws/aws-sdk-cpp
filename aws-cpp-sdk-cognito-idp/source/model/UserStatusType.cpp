@@ -34,6 +34,7 @@ namespace Aws
         static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
         static const int COMPROMISED_HASH = HashingUtils::HashString("COMPROMISED");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int RESET_REQUIRED_HASH = HashingUtils::HashString("RESET_REQUIRED");
 
 
         UserStatusType GetUserStatusTypeForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return UserStatusType::UNKNOWN;
           }
+          else if (hashCode == RESET_REQUIRED_HASH)
+          {
+            return UserStatusType::RESET_REQUIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "COMPROMISED";
           case UserStatusType::UNKNOWN:
             return "UNKNOWN";
+          case UserStatusType::RESET_REQUIRED:
+            return "RESET_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

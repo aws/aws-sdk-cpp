@@ -338,9 +338,15 @@ namespace Model
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds. An expiration can also be specified in the SAML authentication
      * response's <code>SessionNotOnOrAfter</code> value. The actual expiration time is
-     * whichever value is shorter. </p> <note> <p>The maximum duration for a session is
-     * 1 hour, and the minimum duration is 15 minutes, even if values outside this
-     * range are specified.</p> </note>
+     * whichever value is shorter. </p> <note> <p>This is separate from the duration of
+     * a console session that you might request using the returned credentials. The
+     * request to the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
+     * SAML 2.0 Federated Users to Access the AWS Management Console</a> in the <i>IAM
+     * User Guide</i>.</p> </note>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -349,9 +355,15 @@ namespace Model
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds. An expiration can also be specified in the SAML authentication
      * response's <code>SessionNotOnOrAfter</code> value. The actual expiration time is
-     * whichever value is shorter. </p> <note> <p>The maximum duration for a session is
-     * 1 hour, and the minimum duration is 15 minutes, even if values outside this
-     * range are specified.</p> </note>
+     * whichever value is shorter. </p> <note> <p>This is separate from the duration of
+     * a console session that you might request using the returned credentials. The
+     * request to the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
+     * SAML 2.0 Federated Users to Access the AWS Management Console</a> in the <i>IAM
+     * User Guide</i>.</p> </note>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -360,9 +372,15 @@ namespace Model
      * seconds (15 minutes) to 3600 seconds (1 hour). By default, the value is set to
      * 3600 seconds. An expiration can also be specified in the SAML authentication
      * response's <code>SessionNotOnOrAfter</code> value. The actual expiration time is
-     * whichever value is shorter. </p> <note> <p>The maximum duration for a session is
-     * 1 hour, and the minimum duration is 15 minutes, even if values outside this
-     * range are specified.</p> </note>
+     * whichever value is shorter. </p> <note> <p>This is separate from the duration of
+     * a console session that you might request using the returned credentials. The
+     * request to the federation endpoint for a console sign-in token takes a
+     * <code>SessionDuration</code> parameter that specifies the maximum length of the
+     * console session, separately from the <code>DurationSeconds</code> parameter on
+     * this API. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling
+     * SAML 2.0 Federated Users to Access the AWS Management Console</a> in the <i>IAM
+     * User Guide</i>.</p> </note>
      */
     inline AssumeRoleWithSAMLRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

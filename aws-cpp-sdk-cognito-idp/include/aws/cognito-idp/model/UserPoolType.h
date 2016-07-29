@@ -21,6 +21,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
+#include <aws/cognito-idp/model/DeviceConfigurationType.h>
+#include <aws/cognito-idp/model/EmailConfigurationType.h>
+#include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
@@ -546,6 +549,31 @@ namespace Model
     inline UserPoolType& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(value); return *this;}
 
     /**
+     * <p>The device configuration.</p>
+     */
+    inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline void SetDeviceConfiguration(const DeviceConfigurationType& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline UserPoolType& WithDeviceConfiguration(const DeviceConfigurationType& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline UserPoolType& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
      * <p>A number estimating the size of the user pool.</p>
      */
     inline int GetEstimatedNumberOfUsers() const{ return m_estimatedNumberOfUsers; }
@@ -559,6 +587,140 @@ namespace Model
      * <p>A number estimating the size of the user pool.</p>
      */
     inline UserPoolType& WithEstimatedNumberOfUsers(int value) { SetEstimatedNumberOfUsers(value); return *this;}
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline UserPoolType& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline UserPoolType& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(value); return *this;}
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline UserPoolType& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline UserPoolType& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline void SetSmsConfigurationFailure(const Aws::String& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline void SetSmsConfigurationFailure(Aws::String&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline void SetSmsConfigurationFailure(const char* value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure.assign(value); }
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline UserPoolType& WithSmsConfigurationFailure(const Aws::String& value) { SetSmsConfigurationFailure(value); return *this;}
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline UserPoolType& WithSmsConfigurationFailure(Aws::String&& value) { SetSmsConfigurationFailure(value); return *this;}
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the message(s) to your
+     * users.</p>
+     */
+    inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline const Aws::String& GetEmailConfigurationFailure() const{ return m_emailConfigurationFailure; }
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline void SetEmailConfigurationFailure(const Aws::String& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = value; }
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline void SetEmailConfigurationFailure(Aws::String&& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = value; }
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline void SetEmailConfigurationFailure(const char* value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure.assign(value); }
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline UserPoolType& WithEmailConfigurationFailure(const Aws::String& value) { SetEmailConfigurationFailure(value); return *this;}
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline UserPoolType& WithEmailConfigurationFailure(Aws::String&& value) { SetEmailConfigurationFailure(value); return *this;}
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline UserPoolType& WithEmailConfigurationFailure(const char* value) { SetEmailConfigurationFailure(value); return *this;}
 
   private:
     Aws::String m_id;
@@ -591,8 +753,18 @@ namespace Model
     bool m_smsAuthenticationMessageHasBeenSet;
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
+    DeviceConfigurationType m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
     int m_estimatedNumberOfUsers;
     bool m_estimatedNumberOfUsersHasBeenSet;
+    EmailConfigurationType m_emailConfiguration;
+    bool m_emailConfigurationHasBeenSet;
+    SmsConfigurationType m_smsConfiguration;
+    bool m_smsConfigurationHasBeenSet;
+    Aws::String m_smsConfigurationFailure;
+    bool m_smsConfigurationFailureHasBeenSet;
+    Aws::String m_emailConfigurationFailure;
+    bool m_emailConfigurationFailureHasBeenSet;
   };
 
 } // namespace Model

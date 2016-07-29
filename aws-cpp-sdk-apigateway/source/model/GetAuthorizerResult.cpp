@@ -56,6 +56,15 @@ GetAuthorizerResult& GetAuthorizerResult::operator =(const AmazonWebServiceResul
 
   }
 
+  if(jsonValue.ValueExists("providerARNs"))
+  {
+    Array<JsonValue> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
+    {
+      m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = jsonValue.GetString("authType");

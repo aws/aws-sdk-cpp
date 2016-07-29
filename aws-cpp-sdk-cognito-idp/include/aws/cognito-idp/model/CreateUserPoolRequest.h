@@ -20,6 +20,9 @@
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
+#include <aws/cognito-idp/model/DeviceConfigurationType.h>
+#include <aws/cognito-idp/model/EmailConfigurationType.h>
+#include <aws/cognito-idp/model/SmsConfigurationType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 
@@ -375,6 +378,81 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(value); return *this;}
 
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline const DeviceConfigurationType& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline void SetDeviceConfiguration(const DeviceConfigurationType& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline void SetDeviceConfiguration(DeviceConfigurationType&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithDeviceConfiguration(const DeviceConfigurationType& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>The device configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithDeviceConfiguration(DeviceConfigurationType&& value) { SetDeviceConfiguration(value); return *this;}
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline void SetEmailConfiguration(const EmailConfigurationType& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline void SetEmailConfiguration(EmailConfigurationType&& value) { m_emailConfigurationHasBeenSet = true; m_emailConfiguration = value; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithEmailConfiguration(const EmailConfigurationType& value) { SetEmailConfiguration(value); return *this;}
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithEmailConfiguration(EmailConfigurationType&& value) { SetEmailConfiguration(value); return *this;}
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline const SmsConfigurationType& GetSmsConfiguration() const{ return m_smsConfiguration; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline void SetSmsConfiguration(SmsConfigurationType&& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithSmsConfiguration(const SmsConfigurationType& value) { SetSmsConfiguration(value); return *this;}
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
+    inline CreateUserPoolRequest& WithSmsConfiguration(SmsConfigurationType&& value) { SetSmsConfiguration(value); return *this;}
+
   private:
     Aws::String m_poolName;
     bool m_poolNameHasBeenSet;
@@ -396,6 +474,12 @@ namespace Model
     bool m_smsAuthenticationMessageHasBeenSet;
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;
+    DeviceConfigurationType m_deviceConfiguration;
+    bool m_deviceConfigurationHasBeenSet;
+    EmailConfigurationType m_emailConfiguration;
+    bool m_emailConfigurationHasBeenSet;
+    SmsConfigurationType m_smsConfiguration;
+    bool m_smsConfigurationHasBeenSet;
   };
 
 } // namespace Model

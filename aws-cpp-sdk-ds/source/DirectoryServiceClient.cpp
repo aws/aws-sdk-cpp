@@ -26,6 +26,7 @@
 #include <aws/ds/DirectoryServiceClient.h>
 #include <aws/ds/DirectoryServiceEndpoint.h>
 #include <aws/ds/DirectoryServiceErrorMarshaller.h>
+#include <aws/ds/model/AddIpRoutesRequest.h>
 #include <aws/ds/model/AddTagsToResourceRequest.h>
 #include <aws/ds/model/ConnectDirectoryRequest.h>
 #include <aws/ds/model/CreateAliasRequest.h>
@@ -51,8 +52,10 @@
 #include <aws/ds/model/EnableSsoRequest.h>
 #include <aws/ds/model/GetDirectoryLimitsRequest.h>
 #include <aws/ds/model/GetSnapshotLimitsRequest.h>
+#include <aws/ds/model/ListIpRoutesRequest.h>
 #include <aws/ds/model/ListTagsForResourceRequest.h>
 #include <aws/ds/model/RegisterEventTopicRequest.h>
+#include <aws/ds/model/RemoveIpRoutesRequest.h>
 #include <aws/ds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/ds/model/RestoreFromSnapshotRequest.h>
 #include <aws/ds/model/UpdateConditionalForwarderRequest.h>
@@ -124,6 +127,37 @@ void DirectoryServiceClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AddIpRoutesOutcome DirectoryServiceClient::AddIpRoutes(const AddIpRoutesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddIpRoutesOutcome(AddIpRoutesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddIpRoutesOutcome(outcome.GetError());
+  }
+}
+
+AddIpRoutesOutcomeCallable DirectoryServiceClient::AddIpRoutesCallable(const AddIpRoutesRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::AddIpRoutes, this, request);
+}
+
+void DirectoryServiceClient::AddIpRoutesAsync(const AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::AddIpRoutesAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::AddIpRoutesAsyncHelper(const AddIpRoutesRequest& request, const AddIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddIpRoutes(request), context);
 }
 
 AddTagsToResourceOutcome DirectoryServiceClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
@@ -901,6 +935,37 @@ void DirectoryServiceClient::GetSnapshotLimitsAsyncHelper(const GetSnapshotLimit
   handler(this, request, GetSnapshotLimits(request), context);
 }
 
+ListIpRoutesOutcome DirectoryServiceClient::ListIpRoutes(const ListIpRoutesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListIpRoutesOutcome(ListIpRoutesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListIpRoutesOutcome(outcome.GetError());
+  }
+}
+
+ListIpRoutesOutcomeCallable DirectoryServiceClient::ListIpRoutesCallable(const ListIpRoutesRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::ListIpRoutes, this, request);
+}
+
+void DirectoryServiceClient::ListIpRoutesAsync(const ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::ListIpRoutesAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::ListIpRoutesAsyncHelper(const ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIpRoutes(request), context);
+}
+
 ListTagsForResourceOutcome DirectoryServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::StringStream ss;
@@ -961,6 +1026,37 @@ void DirectoryServiceClient::RegisterEventTopicAsync(const RegisterEventTopicReq
 void DirectoryServiceClient::RegisterEventTopicAsyncHelper(const RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterEventTopic(request), context);
+}
+
+RemoveIpRoutesOutcome DirectoryServiceClient::RemoveIpRoutes(const RemoveIpRoutesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveIpRoutesOutcome(RemoveIpRoutesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveIpRoutesOutcome(outcome.GetError());
+  }
+}
+
+RemoveIpRoutesOutcomeCallable DirectoryServiceClient::RemoveIpRoutesCallable(const RemoveIpRoutesRequest& request) const
+{
+  return std::async(std::launch::async, &DirectoryServiceClient::RemoveIpRoutes, this, request);
+}
+
+void DirectoryServiceClient::RemoveIpRoutesAsync(const RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit(&DirectoryServiceClient::RemoveIpRoutesAsyncHelper, this, request, handler, context);
+}
+
+void DirectoryServiceClient::RemoveIpRoutesAsyncHelper(const RemoveIpRoutesRequest& request, const RemoveIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveIpRoutes(request), context);
 }
 
 RemoveTagsFromResourceOutcome DirectoryServiceClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const

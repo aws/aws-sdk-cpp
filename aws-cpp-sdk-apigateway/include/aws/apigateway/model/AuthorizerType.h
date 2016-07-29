@@ -25,7 +25,8 @@ namespace Model
   enum class AuthorizerType
   {
     NOT_SET,
-    TOKEN
+    TOKEN,
+    COGNITO_USER_POOLS
   };
 
 namespace AuthorizerTypeMapper

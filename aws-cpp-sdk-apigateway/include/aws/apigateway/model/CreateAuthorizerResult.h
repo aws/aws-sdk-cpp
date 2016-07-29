@@ -16,6 +16,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/AuthorizerType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -143,6 +144,30 @@ namespace Model
      * TOKEN.</p>
      */
     inline CreateAuthorizerResult& WithType(AuthorizerType&& value) { SetType(value); return *this;}
+
+    
+    inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
+
+    
+    inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNs = value; }
+
+    
+    inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNs = value; }
+
+    
+    inline CreateAuthorizerResult& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
+
+    
+    inline CreateAuthorizerResult& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
+
+    
+    inline CreateAuthorizerResult& AddProviderARNs(const Aws::String& value) { m_providerARNs.push_back(value); return *this; }
+
+    
+    inline CreateAuthorizerResult& AddProviderARNs(Aws::String&& value) { m_providerARNs.push_back(value); return *this; }
+
+    
+    inline CreateAuthorizerResult& AddProviderARNs(const char* value) { m_providerARNs.push_back(value); return *this; }
 
     /**
      * <p>Optional customer-defined field, used in Swagger imports/exports. Has no
@@ -477,6 +502,7 @@ namespace Model
     Aws::String m_id;
     Aws::String m_name;
     AuthorizerType m_type;
+    Aws::Vector<Aws::String> m_providerARNs;
     Aws::String m_authType;
     Aws::String m_authorizerUri;
     Aws::String m_authorizerCredentials;

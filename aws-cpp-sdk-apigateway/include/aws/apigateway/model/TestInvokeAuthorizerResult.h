@@ -216,6 +216,42 @@ namespace Model
     
     inline TestInvokeAuthorizerResult& AddAuthorization(const char* key, const Aws::Vector<Aws::String>& value) { m_authorization[key] = value; return *this; }
 
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetClaims() const{ return m_claims; }
+
+    
+    inline void SetClaims(const Aws::Map<Aws::String, Aws::String>& value) { m_claims = value; }
+
+    
+    inline void SetClaims(Aws::Map<Aws::String, Aws::String>&& value) { m_claims = value; }
+
+    
+    inline TestInvokeAuthorizerResult& WithClaims(const Aws::Map<Aws::String, Aws::String>& value) { SetClaims(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerResult& WithClaims(Aws::Map<Aws::String, Aws::String>&& value) { SetClaims(value); return *this;}
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, const Aws::String& value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const Aws::String& value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, Aws::String&& value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, Aws::String&& value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(const char* key, Aws::String&& value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const char* value) { m_claims[key] = value; return *this; }
+
+    
+    inline TestInvokeAuthorizerResult& AddClaims(const char* key, const char* value) { m_claims[key] = value; return *this; }
+
   private:
     int m_clientStatus;
     Aws::String m_log;
@@ -223,6 +259,7 @@ namespace Model
     Aws::String m_principalId;
     Aws::String m_policy;
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_authorization;
+    Aws::Map<Aws::String, Aws::String> m_claims;
   };
 
 } // namespace Model
