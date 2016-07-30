@@ -23,15 +23,34 @@ namespace Aws
 {
     namespace Utils
     {
+        /**
+         * Class encapsulating a UUID. This is platform dependent. The method you are most likely interested in is RandomUUID().
+         */
         class AWS_CORE_API UUID
         {
         public:
+            /**
+             * Parses a GUID string into the raw data.
+             */
             UUID(const Aws::String&);
+            /**
+             * Sets the raw uuid data
+             */
             UUID(const unsigned char uuid[16]);
 
+            /**
+             * Returns the current UUID as a GUID string
+             */
             operator Aws::String();
+            /**
+             * Returns a copy of the raw uuid
+             */
             inline operator ByteBuffer() { return ByteBuffer(m_uuid, sizeof(m_uuid)); }
 
+            /**
+             * Generates a UUID. It will always try to prefer a random implementation from the entropy source on the machine. If none, is available, it will
+             * fallback to the mac address and timestamp implementation.
+             */
             static UUID RandomUUID();
 
         private:

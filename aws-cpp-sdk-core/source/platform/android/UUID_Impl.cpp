@@ -13,18 +13,26 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/platform/Environment.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
-namespace Environment
-{
+    namespace Utils
+    {
+        UUID UUID::RandomUUID()
+        {
+            char uuid[36];
+            memset(uuid, 0, sizeof(uuid));
 
-Aws::String GetEnv(const char* name)
-{
-   auto value = getenv(name);
-   return Aws::String( value ? value : "" );
+            int fd = fopen("/proc/sys/kernel/random/uuid", "r");
+
+            if(fd)
+            {
+                fread(uuid, sizeof(uuid), sizeof(uuid), fd);
+                fclose(fd);
+            }
+            Aws::String uuidStr(uuid);
+            return UUID(uuidStr);
+        }
+    }
 }
-
-} // namespace Environment
-} // namespace Aws
