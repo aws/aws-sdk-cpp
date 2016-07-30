@@ -23,7 +23,7 @@ ResponseStream::ResponseStream(void) :
 {
 }
 
-ResponseStream::ResponseStream(IOStream* underlyingStreamToManage) :
+ResponseStream::ResponseStream(Aws::IOStream* underlyingStreamToManage) :
     m_underlyingStream(underlyingStreamToManage)
 {
 }

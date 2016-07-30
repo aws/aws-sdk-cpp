@@ -30,10 +30,13 @@ namespace Modules
 {
 static const char* const Allocation_Tag = "CryptoModule";
 static const size_t IV_SIZE = 16u;
-static const size_t TAG_SIZE = 16u;
+static const size_t TAG_SIZE_BITS = 128u;
+static const size_t TAG_SIZE_BYTES = 16u;
 static const size_t AES_BLOCK_SIZE = 16u;
 static const size_t AES_GCM_PAD_SIZE = 12u;
-static const Aws::String BYTES_SPECIFIER = "bytes=-";
+static const Aws::String LAST_BYTES_SPECIFIER = "bytes=-";
+static const Aws::String FIRST_BYTES_SPECIFIER = "bytes=0-";
+static const size_t BITS_IN_BYTE = 8u;
 
 CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
     const Aws::S3::S3Client& s3Client) :
@@ -69,7 +72,6 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model:
         Handlers::MetadataHandler handler;
         handler.WriteData(request, m_contentCryptoMaterial);
     }	
-	
     PutObjectOutcome outcome = m_s3Client.PutObject(request);
     if (!outcome.IsSuccess())
     {
@@ -152,8 +154,6 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapRequestWithCipher(Aws
 
     userSuppliedStream->clear();
     userSuppliedStream->seekg(0, std::ios_base::beg);
-    //replacing the stream here will free the memory from the crypto stream, and then set it to the previously allocated stream.
-    //result now owns the stream and will free the memory when finished.
     result.ReplaceBody(userSuppliedStream);
 
 	return GetObjectOutcome(GetObjectResult(std::move(result)));
@@ -194,26 +194,25 @@ void CryptoModule::StrictAuthenticatedEncryptionCheck(const Aws::S3::Model::GetO
 	{
 		if (request.GetRange() != emptyRange)
 		{
-			AWS_LOGSTREAM_FATAL(Allocation_Tag, "Range-Get Operations not allowed with Strict Authenticated Encryption mode.")
+			AWS_LOGSTREAM_FATAL(Allocation_Tag, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
 			assert(0);
 		}
 	}
 }
 
-//This is my current implementation to get the tag. It is failing on the hex decode.
 CryptoBuffer CryptoModule::GetTag(const GetObjectRequest & request)
 {
 	GetObjectRequest getTag;
 	getTag.WithBucket(request.GetBucket());
 	getTag.WithKey(request.GetKey());
-	Aws::String tagLengthRangeSpecifier = BYTES_SPECIFIER + Utils::StringUtils::to_string(m_contentCryptoMaterial.GetCryptoTagLength());
+	auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
+	Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
 	getTag.SetRange(tagLengthRangeSpecifier);
 	GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
 	Aws::OStream& tagStream = tagOutcome.GetResult().GetBody();
 	Aws::OStringStream ss;
 	ss << tagStream.rdbuf();
-	std::cout << ss.str() << std::endl;
-	return HashingUtils::HexDecode(ss.str());
+	return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
 }
 
 
@@ -255,7 +254,7 @@ CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMateri
 void CryptoModuleAE::PopulateCryptoContentMaterial()
 {
 	m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
-	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE);
+	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BITS);
     m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
 }
 
@@ -283,7 +282,7 @@ void CryptoModuleStrictAE::PopulateCryptoContentMaterial()
 {
     m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
 	m_contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IV_SIZE));
-	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE);
+	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BITS);
     m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
 }
 

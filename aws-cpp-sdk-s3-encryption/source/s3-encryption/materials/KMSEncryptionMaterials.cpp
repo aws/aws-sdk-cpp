@@ -36,7 +36,10 @@ void KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMat
 {
     EncryptRequest request;
     request.SetKeyId(m_customerMasterKeyID);
+
+	contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, m_customerMasterKeyID);
     request.SetEncryptionContext(contentCryptoMaterial.GetMaterialsDescription());
+
     request.SetPlaintext(contentCryptoMaterial.GetContentEncryptionKey());
 
     EncryptOutcome outcome = m_kmsClient->Encrypt(request);
@@ -51,7 +54,8 @@ void KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMat
     EncryptResult result = outcome.GetResult();
     contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
     contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, m_customerMasterKeyID);
-    contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer(result.GetCiphertextBlob()));
+	//remove cryptoBuffer
+    contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
 }
 
 void KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
@@ -80,7 +84,7 @@ void KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMat
 
     DecryptRequest request;
     request.SetEncryptionContext(contentCryptoMaterial.GetMaterialsDescription());
-    request.SetCiphertextBlob(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
+    request.SetCiphertextBlob(encryptedContentEncryptionKey);
 
     DecryptOutcome outcome = m_kmsClient->Decrypt(request);
     if (!outcome.IsSuccess())

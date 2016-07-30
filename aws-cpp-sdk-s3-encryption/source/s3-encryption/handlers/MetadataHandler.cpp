@@ -72,9 +72,9 @@ ContentCryptoMaterial MetadataHandler::ReadMetadata(const Aws::Map<Aws::String, 
 	auto keyWrapIterator = metadata.find(KEY_WRAP_ALGORITHM);
 	auto cryptoTagIterator = metadata.find(CRYPTO_TAG_LENGTH_HEADER);
 
-	if (keyIterator == metadata.end() || keyIterator == metadata.end() ||
-		keyIterator == metadata.end() || keyIterator == metadata.end() ||
-		keyIterator == metadata.end() || keyIterator == metadata.end())
+	if (keyIterator == metadata.end() || ivIterator == metadata.end() ||
+		materialsDescriptionIterator == metadata.end() || schemeIterator == metadata.end() ||
+		keyIterator == metadata.end())
 	{
 		AWS_LOGSTREAM_ERROR(Allocation_Tag, "One or more metadata fields do not exist for decryption.");
 		return ContentCryptoMaterial();
@@ -90,8 +90,14 @@ ContentCryptoMaterial MetadataHandler::ReadMetadata(const Aws::Map<Aws::String, 
 
 	Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
 	contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
-
-	contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
+	if (cryptoTagIterator != metadata.end())
+	{
+		contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
+	}
+	else
+	{
+		contentCryptoMaterial.SetCryptoTagLength(0u);
+	}
 	return contentCryptoMaterial;
 }
 
