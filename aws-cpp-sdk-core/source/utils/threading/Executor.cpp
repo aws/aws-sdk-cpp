@@ -115,14 +115,31 @@ m_executor(executor), m_poolSize(poolSize), m_numTasksRunning(0)
 
 BlockingExecutor::~BlockingExecutor()
 {
+    while (m_numTasksRunning != 0)
+    {
+        std::this_thread::yield();
+        if (m_numTasksRunning == 0)
+        {
+            // Make sure the condition actually does hold under the lock
+            std::lock_guard<std::recursive_mutex> locker(m_syncPointLock);
+            if (m_numTasksRunning == 0)
+            {
+                break;
+            }
+        }
+    }
+    assert(m_numTasksRunning == 0);
 }
 
 bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
 {
     std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
+    assert(m_numTasksRunning <= m_poolSize);
     if (m_numTasksRunning >= m_poolSize)
     {
-        m_syncPoint.wait(locker);
+        m_syncPoint.wait(locker, [&]{
+            return m_numTasksRunning < m_poolSize;
+        });
     }
     m_numTasksRunning++;
     locker.unlock();
@@ -140,6 +157,7 @@ void BlockingExecutor::ExecuteTask(std::function<void()> fn)
 void BlockingExecutor::OnTaskComplete()
 {
     std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
+    assert(m_numTasksRunning <= m_poolSize);
     m_numTasksRunning--;
     m_syncPoint.notify_one();
     locker.unlock();

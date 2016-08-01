@@ -150,7 +150,7 @@ namespace Aws
                 std::shared_ptr<Executor> m_executor;
                 size_t m_poolSize;
                 
-                size_t m_numTasksRunning;
+                volatile size_t m_numTasksRunning;
             };
 
 

@@ -20,6 +20,7 @@
 #include <chrono>
 
 using namespace Aws::Utils::Threading;
+using namespace std::chrono;
 
 const char* EXECUTOR_TEST_ALLOCATION_TAG = "ExecutorTest";
 
@@ -164,8 +165,7 @@ TEST(BlockingExecutorTest, TestBlockSingleTask)
     std::mutex vectorLock;
     std::condition_variable taskSignal;
     
-    std::atomic<bool> lastTaskWaiting;
-    lastTaskWaiting = false;
+    volatile bool lastTaskWaiting = false;
     
     /* Each tasks waits for a "task signal" before proceeding. The last task will set a
      * special flag. */
@@ -204,7 +204,13 @@ TEST(BlockingExecutorTest, TestBlockSingleTask)
     taskSignal.notify_all();
     locker.lock();
     
-    checkpointSignal.wait(locker);
+    // If queued tasks aren't finished yet, wait for them to finish.
+    if (taskOrder.size() != CHECKPOINT_SIZE)
+    {
+        checkpointSignal.wait(locker, [&] {
+            return taskOrder.size() == CHECKPOINT_SIZE;
+        });
+    }
     
     // Check that all those tasks ran successfully.
     ASSERT_EQ(taskOrder.size(), CHECKPOINT_SIZE);
@@ -214,19 +220,37 @@ TEST(BlockingExecutorTest, TestBlockSingleTask)
     }
     locker.unlock();
     
-    /* Additionally, the last task should now have been queued up (i.e. received by the mock executor
-     * , now that the others have finished. */
-    ASSERT_EQ(numReceivedTasks, FINAL_SIZE);
+    /* Additionally, the last task should now have been queued up (i.e. received by the mock executor,
+     * now that the others have finished. It may take some time for the last task to queue up, so we
+     * wait until it does. */
+    while (numReceivedTasks != FINAL_SIZE)
+    {
+        std::this_thread::yield();
+    }
     
     // Wait for the last task to let us know it's ready, then signal it.
     while (!lastTaskWaiting)
     {
         std::this_thread::yield();
+        if (lastTaskWaiting)
+        {
+            std::lock_guard<std::mutex> locker(vectorLock);
+            if (lastTaskWaiting)
+            {
+                break;
+            }
+        }
     }
     taskSignal.notify_all();
-    
+            
     locker.lock();
-    doneSignal.wait(locker);
+    
+    if (taskOrder.size() != FINAL_SIZE)
+    {
+        doneSignal.wait(locker, [&] {
+            return taskOrder.size() == FINAL_SIZE;
+        });
+    }
     
     // Check completion and ordering of tasks.
     ASSERT_EQ(taskOrder.size(), FINAL_SIZE);
@@ -236,18 +260,27 @@ TEST(BlockingExecutorTest, TestBlockSingleTask)
     AWS_END_MEMORY_TEST
 }
 
-// Tests whether the blocking executor properly delegates tasks concurrently.
+/** Tests whether the blocking executor properly delegates tasks concurrently */
 TEST(BlockingExecutorTest, ConcurrencyTimingTest)
 {
-    using namespace std::chrono;
-    
     AWS_BEGIN_MEMORY_TEST(16, 10)
     
     const size_t NUM_TASKS = 15;
     const size_t POOL_SIZE = 5;
     
+    unsigned int counter = 0;
+    std::mutex counterLock;
+    std::condition_variable doneSignal;
+    
     auto executeTask = [&] () {
         std::this_thread::sleep_for(milliseconds(10));
+        std::unique_lock<std::mutex> locker(counterLock);
+        counter++;
+        if (counter == NUM_TASKS)
+        {
+            locker.unlock();
+            doneSignal.notify_all();
+        }
     };
 
     // Time how long it takes to run the tasks with an underlying executor that's concurrent
@@ -260,6 +293,13 @@ TEST(BlockingExecutorTest, ConcurrencyTimingTest)
     {
         blockingExecutor.Submit(executeTask);
     }
+    std::unique_lock<std::mutex> locker(counterLock);
+    while (counter != NUM_TASKS)
+    {
+        doneSignal.wait(locker);
+    }
+    counter = 0;
+    locker.unlock();
     high_resolution_clock::time_point endTime = high_resolution_clock::now();
     auto asyncDuration = duration_cast<milliseconds>(endTime - startTime).count();
     
@@ -267,11 +307,16 @@ TEST(BlockingExecutorTest, ConcurrencyTimingTest)
     std::shared_ptr<ThreadlessMockExecutor> threadlessMockExecutor =
             Aws::MakeShared<ThreadlessMockExecutor>(EXECUTOR_TEST_ALLOCATION_TAG);
     BlockingExecutor threadlessBlockingExecutor(threadlessMockExecutor, POOL_SIZE);
-    
+
     startTime = high_resolution_clock::now();
     for (u_long i = 0; i < NUM_TASKS; i++)
     {
         threadlessBlockingExecutor.Submit(executeTask);
+    }
+    locker.lock();
+    while (counter != NUM_TASKS)
+    {
+        doneSignal.wait(locker);
     }
     endTime = high_resolution_clock::now();
     auto sequentialDuration = duration_cast<milliseconds>(endTime - startTime).count();
@@ -284,7 +329,7 @@ TEST(BlockingExecutorTest, ConcurrencyTimingTest)
     AWS_END_MEMORY_TEST
 }
 
-// Stress test where number of tasks ran >> pool size.
+/** Stress test where number of tasks ran >> pool size */
 TEST(BlockingExecutorTest, StressTest)
 {
     AWS_BEGIN_MEMORY_TEST(16, 10)
