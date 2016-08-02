@@ -271,6 +271,9 @@ def Main():
         print( "No definition for target architecture " + architecture )
         return 1
 
+    if architecture == "Linux":
+        os.environ["CXX"] = "clang++ -stdlib=libc++"
+
     targetPlatformDef = platformBuildTargets[ architecture ]
     if not sourcePlatform in targetPlatformDef[ 'buildPlatforms' ]:
         print( "Platform " + sourcePlatform + " does not support building for architecture " + architecture )
