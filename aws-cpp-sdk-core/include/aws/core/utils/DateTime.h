@@ -94,12 +94,12 @@ namespace Aws
              */
             DateTime(const char* timestamp, DateFormat format);
 
-            bool operator == (const DateTime& other);
-            bool operator < (const DateTime& other);
-            bool operator > (const DateTime& other);
-            bool operator != (const DateTime& other);
-            bool operator <= (const DateTime& other);
-            bool operator >= (const DateTime& other);
+            bool operator == (const DateTime& other) const;
+            bool operator < (const DateTime& other) const;
+            bool operator > (const DateTime& other) const;
+            bool operator != (const DateTime& other) const;
+            bool operator <= (const DateTime& other) const;
+            bool operator >= (const DateTime& other) const;
 
             /**
              * Assign from seconds.millis since epoch.
