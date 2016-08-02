@@ -32,6 +32,7 @@ namespace Aws
         static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
         static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
         static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";
+        static const char* const CONTENT_LENGTH_HEADER = "x-amz-content-length";
 
         namespace Handlers
         {
@@ -61,6 +62,11 @@ namespace Aws
                 Function to deserialize a string to map.
                 */
                 const Aws::Map<Aws::String, Aws::String> DeserializeMap(const Aws::String& jsonString);
+            protected:
+                /*
+                * Function to read meta data and return a content crypto material object.
+                */
+                ContentCryptoMaterial ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata);
             };
         }
     }

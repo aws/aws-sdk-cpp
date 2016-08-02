@@ -31,6 +31,7 @@
 #include <aws/s3/model/PutObjectResult.h>
 
 static const char* AllocationTag = "DataHandlersTest";
+static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
 static size_t CryptoTagLength = 16;
 static size_t IVSize = 12;
 
@@ -319,7 +320,7 @@ TEST_F(HandlerTest, InstructionFileS3OperationsTest)
     ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(getObjectResult);
 
     auto metadata = getObjectResult.GetMetadata();
-    ASSERT_STREQ(metadata[INSTRUCTION_FILE_HEADER].c_str(), "");
+    ASSERT_STREQ(metadata[INSTRUCTION_FILE_HEADER].c_str(), INSTRUCTION_HEADER_VALUE);
 
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
     ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());

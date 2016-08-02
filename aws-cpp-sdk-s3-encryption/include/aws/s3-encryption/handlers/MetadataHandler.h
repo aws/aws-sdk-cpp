@@ -44,12 +44,6 @@ namespace Aws
 				* Read the metadata of a HeadObeject result and store into a ContentCryptoMaterialObject.
 				*/
 				ContentCryptoMaterial ReadData(Aws::S3::Model::HeadObjectResult& result);
-
-			private:
-				/*
-				* Read the metadata and return a content crypto material from it.
-				*/
-				ContentCryptoMaterial ReadMetadata(const Aws::Map<Aws::String, Aws::String>& metadata);
             };
         }
     }

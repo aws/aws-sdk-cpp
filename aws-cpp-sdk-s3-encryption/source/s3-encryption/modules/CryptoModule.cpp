@@ -29,11 +29,10 @@ namespace S3Encryption
 namespace Modules
 {
 static const char* const Allocation_Tag = "CryptoModule";
-static const size_t IV_SIZE = 16u;
-static const size_t TAG_SIZE_BITS = 128u;
+static const size_t CBC_IV_SIZE = 16u;
+static const size_t GCM_IV_SIZE = 12u;
 static const size_t TAG_SIZE_BYTES = 16u;
 static const size_t AES_BLOCK_SIZE = 16u;
-static const size_t AES_GCM_PAD_SIZE = 12u;
 static const Aws::String LAST_BYTES_SPECIFIER = "bytes=-";
 static const Aws::String FIRST_BYTES_SPECIFIER = "bytes=0-";
 static const size_t BITS_IN_BYTE = 8u;
@@ -41,29 +40,31 @@ static const size_t BITS_IN_BYTE = 8u;
 CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
     const Aws::S3::S3Client& s3Client) :
     m_s3Client(s3Client), m_encryptionMaterials(encryptionMaterials), m_contentCryptoMaterial(ContentCryptoMaterial()),
-	m_cryptoConfig(cryptoConfig), m_cipher(nullptr)
+    m_cryptoConfig(cryptoConfig), m_cipher(nullptr)
 {
 }
 
 Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model::PutObjectRequest & request)
 {
-	PopulateCryptoContentMaterial();
-	InitEncryptionCipher();
-	PadRequestContentLength(request);
-	WrapRequestWithCipher(request);
+    PopulateCryptoContentMaterial();
+    InitEncryptionCipher();
+    SetContentLength(request);
+    WrapRequestWithCipher(request);
     m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
 
     if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
     {
         Handlers::InstructionFileHandler handler;
-		PutObjectRequest instructionFileRequest;
-		instructionFileRequest.WithBucket(request.GetBucket());
-		instructionFileRequest.WithKey(request.GetKey());
+        PutObjectRequest instructionFileRequest;
+        instructionFileRequest.WithBucket(request.GetBucket());
+        instructionFileRequest.WithKey(request.GetKey());
         handler.WriteData(instructionFileRequest, m_contentCryptoMaterial);
         PutObjectOutcome instructionOutcome = m_s3Client.PutObject(instructionFileRequest);
         if (!instructionOutcome.IsSuccess())
         {
-            AWS_LOGSTREAM_ERROR(Allocation_Tag, "Instruction file put operation not successful.");
+            AWS_LOGSTREAM_ERROR(Allocation_Tag, "Instruction file put operation not successful: "
+                    << instructionOutcome.GetError().GetExceptionName() << " : " 
+                    << instructionOutcome.GetError().GetMessage());
             return PutObjectOutcome(instructionOutcome.GetError());
         }
     }
@@ -75,7 +76,9 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model:
     PutObjectOutcome outcome = m_s3Client.PutObject(request);
     if (!outcome.IsSuccess())
     {
-        AWS_LOGSTREAM_ERROR(Allocation_Tag, "S3 put object securely operation not successful.");
+        AWS_LOGSTREAM_ERROR(Allocation_Tag, "S3 put object operation not successful: "
+            << outcome.GetError().GetExceptionName() << " : "
+            << outcome.GetError().GetMessage());
         return PutObjectOutcome(outcome.GetError());
     }
     return PutObjectOutcome(PutObjectResult(outcome.GetResultWithOwnership()));
@@ -83,136 +86,163 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model:
 
 Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request)
 {
-	HeadObjectRequest headRequest;
-	headRequest.WithKey(request.GetKey());
-	headRequest.WithBucket(request.GetBucket());
-	HeadObjectOutcome headOutcome = m_s3Client.HeadObject(headRequest);
+    HeadObjectRequest headRequest;
+    headRequest.WithKey(request.GetKey());
+    headRequest.WithBucket(request.GetBucket());
+    HeadObjectOutcome headOutcome = m_s3Client.HeadObject(headRequest);
 
-	auto metadata = headOutcome.GetResult().GetMetadata();
-	if (metadata.find(CONTENT_KEY_HEADER) == metadata.end())
-	{
-		Handlers::InstructionFileHandler handler;
-		GetObjectRequest instructionFileRequest;
-		instructionFileRequest.SetKey(request.GetKey() + Handlers::DEFAULT_INSTRUCTION_FILE_SUFFIX);
-		instructionFileRequest.SetBucket(request.GetBucket());
-		GetObjectOutcome instructionOutcome = m_s3Client.GetObject(instructionFileRequest);
-		if (!instructionOutcome.IsSuccess())
-		{
-			AWS_LOGSTREAM_ERROR(Allocation_Tag, "Instruction file get operation not successful.");
-			return GetObjectOutcome(instructionOutcome.GetError());
-		}
-		m_contentCryptoMaterial = handler.ReadData(instructionOutcome.GetResult());
-	}
-	else
-	{
-		Handlers::MetadataHandler handler;
-		m_contentCryptoMaterial = handler.ReadData(headOutcome.GetResult());
-	}
+    auto metadata = headOutcome.GetResult().GetMetadata();
+    if (metadata.find(CONTENT_KEY_HEADER) == metadata.end() || metadata.find(IV_HEADER) == metadata.end())
+    {
+        Handlers::InstructionFileHandler handler;
+        GetObjectRequest instructionFileRequest;
+        instructionFileRequest.SetKey(request.GetKey() + Handlers::DEFAULT_INSTRUCTION_FILE_SUFFIX);
+        instructionFileRequest.SetBucket(request.GetBucket());
+        GetObjectOutcome instructionOutcome = m_s3Client.GetObject(instructionFileRequest);
+        if (!instructionOutcome.IsSuccess())
+        {
+            AWS_LOGSTREAM_ERROR(Allocation_Tag, "Instruction file get operation not successful: "
+                << instructionOutcome.GetError().GetExceptionName() << " : "
+                << instructionOutcome.GetError().GetMessage());
+            return GetObjectOutcome(instructionOutcome.GetError());
+        }
+        m_contentCryptoMaterial = handler.ReadData(instructionOutcome.GetResult());
+    }
+    else
+    {
+        Handlers::MetadataHandler handler;
+        m_contentCryptoMaterial = handler.ReadData(headOutcome.GetResult());
+    }
 
-	StrictAuthenticatedEncryptionCheck(request);
-	m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
-	if (m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM)
-	{
-		CryptoBuffer tagFromBody = GetTag(request);
-		InitDecryptionCipher(tagFromBody);
-	}
-	else
-	{
-		InitDecryptionCipher();
-	}
-	
+    StrictAuthenticatedEncryptionCheck(request);
+    m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
+    if (m_contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
+    {
+        AWS_LOGSTREAM_ERROR(Allocation_Tag, "Content Encryption Key could not be decrypted.");
+        return GetObjectOutcome();
+    }
+    if (m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM)
+    {
+        CryptoBuffer tagFromBody = GetTag(request);
+        InitDecryptionCipher(tagFromBody);
+
+        auto adjustedRange = headOutcome.GetResult().GetContentLength() - TAG_SIZE_BYTES - 1;
+        request.SetRange(FIRST_BYTES_SPECIFIER + Aws::Utils::StringUtils::to_string(adjustedRange));
+    }
+    else
+    {
+        InitDecryptionCipher();
+    }
+    
     GetObjectOutcome outcome = UnwrapRequestWithCipher(request);
     return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
 }
 
 const Aws::S3::Model::PutObjectRequest & CryptoModule::WrapRequestWithCipher(Aws::S3::Model::PutObjectRequest & request)
 {
-	const std::shared_ptr<Aws::IOStream>& iostream = request.GetBody();
-	request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(Allocation_Tag, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
-	iostream->clear();
-	iostream->seekg(0, std::ios_base::beg);
-	return request;
+    const std::shared_ptr<Aws::IOStream>& iostream = request.GetBody();
+    request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(Allocation_Tag, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
+    iostream->clear();
+    iostream->seekg(0, std::ios_base::beg);
+    return request;
 }
 
 const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapRequestWithCipher(Aws::S3::Model::GetObjectRequest& request)
 {
-	auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
-	auto userSuppliedStream = userSuppliedStreamFactory();
+    auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
+    auto userSuppliedStream = userSuppliedStreamFactory();
 
-	request.SetResponseStreamFactory(
-		[&] { return Aws::New<SymmetricCryptoStream>(Allocation_Tag, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
-	);
-	GetObjectOutcome outcome = m_s3Client.GetObject(request);
-	if (!outcome.IsSuccess())
-	{
-		AWS_LOGSTREAM_ERROR(Allocation_Tag, "S3 get object operation not successful.");
-		return GetObjectOutcome(std::move(outcome.GetError()));
-	}
+    request.SetResponseStreamFactory(
+        [&] { return Aws::New<SymmetricCryptoStream>(Allocation_Tag, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
+    );
+    GetObjectOutcome outcome = m_s3Client.GetObject(request);
+    if (!outcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(Allocation_Tag, "S3 get operation not successful: "
+            << outcome.GetError().GetExceptionName() << " : "
+            << outcome.GetError().GetMessage());
+        return GetObjectOutcome(std::move(outcome.GetError()));
+    }
 
-	GetObjectResult&& result = outcome.GetResultWithOwnership();
-	((SymmetricCryptoStream&)result.GetBody()).Finalize();
+    GetObjectResult&& result = outcome.GetResultWithOwnership();
+    ((SymmetricCryptoStream&)result.GetBody()).Finalize();
 
     userSuppliedStream->clear();
     userSuppliedStream->seekg(0, std::ios_base::beg);
     result.ReplaceBody(userSuppliedStream);
 
-	return GetObjectOutcome(GetObjectResult(std::move(result)));
+    return GetObjectOutcome(GetObjectResult(std::move(result)));
 }
 
-const Aws::S3::Model::PutObjectRequest & CryptoModule::PadRequestContentLength(Aws::S3::Model::PutObjectRequest & request)
+void CryptoModule::SetContentLength(Aws::S3::Model::PutObjectRequest & request)
 {
-	ContentCryptoScheme currentScheme = m_contentCryptoMaterial.GetContentCryptoScheme();
-	request.GetBody()->seekg(0, std::ios_base::end);
-	size_t prePaddingLength = static_cast<size_t>(request.GetBody()->tellg());
-	if (currentScheme == ContentCryptoScheme::CBC)
-	{
-		auto postPaddingLength = (prePaddingLength % AES_BLOCK_SIZE) == 0 ? AES_BLOCK_SIZE : AES_BLOCK_SIZE - prePaddingLength % AES_BLOCK_SIZE;
-		postPaddingLength += prePaddingLength;
-		request.SetContentLength(postPaddingLength);
-		request.GetBody()->seekg(0, std::ios_base::beg);
-		return request;
-	}
-	else if (currentScheme == ContentCryptoScheme::GCM)
-	{
-		auto postPaddingLength = prePaddingLength + AES_BLOCK_SIZE;
-		request.SetContentLength(postPaddingLength);
-		request.GetBody()->seekg(0, std::ios_base::beg);
-		return request;
-	}
-	else
-	{
-		request.SetContentLength(prePaddingLength);
-		request.GetBody()->seekg(0, std::ios_base::beg);
-		return request;
-	}
+    ContentCryptoScheme currentScheme = m_contentCryptoMaterial.GetContentCryptoScheme();
+    request.GetBody()->seekg(0, std::ios_base::end);
+    size_t paddingLength = static_cast<size_t>(request.GetBody()->tellg());
+    if (currentScheme == ContentCryptoScheme::CBC)
+    {
+        auto paddingAddition = (paddingLength % AES_BLOCK_SIZE) == 0 ? AES_BLOCK_SIZE : AES_BLOCK_SIZE - paddingLength % AES_BLOCK_SIZE;
+        paddingLength += paddingAddition;
+    }
+    else if (currentScheme == ContentCryptoScheme::GCM)
+    {
+        //Adding 16 bytes to content length since tag is automatically appended
+        paddingLength += AES_BLOCK_SIZE;
+    }
+    request.SetContentLength(paddingLength);
+    request.GetBody()->seekg(0, std::ios_base::beg);
+
 }
 
 void CryptoModule::StrictAuthenticatedEncryptionCheck(const Aws::S3::Model::GetObjectRequest & request)
 {
-	Aws::String emptyRange = "";
-	if (m_cryptoConfig.GetCryptoMode() == CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION)
-	{
-		if (request.GetRange() != emptyRange)
-		{
-			AWS_LOGSTREAM_FATAL(Allocation_Tag, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
-			assert(0);
-		}
-	}
+    Aws::String emptyRange = "";
+    if (m_cryptoConfig.GetCryptoMode() == CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION)
+    {
+        if (!request.GetRange().empty())   
+        {
+            AWS_LOGSTREAM_FATAL(Allocation_Tag, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
+            assert(0);
+        }
+        if (m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CBC ||
+            m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CTR)
+        {
+            AWS_LOGSTREAM_FATAL(Allocation_Tag, "Decryption of objects with CBC or CTR encryption is not allowed with Strict Authenticated Encryption mode.")
+                assert(0);
+        }
+    }
 }
 
 CryptoBuffer CryptoModule::GetTag(const GetObjectRequest & request)
 {
-	GetObjectRequest getTag;
-	getTag.WithBucket(request.GetBucket());
-	getTag.WithKey(request.GetKey());
-	auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
-	Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
-	getTag.SetRange(tagLengthRangeSpecifier);
-	GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
-	Aws::OStream& tagStream = tagOutcome.GetResult().GetBody();
-	Aws::OStringStream ss;
-	ss << tagStream.rdbuf();
-	return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
+    GetObjectRequest getTag;
+    getTag.WithBucket(request.GetBucket());
+    getTag.WithKey(request.GetKey());
+    auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
+    Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
+    getTag.SetRange(tagLengthRangeSpecifier);
+    GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
+    Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
+    Aws::OStringStream ss;
+    ss << tagStream.rdbuf();
+    return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
+}
+
+void CryptoModule::InitDecryptionCipher(const Aws::Utils::CryptoBuffer & tag)
+{
+    ContentCryptoScheme scheme = m_contentCryptoMaterial.GetContentCryptoScheme();
+    if (scheme == ContentCryptoScheme::CBC)
+    {
+        m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
+    }
+    else if (scheme == ContentCryptoScheme::CTR)
+    {
+        m_cipher = CreateAES_CTRImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
+    }
+    else if (scheme == ContentCryptoScheme::GCM)
+    {
+        m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+    }
 }
 
 
@@ -227,19 +257,14 @@ CryptoModuleEO::CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMateri
 void CryptoModuleEO::PopulateCryptoContentMaterial()
 {
     m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
-	m_contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IV_SIZE));
-	m_contentCryptoMaterial.SetCryptoTagLength(0u);
+    m_contentCryptoMaterial.SetCryptoTagLength(0u);
     m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::CBC);
 }
 
 void CryptoModuleEO::InitEncryptionCipher()
 {
-	m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
-}
-
-void CryptoModuleEO::InitDecryptionCipher(const Aws::Utils::CryptoBuffer&)
-{
-	m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
+    m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey());
+    m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
 
@@ -253,20 +278,15 @@ CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMateri
 
 void CryptoModuleAE::PopulateCryptoContentMaterial()
 {
-	m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
-	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BITS);
+    m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
+    m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
     m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
 }
 
 void CryptoModuleAE::InitEncryptionCipher()
 {
-	m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(Allocation_Tag, m_contentCryptoMaterial.GetContentEncryptionKey());
-	m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
-}
-
-void CryptoModuleAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag)
-{
-	m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+    m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(Allocation_Tag, m_contentCryptoMaterial.GetContentEncryptionKey());
+    m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
 
@@ -281,22 +301,15 @@ CryptoModuleStrictAE::CryptoModuleStrictAE(const std::shared_ptr<Materials::Encr
 void CryptoModuleStrictAE::PopulateCryptoContentMaterial()
 {
     m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
-	m_contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IV_SIZE));
-	m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BITS);
+    m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
     m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
 }
 
 void CryptoModuleStrictAE::InitEncryptionCipher()
 {
-	m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(Allocation_Tag, m_contentCryptoMaterial.GetContentEncryptionKey());
-	m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
+    m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(Allocation_Tag, m_contentCryptoMaterial.GetContentEncryptionKey());
+    m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
-
-void CryptoModuleStrictAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag)
-{
-	m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
-}
-
 
 
 
@@ -334,6 +347,7 @@ CryptoBuffer AES_GCM_AppendedTag::DecryptBuffer(const CryptoBuffer&)
 
 CryptoBuffer AES_GCM_AppendedTag::FinalizeDecryption()
 {
+    
     //don't use this in decryption mode.
     assert(0);
     m_failure = true;
