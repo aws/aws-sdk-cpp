@@ -151,7 +151,8 @@ nuget {
         Libraries += winhttp.lib;
         Libraries += wininet.lib;
         Libraries += bcrypt.lib;
-        Libraries += userenv.lib;        
+        Libraries += userenv.lib;
+        Libraries += Rpcrt4.lib;
     }
 }    
      

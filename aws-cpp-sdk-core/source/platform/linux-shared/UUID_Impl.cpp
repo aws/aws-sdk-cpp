@@ -13,18 +13,18 @@
   * permissions and limitations under the License.
   */
 
-#include <aws/core/platform/Environment.h>
+#include <aws/core/utils/UUID.h>
+#include <uuid/uuid.h>
 
 namespace Aws
 {
-namespace Environment
-{
-
-Aws::String GetEnv(const char* name)
-{
-   auto value = getenv(name);
-   return Aws::String( value ? value : "" );
+    namespace Utils
+    {
+        UUID UUID::RandomUUID()
+        {
+            uuid_t uuid;
+            uuid_generate(uuid);
+            return UUID(uuid);
+        }
+    }
 }
-
-} // namespace Environment
-} // namespace Aws

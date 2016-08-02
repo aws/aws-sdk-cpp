@@ -1033,8 +1033,10 @@ endif()
 
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
-    set(PLATFORM_DEP_LIBS Userenv )
-elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
+    set(PLATFORM_DEP_LIBS Userenv Rpcrt4)
+elseif(PLATFORM_LINUX)
+    set(PLATFORM_DEP_LIBS pthread uuid)
+elseif(PLATFORM_APPLE)
     set(PLATFORM_DEP_LIBS pthread)
 elseif(PLATFORM_ANDROID)
     set(PLATFORM_DEP_LIBS log atomic)
