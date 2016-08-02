@@ -34,7 +34,7 @@ namespace Aws
         UUID::UUID(const Aws::String& uuidToConvert)
         {
             //GUID has 2 characters per byte + 4 dashes = 36 bytes
-            assert(uuidToConvert.length() == UUID_BINARY_SIZE * 2 + 4);
+            assert(uuidToConvert.length() == UUID_STR_SIZE);
             memset(m_uuid, 0, sizeof(m_uuid));
             Aws::String escapedHexStr(uuidToConvert);
             StringUtils::Replace(escapedHexStr, "-", "");

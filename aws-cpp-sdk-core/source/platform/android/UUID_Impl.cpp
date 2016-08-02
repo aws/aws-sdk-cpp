@@ -21,7 +21,7 @@ namespace Aws
     {
         UUID UUID::RandomUUID()
         {
-            char uuid[UUID_BINARY_SIZE];
+            char uuid[UUID_STR_SIZE];
             memset(uuid, 0, sizeof(uuid));
 
             int fd = fopen("/proc/sys/kernel/random/uuid", "r");

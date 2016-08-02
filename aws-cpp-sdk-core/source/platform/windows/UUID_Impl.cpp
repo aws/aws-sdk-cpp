@@ -25,7 +25,7 @@ namespace Aws
             ::UUID uuidStruct;
             UuidCreate(&uuidStruct);
 
-            unsigned char newUuid[16];
+            unsigned char newUuid[UUID_BINARY_SIZE];
             memcpy(newUuid, &uuidStruct.Data1, sizeof(uuidStruct.Data1));
             memcpy(newUuid + 4, &uuidStruct.Data2, sizeof(uuidStruct.Data2));
             memcpy(newUuid + 6, &uuidStruct.Data3, sizeof(uuidStruct.Data3));
