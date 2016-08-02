@@ -33,14 +33,17 @@ namespace Aws
 
         UUID::UUID(const Aws::String& uuidToConvert)
         {
+            //GUID has 2 characters per byte + 4 dashes = 36 bytes
+            assert(uuidToConvert.length() == UUID_BINARY_SIZE * 2 + 4);
             memset(m_uuid, 0, sizeof(m_uuid));
             Aws::String escapedHexStr(uuidToConvert);
             StringUtils::Replace(escapedHexStr, "-", "");
+            assert(escapedHexStr.length() == UUID_BINARY_SIZE * 2);
             ByteBuffer&& rawUuid = HashingUtils::HexDecode(escapedHexStr);
             memcpy(m_uuid, rawUuid.GetUnderlyingData(), rawUuid.GetLength());
         }
 
-        UUID::UUID(const unsigned char toCopy[16])
+        UUID::UUID(const unsigned char toCopy[UUID_BINARY_SIZE])
         {
             memcpy(m_uuid, toCopy, sizeof(m_uuid));
         }

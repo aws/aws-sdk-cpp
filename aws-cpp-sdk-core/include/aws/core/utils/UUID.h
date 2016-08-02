@@ -23,6 +23,8 @@ namespace Aws
 {
     namespace Utils
     {
+        static const size_t UUID_BINARY_SIZE = 0x10;
+
         /**
          * Class encapsulating a UUID. This is platform dependent. The method you are most likely interested in is RandomUUID().
          */
@@ -36,7 +38,7 @@ namespace Aws
             /**
              * Sets the raw uuid data
              */
-            UUID(const unsigned char uuid[16]);
+            UUID(const unsigned char uuid[UUID_BINARY_SIZE]);
 
             /**
              * Returns the current UUID as a GUID string
@@ -54,7 +56,7 @@ namespace Aws
             static UUID RandomUUID();
 
         private:
-            unsigned char m_uuid[16];
+            unsigned char m_uuid[UUID_BINARY_SIZE];
         };
     }
 }
