@@ -109,26 +109,13 @@ bool PooledThreadExecutor::HasTasks()
 }
 
 BlockingExecutor::BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize) :
-m_executor(executor), m_poolSize(poolSize), m_numTasksRunning(0)
+    m_executor(executor), m_poolSize(poolSize), m_numTasksRunning(0)
 {
 }
 
 BlockingExecutor::~BlockingExecutor()
 {
-    while (m_numTasksRunning != 0)
-    {
-        std::this_thread::yield();
-        if (m_numTasksRunning == 0)
-        {
-            // Make sure the condition actually does hold under the lock
-            std::lock_guard<std::recursive_mutex> locker(m_syncPointLock);
-            if (m_numTasksRunning == 0)
-            {
-                break;
-            }
-        }
-    }
-    assert(m_numTasksRunning == 0);
+    WaitForCompletion();
 }
 
 bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
@@ -161,4 +148,21 @@ void BlockingExecutor::OnTaskComplete()
     m_numTasksRunning--;
     m_syncPoint.notify_one();
     locker.unlock();
+}
+
+void BlockingExecutor::WaitForCompletion()
+{
+    while (m_numTasksRunning != 0)
+    {
+        std::this_thread::yield();
+        if (m_numTasksRunning == 0)
+        {
+            // Make sure the condition actually does hold under the lock
+            std::lock_guard<std::recursive_mutex> locker(m_syncPointLock);
+            if (m_numTasksRunning == 0)
+            {
+                break;
+            }
+        }
+    }
 }

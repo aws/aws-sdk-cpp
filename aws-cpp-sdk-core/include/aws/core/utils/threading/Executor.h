@@ -124,7 +124,7 @@ namespace Aws
                 /** Constructor that takes an Executor to delegate thread execution to and the max
                  *  number of tasks that can run at once */
                 BlockingExecutor(std::shared_ptr<Executor> executor, size_t poolSize);
-                ~BlockingExecutor();
+                virtual ~BlockingExecutor();
                 
                 /**
                  * Rule of 5 stuff.
@@ -134,6 +134,9 @@ namespace Aws
                 BlockingExecutor& operator =(const BlockingExecutor&) = delete;
                 BlockingExecutor(BlockingExecutor&&) = delete;
                 BlockingExecutor& operator =(BlockingExecutor&&) = delete;
+                
+                /** Blocks until all tasks are done running. */
+                void WaitForCompletion();
                 
             protected:
                 bool SubmitToThread(std::function<void()>&&) override;
