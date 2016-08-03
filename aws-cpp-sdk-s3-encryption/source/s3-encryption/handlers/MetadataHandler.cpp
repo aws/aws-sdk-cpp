@@ -29,9 +29,9 @@ namespace S3Encryption
 {
 namespace Handlers
 {
-static const char* const Allocation_Tag = "MetadataHandler";
+static const char* const ALLOCATION_TAG = "MetadataHandler";
 
-void MetadataHandler::WriteData(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial)
+void MetadataHandler::PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial)
 {
     Aws::String encodedCEK = HashingUtils::Base64Encode(contentCryptoMaterial.GetEncryptedContentEncryptionKey());
     request.AddMetadata(CONTENT_KEY_HEADER, encodedCEK);
@@ -51,13 +51,13 @@ void MetadataHandler::WriteData(Aws::S3::Model::PutObjectRequest& request, const
     request.AddMetadata(KEY_WRAP_ALGORITHM, GetNameForKeyWrapAlgorithm(keyWrapAlgorithm));
 }
 
-ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::GetObjectResult& result)
+ContentCryptoMaterial MetadataHandler::ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result)
 {
 	Aws::Map<Aws::String, Aws::String> metadata = result.GetMetadata();
 	return ReadMetadata(metadata);
 }
 
-ContentCryptoMaterial MetadataHandler::ReadData(Aws::S3::Model::HeadObjectResult & result)
+ContentCryptoMaterial MetadataHandler::ReadContentCryptoMaterial(const Aws::S3::Model::HeadObjectResult & result)
 {
 	Aws::Map<Aws::String, Aws::String> metadata = result.GetMetadata();
 	return ReadMetadata(metadata);

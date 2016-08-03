@@ -25,6 +25,7 @@ namespace S3Encryption
 {
 namespace Materials
 {
+    static const char* const ALLOCATION_TAG = "SimpleEncryptionMaterials";
 
 SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuffer & symmetricKey) :
     m_symmetricMasterKey(symmetricKey)
@@ -45,7 +46,7 @@ void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMater
 {
     if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
     {
-        AWS_LOGSTREAM_ERROR(SimpleEncryptionMaterials_Tag, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
                     << " current encryption materials can not decrypt the content encryption key.");
         //return without changing the encrypted content encryption key
         return;
@@ -54,7 +55,12 @@ void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMater
     const CryptoBuffer& encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
     CryptoBuffer&& decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
     CryptoBuffer&& decryptFinalizeResult = cipher->FinalizeDecryption();
-    contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer({ &decryptResult, &decryptFinalizeResult }));
+    CryptoBuffer decryptedBuffer = CryptoBuffer({ &decryptResult, &decryptFinalizeResult });
+    contentCryptoMaterial.SetContentEncryptionKey(decryptedBuffer);
+    if (contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
+    }
 }
 
 } //namespace Materials

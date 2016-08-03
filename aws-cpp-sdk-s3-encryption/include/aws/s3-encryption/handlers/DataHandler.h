@@ -32,7 +32,6 @@ namespace Aws
         static const char* const CRYPTO_TAG_LENGTH_HEADER = "x-amz-tag-len";
         static const char* const KEY_WRAP_ALGORITHM = "x-amz-wrap-alg";
         static const char* const INSTRUCTION_FILE_HEADER = "x-amz-crypto-instr-file";
-        static const char* const CONTENT_LENGTH_HEADER = "x-amz-content-length";
 
         namespace Handlers
         {
@@ -46,12 +45,12 @@ namespace Aws
                 /*
                 Override this function to write content crypto material data to S3 object request.
                 */
-                virtual void WriteData(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial) = 0;
+                virtual void PopulateRequest(Aws::S3::Model::PutObjectRequest& request, const ContentCryptoMaterial& contentCryptoMaterial) = 0;
 
                 /*
                 Override this function to read data from an S3 object and return a Content Crypto Material object.
                 */
-                virtual ContentCryptoMaterial ReadData(Aws::S3::Model::GetObjectResult& result) = 0;
+                virtual ContentCryptoMaterial ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult& result) = 0;
 
                 /*
                 Function to json serialize a map contianing pairs of strings.

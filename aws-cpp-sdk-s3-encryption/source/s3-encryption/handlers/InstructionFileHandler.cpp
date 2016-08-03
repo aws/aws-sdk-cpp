@@ -28,10 +28,10 @@ namespace S3Encryption
 namespace Handlers
 {
 
-static const char* const Allocation_Tag = "InstructionFileHandler";
+static const char* const ALLOCATION_TAG = "InstructionFileHandler";
 static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
 
-void InstructionFileHandler::WriteData(Aws::S3::Model::PutObjectRequest & request, const ContentCryptoMaterial & contentCryptoMaterial)
+void InstructionFileHandler::PopulateRequest(Aws::S3::Model::PutObjectRequest & request, const ContentCryptoMaterial & contentCryptoMaterial)
 {
     request.SetKey(request.GetKey() + DEFAULT_INSTRUCTION_FILE_SUFFIX);
 
@@ -48,11 +48,11 @@ void InstructionFileHandler::WriteData(Aws::S3::Model::PutObjectRequest & reques
     contentCryptoMap[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(contentCryptoMaterial.GetCryptoTagLength());
 
     Aws::String jsonCryptoMap = SerializeMap(contentCryptoMap);
-    std::shared_ptr<Aws::StringStream> streamPtr = Aws::MakeShared<Aws::StringStream>(Allocation_Tag, jsonCryptoMap);
+    std::shared_ptr<Aws::StringStream> streamPtr = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, jsonCryptoMap);
     request.SetBody(streamPtr);
 }
 
-ContentCryptoMaterial InstructionFileHandler::ReadData(Aws::S3::Model::GetObjectResult & result)
+ContentCryptoMaterial InstructionFileHandler::ReadContentCryptoMaterial(Aws::S3::Model::GetObjectResult & result)
 {
     IOStream& stream = result.GetBody();
     Aws::String jsonString;

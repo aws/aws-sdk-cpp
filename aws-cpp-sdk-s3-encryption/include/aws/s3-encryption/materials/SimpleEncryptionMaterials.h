@@ -21,8 +21,6 @@ namespace Aws
     {
         namespace Materials
         {
-            static const char* SimpleEncryptionMaterials_Tag = "SimpleEncryptionMaterials";
-
             /*
             * Simple Encryption Materials is responsible for handling the encryption/decryption of
             * content encryption keys. This class will use a user provided symmetric

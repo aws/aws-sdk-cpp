@@ -127,7 +127,7 @@ TEST_F(HandlerTest, WriteReadMetadataTest)
     PutObjectRequest request;
     PopulateContentCryptoMaterial(contentCryptoMaterial);
     
-    handler.WriteData(request, contentCryptoMaterial);
+    handler.PopulateRequest(request, contentCryptoMaterial);
     auto metadata = request.GetMetadata();
     ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
     ASSERT_EQ(HashingUtils::Base64Decode(metadata[CONTENT_KEY_HEADER]), contentCryptoMaterial.GetEncryptedContentEncryptionKey());
@@ -149,7 +149,7 @@ TEST_F(HandlerTest, WriteReadMetadataTest)
 
     GetObjectResult result;
     result.SetMetadata(metadata);
-    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(result);
+    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(result);
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
     ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
     ASSERT_EQ(contentCryptoMaterial.GetContentCryptoScheme(), readContentCryptoMaterial.GetContentCryptoScheme());
@@ -165,7 +165,7 @@ TEST_F(HandlerTest, ReadMetadataTest)
     MetadataHandler handler;
     PopulateGetObjectResultMetadata(result);
 
-    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(result);
+    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(result);
     auto metadata = result.GetMetadata();
 
     ASSERT_NE(metadata.find(CONTENT_KEY_HEADER), metadata.end());
@@ -194,7 +194,7 @@ TEST_F(HandlerTest, WriteMetadataTest)
     ContentCryptoMaterial contentCryptoMaterial;
     PopulateContentCryptoMaterial(contentCryptoMaterial);
     MetadataHandler handler;
-    handler.WriteData(request, contentCryptoMaterial);
+    handler.PopulateRequest(request, contentCryptoMaterial);
 
     auto metadata = request.GetMetadata();
 
@@ -233,7 +233,7 @@ TEST_F(HandlerTest, MetadataS3OperationsTest)
 
     //put contentCryptoMaterial into metadata
     MetadataHandler handler;
-    handler.WriteData(putObjectRequest, contentCryptoMaterial);
+    handler.PopulateRequest(putObjectRequest, contentCryptoMaterial);
 
     PutObjectOutcome putObjectOutcome = myClient->PutObject(putObjectRequest);
 
@@ -245,7 +245,7 @@ TEST_F(HandlerTest, MetadataS3OperationsTest)
 
     GetObjectResult& getObjectResult = getObjectOutcome.GetResult();
 
-    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(getObjectResult);
+    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult);
 
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
     ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
@@ -264,7 +264,7 @@ TEST_F(HandlerTest, WriteInstructionFileTest)
     ContentCryptoMaterial contentCryptoMaterial;
     PopulateContentCryptoMaterial(contentCryptoMaterial);
     InstructionFileHandler handler;
-    handler.WriteData(request, contentCryptoMaterial);
+    handler.PopulateRequest(request, contentCryptoMaterial);
 
     auto bodyStream = request.GetBody();
     Aws::String jsonString;
@@ -305,7 +305,7 @@ TEST_F(HandlerTest, InstructionFileS3OperationsTest)
 
     //content crypto material into body of a putObjectRequest
     InstructionFileHandler handler;
-    handler.WriteData(instructionPutObjectRequest, contentCryptoMaterial);
+    handler.PopulateRequest(instructionPutObjectRequest, contentCryptoMaterial);
 
     PutObjectOutcome putObjectOutcome = myClient->PutObject(instructionPutObjectRequest);
 
@@ -317,7 +317,7 @@ TEST_F(HandlerTest, InstructionFileS3OperationsTest)
 
     GetObjectResult& getObjectResult = getObjectOutcome.GetResult();
 
-    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadData(getObjectResult);
+    ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult);
 
     auto metadata = getObjectResult.GetMetadata();
     ASSERT_STREQ(metadata[INSTRUCTION_FILE_HEADER].c_str(), INSTRUCTION_HEADER_VALUE);

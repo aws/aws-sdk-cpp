@@ -25,7 +25,6 @@ namespace Aws
     {
         namespace Materials
         {
-            static const char* KMSEncryptionMaterials_Tag = "KMSEncryptionMaterials";
             //identifier for materials description
             static const char* cmkID_Identifier = "kms_cmk_id";
 

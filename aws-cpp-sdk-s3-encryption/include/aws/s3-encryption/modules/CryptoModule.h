@@ -51,52 +51,56 @@ namespace Aws
                 Aws::S3::Model::PutObjectOutcome PutObjectSecurely(Aws::S3::Model::PutObjectRequest& request);
 
                 /*
-                * Function to get an encrypted object from S3.
+                * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request);
+                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult);
 
             private:
                 /*
                 * This function is used to encrypt the given S3 PutObjectRequest.
                 */
-                const Aws::S3::Model::PutObjectRequest& WrapRequestWithCipher(Aws::S3::Model::PutObjectRequest& request);
+                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request);
 
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                const Aws::S3::Model::GetObjectOutcome UnwrapRequestWithCipher(Aws::S3::Model::GetObjectRequest& request);
-
-                /*
-                * Function to set content length of request if padding is needed according to CryptoMode.
-                */
-                void SetContentLength(Aws::S3::Model::PutObjectRequest& request);
-
-                /*
-                * Function to check if strict authenticated is used and if so, prohibits range-get operations 
-                *    and decryption of non GCM encrypted requests.
-                */
-                void StrictAuthenticatedEncryptionCheck(const Aws::S3::Model::GetObjectRequest& request);
-
-                /*
-                * Gets the tag from the end of the request body if the encryption method was GCM.
-                */
-                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request);
-
-                /**
-                * Override this Function to initialize the cipher for decryption using the crypto content material.
-                */
-                virtual void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request);
 
             protected:
+                /*
+                * Override this function to set the content length of the put object request.
+                */
+                virtual void SetContentLength(Aws::S3::Model::PutObjectRequest& request) = 0;
+
                 /**
                 * Override this Function to initialize the cipher for encryption using the crypto content material.
                 */
                 virtual void InitEncryptionCipher() = 0;
 
+                /**
+                * Override this Function to initialize the cipher for decryption using the crypto content material.
+                */
+                virtual void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
+
                 /*
                 * Override this function to populate the crypto content member variable.
                 */
                 virtual void PopulateCryptoContentMaterial() = 0;
+
+                /*
+                * Override this function to get the crypto tag according to the module. See specific module documentation for more details.
+                */
+                virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) = 0;
+
+                /*
+                * Override this function to check for any prohibitted actions specific to each module. Refer to documentation on subclass functions for details. 
+                */
+                virtual void DecryptionConditionCheck(const Aws::String& requestRange) = 0;
+
+                /*
+                * Override this function adjust getObjectRequest range to only specify the encrypted body. 
+                */
+                virtual void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
 
                 const Aws::S3::S3Client& m_s3Client;
                 std::shared_ptr<Materials::EncryptionMaterials> m_encryptionMaterials;
@@ -116,6 +120,11 @@ namespace Aws
 
             private:
                 /*
+                * Function to set content length of request which accounts for CBC padding.
+                */
+                void SetContentLength(Aws::S3::Model::PutObjectRequest& request) override;
+
+                /*
                 * Function to populate the crypto content member variable.
                 */
                 void PopulateCryptoContentMaterial() override;
@@ -124,6 +133,30 @@ namespace Aws
                 * Function to initialize the cipher for encryption using the crypto content material.
                 */
                 void InitEncryptionCipher() override;
+
+                /**
+                *Function to initialize the cipher for decryption using the crypto content material.
+                */
+                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+
+                /*
+                * Function to get the crypto tag according to the module. 
+                * For Encryption Only, this will only return an empty cryptobuffer since there is no tag in CBC encryption.
+                */
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+
+                /*
+                * Function to check for any prohibitted actions specific to each module for decryption.
+                * In Encryption Only, a warning will be logged to notify the user that they are using Encryption Only mode for decryption.
+                * The decryption will still occur. 
+                */
+                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+
+                /*
+                * Function adjust getObjectRequest range to only specify the encrypted body.
+                * For Encryption Only, this will not change the range since there is no tag appended to the end of the body.
+                */
+                void AdjustRange( Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleAE : public CryptoModule
@@ -137,6 +170,10 @@ namespace Aws
 
             private:
                 /*
+                * Function to set content length of request which accounts for the GCM tag appended to the body of the request.
+                */
+                void SetContentLength(Aws::S3::Model::PutObjectRequest& request) override;
+                /*
                 * Function to populate the crypto content member variable.
                 */
                 void PopulateCryptoContentMaterial() override;
@@ -145,6 +182,28 @@ namespace Aws
                 * Function to initialize the cipher for encryption using the crypto content material.
                 */
                 void InitEncryptionCipher() override;
+
+                /**
+                *Function to initialize the cipher for decryption using the crypto content material.
+                */
+                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+
+                /*
+                * Function to get the crypto tag according to the module.
+                * For Authenticated Encryption, this will only return the 16 byte crypto tag at the end of the crypto body.
+                */
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+
+                /*
+                * Function to check for any prohibitted actions specific to each module for decryption.
+                */
+                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+
+                /*
+                * Function adjust getObjectRequest range to only specify the encrypted body.
+                * For Authenticated Encryption, this will change the range to exclude the tag from GCM encryption.
+                */
+                void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleStrictAE : public CryptoModule
@@ -158,6 +217,10 @@ namespace Aws
                 
             private:
                 /*
+                * Function to set content length of request which accounts for the GCM tag appended to the body of the request.
+                */
+                void SetContentLength(Aws::S3::Model::PutObjectRequest& request) override;
+                /*
                 * Function to populate the crypto content member variable.
                 */
                 void PopulateCryptoContentMaterial() override;
@@ -166,6 +229,30 @@ namespace Aws
                 * Function to initialize the cipher for encryption using the crypto content material.
                 */
                 void InitEncryptionCipher() override;
+
+                /**
+                *Function to initialize the cipher for decryption using the crypto content material.
+                */
+                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+
+                /*
+                * Function to get the crypto tag according to the module.
+                * For Authenticated Encryption, this will only return the 16 byte crypto tag at the end of the crypto body.
+                */
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+
+                /*
+                * Function to check for any prohibitted actions specific to each module for decryption.
+                * In strict AE mode, this function will check for range get operations or decryption of non GCM-encrypted object.
+                * This will log a fatal error and exit. 
+                */
+                virtual void DecryptionConditionCheck(const Aws::String& requestRange) override;
+
+                /*
+                * Function adjust getObjectRequest range to only specify the encrypted body.
+                * For Strict Authenticated Encryption, this will change the range to exclude the tag from GCM encryption.
+                */
+                void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };           
 
             /**
@@ -210,7 +297,6 @@ namespace Aws
 
             private:
                 std::shared_ptr<Aws::Utils::Crypto::SymmetricCipher> m_cipher;
-                Aws::Utils::CryptoBuffer m_potentialTagBuffer;
             };
 
         }

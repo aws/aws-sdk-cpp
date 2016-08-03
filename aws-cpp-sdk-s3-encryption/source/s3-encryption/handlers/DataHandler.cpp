@@ -19,8 +19,6 @@
 #include <aws/core/utils/StringUtils.h>
 
 using namespace Aws::Utils::Json;
-using namespace Aws::S3Encryption::ContentCryptoSchemeMapper;
-using namespace Aws::S3Encryption::KeyWrapAlgorithmMapper;
 
 namespace Aws
 {
@@ -28,7 +26,7 @@ namespace S3Encryption
 {
 namespace Handlers
 {
-static const char* const Allocation_Tag = "DataHandler";
+static const char* const ALLOCATION_TAG = "DataHandler";
 
 const Aws::String DataHandler::SerializeMap(const Aws::Map<Aws::String, Aws::String>& currentMap)
 {
@@ -55,7 +53,7 @@ const Aws::Map<Aws::String, Aws::String> DataHandler::DeserializeMap(const Aws::
     }
     else
     {
-        AWS_LOGSTREAM_ERROR(MetadataHandler_Tag, "Json Parse failed with message: " << jsonObject.GetErrorMessage());
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Json Parse failed with message: " << jsonObject.GetErrorMessage());
         return materialsDescriptionMap;
     }
 }
@@ -73,7 +71,7 @@ ContentCryptoMaterial DataHandler::ReadMetadata(const Aws::Map<Aws::String, Aws:
         materialsDescriptionIterator == metadata.end() || schemeIterator == metadata.end() ||
         keyIterator == metadata.end())
     {
-        AWS_LOGSTREAM_ERROR(Allocation_Tag, "One or more metadata fields do not exist for decryption.");
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "One or more metadata fields do not exist for decryption.");
         return ContentCryptoMaterial();
     }
 
@@ -83,10 +81,10 @@ ContentCryptoMaterial DataHandler::ReadMetadata(const Aws::Map<Aws::String, Aws:
     contentCryptoMaterial.SetMaterialsDescription(DeserializeMap(materialsDescriptionIterator->second));
 
     Aws::String schemeAsString = schemeIterator->second;
-    contentCryptoMaterial.SetContentCryptoScheme(GetContentCryptoSchemeForName(schemeAsString));
+    contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(schemeAsString));
 
     Aws::String keyWrapAlgorithmAsString = keyWrapIterator->second;
-    contentCryptoMaterial.SetKeyWrapAlgorithm(GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
+    contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(keyWrapAlgorithmAsString));
     if (cryptoTagIterator != metadata.end())
     {
         contentCryptoMaterial.SetCryptoTagLength(static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(cryptoTagIterator->second.c_str())));
