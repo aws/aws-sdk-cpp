@@ -83,14 +83,18 @@ public:
                       Aws::Map<Aws::String, Aws::String>&& metadata,
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                       bool createBucket,
-                      bool doConsistencyChecks);
+                      bool doConsistencyChecks,
+                      Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                      Aws::S3::Model::StorageClass storageClass);
     UploadFileRequest(const Aws::String& fileName, 
                       const Aws::String& bucketName, 
                       const Aws::String& keyName, 
                       const Aws::String& contentType, 
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                       bool createBucket,
-                      bool doConsistencyChecks);
+                      bool doConsistencyChecks,
+                      Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                      Aws::S3::Model::StorageClass storageClass);
     UploadFileRequest(const Aws::String& fileName,
                       const Aws::String& bucketName,
                       const Aws::String& keyName,
@@ -98,7 +102,9 @@ public:
                       const Aws::Map<Aws::String, Aws::String>& metadata,
                       const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                       bool createBucket,
-                      bool doConsistencyChecks);
+                      bool doConsistencyChecks,
+                      Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                      Aws::S3::Model::StorageClass storageClass);
     virtual ~UploadFileRequest();
 
     // How many parts have we at least begun to upload
@@ -272,6 +278,8 @@ private:
 
     Aws::String m_contentType;
     Aws::Map<Aws::String, Aws::String> m_metadata;
+    Aws::S3::Model::ServerSideEncryption m_serverSideEncryption;
+    Aws::S3::Model::StorageClass m_storageClass;
     Aws::String m_uploadId;
     uint32_t m_createMultipartRetries;
     uint32_t m_createBucketRetries;

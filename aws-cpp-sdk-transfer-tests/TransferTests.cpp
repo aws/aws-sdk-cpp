@@ -1323,4 +1323,90 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
 }
 
+// Singlepart upload with AES256 and standard infrequent access specified.
+TEST_F(TransferTests, SinglePartUploadWithStorageClassAndEncryptionTest)
+{
+  if (EmptyBucket(GetTestBucketName()))
+  {
+      WaitForBucketToEmpty(GetTestBucketName());
+  }
+  GetObjectRequest getObjectRequest;
+  getObjectRequest.SetBucket(GetTestBucketName());
+  getObjectRequest.SetKey(TEST_FILE_NAME);
+
+  GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+  EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+  const bool cCreateBucket = true;
+  const bool cConsistencyChecks = true;
+  const Aws::S3::Model::ServerSideEncryption serverSideEncryption = Aws::S3::Model::ServerSideEncryption::AES256;
+  const Aws::S3::Model::StorageClass storageClass = Aws::S3::Model::StorageClass::STANDARD_IA;
+  std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(m_testFileName, GetTestBucketName(), "", "", cCreateBucket, cConsistencyChecks, serverSideEncryption, storageClass);
+
+  ASSERT_FALSE(requestPtr->IsDone());
+
+  WaitForUploadAndUpdate(requestPtr, 100.0f);
+
+  ASSERT_TRUE(requestPtr->IsDone());
+
+  ASSERT_TRUE(requestPtr->CompletedSuccessfully());
+
+  WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_NAME);
+
+  HeadObjectRequest headObjectRequest;
+  headObjectRequest.SetBucket(GetTestBucketName());
+  headObjectRequest.SetKey(TEST_FILE_NAME);
+
+  HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+  ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+  ASSERT_EQ(Aws::S3::Model::ServerSideEncryption::AES256, headObjectOutcome.GetResult().GetServerSideEncryption());
+  ASSERT_EQ(Aws::S3::Model::StorageClass::STANDARD_IA, headObjectOutcome.GetResult().GetStorageClass());
+}
+
+// Multipart upload with AES256 and standard infrequent access specified.
+TEST_F(TransferTests, MultiPartUploadWithStorageClassAndEncryptionTest)
+{
+  if (EmptyBucket(GetTestBucketName()))
+  {
+      WaitForBucketToEmpty(GetTestBucketName());
+  }
+  GetObjectRequest getObjectRequest;
+  getObjectRequest.SetBucket(GetTestBucketName());
+  getObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+  GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+  EXPECT_FALSE(getObjectOutcome.IsSuccess());
+
+  ListMultipartUploadsRequest listMultipartRequest;
+
+  listMultipartRequest.SetBucket(GetTestBucketName());
+
+  const bool cCreateBucket = true;
+  const bool cConsistencyChecks = true;
+  const Aws::S3::Model::ServerSideEncryption serverSideEncryption = Aws::S3::Model::ServerSideEncryption::AES256;
+  const Aws::S3::Model::StorageClass storageClass = Aws::S3::Model::StorageClass::STANDARD_IA;
+  std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "", cCreateBucket, cConsistencyChecks, serverSideEncryption, storageClass);
+
+  ASSERT_FALSE(requestPtr->IsDone());
+
+  WaitForUploadAndUpdate(requestPtr, 100.0f);
+
+  ASSERT_TRUE(requestPtr->IsDone());
+
+  ASSERT_TRUE(requestPtr->CompletedSuccessfully());
+
+  WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY);
+
+  HeadObjectRequest headObjectRequest;
+  headObjectRequest.SetBucket(GetTestBucketName());
+  headObjectRequest.SetKey(MEDIUM_FILE_KEY);
+
+  HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
+  ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+  ASSERT_EQ(Aws::S3::Model::ServerSideEncryption::AES256, headObjectOutcome.GetResult().GetServerSideEncryption());
+  ASSERT_EQ(Aws::S3::Model::StorageClass::STANDARD_IA, headObjectOutcome.GetResult().GetStorageClass());
+}
+
 }
