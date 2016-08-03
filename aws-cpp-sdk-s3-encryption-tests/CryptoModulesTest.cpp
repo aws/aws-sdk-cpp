@@ -279,7 +279,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -340,7 +343,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);        
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -401,7 +407,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -463,7 +472,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -527,7 +539,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -591,7 +606,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult());
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
@@ -655,7 +673,10 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult()); }, ASSERTION_FAILED);
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial); }, ASSERTION_FAILED);
     }
 
     TEST_F(CryptoModulesTest, StrictAEDecryptionFailure)
@@ -708,6 +729,9 @@ namespace
         headObject.WithKey(KEY_TEST_NAME);
         HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
 
-        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult()); }, ASSERTION_FAILED);
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial); }, ASSERTION_FAILED);
     }
 }

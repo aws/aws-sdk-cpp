@@ -35,6 +35,11 @@ SimpleEncryptionMaterials::SimpleEncryptionMaterials(const Aws::Utils::CryptoBuf
 void SimpleEncryptionMaterials::EncryptCEK(Aws::S3Encryption::ContentCryptoMaterial & contentCryptoMaterial)
 {
     auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+    if (cipher == nullptr)
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during encryption.");
+        return;
+    }
     contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
     const CryptoBuffer& contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
     CryptoBuffer&& encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
@@ -48,10 +53,14 @@ void SimpleEncryptionMaterials::DecryptCEK(Aws::S3Encryption::ContentCryptoMater
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
                     << " current encryption materials can not decrypt the content encryption key.");
-        //return without changing the encrypted content encryption key
         return;
     }
     auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
+    if (cipher == nullptr)
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during decryption.");
+        return;
+    }
     const CryptoBuffer& encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
     CryptoBuffer&& decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
     CryptoBuffer&& decryptFinalizeResult = cipher->FinalizeDecryption();

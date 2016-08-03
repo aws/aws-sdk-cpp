@@ -30,10 +30,10 @@
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
 
-static const char* AllocationTag = "DataHandlersTest";
+static const char* ALLOCATION_TAG = "DataHandlersTest";
 static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
-static size_t CryptoTagLength = 16;
-static size_t IVSize = 12;
+static size_t CRYPTO_TAG_LENGTH = 16;
+static size_t IV_SIZE = 12;
 
 class MockS3Client : public Aws::S3::S3Client
 {
@@ -97,9 +97,9 @@ protected:
     static void PopulateContentCryptoMaterial(ContentCryptoMaterial& contentCryptoMaterial)
     {
         contentCryptoMaterial.SetEncryptedContentEncryptionKey(SymmetricCipher::GenerateKey());
-        contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IVSize));
+        contentCryptoMaterial.SetIV(SymmetricCipher::GenerateIV(IV_SIZE));
         contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
-        contentCryptoMaterial.SetCryptoTagLength(CryptoTagLength);
+        contentCryptoMaterial.SetCryptoTagLength(CRYPTO_TAG_LENGTH);
         contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
         Aws::Map<Aws::String, Aws::String> testMap;
         testMap[TEST_KEY] = TEST_VALUE;
@@ -110,9 +110,9 @@ protected:
     {
         auto metadata = result.GetMetadata();
         metadata[CONTENT_KEY_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateKey());
-        metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IVSize));
+        metadata[IV_HEADER] = HashingUtils::Base64Encode(SymmetricCipher::GenerateIV(IV_SIZE));
         metadata[CONTENT_CRYPTO_SCHEME_HEADER] = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
-        metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CryptoTagLength);
+        metadata[CRYPTO_TAG_LENGTH_HEADER] = StringUtils::to_string(CRYPTO_TAG_LENGTH);
         metadata[KEY_WRAP_ALGORITHM] = KeyWrapAlgorithmMapper::GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
         metadata[MATERIALS_DESCRIPTION_HEADER] = "";
         result.SetMetadata(metadata);
@@ -221,7 +221,7 @@ TEST_F(HandlerTest, WriteMetadataTest)
 //  uses the metadata to populate a get object result.
 TEST_F(HandlerTest, MetadataS3OperationsTest)
 {
-    auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;
 
     PutObjectRequest putObjectRequest;
@@ -293,7 +293,7 @@ TEST_F(HandlerTest, WriteInstructionFileTest)
 //This tests the instruction file read/write functionality by using a mock S3 client.
 TEST_F(HandlerTest, InstructionFileS3OperationsTest)
 {
-    auto myClient = Aws::MakeShared<MockS3Client>(AllocationTag, ClientConfiguration());
+    auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, ClientConfiguration());
     Aws::String fullBucketName = TEST_BUCKET_NAME;
 
     PutObjectRequest instructionPutObjectRequest;
@@ -320,6 +320,7 @@ TEST_F(HandlerTest, InstructionFileS3OperationsTest)
     ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult);
 
     auto metadata = getObjectResult.GetMetadata();
+    ASSERT_TRUE(metadata.find(INSTRUCTION_FILE_HEADER) != metadata.end());
     ASSERT_STREQ(metadata[INSTRUCTION_FILE_HEADER].c_str(), INSTRUCTION_HEADER_VALUE);
 
     ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());

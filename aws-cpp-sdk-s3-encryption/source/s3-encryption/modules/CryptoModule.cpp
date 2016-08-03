@@ -78,29 +78,9 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model:
 }
 
 Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request,
-   const Aws::S3::Model::HeadObjectResult& headObjectResult)
+   const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial)
 {
-    if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
-    {
-        Handlers::InstructionFileHandler handler;
-        GetObjectRequest instructionFileRequest;
-        instructionFileRequest.SetKey(request.GetKey() + Handlers::DEFAULT_INSTRUCTION_FILE_SUFFIX);
-        instructionFileRequest.SetBucket(request.GetBucket());
-        GetObjectOutcome instructionOutcome = m_s3Client.GetObject(instructionFileRequest);
-        if (!instructionOutcome.IsSuccess())
-        {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Instruction file get operation not successful: "
-                << instructionOutcome.GetError().GetExceptionName() << " : "
-                << instructionOutcome.GetError().GetMessage());
-            return GetObjectOutcome(instructionOutcome.GetError());
-        }
-        m_contentCryptoMaterial = handler.ReadContentCryptoMaterial(instructionOutcome.GetResult());
-    }
-    else
-    {
-        Handlers::MetadataHandler handler;
-        m_contentCryptoMaterial = handler.ReadContentCryptoMaterial(headObjectResult);
-    }
+    m_contentCryptoMaterial = contentCryptoMaterial;
 
     DecryptionConditionCheck(request.GetRange());
     m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
@@ -109,8 +89,7 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(Aws::S3::Model:
     InitDecryptionCipher(tagFromBody);
     AdjustRange(request, headObjectResult);
     
-    GetObjectOutcome outcome = UnwrapAndMakeRequestWithCipher(request);
-    return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
+    return UnwrapAndMakeRequestWithCipher(request);
 }
 
 const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request)
@@ -126,9 +105,9 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 put object operation not successful: "
             << outcome.GetError().GetExceptionName() << " : "
             << outcome.GetError().GetMessage());
-        return PutObjectOutcome(outcome.GetError());
+        return outcome;
     }
-    return PutObjectOutcome(PutObjectResult(outcome.GetResultWithOwnership()));
+    return outcome;
 }
 
 const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request)
@@ -145,7 +124,7 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
             << outcome.GetError().GetExceptionName() << " : "
             << outcome.GetError().GetMessage());
-        return GetObjectOutcome(std::move(outcome.GetError()));
+        return outcome;
     }
 
     GetObjectResult&& result = outcome.GetResultWithOwnership();
@@ -155,7 +134,7 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     userSuppliedStream->seekg(0, std::ios_base::beg);
     result.ReplaceBody(userSuppliedStream);
 
-    return GetObjectOutcome(GetObjectResult(std::move(result)));
+    return outcome;
 }
 
 
@@ -202,7 +181,7 @@ Aws::Utils::CryptoBuffer CryptoModuleEO::GetTag(const Aws::S3::Model::GetObjectR
 
 void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
 {
-    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
+    AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
 }
 
 void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest &, const Aws::S3::Model::HeadObjectResult &)
@@ -224,7 +203,7 @@ void CryptoModuleAE::SetContentLength(Aws::S3::Model::PutObjectRequest & request
     request.GetBody()->seekg(0, std::ios_base::end);
     size_t paddingLength = static_cast<size_t>(request.GetBody()->tellg());
     //Adding 16 bytes to content length since tag is automatically appended
-    paddingLength += AES_BLOCK_SIZE;
+    paddingLength += TAG_SIZE_BYTES;
     request.SetContentLength(paddingLength);
     request.GetBody()->seekg(0, std::ios_base::beg);
 }
@@ -256,6 +235,13 @@ Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectR
     Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
     getTag.SetRange(tagLengthRangeSpecifier);
     GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
+    if (!tagOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Get Operation for crypto tag not successful: "
+            << tagOutcome.GetError().GetExceptionName() << " : "
+            << tagOutcome.GetError().GetMessage());
+        return CryptoBuffer();
+    }
     Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
     Aws::OStringStream ss;
     ss << tagStream.rdbuf();
@@ -335,7 +321,7 @@ void CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRa
     if (m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CBC ||
         m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CTR)
     {
-        AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Decryption of objects with CBC or CTR encryption is not allowed with Strict Authenticated Encryption mode.")
+        AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.")
             assert(0);
     }
 }
