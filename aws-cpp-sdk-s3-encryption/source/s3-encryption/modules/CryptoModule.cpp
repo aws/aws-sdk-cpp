@@ -105,7 +105,6 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 put object operation not successful: "
             << outcome.GetError().GetExceptionName() << " : "
             << outcome.GetError().GetMessage());
-        return outcome;
     }
     return outcome;
 }
@@ -318,8 +317,7 @@ void CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRa
         AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
             assert(0);
     }
-    if (m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CBC ||
-        m_contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::CTR)
+    if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM)
     {
         AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.")
             assert(0);
