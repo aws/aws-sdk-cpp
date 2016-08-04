@@ -235,37 +235,37 @@ namespace Model
     inline Cluster& WithRequestedAmiVersion(const char* value) { SetRequestedAmiVersion(value); return *this;}
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline const Aws::String& GetRunningAmiVersion() const{ return m_runningAmiVersion; }
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline void SetRunningAmiVersion(const Aws::String& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline void SetRunningAmiVersion(Aws::String&& value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion = value; }
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline void SetRunningAmiVersion(const char* value) { m_runningAmiVersionHasBeenSet = true; m_runningAmiVersion.assign(value); }
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline Cluster& WithRunningAmiVersion(const Aws::String& value) { SetRunningAmiVersion(value); return *this;}
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline Cluster& WithRunningAmiVersion(Aws::String&& value) { SetRunningAmiVersion(value); return *this;}
 
     /**
-     * <p>The AMI version running on this cluster. </p>
+     * <p>The AMI version running on this cluster.</p>
      */
     inline Cluster& WithRunningAmiVersion(const char* value) { SetRunningAmiVersion(value); return *this;}
 
@@ -558,43 +558,43 @@ namespace Model
     inline Cluster& WithMasterPublicDnsName(const char* value) { SetMasterPublicDnsName(value); return *this;}
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline Cluster& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>The list of
+     * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>The list of
      * Configurations supplied to the EMR cluster.</p>
      */
     inline Cluster& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }

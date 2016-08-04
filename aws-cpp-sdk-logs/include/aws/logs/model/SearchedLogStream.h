@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>An object indicating the search status of a log stream in a <code
-   * class="code">FilterLogEvents</code> request.</p>
+   * <p>An object indicating the search status of a log stream in a
+   * <code>FilterLogEvents</code> request.</p>
    */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {

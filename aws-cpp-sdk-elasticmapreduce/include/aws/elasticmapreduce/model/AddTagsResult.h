@@ -32,7 +32,7 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output indicates the result of adding tags to a resource. </p>
+   * <p>This output indicates the result of adding tags to a resource.</p>
    */
   class AWS_EMR_API AddTagsResult
   {

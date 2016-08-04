@@ -41,6 +41,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allowMajorVersionUpgradeHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
@@ -154,6 +155,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
     ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+  }
+
+  if(m_licenseModelHasBeenSet)
+  {
+    ss << "LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
 
   if(m_iopsHasBeenSet)

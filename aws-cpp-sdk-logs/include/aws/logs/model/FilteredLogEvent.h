@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a matched event from a <code class="code">FilterLogEvents</code>
-   * request.</p>
+   * <p>Represents a matched event from a <code>FilterLogEvents</code> request.</p>
    */
   class AWS_CLOUDWATCHLOGS_API FilteredLogEvent
   {

@@ -127,12 +127,12 @@ AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& reques
 
 AddPermissionOutcomeCallable SQSClient::AddPermissionCallable(const AddPermissionRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::AddPermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddPermission(request); });
 }
 
 void SQSClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::AddPermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddPermissionAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -155,12 +155,12 @@ ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMe
 
 ChangeMessageVisibilityOutcomeCallable SQSClient::ChangeMessageVisibilityCallable(const ChangeMessageVisibilityRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::ChangeMessageVisibility, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ChangeMessageVisibility(request); });
 }
 
 void SQSClient::ChangeMessageVisibilityAsync(const ChangeMessageVisibilityRequest& request, const ChangeMessageVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::ChangeMessageVisibilityAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ChangeMessageVisibilityAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::ChangeMessageVisibilityAsyncHelper(const ChangeMessageVisibilityRequest& request, const ChangeMessageVisibilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -183,12 +183,12 @@ ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(cons
 
 ChangeMessageVisibilityBatchOutcomeCallable SQSClient::ChangeMessageVisibilityBatchCallable(const ChangeMessageVisibilityBatchRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::ChangeMessageVisibilityBatch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ChangeMessageVisibilityBatch(request); });
 }
 
 void SQSClient::ChangeMessageVisibilityBatchAsync(const ChangeMessageVisibilityBatchRequest& request, const ChangeMessageVisibilityBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::ChangeMessageVisibilityBatchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ChangeMessageVisibilityBatchAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::ChangeMessageVisibilityBatchAsyncHelper(const ChangeMessageVisibilityBatchRequest& request, const ChangeMessageVisibilityBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -215,12 +215,12 @@ CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) con
 
 CreateQueueOutcomeCallable SQSClient::CreateQueueCallable(const CreateQueueRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::CreateQueue, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateQueue(request); });
 }
 
 void SQSClient::CreateQueueAsync(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::CreateQueueAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateQueueAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::CreateQueueAsyncHelper(const CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -243,12 +243,12 @@ DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& reques
 
 DeleteMessageOutcomeCallable SQSClient::DeleteMessageCallable(const DeleteMessageRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::DeleteMessage, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteMessage(request); });
 }
 
 void SQSClient::DeleteMessageAsync(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::DeleteMessageAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMessageAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::DeleteMessageAsyncHelper(const DeleteMessageRequest& request, const DeleteMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -271,12 +271,12 @@ DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatch
 
 DeleteMessageBatchOutcomeCallable SQSClient::DeleteMessageBatchCallable(const DeleteMessageBatchRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::DeleteMessageBatch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteMessageBatch(request); });
 }
 
 void SQSClient::DeleteMessageBatchAsync(const DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::DeleteMessageBatchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMessageBatchAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::DeleteMessageBatchAsyncHelper(const DeleteMessageBatchRequest& request, const DeleteMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -299,12 +299,12 @@ DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) con
 
 DeleteQueueOutcomeCallable SQSClient::DeleteQueueCallable(const DeleteQueueRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::DeleteQueue, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteQueue(request); });
 }
 
 void SQSClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::DeleteQueueAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueueAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::DeleteQueueAsyncHelper(const DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -327,12 +327,12 @@ GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributes
 
 GetQueueAttributesOutcomeCallable SQSClient::GetQueueAttributesCallable(const GetQueueAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::GetQueueAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetQueueAttributes(request); });
 }
 
 void SQSClient::GetQueueAttributesAsync(const GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::GetQueueAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetQueueAttributesAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::GetQueueAttributesAsyncHelper(const GetQueueAttributesRequest& request, const GetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -359,12 +359,12 @@ GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) con
 
 GetQueueUrlOutcomeCallable SQSClient::GetQueueUrlCallable(const GetQueueUrlRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::GetQueueUrl, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetQueueUrl(request); });
 }
 
 void SQSClient::GetQueueUrlAsync(const GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::GetQueueUrlAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetQueueUrlAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::GetQueueUrlAsyncHelper(const GetQueueUrlRequest& request, const GetQueueUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -387,12 +387,12 @@ ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const Li
 
 ListDeadLetterSourceQueuesOutcomeCallable SQSClient::ListDeadLetterSourceQueuesCallable(const ListDeadLetterSourceQueuesRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::ListDeadLetterSourceQueues, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListDeadLetterSourceQueues(request); });
 }
 
 void SQSClient::ListDeadLetterSourceQueuesAsync(const ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::ListDeadLetterSourceQueuesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListDeadLetterSourceQueuesAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::ListDeadLetterSourceQueuesAsyncHelper(const ListDeadLetterSourceQueuesRequest& request, const ListDeadLetterSourceQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -419,12 +419,12 @@ ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 
 ListQueuesOutcomeCallable SQSClient::ListQueuesCallable(const ListQueuesRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::ListQueues, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListQueues(request); });
 }
 
 void SQSClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::ListQueuesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListQueuesAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::ListQueuesAsyncHelper(const ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -447,12 +447,12 @@ PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
 
 PurgeQueueOutcomeCallable SQSClient::PurgeQueueCallable(const PurgeQueueRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::PurgeQueue, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PurgeQueue(request); });
 }
 
 void SQSClient::PurgeQueueAsync(const PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::PurgeQueueAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PurgeQueueAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::PurgeQueueAsyncHelper(const PurgeQueueRequest& request, const PurgeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -475,12 +475,12 @@ ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& req
 
 ReceiveMessageOutcomeCallable SQSClient::ReceiveMessageCallable(const ReceiveMessageRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::ReceiveMessage, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ReceiveMessage(request); });
 }
 
 void SQSClient::ReceiveMessageAsync(const ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::ReceiveMessageAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ReceiveMessageAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::ReceiveMessageAsyncHelper(const ReceiveMessageRequest& request, const ReceiveMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -503,12 +503,12 @@ RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionReques
 
 RemovePermissionOutcomeCallable SQSClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::RemovePermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemovePermission(request); });
 }
 
 void SQSClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::RemovePermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -531,12 +531,12 @@ SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) con
 
 SendMessageOutcomeCallable SQSClient::SendMessageCallable(const SendMessageRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::SendMessage, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SendMessage(request); });
 }
 
 void SQSClient::SendMessageAsync(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::SendMessageAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SendMessageAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::SendMessageAsyncHelper(const SendMessageRequest& request, const SendMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -559,12 +559,12 @@ SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchReques
 
 SendMessageBatchOutcomeCallable SQSClient::SendMessageBatchCallable(const SendMessageBatchRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::SendMessageBatch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SendMessageBatch(request); });
 }
 
 void SQSClient::SendMessageBatchAsync(const SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::SendMessageBatchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SendMessageBatchAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::SendMessageBatchAsyncHelper(const SendMessageBatchRequest& request, const SendMessageBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -587,12 +587,12 @@ SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributes
 
 SetQueueAttributesOutcomeCallable SQSClient::SetQueueAttributesCallable(const SetQueueAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SQSClient::SetQueueAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetQueueAttributes(request); });
 }
 
 void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SQSClient::SetQueueAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetQueueAttributesAsyncHelper(request, handler, context); } );
 }
 
 void SQSClient::SetQueueAttributesAsyncHelper(const SetQueueAttributesRequest& request, const SetQueueAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

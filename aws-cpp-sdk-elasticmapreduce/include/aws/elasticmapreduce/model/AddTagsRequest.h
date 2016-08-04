@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to attach. </p>
+   * <p>This input identifies a cluster and a list of tags to attach.</p>
    */
   class AWS_EMR_API AddTagsRequest : public EMRRequest
   {

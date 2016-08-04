@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to remove. </p>
+   * <p>This input identifies a cluster and a list of tags to remove.</p>
    */
   class AWS_EMR_API RemoveTagsRequest : public EMRRequest
   {

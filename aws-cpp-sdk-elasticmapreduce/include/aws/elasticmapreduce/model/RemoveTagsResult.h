@@ -32,7 +32,7 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output indicates the result of removing tags from a resource. </p>
+   * <p>This output indicates the result of removing tags from a resource.</p>
    */
   class AWS_EMR_API RemoveTagsResult
   {

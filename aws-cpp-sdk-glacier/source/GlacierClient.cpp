@@ -148,12 +148,12 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
 
 AbortMultipartUploadOutcomeCallable GlacierClient::AbortMultipartUploadCallable(const AbortMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::AbortMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AbortMultipartUpload(request); } );
 }
 
 void GlacierClient::AbortMultipartUploadAsync(const AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::AbortMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AbortMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -183,12 +183,12 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
 
 AbortVaultLockOutcomeCallable GlacierClient::AbortVaultLockCallable(const AbortVaultLockRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::AbortVaultLock, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AbortVaultLock(request); } );
 }
 
 void GlacierClient::AbortVaultLockAsync(const AbortVaultLockRequest& request, const AbortVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::AbortVaultLockAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AbortVaultLockAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::AbortVaultLockAsyncHelper(const AbortVaultLockRequest& request, const AbortVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -218,12 +218,12 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
 
 AddTagsToVaultOutcomeCallable GlacierClient::AddTagsToVaultCallable(const AddTagsToVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::AddTagsToVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddTagsToVault(request); } );
 }
 
 void GlacierClient::AddTagsToVaultAsync(const AddTagsToVaultRequest& request, const AddTagsToVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::AddTagsToVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::AddTagsToVaultAsyncHelper(const AddTagsToVaultRequest& request, const AddTagsToVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -254,12 +254,12 @@ CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const Comp
 
 CompleteMultipartUploadOutcomeCallable GlacierClient::CompleteMultipartUploadCallable(const CompleteMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::CompleteMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CompleteMultipartUpload(request); } );
 }
 
 void GlacierClient::CompleteMultipartUploadAsync(const CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::CompleteMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -290,12 +290,12 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
 
 CompleteVaultLockOutcomeCallable GlacierClient::CompleteVaultLockCallable(const CompleteVaultLockRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::CompleteVaultLock, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CompleteVaultLock(request); } );
 }
 
 void GlacierClient::CompleteVaultLockAsync(const CompleteVaultLockRequest& request, const CompleteVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::CompleteVaultLockAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteVaultLockAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::CompleteVaultLockAsyncHelper(const CompleteVaultLockRequest& request, const CompleteVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -324,12 +324,12 @@ CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request)
 
 CreateVaultOutcomeCallable GlacierClient::CreateVaultCallable(const CreateVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::CreateVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateVault(request); } );
 }
 
 void GlacierClient::CreateVaultAsync(const CreateVaultRequest& request, const CreateVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::CreateVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::CreateVaultAsyncHelper(const CreateVaultRequest& request, const CreateVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -360,12 +360,12 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
 
 DeleteArchiveOutcomeCallable GlacierClient::DeleteArchiveCallable(const DeleteArchiveRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DeleteArchive, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteArchive(request); } );
 }
 
 void GlacierClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DeleteArchiveAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteArchiveAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request, const DeleteArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -394,12 +394,12 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
 
 DeleteVaultOutcomeCallable GlacierClient::DeleteVaultCallable(const DeleteVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DeleteVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteVault(request); } );
 }
 
 void GlacierClient::DeleteVaultAsync(const DeleteVaultRequest& request, const DeleteVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DeleteVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DeleteVaultAsyncHelper(const DeleteVaultRequest& request, const DeleteVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -429,12 +429,12 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
 
 DeleteVaultAccessPolicyOutcomeCallable GlacierClient::DeleteVaultAccessPolicyCallable(const DeleteVaultAccessPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DeleteVaultAccessPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteVaultAccessPolicy(request); } );
 }
 
 void GlacierClient::DeleteVaultAccessPolicyAsync(const DeleteVaultAccessPolicyRequest& request, const DeleteVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DeleteVaultAccessPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVaultAccessPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DeleteVaultAccessPolicyAsyncHelper(const DeleteVaultAccessPolicyRequest& request, const DeleteVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -464,12 +464,12 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
 
 DeleteVaultNotificationsOutcomeCallable GlacierClient::DeleteVaultNotificationsCallable(const DeleteVaultNotificationsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DeleteVaultNotifications, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteVaultNotifications(request); } );
 }
 
 void GlacierClient::DeleteVaultNotificationsAsync(const DeleteVaultNotificationsRequest& request, const DeleteVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DeleteVaultNotificationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVaultNotificationsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DeleteVaultNotificationsAsyncHelper(const DeleteVaultNotificationsRequest& request, const DeleteVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -500,12 +500,12 @@ DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request)
 
 DescribeJobOutcomeCallable GlacierClient::DescribeJobCallable(const DescribeJobRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DescribeJob, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeJob(request); } );
 }
 
 void GlacierClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DescribeJobAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -534,12 +534,12 @@ DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& re
 
 DescribeVaultOutcomeCallable GlacierClient::DescribeVaultCallable(const DescribeVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::DescribeVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeVault(request); } );
 }
 
 void GlacierClient::DescribeVaultAsync(const DescribeVaultRequest& request, const DescribeVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::DescribeVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::DescribeVaultAsyncHelper(const DescribeVaultRequest& request, const DescribeVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -567,12 +567,12 @@ GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDat
 
 GetDataRetrievalPolicyOutcomeCallable GlacierClient::GetDataRetrievalPolicyCallable(const GetDataRetrievalPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::GetDataRetrievalPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetDataRetrievalPolicy(request); } );
 }
 
 void GlacierClient::GetDataRetrievalPolicyAsync(const GetDataRetrievalPolicyRequest& request, const GetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::GetDataRetrievalPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetDataRetrievalPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::GetDataRetrievalPolicyAsyncHelper(const GetDataRetrievalPolicyRequest& request, const GetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -604,12 +604,12 @@ GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& reque
 
 GetJobOutputOutcomeCallable GlacierClient::GetJobOutputCallable(const GetJobOutputRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::GetJobOutput, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetJobOutput(request); } );
 }
 
 void GlacierClient::GetJobOutputAsync(const GetJobOutputRequest& request, const GetJobOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::GetJobOutputAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobOutputAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::GetJobOutputAsyncHelper(const GetJobOutputRequest& request, const GetJobOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -639,12 +639,12 @@ GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAc
 
 GetVaultAccessPolicyOutcomeCallable GlacierClient::GetVaultAccessPolicyCallable(const GetVaultAccessPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::GetVaultAccessPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetVaultAccessPolicy(request); } );
 }
 
 void GlacierClient::GetVaultAccessPolicyAsync(const GetVaultAccessPolicyRequest& request, const GetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::GetVaultAccessPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetVaultAccessPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::GetVaultAccessPolicyAsyncHelper(const GetVaultAccessPolicyRequest& request, const GetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -674,12 +674,12 @@ GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& reque
 
 GetVaultLockOutcomeCallable GlacierClient::GetVaultLockCallable(const GetVaultLockRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::GetVaultLock, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetVaultLock(request); } );
 }
 
 void GlacierClient::GetVaultLockAsync(const GetVaultLockRequest& request, const GetVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::GetVaultLockAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetVaultLockAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::GetVaultLockAsyncHelper(const GetVaultLockRequest& request, const GetVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -709,12 +709,12 @@ GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVault
 
 GetVaultNotificationsOutcomeCallable GlacierClient::GetVaultNotificationsCallable(const GetVaultNotificationsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::GetVaultNotifications, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetVaultNotifications(request); } );
 }
 
 void GlacierClient::GetVaultNotificationsAsync(const GetVaultNotificationsRequest& request, const GetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::GetVaultNotificationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetVaultNotificationsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::GetVaultNotificationsAsyncHelper(const GetVaultNotificationsRequest& request, const GetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -744,12 +744,12 @@ InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request)
 
 InitiateJobOutcomeCallable GlacierClient::InitiateJobCallable(const InitiateJobRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::InitiateJob, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->InitiateJob(request); } );
 }
 
 void GlacierClient::InitiateJobAsync(const InitiateJobRequest& request, const InitiateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::InitiateJobAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->InitiateJobAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::InitiateJobAsyncHelper(const InitiateJobRequest& request, const InitiateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -779,12 +779,12 @@ InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const Init
 
 InitiateMultipartUploadOutcomeCallable GlacierClient::InitiateMultipartUploadCallable(const InitiateMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::InitiateMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->InitiateMultipartUpload(request); } );
 }
 
 void GlacierClient::InitiateMultipartUploadAsync(const InitiateMultipartUploadRequest& request, const InitiateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::InitiateMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->InitiateMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::InitiateMultipartUploadAsyncHelper(const InitiateMultipartUploadRequest& request, const InitiateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -814,12 +814,12 @@ InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLoc
 
 InitiateVaultLockOutcomeCallable GlacierClient::InitiateVaultLockCallable(const InitiateVaultLockRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::InitiateVaultLock, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->InitiateVaultLock(request); } );
 }
 
 void GlacierClient::InitiateVaultLockAsync(const InitiateVaultLockRequest& request, const InitiateVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::InitiateVaultLockAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->InitiateVaultLockAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::InitiateVaultLockAsyncHelper(const InitiateVaultLockRequest& request, const InitiateVaultLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -849,12 +849,12 @@ ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 
 ListJobsOutcomeCallable GlacierClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::ListJobs, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListJobs(request); } );
 }
 
 void GlacierClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::ListJobsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -884,12 +884,12 @@ ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultip
 
 ListMultipartUploadsOutcomeCallable GlacierClient::ListMultipartUploadsCallable(const ListMultipartUploadsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::ListMultipartUploads, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListMultipartUploads(request); } );
 }
 
 void GlacierClient::ListMultipartUploadsAsync(const ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::ListMultipartUploadsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListMultipartUploadsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -920,12 +920,12 @@ ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 
 ListPartsOutcomeCallable GlacierClient::ListPartsCallable(const ListPartsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::ListParts, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListParts(request); } );
 }
 
 void GlacierClient::ListPartsAsync(const ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::ListPartsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPartsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::ListPartsAsyncHelper(const ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -955,12 +955,12 @@ ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRe
 
 ListTagsForVaultOutcomeCallable GlacierClient::ListTagsForVaultCallable(const ListTagsForVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::ListTagsForVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTagsForVault(request); } );
 }
 
 void GlacierClient::ListTagsForVaultAsync(const ListTagsForVaultRequest& request, const ListTagsForVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::ListTagsForVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::ListTagsForVaultAsyncHelper(const ListTagsForVaultRequest& request, const ListTagsForVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -988,12 +988,12 @@ ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) co
 
 ListVaultsOutcomeCallable GlacierClient::ListVaultsCallable(const ListVaultsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::ListVaults, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListVaults(request); } );
 }
 
 void GlacierClient::ListVaultsAsync(const ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::ListVaultsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListVaultsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::ListVaultsAsyncHelper(const ListVaultsRequest& request, const ListVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1023,12 +1023,12 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
 
 RemoveTagsFromVaultOutcomeCallable GlacierClient::RemoveTagsFromVaultCallable(const RemoveTagsFromVaultRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::RemoveTagsFromVault, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveTagsFromVault(request); } );
 }
 
 void GlacierClient::RemoveTagsFromVaultAsync(const RemoveTagsFromVaultRequest& request, const RemoveTagsFromVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::RemoveTagsFromVaultAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromVaultAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::RemoveTagsFromVaultAsyncHelper(const RemoveTagsFromVaultRequest& request, const RemoveTagsFromVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1056,12 +1056,12 @@ SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDat
 
 SetDataRetrievalPolicyOutcomeCallable GlacierClient::SetDataRetrievalPolicyCallable(const SetDataRetrievalPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::SetDataRetrievalPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetDataRetrievalPolicy(request); } );
 }
 
 void GlacierClient::SetDataRetrievalPolicyAsync(const SetDataRetrievalPolicyRequest& request, const SetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::SetDataRetrievalPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetDataRetrievalPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::SetDataRetrievalPolicyAsyncHelper(const SetDataRetrievalPolicyRequest& request, const SetDataRetrievalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1091,12 +1091,12 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
 
 SetVaultAccessPolicyOutcomeCallable GlacierClient::SetVaultAccessPolicyCallable(const SetVaultAccessPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::SetVaultAccessPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetVaultAccessPolicy(request); } );
 }
 
 void GlacierClient::SetVaultAccessPolicyAsync(const SetVaultAccessPolicyRequest& request, const SetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::SetVaultAccessPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetVaultAccessPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::SetVaultAccessPolicyAsyncHelper(const SetVaultAccessPolicyRequest& request, const SetVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1126,12 +1126,12 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
 
 SetVaultNotificationsOutcomeCallable GlacierClient::SetVaultNotificationsCallable(const SetVaultNotificationsRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::SetVaultNotifications, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetVaultNotifications(request); } );
 }
 
 void GlacierClient::SetVaultNotificationsAsync(const SetVaultNotificationsRequest& request, const SetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::SetVaultNotificationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetVaultNotificationsAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::SetVaultNotificationsAsyncHelper(const SetVaultNotificationsRequest& request, const SetVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1161,12 +1161,12 @@ UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& re
 
 UploadArchiveOutcomeCallable GlacierClient::UploadArchiveCallable(const UploadArchiveRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::UploadArchive, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadArchive(request); } );
 }
 
 void GlacierClient::UploadArchiveAsync(const UploadArchiveRequest& request, const UploadArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::UploadArchiveAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadArchiveAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::UploadArchiveAsyncHelper(const UploadArchiveRequest& request, const UploadArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1197,12 +1197,12 @@ UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultip
 
 UploadMultipartPartOutcomeCallable GlacierClient::UploadMultipartPartCallable(const UploadMultipartPartRequest& request) const
 {
-  return std::async(std::launch::async, &GlacierClient::UploadMultipartPart, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadMultipartPart(request); } );
 }
 
 void GlacierClient::UploadMultipartPartAsync(const UploadMultipartPartRequest& request, const UploadMultipartPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&GlacierClient::UploadMultipartPartAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadMultipartPartAsyncHelper( request, handler, context ); } );
 }
 
 void GlacierClient::UploadMultipartPartAsyncHelper(const UploadMultipartPartRequest& request, const UploadMultipartPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

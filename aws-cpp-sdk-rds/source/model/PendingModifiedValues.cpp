@@ -41,6 +41,7 @@ PendingModifiedValues::PendingModifiedValues() :
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
@@ -61,6 +62,7 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
@@ -117,6 +119,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
     {
       m_engineVersion = StringUtils::Trim(engineVersionNode.GetText().c_str());
       m_engineVersionHasBeenSet = true;
+    }
+    XmlNode licenseModelNode = resultNode.FirstChild("LicenseModel");
+    if(!licenseModelNode.IsNull())
+    {
+      m_licenseModel = StringUtils::Trim(licenseModelNode.GetText().c_str());
+      m_licenseModelHasBeenSet = true;
     }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
     if(!iopsNode.IsNull())
@@ -184,6 +192,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
   }
 
+  if(m_licenseModelHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
+  }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
@@ -235,6 +248,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_engineVersionHasBeenSet)
   {
       oStream << location << ".EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+  if(m_licenseModelHasBeenSet)
+  {
+      oStream << location << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
   if(m_iopsHasBeenSet)
   {

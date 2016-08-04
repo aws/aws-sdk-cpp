@@ -68,37 +68,37 @@ namespace Model
     inline ExportTaskStatus& WithCode(ExportTaskStatusCode&& value) { SetCode(value); return *this;}
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline ExportTaskStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline ExportTaskStatus& WithMessage(Aws::String&& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Status message related to the <code class="code">code</code>.</p>
+     * <p>Status message related to the <code>code</code>.</p>
      */
     inline ExportTaskStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
 
