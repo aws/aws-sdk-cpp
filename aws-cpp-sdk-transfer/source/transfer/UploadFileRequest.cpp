@@ -230,8 +230,16 @@ bool UploadFileRequest::CreateMultipartUpload()
     Aws::S3::Model::CreateMultipartUploadRequest createMultipartUploadRequest;
     createMultipartUploadRequest.SetBucket(GetBucketName());
     createMultipartUploadRequest.SetKey(GetKeyName());
-    createMultipartUploadRequest.SetServerSideEncryption(m_serverSideEncryption);
-    createMultipartUploadRequest.SetStorageClass(m_storageClass);
+    
+    if (m_serverSideEncryption != Aws::S3::Model::ServerSideEncryption::NOT_SET) 
+    {
+        createMultipartUploadRequest.SetServerSideEncryption(m_serverSideEncryption);
+    }
+    if (m_storageClass != Aws::S3::Model::StorageClass::NOT_SET) 
+    {
+        createMultipartUploadRequest.SetStorageClass(m_storageClass);    
+    } 
+
     // not mandatory - defaults to binary in S3
     if (m_contentType.length())
     {
@@ -820,8 +828,15 @@ bool UploadFileRequest::DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& str
         putObjectRequest.SetMetadata(m_metadata);
     }
     putObjectRequest.SetKey(GetKeyName());
-    putObjectRequest.SetServerSideEncryption(m_serverSideEncryption);
-    putObjectRequest.SetStorageClass(m_storageClass);
+    
+    if (m_serverSideEncryption != Aws::S3::Model::ServerSideEncryption::NOT_SET) 
+    {
+        putObjectRequest.SetServerSideEncryption(m_serverSideEncryption);
+    }
+    if (m_storageClass != Aws::S3::Model::StorageClass::NOT_SET) 
+    {
+        putObjectRequest.SetStorageClass(m_storageClass);    
+    } 
 
     putObjectRequest.SetDataSentEventHandler(std::bind(&UploadFileRequest::OnDataSent, this, std::placeholders::_1, std::placeholders::_2));
     
