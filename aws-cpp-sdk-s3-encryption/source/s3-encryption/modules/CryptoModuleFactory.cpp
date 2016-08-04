@@ -32,7 +32,7 @@ CryptoModuleFactory::CryptoModuleFactory()
 }
 
 std::shared_ptr<CryptoModule> CryptoModuleFactory::FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-	const Aws::S3::S3Client& s3Client)
+	const Aws::S3::S3Client& s3Client) const
 {
     auto entry = m_cryptoFactories.find(cryptoConfig.GetCryptoMode());
     std::shared_ptr<CryptoModuleAbstractFactory> factory = entry->second;

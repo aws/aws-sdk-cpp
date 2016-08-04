@@ -63,7 +63,7 @@ namespace Aws
                 * Determines which module to use and returns a specific factory for that module.
                 */
                 std::shared_ptr<CryptoModule> FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-					const Aws::S3::S3Client& s3Client);
+                    const Aws::S3::S3Client& s3Client) const;
 
             private:
                 Aws::Map<Aws::S3Encryption::CryptoMode, std::shared_ptr<CryptoModuleAbstractFactory>> m_cryptoFactories;

@@ -48,12 +48,12 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(Aws::S3::Model::PutObjectRequest& request);
+                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request);
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial);
+                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial);
 
             private:
                 /*

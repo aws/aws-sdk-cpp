@@ -44,42 +44,43 @@ CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>
 {
 }
 
-Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(Aws::S3::Model::PutObjectRequest& request)
+Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request)
 {
+    PutObjectRequest copyRequest(request);
     PopulateCryptoContentMaterial();
     InitEncryptionCipher();
-    SetContentLength(request);
+    SetContentLength(copyRequest);
     m_encryptionMaterials->EncryptCEK(m_contentCryptoMaterial);
     
     if (m_cryptoConfig.GetStorageMethod() == StorageMethod::INSTRUCTION_FILE)
     {
         Handlers::InstructionFileHandler handler;
         PutObjectRequest instructionFileRequest;
-        instructionFileRequest.WithBucket(request.GetBucket());
-        instructionFileRequest.WithKey(request.GetKey());
+        instructionFileRequest.WithBucket(copyRequest.GetBucket());
+        instructionFileRequest.WithKey(copyRequest.GetKey());
         handler.PopulateRequest(instructionFileRequest, m_contentCryptoMaterial);
-        PutObjectOutcome instructionOutcome = m_s3Client.PutObject(instructionFileRequest);
+        PutObjectOutcome instructionOutcome = m_s3Client.S3Client::PutObject(instructionFileRequest);
         if (!instructionOutcome.IsSuccess())
         {
             AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Instruction file put operation not successful: "
                     << instructionOutcome.GetError().GetExceptionName() << " : " 
                     << instructionOutcome.GetError().GetMessage());
-            return PutObjectOutcome(instructionOutcome.GetError());
+            return instructionOutcome;
         }
     }
     else
     {
         Handlers::MetadataHandler handler;
-        handler.PopulateRequest(request, m_contentCryptoMaterial);
+        handler.PopulateRequest(copyRequest, m_contentCryptoMaterial);
     }	
-    PutObjectOutcome outcome = WrapAndMakeRequestWithCipher(request);
-    return PutObjectOutcome(PutObjectResult(outcome.GetResultWithOwnership()));
-
+    return WrapAndMakeRequestWithCipher(copyRequest);
 }
 
-Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(Aws::S3::Model::GetObjectRequest& request,
+Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request,
    const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial)
 {
+    GetObjectRequest copyRequest(request);
+
     m_contentCryptoMaterial = contentCryptoMaterial;
 
     DecryptionConditionCheck(request.GetRange());
@@ -87,9 +88,9 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(Aws::S3::Model:
 
     CryptoBuffer tagFromBody = GetTag(request);
     InitDecryptionCipher(tagFromBody);
-    AdjustRange(request, headObjectResult);
+    AdjustRange(copyRequest, headObjectResult);
     
-    return UnwrapAndMakeRequestWithCipher(request);
+    return UnwrapAndMakeRequestWithCipher(copyRequest);
 }
 
 const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request)
@@ -99,7 +100,7 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
     iostream->clear();
     iostream->seekg(0, std::ios_base::beg);
 
-    PutObjectOutcome outcome = m_s3Client.PutObject(request);
+    PutObjectOutcome outcome = m_s3Client.S3Client::PutObject(request);
     if (!outcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 put object operation not successful: "
@@ -117,7 +118,7 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     request.SetResponseStreamFactory(
         [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
     );
-    GetObjectOutcome outcome = m_s3Client.GetObject(request);
+    GetObjectOutcome outcome = m_s3Client.S3Client::GetObject(request);
     if (!outcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
@@ -233,7 +234,7 @@ Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectR
     auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
     Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
     getTag.SetRange(tagLengthRangeSpecifier);
-    GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
+    GetObjectOutcome tagOutcome = m_s3Client.S3Client::GetObject(getTag);
     if (!tagOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Get Operation for crypto tag not successful: "
@@ -303,7 +304,7 @@ Aws::Utils::CryptoBuffer CryptoModuleStrictAE::GetTag(const Aws::S3::Model::GetO
     auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
     Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
     getTag.SetRange(tagLengthRangeSpecifier);
-    GetObjectOutcome tagOutcome = m_s3Client.GetObject(getTag);
+    GetObjectOutcome tagOutcome = m_s3Client.S3Client::GetObject(getTag);
     Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
     Aws::OStringStream ss;
     ss << tagStream.rdbuf();
