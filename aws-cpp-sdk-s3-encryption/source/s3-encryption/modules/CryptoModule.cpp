@@ -83,10 +83,10 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::
 
     m_contentCryptoMaterial = contentCryptoMaterial;
 
-    DecryptionConditionCheck(request.GetRange());
+    DecryptionConditionCheck(copyRequest.GetRange());
     m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
 
-    CryptoBuffer tagFromBody = GetTag(request);
+    CryptoBuffer tagFromBody = GetTag(copyRequest);
     InitDecryptionCipher(tagFromBody);
     AdjustRange(copyRequest, headObjectResult);
     

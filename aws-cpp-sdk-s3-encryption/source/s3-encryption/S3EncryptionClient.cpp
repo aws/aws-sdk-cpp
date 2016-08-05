@@ -25,22 +25,17 @@ namespace S3Encryption
     using namespace Aws::S3::Model;
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(Aws::S3Encryption::Modules::CryptoModuleFactory()), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(clientConfiguration)
+        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(clientConfiguration)
     {
     }
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(Aws::S3Encryption::Modules::CryptoModuleFactory()), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentials, clientConfiguration)
+        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentials, clientConfiguration)
     {
     }
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(Aws::S3Encryption::Modules::CryptoModuleFactory()), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentialsProvider, clientConfiguration)
-    {
-    }
-
-    S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Aws::S3::S3Client& s3Client) :
-        m_cryptoModuleFactory(Aws::S3Encryption::Modules::CryptoModuleFactory()), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(s3Client)
+        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentialsProvider, clientConfiguration)
     {
     }
 

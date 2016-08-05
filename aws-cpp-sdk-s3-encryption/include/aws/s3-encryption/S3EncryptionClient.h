@@ -42,11 +42,6 @@ namespace Aws
             S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
 
             /*
-            * Initialize the S3 Encryption Client with encryption materials, crypto configuration, and an S3Client that will be used within the S3 Encryption Client.
-            */
-            S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Aws::S3::S3Client& s3Client);
-
-            /*
             * Function to put an object encrypted to S3.
             */
             Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const override;
@@ -62,8 +57,8 @@ namespace Aws
             */
             Aws::S3::Model::GetObjectOutcome GetInstructionFileObject(const Aws::S3::Model::GetObjectRequest& originalGetRequest) const;
 
-            const Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
-            const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials> m_encryptionMaterials;
+            Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
+            std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials> m_encryptionMaterials;
             const Aws::S3Encryption::CryptoConfiguration& m_cryptoConfig;
         };
     }
