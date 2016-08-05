@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API RemovePermissionRequest : public LambdaRequest
   {

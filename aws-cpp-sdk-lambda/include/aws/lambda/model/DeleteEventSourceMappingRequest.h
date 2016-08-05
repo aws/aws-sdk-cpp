@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API DeleteEventSourceMappingRequest : public LambdaRequest
   {

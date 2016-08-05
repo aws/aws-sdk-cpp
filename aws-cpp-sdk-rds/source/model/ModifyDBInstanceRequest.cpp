@@ -24,6 +24,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
+    m_dBSubnetGroupNameHasBeenSet(false),
     m_dBSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_applyImmediately(false),
@@ -83,6 +84,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
+  }
+
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
   if(m_dBSecurityGroupsHasBeenSet)

@@ -34,6 +34,9 @@ namespace Lambda
 {
 namespace Model
 {
+  /**
+   * <p/>
+   */
   class AWS_LAMBDA_API ListVersionsByFunctionResult
   {
   public:

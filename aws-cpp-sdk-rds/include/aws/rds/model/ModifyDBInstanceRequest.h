@@ -321,6 +321,111 @@ namespace Model
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
     /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
      * setting does not result in an outage and the change is asynchronously applied as
      * soon as possible.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255
@@ -2007,6 +2112,8 @@ namespace Model
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+    Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;

@@ -103,6 +103,7 @@
 #include <aws/rds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/rds/model/ResetDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/ResetDBParameterGroupRequest.h>
+#include <aws/rds/model/RestoreDBClusterFromS3Request.h>
 #include <aws/rds/model/RestoreDBClusterFromSnapshotRequest.h>
 #include <aws/rds/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
@@ -2485,6 +2486,36 @@ void RDSClient::ResetDBParameterGroupAsync(const ResetDBParameterGroupRequest& r
 void RDSClient::ResetDBParameterGroupAsyncHelper(const ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetDBParameterGroup(request), context);
+}
+
+RestoreDBClusterFromS3Outcome RDSClient::RestoreDBClusterFromS3(const RestoreDBClusterFromS3Request& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDBClusterFromS3Outcome(RestoreDBClusterFromS3Result(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDBClusterFromS3Outcome(outcome.GetError());
+  }
+}
+
+RestoreDBClusterFromS3OutcomeCallable RDSClient::RestoreDBClusterFromS3Callable(const RestoreDBClusterFromS3Request& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBClusterFromS3( request ); } );
+}
+
+void RDSClient::RestoreDBClusterFromS3Async(const RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterFromS3AsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::RestoreDBClusterFromS3AsyncHelper(const RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDBClusterFromS3(request), context);
 }
 
 RestoreDBClusterFromSnapshotOutcome RDSClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const

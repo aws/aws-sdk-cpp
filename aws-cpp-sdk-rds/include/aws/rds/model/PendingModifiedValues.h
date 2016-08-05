@@ -412,6 +412,41 @@ namespace Model
      */
     inline PendingModifiedValues& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+
   private:
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
@@ -437,6 +472,8 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+    Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
   };
 
 } // namespace Model

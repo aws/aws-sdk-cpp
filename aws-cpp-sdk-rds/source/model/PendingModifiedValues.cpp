@@ -46,7 +46,8 @@ PendingModifiedValues::PendingModifiedValues() :
     m_iopsHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_dBSubnetGroupNameHasBeenSet(false)
 {
 }
 
@@ -67,7 +68,8 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_iopsHasBeenSet(false),
     m_dBInstanceIdentifierHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false)
+    m_cACertificateIdentifierHasBeenSet(false),
+    m_dBSubnetGroupNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -150,6 +152,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_cACertificateIdentifier = StringUtils::Trim(cACertificateIdentifierNode.GetText().c_str());
       m_cACertificateIdentifierHasBeenSet = true;
     }
+    XmlNode dBSubnetGroupNameNode = resultNode.FirstChild("DBSubnetGroupName");
+    if(!dBSubnetGroupNameNode.IsNull())
+    {
+      m_dBSubnetGroupName = StringUtils::Trim(dBSubnetGroupNameNode.GetText().c_str());
+      m_dBSubnetGroupNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -217,6 +225,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -268,6 +281,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_cACertificateIdentifierHasBeenSet)
   {
       oStream << location << ".CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
+  }
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+      oStream << location << ".DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 }
 
