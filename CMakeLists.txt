@@ -16,7 +16,7 @@
 # minimum version of cmake that 
 #   (1) supports ExternalProject_Add URL_HASH
 #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
-cmake_minimum_required (VERSION 2.8.1)
+cmake_minimum_required (VERSION 2.8.12)
 
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
@@ -54,6 +54,7 @@ option(NO_ENCRYPTION "If enabled, no platform-default encryption will be include
 option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
 option(ENABLE_TESTING "Flag to enable/disable building unit and integration tests" ON)
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
+set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -111,7 +112,7 @@ if(PLATFORM_ANDROID)
     #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
     cmake_minimum_required (VERSION 3.1.2)
 else()
-    cmake_minimum_required (VERSION 2.8)
+    cmake_minimum_required (VERSION 2.8.12)
 endif()
 
 if(PLATFORM_WINDOWS)

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.5)
+cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-core)
 
 if(GIT_FOUND)
@@ -347,7 +347,7 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
 endif()
 
 if(NOT PLATFORM_WINDOWS)
-    target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++11)
+    target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++${CPP_STANDARD})
 
     if(USE_GCC_FLAGS)
         if(NOT ENABLE_RTTI)

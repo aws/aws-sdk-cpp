@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.12)
 project(android-unified-tests)
 
 # Headers are included in the source so that they show up in Visual Studio.
@@ -45,10 +45,6 @@ file(GLOB AWS_UNIFIED_INTEGRATION_TESTS_SRC
 #    ${IDENTITY_MANAGEMENT_SRC}
     ${TEST_SRC}
 )
-
-if(NOT MSVC)
-    add_definitions(-std=c++0x)
-endif()
 
 set(AWS_UNIFIED_INTEGRATION_TEST_APPLICATION_INCLUDES
     "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"

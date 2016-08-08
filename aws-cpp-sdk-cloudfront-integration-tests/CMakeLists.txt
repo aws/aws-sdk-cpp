@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-sqs-cloudfront-tests)
 
 # Headers are included in the source so that they show up in Visual Studio.
@@ -11,11 +11,6 @@ project(aws-cpp-sdk-sqs-cloudfront-tests)
   file(GLOB AWS_CLOUDFRONT_INTEGRATION_TESTS_SRC
     ${AWS_CLOUDFRONT_SRC}
   )
-
-if(NOT MSVC)
-  add_definitions(-std=c++0x)
-endif()
-
 
 set(AWS_CLOUDFRONT_INTEGRATION_TEST_APPLICATION_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
