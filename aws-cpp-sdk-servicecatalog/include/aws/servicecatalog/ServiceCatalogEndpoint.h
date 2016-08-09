@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ServiceCatalog
 {
 namespace ServiceCatalogEndpoint
 {
-AWS_SERVICECATALOG_API Aws::String ForRegion(Region region);
+AWS_SERVICECATALOG_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ServiceCatalogEndpoint
 } // namespace ServiceCatalog
 } // namespace Aws

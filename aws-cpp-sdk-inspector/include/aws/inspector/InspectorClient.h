@@ -926,13 +926,13 @@ namespace Model
         virtual void RemoveAttributesFromFindingsAsync(const Model::RemoveAttributesFromFindingsRequest& request, const RemoveAttributesFromFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the analysis of the application’s behavior against selected rule
+         * <p>Starts the analysis of the application?s behavior against selected rule
          * packages for the assessment specified by the assessment ARN.</p>
          */
         virtual Model::RunAssessmentOutcome RunAssessment(const Model::RunAssessmentRequest& request) const;
 
         /**
-         * <p>Starts the analysis of the application’s behavior against selected rule
+         * <p>Starts the analysis of the application?s behavior against selected rule
          * packages for the assessment specified by the assessment ARN.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -940,7 +940,7 @@ namespace Model
         virtual Model::RunAssessmentOutcomeCallable RunAssessmentCallable(const Model::RunAssessmentRequest& request) const;
 
         /**
-         * <p>Starts the analysis of the application’s behavior against selected rule
+         * <p>Starts the analysis of the application?s behavior against selected rule
          * packages for the assessment specified by the assessment ARN.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

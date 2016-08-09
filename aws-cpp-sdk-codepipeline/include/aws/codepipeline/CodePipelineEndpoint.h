@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CodePipeline
 {
 namespace CodePipelineEndpoint
 {
-AWS_CODEPIPELINE_API Aws::String ForRegion(Region region);
+AWS_CODEPIPELINE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CodePipelineEndpoint
 } // namespace CodePipeline
 } // namespace Aws

@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ElasticTranscoder
 {
 namespace ElasticTranscoderEndpoint
 {
-AWS_ELASTICTRANSCODER_API Aws::String ForRegion(Region region);
+AWS_ELASTICTRANSCODER_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ElasticTranscoderEndpoint
 } // namespace ElasticTranscoder
 } // namespace Aws

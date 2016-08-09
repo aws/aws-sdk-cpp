@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Redshift
 {
 namespace RedshiftEndpoint
 {
-AWS_REDSHIFT_API Aws::String ForRegion(Region region);
+AWS_REDSHIFT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace RedshiftEndpoint
 } // namespace Redshift
 } // namespace Aws

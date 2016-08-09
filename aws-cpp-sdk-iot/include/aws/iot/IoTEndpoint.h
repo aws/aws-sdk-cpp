@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace IoT
 {
 namespace IoTEndpoint
 {
-AWS_IOT_API Aws::String ForRegion(Region region);
+AWS_IOT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace IoTEndpoint
 } // namespace IoT
 } // namespace Aws

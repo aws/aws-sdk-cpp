@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CloudWatchLogs
 {
 namespace CloudWatchLogsEndpoint
 {
-AWS_CLOUDWATCHLOGS_API Aws::String ForRegion(Region region);
+AWS_CLOUDWATCHLOGS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CloudWatchLogsEndpoint
 } // namespace CloudWatchLogs
 } // namespace Aws

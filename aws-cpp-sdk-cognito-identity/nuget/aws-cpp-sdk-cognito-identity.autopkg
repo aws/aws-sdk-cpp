@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CognitoIdentity;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.13.20140630.13;
+        version : @RUNTIME_MAJOR_VERSION@.20140630.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Cognito Identity);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/0.13.1
+            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
        }
     }
 

@@ -24,7 +24,6 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.EnumModel;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
-import com.amazonaws.util.awsclientgenerator.regions.RegionEndpointMapper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
@@ -278,7 +277,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        return RegionEndpointMapper.GetRegionMappingForService(serviceModel.getMetadata().getEndpointPrefix());
+        return new LinkedHashMap<>();
     }
 
     private SdkFileEntry generateExportHeader(final ServiceModel serviceModel) throws Exception {

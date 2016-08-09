@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CognitoIdentityProvider
 {
 namespace CognitoIdentityProviderEndpoint
 {
-AWS_COGNITOIDENTITYPROVIDER_API Aws::String ForRegion(Region region);
+AWS_COGNITOIDENTITYPROVIDER_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CognitoIdentityProviderEndpoint
 } // namespace CognitoIdentityProvider
 } // namespace Aws

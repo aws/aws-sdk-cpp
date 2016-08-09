@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Route53Domains
 {
 namespace Route53DomainsEndpoint
 {
-AWS_ROUTE53DOMAINS_API Aws::String ForRegion(Region region);
+AWS_ROUTE53DOMAINS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace Route53DomainsEndpoint
 } // namespace Route53Domains
 } // namespace Aws

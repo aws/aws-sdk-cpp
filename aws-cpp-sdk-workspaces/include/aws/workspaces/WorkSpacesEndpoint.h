@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace WorkSpaces
 {
 namespace WorkSpacesEndpoint
 {
-AWS_WORKSPACES_API Aws::String ForRegion(Region region);
+AWS_WORKSPACES_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace WorkSpacesEndpoint
 } // namespace WorkSpaces
 } // namespace Aws

@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace SimpleDB
 {
 namespace SimpleDBEndpoint
 {
-AWS_SIMPLEDB_API Aws::String ForRegion(Region region);
+AWS_SIMPLEDB_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace SimpleDBEndpoint
 } // namespace SimpleDB
 } // namespace Aws

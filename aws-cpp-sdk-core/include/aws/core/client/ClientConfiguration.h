@@ -59,11 +59,11 @@ namespace Aws
             /**
              * AWS Region to use in signing requests. Default US_EAST_1
              */
-            Aws::Region region;
+            Aws::String region;
             /**
-             * if customRegion is set you have to also specify an endpoint override, if it is not set, we fallback to region.
+             * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
              */
-            Aws::String authenticationRegion;
+            bool useDualStack;
             /**
              * Max concurrent tcp connections for a single http client to use. Default 25.
              */

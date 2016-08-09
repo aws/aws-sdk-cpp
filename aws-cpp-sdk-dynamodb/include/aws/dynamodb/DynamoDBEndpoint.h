@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace DynamoDB
 {
 namespace DynamoDBEndpoint
 {
-AWS_DYNAMODB_API Aws::String ForRegion(Region region);
+AWS_DYNAMODB_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace DynamoDBEndpoint
 } // namespace DynamoDB
 } // namespace Aws

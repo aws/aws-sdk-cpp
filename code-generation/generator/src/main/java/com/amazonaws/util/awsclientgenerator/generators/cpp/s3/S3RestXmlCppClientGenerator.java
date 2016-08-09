@@ -16,16 +16,15 @@
 package com.amazonaws.util.awsclientgenerator.generators.cpp.s3;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
-import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
-import com.amazonaws.util.awsclientgenerator.regions.RegionEndpointMapper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -97,8 +96,15 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     
 
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        Map<String, String> endpoints = RegionEndpointMapper.GetRegionMappingForService(serviceModel.getMetadata().getEndpointPrefix(), "%s-%s");
-        endpoints.put("US_EAST_1", serviceModel.getMetadata().getGlobalEndpoint());
+        Map<String, String> endpoints = new LinkedHashMap<>();
+        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-west-1", "s3-us-west-1.amazonaws.com");
+        endpoints.put("us-west-2", "s3-us-west-2.amazonaws.com");
+        endpoints.put("eu-west-1", "s3-eu-west-1.amazonaws.com");
+        endpoints.put("ap-southeast-1", "s3-ap-southeast-1.amazonaws.com");
+        endpoints.put("ap-southeast-2", "s3-ap-southeast-2.amazonaws.com");
+        endpoints.put("ap-northeast-1", "s3-ap-northeast-1.amazonaws.com");
+        endpoints.put("sa-east-1", "s3-sa-east-1.amazonaws.com");
 
         return endpoints;
     }

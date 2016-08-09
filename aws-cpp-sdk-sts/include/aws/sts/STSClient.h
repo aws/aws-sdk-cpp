@@ -1083,7 +1083,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken?Federation
          * Through a Custom Identity Broker</a>. </p>
          */
         virtual Model::GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest& request) const;
@@ -1155,7 +1155,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken?Federation
          * Through a Custom Identity Broker</a>. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1229,7 +1229,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions
          * for GetFederationToken</a>. For information about using
          * <code>GetFederationToken</code> to create temporary security credentials, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken?Federation
          * Through a Custom Identity Broker</a>. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace AutoScaling
 {
 namespace AutoScalingEndpoint
 {
-AWS_AUTOSCALING_API Aws::String ForRegion(Region region);
+AWS_AUTOSCALING_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace AutoScalingEndpoint
 } // namespace AutoScaling
 } // namespace Aws

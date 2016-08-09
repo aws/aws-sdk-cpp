@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace SES
 {
 namespace SESEndpoint
 {
-AWS_SES_API Aws::String ForRegion(Region region);
+AWS_SES_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace SESEndpoint
 } // namespace SES
 } // namespace Aws

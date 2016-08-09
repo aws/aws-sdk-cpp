@@ -36,7 +36,7 @@ public class CloudfrontCppClientGenerator extends RestXmlCppClientGenerator {
     @Override
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
-        endpoints.put("US_EAST_1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
 
         return endpoints;
     }

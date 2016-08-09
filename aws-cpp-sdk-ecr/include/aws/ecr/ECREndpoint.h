@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ECR
 {
 namespace ECREndpoint
 {
-AWS_ECR_API Aws::String ForRegion(Region region);
+AWS_ECR_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ECREndpoint
 } // namespace ECR
 } // namespace Aws

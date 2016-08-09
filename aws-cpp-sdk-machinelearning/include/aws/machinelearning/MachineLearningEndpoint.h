@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace MachineLearning
 {
 namespace MachineLearningEndpoint
 {
-AWS_MACHINELEARNING_API Aws::String ForRegion(Region region);
+AWS_MACHINELEARNING_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace MachineLearningEndpoint
 } // namespace MachineLearning
 } // namespace Aws

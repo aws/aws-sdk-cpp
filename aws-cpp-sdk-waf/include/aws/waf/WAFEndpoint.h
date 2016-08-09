@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace WAF
 {
 namespace WAFEndpoint
 {
-AWS_WAF_API Aws::String ForRegion(Region region);
+AWS_WAF_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace WAFEndpoint
 } // namespace WAF
 } // namespace Aws

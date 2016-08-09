@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Glacier
 {
 namespace GlacierEndpoint
 {
-AWS_GLACIER_API Aws::String ForRegion(Region region);
+AWS_GLACIER_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace GlacierEndpoint
 } // namespace Glacier
 } // namespace Aws

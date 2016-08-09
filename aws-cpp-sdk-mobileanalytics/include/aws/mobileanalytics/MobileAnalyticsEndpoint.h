@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace MobileAnalytics
 {
 namespace MobileAnalyticsEndpoint
 {
-AWS_MOBILEANALYTICS_API Aws::String ForRegion(Region region);
+AWS_MOBILEANALYTICS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace MobileAnalyticsEndpoint
 } // namespace MobileAnalytics
 } // namespace Aws

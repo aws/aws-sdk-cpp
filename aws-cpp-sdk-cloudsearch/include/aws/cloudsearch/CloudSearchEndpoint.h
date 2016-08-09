@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CloudSearch
 {
 namespace CloudSearchEndpoint
 {
-AWS_CLOUDSEARCH_API Aws::String ForRegion(Region region);
+AWS_CLOUDSEARCH_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CloudSearchEndpoint
 } // namespace CloudSearch
 } // namespace Aws

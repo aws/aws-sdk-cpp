@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace OpsWorks
 {
 namespace OpsWorksEndpoint
 {
-AWS_OPSWORKS_API Aws::String ForRegion(Region region);
+AWS_OPSWORKS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace OpsWorksEndpoint
 } // namespace OpsWorks
 } // namespace Aws
