@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-WAF;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.13.20150824.14;
+        version : 0.13.20150824.15;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS WAF);

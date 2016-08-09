@@ -27,6 +27,7 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpoint.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrorMarshaller.h>
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetRequest.h>
+#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -124,5 +125,36 @@ void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsync(const GenerateData
 void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GenerateDataSet(request), context);
+}
+
+StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartSupportDataExportOutcome(StartSupportDataExportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSupportDataExportOutcome(outcome.GetError());
+  }
+}
+
+StartSupportDataExportOutcomeCallable MarketplaceCommerceAnalyticsClient::StartSupportDataExportCallable(const StartSupportDataExportRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StartSupportDataExport(request); } );
+}
+
+void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsync(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSupportDataExportAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsyncHelper(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSupportDataExport(request), context);
 }
 

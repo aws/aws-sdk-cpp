@@ -32,6 +32,9 @@ namespace ECR
 namespace Model
 {
 
+  /**
+   * <p>An object representing an Amazon ECR image failure.</p>
+   */
   class AWS_ECR_API ImageFailure
   {
   public:
