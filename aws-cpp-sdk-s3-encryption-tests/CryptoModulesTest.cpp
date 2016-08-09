@@ -53,9 +53,6 @@ namespace
     static size_t const CBC_IV_SIZE_BYTES = 16u;
     static size_t const GCM_IV_SIZE_BYTES = 12u;
 
-    static const char* const LIVE_BUCKET_NAME = "s3encryptionclient";
-    static const char* const LIVE_CMKID = "arn:aws:kms:us-east-1:413075755375:key/2752fae8-2cb4-4b30-aed0-6267e6c9607f";
-
     using namespace Aws::Auth;
     using namespace Aws::Client;
     using namespace Aws::S3Encryption;
@@ -267,7 +264,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since EO uses CBC padding.
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -331,7 +328,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since AE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -395,7 +392,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -460,7 +457,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         //check to make sure content length is now padded since EO using CBC padding.
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -527,7 +524,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         //check to make sure content length is now padded since AE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -594,7 +591,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -660,7 +657,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -717,7 +714,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(putRequest.GetContentLength() > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), strictAEConfig, s3Client);
         GetObjectRequest getRequest;
