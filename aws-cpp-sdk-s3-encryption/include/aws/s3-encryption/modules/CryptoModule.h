@@ -48,23 +48,24 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request);
+                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction);
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
-                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial);
+                Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial
+                    , const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction);
 
             private:
                 /*
                 * This function is used to encrypt the given S3 PutObjectRequest.
                 */
-                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request);
+                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction);
 
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request);
+                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction);
 
             protected:
                 /*
@@ -90,7 +91,7 @@ namespace Aws
                 /*
                 * This function is used to get the crypto tag appended to the end of the body. It creates a seperate get request to obtain the tag.
                 */
-                virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) = 0;
+                virtual Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) = 0;
 
                 /*
                 * This function checks for any prohibitted actions within each module.
@@ -142,7 +143,7 @@ namespace Aws
                 /*
                 * Function to get the crypto tag according to the module. 
                 */
-                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
@@ -187,7 +188,7 @@ namespace Aws
                 /*
                 * Function to get the crypto tag according to the module.
                 */
-                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.
@@ -232,7 +233,7 @@ namespace Aws
                 /*
                 * Function to get the crypto tag according to the module.
                 */
-                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request) override;
+                Aws::Utils::CryptoBuffer GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction) override;
 
                 /*
                 * Function to check for any prohibitted actions specific to each module for decryption.

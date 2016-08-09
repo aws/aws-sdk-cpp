@@ -44,7 +44,7 @@ CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>
 {
 }
 
-Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request)
+Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction)
 {
     PutObjectRequest copyRequest(request);
     PopulateCryptoContentMaterial();
@@ -73,11 +73,11 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::
         Handlers::MetadataHandler handler;
         handler.PopulateRequest(copyRequest, m_contentCryptoMaterial);
     }	
-    return WrapAndMakeRequestWithCipher(copyRequest);
+    return WrapAndMakeRequestWithCipher(copyRequest, putObjectFunction);
 }
 
 Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request,
-   const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial)
+   const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
 {
     GetObjectRequest copyRequest(request);
 
@@ -86,21 +86,21 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::
     DecryptionConditionCheck(copyRequest.GetRange());
     m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
 
-    CryptoBuffer tagFromBody = GetTag(copyRequest);
+    CryptoBuffer tagFromBody = GetTag(copyRequest, getObjectFunction);
     InitDecryptionCipher(tagFromBody);
     AdjustRange(copyRequest, headObjectResult);
     
-    return UnwrapAndMakeRequestWithCipher(copyRequest);
+    return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction);
 }
 
-const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request)
+const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction)
 {
     std::shared_ptr<Aws::IOStream> iostream = request.GetBody();
     request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
     iostream->clear();
     iostream->seekg(0, std::ios_base::beg);
 
-    PutObjectOutcome outcome = m_s3Client.S3Client::PutObject(request);
+    PutObjectOutcome outcome = putObjectFunction(request);
     if (!outcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 put object operation not successful: "
@@ -110,7 +110,7 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
     return outcome;
 }
 
-const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request)
+const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
 {
     auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
     auto userSuppliedStream = userSuppliedStreamFactory();
@@ -118,7 +118,8 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     request.SetResponseStreamFactory(
         [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
     );
-    GetObjectOutcome outcome = m_s3Client.S3Client::GetObject(request);
+    GetObjectOutcome outcome = getObjectFunction(request);
+    //GetObjectOutcome outcome = m_s3Client.S3Client::GetObject(request);
     if (!outcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
@@ -174,7 +175,7 @@ void CryptoModuleEO::InitDecryptionCipher(const Aws::Utils::CryptoBuffer &)
     m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
 }
 
-Aws::Utils::CryptoBuffer CryptoModuleEO::GetTag(const Aws::S3::Model::GetObjectRequest &)
+Aws::Utils::CryptoBuffer CryptoModuleEO::GetTag(const Aws::S3::Model::GetObjectRequest&, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >&)
 {
     return Aws::Utils::CryptoBuffer();
 }
@@ -226,7 +227,7 @@ void CryptoModuleAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer & tag)
     m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
 }
 
-Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectRequest & request)
+Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectRequest & request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
 {
     GetObjectRequest getTag;
     getTag.WithBucket(request.GetBucket());
@@ -234,7 +235,7 @@ Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectR
     auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
     Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
     getTag.SetRange(tagLengthRangeSpecifier);
-    GetObjectOutcome tagOutcome = m_s3Client.S3Client::GetObject(getTag);
+    GetObjectOutcome tagOutcome = getObjectFunction(getTag);
     if (!tagOutcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Get Operation for crypto tag not successful: "
@@ -296,7 +297,7 @@ void CryptoModuleStrictAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer &
     m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
 }
 
-Aws::Utils::CryptoBuffer CryptoModuleStrictAE::GetTag(const Aws::S3::Model::GetObjectRequest & request)
+Aws::Utils::CryptoBuffer CryptoModuleStrictAE::GetTag(const Aws::S3::Model::GetObjectRequest & request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
 {
     GetObjectRequest getTag;
     getTag.WithBucket(request.GetBucket());
@@ -304,7 +305,7 @@ Aws::Utils::CryptoBuffer CryptoModuleStrictAE::GetTag(const Aws::S3::Model::GetO
     auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
     Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
     getTag.SetRange(tagLengthRangeSpecifier);
-    GetObjectOutcome tagOutcome = m_s3Client.S3Client::GetObject(getTag);
+    GetObjectOutcome tagOutcome = getObjectFunction(getTag);
     Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
     Aws::OStringStream ss;
     ss << tagStream.rdbuf();

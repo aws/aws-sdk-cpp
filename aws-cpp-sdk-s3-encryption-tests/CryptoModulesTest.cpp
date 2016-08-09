@@ -145,6 +145,7 @@ namespace
                 return result;
             }
             m_metadata = request.GetMetadata();
+            m_requestContentLength = request.GetContentLength();
 
             std::shared_ptr<Aws::IOStream> body = request.GetBody();
             Aws::String tempBodyString((Aws::IStreamBufIterator(*body)), Aws::IStreamBufIterator());
@@ -196,12 +197,23 @@ namespace
             return result;
         }
 
+        const Aws::Map<Aws::String, Aws::String>& GetMetadata() const
+        {
+            return m_metadata;
+        }
+
+        const size_t GetRequestContentLength() const
+        {
+            return m_requestContentLength;
+        }
+
         mutable size_t m_putObjectCalled;
         mutable size_t m_getObjectCalled;
         mutable Aws::String bodyString;
         mutable Aws::Map<Aws::String, Aws::String> m_metadata;
         mutable std::shared_ptr<Aws::IOStream> m_body;
         mutable std::shared_ptr<Aws::IOStream> m_instructionBody;
+        mutable size_t m_requestContentLength;
     };
 
     class CryptoModulesTest : public ::testing::Test 
@@ -245,10 +257,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -263,8 +276,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
-        //check to make sure content length is now padded since EO uses CBC padding.
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -279,21 +291,23 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
         
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 1);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
-        SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
+        Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+        SimpleEncryptionMaterials materials(masterKey);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
 
         MockS3Client s3Client;
@@ -308,11 +322,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -327,8 +341,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
-        //check to make sure content length is now padded since AE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -343,21 +356,23 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);        
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 2);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
 
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithSimpleEncryptionMaterials)
     {
-        SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
+        Aws::Utils::CryptoBuffer masterKey = Aws::Utils::Crypto::SymmetricCipher::GenerateKey();
+        SimpleEncryptionMaterials materials(masterKey);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
 
         MockS3Client s3Client;
@@ -372,11 +387,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -391,8 +406,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
-        //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -407,14 +421,15 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 2);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
@@ -437,11 +452,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -456,8 +471,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
-        //check to make sure content length is now padded since EO using CBC padding.
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -472,14 +486,15 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
@@ -504,11 +519,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -523,8 +538,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
-        //check to make sure content length is now padded since AE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -539,16 +553,17 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 2);
-        ASSERT_EQ(s3Client.m_putObjectCalled, 1);
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
@@ -571,11 +586,11 @@ namespace
         objectStream->flush();
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
-
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -590,8 +605,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::KMS);
 
-        //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -606,16 +620,17 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        GetObjectOutcome getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
         ASSERT_TRUE(getOutcome.IsSuccess());
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
         ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), putRequest.GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 2);
-        ASSERT_EQ(s3Client.m_putObjectCalled, 1);
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
     }
@@ -638,10 +653,11 @@ namespace
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
 
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -656,8 +672,7 @@ namespace
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
-        //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
         GetObjectRequest getRequest;
@@ -673,7 +688,8 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial); }, ASSERTION_FAILED);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
 
     TEST_F(CryptoModulesTest, StrictAEDecryptionFailure)
@@ -695,10 +711,11 @@ namespace
         putRequest.SetBody(objectStream);
         putRequest.SetKey(KEY_TEST_NAME);
 
-        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest);
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
         ASSERT_TRUE(putOutcome.IsSuccess());
 
-        auto metadata = putRequest.GetMetadata();
+        auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
@@ -714,7 +731,7 @@ namespace
         ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
 
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
-        ASSERT_TRUE(static_cast<size_t>(putRequest.GetContentLength()) > strlen(BODY_STREAM_TEST));
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
         auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), strictAEConfig, s3Client);
         GetObjectRequest getRequest;
@@ -729,6 +746,7 @@ namespace
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
 
-        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial); }, ASSERTION_FAILED);
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
 }
