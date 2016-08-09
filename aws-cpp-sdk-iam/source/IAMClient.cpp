@@ -195,7 +195,7 @@ void IAMClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << IAMEndpoint::ForRegion(config.region);
+    ss << IAMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

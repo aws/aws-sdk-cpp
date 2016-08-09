@@ -88,7 +88,7 @@ void FirehoseClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << FirehoseEndpoint::ForRegion(config.region);
+    ss << FirehoseEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -98,7 +98,7 @@ void CognitoSyncClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CognitoSyncEndpoint::ForRegion(config.region);
+    ss << CognitoSyncEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

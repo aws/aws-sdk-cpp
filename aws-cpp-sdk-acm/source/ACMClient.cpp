@@ -90,7 +90,7 @@ void ACMClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ACMEndpoint::ForRegion(config.region);
+    ss << ACMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

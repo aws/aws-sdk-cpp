@@ -120,7 +120,7 @@ void ElastiCacheClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ElastiCacheEndpoint::ForRegion(config.region);
+    ss << ElastiCacheEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

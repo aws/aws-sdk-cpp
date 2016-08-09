@@ -124,7 +124,7 @@ void DeviceFarmClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << DeviceFarmEndpoint::ForRegion(config.region);
+    ss << DeviceFarmEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

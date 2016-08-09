@@ -88,7 +88,7 @@ void ApplicationAutoScalingClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ApplicationAutoScalingEndpoint::ForRegion(config.region);
+    ss << ApplicationAutoScalingEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -92,7 +92,7 @@ void ServiceCatalogClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ServiceCatalogEndpoint::ForRegion(config.region);
+    ss << ServiceCatalogEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

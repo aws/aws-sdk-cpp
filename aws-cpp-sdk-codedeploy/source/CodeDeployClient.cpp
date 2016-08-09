@@ -116,7 +116,7 @@ void CodeDeployClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CodeDeployEndpoint::ForRegion(config.region);
+    ss << CodeDeployEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

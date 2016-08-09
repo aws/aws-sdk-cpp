@@ -82,7 +82,7 @@ void MobileAnalyticsClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << MobileAnalyticsEndpoint::ForRegion(config.region);
+    ss << MobileAnalyticsEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -136,7 +136,7 @@ void S3Client::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << S3Endpoint::ForRegion(config.region);
+    ss << S3Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

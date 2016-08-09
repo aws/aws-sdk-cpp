@@ -112,7 +112,7 @@ void SNSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SNSEndpoint::ForRegion(config.region);
+    ss << SNSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

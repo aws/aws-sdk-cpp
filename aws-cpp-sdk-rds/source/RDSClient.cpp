@@ -165,7 +165,7 @@ void RDSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << RDSEndpoint::ForRegion(config.region);
+    ss << RDSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

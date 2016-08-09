@@ -144,7 +144,7 @@ void RedshiftClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << RedshiftEndpoint::ForRegion(config.region);
+    ss << RedshiftEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

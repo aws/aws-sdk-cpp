@@ -90,7 +90,7 @@ void ElasticsearchServiceClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ElasticsearchServiceEndpoint::ForRegion(config.region);
+    ss << ElasticsearchServiceEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

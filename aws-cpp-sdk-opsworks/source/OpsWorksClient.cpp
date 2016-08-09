@@ -150,7 +150,7 @@ void OpsWorksClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << OpsWorksEndpoint::ForRegion(config.region);
+    ss << OpsWorksEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

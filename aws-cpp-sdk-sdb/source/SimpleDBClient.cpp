@@ -92,7 +92,7 @@ void SimpleDBClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SimpleDBEndpoint::ForRegion(config.region);
+    ss << SimpleDBEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -108,7 +108,7 @@ void ECSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ECSEndpoint::ForRegion(config.region);
+    ss << ECSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

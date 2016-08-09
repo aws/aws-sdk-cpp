@@ -107,7 +107,7 @@ void SSMClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SSMEndpoint::ForRegion(config.region);
+    ss << SSMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

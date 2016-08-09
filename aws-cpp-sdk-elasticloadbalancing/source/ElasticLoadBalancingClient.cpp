@@ -110,7 +110,7 @@ void ElasticLoadBalancingClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ElasticLoadBalancingEndpoint::ForRegion(config.region);
+    ss << ElasticLoadBalancingEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

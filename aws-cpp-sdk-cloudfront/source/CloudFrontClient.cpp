@@ -104,7 +104,7 @@ void CloudFrontClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CloudFrontEndpoint::ForRegion(config.region);
+    ss << CloudFrontEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

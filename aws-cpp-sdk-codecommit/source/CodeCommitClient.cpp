@@ -96,7 +96,7 @@ void CodeCommitClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CodeCommitEndpoint::ForRegion(config.region);
+    ss << CodeCommitEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

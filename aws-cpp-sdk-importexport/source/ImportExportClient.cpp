@@ -88,7 +88,7 @@ void ImportExportClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ImportExportEndpoint::ForRegion(config.region);
+    ss << ImportExportEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

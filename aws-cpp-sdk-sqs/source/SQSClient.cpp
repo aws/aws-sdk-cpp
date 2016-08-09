@@ -99,7 +99,7 @@ void SQSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SQSEndpoint::ForRegion(config.region);
+    ss << SQSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

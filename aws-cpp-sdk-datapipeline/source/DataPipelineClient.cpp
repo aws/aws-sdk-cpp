@@ -100,7 +100,7 @@ void DataPipelineClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << DataPipelineEndpoint::ForRegion(config.region);
+    ss << DataPipelineEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

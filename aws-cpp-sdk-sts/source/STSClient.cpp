@@ -89,7 +89,7 @@ void STSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << STSEndpoint::ForRegion(config.region);
+    ss << STSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

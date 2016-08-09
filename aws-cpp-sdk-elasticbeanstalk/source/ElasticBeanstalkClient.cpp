@@ -118,7 +118,7 @@ void ElasticBeanstalkClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ElasticBeanstalkEndpoint::ForRegion(config.region);
+    ss << ElasticBeanstalkEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

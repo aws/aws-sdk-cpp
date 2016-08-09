@@ -119,7 +119,7 @@ void GameLiftClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << GameLiftEndpoint::ForRegion(config.region);
+    ss << GameLiftEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

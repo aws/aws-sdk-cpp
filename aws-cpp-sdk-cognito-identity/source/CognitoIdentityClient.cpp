@@ -99,7 +99,7 @@ void CognitoIdentityClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CognitoIdentityEndpoint::ForRegion(config.region);
+    ss << CognitoIdentityEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

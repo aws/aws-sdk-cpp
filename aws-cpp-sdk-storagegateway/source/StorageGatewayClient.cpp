@@ -137,7 +137,7 @@ void StorageGatewayClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << StorageGatewayEndpoint::ForRegion(config.region);
+    ss << StorageGatewayEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -95,7 +95,7 @@ void SupportClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SupportEndpoint::ForRegion(config.region);
+    ss << SupportEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -138,7 +138,7 @@ void IoTClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << IoTEndpoint::ForRegion(config.region);
+    ss << IoTEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

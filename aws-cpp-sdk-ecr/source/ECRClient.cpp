@@ -97,7 +97,7 @@ void ECRClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ECREndpoint::ForRegion(config.region);
+    ss << ECREndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

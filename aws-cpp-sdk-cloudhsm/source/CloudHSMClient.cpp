@@ -101,7 +101,7 @@ void CloudHSMClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CloudHSMEndpoint::ForRegion(config.region);
+    ss << CloudHSMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

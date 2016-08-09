@@ -158,7 +158,7 @@ void APIGatewayClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << APIGatewayEndpoint::ForRegion(config.region);
+    ss << APIGatewayEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -100,7 +100,7 @@ void DirectConnectClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << DirectConnectEndpoint::ForRegion(config.region);
+    ss << DirectConnectEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

@@ -106,7 +106,7 @@ void ConfigServiceClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ConfigServiceEndpoint::ForRegion(config.region);
+    ss << ConfigServiceEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

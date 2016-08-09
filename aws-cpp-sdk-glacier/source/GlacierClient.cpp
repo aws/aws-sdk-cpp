@@ -112,7 +112,7 @@ void GlacierClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << GlacierEndpoint::ForRegion(config.region);
+    ss << GlacierEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

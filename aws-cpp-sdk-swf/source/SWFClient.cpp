@@ -112,7 +112,7 @@ void SWFClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << SWFEndpoint::ForRegion(config.region);
+    ss << SWFEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

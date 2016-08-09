@@ -286,7 +286,7 @@ void EC2Client::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << EC2Endpoint::ForRegion(config.region);
+    ss << EC2Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

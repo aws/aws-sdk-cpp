@@ -93,7 +93,7 @@ void CloudWatchClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CloudWatchEndpoint::ForRegion(config.region);
+    ss << CloudWatchEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

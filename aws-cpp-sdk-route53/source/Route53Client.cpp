@@ -127,7 +127,7 @@ void Route53Client::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << Route53Endpoint::ForRegion(config.region);
+    ss << Route53Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

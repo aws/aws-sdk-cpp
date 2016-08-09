@@ -91,7 +91,7 @@ void WorkSpacesClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << WorkSpacesEndpoint::ForRegion(config.region);
+    ss << WorkSpacesEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

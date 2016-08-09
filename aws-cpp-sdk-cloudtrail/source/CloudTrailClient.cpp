@@ -93,7 +93,7 @@ void CloudTrailClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CloudTrailEndpoint::ForRegion(config.region);
+    ss << CloudTrailEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

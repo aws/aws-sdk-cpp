@@ -106,7 +106,7 @@ void CloudSearchClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CloudSearchEndpoint::ForRegion(config.region);
+    ss << CloudSearchEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

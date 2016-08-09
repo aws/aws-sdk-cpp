@@ -53,7 +53,7 @@ void ${className}::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << ${metadata.classNamePrefix}Endpoint::ForRegion(config.region);
+    ss << ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

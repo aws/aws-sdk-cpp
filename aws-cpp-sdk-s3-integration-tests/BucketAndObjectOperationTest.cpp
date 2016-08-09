@@ -111,6 +111,7 @@ namespace
 
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
             config.region = Aws::Region::US_WEST_2;
+            config.useDualStack = true;
             oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
             m_HttpClient = Aws::Http::CreateHttpClient(config);
         }

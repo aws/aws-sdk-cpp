@@ -110,7 +110,7 @@ void KMSClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << KMSEndpoint::ForRegion(config.region);
+    ss << KMSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

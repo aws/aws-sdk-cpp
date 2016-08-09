@@ -95,7 +95,7 @@ void DynamoDBClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << DynamoDBEndpoint::ForRegion(config.region);
+    ss << DynamoDBEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

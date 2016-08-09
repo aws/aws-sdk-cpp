@@ -106,7 +106,7 @@ void CodePipelineClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << CodePipelineEndpoint::ForRegion(config.region);
+    ss << CodePipelineEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

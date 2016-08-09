@@ -104,7 +104,7 @@ void LambdaClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << LambdaEndpoint::ForRegion(config.region);
+    ss << LambdaEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

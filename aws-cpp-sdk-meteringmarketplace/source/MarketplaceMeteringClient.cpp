@@ -82,7 +82,7 @@ void MarketplaceMeteringClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << MarketplaceMeteringEndpoint::ForRegion(config.region);
+    ss << MarketplaceMeteringEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

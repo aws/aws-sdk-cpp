@@ -82,7 +82,7 @@ void MarketplaceCommerceAnalyticsClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << MarketplaceCommerceAnalyticsEndpoint::ForRegion(config.region);
+    ss << MarketplaceCommerceAnalyticsEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

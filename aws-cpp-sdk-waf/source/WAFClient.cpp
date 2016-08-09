@@ -119,7 +119,7 @@ void WAFClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << WAFEndpoint::ForRegion(config.region);
+    ss << WAFEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

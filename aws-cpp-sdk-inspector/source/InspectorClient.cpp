@@ -116,7 +116,7 @@ void InspectorClient::init(const ClientConfiguration& config)
 
   if(config.endpointOverride.empty())
   {
-    ss << InspectorEndpoint::ForRegion(config.region);
+    ss << InspectorEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
