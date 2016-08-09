@@ -37,10 +37,8 @@ static const Aws::String LAST_BYTES_SPECIFIER = "bytes=-";
 static const Aws::String FIRST_BYTES_SPECIFIER = "bytes=0-";
 static const size_t BITS_IN_BYTE = 8u;
 
-CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-    const Aws::S3::S3Client& s3Client) :
-    m_s3Client(s3Client), m_encryptionMaterials(encryptionMaterials), m_contentCryptoMaterial(ContentCryptoMaterial()),
-    m_cryptoConfig(cryptoConfig), m_cipher(nullptr)
+CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
+    m_encryptionMaterials(encryptionMaterials), m_contentCryptoMaterial(ContentCryptoMaterial()), m_cryptoConfig(cryptoConfig), m_cipher(nullptr)
 {
 }
 
@@ -59,7 +57,7 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::
         instructionFileRequest.WithBucket(copyRequest.GetBucket());
         instructionFileRequest.WithKey(copyRequest.GetKey());
         handler.PopulateRequest(instructionFileRequest, m_contentCryptoMaterial);
-        PutObjectOutcome instructionOutcome = m_s3Client.S3Client::PutObject(instructionFileRequest);
+        PutObjectOutcome instructionOutcome = putObjectFunction(instructionFileRequest);
         if (!instructionOutcome.IsSuccess())
         {
             AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Instruction file put operation not successful: "
@@ -119,7 +117,6 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
         [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
     );
     GetObjectOutcome outcome = getObjectFunction(request);
-    //GetObjectOutcome outcome = m_s3Client.S3Client::GetObject(request);
     if (!outcome.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 get operation not successful: "
@@ -138,12 +135,24 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     return outcome;
 }
 
+const std::pair<long, long> CryptoModule::PraseGetObjectRequestRange(const Aws::String& range)
+{
+    auto iter = range.find("=");
+    if (iter == range.npos)
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The Range will not be adjusted.");
+    }
+    Aws::String bytesRange = range.substr(iter + 1);
+    long lowerBound = StringUtils::ConvertToInt32((bytesRange.substr(0, bytesRange.find("-") - 1)).c_str());
+    long upperBound = StringUtils::ConvertToInt32((bytesRange.substr(bytesRange.find("-") + 1).c_str()));
+    return std::make_pair(lowerBound, upperBound);
+}
 
 
 
-CryptoModuleEO::CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-    const Aws::S3::S3Client& s3Client) :
-    CryptoModule(encryptionMaterials, cryptoConfig, s3Client)
+
+CryptoModuleEO::CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
+    CryptoModule(encryptionMaterials, cryptoConfig)
 {
 }
 
@@ -185,17 +194,34 @@ void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
     AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
 }
 
-void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest &, const Aws::S3::Model::HeadObjectResult &)
+void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult &)
 {
-    //no range adjustment needed in Encryption Only Mode.
+    Aws::String range = request.GetRange();
+    if (request.GetRange() != "")
+    {
+        auto pairOfBounds = PraseGetObjectRequestRange(range);
+        long lowerBound = pairOfBounds.first;
+        long upperBound = pairOfBounds.second;
+        long newLowerBound = lowerBound - (lowerBound % CBC_IV_SIZE) - CBC_IV_SIZE;
+        if (newLowerBound < 0)
+        {
+            newLowerBound = 0;
+        }
+        long newUpperBound = upperBound + (CBC_IV_SIZE - (upperBound % CBC_IV_SIZE)) + CBC_IV_SIZE;
+        if (newUpperBound < 0)
+        {
+            newUpperBound = LONG_MAX;
+        }
+        Aws::String rangeSpecifier = "bytes=" + StringUtils::to_string(newLowerBound) + "-" + StringUtils::to_string(newUpperBound);
+        request.SetRange(rangeSpecifier);
+    }
 }
 
 
 
 
-CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-    const Aws::S3::S3Client& s3Client) :
-    CryptoModule(encryptionMaterials, cryptoConfig, s3Client)
+CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
+    CryptoModule(encryptionMaterials, cryptoConfig)
 {
 }
 
@@ -263,9 +289,8 @@ void CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectReq
 
 
 
-CryptoModuleStrictAE::CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-    const Aws::S3::S3Client& s3Client) :
-    CryptoModule(encryptionMaterials, cryptoConfig, s3Client)
+CryptoModuleStrictAE::CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
+    CryptoModule(encryptionMaterials, cryptoConfig)
 {
 }
 

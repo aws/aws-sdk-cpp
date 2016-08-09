@@ -42,8 +42,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+                CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
                 /*
                 * Function to put an encrypted object to S3.
@@ -68,6 +67,11 @@ namespace Aws
                 const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction);
 
             protected:
+                /*
+                * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
+                */
+                const std::pair<long, long> PraseGetObjectRequestRange(const Aws::String& range);
+
                 /*
                 * This function sets the content length of the put object request, accounting for any additional content appended after encryption.
                 */
@@ -99,11 +103,10 @@ namespace Aws
                 virtual void DecryptionConditionCheck(const Aws::String& requestRange) = 0;
 
                 /*
-                * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. 
+                * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. It also adjusts the range if the a range-get request was specified according to the range for the cipher block.
                 */
                 virtual void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
 
-                const Aws::S3::S3Client& m_s3Client;
                 std::shared_ptr<Materials::EncryptionMaterials> m_encryptionMaterials;
                 ContentCryptoMaterial m_contentCryptoMaterial;
                 CryptoConfiguration m_cryptoConfig;
@@ -116,8 +119,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+                CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
             private:
                 /*
@@ -162,8 +164,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+                CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
             private:
                 /*
@@ -207,8 +208,7 @@ namespace Aws
                 /*
                 * Constructor to initialize encryption materials, crypto configuration, and internal S3 client.
                 */
-                CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig,
-                    const Aws::S3::S3Client& s3Client);
+                CryptoModuleStrictAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
                 
             private:
                 /*

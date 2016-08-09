@@ -31,12 +31,11 @@ CryptoModuleFactory::CryptoModuleFactory()
     m_cryptoFactories.insert(std::pair < CryptoMode, std::shared_ptr<CryptoModuleAbstractFactory>>(CryptoModuleFactoryStrictAE().HandlesMode(), Aws::MakeShared<CryptoModuleFactoryStrictAE>(ALLOCATION_TAG, CryptoModuleFactoryStrictAE())));
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactory::FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-	const Aws::S3::S3Client& s3Client) const
+std::shared_ptr<CryptoModule> CryptoModuleFactory::FetchCryptoModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig) const
 {
     auto entry = m_cryptoFactories.find(cryptoConfig.GetCryptoMode());
     std::shared_ptr<CryptoModuleAbstractFactory> factory = entry->second;
-    return factory->CreateModule(encryptionMaterials, cryptoConfig, s3Client);
+    return factory->CreateModule(encryptionMaterials, cryptoConfig);
 }
 
 
@@ -44,10 +43,9 @@ CryptoModuleFactoryEO::CryptoModuleFactoryEO()
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-	const Aws::S3::S3Client& s3Client)
+std::shared_ptr<CryptoModule> CryptoModuleFactoryEO::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig)
 {
-    return Aws::MakeShared<CryptoModuleEO>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig, s3Client);
+    return Aws::MakeShared<CryptoModuleEO>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig);
 }
 
 CryptoMode CryptoModuleFactoryEO::HandlesMode() const
@@ -59,10 +57,9 @@ CryptoModuleFactoryAE::CryptoModuleFactoryAE()
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-	const Aws::S3::S3Client& s3Client)
+std::shared_ptr<CryptoModule> CryptoModuleFactoryAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig)
 {
-    return Aws::MakeShared<CryptoModuleAE>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig, s3Client);
+    return Aws::MakeShared<CryptoModuleAE>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig);
 }
 
 CryptoMode CryptoModuleFactoryAE::HandlesMode() const
@@ -74,10 +71,9 @@ CryptoModuleFactoryStrictAE::CryptoModuleFactoryStrictAE()
 {
 }
 
-std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig,
-	const Aws::S3::S3Client& s3Client)
+std::shared_ptr<CryptoModule> CryptoModuleFactoryStrictAE::CreateModule(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration& cryptoConfig)
 {
-    return Aws::MakeShared<CryptoModuleStrictAE>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig, s3Client);
+    return Aws::MakeShared<CryptoModuleStrictAE>(ALLOCATION_TAG, encryptionMaterials, cryptoConfig);
 }
 
 CryptoMode CryptoModuleFactoryStrictAE::HandlesMode() const

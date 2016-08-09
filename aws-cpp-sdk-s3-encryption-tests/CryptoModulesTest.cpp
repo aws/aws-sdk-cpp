@@ -248,7 +248,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -278,7 +278,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -313,7 +313,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -343,7 +343,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -378,7 +378,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -408,7 +408,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -443,7 +443,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -473,7 +473,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -510,7 +510,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -540,7 +540,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -577,8 +577,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
-
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
         std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
@@ -607,7 +606,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<KMSEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -643,7 +642,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -674,7 +673,7 @@ namespace
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
@@ -701,7 +700,7 @@ namespace
         MockS3Client s3Client;
 
         CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), eoConfig, s3Client);
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), eoConfig);
 
         PutObjectRequest putRequest;
         putRequest.SetBucket(BUCKET_TEST_NAME);
@@ -733,7 +732,7 @@ namespace
         //check to make sure content length is now padded since StrictAE appends the tag to the end of the body
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
-        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), strictAEConfig, s3Client);
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), strictAEConfig);
         GetObjectRequest getRequest;
         getRequest.SetBucket(BUCKET_TEST_NAME);
         getRequest.SetKey(KEY_TEST_NAME);
