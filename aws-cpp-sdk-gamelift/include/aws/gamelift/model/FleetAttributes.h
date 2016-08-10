@@ -219,70 +219,70 @@ namespace Model
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> ? A new fleet has been defined and desired
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
      * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> ? GameLift is setting
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
      * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> ? Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> ? An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> ? Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> ? The fleet no
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
      * longer exists.</li></ul>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> ? A new fleet has been defined and desired
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
      * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> ? GameLift is setting
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
      * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> ? Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> ? An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> ? Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> ? The fleet no
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
      * longer exists.</li></ul>
      */
     inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> ? A new fleet has been defined and desired
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
      * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> ? GameLift is setting
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
      * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> ? Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> ? An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> ? Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> ? The fleet no
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
      * longer exists.</li></ul>
      */
     inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> ? A new fleet has been defined and desired
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
      * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> ? GameLift is setting
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
      * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> ? Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> ? An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> ? Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> ? The fleet no
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
      * longer exists.</li></ul>
      */
     inline FleetAttributes& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> ? A new fleet has been defined and desired
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
      * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> ? GameLift is setting
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
      * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> ? Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> ? An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> ? Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> ? The fleet no
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
+     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
+     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
      * longer exists.</li></ul>
      */
     inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(value); return *this;}
@@ -496,8 +496,8 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> ? The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> ? If the game session
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li></ul>
      */
@@ -505,8 +505,8 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> ? The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> ? If the game session
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li></ul>
      */
@@ -514,8 +514,8 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> ? The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> ? If the game session
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li></ul>
      */
@@ -523,8 +523,8 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> ? The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> ? If the game session
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li></ul>
      */
@@ -532,8 +532,8 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> ? The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> ? If the game session
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
      * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
      * event.</li></ul>
      */

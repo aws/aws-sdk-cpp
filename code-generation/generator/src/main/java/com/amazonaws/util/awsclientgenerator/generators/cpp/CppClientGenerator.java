@@ -32,6 +32,7 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public abstract class CppClientGenerator implements ClientGenerator {
@@ -83,6 +84,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = new VelocityContext();
         context.put("nl", "\n");
         context.put("serviceModel", serviceModel);
+        context.put("input.encoding", StandardCharsets.UTF_8.name());
+        context.put("output.encoding", StandardCharsets.UTF_8.name());
         return context;
     }
 
@@ -108,10 +111,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
 
         if (shape.isRequest()) {
-            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/RequestHeader.vm");
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/RequestHeader.vm", StandardCharsets.UTF_8.name());
         }
         else if (shape.isEnum()) {
-            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm");
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());
             EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
         }
@@ -152,7 +155,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
 
         if (shape.isEnum()) {
-            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EnumSource.vm");
+            template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EnumSource.vm", StandardCharsets.UTF_8.name());
             EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
 
@@ -176,7 +179,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
            }
         }
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorsSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorsSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("ErrorFormatter", ErrorFormatter.class);
@@ -191,7 +194,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateErrorMarshallingSourceFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorMarshallerSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorMarshallerSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("ErrorFormatter", ErrorFormatter.class);
@@ -202,7 +205,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateErrorsHeaderFile(ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ErrorsHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ErrorsHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         ErrorFormatter errorFormatter = new ErrorFormatter();
@@ -217,7 +220,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ErrorMarshallerHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -229,7 +232,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected SdkFileEntry generateNugetFile(ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/nuget.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/nuget.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("nl", "\n");
@@ -241,7 +244,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -254,7 +257,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateRegionHeaderFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
@@ -267,7 +270,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateRegionSourceFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("endpointMapping", computeRegionEndpointsForService(serviceModel));
@@ -282,7 +285,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateExportHeader(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceExportHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceExportHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -294,7 +297,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateCmakeFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/CMakeFile.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/CMakeFile.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
 

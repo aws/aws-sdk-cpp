@@ -25,6 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -51,13 +52,13 @@ public class MainClientGenerator {
         File finalOutputFile = File.createTempFile(sdkOutputName, ".zip");
 
         FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream)) {
+        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream, StandardCharsets.UTF_8)) {
 
             for (SdkFileEntry apiFile : apiFiles) {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
                     zipOutputStream.putNextEntry(zipEntry);
-                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes());
+                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
                     zipOutputStream.closeEntry();
                 }
             }
@@ -77,7 +78,7 @@ public class MainClientGenerator {
 
         StringBuilder inputJson = new StringBuilder();
 
-        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), "q")) {
+        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), StandardCharsets.UTF_8.name())) {
             char[] inputBuffer = new char[1024];
 
             while (reader.read(inputBuffer) >= 0) {

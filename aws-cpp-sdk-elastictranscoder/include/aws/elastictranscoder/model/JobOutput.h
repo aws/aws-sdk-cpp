@@ -946,7 +946,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -960,7 +960,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -974,7 +974,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -988,7 +988,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -1002,7 +1002,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -1016,7 +1016,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the
@@ -1030,7 +1030,7 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset that you
      * specify in <code>Preset</code> for the current output.</p> <p>Watermarks are
      * added to the output video in the sequence in which you list them in the job
-     * output?the first watermark in the list is added to the output video first, the
+     * output—the first watermark in the list is added to the output video first, the
      * second watermark in the list is added next, and so on. As a result, if the
      * settings in a preset cause Elastic Transcoder to place all watermarks in the
      * same location, the second watermark that you add will cover the first one, the

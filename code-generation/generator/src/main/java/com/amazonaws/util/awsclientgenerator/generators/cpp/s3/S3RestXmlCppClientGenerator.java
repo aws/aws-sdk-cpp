@@ -23,6 +23,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGene
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -86,7 +87,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     protected SdkFileEntry generateModelSourceFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         switch(shapeEntry.getKey()) {
             case "GetBucketLocationResult": {
-                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm");
+                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
                 return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp");
             }
             default:
