@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Object representing a repository.</p>
+   * <p>An object representing a repository.</p>
    */
   class AWS_ECR_API Repository
   {

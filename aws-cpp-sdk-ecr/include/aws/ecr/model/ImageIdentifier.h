@@ -30,6 +30,9 @@ namespace ECR
 namespace Model
 {
 
+  /**
+   * <p>An object with identifying information for an Amazon ECR image.</p>
+   */
   class AWS_ECR_API ImageIdentifier
   {
   public:
