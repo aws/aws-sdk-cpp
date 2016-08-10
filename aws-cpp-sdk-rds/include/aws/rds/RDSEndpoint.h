@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace RDS
 {
 namespace RDSEndpoint
 {
-AWS_RDS_API Aws::String ForRegion(Region region);
+AWS_RDS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace RDSEndpoint
 } // namespace RDS
 } // namespace Aws

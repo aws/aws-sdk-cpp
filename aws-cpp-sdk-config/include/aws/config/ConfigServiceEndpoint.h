@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ConfigService
 {
 namespace ConfigServiceEndpoint
 {
-AWS_CONFIGSERVICE_API Aws::String ForRegion(Region region);
+AWS_CONFIGSERVICE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ConfigServiceEndpoint
 } // namespace ConfigService
 } // namespace Aws

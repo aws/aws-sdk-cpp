@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CodeCommit
 {
 namespace CodeCommitEndpoint
 {
-AWS_CODECOMMIT_API Aws::String ForRegion(Region region);
+AWS_CODECOMMIT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CodeCommitEndpoint
 } // namespace CodeCommit
 } // namespace Aws

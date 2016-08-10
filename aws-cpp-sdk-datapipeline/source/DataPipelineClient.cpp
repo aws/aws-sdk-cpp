@@ -61,8 +61,7 @@ static const char* ALLOCATION_TAG = "DataPipelineClient";
 DataPipelineClient::DataPipelineClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,8 +71,7 @@ DataPipelineClient::DataPipelineClient(const Client::ClientConfiguration& client
 DataPipelineClient::DataPipelineClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,8 +82,7 @@ DataPipelineClient::DataPipelineClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DataPipelineErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -101,9 +98,9 @@ void DataPipelineClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << DataPipelineEndpoint::ForRegion(config.region);
+    ss << DataPipelineEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

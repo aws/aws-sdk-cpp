@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace KMS
 {
 namespace KMSEndpoint
 {
-AWS_KMS_API Aws::String ForRegion(Region region);
+AWS_KMS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace KMSEndpoint
 } // namespace KMS
 } // namespace Aws

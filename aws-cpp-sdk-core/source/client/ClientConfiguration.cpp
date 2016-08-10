@@ -40,6 +40,7 @@ ClientConfiguration::ClientConfiguration() :
     userAgent(ComputeUserAgentString()), 
     scheme(Aws::Http::Scheme::HTTPS), 
     region(Region::US_EAST_1),
+    useDualStack(false),
     maxConnections(25), 
     requestTimeoutMs(3000), 
     connectTimeoutMs(1000),

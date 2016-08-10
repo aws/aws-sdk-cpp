@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Lambda
 {
 namespace LambdaEndpoint
 {
-AWS_LAMBDA_API Aws::String ForRegion(Region region);
+AWS_LAMBDA_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace LambdaEndpoint
 } // namespace Lambda
 } // namespace Aws

@@ -67,8 +67,7 @@ static const char* ALLOCATION_TAG = "ConfigServiceClient";
 ConfigServiceClient::ConfigServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -78,8 +77,7 @@ ConfigServiceClient::ConfigServiceClient(const Client::ClientConfiguration& clie
 ConfigServiceClient::ConfigServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -90,8 +88,7 @@ ConfigServiceClient::ConfigServiceClient(const std::shared_ptr<AWSCredentialsPro
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ConfigServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -107,9 +104,9 @@ void ConfigServiceClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << ConfigServiceEndpoint::ForRegion(config.region);
+    ss << ConfigServiceEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {

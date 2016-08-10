@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CloudHSM
 {
 namespace CloudHSMEndpoint
 {
-AWS_CLOUDHSM_API Aws::String ForRegion(Region region);
+AWS_CLOUDHSM_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CloudHSMEndpoint
 } // namespace CloudHSM
 } // namespace Aws

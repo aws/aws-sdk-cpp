@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace MarketplaceCommerceAnalytics
 {
 namespace MarketplaceCommerceAnalyticsEndpoint
 {
-AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::String ForRegion(Region region);
+AWS_MARKETPLACECOMMERCEANALYTICS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace MarketplaceCommerceAnalyticsEndpoint
 } // namespace MarketplaceCommerceAnalytics
 } // namespace Aws

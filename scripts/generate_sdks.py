@@ -22,6 +22,7 @@ import subprocess
 import os
 import zipfile
 import io
+import codecs
 from subprocess import PIPE, STDOUT, Popen
 from os import listdir
 from os.path import isfile, join
@@ -73,11 +74,13 @@ def PrepareGenerator(generatorPath):
 
 def GenerateSdk(generatorPath, sdk, outputDir):
     try:
-       with open(sdk['filePath'], 'rb') as api_definition:
+       with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generatorPath, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
             process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'], '--language-binding', 'cpp', '--arbitrary'],stdout=PIPE,  stdin=PIPE, stderr=STDOUT )
-            process.stdin.write(api_content)
+            writer = codecs.getwriter('utf-8')
+            stdInWriter = writer(process.stdin)
+            stdInWriter.write(api_content)
             process.stdin.close()
             output = process.stdout.read()
             if output:

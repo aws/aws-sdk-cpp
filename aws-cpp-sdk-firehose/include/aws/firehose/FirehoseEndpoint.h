@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Firehose
 {
 namespace FirehoseEndpoint
 {
-AWS_FIREHOSE_API Aws::String ForRegion(Region region);
+AWS_FIREHOSE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace FirehoseEndpoint
 } // namespace Firehose
 } // namespace Aws

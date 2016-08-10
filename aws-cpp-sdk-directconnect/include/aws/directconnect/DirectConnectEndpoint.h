@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace DirectConnect
 {
 namespace DirectConnectEndpoint
 {
-AWS_DIRECTCONNECT_API Aws::String ForRegion(Region region);
+AWS_DIRECTCONNECT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace DirectConnectEndpoint
 } // namespace DirectConnect
 } // namespace Aws

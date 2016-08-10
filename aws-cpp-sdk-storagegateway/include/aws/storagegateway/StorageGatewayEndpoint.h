@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace StorageGateway
 {
 namespace StorageGatewayEndpoint
 {
-AWS_STORAGEGATEWAY_API Aws::String ForRegion(Region region);
+AWS_STORAGEGATEWAY_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace StorageGatewayEndpoint
 } // namespace StorageGateway
 } // namespace Aws

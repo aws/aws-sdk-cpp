@@ -24,6 +24,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGene
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ public class CloudfrontCppClientGenerator extends RestXmlCppClientGenerator {
     @Override
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
-        endpoints.put("US_EAST_1", serviceModel.getMetadata().getGlobalEndpoint());
+        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
 
         return endpoints;
     }
@@ -47,7 +48,7 @@ public class CloudfrontCppClientGenerator extends RestXmlCppClientGenerator {
 
         if (shape.isResult()) {
             VelocityContext context = createContext(serviceModel);
-            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/CloudfrontXmlResultSource.vm");
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/CloudfrontXmlResultSource.vm", StandardCharsets.UTF_8.name());
             context.put("shape", shape);
             context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
             context.put("CppViewHelper", CppViewHelper.class);

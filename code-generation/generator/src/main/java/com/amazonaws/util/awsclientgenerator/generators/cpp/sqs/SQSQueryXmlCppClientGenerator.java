@@ -24,6 +24,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenera
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 
 public class SQSQueryXmlCppClientGenerator extends QueryCppClientGenerator {
@@ -53,7 +54,7 @@ public class SQSQueryXmlCppClientGenerator extends QueryCppClientGenerator {
 
     @Override
     protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/sqs/SQSServiceClientSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/sqs/SQSServiceClientSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);

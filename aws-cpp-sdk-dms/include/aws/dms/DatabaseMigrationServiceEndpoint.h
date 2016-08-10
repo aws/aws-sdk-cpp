@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace DatabaseMigrationService
 {
 namespace DatabaseMigrationServiceEndpoint
 {
-AWS_DATABASEMIGRATIONSERVICE_API Aws::String ForRegion(Region region);
+AWS_DATABASEMIGRATIONSERVICE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace DatabaseMigrationServiceEndpoint
 } // namespace DatabaseMigrationService
 } // namespace Aws

@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace GameLift
 {
 namespace GameLiftEndpoint
 {
-AWS_GAMELIFT_API Aws::String ForRegion(Region region);
+AWS_GAMELIFT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace GameLiftEndpoint
 } // namespace GameLift
 } // namespace Aws

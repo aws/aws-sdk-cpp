@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CloudTrail
 {
 namespace CloudTrailEndpoint
 {
-AWS_CLOUDTRAIL_API Aws::String ForRegion(Region region);
+AWS_CLOUDTRAIL_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CloudTrailEndpoint
 } // namespace CloudTrail
 } // namespace Aws

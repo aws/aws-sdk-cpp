@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ElasticLoadBalancing
 {
 namespace ElasticLoadBalancingEndpoint
 {
-AWS_ELASTICLOADBALANCING_API Aws::String ForRegion(Region region);
+AWS_ELASTICLOADBALANCING_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ElasticLoadBalancingEndpoint
 } // namespace ElasticLoadBalancing
 } // namespace Aws

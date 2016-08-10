@@ -21,6 +21,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.JsonCppClientGenerator;
 import org.apache.velocity.Template;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
@@ -48,11 +49,11 @@ public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
     protected SdkFileEntry generateModelHeaderFile(ServiceModel serviceModel, Map.Entry<String, Shape> shapeEntry) throws Exception {
         switch(shapeEntry.getKey()) {
             case "AttributeValue": {
-                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/dynamodb/AttributeValueHeader.vm");
+                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/dynamodb/AttributeValueHeader.vm", StandardCharsets.UTF_8.name());
                 return makeFile(template, createContext(serviceModel), "include/aws/dynamodb/model/AttributeValue.h");
             }
             case "AttributeValueValue": {
-                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/dynamodb/AttributeValueValueHeader.vm");
+                Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/dynamodb/AttributeValueValueHeader.vm", StandardCharsets.UTF_8.name());
                 return makeFile(template, createContext(serviceModel), "include/aws/dynamodb/model/AttributeValueValue.h");
             }
             default:

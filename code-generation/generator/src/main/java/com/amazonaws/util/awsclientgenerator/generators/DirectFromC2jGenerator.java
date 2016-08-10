@@ -19,6 +19,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 
 
 public class DirectFromC2jGenerator {
@@ -32,6 +33,7 @@ public class DirectFromC2jGenerator {
     public File generateSourceFromJson(String rawJson, String languageBinding, String serviceName) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
+
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
         c2jServiceModel.setServiceName(serviceName);
         return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding);

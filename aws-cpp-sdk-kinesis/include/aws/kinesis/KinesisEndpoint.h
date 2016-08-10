@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace Kinesis
 {
 namespace KinesisEndpoint
 {
-AWS_KINESIS_API Aws::String ForRegion(Region region);
+AWS_KINESIS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace KinesisEndpoint
 } // namespace Kinesis
 } // namespace Aws

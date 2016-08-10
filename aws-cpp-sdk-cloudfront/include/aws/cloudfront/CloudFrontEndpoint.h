@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CloudFront
 {
 namespace CloudFrontEndpoint
 {
-AWS_CLOUDFRONT_API Aws::String ForRegion(Region region);
+AWS_CLOUDFRONT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CloudFrontEndpoint
 } // namespace CloudFront
 } // namespace Aws

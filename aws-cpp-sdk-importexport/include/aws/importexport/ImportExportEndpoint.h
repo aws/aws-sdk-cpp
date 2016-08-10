@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ImportExport
 {
 namespace ImportExportEndpoint
 {
-AWS_IMPORTEXPORT_API Aws::String ForRegion(Region region);
+AWS_IMPORTEXPORT_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ImportExportEndpoint
 } // namespace ImportExport
 } // namespace Aws

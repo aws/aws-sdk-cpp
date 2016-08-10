@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ElasticsearchService
 {
 namespace ElasticsearchServiceEndpoint
 {
-AWS_ELASTICSEARCHSERVICE_API Aws::String ForRegion(Region region);
+AWS_ELASTICSEARCHSERVICE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ElasticsearchServiceEndpoint
 } // namespace ElasticsearchService
 } // namespace Aws

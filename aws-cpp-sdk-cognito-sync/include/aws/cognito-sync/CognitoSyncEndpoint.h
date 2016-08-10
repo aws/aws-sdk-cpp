@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace CognitoSync
 {
 namespace CognitoSyncEndpoint
 {
-AWS_COGNITOSYNC_API Aws::String ForRegion(Region region);
+AWS_COGNITOSYNC_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace CognitoSyncEndpoint
 } // namespace CognitoSync
 } // namespace Aws

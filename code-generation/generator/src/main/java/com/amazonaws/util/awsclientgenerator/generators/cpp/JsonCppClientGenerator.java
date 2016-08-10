@@ -23,6 +23,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.Cpp
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class JsonCppClientGenerator extends CppClientGenerator {
@@ -45,12 +46,12 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             VelocityContext context = createContext(serviceModel);
 
             if (shape.isResult() && shape.hasStreamMembers()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultHeader.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultHeader.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isResult()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultHeader.vm", StandardCharsets.UTF_8.name());
             } else if (!shape.isRequest() && shape.isStructure()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectHeader.vm", StandardCharsets.UTF_8.name());
             }
 
             context.put("shape", shape);
@@ -76,18 +77,18 @@ public class JsonCppClientGenerator extends CppClientGenerator {
             VelocityContext context = createContext(serviceModel);
 
             if (shape.isRequest() && shape.hasStreamMembers()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isRequest()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonRequestSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonRequestSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isResult() && shape.hasStreamMembers()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamResultSource.vm", StandardCharsets.UTF_8.name());
             }
             else if (shape.isResult()) {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonResultSource.vm", StandardCharsets.UTF_8.name());
             } else {
-                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectSource.vm");
+                template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonSubObjectSource.vm", StandardCharsets.UTF_8.name());
             }
 
             context.put("shape", shape);
@@ -104,7 +105,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientHeader.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
@@ -118,7 +119,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm");
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceClientSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
