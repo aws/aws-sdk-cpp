@@ -748,4 +748,44 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         ASSERT_DEATH({ decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction); }, ASSERTION_FAILED);
     }
+
+    TEST_F(CryptoModulesTest, RangeParserSuccess)
+    {
+        SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
+        CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), config);
+
+        int64_t contentLength = 90;
+        Aws::Vector<Aws::String> rangeOptions = { "bytes=10-20", "bytes=-20", "bytes=20-", "bytes=1-9" };
+        Aws::Vector<std::pair<int64_t, int64_t>> resultPairs = {
+            std::make_pair(10LL, 20LL),
+            std::make_pair(0LL, 20LL),
+            std::make_pair(20LL, contentLength),
+            std::make_pair(1LL, 9LL)
+        };
+        
+        for (size_t i = 0; i < rangeOptions.size(); ++i)
+        {
+            auto pair = module->ParseGetObjectRequestRange(rangeOptions[i], contentLength);
+            ASSERT_EQ(pair, resultPairs[i]);
+        }
+    }
+
+    TEST_F(CryptoModulesTest, RangeParserFailure)
+    {
+        SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
+        CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), config);
+
+        int64_t contentLength = 90;
+        Aws::Vector<Aws::String> rangeOptions = { "bytes10-20", "bytes=20", "20=-", "bytes19" };
+
+        for (size_t i = 0; i < rangeOptions.size(); ++i)
+        {
+            auto pair = module->ParseGetObjectRequestRange(rangeOptions[i], contentLength);
+            ASSERT_EQ(pair, std::make_pair(0LL, 0LL));
+        }
+    }
 }

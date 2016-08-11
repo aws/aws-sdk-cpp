@@ -36,6 +36,9 @@ namespace Aws
     {
         namespace Modules
         {
+            typedef std::function <Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&)> PutObjectFunction;
+            typedef std::function <Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&)> GetObjectFunction;
+
             class AWS_S3ENCRYPTION_API CryptoModule
             {
             public:
@@ -47,31 +50,31 @@ namespace Aws
                 /*
                 * Function to put an encrypted object to S3.
                 */
-                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction);
+                Aws::S3::Model::PutObjectOutcome PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
 
                 /*
                 * Function to get an encrypted object from S3. This function takes a headObjectResult as well to collect metadata.
                 */
                 Aws::S3::Model::GetObjectOutcome GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request, const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial
-                    , const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction);
+                    , const GetObjectFunction& getObjectFunction);
+
+                /*
+                * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
+                */
+                std::pair<int64_t, int64_t> ParseGetObjectRequestRange(const Aws::String& range, int64_t contentLength);
 
             private:
                 /*
                 * This function is used to encrypt the given S3 PutObjectRequest.
                 */
-                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction);
+                const Aws::S3::Model::PutObjectOutcome WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction);
 
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction);
+                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction);
 
             protected:
-                /*
-                * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
-                */
-                const std::pair<int64_t, int64_t> ParseGetObjectRequestRange(const Aws::String& range, const long long contentLength);
-
                 /*
                 * This function sets the content length of the put object request, accounting for any additional content appended after encryption.
                 */

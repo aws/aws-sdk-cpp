@@ -42,7 +42,7 @@ CryptoModule::CryptoModule(const std::shared_ptr<Materials::EncryptionMaterials>
 {
 }
 
-Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction)
+Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction)
 {
     PutObjectRequest copyRequest(request);
     PopulateCryptoContentMaterial();
@@ -75,7 +75,7 @@ Aws::S3::Model::PutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::
 }
 
 Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::Model::GetObjectRequest& request,
-   const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
+   const Aws::S3::Model::HeadObjectResult& headObjectResult, const ContentCryptoMaterial& contentCryptoMaterial, const GetObjectFunction& getObjectFunction)
 {
     GetObjectRequest copyRequest(request);
 
@@ -91,7 +91,7 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::
     return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction);
 }
 
-const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const std::function < Aws::S3::Model::PutObjectOutcome(const Aws::S3::Model::PutObjectRequest&) >& putObjectFunction)
+const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
 {
     std::shared_ptr<Aws::IOStream> iostream = request.GetBody();
     request.SetBody(Aws::MakeShared<Aws::Utils::Crypto::SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::IStream&)*iostream, CipherMode::Encrypt, (*m_cipher)));
@@ -108,7 +108,7 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
     return outcome;
 }
 
-const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
+const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction)
 {
     auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
     auto userSuppliedStream = userSuppliedStreamFactory();
@@ -135,21 +135,20 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     return outcome;
 }
 
-const std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::String& range, const long long contentLength)
+std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::String& range, int64_t contentLength)
 {
     auto iterEquals = range.find("=");
     auto iterDash = range.find("-");
     if (iterEquals == range.npos || iterDash == range.npos)
     {
-        return std::make_pair(0ULL, 0ULL);
+        return std::make_pair(0LL, 0LL);
     }
     Aws::String bytesRange = range.substr(iterEquals + 1);
-    uint64_t lowerBound = 0ULL;
-    uint64_t upperBound = 0ULL;
+    uint64_t lowerBound = 0LL;
+    uint64_t upperBound = 0LL;
     iterDash = bytesRange.find("-");
     if (iterDash == 0)
     {
-        lowerBound = 0;
         upperBound = StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
     }
     else if (iterDash == bytesRange.size() - 1)
@@ -159,7 +158,7 @@ const std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const
     }
     else
     {
-        lowerBound = StringUtils::ConvertToInt64((bytesRange.substr(0, iterDash - 1)).c_str());
+        lowerBound = StringUtils::ConvertToInt64((bytesRange.substr(0, iterDash)).c_str());
         upperBound = StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
     }
     return std::make_pair(lowerBound, upperBound);
@@ -219,8 +218,7 @@ void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, con
         auto pairOfBounds = ParseGetObjectRequestRange(range, result.GetContentLength());
         if (pairOfBounds == std::make_pair(0LL, 0LL))
         {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will be removed.");
-            request.SetRange("");
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will not be adjusted.");
             return;
         }
         int64_t lowerBound = pairOfBounds.first;
@@ -239,6 +237,10 @@ void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, con
         {
             Aws::String rangeSpecifier = "bytes=" + StringUtils::to_string(newLowerBound) + "-" + StringUtils::to_string(newUpperBound);
             request.SetRange(rangeSpecifier);
+        }
+        else
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Invalid adjusted range was calculated. Make sure range is in correct format. The set range will not be adjusted.");
         }
     }
 }
