@@ -27,6 +27,7 @@
 #include <aws/autoscaling/AutoScalingEndpoint.h>
 #include <aws/autoscaling/AutoScalingErrorMarshaller.h>
 #include <aws/autoscaling/model/AttachInstancesRequest.h>
+#include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancersRequest.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionRequest.h>
 #include <aws/autoscaling/model/CreateAutoScalingGroupRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/autoscaling/model/DescribeLaunchConfigurationsRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHookTypesRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHooksRequest.h>
+#include <aws/autoscaling/model/DescribeLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeLoadBalancersRequest.h>
 #include <aws/autoscaling/model/DescribeMetricCollectionTypesRequest.h>
 #include <aws/autoscaling/model/DescribeNotificationConfigurationsRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/autoscaling/model/DescribeTagsRequest.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
 #include <aws/autoscaling/model/DetachInstancesRequest.h>
+#include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancersRequest.h>
 #include <aws/autoscaling/model/DisableMetricsCollectionRequest.h>
 #include <aws/autoscaling/model/EnableMetricsCollectionRequest.h>
@@ -169,6 +172,36 @@ void AutoScalingClient::AttachInstancesAsync(const AttachInstancesRequest& reque
 void AutoScalingClient::AttachInstancesAsyncHelper(const AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AttachInstances(request), context);
+}
+
+AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTargetGroups(const AttachLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AttachLoadBalancerTargetGroupsOutcome(AttachLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AttachLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+AttachLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::AttachLoadBalancerTargetGroupsCallable(const AttachLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->AttachLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::AttachLoadBalancerTargetGroupsAsync(const AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AttachLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::AttachLoadBalancerTargetGroupsAsyncHelper(const AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AttachLoadBalancerTargetGroups(request), context);
 }
 
 AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLoadBalancersRequest& request) const
@@ -771,6 +804,36 @@ void AutoScalingClient::DescribeLifecycleHooksAsyncHelper(const DescribeLifecycl
   handler(this, request, DescribeLifecycleHooks(request), context);
 }
 
+DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerTargetGroups(const DescribeLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLoadBalancerTargetGroupsOutcome(DescribeLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::DescribeLoadBalancerTargetGroupsCallable(const DescribeLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::DescribeLoadBalancerTargetGroupsAsync(const DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DescribeLoadBalancerTargetGroupsAsyncHelper(const DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLoadBalancerTargetGroups(request), context);
+}
+
 DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
 {
   Aws::StringStream ss;
@@ -1069,6 +1132,36 @@ void AutoScalingClient::DetachInstancesAsync(const DetachInstancesRequest& reque
 void AutoScalingClient::DetachInstancesAsyncHelper(const DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetachInstances(request), context);
+}
+
+DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTargetGroups(const DetachLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DetachLoadBalancerTargetGroupsOutcome(DetachLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DetachLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+DetachLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::DetachLoadBalancerTargetGroupsCallable(const DetachLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DetachLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::DetachLoadBalancerTargetGroupsAsync(const DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetachLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DetachLoadBalancerTargetGroupsAsyncHelper(const DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetachLoadBalancerTargetGroups(request), context);
 }
 
 DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLoadBalancersRequest& request) const

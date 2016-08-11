@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateOrUpdateTags.</p>
    */
   class AWS_AUTOSCALING_API CreateOrUpdateTagsRequest : public AutoScalingRequest
   {

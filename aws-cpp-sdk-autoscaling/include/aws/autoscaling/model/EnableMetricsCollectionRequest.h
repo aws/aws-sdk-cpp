@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for EnableMetricsCollection.</p>
    */
   class AWS_AUTOSCALING_API EnableMetricsCollectionRequest : public AutoScalingRequest
   {
@@ -70,14 +71,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -85,14 +85,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -100,14 +99,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -115,14 +113,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -130,14 +127,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -145,14 +141,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -160,14 +155,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */
@@ -175,14 +169,13 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul> <p>Note that the
+     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
      * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
      * explicitly request this metric.</p>
      */

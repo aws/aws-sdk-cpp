@@ -34,6 +34,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeTerminationPolicyTypes.</p>
+   */
   class AWS_AUTOSCALING_API DescribeTerminationPolicyTypesResult
   {
   public:

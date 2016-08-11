@@ -33,6 +33,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of TerminateInstancesInAutoScalingGroup.</p>
+   */
   class AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult
   {
   public:

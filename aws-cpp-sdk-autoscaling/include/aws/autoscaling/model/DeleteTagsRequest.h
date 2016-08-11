@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteTags.</p>
    */
   class AWS_AUTOSCALING_API DeleteTagsRequest : public AutoScalingRequest
   {

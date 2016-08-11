@@ -32,6 +32,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of RecordLifecycleActionHeartBeat.</p>
+   */
   class AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatResult
   {
   public:

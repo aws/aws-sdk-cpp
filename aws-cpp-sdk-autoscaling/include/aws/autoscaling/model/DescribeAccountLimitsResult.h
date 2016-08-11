@@ -32,6 +32,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the parameters for DescribeAccountLimits.</p>
+   */
   class AWS_AUTOSCALING_API DescribeAccountLimitsResult
   {
   public:

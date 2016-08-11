@@ -32,6 +32,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of CompleteLifecycleAction.</p>
+   */
   class AWS_AUTOSCALING_API CompleteLifecycleActionResult
   {
   public:

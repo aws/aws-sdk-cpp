@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for SetInstanceProtection.</p>
    */
   class AWS_AUTOSCALING_API SetInstanceProtectionRequest : public AutoScalingRequest
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteLifecycleHook.</p>
    */
   class AWS_AUTOSCALING_API DeleteLifecycleHookRequest : public AutoScalingRequest
   {

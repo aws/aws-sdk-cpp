@@ -27,7 +27,8 @@ namespace Model
     NOT_SET,
     Enabled,
     Disabled,
-    PendingDeletion
+    PendingDeletion,
+    PendingImport
   };
 
 namespace KeyStateMapper

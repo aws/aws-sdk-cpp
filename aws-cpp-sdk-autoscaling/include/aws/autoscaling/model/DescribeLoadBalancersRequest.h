@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeLoadBalancers.</p>
    */
   class AWS_AUTOSCALING_API DescribeLoadBalancersRequest : public AutoScalingRequest
   {

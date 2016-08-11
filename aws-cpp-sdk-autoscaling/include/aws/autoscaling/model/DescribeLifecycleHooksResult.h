@@ -34,6 +34,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeLifecycleHooks.</p>
+   */
   class AWS_AUTOSCALING_API DescribeLifecycleHooksResult
   {
   public:

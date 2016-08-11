@@ -35,6 +35,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeLaunchConfigurations.</p>
+   */
   class AWS_AUTOSCALING_API DescribeLaunchConfigurationsResult
   {
   public:

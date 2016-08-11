@@ -33,6 +33,7 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
@@ -103,6 +104,17 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       ss << "LoadBalancerNames.member." << loadBalancerNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       loadBalancerNamesCount++;
+    }
+  }
+
+  if(m_targetGroupARNsHasBeenSet)
+  {
+    unsigned targetGroupARNsCount = 1;
+    for(auto& item : m_targetGroupARNs)
+    {
+      ss << "TargetGroupARNs.member." << targetGroupARNsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      targetGroupARNsCount++;
     }
   }
 

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for EnteStandby.</p>
    */
   class AWS_AUTOSCALING_API EnterStandbyRequest : public AutoScalingRequest
   {

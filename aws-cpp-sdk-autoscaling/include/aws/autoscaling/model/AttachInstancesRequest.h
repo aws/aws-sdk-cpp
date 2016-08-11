@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for AttachInstances.</p>
    */
   class AWS_AUTOSCALING_API AttachInstancesRequest : public AutoScalingRequest
   {

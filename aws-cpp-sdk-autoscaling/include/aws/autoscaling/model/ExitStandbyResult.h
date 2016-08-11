@@ -34,6 +34,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the parameters for ExitStandby.</p>
+   */
   class AWS_AUTOSCALING_API ExitStandbyResult
   {
   public:

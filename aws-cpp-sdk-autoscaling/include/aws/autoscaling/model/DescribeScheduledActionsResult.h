@@ -35,6 +35,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeScheduledActions.</p>
+   */
   class AWS_AUTOSCALING_API DescribeScheduledActionsResult
   {
   public:

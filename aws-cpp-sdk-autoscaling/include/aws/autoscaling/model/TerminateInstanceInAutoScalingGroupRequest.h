@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for TerminateInstanceInAutoScalingGroup.</p>
    */
   class AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupRequest : public AutoScalingRequest
   {

@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteNotificationConfiguration.</p>
    */
   class AWS_AUTOSCALING_API DeleteNotificationConfigurationRequest : public AutoScalingRequest
   {

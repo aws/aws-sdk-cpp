@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DetachInstances.</p>
    */
   class AWS_AUTOSCALING_API DetachInstancesRequest : public AutoScalingRequest
   {

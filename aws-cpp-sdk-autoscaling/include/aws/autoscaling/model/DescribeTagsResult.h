@@ -35,6 +35,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeTags.</p>
+   */
   class AWS_AUTOSCALING_API DescribeTagsResult
   {
   public:

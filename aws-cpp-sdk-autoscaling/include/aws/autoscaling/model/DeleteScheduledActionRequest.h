@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteScheduledAction.</p>
    */
   class AWS_AUTOSCALING_API DeleteScheduledActionRequest : public AutoScalingRequest
   {

@@ -32,6 +32,7 @@
 #include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/kms/model/DecryptRequest.h>
 #include <aws/kms/model/DeleteAliasRequest.h>
+#include <aws/kms/model/DeleteImportedKeyMaterialRequest.h>
 #include <aws/kms/model/DescribeKeyRequest.h>
 #include <aws/kms/model/DisableKeyRequest.h>
 #include <aws/kms/model/DisableKeyRotationRequest.h>
@@ -43,6 +44,8 @@
 #include <aws/kms/model/GenerateRandomRequest.h>
 #include <aws/kms/model/GetKeyPolicyRequest.h>
 #include <aws/kms/model/GetKeyRotationStatusRequest.h>
+#include <aws/kms/model/GetParametersForImportRequest.h>
+#include <aws/kms/model/ImportKeyMaterialRequest.h>
 #include <aws/kms/model/ListAliasesRequest.h>
 #include <aws/kms/model/ListGrantsRequest.h>
 #include <aws/kms/model/ListKeyPoliciesRequest.h>
@@ -304,6 +307,37 @@ void KMSClient::DeleteAliasAsync(const DeleteAliasRequest& request, const Delete
 void KMSClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAlias(request), context);
+}
+
+DeleteImportedKeyMaterialOutcome KMSClient::DeleteImportedKeyMaterial(const DeleteImportedKeyMaterialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteImportedKeyMaterialOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteImportedKeyMaterialOutcome(outcome.GetError());
+  }
+}
+
+DeleteImportedKeyMaterialOutcomeCallable KMSClient::DeleteImportedKeyMaterialCallable(const DeleteImportedKeyMaterialRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DeleteImportedKeyMaterial(request); } );
+}
+
+void KMSClient::DeleteImportedKeyMaterialAsync(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImportedKeyMaterialAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::DeleteImportedKeyMaterialAsyncHelper(const DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImportedKeyMaterial(request), context);
 }
 
 DescribeKeyOutcome KMSClient::DescribeKey(const DescribeKeyRequest& request) const
@@ -645,6 +679,68 @@ void KMSClient::GetKeyRotationStatusAsync(const GetKeyRotationStatusRequest& req
 void KMSClient::GetKeyRotationStatusAsyncHelper(const GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetKeyRotationStatus(request), context);
+}
+
+GetParametersForImportOutcome KMSClient::GetParametersForImport(const GetParametersForImportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetParametersForImportOutcome(GetParametersForImportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetParametersForImportOutcome(outcome.GetError());
+  }
+}
+
+GetParametersForImportOutcomeCallable KMSClient::GetParametersForImportCallable(const GetParametersForImportRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetParametersForImport(request); } );
+}
+
+void KMSClient::GetParametersForImportAsync(const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetParametersForImportAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::GetParametersForImportAsyncHelper(const GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetParametersForImport(request), context);
+}
+
+ImportKeyMaterialOutcome KMSClient::ImportKeyMaterial(const ImportKeyMaterialRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ImportKeyMaterialOutcome(ImportKeyMaterialResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportKeyMaterialOutcome(outcome.GetError());
+  }
+}
+
+ImportKeyMaterialOutcomeCallable KMSClient::ImportKeyMaterialCallable(const ImportKeyMaterialRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->ImportKeyMaterial(request); } );
+}
+
+void KMSClient::ImportKeyMaterialAsync(const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportKeyMaterialAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::ImportKeyMaterialAsyncHelper(const ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportKeyMaterial(request), context);
 }
 
 ListAliasesOutcome KMSClient::ListAliases(const ListAliasesRequest& request) const

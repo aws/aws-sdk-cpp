@@ -35,6 +35,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output for DescribeAutoScalingGroups.</p>
+   */
   class AWS_AUTOSCALING_API DescribeAutoScalingGroupsResult
   {
   public:

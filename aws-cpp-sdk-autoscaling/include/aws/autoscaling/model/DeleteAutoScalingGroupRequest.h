@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteAutoScalingGroup.</p>
    */
   class AWS_AUTOSCALING_API DeleteAutoScalingGroupRequest : public AutoScalingRequest
   {

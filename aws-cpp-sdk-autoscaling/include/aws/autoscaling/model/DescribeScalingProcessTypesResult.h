@@ -34,6 +34,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeScalingProcessTypes.</p>
+   */
   class AWS_AUTOSCALING_API DescribeScalingProcessTypesResult
   {
   public:

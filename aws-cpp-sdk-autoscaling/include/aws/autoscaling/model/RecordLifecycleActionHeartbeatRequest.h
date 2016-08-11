@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for RecordLifecycleActionHeartbeat.</p>
    */
   class AWS_AUTOSCALING_API RecordLifecycleActionHeartbeatRequest : public AutoScalingRequest
   {

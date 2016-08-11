@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeAutoScalingInstances.</p>
    */
   class AWS_AUTOSCALING_API DescribeAutoScalingInstancesRequest : public AutoScalingRequest
   {

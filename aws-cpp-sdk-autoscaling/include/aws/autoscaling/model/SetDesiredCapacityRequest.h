@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for SetDesiredCapacity.</p>
    */
   class AWS_AUTOSCALING_API SetDesiredCapacityRequest : public AutoScalingRequest
   {

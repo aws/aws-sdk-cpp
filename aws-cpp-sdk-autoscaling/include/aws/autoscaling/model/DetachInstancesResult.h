@@ -34,6 +34,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DetachInstances.</p>
+   */
   class AWS_AUTOSCALING_API DetachInstancesResult
   {
   public:

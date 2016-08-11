@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CompleteLifecycleAction.</p>
    */
   class AWS_AUTOSCALING_API CompleteLifecycleActionRequest : public AutoScalingRequest
   {

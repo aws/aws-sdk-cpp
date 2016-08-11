@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p/>
+   * <p>Contains the parameters for DeletePolicy.</p>
    */
   class AWS_AUTOSCALING_API DeletePolicyRequest : public AutoScalingRequest
   {

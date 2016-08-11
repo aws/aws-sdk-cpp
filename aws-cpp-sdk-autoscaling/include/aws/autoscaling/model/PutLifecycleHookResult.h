@@ -32,6 +32,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of PutLifecycleHook.</p>
+   */
   class AWS_AUTOSCALING_API PutLifecycleHookResult
   {
   public:

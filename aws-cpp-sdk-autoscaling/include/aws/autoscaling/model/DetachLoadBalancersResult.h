@@ -32,6 +32,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output for DetachLoadBalancers.</p>
+   */
   class AWS_AUTOSCALING_API DetachLoadBalancersResult
   {
   public:

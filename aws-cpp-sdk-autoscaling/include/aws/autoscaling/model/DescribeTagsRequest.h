@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeTags.</p>
    */
   class AWS_AUTOSCALING_API DescribeTagsRequest : public AutoScalingRequest
   {

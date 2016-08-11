@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ExitStandby.</p>
    */
   class AWS_AUTOSCALING_API ExitStandbyRequest : public AutoScalingRequest
   {

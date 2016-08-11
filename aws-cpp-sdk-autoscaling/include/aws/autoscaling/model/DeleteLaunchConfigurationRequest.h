@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DeleteLaunchConfiguration.</p>
    */
   class AWS_AUTOSCALING_API DeleteLaunchConfigurationRequest : public AutoScalingRequest
   {
