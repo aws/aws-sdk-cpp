@@ -25,24 +25,24 @@ namespace S3Encryption
     using namespace Aws::S3::Model;
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(clientConfiguration)
+        S3Client(clientConfiguration), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
     {
     }
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentials, clientConfiguration)
+        S3Client(credentials, clientConfiguration), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
     {
     }
 
     S3EncryptionClient::S3EncryptionClient(const std::shared_ptr<Aws::S3Encryption::Materials::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration) :
-        m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig), S3Client(credentialsProvider, clientConfiguration)
+        S3Client(credentialsProvider, clientConfiguration), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
     {
     }
 
     Aws::S3::Model::PutObjectOutcome S3EncryptionClient::PutObject(const Aws::S3::Model::PutObjectRequest& request) const
     {        
         auto module = m_cryptoModuleFactory.FetchCryptoModule(m_encryptionMaterials, m_cryptoConfig);
-        auto putObjectFunction = [this](const Aws::S3::Model::PutObjectRequest& putRequest) -> Aws::S3::Model::PutObjectOutcome { return S3Client::PutObject(putRequest); };
+        auto putObjectFunction = [this](const Aws::S3::Model::PutObjectRequest& putRequest) { return S3Client::PutObject(putRequest); };
         return module->PutObjectSecurely(request, putObjectFunction);
     }
 
@@ -97,7 +97,7 @@ namespace S3Encryption
             decryptionCryptoConfig.SetCryptoMode(CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
         }
         auto module = m_cryptoModuleFactory.FetchCryptoModule(m_encryptionMaterials, decryptionCryptoConfig);
-        auto getObjectFunction = [this](const Aws::S3::Model::GetObjectRequest& getRequest) -> Aws::S3::Model::GetObjectOutcome { return S3Client::GetObject(getRequest); };
+        auto getObjectFunction = [this](const Aws::S3::Model::GetObjectRequest& getRequest) { return S3Client::GetObject(getRequest); };
         return module->GetObjectSecurely(request, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
     }
 

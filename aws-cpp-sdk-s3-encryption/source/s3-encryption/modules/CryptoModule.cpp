@@ -135,16 +135,33 @@ const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCip
     return outcome;
 }
 
-const std::pair<long, long> CryptoModule::PraseGetObjectRequestRange(const Aws::String& range)
+const std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::String& range, const long long contentLength)
 {
-    auto iter = range.find("=");
-    if (iter == range.npos)
+    auto iterEquals = range.find("=");
+    auto iterDash = range.find("-");
+    if (iterEquals == range.npos || iterDash == range.npos)
     {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The Range will not be adjusted.");
+        return std::make_pair(0ULL, 0ULL);
     }
-    Aws::String bytesRange = range.substr(iter + 1);
-    long lowerBound = StringUtils::ConvertToInt32((bytesRange.substr(0, bytesRange.find("-") - 1)).c_str());
-    long upperBound = StringUtils::ConvertToInt32((bytesRange.substr(bytesRange.find("-") + 1).c_str()));
+    Aws::String bytesRange = range.substr(iterEquals + 1);
+    uint64_t lowerBound = 0ULL;
+    uint64_t upperBound = 0ULL;
+    iterDash = bytesRange.find("-");
+    if (iterDash == 0)
+    {
+        lowerBound = 0;
+        upperBound = StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
+    }
+    else if (iterDash == bytesRange.size() - 1)
+    {
+        lowerBound = StringUtils::ConvertToInt64((bytesRange.substr(0, iterDash)).c_str());
+        upperBound = contentLength;
+    }
+    else
+    {
+        lowerBound = StringUtils::ConvertToInt64((bytesRange.substr(0, iterDash - 1)).c_str());
+        upperBound = StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
+    }
     return std::make_pair(lowerBound, upperBound);
 }
 
@@ -194,26 +211,35 @@ void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
     AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
 }
 
-void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult &)
+void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult & result)
 {
     Aws::String range = request.GetRange();
     if (request.GetRange() != "")
     {
-        auto pairOfBounds = PraseGetObjectRequestRange(range);
-        long lowerBound = pairOfBounds.first;
-        long upperBound = pairOfBounds.second;
-        long newLowerBound = lowerBound - (lowerBound % CBC_IV_SIZE) - CBC_IV_SIZE;
+        auto pairOfBounds = ParseGetObjectRequestRange(range, result.GetContentLength());
+        if (pairOfBounds == std::make_pair(0LL, 0LL))
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will be removed.");
+            request.SetRange("");
+            return;
+        }
+        int64_t lowerBound = pairOfBounds.first;
+        int64_t upperBound = pairOfBounds.second;
+        int64_t newLowerBound = lowerBound - (lowerBound % CBC_IV_SIZE) - CBC_IV_SIZE;
         if (newLowerBound < 0)
         {
             newLowerBound = 0;
         }
-        long newUpperBound = upperBound + (CBC_IV_SIZE - (upperBound % CBC_IV_SIZE)) + CBC_IV_SIZE;
+        int64_t newUpperBound = upperBound + (CBC_IV_SIZE - (upperBound % CBC_IV_SIZE)) + CBC_IV_SIZE;
         if (newUpperBound < 0)
         {
             newUpperBound = LONG_MAX;
         }
-        Aws::String rangeSpecifier = "bytes=" + StringUtils::to_string(newLowerBound) + "-" + StringUtils::to_string(newUpperBound);
-        request.SetRange(rangeSpecifier);
+        if (newUpperBound > newLowerBound)
+        {
+            Aws::String rangeSpecifier = "bytes=" + StringUtils::to_string(newLowerBound) + "-" + StringUtils::to_string(newUpperBound);
+            request.SetRange(rangeSpecifier);
+        }
     }
 }
 

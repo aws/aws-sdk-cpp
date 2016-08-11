@@ -70,7 +70,7 @@ namespace Aws
                 /*
                 * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
                 */
-                const std::pair<long, long> PraseGetObjectRequestRange(const Aws::String& range);
+                const std::pair<int64_t, int64_t> ParseGetObjectRequestRange(const Aws::String& range, const long long contentLength);
 
                 /*
                 * This function sets the content length of the put object request, accounting for any additional content appended after encryption.
