@@ -218,7 +218,8 @@ void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, con
         auto pairOfBounds = ParseGetObjectRequestRange(range, result.GetContentLength());
         if (pairOfBounds == std::make_pair(0LL, 0LL))
         {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will not be adjusted.");
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will not be adjusted. "
+               << "Invalid Range specifier: " << range);
             return;
         }
         int64_t lowerBound = pairOfBounds.first;
@@ -240,7 +241,8 @@ void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, con
         }
         else
         {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Invalid adjusted range was calculated. Make sure range is in correct format. The set range will not be adjusted.");
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Invalid adjusted range was calculated. Make sure range is in correct format. The set range will not be adjusted."
+                << "Invalid Range specifier: " << range);
         }
     }
 }
