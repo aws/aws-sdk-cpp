@@ -1,5 +1,4 @@
-﻿
-configurations {
+﻿configurations {
     Toolset {
     key : "PlatformToolset";
     choices: { v140, v120 };
