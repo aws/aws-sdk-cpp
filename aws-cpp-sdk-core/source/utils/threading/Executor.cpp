@@ -121,7 +121,6 @@ BlockingExecutor::~BlockingExecutor()
 bool BlockingExecutor::SubmitToThread(std::function<void()>&& fn)
 {
     std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
-    assert(m_numTasksRunning <= m_poolSize);
     if (m_numTasksRunning >= m_poolSize)
     {
         m_syncPoint.wait(locker, [&]{
@@ -144,7 +143,6 @@ void BlockingExecutor::ExecuteTask(std::function<void()> fn)
 void BlockingExecutor::OnTaskComplete()
 {
     std::unique_lock<std::recursive_mutex> locker(m_syncPointLock);
-    assert(m_numTasksRunning <= m_poolSize);
     m_numTasksRunning--;
     m_syncPoint.notify_one();
     locker.unlock();
