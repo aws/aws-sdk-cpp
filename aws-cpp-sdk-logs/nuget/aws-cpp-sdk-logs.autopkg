@@ -1,3 +1,4 @@
+﻿
 configurations {
     Toolset {
     key : "PlatformToolset";
@@ -13,7 +14,7 @@ nuget {
         id = AWSSDKCPP-CloudWatchLogs;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.14.20140328.3;
+        version : @RUNTIME_MAJOR_VERSION@.20140328.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudWatch Logs);
@@ -48,7 +49,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/0.14.1
+            AWSSDKCPP-Core/@RUNTIME_MAJOR_VERSION@.1
        }
     }
 

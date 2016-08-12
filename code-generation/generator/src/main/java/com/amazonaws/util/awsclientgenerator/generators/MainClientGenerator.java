@@ -51,6 +51,9 @@ public class MainClientGenerator {
         String sdkOutputName = String.format("aws-%s-sdk-%s", spec.getLanguageBinding(), serviceModel.getMetadata().getProjectName());
         File finalOutputFile = File.createTempFile(sdkOutputName, ".zip");
 
+        //we need to add a BOM to accommodate MSFT compilers.
+        //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
+        byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
         FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
         try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream, StandardCharsets.UTF_8)) {
 
@@ -58,6 +61,7 @@ public class MainClientGenerator {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
                     zipOutputStream.putNextEntry(zipEntry);
+                    zipOutputStream.write(bom);
                     zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
                     zipOutputStream.closeEntry();
                 }
