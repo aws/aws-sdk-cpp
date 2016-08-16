@@ -116,6 +116,11 @@ namespace Aws
              */
             Aws::String caPath;
             /**
+             * If your Certificate Authority file is different from the default, you can tell
+             * curl where to find your CA file.
+             */
+            Aws::String caFile;
+            /**
              * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
              */
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;

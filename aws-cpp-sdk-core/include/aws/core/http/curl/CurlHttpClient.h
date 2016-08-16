@@ -54,6 +54,7 @@ private:
     unsigned m_proxyPort;
     bool m_verifySSL;
     Aws::String m_caPath;
+    Aws::String m_caCert;
     bool m_allowRedirects;
 
     static std::atomic<bool> isInit;
