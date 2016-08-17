@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -33,7 +33,8 @@ CACertificateDescription::CACertificateDescription() :
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_autoRegistrationStatusHasBeenSet(false)
 {
 }
 
@@ -43,7 +44,8 @@ CACertificateDescription::CACertificateDescription(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_certificatePemHasBeenSet(false),
     m_ownedByHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_autoRegistrationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ CACertificateDescription& CACertificateDescription::operator =(const JsonValue& 
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("autoRegistrationStatus"))
+  {
+    m_autoRegistrationStatus = AutoRegistrationStatusMapper::GetAutoRegistrationStatusForName(jsonValue.GetString("autoRegistrationStatus"));
+
+    m_autoRegistrationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,11 @@ JsonValue CACertificateDescription::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("creationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_autoRegistrationStatusHasBeenSet)
+  {
+   payload.WithString("autoRegistrationStatus", AutoRegistrationStatusMapper::GetNameForAutoRegistrationStatus(m_autoRegistrationStatus));
   }
 
   return payload;

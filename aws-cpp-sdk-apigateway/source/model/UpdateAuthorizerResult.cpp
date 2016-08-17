@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -54,6 +54,15 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const AmazonWebServic
   {
     m_type = AuthorizerTypeMapper::GetAuthorizerTypeForName(jsonValue.GetString("type"));
 
+  }
+
+  if(jsonValue.ValueExists("providerARNs"))
+  {
+    Array<JsonValue> providerARNsJsonList = jsonValue.GetArray("providerARNs");
+    for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
+    {
+      m_providerARNs.push_back(providerARNsJsonList[providerARNsIndex].AsString());
+    }
   }
 
   if(jsonValue.ValueExists("authType"))

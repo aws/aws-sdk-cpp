@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,6 +28,7 @@ namespace Model
 {
 
 LoadBalancer::LoadBalancer() : 
+    m_targetGroupArnHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
     m_containerNameHasBeenSet(false),
     m_containerPort(0),
@@ -36,6 +37,7 @@ LoadBalancer::LoadBalancer() :
 }
 
 LoadBalancer::LoadBalancer(const JsonValue& jsonValue) : 
+    m_targetGroupArnHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
     m_containerNameHasBeenSet(false),
     m_containerPort(0),
@@ -46,6 +48,13 @@ LoadBalancer::LoadBalancer(const JsonValue& jsonValue) :
 
 LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("targetGroupArn"))
+  {
+    m_targetGroupArn = jsonValue.GetString("targetGroupArn");
+
+    m_targetGroupArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("loadBalancerName"))
   {
     m_loadBalancerName = jsonValue.GetString("loadBalancerName");
@@ -73,6 +82,12 @@ LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 JsonValue LoadBalancer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_targetGroupArnHasBeenSet)
+  {
+   payload.WithString("targetGroupArn", m_targetGroupArn);
+
+  }
 
   if(m_loadBalancerNameHasBeenSet)
   {

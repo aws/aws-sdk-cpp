@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -152,98 +152,98 @@ namespace Model
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(value); return *this;}
 
     /**
      * <p>The lifecycle state for the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline AutoScalingInstanceDetails& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline AutoScalingInstanceDetails& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p>The health status of this instance. "Healthy" means that the instance is
-     * healthy and should remain in service. "Unhealthy" means that the instance is
-     * unhealthy and Auto Scaling should terminate and replace it.</p>
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
      */
     inline AutoScalingInstanceDetails& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 

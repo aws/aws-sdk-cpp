@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,8 +34,7 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>This response contains the object for the Lambda function location (see
-   * <a>API_FunctionCodeLocation</a>.</p>
+   * <p>This response contains the object for the Lambda function location (see .</p>
    */
   class AWS_LAMBDA_API GetFunctionResult
   {

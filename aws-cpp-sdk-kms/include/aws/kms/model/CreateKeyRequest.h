@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,6 +17,7 @@
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/KeyUsageType.h>
+#include <aws/kms/model/OriginType.h>
 
 namespace Aws
 {
@@ -36,11 +37,12 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -59,11 +61,12 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -82,11 +85,12 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -105,11 +109,12 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -128,11 +133,12 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -151,11 +157,12 @@ namespace Model
     inline CreateKeyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -174,11 +181,12 @@ namespace Model
     inline CreateKeyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>If you specify a key policy, it
-     * must meet the following criteria:</p> <ul> <li> <p>It must allow the principal
-     * making the <code>CreateKey</code> request to make a subsequent
-     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK
-     * becomes unmanageable. For more information, refer to the scenario in the <a
+     * <p>The key policy to attach to the CMK.</p> <p>If you specify a policy and do
+     * not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must
+     * meet the following criteria:</p> <ul> <li> <p>It must allow the principal making
+     * the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
+     * request on the CMK. This reduces the likelihood that the CMK becomes
+     * unmanageable. For more information, refer to the scenario in the <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
      * Key Policy</a> section in the <i>AWS Key Management Service Developer
      * Guide</i>.</p> </li> <li> <p>The principal(s) specified in the key policy must
@@ -269,6 +277,76 @@ namespace Model
     inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(value); return *this;}
 
     /**
+     * <p>The source of the CMK's key material.</p> <p>The default is
+     * <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this
+     * parameter is set to <code>EXTERNAL</code>, the request creates a CMK without key
+     * material so that you can import key material from your existing key management
+     * infrastructure. For more information about importing key material into AWS KMS,
+     * see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.</p>
+     */
+    inline const OriginType& GetOrigin() const{ return m_origin; }
+
+    /**
+     * <p>The source of the CMK's key material.</p> <p>The default is
+     * <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this
+     * parameter is set to <code>EXTERNAL</code>, the request creates a CMK without key
+     * material so that you can import key material from your existing key management
+     * infrastructure. For more information about importing key material into AWS KMS,
+     * see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.</p>
+     */
+    inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
+
+    /**
+     * <p>The source of the CMK's key material.</p> <p>The default is
+     * <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this
+     * parameter is set to <code>EXTERNAL</code>, the request creates a CMK without key
+     * material so that you can import key material from your existing key management
+     * infrastructure. For more information about importing key material into AWS KMS,
+     * see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.</p>
+     */
+    inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = value; }
+
+    /**
+     * <p>The source of the CMK's key material.</p> <p>The default is
+     * <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this
+     * parameter is set to <code>EXTERNAL</code>, the request creates a CMK without key
+     * material so that you can import key material from your existing key management
+     * infrastructure. For more information about importing key material into AWS KMS,
+     * see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.</p>
+     */
+    inline CreateKeyRequest& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
+
+    /**
+     * <p>The source of the CMK's key material.</p> <p>The default is
+     * <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this
+     * parameter is set to <code>EXTERNAL</code>, the request creates a CMK without key
+     * material so that you can import key material from your existing key management
+     * infrastructure. For more information about importing key material into AWS KMS,
+     * see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * <p>The CMK's <code>Origin</code> is immutable and is set when the CMK is
+     * created.</p>
+     */
+    inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(value); return *this;}
+
+    /**
      * <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
      * <important> <p>Setting this value to true increases the likelihood that the CMK
      * becomes unmanageable. Do not set this value to true indiscriminately.</p> <p>For
@@ -317,6 +395,8 @@ namespace Model
     bool m_descriptionHasBeenSet;
     KeyUsageType m_keyUsage;
     bool m_keyUsageHasBeenSet;
+    OriginType m_origin;
+    bool m_originHasBeenSet;
     bool m_bypassPolicyLockoutSafetyCheck;
     bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
   };

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -561,6 +561,113 @@ namespace Model
     inline GetDataSourceResult& WithComputeStatistics(bool value) { SetComputeStatistics(value); return *this;}
 
     /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>DataSource</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.</p>
+     */
+    inline long long GetComputeTime() const{ return m_computeTime; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>DataSource</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.</p>
+     */
+    inline void SetComputeTime(long long value) { m_computeTime = value; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>DataSource</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>DataSource</code> is in the <code>COMPLETED</code> state and the
+     * <code>ComputeStatistics</code> is set to true.</p>
+     */
+    inline GetDataSourceResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>DataSource</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>DataSource</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>DataSource</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>DataSource</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetDataSourceResult& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>DataSource</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetDataSourceResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>DataSource</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>DataSource</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>DataSource</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>DataSource</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline GetDataSourceResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>DataSource</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>DataSource</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline GetDataSourceResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+
+    /**
      * <p>The schema used by all of the data files of this <code>DataSource</code>.</p>
      * <note><title>Note</title> <p>This parameter is provided as part of the verbose
      * format.</p></note>
@@ -626,6 +733,9 @@ namespace Model
     RDSMetadata m_rDSMetadata;
     Aws::String m_roleARN;
     bool m_computeStatistics;
+    long long m_computeTime;
+    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_startedAt;
     Aws::String m_dataSourceSchema;
   };
 

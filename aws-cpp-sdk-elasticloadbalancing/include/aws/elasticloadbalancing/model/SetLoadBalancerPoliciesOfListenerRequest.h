@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for SetLoadBalancePoliciesOfListener.</p>
    */
   class AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesOfListenerRequest : public ElasticLoadBalancingRequest
   {
@@ -69,65 +70,73 @@ namespace Model
     inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The external port of the load balancer for the policy.</p>
+     * <p>The external port of the load balancer.</p>
      */
     inline int GetLoadBalancerPort() const{ return m_loadBalancerPort; }
 
     /**
-     * <p>The external port of the load balancer for the policy.</p>
+     * <p>The external port of the load balancer.</p>
      */
     inline void SetLoadBalancerPort(int value) { m_loadBalancerPortHasBeenSet = true; m_loadBalancerPort = value; }
 
     /**
-     * <p>The external port of the load balancer for the policy.</p>
+     * <p>The external port of the load balancer.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the policies. If the list is empty, the current policy is
-     * removed from the listener.</p>
+     * <p>The names of the policies. This list must include all policies to be enabled.
+     * If you omit a policy that is currently enabled, it is disabled. If the list is
+     * empty, all current policies are disabled.</p>
      */
     inline SetLoadBalancerPoliciesOfListenerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 

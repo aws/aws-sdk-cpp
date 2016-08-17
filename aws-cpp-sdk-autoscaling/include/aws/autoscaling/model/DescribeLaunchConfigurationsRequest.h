@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeLaunchConfigurations.</p>
    */
   class AWS_AUTOSCALING_API DescribeLaunchConfigurationsRequest : public AutoScalingRequest
   {
@@ -34,42 +35,50 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchConfigurationNames() const{ return m_launchConfigurationNames; }
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline void SetLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline void SetLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { SetLaunchConfigurationNames(value); return *this;}
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { SetLaunchConfigurationNames(value); return *this;}
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const Aws::String& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(Aws::String&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 
     /**
-     * <p>The launch configuration names.</p>
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
      */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const char* value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
 

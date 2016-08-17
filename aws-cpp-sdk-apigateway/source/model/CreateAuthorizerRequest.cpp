@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ CreateAuthorizerRequest::CreateAuthorizerRequest() :
     m_restApiIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_providerARNsHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_authorizerUriHasBeenSet(false),
     m_authorizerCredentialsHasBeenSet(false),
@@ -48,6 +49,17 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", AuthorizerTypeMapper::GetNameForAuthorizerType(m_type));
+  }
+
+  if(m_providerARNsHasBeenSet)
+  {
+   Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
+   for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
+   {
+     providerARNsJsonList[providerARNsIndex].AsString(m_providerARNs[providerARNsIndex]);
+   }
+   payload.WithArray("providerARNs", std::move(providerARNsJsonList));
+
   }
 
   if(m_authTypeHasBeenSet)

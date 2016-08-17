@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -115,82 +115,82 @@ namespace Model
     inline Step& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The Hadoop job configuration of the cluster step. </p>
+     * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline const HadoopStepConfig& GetConfig() const{ return m_config; }
 
     /**
-     * <p>The Hadoop job configuration of the cluster step. </p>
+     * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline void SetConfig(const HadoopStepConfig& value) { m_configHasBeenSet = true; m_config = value; }
 
     /**
-     * <p>The Hadoop job configuration of the cluster step. </p>
+     * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline void SetConfig(HadoopStepConfig&& value) { m_configHasBeenSet = true; m_config = value; }
 
     /**
-     * <p>The Hadoop job configuration of the cluster step. </p>
+     * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline Step& WithConfig(const HadoopStepConfig& value) { SetConfig(value); return *this;}
 
     /**
-     * <p>The Hadoop job configuration of the cluster step. </p>
+     * <p>The Hadoop job configuration of the cluster step.</p>
      */
     inline Step& WithConfig(HadoopStepConfig&& value) { SetConfig(value); return *this;}
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
-     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. </p>
+     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>
      */
     inline const ActionOnFailure& GetActionOnFailure() const{ return m_actionOnFailure; }
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
-     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. </p>
+     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>
      */
     inline void SetActionOnFailure(const ActionOnFailure& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
-     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. </p>
+     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>
      */
     inline void SetActionOnFailure(ActionOnFailure&& value) { m_actionOnFailureHasBeenSet = true; m_actionOnFailure = value; }
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
-     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. </p>
+     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>
      */
     inline Step& WithActionOnFailure(const ActionOnFailure& value) { SetActionOnFailure(value); return *this;}
 
     /**
      * <p>This specifies what action to take when the cluster step fails. Possible
-     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. </p>
+     * values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>
      */
     inline Step& WithActionOnFailure(ActionOnFailure&& value) { SetActionOnFailure(value); return *this;}
 
     /**
-     * <p>The current execution status details of the cluster step. </p>
+     * <p>The current execution status details of the cluster step.</p>
      */
     inline const StepStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current execution status details of the cluster step. </p>
+     * <p>The current execution status details of the cluster step.</p>
      */
     inline void SetStatus(const StepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current execution status details of the cluster step. </p>
+     * <p>The current execution status details of the cluster step.</p>
      */
     inline void SetStatus(StepStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current execution status details of the cluster step. </p>
+     * <p>The current execution status details of the cluster step.</p>
      */
     inline Step& WithStatus(const StepStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current execution status details of the cluster step. </p>
+     * <p>The current execution status details of the cluster step.</p>
      */
     inline Step& WithStatus(StepStatus&& value) { SetStatus(value); return *this;}
 

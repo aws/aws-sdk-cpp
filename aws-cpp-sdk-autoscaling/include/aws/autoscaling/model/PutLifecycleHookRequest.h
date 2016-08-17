@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for PutLifecycleHook.</p>
    */
   class AWS_AUTOSCALING_API PutLifecycleHookRequest : public AutoScalingRequest
   {
@@ -219,13 +220,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -239,13 +241,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -259,13 +262,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -279,13 +283,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -299,13 +304,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -319,13 +325,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling
@@ -339,13 +346,14 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. This target
      * can be either an SQS queue or an SNS topic. If you specify an empty string, this
      * overrides the current ARN.</p> <p>The notification messages sent to the target
-     * include the following information:</p> <ul> <li><b>AutoScalingGroupName</b>. The
-     * name of the Auto Scaling group.</li> <li><b>AccountId</b>. The AWS account
-     * ID.</li> <li><b>LifecycleTransition</b>. The lifecycle hook type.</li>
-     * <li><b>LifecycleActionToken</b>. The lifecycle action token.</li>
-     * <li><b>EC2InstanceId</b>. The EC2 instance ID.</li>
-     * <li><b>LifecycleHookName</b>. The name of the lifecycle hook.</li>
-     * <li><b>NotificationMetadata</b>. User-defined information.</li> </ul> <p>This
+     * include the following information:</p> <ul> <li> <p>
+     * <b>AutoScalingGroupName</b>. The name of the Auto Scaling group.</p> </li> <li>
+     * <p> <b>AccountId</b>. The AWS account ID.</p> </li> <li> <p>
+     * <b>LifecycleTransition</b>. The lifecycle hook type.</p> </li> <li> <p>
+     * <b>LifecycleActionToken</b>. The lifecycle action token.</p> </li> <li> <p>
+     * <b>EC2InstanceId</b>. The EC2 instance ID.</p> </li> <li> <p>
+     * <b>LifecycleHookName</b>. The name of the lifecycle hook.</p> </li> <li> <p>
+     * <b>NotificationMetadata</b>. User-defined information.</p> </li> </ul> <p>This
      * operation uses the JSON format when sending notifications to an Amazon SQS
      * queue, and an email key/value pair format when sending notifications to an
      * Amazon SNS topic.</p> <p>When you specify a notification target, Auto Scaling

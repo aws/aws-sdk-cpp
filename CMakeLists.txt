@@ -16,7 +16,7 @@
 # minimum version of cmake that 
 #   (1) supports ExternalProject_Add URL_HASH
 #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
-cmake_minimum_required (VERSION 2.8.1)
+cmake_minimum_required (VERSION 2.8.12)
 
 # git is required for Android builds and optional for all other platforms
 find_package(Git)
@@ -54,6 +54,7 @@ option(NO_ENCRYPTION "If enabled, no platform-default encryption will be include
 option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
 option(ENABLE_TESTING "Flag to enable/disable building unit and integration tests" ON)
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
+set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -111,7 +112,7 @@ if(PLATFORM_ANDROID)
     #   (2) correctly extracts OPENSSL's version number from openssl/opensslv.h in version 1.0.2d
     cmake_minimum_required (VERSION 3.1.2)
 else()
-    cmake_minimum_required (VERSION 2.8)
+    cmake_minimum_required (VERSION 2.8.12)
 endif()
 
 if(PLATFORM_WINDOWS)
@@ -506,6 +507,7 @@ list(APPEND C2J_LIST "elasticache:2015-02-02")
 list(APPEND C2J_LIST "elasticbeanstalk:2010-12-01")
 list(APPEND C2J_LIST "elasticfilesystem:2015-02-01")
 list(APPEND C2J_LIST "elasticloadbalancing:2012-06-01")
+list(APPEND C2J_LIST "elasticloadbalancingv2:2015-12-01")
 list(APPEND C2J_LIST "elasticmapreduce:2009-03-31")
 list(APPEND C2J_LIST "elastictranscoder:2012-09-25")
 list(APPEND C2J_LIST "email:2010-12-01")
@@ -519,6 +521,7 @@ list(APPEND C2J_LIST "importexport:2010-06-01")
 list(APPEND C2J_LIST "inspector:2015-08-18")
 list(APPEND C2J_LIST "iot:2015-05-28")
 list(APPEND C2J_LIST "kinesis:2013-12-02")
+list(APPEND C2J_LIST "kinesisanalytics:2015-08-14")
 list(APPEND C2J_LIST "kms:2014-11-01")
 list(APPEND C2J_LIST "lambda:2015-03-31")
 list(APPEND C2J_LIST "logs:2014-03-28")
@@ -540,6 +543,7 @@ list(APPEND C2J_LIST "ssm:2014-11-06")
 list(APPEND C2J_LIST "storagegateway:2013-06-30")
 list(APPEND C2J_LIST "sts:2011-06-15")
 list(APPEND C2J_LIST "support:2013-04-15")
+list(APPEND C2J_LIST "snowball:2016-06-30")
 list(APPEND C2J_LIST "swf:2012-01-25")
 list(APPEND C2J_LIST "waf:2015-08-24")
 list(APPEND C2J_LIST "workspaces:2015-04-08")
@@ -1037,8 +1041,10 @@ endif()
 
 # default libraries to link in per-platform
 if(PLATFORM_WINDOWS)
-    set(PLATFORM_DEP_LIBS Userenv )
-elseif(PLATFORM_LINUX OR PLATFORM_APPLE)
+    set(PLATFORM_DEP_LIBS Userenv Rpcrt4)
+elseif(PLATFORM_LINUX)
+    set(PLATFORM_DEP_LIBS pthread uuid)
+elseif(PLATFORM_APPLE)
     set(PLATFORM_DEP_LIBS pthread)
 elseif(PLATFORM_ANDROID)
     set(PLATFORM_DEP_LIBS log atomic)

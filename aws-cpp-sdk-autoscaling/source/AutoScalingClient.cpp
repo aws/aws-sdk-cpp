@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,6 +27,7 @@
 #include <aws/autoscaling/AutoScalingEndpoint.h>
 #include <aws/autoscaling/AutoScalingErrorMarshaller.h>
 #include <aws/autoscaling/model/AttachInstancesRequest.h>
+#include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/AttachLoadBalancersRequest.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionRequest.h>
 #include <aws/autoscaling/model/CreateAutoScalingGroupRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/autoscaling/model/DescribeLaunchConfigurationsRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHookTypesRequest.h>
 #include <aws/autoscaling/model/DescribeLifecycleHooksRequest.h>
+#include <aws/autoscaling/model/DescribeLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeLoadBalancersRequest.h>
 #include <aws/autoscaling/model/DescribeMetricCollectionTypesRequest.h>
 #include <aws/autoscaling/model/DescribeNotificationConfigurationsRequest.h>
@@ -57,6 +59,7 @@
 #include <aws/autoscaling/model/DescribeTagsRequest.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesRequest.h>
 #include <aws/autoscaling/model/DetachInstancesRequest.h>
+#include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsRequest.h>
 #include <aws/autoscaling/model/DetachLoadBalancersRequest.h>
 #include <aws/autoscaling/model/DisableMetricsCollectionRequest.h>
 #include <aws/autoscaling/model/EnableMetricsCollectionRequest.h>
@@ -92,8 +95,7 @@ static const char* ALLOCATION_TAG = "AutoScalingClient";
 AutoScalingClient::AutoScalingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -103,8 +105,7 @@ AutoScalingClient::AutoScalingClient(const Client::ClientConfiguration& clientCo
 AutoScalingClient::AutoScalingClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -115,8 +116,7 @@ AutoScalingClient::AutoScalingClient(const std::shared_ptr<AWSCredentialsProvide
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -132,9 +132,9 @@ void AutoScalingClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << AutoScalingEndpoint::ForRegion(config.region);
+    ss << AutoScalingEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -161,17 +161,47 @@ AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesR
 
 AttachInstancesOutcomeCallable AutoScalingClient::AttachInstancesCallable(const AttachInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::AttachInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AttachInstances( request ); } );
 }
 
 void AutoScalingClient::AttachInstancesAsync(const AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::AttachInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AttachInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::AttachInstancesAsyncHelper(const AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AttachInstances(request), context);
+}
+
+AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTargetGroups(const AttachLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AttachLoadBalancerTargetGroupsOutcome(AttachLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AttachLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+AttachLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::AttachLoadBalancerTargetGroupsCallable(const AttachLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->AttachLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::AttachLoadBalancerTargetGroupsAsync(const AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AttachLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::AttachLoadBalancerTargetGroupsAsyncHelper(const AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AttachLoadBalancerTargetGroups(request), context);
 }
 
 AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLoadBalancersRequest& request) const
@@ -191,12 +221,12 @@ AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLo
 
 AttachLoadBalancersOutcomeCallable AutoScalingClient::AttachLoadBalancersCallable(const AttachLoadBalancersRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::AttachLoadBalancers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AttachLoadBalancers( request ); } );
 }
 
 void AutoScalingClient::AttachLoadBalancersAsync(const AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::AttachLoadBalancersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AttachLoadBalancersAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::AttachLoadBalancersAsyncHelper(const AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -221,12 +251,12 @@ CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const 
 
 CompleteLifecycleActionOutcomeCallable AutoScalingClient::CompleteLifecycleActionCallable(const CompleteLifecycleActionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::CompleteLifecycleAction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CompleteLifecycleAction( request ); } );
 }
 
 void AutoScalingClient::CompleteLifecycleActionAsync(const CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::CompleteLifecycleActionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteLifecycleActionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::CompleteLifecycleActionAsyncHelper(const CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -251,12 +281,12 @@ CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const Cr
 
 CreateAutoScalingGroupOutcomeCallable AutoScalingClient::CreateAutoScalingGroupCallable(const CreateAutoScalingGroupRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::CreateAutoScalingGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateAutoScalingGroup( request ); } );
 }
 
 void AutoScalingClient::CreateAutoScalingGroupAsync(const CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateAutoScalingGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAutoScalingGroupAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::CreateAutoScalingGroupAsyncHelper(const CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -281,12 +311,12 @@ CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(co
 
 CreateLaunchConfigurationOutcomeCallable AutoScalingClient::CreateLaunchConfigurationCallable(const CreateLaunchConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::CreateLaunchConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateLaunchConfiguration( request ); } );
 }
 
 void AutoScalingClient::CreateLaunchConfigurationAsync(const CreateLaunchConfigurationRequest& request, const CreateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateLaunchConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::CreateLaunchConfigurationAsyncHelper(const CreateLaunchConfigurationRequest& request, const CreateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -311,12 +341,12 @@ CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUp
 
 CreateOrUpdateTagsOutcomeCallable AutoScalingClient::CreateOrUpdateTagsCallable(const CreateOrUpdateTagsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::CreateOrUpdateTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateOrUpdateTags( request ); } );
 }
 
 void AutoScalingClient::CreateOrUpdateTagsAsync(const CreateOrUpdateTagsRequest& request, const CreateOrUpdateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::CreateOrUpdateTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOrUpdateTagsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::CreateOrUpdateTagsAsyncHelper(const CreateOrUpdateTagsRequest& request, const CreateOrUpdateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -341,12 +371,12 @@ DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const De
 
 DeleteAutoScalingGroupOutcomeCallable AutoScalingClient::DeleteAutoScalingGroupCallable(const DeleteAutoScalingGroupRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteAutoScalingGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAutoScalingGroup( request ); } );
 }
 
 void AutoScalingClient::DeleteAutoScalingGroupAsync(const DeleteAutoScalingGroupRequest& request, const DeleteAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteAutoScalingGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAutoScalingGroupAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteAutoScalingGroupAsyncHelper(const DeleteAutoScalingGroupRequest& request, const DeleteAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -371,12 +401,12 @@ DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(co
 
 DeleteLaunchConfigurationOutcomeCallable AutoScalingClient::DeleteLaunchConfigurationCallable(const DeleteLaunchConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteLaunchConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteLaunchConfiguration( request ); } );
 }
 
 void AutoScalingClient::DeleteLaunchConfigurationAsync(const DeleteLaunchConfigurationRequest& request, const DeleteLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteLaunchConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteLaunchConfigurationAsyncHelper(const DeleteLaunchConfigurationRequest& request, const DeleteLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -401,12 +431,12 @@ DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLi
 
 DeleteLifecycleHookOutcomeCallable AutoScalingClient::DeleteLifecycleHookCallable(const DeleteLifecycleHookRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteLifecycleHook, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteLifecycleHook( request ); } );
 }
 
 void AutoScalingClient::DeleteLifecycleHookAsync(const DeleteLifecycleHookRequest& request, const DeleteLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteLifecycleHookAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLifecycleHookAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteLifecycleHookAsyncHelper(const DeleteLifecycleHookRequest& request, const DeleteLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -431,12 +461,12 @@ DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConf
 
 DeleteNotificationConfigurationOutcomeCallable AutoScalingClient::DeleteNotificationConfigurationCallable(const DeleteNotificationConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteNotificationConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteNotificationConfiguration( request ); } );
 }
 
 void AutoScalingClient::DeleteNotificationConfigurationAsync(const DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteNotificationConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteNotificationConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteNotificationConfigurationAsyncHelper(const DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -461,12 +491,12 @@ DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& r
 
 DeletePolicyOutcomeCallable AutoScalingClient::DeletePolicyCallable(const DeletePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeletePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeletePolicy( request ); } );
 }
 
 void AutoScalingClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeletePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -491,12 +521,12 @@ DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const Dele
 
 DeleteScheduledActionOutcomeCallable AutoScalingClient::DeleteScheduledActionCallable(const DeleteScheduledActionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteScheduledAction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteScheduledAction( request ); } );
 }
 
 void AutoScalingClient::DeleteScheduledActionAsync(const DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteScheduledActionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteScheduledActionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteScheduledActionAsyncHelper(const DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -521,12 +551,12 @@ DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request
 
 DeleteTagsOutcomeCallable AutoScalingClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DeleteTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteTags( request ); } );
 }
 
 void AutoScalingClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DeleteTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -551,12 +581,12 @@ DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const Desc
 
 DescribeAccountLimitsOutcomeCallable AutoScalingClient::DescribeAccountLimitsCallable(const DescribeAccountLimitsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeAccountLimits, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAccountLimits( request ); } );
 }
 
 void AutoScalingClient::DescribeAccountLimitsAsync(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAccountLimitsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountLimitsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeAccountLimitsAsyncHelper(const DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -581,12 +611,12 @@ DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const 
 
 DescribeAdjustmentTypesOutcomeCallable AutoScalingClient::DescribeAdjustmentTypesCallable(const DescribeAdjustmentTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeAdjustmentTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAdjustmentTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeAdjustmentTypesAsync(const DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAdjustmentTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAdjustmentTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeAdjustmentTypesAsyncHelper(const DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -611,12 +641,12 @@ DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(co
 
 DescribeAutoScalingGroupsOutcomeCallable AutoScalingClient::DescribeAutoScalingGroupsCallable(const DescribeAutoScalingGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAutoScalingGroups( request ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingGroupsAsync(const DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoScalingGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingGroupsAsyncHelper(const DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -641,12 +671,12 @@ DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstan
 
 DescribeAutoScalingInstancesOutcomeCallable AutoScalingClient::DescribeAutoScalingInstancesCallable(const DescribeAutoScalingInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAutoScalingInstances( request ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingInstancesAsync(const DescribeAutoScalingInstancesRequest& request, const DescribeAutoScalingInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoScalingInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingInstancesAsyncHelper(const DescribeAutoScalingInstancesRequest& request, const DescribeAutoScalingInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -671,12 +701,12 @@ DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScali
 
 DescribeAutoScalingNotificationTypesOutcomeCallable AutoScalingClient::DescribeAutoScalingNotificationTypesCallable(const DescribeAutoScalingNotificationTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeAutoScalingNotificationTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAutoScalingNotificationTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingNotificationTypesAsync(const DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAutoScalingNotificationTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeAutoScalingNotificationTypesAsyncHelper(const DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -701,12 +731,12 @@ DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurati
 
 DescribeLaunchConfigurationsOutcomeCallable AutoScalingClient::DescribeLaunchConfigurationsCallable(const DescribeLaunchConfigurationsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeLaunchConfigurations, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLaunchConfigurations( request ); } );
 }
 
 void AutoScalingClient::DescribeLaunchConfigurationsAsync(const DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLaunchConfigurationsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeLaunchConfigurationsAsyncHelper(const DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -731,12 +761,12 @@ DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(
 
 DescribeLifecycleHookTypesOutcomeCallable AutoScalingClient::DescribeLifecycleHookTypesCallable(const DescribeLifecycleHookTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeLifecycleHookTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLifecycleHookTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeLifecycleHookTypesAsync(const DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLifecycleHookTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeLifecycleHookTypesAsyncHelper(const DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -761,17 +791,47 @@ DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const De
 
 DescribeLifecycleHooksOutcomeCallable AutoScalingClient::DescribeLifecycleHooksCallable(const DescribeLifecycleHooksRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeLifecycleHooks, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLifecycleHooks( request ); } );
 }
 
 void AutoScalingClient::DescribeLifecycleHooksAsync(const DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLifecycleHooksAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLifecycleHooksAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeLifecycleHooksAsyncHelper(const DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLifecycleHooks(request), context);
+}
+
+DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerTargetGroups(const DescribeLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLoadBalancerTargetGroupsOutcome(DescribeLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::DescribeLoadBalancerTargetGroupsCallable(const DescribeLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::DescribeLoadBalancerTargetGroupsAsync(const DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DescribeLoadBalancerTargetGroupsAsyncHelper(const DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLoadBalancerTargetGroups(request), context);
 }
 
 DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
@@ -791,12 +851,12 @@ DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const Desc
 
 DescribeLoadBalancersOutcomeCallable AutoScalingClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeLoadBalancers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancers( request ); } );
 }
 
 void AutoScalingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeLoadBalancersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBalancersAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeLoadBalancersAsyncHelper(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -821,12 +881,12 @@ DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollection
 
 DescribeMetricCollectionTypesOutcomeCallable AutoScalingClient::DescribeMetricCollectionTypesCallable(const DescribeMetricCollectionTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeMetricCollectionTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeMetricCollectionTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeMetricCollectionTypesAsync(const DescribeMetricCollectionTypesRequest& request, const DescribeMetricCollectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMetricCollectionTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeMetricCollectionTypesAsyncHelper(const DescribeMetricCollectionTypesRequest& request, const DescribeMetricCollectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -851,12 +911,12 @@ DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificatio
 
 DescribeNotificationConfigurationsOutcomeCallable AutoScalingClient::DescribeNotificationConfigurationsCallable(const DescribeNotificationConfigurationsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeNotificationConfigurations, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeNotificationConfigurations( request ); } );
 }
 
 void AutoScalingClient::DescribeNotificationConfigurationsAsync(const DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeNotificationConfigurationsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeNotificationConfigurationsAsyncHelper(const DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -881,12 +941,12 @@ DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePolici
 
 DescribePoliciesOutcomeCallable AutoScalingClient::DescribePoliciesCallable(const DescribePoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribePolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribePolicies( request ); } );
 }
 
 void AutoScalingClient::DescribePoliciesAsync(const DescribePoliciesRequest& request, const DescribePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribePoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribePoliciesAsyncHelper(const DescribePoliciesRequest& request, const DescribePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -911,12 +971,12 @@ DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(co
 
 DescribeScalingActivitiesOutcomeCallable AutoScalingClient::DescribeScalingActivitiesCallable(const DescribeScalingActivitiesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeScalingActivities, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeScalingActivities( request ); } );
 }
 
 void AutoScalingClient::DescribeScalingActivitiesAsync(const DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScalingActivitiesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingActivitiesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeScalingActivitiesAsyncHelper(const DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -941,12 +1001,12 @@ DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessType
 
 DescribeScalingProcessTypesOutcomeCallable AutoScalingClient::DescribeScalingProcessTypesCallable(const DescribeScalingProcessTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeScalingProcessTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeScalingProcessTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeScalingProcessTypesAsync(const DescribeScalingProcessTypesRequest& request, const DescribeScalingProcessTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScalingProcessTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingProcessTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeScalingProcessTypesAsyncHelper(const DescribeScalingProcessTypesRequest& request, const DescribeScalingProcessTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -971,12 +1031,12 @@ DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(cons
 
 DescribeScheduledActionsOutcomeCallable AutoScalingClient::DescribeScheduledActionsCallable(const DescribeScheduledActionsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeScheduledActions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeScheduledActions( request ); } );
 }
 
 void AutoScalingClient::DescribeScheduledActionsAsync(const DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeScheduledActionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScheduledActionsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeScheduledActionsAsyncHelper(const DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1001,12 +1061,12 @@ DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& r
 
 DescribeTagsOutcomeCallable AutoScalingClient::DescribeTagsCallable(const DescribeTagsRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeTags( request ); } );
 }
 
 void AutoScalingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1031,12 +1091,12 @@ DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPoli
 
 DescribeTerminationPolicyTypesOutcomeCallable AutoScalingClient::DescribeTerminationPolicyTypesCallable(const DescribeTerminationPolicyTypesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DescribeTerminationPolicyTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeTerminationPolicyTypes( request ); } );
 }
 
 void AutoScalingClient::DescribeTerminationPolicyTypesAsync(const DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTerminationPolicyTypesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DescribeTerminationPolicyTypesAsyncHelper(const DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1061,17 +1121,47 @@ DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesR
 
 DetachInstancesOutcomeCallable AutoScalingClient::DetachInstancesCallable(const DetachInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DetachInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DetachInstances( request ); } );
 }
 
 void AutoScalingClient::DetachInstancesAsync(const DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DetachInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DetachInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DetachInstancesAsyncHelper(const DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DetachInstances(request), context);
+}
+
+DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTargetGroups(const DetachLoadBalancerTargetGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DetachLoadBalancerTargetGroupsOutcome(DetachLoadBalancerTargetGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DetachLoadBalancerTargetGroupsOutcome(outcome.GetError());
+  }
+}
+
+DetachLoadBalancerTargetGroupsOutcomeCallable AutoScalingClient::DetachLoadBalancerTargetGroupsCallable(const DetachLoadBalancerTargetGroupsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DetachLoadBalancerTargetGroups( request ); } );
+}
+
+void AutoScalingClient::DetachLoadBalancerTargetGroupsAsync(const DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetachLoadBalancerTargetGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::DetachLoadBalancerTargetGroupsAsyncHelper(const DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetachLoadBalancerTargetGroups(request), context);
 }
 
 DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLoadBalancersRequest& request) const
@@ -1091,12 +1181,12 @@ DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLo
 
 DetachLoadBalancersOutcomeCallable AutoScalingClient::DetachLoadBalancersCallable(const DetachLoadBalancersRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DetachLoadBalancers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DetachLoadBalancers( request ); } );
 }
 
 void AutoScalingClient::DetachLoadBalancersAsync(const DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DetachLoadBalancersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DetachLoadBalancersAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DetachLoadBalancersAsyncHelper(const DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1121,12 +1211,12 @@ DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(cons
 
 DisableMetricsCollectionOutcomeCallable AutoScalingClient::DisableMetricsCollectionCallable(const DisableMetricsCollectionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::DisableMetricsCollection, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DisableMetricsCollection( request ); } );
 }
 
 void AutoScalingClient::DisableMetricsCollectionAsync(const DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::DisableMetricsCollectionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DisableMetricsCollectionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::DisableMetricsCollectionAsyncHelper(const DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1151,12 +1241,12 @@ EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const 
 
 EnableMetricsCollectionOutcomeCallable AutoScalingClient::EnableMetricsCollectionCallable(const EnableMetricsCollectionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::EnableMetricsCollection, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnableMetricsCollection( request ); } );
 }
 
 void AutoScalingClient::EnableMetricsCollectionAsync(const EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::EnableMetricsCollectionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnableMetricsCollectionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::EnableMetricsCollectionAsyncHelper(const EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1181,12 +1271,12 @@ EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& r
 
 EnterStandbyOutcomeCallable AutoScalingClient::EnterStandbyCallable(const EnterStandbyRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::EnterStandby, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnterStandby( request ); } );
 }
 
 void AutoScalingClient::EnterStandbyAsync(const EnterStandbyRequest& request, const EnterStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::EnterStandbyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnterStandbyAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::EnterStandbyAsyncHelper(const EnterStandbyRequest& request, const EnterStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1211,12 +1301,12 @@ ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest
 
 ExecutePolicyOutcomeCallable AutoScalingClient::ExecutePolicyCallable(const ExecutePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::ExecutePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ExecutePolicy( request ); } );
 }
 
 void AutoScalingClient::ExecutePolicyAsync(const ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::ExecutePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ExecutePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::ExecutePolicyAsyncHelper(const ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1241,12 +1331,12 @@ ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& requ
 
 ExitStandbyOutcomeCallable AutoScalingClient::ExitStandbyCallable(const ExitStandbyRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::ExitStandby, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ExitStandby( request ); } );
 }
 
 void AutoScalingClient::ExitStandbyAsync(const ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::ExitStandbyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ExitStandbyAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::ExitStandbyAsyncHelper(const ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1271,12 +1361,12 @@ PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHo
 
 PutLifecycleHookOutcomeCallable AutoScalingClient::PutLifecycleHookCallable(const PutLifecycleHookRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::PutLifecycleHook, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutLifecycleHook( request ); } );
 }
 
 void AutoScalingClient::PutLifecycleHookAsync(const PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutLifecycleHookAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleHookAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::PutLifecycleHookAsyncHelper(const PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1301,12 +1391,12 @@ PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfigurat
 
 PutNotificationConfigurationOutcomeCallable AutoScalingClient::PutNotificationConfigurationCallable(const PutNotificationConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::PutNotificationConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutNotificationConfiguration( request ); } );
 }
 
 void AutoScalingClient::PutNotificationConfigurationAsync(const PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutNotificationConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutNotificationConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::PutNotificationConfigurationAsyncHelper(const PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1331,12 +1421,12 @@ PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPoli
 
 PutScalingPolicyOutcomeCallable AutoScalingClient::PutScalingPolicyCallable(const PutScalingPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::PutScalingPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutScalingPolicy( request ); } );
 }
 
 void AutoScalingClient::PutScalingPolicyAsync(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutScalingPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutScalingPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1361,12 +1451,12 @@ PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupA
 
 PutScheduledUpdateGroupActionOutcomeCallable AutoScalingClient::PutScheduledUpdateGroupActionCallable(const PutScheduledUpdateGroupActionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::PutScheduledUpdateGroupAction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutScheduledUpdateGroupAction( request ); } );
 }
 
 void AutoScalingClient::PutScheduledUpdateGroupActionAsync(const PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutScheduledUpdateGroupActionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::PutScheduledUpdateGroupActionAsyncHelper(const PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1391,12 +1481,12 @@ RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHe
 
 RecordLifecycleActionHeartbeatOutcomeCallable AutoScalingClient::RecordLifecycleActionHeartbeatCallable(const RecordLifecycleActionHeartbeatRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::RecordLifecycleActionHeartbeat, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RecordLifecycleActionHeartbeat( request ); } );
 }
 
 void AutoScalingClient::RecordLifecycleActionHeartbeatAsync(const RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RecordLifecycleActionHeartbeatAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::RecordLifecycleActionHeartbeatAsyncHelper(const RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1421,12 +1511,12 @@ ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesR
 
 ResumeProcessesOutcomeCallable AutoScalingClient::ResumeProcessesCallable(const ResumeProcessesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::ResumeProcesses, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResumeProcesses( request ); } );
 }
 
 void AutoScalingClient::ResumeProcessesAsync(const ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::ResumeProcessesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResumeProcessesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::ResumeProcessesAsyncHelper(const ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1451,12 +1541,12 @@ SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesired
 
 SetDesiredCapacityOutcomeCallable AutoScalingClient::SetDesiredCapacityCallable(const SetDesiredCapacityRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::SetDesiredCapacity, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetDesiredCapacity( request ); } );
 }
 
 void AutoScalingClient::SetDesiredCapacityAsync(const SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::SetDesiredCapacityAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetDesiredCapacityAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::SetDesiredCapacityAsyncHelper(const SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1481,12 +1571,12 @@ SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceH
 
 SetInstanceHealthOutcomeCallable AutoScalingClient::SetInstanceHealthCallable(const SetInstanceHealthRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::SetInstanceHealth, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetInstanceHealth( request ); } );
 }
 
 void AutoScalingClient::SetInstanceHealthAsync(const SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::SetInstanceHealthAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetInstanceHealthAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::SetInstanceHealthAsyncHelper(const SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1511,12 +1601,12 @@ SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetI
 
 SetInstanceProtectionOutcomeCallable AutoScalingClient::SetInstanceProtectionCallable(const SetInstanceProtectionRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::SetInstanceProtection, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetInstanceProtection( request ); } );
 }
 
 void AutoScalingClient::SetInstanceProtectionAsync(const SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::SetInstanceProtectionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetInstanceProtectionAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::SetInstanceProtectionAsyncHelper(const SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1541,12 +1631,12 @@ SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcess
 
 SuspendProcessesOutcomeCallable AutoScalingClient::SuspendProcessesCallable(const SuspendProcessesRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::SuspendProcesses, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SuspendProcesses( request ); } );
 }
 
 void AutoScalingClient::SuspendProcessesAsync(const SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::SuspendProcessesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SuspendProcessesAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::SuspendProcessesAsyncHelper(const SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1571,12 +1661,12 @@ TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceI
 
 TerminateInstanceInAutoScalingGroupOutcomeCallable AutoScalingClient::TerminateInstanceInAutoScalingGroupCallable(const TerminateInstanceInAutoScalingGroupRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::TerminateInstanceInAutoScalingGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->TerminateInstanceInAutoScalingGroup( request ); } );
 }
 
 void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsync(const TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->TerminateInstanceInAutoScalingGroupAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::TerminateInstanceInAutoScalingGroupAsyncHelper(const TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1601,12 +1691,12 @@ UpdateAutoScalingGroupOutcome AutoScalingClient::UpdateAutoScalingGroup(const Up
 
 UpdateAutoScalingGroupOutcomeCallable AutoScalingClient::UpdateAutoScalingGroupCallable(const UpdateAutoScalingGroupRequest& request) const
 {
-  return std::async(std::launch::async, &AutoScalingClient::UpdateAutoScalingGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAutoScalingGroup( request ); } );
 }
 
 void AutoScalingClient::UpdateAutoScalingGroupAsync(const UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&AutoScalingClient::UpdateAutoScalingGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAutoScalingGroupAsyncHelper( request, handler, context ); } );
 }
 
 void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

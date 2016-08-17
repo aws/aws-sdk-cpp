@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,11 +28,13 @@
 #include <aws/route53domains/model/EnableDomainTransferLockResult.h>
 #include <aws/route53domains/model/GetContactReachabilityStatusResult.h>
 #include <aws/route53domains/model/GetDomainDetailResult.h>
+#include <aws/route53domains/model/GetDomainSuggestionsResult.h>
 #include <aws/route53domains/model/GetOperationDetailResult.h>
 #include <aws/route53domains/model/ListDomainsResult.h>
 #include <aws/route53domains/model/ListOperationsResult.h>
 #include <aws/route53domains/model/ListTagsForDomainResult.h>
 #include <aws/route53domains/model/RegisterDomainResult.h>
+#include <aws/route53domains/model/RenewDomainResult.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailResult.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeResult.h>
 #include <aws/route53domains/model/TransferDomainResult.h>
@@ -40,6 +42,7 @@
 #include <aws/route53domains/model/UpdateDomainContactPrivacyResult.h>
 #include <aws/route53domains/model/UpdateDomainNameserversResult.h>
 #include <aws/route53domains/model/UpdateTagsForDomainResult.h>
+#include <aws/route53domains/model/ViewBillingResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -93,11 +96,13 @@ namespace Model
         class EnableDomainTransferLockRequest;
         class GetContactReachabilityStatusRequest;
         class GetDomainDetailRequest;
+        class GetDomainSuggestionsRequest;
         class GetOperationDetailRequest;
         class ListDomainsRequest;
         class ListOperationsRequest;
         class ListTagsForDomainRequest;
         class RegisterDomainRequest;
+        class RenewDomainRequest;
         class ResendContactReachabilityEmailRequest;
         class RetrieveDomainAuthCodeRequest;
         class TransferDomainRequest;
@@ -105,6 +110,7 @@ namespace Model
         class UpdateDomainContactPrivacyRequest;
         class UpdateDomainNameserversRequest;
         class UpdateTagsForDomainRequest;
+        class ViewBillingRequest;
 
         typedef Aws::Utils::Outcome<CheckDomainAvailabilityResult, Aws::Client::AWSError<Route53DomainsErrors>> CheckDomainAvailabilityOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> DeleteTagsForDomainOutcome;
@@ -114,11 +120,13 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableDomainTransferLockResult, Aws::Client::AWSError<Route53DomainsErrors>> EnableDomainTransferLockOutcome;
         typedef Aws::Utils::Outcome<GetContactReachabilityStatusResult, Aws::Client::AWSError<Route53DomainsErrors>> GetContactReachabilityStatusOutcome;
         typedef Aws::Utils::Outcome<GetDomainDetailResult, Aws::Client::AWSError<Route53DomainsErrors>> GetDomainDetailOutcome;
+        typedef Aws::Utils::Outcome<GetDomainSuggestionsResult, Aws::Client::AWSError<Route53DomainsErrors>> GetDomainSuggestionsOutcome;
         typedef Aws::Utils::Outcome<GetOperationDetailResult, Aws::Client::AWSError<Route53DomainsErrors>> GetOperationDetailOutcome;
         typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<Route53DomainsErrors>> ListDomainsOutcome;
         typedef Aws::Utils::Outcome<ListOperationsResult, Aws::Client::AWSError<Route53DomainsErrors>> ListOperationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> ListTagsForDomainOutcome;
         typedef Aws::Utils::Outcome<RegisterDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> RegisterDomainOutcome;
+        typedef Aws::Utils::Outcome<RenewDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> RenewDomainOutcome;
         typedef Aws::Utils::Outcome<ResendContactReachabilityEmailResult, Aws::Client::AWSError<Route53DomainsErrors>> ResendContactReachabilityEmailOutcome;
         typedef Aws::Utils::Outcome<RetrieveDomainAuthCodeResult, Aws::Client::AWSError<Route53DomainsErrors>> RetrieveDomainAuthCodeOutcome;
         typedef Aws::Utils::Outcome<TransferDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> TransferDomainOutcome;
@@ -126,6 +134,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDomainContactPrivacyResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateDomainContactPrivacyOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainNameserversResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateDomainNameserversOutcome;
         typedef Aws::Utils::Outcome<UpdateTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateTagsForDomainOutcome;
+        typedef Aws::Utils::Outcome<ViewBillingResult, Aws::Client::AWSError<Route53DomainsErrors>> ViewBillingOutcome;
 
         typedef std::future<CheckDomainAvailabilityOutcome> CheckDomainAvailabilityOutcomeCallable;
         typedef std::future<DeleteTagsForDomainOutcome> DeleteTagsForDomainOutcomeCallable;
@@ -135,11 +144,13 @@ namespace Model
         typedef std::future<EnableDomainTransferLockOutcome> EnableDomainTransferLockOutcomeCallable;
         typedef std::future<GetContactReachabilityStatusOutcome> GetContactReachabilityStatusOutcomeCallable;
         typedef std::future<GetDomainDetailOutcome> GetDomainDetailOutcomeCallable;
+        typedef std::future<GetDomainSuggestionsOutcome> GetDomainSuggestionsOutcomeCallable;
         typedef std::future<GetOperationDetailOutcome> GetOperationDetailOutcomeCallable;
         typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
         typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
         typedef std::future<ListTagsForDomainOutcome> ListTagsForDomainOutcomeCallable;
         typedef std::future<RegisterDomainOutcome> RegisterDomainOutcomeCallable;
+        typedef std::future<RenewDomainOutcome> RenewDomainOutcomeCallable;
         typedef std::future<ResendContactReachabilityEmailOutcome> ResendContactReachabilityEmailOutcomeCallable;
         typedef std::future<RetrieveDomainAuthCodeOutcome> RetrieveDomainAuthCodeOutcomeCallable;
         typedef std::future<TransferDomainOutcome> TransferDomainOutcomeCallable;
@@ -147,6 +158,7 @@ namespace Model
         typedef std::future<UpdateDomainContactPrivacyOutcome> UpdateDomainContactPrivacyOutcomeCallable;
         typedef std::future<UpdateDomainNameserversOutcome> UpdateDomainNameserversOutcomeCallable;
         typedef std::future<UpdateTagsForDomainOutcome> UpdateTagsForDomainOutcomeCallable;
+        typedef std::future<ViewBillingOutcome> ViewBillingOutcomeCallable;
 } // namespace Model
 
   class Route53DomainsClient;
@@ -159,11 +171,13 @@ namespace Model
     typedef std::function<void(const Route53DomainsClient*, const Model::EnableDomainTransferLockRequest&, const Model::EnableDomainTransferLockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDomainTransferLockResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::GetContactReachabilityStatusRequest&, const Model::GetContactReachabilityStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactReachabilityStatusResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::GetDomainDetailRequest&, const Model::GetDomainDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainDetailResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::GetDomainSuggestionsRequest&, const Model::GetDomainSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainSuggestionsResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::GetOperationDetailRequest&, const Model::GetOperationDetailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOperationDetailResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ListTagsForDomainRequest&, const Model::ListTagsForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForDomainResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::RegisterDomainRequest&, const Model::RegisterDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDomainResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::RenewDomainRequest&, const Model::RenewDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewDomainResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ResendContactReachabilityEmailRequest&, const Model::ResendContactReachabilityEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendContactReachabilityEmailResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::RetrieveDomainAuthCodeRequest&, const Model::RetrieveDomainAuthCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetrieveDomainAuthCodeResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::TransferDomainRequest&, const Model::TransferDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferDomainResponseReceivedHandler;
@@ -171,6 +185,7 @@ namespace Model
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateDomainContactPrivacyRequest&, const Model::UpdateDomainContactPrivacyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainContactPrivacyResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateDomainNameserversRequest&, const Model::UpdateDomainNameserversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainNameserversResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateTagsForDomainRequest&, const Model::UpdateTagsForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTagsForDomainResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::ViewBillingRequest&, const Model::ViewBillingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ViewBillingResponseReceivedHandler;
 
   class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient
   {
@@ -250,19 +265,13 @@ namespace Model
 
         /**
          * <p>This operation disables automatic renewal of domain registration for the
-         * specified domain.</p> <note>Caution! Amazon Route 53 doesn't have a manual
-         * renewal process, so if you disable automatic renewal, registration for the
-         * domain will not be renewed when the expiration date passes, and you will lose
-         * control of the domain name.</note>
+         * specified domain.</p>
          */
         virtual Model::DisableDomainAutoRenewOutcome DisableDomainAutoRenew(const Model::DisableDomainAutoRenewRequest& request) const;
 
         /**
          * <p>This operation disables automatic renewal of domain registration for the
-         * specified domain.</p> <note>Caution! Amazon Route 53 doesn't have a manual
-         * renewal process, so if you disable automatic renewal, registration for the
-         * domain will not be renewed when the expiration date passes, and you will lose
-         * control of the domain name.</note>
+         * specified domain.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -270,10 +279,7 @@ namespace Model
 
         /**
          * <p>This operation disables automatic renewal of domain registration for the
-         * specified domain.</p> <note>Caution! Amazon Route 53 doesn't have a manual
-         * renewal process, so if you disable automatic renewal, registration for the
-         * domain will not be renewed when the expiration date passes, and you will lose
-         * control of the domain name.</note>
+         * specified domain.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -447,6 +453,55 @@ namespace Model
         virtual void GetDomainDetailAsync(const Model::GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
+         * given a string, which can either be a domain name or simply a word or phrase
+         * (without spaces).</p> <p> Parameters: <ul><li>DomainName (string): The basis for
+         * your domain suggestion search, a string with (or without) top-level domain
+         * specified.</li> <li>SuggestionCount (int): The number of domain suggestions to
+         * be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable (bool): If true,
+         * availability check will be performed on suggestion results, and only available
+         * domains will be returned. If false, suggestions will be returned without
+         * checking whether the domain is actually available, and caller will have to call
+         * checkDomainAvailability for each suggestion to determine availability for
+         * registration.</li> </ul> </p>
+         */
+        virtual Model::GetDomainSuggestionsOutcome GetDomainSuggestions(const Model::GetDomainSuggestionsRequest& request) const;
+
+        /**
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
+         * given a string, which can either be a domain name or simply a word or phrase
+         * (without spaces).</p> <p> Parameters: <ul><li>DomainName (string): The basis for
+         * your domain suggestion search, a string with (or without) top-level domain
+         * specified.</li> <li>SuggestionCount (int): The number of domain suggestions to
+         * be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable (bool): If true,
+         * availability check will be performed on suggestion results, and only available
+         * domains will be returned. If false, suggestions will be returned without
+         * checking whether the domain is actually available, and caller will have to call
+         * checkDomainAvailability for each suggestion to determine availability for
+         * registration.</li> </ul> </p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDomainSuggestionsOutcomeCallable GetDomainSuggestionsCallable(const Model::GetDomainSuggestionsRequest& request) const;
+
+        /**
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
+         * given a string, which can either be a domain name or simply a word or phrase
+         * (without spaces).</p> <p> Parameters: <ul><li>DomainName (string): The basis for
+         * your domain suggestion search, a string with (or without) top-level domain
+         * specified.</li> <li>SuggestionCount (int): The number of domain suggestions to
+         * be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable (bool): If true,
+         * availability check will be performed on suggestion results, and only available
+         * domains will be returned. If false, suggestions will be returned without
+         * checking whether the domain is actually available, and caller will have to call
+         * checkDomainAvailability for each suggestion to determine availability for
+         * registration.</li> </ul> </p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDomainSuggestionsAsync(const Model::GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation returns the current status of an operation that is not
          * completed.</p>
          */
@@ -606,6 +661,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RegisterDomainAsync(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation renews a domain for the specified number of years. The cost of
+         * renewing your domain is billed to your AWS account.</p> <p>We recommend that you
+         * renew your domain several weeks before the expiration date. Some TLD registries
+         * delete domains before the expiration date if you haven't renewed far enough in
+         * advance. For more information about renewing domain registration, see <a
+         * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+         * Registration for a Domain</a> in the Amazon Route 53 documentation.</p>
+         */
+        virtual Model::RenewDomainOutcome RenewDomain(const Model::RenewDomainRequest& request) const;
+
+        /**
+         * <p>This operation renews a domain for the specified number of years. The cost of
+         * renewing your domain is billed to your AWS account.</p> <p>We recommend that you
+         * renew your domain several weeks before the expiration date. Some TLD registries
+         * delete domains before the expiration date if you haven't renewed far enough in
+         * advance. For more information about renewing domain registration, see <a
+         * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+         * Registration for a Domain</a> in the Amazon Route 53 documentation.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RenewDomainOutcomeCallable RenewDomainCallable(const Model::RenewDomainRequest& request) const;
+
+        /**
+         * <p>This operation renews a domain for the specified number of years. The cost of
+         * renewing your domain is billed to your AWS account.</p> <p>We recommend that you
+         * renew your domain several weeks before the expiration date. Some TLD registries
+         * delete domains before the expiration date if you haven't renewed far enough in
+         * advance. For more information about renewing domain registration, see <a
+         * href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
+         * Registration for a Domain</a> in the Amazon Route 53 documentation.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RenewDomainAsync(const Model::RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For operations that require confirmation that the email address for the
@@ -872,6 +964,28 @@ namespace Model
          */
         virtual void UpdateTagsForDomainAsync(const Model::UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>This operation returns all the domain-related billing records for the current
+         * AWS account for a specified period</p>
+         */
+        virtual Model::ViewBillingOutcome ViewBilling(const Model::ViewBillingRequest& request) const;
+
+        /**
+         * <p>This operation returns all the domain-related billing records for the current
+         * AWS account for a specified period</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ViewBillingOutcomeCallable ViewBillingCallable(const Model::ViewBillingRequest& request) const;
+
+        /**
+         * <p>This operation returns all the domain-related billing records for the current
+         * AWS account for a specified period</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ViewBillingAsync(const Model::ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
@@ -885,11 +999,13 @@ namespace Model
         void EnableDomainTransferLockAsyncHelper(const Model::EnableDomainTransferLockRequest& request, const EnableDomainTransferLockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContactReachabilityStatusAsyncHelper(const Model::GetContactReachabilityStatusRequest& request, const GetContactReachabilityStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainDetailAsyncHelper(const Model::GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDomainSuggestionsAsyncHelper(const Model::GetDomainSuggestionsRequest& request, const GetDomainSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOperationDetailAsyncHelper(const Model::GetOperationDetailRequest& request, const GetOperationDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOperationsAsyncHelper(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForDomainAsyncHelper(const Model::ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterDomainAsyncHelper(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RenewDomainAsyncHelper(const Model::RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResendContactReachabilityEmailAsyncHelper(const Model::ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetrieveDomainAuthCodeAsyncHelper(const Model::RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TransferDomainAsyncHelper(const Model::TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -897,6 +1013,7 @@ namespace Model
         void UpdateDomainContactPrivacyAsyncHelper(const Model::UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainNameserversAsyncHelper(const Model::UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTagsForDomainAsyncHelper(const Model::UpdateTagsForDomainRequest& request, const UpdateTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ViewBillingAsyncHelper(const Model::ViewBillingRequest& request, const ViewBillingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

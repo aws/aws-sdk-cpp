@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -33,6 +33,7 @@ OptionConfiguration::OptionConfiguration() :
     m_optionNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_optionVersionHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
     m_vpcSecurityGroupMembershipsHasBeenSet(false),
     m_optionSettingsHasBeenSet(false)
@@ -43,6 +44,7 @@ OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode) :
     m_optionNameHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
+    m_optionVersionHasBeenSet(false),
     m_dBSecurityGroupMembershipsHasBeenSet(false),
     m_vpcSecurityGroupMembershipsHasBeenSet(false),
     m_optionSettingsHasBeenSet(false)
@@ -67,6 +69,12 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
     {
       m_port = StringUtils::ConvertToInt32(StringUtils::Trim(portNode.GetText().c_str()).c_str());
       m_portHasBeenSet = true;
+    }
+    XmlNode optionVersionNode = resultNode.FirstChild("OptionVersion");
+    if(!optionVersionNode.IsNull())
+    {
+      m_optionVersion = StringUtils::Trim(optionVersionNode.GetText().c_str());
+      m_optionVersionHasBeenSet = true;
     }
     XmlNode dBSecurityGroupMembershipsNode = resultNode.FirstChild("DBSecurityGroupMemberships");
     if(!dBSecurityGroupMembershipsNode.IsNull())
@@ -121,6 +129,11 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".Port=" << m_port << "&";
   }
 
+  if(m_optionVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OptionVersion=" << StringUtils::URLEncode(m_optionVersion.c_str()) << "&";
+  }
+
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {
       unsigned dBSecurityGroupMembershipsIdx = 1;
@@ -161,6 +174,10 @@ void OptionConfiguration::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_portHasBeenSet)
   {
       oStream << location << ".Port=" << m_port << "&";
+  }
+  if(m_optionVersionHasBeenSet)
+  {
+      oStream << location << ".OptionVersion=" << StringUtils::URLEncode(m_optionVersion.c_str()) << "&";
   }
   if(m_dBSecurityGroupMembershipsHasBeenSet)
   {

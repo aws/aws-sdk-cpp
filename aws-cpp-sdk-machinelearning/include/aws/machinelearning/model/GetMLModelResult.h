@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -1018,6 +1018,105 @@ namespace Model
     inline GetMLModelResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>MLModel</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline long long GetComputeTime() const{ return m_computeTime; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>MLModel</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline void SetComputeTime(long long value) { m_computeTime = value; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>MLModel</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>MLModel</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline GetMLModelResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is
+     * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is
+     * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is
+     * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is
+     * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.</p>
+     */
+    inline GetMLModelResult& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is
+     * only available when the <code>MLModel</code> is in the <code>COMPLETED</code> or
+     * <code>FAILED</code> state.</p>
+     */
+    inline GetMLModelResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
+     * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
+     * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+     */
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
+     * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+     */
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
+     * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+     */
+    inline GetMLModelResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the <code>MLModel</code>
+     * as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the
+     * <code>MLModel</code> is in the <code>PENDING</code> state.</p>
+     */
+    inline GetMLModelResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+
+    /**
      * <p>The recipe to use when training the <code>MLModel</code>. The
      * <code>Recipe</code> provides detailed information about the observation data to
      * use during training, and manipulations to perform on the observation data during
@@ -1146,6 +1245,9 @@ namespace Model
     Aws::Utils::DateTime m_scoreThresholdLastUpdatedAt;
     Aws::String m_logUri;
     Aws::String m_message;
+    long long m_computeTime;
+    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_startedAt;
     Aws::String m_recipe;
     Aws::String m_schema;
   };

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,6 +16,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/ecr/ECRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/model/ListImagesFilter.h>
 
 namespace Aws
 {
@@ -123,7 +124,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -132,7 +136,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -141,7 +148,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -150,7 +160,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -159,7 +172,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline ListImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -168,7 +184,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline ListImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
@@ -177,7 +196,10 @@ namespace Model
      * <code>ListImages</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
      * of the previous results that returned the <code>nextToken</code> value. This
-     * value is <code>null</code> when there are no more results to return.</p>
+     * value is <code>null</code> when there are no more results to return.</p> <note>
+     * <p>This token should be treated as an opaque identifier that is only used to
+     * retrieve the next items in a list and not for other programmatic purposes.</p>
+     * </note>
      */
     inline ListImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -217,6 +239,21 @@ namespace Model
      */
     inline ListImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+    
+    inline const ListImagesFilter& GetFilter() const{ return m_filter; }
+
+    
+    inline void SetFilter(const ListImagesFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline void SetFilter(ListImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    
+    inline ListImagesRequest& WithFilter(const ListImagesFilter& value) { SetFilter(value); return *this;}
+
+    
+    inline ListImagesRequest& WithFilter(ListImagesFilter&& value) { SetFilter(value); return *this;}
+
   private:
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet;
@@ -226,6 +263,8 @@ namespace Model
     bool m_nextTokenHasBeenSet;
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+    ListImagesFilter m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model

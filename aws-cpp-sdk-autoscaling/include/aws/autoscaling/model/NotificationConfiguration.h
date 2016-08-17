@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -122,72 +122,72 @@ namespace Model
     inline NotificationConfiguration& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNotificationType() const{ return m_notificationType; }
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline void SetNotificationType(const Aws::String& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline void SetNotificationType(Aws::String&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline void SetNotificationType(const char* value) { m_notificationTypeHasBeenSet = true; m_notificationType.assign(value); }
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline NotificationConfiguration& WithNotificationType(const Aws::String& value) { SetNotificationType(value); return *this;}
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline NotificationConfiguration& WithNotificationType(Aws::String&& value) { SetNotificationType(value); return *this;}
 
     /**
-     * <p>One of the following event notification types:</p> <ul>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE</code></p></li>
-     * <li><p><code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code></p></li>
-     * <li><p><code>autoscaling:TEST_NOTIFICATION</code></p></li> </ul>
+     * <p>One of the following event notification types:</p> <ul> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE</code> </p> </li> <li> <p>
+     * <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li> <li> <p>
+     * <code>autoscaling:TEST_NOTIFICATION</code> </p> </li> </ul>
      */
     inline NotificationConfiguration& WithNotificationType(const char* value) { SetNotificationType(value); return *this;}
 

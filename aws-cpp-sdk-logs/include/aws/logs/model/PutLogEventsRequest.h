@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -128,44 +128,44 @@ namespace Model
     inline PutLogEventsRequest& AddLogEvents(InputLogEvent&& value) { m_logEventsHasBeenSet = true; m_logEvents.push_back(value); return *this; }
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline const Aws::String& GetSequenceToken() const{ return m_sequenceToken; }
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline void SetSequenceToken(const Aws::String& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline void SetSequenceToken(Aws::String&& value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken = value; }
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline void SetSequenceToken(const char* value) { m_sequenceTokenHasBeenSet = true; m_sequenceToken.assign(value); }
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const Aws::String& value) { SetSequenceToken(value); return *this;}
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(Aws::String&& value) { SetSequenceToken(value); return *this;}
 
     /**
-     * <p> A string token that must be obtained from the response of the previous <code
-     * class="code">PutLogEvents</code> request. </p>
+     * <p>A string token that must be obtained from the response of the previous
+     * <code>PutLogEvents</code> request.</p>
      */
     inline PutLogEventsRequest& WithSequenceToken(const char* value) { SetSequenceToken(value); return *this;}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -115,76 +115,86 @@ namespace Model
     inline GetFunctionConfigurationResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p>
      */
     inline GetFunctionConfigurationResult& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p>
+     * <p>The runtime environment for the Lambda function.</p> <p>To use the Node.js
+     * runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42),
+     * set the value to "nodejs".</p>
      */
     inline GetFunctionConfigurationResult& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline void SetRole(const Aws::String& value) { m_role = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline void SetRole(Aws::String&& value) { m_role = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline void SetRole(const char* value) { m_role.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline GetFunctionConfigurationResult& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline GetFunctionConfigurationResult& WithRole(Aws::String&& value) { SetRole(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it
-     * executes your function to access any other Amazon Web Services (AWS) resources.
-     * </p>
+     * executes your function to access any other Amazon Web Services (AWS)
+     * resources.</p>
      */
     inline GetFunctionConfigurationResult& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -276,21 +286,21 @@ namespace Model
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline void SetTimeout(int value) { m_timeout = value; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline GetFunctionConfigurationResult& WithTimeout(int value) { SetTimeout(value); return *this;}
 

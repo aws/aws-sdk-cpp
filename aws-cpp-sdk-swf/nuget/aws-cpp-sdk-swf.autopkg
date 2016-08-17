@@ -1,4 +1,4 @@
-configurations {
+﻿configurations {
     Toolset {
     key : "PlatformToolset";
     choices: { v140, v120 };
@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-SWF;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.13.20120125.9;
+        version : 0.14.20120125.4;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Workflow Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/0.13.1
+            AWSSDKCPP-Core/0.14.1
        }
     }
 

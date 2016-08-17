@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
    */
   class AWS_ELASTICLOADBALANCING_API CreateLoadBalancerPolicyRequest : public ElasticLoadBalancingRequest
   {
@@ -154,37 +155,37 @@ namespace Model
     inline CreateLoadBalancerPolicyRequest& WithPolicyTypeName(const char* value) { SetPolicyTypeName(value); return *this;}
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline const Aws::Vector<PolicyAttribute>& GetPolicyAttributes() const{ return m_policyAttributes; }
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline void SetPolicyAttributes(const Aws::Vector<PolicyAttribute>& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes = value; }
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline void SetPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes = value; }
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline CreateLoadBalancerPolicyRequest& WithPolicyAttributes(const Aws::Vector<PolicyAttribute>& value) { SetPolicyAttributes(value); return *this;}
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline CreateLoadBalancerPolicyRequest& WithPolicyAttributes(Aws::Vector<PolicyAttribute>&& value) { SetPolicyAttributes(value); return *this;}
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline CreateLoadBalancerPolicyRequest& AddPolicyAttributes(const PolicyAttribute& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The attributes for the policy.</p>
+     * <p>The policy attributes.</p>
      */
     inline CreateLoadBalancerPolicyRequest& AddPolicyAttributes(PolicyAttribute&& value) { m_policyAttributesHasBeenSet = true; m_policyAttributes.push_back(value); return *this; }
 

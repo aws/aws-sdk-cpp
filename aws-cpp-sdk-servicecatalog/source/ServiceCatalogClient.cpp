@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -53,8 +53,7 @@ static const char* ALLOCATION_TAG = "ServiceCatalogClient";
 ServiceCatalogClient::ServiceCatalogClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ServiceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -64,8 +63,7 @@ ServiceCatalogClient::ServiceCatalogClient(const Client::ClientConfiguration& cl
 ServiceCatalogClient::ServiceCatalogClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ServiceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,8 +74,7 @@ ServiceCatalogClient::ServiceCatalogClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ServiceCatalogErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -93,9 +90,9 @@ void ServiceCatalogClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << ServiceCatalogEndpoint::ForRegion(config.region);
+    ss << ServiceCatalogEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -123,12 +120,12 @@ DescribeProductOutcome ServiceCatalogClient::DescribeProduct(const DescribeProdu
 
 DescribeProductOutcomeCallable ServiceCatalogClient::DescribeProductCallable(const DescribeProductRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::DescribeProduct, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeProduct(request); } );
 }
 
 void ServiceCatalogClient::DescribeProductAsync(const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::DescribeProductAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::DescribeProductAsyncHelper(const DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -154,12 +151,12 @@ DescribeProductViewOutcome ServiceCatalogClient::DescribeProductView(const Descr
 
 DescribeProductViewOutcomeCallable ServiceCatalogClient::DescribeProductViewCallable(const DescribeProductViewRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::DescribeProductView, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeProductView(request); } );
 }
 
 void ServiceCatalogClient::DescribeProductViewAsync(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::DescribeProductViewAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProductViewAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::DescribeProductViewAsyncHelper(const DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -185,12 +182,12 @@ DescribeProvisioningParametersOutcome ServiceCatalogClient::DescribeProvisioning
 
 DescribeProvisioningParametersOutcomeCallable ServiceCatalogClient::DescribeProvisioningParametersCallable(const DescribeProvisioningParametersRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::DescribeProvisioningParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeProvisioningParameters(request); } );
 }
 
 void ServiceCatalogClient::DescribeProvisioningParametersAsync(const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::DescribeProvisioningParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisioningParametersAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::DescribeProvisioningParametersAsyncHelper(const DescribeProvisioningParametersRequest& request, const DescribeProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -216,12 +213,12 @@ DescribeRecordOutcome ServiceCatalogClient::DescribeRecord(const DescribeRecordR
 
 DescribeRecordOutcomeCallable ServiceCatalogClient::DescribeRecordCallable(const DescribeRecordRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::DescribeRecord, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeRecord(request); } );
 }
 
 void ServiceCatalogClient::DescribeRecordAsync(const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::DescribeRecordAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecordAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::DescribeRecordAsyncHelper(const DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -247,12 +244,12 @@ ListLaunchPathsOutcome ServiceCatalogClient::ListLaunchPaths(const ListLaunchPat
 
 ListLaunchPathsOutcomeCallable ServiceCatalogClient::ListLaunchPathsCallable(const ListLaunchPathsRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::ListLaunchPaths, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListLaunchPaths(request); } );
 }
 
 void ServiceCatalogClient::ListLaunchPathsAsync(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::ListLaunchPathsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListLaunchPathsAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::ListLaunchPathsAsyncHelper(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -278,12 +275,12 @@ ListRecordHistoryOutcome ServiceCatalogClient::ListRecordHistory(const ListRecor
 
 ListRecordHistoryOutcomeCallable ServiceCatalogClient::ListRecordHistoryCallable(const ListRecordHistoryRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::ListRecordHistory, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRecordHistory(request); } );
 }
 
 void ServiceCatalogClient::ListRecordHistoryAsync(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::ListRecordHistoryAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRecordHistoryAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::ListRecordHistoryAsyncHelper(const ListRecordHistoryRequest& request, const ListRecordHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -309,12 +306,12 @@ ProvisionProductOutcome ServiceCatalogClient::ProvisionProduct(const ProvisionPr
 
 ProvisionProductOutcomeCallable ServiceCatalogClient::ProvisionProductCallable(const ProvisionProductRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::ProvisionProduct, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ProvisionProduct(request); } );
 }
 
 void ServiceCatalogClient::ProvisionProductAsync(const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::ProvisionProductAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ProvisionProductAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::ProvisionProductAsyncHelper(const ProvisionProductRequest& request, const ProvisionProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -340,12 +337,12 @@ ScanProvisionedProductsOutcome ServiceCatalogClient::ScanProvisionedProducts(con
 
 ScanProvisionedProductsOutcomeCallable ServiceCatalogClient::ScanProvisionedProductsCallable(const ScanProvisionedProductsRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::ScanProvisionedProducts, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ScanProvisionedProducts(request); } );
 }
 
 void ServiceCatalogClient::ScanProvisionedProductsAsync(const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::ScanProvisionedProductsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ScanProvisionedProductsAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::ScanProvisionedProductsAsyncHelper(const ScanProvisionedProductsRequest& request, const ScanProvisionedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -371,12 +368,12 @@ SearchProductsOutcome ServiceCatalogClient::SearchProducts(const SearchProductsR
 
 SearchProductsOutcomeCallable ServiceCatalogClient::SearchProductsCallable(const SearchProductsRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::SearchProducts, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SearchProducts(request); } );
 }
 
 void ServiceCatalogClient::SearchProductsAsync(const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::SearchProductsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SearchProductsAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::SearchProductsAsyncHelper(const SearchProductsRequest& request, const SearchProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -402,12 +399,12 @@ TerminateProvisionedProductOutcome ServiceCatalogClient::TerminateProvisionedPro
 
 TerminateProvisionedProductOutcomeCallable ServiceCatalogClient::TerminateProvisionedProductCallable(const TerminateProvisionedProductRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::TerminateProvisionedProduct, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->TerminateProvisionedProduct(request); } );
 }
 
 void ServiceCatalogClient::TerminateProvisionedProductAsync(const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::TerminateProvisionedProductAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->TerminateProvisionedProductAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::TerminateProvisionedProductAsyncHelper(const TerminateProvisionedProductRequest& request, const TerminateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -433,12 +430,12 @@ UpdateProvisionedProductOutcome ServiceCatalogClient::UpdateProvisionedProduct(c
 
 UpdateProvisionedProductOutcomeCallable ServiceCatalogClient::UpdateProvisionedProductCallable(const UpdateProvisionedProductRequest& request) const
 {
-  return std::async(std::launch::async, &ServiceCatalogClient::UpdateProvisionedProduct, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateProvisionedProduct(request); } );
 }
 
 void ServiceCatalogClient::UpdateProvisionedProductAsync(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ServiceCatalogClient::UpdateProvisionedProductAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProvisionedProductAsyncHelper( request, handler, context ); } );
 }
 
 void ServiceCatalogClient::UpdateProvisionedProductAsyncHelper(const UpdateProvisionedProductRequest& request, const UpdateProvisionedProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

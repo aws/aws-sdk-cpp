@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -81,8 +81,7 @@ static const char* ALLOCATION_TAG = "ElastiCacheClient";
 ElastiCacheClient::ElastiCacheClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ElastiCacheErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -92,8 +91,7 @@ ElastiCacheClient::ElastiCacheClient(const Client::ClientConfiguration& clientCo
 ElastiCacheClient::ElastiCacheClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ElastiCacheErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -104,8 +102,7 @@ ElastiCacheClient::ElastiCacheClient(const std::shared_ptr<AWSCredentialsProvide
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ElastiCacheErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -121,9 +118,9 @@ void ElastiCacheClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << ElastiCacheEndpoint::ForRegion(config.region);
+    ss << ElastiCacheEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -150,12 +147,12 @@ AddTagsToResourceOutcome ElastiCacheClient::AddTagsToResource(const AddTagsToRes
 
 AddTagsToResourceOutcomeCallable ElastiCacheClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::AddTagsToResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddTagsToResource( request ); } );
 }
 
 void ElastiCacheClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -180,12 +177,12 @@ AuthorizeCacheSecurityGroupIngressOutcome ElastiCacheClient::AuthorizeCacheSecur
 
 AuthorizeCacheSecurityGroupIngressOutcomeCallable ElastiCacheClient::AuthorizeCacheSecurityGroupIngressCallable(const AuthorizeCacheSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::AuthorizeCacheSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AuthorizeCacheSecurityGroupIngress( request ); } );
 }
 
 void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsync(const AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeCacheSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::AuthorizeCacheSecurityGroupIngressAsyncHelper(const AuthorizeCacheSecurityGroupIngressRequest& request, const AuthorizeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -210,12 +207,12 @@ CopySnapshotOutcome ElastiCacheClient::CopySnapshot(const CopySnapshotRequest& r
 
 CopySnapshotOutcomeCallable ElastiCacheClient::CopySnapshotCallable(const CopySnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CopySnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopySnapshot( request ); } );
 }
 
 void ElastiCacheClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CopySnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopySnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -240,12 +237,12 @@ CreateCacheClusterOutcome ElastiCacheClient::CreateCacheCluster(const CreateCach
 
 CreateCacheClusterOutcomeCallable ElastiCacheClient::CreateCacheClusterCallable(const CreateCacheClusterRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateCacheCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateCacheCluster( request ); } );
 }
 
 void ElastiCacheClient::CreateCacheClusterAsync(const CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCacheClusterAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateCacheClusterAsyncHelper(const CreateCacheClusterRequest& request, const CreateCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -270,12 +267,12 @@ CreateCacheParameterGroupOutcome ElastiCacheClient::CreateCacheParameterGroup(co
 
 CreateCacheParameterGroupOutcomeCallable ElastiCacheClient::CreateCacheParameterGroupCallable(const CreateCacheParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateCacheParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateCacheParameterGroup( request ); } );
 }
 
 void ElastiCacheClient::CreateCacheParameterGroupAsync(const CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCacheParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateCacheParameterGroupAsyncHelper(const CreateCacheParameterGroupRequest& request, const CreateCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -300,12 +297,12 @@ CreateCacheSecurityGroupOutcome ElastiCacheClient::CreateCacheSecurityGroup(cons
 
 CreateCacheSecurityGroupOutcomeCallable ElastiCacheClient::CreateCacheSecurityGroupCallable(const CreateCacheSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateCacheSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateCacheSecurityGroup( request ); } );
 }
 
 void ElastiCacheClient::CreateCacheSecurityGroupAsync(const CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCacheSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateCacheSecurityGroupAsyncHelper(const CreateCacheSecurityGroupRequest& request, const CreateCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -330,12 +327,12 @@ CreateCacheSubnetGroupOutcome ElastiCacheClient::CreateCacheSubnetGroup(const Cr
 
 CreateCacheSubnetGroupOutcomeCallable ElastiCacheClient::CreateCacheSubnetGroupCallable(const CreateCacheSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateCacheSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateCacheSubnetGroup( request ); } );
 }
 
 void ElastiCacheClient::CreateCacheSubnetGroupAsync(const CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCacheSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper(const CreateCacheSubnetGroupRequest& request, const CreateCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -360,12 +357,12 @@ CreateReplicationGroupOutcome ElastiCacheClient::CreateReplicationGroup(const Cr
 
 CreateReplicationGroupOutcomeCallable ElastiCacheClient::CreateReplicationGroupCallable(const CreateReplicationGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateReplicationGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateReplicationGroup( request ); } );
 }
 
 void ElastiCacheClient::CreateReplicationGroupAsync(const CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateReplicationGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateReplicationGroupAsyncHelper(const CreateReplicationGroupRequest& request, const CreateReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -390,12 +387,12 @@ CreateSnapshotOutcome ElastiCacheClient::CreateSnapshot(const CreateSnapshotRequ
 
 CreateSnapshotOutcomeCallable ElastiCacheClient::CreateSnapshotCallable(const CreateSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::CreateSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateSnapshot( request ); } );
 }
 
 void ElastiCacheClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::CreateSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -420,12 +417,12 @@ DeleteCacheClusterOutcome ElastiCacheClient::DeleteCacheCluster(const DeleteCach
 
 DeleteCacheClusterOutcomeCallable ElastiCacheClient::DeleteCacheClusterCallable(const DeleteCacheClusterRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCacheCluster( request ); } );
 }
 
 void ElastiCacheClient::DeleteCacheClusterAsync(const DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCacheClusterAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteCacheClusterAsyncHelper(const DeleteCacheClusterRequest& request, const DeleteCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -450,12 +447,12 @@ DeleteCacheParameterGroupOutcome ElastiCacheClient::DeleteCacheParameterGroup(co
 
 DeleteCacheParameterGroupOutcomeCallable ElastiCacheClient::DeleteCacheParameterGroupCallable(const DeleteCacheParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCacheParameterGroup( request ); } );
 }
 
 void ElastiCacheClient::DeleteCacheParameterGroupAsync(const DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCacheParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteCacheParameterGroupAsyncHelper(const DeleteCacheParameterGroupRequest& request, const DeleteCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -480,12 +477,12 @@ DeleteCacheSecurityGroupOutcome ElastiCacheClient::DeleteCacheSecurityGroup(cons
 
 DeleteCacheSecurityGroupOutcomeCallable ElastiCacheClient::DeleteCacheSecurityGroupCallable(const DeleteCacheSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCacheSecurityGroup( request ); } );
 }
 
 void ElastiCacheClient::DeleteCacheSecurityGroupAsync(const DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCacheSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteCacheSecurityGroupAsyncHelper(const DeleteCacheSecurityGroupRequest& request, const DeleteCacheSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -510,12 +507,12 @@ DeleteCacheSubnetGroupOutcome ElastiCacheClient::DeleteCacheSubnetGroup(const De
 
 DeleteCacheSubnetGroupOutcomeCallable ElastiCacheClient::DeleteCacheSubnetGroupCallable(const DeleteCacheSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteCacheSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCacheSubnetGroup( request ); } );
 }
 
 void ElastiCacheClient::DeleteCacheSubnetGroupAsync(const DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCacheSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper(const DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -540,12 +537,12 @@ DeleteReplicationGroupOutcome ElastiCacheClient::DeleteReplicationGroup(const De
 
 DeleteReplicationGroupOutcomeCallable ElastiCacheClient::DeleteReplicationGroupCallable(const DeleteReplicationGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteReplicationGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteReplicationGroup( request ); } );
 }
 
 void ElastiCacheClient::DeleteReplicationGroupAsync(const DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteReplicationGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteReplicationGroupAsyncHelper(const DeleteReplicationGroupRequest& request, const DeleteReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -570,12 +567,12 @@ DeleteSnapshotOutcome ElastiCacheClient::DeleteSnapshot(const DeleteSnapshotRequ
 
 DeleteSnapshotOutcomeCallable ElastiCacheClient::DeleteSnapshotCallable(const DeleteSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DeleteSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSnapshot( request ); } );
 }
 
 void ElastiCacheClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DeleteSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DeleteSnapshotAsyncHelper(const DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -600,12 +597,12 @@ DescribeCacheClustersOutcome ElastiCacheClient::DescribeCacheClusters(const Desc
 
 DescribeCacheClustersOutcomeCallable ElastiCacheClient::DescribeCacheClustersCallable(const DescribeCacheClustersRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheClusters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheClusters( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheClustersAsync(const DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheClustersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheClustersAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheClustersAsyncHelper(const DescribeCacheClustersRequest& request, const DescribeCacheClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -630,12 +627,12 @@ DescribeCacheEngineVersionsOutcome ElastiCacheClient::DescribeCacheEngineVersion
 
 DescribeCacheEngineVersionsOutcomeCallable ElastiCacheClient::DescribeCacheEngineVersionsCallable(const DescribeCacheEngineVersionsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheEngineVersions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheEngineVersions( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheEngineVersionsAsync(const DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheEngineVersionsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheEngineVersionsAsyncHelper(const DescribeCacheEngineVersionsRequest& request, const DescribeCacheEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -660,12 +657,12 @@ DescribeCacheParameterGroupsOutcome ElastiCacheClient::DescribeCacheParameterGro
 
 DescribeCacheParameterGroupsOutcomeCallable ElastiCacheClient::DescribeCacheParameterGroupsCallable(const DescribeCacheParameterGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheParameterGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheParameterGroups( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheParameterGroupsAsync(const DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheParameterGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheParameterGroupsAsyncHelper(const DescribeCacheParameterGroupsRequest& request, const DescribeCacheParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -690,12 +687,12 @@ DescribeCacheParametersOutcome ElastiCacheClient::DescribeCacheParameters(const 
 
 DescribeCacheParametersOutcomeCallable ElastiCacheClient::DescribeCacheParametersCallable(const DescribeCacheParametersRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheParameters( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheParametersAsync(const DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheParametersAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheParametersAsyncHelper(const DescribeCacheParametersRequest& request, const DescribeCacheParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -720,12 +717,12 @@ DescribeCacheSecurityGroupsOutcome ElastiCacheClient::DescribeCacheSecurityGroup
 
 DescribeCacheSecurityGroupsOutcomeCallable ElastiCacheClient::DescribeCacheSecurityGroupsCallable(const DescribeCacheSecurityGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheSecurityGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheSecurityGroups( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheSecurityGroupsAsync(const DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheSecurityGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheSecurityGroupsAsyncHelper(const DescribeCacheSecurityGroupsRequest& request, const DescribeCacheSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -750,12 +747,12 @@ DescribeCacheSubnetGroupsOutcome ElastiCacheClient::DescribeCacheSubnetGroups(co
 
 DescribeCacheSubnetGroupsOutcomeCallable ElastiCacheClient::DescribeCacheSubnetGroupsCallable(const DescribeCacheSubnetGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeCacheSubnetGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCacheSubnetGroups( request ); } );
 }
 
 void ElastiCacheClient::DescribeCacheSubnetGroupsAsync(const DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCacheSubnetGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeCacheSubnetGroupsAsyncHelper(const DescribeCacheSubnetGroupsRequest& request, const DescribeCacheSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -780,12 +777,12 @@ DescribeEngineDefaultParametersOutcome ElastiCacheClient::DescribeEngineDefaultP
 
 DescribeEngineDefaultParametersOutcomeCallable ElastiCacheClient::DescribeEngineDefaultParametersCallable(const DescribeEngineDefaultParametersRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeEngineDefaultParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEngineDefaultParameters( request ); } );
 }
 
 void ElastiCacheClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngineDefaultParametersAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -810,12 +807,12 @@ DescribeEventsOutcome ElastiCacheClient::DescribeEvents(const DescribeEventsRequ
 
 DescribeEventsOutcomeCallable ElastiCacheClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeEvents, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEvents( request ); } );
 }
 
 void ElastiCacheClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeEventsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -840,12 +837,12 @@ DescribeReplicationGroupsOutcome ElastiCacheClient::DescribeReplicationGroups(co
 
 DescribeReplicationGroupsOutcomeCallable ElastiCacheClient::DescribeReplicationGroupsCallable(const DescribeReplicationGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeReplicationGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReplicationGroups( request ); } );
 }
 
 void ElastiCacheClient::DescribeReplicationGroupsAsync(const DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReplicationGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeReplicationGroupsAsyncHelper(const DescribeReplicationGroupsRequest& request, const DescribeReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -870,12 +867,12 @@ DescribeReservedCacheNodesOutcome ElastiCacheClient::DescribeReservedCacheNodes(
 
 DescribeReservedCacheNodesOutcomeCallable ElastiCacheClient::DescribeReservedCacheNodesCallable(const DescribeReservedCacheNodesRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeReservedCacheNodes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedCacheNodes( request ); } );
 }
 
 void ElastiCacheClient::DescribeReservedCacheNodesAsync(const DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedCacheNodesAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeReservedCacheNodesAsyncHelper(const DescribeReservedCacheNodesRequest& request, const DescribeReservedCacheNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -900,12 +897,12 @@ DescribeReservedCacheNodesOfferingsOutcome ElastiCacheClient::DescribeReservedCa
 
 DescribeReservedCacheNodesOfferingsOutcomeCallable ElastiCacheClient::DescribeReservedCacheNodesOfferingsCallable(const DescribeReservedCacheNodesOfferingsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeReservedCacheNodesOfferings, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedCacheNodesOfferings( request ); } );
 }
 
 void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsync(const DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedCacheNodesOfferingsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeReservedCacheNodesOfferingsAsyncHelper(const DescribeReservedCacheNodesOfferingsRequest& request, const DescribeReservedCacheNodesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -930,12 +927,12 @@ DescribeSnapshotsOutcome ElastiCacheClient::DescribeSnapshots(const DescribeSnap
 
 DescribeSnapshotsOutcomeCallable ElastiCacheClient::DescribeSnapshotsCallable(const DescribeSnapshotsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::DescribeSnapshots, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSnapshots( request ); } );
 }
 
 void ElastiCacheClient::DescribeSnapshotsAsync(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::DescribeSnapshotsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::DescribeSnapshotsAsyncHelper(const DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -960,12 +957,12 @@ ListAllowedNodeTypeModificationsOutcome ElastiCacheClient::ListAllowedNodeTypeMo
 
 ListAllowedNodeTypeModificationsOutcomeCallable ElastiCacheClient::ListAllowedNodeTypeModificationsCallable(const ListAllowedNodeTypeModificationsRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ListAllowedNodeTypeModifications, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAllowedNodeTypeModifications( request ); } );
 }
 
 void ElastiCacheClient::ListAllowedNodeTypeModificationsAsync(const ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ListAllowedNodeTypeModificationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAllowedNodeTypeModificationsAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ListAllowedNodeTypeModificationsAsyncHelper(const ListAllowedNodeTypeModificationsRequest& request, const ListAllowedNodeTypeModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -990,12 +987,12 @@ ListTagsForResourceOutcome ElastiCacheClient::ListTagsForResource(const ListTags
 
 ListTagsForResourceOutcomeCallable ElastiCacheClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ListTagsForResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTagsForResource( request ); } );
 }
 
 void ElastiCacheClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1020,12 +1017,12 @@ ModifyCacheClusterOutcome ElastiCacheClient::ModifyCacheCluster(const ModifyCach
 
 ModifyCacheClusterOutcomeCallable ElastiCacheClient::ModifyCacheClusterCallable(const ModifyCacheClusterRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyCacheCluster( request ); } );
 }
 
 void ElastiCacheClient::ModifyCacheClusterAsync(const ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyCacheClusterAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ModifyCacheClusterAsyncHelper(const ModifyCacheClusterRequest& request, const ModifyCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1050,12 +1047,12 @@ ModifyCacheParameterGroupOutcome ElastiCacheClient::ModifyCacheParameterGroup(co
 
 ModifyCacheParameterGroupOutcomeCallable ElastiCacheClient::ModifyCacheParameterGroupCallable(const ModifyCacheParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyCacheParameterGroup( request ); } );
 }
 
 void ElastiCacheClient::ModifyCacheParameterGroupAsync(const ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyCacheParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ModifyCacheParameterGroupAsyncHelper(const ModifyCacheParameterGroupRequest& request, const ModifyCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1080,12 +1077,12 @@ ModifyCacheSubnetGroupOutcome ElastiCacheClient::ModifyCacheSubnetGroup(const Mo
 
 ModifyCacheSubnetGroupOutcomeCallable ElastiCacheClient::ModifyCacheSubnetGroupCallable(const ModifyCacheSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ModifyCacheSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyCacheSubnetGroup( request ); } );
 }
 
 void ElastiCacheClient::ModifyCacheSubnetGroupAsync(const ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyCacheSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper(const ModifyCacheSubnetGroupRequest& request, const ModifyCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1110,12 +1107,12 @@ ModifyReplicationGroupOutcome ElastiCacheClient::ModifyReplicationGroup(const Mo
 
 ModifyReplicationGroupOutcomeCallable ElastiCacheClient::ModifyReplicationGroupCallable(const ModifyReplicationGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ModifyReplicationGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyReplicationGroup( request ); } );
 }
 
 void ElastiCacheClient::ModifyReplicationGroupAsync(const ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ModifyReplicationGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyReplicationGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ModifyReplicationGroupAsyncHelper(const ModifyReplicationGroupRequest& request, const ModifyReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1140,12 +1137,12 @@ PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCac
 
 PurchaseReservedCacheNodesOfferingOutcomeCallable ElastiCacheClient::PurchaseReservedCacheNodesOfferingCallable(const PurchaseReservedCacheNodesOfferingRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::PurchaseReservedCacheNodesOffering, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PurchaseReservedCacheNodesOffering( request ); } );
 }
 
 void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsync(const PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedCacheNodesOfferingAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper(const PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1170,12 +1167,12 @@ RebootCacheClusterOutcome ElastiCacheClient::RebootCacheCluster(const RebootCach
 
 RebootCacheClusterOutcomeCallable ElastiCacheClient::RebootCacheClusterCallable(const RebootCacheClusterRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::RebootCacheCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RebootCacheCluster( request ); } );
 }
 
 void ElastiCacheClient::RebootCacheClusterAsync(const RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RebootCacheClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RebootCacheClusterAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::RebootCacheClusterAsyncHelper(const RebootCacheClusterRequest& request, const RebootCacheClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1200,12 +1197,12 @@ RemoveTagsFromResourceOutcome ElastiCacheClient::RemoveTagsFromResource(const Re
 
 RemoveTagsFromResourceOutcomeCallable ElastiCacheClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::RemoveTagsFromResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveTagsFromResource( request ); } );
 }
 
 void ElastiCacheClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1230,12 +1227,12 @@ ResetCacheParameterGroupOutcome ElastiCacheClient::ResetCacheParameterGroup(cons
 
 ResetCacheParameterGroupOutcomeCallable ElastiCacheClient::ResetCacheParameterGroupCallable(const ResetCacheParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::ResetCacheParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResetCacheParameterGroup( request ); } );
 }
 
 void ElastiCacheClient::ResetCacheParameterGroupAsync(const ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::ResetCacheParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResetCacheParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::ResetCacheParameterGroupAsyncHelper(const ResetCacheParameterGroupRequest& request, const ResetCacheParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1260,12 +1257,12 @@ RevokeCacheSecurityGroupIngressOutcome ElastiCacheClient::RevokeCacheSecurityGro
 
 RevokeCacheSecurityGroupIngressOutcomeCallable ElastiCacheClient::RevokeCacheSecurityGroupIngressCallable(const RevokeCacheSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &ElastiCacheClient::RevokeCacheSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RevokeCacheSecurityGroupIngress( request ); } );
 }
 
 void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsync(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeCacheSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void ElastiCacheClient::RevokeCacheSecurityGroupIngressAsyncHelper(const RevokeCacheSecurityGroupIngressRequest& request, const RevokeCacheSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

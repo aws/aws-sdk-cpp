@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -40,8 +40,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline const Aws::String& GetDBSecurityGroupName() const{ return m_dBSecurityGroupName; }
 
@@ -50,8 +50,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
@@ -60,8 +60,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline void SetDBSecurityGroupName(Aws::String&& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
@@ -70,8 +70,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline void SetDBSecurityGroupName(const char* value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName.assign(value); }
 
@@ -80,8 +80,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(const Aws::String& value) { SetDBSecurityGroupName(value); return *this;}
 
@@ -90,8 +90,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(Aws::String&& value) { SetDBSecurityGroupName(value); return *this;}
 
@@ -100,8 +100,8 @@ namespace Model
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
      * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
-     * <p>Must not be "Default"</p> </li> <li> <p>Cannot contain spaces</p> </li> </ul>
-     * <p>Example: <code>mysecuritygroup</code> </p>
+     * <p>Must not be "Default"</p> </li> </ul> <p>Example:
+     * <code>mysecuritygroup</code> </p>
      */
     inline CreateDBSecurityGroupRequest& WithDBSecurityGroupName(const char* value) { SetDBSecurityGroupName(value); return *this;}
 

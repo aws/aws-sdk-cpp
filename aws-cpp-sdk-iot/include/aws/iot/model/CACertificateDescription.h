@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificateStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/AutoRegistrationStatus.h>
 
 namespace Aws
 {
@@ -233,6 +234,36 @@ namespace Model
      */
     inline CACertificateDescription& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(value); return *this;}
 
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline const AutoRegistrationStatus& GetAutoRegistrationStatus() const{ return m_autoRegistrationStatus; }
+
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline void SetAutoRegistrationStatus(const AutoRegistrationStatus& value) { m_autoRegistrationStatusHasBeenSet = true; m_autoRegistrationStatus = value; }
+
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline void SetAutoRegistrationStatus(AutoRegistrationStatus&& value) { m_autoRegistrationStatusHasBeenSet = true; m_autoRegistrationStatus = value; }
+
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline CACertificateDescription& WithAutoRegistrationStatus(const AutoRegistrationStatus& value) { SetAutoRegistrationStatus(value); return *this;}
+
+    /**
+     * <p>Whether the CA certificate configured for auto registration of device
+     * certificates. Valid values are "ENABLE" and "DISABLE"</p>
+     */
+    inline CACertificateDescription& WithAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetAutoRegistrationStatus(value); return *this;}
+
   private:
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
@@ -246,6 +277,8 @@ namespace Model
     bool m_ownedByHasBeenSet;
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;
+    AutoRegistrationStatus m_autoRegistrationStatus;
+    bool m_autoRegistrationStatusHasBeenSet;
   };
 
 } // namespace Model

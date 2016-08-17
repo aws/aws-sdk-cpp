@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -189,44 +189,44 @@ namespace Model
     inline CreateExportTaskRequest& WithTo(long long value) { SetTo(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline CreateExportTaskRequest& WithDestination(Aws::String&& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p>
-     * <p><b>Note:</b> Only buckets in the same AWS region are supported.</p>
+     * <p>Name of Amazon S3 bucket to which the log data will be exported.</p> <p>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.</p>
      */
     inline CreateExportTaskRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
 

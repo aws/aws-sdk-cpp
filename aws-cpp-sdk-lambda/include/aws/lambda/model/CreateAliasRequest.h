@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -33,37 +33,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline CreateAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline CreateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. </p>
+     * <p>Name of the Lambda function for which you want to create an alias.</p>
      */
     inline CreateAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

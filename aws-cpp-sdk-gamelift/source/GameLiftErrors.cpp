@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,8 +28,8 @@ namespace GameLiftErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
-static const int TERMINAL_ROUTING_STRATEGY_HASH = HashingUtils::HashString("TerminalRoutingStrategyException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
+static const int TERMINAL_ROUTING_STRATEGY_HASH = HashingUtils::HashString("TerminalRoutingStrategyException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_GAME_SESSION_STATUS_HASH = HashingUtils::HashString("InvalidGameSessionStatusException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
@@ -48,13 +48,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::CONFLICT), false);
   }
-  else if (hashCode == TERMINAL_ROUTING_STRATEGY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TERMINAL_ROUTING_STRATEGY), false);
-  }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::INVALID_REQUEST), false);
+  }
+  else if (hashCode == TERMINAL_ROUTING_STRATEGY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::TERMINAL_ROUTING_STRATEGY), false);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {

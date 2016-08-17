@@ -1,8 +1,10 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($endpointPrefix = $metadata.endpointPrefix)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
-\#include <aws/core/utils/memory/stl/AWSMap.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::${metadata.namespace};
@@ -13,17 +15,38 @@ namespace ${metadata.namespace}
 {
 namespace ${metadata.classNamePrefix}Endpoint
 {
-  Aws::String ForRegion(Region region)
-  {
-    switch(region)
-    {
+
 #foreach($regionEndpointPair in $endpointMapping.entrySet())
-     case Region::${regionEndpointPair.key}:
-        return "${regionEndpointPair.value}";
+  static const int ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH = Aws::Utils::HashingUtils::HashString("${regionEndpointPair.key}");
 #end
-     default:
-        return "$endpointMapping.entrySet().iterator().next().value";
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
+  {
+#if($endpointMapping.size() > 0)
+    if(!useDualStack)
+    {
+      auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+
+#set($elseText = "")
+#foreach($regionEndpointPair in $endpointMapping.entrySet())
+      ${elseText}if(hash == ${regionEndpointPair.key.toUpperCase().replace("-", "_")}_HASH)
+      {
+        return "${regionEndpointPair.value}";
+      }
+#set($elseText = "else ")
+#end
     }
+#end
+    Aws::StringStream ss;
+    ss << "${endpointPrefix}" << ".";
+
+    if(useDualStack)
+    {
+      ss << "dualstack.";
+    }
+
+    ss << regionName << ".amazonaws.com";
+    return ss.str();
   }
 
 } // namespace ${metadata.classNamePrefix}Endpoint

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -24,11 +24,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEvaluationResult::GetEvaluationResult()
+GetEvaluationResult::GetEvaluationResult() : 
+    m_computeTime(0)
 {
 }
 
-GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result)
+GetEvaluationResult::GetEvaluationResult(const AmazonWebServiceResult<JsonValue>& result) : 
+    m_computeTime(0)
 {
   *this = result;
 }
@@ -105,6 +107,24 @@ GetEvaluationResult& GetEvaluationResult::operator =(const AmazonWebServiceResul
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
+
+  }
+
+  if(jsonValue.ValueExists("ComputeTime"))
+  {
+    m_computeTime = jsonValue.GetInt64("ComputeTime");
+
+  }
+
+  if(jsonValue.ValueExists("FinishedAt"))
+  {
+    m_finishedAt = jsonValue.GetDouble("FinishedAt");
+
+  }
+
+  if(jsonValue.ValueExists("StartedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("StartedAt");
 
   }
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeAutoScalingGroups.</p>
    */
   class AWS_AUTOSCALING_API DescribeAutoScalingGroupsRequest : public AutoScalingRequest
   {
@@ -34,42 +35,50 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(value); return *this;}
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>The group names.</p>
+     * <p>The group names. If you omit this parameter, all Auto Scaling groups are
+     * described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 
 CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() : 
     m_domainNameHasBeenSet(false),
+    m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
@@ -38,6 +39,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
   if(m_domainNameHasBeenSet)
   {
    payload.WithString("DomainName", m_domainName);
+
+  }
+
+  if(m_elasticsearchVersionHasBeenSet)
+  {
+   payload.WithString("ElasticsearchVersion", m_elasticsearchVersion);
 
   }
 

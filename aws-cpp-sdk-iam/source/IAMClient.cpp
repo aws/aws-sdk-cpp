@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -156,8 +156,7 @@ static const char* ALLOCATION_TAG = "IAMClient";
 IAMClient::IAMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -167,8 +166,7 @@ IAMClient::IAMClient(const Client::ClientConfiguration& clientConfiguration) :
 IAMClient::IAMClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -179,8 +177,7 @@ IAMClient::IAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<IAMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -196,9 +193,9 @@ void IAMClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << IAMEndpoint::ForRegion(config.region);
+    ss << IAMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -225,12 +222,12 @@ AddClientIDToOpenIDConnectProviderOutcome IAMClient::AddClientIDToOpenIDConnectP
 
 AddClientIDToOpenIDConnectProviderOutcomeCallable IAMClient::AddClientIDToOpenIDConnectProviderCallable(const AddClientIDToOpenIDConnectProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AddClientIDToOpenIDConnectProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddClientIDToOpenIDConnectProvider( request ); } );
 }
 
 void IAMClient::AddClientIDToOpenIDConnectProviderAsync(const AddClientIDToOpenIDConnectProviderRequest& request, const AddClientIDToOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddClientIDToOpenIDConnectProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AddClientIDToOpenIDConnectProviderAsyncHelper(const AddClientIDToOpenIDConnectProviderRequest& request, const AddClientIDToOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -255,12 +252,12 @@ AddRoleToInstanceProfileOutcome IAMClient::AddRoleToInstanceProfile(const AddRol
 
 AddRoleToInstanceProfileOutcomeCallable IAMClient::AddRoleToInstanceProfileCallable(const AddRoleToInstanceProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AddRoleToInstanceProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddRoleToInstanceProfile( request ); } );
 }
 
 void IAMClient::AddRoleToInstanceProfileAsync(const AddRoleToInstanceProfileRequest& request, const AddRoleToInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AddRoleToInstanceProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddRoleToInstanceProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AddRoleToInstanceProfileAsyncHelper(const AddRoleToInstanceProfileRequest& request, const AddRoleToInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -285,12 +282,12 @@ AddUserToGroupOutcome IAMClient::AddUserToGroup(const AddUserToGroupRequest& req
 
 AddUserToGroupOutcomeCallable IAMClient::AddUserToGroupCallable(const AddUserToGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AddUserToGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddUserToGroup( request ); } );
 }
 
 void IAMClient::AddUserToGroupAsync(const AddUserToGroupRequest& request, const AddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AddUserToGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddUserToGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AddUserToGroupAsyncHelper(const AddUserToGroupRequest& request, const AddUserToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -315,12 +312,12 @@ AttachGroupPolicyOutcome IAMClient::AttachGroupPolicy(const AttachGroupPolicyReq
 
 AttachGroupPolicyOutcomeCallable IAMClient::AttachGroupPolicyCallable(const AttachGroupPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AttachGroupPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AttachGroupPolicy( request ); } );
 }
 
 void IAMClient::AttachGroupPolicyAsync(const AttachGroupPolicyRequest& request, const AttachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AttachGroupPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AttachGroupPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AttachGroupPolicyAsyncHelper(const AttachGroupPolicyRequest& request, const AttachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -345,12 +342,12 @@ AttachRolePolicyOutcome IAMClient::AttachRolePolicy(const AttachRolePolicyReques
 
 AttachRolePolicyOutcomeCallable IAMClient::AttachRolePolicyCallable(const AttachRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AttachRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AttachRolePolicy( request ); } );
 }
 
 void IAMClient::AttachRolePolicyAsync(const AttachRolePolicyRequest& request, const AttachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AttachRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AttachRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AttachRolePolicyAsyncHelper(const AttachRolePolicyRequest& request, const AttachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -375,12 +372,12 @@ AttachUserPolicyOutcome IAMClient::AttachUserPolicy(const AttachUserPolicyReques
 
 AttachUserPolicyOutcomeCallable IAMClient::AttachUserPolicyCallable(const AttachUserPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::AttachUserPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AttachUserPolicy( request ); } );
 }
 
 void IAMClient::AttachUserPolicyAsync(const AttachUserPolicyRequest& request, const AttachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::AttachUserPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AttachUserPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::AttachUserPolicyAsyncHelper(const AttachUserPolicyRequest& request, const AttachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -405,12 +402,12 @@ ChangePasswordOutcome IAMClient::ChangePassword(const ChangePasswordRequest& req
 
 ChangePasswordOutcomeCallable IAMClient::ChangePasswordCallable(const ChangePasswordRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ChangePassword, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ChangePassword( request ); } );
 }
 
 void IAMClient::ChangePasswordAsync(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ChangePasswordAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ChangePasswordAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ChangePasswordAsyncHelper(const ChangePasswordRequest& request, const ChangePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -435,12 +432,12 @@ CreateAccessKeyOutcome IAMClient::CreateAccessKey(const CreateAccessKeyRequest& 
 
 CreateAccessKeyOutcomeCallable IAMClient::CreateAccessKeyCallable(const CreateAccessKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateAccessKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateAccessKey( request ); } );
 }
 
 void IAMClient::CreateAccessKeyAsync(const CreateAccessKeyRequest& request, const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateAccessKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateAccessKeyAsyncHelper(const CreateAccessKeyRequest& request, const CreateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -465,12 +462,12 @@ CreateAccountAliasOutcome IAMClient::CreateAccountAlias(const CreateAccountAlias
 
 CreateAccountAliasOutcomeCallable IAMClient::CreateAccountAliasCallable(const CreateAccountAliasRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateAccountAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateAccountAlias( request ); } );
 }
 
 void IAMClient::CreateAccountAliasAsync(const CreateAccountAliasRequest& request, const CreateAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateAccountAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccountAliasAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateAccountAliasAsyncHelper(const CreateAccountAliasRequest& request, const CreateAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -495,12 +492,12 @@ CreateGroupOutcome IAMClient::CreateGroup(const CreateGroupRequest& request) con
 
 CreateGroupOutcomeCallable IAMClient::CreateGroupCallable(const CreateGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateGroup( request ); } );
 }
 
 void IAMClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -525,12 +522,12 @@ CreateInstanceProfileOutcome IAMClient::CreateInstanceProfile(const CreateInstan
 
 CreateInstanceProfileOutcomeCallable IAMClient::CreateInstanceProfileCallable(const CreateInstanceProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateInstanceProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateInstanceProfile( request ); } );
 }
 
 void IAMClient::CreateInstanceProfileAsync(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateInstanceProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateInstanceProfileAsyncHelper(const CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -555,12 +552,12 @@ CreateLoginProfileOutcome IAMClient::CreateLoginProfile(const CreateLoginProfile
 
 CreateLoginProfileOutcomeCallable IAMClient::CreateLoginProfileCallable(const CreateLoginProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateLoginProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateLoginProfile( request ); } );
 }
 
 void IAMClient::CreateLoginProfileAsync(const CreateLoginProfileRequest& request, const CreateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateLoginProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLoginProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateLoginProfileAsyncHelper(const CreateLoginProfileRequest& request, const CreateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -585,12 +582,12 @@ CreateOpenIDConnectProviderOutcome IAMClient::CreateOpenIDConnectProvider(const 
 
 CreateOpenIDConnectProviderOutcomeCallable IAMClient::CreateOpenIDConnectProviderCallable(const CreateOpenIDConnectProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateOpenIDConnectProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateOpenIDConnectProvider( request ); } );
 }
 
 void IAMClient::CreateOpenIDConnectProviderAsync(const CreateOpenIDConnectProviderRequest& request, const CreateOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateOpenIDConnectProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOpenIDConnectProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateOpenIDConnectProviderAsyncHelper(const CreateOpenIDConnectProviderRequest& request, const CreateOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -615,12 +612,12 @@ CreatePolicyOutcome IAMClient::CreatePolicy(const CreatePolicyRequest& request) 
 
 CreatePolicyOutcomeCallable IAMClient::CreatePolicyCallable(const CreatePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreatePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreatePolicy( request ); } );
 }
 
 void IAMClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreatePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, const CreatePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -645,12 +642,12 @@ CreatePolicyVersionOutcome IAMClient::CreatePolicyVersion(const CreatePolicyVers
 
 CreatePolicyVersionOutcomeCallable IAMClient::CreatePolicyVersionCallable(const CreatePolicyVersionRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreatePolicyVersion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreatePolicyVersion( request ); } );
 }
 
 void IAMClient::CreatePolicyVersionAsync(const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreatePolicyVersionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePolicyVersionAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest& request, const CreatePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -675,12 +672,12 @@ CreateRoleOutcome IAMClient::CreateRole(const CreateRoleRequest& request) const
 
 CreateRoleOutcomeCallable IAMClient::CreateRoleCallable(const CreateRoleRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateRole, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateRole( request ); } );
 }
 
 void IAMClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateRoleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRoleAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateRoleAsyncHelper(const CreateRoleRequest& request, const CreateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -705,12 +702,12 @@ CreateSAMLProviderOutcome IAMClient::CreateSAMLProvider(const CreateSAMLProvider
 
 CreateSAMLProviderOutcomeCallable IAMClient::CreateSAMLProviderCallable(const CreateSAMLProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateSAMLProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateSAMLProvider( request ); } );
 }
 
 void IAMClient::CreateSAMLProviderAsync(const CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateSAMLProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSAMLProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateSAMLProviderAsyncHelper(const CreateSAMLProviderRequest& request, const CreateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -735,12 +732,12 @@ CreateUserOutcome IAMClient::CreateUser(const CreateUserRequest& request) const
 
 CreateUserOutcomeCallable IAMClient::CreateUserCallable(const CreateUserRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateUser, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateUser( request ); } );
 }
 
 void IAMClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateUserAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -765,12 +762,12 @@ CreateVirtualMFADeviceOutcome IAMClient::CreateVirtualMFADevice(const CreateVirt
 
 CreateVirtualMFADeviceOutcomeCallable IAMClient::CreateVirtualMFADeviceCallable(const CreateVirtualMFADeviceRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::CreateVirtualMFADevice, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateVirtualMFADevice( request ); } );
 }
 
 void IAMClient::CreateVirtualMFADeviceAsync(const CreateVirtualMFADeviceRequest& request, const CreateVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::CreateVirtualMFADeviceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualMFADeviceAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::CreateVirtualMFADeviceAsyncHelper(const CreateVirtualMFADeviceRequest& request, const CreateVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -795,12 +792,12 @@ DeactivateMFADeviceOutcome IAMClient::DeactivateMFADevice(const DeactivateMFADev
 
 DeactivateMFADeviceOutcomeCallable IAMClient::DeactivateMFADeviceCallable(const DeactivateMFADeviceRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeactivateMFADevice, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeactivateMFADevice( request ); } );
 }
 
 void IAMClient::DeactivateMFADeviceAsync(const DeactivateMFADeviceRequest& request, const DeactivateMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeactivateMFADeviceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeactivateMFADeviceAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeactivateMFADeviceAsyncHelper(const DeactivateMFADeviceRequest& request, const DeactivateMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -825,12 +822,12 @@ DeleteAccessKeyOutcome IAMClient::DeleteAccessKey(const DeleteAccessKeyRequest& 
 
 DeleteAccessKeyOutcomeCallable IAMClient::DeleteAccessKeyCallable(const DeleteAccessKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteAccessKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAccessKey( request ); } );
 }
 
 void IAMClient::DeleteAccessKeyAsync(const DeleteAccessKeyRequest& request, const DeleteAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccessKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteAccessKeyAsyncHelper(const DeleteAccessKeyRequest& request, const DeleteAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -855,12 +852,12 @@ DeleteAccountAliasOutcome IAMClient::DeleteAccountAlias(const DeleteAccountAlias
 
 DeleteAccountAliasOutcomeCallable IAMClient::DeleteAccountAliasCallable(const DeleteAccountAliasRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteAccountAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAccountAlias( request ); } );
 }
 
 void IAMClient::DeleteAccountAliasAsync(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccountAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountAliasAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteAccountAliasAsyncHelper(const DeleteAccountAliasRequest& request, const DeleteAccountAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -885,12 +882,12 @@ DeleteAccountPasswordPolicyOutcome IAMClient::DeleteAccountPasswordPolicy(const 
 
 DeleteAccountPasswordPolicyOutcomeCallable IAMClient::DeleteAccountPasswordPolicyCallable(const DeleteAccountPasswordPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteAccountPasswordPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAccountPasswordPolicy( request ); } );
 }
 
 void IAMClient::DeleteAccountPasswordPolicyAsync(const DeleteAccountPasswordPolicyRequest& request, const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteAccountPasswordPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccountPasswordPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteAccountPasswordPolicyAsyncHelper(const DeleteAccountPasswordPolicyRequest& request, const DeleteAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -915,12 +912,12 @@ DeleteGroupOutcome IAMClient::DeleteGroup(const DeleteGroupRequest& request) con
 
 DeleteGroupOutcomeCallable IAMClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteGroup( request ); } );
 }
 
 void IAMClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -945,12 +942,12 @@ DeleteGroupPolicyOutcome IAMClient::DeleteGroupPolicy(const DeleteGroupPolicyReq
 
 DeleteGroupPolicyOutcomeCallable IAMClient::DeleteGroupPolicyCallable(const DeleteGroupPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteGroupPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteGroupPolicy( request ); } );
 }
 
 void IAMClient::DeleteGroupPolicyAsync(const DeleteGroupPolicyRequest& request, const DeleteGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteGroupPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteGroupPolicyAsyncHelper(const DeleteGroupPolicyRequest& request, const DeleteGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -975,12 +972,12 @@ DeleteInstanceProfileOutcome IAMClient::DeleteInstanceProfile(const DeleteInstan
 
 DeleteInstanceProfileOutcomeCallable IAMClient::DeleteInstanceProfileCallable(const DeleteInstanceProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteInstanceProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteInstanceProfile( request ); } );
 }
 
 void IAMClient::DeleteInstanceProfileAsync(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteInstanceProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteInstanceProfileAsyncHelper(const DeleteInstanceProfileRequest& request, const DeleteInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1005,12 +1002,12 @@ DeleteLoginProfileOutcome IAMClient::DeleteLoginProfile(const DeleteLoginProfile
 
 DeleteLoginProfileOutcomeCallable IAMClient::DeleteLoginProfileCallable(const DeleteLoginProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteLoginProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteLoginProfile( request ); } );
 }
 
 void IAMClient::DeleteLoginProfileAsync(const DeleteLoginProfileRequest& request, const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteLoginProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLoginProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteLoginProfileAsyncHelper(const DeleteLoginProfileRequest& request, const DeleteLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1035,12 +1032,12 @@ DeleteOpenIDConnectProviderOutcome IAMClient::DeleteOpenIDConnectProvider(const 
 
 DeleteOpenIDConnectProviderOutcomeCallable IAMClient::DeleteOpenIDConnectProviderCallable(const DeleteOpenIDConnectProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteOpenIDConnectProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteOpenIDConnectProvider( request ); } );
 }
 
 void IAMClient::DeleteOpenIDConnectProviderAsync(const DeleteOpenIDConnectProviderRequest& request, const DeleteOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteOpenIDConnectProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOpenIDConnectProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteOpenIDConnectProviderAsyncHelper(const DeleteOpenIDConnectProviderRequest& request, const DeleteOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1065,12 +1062,12 @@ DeletePolicyOutcome IAMClient::DeletePolicy(const DeletePolicyRequest& request) 
 
 DeletePolicyOutcomeCallable IAMClient::DeletePolicyCallable(const DeletePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeletePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeletePolicy( request ); } );
 }
 
 void IAMClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeletePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1095,12 +1092,12 @@ DeletePolicyVersionOutcome IAMClient::DeletePolicyVersion(const DeletePolicyVers
 
 DeletePolicyVersionOutcomeCallable IAMClient::DeletePolicyVersionCallable(const DeletePolicyVersionRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeletePolicyVersion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeletePolicyVersion( request ); } );
 }
 
 void IAMClient::DeletePolicyVersionAsync(const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeletePolicyVersionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyVersionAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest& request, const DeletePolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1125,12 +1122,12 @@ DeleteRoleOutcome IAMClient::DeleteRole(const DeleteRoleRequest& request) const
 
 DeleteRoleOutcomeCallable IAMClient::DeleteRoleCallable(const DeleteRoleRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteRole, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteRole( request ); } );
 }
 
 void IAMClient::DeleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteRoleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRoleAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteRoleAsyncHelper(const DeleteRoleRequest& request, const DeleteRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1155,12 +1152,12 @@ DeleteRolePolicyOutcome IAMClient::DeleteRolePolicy(const DeleteRolePolicyReques
 
 DeleteRolePolicyOutcomeCallable IAMClient::DeleteRolePolicyCallable(const DeleteRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteRolePolicy( request ); } );
 }
 
 void IAMClient::DeleteRolePolicyAsync(const DeleteRolePolicyRequest& request, const DeleteRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteRolePolicyAsyncHelper(const DeleteRolePolicyRequest& request, const DeleteRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1185,12 +1182,12 @@ DeleteSAMLProviderOutcome IAMClient::DeleteSAMLProvider(const DeleteSAMLProvider
 
 DeleteSAMLProviderOutcomeCallable IAMClient::DeleteSAMLProviderCallable(const DeleteSAMLProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteSAMLProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSAMLProvider( request ); } );
 }
 
 void IAMClient::DeleteSAMLProviderAsync(const DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteSAMLProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSAMLProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteSAMLProviderAsyncHelper(const DeleteSAMLProviderRequest& request, const DeleteSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1215,12 +1212,12 @@ DeleteSSHPublicKeyOutcome IAMClient::DeleteSSHPublicKey(const DeleteSSHPublicKey
 
 DeleteSSHPublicKeyOutcomeCallable IAMClient::DeleteSSHPublicKeyCallable(const DeleteSSHPublicKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteSSHPublicKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSSHPublicKey( request ); } );
 }
 
 void IAMClient::DeleteSSHPublicKeyAsync(const DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteSSHPublicKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSSHPublicKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteSSHPublicKeyAsyncHelper(const DeleteSSHPublicKeyRequest& request, const DeleteSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1245,12 +1242,12 @@ DeleteServerCertificateOutcome IAMClient::DeleteServerCertificate(const DeleteSe
 
 DeleteServerCertificateOutcomeCallable IAMClient::DeleteServerCertificateCallable(const DeleteServerCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteServerCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteServerCertificate( request ); } );
 }
 
 void IAMClient::DeleteServerCertificateAsync(const DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteServerCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteServerCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteServerCertificateAsyncHelper(const DeleteServerCertificateRequest& request, const DeleteServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1275,12 +1272,12 @@ DeleteSigningCertificateOutcome IAMClient::DeleteSigningCertificate(const Delete
 
 DeleteSigningCertificateOutcomeCallable IAMClient::DeleteSigningCertificateCallable(const DeleteSigningCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteSigningCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSigningCertificate( request ); } );
 }
 
 void IAMClient::DeleteSigningCertificateAsync(const DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteSigningCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSigningCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteSigningCertificateAsyncHelper(const DeleteSigningCertificateRequest& request, const DeleteSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1305,12 +1302,12 @@ DeleteUserOutcome IAMClient::DeleteUser(const DeleteUserRequest& request) const
 
 DeleteUserOutcomeCallable IAMClient::DeleteUserCallable(const DeleteUserRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteUser, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteUser( request ); } );
 }
 
 void IAMClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteUserAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1335,12 +1332,12 @@ DeleteUserPolicyOutcome IAMClient::DeleteUserPolicy(const DeleteUserPolicyReques
 
 DeleteUserPolicyOutcomeCallable IAMClient::DeleteUserPolicyCallable(const DeleteUserPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteUserPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteUserPolicy( request ); } );
 }
 
 void IAMClient::DeleteUserPolicyAsync(const DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteUserPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteUserPolicyAsyncHelper(const DeleteUserPolicyRequest& request, const DeleteUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1365,12 +1362,12 @@ DeleteVirtualMFADeviceOutcome IAMClient::DeleteVirtualMFADevice(const DeleteVirt
 
 DeleteVirtualMFADeviceOutcomeCallable IAMClient::DeleteVirtualMFADeviceCallable(const DeleteVirtualMFADeviceRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DeleteVirtualMFADevice, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteVirtualMFADevice( request ); } );
 }
 
 void IAMClient::DeleteVirtualMFADeviceAsync(const DeleteVirtualMFADeviceRequest& request, const DeleteVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DeleteVirtualMFADeviceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualMFADeviceAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DeleteVirtualMFADeviceAsyncHelper(const DeleteVirtualMFADeviceRequest& request, const DeleteVirtualMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1395,12 +1392,12 @@ DetachGroupPolicyOutcome IAMClient::DetachGroupPolicy(const DetachGroupPolicyReq
 
 DetachGroupPolicyOutcomeCallable IAMClient::DetachGroupPolicyCallable(const DetachGroupPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DetachGroupPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DetachGroupPolicy( request ); } );
 }
 
 void IAMClient::DetachGroupPolicyAsync(const DetachGroupPolicyRequest& request, const DetachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DetachGroupPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DetachGroupPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DetachGroupPolicyAsyncHelper(const DetachGroupPolicyRequest& request, const DetachGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1425,12 +1422,12 @@ DetachRolePolicyOutcome IAMClient::DetachRolePolicy(const DetachRolePolicyReques
 
 DetachRolePolicyOutcomeCallable IAMClient::DetachRolePolicyCallable(const DetachRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DetachRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DetachRolePolicy( request ); } );
 }
 
 void IAMClient::DetachRolePolicyAsync(const DetachRolePolicyRequest& request, const DetachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DetachRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DetachRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DetachRolePolicyAsyncHelper(const DetachRolePolicyRequest& request, const DetachRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1455,12 +1452,12 @@ DetachUserPolicyOutcome IAMClient::DetachUserPolicy(const DetachUserPolicyReques
 
 DetachUserPolicyOutcomeCallable IAMClient::DetachUserPolicyCallable(const DetachUserPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::DetachUserPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DetachUserPolicy( request ); } );
 }
 
 void IAMClient::DetachUserPolicyAsync(const DetachUserPolicyRequest& request, const DetachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::DetachUserPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DetachUserPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::DetachUserPolicyAsyncHelper(const DetachUserPolicyRequest& request, const DetachUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1485,12 +1482,12 @@ EnableMFADeviceOutcome IAMClient::EnableMFADevice(const EnableMFADeviceRequest& 
 
 EnableMFADeviceOutcomeCallable IAMClient::EnableMFADeviceCallable(const EnableMFADeviceRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::EnableMFADevice, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnableMFADevice( request ); } );
 }
 
 void IAMClient::EnableMFADeviceAsync(const EnableMFADeviceRequest& request, const EnableMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::EnableMFADeviceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnableMFADeviceAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::EnableMFADeviceAsyncHelper(const EnableMFADeviceRequest& request, const EnableMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1515,12 +1512,12 @@ GenerateCredentialReportOutcome IAMClient::GenerateCredentialReport(const Genera
 
 GenerateCredentialReportOutcomeCallable IAMClient::GenerateCredentialReportCallable(const GenerateCredentialReportRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GenerateCredentialReport, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GenerateCredentialReport( request ); } );
 }
 
 void IAMClient::GenerateCredentialReportAsync(const GenerateCredentialReportRequest& request, const GenerateCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GenerateCredentialReportAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateCredentialReportAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GenerateCredentialReportAsyncHelper(const GenerateCredentialReportRequest& request, const GenerateCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1545,12 +1542,12 @@ GetAccessKeyLastUsedOutcome IAMClient::GetAccessKeyLastUsed(const GetAccessKeyLa
 
 GetAccessKeyLastUsedOutcomeCallable IAMClient::GetAccessKeyLastUsedCallable(const GetAccessKeyLastUsedRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetAccessKeyLastUsed, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetAccessKeyLastUsed( request ); } );
 }
 
 void IAMClient::GetAccessKeyLastUsedAsync(const GetAccessKeyLastUsedRequest& request, const GetAccessKeyLastUsedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetAccessKeyLastUsedAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessKeyLastUsedAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetAccessKeyLastUsedAsyncHelper(const GetAccessKeyLastUsedRequest& request, const GetAccessKeyLastUsedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1575,12 +1572,12 @@ GetAccountAuthorizationDetailsOutcome IAMClient::GetAccountAuthorizationDetails(
 
 GetAccountAuthorizationDetailsOutcomeCallable IAMClient::GetAccountAuthorizationDetailsCallable(const GetAccountAuthorizationDetailsRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetAccountAuthorizationDetails, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetAccountAuthorizationDetails( request ); } );
 }
 
 void IAMClient::GetAccountAuthorizationDetailsAsync(const GetAccountAuthorizationDetailsRequest& request, const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountAuthorizationDetailsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccountAuthorizationDetailsAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetAccountAuthorizationDetailsAsyncHelper(const GetAccountAuthorizationDetailsRequest& request, const GetAccountAuthorizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1605,12 +1602,12 @@ GetAccountPasswordPolicyOutcome IAMClient::GetAccountPasswordPolicy(const GetAcc
 
 GetAccountPasswordPolicyOutcomeCallable IAMClient::GetAccountPasswordPolicyCallable(const GetAccountPasswordPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetAccountPasswordPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetAccountPasswordPolicy( request ); } );
 }
 
 void IAMClient::GetAccountPasswordPolicyAsync(const GetAccountPasswordPolicyRequest& request, const GetAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountPasswordPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccountPasswordPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetAccountPasswordPolicyAsyncHelper(const GetAccountPasswordPolicyRequest& request, const GetAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1635,12 +1632,12 @@ GetAccountSummaryOutcome IAMClient::GetAccountSummary(const GetAccountSummaryReq
 
 GetAccountSummaryOutcomeCallable IAMClient::GetAccountSummaryCallable(const GetAccountSummaryRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetAccountSummary, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetAccountSummary( request ); } );
 }
 
 void IAMClient::GetAccountSummaryAsync(const GetAccountSummaryRequest& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetAccountSummaryAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccountSummaryAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetAccountSummaryAsyncHelper(const GetAccountSummaryRequest& request, const GetAccountSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1665,12 +1662,12 @@ GetContextKeysForCustomPolicyOutcome IAMClient::GetContextKeysForCustomPolicy(co
 
 GetContextKeysForCustomPolicyOutcomeCallable IAMClient::GetContextKeysForCustomPolicyCallable(const GetContextKeysForCustomPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetContextKeysForCustomPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetContextKeysForCustomPolicy( request ); } );
 }
 
 void IAMClient::GetContextKeysForCustomPolicyAsync(const GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetContextKeysForCustomPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetContextKeysForCustomPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetContextKeysForCustomPolicyAsyncHelper(const GetContextKeysForCustomPolicyRequest& request, const GetContextKeysForCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1695,12 +1692,12 @@ GetContextKeysForPrincipalPolicyOutcome IAMClient::GetContextKeysForPrincipalPol
 
 GetContextKeysForPrincipalPolicyOutcomeCallable IAMClient::GetContextKeysForPrincipalPolicyCallable(const GetContextKeysForPrincipalPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetContextKeysForPrincipalPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetContextKeysForPrincipalPolicy( request ); } );
 }
 
 void IAMClient::GetContextKeysForPrincipalPolicyAsync(const GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetContextKeysForPrincipalPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetContextKeysForPrincipalPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetContextKeysForPrincipalPolicyAsyncHelper(const GetContextKeysForPrincipalPolicyRequest& request, const GetContextKeysForPrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1725,12 +1722,12 @@ GetCredentialReportOutcome IAMClient::GetCredentialReport(const GetCredentialRep
 
 GetCredentialReportOutcomeCallable IAMClient::GetCredentialReportCallable(const GetCredentialReportRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetCredentialReport, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetCredentialReport( request ); } );
 }
 
 void IAMClient::GetCredentialReportAsync(const GetCredentialReportRequest& request, const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetCredentialReportAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetCredentialReportAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetCredentialReportAsyncHelper(const GetCredentialReportRequest& request, const GetCredentialReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1755,12 +1752,12 @@ GetGroupOutcome IAMClient::GetGroup(const GetGroupRequest& request) const
 
 GetGroupOutcomeCallable IAMClient::GetGroupCallable(const GetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetGroup( request ); } );
 }
 
 void IAMClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1785,12 +1782,12 @@ GetGroupPolicyOutcome IAMClient::GetGroupPolicy(const GetGroupPolicyRequest& req
 
 GetGroupPolicyOutcomeCallable IAMClient::GetGroupPolicyCallable(const GetGroupPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetGroupPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetGroupPolicy( request ); } );
 }
 
 void IAMClient::GetGroupPolicyAsync(const GetGroupPolicyRequest& request, const GetGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetGroupPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetGroupPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetGroupPolicyAsyncHelper(const GetGroupPolicyRequest& request, const GetGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1815,12 +1812,12 @@ GetInstanceProfileOutcome IAMClient::GetInstanceProfile(const GetInstanceProfile
 
 GetInstanceProfileOutcomeCallable IAMClient::GetInstanceProfileCallable(const GetInstanceProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetInstanceProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetInstanceProfile( request ); } );
 }
 
 void IAMClient::GetInstanceProfileAsync(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetInstanceProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetInstanceProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetInstanceProfileAsyncHelper(const GetInstanceProfileRequest& request, const GetInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1845,12 +1842,12 @@ GetLoginProfileOutcome IAMClient::GetLoginProfile(const GetLoginProfileRequest& 
 
 GetLoginProfileOutcomeCallable IAMClient::GetLoginProfileCallable(const GetLoginProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetLoginProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetLoginProfile( request ); } );
 }
 
 void IAMClient::GetLoginProfileAsync(const GetLoginProfileRequest& request, const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetLoginProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetLoginProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetLoginProfileAsyncHelper(const GetLoginProfileRequest& request, const GetLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1875,12 +1872,12 @@ GetOpenIDConnectProviderOutcome IAMClient::GetOpenIDConnectProvider(const GetOpe
 
 GetOpenIDConnectProviderOutcomeCallable IAMClient::GetOpenIDConnectProviderCallable(const GetOpenIDConnectProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetOpenIDConnectProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetOpenIDConnectProvider( request ); } );
 }
 
 void IAMClient::GetOpenIDConnectProviderAsync(const GetOpenIDConnectProviderRequest& request, const GetOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetOpenIDConnectProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetOpenIDConnectProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetOpenIDConnectProviderAsyncHelper(const GetOpenIDConnectProviderRequest& request, const GetOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1905,12 +1902,12 @@ GetPolicyOutcome IAMClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyOutcomeCallable IAMClient::GetPolicyCallable(const GetPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetPolicy( request ); } );
 }
 
 void IAMClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1935,12 +1932,12 @@ GetPolicyVersionOutcome IAMClient::GetPolicyVersion(const GetPolicyVersionReques
 
 GetPolicyVersionOutcomeCallable IAMClient::GetPolicyVersionCallable(const GetPolicyVersionRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetPolicyVersion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetPolicyVersion( request ); } );
 }
 
 void IAMClient::GetPolicyVersionAsync(const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetPolicyVersionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyVersionAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& request, const GetPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1965,12 +1962,12 @@ GetRoleOutcome IAMClient::GetRole(const GetRoleRequest& request) const
 
 GetRoleOutcomeCallable IAMClient::GetRoleCallable(const GetRoleRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetRole, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetRole( request ); } );
 }
 
 void IAMClient::GetRoleAsync(const GetRoleRequest& request, const GetRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetRoleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetRoleAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetRoleAsyncHelper(const GetRoleRequest& request, const GetRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1995,12 +1992,12 @@ GetRolePolicyOutcome IAMClient::GetRolePolicy(const GetRolePolicyRequest& reques
 
 GetRolePolicyOutcomeCallable IAMClient::GetRolePolicyCallable(const GetRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetRolePolicy( request ); } );
 }
 
 void IAMClient::GetRolePolicyAsync(const GetRolePolicyRequest& request, const GetRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetRolePolicyAsyncHelper(const GetRolePolicyRequest& request, const GetRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2025,12 +2022,12 @@ GetSAMLProviderOutcome IAMClient::GetSAMLProvider(const GetSAMLProviderRequest& 
 
 GetSAMLProviderOutcomeCallable IAMClient::GetSAMLProviderCallable(const GetSAMLProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetSAMLProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetSAMLProvider( request ); } );
 }
 
 void IAMClient::GetSAMLProviderAsync(const GetSAMLProviderRequest& request, const GetSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetSAMLProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetSAMLProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetSAMLProviderAsyncHelper(const GetSAMLProviderRequest& request, const GetSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2055,12 +2052,12 @@ GetSSHPublicKeyOutcome IAMClient::GetSSHPublicKey(const GetSSHPublicKeyRequest& 
 
 GetSSHPublicKeyOutcomeCallable IAMClient::GetSSHPublicKeyCallable(const GetSSHPublicKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetSSHPublicKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetSSHPublicKey( request ); } );
 }
 
 void IAMClient::GetSSHPublicKeyAsync(const GetSSHPublicKeyRequest& request, const GetSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetSSHPublicKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetSSHPublicKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetSSHPublicKeyAsyncHelper(const GetSSHPublicKeyRequest& request, const GetSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2085,12 +2082,12 @@ GetServerCertificateOutcome IAMClient::GetServerCertificate(const GetServerCerti
 
 GetServerCertificateOutcomeCallable IAMClient::GetServerCertificateCallable(const GetServerCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetServerCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetServerCertificate( request ); } );
 }
 
 void IAMClient::GetServerCertificateAsync(const GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetServerCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetServerCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetServerCertificateAsyncHelper(const GetServerCertificateRequest& request, const GetServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2115,12 +2112,12 @@ GetUserOutcome IAMClient::GetUser(const GetUserRequest& request) const
 
 GetUserOutcomeCallable IAMClient::GetUserCallable(const GetUserRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetUser, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetUser( request ); } );
 }
 
 void IAMClient::GetUserAsync(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetUserAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetUserAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetUserAsyncHelper(const GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2145,12 +2142,12 @@ GetUserPolicyOutcome IAMClient::GetUserPolicy(const GetUserPolicyRequest& reques
 
 GetUserPolicyOutcomeCallable IAMClient::GetUserPolicyCallable(const GetUserPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::GetUserPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetUserPolicy( request ); } );
 }
 
 void IAMClient::GetUserPolicyAsync(const GetUserPolicyRequest& request, const GetUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::GetUserPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetUserPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::GetUserPolicyAsyncHelper(const GetUserPolicyRequest& request, const GetUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2175,12 +2172,12 @@ ListAccessKeysOutcome IAMClient::ListAccessKeys(const ListAccessKeysRequest& req
 
 ListAccessKeysOutcomeCallable IAMClient::ListAccessKeysCallable(const ListAccessKeysRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListAccessKeys, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAccessKeys( request ); } );
 }
 
 void IAMClient::ListAccessKeysAsync(const ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListAccessKeysAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessKeysAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListAccessKeysAsyncHelper(const ListAccessKeysRequest& request, const ListAccessKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2205,12 +2202,12 @@ ListAccountAliasesOutcome IAMClient::ListAccountAliases(const ListAccountAliases
 
 ListAccountAliasesOutcomeCallable IAMClient::ListAccountAliasesCallable(const ListAccountAliasesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListAccountAliases, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAccountAliases( request ); } );
 }
 
 void IAMClient::ListAccountAliasesAsync(const ListAccountAliasesRequest& request, const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListAccountAliasesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccountAliasesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListAccountAliasesAsyncHelper(const ListAccountAliasesRequest& request, const ListAccountAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2235,12 +2232,12 @@ ListAttachedGroupPoliciesOutcome IAMClient::ListAttachedGroupPolicies(const List
 
 ListAttachedGroupPoliciesOutcomeCallable IAMClient::ListAttachedGroupPoliciesCallable(const ListAttachedGroupPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListAttachedGroupPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAttachedGroupPolicies( request ); } );
 }
 
 void IAMClient::ListAttachedGroupPoliciesAsync(const ListAttachedGroupPoliciesRequest& request, const ListAttachedGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedGroupPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedGroupPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListAttachedGroupPoliciesAsyncHelper(const ListAttachedGroupPoliciesRequest& request, const ListAttachedGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2265,12 +2262,12 @@ ListAttachedRolePoliciesOutcome IAMClient::ListAttachedRolePolicies(const ListAt
 
 ListAttachedRolePoliciesOutcomeCallable IAMClient::ListAttachedRolePoliciesCallable(const ListAttachedRolePoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListAttachedRolePolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAttachedRolePolicies( request ); } );
 }
 
 void IAMClient::ListAttachedRolePoliciesAsync(const ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedRolePoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedRolePoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListAttachedRolePoliciesAsyncHelper(const ListAttachedRolePoliciesRequest& request, const ListAttachedRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2295,12 +2292,12 @@ ListAttachedUserPoliciesOutcome IAMClient::ListAttachedUserPolicies(const ListAt
 
 ListAttachedUserPoliciesOutcomeCallable IAMClient::ListAttachedUserPoliciesCallable(const ListAttachedUserPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListAttachedUserPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAttachedUserPolicies( request ); } );
 }
 
 void IAMClient::ListAttachedUserPoliciesAsync(const ListAttachedUserPoliciesRequest& request, const ListAttachedUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListAttachedUserPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttachedUserPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListAttachedUserPoliciesAsyncHelper(const ListAttachedUserPoliciesRequest& request, const ListAttachedUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2325,12 +2322,12 @@ ListEntitiesForPolicyOutcome IAMClient::ListEntitiesForPolicy(const ListEntities
 
 ListEntitiesForPolicyOutcomeCallable IAMClient::ListEntitiesForPolicyCallable(const ListEntitiesForPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListEntitiesForPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListEntitiesForPolicy( request ); } );
 }
 
 void IAMClient::ListEntitiesForPolicyAsync(const ListEntitiesForPolicyRequest& request, const ListEntitiesForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListEntitiesForPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesForPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListEntitiesForPolicyAsyncHelper(const ListEntitiesForPolicyRequest& request, const ListEntitiesForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2355,12 +2352,12 @@ ListGroupPoliciesOutcome IAMClient::ListGroupPolicies(const ListGroupPoliciesReq
 
 ListGroupPoliciesOutcomeCallable IAMClient::ListGroupPoliciesCallable(const ListGroupPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListGroupPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListGroupPolicies( request ); } );
 }
 
 void IAMClient::ListGroupPoliciesAsync(const ListGroupPoliciesRequest& request, const ListGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListGroupPoliciesAsyncHelper(const ListGroupPoliciesRequest& request, const ListGroupPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2385,12 +2382,12 @@ ListGroupsOutcome IAMClient::ListGroups(const ListGroupsRequest& request) const
 
 ListGroupsOutcomeCallable IAMClient::ListGroupsCallable(const ListGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListGroups( request ); } );
 }
 
 void IAMClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2415,12 +2412,12 @@ ListGroupsForUserOutcome IAMClient::ListGroupsForUser(const ListGroupsForUserReq
 
 ListGroupsForUserOutcomeCallable IAMClient::ListGroupsForUserCallable(const ListGroupsForUserRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListGroupsForUser, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListGroupsForUser( request ); } );
 }
 
 void IAMClient::ListGroupsForUserAsync(const ListGroupsForUserRequest& request, const ListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListGroupsForUserAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsForUserAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListGroupsForUserAsyncHelper(const ListGroupsForUserRequest& request, const ListGroupsForUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2445,12 +2442,12 @@ ListInstanceProfilesOutcome IAMClient::ListInstanceProfiles(const ListInstancePr
 
 ListInstanceProfilesOutcomeCallable IAMClient::ListInstanceProfilesCallable(const ListInstanceProfilesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListInstanceProfiles, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListInstanceProfiles( request ); } );
 }
 
 void IAMClient::ListInstanceProfilesAsync(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListInstanceProfilesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceProfilesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListInstanceProfilesAsyncHelper(const ListInstanceProfilesRequest& request, const ListInstanceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2475,12 +2472,12 @@ ListInstanceProfilesForRoleOutcome IAMClient::ListInstanceProfilesForRole(const 
 
 ListInstanceProfilesForRoleOutcomeCallable IAMClient::ListInstanceProfilesForRoleCallable(const ListInstanceProfilesForRoleRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListInstanceProfilesForRole, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListInstanceProfilesForRole( request ); } );
 }
 
 void IAMClient::ListInstanceProfilesForRoleAsync(const ListInstanceProfilesForRoleRequest& request, const ListInstanceProfilesForRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListInstanceProfilesForRoleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListInstanceProfilesForRoleAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListInstanceProfilesForRoleAsyncHelper(const ListInstanceProfilesForRoleRequest& request, const ListInstanceProfilesForRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2505,12 +2502,12 @@ ListMFADevicesOutcome IAMClient::ListMFADevices(const ListMFADevicesRequest& req
 
 ListMFADevicesOutcomeCallable IAMClient::ListMFADevicesCallable(const ListMFADevicesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListMFADevices, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListMFADevices( request ); } );
 }
 
 void IAMClient::ListMFADevicesAsync(const ListMFADevicesRequest& request, const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListMFADevicesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListMFADevicesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListMFADevicesAsyncHelper(const ListMFADevicesRequest& request, const ListMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2535,12 +2532,12 @@ ListOpenIDConnectProvidersOutcome IAMClient::ListOpenIDConnectProviders(const Li
 
 ListOpenIDConnectProvidersOutcomeCallable IAMClient::ListOpenIDConnectProvidersCallable(const ListOpenIDConnectProvidersRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListOpenIDConnectProviders, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListOpenIDConnectProviders( request ); } );
 }
 
 void IAMClient::ListOpenIDConnectProvidersAsync(const ListOpenIDConnectProvidersRequest& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListOpenIDConnectProvidersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListOpenIDConnectProvidersAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListOpenIDConnectProvidersAsyncHelper(const ListOpenIDConnectProvidersRequest& request, const ListOpenIDConnectProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2565,12 +2562,12 @@ ListPoliciesOutcome IAMClient::ListPolicies(const ListPoliciesRequest& request) 
 
 ListPoliciesOutcomeCallable IAMClient::ListPoliciesCallable(const ListPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListPolicies( request ); } );
 }
 
 void IAMClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2595,12 +2592,12 @@ ListPolicyVersionsOutcome IAMClient::ListPolicyVersions(const ListPolicyVersions
 
 ListPolicyVersionsOutcomeCallable IAMClient::ListPolicyVersionsCallable(const ListPolicyVersionsRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListPolicyVersions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListPolicyVersions( request ); } );
 }
 
 void IAMClient::ListPolicyVersionsAsync(const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListPolicyVersionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPolicyVersionsAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2625,12 +2622,12 @@ ListRolePoliciesOutcome IAMClient::ListRolePolicies(const ListRolePoliciesReques
 
 ListRolePoliciesOutcomeCallable IAMClient::ListRolePoliciesCallable(const ListRolePoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListRolePolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRolePolicies( request ); } );
 }
 
 void IAMClient::ListRolePoliciesAsync(const ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListRolePoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRolePoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListRolePoliciesAsyncHelper(const ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2655,12 +2652,12 @@ ListRolesOutcome IAMClient::ListRoles(const ListRolesRequest& request) const
 
 ListRolesOutcomeCallable IAMClient::ListRolesCallable(const ListRolesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListRoles, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRoles( request ); } );
 }
 
 void IAMClient::ListRolesAsync(const ListRolesRequest& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListRolesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRolesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListRolesAsyncHelper(const ListRolesRequest& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2685,12 +2682,12 @@ ListSAMLProvidersOutcome IAMClient::ListSAMLProviders(const ListSAMLProvidersReq
 
 ListSAMLProvidersOutcomeCallable IAMClient::ListSAMLProvidersCallable(const ListSAMLProvidersRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListSAMLProviders, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListSAMLProviders( request ); } );
 }
 
 void IAMClient::ListSAMLProvidersAsync(const ListSAMLProvidersRequest& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListSAMLProvidersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListSAMLProvidersAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListSAMLProvidersAsyncHelper(const ListSAMLProvidersRequest& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2715,12 +2712,12 @@ ListSSHPublicKeysOutcome IAMClient::ListSSHPublicKeys(const ListSSHPublicKeysReq
 
 ListSSHPublicKeysOutcomeCallable IAMClient::ListSSHPublicKeysCallable(const ListSSHPublicKeysRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListSSHPublicKeys, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListSSHPublicKeys( request ); } );
 }
 
 void IAMClient::ListSSHPublicKeysAsync(const ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListSSHPublicKeysAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListSSHPublicKeysAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListSSHPublicKeysAsyncHelper(const ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2745,12 +2742,12 @@ ListServerCertificatesOutcome IAMClient::ListServerCertificates(const ListServer
 
 ListServerCertificatesOutcomeCallable IAMClient::ListServerCertificatesCallable(const ListServerCertificatesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListServerCertificates, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListServerCertificates( request ); } );
 }
 
 void IAMClient::ListServerCertificatesAsync(const ListServerCertificatesRequest& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListServerCertificatesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListServerCertificatesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListServerCertificatesAsyncHelper(const ListServerCertificatesRequest& request, const ListServerCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2775,12 +2772,12 @@ ListSigningCertificatesOutcome IAMClient::ListSigningCertificates(const ListSign
 
 ListSigningCertificatesOutcomeCallable IAMClient::ListSigningCertificatesCallable(const ListSigningCertificatesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListSigningCertificates, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListSigningCertificates( request ); } );
 }
 
 void IAMClient::ListSigningCertificatesAsync(const ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListSigningCertificatesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListSigningCertificatesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListSigningCertificatesAsyncHelper(const ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2805,12 +2802,12 @@ ListUserPoliciesOutcome IAMClient::ListUserPolicies(const ListUserPoliciesReques
 
 ListUserPoliciesOutcomeCallable IAMClient::ListUserPoliciesCallable(const ListUserPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListUserPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListUserPolicies( request ); } );
 }
 
 void IAMClient::ListUserPoliciesAsync(const ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListUserPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListUserPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListUserPoliciesAsyncHelper(const ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2835,12 +2832,12 @@ ListUsersOutcome IAMClient::ListUsers(const ListUsersRequest& request) const
 
 ListUsersOutcomeCallable IAMClient::ListUsersCallable(const ListUsersRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListUsers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListUsers( request ); } );
 }
 
 void IAMClient::ListUsersAsync(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListUsersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListUsersAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2865,12 +2862,12 @@ ListVirtualMFADevicesOutcome IAMClient::ListVirtualMFADevices(const ListVirtualM
 
 ListVirtualMFADevicesOutcomeCallable IAMClient::ListVirtualMFADevicesCallable(const ListVirtualMFADevicesRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ListVirtualMFADevices, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListVirtualMFADevices( request ); } );
 }
 
 void IAMClient::ListVirtualMFADevicesAsync(const ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ListVirtualMFADevicesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualMFADevicesAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ListVirtualMFADevicesAsyncHelper(const ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2895,12 +2892,12 @@ PutGroupPolicyOutcome IAMClient::PutGroupPolicy(const PutGroupPolicyRequest& req
 
 PutGroupPolicyOutcomeCallable IAMClient::PutGroupPolicyCallable(const PutGroupPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::PutGroupPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutGroupPolicy( request ); } );
 }
 
 void IAMClient::PutGroupPolicyAsync(const PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::PutGroupPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutGroupPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::PutGroupPolicyAsyncHelper(const PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2925,12 +2922,12 @@ PutRolePolicyOutcome IAMClient::PutRolePolicy(const PutRolePolicyRequest& reques
 
 PutRolePolicyOutcomeCallable IAMClient::PutRolePolicyCallable(const PutRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::PutRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutRolePolicy( request ); } );
 }
 
 void IAMClient::PutRolePolicyAsync(const PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::PutRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::PutRolePolicyAsyncHelper(const PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2955,12 +2952,12 @@ PutUserPolicyOutcome IAMClient::PutUserPolicy(const PutUserPolicyRequest& reques
 
 PutUserPolicyOutcomeCallable IAMClient::PutUserPolicyCallable(const PutUserPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::PutUserPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutUserPolicy( request ); } );
 }
 
 void IAMClient::PutUserPolicyAsync(const PutUserPolicyRequest& request, const PutUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::PutUserPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutUserPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::PutUserPolicyAsyncHelper(const PutUserPolicyRequest& request, const PutUserPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2985,12 +2982,12 @@ RemoveClientIDFromOpenIDConnectProviderOutcome IAMClient::RemoveClientIDFromOpen
 
 RemoveClientIDFromOpenIDConnectProviderOutcomeCallable IAMClient::RemoveClientIDFromOpenIDConnectProviderCallable(const RemoveClientIDFromOpenIDConnectProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::RemoveClientIDFromOpenIDConnectProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveClientIDFromOpenIDConnectProvider( request ); } );
 }
 
 void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsync(const RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveClientIDFromOpenIDConnectProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::RemoveClientIDFromOpenIDConnectProviderAsyncHelper(const RemoveClientIDFromOpenIDConnectProviderRequest& request, const RemoveClientIDFromOpenIDConnectProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3015,12 +3012,12 @@ RemoveRoleFromInstanceProfileOutcome IAMClient::RemoveRoleFromInstanceProfile(co
 
 RemoveRoleFromInstanceProfileOutcomeCallable IAMClient::RemoveRoleFromInstanceProfileCallable(const RemoveRoleFromInstanceProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::RemoveRoleFromInstanceProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveRoleFromInstanceProfile( request ); } );
 }
 
 void IAMClient::RemoveRoleFromInstanceProfileAsync(const RemoveRoleFromInstanceProfileRequest& request, const RemoveRoleFromInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::RemoveRoleFromInstanceProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveRoleFromInstanceProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::RemoveRoleFromInstanceProfileAsyncHelper(const RemoveRoleFromInstanceProfileRequest& request, const RemoveRoleFromInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3045,12 +3042,12 @@ RemoveUserFromGroupOutcome IAMClient::RemoveUserFromGroup(const RemoveUserFromGr
 
 RemoveUserFromGroupOutcomeCallable IAMClient::RemoveUserFromGroupCallable(const RemoveUserFromGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::RemoveUserFromGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveUserFromGroup( request ); } );
 }
 
 void IAMClient::RemoveUserFromGroupAsync(const RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::RemoveUserFromGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveUserFromGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::RemoveUserFromGroupAsyncHelper(const RemoveUserFromGroupRequest& request, const RemoveUserFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3075,12 +3072,12 @@ ResyncMFADeviceOutcome IAMClient::ResyncMFADevice(const ResyncMFADeviceRequest& 
 
 ResyncMFADeviceOutcomeCallable IAMClient::ResyncMFADeviceCallable(const ResyncMFADeviceRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::ResyncMFADevice, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResyncMFADevice( request ); } );
 }
 
 void IAMClient::ResyncMFADeviceAsync(const ResyncMFADeviceRequest& request, const ResyncMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::ResyncMFADeviceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResyncMFADeviceAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::ResyncMFADeviceAsyncHelper(const ResyncMFADeviceRequest& request, const ResyncMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3105,12 +3102,12 @@ SetDefaultPolicyVersionOutcome IAMClient::SetDefaultPolicyVersion(const SetDefau
 
 SetDefaultPolicyVersionOutcomeCallable IAMClient::SetDefaultPolicyVersionCallable(const SetDefaultPolicyVersionRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::SetDefaultPolicyVersion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetDefaultPolicyVersion( request ); } );
 }
 
 void IAMClient::SetDefaultPolicyVersionAsync(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::SetDefaultPolicyVersionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetDefaultPolicyVersionAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3135,12 +3132,12 @@ SimulateCustomPolicyOutcome IAMClient::SimulateCustomPolicy(const SimulateCustom
 
 SimulateCustomPolicyOutcomeCallable IAMClient::SimulateCustomPolicyCallable(const SimulateCustomPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::SimulateCustomPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SimulateCustomPolicy( request ); } );
 }
 
 void IAMClient::SimulateCustomPolicyAsync(const SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::SimulateCustomPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SimulateCustomPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::SimulateCustomPolicyAsyncHelper(const SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3165,12 +3162,12 @@ SimulatePrincipalPolicyOutcome IAMClient::SimulatePrincipalPolicy(const Simulate
 
 SimulatePrincipalPolicyOutcomeCallable IAMClient::SimulatePrincipalPolicyCallable(const SimulatePrincipalPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::SimulatePrincipalPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SimulatePrincipalPolicy( request ); } );
 }
 
 void IAMClient::SimulatePrincipalPolicyAsync(const SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::SimulatePrincipalPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SimulatePrincipalPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::SimulatePrincipalPolicyAsyncHelper(const SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3195,12 +3192,12 @@ UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& 
 
 UpdateAccessKeyOutcomeCallable IAMClient::UpdateAccessKeyCallable(const UpdateAccessKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateAccessKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAccessKey( request ); } );
 }
 
 void IAMClient::UpdateAccessKeyAsync(const UpdateAccessKeyRequest& request, const UpdateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAccessKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateAccessKeyAsyncHelper(const UpdateAccessKeyRequest& request, const UpdateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3225,12 +3222,12 @@ UpdateAccountPasswordPolicyOutcome IAMClient::UpdateAccountPasswordPolicy(const 
 
 UpdateAccountPasswordPolicyOutcomeCallable IAMClient::UpdateAccountPasswordPolicyCallable(const UpdateAccountPasswordPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateAccountPasswordPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAccountPasswordPolicy( request ); } );
 }
 
 void IAMClient::UpdateAccountPasswordPolicyAsync(const UpdateAccountPasswordPolicyRequest& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAccountPasswordPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccountPasswordPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateAccountPasswordPolicyAsyncHelper(const UpdateAccountPasswordPolicyRequest& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3255,12 +3252,12 @@ UpdateAssumeRolePolicyOutcome IAMClient::UpdateAssumeRolePolicy(const UpdateAssu
 
 UpdateAssumeRolePolicyOutcomeCallable IAMClient::UpdateAssumeRolePolicyCallable(const UpdateAssumeRolePolicyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateAssumeRolePolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAssumeRolePolicy( request ); } );
 }
 
 void IAMClient::UpdateAssumeRolePolicyAsync(const UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateAssumeRolePolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssumeRolePolicyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateAssumeRolePolicyAsyncHelper(const UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3285,12 +3282,12 @@ UpdateGroupOutcome IAMClient::UpdateGroup(const UpdateGroupRequest& request) con
 
 UpdateGroupOutcomeCallable IAMClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateGroup( request ); } );
 }
 
 void IAMClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGroupAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3315,12 +3312,12 @@ UpdateLoginProfileOutcome IAMClient::UpdateLoginProfile(const UpdateLoginProfile
 
 UpdateLoginProfileOutcomeCallable IAMClient::UpdateLoginProfileCallable(const UpdateLoginProfileRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateLoginProfile, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateLoginProfile( request ); } );
 }
 
 void IAMClient::UpdateLoginProfileAsync(const UpdateLoginProfileRequest& request, const UpdateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateLoginProfileAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLoginProfileAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateLoginProfileAsyncHelper(const UpdateLoginProfileRequest& request, const UpdateLoginProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3345,12 +3342,12 @@ UpdateOpenIDConnectProviderThumbprintOutcome IAMClient::UpdateOpenIDConnectProvi
 
 UpdateOpenIDConnectProviderThumbprintOutcomeCallable IAMClient::UpdateOpenIDConnectProviderThumbprintCallable(const UpdateOpenIDConnectProviderThumbprintRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateOpenIDConnectProviderThumbprint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateOpenIDConnectProviderThumbprint( request ); } );
 }
 
 void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOpenIDConnectProviderThumbprintAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3375,12 +3372,12 @@ UpdateSAMLProviderOutcome IAMClient::UpdateSAMLProvider(const UpdateSAMLProvider
 
 UpdateSAMLProviderOutcomeCallable IAMClient::UpdateSAMLProviderCallable(const UpdateSAMLProviderRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateSAMLProvider, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateSAMLProvider( request ); } );
 }
 
 void IAMClient::UpdateSAMLProviderAsync(const UpdateSAMLProviderRequest& request, const UpdateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateSAMLProviderAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSAMLProviderAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateSAMLProviderAsyncHelper(const UpdateSAMLProviderRequest& request, const UpdateSAMLProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3405,12 +3402,12 @@ UpdateSSHPublicKeyOutcome IAMClient::UpdateSSHPublicKey(const UpdateSSHPublicKey
 
 UpdateSSHPublicKeyOutcomeCallable IAMClient::UpdateSSHPublicKeyCallable(const UpdateSSHPublicKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateSSHPublicKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateSSHPublicKey( request ); } );
 }
 
 void IAMClient::UpdateSSHPublicKeyAsync(const UpdateSSHPublicKeyRequest& request, const UpdateSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateSSHPublicKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSSHPublicKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateSSHPublicKeyAsyncHelper(const UpdateSSHPublicKeyRequest& request, const UpdateSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3435,12 +3432,12 @@ UpdateServerCertificateOutcome IAMClient::UpdateServerCertificate(const UpdateSe
 
 UpdateServerCertificateOutcomeCallable IAMClient::UpdateServerCertificateCallable(const UpdateServerCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateServerCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateServerCertificate( request ); } );
 }
 
 void IAMClient::UpdateServerCertificateAsync(const UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateServerCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateServerCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateServerCertificateAsyncHelper(const UpdateServerCertificateRequest& request, const UpdateServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3465,12 +3462,12 @@ UpdateSigningCertificateOutcome IAMClient::UpdateSigningCertificate(const Update
 
 UpdateSigningCertificateOutcomeCallable IAMClient::UpdateSigningCertificateCallable(const UpdateSigningCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateSigningCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateSigningCertificate( request ); } );
 }
 
 void IAMClient::UpdateSigningCertificateAsync(const UpdateSigningCertificateRequest& request, const UpdateSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateSigningCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSigningCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateSigningCertificateAsyncHelper(const UpdateSigningCertificateRequest& request, const UpdateSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3495,12 +3492,12 @@ UpdateUserOutcome IAMClient::UpdateUser(const UpdateUserRequest& request) const
 
 UpdateUserOutcomeCallable IAMClient::UpdateUserCallable(const UpdateUserRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UpdateUser, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateUser( request ); } );
 }
 
 void IAMClient::UpdateUserAsync(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UpdateUserAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UpdateUserAsyncHelper(const UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3525,12 +3522,12 @@ UploadSSHPublicKeyOutcome IAMClient::UploadSSHPublicKey(const UploadSSHPublicKey
 
 UploadSSHPublicKeyOutcomeCallable IAMClient::UploadSSHPublicKeyCallable(const UploadSSHPublicKeyRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UploadSSHPublicKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadSSHPublicKey( request ); } );
 }
 
 void IAMClient::UploadSSHPublicKeyAsync(const UploadSSHPublicKeyRequest& request, const UploadSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UploadSSHPublicKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadSSHPublicKeyAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UploadSSHPublicKeyAsyncHelper(const UploadSSHPublicKeyRequest& request, const UploadSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3555,12 +3552,12 @@ UploadServerCertificateOutcome IAMClient::UploadServerCertificate(const UploadSe
 
 UploadServerCertificateOutcomeCallable IAMClient::UploadServerCertificateCallable(const UploadServerCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UploadServerCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadServerCertificate( request ); } );
 }
 
 void IAMClient::UploadServerCertificateAsync(const UploadServerCertificateRequest& request, const UploadServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UploadServerCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadServerCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UploadServerCertificateAsyncHelper(const UploadServerCertificateRequest& request, const UploadServerCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -3585,12 +3582,12 @@ UploadSigningCertificateOutcome IAMClient::UploadSigningCertificate(const Upload
 
 UploadSigningCertificateOutcomeCallable IAMClient::UploadSigningCertificateCallable(const UploadSigningCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &IAMClient::UploadSigningCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadSigningCertificate( request ); } );
 }
 
 void IAMClient::UploadSigningCertificateAsync(const UploadSigningCertificateRequest& request, const UploadSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&IAMClient::UploadSigningCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadSigningCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertificateRequest& request, const UploadSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -74,80 +74,80 @@ namespace Model
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
      * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is an integer representing the number of seconds since the Unix
-     * epoch (Unix time).</p>
+     * end time. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
      * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is an integer representing the number of seconds since the Unix
-     * epoch (Unix time).</p>
+     * end time. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
      * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is an integer representing the number of seconds since the Unix
-     * epoch (Unix time).</p>
+     * end time. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
      * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is an integer representing the number of seconds since the Unix
-     * epoch (Unix time).</p>
+     * end time. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline DescribeFleetEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Earliest date to retrieve event logs for. If no start time is specified, this
      * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is an integer representing the number of seconds since the Unix
-     * epoch (Unix time).</p>
+     * end time. Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
-     * Format is an integer representing the number of seconds since the Unix epoch
-     * (Unix time).</p>
+     * Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
-     * Format is an integer representing the number of seconds since the Unix epoch
-     * (Unix time).</p>
+     * Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
-     * Format is an integer representing the number of seconds since the Unix epoch
-     * (Unix time).</p>
+     * Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
-     * Format is an integer representing the number of seconds since the Unix epoch
-     * (Unix time).</p>
+     * Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline DescribeFleetEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>Most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
-     * Format is an integer representing the number of seconds since the Unix epoch
-     * (Unix time).</p>
+     * Format is a number expressed in Unix time as milliseconds (ex:
+     * "1469498468.057".</p>
      */
     inline DescribeFleetEventsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 

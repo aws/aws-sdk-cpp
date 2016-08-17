@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -192,65 +192,65 @@ namespace Model
     inline PolicyAttributeTypeDescription& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline const Aws::String& GetCardinality() const{ return m_cardinality; }
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline void SetCardinality(const Aws::String& value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline void SetCardinality(Aws::String&& value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline void SetCardinality(const char* value) { m_cardinalityHasBeenSet = true; m_cardinality.assign(value); }
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline PolicyAttributeTypeDescription& WithCardinality(const Aws::String& value) { SetCardinality(value); return *this;}
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline PolicyAttributeTypeDescription& WithCardinality(Aws::String&& value) { SetCardinality(value); return *this;}
 
     /**
-     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>ONE(1) :
-     * Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can be
-     * supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values are
-     * allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</li>
-     * </ul>
+     * <p>The cardinality of the attribute.</p> <p>Valid values:</p> <ul> <li>
+     * <p>ONE(1) : Single value required</p> </li> <li> <p>ZERO_OR_ONE(0..1) : Up to
+     * one value is allowed</p> </li> <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple
+     * values are allowed</p> </li> <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple
+     * values are allowed</p> </li> </ul>
      */
     inline PolicyAttributeTypeDescription& WithCardinality(const char* value) { SetCardinality(value); return *this;}
 

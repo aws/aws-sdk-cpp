@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -46,72 +46,72 @@ namespace Model
     ListClustersResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline const Aws::Vector<ClusterSummary>& GetClusters() const{ return m_clusters; }
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline void SetClusters(const Aws::Vector<ClusterSummary>& value) { m_clusters = value; }
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline void SetClusters(Aws::Vector<ClusterSummary>&& value) { m_clusters = value; }
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline ListClustersResult& WithClusters(const Aws::Vector<ClusterSummary>& value) { SetClusters(value); return *this;}
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline ListClustersResult& WithClusters(Aws::Vector<ClusterSummary>&& value) { SetClusters(value); return *this;}
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline ListClustersResult& AddClusters(const ClusterSummary& value) { m_clusters.push_back(value); return *this; }
 
     /**
-     * <p>The list of clusters for the account based on the given filters. </p>
+     * <p>The list of clusters for the account based on the given filters.</p>
      */
     inline ListClustersResult& AddClusters(ClusterSummary&& value) { m_clusters.push_back(value); return *this; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline ListClustersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline ListClustersResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve. </p>
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline ListClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 

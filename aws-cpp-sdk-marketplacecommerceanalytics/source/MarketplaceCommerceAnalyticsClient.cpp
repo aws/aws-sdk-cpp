@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,6 +27,7 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpoint.h>
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrorMarshaller.h>
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetRequest.h>
+#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -43,8 +44,7 @@ static const char* ALLOCATION_TAG = "MarketplaceCommerceAnalyticsClient";
 MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -54,8 +54,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const Cli
 MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,8 +65,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const std
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<MarketplaceCommerceAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -83,9 +81,9 @@ void MarketplaceCommerceAnalyticsClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << MarketplaceCommerceAnalyticsEndpoint::ForRegion(config.region);
+    ss << MarketplaceCommerceAnalyticsEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -113,16 +111,47 @@ GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const
 
 GenerateDataSetOutcomeCallable MarketplaceCommerceAnalyticsClient::GenerateDataSetCallable(const GenerateDataSetRequest& request) const
 {
-  return std::async(std::launch::async, &MarketplaceCommerceAnalyticsClient::GenerateDataSet, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GenerateDataSet(request); } );
 }
 
 void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsync(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateDataSetAsyncHelper( request, handler, context ); } );
 }
 
 void MarketplaceCommerceAnalyticsClient::GenerateDataSetAsyncHelper(const GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GenerateDataSet(request), context);
+}
+
+StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartSupportDataExportOutcome(StartSupportDataExportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSupportDataExportOutcome(outcome.GetError());
+  }
+}
+
+StartSupportDataExportOutcomeCallable MarketplaceCommerceAnalyticsClient::StartSupportDataExportCallable(const StartSupportDataExportRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StartSupportDataExport(request); } );
+}
+
+void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsync(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSupportDataExportAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceCommerceAnalyticsClient::StartSupportDataExportAsyncHelper(const StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSupportDataExport(request), context);
 }
 

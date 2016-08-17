@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,7 +32,10 @@ LambdaConfigType::LambdaConfigType() :
     m_customMessageHasBeenSet(false),
     m_postConfirmationHasBeenSet(false),
     m_preAuthenticationHasBeenSet(false),
-    m_postAuthenticationHasBeenSet(false)
+    m_postAuthenticationHasBeenSet(false),
+    m_defineAuthChallengeHasBeenSet(false),
+    m_createAuthChallengeHasBeenSet(false),
+    m_verifyAuthChallengeResponseHasBeenSet(false)
 {
 }
 
@@ -41,7 +44,10 @@ LambdaConfigType::LambdaConfigType(const JsonValue& jsonValue) :
     m_customMessageHasBeenSet(false),
     m_postConfirmationHasBeenSet(false),
     m_preAuthenticationHasBeenSet(false),
-    m_postAuthenticationHasBeenSet(false)
+    m_postAuthenticationHasBeenSet(false),
+    m_defineAuthChallengeHasBeenSet(false),
+    m_createAuthChallengeHasBeenSet(false),
+    m_verifyAuthChallengeResponseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +89,27 @@ LambdaConfigType& LambdaConfigType::operator =(const JsonValue& jsonValue)
     m_postAuthenticationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefineAuthChallenge"))
+  {
+    m_defineAuthChallenge = jsonValue.GetString("DefineAuthChallenge");
+
+    m_defineAuthChallengeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateAuthChallenge"))
+  {
+    m_createAuthChallenge = jsonValue.GetString("CreateAuthChallenge");
+
+    m_createAuthChallengeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VerifyAuthChallengeResponse"))
+  {
+    m_verifyAuthChallengeResponse = jsonValue.GetString("VerifyAuthChallengeResponse");
+
+    m_verifyAuthChallengeResponseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +144,24 @@ JsonValue LambdaConfigType::Jsonize() const
   if(m_postAuthenticationHasBeenSet)
   {
    payload.WithString("PostAuthentication", m_postAuthentication);
+
+  }
+
+  if(m_defineAuthChallengeHasBeenSet)
+  {
+   payload.WithString("DefineAuthChallenge", m_defineAuthChallenge);
+
+  }
+
+  if(m_createAuthChallengeHasBeenSet)
+  {
+   payload.WithString("CreateAuthChallenge", m_createAuthChallenge);
+
+  }
+
+  if(m_verifyAuthChallengeResponseHasBeenSet)
+  {
+   payload.WithString("VerifyAuthChallengeResponse", m_verifyAuthChallengeResponse);
 
   }
 

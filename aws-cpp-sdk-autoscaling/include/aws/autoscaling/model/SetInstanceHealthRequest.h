@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for SetInstanceHealth.</p>
    */
   class AWS_AUTOSCALING_API SetInstanceHealthRequest : public AutoScalingRequest
   {
@@ -68,58 +69,58 @@ namespace Model
     inline SetInstanceHealthRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline SetInstanceHealthRequest& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline SetInstanceHealthRequest& WithHealthStatus(Aws::String&& value) { SetHealthStatus(value); return *this;}
 
     /**
-     * <p> The health status of the instance. Set to <code>Healthy</code> if you want
+     * <p>The health status of the instance. Set to <code>Healthy</code> if you want
      * the instance to remain in service. Set to <code>Unhealthy</code> if you want the
      * instance to be out of service. Auto Scaling will terminate and replace the
-     * unhealthy instance. </p>
+     * unhealthy instance.</p>
      */
     inline SetInstanceHealthRequest& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 

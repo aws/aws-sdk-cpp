@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -78,19 +78,19 @@ namespace Model
     inline FleetUtilization& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * <p>Number of server processes in an <code>ACTIVE</code> status currently running
      * across all instances in the fleet</p>
      */
     inline int GetActiveServerProcessCount() const{ return m_activeServerProcessCount; }
 
     /**
-     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * <p>Number of server processes in an <code>ACTIVE</code> status currently running
      * across all instances in the fleet</p>
      */
     inline void SetActiveServerProcessCount(int value) { m_activeServerProcessCountHasBeenSet = true; m_activeServerProcessCount = value; }
 
     /**
-     * <p>Number of server processes in an <code>ACTIVE</code> state currently running
+     * <p>Number of server processes in an <code>ACTIVE</code> status currently running
      * across all instances in the fleet</p>
      */
     inline FleetUtilization& WithActiveServerProcessCount(int value) { SetActiveServerProcessCount(value); return *this;}

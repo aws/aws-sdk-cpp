@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateAppCookieStickinessPolicy.</p>
    */
   class AWS_ELASTICLOADBALANCING_API CreateAppCookieStickinessPolicyRequest : public ElasticLoadBalancingRequest
   {

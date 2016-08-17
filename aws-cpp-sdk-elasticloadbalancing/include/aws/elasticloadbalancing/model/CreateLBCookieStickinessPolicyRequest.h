@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for CreateLBCookieStickinessPolicy.</p>
    */
   class AWS_ELASTICLOADBALANCING_API CreateLBCookieStickinessPolicyRequest : public ElasticLoadBalancingRequest
   {
@@ -118,22 +119,25 @@ namespace Model
 
     /**
      * <p>The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for the
-     * duration of the browser session.</p>
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
      */
     inline long long GetCookieExpirationPeriod() const{ return m_cookieExpirationPeriod; }
 
     /**
      * <p>The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for the
-     * duration of the browser session.</p>
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
      */
     inline void SetCookieExpirationPeriod(long long value) { m_cookieExpirationPeriodHasBeenSet = true; m_cookieExpirationPeriod = value; }
 
     /**
      * <p>The time period, in seconds, after which the cookie should be considered
-     * stale. If you do not specify this parameter, the sticky session lasts for the
-     * duration of the browser session.</p>
+     * stale. If you do not specify this parameter, the default value is 0, which
+     * indicates that the sticky session should last for the duration of the browser
+     * session.</p>
      */
     inline CreateLBCookieStickinessPolicyRequest& WithCookieExpirationPeriod(long long value) { SetCookieExpirationPeriod(value); return *this;}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -184,122 +184,122 @@ namespace Model
     inline PlayerSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline PlayerSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline PlayerSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline PlayerSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline PlayerSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Current status of the player session. Possible player session states include
-     * the following: <ul><li><b>RESERVED</b> – The player session request has been
-     * received, but the player has not yet connected to the server process and/or been
-     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
-     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
-     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
-     * was received, but the player did not connect and/or was not validated within the
-     * time-out limit (60 seconds).</li></ul></p>
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul><li><b>RESERVED</b> – The player session request
+     * has been received, but the player has not yet connected to the server process
+     * and/or been validated. </li><li><b>ACTIVE</b> – The player has been validated by
+     * the server process and is currently connected.</li><li><b>COMPLETED</b> – The
+     * player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+     * request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).</li></ul>
      */
     inline const PlayerSessionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include
-     * the following: <ul><li><b>RESERVED</b> – The player session request has been
-     * received, but the player has not yet connected to the server process and/or been
-     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
-     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
-     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
-     * was received, but the player did not connect and/or was not validated within the
-     * time-out limit (60 seconds).</li></ul></p>
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul><li><b>RESERVED</b> – The player session request
+     * has been received, but the player has not yet connected to the server process
+     * and/or been validated. </li><li><b>ACTIVE</b> – The player has been validated by
+     * the server process and is currently connected.</li><li><b>COMPLETED</b> – The
+     * player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+     * request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).</li></ul>
      */
     inline void SetStatus(const PlayerSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include
-     * the following: <ul><li><b>RESERVED</b> – The player session request has been
-     * received, but the player has not yet connected to the server process and/or been
-     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
-     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
-     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
-     * was received, but the player did not connect and/or was not validated within the
-     * time-out limit (60 seconds).</li></ul></p>
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul><li><b>RESERVED</b> – The player session request
+     * has been received, but the player has not yet connected to the server process
+     * and/or been validated. </li><li><b>ACTIVE</b> – The player has been validated by
+     * the server process and is currently connected.</li><li><b>COMPLETED</b> – The
+     * player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+     * request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).</li></ul>
      */
     inline void SetStatus(PlayerSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the player session. Possible player session states include
-     * the following: <ul><li><b>RESERVED</b> – The player session request has been
-     * received, but the player has not yet connected to the server process and/or been
-     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
-     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
-     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
-     * was received, but the player did not connect and/or was not validated within the
-     * time-out limit (60 seconds).</li></ul></p>
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul><li><b>RESERVED</b> – The player session request
+     * has been received, but the player has not yet connected to the server process
+     * and/or been validated. </li><li><b>ACTIVE</b> – The player has been validated by
+     * the server process and is currently connected.</li><li><b>COMPLETED</b> – The
+     * player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+     * request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).</li></ul>
      */
     inline PlayerSession& WithStatus(const PlayerSessionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the player session. Possible player session states include
-     * the following: <ul><li><b>RESERVED</b> – The player session request has been
-     * received, but the player has not yet connected to the server process and/or been
-     * validated. </li><li><b>ACTIVE</b> – The player has been validated by the server
-     * process and is currently connected.</li><li><b>COMPLETED</b> – The player
-     * connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session request
-     * was received, but the player did not connect and/or was not validated within the
-     * time-out limit (60 seconds).</li></ul></p>
+     * <p>Current status of the player session.</p> <p>Possible player session statuses
+     * include the following:</p> <ul><li><b>RESERVED</b> – The player session request
+     * has been received, but the player has not yet connected to the server process
+     * and/or been validated. </li><li><b>ACTIVE</b> – The player has been validated by
+     * the server process and is currently connected.</li><li><b>COMPLETED</b> – The
+     * player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
+     * request was received, but the player did not connect and/or was not validated
+     * within the time-out limit (60 seconds).</li></ul>
      */
     inline PlayerSession& WithStatus(PlayerSessionStatus&& value) { SetStatus(value); return *this;}
 

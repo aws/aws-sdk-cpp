@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,6 +32,9 @@ namespace ElasticLoadBalancing
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DeleteLoadBalancerListeners.</p>
+   */
   class AWS_ELASTICLOADBALANCING_API DeleteLoadBalancerListenersResult
   {
   public:

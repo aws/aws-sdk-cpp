@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -124,6 +124,24 @@ namespace Model
      */
     inline RegisterCACertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
 
+    /**
+     * <p>Allows this CA certificate to be used for auto registration of device
+     * certificates.</p>
+     */
+    inline bool GetAllowAutoRegistration() const{ return m_allowAutoRegistration; }
+
+    /**
+     * <p>Allows this CA certificate to be used for auto registration of device
+     * certificates.</p>
+     */
+    inline void SetAllowAutoRegistration(bool value) { m_allowAutoRegistrationHasBeenSet = true; m_allowAutoRegistration = value; }
+
+    /**
+     * <p>Allows this CA certificate to be used for auto registration of device
+     * certificates.</p>
+     */
+    inline RegisterCACertificateRequest& WithAllowAutoRegistration(bool value) { SetAllowAutoRegistration(value); return *this;}
+
   private:
     Aws::String m_caCertificate;
     bool m_caCertificateHasBeenSet;
@@ -131,6 +149,8 @@ namespace Model
     bool m_verificationCertificateHasBeenSet;
     bool m_setAsActive;
     bool m_setAsActiveHasBeenSet;
+    bool m_allowAutoRegistration;
+    bool m_allowAutoRegistrationHasBeenSet;
   };
 
 } // namespace Model

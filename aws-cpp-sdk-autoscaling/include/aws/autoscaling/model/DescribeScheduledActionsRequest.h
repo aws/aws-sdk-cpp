@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DescribeScheduledActions.</p>
    */
   class AWS_AUTOSCALING_API DescribeScheduledActionsRequest : public AutoScalingRequest
   {
@@ -70,8 +71,8 @@ namespace Model
     inline DescribeScheduledActionsRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -80,8 +81,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -90,8 +91,8 @@ namespace Model
     inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -100,8 +101,8 @@ namespace Model
     inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -110,8 +111,8 @@ namespace Model
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -120,8 +121,8 @@ namespace Model
     inline DescribeScheduledActionsRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(value); return *this;}
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -130,8 +131,8 @@ namespace Model
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned
@@ -140,8 +141,8 @@ namespace Model
     inline DescribeScheduledActionsRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
 
     /**
-     * <p>Describes one or more scheduled actions. If you omit this list, the call
-     * describes all scheduled actions. If you specify an unknown scheduled action it
+     * <p>Describes one or more scheduled actions. If you omit this parameter, all
+     * scheduled actions are described. If you specify an unknown scheduled action, it
      * is ignored with no error.</p> <p>You can describe up to a maximum of 50
      * instances with a single call. If there are more items to return, the call
      * returns a token. To get the next set of items, repeat the call with the returned

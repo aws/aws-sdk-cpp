@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API ListVersionsByFunctionRequest : public LambdaRequest
   {
@@ -172,23 +173,20 @@ namespace Model
     inline ListVersionsByFunctionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.
-     * </p>
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
+     * versions to return in response. This parameter value must be greater than 0.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p> Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.
-     * </p>
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
+     * versions to return in response. This parameter value must be greater than 0.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p> Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.
-     * </p>
+     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
+     * versions to return in response. This parameter value must be greater than 0.</p>
      */
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

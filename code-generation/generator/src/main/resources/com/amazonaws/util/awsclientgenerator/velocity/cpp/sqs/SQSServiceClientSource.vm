@@ -68,12 +68,12 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const
 {
-  return std::async(std::launch::async, &${className}::${operation.name}, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->${operation.name}(request); });
 }
 
 void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&${className}::${operation.name}AsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->${operation.name}AsyncHelper(request, handler, context); } );
 }
 
 void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

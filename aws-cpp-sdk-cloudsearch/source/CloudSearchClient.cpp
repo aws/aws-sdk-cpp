@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -67,8 +67,7 @@ static const char* ALLOCATION_TAG = "CloudSearchClient";
 CloudSearchClient::CloudSearchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -78,8 +77,7 @@ CloudSearchClient::CloudSearchClient(const Client::ClientConfiguration& clientCo
 CloudSearchClient::CloudSearchClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -90,8 +88,7 @@ CloudSearchClient::CloudSearchClient(const std::shared_ptr<AWSCredentialsProvide
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -107,9 +104,9 @@ void CloudSearchClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << CloudSearchEndpoint::ForRegion(config.region);
+    ss << CloudSearchEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -136,12 +133,12 @@ BuildSuggestersOutcome CloudSearchClient::BuildSuggesters(const BuildSuggestersR
 
 BuildSuggestersOutcomeCallable CloudSearchClient::BuildSuggestersCallable(const BuildSuggestersRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::BuildSuggesters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->BuildSuggesters( request ); } );
 }
 
 void CloudSearchClient::BuildSuggestersAsync(const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::BuildSuggestersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->BuildSuggestersAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::BuildSuggestersAsyncHelper(const BuildSuggestersRequest& request, const BuildSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -166,12 +163,12 @@ CreateDomainOutcome CloudSearchClient::CreateDomain(const CreateDomainRequest& r
 
 CreateDomainOutcomeCallable CloudSearchClient::CreateDomainCallable(const CreateDomainRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::CreateDomain, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDomain( request ); } );
 }
 
 void CloudSearchClient::CreateDomainAsync(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::CreateDomainAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::CreateDomainAsyncHelper(const CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -196,12 +193,12 @@ DefineAnalysisSchemeOutcome CloudSearchClient::DefineAnalysisScheme(const Define
 
 DefineAnalysisSchemeOutcomeCallable CloudSearchClient::DefineAnalysisSchemeCallable(const DefineAnalysisSchemeRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DefineAnalysisScheme, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DefineAnalysisScheme( request ); } );
 }
 
 void CloudSearchClient::DefineAnalysisSchemeAsync(const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DefineAnalysisSchemeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DefineAnalysisSchemeAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DefineAnalysisSchemeAsyncHelper(const DefineAnalysisSchemeRequest& request, const DefineAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -226,12 +223,12 @@ DefineExpressionOutcome CloudSearchClient::DefineExpression(const DefineExpressi
 
 DefineExpressionOutcomeCallable CloudSearchClient::DefineExpressionCallable(const DefineExpressionRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DefineExpression, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DefineExpression( request ); } );
 }
 
 void CloudSearchClient::DefineExpressionAsync(const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DefineExpressionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DefineExpressionAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DefineExpressionAsyncHelper(const DefineExpressionRequest& request, const DefineExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -256,12 +253,12 @@ DefineIndexFieldOutcome CloudSearchClient::DefineIndexField(const DefineIndexFie
 
 DefineIndexFieldOutcomeCallable CloudSearchClient::DefineIndexFieldCallable(const DefineIndexFieldRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DefineIndexField, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DefineIndexField( request ); } );
 }
 
 void CloudSearchClient::DefineIndexFieldAsync(const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DefineIndexFieldAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DefineIndexFieldAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DefineIndexFieldAsyncHelper(const DefineIndexFieldRequest& request, const DefineIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -286,12 +283,12 @@ DefineSuggesterOutcome CloudSearchClient::DefineSuggester(const DefineSuggesterR
 
 DefineSuggesterOutcomeCallable CloudSearchClient::DefineSuggesterCallable(const DefineSuggesterRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DefineSuggester, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DefineSuggester( request ); } );
 }
 
 void CloudSearchClient::DefineSuggesterAsync(const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DefineSuggesterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DefineSuggesterAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DefineSuggesterAsyncHelper(const DefineSuggesterRequest& request, const DefineSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -316,12 +313,12 @@ DeleteAnalysisSchemeOutcome CloudSearchClient::DeleteAnalysisScheme(const Delete
 
 DeleteAnalysisSchemeOutcomeCallable CloudSearchClient::DeleteAnalysisSchemeCallable(const DeleteAnalysisSchemeRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DeleteAnalysisScheme, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAnalysisScheme( request ); } );
 }
 
 void CloudSearchClient::DeleteAnalysisSchemeAsync(const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DeleteAnalysisSchemeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAnalysisSchemeAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DeleteAnalysisSchemeAsyncHelper(const DeleteAnalysisSchemeRequest& request, const DeleteAnalysisSchemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -346,12 +343,12 @@ DeleteDomainOutcome CloudSearchClient::DeleteDomain(const DeleteDomainRequest& r
 
 DeleteDomainOutcomeCallable CloudSearchClient::DeleteDomainCallable(const DeleteDomainRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DeleteDomain, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDomain( request ); } );
 }
 
 void CloudSearchClient::DeleteDomainAsync(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DeleteDomainAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -376,12 +373,12 @@ DeleteExpressionOutcome CloudSearchClient::DeleteExpression(const DeleteExpressi
 
 DeleteExpressionOutcomeCallable CloudSearchClient::DeleteExpressionCallable(const DeleteExpressionRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DeleteExpression, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteExpression( request ); } );
 }
 
 void CloudSearchClient::DeleteExpressionAsync(const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DeleteExpressionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExpressionAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DeleteExpressionAsyncHelper(const DeleteExpressionRequest& request, const DeleteExpressionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -406,12 +403,12 @@ DeleteIndexFieldOutcome CloudSearchClient::DeleteIndexField(const DeleteIndexFie
 
 DeleteIndexFieldOutcomeCallable CloudSearchClient::DeleteIndexFieldCallable(const DeleteIndexFieldRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DeleteIndexField, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteIndexField( request ); } );
 }
 
 void CloudSearchClient::DeleteIndexFieldAsync(const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DeleteIndexFieldAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteIndexFieldAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DeleteIndexFieldAsyncHelper(const DeleteIndexFieldRequest& request, const DeleteIndexFieldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -436,12 +433,12 @@ DeleteSuggesterOutcome CloudSearchClient::DeleteSuggester(const DeleteSuggesterR
 
 DeleteSuggesterOutcomeCallable CloudSearchClient::DeleteSuggesterCallable(const DeleteSuggesterRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DeleteSuggester, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSuggester( request ); } );
 }
 
 void CloudSearchClient::DeleteSuggesterAsync(const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DeleteSuggesterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSuggesterAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DeleteSuggesterAsyncHelper(const DeleteSuggesterRequest& request, const DeleteSuggesterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -466,12 +463,12 @@ DescribeAnalysisSchemesOutcome CloudSearchClient::DescribeAnalysisSchemes(const 
 
 DescribeAnalysisSchemesOutcomeCallable CloudSearchClient::DescribeAnalysisSchemesCallable(const DescribeAnalysisSchemesRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeAnalysisSchemes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAnalysisSchemes( request ); } );
 }
 
 void CloudSearchClient::DescribeAnalysisSchemesAsync(const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeAnalysisSchemesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAnalysisSchemesAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeAnalysisSchemesAsyncHelper(const DescribeAnalysisSchemesRequest& request, const DescribeAnalysisSchemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -496,12 +493,12 @@ DescribeAvailabilityOptionsOutcome CloudSearchClient::DescribeAvailabilityOption
 
 DescribeAvailabilityOptionsOutcomeCallable CloudSearchClient::DescribeAvailabilityOptionsCallable(const DescribeAvailabilityOptionsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeAvailabilityOptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAvailabilityOptions( request ); } );
 }
 
 void CloudSearchClient::DescribeAvailabilityOptionsAsync(const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeAvailabilityOptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAvailabilityOptionsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeAvailabilityOptionsAsyncHelper(const DescribeAvailabilityOptionsRequest& request, const DescribeAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -526,12 +523,12 @@ DescribeDomainsOutcome CloudSearchClient::DescribeDomains(const DescribeDomainsR
 
 DescribeDomainsOutcomeCallable CloudSearchClient::DescribeDomainsCallable(const DescribeDomainsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeDomains, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDomains( request ); } );
 }
 
 void CloudSearchClient::DescribeDomainsAsync(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeDomainsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeDomainsAsyncHelper(const DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -556,12 +553,12 @@ DescribeExpressionsOutcome CloudSearchClient::DescribeExpressions(const Describe
 
 DescribeExpressionsOutcomeCallable CloudSearchClient::DescribeExpressionsCallable(const DescribeExpressionsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeExpressions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeExpressions( request ); } );
 }
 
 void CloudSearchClient::DescribeExpressionsAsync(const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeExpressionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExpressionsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeExpressionsAsyncHelper(const DescribeExpressionsRequest& request, const DescribeExpressionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -586,12 +583,12 @@ DescribeIndexFieldsOutcome CloudSearchClient::DescribeIndexFields(const Describe
 
 DescribeIndexFieldsOutcomeCallable CloudSearchClient::DescribeIndexFieldsCallable(const DescribeIndexFieldsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeIndexFields, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeIndexFields( request ); } );
 }
 
 void CloudSearchClient::DescribeIndexFieldsAsync(const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeIndexFieldsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIndexFieldsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeIndexFieldsAsyncHelper(const DescribeIndexFieldsRequest& request, const DescribeIndexFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -616,12 +613,12 @@ DescribeScalingParametersOutcome CloudSearchClient::DescribeScalingParameters(co
 
 DescribeScalingParametersOutcomeCallable CloudSearchClient::DescribeScalingParametersCallable(const DescribeScalingParametersRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeScalingParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeScalingParameters( request ); } );
 }
 
 void CloudSearchClient::DescribeScalingParametersAsync(const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeScalingParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingParametersAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeScalingParametersAsyncHelper(const DescribeScalingParametersRequest& request, const DescribeScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -646,12 +643,12 @@ DescribeServiceAccessPoliciesOutcome CloudSearchClient::DescribeServiceAccessPol
 
 DescribeServiceAccessPoliciesOutcomeCallable CloudSearchClient::DescribeServiceAccessPoliciesCallable(const DescribeServiceAccessPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeServiceAccessPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeServiceAccessPolicies( request ); } );
 }
 
 void CloudSearchClient::DescribeServiceAccessPoliciesAsync(const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeServiceAccessPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceAccessPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeServiceAccessPoliciesAsyncHelper(const DescribeServiceAccessPoliciesRequest& request, const DescribeServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -676,12 +673,12 @@ DescribeSuggestersOutcome CloudSearchClient::DescribeSuggesters(const DescribeSu
 
 DescribeSuggestersOutcomeCallable CloudSearchClient::DescribeSuggestersCallable(const DescribeSuggestersRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::DescribeSuggesters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSuggesters( request ); } );
 }
 
 void CloudSearchClient::DescribeSuggestersAsync(const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::DescribeSuggestersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSuggestersAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::DescribeSuggestersAsyncHelper(const DescribeSuggestersRequest& request, const DescribeSuggestersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -706,12 +703,12 @@ IndexDocumentsOutcome CloudSearchClient::IndexDocuments(const IndexDocumentsRequ
 
 IndexDocumentsOutcomeCallable CloudSearchClient::IndexDocumentsCallable(const IndexDocumentsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::IndexDocuments, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->IndexDocuments( request ); } );
 }
 
 void CloudSearchClient::IndexDocumentsAsync(const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::IndexDocumentsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->IndexDocumentsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::IndexDocumentsAsyncHelper(const IndexDocumentsRequest& request, const IndexDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -736,12 +733,12 @@ ListDomainNamesOutcome CloudSearchClient::ListDomainNames(const ListDomainNamesR
 
 ListDomainNamesOutcomeCallable CloudSearchClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::ListDomainNames, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListDomainNames( request ); } );
 }
 
 void CloudSearchClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::ListDomainNamesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -766,12 +763,12 @@ UpdateAvailabilityOptionsOutcome CloudSearchClient::UpdateAvailabilityOptions(co
 
 UpdateAvailabilityOptionsOutcomeCallable CloudSearchClient::UpdateAvailabilityOptionsCallable(const UpdateAvailabilityOptionsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::UpdateAvailabilityOptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAvailabilityOptions( request ); } );
 }
 
 void CloudSearchClient::UpdateAvailabilityOptionsAsync(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::UpdateAvailabilityOptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAvailabilityOptionsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::UpdateAvailabilityOptionsAsyncHelper(const UpdateAvailabilityOptionsRequest& request, const UpdateAvailabilityOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -796,12 +793,12 @@ UpdateScalingParametersOutcome CloudSearchClient::UpdateScalingParameters(const 
 
 UpdateScalingParametersOutcomeCallable CloudSearchClient::UpdateScalingParametersCallable(const UpdateScalingParametersRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::UpdateScalingParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateScalingParameters( request ); } );
 }
 
 void CloudSearchClient::UpdateScalingParametersAsync(const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::UpdateScalingParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateScalingParametersAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::UpdateScalingParametersAsyncHelper(const UpdateScalingParametersRequest& request, const UpdateScalingParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -826,12 +823,12 @@ UpdateServiceAccessPoliciesOutcome CloudSearchClient::UpdateServiceAccessPolicie
 
 UpdateServiceAccessPoliciesOutcomeCallable CloudSearchClient::UpdateServiceAccessPoliciesCallable(const UpdateServiceAccessPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchClient::UpdateServiceAccessPolicies, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateServiceAccessPolicies( request ); } );
 }
 
 void CloudSearchClient::UpdateServiceAccessPoliciesAsync(const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchClient::UpdateServiceAccessPoliciesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceAccessPoliciesAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchClient::UpdateServiceAccessPoliciesAsyncHelper(const UpdateServiceAccessPoliciesRequest& request, const UpdateServiceAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

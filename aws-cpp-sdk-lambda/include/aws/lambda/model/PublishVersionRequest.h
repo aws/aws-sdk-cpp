@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API PublishVersionRequest : public LambdaRequest
   {
@@ -119,98 +120,91 @@ namespace Model
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline const Aws::String& GetCodeSha256() const{ return m_codeSha256; }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline void SetCodeSha256(const Aws::String& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline void SetCodeSha256(Aws::String&& value) { m_codeSha256HasBeenSet = true; m_codeSha256 = value; }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline void SetCodeSha256(const char* value) { m_codeSha256HasBeenSet = true; m_codeSha256.assign(value); }
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(const Aws::String& value) { SetCodeSha256(value); return *this;}
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(Aws::String&& value) { SetCodeSha256(value); return *this;}
 
     /**
      * <p>The SHA256 hash of the deployment package you want to publish. This provides
      * validation on the code you are publishing. If you provide this parameter value
-     * must match the SHA256 of the $LATEST version for the publication to succeed.
-     * </p>
+     * must match the SHA256 of the $LATEST version for the publication to succeed.</p>
      */
     inline PublishVersionRequest& WithCodeSha256(const char* value) { SetCodeSha256(value); return *this;}
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline PublishVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline PublishVersionRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description for the version you are publishing. If not provided, AWS
-     * Lambda copies the description from the $LATEST version. </p>
+     * <p>The description for the version you are publishing. If not provided, AWS
+     * Lambda copies the description from the $LATEST version.</p>
      */
     inline PublishVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

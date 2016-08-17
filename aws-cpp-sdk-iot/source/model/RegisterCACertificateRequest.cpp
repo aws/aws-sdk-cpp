@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,7 +28,9 @@ RegisterCACertificateRequest::RegisterCACertificateRequest() :
     m_caCertificateHasBeenSet(false),
     m_verificationCertificateHasBeenSet(false),
     m_setAsActive(false),
-    m_setAsActiveHasBeenSet(false)
+    m_setAsActiveHasBeenSet(false),
+    m_allowAutoRegistration(false),
+    m_allowAutoRegistrationHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,13 @@ void RegisterCACertificateRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_setAsActive;
       uri.AddQueryStringParameter("setAsActive", ss.str());
+      ss.str("");
+    }
+
+    if(m_allowAutoRegistrationHasBeenSet)
+    {
+      ss << m_allowAutoRegistration;
+      uri.AddQueryStringParameter("allowAutoRegistration", ss.str());
       ss.str("");
     }
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -38,6 +38,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_endpointHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
@@ -57,6 +58,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
     m_endpointHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
@@ -115,6 +117,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_processing = jsonValue.GetBool("Processing");
 
     m_processingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ElasticsearchVersion"))
+  {
+    m_elasticsearchVersion = jsonValue.GetString("ElasticsearchVersion");
+
+    m_elasticsearchVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ElasticsearchClusterConfig"))
@@ -201,6 +210,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_processingHasBeenSet)
   {
    payload.WithBool("Processing", m_processing);
+
+  }
+
+  if(m_elasticsearchVersionHasBeenSet)
+  {
+   payload.WithString("ElasticsearchVersion", m_elasticsearchVersion);
 
   }
 

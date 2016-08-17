@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -45,7 +45,11 @@ DataSource::DataSource() :
     m_rDSMetadataHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false)
+    m_computeStatisticsHasBeenSet(false),
+    m_computeTime(0),
+    m_computeTimeHasBeenSet(false),
+    m_finishedAtHasBeenSet(false),
+    m_startedAtHasBeenSet(false)
 {
 }
 
@@ -67,7 +71,11 @@ DataSource::DataSource(const JsonValue& jsonValue) :
     m_rDSMetadataHasBeenSet(false),
     m_roleARNHasBeenSet(false),
     m_computeStatistics(false),
-    m_computeStatisticsHasBeenSet(false)
+    m_computeStatisticsHasBeenSet(false),
+    m_computeTime(0),
+    m_computeTimeHasBeenSet(false),
+    m_finishedAtHasBeenSet(false),
+    m_startedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +187,27 @@ DataSource& DataSource::operator =(const JsonValue& jsonValue)
     m_computeStatisticsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ComputeTime"))
+  {
+    m_computeTime = jsonValue.GetInt64("ComputeTime");
+
+    m_computeTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FinishedAt"))
+  {
+    m_finishedAt = jsonValue.GetDouble("FinishedAt");
+
+    m_finishedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("StartedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +300,22 @@ JsonValue DataSource::Jsonize() const
   {
    payload.WithBool("ComputeStatistics", m_computeStatistics);
 
+  }
+
+  if(m_computeTimeHasBeenSet)
+  {
+   payload.WithInt64("ComputeTime", m_computeTime);
+
+  }
+
+  if(m_finishedAtHasBeenSet)
+  {
+   payload.WithDouble("FinishedAt", m_finishedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithDouble("StartedAt", m_startedAt.SecondsWithMSPrecision());
   }
 
   return payload;

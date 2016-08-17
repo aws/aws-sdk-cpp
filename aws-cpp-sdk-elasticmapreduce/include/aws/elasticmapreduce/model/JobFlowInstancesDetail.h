@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -206,37 +206,37 @@ namespace Model
     inline JobFlowInstancesDetail& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline const Aws::Vector<InstanceGroupDetail>& GetInstanceGroups() const{ return m_instanceGroups; }
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline void SetInstanceGroups(const Aws::Vector<InstanceGroupDetail>& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline void SetInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups = value; }
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline JobFlowInstancesDetail& WithInstanceGroups(const Aws::Vector<InstanceGroupDetail>& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline JobFlowInstancesDetail& WithInstanceGroups(Aws::Vector<InstanceGroupDetail>&& value) { SetInstanceGroups(value); return *this;}
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline JobFlowInstancesDetail& AddInstanceGroups(const InstanceGroupDetail& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
     /**
-     * <p>Details about the job flow's instance groups. </p>
+     * <p>Details about the job flow's instance groups.</p>
      */
     inline JobFlowInstancesDetail& AddInstanceGroups(InstanceGroupDetail&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(value); return *this; }
 
@@ -400,21 +400,21 @@ namespace Model
     /**
      * <p>Specifies whether the Amazon EC2 instances in the cluster are protected from
      * termination by API calls, user intervention, or in the event of a job flow
-     * error. </p>
+     * error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
 
     /**
      * <p>Specifies whether the Amazon EC2 instances in the cluster are protected from
      * termination by API calls, user intervention, or in the event of a job flow
-     * error. </p>
+     * error.</p>
      */
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
 
     /**
      * <p>Specifies whether the Amazon EC2 instances in the cluster are protected from
      * termination by API calls, user intervention, or in the event of a job flow
-     * error. </p>
+     * error.</p>
      */
     inline JobFlowInstancesDetail& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 

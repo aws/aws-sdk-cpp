@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,6 +29,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API GetFunctionRequest : public LambdaRequest
   {
@@ -39,7 +40,7 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -51,7 +52,7 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -63,7 +64,7 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -75,7 +76,7 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -87,7 +88,7 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -99,7 +100,7 @@ namespace Model
     inline GetFunctionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
@@ -111,7 +112,7 @@ namespace Model
     inline GetFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The Lambda function name. </p> <p> You can specify a function name (for
+     * <p>The Lambda function name.</p> <p> You can specify a function name (for
      * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
      * of the function (for example,
      * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda

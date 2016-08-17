@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -45,17 +45,17 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>Specifies whether access log is enabled for the load balancer.</p>
+     * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Specifies whether access log is enabled for the load balancer.</p>
+     * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Specifies whether access log is enabled for the load balancer.</p>
+     * <p>Specifies whether access logs are enabled for the load balancer.</p>
      */
     inline AccessLog& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

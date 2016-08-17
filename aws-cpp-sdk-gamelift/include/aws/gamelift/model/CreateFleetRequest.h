@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -120,49 +120,49 @@ namespace Model
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(Aws::String&& value) { SetBuildId(value); return *this;}
 
     /**
      * <p>Unique identifier of the build to be deployed on the new fleet. The build
      * must have been successfully uploaded to GameLift and be in a <code>READY</code>
-     * state. This fleet setting cannot be changed once the fleet is created.</p>
+     * status. This fleet setting cannot be changed once the fleet is created.</p>
      */
     inline CreateFleetRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
@@ -484,11 +484,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
      * <ul><li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * event.</li></ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
@@ -497,11 +497,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
      * <ul><li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * event.</li></ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
@@ -510,11 +510,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
      * <ul><li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * event.</li></ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
@@ -523,11 +523,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
      * <ul><li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * event.</li></ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
@@ -536,11 +536,11 @@ namespace Model
      * this parameter is not set, instances in this fleet default to no protection. You
      * can change a fleet's protection policy using UpdateFleetAttributes, but this
      * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.
+     * set protection for individual instances using <a>UpdateGameSession</a>.</p>
      * <ul><li><b>NoProtection</b> – The game session can be terminated during a
      * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
      * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * event.</li></ul>
      */
     inline CreateFleetRequest& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 

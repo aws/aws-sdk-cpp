@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -33,7 +33,12 @@ UserPoolClientType::UserPoolClientType() :
     m_clientIdHasBeenSet(false),
     m_clientSecretHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_refreshTokenValidity(0),
+    m_refreshTokenValidityHasBeenSet(false),
+    m_readAttributesHasBeenSet(false),
+    m_writeAttributesHasBeenSet(false),
+    m_explicitAuthFlowsHasBeenSet(false)
 {
 }
 
@@ -43,7 +48,12 @@ UserPoolClientType::UserPoolClientType(const JsonValue& jsonValue) :
     m_clientIdHasBeenSet(false),
     m_clientSecretHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
+    m_creationDateHasBeenSet(false),
+    m_refreshTokenValidity(0),
+    m_refreshTokenValidityHasBeenSet(false),
+    m_readAttributesHasBeenSet(false),
+    m_writeAttributesHasBeenSet(false),
+    m_explicitAuthFlowsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +102,43 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RefreshTokenValidity"))
+  {
+    m_refreshTokenValidity = jsonValue.GetInteger("RefreshTokenValidity");
+
+    m_refreshTokenValidityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadAttributes"))
+  {
+    Array<JsonValue> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
+    for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
+    {
+      m_readAttributes.push_back(readAttributesJsonList[readAttributesIndex].AsString());
+    }
+    m_readAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WriteAttributes"))
+  {
+    Array<JsonValue> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
+    for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
+    {
+      m_writeAttributes.push_back(writeAttributesJsonList[writeAttributesIndex].AsString());
+    }
+    m_writeAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExplicitAuthFlows"))
+  {
+    Array<JsonValue> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
+    for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
+    {
+      m_explicitAuthFlows.push_back(ExplicitAuthFlowsTypeMapper::GetExplicitAuthFlowsTypeForName(explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString()));
+    }
+    m_explicitAuthFlowsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +178,45 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithDouble("CreationDate", m_creationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_refreshTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
+
+  }
+
+  if(m_readAttributesHasBeenSet)
+  {
+   Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
+   for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
+   {
+     readAttributesJsonList[readAttributesIndex].AsString(m_readAttributes[readAttributesIndex]);
+   }
+   payload.WithArray("ReadAttributes", std::move(readAttributesJsonList));
+
+  }
+
+  if(m_writeAttributesHasBeenSet)
+  {
+   Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
+   for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
+   {
+     writeAttributesJsonList[writeAttributesIndex].AsString(m_writeAttributes[writeAttributesIndex]);
+   }
+   payload.WithArray("WriteAttributes", std::move(writeAttributesJsonList));
+
+  }
+
+  if(m_explicitAuthFlowsHasBeenSet)
+  {
+   Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
+   for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
+   {
+     explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString(ExplicitAuthFlowsTypeMapper::GetNameForExplicitAuthFlowsType(m_explicitAuthFlows[explicitAuthFlowsIndex]));
+   }
+   payload.WithArray("ExplicitAuthFlows", std::move(explicitAuthFlowsJsonList));
+
   }
 
   return payload;

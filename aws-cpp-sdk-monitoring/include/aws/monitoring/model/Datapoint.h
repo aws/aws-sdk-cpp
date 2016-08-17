@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -47,130 +47,130 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The time stamp used for the datapoint. </p>
+     * <p>The time stamp used for the datapoint.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p> The time stamp used for the datapoint. </p>
+     * <p>The time stamp used for the datapoint.</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the datapoint. </p>
+     * <p>The time stamp used for the datapoint.</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> The time stamp used for the datapoint. </p>
+     * <p>The time stamp used for the datapoint.</p>
      */
     inline Datapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The time stamp used for the datapoint. </p>
+     * <p>The time stamp used for the datapoint.</p>
      */
     inline Datapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> The number of metric values that contributed to the aggregate value of this
-     * datapoint. </p>
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
      */
     inline double GetSampleCount() const{ return m_sampleCount; }
 
     /**
-     * <p> The number of metric values that contributed to the aggregate value of this
-     * datapoint. </p>
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
      */
     inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /**
-     * <p> The number of metric values that contributed to the aggregate value of this
-     * datapoint. </p>
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * datapoint.</p>
      */
     inline Datapoint& WithSampleCount(double value) { SetSampleCount(value); return *this;}
 
     /**
-     * <p> The average of metric values that correspond to the datapoint. </p>
+     * <p>The average of metric values that correspond to the datapoint.</p>
      */
     inline double GetAverage() const{ return m_average; }
 
     /**
-     * <p> The average of metric values that correspond to the datapoint. </p>
+     * <p>The average of metric values that correspond to the datapoint.</p>
      */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
 
     /**
-     * <p> The average of metric values that correspond to the datapoint. </p>
+     * <p>The average of metric values that correspond to the datapoint.</p>
      */
     inline Datapoint& WithAverage(double value) { SetAverage(value); return *this;}
 
     /**
-     * <p> The sum of metric values used for the datapoint. </p>
+     * <p>The sum of metric values used for the datapoint.</p>
      */
     inline double GetSum() const{ return m_sum; }
 
     /**
-     * <p> The sum of metric values used for the datapoint. </p>
+     * <p>The sum of metric values used for the datapoint.</p>
      */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
-     * <p> The sum of metric values used for the datapoint. </p>
+     * <p>The sum of metric values used for the datapoint.</p>
      */
     inline Datapoint& WithSum(double value) { SetSum(value); return *this;}
 
     /**
-     * <p> The minimum metric value used for the datapoint. </p>
+     * <p>The minimum metric value used for the datapoint.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
 
     /**
-     * <p> The minimum metric value used for the datapoint. </p>
+     * <p>The minimum metric value used for the datapoint.</p>
      */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
-     * <p> The minimum metric value used for the datapoint. </p>
+     * <p>The minimum metric value used for the datapoint.</p>
      */
     inline Datapoint& WithMinimum(double value) { SetMinimum(value); return *this;}
 
     /**
-     * <p> The maximum of the metric value used for the datapoint. </p>
+     * <p>The maximum of the metric value used for the datapoint.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
 
     /**
-     * <p> The maximum of the metric value used for the datapoint. </p>
+     * <p>The maximum of the metric value used for the datapoint.</p>
      */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
-     * <p> The maximum of the metric value used for the datapoint. </p>
+     * <p>The maximum of the metric value used for the datapoint.</p>
      */
     inline Datapoint& WithMaximum(double value) { SetMaximum(value); return *this;}
 
     /**
-     * <p> The standard unit used for the datapoint. </p>
+     * <p>The standard unit used for the datapoint.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p> The standard unit used for the datapoint. </p>
+     * <p>The standard unit used for the datapoint.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p> The standard unit used for the datapoint. </p>
+     * <p>The standard unit used for the datapoint.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p> The standard unit used for the datapoint. </p>
+     * <p>The standard unit used for the datapoint.</p>
      */
     inline Datapoint& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p> The standard unit used for the datapoint. </p>
+     * <p>The standard unit used for the datapoint.</p>
      */
     inline Datapoint& WithUnit(StandardUnit&& value) { SetUnit(value); return *this;}
 

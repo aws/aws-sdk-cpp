@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,7 +13,8 @@
 * permissions and limitations under the License.
 */
 #include <aws/cloudfront/CloudFrontEndpoint.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::CloudFront;
@@ -24,15 +25,30 @@ namespace CloudFront
 {
 namespace CloudFrontEndpoint
 {
-  Aws::String ForRegion(Region region)
+
+  static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    switch(region)
+    if(!useDualStack)
     {
-     case Region::US_EAST_1:
+      auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+
+      if(hash == US_EAST_1_HASH)
+      {
         return "cloudfront.amazonaws.com";
-     default:
-        return "cloudfront.amazonaws.com";
+      }
     }
+    Aws::StringStream ss;
+    ss << "cloudfront" << ".";
+
+    if(useDualStack)
+    {
+      ss << "dualstack.";
+    }
+
+    ss << regionName << ".amazonaws.com";
+    return ss.str();
   }
 
 } // namespace CloudFrontEndpoint

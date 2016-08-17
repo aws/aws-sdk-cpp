@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -91,6 +91,69 @@ namespace Model
      * (lowercase), 0-9, and - (hyphen).</p>
      */
     inline CreateElasticsearchDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline void SetElasticsearchVersion(const char* value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion.assign(value); }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(const Aws::String& value) { SetElasticsearchVersion(value); return *this;}
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(value); return *this;}
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain eg.
+     * "1.5" or "2.3". For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains"
+     * target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon
+     * Elasticsearch Service Developer Guide</i>.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
 
     /**
      * <p>Configuration options for an Elasticsearch domain. Specifies the instance
@@ -328,6 +391,8 @@ namespace Model
   private:
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+    Aws::String m_elasticsearchVersion;
+    bool m_elasticsearchVersionHasBeenSet;
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
     EBSOptions m_eBSOptions;

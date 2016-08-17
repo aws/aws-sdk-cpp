@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,6 +28,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API CreateFunctionRequest : public LambdaRequest
   {
@@ -92,27 +93,37 @@ namespace Model
     inline CreateFunctionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. </p>
+     * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
+     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
+     * runtime (v0.10.42), set the value to "nodejs".</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. </p>
+     * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
+     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
+     * runtime (v0.10.42), set the value to "nodejs".</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. </p>
+     * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
+     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
+     * runtime (v0.10.42), set the value to "nodejs".</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. </p>
+     * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
+     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
+     * runtime (v0.10.42), set the value to "nodejs".</p>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function you are uploading. </p>
+     * <p>The runtime environment for the Lambda function you are uploading.</p> <p>To
+     * use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier
+     * runtime (v0.10.42), set the value to "nodejs".</p>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(value); return *this;}
 
@@ -250,27 +261,27 @@ namespace Model
     inline CreateFunctionRequest& WithHandler(const char* value) { SetHandler(value); return *this;}
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>The code for the Lambda function.</p>
      */
     inline const FunctionCode& GetCode() const{ return m_code; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>The code for the Lambda function.</p>
      */
     inline void SetCode(const FunctionCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>The code for the Lambda function.</p>
      */
     inline void SetCode(FunctionCode&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>The code for the Lambda function.</p>
      */
     inline CreateFunctionRequest& WithCode(const FunctionCode& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The code for the Lambda function. </p>
+     * <p>The code for the Lambda function.</p>
      */
     inline CreateFunctionRequest& WithCode(FunctionCode&& value) { SetCode(value); return *this;}
 
@@ -319,21 +330,21 @@ namespace Model
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
      * <p>The function execution time at which Lambda should terminate the function.
      * Because the execution time has cost implications, we recommend you set this
-     * value based on your expected execution time. The default is 3 seconds. </p>
+     * value based on your expected execution time. The default is 3 seconds.</p>
      */
     inline CreateFunctionRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -369,19 +380,19 @@ namespace Model
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline bool GetPublish() const{ return m_publish; }
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to create the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline CreateFunctionRequest& WithPublish(bool value) { SetPublish(value); return *this;}
 

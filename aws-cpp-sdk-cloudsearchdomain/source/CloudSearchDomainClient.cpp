@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -45,8 +45,7 @@ static const char* ALLOCATION_TAG = "CloudSearchDomainClient";
 CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -56,8 +55,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfigurati
 CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,8 +66,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -85,9 +82,9 @@ void CloudSearchDomainClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << CloudSearchDomainEndpoint::ForRegion(config.region);
+    ss << CloudSearchDomainEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -115,12 +112,12 @@ SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) cons
 
 SearchOutcomeCallable CloudSearchDomainClient::SearchCallable(const SearchRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchDomainClient::Search, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Search(request); } );
 }
 
 void CloudSearchDomainClient::SearchAsync(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchDomainClient::SearchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SearchAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchDomainClient::SearchAsyncHelper(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -146,12 +143,12 @@ SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) c
 
 SuggestOutcomeCallable CloudSearchDomainClient::SuggestCallable(const SuggestRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchDomainClient::Suggest, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Suggest(request); } );
 }
 
 void CloudSearchDomainClient::SuggestAsync(const SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchDomainClient::SuggestAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SuggestAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchDomainClient::SuggestAsyncHelper(const SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -177,12 +174,12 @@ UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocu
 
 UploadDocumentsOutcomeCallable CloudSearchDomainClient::UploadDocumentsCallable(const UploadDocumentsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudSearchDomainClient::UploadDocuments, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadDocuments(request); } );
 }
 
 void CloudSearchDomainClient::UploadDocumentsAsync(const UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudSearchDomainClient::UploadDocumentsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadDocumentsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudSearchDomainClient::UploadDocumentsAsyncHelper(const UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

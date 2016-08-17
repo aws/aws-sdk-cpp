@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -106,43 +106,43 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role that grants CloudWatch Logs permissions to do Amazon
-     * Kinesis PutRecord requests on the desitnation stream.</p>
+     * Kinesis PutRecord requests on the destination stream.</p>
      */
     inline PutDestinationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

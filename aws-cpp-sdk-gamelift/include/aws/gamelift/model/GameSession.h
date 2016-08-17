@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -159,62 +159,62 @@ namespace Model
     inline GameSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline GameSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline GameSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline GameSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline GameSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
@@ -250,31 +250,31 @@ namespace Model
 
     /**
      * <p>Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.</p>
+     * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline const GameSessionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.</p>
+     * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline void SetStatus(const GameSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.</p>
+     * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline void SetStatus(GameSessionStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.</p>
+     * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline GameSession& WithStatus(const GameSessionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the game session. A game session must be in an
-     * <code>ACTIVE</code> state to have player sessions.</p>
+     * <code>ACTIVE</code> status to have player sessions.</p>
      */
     inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(value); return *this;}
 

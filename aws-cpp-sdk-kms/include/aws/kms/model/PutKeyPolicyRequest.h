@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -140,7 +140,8 @@ namespace Model
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -159,7 +160,8 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -178,7 +180,8 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -197,7 +200,8 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -216,7 +220,8 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -235,7 +240,8 @@ namespace Model
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes
@@ -254,7 +260,8 @@ namespace Model
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The key policy to attach to the CMK.</p> <p>The key policy must meet the
+     * <p>The key policy to attach to the CMK.</p> <p>If you do not set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the
      * following criteria:</p> <ul> <li> <p>It must allow the principal making the
      * <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code>
      * request on the CMK. This reduces the likelihood that the CMK becomes

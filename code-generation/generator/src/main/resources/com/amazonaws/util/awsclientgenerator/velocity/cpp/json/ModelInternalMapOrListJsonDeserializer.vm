@@ -84,7 +84,7 @@
 #end
 #if($template.currentShape.listMember.shape.map)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "Map")
-#elseif($template.currentShape.mapValue.shape.list)
+#elseif($template.currentShape.mapValue.shape.list || $template.currentShape.listMember.shape.list)
 #set($template.internalCollectionName = $CppViewHelper.computeVariableName($template.currentShape.listMember.shape.name) + "List")
 #end
 #if(!$template.atBottom)

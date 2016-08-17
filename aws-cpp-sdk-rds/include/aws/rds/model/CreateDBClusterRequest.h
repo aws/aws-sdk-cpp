@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -276,71 +276,64 @@ namespace Model
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> for the
-     * specified engine will be used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 alphanumeric characters</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * cluster. If this argument is omitted, <code>default.aurora5.6</code> will be
+     * used. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric
+     * characters</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -536,58 +529,58 @@ namespace Model
     inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The name of the master user for the client DB cluster.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 alphanumeric characters.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
-     * reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be 1 to 16 alphanumeric characters.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
+     * chosen database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 

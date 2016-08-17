@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -105,8 +105,7 @@ static const char* ALLOCATION_TAG = "RedshiftClient";
 RedshiftClient::RedshiftClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RedshiftErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -116,8 +115,7 @@ RedshiftClient::RedshiftClient(const Client::ClientConfiguration& clientConfigur
 RedshiftClient::RedshiftClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RedshiftErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -128,8 +126,7 @@ RedshiftClient::RedshiftClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RedshiftErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -145,9 +142,9 @@ void RedshiftClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << RedshiftEndpoint::ForRegion(config.region);
+    ss << RedshiftEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -174,12 +171,12 @@ AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecu
 
 AuthorizeClusterSecurityGroupIngressOutcomeCallable RedshiftClient::AuthorizeClusterSecurityGroupIngressCallable(const AuthorizeClusterSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::AuthorizeClusterSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AuthorizeClusterSecurityGroupIngress( request ); } );
 }
 
 void RedshiftClient::AuthorizeClusterSecurityGroupIngressAsync(const AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::AuthorizeClusterSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeClusterSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::AuthorizeClusterSecurityGroupIngressAsyncHelper(const AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -204,12 +201,12 @@ AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const Aut
 
 AuthorizeSnapshotAccessOutcomeCallable RedshiftClient::AuthorizeSnapshotAccessCallable(const AuthorizeSnapshotAccessRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::AuthorizeSnapshotAccess, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AuthorizeSnapshotAccess( request ); } );
 }
 
 void RedshiftClient::AuthorizeSnapshotAccessAsync(const AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::AuthorizeSnapshotAccessAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeSnapshotAccessAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::AuthorizeSnapshotAccessAsyncHelper(const AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -234,12 +231,12 @@ CopyClusterSnapshotOutcome RedshiftClient::CopyClusterSnapshot(const CopyCluster
 
 CopyClusterSnapshotOutcomeCallable RedshiftClient::CopyClusterSnapshotCallable(const CopyClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CopyClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyClusterSnapshot( request ); } );
 }
 
 void RedshiftClient::CopyClusterSnapshotAsync(const CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CopyClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CopyClusterSnapshotAsyncHelper(const CopyClusterSnapshotRequest& request, const CopyClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -264,12 +261,12 @@ CreateClusterOutcome RedshiftClient::CreateCluster(const CreateClusterRequest& r
 
 CreateClusterOutcomeCallable RedshiftClient::CreateClusterCallable(const CreateClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateCluster( request ); } );
 }
 
 void RedshiftClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -294,12 +291,12 @@ CreateClusterParameterGroupOutcome RedshiftClient::CreateClusterParameterGroup(c
 
 CreateClusterParameterGroupOutcomeCallable RedshiftClient::CreateClusterParameterGroupCallable(const CreateClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateClusterParameterGroup( request ); } );
 }
 
 void RedshiftClient::CreateClusterParameterGroupAsync(const CreateClusterParameterGroupRequest& request, const CreateClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateClusterParameterGroupAsyncHelper(const CreateClusterParameterGroupRequest& request, const CreateClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -324,12 +321,12 @@ CreateClusterSecurityGroupOutcome RedshiftClient::CreateClusterSecurityGroup(con
 
 CreateClusterSecurityGroupOutcomeCallable RedshiftClient::CreateClusterSecurityGroupCallable(const CreateClusterSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateClusterSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateClusterSecurityGroup( request ); } );
 }
 
 void RedshiftClient::CreateClusterSecurityGroupAsync(const CreateClusterSecurityGroupRequest& request, const CreateClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateClusterSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateClusterSecurityGroupAsyncHelper(const CreateClusterSecurityGroupRequest& request, const CreateClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -354,12 +351,12 @@ CreateClusterSnapshotOutcome RedshiftClient::CreateClusterSnapshot(const CreateC
 
 CreateClusterSnapshotOutcomeCallable RedshiftClient::CreateClusterSnapshotCallable(const CreateClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateClusterSnapshot( request ); } );
 }
 
 void RedshiftClient::CreateClusterSnapshotAsync(const CreateClusterSnapshotRequest& request, const CreateClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateClusterSnapshotAsyncHelper(const CreateClusterSnapshotRequest& request, const CreateClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -384,12 +381,12 @@ CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const C
 
 CreateClusterSubnetGroupOutcomeCallable RedshiftClient::CreateClusterSubnetGroupCallable(const CreateClusterSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateClusterSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateClusterSubnetGroup( request ); } );
 }
 
 void RedshiftClient::CreateClusterSubnetGroupAsync(const CreateClusterSubnetGroupRequest& request, const CreateClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateClusterSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateClusterSubnetGroupAsyncHelper(const CreateClusterSubnetGroupRequest& request, const CreateClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -414,12 +411,12 @@ CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const Cre
 
 CreateEventSubscriptionOutcomeCallable RedshiftClient::CreateEventSubscriptionCallable(const CreateEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateEventSubscription( request ); } );
 }
 
 void RedshiftClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -444,12 +441,12 @@ CreateHsmClientCertificateOutcome RedshiftClient::CreateHsmClientCertificate(con
 
 CreateHsmClientCertificateOutcomeCallable RedshiftClient::CreateHsmClientCertificateCallable(const CreateHsmClientCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateHsmClientCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateHsmClientCertificate( request ); } );
 }
 
 void RedshiftClient::CreateHsmClientCertificateAsync(const CreateHsmClientCertificateRequest& request, const CreateHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateHsmClientCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHsmClientCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateHsmClientCertificateAsyncHelper(const CreateHsmClientCertificateRequest& request, const CreateHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -474,12 +471,12 @@ CreateHsmConfigurationOutcome RedshiftClient::CreateHsmConfiguration(const Creat
 
 CreateHsmConfigurationOutcomeCallable RedshiftClient::CreateHsmConfigurationCallable(const CreateHsmConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateHsmConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateHsmConfiguration( request ); } );
 }
 
 void RedshiftClient::CreateHsmConfigurationAsync(const CreateHsmConfigurationRequest& request, const CreateHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateHsmConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateHsmConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateHsmConfigurationAsyncHelper(const CreateHsmConfigurationRequest& request, const CreateHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -504,12 +501,12 @@ CreateSnapshotCopyGrantOutcome RedshiftClient::CreateSnapshotCopyGrant(const Cre
 
 CreateSnapshotCopyGrantOutcomeCallable RedshiftClient::CreateSnapshotCopyGrantCallable(const CreateSnapshotCopyGrantRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateSnapshotCopyGrant, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateSnapshotCopyGrant( request ); } );
 }
 
 void RedshiftClient::CreateSnapshotCopyGrantAsync(const CreateSnapshotCopyGrantRequest& request, const CreateSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateSnapshotCopyGrantAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSnapshotCopyGrantAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateSnapshotCopyGrantAsyncHelper(const CreateSnapshotCopyGrantRequest& request, const CreateSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -534,12 +531,12 @@ CreateTagsOutcome RedshiftClient::CreateTags(const CreateTagsRequest& request) c
 
 CreateTagsOutcomeCallable RedshiftClient::CreateTagsCallable(const CreateTagsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::CreateTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateTags( request ); } );
 }
 
 void RedshiftClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::CreateTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -564,12 +561,12 @@ DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& r
 
 DeleteClusterOutcomeCallable RedshiftClient::DeleteClusterCallable(const DeleteClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCluster( request ); } );
 }
 
 void RedshiftClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -594,12 +591,12 @@ DeleteClusterParameterGroupOutcome RedshiftClient::DeleteClusterParameterGroup(c
 
 DeleteClusterParameterGroupOutcomeCallable RedshiftClient::DeleteClusterParameterGroupCallable(const DeleteClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteClusterParameterGroup( request ); } );
 }
 
 void RedshiftClient::DeleteClusterParameterGroupAsync(const DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteClusterParameterGroupAsyncHelper(const DeleteClusterParameterGroupRequest& request, const DeleteClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -624,12 +621,12 @@ DeleteClusterSecurityGroupOutcome RedshiftClient::DeleteClusterSecurityGroup(con
 
 DeleteClusterSecurityGroupOutcomeCallable RedshiftClient::DeleteClusterSecurityGroupCallable(const DeleteClusterSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteClusterSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteClusterSecurityGroup( request ); } );
 }
 
 void RedshiftClient::DeleteClusterSecurityGroupAsync(const DeleteClusterSecurityGroupRequest& request, const DeleteClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteClusterSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteClusterSecurityGroupAsyncHelper(const DeleteClusterSecurityGroupRequest& request, const DeleteClusterSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -654,12 +651,12 @@ DeleteClusterSnapshotOutcome RedshiftClient::DeleteClusterSnapshot(const DeleteC
 
 DeleteClusterSnapshotOutcomeCallable RedshiftClient::DeleteClusterSnapshotCallable(const DeleteClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteClusterSnapshot( request ); } );
 }
 
 void RedshiftClient::DeleteClusterSnapshotAsync(const DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteClusterSnapshotAsyncHelper(const DeleteClusterSnapshotRequest& request, const DeleteClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -684,12 +681,12 @@ DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const D
 
 DeleteClusterSubnetGroupOutcomeCallable RedshiftClient::DeleteClusterSubnetGroupCallable(const DeleteClusterSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteClusterSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteClusterSubnetGroup( request ); } );
 }
 
 void RedshiftClient::DeleteClusterSubnetGroupAsync(const DeleteClusterSubnetGroupRequest& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteClusterSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteClusterSubnetGroupAsyncHelper(const DeleteClusterSubnetGroupRequest& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -714,12 +711,12 @@ DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const Del
 
 DeleteEventSubscriptionOutcomeCallable RedshiftClient::DeleteEventSubscriptionCallable(const DeleteEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteEventSubscription( request ); } );
 }
 
 void RedshiftClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -744,12 +741,12 @@ DeleteHsmClientCertificateOutcome RedshiftClient::DeleteHsmClientCertificate(con
 
 DeleteHsmClientCertificateOutcomeCallable RedshiftClient::DeleteHsmClientCertificateCallable(const DeleteHsmClientCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteHsmClientCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteHsmClientCertificate( request ); } );
 }
 
 void RedshiftClient::DeleteHsmClientCertificateAsync(const DeleteHsmClientCertificateRequest& request, const DeleteHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteHsmClientCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteHsmClientCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteHsmClientCertificateAsyncHelper(const DeleteHsmClientCertificateRequest& request, const DeleteHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -774,12 +771,12 @@ DeleteHsmConfigurationOutcome RedshiftClient::DeleteHsmConfiguration(const Delet
 
 DeleteHsmConfigurationOutcomeCallable RedshiftClient::DeleteHsmConfigurationCallable(const DeleteHsmConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteHsmConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteHsmConfiguration( request ); } );
 }
 
 void RedshiftClient::DeleteHsmConfigurationAsync(const DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteHsmConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteHsmConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteHsmConfigurationAsyncHelper(const DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -804,12 +801,12 @@ DeleteSnapshotCopyGrantOutcome RedshiftClient::DeleteSnapshotCopyGrant(const Del
 
 DeleteSnapshotCopyGrantOutcomeCallable RedshiftClient::DeleteSnapshotCopyGrantCallable(const DeleteSnapshotCopyGrantRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteSnapshotCopyGrant, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSnapshotCopyGrant( request ); } );
 }
 
 void RedshiftClient::DeleteSnapshotCopyGrantAsync(const DeleteSnapshotCopyGrantRequest& request, const DeleteSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteSnapshotCopyGrantAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSnapshotCopyGrantAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteSnapshotCopyGrantAsyncHelper(const DeleteSnapshotCopyGrantRequest& request, const DeleteSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -834,12 +831,12 @@ DeleteTagsOutcome RedshiftClient::DeleteTags(const DeleteTagsRequest& request) c
 
 DeleteTagsOutcomeCallable RedshiftClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DeleteTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteTags( request ); } );
 }
 
 void RedshiftClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DeleteTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -864,12 +861,12 @@ DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGr
 
 DescribeClusterParameterGroupsOutcomeCallable RedshiftClient::DescribeClusterParameterGroupsCallable(const DescribeClusterParameterGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterParameterGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterParameterGroups( request ); } );
 }
 
 void RedshiftClient::DescribeClusterParameterGroupsAsync(const DescribeClusterParameterGroupsRequest& request, const DescribeClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterParameterGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterParameterGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterParameterGroupsAsyncHelper(const DescribeClusterParameterGroupsRequest& request, const DescribeClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -894,12 +891,12 @@ DescribeClusterParametersOutcome RedshiftClient::DescribeClusterParameters(const
 
 DescribeClusterParametersOutcomeCallable RedshiftClient::DescribeClusterParametersCallable(const DescribeClusterParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterParameters( request ); } );
 }
 
 void RedshiftClient::DescribeClusterParametersAsync(const DescribeClusterParametersRequest& request, const DescribeClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterParametersAsyncHelper(const DescribeClusterParametersRequest& request, const DescribeClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -924,12 +921,12 @@ DescribeClusterSecurityGroupsOutcome RedshiftClient::DescribeClusterSecurityGrou
 
 DescribeClusterSecurityGroupsOutcomeCallable RedshiftClient::DescribeClusterSecurityGroupsCallable(const DescribeClusterSecurityGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterSecurityGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterSecurityGroups( request ); } );
 }
 
 void RedshiftClient::DescribeClusterSecurityGroupsAsync(const DescribeClusterSecurityGroupsRequest& request, const DescribeClusterSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterSecurityGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterSecurityGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterSecurityGroupsAsyncHelper(const DescribeClusterSecurityGroupsRequest& request, const DescribeClusterSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -954,12 +951,12 @@ DescribeClusterSnapshotsOutcome RedshiftClient::DescribeClusterSnapshots(const D
 
 DescribeClusterSnapshotsOutcomeCallable RedshiftClient::DescribeClusterSnapshotsCallable(const DescribeClusterSnapshotsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterSnapshots, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterSnapshots( request ); } );
 }
 
 void RedshiftClient::DescribeClusterSnapshotsAsync(const DescribeClusterSnapshotsRequest& request, const DescribeClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterSnapshotsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterSnapshotsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterSnapshotsAsyncHelper(const DescribeClusterSnapshotsRequest& request, const DescribeClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -984,12 +981,12 @@ DescribeClusterSubnetGroupsOutcome RedshiftClient::DescribeClusterSubnetGroups(c
 
 DescribeClusterSubnetGroupsOutcomeCallable RedshiftClient::DescribeClusterSubnetGroupsCallable(const DescribeClusterSubnetGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterSubnetGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterSubnetGroups( request ); } );
 }
 
 void RedshiftClient::DescribeClusterSubnetGroupsAsync(const DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterSubnetGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterSubnetGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterSubnetGroupsAsyncHelper(const DescribeClusterSubnetGroupsRequest& request, const DescribeClusterSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1014,12 +1011,12 @@ DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const Des
 
 DescribeClusterVersionsOutcomeCallable RedshiftClient::DescribeClusterVersionsCallable(const DescribeClusterVersionsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusterVersions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusterVersions( request ); } );
 }
 
 void RedshiftClient::DescribeClusterVersionsAsync(const DescribeClusterVersionsRequest& request, const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClusterVersionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterVersionsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClusterVersionsAsyncHelper(const DescribeClusterVersionsRequest& request, const DescribeClusterVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1044,12 +1041,12 @@ DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersR
 
 DescribeClustersOutcomeCallable RedshiftClient::DescribeClustersCallable(const DescribeClustersRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeClusters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeClusters( request ); } );
 }
 
 void RedshiftClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeClustersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClustersAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeClustersAsyncHelper(const DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1074,12 +1071,12 @@ DescribeDefaultClusterParametersOutcome RedshiftClient::DescribeDefaultClusterPa
 
 DescribeDefaultClusterParametersOutcomeCallable RedshiftClient::DescribeDefaultClusterParametersCallable(const DescribeDefaultClusterParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeDefaultClusterParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDefaultClusterParameters( request ); } );
 }
 
 void RedshiftClient::DescribeDefaultClusterParametersAsync(const DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeDefaultClusterParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDefaultClusterParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeDefaultClusterParametersAsyncHelper(const DescribeDefaultClusterParametersRequest& request, const DescribeDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1104,12 +1101,12 @@ DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const Des
 
 DescribeEventCategoriesOutcomeCallable RedshiftClient::DescribeEventCategoriesCallable(const DescribeEventCategoriesRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeEventCategories, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEventCategories( request ); } );
 }
 
 void RedshiftClient::DescribeEventCategoriesAsync(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeEventCategoriesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventCategoriesAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1134,12 +1131,12 @@ DescribeEventSubscriptionsOutcome RedshiftClient::DescribeEventSubscriptions(con
 
 DescribeEventSubscriptionsOutcomeCallable RedshiftClient::DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeEventSubscriptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEventSubscriptions( request ); } );
 }
 
 void RedshiftClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeEventSubscriptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSubscriptionsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1164,12 +1161,12 @@ DescribeEventsOutcome RedshiftClient::DescribeEvents(const DescribeEventsRequest
 
 DescribeEventsOutcomeCallable RedshiftClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeEvents, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEvents( request ); } );
 }
 
 void RedshiftClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeEventsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1194,12 +1191,12 @@ DescribeHsmClientCertificatesOutcome RedshiftClient::DescribeHsmClientCertificat
 
 DescribeHsmClientCertificatesOutcomeCallable RedshiftClient::DescribeHsmClientCertificatesCallable(const DescribeHsmClientCertificatesRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeHsmClientCertificates, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeHsmClientCertificates( request ); } );
 }
 
 void RedshiftClient::DescribeHsmClientCertificatesAsync(const DescribeHsmClientCertificatesRequest& request, const DescribeHsmClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeHsmClientCertificatesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHsmClientCertificatesAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeHsmClientCertificatesAsyncHelper(const DescribeHsmClientCertificatesRequest& request, const DescribeHsmClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1224,12 +1221,12 @@ DescribeHsmConfigurationsOutcome RedshiftClient::DescribeHsmConfigurations(const
 
 DescribeHsmConfigurationsOutcomeCallable RedshiftClient::DescribeHsmConfigurationsCallable(const DescribeHsmConfigurationsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeHsmConfigurations, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeHsmConfigurations( request ); } );
 }
 
 void RedshiftClient::DescribeHsmConfigurationsAsync(const DescribeHsmConfigurationsRequest& request, const DescribeHsmConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeHsmConfigurationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeHsmConfigurationsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeHsmConfigurationsAsyncHelper(const DescribeHsmConfigurationsRequest& request, const DescribeHsmConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1254,12 +1251,12 @@ DescribeLoggingStatusOutcome RedshiftClient::DescribeLoggingStatus(const Describ
 
 DescribeLoggingStatusOutcomeCallable RedshiftClient::DescribeLoggingStatusCallable(const DescribeLoggingStatusRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeLoggingStatus, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeLoggingStatus( request ); } );
 }
 
 void RedshiftClient::DescribeLoggingStatusAsync(const DescribeLoggingStatusRequest& request, const DescribeLoggingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeLoggingStatusAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoggingStatusAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeLoggingStatusAsyncHelper(const DescribeLoggingStatusRequest& request, const DescribeLoggingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1284,12 +1281,12 @@ DescribeOrderableClusterOptionsOutcome RedshiftClient::DescribeOrderableClusterO
 
 DescribeOrderableClusterOptionsOutcomeCallable RedshiftClient::DescribeOrderableClusterOptionsCallable(const DescribeOrderableClusterOptionsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeOrderableClusterOptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeOrderableClusterOptions( request ); } );
 }
 
 void RedshiftClient::DescribeOrderableClusterOptionsAsync(const DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeOrderableClusterOptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrderableClusterOptionsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeOrderableClusterOptionsAsyncHelper(const DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1314,12 +1311,12 @@ DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferin
 
 DescribeReservedNodeOfferingsOutcomeCallable RedshiftClient::DescribeReservedNodeOfferingsCallable(const DescribeReservedNodeOfferingsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeReservedNodeOfferings, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedNodeOfferings( request ); } );
 }
 
 void RedshiftClient::DescribeReservedNodeOfferingsAsync(const DescribeReservedNodeOfferingsRequest& request, const DescribeReservedNodeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeReservedNodeOfferingsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedNodeOfferingsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeReservedNodeOfferingsAsyncHelper(const DescribeReservedNodeOfferingsRequest& request, const DescribeReservedNodeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1344,12 +1341,12 @@ DescribeReservedNodesOutcome RedshiftClient::DescribeReservedNodes(const Describ
 
 DescribeReservedNodesOutcomeCallable RedshiftClient::DescribeReservedNodesCallable(const DescribeReservedNodesRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeReservedNodes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedNodes( request ); } );
 }
 
 void RedshiftClient::DescribeReservedNodesAsync(const DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeReservedNodesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedNodesAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeReservedNodesAsyncHelper(const DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1374,12 +1371,12 @@ DescribeResizeOutcome RedshiftClient::DescribeResize(const DescribeResizeRequest
 
 DescribeResizeOutcomeCallable RedshiftClient::DescribeResizeCallable(const DescribeResizeRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeResize, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeResize( request ); } );
 }
 
 void RedshiftClient::DescribeResizeAsync(const DescribeResizeRequest& request, const DescribeResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeResizeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeResizeAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeResizeAsyncHelper(const DescribeResizeRequest& request, const DescribeResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1404,12 +1401,12 @@ DescribeSnapshotCopyGrantsOutcome RedshiftClient::DescribeSnapshotCopyGrants(con
 
 DescribeSnapshotCopyGrantsOutcomeCallable RedshiftClient::DescribeSnapshotCopyGrantsCallable(const DescribeSnapshotCopyGrantsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeSnapshotCopyGrants, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSnapshotCopyGrants( request ); } );
 }
 
 void RedshiftClient::DescribeSnapshotCopyGrantsAsync(const DescribeSnapshotCopyGrantsRequest& request, const DescribeSnapshotCopyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeSnapshotCopyGrantsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSnapshotCopyGrantsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeSnapshotCopyGrantsAsyncHelper(const DescribeSnapshotCopyGrantsRequest& request, const DescribeSnapshotCopyGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1434,12 +1431,12 @@ DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(con
 
 DescribeTableRestoreStatusOutcomeCallable RedshiftClient::DescribeTableRestoreStatusCallable(const DescribeTableRestoreStatusRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeTableRestoreStatus, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeTableRestoreStatus( request ); } );
 }
 
 void RedshiftClient::DescribeTableRestoreStatusAsync(const DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeTableRestoreStatusAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableRestoreStatusAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeTableRestoreStatusAsyncHelper(const DescribeTableRestoreStatusRequest& request, const DescribeTableRestoreStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1464,12 +1461,12 @@ DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& requ
 
 DescribeTagsOutcomeCallable RedshiftClient::DescribeTagsCallable(const DescribeTagsRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DescribeTags, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeTags( request ); } );
 }
 
 void RedshiftClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DescribeTagsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTagsAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1494,12 +1491,12 @@ DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest
 
 DisableLoggingOutcomeCallable RedshiftClient::DisableLoggingCallable(const DisableLoggingRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DisableLogging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DisableLogging( request ); } );
 }
 
 void RedshiftClient::DisableLoggingAsync(const DisableLoggingRequest& request, const DisableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DisableLoggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DisableLoggingAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DisableLoggingAsyncHelper(const DisableLoggingRequest& request, const DisableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1524,12 +1521,12 @@ DisableSnapshotCopyOutcome RedshiftClient::DisableSnapshotCopy(const DisableSnap
 
 DisableSnapshotCopyOutcomeCallable RedshiftClient::DisableSnapshotCopyCallable(const DisableSnapshotCopyRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::DisableSnapshotCopy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DisableSnapshotCopy( request ); } );
 }
 
 void RedshiftClient::DisableSnapshotCopyAsync(const DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::DisableSnapshotCopyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DisableSnapshotCopyAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::DisableSnapshotCopyAsyncHelper(const DisableSnapshotCopyRequest& request, const DisableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1554,12 +1551,12 @@ EnableLoggingOutcome RedshiftClient::EnableLogging(const EnableLoggingRequest& r
 
 EnableLoggingOutcomeCallable RedshiftClient::EnableLoggingCallable(const EnableLoggingRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::EnableLogging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnableLogging( request ); } );
 }
 
 void RedshiftClient::EnableLoggingAsync(const EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::EnableLoggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnableLoggingAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::EnableLoggingAsyncHelper(const EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1584,12 +1581,12 @@ EnableSnapshotCopyOutcome RedshiftClient::EnableSnapshotCopy(const EnableSnapsho
 
 EnableSnapshotCopyOutcomeCallable RedshiftClient::EnableSnapshotCopyCallable(const EnableSnapshotCopyRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::EnableSnapshotCopy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnableSnapshotCopy( request ); } );
 }
 
 void RedshiftClient::EnableSnapshotCopyAsync(const EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::EnableSnapshotCopyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnableSnapshotCopyAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::EnableSnapshotCopyAsyncHelper(const EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1614,12 +1611,12 @@ ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& r
 
 ModifyClusterOutcomeCallable RedshiftClient::ModifyClusterCallable(const ModifyClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifyCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyCluster( request ); } );
 }
 
 void RedshiftClient::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifyClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifyClusterAsyncHelper(const ModifyClusterRequest& request, const ModifyClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1644,12 +1641,12 @@ ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyC
 
 ModifyClusterIamRolesOutcomeCallable RedshiftClient::ModifyClusterIamRolesCallable(const ModifyClusterIamRolesRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifyClusterIamRoles, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyClusterIamRoles( request ); } );
 }
 
 void RedshiftClient::ModifyClusterIamRolesAsync(const ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifyClusterIamRolesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterIamRolesAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifyClusterIamRolesAsyncHelper(const ModifyClusterIamRolesRequest& request, const ModifyClusterIamRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1674,12 +1671,12 @@ ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(c
 
 ModifyClusterParameterGroupOutcomeCallable RedshiftClient::ModifyClusterParameterGroupCallable(const ModifyClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifyClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyClusterParameterGroup( request ); } );
 }
 
 void RedshiftClient::ModifyClusterParameterGroupAsync(const ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifyClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifyClusterParameterGroupAsyncHelper(const ModifyClusterParameterGroupRequest& request, const ModifyClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1704,12 +1701,12 @@ ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const M
 
 ModifyClusterSubnetGroupOutcomeCallable RedshiftClient::ModifyClusterSubnetGroupCallable(const ModifyClusterSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifyClusterSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyClusterSubnetGroup( request ); } );
 }
 
 void RedshiftClient::ModifyClusterSubnetGroupAsync(const ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifyClusterSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClusterSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifyClusterSubnetGroupAsyncHelper(const ModifyClusterSubnetGroupRequest& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1734,12 +1731,12 @@ ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const Mod
 
 ModifyEventSubscriptionOutcomeCallable RedshiftClient::ModifyEventSubscriptionCallable(const ModifyEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifyEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyEventSubscription( request ); } );
 }
 
 void RedshiftClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifyEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1764,12 +1761,12 @@ ModifySnapshotCopyRetentionPeriodOutcome RedshiftClient::ModifySnapshotCopyReten
 
 ModifySnapshotCopyRetentionPeriodOutcomeCallable RedshiftClient::ModifySnapshotCopyRetentionPeriodCallable(const ModifySnapshotCopyRetentionPeriodRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ModifySnapshotCopyRetentionPeriod, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifySnapshotCopyRetentionPeriod( request ); } );
 }
 
 void RedshiftClient::ModifySnapshotCopyRetentionPeriodAsync(const ModifySnapshotCopyRetentionPeriodRequest& request, const ModifySnapshotCopyRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ModifySnapshotCopyRetentionPeriodAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifySnapshotCopyRetentionPeriodAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ModifySnapshotCopyRetentionPeriodAsyncHelper(const ModifySnapshotCopyRetentionPeriodRequest& request, const ModifySnapshotCopyRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1794,12 +1791,12 @@ PurchaseReservedNodeOfferingOutcome RedshiftClient::PurchaseReservedNodeOffering
 
 PurchaseReservedNodeOfferingOutcomeCallable RedshiftClient::PurchaseReservedNodeOfferingCallable(const PurchaseReservedNodeOfferingRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::PurchaseReservedNodeOffering, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PurchaseReservedNodeOffering( request ); } );
 }
 
 void RedshiftClient::PurchaseReservedNodeOfferingAsync(const PurchaseReservedNodeOfferingRequest& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::PurchaseReservedNodeOfferingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedNodeOfferingAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::PurchaseReservedNodeOfferingAsyncHelper(const PurchaseReservedNodeOfferingRequest& request, const PurchaseReservedNodeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1824,12 +1821,12 @@ RebootClusterOutcome RedshiftClient::RebootCluster(const RebootClusterRequest& r
 
 RebootClusterOutcomeCallable RedshiftClient::RebootClusterCallable(const RebootClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RebootCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RebootCluster( request ); } );
 }
 
 void RedshiftClient::RebootClusterAsync(const RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RebootClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RebootClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RebootClusterAsyncHelper(const RebootClusterRequest& request, const RebootClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1854,12 +1851,12 @@ ResetClusterParameterGroupOutcome RedshiftClient::ResetClusterParameterGroup(con
 
 ResetClusterParameterGroupOutcomeCallable RedshiftClient::ResetClusterParameterGroupCallable(const ResetClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::ResetClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResetClusterParameterGroup( request ); } );
 }
 
 void RedshiftClient::ResetClusterParameterGroupAsync(const ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::ResetClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResetClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::ResetClusterParameterGroupAsyncHelper(const ResetClusterParameterGroupRequest& request, const ResetClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1884,12 +1881,12 @@ RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(con
 
 RestoreFromClusterSnapshotOutcomeCallable RedshiftClient::RestoreFromClusterSnapshotCallable(const RestoreFromClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RestoreFromClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreFromClusterSnapshot( request ); } );
 }
 
 void RedshiftClient::RestoreFromClusterSnapshotAsync(const RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RestoreFromClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreFromClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RestoreFromClusterSnapshotAsyncHelper(const RestoreFromClusterSnapshotRequest& request, const RestoreFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1914,12 +1911,12 @@ RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSn
 
 RestoreTableFromClusterSnapshotOutcomeCallable RedshiftClient::RestoreTableFromClusterSnapshotCallable(const RestoreTableFromClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RestoreTableFromClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreTableFromClusterSnapshot( request ); } );
 }
 
 void RedshiftClient::RestoreTableFromClusterSnapshotAsync(const RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RestoreTableFromClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreTableFromClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RestoreTableFromClusterSnapshotAsyncHelper(const RestoreTableFromClusterSnapshotRequest& request, const RestoreTableFromClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1944,12 +1941,12 @@ RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGr
 
 RevokeClusterSecurityGroupIngressOutcomeCallable RedshiftClient::RevokeClusterSecurityGroupIngressCallable(const RevokeClusterSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RevokeClusterSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RevokeClusterSecurityGroupIngress( request ); } );
 }
 
 void RedshiftClient::RevokeClusterSecurityGroupIngressAsync(const RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RevokeClusterSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeClusterSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RevokeClusterSecurityGroupIngressAsyncHelper(const RevokeClusterSecurityGroupIngressRequest& request, const RevokeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1974,12 +1971,12 @@ RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSna
 
 RevokeSnapshotAccessOutcomeCallable RedshiftClient::RevokeSnapshotAccessCallable(const RevokeSnapshotAccessRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RevokeSnapshotAccess, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RevokeSnapshotAccess( request ); } );
 }
 
 void RedshiftClient::RevokeSnapshotAccessAsync(const RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RevokeSnapshotAccessAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeSnapshotAccessAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RevokeSnapshotAccessAsyncHelper(const RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2004,12 +2001,12 @@ RotateEncryptionKeyOutcome RedshiftClient::RotateEncryptionKey(const RotateEncry
 
 RotateEncryptionKeyOutcomeCallable RedshiftClient::RotateEncryptionKeyCallable(const RotateEncryptionKeyRequest& request) const
 {
-  return std::async(std::launch::async, &RedshiftClient::RotateEncryptionKey, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RotateEncryptionKey( request ); } );
 }
 
 void RedshiftClient::RotateEncryptionKeyAsync(const RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RedshiftClient::RotateEncryptionKeyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RotateEncryptionKeyAsyncHelper( request, handler, context ); } );
 }
 
 void RedshiftClient::RotateEncryptionKeyAsyncHelper(const RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,7 +13,8 @@
 * permissions and limitations under the License.
 */
 #include <aws/route53/Route53Endpoint.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::Route53;
@@ -24,35 +25,30 @@ namespace Route53
 {
 namespace Route53Endpoint
 {
-  Aws::String ForRegion(Region region)
+
+  static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    switch(region)
+    if(!useDualStack)
     {
-     case Region::US_EAST_1:
+      auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+
+      if(hash == US_EAST_1_HASH)
+      {
         return "route53.amazonaws.com";
-     case Region::US_WEST_1:
-        return "route53-us-west-1.amazonaws.com";
-     case Region::US_WEST_2:
-        return "route53-us-west-2.amazonaws.com";
-     case Region::EU_WEST_1:
-        return "route53-eu-west-1.amazonaws.com";
-     case Region::EU_CENTRAL_1:
-        return "route53-eu-central-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_1:
-        return "route53-ap-southeast-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_2:
-        return "route53-ap-southeast-2.amazonaws.com";
-     case Region::AP_NORTHEAST_1:
-        return "route53-ap-northeast-1.amazonaws.com";
-     case Region::AP_NORTHEAST_2:
-        return "route53-ap-northeast-2.amazonaws.com";
-     case Region::SA_EAST_1:
-        return "route53-sa-east-1.amazonaws.com";
-     case Region::AP_SOUTH_1:
-        return "route53-ap-south-1.amazonaws.com";
-     default:
-        return "route53.amazonaws.com";
+      }
     }
+    Aws::StringStream ss;
+    ss << "route53" << ".";
+
+    if(useDualStack)
+    {
+      ss << "dualstack.";
+    }
+
+    ss << regionName << ".amazonaws.com";
+    return ss.str();
   }
 
 } // namespace Route53Endpoint

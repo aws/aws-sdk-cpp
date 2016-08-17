@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+﻿cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-apigateway)
 
   file(GLOB AWS_APIGATEWAY_HEADERS

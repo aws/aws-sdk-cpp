@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -202,73 +202,73 @@ namespace Model
         virtual void AddInstanceGroupsAsync(const Model::AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow. </p> <p>If your job flow is long-running (such as
-         * a Hive data warehouse) or complex, you may require more than 256 steps to
-         * process your data. You can bypass the 256-step limitation in various ways,
-         * including using the SSH shell to connect to the master node and submitting
-         * queries directly to the software running on the master node, such as Hive and
-         * Hadoop. For more information on how to do this, go to <a
+         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * Hive data warehouse) or complex, you may require more than 256 steps to process
+         * your data. You can bypass the 256-step limitation in various ways, including
+         * using the SSH shell to connect to the master node and submitting queries
+         * directly to the software running on the master node, such as Hive and Hadoop.
+         * For more information on how to do this, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce
-         * Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file
-         * stored either on the master node of the job flow or in Amazon S3. Each step is
+         * Developer's Guide</i>.</p> <p>A step specifies the location of a JAR file stored
+         * either on the master node of the job flow or in Amazon S3. Each step is
          * performed by the main function of the main class of the JAR file. The main class
          * can be specified either in the manifest of the JAR or by using the MainFunction
-         * parameter of the step. </p> <p> Elastic MapReduce executes each step in the
-         * order listed. For a step to be considered complete, the main function must exit
-         * with a zero exit code and all Hadoop jobs started while the step was running
-         * must have completed and run successfully. </p> <p> You can only add steps to a
-         * job flow that is in one of the following states: STARTING, BOOTSTRAPPING,
-         * RUNNING, or WAITING.</p>
+         * parameter of the step.</p> <p>Elastic MapReduce executes each step in the order
+         * listed. For a step to be considered complete, the main function must exit with a
+         * zero exit code and all Hadoop jobs started while the step was running must have
+         * completed and run successfully.</p> <p>You can only add steps to a job flow that
+         * is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
+         * WAITING.</p>
          */
         virtual Model::AddJobFlowStepsOutcome AddJobFlowSteps(const Model::AddJobFlowStepsRequest& request) const;
 
         /**
-         * <p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow. </p> <p>If your job flow is long-running (such as
-         * a Hive data warehouse) or complex, you may require more than 256 steps to
-         * process your data. You can bypass the 256-step limitation in various ways,
-         * including using the SSH shell to connect to the master node and submitting
-         * queries directly to the software running on the master node, such as Hive and
-         * Hadoop. For more information on how to do this, go to <a
+         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * Hive data warehouse) or complex, you may require more than 256 steps to process
+         * your data. You can bypass the 256-step limitation in various ways, including
+         * using the SSH shell to connect to the master node and submitting queries
+         * directly to the software running on the master node, such as Hive and Hadoop.
+         * For more information on how to do this, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce
-         * Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file
-         * stored either on the master node of the job flow or in Amazon S3. Each step is
+         * Developer's Guide</i>.</p> <p>A step specifies the location of a JAR file stored
+         * either on the master node of the job flow or in Amazon S3. Each step is
          * performed by the main function of the main class of the JAR file. The main class
          * can be specified either in the manifest of the JAR or by using the MainFunction
-         * parameter of the step. </p> <p> Elastic MapReduce executes each step in the
-         * order listed. For a step to be considered complete, the main function must exit
-         * with a zero exit code and all Hadoop jobs started while the step was running
-         * must have completed and run successfully. </p> <p> You can only add steps to a
-         * job flow that is in one of the following states: STARTING, BOOTSTRAPPING,
-         * RUNNING, or WAITING.</p>
+         * parameter of the step.</p> <p>Elastic MapReduce executes each step in the order
+         * listed. For a step to be considered complete, the main function must exit with a
+         * zero exit code and all Hadoop jobs started while the step was running must have
+         * completed and run successfully.</p> <p>You can only add steps to a job flow that
+         * is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
+         * WAITING.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AddJobFlowStepsOutcomeCallable AddJobFlowStepsCallable(const Model::AddJobFlowStepsRequest& request) const;
 
         /**
-         * <p> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
-         * are allowed in each job flow. </p> <p>If your job flow is long-running (such as
-         * a Hive data warehouse) or complex, you may require more than 256 steps to
-         * process your data. You can bypass the 256-step limitation in various ways,
-         * including using the SSH shell to connect to the master node and submitting
-         * queries directly to the software running on the master node, such as Hive and
-         * Hadoop. For more information on how to do this, go to <a
+         * <p>AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps
+         * are allowed in each job flow.</p> <p>If your job flow is long-running (such as a
+         * Hive data warehouse) or complex, you may require more than 256 steps to process
+         * your data. You can bypass the 256-step limitation in various ways, including
+         * using the SSH shell to connect to the master node and submitting queries
+         * directly to the software running on the master node, such as Hive and Hadoop.
+         * For more information on how to do this, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
          * More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce
-         * Developer's Guide</i>.</p> <p> A step specifies the location of a JAR file
-         * stored either on the master node of the job flow or in Amazon S3. Each step is
+         * Developer's Guide</i>.</p> <p>A step specifies the location of a JAR file stored
+         * either on the master node of the job flow or in Amazon S3. Each step is
          * performed by the main function of the main class of the JAR file. The main class
          * can be specified either in the manifest of the JAR or by using the MainFunction
-         * parameter of the step. </p> <p> Elastic MapReduce executes each step in the
-         * order listed. For a step to be considered complete, the main function must exit
-         * with a zero exit code and all Hadoop jobs started while the step was running
-         * must have completed and run successfully. </p> <p> You can only add steps to a
-         * job flow that is in one of the following states: STARTING, BOOTSTRAPPING,
-         * RUNNING, or WAITING.</p>
+         * parameter of the step.</p> <p>Elastic MapReduce executes each step in the order
+         * listed. For a step to be considered complete, the main function must exit with a
+         * zero exit code and all Hadoop jobs started while the step was running must have
+         * completed and run successfully.</p> <p>You can only add steps to a job flow that
+         * is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or
+         * WAITING.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -376,7 +376,7 @@ namespace Model
          * to filter the list of clusters based on certain criteria; for example, filtering
          * by cluster creation date and time or by status. This call returns a maximum of
          * 50 clusters per call, but returns a marker to track the paging of the cluster
-         * list across multiple ListClusters calls. </p>
+         * list across multiple ListClusters calls.</p>
          */
         virtual Model::ListClustersOutcome ListClusters(const Model::ListClustersRequest& request) const;
 
@@ -385,7 +385,7 @@ namespace Model
          * to filter the list of clusters based on certain criteria; for example, filtering
          * by cluster creation date and time or by status. This call returns a maximum of
          * 50 clusters per call, but returns a marker to track the paging of the cluster
-         * list across multiple ListClusters calls. </p>
+         * list across multiple ListClusters calls.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -396,7 +396,7 @@ namespace Model
          * to filter the list of clusters based on certain criteria; for example, filtering
          * by cluster creation date and time or by status. This call returns a maximum of
          * 50 clusters per call, but returns a marker to track the paging of the cluster
-         * list across multiple ListClusters calls. </p>
+         * list across multiple ListClusters calls.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -426,7 +426,7 @@ namespace Model
          * on behalf of a user when it creates the cluster. For example, this operation
          * indicates when the EC2 instances reach the Ready state, when instances become
          * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc. </p>
+         * instances, etc.</p>
          */
         virtual Model::ListInstancesOutcome ListInstances(const Model::ListInstancesRequest& request) const;
 
@@ -435,7 +435,7 @@ namespace Model
          * on behalf of a user when it creates the cluster. For example, this operation
          * indicates when the EC2 instances reach the Ready state, when instances become
          * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc. </p>
+         * instances, etc.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -446,26 +446,26 @@ namespace Model
          * on behalf of a user when it creates the cluster. For example, this operation
          * indicates when the EC2 instances reach the Ready state, when instances become
          * available to Amazon EMR to use for jobs, and the IP addresses for cluster
-         * instances, etc. </p>
+         * instances, etc.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides a list of steps for the cluster. </p>
+         * <p>Provides a list of steps for the cluster.</p>
          */
         virtual Model::ListStepsOutcome ListSteps(const Model::ListStepsRequest& request) const;
 
         /**
-         * <p>Provides a list of steps for the cluster. </p>
+         * <p>Provides a list of steps for the cluster.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListStepsOutcomeCallable ListStepsCallable(const Model::ListStepsRequest& request) const;
 
         /**
-         * <p>Provides a list of steps for the cluster. </p>
+         * <p>Provides a list of steps for the cluster.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -610,12 +610,12 @@ namespace Model
         virtual void RunJobFlowAsync(const Model::RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
+         * <p>SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
          * cluster cannot be terminated by user intervention, an API call, or in the event
          * of a job-flow error. The cluster still terminates upon successful completion of
          * the job flow. Calling SetTerminationProtection on a job flow is analogous to
          * calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in
-         * a cluster.</p> <p> SetTerminationProtection is used to prevent accidental
+         * a cluster.</p> <p>SetTerminationProtection is used to prevent accidental
          * termination of a job flow and to ensure that in the event of an error, the
          * instances will persist so you can recover any data stored in their ephemeral
          * instance storage.</p> <p> To terminate a job flow that has been locked by
@@ -624,17 +624,17 @@ namespace Model
          * value to <code>false</code>. </p> <p> For more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
          * a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's
-         * Guide.</i></p>
+         * Guide.</i> </p>
          */
         virtual Model::SetTerminationProtectionOutcome SetTerminationProtection(const Model::SetTerminationProtectionRequest& request) const;
 
         /**
-         * <p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
+         * <p>SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
          * cluster cannot be terminated by user intervention, an API call, or in the event
          * of a job-flow error. The cluster still terminates upon successful completion of
          * the job flow. Calling SetTerminationProtection on a job flow is analogous to
          * calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in
-         * a cluster.</p> <p> SetTerminationProtection is used to prevent accidental
+         * a cluster.</p> <p>SetTerminationProtection is used to prevent accidental
          * termination of a job flow and to ensure that in the event of an error, the
          * instances will persist so you can recover any data stored in their ephemeral
          * instance storage.</p> <p> To terminate a job flow that has been locked by
@@ -643,19 +643,19 @@ namespace Model
          * value to <code>false</code>. </p> <p> For more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
          * a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's
-         * Guide.</i></p>
+         * Guide.</i> </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SetTerminationProtectionOutcomeCallable SetTerminationProtectionCallable(const Model::SetTerminationProtectionRequest& request) const;
 
         /**
-         * <p> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
+         * <p>SetTerminationProtection locks a job flow so the Amazon EC2 instances in the
          * cluster cannot be terminated by user intervention, an API call, or in the event
          * of a job-flow error. The cluster still terminates upon successful completion of
          * the job flow. Calling SetTerminationProtection on a job flow is analogous to
          * calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in
-         * a cluster.</p> <p> SetTerminationProtection is used to prevent accidental
+         * a cluster.</p> <p>SetTerminationProtection is used to prevent accidental
          * termination of a job flow and to ensure that in the event of an error, the
          * instances will persist so you can recover any data stored in their ephemeral
          * instance storage.</p> <p> To terminate a job flow that has been locked by
@@ -664,7 +664,7 @@ namespace Model
          * value to <code>false</code>. </p> <p> For more information, go to <a
          * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
          * a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's
-         * Guide.</i></p>
+         * Guide.</i> </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -705,40 +705,40 @@ namespace Model
         virtual void SetVisibleToAllUsersAsync(const Model::SetVisibleToAllUsersRequest& request, const SetVisibleToAllUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut
+         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
          * down, any step not yet completed is canceled and the EC2 instances on which the
          * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The
+         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
          * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
          * asynchronous. Depending on the configuration of the job flow, it may take up to
          * 5-20 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances. </p>
+         * resources, such as Amazon EC2 instances.</p>
          */
         virtual Model::TerminateJobFlowsOutcome TerminateJobFlows(const Model::TerminateJobFlowsRequest& request) const;
 
         /**
-         * <p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut
+         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
          * down, any step not yet completed is canceled and the EC2 instances on which the
          * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The
+         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
          * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
          * asynchronous. Depending on the configuration of the job flow, it may take up to
          * 5-20 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances. </p>
+         * resources, such as Amazon EC2 instances.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TerminateJobFlowsOutcomeCallable TerminateJobFlowsCallable(const Model::TerminateJobFlowsRequest& request) const;
 
         /**
-         * <p> TerminateJobFlows shuts a list of job flows down. When a job flow is shut
+         * <p>TerminateJobFlows shuts a list of job flows down. When a job flow is shut
          * down, any step not yet completed is canceled and the EC2 instances on which the
          * job flow is running are stopped. Any log files not already saved are uploaded to
-         * Amazon S3 if a LogUri was specified when the job flow was created. </p> <p> The
+         * Amazon S3 if a LogUri was specified when the job flow was created.</p> <p>The
          * maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is
          * asynchronous. Depending on the configuration of the job flow, it may take up to
          * 5-20 minutes for the job flow to completely terminate and release allocated
-         * resources, such as Amazon EC2 instances. </p>
+         * resources, such as Amazon EC2 instances.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

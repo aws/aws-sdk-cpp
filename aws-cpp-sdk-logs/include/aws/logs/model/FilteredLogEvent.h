@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a matched event from a <code class="code">FilterLogEvents</code>
-   * request.</p>
+   * <p>Represents a matched event from a <code>FilterLogEvents</code> request.</p>
    */
   class AWS_CLOUDWATCHLOGS_API FilteredLogEvent
   {

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -482,7 +482,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -504,7 +504,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -526,7 +526,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -548,7 +548,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -570,7 +570,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -592,7 +592,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -614,7 +614,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security
@@ -636,7 +636,7 @@ namespace Model
      * a container</a> section of the <a
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/">Docker
      * Remote API</a> and the <code>--link</code> option to <a
-     * href="https://docs.docker.com/reference/commandline/run/"> docker run </a>.</p>
+     * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.</p>
      * <important> <p>Containers that are collocated on a single container instance may
      * be able to communicate with each other without requiring links or host port
      * mappings. Network isolation is achieved on the container instance using security

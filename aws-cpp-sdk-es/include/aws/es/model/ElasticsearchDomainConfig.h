@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,6 +14,7 @@
 */
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/es/model/ElasticsearchVersionStatus.h>
 #include <aws/es/model/ElasticsearchClusterConfigStatus.h>
 #include <aws/es/model/EBSOptionsStatus.h>
 #include <aws/es/model/AccessPoliciesStatus.h>
@@ -44,6 +45,31 @@ namespace Model
     ElasticsearchDomainConfig(const Aws::Utils::Json::JsonValue& jsonValue);
     ElasticsearchDomainConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+     */
+    inline const ElasticsearchVersionStatus& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+     */
+    inline void SetElasticsearchVersion(const ElasticsearchVersionStatus& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+     */
+    inline void SetElasticsearchVersion(ElasticsearchVersionStatus&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithElasticsearchVersion(const ElasticsearchVersionStatus& value) { SetElasticsearchVersion(value); return *this;}
+
+    /**
+     * <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithElasticsearchVersion(ElasticsearchVersionStatus&& value) { SetElasticsearchVersion(value); return *this;}
 
     /**
      * <p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch
@@ -186,6 +212,8 @@ namespace Model
     inline ElasticsearchDomainConfig& WithAdvancedOptions(AdvancedOptionsStatus&& value) { SetAdvancedOptions(value); return *this;}
 
   private:
+    ElasticsearchVersionStatus m_elasticsearchVersion;
+    bool m_elasticsearchVersionHasBeenSet;
     ElasticsearchClusterConfigStatus m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
     EBSOptionsStatus m_eBSOptions;

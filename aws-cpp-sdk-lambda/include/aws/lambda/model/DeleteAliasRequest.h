@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,43 +34,43 @@ namespace Model
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline DeleteAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline DeleteAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(value); return *this;}
 
     /**
      * <p>The Lambda function name for which the alias is created. Deleting an alias
-     * does not delete the function version to which it is pointing. </p>
+     * does not delete the function version to which it is pointing.</p>
      */
     inline DeleteAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

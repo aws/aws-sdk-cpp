@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,6 +32,9 @@ namespace ECR
 namespace Model
 {
 
+  /**
+   * <p>An object representing an Amazon ECR image failure.</p>
+   */
   class AWS_ECR_API ImageFailure
   {
   public:

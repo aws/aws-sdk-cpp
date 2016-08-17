@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,7 +32,7 @@ namespace EMR
 namespace Model
 {
   /**
-   * <p>This output indicates the result of removing tags from a resource. </p>
+   * <p>This output indicates the result of removing tags from a resource.</p>
    */
   class AWS_EMR_API RemoveTagsResult
   {

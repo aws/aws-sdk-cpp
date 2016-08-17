@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <note><p>Amazon EMR releases 4.x or later.</p></note> <p>Specifies a hardware
+   * <note> <p>Amazon EMR releases 4.x or later.</p> </note> <p>Specifies a hardware
    * and software configuration of the EMR cluster. This includes configurations for
    * applications and software bundled with Amazon EMR. The Configuration object is a
    * JSON object which is defined by a classification and a set of properties.
@@ -99,37 +99,37 @@ namespace Model
     inline Configuration& WithClassification(const char* value) { SetClassification(value); return *this;}
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline Configuration& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline Configuration& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline Configuration& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>A list of configurations you apply to this configuration object. </p>
+     * <p>A list of configurations you apply to this configuration object.</p>
      */
     inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
 

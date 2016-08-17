@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -103,6 +103,7 @@
 #include <aws/rds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/rds/model/ResetDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/ResetDBParameterGroupRequest.h>
+#include <aws/rds/model/RestoreDBClusterFromS3Request.h>
 #include <aws/rds/model/RestoreDBClusterFromSnapshotRequest.h>
 #include <aws/rds/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/rds/model/RestoreDBInstanceFromDBSnapshotRequest.h>
@@ -125,8 +126,7 @@ static const char* ALLOCATION_TAG = "RDSClient";
 RDSClient::RDSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RDSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -136,8 +136,7 @@ RDSClient::RDSClient(const Client::ClientConfiguration& clientConfiguration) :
 RDSClient::RDSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RDSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -148,8 +147,7 @@ RDSClient::RDSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<RDSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -165,9 +163,9 @@ void RDSClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << RDSEndpoint::ForRegion(config.region);
+    ss << RDSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -194,12 +192,12 @@ AddSourceIdentifierToSubscriptionOutcome RDSClient::AddSourceIdentifierToSubscri
 
 AddSourceIdentifierToSubscriptionOutcomeCallable RDSClient::AddSourceIdentifierToSubscriptionCallable(const AddSourceIdentifierToSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::AddSourceIdentifierToSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddSourceIdentifierToSubscription( request ); } );
 }
 
 void RDSClient::AddSourceIdentifierToSubscriptionAsync(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddSourceIdentifierToSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::AddSourceIdentifierToSubscriptionAsyncHelper(const AddSourceIdentifierToSubscriptionRequest& request, const AddSourceIdentifierToSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -224,12 +222,12 @@ AddTagsToResourceOutcome RDSClient::AddTagsToResource(const AddTagsToResourceReq
 
 AddTagsToResourceOutcomeCallable RDSClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::AddTagsToResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddTagsToResource( request ); } );
 }
 
 void RDSClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -254,12 +252,12 @@ ApplyPendingMaintenanceActionOutcome RDSClient::ApplyPendingMaintenanceAction(co
 
 ApplyPendingMaintenanceActionOutcomeCallable RDSClient::ApplyPendingMaintenanceActionCallable(const ApplyPendingMaintenanceActionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ApplyPendingMaintenanceAction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ApplyPendingMaintenanceAction( request ); } );
 }
 
 void RDSClient::ApplyPendingMaintenanceActionAsync(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ApplyPendingMaintenanceActionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ApplyPendingMaintenanceActionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ApplyPendingMaintenanceActionAsyncHelper(const ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -284,12 +282,12 @@ AuthorizeDBSecurityGroupIngressOutcome RDSClient::AuthorizeDBSecurityGroupIngres
 
 AuthorizeDBSecurityGroupIngressOutcomeCallable RDSClient::AuthorizeDBSecurityGroupIngressCallable(const AuthorizeDBSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::AuthorizeDBSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AuthorizeDBSecurityGroupIngress( request ); } );
 }
 
 void RDSClient::AuthorizeDBSecurityGroupIngressAsync(const AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AuthorizeDBSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::AuthorizeDBSecurityGroupIngressAsyncHelper(const AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -314,12 +312,12 @@ CopyDBClusterParameterGroupOutcome RDSClient::CopyDBClusterParameterGroup(const 
 
 CopyDBClusterParameterGroupOutcomeCallable RDSClient::CopyDBClusterParameterGroupCallable(const CopyDBClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CopyDBClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyDBClusterParameterGroup( request ); } );
 }
 
 void RDSClient::CopyDBClusterParameterGroupAsync(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CopyDBClusterParameterGroupAsyncHelper(const CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -344,12 +342,12 @@ CopyDBClusterSnapshotOutcome RDSClient::CopyDBClusterSnapshot(const CopyDBCluste
 
 CopyDBClusterSnapshotOutcomeCallable RDSClient::CopyDBClusterSnapshotCallable(const CopyDBClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CopyDBClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyDBClusterSnapshot( request ); } );
 }
 
 void RDSClient::CopyDBClusterSnapshotAsync(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyDBClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CopyDBClusterSnapshotAsyncHelper(const CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -374,12 +372,12 @@ CopyDBParameterGroupOutcome RDSClient::CopyDBParameterGroup(const CopyDBParamete
 
 CopyDBParameterGroupOutcomeCallable RDSClient::CopyDBParameterGroupCallable(const CopyDBParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CopyDBParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyDBParameterGroup( request ); } );
 }
 
 void RDSClient::CopyDBParameterGroupAsync(const CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyDBParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CopyDBParameterGroupAsyncHelper(const CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -404,12 +402,12 @@ CopyDBSnapshotOutcome RDSClient::CopyDBSnapshot(const CopyDBSnapshotRequest& req
 
 CopyDBSnapshotOutcomeCallable RDSClient::CopyDBSnapshotCallable(const CopyDBSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CopyDBSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyDBSnapshot( request ); } );
 }
 
 void RDSClient::CopyDBSnapshotAsync(const CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CopyDBSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyDBSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CopyDBSnapshotAsyncHelper(const CopyDBSnapshotRequest& request, const CopyDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -434,12 +432,12 @@ CopyOptionGroupOutcome RDSClient::CopyOptionGroup(const CopyOptionGroupRequest& 
 
 CopyOptionGroupOutcomeCallable RDSClient::CopyOptionGroupCallable(const CopyOptionGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CopyOptionGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyOptionGroup( request ); } );
 }
 
 void RDSClient::CopyOptionGroupAsync(const CopyOptionGroupRequest& request, const CopyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CopyOptionGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyOptionGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CopyOptionGroupAsyncHelper(const CopyOptionGroupRequest& request, const CopyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -464,12 +462,12 @@ CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& 
 
 CreateDBClusterOutcomeCallable RDSClient::CreateDBClusterCallable(const CreateDBClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBCluster( request ); } );
 }
 
 void RDSClient::CreateDBClusterAsync(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBClusterAsyncHelper(const CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -494,12 +492,12 @@ CreateDBClusterParameterGroupOutcome RDSClient::CreateDBClusterParameterGroup(co
 
 CreateDBClusterParameterGroupOutcomeCallable RDSClient::CreateDBClusterParameterGroupCallable(const CreateDBClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBClusterParameterGroup( request ); } );
 }
 
 void RDSClient::CreateDBClusterParameterGroupAsync(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBClusterParameterGroupAsyncHelper(const CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -524,12 +522,12 @@ CreateDBClusterSnapshotOutcome RDSClient::CreateDBClusterSnapshot(const CreateDB
 
 CreateDBClusterSnapshotOutcomeCallable RDSClient::CreateDBClusterSnapshotCallable(const CreateDBClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBClusterSnapshot( request ); } );
 }
 
 void RDSClient::CreateDBClusterSnapshotAsync(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBClusterSnapshotAsyncHelper(const CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -554,12 +552,12 @@ CreateDBInstanceOutcome RDSClient::CreateDBInstance(const CreateDBInstanceReques
 
 CreateDBInstanceOutcomeCallable RDSClient::CreateDBInstanceCallable(const CreateDBInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBInstance( request ); } );
 }
 
 void RDSClient::CreateDBInstanceAsync(const CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBInstanceAsyncHelper(const CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -584,12 +582,12 @@ CreateDBInstanceReadReplicaOutcome RDSClient::CreateDBInstanceReadReplica(const 
 
 CreateDBInstanceReadReplicaOutcomeCallable RDSClient::CreateDBInstanceReadReplicaCallable(const CreateDBInstanceReadReplicaRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBInstanceReadReplica, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBInstanceReadReplica( request ); } );
 }
 
 void RDSClient::CreateDBInstanceReadReplicaAsync(const CreateDBInstanceReadReplicaRequest& request, const CreateDBInstanceReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBInstanceReadReplicaAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBInstanceReadReplicaAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBInstanceReadReplicaAsyncHelper(const CreateDBInstanceReadReplicaRequest& request, const CreateDBInstanceReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -614,12 +612,12 @@ CreateDBParameterGroupOutcome RDSClient::CreateDBParameterGroup(const CreateDBPa
 
 CreateDBParameterGroupOutcomeCallable RDSClient::CreateDBParameterGroupCallable(const CreateDBParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBParameterGroup( request ); } );
 }
 
 void RDSClient::CreateDBParameterGroupAsync(const CreateDBParameterGroupRequest& request, const CreateDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBParameterGroupAsyncHelper(const CreateDBParameterGroupRequest& request, const CreateDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -644,12 +642,12 @@ CreateDBSecurityGroupOutcome RDSClient::CreateDBSecurityGroup(const CreateDBSecu
 
 CreateDBSecurityGroupOutcomeCallable RDSClient::CreateDBSecurityGroupCallable(const CreateDBSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBSecurityGroup( request ); } );
 }
 
 void RDSClient::CreateDBSecurityGroupAsync(const CreateDBSecurityGroupRequest& request, const CreateDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBSecurityGroupAsyncHelper(const CreateDBSecurityGroupRequest& request, const CreateDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -674,12 +672,12 @@ CreateDBSnapshotOutcome RDSClient::CreateDBSnapshot(const CreateDBSnapshotReques
 
 CreateDBSnapshotOutcomeCallable RDSClient::CreateDBSnapshotCallable(const CreateDBSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBSnapshot( request ); } );
 }
 
 void RDSClient::CreateDBSnapshotAsync(const CreateDBSnapshotRequest& request, const CreateDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBSnapshotAsyncHelper(const CreateDBSnapshotRequest& request, const CreateDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -704,12 +702,12 @@ CreateDBSubnetGroupOutcome RDSClient::CreateDBSubnetGroup(const CreateDBSubnetGr
 
 CreateDBSubnetGroupOutcomeCallable RDSClient::CreateDBSubnetGroupCallable(const CreateDBSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateDBSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateDBSubnetGroup( request ); } );
 }
 
 void RDSClient::CreateDBSubnetGroupAsync(const CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateDBSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDBSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateDBSubnetGroupAsyncHelper(const CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -734,12 +732,12 @@ CreateEventSubscriptionOutcome RDSClient::CreateEventSubscription(const CreateEv
 
 CreateEventSubscriptionOutcomeCallable RDSClient::CreateEventSubscriptionCallable(const CreateEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateEventSubscription( request ); } );
 }
 
 void RDSClient::CreateEventSubscriptionAsync(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -764,12 +762,12 @@ CreateOptionGroupOutcome RDSClient::CreateOptionGroup(const CreateOptionGroupReq
 
 CreateOptionGroupOutcomeCallable RDSClient::CreateOptionGroupCallable(const CreateOptionGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::CreateOptionGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateOptionGroup( request ); } );
 }
 
 void RDSClient::CreateOptionGroupAsync(const CreateOptionGroupRequest& request, const CreateOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::CreateOptionGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateOptionGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::CreateOptionGroupAsyncHelper(const CreateOptionGroupRequest& request, const CreateOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -794,12 +792,12 @@ DeleteDBClusterOutcome RDSClient::DeleteDBCluster(const DeleteDBClusterRequest& 
 
 DeleteDBClusterOutcomeCallable RDSClient::DeleteDBClusterCallable(const DeleteDBClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBCluster( request ); } );
 }
 
 void RDSClient::DeleteDBClusterAsync(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBClusterAsyncHelper(const DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -824,12 +822,12 @@ DeleteDBClusterParameterGroupOutcome RDSClient::DeleteDBClusterParameterGroup(co
 
 DeleteDBClusterParameterGroupOutcomeCallable RDSClient::DeleteDBClusterParameterGroupCallable(const DeleteDBClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBClusterParameterGroup( request ); } );
 }
 
 void RDSClient::DeleteDBClusterParameterGroupAsync(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBClusterParameterGroupAsyncHelper(const DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -854,12 +852,12 @@ DeleteDBClusterSnapshotOutcome RDSClient::DeleteDBClusterSnapshot(const DeleteDB
 
 DeleteDBClusterSnapshotOutcomeCallable RDSClient::DeleteDBClusterSnapshotCallable(const DeleteDBClusterSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBClusterSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBClusterSnapshot( request ); } );
 }
 
 void RDSClient::DeleteDBClusterSnapshotAsync(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBClusterSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBClusterSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBClusterSnapshotAsyncHelper(const DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -884,12 +882,12 @@ DeleteDBInstanceOutcome RDSClient::DeleteDBInstance(const DeleteDBInstanceReques
 
 DeleteDBInstanceOutcomeCallable RDSClient::DeleteDBInstanceCallable(const DeleteDBInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBInstance( request ); } );
 }
 
 void RDSClient::DeleteDBInstanceAsync(const DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBInstanceAsyncHelper(const DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -914,12 +912,12 @@ DeleteDBParameterGroupOutcome RDSClient::DeleteDBParameterGroup(const DeleteDBPa
 
 DeleteDBParameterGroupOutcomeCallable RDSClient::DeleteDBParameterGroupCallable(const DeleteDBParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBParameterGroup( request ); } );
 }
 
 void RDSClient::DeleteDBParameterGroupAsync(const DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBParameterGroupAsyncHelper(const DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -944,12 +942,12 @@ DeleteDBSecurityGroupOutcome RDSClient::DeleteDBSecurityGroup(const DeleteDBSecu
 
 DeleteDBSecurityGroupOutcomeCallable RDSClient::DeleteDBSecurityGroupCallable(const DeleteDBSecurityGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBSecurityGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBSecurityGroup( request ); } );
 }
 
 void RDSClient::DeleteDBSecurityGroupAsync(const DeleteDBSecurityGroupRequest& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSecurityGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBSecurityGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBSecurityGroupAsyncHelper(const DeleteDBSecurityGroupRequest& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -974,12 +972,12 @@ DeleteDBSnapshotOutcome RDSClient::DeleteDBSnapshot(const DeleteDBSnapshotReques
 
 DeleteDBSnapshotOutcomeCallable RDSClient::DeleteDBSnapshotCallable(const DeleteDBSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBSnapshot( request ); } );
 }
 
 void RDSClient::DeleteDBSnapshotAsync(const DeleteDBSnapshotRequest& request, const DeleteDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBSnapshotAsyncHelper(const DeleteDBSnapshotRequest& request, const DeleteDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1004,12 +1002,12 @@ DeleteDBSubnetGroupOutcome RDSClient::DeleteDBSubnetGroup(const DeleteDBSubnetGr
 
 DeleteDBSubnetGroupOutcomeCallable RDSClient::DeleteDBSubnetGroupCallable(const DeleteDBSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteDBSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteDBSubnetGroup( request ); } );
 }
 
 void RDSClient::DeleteDBSubnetGroupAsync(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteDBSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDBSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteDBSubnetGroupAsyncHelper(const DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1034,12 +1032,12 @@ DeleteEventSubscriptionOutcome RDSClient::DeleteEventSubscription(const DeleteEv
 
 DeleteEventSubscriptionOutcomeCallable RDSClient::DeleteEventSubscriptionCallable(const DeleteEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteEventSubscription( request ); } );
 }
 
 void RDSClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1064,12 +1062,12 @@ DeleteOptionGroupOutcome RDSClient::DeleteOptionGroup(const DeleteOptionGroupReq
 
 DeleteOptionGroupOutcomeCallable RDSClient::DeleteOptionGroupCallable(const DeleteOptionGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DeleteOptionGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteOptionGroup( request ); } );
 }
 
 void RDSClient::DeleteOptionGroupAsync(const DeleteOptionGroupRequest& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DeleteOptionGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOptionGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DeleteOptionGroupAsyncHelper(const DeleteOptionGroupRequest& request, const DeleteOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1094,12 +1092,12 @@ DescribeAccountAttributesOutcome RDSClient::DescribeAccountAttributes(const Desc
 
 DescribeAccountAttributesOutcomeCallable RDSClient::DescribeAccountAttributesCallable(const DescribeAccountAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeAccountAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAccountAttributes( request ); } );
 }
 
 void RDSClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeAccountAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1124,12 +1122,12 @@ DescribeCertificatesOutcome RDSClient::DescribeCertificates(const DescribeCertif
 
 DescribeCertificatesOutcomeCallable RDSClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeCertificates, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCertificates( request ); } );
 }
 
 void RDSClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeCertificatesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificatesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1154,12 +1152,12 @@ DescribeDBClusterParameterGroupsOutcome RDSClient::DescribeDBClusterParameterGro
 
 DescribeDBClusterParameterGroupsOutcomeCallable RDSClient::DescribeDBClusterParameterGroupsCallable(const DescribeDBClusterParameterGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBClusterParameterGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBClusterParameterGroups( request ); } );
 }
 
 void RDSClient::DescribeDBClusterParameterGroupsAsync(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBClusterParameterGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterParameterGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBClusterParameterGroupsAsyncHelper(const DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1184,12 +1182,12 @@ DescribeDBClusterParametersOutcome RDSClient::DescribeDBClusterParameters(const 
 
 DescribeDBClusterParametersOutcomeCallable RDSClient::DescribeDBClusterParametersCallable(const DescribeDBClusterParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBClusterParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBClusterParameters( request ); } );
 }
 
 void RDSClient::DescribeDBClusterParametersAsync(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBClusterParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBClusterParametersAsyncHelper(const DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1214,12 +1212,12 @@ DescribeDBClusterSnapshotAttributesOutcome RDSClient::DescribeDBClusterSnapshotA
 
 DescribeDBClusterSnapshotAttributesOutcomeCallable RDSClient::DescribeDBClusterSnapshotAttributesCallable(const DescribeDBClusterSnapshotAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBClusterSnapshotAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBClusterSnapshotAttributes( request ); } );
 }
 
 void RDSClient::DescribeDBClusterSnapshotAttributesAsync(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBClusterSnapshotAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterSnapshotAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBClusterSnapshotAttributesAsyncHelper(const DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1244,12 +1242,12 @@ DescribeDBClusterSnapshotsOutcome RDSClient::DescribeDBClusterSnapshots(const De
 
 DescribeDBClusterSnapshotsOutcomeCallable RDSClient::DescribeDBClusterSnapshotsCallable(const DescribeDBClusterSnapshotsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBClusterSnapshots, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBClusterSnapshots( request ); } );
 }
 
 void RDSClient::DescribeDBClusterSnapshotsAsync(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBClusterSnapshotsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClusterSnapshotsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBClusterSnapshotsAsyncHelper(const DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1274,12 +1272,12 @@ DescribeDBClustersOutcome RDSClient::DescribeDBClusters(const DescribeDBClusters
 
 DescribeDBClustersOutcomeCallable RDSClient::DescribeDBClustersCallable(const DescribeDBClustersRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBClusters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBClusters( request ); } );
 }
 
 void RDSClient::DescribeDBClustersAsync(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBClustersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBClustersAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBClustersAsyncHelper(const DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1304,12 +1302,12 @@ DescribeDBEngineVersionsOutcome RDSClient::DescribeDBEngineVersions(const Descri
 
 DescribeDBEngineVersionsOutcomeCallable RDSClient::DescribeDBEngineVersionsCallable(const DescribeDBEngineVersionsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBEngineVersions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBEngineVersions( request ); } );
 }
 
 void RDSClient::DescribeDBEngineVersionsAsync(const DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBEngineVersionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBEngineVersionsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBEngineVersionsAsyncHelper(const DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1334,12 +1332,12 @@ DescribeDBInstancesOutcome RDSClient::DescribeDBInstances(const DescribeDBInstan
 
 DescribeDBInstancesOutcomeCallable RDSClient::DescribeDBInstancesCallable(const DescribeDBInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBInstances( request ); } );
 }
 
 void RDSClient::DescribeDBInstancesAsync(const DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBInstancesAsyncHelper(const DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1364,12 +1362,12 @@ DescribeDBLogFilesOutcome RDSClient::DescribeDBLogFiles(const DescribeDBLogFiles
 
 DescribeDBLogFilesOutcomeCallable RDSClient::DescribeDBLogFilesCallable(const DescribeDBLogFilesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBLogFiles, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBLogFiles( request ); } );
 }
 
 void RDSClient::DescribeDBLogFilesAsync(const DescribeDBLogFilesRequest& request, const DescribeDBLogFilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBLogFilesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBLogFilesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBLogFilesAsyncHelper(const DescribeDBLogFilesRequest& request, const DescribeDBLogFilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1394,12 +1392,12 @@ DescribeDBParameterGroupsOutcome RDSClient::DescribeDBParameterGroups(const Desc
 
 DescribeDBParameterGroupsOutcomeCallable RDSClient::DescribeDBParameterGroupsCallable(const DescribeDBParameterGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBParameterGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBParameterGroups( request ); } );
 }
 
 void RDSClient::DescribeDBParameterGroupsAsync(const DescribeDBParameterGroupsRequest& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBParameterGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBParameterGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBParameterGroupsAsyncHelper(const DescribeDBParameterGroupsRequest& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1424,12 +1422,12 @@ DescribeDBParametersOutcome RDSClient::DescribeDBParameters(const DescribeDBPara
 
 DescribeDBParametersOutcomeCallable RDSClient::DescribeDBParametersCallable(const DescribeDBParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBParameters( request ); } );
 }
 
 void RDSClient::DescribeDBParametersAsync(const DescribeDBParametersRequest& request, const DescribeDBParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBParametersAsyncHelper(const DescribeDBParametersRequest& request, const DescribeDBParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1454,12 +1452,12 @@ DescribeDBSecurityGroupsOutcome RDSClient::DescribeDBSecurityGroups(const Descri
 
 DescribeDBSecurityGroupsOutcomeCallable RDSClient::DescribeDBSecurityGroupsCallable(const DescribeDBSecurityGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBSecurityGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBSecurityGroups( request ); } );
 }
 
 void RDSClient::DescribeDBSecurityGroupsAsync(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSecurityGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBSecurityGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBSecurityGroupsAsyncHelper(const DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1484,12 +1482,12 @@ DescribeDBSnapshotAttributesOutcome RDSClient::DescribeDBSnapshotAttributes(cons
 
 DescribeDBSnapshotAttributesOutcomeCallable RDSClient::DescribeDBSnapshotAttributesCallable(const DescribeDBSnapshotAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBSnapshotAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBSnapshotAttributes( request ); } );
 }
 
 void RDSClient::DescribeDBSnapshotAttributesAsync(const DescribeDBSnapshotAttributesRequest& request, const DescribeDBSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSnapshotAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBSnapshotAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBSnapshotAttributesAsyncHelper(const DescribeDBSnapshotAttributesRequest& request, const DescribeDBSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1514,12 +1512,12 @@ DescribeDBSnapshotsOutcome RDSClient::DescribeDBSnapshots(const DescribeDBSnapsh
 
 DescribeDBSnapshotsOutcomeCallable RDSClient::DescribeDBSnapshotsCallable(const DescribeDBSnapshotsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBSnapshots, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBSnapshots( request ); } );
 }
 
 void RDSClient::DescribeDBSnapshotsAsync(const DescribeDBSnapshotsRequest& request, const DescribeDBSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSnapshotsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBSnapshotsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBSnapshotsAsyncHelper(const DescribeDBSnapshotsRequest& request, const DescribeDBSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1544,12 +1542,12 @@ DescribeDBSubnetGroupsOutcome RDSClient::DescribeDBSubnetGroups(const DescribeDB
 
 DescribeDBSubnetGroupsOutcomeCallable RDSClient::DescribeDBSubnetGroupsCallable(const DescribeDBSubnetGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeDBSubnetGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeDBSubnetGroups( request ); } );
 }
 
 void RDSClient::DescribeDBSubnetGroupsAsync(const DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeDBSubnetGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDBSubnetGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeDBSubnetGroupsAsyncHelper(const DescribeDBSubnetGroupsRequest& request, const DescribeDBSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1574,12 +1572,12 @@ DescribeEngineDefaultClusterParametersOutcome RDSClient::DescribeEngineDefaultCl
 
 DescribeEngineDefaultClusterParametersOutcomeCallable RDSClient::DescribeEngineDefaultClusterParametersCallable(const DescribeEngineDefaultClusterParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeEngineDefaultClusterParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEngineDefaultClusterParameters( request ); } );
 }
 
 void RDSClient::DescribeEngineDefaultClusterParametersAsync(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEngineDefaultClusterParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngineDefaultClusterParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeEngineDefaultClusterParametersAsyncHelper(const DescribeEngineDefaultClusterParametersRequest& request, const DescribeEngineDefaultClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1604,12 +1602,12 @@ DescribeEngineDefaultParametersOutcome RDSClient::DescribeEngineDefaultParameter
 
 DescribeEngineDefaultParametersOutcomeCallable RDSClient::DescribeEngineDefaultParametersCallable(const DescribeEngineDefaultParametersRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeEngineDefaultParameters, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEngineDefaultParameters( request ); } );
 }
 
 void RDSClient::DescribeEngineDefaultParametersAsync(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEngineDefaultParametersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEngineDefaultParametersAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeEngineDefaultParametersAsyncHelper(const DescribeEngineDefaultParametersRequest& request, const DescribeEngineDefaultParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1634,12 +1632,12 @@ DescribeEventCategoriesOutcome RDSClient::DescribeEventCategories(const Describe
 
 DescribeEventCategoriesOutcomeCallable RDSClient::DescribeEventCategoriesCallable(const DescribeEventCategoriesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeEventCategories, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEventCategories( request ); } );
 }
 
 void RDSClient::DescribeEventCategoriesAsync(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventCategoriesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventCategoriesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeEventCategoriesAsyncHelper(const DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1664,12 +1662,12 @@ DescribeEventSubscriptionsOutcome RDSClient::DescribeEventSubscriptions(const De
 
 DescribeEventSubscriptionsOutcomeCallable RDSClient::DescribeEventSubscriptionsCallable(const DescribeEventSubscriptionsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeEventSubscriptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEventSubscriptions( request ); } );
 }
 
 void RDSClient::DescribeEventSubscriptionsAsync(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventSubscriptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventSubscriptionsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeEventSubscriptionsAsyncHelper(const DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1694,12 +1692,12 @@ DescribeEventsOutcome RDSClient::DescribeEvents(const DescribeEventsRequest& req
 
 DescribeEventsOutcomeCallable RDSClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeEvents, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEvents( request ); } );
 }
 
 void RDSClient::DescribeEventsAsync(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeEventsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEventsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1724,12 +1722,12 @@ DescribeOptionGroupOptionsOutcome RDSClient::DescribeOptionGroupOptions(const De
 
 DescribeOptionGroupOptionsOutcomeCallable RDSClient::DescribeOptionGroupOptionsCallable(const DescribeOptionGroupOptionsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeOptionGroupOptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeOptionGroupOptions( request ); } );
 }
 
 void RDSClient::DescribeOptionGroupOptionsAsync(const DescribeOptionGroupOptionsRequest& request, const DescribeOptionGroupOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOptionGroupOptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOptionGroupOptionsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeOptionGroupOptionsAsyncHelper(const DescribeOptionGroupOptionsRequest& request, const DescribeOptionGroupOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1754,12 +1752,12 @@ DescribeOptionGroupsOutcome RDSClient::DescribeOptionGroups(const DescribeOption
 
 DescribeOptionGroupsOutcomeCallable RDSClient::DescribeOptionGroupsCallable(const DescribeOptionGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeOptionGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeOptionGroups( request ); } );
 }
 
 void RDSClient::DescribeOptionGroupsAsync(const DescribeOptionGroupsRequest& request, const DescribeOptionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOptionGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOptionGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeOptionGroupsAsyncHelper(const DescribeOptionGroupsRequest& request, const DescribeOptionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1784,12 +1782,12 @@ DescribeOrderableDBInstanceOptionsOutcome RDSClient::DescribeOrderableDBInstance
 
 DescribeOrderableDBInstanceOptionsOutcomeCallable RDSClient::DescribeOrderableDBInstanceOptionsCallable(const DescribeOrderableDBInstanceOptionsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeOrderableDBInstanceOptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeOrderableDBInstanceOptions( request ); } );
 }
 
 void RDSClient::DescribeOrderableDBInstanceOptionsAsync(const DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrderableDBInstanceOptionsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeOrderableDBInstanceOptionsAsyncHelper(const DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1814,12 +1812,12 @@ DescribePendingMaintenanceActionsOutcome RDSClient::DescribePendingMaintenanceAc
 
 DescribePendingMaintenanceActionsOutcomeCallable RDSClient::DescribePendingMaintenanceActionsCallable(const DescribePendingMaintenanceActionsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribePendingMaintenanceActions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribePendingMaintenanceActions( request ); } );
 }
 
 void RDSClient::DescribePendingMaintenanceActionsAsync(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribePendingMaintenanceActionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePendingMaintenanceActionsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribePendingMaintenanceActionsAsyncHelper(const DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1844,12 +1842,12 @@ DescribeReservedDBInstancesOutcome RDSClient::DescribeReservedDBInstances(const 
 
 DescribeReservedDBInstancesOutcomeCallable RDSClient::DescribeReservedDBInstancesCallable(const DescribeReservedDBInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeReservedDBInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedDBInstances( request ); } );
 }
 
 void RDSClient::DescribeReservedDBInstancesAsync(const DescribeReservedDBInstancesRequest& request, const DescribeReservedDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedDBInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeReservedDBInstancesAsyncHelper(const DescribeReservedDBInstancesRequest& request, const DescribeReservedDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1874,12 +1872,12 @@ DescribeReservedDBInstancesOfferingsOutcome RDSClient::DescribeReservedDBInstanc
 
 DescribeReservedDBInstancesOfferingsOutcomeCallable RDSClient::DescribeReservedDBInstancesOfferingsCallable(const DescribeReservedDBInstancesOfferingsRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DescribeReservedDBInstancesOfferings, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReservedDBInstancesOfferings( request ); } );
 }
 
 void RDSClient::DescribeReservedDBInstancesOfferingsAsync(const DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservedDBInstancesOfferingsAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper(const DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1904,12 +1902,12 @@ DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const Downlo
 
 DownloadDBLogFilePortionOutcomeCallable RDSClient::DownloadDBLogFilePortionCallable(const DownloadDBLogFilePortionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::DownloadDBLogFilePortion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DownloadDBLogFilePortion( request ); } );
 }
 
 void RDSClient::DownloadDBLogFilePortionAsync(const DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::DownloadDBLogFilePortionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DownloadDBLogFilePortionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::DownloadDBLogFilePortionAsyncHelper(const DownloadDBLogFilePortionRequest& request, const DownloadDBLogFilePortionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1934,12 +1932,12 @@ FailoverDBClusterOutcome RDSClient::FailoverDBCluster(const FailoverDBClusterReq
 
 FailoverDBClusterOutcomeCallable RDSClient::FailoverDBClusterCallable(const FailoverDBClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::FailoverDBCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->FailoverDBCluster( request ); } );
 }
 
 void RDSClient::FailoverDBClusterAsync(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::FailoverDBClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->FailoverDBClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::FailoverDBClusterAsyncHelper(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1964,12 +1962,12 @@ ListTagsForResourceOutcome RDSClient::ListTagsForResource(const ListTagsForResou
 
 ListTagsForResourceOutcomeCallable RDSClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ListTagsForResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTagsForResource( request ); } );
 }
 
 void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1994,12 +1992,12 @@ ModifyDBClusterOutcome RDSClient::ModifyDBCluster(const ModifyDBClusterRequest& 
 
 ModifyDBClusterOutcomeCallable RDSClient::ModifyDBClusterCallable(const ModifyDBClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBCluster( request ); } );
 }
 
 void RDSClient::ModifyDBClusterAsync(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBClusterAsyncHelper(const ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2024,12 +2022,12 @@ ModifyDBClusterParameterGroupOutcome RDSClient::ModifyDBClusterParameterGroup(co
 
 ModifyDBClusterParameterGroupOutcomeCallable RDSClient::ModifyDBClusterParameterGroupCallable(const ModifyDBClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBClusterParameterGroup( request ); } );
 }
 
 void RDSClient::ModifyDBClusterParameterGroupAsync(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBClusterParameterGroupAsyncHelper(const ModifyDBClusterParameterGroupRequest& request, const ModifyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2054,12 +2052,12 @@ ModifyDBClusterSnapshotAttributeOutcome RDSClient::ModifyDBClusterSnapshotAttrib
 
 ModifyDBClusterSnapshotAttributeOutcomeCallable RDSClient::ModifyDBClusterSnapshotAttributeCallable(const ModifyDBClusterSnapshotAttributeRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBClusterSnapshotAttribute, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBClusterSnapshotAttribute( request ); } );
 }
 
 void RDSClient::ModifyDBClusterSnapshotAttributeAsync(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBClusterSnapshotAttributeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBClusterSnapshotAttributeAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBClusterSnapshotAttributeAsyncHelper(const ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2084,12 +2082,12 @@ ModifyDBInstanceOutcome RDSClient::ModifyDBInstance(const ModifyDBInstanceReques
 
 ModifyDBInstanceOutcomeCallable RDSClient::ModifyDBInstanceCallable(const ModifyDBInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBInstance( request ); } );
 }
 
 void RDSClient::ModifyDBInstanceAsync(const ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBInstanceAsyncHelper(const ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2114,12 +2112,12 @@ ModifyDBParameterGroupOutcome RDSClient::ModifyDBParameterGroup(const ModifyDBPa
 
 ModifyDBParameterGroupOutcomeCallable RDSClient::ModifyDBParameterGroupCallable(const ModifyDBParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBParameterGroup( request ); } );
 }
 
 void RDSClient::ModifyDBParameterGroupAsync(const ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBParameterGroupAsyncHelper(const ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2144,12 +2142,12 @@ ModifyDBSnapshotAttributeOutcome RDSClient::ModifyDBSnapshotAttribute(const Modi
 
 ModifyDBSnapshotAttributeOutcomeCallable RDSClient::ModifyDBSnapshotAttributeCallable(const ModifyDBSnapshotAttributeRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBSnapshotAttribute, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBSnapshotAttribute( request ); } );
 }
 
 void RDSClient::ModifyDBSnapshotAttributeAsync(const ModifyDBSnapshotAttributeRequest& request, const ModifyDBSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBSnapshotAttributeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBSnapshotAttributeAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBSnapshotAttributeAsyncHelper(const ModifyDBSnapshotAttributeRequest& request, const ModifyDBSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2174,12 +2172,12 @@ ModifyDBSubnetGroupOutcome RDSClient::ModifyDBSubnetGroup(const ModifyDBSubnetGr
 
 ModifyDBSubnetGroupOutcomeCallable RDSClient::ModifyDBSubnetGroupCallable(const ModifyDBSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyDBSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyDBSubnetGroup( request ); } );
 }
 
 void RDSClient::ModifyDBSubnetGroupAsync(const ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyDBSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyDBSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyDBSubnetGroupAsyncHelper(const ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2204,12 +2202,12 @@ ModifyEventSubscriptionOutcome RDSClient::ModifyEventSubscription(const ModifyEv
 
 ModifyEventSubscriptionOutcomeCallable RDSClient::ModifyEventSubscriptionCallable(const ModifyEventSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyEventSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyEventSubscription( request ); } );
 }
 
 void RDSClient::ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyEventSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEventSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2234,12 +2232,12 @@ ModifyOptionGroupOutcome RDSClient::ModifyOptionGroup(const ModifyOptionGroupReq
 
 ModifyOptionGroupOutcomeCallable RDSClient::ModifyOptionGroupCallable(const ModifyOptionGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ModifyOptionGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyOptionGroup( request ); } );
 }
 
 void RDSClient::ModifyOptionGroupAsync(const ModifyOptionGroupRequest& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ModifyOptionGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyOptionGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ModifyOptionGroupAsyncHelper(const ModifyOptionGroupRequest& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2264,12 +2262,12 @@ PromoteReadReplicaOutcome RDSClient::PromoteReadReplica(const PromoteReadReplica
 
 PromoteReadReplicaOutcomeCallable RDSClient::PromoteReadReplicaCallable(const PromoteReadReplicaRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::PromoteReadReplica, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PromoteReadReplica( request ); } );
 }
 
 void RDSClient::PromoteReadReplicaAsync(const PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::PromoteReadReplicaAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PromoteReadReplicaAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::PromoteReadReplicaAsyncHelper(const PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2294,12 +2292,12 @@ PromoteReadReplicaDBClusterOutcome RDSClient::PromoteReadReplicaDBCluster(const 
 
 PromoteReadReplicaDBClusterOutcomeCallable RDSClient::PromoteReadReplicaDBClusterCallable(const PromoteReadReplicaDBClusterRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::PromoteReadReplicaDBCluster, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PromoteReadReplicaDBCluster( request ); } );
 }
 
 void RDSClient::PromoteReadReplicaDBClusterAsync(const PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::PromoteReadReplicaDBClusterAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PromoteReadReplicaDBClusterAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::PromoteReadReplicaDBClusterAsyncHelper(const PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2324,12 +2322,12 @@ PurchaseReservedDBInstancesOfferingOutcome RDSClient::PurchaseReservedDBInstance
 
 PurchaseReservedDBInstancesOfferingOutcomeCallable RDSClient::PurchaseReservedDBInstancesOfferingCallable(const PurchaseReservedDBInstancesOfferingRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::PurchaseReservedDBInstancesOffering, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PurchaseReservedDBInstancesOffering( request ); } );
 }
 
 void RDSClient::PurchaseReservedDBInstancesOfferingAsync(const PurchaseReservedDBInstancesOfferingRequest& request, const PurchaseReservedDBInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PurchaseReservedDBInstancesOfferingAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::PurchaseReservedDBInstancesOfferingAsyncHelper(const PurchaseReservedDBInstancesOfferingRequest& request, const PurchaseReservedDBInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2354,12 +2352,12 @@ RebootDBInstanceOutcome RDSClient::RebootDBInstance(const RebootDBInstanceReques
 
 RebootDBInstanceOutcomeCallable RDSClient::RebootDBInstanceCallable(const RebootDBInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RebootDBInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RebootDBInstance( request ); } );
 }
 
 void RDSClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RebootDBInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RebootDBInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2384,12 +2382,12 @@ RemoveSourceIdentifierFromSubscriptionOutcome RDSClient::RemoveSourceIdentifierF
 
 RemoveSourceIdentifierFromSubscriptionOutcomeCallable RDSClient::RemoveSourceIdentifierFromSubscriptionCallable(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RemoveSourceIdentifierFromSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveSourceIdentifierFromSubscription( request ); } );
 }
 
 void RDSClient::RemoveSourceIdentifierFromSubscriptionAsync(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveSourceIdentifierFromSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RemoveSourceIdentifierFromSubscriptionAsyncHelper(const RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2414,12 +2412,12 @@ RemoveTagsFromResourceOutcome RDSClient::RemoveTagsFromResource(const RemoveTags
 
 RemoveTagsFromResourceOutcomeCallable RDSClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RemoveTagsFromResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveTagsFromResource( request ); } );
 }
 
 void RDSClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2444,12 +2442,12 @@ ResetDBClusterParameterGroupOutcome RDSClient::ResetDBClusterParameterGroup(cons
 
 ResetDBClusterParameterGroupOutcomeCallable RDSClient::ResetDBClusterParameterGroupCallable(const ResetDBClusterParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ResetDBClusterParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResetDBClusterParameterGroup( request ); } );
 }
 
 void RDSClient::ResetDBClusterParameterGroupAsync(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ResetDBClusterParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResetDBClusterParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ResetDBClusterParameterGroupAsyncHelper(const ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2474,17 +2472,47 @@ ResetDBParameterGroupOutcome RDSClient::ResetDBParameterGroup(const ResetDBParam
 
 ResetDBParameterGroupOutcomeCallable RDSClient::ResetDBParameterGroupCallable(const ResetDBParameterGroupRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::ResetDBParameterGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ResetDBParameterGroup( request ); } );
 }
 
 void RDSClient::ResetDBParameterGroupAsync(const ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::ResetDBParameterGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ResetDBParameterGroupAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::ResetDBParameterGroupAsyncHelper(const ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetDBParameterGroup(request), context);
+}
+
+RestoreDBClusterFromS3Outcome RDSClient::RestoreDBClusterFromS3(const RestoreDBClusterFromS3Request& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RestoreDBClusterFromS3Outcome(RestoreDBClusterFromS3Result(outcome.GetResult()));
+  }
+  else
+  {
+    return RestoreDBClusterFromS3Outcome(outcome.GetError());
+  }
+}
+
+RestoreDBClusterFromS3OutcomeCallable RDSClient::RestoreDBClusterFromS3Callable(const RestoreDBClusterFromS3Request& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBClusterFromS3( request ); } );
+}
+
+void RDSClient::RestoreDBClusterFromS3Async(const RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterFromS3AsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::RestoreDBClusterFromS3AsyncHelper(const RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RestoreDBClusterFromS3(request), context);
 }
 
 RestoreDBClusterFromSnapshotOutcome RDSClient::RestoreDBClusterFromSnapshot(const RestoreDBClusterFromSnapshotRequest& request) const
@@ -2504,12 +2532,12 @@ RestoreDBClusterFromSnapshotOutcome RDSClient::RestoreDBClusterFromSnapshot(cons
 
 RestoreDBClusterFromSnapshotOutcomeCallable RDSClient::RestoreDBClusterFromSnapshotCallable(const RestoreDBClusterFromSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RestoreDBClusterFromSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBClusterFromSnapshot( request ); } );
 }
 
 void RDSClient::RestoreDBClusterFromSnapshotAsync(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBClusterFromSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterFromSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RestoreDBClusterFromSnapshotAsyncHelper(const RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2534,12 +2562,12 @@ RestoreDBClusterToPointInTimeOutcome RDSClient::RestoreDBClusterToPointInTime(co
 
 RestoreDBClusterToPointInTimeOutcomeCallable RDSClient::RestoreDBClusterToPointInTimeCallable(const RestoreDBClusterToPointInTimeRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RestoreDBClusterToPointInTime, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBClusterToPointInTime( request ); } );
 }
 
 void RDSClient::RestoreDBClusterToPointInTimeAsync(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBClusterToPointInTimeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBClusterToPointInTimeAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RestoreDBClusterToPointInTimeAsyncHelper(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2564,12 +2592,12 @@ RestoreDBInstanceFromDBSnapshotOutcome RDSClient::RestoreDBInstanceFromDBSnapsho
 
 RestoreDBInstanceFromDBSnapshotOutcomeCallable RDSClient::RestoreDBInstanceFromDBSnapshotCallable(const RestoreDBInstanceFromDBSnapshotRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RestoreDBInstanceFromDBSnapshot, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBInstanceFromDBSnapshot( request ); } );
 }
 
 void RDSClient::RestoreDBInstanceFromDBSnapshotAsync(const RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBInstanceFromDBSnapshotAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RestoreDBInstanceFromDBSnapshotAsyncHelper(const RestoreDBInstanceFromDBSnapshotRequest& request, const RestoreDBInstanceFromDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2594,12 +2622,12 @@ RestoreDBInstanceToPointInTimeOutcome RDSClient::RestoreDBInstanceToPointInTime(
 
 RestoreDBInstanceToPointInTimeOutcomeCallable RDSClient::RestoreDBInstanceToPointInTimeCallable(const RestoreDBInstanceToPointInTimeRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RestoreDBInstanceToPointInTime, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreDBInstanceToPointInTime( request ); } );
 }
 
 void RDSClient::RestoreDBInstanceToPointInTimeAsync(const RestoreDBInstanceToPointInTimeRequest& request, const RestoreDBInstanceToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreDBInstanceToPointInTimeAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RestoreDBInstanceToPointInTimeAsyncHelper(const RestoreDBInstanceToPointInTimeRequest& request, const RestoreDBInstanceToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2624,12 +2652,12 @@ RevokeDBSecurityGroupIngressOutcome RDSClient::RevokeDBSecurityGroupIngress(cons
 
 RevokeDBSecurityGroupIngressOutcomeCallable RDSClient::RevokeDBSecurityGroupIngressCallable(const RevokeDBSecurityGroupIngressRequest& request) const
 {
-  return std::async(std::launch::async, &RDSClient::RevokeDBSecurityGroupIngress, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RevokeDBSecurityGroupIngress( request ); } );
 }
 
 void RDSClient::RevokeDBSecurityGroupIngressAsync(const RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&RDSClient::RevokeDBSecurityGroupIngressAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeDBSecurityGroupIngressAsyncHelper( request, handler, context ); } );
 }
 
 void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGroupIngressRequest& request, const RevokeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

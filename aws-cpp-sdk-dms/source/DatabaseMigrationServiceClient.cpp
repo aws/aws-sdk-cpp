@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -74,8 +74,7 @@ static const char* ALLOCATION_TAG = "DatabaseMigrationServiceClient";
 DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -85,8 +84,7 @@ DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const Client::Cli
 DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,8 +95,7 @@ DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const std::shared
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -114,9 +111,9 @@ void DatabaseMigrationServiceClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << DatabaseMigrationServiceEndpoint::ForRegion(config.region);
+    ss << DatabaseMigrationServiceEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -144,12 +141,12 @@ AddTagsToResourceOutcome DatabaseMigrationServiceClient::AddTagsToResource(const
 
 AddTagsToResourceOutcomeCallable DatabaseMigrationServiceClient::AddTagsToResourceCallable(const AddTagsToResourceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::AddTagsToResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddTagsToResource(request); } );
 }
 
 void DatabaseMigrationServiceClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::AddTagsToResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -175,12 +172,12 @@ CreateEndpointOutcome DatabaseMigrationServiceClient::CreateEndpoint(const Creat
 
 CreateEndpointOutcomeCallable DatabaseMigrationServiceClient::CreateEndpointCallable(const CreateEndpointRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::CreateEndpoint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateEndpoint(request); } );
 }
 
 void DatabaseMigrationServiceClient::CreateEndpointAsync(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::CreateEndpointAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEndpointAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::CreateEndpointAsyncHelper(const CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -206,12 +203,12 @@ CreateReplicationInstanceOutcome DatabaseMigrationServiceClient::CreateReplicati
 
 CreateReplicationInstanceOutcomeCallable DatabaseMigrationServiceClient::CreateReplicationInstanceCallable(const CreateReplicationInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::CreateReplicationInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateReplicationInstance(request); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationInstanceAsync(const CreateReplicationInstanceRequest& request, const CreateReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::CreateReplicationInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationInstanceAsyncHelper(const CreateReplicationInstanceRequest& request, const CreateReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -237,12 +234,12 @@ CreateReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::CreateReplic
 
 CreateReplicationSubnetGroupOutcomeCallable DatabaseMigrationServiceClient::CreateReplicationSubnetGroupCallable(const CreateReplicationSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::CreateReplicationSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateReplicationSubnetGroup(request); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationSubnetGroupAsync(const CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::CreateReplicationSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationSubnetGroupAsyncHelper(const CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -268,12 +265,12 @@ CreateReplicationTaskOutcome DatabaseMigrationServiceClient::CreateReplicationTa
 
 CreateReplicationTaskOutcomeCallable DatabaseMigrationServiceClient::CreateReplicationTaskCallable(const CreateReplicationTaskRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::CreateReplicationTask, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateReplicationTask(request); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationTaskAsync(const CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::CreateReplicationTaskAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationTaskAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::CreateReplicationTaskAsyncHelper(const CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -299,12 +296,12 @@ DeleteCertificateOutcome DatabaseMigrationServiceClient::DeleteCertificate(const
 
 DeleteCertificateOutcomeCallable DatabaseMigrationServiceClient::DeleteCertificateCallable(const DeleteCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteCertificate(request); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -330,12 +327,12 @@ DeleteEndpointOutcome DatabaseMigrationServiceClient::DeleteEndpoint(const Delet
 
 DeleteEndpointOutcomeCallable DatabaseMigrationServiceClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteEndpoint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteEndpoint(request); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteEndpointAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -361,12 +358,12 @@ DeleteReplicationInstanceOutcome DatabaseMigrationServiceClient::DeleteReplicati
 
 DeleteReplicationInstanceOutcomeCallable DatabaseMigrationServiceClient::DeleteReplicationInstanceCallable(const DeleteReplicationInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteReplicationInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteReplicationInstance(request); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationInstanceAsync(const DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteReplicationInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationInstanceAsyncHelper(const DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -392,12 +389,12 @@ DeleteReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::DeleteReplic
 
 DeleteReplicationSubnetGroupOutcomeCallable DatabaseMigrationServiceClient::DeleteReplicationSubnetGroupCallable(const DeleteReplicationSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteReplicationSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteReplicationSubnetGroup(request); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationSubnetGroupAsync(const DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteReplicationSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationSubnetGroupAsyncHelper(const DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -423,12 +420,12 @@ DeleteReplicationTaskOutcome DatabaseMigrationServiceClient::DeleteReplicationTa
 
 DeleteReplicationTaskOutcomeCallable DatabaseMigrationServiceClient::DeleteReplicationTaskCallable(const DeleteReplicationTaskRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DeleteReplicationTask, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteReplicationTask(request); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationTaskAsync(const DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DeleteReplicationTaskAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationTaskAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DeleteReplicationTaskAsyncHelper(const DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -454,12 +451,12 @@ DescribeAccountAttributesOutcome DatabaseMigrationServiceClient::DescribeAccount
 
 DescribeAccountAttributesOutcomeCallable DatabaseMigrationServiceClient::DescribeAccountAttributesCallable(const DescribeAccountAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeAccountAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeAccountAttributes(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeAccountAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -485,12 +482,12 @@ DescribeCertificatesOutcome DatabaseMigrationServiceClient::DescribeCertificates
 
 DescribeCertificatesOutcomeCallable DatabaseMigrationServiceClient::DescribeCertificatesCallable(const DescribeCertificatesRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeCertificates, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeCertificates(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeCertificatesAsync(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeCertificatesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificatesAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeCertificatesAsyncHelper(const DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -516,12 +513,12 @@ DescribeConnectionsOutcome DatabaseMigrationServiceClient::DescribeConnections(c
 
 DescribeConnectionsOutcomeCallable DatabaseMigrationServiceClient::DescribeConnectionsCallable(const DescribeConnectionsRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeConnections, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeConnections(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeConnectionsAsync(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeConnectionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeConnectionsAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeConnectionsAsyncHelper(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -547,12 +544,12 @@ DescribeEndpointTypesOutcome DatabaseMigrationServiceClient::DescribeEndpointTyp
 
 DescribeEndpointTypesOutcomeCallable DatabaseMigrationServiceClient::DescribeEndpointTypesCallable(const DescribeEndpointTypesRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeEndpointTypes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEndpointTypes(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeEndpointTypesAsync(const DescribeEndpointTypesRequest& request, const DescribeEndpointTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeEndpointTypesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointTypesAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeEndpointTypesAsyncHelper(const DescribeEndpointTypesRequest& request, const DescribeEndpointTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -578,12 +575,12 @@ DescribeEndpointsOutcome DatabaseMigrationServiceClient::DescribeEndpoints(const
 
 DescribeEndpointsOutcomeCallable DatabaseMigrationServiceClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeEndpoints, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeEndpoints(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeEndpointsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointsAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -609,12 +606,12 @@ DescribeOrderableReplicationInstancesOutcome DatabaseMigrationServiceClient::Des
 
 DescribeOrderableReplicationInstancesOutcomeCallable DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesCallable(const DescribeOrderableReplicationInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeOrderableReplicationInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeOrderableReplicationInstances(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesAsync(const DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrderableReplicationInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeOrderableReplicationInstancesAsyncHelper(const DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -640,12 +637,12 @@ DescribeRefreshSchemasStatusOutcome DatabaseMigrationServiceClient::DescribeRefr
 
 DescribeRefreshSchemasStatusOutcomeCallable DatabaseMigrationServiceClient::DescribeRefreshSchemasStatusCallable(const DescribeRefreshSchemasStatusRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeRefreshSchemasStatus, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeRefreshSchemasStatus(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeRefreshSchemasStatusAsync(const DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeRefreshSchemasStatusAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRefreshSchemasStatusAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeRefreshSchemasStatusAsyncHelper(const DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -671,12 +668,12 @@ DescribeReplicationInstancesOutcome DatabaseMigrationServiceClient::DescribeRepl
 
 DescribeReplicationInstancesOutcomeCallable DatabaseMigrationServiceClient::DescribeReplicationInstancesCallable(const DescribeReplicationInstancesRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeReplicationInstances, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReplicationInstances(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationInstancesAsync(const DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeReplicationInstancesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationInstancesAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationInstancesAsyncHelper(const DescribeReplicationInstancesRequest& request, const DescribeReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -702,12 +699,12 @@ DescribeReplicationSubnetGroupsOutcome DatabaseMigrationServiceClient::DescribeR
 
 DescribeReplicationSubnetGroupsOutcomeCallable DatabaseMigrationServiceClient::DescribeReplicationSubnetGroupsCallable(const DescribeReplicationSubnetGroupsRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeReplicationSubnetGroups, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReplicationSubnetGroups(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationSubnetGroupsAsync(const DescribeReplicationSubnetGroupsRequest& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeReplicationSubnetGroupsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationSubnetGroupsAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationSubnetGroupsAsyncHelper(const DescribeReplicationSubnetGroupsRequest& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -733,12 +730,12 @@ DescribeReplicationTasksOutcome DatabaseMigrationServiceClient::DescribeReplicat
 
 DescribeReplicationTasksOutcomeCallable DatabaseMigrationServiceClient::DescribeReplicationTasksCallable(const DescribeReplicationTasksRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeReplicationTasks, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeReplicationTasks(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationTasksAsync(const DescribeReplicationTasksRequest& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeReplicationTasksAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationTasksAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeReplicationTasksAsyncHelper(const DescribeReplicationTasksRequest& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -764,12 +761,12 @@ DescribeSchemasOutcome DatabaseMigrationServiceClient::DescribeSchemas(const Des
 
 DescribeSchemasOutcomeCallable DatabaseMigrationServiceClient::DescribeSchemasCallable(const DescribeSchemasRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeSchemas, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSchemas(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeSchemasAsync(const DescribeSchemasRequest& request, const DescribeSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeSchemasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSchemasAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeSchemasAsyncHelper(const DescribeSchemasRequest& request, const DescribeSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -795,12 +792,12 @@ DescribeTableStatisticsOutcome DatabaseMigrationServiceClient::DescribeTableStat
 
 DescribeTableStatisticsOutcomeCallable DatabaseMigrationServiceClient::DescribeTableStatisticsCallable(const DescribeTableStatisticsRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::DescribeTableStatistics, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeTableStatistics(request); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeTableStatisticsAsync(const DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::DescribeTableStatisticsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTableStatisticsAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::DescribeTableStatisticsAsyncHelper(const DescribeTableStatisticsRequest& request, const DescribeTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -826,12 +823,12 @@ ImportCertificateOutcome DatabaseMigrationServiceClient::ImportCertificate(const
 
 ImportCertificateOutcomeCallable DatabaseMigrationServiceClient::ImportCertificateCallable(const ImportCertificateRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ImportCertificate, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ImportCertificate(request); } );
 }
 
 void DatabaseMigrationServiceClient::ImportCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::ImportCertificateAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ImportCertificateAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::ImportCertificateAsyncHelper(const ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -857,12 +854,12 @@ ListTagsForResourceOutcome DatabaseMigrationServiceClient::ListTagsForResource(c
 
 ListTagsForResourceOutcomeCallable DatabaseMigrationServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ListTagsForResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTagsForResource(request); } );
 }
 
 void DatabaseMigrationServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::ListTagsForResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -888,12 +885,12 @@ ModifyEndpointOutcome DatabaseMigrationServiceClient::ModifyEndpoint(const Modif
 
 ModifyEndpointOutcomeCallable DatabaseMigrationServiceClient::ModifyEndpointCallable(const ModifyEndpointRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ModifyEndpoint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyEndpoint(request); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyEndpointAsync(const ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::ModifyEndpointAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyEndpointAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyEndpointAsyncHelper(const ModifyEndpointRequest& request, const ModifyEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -919,12 +916,12 @@ ModifyReplicationInstanceOutcome DatabaseMigrationServiceClient::ModifyReplicati
 
 ModifyReplicationInstanceOutcomeCallable DatabaseMigrationServiceClient::ModifyReplicationInstanceCallable(const ModifyReplicationInstanceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ModifyReplicationInstance, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyReplicationInstance(request); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyReplicationInstanceAsync(const ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::ModifyReplicationInstanceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyReplicationInstanceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyReplicationInstanceAsyncHelper(const ModifyReplicationInstanceRequest& request, const ModifyReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -950,12 +947,12 @@ ModifyReplicationSubnetGroupOutcome DatabaseMigrationServiceClient::ModifyReplic
 
 ModifyReplicationSubnetGroupOutcomeCallable DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupCallable(const ModifyReplicationSubnetGroupRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::ModifyReplicationSubnetGroup, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ModifyReplicationSubnetGroup(request); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupAsync(const ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyReplicationSubnetGroupAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::ModifyReplicationSubnetGroupAsyncHelper(const ModifyReplicationSubnetGroupRequest& request, const ModifyReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -981,12 +978,12 @@ RefreshSchemasOutcome DatabaseMigrationServiceClient::RefreshSchemas(const Refre
 
 RefreshSchemasOutcomeCallable DatabaseMigrationServiceClient::RefreshSchemasCallable(const RefreshSchemasRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::RefreshSchemas, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RefreshSchemas(request); } );
 }
 
 void DatabaseMigrationServiceClient::RefreshSchemasAsync(const RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::RefreshSchemasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RefreshSchemasAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::RefreshSchemasAsyncHelper(const RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1012,12 +1009,12 @@ RemoveTagsFromResourceOutcome DatabaseMigrationServiceClient::RemoveTagsFromReso
 
 RemoveTagsFromResourceOutcomeCallable DatabaseMigrationServiceClient::RemoveTagsFromResourceCallable(const RemoveTagsFromResourceRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::RemoveTagsFromResource, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveTagsFromResource(request); } );
 }
 
 void DatabaseMigrationServiceClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::RemoveTagsFromResourceAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1043,12 +1040,12 @@ StartReplicationTaskOutcome DatabaseMigrationServiceClient::StartReplicationTask
 
 StartReplicationTaskOutcomeCallable DatabaseMigrationServiceClient::StartReplicationTaskCallable(const StartReplicationTaskRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::StartReplicationTask, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->StartReplicationTask(request); } );
 }
 
 void DatabaseMigrationServiceClient::StartReplicationTaskAsync(const StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::StartReplicationTaskAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->StartReplicationTaskAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::StartReplicationTaskAsyncHelper(const StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1074,12 +1071,12 @@ StopReplicationTaskOutcome DatabaseMigrationServiceClient::StopReplicationTask(c
 
 StopReplicationTaskOutcomeCallable DatabaseMigrationServiceClient::StopReplicationTaskCallable(const StopReplicationTaskRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::StopReplicationTask, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->StopReplicationTask(request); } );
 }
 
 void DatabaseMigrationServiceClient::StopReplicationTaskAsync(const StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::StopReplicationTaskAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->StopReplicationTaskAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::StopReplicationTaskAsyncHelper(const StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1105,12 +1102,12 @@ TestConnectionOutcome DatabaseMigrationServiceClient::TestConnection(const TestC
 
 TestConnectionOutcomeCallable DatabaseMigrationServiceClient::TestConnectionCallable(const TestConnectionRequest& request) const
 {
-  return std::async(std::launch::async, &DatabaseMigrationServiceClient::TestConnection, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->TestConnection(request); } );
 }
 
 void DatabaseMigrationServiceClient::TestConnectionAsync(const TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&DatabaseMigrationServiceClient::TestConnectionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->TestConnectionAsyncHelper( request, handler, context ); } );
 }
 
 void DatabaseMigrationServiceClient::TestConnectionAsyncHelper(const TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

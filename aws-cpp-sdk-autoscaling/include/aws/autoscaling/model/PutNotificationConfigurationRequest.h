@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for PutNotificationConfiguration.</p>
    */
   class AWS_AUTOSCALING_API PutNotificationConfigurationRequest : public AutoScalingRequest
   {
@@ -69,44 +70,44 @@ namespace Model
     inline PutNotificationConfigurationRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline void SetTopicARN(const Aws::String& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline void SetTopicARN(Aws::String&& value) { m_topicARNHasBeenSet = true; m_topicARN = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline void SetTopicARN(const char* value) { m_topicARNHasBeenSet = true; m_topicARN.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(const Aws::String& value) { SetTopicARN(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(Aws::String&& value) { SetTopicARN(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * (SNS) topic. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (SNS) topic.</p>
      */
     inline PutNotificationConfigurationRequest& WithTopicARN(const char* value) { SetTopicARN(value); return *this;}
 

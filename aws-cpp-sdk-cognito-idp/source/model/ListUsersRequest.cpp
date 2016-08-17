@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,7 +27,7 @@ ListUsersRequest::ListUsersRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_paginationTokenHasBeenSet(false),
-    m_userStatusHasBeenSet(false)
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -64,9 +64,10 @@ Aws::String ListUsersRequest::SerializePayload() const
 
   }
 
-  if(m_userStatusHasBeenSet)
+  if(m_filterHasBeenSet)
   {
-   payload.WithString("UserStatus", UserStatusTypeMapper::GetNameForUserStatusType(m_userStatus));
+   payload.WithString("Filter", m_filter);
+
   }
 
   return payload.WriteReadable();

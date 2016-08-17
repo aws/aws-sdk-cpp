@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,7 +26,8 @@ ListImagesRequest::ListImagesRequest() :
     m_repositoryNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String ListImagesRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
 
   }
 

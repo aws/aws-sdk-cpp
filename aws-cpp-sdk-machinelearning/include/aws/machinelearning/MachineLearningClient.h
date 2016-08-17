@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -696,7 +696,7 @@ namespace Model
          * <code>MLModel</code> during the creation operation.</p> <p>
          * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
          * <code>CreateDataSourceFromRedshift</code> operations. </p>
          */
@@ -716,7 +716,7 @@ namespace Model
          * <code>MLModel</code> during the creation operation.</p> <p>
          * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
          * <code>CreateDataSourceFromRedshift</code> operations. </p>
          *
@@ -738,7 +738,7 @@ namespace Model
          * <code>MLModel</code> during the creation operation.</p> <p>
          * <code>CreateMLModel</code> requires a <code>DataSource</code> with computed
          * statistics, which can be created by setting <code>ComputeStatistics</code> to
-         * <code>true</code> in <code>CreateDataSourcceFromRDS</code>,
+         * <code>true</code> in <code>CreateDataSourceFromRDS</code>,
          * <code>CreateDataSourceFromS3</code>, or
          * <code>CreateDataSourceFromRedshift</code> operations. </p>
          *

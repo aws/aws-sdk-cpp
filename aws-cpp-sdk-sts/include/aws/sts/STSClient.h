@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -460,12 +460,13 @@ namespace Model
          * returned by the operation have the permissions that are defined in the access
          * policy of the role that is being assumed. If you pass a policy to this
          * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
+         * have the permissions that are allowed by the intersection of both the access
+         * policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
+         * you pass. This means that both policies must grant the permission for the action
+         * to be allowed. This gives you a way to further restrict the permissions for the
+         * resulting temporary security credentials. You cannot use the passed policy to
+         * grant permissions that are in excess of those allowed by the access policy of
+         * the role that is being assumed. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
          * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
          * <i>IAM User Guide</i>.</p> <p>Before your application can call
@@ -526,12 +527,13 @@ namespace Model
          * returned by the operation have the permissions that are defined in the access
          * policy of the role that is being assumed. If you pass a policy to this
          * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
+         * have the permissions that are allowed by the intersection of both the access
+         * policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
+         * you pass. This means that both policies must grant the permission for the action
+         * to be allowed. This gives you a way to further restrict the permissions for the
+         * resulting temporary security credentials. You cannot use the passed policy to
+         * grant permissions that are in excess of those allowed by the access policy of
+         * the role that is being assumed. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
          * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
          * <i>IAM User Guide</i>.</p> <p>Before your application can call
@@ -594,12 +596,13 @@ namespace Model
          * returned by the operation have the permissions that are defined in the access
          * policy of the role that is being assumed. If you pass a policy to this
          * operation, the temporary security credentials that are returned by the operation
-         * have the permissions that are allowed by both the access policy of the role that
-         * is being assumed, <i> <b>and</b> </i> the policy that you pass. This gives you a
-         * way to further restrict the permissions for the resulting temporary security
-         * credentials. You cannot use the passed policy to grant permissions that are in
-         * excess of those allowed by the access policy of the role that is being assumed.
-         * For more information, see <a
+         * have the permissions that are allowed by the intersection of both the access
+         * policy of the role that is being assumed, <i> <b>and</b> </i> the policy that
+         * you pass. This means that both policies must grant the permission for the action
+         * to be allowed. This gives you a way to further restrict the permissions for the
+         * resulting temporary security credentials. You cannot use the passed policy to
+         * grant permissions that are in excess of those allowed by the access policy of
+         * the role that is being assumed. For more information, see <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html">Permissions
          * for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity</a> in the
          * <i>IAM User Guide</i>.</p> <p>Before your application can call

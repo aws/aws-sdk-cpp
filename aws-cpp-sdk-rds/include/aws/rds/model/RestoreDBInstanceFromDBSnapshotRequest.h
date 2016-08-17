@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -523,43 +523,43 @@ namespace Model
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(Aws::String&& value) { SetDBName(value); return *this;}
 
     /**
      * <p>The database name for the restored DB instance.</p> <note> <p>This parameter
-     * doesn't apply to the MySQL or MariaDB engines.</p> </note>
+     * doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.</p> </note>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 

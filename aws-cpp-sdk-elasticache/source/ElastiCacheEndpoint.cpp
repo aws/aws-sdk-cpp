@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,7 +13,8 @@
 * permissions and limitations under the License.
 */
 #include <aws/elasticache/ElastiCacheEndpoint.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::ElastiCache;
@@ -24,35 +25,20 @@ namespace ElastiCache
 {
 namespace ElastiCacheEndpoint
 {
-  Aws::String ForRegion(Region region)
+
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    switch(region)
+    Aws::StringStream ss;
+    ss << "elasticache" << ".";
+
+    if(useDualStack)
     {
-     case Region::US_EAST_1:
-        return "elasticache.us-east-1.amazonaws.com";
-     case Region::US_WEST_1:
-        return "elasticache.us-west-1.amazonaws.com";
-     case Region::US_WEST_2:
-        return "elasticache.us-west-2.amazonaws.com";
-     case Region::EU_WEST_1:
-        return "elasticache.eu-west-1.amazonaws.com";
-     case Region::EU_CENTRAL_1:
-        return "elasticache.eu-central-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_1:
-        return "elasticache.ap-southeast-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_2:
-        return "elasticache.ap-southeast-2.amazonaws.com";
-     case Region::AP_NORTHEAST_1:
-        return "elasticache.ap-northeast-1.amazonaws.com";
-     case Region::AP_NORTHEAST_2:
-        return "elasticache.ap-northeast-2.amazonaws.com";
-     case Region::SA_EAST_1:
-        return "elasticache.sa-east-1.amazonaws.com";
-     case Region::AP_SOUTH_1:
-        return "elasticache.ap-south-1.amazonaws.com";
-     default:
-        return "elasticache.us-east-1.amazonaws.com";
+      ss << "dualstack.";
     }
+
+    ss << regionName << ".amazonaws.com";
+    return ss.str();
   }
 
 } // namespace ElastiCacheEndpoint

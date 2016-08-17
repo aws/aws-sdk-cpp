@@ -20,6 +20,7 @@ import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainClientGenerator;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,12 +60,12 @@ public class main {
             String serviceName = argPairs.get(SERVICE_OPTION);
 
             //read from the piped input
-            try (InputStreamReader reader = getInputStreamReader(argPairs)) {
+            try (InputStream stream = getInputStreamReader(argPairs)) {
                 StringBuilder stringBuilder = new StringBuilder();
 
-                char[] buffer = new char[1024];
-                while (reader.read(buffer) > 0) {
-                    stringBuilder.append(buffer);
+                byte[] buffer = new byte[1024];
+                while (stream.read(buffer) > 0) {
+                    stringBuilder.append(new String(buffer, StandardCharsets.UTF_8));
                 }
 
                 arbitraryJson = stringBuilder.toString();
@@ -91,11 +92,11 @@ public class main {
 
     }
 
-    private static InputStreamReader getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {
+    private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {
         if (argsMap.containsKey(FILE_NAME)) {
-            return new InputStreamReader(new FileInputStream(argsMap.get(FILE_NAME)), "UTF-8");
+            return new FileInputStream(argsMap.get(FILE_NAME));
         }
-        return new InputStreamReader(System.in, "UTF-8");
+        return System.in;
     }
 
     private static void printHelp() {

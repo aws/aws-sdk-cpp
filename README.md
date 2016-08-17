@@ -137,6 +137,9 @@ CMake options are variables that can either be ON or OFF, with a controllable de
 ##### ENABLE_RTTI
 (Defaults to ON) Controls whether or not the SDK is built with RTTI information
 
+##### CPP_STANDARD
+(Defaults to 11) Allows you to specify a custom c++ standard for use with C++ 14 and 17 code-bases
+
 ##### ENABLE_TESTING
 (Defaults to ON) Controls whether or not the unit and integration test projects are built
 
@@ -165,10 +168,10 @@ An override path for where the build system should find the Android NDK.  By def
 Several directories are appended with \*integration-tests. After building your project, you can run these executables to ensure everything works properly.
 
 #### Dependencies:
-To compile in Linux, you must have the header files for libcurl and libopenssl. The packages are typically available in your package manager.
+To compile in Linux, you must have the header files for libcurl, libopenssl, and libuuid. The packages are typically available in your package manager.
 
-Libcurl example:
-   `sudo apt-get install libcurl-dev`
+Debian example:
+   `sudo apt-get install libcurl-dev uuid-dev`
 
 ### Using the SDK
 After they are constructed, individual service clients are very similar to other SDKs, such as Java and .NET. This section explains how core works, how to use each feature, and how to construct an individual client.
@@ -376,7 +379,7 @@ struct AWS_CORE_API ClientConfiguration
     Aws::String userAgent;
     Aws::Http::Scheme scheme;
     Aws::Region region;
-    Aws::String authenticationRegion;
+    bool useDualStack;
     unsigned maxConnections;
     long requestTimeoutMs;
     long connectTimeoutMs;
@@ -403,8 +406,8 @@ The default value for scheme is HTTPS. You can set this value to HTTP if the inf
 ##### Region
 The region specifies where you want the client to communicate. Examples include us-east-1 or us-west-1. You must ensure the service you want to use has an endpoint in the region you configure.
 
-##### Authentication Region
-The authentication region allows you to specify an arbitrary region to use for signing. If you don't set this we fall back to Region. If you do set this, you are also responsible for setting endpoint override to connect to the endpoint that cooresponds with your custom region.
+##### UseDualStack
+Sets the endpoint calculation to go to a dual stack (ipv6 enabled) endpoint. It is your responsibility to check that the service actually supports ipv6 in the region you specify.
 
 ##### Max Connections
 The default value for the maximum number of allowed connections to a single server for your HTTP communications is 25. You can set this value as high as you can support the bandwidth. We recommend a value around 25.

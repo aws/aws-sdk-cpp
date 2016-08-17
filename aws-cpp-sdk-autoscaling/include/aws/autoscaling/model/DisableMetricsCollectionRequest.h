@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for DisableMetricsCollection.</p>
    */
   class AWS_AUTOSCALING_API DisableMetricsCollectionRequest : public AutoScalingRequest
   {
@@ -70,105 +71,97 @@ namespace Model
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline DisableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(value); return *this;}
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are disabled.</p> <ul> <li><p><code>GroupMinSize</code></p></li>
-     * <li><p><code>GroupMaxSize</code></p></li>
-     * <li><p><code>GroupDesiredCapacity</code></p></li>
-     * <li><p><code>GroupInServiceInstances</code></p></li>
-     * <li><p><code>GroupPendingInstances</code></p></li>
-     * <li><p><code>GroupStandbyInstances</code></p></li>
-     * <li><p><code>GroupTerminatingInstances</code></p></li>
-     * <li><p><code>GroupTotalInstances</code></p></li> </ul>
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline DisableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 

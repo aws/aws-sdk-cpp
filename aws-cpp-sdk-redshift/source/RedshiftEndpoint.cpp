@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,7 +13,8 @@
 * permissions and limitations under the License.
 */
 #include <aws/redshift/RedshiftEndpoint.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
 using namespace Aws::Redshift;
@@ -24,35 +25,20 @@ namespace Redshift
 {
 namespace RedshiftEndpoint
 {
-  Aws::String ForRegion(Region region)
+
+
+  Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    switch(region)
+    Aws::StringStream ss;
+    ss << "redshift" << ".";
+
+    if(useDualStack)
     {
-     case Region::US_EAST_1:
-        return "redshift.us-east-1.amazonaws.com";
-     case Region::US_WEST_1:
-        return "redshift.us-west-1.amazonaws.com";
-     case Region::US_WEST_2:
-        return "redshift.us-west-2.amazonaws.com";
-     case Region::EU_WEST_1:
-        return "redshift.eu-west-1.amazonaws.com";
-     case Region::EU_CENTRAL_1:
-        return "redshift.eu-central-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_1:
-        return "redshift.ap-southeast-1.amazonaws.com";
-     case Region::AP_SOUTHEAST_2:
-        return "redshift.ap-southeast-2.amazonaws.com";
-     case Region::AP_NORTHEAST_1:
-        return "redshift.ap-northeast-1.amazonaws.com";
-     case Region::AP_NORTHEAST_2:
-        return "redshift.ap-northeast-2.amazonaws.com";
-     case Region::SA_EAST_1:
-        return "redshift.sa-east-1.amazonaws.com";
-     case Region::AP_SOUTH_1:
-        return "redshift.ap-south-1.amazonaws.com";
-     default:
-        return "redshift.us-east-1.amazonaws.com";
+      ss << "dualstack.";
     }
+
+    ss << regionName << ".amazonaws.com";
+    return ss.str();
   }
 
 } // namespace RedshiftEndpoint

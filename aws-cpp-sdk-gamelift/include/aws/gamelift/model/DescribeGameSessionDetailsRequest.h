@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -162,49 +162,49 @@ namespace Model
     inline DescribeGameSessionDetailsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline const Aws::String& GetStatusFilter() const{ return m_statusFilter; }
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline void SetStatusFilter(const Aws::String& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline void SetStatusFilter(Aws::String&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline void SetStatusFilter(const char* value) { m_statusFilterHasBeenSet = true; m_statusFilter.assign(value); }
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline DescribeGameSessionDetailsRequest& WithStatusFilter(const Aws::String& value) { SetStatusFilter(value); return *this;}
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */
     inline DescribeGameSessionDetailsRequest& WithStatusFilter(Aws::String&& value) { SetStatusFilter(value); return *this;}
 
     /**
-     * <p>Game session status to filter results on. Possible game session states
+     * <p>Game session status to filter results on. Possible game session statuses
      * include ACTIVE, <code>TERMINATED</code>, <code>ACTIVATING</code> and
      * <code>TERMINATING</code> (the last two are transitory). </p>
      */

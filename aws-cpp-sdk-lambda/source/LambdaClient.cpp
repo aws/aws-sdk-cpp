@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -65,8 +65,7 @@ static const char* ALLOCATION_TAG = "LambdaClient";
 LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,8 +75,7 @@ LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguratio
 LambdaClient::LambdaClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,8 +86,7 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -105,9 +102,9 @@ void LambdaClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << LambdaEndpoint::ForRegion(config.region);
+    ss << LambdaEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -137,12 +134,12 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
 
 AddPermissionOutcomeCallable LambdaClient::AddPermissionCallable(const AddPermissionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::AddPermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddPermission(request); } );
 }
 
 void LambdaClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::AddPermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddPermissionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -170,12 +167,12 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
 
 CreateAliasOutcomeCallable LambdaClient::CreateAliasCallable(const CreateAliasRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::CreateAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateAlias(request); } );
 }
 
 void LambdaClient::CreateAliasAsync(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::CreateAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAliasAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -201,12 +198,12 @@ CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const Cre
 
 CreateEventSourceMappingOutcomeCallable LambdaClient::CreateEventSourceMappingCallable(const CreateEventSourceMappingRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::CreateEventSourceMapping, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateEventSourceMapping(request); } );
 }
 
 void LambdaClient::CreateEventSourceMappingAsync(const CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::CreateEventSourceMappingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateEventSourceMappingAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -232,12 +229,12 @@ CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& 
 
 CreateFunctionOutcomeCallable LambdaClient::CreateFunctionCallable(const CreateFunctionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::CreateFunction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateFunction(request); } );
 }
 
 void LambdaClient::CreateFunctionAsync(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::CreateFunctionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFunctionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -266,12 +263,12 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
 
 DeleteAliasOutcomeCallable LambdaClient::DeleteAliasCallable(const DeleteAliasRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::DeleteAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteAlias(request); } );
 }
 
 void LambdaClient::DeleteAliasAsync(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::DeleteAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAliasAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -298,12 +295,12 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
 
 DeleteEventSourceMappingOutcomeCallable LambdaClient::DeleteEventSourceMappingCallable(const DeleteEventSourceMappingRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::DeleteEventSourceMapping, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteEventSourceMapping(request); } );
 }
 
 void LambdaClient::DeleteEventSourceMappingAsync(const DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::DeleteEventSourceMappingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventSourceMappingAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -330,12 +327,12 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
 
 DeleteFunctionOutcomeCallable LambdaClient::DeleteFunctionCallable(const DeleteFunctionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::DeleteFunction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteFunction(request); } );
 }
 
 void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::DeleteFunctionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -364,12 +361,12 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 
 GetAliasOutcomeCallable LambdaClient::GetAliasCallable(const GetAliasRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::GetAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetAlias(request); } );
 }
 
 void LambdaClient::GetAliasAsync(const GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::GetAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetAliasAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::GetAliasAsyncHelper(const GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -396,12 +393,12 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
 
 GetEventSourceMappingOutcomeCallable LambdaClient::GetEventSourceMappingCallable(const GetEventSourceMappingRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::GetEventSourceMapping, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetEventSourceMapping(request); } );
 }
 
 void LambdaClient::GetEventSourceMappingAsync(const GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::GetEventSourceMappingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetEventSourceMappingAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -428,12 +425,12 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
 
 GetFunctionOutcomeCallable LambdaClient::GetFunctionCallable(const GetFunctionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::GetFunction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetFunction(request); } );
 }
 
 void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::GetFunctionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -461,12 +458,12 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
 
 GetFunctionConfigurationOutcomeCallable LambdaClient::GetFunctionConfigurationCallable(const GetFunctionConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::GetFunctionConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetFunctionConfiguration(request); } );
 }
 
 void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::GetFunctionConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -494,12 +491,12 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyOutcomeCallable LambdaClient::GetPolicyCallable(const GetPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::GetPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetPolicy(request); } );
 }
 
 void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::GetPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -527,12 +524,12 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 
 InvokeOutcomeCallable LambdaClient::InvokeCallable(const InvokeRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::Invoke, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Invoke(request); } );
 }
 
 void LambdaClient::InvokeAsync(const InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::InvokeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->InvokeAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -560,12 +557,12 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
 
 ListAliasesOutcomeCallable LambdaClient::ListAliasesCallable(const ListAliasesRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::ListAliases, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListAliases(request); } );
 }
 
 void LambdaClient::ListAliasesAsync(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::ListAliasesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListAliasesAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -591,12 +588,12 @@ ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListE
 
 ListEventSourceMappingsOutcomeCallable LambdaClient::ListEventSourceMappingsCallable(const ListEventSourceMappingsRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::ListEventSourceMappings, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListEventSourceMappings(request); } );
 }
 
 void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::ListEventSourceMappingsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListEventSourceMappingsAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -622,12 +619,12 @@ ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& req
 
 ListFunctionsOutcomeCallable LambdaClient::ListFunctionsCallable(const ListFunctionsRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::ListFunctions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListFunctions(request); } );
 }
 
 void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::ListFunctionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionsAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -655,12 +652,12 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
 
 ListVersionsByFunctionOutcomeCallable LambdaClient::ListVersionsByFunctionCallable(const ListVersionsByFunctionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::ListVersionsByFunction, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListVersionsByFunction(request); } );
 }
 
 void LambdaClient::ListVersionsByFunctionAsync(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::ListVersionsByFunctionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListVersionsByFunctionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -688,12 +685,12 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
 
 PublishVersionOutcomeCallable LambdaClient::PublishVersionCallable(const PublishVersionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::PublishVersion, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PublishVersion(request); } );
 }
 
 void LambdaClient::PublishVersionAsync(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::PublishVersionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PublishVersionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -722,12 +719,12 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
 
 RemovePermissionOutcomeCallable LambdaClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::RemovePermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemovePermission(request); } );
 }
 
 void LambdaClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::RemovePermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -756,12 +753,12 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
 
 UpdateAliasOutcomeCallable LambdaClient::UpdateAliasCallable(const UpdateAliasRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::UpdateAlias, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateAlias(request); } );
 }
 
 void LambdaClient::UpdateAliasAsync(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateAliasAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAliasAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -788,12 +785,12 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
 
 UpdateEventSourceMappingOutcomeCallable LambdaClient::UpdateEventSourceMappingCallable(const UpdateEventSourceMappingRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::UpdateEventSourceMapping, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateEventSourceMapping(request); } );
 }
 
 void LambdaClient::UpdateEventSourceMappingAsync(const UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateEventSourceMappingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventSourceMappingAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -821,12 +818,12 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
 
 UpdateFunctionCodeOutcomeCallable LambdaClient::UpdateFunctionCodeCallable(const UpdateFunctionCodeRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::UpdateFunctionCode, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateFunctionCode(request); } );
 }
 
 void LambdaClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateFunctionCodeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionCodeAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -854,12 +851,12 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
 
 UpdateFunctionConfigurationOutcomeCallable LambdaClient::UpdateFunctionConfigurationCallable(const UpdateFunctionConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &LambdaClient::UpdateFunctionConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateFunctionConfiguration(request); } );
 }
 
 void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&LambdaClient::UpdateFunctionConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void LambdaClient::UpdateFunctionConfigurationAsyncHelper(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

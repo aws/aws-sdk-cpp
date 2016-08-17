@@ -906,32 +906,32 @@ DateTime& DateTime::operator=(const std::chrono::system_clock::time_point& timep
     return *this;
 }
 
-bool DateTime::operator == (const DateTime& other)
+bool DateTime::operator == (const DateTime& other) const
 {
     return m_time == other.m_time;
 }
 
-bool DateTime::operator < (const DateTime& other)
+bool DateTime::operator < (const DateTime& other) const
 {
     return m_time < other.m_time;
 }
 
-bool DateTime::operator > (const DateTime& other)
+bool DateTime::operator > (const DateTime& other) const
 {
     return m_time > other.m_time;
 }
 
-bool DateTime::operator != (const DateTime& other)
+bool DateTime::operator != (const DateTime& other) const
 {
     return m_time != other.m_time;
 }
 
-bool DateTime::operator <= (const DateTime& other)
+bool DateTime::operator <= (const DateTime& other) const
 {
     return m_time <= other.m_time;
 }
 
-bool DateTime::operator >= (const DateTime& other)
+bool DateTime::operator >= (const DateTime& other) const
 {
     return m_time >= other.m_time;
 }

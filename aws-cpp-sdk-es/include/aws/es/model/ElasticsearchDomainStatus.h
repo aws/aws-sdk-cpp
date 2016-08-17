@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -300,6 +300,27 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithProcessing(bool value) { SetProcessing(value); return *this;}
 
+    
+    inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    
+    inline void SetElasticsearchVersion(const Aws::String& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    
+    inline void SetElasticsearchVersion(Aws::String&& value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion = value; }
+
+    
+    inline void SetElasticsearchVersion(const char* value) { m_elasticsearchVersionHasBeenSet = true; m_elasticsearchVersion.assign(value); }
+
+    
+    inline ElasticsearchDomainStatus& WithElasticsearchVersion(const Aws::String& value) { SetElasticsearchVersion(value); return *this;}
+
+    
+    inline ElasticsearchDomainStatus& WithElasticsearchVersion(Aws::String&& value) { SetElasticsearchVersion(value); return *this;}
+
+    
+    inline ElasticsearchDomainStatus& WithElasticsearchVersion(const char* value) { SetElasticsearchVersion(value); return *this;}
+
     /**
      * <p>The type and number of instances in the domain cluster.</p>
      */
@@ -495,6 +516,8 @@ namespace Model
     bool m_endpointHasBeenSet;
     bool m_processing;
     bool m_processingHasBeenSet;
+    Aws::String m_elasticsearchVersion;
+    bool m_elasticsearchVersionHasBeenSet;
     ElasticsearchClusterConfig m_elasticsearchClusterConfig;
     bool m_elasticsearchClusterConfigHasBeenSet;
     EBSOptions m_eBSOptions;

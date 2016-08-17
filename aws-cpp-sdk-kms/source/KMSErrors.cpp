@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,7 +30,9 @@ namespace KMSErrorMapper
 static const int INVALID_ALIAS_NAME_HASH = HashingUtils::HashString("InvalidAliasNameException");
 static const int K_M_S_INTERNAL_HASH = HashingUtils::HashString("KMSInternalException");
 static const int INVALID_KEY_USAGE_HASH = HashingUtils::HashString("InvalidKeyUsageException");
+static const int INVALID_IMPORT_TOKEN_HASH = HashingUtils::HashString("InvalidImportTokenException");
 static const int INVALID_GRANT_ID_HASH = HashingUtils::HashString("InvalidGrantIdException");
+static const int INCORRECT_KEY_MATERIAL_HASH = HashingUtils::HashString("IncorrectKeyMaterialException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int DISABLED_HASH = HashingUtils::HashString("DisabledException");
@@ -41,6 +43,7 @@ static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalid
 static const int DEPENDENCY_TIMEOUT_HASH = HashingUtils::HashString("DependencyTimeoutException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_MARKER_HASH = HashingUtils::HashString("InvalidMarkerException");
+static const int EXPIRED_IMPORT_TOKEN_HASH = HashingUtils::HashString("ExpiredImportTokenException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int KEY_UNAVAILABLE_HASH = HashingUtils::HashString("KeyUnavailableException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
@@ -62,9 +65,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_KEY_USAGE), false);
   }
+  else if (hashCode == INVALID_IMPORT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_IMPORT_TOKEN), false);
+  }
   else if (hashCode == INVALID_GRANT_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_GRANT_ID), false);
+  }
+  else if (hashCode == INCORRECT_KEY_MATERIAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INCORRECT_KEY_MATERIAL), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
@@ -105,6 +116,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_MARKER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_MARKER), false);
+  }
+  else if (hashCode == EXPIRED_IMPORT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::EXPIRED_IMPORT_TOKEN), false);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {

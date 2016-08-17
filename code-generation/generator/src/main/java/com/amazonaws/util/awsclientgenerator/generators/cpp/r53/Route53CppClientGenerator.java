@@ -17,8 +17,8 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.r53;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
-import com.amazonaws.util.awsclientgenerator.regions.RegionEndpointMapper;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Route53CppClientGenerator extends RestXmlCppClientGenerator {
@@ -27,8 +27,8 @@ public class Route53CppClientGenerator extends RestXmlCppClientGenerator {
     }
 
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
-        Map<String, String> endpoints = RegionEndpointMapper.GetRegionMappingForService(serviceModel.getMetadata().getEndpointPrefix(), "%s-%s");
-        endpoints.put("US_EAST_1", serviceModel.getMetadata().getGlobalEndpoint());
+         Map<String, String> endpoints = new LinkedHashMap<>();
+        endpoints.put("us-east-1", serviceModel.getMetadata().getGlobalEndpoint());
 
         return endpoints;
     }

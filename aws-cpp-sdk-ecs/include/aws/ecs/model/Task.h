@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -414,102 +414,92 @@ namespace Model
     inline Task& WithStoppedReason(const char* value) { SetStoppedReason(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was created (the task
-     * entered the <code>PENDING</code> state).</p>
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was created (the task
-     * entered the <code>PENDING</code> state).</p>
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was created (the task
-     * entered the <code>PENDING</code> state).</p>
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was created (the task
-     * entered the <code>PENDING</code> state).</p>
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
      */
     inline Task& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was created (the task
-     * entered the <code>PENDING</code> state).</p>
+     * <p>The Unix timestamp for when the task was created (the task entered the
+     * <code>PENDING</code> state).</p>
      */
     inline Task& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was started (the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was started (the task transitioned from
+     * the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was started (the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was started (the task transitioned from
+     * the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was started (the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was started (the task transitioned from
+     * the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was started (the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was started (the task transitioned from
+     * the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline Task& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was started (the task
-     * transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was started (the task transitioned from
+     * the <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline Task& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline void SetStoppedAt(Aws::Utils::DateTime&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline Task& WithStoppedAt(const Aws::Utils::DateTime& value) { SetStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the task was stopped (the task
-     * transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code>
-     * state).</p>
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
+     * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline Task& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(value); return *this;}
 

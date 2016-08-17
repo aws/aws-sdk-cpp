@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>The list of supported product configurations which allow user-supplied
    * arguments. EMR accepts these arguments and forwards them to the corresponding
-   * installation script as bootstrap action arguments. </p>
+   * installation script as bootstrap action arguments.</p>
    */
   class AWS_EMR_API SupportedProductConfig
   {

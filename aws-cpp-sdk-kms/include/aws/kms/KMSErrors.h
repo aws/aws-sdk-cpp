@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -51,11 +51,14 @@ enum class KMSErrors
   ALREADY_EXISTS= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEPENDENCY_TIMEOUT,
   DISABLED,
+  EXPIRED_IMPORT_TOKEN,
+  INCORRECT_KEY_MATERIAL,
   INVALID_ALIAS_NAME,
   INVALID_ARN,
   INVALID_CIPHERTEXT,
   INVALID_GRANT_ID,
   INVALID_GRANT_TOKEN,
+  INVALID_IMPORT_TOKEN,
   INVALID_KEY_USAGE,
   INVALID_MARKER,
   KEY_UNAVAILABLE,

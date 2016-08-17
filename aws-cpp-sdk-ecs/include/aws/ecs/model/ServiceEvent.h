@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -78,27 +78,27 @@ namespace Model
     inline ServiceEvent& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
+     * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
+     * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
+     * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
+     * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline ServiceEvent& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the event was triggered.</p>
+     * <p>The Unix timestamp for when the event was triggered.</p>
      */
     inline ServiceEvent& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 

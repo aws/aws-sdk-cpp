@@ -374,38 +374,6 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
     ASSERT_STREQ(cek.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeDecryptedResult).c_str()).c_str());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
-{
-    Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
-    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
-    Aws::String cek = "00112233445566778899AABBCCDDEEFF";
-
-    CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
-    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
-    CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
-
-    auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
-    auto encryptResult = cipher->EncryptBuffer(cek_raw);
-    auto encryptFinalizeResult = cipher->FinalizeEncryption();
-
-
-    ASSERT_TRUE(*cipher);
-    CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
-    ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
-    //do this as a string to enhance test output readability.
-    ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
-
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
-    auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
-    auto decryptFinalizeResult = cipher->FinalizeDecryption();
-
-    ASSERT_TRUE(*cipher);
-    CryptoBuffer completeDecryptedResult({ &decryptResult, &decryptFinalizeResult });
-    ASSERT_EQ(cek_raw.GetLength(), completeDecryptedResult.GetLength());
-    //do this as a string to enhance test output readability.
-    ASSERT_STREQ(cek.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeDecryptedResult).c_str()).c_str());
-}
-
 TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
 {
     Aws::String expected_cipher_text = "28C9F404C4B810F4CBCCB35CFB87F8263F5786E2D80ED326CBC7F0E71A99F43BFB988B9B7A02DD21";
@@ -462,6 +430,100 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
     cipher = CreateAES_KeyWrapImplementation(kek_raw);
     //alter data after the integrity register and make sure the decryption fails.
     expected_cipher_text_raw[14] = expected_cipher_text_raw[12] + expected_cipher_text_raw[13];
+    auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
+    auto decryptFinalizeResult = cipher->FinalizeDecryption();
+
+    ASSERT_FALSE(*cipher);
+    ASSERT_EQ(0u, decryptResult.GetLength());
+    ASSERT_EQ(0u, decryptFinalizeResult.GetLength());
+}
+
+TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
+{
+    Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    Aws::String cek = "00112233445566778899AABBCCDDEEFF";
+
+    CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
+
+    auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    auto encryptResult = cipher->EncryptBuffer(cek_raw);
+    auto encryptFinalizeResult = cipher->FinalizeEncryption();
+
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
+    ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
+    //do this as a string to enhance test output readability.
+    ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
+
+    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
+    auto decryptFinalizeResult = cipher->FinalizeDecryption();
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer completeDecryptedResult({ &decryptResult, &decryptFinalizeResult });
+    ASSERT_EQ(cek_raw.GetLength(), completeDecryptedResult.GetLength());
+    //do this as a string to enhance test output readability.
+    ASSERT_STREQ(cek.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeDecryptedResult).c_str()).c_str());
+}
+
+TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
+{
+    Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    Aws::String cek = "00112233445566778899AABBCCDDEEFF";
+
+    CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
+
+    auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    auto encryptResult = cipher->EncryptBuffer(cek_raw);
+    auto encryptFinalizeResult = cipher->FinalizeEncryption();
+
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
+    ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
+    //do this as a string to enhance test output readability.
+    ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
+
+    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    expected_cipher_text_raw[1] = expected_cipher_text_raw[1] + expected_cipher_text_raw[2];
+    auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
+    auto decryptFinalizeResult = cipher->FinalizeDecryption();
+
+    ASSERT_FALSE(*cipher);
+    ASSERT_EQ(0u, decryptResult.GetLength());
+    ASSERT_EQ(0u, decryptFinalizeResult.GetLength());
+}
+
+TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
+{
+    Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    Aws::String cek = "00112233445566778899AABBCCDDEEFF";
+
+    CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
+
+    auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    auto encryptResult = cipher->EncryptBuffer(cek_raw);
+    auto encryptFinalizeResult = cipher->FinalizeEncryption();
+
+
+    ASSERT_TRUE(*cipher);
+    CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
+    ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
+    //do this as a string to enhance test output readability.
+    ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
+
+    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    expected_cipher_text_raw[14] = expected_cipher_text_raw[13] + expected_cipher_text_raw[14];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
 

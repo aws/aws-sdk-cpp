@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -37,37 +37,37 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline AddTagsToResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline AddTagsToResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the directory to which to add the tag.</p>
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
     inline AddTagsToResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

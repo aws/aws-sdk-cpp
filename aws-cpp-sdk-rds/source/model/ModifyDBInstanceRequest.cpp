@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -24,6 +24,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
+    m_dBSubnetGroupNameHasBeenSet(false),
     m_dBSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_applyImmediately(false),
@@ -41,6 +42,7 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_allowMajorVersionUpgradeHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
     m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_licenseModelHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_optionGroupNameHasBeenSet(false),
@@ -82,6 +84,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_dBInstanceClassHasBeenSet)
   {
     ss << "DBInstanceClass=" << StringUtils::URLEncode(m_dBInstanceClass.c_str()) << "&";
+  }
+
+  if(m_dBSubnetGroupNameHasBeenSet)
+  {
+    ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
   }
 
   if(m_dBSecurityGroupsHasBeenSet)
@@ -154,6 +161,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
     ss << "AutoMinorVersionUpgrade=" << m_autoMinorVersionUpgrade << "&";
+  }
+
+  if(m_licenseModelHasBeenSet)
+  {
+    ss << "LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
 
   if(m_iopsHasBeenSet)

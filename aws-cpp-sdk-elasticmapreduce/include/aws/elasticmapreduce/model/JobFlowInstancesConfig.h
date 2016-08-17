@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -338,79 +338,79 @@ namespace Model
     inline JobFlowInstancesConfig& WithHadoopVersion(const char* value) { SetHadoopVersion(value); return *this;}
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline const Aws::String& GetEc2SubnetId() const{ return m_ec2SubnetId; }
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline void SetEc2SubnetId(const Aws::String& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline void SetEc2SubnetId(Aws::String&& value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId = value; }
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline void SetEc2SubnetId(const char* value) { m_ec2SubnetIdHasBeenSet = true; m_ec2SubnetId.assign(value); }
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline JobFlowInstancesConfig& WithEc2SubnetId(const Aws::String& value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline JobFlowInstancesConfig& WithEc2SubnetId(Aws::String&& value) { SetEc2SubnetId(value); return *this;}
 
     /**
-     * <p> To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set
-     * this parameter to the identifier of the Amazon VPC subnet where you want the job
-     * flow to launch. If you do not specify this value, the job flow is launched in
-     * the normal Amazon Web Services cloud, outside of an Amazon VPC. </p> <p> Amazon
-     * VPC currently does not support cluster compute quadruple extra large
-     * (cc1.4xlarge) instances. Thus you cannot specify the cc1.4xlarge instance type
-     * for nodes of a job flow launched in a Amazon VPC. </p>
+     * <p>To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC), set this
+     * parameter to the identifier of the Amazon VPC subnet where you want the job flow
+     * to launch. If you do not specify this value, the job flow is launched in the
+     * normal Amazon Web Services cloud, outside of an Amazon VPC.</p> <p>Amazon VPC
+     * currently does not support cluster compute quadruple extra large (cc1.4xlarge)
+     * instances. Thus you cannot specify the cc1.4xlarge instance type for nodes of a
+     * job flow launched in a Amazon VPC.</p>
      */
     inline JobFlowInstancesConfig& WithEc2SubnetId(const char* value) { SetEc2SubnetId(value); return *this;}
 

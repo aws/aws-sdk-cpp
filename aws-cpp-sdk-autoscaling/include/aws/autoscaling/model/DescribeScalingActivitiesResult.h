@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -35,6 +35,9 @@ namespace AutoScaling
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeScalingActivities.</p>
+   */
   class AWS_AUTOSCALING_API DescribeScalingActivitiesResult
   {
   public:
@@ -43,37 +46,44 @@ namespace Model
     DescribeScalingActivitiesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline const Aws::Vector<Activity>& GetActivities() const{ return m_activities; }
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline void SetActivities(const Aws::Vector<Activity>& value) { m_activities = value; }
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline void SetActivities(Aws::Vector<Activity>&& value) { m_activities = value; }
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline DescribeScalingActivitiesResult& WithActivities(const Aws::Vector<Activity>& value) { SetActivities(value); return *this;}
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline DescribeScalingActivitiesResult& WithActivities(Aws::Vector<Activity>&& value) { SetActivities(value); return *this;}
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline DescribeScalingActivitiesResult& AddActivities(const Activity& value) { m_activities.push_back(value); return *this; }
 
     /**
-     * <p>The scaling activities.</p>
+     * <p>The scaling activities. Activities are sorted by start time. Activities still
+     * in progress are described first.</p>
      */
     inline DescribeScalingActivitiesResult& AddActivities(Activity&& value) { m_activities.push_back(value); return *this; }
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,6 +27,7 @@ namespace Model
 {
 
   /**
+   * <p>Describes the inputs for ListMetrics.</p>
    */
   class AWS_CLOUDWATCH_API ListMetricsRequest : public CloudWatchRequest
   {
@@ -35,149 +36,149 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline ListMetricsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline ListMetricsRequest& WithNamespace(Aws::String&& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The namespace to filter against. </p>
+     * <p>The namespace to filter against.</p>
      */
     inline ListMetricsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline ListMetricsRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline ListMetricsRequest& WithMetricName(Aws::String&& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p> The name of the metric to filter against. </p>
+     * <p>The name of the metric to filter against.</p>
      */
     inline ListMetricsRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline const Aws::Vector<DimensionFilter>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline void SetDimensions(const Aws::Vector<DimensionFilter>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline void SetDimensions(Aws::Vector<DimensionFilter>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline ListMetricsRequest& WithDimensions(const Aws::Vector<DimensionFilter>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline ListMetricsRequest& WithDimensions(Aws::Vector<DimensionFilter>&& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline ListMetricsRequest& AddDimensions(const DimensionFilter& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p> A list of dimensions to filter against. </p>
+     * <p>A list of dimensions to filter against.</p>
      */
     inline ListMetricsRequest& AddDimensions(DimensionFilter&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline ListMetricsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline ListMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The token returned by a previous call to indicate that there is more data
-     * available. </p>
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
      */
     inline ListMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

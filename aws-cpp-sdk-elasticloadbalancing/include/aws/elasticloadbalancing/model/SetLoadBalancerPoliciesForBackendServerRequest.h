@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for SetLoadBalancerPoliciesForBackendServer.</p>
    */
   class AWS_ELASTICLOADBALANCING_API SetLoadBalancerPoliciesForBackendServerRequest : public ElasticLoadBalancingRequest
   {
@@ -69,65 +70,65 @@ namespace Model
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The port number associated with the back-end server.</p>
+     * <p>The port number associated with the EC2 instance.</p>
      */
     inline int GetInstancePort() const{ return m_instancePort; }
 
     /**
-     * <p>The port number associated with the back-end server.</p>
+     * <p>The port number associated with the EC2 instance.</p>
      */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
-     * <p>The port number associated with the back-end server.</p>
+     * <p>The port number associated with the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithInstancePort(int value) { SetInstancePort(value); return *this;}
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(value); return *this;}
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
      * <p>The names of the policies. If the list is empty, then all current polices are
-     * removed from the back-end server.</p>
+     * removed from the EC2 instance.</p>
      */
     inline SetLoadBalancerPoliciesForBackendServerRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 

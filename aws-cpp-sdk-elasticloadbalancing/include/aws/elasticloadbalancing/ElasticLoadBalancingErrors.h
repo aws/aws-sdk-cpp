@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -50,6 +50,7 @@ enum class ElasticLoadBalancingErrors
 
   ACCESS_POINT_NOT_FOUND= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CERTIFICATE_NOT_FOUND,
+  DEPENDENCY_THROTTLE,
   DUPLICATE_ACCESS_POINT_NAME,
   DUPLICATE_LISTENER,
   DUPLICATE_POLICY_NAME,
@@ -66,7 +67,8 @@ enum class ElasticLoadBalancingErrors
   SUBNET_NOT_FOUND,
   TOO_MANY_ACCESS_POINTS,
   TOO_MANY_POLICIES,
-  TOO_MANY_TAGS
+  TOO_MANY_TAGS,
+  UNSUPPORTED_PROTOCOL
 };
 namespace ElasticLoadBalancingErrorMapper
 {

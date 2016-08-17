@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -54,8 +54,7 @@ static const char* ALLOCATION_TAG = "CloudWatchEventsClient";
 CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -65,8 +64,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration
 CloudWatchEventsClient::CloudWatchEventsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,8 +75,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const std::shared_ptr<AWSCredenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -94,9 +91,9 @@ void CloudWatchEventsClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << CloudWatchEventsEndpoint::ForRegion(config.region);
+    ss << CloudWatchEventsEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -124,12 +121,12 @@ DeleteRuleOutcome CloudWatchEventsClient::DeleteRule(const DeleteRuleRequest& re
 
 DeleteRuleOutcomeCallable CloudWatchEventsClient::DeleteRuleCallable(const DeleteRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::DeleteRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteRule(request); } );
 }
 
 void CloudWatchEventsClient::DeleteRuleAsync(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::DeleteRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::DeleteRuleAsyncHelper(const DeleteRuleRequest& request, const DeleteRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -155,12 +152,12 @@ DescribeRuleOutcome CloudWatchEventsClient::DescribeRule(const DescribeRuleReque
 
 DescribeRuleOutcomeCallable CloudWatchEventsClient::DescribeRuleCallable(const DescribeRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::DescribeRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DescribeRule(request); } );
 }
 
 void CloudWatchEventsClient::DescribeRuleAsync(const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::DescribeRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::DescribeRuleAsyncHelper(const DescribeRuleRequest& request, const DescribeRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -186,12 +183,12 @@ DisableRuleOutcome CloudWatchEventsClient::DisableRule(const DisableRuleRequest&
 
 DisableRuleOutcomeCallable CloudWatchEventsClient::DisableRuleCallable(const DisableRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::DisableRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DisableRule(request); } );
 }
 
 void CloudWatchEventsClient::DisableRuleAsync(const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::DisableRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DisableRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::DisableRuleAsyncHelper(const DisableRuleRequest& request, const DisableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -217,12 +214,12 @@ EnableRuleOutcome CloudWatchEventsClient::EnableRule(const EnableRuleRequest& re
 
 EnableRuleOutcomeCallable CloudWatchEventsClient::EnableRuleCallable(const EnableRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::EnableRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->EnableRule(request); } );
 }
 
 void CloudWatchEventsClient::EnableRuleAsync(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::EnableRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->EnableRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::EnableRuleAsyncHelper(const EnableRuleRequest& request, const EnableRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -248,12 +245,12 @@ ListRuleNamesByTargetOutcome CloudWatchEventsClient::ListRuleNamesByTarget(const
 
 ListRuleNamesByTargetOutcomeCallable CloudWatchEventsClient::ListRuleNamesByTargetCallable(const ListRuleNamesByTargetRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::ListRuleNamesByTarget, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRuleNamesByTarget(request); } );
 }
 
 void CloudWatchEventsClient::ListRuleNamesByTargetAsync(const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::ListRuleNamesByTargetAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRuleNamesByTargetAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::ListRuleNamesByTargetAsyncHelper(const ListRuleNamesByTargetRequest& request, const ListRuleNamesByTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -279,12 +276,12 @@ ListRulesOutcome CloudWatchEventsClient::ListRules(const ListRulesRequest& reque
 
 ListRulesOutcomeCallable CloudWatchEventsClient::ListRulesCallable(const ListRulesRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::ListRules, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRules(request); } );
 }
 
 void CloudWatchEventsClient::ListRulesAsync(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::ListRulesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRulesAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::ListRulesAsyncHelper(const ListRulesRequest& request, const ListRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -310,12 +307,12 @@ ListTargetsByRuleOutcome CloudWatchEventsClient::ListTargetsByRule(const ListTar
 
 ListTargetsByRuleOutcomeCallable CloudWatchEventsClient::ListTargetsByRuleCallable(const ListTargetsByRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::ListTargetsByRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTargetsByRule(request); } );
 }
 
 void CloudWatchEventsClient::ListTargetsByRuleAsync(const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::ListTargetsByRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTargetsByRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::ListTargetsByRuleAsyncHelper(const ListTargetsByRuleRequest& request, const ListTargetsByRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -341,12 +338,12 @@ PutEventsOutcome CloudWatchEventsClient::PutEvents(const PutEventsRequest& reque
 
 PutEventsOutcomeCallable CloudWatchEventsClient::PutEventsCallable(const PutEventsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::PutEvents, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutEvents(request); } );
 }
 
 void CloudWatchEventsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::PutEventsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -372,12 +369,12 @@ PutRuleOutcome CloudWatchEventsClient::PutRule(const PutRuleRequest& request) co
 
 PutRuleOutcomeCallable CloudWatchEventsClient::PutRuleCallable(const PutRuleRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::PutRule, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutRule(request); } );
 }
 
 void CloudWatchEventsClient::PutRuleAsync(const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::PutRuleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutRuleAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::PutRuleAsyncHelper(const PutRuleRequest& request, const PutRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -403,12 +400,12 @@ PutTargetsOutcome CloudWatchEventsClient::PutTargets(const PutTargetsRequest& re
 
 PutTargetsOutcomeCallable CloudWatchEventsClient::PutTargetsCallable(const PutTargetsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::PutTargets, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutTargets(request); } );
 }
 
 void CloudWatchEventsClient::PutTargetsAsync(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::PutTargetsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutTargetsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::PutTargetsAsyncHelper(const PutTargetsRequest& request, const PutTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -434,12 +431,12 @@ RemoveTargetsOutcome CloudWatchEventsClient::RemoveTargets(const RemoveTargetsRe
 
 RemoveTargetsOutcomeCallable CloudWatchEventsClient::RemoveTargetsCallable(const RemoveTargetsRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::RemoveTargets, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemoveTargets(request); } );
 }
 
 void CloudWatchEventsClient::RemoveTargetsAsync(const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::RemoveTargetsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveTargetsAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::RemoveTargetsAsyncHelper(const RemoveTargetsRequest& request, const RemoveTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -465,12 +462,12 @@ TestEventPatternOutcome CloudWatchEventsClient::TestEventPattern(const TestEvent
 
 TestEventPatternOutcomeCallable CloudWatchEventsClient::TestEventPatternCallable(const TestEventPatternRequest& request) const
 {
-  return std::async(std::launch::async, &CloudWatchEventsClient::TestEventPattern, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->TestEventPattern(request); } );
 }
 
 void CloudWatchEventsClient::TestEventPatternAsync(const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CloudWatchEventsClient::TestEventPatternAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->TestEventPatternAsyncHelper( request, handler, context ); } );
 }
 
 void CloudWatchEventsClient::TestEventPatternAsyncHelper(const TestEventPatternRequest& request, const TestEventPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

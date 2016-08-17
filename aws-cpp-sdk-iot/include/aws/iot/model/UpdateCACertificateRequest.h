@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,6 +17,7 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CACertificateStatus.h>
+#include <aws/iot/model/AutoRegistrationStatus.h>
 
 namespace Aws
 {
@@ -105,11 +106,43 @@ namespace Model
      */
     inline UpdateCACertificateRequest& WithNewStatus(CACertificateStatus&& value) { SetNewStatus(value); return *this;}
 
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline const AutoRegistrationStatus& GetNewAutoRegistrationStatus() const{ return m_newAutoRegistrationStatus; }
+
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline void SetNewAutoRegistrationStatus(const AutoRegistrationStatus& value) { m_newAutoRegistrationStatusHasBeenSet = true; m_newAutoRegistrationStatus = value; }
+
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline void SetNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { m_newAutoRegistrationStatusHasBeenSet = true; m_newAutoRegistrationStatus = value; }
+
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(const AutoRegistrationStatus& value) { SetNewAutoRegistrationStatus(value); return *this;}
+
+    /**
+     * <p>The new value for the auto registration status. Valid values are: "ENABLE" or
+     * "DISABLE".</p>
+     */
+    inline UpdateCACertificateRequest& WithNewAutoRegistrationStatus(AutoRegistrationStatus&& value) { SetNewAutoRegistrationStatus(value); return *this;}
+
   private:
     Aws::String m_certificateId;
     bool m_certificateIdHasBeenSet;
     CACertificateStatus m_newStatus;
     bool m_newStatusHasBeenSet;
+    AutoRegistrationStatus m_newAutoRegistrationStatus;
+    bool m_newAutoRegistrationStatusHasBeenSet;
   };
 
 } // namespace Model

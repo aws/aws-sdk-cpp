@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>A job flow step consisting of a JAR file whose main function will be
    * executed. The main function submits a job for Hadoop to execute and waits for
-   * the job to finish or fail. </p>
+   * the job to finish or fail.</p>
    */
   class AWS_EMR_API HadoopJarStepConfig
   {

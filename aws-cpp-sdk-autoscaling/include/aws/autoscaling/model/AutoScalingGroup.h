@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -297,6 +297,54 @@ namespace Model
      * <p>One or more load balancers associated with the group.</p>
      */
     inline AutoScalingGroup& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline AutoScalingGroup& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline AutoScalingGroup& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline AutoScalingGroup& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline AutoScalingGroup& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the target groups for your load
+     * balancer.</p>
+     */
+    inline AutoScalingGroup& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
@@ -754,6 +802,8 @@ namespace Model
     bool m_availabilityZonesHasBeenSet;
     Aws::Vector<Aws::String> m_loadBalancerNames;
     bool m_loadBalancerNamesHasBeenSet;
+    Aws::Vector<Aws::String> m_targetGroupARNs;
+    bool m_targetGroupARNsHasBeenSet;
     Aws::String m_healthCheckType;
     bool m_healthCheckTypeHasBeenSet;
     int m_healthCheckGracePeriod;

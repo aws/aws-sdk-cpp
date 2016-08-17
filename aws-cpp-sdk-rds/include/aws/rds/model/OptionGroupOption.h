@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/OptionGroupOptionSetting.h>
+#include <aws/rds/model/OptionVersion.h>
 
 namespace Aws
 {
@@ -378,6 +379,41 @@ namespace Model
      */
     inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
 
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline const Aws::Vector<OptionVersion>& GetOptionGroupOptionVersions() const{ return m_optionGroupOptionVersions; }
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline void SetOptionGroupOptionVersions(const Aws::Vector<OptionVersion>& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = value; }
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline void SetOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = value; }
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline OptionGroupOption& WithOptionGroupOptionVersions(const Aws::Vector<OptionVersion>& value) { SetOptionGroupOptionVersions(value); return *this;}
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline OptionGroupOption& WithOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { SetOptionGroupOptionVersions(value); return *this;}
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline OptionGroupOption& AddOptionGroupOptionVersions(const OptionVersion& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the versions that are available for the option.</p>
+     */
+    inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(value); return *this; }
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -401,6 +437,8 @@ namespace Model
     bool m_permanentHasBeenSet;
     Aws::Vector<OptionGroupOptionSetting> m_optionGroupOptionSettings;
     bool m_optionGroupOptionSettingsHasBeenSet;
+    Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
+    bool m_optionGroupOptionVersionsHasBeenSet;
   };
 
 } // namespace Model

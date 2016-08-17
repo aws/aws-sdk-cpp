@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -186,7 +186,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionConfigurationRequest&, const Model::UpdateFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionConfigurationResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Lambda</fullname> <p><b>Overview</b></p> <p>This is the <i>AWS
+   * <fullname>AWS Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS
    * Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional
    * information. For the service overview, go to <a
    * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
@@ -282,8 +282,8 @@ namespace Model
          * <p>Creates an alias that points to the specified Lambda function version. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-         * to AWS Lambda Aliases</a>.</p> Alias names are unique for a given function.
-         * <p>This requires permission for the lambda:CreateAlias action.</p>
+         * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
+         * This requires permission for the lambda:CreateAlias action.</p>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
@@ -291,8 +291,8 @@ namespace Model
          * <p>Creates an alias that points to the specified Lambda function version. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-         * to AWS Lambda Aliases</a>.</p> Alias names are unique for a given function.
-         * <p>This requires permission for the lambda:CreateAlias action.</p>
+         * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
+         * This requires permission for the lambda:CreateAlias action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -302,8 +302,8 @@ namespace Model
          * <p>Creates an alias that points to the specified Lambda function version. For
          * more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
-         * to AWS Lambda Aliases</a>.</p> Alias names are unique for a given function.
-         * <p>This requires permission for the lambda:CreateAlias action.</p>
+         * to AWS Lambda Aliases</a>.</p> <p>Alias names are unique for a given function.
+         * This requires permission for the lambda:CreateAlias action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -314,20 +314,20 @@ namespace Model
          * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes
          * the specified function when records are posted to the stream.</p> <p>This
          * association between a stream source and a Lambda function is called the event
-         * source mapping. </p> <important>This event source mapping is relevant only in
+         * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important>
-         * <p> You provide mapping information (for example, which stream to read from and
-         * which Lambda function to invoke) in the request body. </p> <p> Each event
-         * source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with
-         * multiple AWS Lambda function. A given Lambda function can be associated with
-         * multiple AWS event sources. </p> <p> <p>If you are using versioning, you can
+         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+         * </important> <p>You provide mapping information (for example, which stream to
+         * read from and which Lambda function to invoke) in the request body.</p> <p>Each
+         * event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+         * with multiple AWS Lambda function. A given Lambda function can be associated
+         * with multiple AWS event sources.</p> <p>If you are using versioning, you can
          * specify a specific function version or an alias via the function name parameter.
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> </p> <p>This operation requires
+         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
          */
         virtual Model::CreateEventSourceMappingOutcome CreateEventSourceMapping(const Model::CreateEventSourceMappingRequest& request) const;
@@ -337,20 +337,20 @@ namespace Model
          * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes
          * the specified function when records are posted to the stream.</p> <p>This
          * association between a stream source and a Lambda function is called the event
-         * source mapping. </p> <important>This event source mapping is relevant only in
+         * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important>
-         * <p> You provide mapping information (for example, which stream to read from and
-         * which Lambda function to invoke) in the request body. </p> <p> Each event
-         * source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with
-         * multiple AWS Lambda function. A given Lambda function can be associated with
-         * multiple AWS event sources. </p> <p> <p>If you are using versioning, you can
+         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+         * </important> <p>You provide mapping information (for example, which stream to
+         * read from and which Lambda function to invoke) in the request body.</p> <p>Each
+         * event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+         * with multiple AWS Lambda function. A given Lambda function can be associated
+         * with multiple AWS event sources.</p> <p>If you are using versioning, you can
          * specify a specific function version or an alias via the function name parameter.
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> </p> <p>This operation requires
+         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -362,20 +362,20 @@ namespace Model
          * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda invokes
          * the specified function when records are posted to the stream.</p> <p>This
          * association between a stream source and a Lambda function is called the event
-         * source mapping. </p> <important>This event source mapping is relevant only in
+         * source mapping.</p> <important><p>This event source mapping is relevant only in
          * the AWS Lambda pull model, where AWS Lambda invokes the function. For more
          * information, go to <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important>
-         * <p> You provide mapping information (for example, which stream to read from and
-         * which Lambda function to invoke) in the request body. </p> <p> Each event
-         * source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with
-         * multiple AWS Lambda function. A given Lambda function can be associated with
-         * multiple AWS event sources. </p> <p> <p>If you are using versioning, you can
+         * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</p>
+         * </important> <p>You provide mapping information (for example, which stream to
+         * read from and which Lambda function to invoke) in the request body.</p> <p>Each
+         * event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+         * with multiple AWS Lambda function. A given Lambda function can be associated
+         * with multiple AWS event sources.</p> <p>If you are using versioning, you can
          * specify a specific function version or an alias via the function name parameter.
          * For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> </p> <p>This operation requires
+         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -386,7 +386,7 @@ namespace Model
          * <p>Creates a new Lambda function. The function metadata is created from the
          * request parameters, and the code for the function is provided by a .zip file in
          * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive. </p> <p> If you are using
+         * Note that the function name is case-sensitive.</p> <p> If you are using
          * versioning, you can also publish a version of the Lambda function you are
          * creating using the <code>Publish</code> parameter. For more information about
          * versioning, see <a
@@ -400,7 +400,7 @@ namespace Model
          * <p>Creates a new Lambda function. The function metadata is created from the
          * request parameters, and the code for the function is provided by a .zip file in
          * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive. </p> <p> If you are using
+         * Note that the function name is case-sensitive.</p> <p> If you are using
          * versioning, you can also publish a version of the Lambda function you are
          * creating using the <code>Publish</code> parameter. For more information about
          * versioning, see <a
@@ -416,7 +416,7 @@ namespace Model
          * <p>Creates a new Lambda function. The function metadata is created from the
          * request parameters, and the code for the function is provided by a .zip file in
          * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive. </p> <p> If you are using
+         * Note that the function name is case-sensitive.</p> <p> If you are using
          * versioning, you can also publish a version of the Lambda function you are
          * creating using the <code>Publish</code> parameter. For more information about
          * versioning, see <a
@@ -699,7 +699,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code></p>
+         * <code>lambda:GetPolicy action.</code> </p>
          */
         virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
 
@@ -712,7 +712,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code></p>
+         * <code>lambda:GetPolicy action.</code> </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -727,19 +727,21 @@ namespace Model
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>For information about adding
          * permissions, see <a>AddPermission</a>.</p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code></p>
+         * <code>lambda:GetPolicy action.</code> </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Invokes a specific Lambda function. </p> <p>If you are using the versioning
+         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
          * feature, you can invoke the specific function version by providing function
          * version or alias name that is pointing to the function version using the
          * <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. For information about the versioning feature, see <a
+         * function is invoked. Invocations occur at least once in response to an event and
+         * functions must be idempotent to handle this. For information about the
+         * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:InvokeFunction</code> action.</p>
@@ -747,12 +749,14 @@ namespace Model
         virtual Model::InvokeOutcome Invoke(const Model::InvokeRequest& request) const;
 
         /**
-         * <p> Invokes a specific Lambda function. </p> <p>If you are using the versioning
+         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
          * feature, you can invoke the specific function version by providing function
          * version or alias name that is pointing to the function version using the
          * <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. For information about the versioning feature, see <a
+         * function is invoked. Invocations occur at least once in response to an event and
+         * functions must be idempotent to handle this. For information about the
+         * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:InvokeFunction</code> action.</p>
@@ -762,12 +766,14 @@ namespace Model
         virtual Model::InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request) const;
 
         /**
-         * <p> Invokes a specific Lambda function. </p> <p>If you are using the versioning
+         * <p>Invokes a specific Lambda function.</p> <p>If you are using the versioning
          * feature, you can invoke the specific function version by providing function
          * version or alias name that is pointing to the function version using the
          * <code>Qualifier</code> parameter in the request. If you don't provide the
          * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. For information about the versioning feature, see <a
+         * function is invoked. Invocations occur at least once in response to an event and
+         * functions must be idempotent to handle this. For information about the
+         * versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:InvokeFunction</code> action.</p>
@@ -967,30 +973,30 @@ namespace Model
         /**
          * <p>You can remove individual permissions from an resource policy associated with
          * a Lambda function by providing a statement ID that you provided when you added
-         * the permission. </p> <p>If you are using versioning, the permissions you remove
+         * the permission.</p> <p>If you are using versioning, the permissions you remove
          * are specific to the Lambda function version or alias you specify in the
          * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the function.
-         * </p> <p>You need permission for the <code>lambda:RemovePermission</code>
-         * action.</p>
+         * permission will cause an active event source to lose permission to the
+         * function.</p> <p>You need permission for the
+         * <code>lambda:RemovePermission</code> action.</p>
          */
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
         /**
          * <p>You can remove individual permissions from an resource policy associated with
          * a Lambda function by providing a statement ID that you provided when you added
-         * the permission. </p> <p>If you are using versioning, the permissions you remove
+         * the permission.</p> <p>If you are using versioning, the permissions you remove
          * are specific to the Lambda function version or alias you specify in the
          * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the function.
-         * </p> <p>You need permission for the <code>lambda:RemovePermission</code>
-         * action.</p>
+         * permission will cause an active event source to lose permission to the
+         * function.</p> <p>You need permission for the
+         * <code>lambda:RemovePermission</code> action.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -999,15 +1005,15 @@ namespace Model
         /**
          * <p>You can remove individual permissions from an resource policy associated with
          * a Lambda function by providing a statement ID that you provided when you added
-         * the permission. </p> <p>If you are using versioning, the permissions you remove
+         * the permission.</p> <p>If you are using versioning, the permissions you remove
          * are specific to the Lambda function version or alias you specify in the
          * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
          * more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the function.
-         * </p> <p>You need permission for the <code>lambda:RemovePermission</code>
-         * action.</p>
+         * permission will cause an active event source to lose permission to the
+         * function.</p> <p>You need permission for the
+         * <code>lambda:RemovePermission</code> action.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1048,9 +1054,9 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping. </p> <p>If you are
-         * using the versioning feature, you can update the event source mapping to map to
-         * a specific Lambda function version or alias as described in the
+         * change the stream itself, you must create a new mapping.</p> <p>If you are using
+         * the versioning feature, you can update the event source mapping to map to a
+         * specific Lambda function version or alias as described in the
          * <code>FunctionName</code> parameter. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1067,9 +1073,9 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping. </p> <p>If you are
-         * using the versioning feature, you can update the event source mapping to map to
-         * a specific Lambda function version or alias as described in the
+         * change the stream itself, you must create a new mapping.</p> <p>If you are using
+         * the versioning feature, you can update the event source mapping to map to a
+         * specific Lambda function version or alias as described in the
          * <code>FunctionName</code> parameter. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1088,9 +1094,9 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping. </p> <p>If you are
-         * using the versioning feature, you can update the event source mapping to map to
-         * a specific Lambda function version or alias as described in the
+         * change the stream itself, you must create a new mapping.</p> <p>If you are using
+         * the versioning feature, you can update the event source mapping to map to a
+         * specific Lambda function version or alias as described in the
          * <code>FunctionName</code> parameter. For information about the versioning
          * feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1106,9 +1112,9 @@ namespace Model
         virtual void UpdateEventSourceMappingAsync(const Model::UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the code for the specified Lambda function. This operation must only
+         * <p>Updates the code for the specified Lambda function. This operation must only
          * be used on an existing Lambda function and cannot be used to update the function
-         * configuration. </p> <p>If you are using the versioning feature, note this API
+         * configuration.</p> <p>If you are using the versioning feature, note this API
          * will always update the $LATEST version of your Lambda function. For information
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1118,9 +1124,9 @@ namespace Model
         virtual Model::UpdateFunctionCodeOutcome UpdateFunctionCode(const Model::UpdateFunctionCodeRequest& request) const;
 
         /**
-         * <p> Updates the code for the specified Lambda function. This operation must only
+         * <p>Updates the code for the specified Lambda function. This operation must only
          * be used on an existing Lambda function and cannot be used to update the function
-         * configuration. </p> <p>If you are using the versioning feature, note this API
+         * configuration.</p> <p>If you are using the versioning feature, note this API
          * will always update the $LATEST version of your Lambda function. For information
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1132,9 +1138,9 @@ namespace Model
         virtual Model::UpdateFunctionCodeOutcomeCallable UpdateFunctionCodeCallable(const Model::UpdateFunctionCodeRequest& request) const;
 
         /**
-         * <p> Updates the code for the specified Lambda function. This operation must only
+         * <p>Updates the code for the specified Lambda function. This operation must only
          * be used on an existing Lambda function and cannot be used to update the function
-         * configuration. </p> <p>If you are using the versioning feature, note this API
+         * configuration.</p> <p>If you are using the versioning feature, note this API
          * will always update the $LATEST version of your Lambda function. For information
          * about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1149,7 +1155,7 @@ namespace Model
          * <p>Updates the configuration parameters for the specified Lambda function by
          * using the values provided in the request. You provide only the parameters you
          * want to change. This operation must only be used on an existing Lambda function
-         * and cannot be used to update the function's code. </p> <p>If you are using the
+         * and cannot be used to update the function's code.</p> <p>If you are using the
          * versioning feature, note this API will always update the $LATEST version of your
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1162,7 +1168,7 @@ namespace Model
          * <p>Updates the configuration parameters for the specified Lambda function by
          * using the values provided in the request. You provide only the parameters you
          * want to change. This operation must only be used on an existing Lambda function
-         * and cannot be used to update the function's code. </p> <p>If you are using the
+         * and cannot be used to update the function's code.</p> <p>If you are using the
          * versioning feature, note this API will always update the $LATEST version of your
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
@@ -1177,7 +1183,7 @@ namespace Model
          * <p>Updates the configuration parameters for the specified Lambda function by
          * using the values provided in the request. You provide only the parameters you
          * want to change. This operation must only be used on an existing Lambda function
-         * and cannot be used to update the function's code. </p> <p>If you are using the
+         * and cannot be used to update the function's code.</p> <p>If you are using the
          * versioning feature, note this API will always update the $LATEST version of your
          * Lambda function. For information about the versioning feature, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS

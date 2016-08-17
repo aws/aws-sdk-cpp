@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,14 +30,18 @@ namespace Model
 MetricTransformation::MetricTransformation() : 
     m_metricNameHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false)
+    m_metricValueHasBeenSet(false),
+    m_defaultValue(0.0),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
 MetricTransformation::MetricTransformation(const JsonValue& jsonValue) : 
     m_metricNameHasBeenSet(false),
     m_metricNamespaceHasBeenSet(false),
-    m_metricValueHasBeenSet(false)
+    m_metricValueHasBeenSet(false),
+    m_defaultValue(0.0),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ MetricTransformation& MetricTransformation::operator =(const JsonValue& jsonValu
     m_metricValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetDouble("defaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +98,12 @@ JsonValue MetricTransformation::Jsonize() const
   if(m_metricValueHasBeenSet)
   {
    payload.WithString("metricValue", m_metricValue);
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithDouble("defaultValue", m_defaultValue);
 
   }
 

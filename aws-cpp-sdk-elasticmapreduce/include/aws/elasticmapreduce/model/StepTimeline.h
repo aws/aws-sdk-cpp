@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The timeline of the cluster step lifecycle. </p>
+   * <p>The timeline of the cluster step lifecycle.</p>
    */
   class AWS_EMR_API StepTimeline
   {
@@ -42,77 +42,77 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>The date and time when the cluster step was created. </p>
+     * <p>The date and time when the cluster step was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
 
     /**
-     * <p>The date and time when the cluster step was created. </p>
+     * <p>The date and time when the cluster step was created.</p>
      */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step was created. </p>
+     * <p>The date and time when the cluster step was created.</p>
      */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step was created. </p>
+     * <p>The date and time when the cluster step was created.</p>
      */
     inline StepTimeline& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster step was created. </p>
+     * <p>The date and time when the cluster step was created.</p>
      */
     inline StepTimeline& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster step execution started. </p>
+     * <p>The date and time when the cluster step execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
 
     /**
-     * <p>The date and time when the cluster step execution started. </p>
+     * <p>The date and time when the cluster step execution started.</p>
      */
     inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step execution started. </p>
+     * <p>The date and time when the cluster step execution started.</p>
      */
     inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step execution started. </p>
+     * <p>The date and time when the cluster step execution started.</p>
      */
     inline StepTimeline& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster step execution started. </p>
+     * <p>The date and time when the cluster step execution started.</p>
      */
     inline StepTimeline& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster step execution completed or failed. </p>
+     * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
 
     /**
-     * <p>The date and time when the cluster step execution completed or failed. </p>
+     * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step execution completed or failed. </p>
+     * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
 
     /**
-     * <p>The date and time when the cluster step execution completed or failed. </p>
+     * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline StepTimeline& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
 
     /**
-     * <p>The date and time when the cluster step execution completed or failed. </p>
+     * <p>The date and time when the cluster step execution completed or failed.</p>
      */
     inline StepTimeline& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(value); return *this;}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,6 +29,11 @@ namespace Model
     m3_large_elasticsearch,
     m3_xlarge_elasticsearch,
     m3_2xlarge_elasticsearch,
+    m4_large_elasticsearch,
+    m4_xlarge_elasticsearch,
+    m4_2xlarge_elasticsearch,
+    m4_4xlarge_elasticsearch,
+    m4_10xlarge_elasticsearch,
     t2_micro_elasticsearch,
     t2_small_elasticsearch,
     t2_medium_elasticsearch,

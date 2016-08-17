@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -280,32 +280,32 @@ namespace Model
     inline GetEvaluationResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.</p>
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.</p>
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
 
     /**
-     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.</p>
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = value; }
 
     /**
-     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.</p>
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
      */
     inline GetEvaluationResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
-     * time is expressed in epoch time.</p>
+     * <p>The time of the most recent edit to the <code>Evaluation</code>. The time is
+     * expressed in epoch time.</p>
      */
     inline GetEvaluationResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(value); return *this;}
 
@@ -573,6 +573,110 @@ namespace Model
      */
     inline GetEvaluationResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>Evaluation</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline long long GetComputeTime() const{ return m_computeTime; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>Evaluation</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline void SetComputeTime(long long value) { m_computeTime = value; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>Evaluation</code>, normalized and scaled on computation
+     * resources. <code>ComputeTime</code> is only available if the
+     * <code>Evaluation</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline GetEvaluationResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetEvaluationResult& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>Evaluation</code> is in
+     * the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetEvaluationResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>Evaluation</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>Evaluation</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>Evaluation</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>Evaluation</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline GetEvaluationResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>Evaluation</code> as <code>INPROGRESS</code>. <code>StartedAt</code> isn't
+     * available if the <code>Evaluation</code> is in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline GetEvaluationResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+
   private:
     Aws::String m_evaluationId;
     Aws::String m_mLModelId;
@@ -586,6 +690,9 @@ namespace Model
     PerformanceMetrics m_performanceMetrics;
     Aws::String m_logUri;
     Aws::String m_message;
+    long long m_computeTime;
+    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_startedAt;
   };
 
 } // namespace Model

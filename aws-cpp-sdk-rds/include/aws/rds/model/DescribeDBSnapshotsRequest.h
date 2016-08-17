@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -191,7 +191,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -213,7 +214,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -235,7 +237,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -257,7 +260,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -279,7 +283,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -301,7 +306,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -323,7 +329,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>

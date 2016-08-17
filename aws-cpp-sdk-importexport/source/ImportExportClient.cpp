@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -49,8 +49,7 @@ static const char* ALLOCATION_TAG = "ImportExportClient";
 ImportExportClient::ImportExportClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -60,8 +59,7 @@ ImportExportClient::ImportExportClient(const Client::ClientConfiguration& client
 ImportExportClient::ImportExportClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,8 +70,7 @@ ImportExportClient::ImportExportClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -89,9 +86,9 @@ void ImportExportClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << ImportExportEndpoint::ForRegion(config.region);
+    ss << ImportExportEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -118,12 +115,12 @@ CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) 
 
 CancelJobOutcomeCallable ImportExportClient::CancelJobCallable(const CancelJobRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::CancelJob, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CancelJob( request ); } );
 }
 
 void ImportExportClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::CancelJobAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -148,12 +145,12 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
 
 CreateJobOutcomeCallable ImportExportClient::CreateJobCallable(const CreateJobRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::CreateJob, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateJob( request ); } );
 }
 
 void ImportExportClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::CreateJobAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -178,12 +175,12 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
 
 GetShippingLabelOutcomeCallable ImportExportClient::GetShippingLabelCallable(const GetShippingLabelRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::GetShippingLabel, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetShippingLabel( request ); } );
 }
 
 void ImportExportClient::GetShippingLabelAsync(const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::GetShippingLabelAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetShippingLabelAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::GetShippingLabelAsyncHelper(const GetShippingLabelRequest& request, const GetShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -208,12 +205,12 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
 
 GetStatusOutcomeCallable ImportExportClient::GetStatusCallable(const GetStatusRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::GetStatus, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetStatus( request ); } );
 }
 
 void ImportExportClient::GetStatusAsync(const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::GetStatusAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetStatusAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::GetStatusAsyncHelper(const GetStatusRequest& request, const GetStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -238,12 +235,12 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
 
 ListJobsOutcomeCallable ImportExportClient::ListJobsCallable(const ListJobsRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::ListJobs, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListJobs( request ); } );
 }
 
 void ImportExportClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::ListJobsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -268,12 +265,12 @@ UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) 
 
 UpdateJobOutcomeCallable ImportExportClient::UpdateJobCallable(const UpdateJobRequest& request) const
 {
-  return std::async(std::launch::async, &ImportExportClient::UpdateJob, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateJob( request ); } );
 }
 
 void ImportExportClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&ImportExportClient::UpdateJobAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
 }
 
 void ImportExportClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

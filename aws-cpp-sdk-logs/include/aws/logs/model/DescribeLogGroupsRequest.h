@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -77,69 +77,69 @@ namespace Model
     inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const char* value) { SetLogGroupNamePrefix(value); return *this;}
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline DescribeLogGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline DescribeLogGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A string token used for pagination that points to the next page of results.
-     * It must be a value obtained from the response of the previous <code
-     * class="code">DescribeLogGroups</code> request. </p>
+     * <p>A string token used for pagination that points to the next page of results.
+     * It must be a value obtained from the response of the previous
+     * <code>DescribeLogGroups</code> request.</p>
      */
     inline DescribeLogGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items. </p>
+     * <p>The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p> The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items. </p>
+     * <p>The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p> The maximum number of items returned in the response. If you don't specify a
-     * value, the request would return up to 50 items. </p>
+     * <p>The maximum number of items returned in the response. If you don't specify a
+     * value, the request would return up to 50 items.</p>
      */
     inline DescribeLogGroupsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

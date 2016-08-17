@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>An object indicating the search status of a log stream in a <code
-   * class="code">FilterLogEvents</code> request.</p>
+   * <p>An object indicating the search status of a log stream in a
+   * <code>FilterLogEvents</code> request.</p>
    */
   class AWS_CLOUDWATCHLOGS_API SearchedLogStream
   {

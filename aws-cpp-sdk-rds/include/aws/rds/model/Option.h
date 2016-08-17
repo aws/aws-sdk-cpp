@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -164,6 +164,41 @@ namespace Model
     inline Option& WithPort(int value) { SetPort(value); return *this;}
 
     /**
+     * <p>The version of the option.</p>
+     */
+    inline const Aws::String& GetOptionVersion() const{ return m_optionVersion; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(const Aws::String& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(Aws::String&& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(const char* value) { m_optionVersionHasBeenSet = true; m_optionVersion.assign(value); }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(const Aws::String& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(Aws::String&& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(const char* value) { SetOptionVersion(value); return *this;}
+
+    /**
      * <p>The option settings for this option.</p>
      */
     inline const Aws::Vector<OptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
@@ -293,6 +328,8 @@ namespace Model
     bool m_permanentHasBeenSet;
     int m_port;
     bool m_portHasBeenSet;
+    Aws::String m_optionVersion;
+    bool m_optionVersionHasBeenSet;
     Aws::Vector<OptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroupMemberships;

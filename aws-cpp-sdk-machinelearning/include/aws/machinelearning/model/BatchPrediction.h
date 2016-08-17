@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -515,6 +515,63 @@ namespace Model
      */
     inline BatchPrediction& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+    
+    inline long long GetComputeTime() const{ return m_computeTime; }
+
+    
+    inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
+
+    
+    inline BatchPrediction& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
+    
+    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    
+    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
+
+    
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
+
+    
+    inline BatchPrediction& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
+
+    
+    inline BatchPrediction& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+
+    
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+
+    
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
+
+    
+    inline BatchPrediction& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    
+    inline BatchPrediction& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+
+    
+    inline long long GetTotalRecordCount() const{ return m_totalRecordCount; }
+
+    
+    inline void SetTotalRecordCount(long long value) { m_totalRecordCountHasBeenSet = true; m_totalRecordCount = value; }
+
+    
+    inline BatchPrediction& WithTotalRecordCount(long long value) { SetTotalRecordCount(value); return *this;}
+
+    
+    inline long long GetInvalidRecordCount() const{ return m_invalidRecordCount; }
+
+    
+    inline void SetInvalidRecordCount(long long value) { m_invalidRecordCountHasBeenSet = true; m_invalidRecordCount = value; }
+
+    
+    inline BatchPrediction& WithInvalidRecordCount(long long value) { SetInvalidRecordCount(value); return *this;}
+
   private:
     Aws::String m_batchPredictionId;
     bool m_batchPredictionIdHasBeenSet;
@@ -538,6 +595,16 @@ namespace Model
     bool m_outputUriHasBeenSet;
     Aws::String m_message;
     bool m_messageHasBeenSet;
+    long long m_computeTime;
+    bool m_computeTimeHasBeenSet;
+    Aws::Utils::DateTime m_finishedAt;
+    bool m_finishedAtHasBeenSet;
+    Aws::Utils::DateTime m_startedAt;
+    bool m_startedAtHasBeenSet;
+    long long m_totalRecordCount;
+    bool m_totalRecordCountHasBeenSet;
+    long long m_invalidRecordCount;
+    bool m_invalidRecordCountHasBeenSet;
   };
 
 } // namespace Model

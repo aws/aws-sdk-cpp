@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -88,142 +88,121 @@ namespace Model
     inline LoadBalancerDescription& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline void SetDNSName(const char* value) { m_dNSNameHasBeenSet = true; m_dNSName.assign(value); }
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline LoadBalancerDescription& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline LoadBalancerDescription& WithDNSName(Aws::String&& value) { SetDNSName(value); return *this;}
 
     /**
-     * <p>The external DNS name of the load balancer.</p>
+     * <p>The DNS name of the load balancer.</p>
      */
     inline LoadBalancerDescription& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetCanonicalHostedZoneName() const{ return m_canonicalHostedZoneName; }
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(const Aws::String& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = value; }
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(Aws::String&& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = value; }
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(const char* value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName.assign(value); }
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(const Aws::String& value) { SetCanonicalHostedZoneName(value); return *this;}
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(Aws::String&& value) { SetCanonicalHostedZoneName(value); return *this;}
 
     /**
-     * <p>The Amazon Route 53 hosted zone associated with the load balancer.</p> <p>For
-     * more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-     * Developer Guide</i>.</p>
+     * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(const char* value) { SetCanonicalHostedZoneName(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline const Aws::String& GetCanonicalHostedZoneNameID() const{ return m_canonicalHostedZoneNameID; }
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline void SetCanonicalHostedZoneNameID(const Aws::String& value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID = value; }
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline void SetCanonicalHostedZoneNameID(Aws::String&& value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID = value; }
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline void SetCanonicalHostedZoneNameID(const char* value) { m_canonicalHostedZoneNameIDHasBeenSet = true; m_canonicalHostedZoneNameID.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(const Aws::String& value) { SetCanonicalHostedZoneNameID(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(Aws::String&& value) { SetCanonicalHostedZoneNameID(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Route 53 hosted zone name associated with the load
-     * balancer.</p>
+     * <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneNameID(const char* value) { SetCanonicalHostedZoneNameID(value); return *this;}
 
@@ -288,37 +267,37 @@ namespace Model
     inline LoadBalancerDescription& WithPolicies(Policies&& value) { SetPolicies(value); return *this;}
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline const Aws::Vector<BackendServerDescription>& GetBackendServerDescriptions() const{ return m_backendServerDescriptions; }
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline void SetBackendServerDescriptions(const Aws::Vector<BackendServerDescription>& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions = value; }
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline void SetBackendServerDescriptions(Aws::Vector<BackendServerDescription>&& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions = value; }
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline LoadBalancerDescription& WithBackendServerDescriptions(const Aws::Vector<BackendServerDescription>& value) { SetBackendServerDescriptions(value); return *this;}
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline LoadBalancerDescription& WithBackendServerDescriptions(Aws::Vector<BackendServerDescription>&& value) { SetBackendServerDescriptions(value); return *this;}
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline LoadBalancerDescription& AddBackendServerDescriptions(const BackendServerDescription& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions.push_back(value); return *this; }
 
     /**
-     * <p>Information about the back-end servers.</p>
+     * <p>Information about your EC2 instances.</p>
      */
     inline LoadBalancerDescription& AddBackendServerDescriptions(BackendServerDescription&& value) { m_backendServerDescriptionsHasBeenSet = true; m_backendServerDescriptions.push_back(value); return *this; }
 
@@ -498,42 +477,42 @@ namespace Model
     inline LoadBalancerDescription& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 
     /**
-     * <p>The security group that you can use as part of your inbound rules for your
-     * load balancer's back-end application instances. To only allow traffic from load
-     * balancers, add a security group rule to your back end instance that specifies
-     * this source security group as the inbound source.</p>
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
      */
     inline const SourceSecurityGroup& GetSourceSecurityGroup() const{ return m_sourceSecurityGroup; }
 
     /**
-     * <p>The security group that you can use as part of your inbound rules for your
-     * load balancer's back-end application instances. To only allow traffic from load
-     * balancers, add a security group rule to your back end instance that specifies
-     * this source security group as the inbound source.</p>
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
      */
     inline void SetSourceSecurityGroup(const SourceSecurityGroup& value) { m_sourceSecurityGroupHasBeenSet = true; m_sourceSecurityGroup = value; }
 
     /**
-     * <p>The security group that you can use as part of your inbound rules for your
-     * load balancer's back-end application instances. To only allow traffic from load
-     * balancers, add a security group rule to your back end instance that specifies
-     * this source security group as the inbound source.</p>
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
      */
     inline void SetSourceSecurityGroup(SourceSecurityGroup&& value) { m_sourceSecurityGroupHasBeenSet = true; m_sourceSecurityGroup = value; }
 
     /**
-     * <p>The security group that you can use as part of your inbound rules for your
-     * load balancer's back-end application instances. To only allow traffic from load
-     * balancers, add a security group rule to your back end instance that specifies
-     * this source security group as the inbound source.</p>
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
      */
     inline LoadBalancerDescription& WithSourceSecurityGroup(const SourceSecurityGroup& value) { SetSourceSecurityGroup(value); return *this;}
 
     /**
-     * <p>The security group that you can use as part of your inbound rules for your
-     * load balancer's back-end application instances. To only allow traffic from load
-     * balancers, add a security group rule to your back end instance that specifies
-     * this source security group as the inbound source.</p>
+     * <p>The security group for the load balancer, which you can use as part of your
+     * inbound rules for your registered instances. To only allow traffic from load
+     * balancers, add a security group rule that specifies this source security group
+     * as the inbound source.</p>
      */
     inline LoadBalancerDescription& WithSourceSecurityGroup(SourceSecurityGroup&& value) { SetSourceSecurityGroup(value); return *this;}
 

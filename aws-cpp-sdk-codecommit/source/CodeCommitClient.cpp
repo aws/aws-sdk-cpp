@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -57,8 +57,7 @@ static const char* ALLOCATION_TAG = "CodeCommitClient";
 CodeCommitClient::CodeCommitClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CodeCommitErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -68,8 +67,7 @@ CodeCommitClient::CodeCommitClient(const Client::ClientConfiguration& clientConf
 CodeCommitClient::CodeCommitClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CodeCommitErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -80,8 +78,7 @@ CodeCommitClient::CodeCommitClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<CodeCommitErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -97,9 +94,9 @@ void CodeCommitClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << CodeCommitEndpoint::ForRegion(config.region);
+    ss << CodeCommitEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -127,12 +124,12 @@ BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGe
 
 BatchGetRepositoriesOutcomeCallable CodeCommitClient::BatchGetRepositoriesCallable(const BatchGetRepositoriesRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::BatchGetRepositories, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->BatchGetRepositories(request); } );
 }
 
 void CodeCommitClient::BatchGetRepositoriesAsync(const BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::BatchGetRepositoriesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetRepositoriesAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::BatchGetRepositoriesAsyncHelper(const BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -158,12 +155,12 @@ CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& re
 
 CreateBranchOutcomeCallable CodeCommitClient::CreateBranchCallable(const CreateBranchRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::CreateBranch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateBranch(request); } );
 }
 
 void CodeCommitClient::CreateBranchAsync(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::CreateBranchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBranchAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -189,12 +186,12 @@ CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositor
 
 CreateRepositoryOutcomeCallable CodeCommitClient::CreateRepositoryCallable(const CreateRepositoryRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::CreateRepository, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateRepository(request); } );
 }
 
 void CodeCommitClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::CreateRepositoryAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -220,12 +217,12 @@ DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositor
 
 DeleteRepositoryOutcomeCallable CodeCommitClient::DeleteRepositoryCallable(const DeleteRepositoryRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::DeleteRepository, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteRepository(request); } );
 }
 
 void CodeCommitClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::DeleteRepositoryAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -251,12 +248,12 @@ GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) co
 
 GetBranchOutcomeCallable CodeCommitClient::GetBranchCallable(const GetBranchRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::GetBranch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBranch(request); } );
 }
 
 void CodeCommitClient::GetBranchAsync(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::GetBranchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBranchAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::GetBranchAsyncHelper(const GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -282,12 +279,12 @@ GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) co
 
 GetCommitOutcomeCallable CodeCommitClient::GetCommitCallable(const GetCommitRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::GetCommit, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetCommit(request); } );
 }
 
 void CodeCommitClient::GetCommitAsync(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::GetCommitAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetCommitAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::GetCommitAsyncHelper(const GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -313,12 +310,12 @@ GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest&
 
 GetRepositoryOutcomeCallable CodeCommitClient::GetRepositoryCallable(const GetRepositoryRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::GetRepository, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetRepository(request); } );
 }
 
 void CodeCommitClient::GetRepositoryAsync(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::GetRepositoryAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::GetRepositoryAsyncHelper(const GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -344,12 +341,12 @@ GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRe
 
 GetRepositoryTriggersOutcomeCallable CodeCommitClient::GetRepositoryTriggersCallable(const GetRepositoryTriggersRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::GetRepositoryTriggers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetRepositoryTriggers(request); } );
 }
 
 void CodeCommitClient::GetRepositoryTriggersAsync(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::GetRepositoryTriggersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryTriggersAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::GetRepositoryTriggersAsyncHelper(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -375,12 +372,12 @@ ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& re
 
 ListBranchesOutcomeCallable CodeCommitClient::ListBranchesCallable(const ListBranchesRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::ListBranches, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListBranches(request); } );
 }
 
 void CodeCommitClient::ListBranchesAsync(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::ListBranchesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListBranchesAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::ListBranchesAsyncHelper(const ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -406,12 +403,12 @@ ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositorie
 
 ListRepositoriesOutcomeCallable CodeCommitClient::ListRepositoriesCallable(const ListRepositoriesRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::ListRepositories, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListRepositories(request); } );
 }
 
 void CodeCommitClient::ListRepositoriesAsync(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::ListRepositoriesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -437,12 +434,12 @@ PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRe
 
 PutRepositoryTriggersOutcomeCallable CodeCommitClient::PutRepositoryTriggersCallable(const PutRepositoryTriggersRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::PutRepositoryTriggers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutRepositoryTriggers(request); } );
 }
 
 void CodeCommitClient::PutRepositoryTriggersAsync(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::PutRepositoryTriggersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutRepositoryTriggersAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::PutRepositoryTriggersAsyncHelper(const PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -468,12 +465,12 @@ TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const Tes
 
 TestRepositoryTriggersOutcomeCallable CodeCommitClient::TestRepositoryTriggersCallable(const TestRepositoryTriggersRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::TestRepositoryTriggers, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->TestRepositoryTriggers(request); } );
 }
 
 void CodeCommitClient::TestRepositoryTriggersAsync(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::TestRepositoryTriggersAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->TestRepositoryTriggersAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::TestRepositoryTriggersAsyncHelper(const TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -499,12 +496,12 @@ UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDef
 
 UpdateDefaultBranchOutcomeCallable CodeCommitClient::UpdateDefaultBranchCallable(const UpdateDefaultBranchRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::UpdateDefaultBranch, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateDefaultBranch(request); } );
 }
 
 void CodeCommitClient::UpdateDefaultBranchAsync(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::UpdateDefaultBranchAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDefaultBranchAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::UpdateDefaultBranchAsyncHelper(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -530,12 +527,12 @@ UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription
 
 UpdateRepositoryDescriptionOutcomeCallable CodeCommitClient::UpdateRepositoryDescriptionCallable(const UpdateRepositoryDescriptionRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::UpdateRepositoryDescription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateRepositoryDescription(request); } );
 }
 
 void CodeCommitClient::UpdateRepositoryDescriptionAsync(const UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::UpdateRepositoryDescriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRepositoryDescriptionAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::UpdateRepositoryDescriptionAsyncHelper(const UpdateRepositoryDescriptionRequest& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -561,12 +558,12 @@ UpdateRepositoryNameOutcome CodeCommitClient::UpdateRepositoryName(const UpdateR
 
 UpdateRepositoryNameOutcomeCallable CodeCommitClient::UpdateRepositoryNameCallable(const UpdateRepositoryNameRequest& request) const
 {
-  return std::async(std::launch::async, &CodeCommitClient::UpdateRepositoryName, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UpdateRepositoryName(request); } );
 }
 
 void CodeCommitClient::UpdateRepositoryNameAsync(const UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&CodeCommitClient::UpdateRepositoryNameAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRepositoryNameAsyncHelper( request, handler, context ); } );
 }
 
 void CodeCommitClient::UpdateRepositoryNameAsyncHelper(const UpdateRepositoryNameRequest& request, const UpdateRepositoryNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

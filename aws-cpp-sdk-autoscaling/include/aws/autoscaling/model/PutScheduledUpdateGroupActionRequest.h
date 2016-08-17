@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for PutScheduledUpdateGroupAction.</p>
    */
   class AWS_AUTOSCALING_API PutScheduledUpdateGroupActionRequest : public AutoScalingRequest
   {
@@ -131,7 +132,7 @@ namespace Model
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
      * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
-     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * to schedule your action in the past, Auto Scaling returns an error message.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
      * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
-     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * to schedule your action in the past, Auto Scaling returns an error message.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -151,7 +152,7 @@ namespace Model
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
      * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
-     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * to schedule your action in the past, Auto Scaling returns an error message.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -161,7 +162,7 @@ namespace Model
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
      * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
-     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * to schedule your action in the past, Auto Scaling returns an error message.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -171,7 +172,7 @@ namespace Model
     /**
      * <p>The time for this action to start, in "YYYY-MM-DDThh:mm:ssZ" format in
      * UTC/GMT only (for example, <code>2014-06-01T00:00:00Z</code>).</p> <p>If you try
-     * to schedule your action in the past, Auto Scaling returns an error message. </p>
+     * to schedule your action in the past, Auto Scaling returns an error message.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -274,47 +275,47 @@ namespace Model
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p> The minimum size for the Auto Scaling group. </p>
+     * <p>The minimum size for the Auto Scaling group.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p> The minimum size for the Auto Scaling group. </p>
+     * <p>The minimum size for the Auto Scaling group.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p> The minimum size for the Auto Scaling group. </p>
+     * <p>The minimum size for the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
     /**
-     * <p> The maximum size for the Auto Scaling group. </p>
+     * <p>The maximum size for the Auto Scaling group.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p> The maximum size for the Auto Scaling group. </p>
+     * <p>The maximum size for the Auto Scaling group.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p> The maximum size for the Auto Scaling group. </p>
+     * <p>The maximum size for the Auto Scaling group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
     /**
-     * <p> The number of EC2 instances that should be running in the group. </p>
+     * <p>The number of EC2 instances that should be running in the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p> The number of EC2 instances that should be running in the group. </p>
+     * <p>The number of EC2 instances that should be running in the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p> The number of EC2 instances that should be running in the group. </p>
+     * <p>The number of EC2 instances that should be running in the group.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -43,6 +43,7 @@ AutoScalingGroup::AutoScalingGroup() :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
@@ -74,6 +75,7 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
@@ -163,6 +165,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       }
 
       m_loadBalancerNamesHasBeenSet = true;
+    }
+    XmlNode targetGroupARNsNode = resultNode.FirstChild("TargetGroupARNs");
+    if(!targetGroupARNsNode.IsNull())
+    {
+      XmlNode targetGroupARNsMember = targetGroupARNsNode.FirstChild("member");
+      while(!targetGroupARNsMember.IsNull())
+      {
+        m_targetGroupARNs.push_back(StringUtils::Trim(targetGroupARNsMember.GetText().c_str()));
+        targetGroupARNsMember = targetGroupARNsMember.NextNode("member");
+      }
+
+      m_targetGroupARNsHasBeenSet = true;
     }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
     if(!healthCheckTypeNode.IsNull())
@@ -326,6 +340,15 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << index << locationValue << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_healthCheckTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
@@ -460,6 +483,14 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_loadBalancerNames)
       {
         oStream << location << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_healthCheckTypeHasBeenSet)

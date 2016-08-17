@@ -459,6 +459,7 @@ public:
 #elif ENABLE_COMMONCRYPTO_ENCRYPTION
         return Aws::MakeShared<AES_KeyWrap_Cipher_CommonCrypto>(s_allocationTag, key);
 #else
+        AWS_UNREFERENCED_PARAM(key);
         return nullptr;
 #endif
     }

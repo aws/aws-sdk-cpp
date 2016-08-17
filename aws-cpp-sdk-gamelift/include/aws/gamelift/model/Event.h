@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -175,32 +175,32 @@ namespace Model
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this event occurred. Format is a number expressed
+     * in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
 
     /**
-     * <p>Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this event occurred. Format is a number expressed
+     * in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
-     * <p>Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this event occurred. Format is a number expressed
+     * in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
-     * <p>Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this event occurred. Format is a number expressed
+     * in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this event occurred. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this event occurred. Format is a number expressed
+     * in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(value); return *this;}
 

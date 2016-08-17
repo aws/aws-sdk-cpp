@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,13 +20,11 @@
 namespace Aws
 {
 
-enum class Region;
-
 namespace ACM
 {
 namespace ACMEndpoint
 {
-AWS_ACM_API Aws::String ForRegion(Region region);
+AWS_ACM_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
 } // namespace ACMEndpoint
 } // namespace ACM
 } // namespace Aws

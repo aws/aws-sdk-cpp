@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -82,6 +82,15 @@ TestInvokeAuthorizerResult& TestInvokeAuthorizerResult::operator =(const AmazonW
         listOfStringList.push_back(listOfStringJsonList[listOfStringIndex].AsString());
       }
       m_authorization[authorizationItem.first] = std::move(listOfStringList);
+    }
+  }
+
+  if(jsonValue.ValueExists("claims"))
+  {
+    Aws::Map<Aws::String, JsonValue> claimsJsonMap = jsonValue.GetObject("claims").GetAllObjects();
+    for(auto& claimsItem : claimsJsonMap)
+    {
+      m_claims[claimsItem.first] = claimsItem.second.AsString();
     }
   }
 

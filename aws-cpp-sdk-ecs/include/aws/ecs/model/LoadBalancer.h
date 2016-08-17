@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -40,6 +40,48 @@ namespace Model
     LoadBalancer(const Aws::Utils::Json::JsonValue& jsonValue);
     LoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline LoadBalancer& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline LoadBalancer& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(value); return *this;}
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
+     * group associated with a service.</p>
+     */
+    inline LoadBalancer& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
     /**
      * <p>The name of the load balancer.</p>
@@ -143,6 +185,8 @@ namespace Model
     inline LoadBalancer& WithContainerPort(int value) { SetContainerPort(value); return *this;}
 
   private:
+    Aws::String m_targetGroupArn;
+    bool m_targetGroupArnHasBeenSet;
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet;
     Aws::String m_containerName;

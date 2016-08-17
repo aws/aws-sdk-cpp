@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,14 +27,16 @@ using namespace Aws;
 GetDataSourceResult::GetDataSourceResult() : 
     m_dataSizeInBytes(0),
     m_numberOfFiles(0),
-    m_computeStatistics(false)
+    m_computeStatistics(false),
+    m_computeTime(0)
 {
 }
 
 GetDataSourceResult::GetDataSourceResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_dataSizeInBytes(0),
     m_numberOfFiles(0),
-    m_computeStatistics(false)
+    m_computeStatistics(false),
+    m_computeTime(0)
 {
   *this = result;
 }
@@ -135,6 +137,24 @@ GetDataSourceResult& GetDataSourceResult::operator =(const AmazonWebServiceResul
   if(jsonValue.ValueExists("ComputeStatistics"))
   {
     m_computeStatistics = jsonValue.GetBool("ComputeStatistics");
+
+  }
+
+  if(jsonValue.ValueExists("ComputeTime"))
+  {
+    m_computeTime = jsonValue.GetInt64("ComputeTime");
+
+  }
+
+  if(jsonValue.ValueExists("FinishedAt"))
+  {
+    m_finishedAt = jsonValue.GetDouble("FinishedAt");
+
+  }
+
+  if(jsonValue.ValueExists("StartedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("StartedAt");
 
   }
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,9 +34,9 @@ namespace Model
   /**
    * <p>Information about a listener.</p> <p>For information about the protocols and
    * the ports supported by Elastic Load Balancing, see <a
-   * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html">Listener
-   * Configurations for Elastic Load Balancing</a> in the <i>Elastic Load Balancing
-   * Developer Guide</i>.</p>
+   * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+   * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
+   * Guide</i>.</p>
    */
   class AWS_ELASTICLOADBALANCING_API Listener
   {
@@ -112,8 +112,8 @@ namespace Model
     inline Listener& WithLoadBalancerPort(int value) { SetLoadBalancerPort(value); return *this;}
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -125,8 +125,8 @@ namespace Model
     inline const Aws::String& GetInstanceProtocol() const{ return m_instanceProtocol; }
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -138,8 +138,8 @@ namespace Model
     inline void SetInstanceProtocol(const Aws::String& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -151,8 +151,8 @@ namespace Model
     inline void SetInstanceProtocol(Aws::String&& value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol = value; }
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -164,8 +164,8 @@ namespace Model
     inline void SetInstanceProtocol(const char* value) { m_instanceProtocolHasBeenSet = true; m_instanceProtocol.assign(value); }
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -177,8 +177,8 @@ namespace Model
     inline Listener& WithInstanceProtocol(const Aws::String& value) { SetInstanceProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's
@@ -190,8 +190,8 @@ namespace Model
     inline Listener& WithInstanceProtocol(Aws::String&& value) { SetInstanceProtocol(value); return *this;}
 
     /**
-     * <p>The protocol to use for routing traffic to back-end instances: HTTP, HTTPS,
-     * TCP, or SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
+     * <p>The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or
+     * SSL.</p> <p>If the front-end protocol is HTTP, HTTPS, TCP, or SSL,
      * <code>InstanceProtocol</code> must be at the same protocol.</p> <p>If there is
      * another listener with the same <code>InstancePort</code> whose
      * <code>InstanceProtocol</code> is secure, (HTTPS or SSL), the listener's

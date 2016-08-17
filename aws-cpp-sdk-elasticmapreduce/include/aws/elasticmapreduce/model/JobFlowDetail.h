@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> A description of a job flow.</p>
+   * <p>A description of a job flow.</p>
    */
   class AWS_EMR_API JobFlowDetail
   {
@@ -117,37 +117,37 @@ namespace Model
     inline JobFlowDetail& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline JobFlowDetail& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline JobFlowDetail& WithLogUri(Aws::String&& value) { SetLogUri(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where log files for the job are stored. </p>
+     * <p>The location in Amazon S3 where log files for the job are stored.</p>
      */
     inline JobFlowDetail& WithLogUri(const char* value) { SetLogUri(value); return *this;}
 
@@ -157,7 +157,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
@@ -167,7 +167,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
@@ -177,7 +177,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
@@ -187,7 +187,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
@@ -197,7 +197,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
@@ -207,7 +207,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(value); return *this;}
 
@@ -217,7 +217,7 @@ namespace Model
      * go to <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce
-     * Developer Guide.</i></p>
+     * Developer Guide.</i> </p>
      */
     inline JobFlowDetail& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 

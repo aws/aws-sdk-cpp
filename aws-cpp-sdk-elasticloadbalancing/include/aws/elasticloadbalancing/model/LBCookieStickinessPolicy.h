@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -45,44 +45,44 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline LBCookieStickinessPolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline LBCookieStickinessPolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name for the policy being created. The name must be unique within the set
-     * of policies for this load balancer.</p>
+     * <p>The name of the policy. This name must be unique within the set of policies
+     * for this load balancer.</p>
      */
     inline LBCookieStickinessPolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

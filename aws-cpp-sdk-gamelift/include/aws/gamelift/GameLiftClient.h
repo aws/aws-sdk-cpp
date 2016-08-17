@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -46,6 +46,7 @@
 #include <aws/gamelift/model/PutScalingPolicyResult.h>
 #include <aws/gamelift/model/RequestUploadCredentialsResult.h>
 #include <aws/gamelift/model/ResolveAliasResult.h>
+#include <aws/gamelift/model/SearchGameSessionsResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
 #include <aws/gamelift/model/UpdateBuildResult.h>
 #include <aws/gamelift/model/UpdateFleetAttributesResult.h>
@@ -129,6 +130,7 @@ namespace Model
         class PutScalingPolicyRequest;
         class RequestUploadCredentialsRequest;
         class ResolveAliasRequest;
+        class SearchGameSessionsRequest;
         class UpdateAliasRequest;
         class UpdateBuildRequest;
         class UpdateFleetAttributesRequest;
@@ -167,6 +169,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, Aws::Client::AWSError<GameLiftErrors>> PutScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RequestUploadCredentialsResult, Aws::Client::AWSError<GameLiftErrors>> RequestUploadCredentialsOutcome;
         typedef Aws::Utils::Outcome<ResolveAliasResult, Aws::Client::AWSError<GameLiftErrors>> ResolveAliasOutcome;
+        typedef Aws::Utils::Outcome<SearchGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> SearchGameSessionsOutcome;
         typedef Aws::Utils::Outcome<UpdateAliasResult, Aws::Client::AWSError<GameLiftErrors>> UpdateAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateBuildResult, Aws::Client::AWSError<GameLiftErrors>> UpdateBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetAttributesResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetAttributesOutcome;
@@ -205,6 +208,7 @@ namespace Model
         typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
         typedef std::future<RequestUploadCredentialsOutcome> RequestUploadCredentialsOutcomeCallable;
         typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
+        typedef std::future<SearchGameSessionsOutcome> SearchGameSessionsOutcomeCallable;
         typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
         typedef std::future<UpdateBuildOutcome> UpdateBuildOutcomeCallable;
         typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
@@ -246,6 +250,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::RequestUploadCredentialsRequest&, const Model::RequestUploadCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestUploadCredentialsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::SearchGameSessionsRequest&, const Model::SearchGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGameSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateBuildRequest&, const Model::UpdateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetAttributesRequest&, const Model::UpdateFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetAttributesResponseReceivedHandler;
@@ -280,22 +285,22 @@ namespace Model
    * sessions.</p> <ul> <li> <b>Game sessions</b> <ul>
    * <li><a>CreateGameSession</a></li> <li><a>DescribeGameSessions</a></li>
    * <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li>
-   * </ul> </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li>
-   * <li><a>CreatePlayerSessions</a></li> <li><a>DescribePlayerSessions</a></li>
-   * </ul> </li> <li> <b>Other actions:</b> <ul> <li><a>GetGameSessionLogUrl</a></li>
-   * </ul> </li> </ul> <p><b>Set Up and Manage Game Servers</b></p> <p>Use these
-   * administrative actions to configure GameLift to host your game servers. When
-   * setting up GameLift, you'll need to (1) configure a build for your game and
-   * upload build files, and (2) set up one or more fleets to host game sessions.
-   * Once you've created and activated a fleet, you can assign aliases to it, scale
-   * capacity, track performance and utilization, etc.</p> <ul> <li> <b>Manage your
-   * builds:</b> <ul> <li><a>ListBuilds</a></li> <li><a>CreateBuild</a></li>
-   * <li><a>DescribeBuild</a></li> <li><a>UpdateBuild</a></li>
-   * <li><a>DeleteBuild</a></li> <li><a>RequestUploadCredentials</a></li> </ul> </li>
-   * <li> <b>Manage your fleets:</b> <ul> <li><a>ListFleets</a></li>
-   * <li><a>CreateFleet</a></li> <li>Describe fleets: <ul>
-   * <li><a>DescribeFleetAttributes</a></li> <li><a>DescribeFleetCapacity</a></li>
-   * <li><a>DescribeFleetPortSettings</a></li>
+   * <li><a>SearchGameSessions</a></li> </ul> </li> <li> <b>Player sessions</b> <ul>
+   * <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
+   * <li><a>DescribePlayerSessions</a></li> </ul> </li> <li> <b>Other actions:</b>
+   * <ul> <li><a>GetGameSessionLogUrl</a></li> </ul> </li> </ul> <p><b>Set Up and
+   * Manage Game Servers</b></p> <p>Use these administrative actions to configure
+   * GameLift to host your game servers. When setting up GameLift, you'll need to (1)
+   * configure a build for your game and upload build files, and (2) set up one or
+   * more fleets to host game sessions. Once you've created and activated a fleet,
+   * you can assign aliases to it, scale capacity, track performance and utilization,
+   * etc.</p> <ul> <li> <b>Manage your builds:</b> <ul> <li><a>ListBuilds</a></li>
+   * <li><a>CreateBuild</a></li> <li><a>DescribeBuild</a></li>
+   * <li><a>UpdateBuild</a></li> <li><a>DeleteBuild</a></li>
+   * <li><a>RequestUploadCredentials</a></li> </ul> </li> <li> <b>Manage your
+   * fleets:</b> <ul> <li><a>ListFleets</a></li> <li><a>CreateFleet</a></li>
+   * <li>Describe fleets: <ul> <li><a>DescribeFleetAttributes</a></li>
+   * <li><a>DescribeFleetCapacity</a></li> <li><a>DescribeFleetPortSettings</a></li>
    * <li><a>DescribeFleetUtilization</a></li>
    * <li><a>DescribeEC2InstanceLimits</a></li> <li><a>DescribeFleetEvents</a></li>
    * <li><a>DescribeRuntimeConfiguration</a></li> </ul> </li> <li>Update fleets: <ul>
@@ -389,8 +394,8 @@ namespace Model
 
         /**
          * <p>Initializes a new build record and generates information required to upload a
-         * game build to Amazon GameLift. Once the build record has been created and is in
-         * an <code>INITIALIZED</code> state, you can upload your game build.</p>
+         * game build to Amazon GameLift. Once the build record has been created and its
+         * status is <code>INITIALIZED</code>, you can upload your game build.</p>
          * <important> <p>Do not use this API action unless you are using your own Amazon
          * Simple Storage Service (Amazon S3) client and need to manually upload your build
          * files. Instead, to create a build, use the CLI command
@@ -409,8 +414,8 @@ namespace Model
 
         /**
          * <p>Initializes a new build record and generates information required to upload a
-         * game build to Amazon GameLift. Once the build record has been created and is in
-         * an <code>INITIALIZED</code> state, you can upload your game build.</p>
+         * game build to Amazon GameLift. Once the build record has been created and its
+         * status is <code>INITIALIZED</code>, you can upload your game build.</p>
          * <important> <p>Do not use this API action unless you are using your own Amazon
          * Simple Storage Service (Amazon S3) client and need to manually upload your build
          * files. Instead, to create a build, use the CLI command
@@ -431,8 +436,8 @@ namespace Model
 
         /**
          * <p>Initializes a new build record and generates information required to upload a
-         * game build to Amazon GameLift. Once the build record has been created and is in
-         * an <code>INITIALIZED</code> state, you can upload your game build.</p>
+         * game build to Amazon GameLift. Once the build record has been created and its
+         * status is <code>INITIALIZED</code>, you can upload your game build.</p>
          * <important> <p>Do not use this API action unless you are using your own Amazon
          * Simple Storage Service (Amazon S3) client and need to manually upload your build
          * files. Instead, to create a build, use the CLI command
@@ -458,17 +463,17 @@ namespace Model
          * instances with certain hardware specifications (see <a
          * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several states; once it reaches the
-         * <code>ACTIVE</code> state, it can begin hosting game sessions.</p> <p>To create
+         * newly created fleet passes through several statuses; once it reaches the
+         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
          * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
          * game build to deploy. You can also configure the new fleet with the following
          * settings: (1) a runtime configuration describing what server processes to run on
          * each instance in the fleet (required to create fleet), (2) access permissions
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for GameLift to upload and store. </p> <p>If the
+         * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the state to
-         * <code>NEW</code> (followed by other states as the fleet is activated).</li>
+         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
          * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
          * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
          * the fleet is configured to run multiple server processes per instance, GameLift
@@ -494,17 +499,17 @@ namespace Model
          * instances with certain hardware specifications (see <a
          * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several states; once it reaches the
-         * <code>ACTIVE</code> state, it can begin hosting game sessions.</p> <p>To create
+         * newly created fleet passes through several statuses; once it reaches the
+         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
          * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
          * game build to deploy. You can also configure the new fleet with the following
          * settings: (1) a runtime configuration describing what server processes to run on
          * each instance in the fleet (required to create fleet), (2) access permissions
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for GameLift to upload and store. </p> <p>If the
+         * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the state to
-         * <code>NEW</code> (followed by other states as the fleet is activated).</li>
+         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
          * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
          * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
          * the fleet is configured to run multiple server processes per instance, GameLift
@@ -532,17 +537,17 @@ namespace Model
          * instances with certain hardware specifications (see <a
          * href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
          * for more information), and deploy a specified game build to each instance. A
-         * newly created fleet passes through several states; once it reaches the
-         * <code>ACTIVE</code> state, it can begin hosting game sessions.</p> <p>To create
+         * newly created fleet passes through several statuses; once it reaches the
+         * <code>ACTIVE</code> status, it can begin hosting game sessions.</p> <p>To create
          * a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the
          * game build to deploy. You can also configure the new fleet with the following
          * settings: (1) a runtime configuration describing what server processes to run on
          * each instance in the fleet (required to create fleet), (2) access permissions
          * for inbound traffic, (3) fleet-wide game session protection, and (4) the
-         * location of default log files for GameLift to upload and store. </p> <p>If the
+         * location of default log files for GameLift to upload and store.</p> <p>If the
          * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
-         * following tasks:</p> <ul> <li>Creates a fleet record and sets the state to
-         * <code>NEW</code> (followed by other states as the fleet is activated).</li>
+         * following tasks:</p> <ul> <li>Creates a fleet record and sets the status to
+         * <code>NEW</code> (followed by other statuses as the fleet is activated).</li>
          * <li>Sets the fleet's capacity to 1 "desired", which causes GameLift to start one
          * new EC2 instance.</li> <li>Starts launching server processes on the instance. If
          * the fleet is configured to run multiple server processes per instance, GameLift
@@ -567,7 +572,7 @@ namespace Model
          * <p>Creates a multiplayer game session for players. This action creates a game
          * session record and assigns the new session to an instance in the specified
          * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> state before a game session can be created in
+         * must be in an <code>ACTIVE</code> status before a game session can be created in
          * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
          * and indicate the maximum number of players the game session allows. You can also
          * provide a name and a set of properties for your game (optional). If successful,
@@ -582,7 +587,7 @@ namespace Model
          * <p>Creates a multiplayer game session for players. This action creates a game
          * session record and assigns the new session to an instance in the specified
          * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> state before a game session can be created in
+         * must be in an <code>ACTIVE</code> status before a game session can be created in
          * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
          * and indicate the maximum number of players the game session allows. You can also
          * provide a name and a set of properties for your game (optional). If successful,
@@ -599,7 +604,7 @@ namespace Model
          * <p>Creates a multiplayer game session for players. This action creates a game
          * session record and assigns the new session to an instance in the specified
          * fleet, which initializes a new server process to host the game session. A fleet
-         * must be in an <code>ACTIVE</code> state before a game session can be created in
+         * must be in an <code>ACTIVE</code> status before a game session can be created in
          * it.</p> <p>To create a game session, specify either a fleet ID or an alias ID
          * and indicate the maximum number of players the game session allows. You can also
          * provide a name and a set of properties for your game (optional). If successful,
@@ -614,7 +619,7 @@ namespace Model
 
         /**
          * <p>Adds a player to a game session and creates a player session record. A game
-         * session must be in an <code>ACTIVE</code> state, have a creation policy of
+         * session must be in an <code>ACTIVE</code> status, have a creation policy of
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
@@ -624,7 +629,7 @@ namespace Model
 
         /**
          * <p>Adds a player to a game session and creates a player session record. A game
-         * session must be in an <code>ACTIVE</code> state, have a creation policy of
+         * session must be in an <code>ACTIVE</code> status, have a creation policy of
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
@@ -636,7 +641,7 @@ namespace Model
 
         /**
          * <p>Adds a player to a game session and creates a player session record. A game
-         * session must be in an <code>ACTIVE</code> state, have a creation policy of
+         * session must be in an <code>ACTIVE</code> status, have a creation policy of
          * <code>ALLOW_ALL</code>, and have an open player slot before players can be added
          * to the session.</p> <p>To create a player session, specify a game session ID and
          * player ID. If successful, the player is added to the game session and a new
@@ -650,7 +655,7 @@ namespace Model
          * <p>Adds a group of players to a game session. Similar to
          * <a>CreatePlayerSession</a>, this action allows you to add multiple players in a
          * single call, which is useful for games that provide party and/or matchmaking
-         * features. A game session must be in an <code>ACTIVE</code> state, have a
+         * features. A game session must be in an <code>ACTIVE</code> status, have a
          * creation policy of <code>ALLOW_ALL</code>, and have an open player slot before
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
@@ -663,7 +668,7 @@ namespace Model
          * <p>Adds a group of players to a game session. Similar to
          * <a>CreatePlayerSession</a>, this action allows you to add multiple players in a
          * single call, which is useful for games that provide party and/or matchmaking
-         * features. A game session must be in an <code>ACTIVE</code> state, have a
+         * features. A game session must be in an <code>ACTIVE</code> status, have a
          * creation policy of <code>ALLOW_ALL</code>, and have an open player slot before
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
@@ -678,7 +683,7 @@ namespace Model
          * <p>Adds a group of players to a game session. Similar to
          * <a>CreatePlayerSession</a>, this action allows you to add multiple players in a
          * single call, which is useful for games that provide party and/or matchmaking
-         * features. A game session must be in an <code>ACTIVE</code> state, have a
+         * features. A game session must be in an <code>ACTIVE</code> status, have a
          * creation policy of <code>ALLOW_ALL</code>, and have an open player slot before
          * players can be added to the session.</p> <p>To create player sessions, specify a
          * game session ID and a list of player IDs. If successful, the players are added
@@ -1331,7 +1336,7 @@ namespace Model
 
         /**
          * <p>Retrieves build records for all builds associated with the AWS account in
-         * use. You can limit results to builds in a specific state using the
+         * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
          * particular order.</p> </note>
@@ -1340,7 +1345,7 @@ namespace Model
 
         /**
          * <p>Retrieves build records for all builds associated with the AWS account in
-         * use. You can limit results to builds in a specific state using the
+         * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
          * particular order.</p> </note>
@@ -1351,7 +1356,7 @@ namespace Model
 
         /**
          * <p>Retrieves build records for all builds associated with the AWS account in
-         * use. You can limit results to builds in a specific state using the
+         * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
          * particular order.</p> </note>
@@ -1467,7 +1472,7 @@ namespace Model
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
          * create the build, but they have a limited lifespan. You can get fresh
-         * credentials and use them to re-upload game files until the state of that build
+         * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
          * build.</p>
          */
@@ -1482,7 +1487,7 @@ namespace Model
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
          * create the build, but they have a limited lifespan. You can get fresh
-         * credentials and use them to re-upload game files until the state of that build
+         * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
          * build.</p>
          *
@@ -1499,7 +1504,7 @@ namespace Model
          * command <code>upload-build</code>, which creates a build record and also uploads
          * build files. </p> </important> <p>Upload credentials are returned when you
          * create the build, but they have a limited lifespan. You can get fresh
-         * credentials and use them to re-upload game files until the state of that build
+         * credentials and use them to re-upload game files until the status of that build
          * changes to <code>READY</code>. Once this happens, you must create a brand new
          * build.</p>
          *
@@ -1525,6 +1530,115 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResolveAliasAsync(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of game sessions in a fleet that match a set of search
+         * criteria and sorts them in a specified order. Currently game session searches
+         * are limited to a single fleet. Search results include only game sessions that
+         * are in ACTIVE status.</p> <p>You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
+         * game session. This unique value is returned in a <a>GameSession</a> object when
+         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
+         * assigned to a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
+         * session names do not need to be unique to a game session.</li> <li>
+         * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
+         * It is expressed in Unix time as milliseconds.</li> <li>
+         * <b>playerSessionCount</b> -- Number of players currently connected to a game
+         * session. This value changes rapidly as players join the session or drop
+         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * allowed for a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
+         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
+         * not a game session has reached its maximum number of players. When searching
+         * with this attribute, the search value must be <code>true</code> or
+         * <code>false</code>. It is highly recommended that all search requests include
+         * this filter attribute to optimize search performance and return only sessions
+         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
+         * ID or an alias ID, and provide a search filter expression, a sort expression, or
+         * both. Use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a collection of <a>GameSession</a> objects matching the
+         * request is returned.</p> <note> <p>Returned values for
+         * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+         * change quickly as players join sessions and others drop out. Results should be
+         * considered a snapshot in time. Be sure to refresh search results often, and
+         * handle sessions that fill up before a player can join. </p> </note>
+         */
+        virtual Model::SearchGameSessionsOutcome SearchGameSessions(const Model::SearchGameSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of game sessions in a fleet that match a set of search
+         * criteria and sorts them in a specified order. Currently game session searches
+         * are limited to a single fleet. Search results include only game sessions that
+         * are in ACTIVE status.</p> <p>You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
+         * game session. This unique value is returned in a <a>GameSession</a> object when
+         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
+         * assigned to a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
+         * session names do not need to be unique to a game session.</li> <li>
+         * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
+         * It is expressed in Unix time as milliseconds.</li> <li>
+         * <b>playerSessionCount</b> -- Number of players currently connected to a game
+         * session. This value changes rapidly as players join the session or drop
+         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * allowed for a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
+         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
+         * not a game session has reached its maximum number of players. When searching
+         * with this attribute, the search value must be <code>true</code> or
+         * <code>false</code>. It is highly recommended that all search requests include
+         * this filter attribute to optimize search performance and return only sessions
+         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
+         * ID or an alias ID, and provide a search filter expression, a sort expression, or
+         * both. Use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a collection of <a>GameSession</a> objects matching the
+         * request is returned.</p> <note> <p>Returned values for
+         * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+         * change quickly as players join sessions and others drop out. Results should be
+         * considered a snapshot in time. Be sure to refresh search results often, and
+         * handle sessions that fill up before a player can join. </p> </note>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchGameSessionsOutcomeCallable SearchGameSessionsCallable(const Model::SearchGameSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of game sessions in a fleet that match a set of search
+         * criteria and sorts them in a specified order. Currently game session searches
+         * are limited to a single fleet. Search results include only game sessions that
+         * are in ACTIVE status.</p> <p>You can search or sort by the following game
+         * session attributes:</p> <ul> <li> <b>gameSessionId</b> -- ID value assigned to a
+         * game session. This unique value is returned in a <a>GameSession</a> object when
+         * a new game session is created. </li> <li> <b>gameSessionName</b> -- Name
+         * assigned to a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>. Game
+         * session names do not need to be unique to a game session.</li> <li>
+         * <b>creationTimeMillis</b> -- Value indicating when a game session was created.
+         * It is expressed in Unix time as milliseconds.</li> <li>
+         * <b>playerSessionCount</b> -- Number of players currently connected to a game
+         * session. This value changes rapidly as players join the session or drop
+         * out.</li> <li> <b>maximumSessions</b> -- Maximum number of player sessions
+         * allowed for a game session. This value is set when requesting a new game session
+         * with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
+         * <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or
+         * not a game session has reached its maximum number of players. When searching
+         * with this attribute, the search value must be <code>true</code> or
+         * <code>false</code>. It is highly recommended that all search requests include
+         * this filter attribute to optimize search performance and return only sessions
+         * that players can join. </li> </ul> <p>To search or sort, specify either a fleet
+         * ID or an alias ID, and provide a search filter expression, a sort expression, or
+         * both. Use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a collection of <a>GameSession</a> objects matching the
+         * request is returned.</p> <note> <p>Returned values for
+         * <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+         * change quickly as players join sessions and others drop out. Results should be
+         * considered a snapshot in time. Be sure to refresh search results often, and
+         * handle sessions that fill up before a player can join. </p> </note>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchGameSessionsAsync(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates properties for an alias. To update properties, specify the alias ID
@@ -1734,8 +1848,8 @@ namespace Model
          * <p>Updates the current runtime configuration for the specified fleet, which
          * tells GameLift how to launch server processes on instances in the fleet. You can
          * update a fleet's runtime configuration at any time after the fleet is created;
-         * it does not need to be in an <code>ACTIVE</code> state.</p> <p>To update runtime
-         * configuration, specify the fleet ID and provide a
+         * it does not need to be in an <code>ACTIVE</code> status.</p> <p>To update
+         * runtime configuration, specify the fleet ID and provide a
          * <code>RuntimeConfiguration</code> object with the updated collection of server
          * process configurations.</p> <p>Each instance in a GameLift fleet checks
          * regularly for an updated runtime configuration and changes how it launches
@@ -1752,8 +1866,8 @@ namespace Model
          * <p>Updates the current runtime configuration for the specified fleet, which
          * tells GameLift how to launch server processes on instances in the fleet. You can
          * update a fleet's runtime configuration at any time after the fleet is created;
-         * it does not need to be in an <code>ACTIVE</code> state.</p> <p>To update runtime
-         * configuration, specify the fleet ID and provide a
+         * it does not need to be in an <code>ACTIVE</code> status.</p> <p>To update
+         * runtime configuration, specify the fleet ID and provide a
          * <code>RuntimeConfiguration</code> object with the updated collection of server
          * process configurations.</p> <p>Each instance in a GameLift fleet checks
          * regularly for an updated runtime configuration and changes how it launches
@@ -1772,8 +1886,8 @@ namespace Model
          * <p>Updates the current runtime configuration for the specified fleet, which
          * tells GameLift how to launch server processes on instances in the fleet. You can
          * update a fleet's runtime configuration at any time after the fleet is created;
-         * it does not need to be in an <code>ACTIVE</code> state.</p> <p>To update runtime
-         * configuration, specify the fleet ID and provide a
+         * it does not need to be in an <code>ACTIVE</code> status.</p> <p>To update
+         * runtime configuration, specify the fleet ID and provide a
          * <code>RuntimeConfiguration</code> object with the updated collection of server
          * process configurations.</p> <p>Each instance in a GameLift fleet checks
          * regularly for an updated runtime configuration and changes how it launches
@@ -1823,6 +1937,7 @@ namespace Model
         void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestUploadCredentialsAsyncHelper(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResolveAliasAsyncHelper(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchGameSessionsAsyncHelper(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBuildAsyncHelper(const Model::UpdateBuildRequest& request, const UpdateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetAttributesAsyncHelper(const Model::UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

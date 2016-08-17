@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API UpdateEventSourceMappingRequest : public LambdaRequest
   {
@@ -77,7 +78,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -93,7 +94,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -109,7 +110,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -125,7 +126,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -141,7 +142,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -157,7 +158,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */
@@ -173,7 +174,7 @@ namespace Model
      * also provide a qualified function ARN (ARN that is qualified with function
      * version or alias name as suffix). For more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-     * Lambda Function Versioning and Aliases</a></p> <p>Note that the length
+     * Lambda Function Versioning and Aliases</a> </p> <p>Note that the length
      * constraint applies only to the ARN. If you specify only the function name, it is
      * limited to 64 character in length.</p>
      */

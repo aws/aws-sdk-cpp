@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetResult.h>
+#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -67,15 +68,19 @@ namespace MarketplaceCommerceAnalytics
 namespace Model
 {
         class GenerateDataSetRequest;
+        class StartSupportDataExportRequest;
 
         typedef Aws::Utils::Outcome<GenerateDataSetResult, Aws::Client::AWSError<MarketplaceCommerceAnalyticsErrors>> GenerateDataSetOutcome;
+        typedef Aws::Utils::Outcome<StartSupportDataExportResult, Aws::Client::AWSError<MarketplaceCommerceAnalyticsErrors>> StartSupportDataExportOutcome;
 
         typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
+        typedef std::future<StartSupportDataExportOutcome> StartSupportDataExportOutcomeCallable;
 } // namespace Model
 
   class MarketplaceCommerceAnalyticsClient;
 
     typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::GenerateDataSetRequest&, const Model::GenerateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataSetResponseReceivedHandler;
+    typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::StartSupportDataExportRequest&, const Model::StartSupportDataExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSupportDataExportResponseReceivedHandler;
 
   /**
    * Provides AWS Marketplace business intelligence data on-demand.
@@ -152,12 +157,62 @@ namespace Model
          */
         virtual void GenerateDataSetAsync(const Model::GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Given a data set type and a from date, asynchronously publishes the requested
+         * customer support data to the specified S3 bucket and notifies the specified SNS
+         * topic once the data is available. Returns a unique request identifier that can
+         * be used to correlate requests with notifications from the SNS topic. Data sets
+         * will be published in comma-separated values (CSV) format with the file name
+         * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
+         * already exists (e.g. if the same data set is requested twice), the original file
+         * will be overwritten by the new file. Requires a Role with an attached
+         * permissions policy providing Allow permissions for the following actions:
+         * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+         * iam:GetRolePolicy.
+         */
+        virtual Model::StartSupportDataExportOutcome StartSupportDataExport(const Model::StartSupportDataExportRequest& request) const;
+
+        /**
+         * Given a data set type and a from date, asynchronously publishes the requested
+         * customer support data to the specified S3 bucket and notifies the specified SNS
+         * topic once the data is available. Returns a unique request identifier that can
+         * be used to correlate requests with notifications from the SNS topic. Data sets
+         * will be published in comma-separated values (CSV) format with the file name
+         * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
+         * already exists (e.g. if the same data set is requested twice), the original file
+         * will be overwritten by the new file. Requires a Role with an attached
+         * permissions policy providing Allow permissions for the following actions:
+         * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+         * iam:GetRolePolicy.
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSupportDataExportOutcomeCallable StartSupportDataExportCallable(const Model::StartSupportDataExportRequest& request) const;
+
+        /**
+         * Given a data set type and a from date, asynchronously publishes the requested
+         * customer support data to the specified S3 bucket and notifies the specified SNS
+         * topic once the data is available. Returns a unique request identifier that can
+         * be used to correlate requests with notifications from the SNS topic. Data sets
+         * will be published in comma-separated values (CSV) format with the file name
+         * {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv. If a file with the same name
+         * already exists (e.g. if the same data set is requested twice), the original file
+         * will be overwritten by the new file. Requires a Role with an attached
+         * permissions policy providing Allow permissions for the following actions:
+         * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+         * iam:GetRolePolicy.
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSupportDataExportAsync(const Model::StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void GenerateDataSetAsyncHelper(const Model::GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSupportDataExportAsyncHelper(const Model::StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Utils::Threading::Executor> m_executor;

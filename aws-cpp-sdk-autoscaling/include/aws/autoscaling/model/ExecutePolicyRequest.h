@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p>Contains the parameters for ExecutePolicy.</p>
    */
   class AWS_AUTOSCALING_API ExecutePolicyRequest : public AutoScalingRequest
   {
@@ -109,7 +110,7 @@ namespace Model
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline bool GetHonorCooldown() const{ return m_honorCooldown; }
 
@@ -120,7 +121,7 @@ namespace Model
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline void SetHonorCooldown(bool value) { m_honorCooldownHasBeenSet = true; m_honorCooldown = value; }
 
@@ -131,7 +132,7 @@ namespace Model
      * parameter is not supported if the policy type is <code>StepScaling</code>.</p>
      * <p>For more information, see <a
      * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-     * Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+     * Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.</p>
      */
     inline ExecutePolicyRequest& WithHonorCooldown(bool value) { SetHonorCooldown(value); return *this;}
 

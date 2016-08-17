@@ -25,6 +25,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -50,14 +51,22 @@ public class MainClientGenerator {
         String sdkOutputName = String.format("aws-%s-sdk-%s", spec.getLanguageBinding(), serviceModel.getMetadata().getProjectName());
         File finalOutputFile = File.createTempFile(sdkOutputName, ".zip");
 
+        //we need to add a BOM to accommodate MSFT compilers.
+        //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
+        byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
         FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream)) {
+        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream, StandardCharsets.UTF_8)) {
 
             for (SdkFileEntry apiFile : apiFiles) {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
                     zipOutputStream.putNextEntry(zipEntry);
-                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes());
+
+                    if(apiFile.isNeedsByteOrderMark()) {
+                        zipOutputStream.write(bom);
+                    }
+
+                    zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
                     zipOutputStream.closeEntry();
                 }
             }
@@ -77,7 +86,7 @@ public class MainClientGenerator {
 
         StringBuilder inputJson = new StringBuilder();
 
-        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), "q")) {
+        try (Reader reader = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(path), StandardCharsets.UTF_8.name())) {
             char[] inputBuffer = new char[1024];
 
             while (reader.read(inputBuffer) >= 0) {

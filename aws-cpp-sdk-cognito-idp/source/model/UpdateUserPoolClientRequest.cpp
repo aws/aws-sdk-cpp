@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -24,7 +24,12 @@ using namespace Aws::Utils;
 UpdateUserPoolClientRequest::UpdateUserPoolClientRequest() : 
     m_userPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
-    m_clientNameHasBeenSet(false)
+    m_clientNameHasBeenSet(false),
+    m_refreshTokenValidity(0),
+    m_refreshTokenValidityHasBeenSet(false),
+    m_readAttributesHasBeenSet(false),
+    m_writeAttributesHasBeenSet(false),
+    m_explicitAuthFlowsHasBeenSet(false)
 {
 }
 
@@ -47,6 +52,45 @@ Aws::String UpdateUserPoolClientRequest::SerializePayload() const
   if(m_clientNameHasBeenSet)
   {
    payload.WithString("ClientName", m_clientName);
+
+  }
+
+  if(m_refreshTokenValidityHasBeenSet)
+  {
+   payload.WithInteger("RefreshTokenValidity", m_refreshTokenValidity);
+
+  }
+
+  if(m_readAttributesHasBeenSet)
+  {
+   Array<JsonValue> readAttributesJsonList(m_readAttributes.size());
+   for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
+   {
+     readAttributesJsonList[readAttributesIndex].AsString(m_readAttributes[readAttributesIndex]);
+   }
+   payload.WithArray("ReadAttributes", std::move(readAttributesJsonList));
+
+  }
+
+  if(m_writeAttributesHasBeenSet)
+  {
+   Array<JsonValue> writeAttributesJsonList(m_writeAttributes.size());
+   for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
+   {
+     writeAttributesJsonList[writeAttributesIndex].AsString(m_writeAttributes[writeAttributesIndex]);
+   }
+   payload.WithArray("WriteAttributes", std::move(writeAttributesJsonList));
+
+  }
+
+  if(m_explicitAuthFlowsHasBeenSet)
+  {
+   Array<JsonValue> explicitAuthFlowsJsonList(m_explicitAuthFlows.size());
+   for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
+   {
+     explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString(ExplicitAuthFlowsTypeMapper::GetNameForExplicitAuthFlowsType(m_explicitAuthFlows[explicitAuthFlowsIndex]));
+   }
+   payload.WithArray("ExplicitAuthFlows", std::move(explicitAuthFlowsJsonList));
 
   }
 

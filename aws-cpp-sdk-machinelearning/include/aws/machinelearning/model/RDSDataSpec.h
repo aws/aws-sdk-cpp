@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -47,31 +47,31 @@ namespace Model
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
-     * of an an Amazon RDS database.</p>
+     * of an Amazon RDS database.</p>
      */
     inline const RDSDatabase& GetDatabaseInformation() const{ return m_databaseInformation; }
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
-     * of an an Amazon RDS database.</p>
+     * of an Amazon RDS database.</p>
      */
     inline void SetDatabaseInformation(const RDSDatabase& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
-     * of an an Amazon RDS database.</p>
+     * of an Amazon RDS database.</p>
      */
     inline void SetDatabaseInformation(RDSDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
-     * of an an Amazon RDS database.</p>
+     * of an Amazon RDS database.</p>
      */
     inline RDSDataSpec& WithDatabaseInformation(const RDSDatabase& value) { SetDatabaseInformation(value); return *this;}
 
     /**
      * <p>Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code>
-     * of an an Amazon RDS database.</p>
+     * of an Amazon RDS database.</p>
      */
     inline RDSDataSpec& WithDatabaseInformation(RDSDatabase&& value) { SetDatabaseInformation(value); return *this;}
 

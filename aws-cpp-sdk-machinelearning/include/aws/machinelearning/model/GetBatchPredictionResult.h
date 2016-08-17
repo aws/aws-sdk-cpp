@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -550,6 +550,146 @@ namespace Model
      */
     inline GetBatchPredictionResult& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>BatchPrediction</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline long long GetComputeTime() const{ return m_computeTime; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>BatchPrediction</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline void SetComputeTime(long long value) { m_computeTime = value; }
+
+    /**
+     * <p>The approximate CPU time in milliseconds that Amazon Machine Learning spent
+     * processing the <code>BatchPrediction</code>, normalized and scaled on
+     * computation resources. <code>ComputeTime</code> is only available if the
+     * <code>BatchPrediction</code> is in the <code>COMPLETED</code> state.</p>
+     */
+    inline GetBatchPredictionResult& WithComputeTime(long long value) { SetComputeTime(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
+     * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
+     * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
+     * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline void SetFinishedAt(Aws::Utils::DateTime&& value) { m_finishedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
+     * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetBatchPredictionResult& WithFinishedAt(const Aws::Utils::DateTime& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>COMPLETED</code> or <code>FAILED</code>.
+     * <code>FinishedAt</code> is only available when the <code>BatchPrediction</code>
+     * is in the <code>COMPLETED</code> or <code>FAILED</code> state.</p>
+     */
+    inline GetBatchPredictionResult& WithFinishedAt(Aws::Utils::DateTime&& value) { SetFinishedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code>
+     * isn't available if the <code>BatchPrediction</code> is in the
+     * <code>PENDING</code> state.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code>
+     * isn't available if the <code>BatchPrediction</code> is in the
+     * <code>PENDING</code> state.</p>
+     */
+    inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code>
+     * isn't available if the <code>BatchPrediction</code> is in the
+     * <code>PENDING</code> state.</p>
+     */
+    inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = value; }
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code>
+     * isn't available if the <code>BatchPrediction</code> is in the
+     * <code>PENDING</code> state.</p>
+     */
+    inline GetBatchPredictionResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The epoch time when Amazon Machine Learning marked the
+     * <code>BatchPrediction</code> as <code>INPROGRESS</code>. <code>StartedAt</code>
+     * isn't available if the <code>BatchPrediction</code> is in the
+     * <code>PENDING</code> state.</p>
+     */
+    inline GetBatchPredictionResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(value); return *this;}
+
+    /**
+     * <p>The number of total records that Amazon Machine Learning saw while processing
+     * the <code>BatchPrediction</code>.</p>
+     */
+    inline long long GetTotalRecordCount() const{ return m_totalRecordCount; }
+
+    /**
+     * <p>The number of total records that Amazon Machine Learning saw while processing
+     * the <code>BatchPrediction</code>.</p>
+     */
+    inline void SetTotalRecordCount(long long value) { m_totalRecordCount = value; }
+
+    /**
+     * <p>The number of total records that Amazon Machine Learning saw while processing
+     * the <code>BatchPrediction</code>.</p>
+     */
+    inline GetBatchPredictionResult& WithTotalRecordCount(long long value) { SetTotalRecordCount(value); return *this;}
+
+    /**
+     * <p>The number of invalid records that Amazon Machine Learning saw while
+     * processing the <code>BatchPrediction</code>.</p>
+     */
+    inline long long GetInvalidRecordCount() const{ return m_invalidRecordCount; }
+
+    /**
+     * <p>The number of invalid records that Amazon Machine Learning saw while
+     * processing the <code>BatchPrediction</code>.</p>
+     */
+    inline void SetInvalidRecordCount(long long value) { m_invalidRecordCount = value; }
+
+    /**
+     * <p>The number of invalid records that Amazon Machine Learning saw while
+     * processing the <code>BatchPrediction</code>.</p>
+     */
+    inline GetBatchPredictionResult& WithInvalidRecordCount(long long value) { SetInvalidRecordCount(value); return *this;}
+
   private:
     Aws::String m_batchPredictionId;
     Aws::String m_mLModelId;
@@ -563,6 +703,11 @@ namespace Model
     Aws::String m_outputUri;
     Aws::String m_logUri;
     Aws::String m_message;
+    long long m_computeTime;
+    Aws::Utils::DateTime m_finishedAt;
+    Aws::Utils::DateTime m_startedAt;
+    long long m_totalRecordCount;
+    long long m_invalidRecordCount;
   };
 
 } // namespace Model

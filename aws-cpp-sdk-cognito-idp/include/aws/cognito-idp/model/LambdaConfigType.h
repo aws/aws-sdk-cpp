@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -216,6 +216,111 @@ namespace Model
      */
     inline LambdaConfigType& WithPostAuthentication(const char* value) { SetPostAuthentication(value); return *this;}
 
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline const Aws::String& GetDefineAuthChallenge() const{ return m_defineAuthChallenge; }
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline void SetDefineAuthChallenge(const Aws::String& value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge = value; }
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline void SetDefineAuthChallenge(Aws::String&& value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge = value; }
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline void SetDefineAuthChallenge(const char* value) { m_defineAuthChallengeHasBeenSet = true; m_defineAuthChallenge.assign(value); }
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithDefineAuthChallenge(const Aws::String& value) { SetDefineAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithDefineAuthChallenge(Aws::String&& value) { SetDefineAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Defines the authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithDefineAuthChallenge(const char* value) { SetDefineAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline const Aws::String& GetCreateAuthChallenge() const{ return m_createAuthChallenge; }
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline void SetCreateAuthChallenge(const Aws::String& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = value; }
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline void SetCreateAuthChallenge(Aws::String&& value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge = value; }
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline void SetCreateAuthChallenge(const char* value) { m_createAuthChallengeHasBeenSet = true; m_createAuthChallenge.assign(value); }
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithCreateAuthChallenge(const Aws::String& value) { SetCreateAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithCreateAuthChallenge(Aws::String&& value) { SetCreateAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Creates an authentication challenge.</p>
+     */
+    inline LambdaConfigType& WithCreateAuthChallenge(const char* value) { SetCreateAuthChallenge(value); return *this;}
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline const Aws::String& GetVerifyAuthChallengeResponse() const{ return m_verifyAuthChallengeResponse; }
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline void SetVerifyAuthChallengeResponse(const Aws::String& value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse = value; }
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline void SetVerifyAuthChallengeResponse(Aws::String&& value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse = value; }
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline void SetVerifyAuthChallengeResponse(const char* value) { m_verifyAuthChallengeResponseHasBeenSet = true; m_verifyAuthChallengeResponse.assign(value); }
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline LambdaConfigType& WithVerifyAuthChallengeResponse(const Aws::String& value) { SetVerifyAuthChallengeResponse(value); return *this;}
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline LambdaConfigType& WithVerifyAuthChallengeResponse(Aws::String&& value) { SetVerifyAuthChallengeResponse(value); return *this;}
+
+    /**
+     * <p>Verifies the authentication challenge response.</p>
+     */
+    inline LambdaConfigType& WithVerifyAuthChallengeResponse(const char* value) { SetVerifyAuthChallengeResponse(value); return *this;}
+
   private:
     Aws::String m_preSignUp;
     bool m_preSignUpHasBeenSet;
@@ -227,6 +332,12 @@ namespace Model
     bool m_preAuthenticationHasBeenSet;
     Aws::String m_postAuthentication;
     bool m_postAuthenticationHasBeenSet;
+    Aws::String m_defineAuthChallenge;
+    bool m_defineAuthChallengeHasBeenSet;
+    Aws::String m_createAuthChallenge;
+    bool m_createAuthChallengeHasBeenSet;
+    Aws::String m_verifyAuthChallengeResponse;
+    bool m_verifyAuthChallengeResponseHasBeenSet;
   };
 
 } // namespace Model

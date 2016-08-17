@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -93,23 +93,23 @@ namespace Model
     inline SetTerminationProtectionRequest& AddJobFlowIds(const char* value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds.push_back(value); return *this; }
 
     /**
-     * <p> A Boolean that indicates whether to protect the job flow and prevent the
+     * <p>A Boolean that indicates whether to protect the job flow and prevent the
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error. </p>
+     * intervention, or job-flow error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
 
     /**
-     * <p> A Boolean that indicates whether to protect the job flow and prevent the
+     * <p>A Boolean that indicates whether to protect the job flow and prevent the
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error. </p>
+     * intervention, or job-flow error.</p>
      */
     inline void SetTerminationProtected(bool value) { m_terminationProtectedHasBeenSet = true; m_terminationProtected = value; }
 
     /**
-     * <p> A Boolean that indicates whether to protect the job flow and prevent the
+     * <p>A Boolean that indicates whether to protect the job flow and prevent the
      * Amazon EC2 instances in the cluster from shutting down due to API calls, user
-     * intervention, or job-flow error. </p>
+     * intervention, or job-flow error.</p>
      */
     inline SetTerminationProtectionRequest& WithTerminationProtected(bool value) { SetTerminationProtected(value); return *this;}
 

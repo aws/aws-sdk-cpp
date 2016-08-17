@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>This input identifies a cluster and a list of tags to attach. </p>
+   * <p>This input identifies a cluster and a list of tags to attach.</p>
    */
   class AWS_EMR_API AddTagsRequest : public EMRRequest
   {

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -79,67 +79,67 @@ namespace Model
     inline DescribeScalingPoliciesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Game session status to filter results on. A scaling policy is only in force
-     * when in an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is
-     * currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to update the
-     * scaling policy has been received.</li> <li> <b>UPDATING</b> – A change is being
-     * made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A request to
-     * delete the scaling policy has been received.</li> <li> <b>DELETING</b> – The
-     * scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
-     * has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the
-     * policy. It should be removed and recreated.</li> </ul></p>
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <b>ACTIVE</b> – The scaling
+     * policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to
+     * update the scaling policy has been received.</li> <li> <b>UPDATING</b> – A
+     * change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A
+     * request to delete the scaling policy has been received.</li> <li>
+     * <b>DELETING</b> – The scaling policy is being deleted.</li> <li> <b>DELETED</b>
+     * – The scaling policy has been deleted.</li> <li> <b>ERROR</b> – An error
+     * occurred in creating the policy. It should be removed and recreated.</li> </ul>
      */
     inline const ScalingStatusType& GetStatusFilter() const{ return m_statusFilter; }
 
     /**
-     * <p>Game session status to filter results on. A scaling policy is only in force
-     * when in an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is
-     * currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to update the
-     * scaling policy has been received.</li> <li> <b>UPDATING</b> – A change is being
-     * made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A request to
-     * delete the scaling policy has been received.</li> <li> <b>DELETING</b> – The
-     * scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
-     * has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the
-     * policy. It should be removed and recreated.</li> </ul></p>
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <b>ACTIVE</b> – The scaling
+     * policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to
+     * update the scaling policy has been received.</li> <li> <b>UPDATING</b> – A
+     * change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A
+     * request to delete the scaling policy has been received.</li> <li>
+     * <b>DELETING</b> – The scaling policy is being deleted.</li> <li> <b>DELETED</b>
+     * – The scaling policy has been deleted.</li> <li> <b>ERROR</b> – An error
+     * occurred in creating the policy. It should be removed and recreated.</li> </ul>
      */
     inline void SetStatusFilter(const ScalingStatusType& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
-     * <p>Game session status to filter results on. A scaling policy is only in force
-     * when in an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is
-     * currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to update the
-     * scaling policy has been received.</li> <li> <b>UPDATING</b> – A change is being
-     * made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A request to
-     * delete the scaling policy has been received.</li> <li> <b>DELETING</b> – The
-     * scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
-     * has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the
-     * policy. It should be removed and recreated.</li> </ul></p>
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <b>ACTIVE</b> – The scaling
+     * policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to
+     * update the scaling policy has been received.</li> <li> <b>UPDATING</b> – A
+     * change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A
+     * request to delete the scaling policy has been received.</li> <li>
+     * <b>DELETING</b> – The scaling policy is being deleted.</li> <li> <b>DELETED</b>
+     * – The scaling policy has been deleted.</li> <li> <b>ERROR</b> – An error
+     * occurred in creating the policy. It should be removed and recreated.</li> </ul>
      */
     inline void SetStatusFilter(ScalingStatusType&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
 
     /**
-     * <p>Game session status to filter results on. A scaling policy is only in force
-     * when in an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is
-     * currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to update the
-     * scaling policy has been received.</li> <li> <b>UPDATING</b> – A change is being
-     * made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A request to
-     * delete the scaling policy has been received.</li> <li> <b>DELETING</b> – The
-     * scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
-     * has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the
-     * policy. It should be removed and recreated.</li> </ul></p>
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <b>ACTIVE</b> – The scaling
+     * policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to
+     * update the scaling policy has been received.</li> <li> <b>UPDATING</b> – A
+     * change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A
+     * request to delete the scaling policy has been received.</li> <li>
+     * <b>DELETING</b> – The scaling policy is being deleted.</li> <li> <b>DELETED</b>
+     * – The scaling policy has been deleted.</li> <li> <b>ERROR</b> – An error
+     * occurred in creating the policy. It should be removed and recreated.</li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithStatusFilter(const ScalingStatusType& value) { SetStatusFilter(value); return *this;}
 
     /**
-     * <p>Game session status to filter results on. A scaling policy is only in force
-     * when in an Active state. <ul> <li> <b>ACTIVE</b> – The scaling policy is
-     * currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to update the
-     * scaling policy has been received.</li> <li> <b>UPDATING</b> – A change is being
-     * made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A request to
-     * delete the scaling policy has been received.</li> <li> <b>DELETING</b> – The
-     * scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
-     * has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the
-     * policy. It should be removed and recreated.</li> </ul></p>
+     * <p>Scaling policy status to filter results on. A scaling policy is only in force
+     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <b>ACTIVE</b> – The scaling
+     * policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b> – A request to
+     * update the scaling policy has been received.</li> <li> <b>UPDATING</b> – A
+     * change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> – A
+     * request to delete the scaling policy has been received.</li> <li>
+     * <b>DELETING</b> – The scaling policy is being deleted.</li> <li> <b>DELETED</b>
+     * – The scaling policy has been deleted.</li> <li> <b>ERROR</b> – An error
+     * occurred in creating the policy. It should be removed and recreated.</li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType&& value) { SetStatusFilter(value); return *this;}
 

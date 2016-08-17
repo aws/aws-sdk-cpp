@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -36,7 +36,7 @@ namespace CloudWatch
 namespace Model
 {
   /**
-   * <p> The output for the <a>DescribeAlarms</a> action. </p>
+   * <p>The output for <a>DescribeAlarms</a>.</p>
    */
   class AWS_CLOUDWATCH_API DescribeAlarmsResult
   {
@@ -46,72 +46,72 @@ namespace Model
     DescribeAlarmsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline const Aws::Vector<MetricAlarm>& GetMetricAlarms() const{ return m_metricAlarms; }
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline void SetMetricAlarms(const Aws::Vector<MetricAlarm>& value) { m_metricAlarms = value; }
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline void SetMetricAlarms(Aws::Vector<MetricAlarm>&& value) { m_metricAlarms = value; }
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline DescribeAlarmsResult& WithMetricAlarms(const Aws::Vector<MetricAlarm>& value) { SetMetricAlarms(value); return *this;}
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline DescribeAlarmsResult& WithMetricAlarms(Aws::Vector<MetricAlarm>&& value) { SetMetricAlarms(value); return *this;}
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline DescribeAlarmsResult& AddMetricAlarms(const MetricAlarm& value) { m_metricAlarms.push_back(value); return *this; }
 
     /**
-     * <p> A list of information for the specified alarms. </p>
+     * <p>A list of information for the specified alarms.</p>
      */
     inline DescribeAlarmsResult& AddMetricAlarms(MetricAlarm&& value) { m_metricAlarms.push_back(value); return *this; }
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline DescribeAlarmsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline DescribeAlarmsResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A string that marks the start of the next batch of returned results. </p>
+     * <p>A string that marks the start of the next batch of returned results.</p>
      */
     inline DescribeAlarmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

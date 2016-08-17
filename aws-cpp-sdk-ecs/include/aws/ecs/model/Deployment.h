@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -237,57 +237,52 @@ namespace Model
     inline Deployment& WithRunningCount(int value) { SetRunningCount(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was last
-     * updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was last
-     * updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was last
-     * updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was last
-     * updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time in seconds and milliseconds when the service was last
-     * updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(value); return *this;}
 

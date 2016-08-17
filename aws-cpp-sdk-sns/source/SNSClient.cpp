@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,8 +73,7 @@ static const char* ALLOCATION_TAG = "SNSClient";
 SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+        SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,8 +83,7 @@ SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
 SNSClient::SNSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -96,8 +94,7 @@ SNSClient::SNSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion),
+         SERVICE_NAME, clientConfiguration.region),
     Aws::MakeShared<SNSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -113,9 +110,9 @@ void SNSClient::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << SNSEndpoint::ForRegion(config.region);
+    ss << SNSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -142,12 +139,12 @@ AddPermissionOutcome SNSClient::AddPermission(const AddPermissionRequest& reques
 
 AddPermissionOutcomeCallable SNSClient::AddPermissionCallable(const AddPermissionRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::AddPermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AddPermission( request ); } );
 }
 
 void SNSClient::AddPermissionAsync(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::AddPermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AddPermissionAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::AddPermissionAsyncHelper(const AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -172,12 +169,12 @@ CheckIfPhoneNumberIsOptedOutOutcome SNSClient::CheckIfPhoneNumberIsOptedOut(cons
 
 CheckIfPhoneNumberIsOptedOutOutcomeCallable SNSClient::CheckIfPhoneNumberIsOptedOutCallable(const CheckIfPhoneNumberIsOptedOutRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::CheckIfPhoneNumberIsOptedOut, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CheckIfPhoneNumberIsOptedOut( request ); } );
 }
 
 void SNSClient::CheckIfPhoneNumberIsOptedOutAsync(const CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CheckIfPhoneNumberIsOptedOutAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CheckIfPhoneNumberIsOptedOutAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::CheckIfPhoneNumberIsOptedOutAsyncHelper(const CheckIfPhoneNumberIsOptedOutRequest& request, const CheckIfPhoneNumberIsOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -202,12 +199,12 @@ ConfirmSubscriptionOutcome SNSClient::ConfirmSubscription(const ConfirmSubscript
 
 ConfirmSubscriptionOutcomeCallable SNSClient::ConfirmSubscriptionCallable(const ConfirmSubscriptionRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ConfirmSubscription, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ConfirmSubscription( request ); } );
 }
 
 void SNSClient::ConfirmSubscriptionAsync(const ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ConfirmSubscriptionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ConfirmSubscriptionAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ConfirmSubscriptionAsyncHelper(const ConfirmSubscriptionRequest& request, const ConfirmSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -232,12 +229,12 @@ CreatePlatformApplicationOutcome SNSClient::CreatePlatformApplication(const Crea
 
 CreatePlatformApplicationOutcomeCallable SNSClient::CreatePlatformApplicationCallable(const CreatePlatformApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::CreatePlatformApplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreatePlatformApplication( request ); } );
 }
 
 void SNSClient::CreatePlatformApplicationAsync(const CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreatePlatformApplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePlatformApplicationAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::CreatePlatformApplicationAsyncHelper(const CreatePlatformApplicationRequest& request, const CreatePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -262,12 +259,12 @@ CreatePlatformEndpointOutcome SNSClient::CreatePlatformEndpoint(const CreatePlat
 
 CreatePlatformEndpointOutcomeCallable SNSClient::CreatePlatformEndpointCallable(const CreatePlatformEndpointRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::CreatePlatformEndpoint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreatePlatformEndpoint( request ); } );
 }
 
 void SNSClient::CreatePlatformEndpointAsync(const CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreatePlatformEndpointAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePlatformEndpointAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::CreatePlatformEndpointAsyncHelper(const CreatePlatformEndpointRequest& request, const CreatePlatformEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -292,12 +289,12 @@ CreateTopicOutcome SNSClient::CreateTopic(const CreateTopicRequest& request) con
 
 CreateTopicOutcomeCallable SNSClient::CreateTopicCallable(const CreateTopicRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::CreateTopic, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateTopic( request ); } );
 }
 
 void SNSClient::CreateTopicAsync(const CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::CreateTopicAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTopicAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::CreateTopicAsyncHelper(const CreateTopicRequest& request, const CreateTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -322,12 +319,12 @@ DeleteEndpointOutcome SNSClient::DeleteEndpoint(const DeleteEndpointRequest& req
 
 DeleteEndpointOutcomeCallable SNSClient::DeleteEndpointCallable(const DeleteEndpointRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::DeleteEndpoint, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteEndpoint( request ); } );
 }
 
 void SNSClient::DeleteEndpointAsync(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeleteEndpointAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteEndpointAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -352,12 +349,12 @@ DeletePlatformApplicationOutcome SNSClient::DeletePlatformApplication(const Dele
 
 DeletePlatformApplicationOutcomeCallable SNSClient::DeletePlatformApplicationCallable(const DeletePlatformApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::DeletePlatformApplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeletePlatformApplication( request ); } );
 }
 
 void SNSClient::DeletePlatformApplicationAsync(const DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeletePlatformApplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePlatformApplicationAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::DeletePlatformApplicationAsyncHelper(const DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -382,12 +379,12 @@ DeleteTopicOutcome SNSClient::DeleteTopic(const DeleteTopicRequest& request) con
 
 DeleteTopicOutcomeCallable SNSClient::DeleteTopicCallable(const DeleteTopicRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::DeleteTopic, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteTopic( request ); } );
 }
 
 void SNSClient::DeleteTopicAsync(const DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::DeleteTopicAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTopicAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::DeleteTopicAsyncHelper(const DeleteTopicRequest& request, const DeleteTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -412,12 +409,12 @@ GetEndpointAttributesOutcome SNSClient::GetEndpointAttributes(const GetEndpointA
 
 GetEndpointAttributesOutcomeCallable SNSClient::GetEndpointAttributesCallable(const GetEndpointAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::GetEndpointAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetEndpointAttributes( request ); } );
 }
 
 void SNSClient::GetEndpointAttributesAsync(const GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetEndpointAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetEndpointAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::GetEndpointAttributesAsyncHelper(const GetEndpointAttributesRequest& request, const GetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -442,12 +439,12 @@ GetPlatformApplicationAttributesOutcome SNSClient::GetPlatformApplicationAttribu
 
 GetPlatformApplicationAttributesOutcomeCallable SNSClient::GetPlatformApplicationAttributesCallable(const GetPlatformApplicationAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::GetPlatformApplicationAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetPlatformApplicationAttributes( request ); } );
 }
 
 void SNSClient::GetPlatformApplicationAttributesAsync(const GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetPlatformApplicationAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetPlatformApplicationAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::GetPlatformApplicationAttributesAsyncHelper(const GetPlatformApplicationAttributesRequest& request, const GetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -472,12 +469,12 @@ GetSMSAttributesOutcome SNSClient::GetSMSAttributes(const GetSMSAttributesReques
 
 GetSMSAttributesOutcomeCallable SNSClient::GetSMSAttributesCallable(const GetSMSAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::GetSMSAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetSMSAttributes( request ); } );
 }
 
 void SNSClient::GetSMSAttributesAsync(const GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetSMSAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetSMSAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::GetSMSAttributesAsyncHelper(const GetSMSAttributesRequest& request, const GetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -502,12 +499,12 @@ GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetS
 
 GetSubscriptionAttributesOutcomeCallable SNSClient::GetSubscriptionAttributesCallable(const GetSubscriptionAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::GetSubscriptionAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetSubscriptionAttributes( request ); } );
 }
 
 void SNSClient::GetSubscriptionAttributesAsync(const GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetSubscriptionAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetSubscriptionAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::GetSubscriptionAttributesAsyncHelper(const GetSubscriptionAttributesRequest& request, const GetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -532,12 +529,12 @@ GetTopicAttributesOutcome SNSClient::GetTopicAttributes(const GetTopicAttributes
 
 GetTopicAttributesOutcomeCallable SNSClient::GetTopicAttributesCallable(const GetTopicAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::GetTopicAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetTopicAttributes( request ); } );
 }
 
 void SNSClient::GetTopicAttributesAsync(const GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::GetTopicAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetTopicAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::GetTopicAttributesAsyncHelper(const GetTopicAttributesRequest& request, const GetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -562,12 +559,12 @@ ListEndpointsByPlatformApplicationOutcome SNSClient::ListEndpointsByPlatformAppl
 
 ListEndpointsByPlatformApplicationOutcomeCallable SNSClient::ListEndpointsByPlatformApplicationCallable(const ListEndpointsByPlatformApplicationRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListEndpointsByPlatformApplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListEndpointsByPlatformApplication( request ); } );
 }
 
 void SNSClient::ListEndpointsByPlatformApplicationAsync(const ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListEndpointsByPlatformApplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListEndpointsByPlatformApplicationAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListEndpointsByPlatformApplicationAsyncHelper(const ListEndpointsByPlatformApplicationRequest& request, const ListEndpointsByPlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -592,12 +589,12 @@ ListPhoneNumbersOptedOutOutcome SNSClient::ListPhoneNumbersOptedOut(const ListPh
 
 ListPhoneNumbersOptedOutOutcomeCallable SNSClient::ListPhoneNumbersOptedOutCallable(const ListPhoneNumbersOptedOutRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListPhoneNumbersOptedOut, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListPhoneNumbersOptedOut( request ); } );
 }
 
 void SNSClient::ListPhoneNumbersOptedOutAsync(const ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListPhoneNumbersOptedOutAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPhoneNumbersOptedOutAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListPhoneNumbersOptedOutAsyncHelper(const ListPhoneNumbersOptedOutRequest& request, const ListPhoneNumbersOptedOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -622,12 +619,12 @@ ListPlatformApplicationsOutcome SNSClient::ListPlatformApplications(const ListPl
 
 ListPlatformApplicationsOutcomeCallable SNSClient::ListPlatformApplicationsCallable(const ListPlatformApplicationsRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListPlatformApplications, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListPlatformApplications( request ); } );
 }
 
 void SNSClient::ListPlatformApplicationsAsync(const ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListPlatformApplicationsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPlatformApplicationsAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListPlatformApplicationsAsyncHelper(const ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -652,12 +649,12 @@ ListSubscriptionsOutcome SNSClient::ListSubscriptions(const ListSubscriptionsReq
 
 ListSubscriptionsOutcomeCallable SNSClient::ListSubscriptionsCallable(const ListSubscriptionsRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListSubscriptions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListSubscriptions( request ); } );
 }
 
 void SNSClient::ListSubscriptionsAsync(const ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListSubscriptionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListSubscriptionsAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListSubscriptionsAsyncHelper(const ListSubscriptionsRequest& request, const ListSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -682,12 +679,12 @@ ListSubscriptionsByTopicOutcome SNSClient::ListSubscriptionsByTopic(const ListSu
 
 ListSubscriptionsByTopicOutcomeCallable SNSClient::ListSubscriptionsByTopicCallable(const ListSubscriptionsByTopicRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListSubscriptionsByTopic, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListSubscriptionsByTopic( request ); } );
 }
 
 void SNSClient::ListSubscriptionsByTopicAsync(const ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListSubscriptionsByTopicAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListSubscriptionsByTopicAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListSubscriptionsByTopicAsyncHelper(const ListSubscriptionsByTopicRequest& request, const ListSubscriptionsByTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -712,12 +709,12 @@ ListTopicsOutcome SNSClient::ListTopics(const ListTopicsRequest& request) const
 
 ListTopicsOutcomeCallable SNSClient::ListTopicsCallable(const ListTopicsRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::ListTopics, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListTopics( request ); } );
 }
 
 void SNSClient::ListTopicsAsync(const ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::ListTopicsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListTopicsAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::ListTopicsAsyncHelper(const ListTopicsRequest& request, const ListTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -742,12 +739,12 @@ OptInPhoneNumberOutcome SNSClient::OptInPhoneNumber(const OptInPhoneNumberReques
 
 OptInPhoneNumberOutcomeCallable SNSClient::OptInPhoneNumberCallable(const OptInPhoneNumberRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::OptInPhoneNumber, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->OptInPhoneNumber( request ); } );
 }
 
 void SNSClient::OptInPhoneNumberAsync(const OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::OptInPhoneNumberAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->OptInPhoneNumberAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::OptInPhoneNumberAsyncHelper(const OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -772,12 +769,12 @@ PublishOutcome SNSClient::Publish(const PublishRequest& request) const
 
 PublishOutcomeCallable SNSClient::PublishCallable(const PublishRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::Publish, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Publish( request ); } );
 }
 
 void SNSClient::PublishAsync(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::PublishAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PublishAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::PublishAsyncHelper(const PublishRequest& request, const PublishResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -802,12 +799,12 @@ RemovePermissionOutcome SNSClient::RemovePermission(const RemovePermissionReques
 
 RemovePermissionOutcomeCallable SNSClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::RemovePermission, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RemovePermission( request ); } );
 }
 
 void SNSClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::RemovePermissionAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -832,12 +829,12 @@ SetEndpointAttributesOutcome SNSClient::SetEndpointAttributes(const SetEndpointA
 
 SetEndpointAttributesOutcomeCallable SNSClient::SetEndpointAttributesCallable(const SetEndpointAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::SetEndpointAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetEndpointAttributes( request ); } );
 }
 
 void SNSClient::SetEndpointAttributesAsync(const SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetEndpointAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetEndpointAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SetEndpointAttributesAsyncHelper(const SetEndpointAttributesRequest& request, const SetEndpointAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -862,12 +859,12 @@ SetPlatformApplicationAttributesOutcome SNSClient::SetPlatformApplicationAttribu
 
 SetPlatformApplicationAttributesOutcomeCallable SNSClient::SetPlatformApplicationAttributesCallable(const SetPlatformApplicationAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::SetPlatformApplicationAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetPlatformApplicationAttributes( request ); } );
 }
 
 void SNSClient::SetPlatformApplicationAttributesAsync(const SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetPlatformApplicationAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetPlatformApplicationAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SetPlatformApplicationAttributesAsyncHelper(const SetPlatformApplicationAttributesRequest& request, const SetPlatformApplicationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -892,12 +889,12 @@ SetSMSAttributesOutcome SNSClient::SetSMSAttributes(const SetSMSAttributesReques
 
 SetSMSAttributesOutcomeCallable SNSClient::SetSMSAttributesCallable(const SetSMSAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::SetSMSAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetSMSAttributes( request ); } );
 }
 
 void SNSClient::SetSMSAttributesAsync(const SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetSMSAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetSMSAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SetSMSAttributesAsyncHelper(const SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -922,12 +919,12 @@ SetSubscriptionAttributesOutcome SNSClient::SetSubscriptionAttributes(const SetS
 
 SetSubscriptionAttributesOutcomeCallable SNSClient::SetSubscriptionAttributesCallable(const SetSubscriptionAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::SetSubscriptionAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetSubscriptionAttributes( request ); } );
 }
 
 void SNSClient::SetSubscriptionAttributesAsync(const SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetSubscriptionAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetSubscriptionAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SetSubscriptionAttributesAsyncHelper(const SetSubscriptionAttributesRequest& request, const SetSubscriptionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -952,12 +949,12 @@ SetTopicAttributesOutcome SNSClient::SetTopicAttributes(const SetTopicAttributes
 
 SetTopicAttributesOutcomeCallable SNSClient::SetTopicAttributesCallable(const SetTopicAttributesRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::SetTopicAttributes, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->SetTopicAttributes( request ); } );
 }
 
 void SNSClient::SetTopicAttributesAsync(const SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SetTopicAttributesAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SetTopicAttributesAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SetTopicAttributesAsyncHelper(const SetTopicAttributesRequest& request, const SetTopicAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -982,12 +979,12 @@ SubscribeOutcome SNSClient::Subscribe(const SubscribeRequest& request) const
 
 SubscribeOutcomeCallable SNSClient::SubscribeCallable(const SubscribeRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::Subscribe, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Subscribe( request ); } );
 }
 
 void SNSClient::SubscribeAsync(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::SubscribeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->SubscribeAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::SubscribeAsyncHelper(const SubscribeRequest& request, const SubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1012,12 +1009,12 @@ UnsubscribeOutcome SNSClient::Unsubscribe(const UnsubscribeRequest& request) con
 
 UnsubscribeOutcomeCallable SNSClient::UnsubscribeCallable(const UnsubscribeRequest& request) const
 {
-  return std::async(std::launch::async, &SNSClient::Unsubscribe, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->Unsubscribe( request ); } );
 }
 
 void SNSClient::UnsubscribeAsync(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&SNSClient::UnsubscribeAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UnsubscribeAsyncHelper( request, handler, context ); } );
 }
 
 void SNSClient::UnsubscribeAsyncHelper(const UnsubscribeRequest& request, const UnsubscribeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

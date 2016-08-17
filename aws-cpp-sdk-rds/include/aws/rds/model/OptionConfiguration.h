@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -95,6 +95,41 @@ namespace Model
      * <p>The optional port for the option.</p>
      */
     inline OptionConfiguration& WithPort(int value) { SetPort(value); return *this;}
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline const Aws::String& GetOptionVersion() const{ return m_optionVersion; }
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline void SetOptionVersion(const Aws::String& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline void SetOptionVersion(Aws::String&& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline void SetOptionVersion(const char* value) { m_optionVersionHasBeenSet = true; m_optionVersion.assign(value); }
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline OptionConfiguration& WithOptionVersion(const Aws::String& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline OptionConfiguration& WithOptionVersion(Aws::String&& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version for the option.</p>
+     */
+    inline OptionConfiguration& WithOptionVersion(const char* value) { SetOptionVersion(value); return *this;}
 
     /**
      * <p>A list of DBSecurityGroupMemebrship name strings used for this option.</p>
@@ -216,6 +251,8 @@ namespace Model
     bool m_optionNameHasBeenSet;
     int m_port;
     bool m_portHasBeenSet;
+    Aws::String m_optionVersion;
+    bool m_optionVersionHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroupMemberships;
     bool m_dBSecurityGroupMembershipsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupMemberships;

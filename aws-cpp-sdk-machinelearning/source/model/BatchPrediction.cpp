@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -38,7 +38,15 @@ BatchPrediction::BatchPrediction() :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputUriHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_computeTime(0),
+    m_computeTimeHasBeenSet(false),
+    m_finishedAtHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_totalRecordCount(0),
+    m_totalRecordCountHasBeenSet(false),
+    m_invalidRecordCount(0),
+    m_invalidRecordCountHasBeenSet(false)
 {
 }
 
@@ -53,7 +61,15 @@ BatchPrediction::BatchPrediction(const JsonValue& jsonValue) :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_outputUriHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_computeTime(0),
+    m_computeTimeHasBeenSet(false),
+    m_finishedAtHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_totalRecordCount(0),
+    m_totalRecordCountHasBeenSet(false),
+    m_invalidRecordCount(0),
+    m_invalidRecordCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +153,41 @@ BatchPrediction& BatchPrediction::operator =(const JsonValue& jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ComputeTime"))
+  {
+    m_computeTime = jsonValue.GetInt64("ComputeTime");
+
+    m_computeTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FinishedAt"))
+  {
+    m_finishedAt = jsonValue.GetDouble("FinishedAt");
+
+    m_finishedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("StartedAt");
+
+    m_startedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalRecordCount"))
+  {
+    m_totalRecordCount = jsonValue.GetInt64("TotalRecordCount");
+
+    m_totalRecordCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvalidRecordCount"))
+  {
+    m_invalidRecordCount = jsonValue.GetInt64("InvalidRecordCount");
+
+    m_invalidRecordCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -204,6 +255,34 @@ JsonValue BatchPrediction::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("Message", m_message);
+
+  }
+
+  if(m_computeTimeHasBeenSet)
+  {
+   payload.WithInt64("ComputeTime", m_computeTime);
+
+  }
+
+  if(m_finishedAtHasBeenSet)
+  {
+   payload.WithDouble("FinishedAt", m_finishedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_startedAtHasBeenSet)
+  {
+   payload.WithDouble("StartedAt", m_startedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_totalRecordCountHasBeenSet)
+  {
+   payload.WithInt64("TotalRecordCount", m_totalRecordCount);
+
+  }
+
+  if(m_invalidRecordCountHasBeenSet)
+  {
+   payload.WithInt64("InvalidRecordCount", m_invalidRecordCount);
 
   }
 

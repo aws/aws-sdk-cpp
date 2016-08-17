@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+﻿cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-ecr)
 
   file(GLOB AWS_ECR_HEADERS

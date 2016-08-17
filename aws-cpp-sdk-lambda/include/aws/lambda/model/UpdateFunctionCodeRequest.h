@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_LAMBDA_API UpdateFunctionCodeRequest : public LambdaRequest
   {
@@ -118,27 +119,52 @@ namespace Model
     inline UpdateFunctionCodeRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Based64-encoded .zip file containing your packaged source code.</p>
+     * <p>The contents of your zip file containing your deployment package. If you are
+     * using the web API directly, the contents of the zip file must be base64-encoded.
+     * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
+     * encoding for you. For more information about creating a .zip file, go to <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
+     * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
-     * <p>Based64-encoded .zip file containing your packaged source code.</p>
+     * <p>The contents of your zip file containing your deployment package. If you are
+     * using the web API directly, the contents of the zip file must be base64-encoded.
+     * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
+     * encoding for you. For more information about creating a .zip file, go to <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
+     * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>Based64-encoded .zip file containing your packaged source code.</p>
+     * <p>The contents of your zip file containing your deployment package. If you are
+     * using the web API directly, the contents of the zip file must be base64-encoded.
+     * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
+     * encoding for you. For more information about creating a .zip file, go to <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
+     * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>Based64-encoded .zip file containing your packaged source code.</p>
+     * <p>The contents of your zip file containing your deployment package. If you are
+     * using the web API directly, the contents of the zip file must be base64-encoded.
+     * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
+     * encoding for you. For more information about creating a .zip file, go to <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
+     * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
-     * <p>Based64-encoded .zip file containing your packaged source code.</p>
+     * <p>The contents of your zip file containing your deployment package. If you are
+     * using the web API directly, the contents of the zip file must be base64-encoded.
+     * If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI will do the
+     * encoding for you. For more information about creating a .zip file, go to <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
+     * Permissions</a> in the <i>AWS Lambda Developer Guide</i>. </p>
      */
     inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(value); return *this;}
 
@@ -192,44 +218,44 @@ namespace Model
     inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(Aws::String&& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The Amazon S3 object (the deployment package) key name you want to upload.
-     * </p>
+     * <p>The Amazon S3 object (the deployment package) key name you want to
+     * upload.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 
@@ -270,19 +296,19 @@ namespace Model
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline bool GetPublish() const{ return m_publish; }
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
 
     /**
      * <p>This boolean parameter can be used to request AWS Lambda to update the Lambda
-     * function and publish a version as an atomic operation. </p>
+     * function and publish a version as an atomic operation.</p>
      */
     inline UpdateFunctionCodeRequest& WithPublish(bool value) { SetPublish(value); return *this;}
 

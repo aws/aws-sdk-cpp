@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -97,8 +97,7 @@ static const char* ALLOCATION_TAG = "S3Client";
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, bool signPayloads) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion, signPayloads, false),
+        SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -108,8 +107,7 @@ S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, bool 
 S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, bool signPayloads) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion, signPayloads, false),
+         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -120,8 +118,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
   const Client::ClientConfiguration& clientConfiguration, bool signPayloads) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.authenticationRegion.empty() ? RegionMapper::GetRegionName(clientConfiguration.region)
-                                                                        : clientConfiguration.authenticationRegion, signPayloads, false),
+         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -137,9 +134,9 @@ void S3Client::init(const ClientConfiguration& config)
   Aws::StringStream ss;
   ss << SchemeMapper::ToString(config.scheme) << "://";
 
-  if(config.endpointOverride.empty() && config.authenticationRegion.empty())
+  if(config.endpointOverride.empty())
   {
-    ss << S3Endpoint::ForRegion(config.region);
+    ss << S3Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
@@ -169,12 +166,12 @@ AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartU
 
 AbortMultipartUploadOutcomeCallable S3Client::AbortMultipartUploadCallable(const AbortMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::AbortMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->AbortMultipartUpload( request ); } );
 }
 
 void S3Client::AbortMultipartUploadAsync(const AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::AbortMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->AbortMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRequest& request, const AbortMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -202,12 +199,12 @@ CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteM
 
 CompleteMultipartUploadOutcomeCallable S3Client::CompleteMultipartUploadCallable(const CompleteMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::CompleteMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CompleteMultipartUpload( request ); } );
 }
 
 void S3Client::CompleteMultipartUploadAsync(const CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::CompleteMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CompleteMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUploadRequest& request, const CompleteMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -235,12 +232,12 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
 
 CopyObjectOutcomeCallable S3Client::CopyObjectCallable(const CopyObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::CopyObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CopyObject( request ); } );
 }
 
 void S3Client::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::CopyObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CopyObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::CopyObjectAsyncHelper(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -266,12 +263,12 @@ CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) c
 
 CreateBucketOutcomeCallable S3Client::CreateBucketCallable(const CreateBucketRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::CreateBucket, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateBucket( request ); } );
 }
 
 void S3Client::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::CreateBucketAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::CreateBucketAsyncHelper(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -300,12 +297,12 @@ CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipa
 
 CreateMultipartUploadOutcomeCallable S3Client::CreateMultipartUploadCallable(const CreateMultipartUploadRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::CreateMultipartUpload, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->CreateMultipartUpload( request ); } );
 }
 
 void S3Client::CreateMultipartUploadAsync(const CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::CreateMultipartUploadAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMultipartUploadAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::CreateMultipartUploadAsyncHelper(const CreateMultipartUploadRequest& request, const CreateMultipartUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -331,12 +328,12 @@ DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) c
 
 DeleteBucketOutcomeCallable S3Client::DeleteBucketCallable(const DeleteBucketRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucket, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucket( request ); } );
 }
 
 void S3Client::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -363,12 +360,12 @@ DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest
 
 DeleteBucketCorsOutcomeCallable S3Client::DeleteBucketCorsCallable(const DeleteBucketCorsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketCors, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketCors( request ); } );
 }
 
 void S3Client::DeleteBucketCorsAsync(const DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketCorsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketCorsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketCorsAsyncHelper(const DeleteBucketCorsRequest& request, const DeleteBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -395,12 +392,12 @@ DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketL
 
 DeleteBucketLifecycleOutcomeCallable S3Client::DeleteBucketLifecycleCallable(const DeleteBucketLifecycleRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketLifecycle, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketLifecycle( request ); } );
 }
 
 void S3Client::DeleteBucketLifecycleAsync(const DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketLifecycleAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketLifecycleAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketLifecycleAsyncHelper(const DeleteBucketLifecycleRequest& request, const DeleteBucketLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -427,12 +424,12 @@ DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyR
 
 DeleteBucketPolicyOutcomeCallable S3Client::DeleteBucketPolicyCallable(const DeleteBucketPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketPolicy( request ); } );
 }
 
 void S3Client::DeleteBucketPolicyAsync(const DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketPolicyAsyncHelper(const DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -459,12 +456,12 @@ DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBuc
 
 DeleteBucketReplicationOutcomeCallable S3Client::DeleteBucketReplicationCallable(const DeleteBucketReplicationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketReplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketReplication( request ); } );
 }
 
 void S3Client::DeleteBucketReplicationAsync(const DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketReplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketReplicationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketReplicationAsyncHelper(const DeleteBucketReplicationRequest& request, const DeleteBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -491,12 +488,12 @@ DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggi
 
 DeleteBucketTaggingOutcomeCallable S3Client::DeleteBucketTaggingCallable(const DeleteBucketTaggingRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketTagging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketTagging( request ); } );
 }
 
 void S3Client::DeleteBucketTaggingAsync(const DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketTaggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketTaggingAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketTaggingAsyncHelper(const DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -523,12 +520,12 @@ DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsi
 
 DeleteBucketWebsiteOutcomeCallable S3Client::DeleteBucketWebsiteCallable(const DeleteBucketWebsiteRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteBucketWebsite, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteBucketWebsite( request ); } );
 }
 
 void S3Client::DeleteBucketWebsiteAsync(const DeleteBucketWebsiteRequest& request, const DeleteBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteBucketWebsiteAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketWebsiteAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteBucketWebsiteAsyncHelper(const DeleteBucketWebsiteRequest& request, const DeleteBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -556,12 +553,12 @@ DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) c
 
 DeleteObjectOutcomeCallable S3Client::DeleteObjectCallable(const DeleteObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteObject( request ); } );
 }
 
 void S3Client::DeleteObjectAsync(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteObjectAsyncHelper(const DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -588,12 +585,12 @@ DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request
 
 DeleteObjectsOutcomeCallable S3Client::DeleteObjectsCallable(const DeleteObjectsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::DeleteObjects, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->DeleteObjects( request ); } );
 }
 
 void S3Client::DeleteObjectsAsync(const DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::DeleteObjectsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteObjectsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::DeleteObjectsAsyncHelper(const DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -620,12 +617,12 @@ GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfigurati
 
 GetBucketAccelerateConfigurationOutcomeCallable S3Client::GetBucketAccelerateConfigurationCallable(const GetBucketAccelerateConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketAccelerateConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketAccelerateConfiguration( request ); } );
 }
 
 void S3Client::GetBucketAccelerateConfigurationAsync(const GetBucketAccelerateConfigurationRequest& request, const GetBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketAccelerateConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAccelerateConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketAccelerateConfigurationAsyncHelper(const GetBucketAccelerateConfigurationRequest& request, const GetBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -652,12 +649,12 @@ GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) c
 
 GetBucketAclOutcomeCallable S3Client::GetBucketAclCallable(const GetBucketAclRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketAcl, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketAcl( request ); } );
 }
 
 void S3Client::GetBucketAclAsync(const GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketAclAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAclAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketAclAsyncHelper(const GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -684,12 +681,12 @@ GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request
 
 GetBucketCorsOutcomeCallable S3Client::GetBucketCorsCallable(const GetBucketCorsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketCors, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketCors( request ); } );
 }
 
 void S3Client::GetBucketCorsAsync(const GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketCorsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketCorsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketCorsAsyncHelper(const GetBucketCorsRequest& request, const GetBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -716,12 +713,12 @@ GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration
 
 GetBucketLifecycleConfigurationOutcomeCallable S3Client::GetBucketLifecycleConfigurationCallable(const GetBucketLifecycleConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketLifecycleConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketLifecycleConfiguration( request ); } );
 }
 
 void S3Client::GetBucketLifecycleConfigurationAsync(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketLifecycleConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketLifecycleConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketLifecycleConfigurationAsyncHelper(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -748,12 +745,12 @@ GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequ
 
 GetBucketLocationOutcomeCallable S3Client::GetBucketLocationCallable(const GetBucketLocationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketLocation, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketLocation( request ); } );
 }
 
 void S3Client::GetBucketLocationAsync(const GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketLocationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketLocationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketLocationAsyncHelper(const GetBucketLocationRequest& request, const GetBucketLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -780,12 +777,12 @@ GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest
 
 GetBucketLoggingOutcomeCallable S3Client::GetBucketLoggingCallable(const GetBucketLoggingRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketLogging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketLogging( request ); } );
 }
 
 void S3Client::GetBucketLoggingAsync(const GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketLoggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketLoggingAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketLoggingAsyncHelper(const GetBucketLoggingRequest& request, const GetBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -812,12 +809,12 @@ GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfigu
 
 GetBucketNotificationConfigurationOutcomeCallable S3Client::GetBucketNotificationConfigurationCallable(const GetBucketNotificationConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketNotificationConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketNotificationConfiguration( request ); } );
 }
 
 void S3Client::GetBucketNotificationConfigurationAsync(const GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketNotificationConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketNotificationConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketNotificationConfigurationAsyncHelper(const GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -844,12 +841,12 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
 
 GetBucketPolicyOutcomeCallable S3Client::GetBucketPolicyCallable(const GetBucketPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketPolicy( request ); } );
 }
 
 void S3Client::GetBucketPolicyAsync(const GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketPolicyAsyncHelper(const GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -876,12 +873,12 @@ GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplic
 
 GetBucketReplicationOutcomeCallable S3Client::GetBucketReplicationCallable(const GetBucketReplicationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketReplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketReplication( request ); } );
 }
 
 void S3Client::GetBucketReplicationAsync(const GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketReplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketReplicationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketReplicationAsyncHelper(const GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -908,12 +905,12 @@ GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucket
 
 GetBucketRequestPaymentOutcomeCallable S3Client::GetBucketRequestPaymentCallable(const GetBucketRequestPaymentRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketRequestPayment, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketRequestPayment( request ); } );
 }
 
 void S3Client::GetBucketRequestPaymentAsync(const GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketRequestPaymentAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketRequestPaymentAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketRequestPaymentAsyncHelper(const GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -940,12 +937,12 @@ GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest
 
 GetBucketTaggingOutcomeCallable S3Client::GetBucketTaggingCallable(const GetBucketTaggingRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketTagging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketTagging( request ); } );
 }
 
 void S3Client::GetBucketTaggingAsync(const GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketTaggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketTaggingAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketTaggingAsyncHelper(const GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -972,12 +969,12 @@ GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioni
 
 GetBucketVersioningOutcomeCallable S3Client::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketVersioning, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketVersioning( request ); } );
 }
 
 void S3Client::GetBucketVersioningAsync(const GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketVersioningAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketVersioningAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketVersioningAsyncHelper(const GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1004,12 +1001,12 @@ GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest
 
 GetBucketWebsiteOutcomeCallable S3Client::GetBucketWebsiteCallable(const GetBucketWebsiteRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetBucketWebsite, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetBucketWebsite( request ); } );
 }
 
 void S3Client::GetBucketWebsiteAsync(const GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetBucketWebsiteAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketWebsiteAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetBucketWebsiteAsyncHelper(const GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1037,12 +1034,12 @@ GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
 
 GetObjectOutcomeCallable S3Client::GetObjectCallable(const GetObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetObject( request ); } );
 }
 
 void S3Client::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetObjectAsyncHelper(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1071,12 +1068,12 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
 
 GetObjectAclOutcomeCallable S3Client::GetObjectAclCallable(const GetObjectAclRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetObjectAcl, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetObjectAcl( request ); } );
 }
 
 void S3Client::GetObjectAclAsync(const GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetObjectAclAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectAclAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetObjectAclAsyncHelper(const GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1105,12 +1102,12 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
 
 GetObjectTorrentOutcomeCallable S3Client::GetObjectTorrentCallable(const GetObjectTorrentRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::GetObjectTorrent, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->GetObjectTorrent( request ); } );
 }
 
 void S3Client::GetObjectTorrentAsync(const GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::GetObjectTorrentAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectTorrentAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::GetObjectTorrentAsyncHelper(const GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1136,12 +1133,12 @@ HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
 
 HeadBucketOutcomeCallable S3Client::HeadBucketCallable(const HeadBucketRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::HeadBucket, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->HeadBucket( request ); } );
 }
 
 void S3Client::HeadBucketAsync(const HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::HeadBucketAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->HeadBucketAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::HeadBucketAsyncHelper(const HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1169,12 +1166,12 @@ HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
 
 HeadObjectOutcomeCallable S3Client::HeadObjectCallable(const HeadObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::HeadObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->HeadObject( request ); } );
 }
 
 void S3Client::HeadObjectAsync(const HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::HeadObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->HeadObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::HeadObjectAsyncHelper(const HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1199,12 +1196,12 @@ ListBucketsOutcome S3Client::ListBuckets() const
 
 ListBucketsOutcomeCallable S3Client::ListBucketsCallable() const
 {
-  return std::async(std::launch::async, &S3Client::ListBuckets, this);
+  return std::async(std::launch::async, [this](){ return this->ListBuckets(); } );
 }
 
 void S3Client::ListBucketsAsync(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListBucketsAsyncHelper, this, handler, context);
+  m_executor->Submit( [this, handler, context](){ this->ListBucketsAsyncHelper( handler, context ); } );
 }
 
 void S3Client::ListBucketsAsyncHelper(const ListBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1231,12 +1228,12 @@ ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUp
 
 ListMultipartUploadsOutcomeCallable S3Client::ListMultipartUploadsCallable(const ListMultipartUploadsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::ListMultipartUploads, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListMultipartUploads( request ); } );
 }
 
 void S3Client::ListMultipartUploadsAsync(const ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListMultipartUploadsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListMultipartUploadsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRequest& request, const ListMultipartUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1263,12 +1260,12 @@ ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsR
 
 ListObjectVersionsOutcomeCallable S3Client::ListObjectVersionsCallable(const ListObjectVersionsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::ListObjectVersions, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListObjectVersions( request ); } );
 }
 
 void S3Client::ListObjectVersionsAsync(const ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListObjectVersionsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListObjectVersionsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::ListObjectVersionsAsyncHelper(const ListObjectVersionsRequest& request, const ListObjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1294,12 +1291,12 @@ ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) cons
 
 ListObjectsOutcomeCallable S3Client::ListObjectsCallable(const ListObjectsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::ListObjects, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListObjects( request ); } );
 }
 
 void S3Client::ListObjectsAsync(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListObjectsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListObjectsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::ListObjectsAsyncHelper(const ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1326,12 +1323,12 @@ ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request
 
 ListObjectsV2OutcomeCallable S3Client::ListObjectsV2Callable(const ListObjectsV2Request& request) const
 {
-  return std::async(std::launch::async, &S3Client::ListObjectsV2, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListObjectsV2( request ); } );
 }
 
 void S3Client::ListObjectsV2Async(const ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListObjectsV2AsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListObjectsV2AsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::ListObjectsV2AsyncHelper(const ListObjectsV2Request& request, const ListObjectsV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1359,12 +1356,12 @@ ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
 
 ListPartsOutcomeCallable S3Client::ListPartsCallable(const ListPartsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::ListParts, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->ListParts( request ); } );
 }
 
 void S3Client::ListPartsAsync(const ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::ListPartsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->ListPartsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::ListPartsAsyncHelper(const ListPartsRequest& request, const ListPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1391,12 +1388,12 @@ PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfigurati
 
 PutBucketAccelerateConfigurationOutcomeCallable S3Client::PutBucketAccelerateConfigurationCallable(const PutBucketAccelerateConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketAccelerateConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketAccelerateConfiguration( request ); } );
 }
 
 void S3Client::PutBucketAccelerateConfigurationAsync(const PutBucketAccelerateConfigurationRequest& request, const PutBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketAccelerateConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketAccelerateConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketAccelerateConfigurationAsyncHelper(const PutBucketAccelerateConfigurationRequest& request, const PutBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1423,12 +1420,12 @@ PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) c
 
 PutBucketAclOutcomeCallable S3Client::PutBucketAclCallable(const PutBucketAclRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketAcl, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketAcl( request ); } );
 }
 
 void S3Client::PutBucketAclAsync(const PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketAclAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketAclAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketAclAsyncHelper(const PutBucketAclRequest& request, const PutBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1455,12 +1452,12 @@ PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request
 
 PutBucketCorsOutcomeCallable S3Client::PutBucketCorsCallable(const PutBucketCorsRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketCors, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketCors( request ); } );
 }
 
 void S3Client::PutBucketCorsAsync(const PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketCorsAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketCorsAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketCorsAsyncHelper(const PutBucketCorsRequest& request, const PutBucketCorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1487,12 +1484,12 @@ PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration
 
 PutBucketLifecycleConfigurationOutcomeCallable S3Client::PutBucketLifecycleConfigurationCallable(const PutBucketLifecycleConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketLifecycleConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketLifecycleConfiguration( request ); } );
 }
 
 void S3Client::PutBucketLifecycleConfigurationAsync(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketLifecycleConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketLifecycleConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketLifecycleConfigurationAsyncHelper(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1519,12 +1516,12 @@ PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest
 
 PutBucketLoggingOutcomeCallable S3Client::PutBucketLoggingCallable(const PutBucketLoggingRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketLogging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketLogging( request ); } );
 }
 
 void S3Client::PutBucketLoggingAsync(const PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketLoggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketLoggingAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketLoggingAsyncHelper(const PutBucketLoggingRequest& request, const PutBucketLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1551,12 +1548,12 @@ PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfigu
 
 PutBucketNotificationConfigurationOutcomeCallable S3Client::PutBucketNotificationConfigurationCallable(const PutBucketNotificationConfigurationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketNotificationConfiguration, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketNotificationConfiguration( request ); } );
 }
 
 void S3Client::PutBucketNotificationConfigurationAsync(const PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketNotificationConfigurationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketNotificationConfigurationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketNotificationConfigurationAsyncHelper(const PutBucketNotificationConfigurationRequest& request, const PutBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1583,12 +1580,12 @@ PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& r
 
 PutBucketPolicyOutcomeCallable S3Client::PutBucketPolicyCallable(const PutBucketPolicyRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketPolicy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketPolicy( request ); } );
 }
 
 void S3Client::PutBucketPolicyAsync(const PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketPolicyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketPolicyAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketPolicyAsyncHelper(const PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1615,12 +1612,12 @@ PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplic
 
 PutBucketReplicationOutcomeCallable S3Client::PutBucketReplicationCallable(const PutBucketReplicationRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketReplication, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketReplication( request ); } );
 }
 
 void S3Client::PutBucketReplicationAsync(const PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketReplicationAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketReplicationAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketReplicationAsyncHelper(const PutBucketReplicationRequest& request, const PutBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1647,12 +1644,12 @@ PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucket
 
 PutBucketRequestPaymentOutcomeCallable S3Client::PutBucketRequestPaymentCallable(const PutBucketRequestPaymentRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketRequestPayment, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketRequestPayment( request ); } );
 }
 
 void S3Client::PutBucketRequestPaymentAsync(const PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketRequestPaymentAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketRequestPaymentAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketRequestPaymentAsyncHelper(const PutBucketRequestPaymentRequest& request, const PutBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1679,12 +1676,12 @@ PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest
 
 PutBucketTaggingOutcomeCallable S3Client::PutBucketTaggingCallable(const PutBucketTaggingRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketTagging, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketTagging( request ); } );
 }
 
 void S3Client::PutBucketTaggingAsync(const PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketTaggingAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketTaggingAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketTaggingAsyncHelper(const PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1711,12 +1708,12 @@ PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioni
 
 PutBucketVersioningOutcomeCallable S3Client::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketVersioning, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketVersioning( request ); } );
 }
 
 void S3Client::PutBucketVersioningAsync(const PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketVersioningAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketVersioningAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketVersioningAsyncHelper(const PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1743,12 +1740,12 @@ PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest
 
 PutBucketWebsiteOutcomeCallable S3Client::PutBucketWebsiteCallable(const PutBucketWebsiteRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutBucketWebsite, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutBucketWebsite( request ); } );
 }
 
 void S3Client::PutBucketWebsiteAsync(const PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutBucketWebsiteAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutBucketWebsiteAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutBucketWebsiteAsyncHelper(const PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1776,12 +1773,12 @@ PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
 
 PutObjectOutcomeCallable S3Client::PutObjectCallable(const PutObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutObject( request ); } );
 }
 
 void S3Client::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutObjectAsyncHelper(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1810,12 +1807,12 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
 
 PutObjectAclOutcomeCallable S3Client::PutObjectAclCallable(const PutObjectAclRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::PutObjectAcl, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->PutObjectAcl( request ); } );
 }
 
 void S3Client::PutObjectAclAsync(const PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::PutObjectAclAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectAclAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::PutObjectAclAsyncHelper(const PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1844,12 +1841,12 @@ RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request
 
 RestoreObjectOutcomeCallable S3Client::RestoreObjectCallable(const RestoreObjectRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::RestoreObject, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->RestoreObject( request ); } );
 }
 
 void S3Client::RestoreObjectAsync(const RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::RestoreObjectAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->RestoreObjectAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::RestoreObjectAsyncHelper(const RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1877,12 +1874,12 @@ UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
 
 UploadPartOutcomeCallable S3Client::UploadPartCallable(const UploadPartRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::UploadPart, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadPart( request ); } );
 }
 
 void S3Client::UploadPartAsync(const UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::UploadPartAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadPartAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::UploadPartAsyncHelper(const UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1910,12 +1907,12 @@ UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& requ
 
 UploadPartCopyOutcomeCallable S3Client::UploadPartCopyCallable(const UploadPartCopyRequest& request) const
 {
-  return std::async(std::launch::async, &S3Client::UploadPartCopy, this, request);
+  return std::async(std::launch::async, [this, request](){ return this->UploadPartCopy( request ); } );
 }
 
 void S3Client::UploadPartCopyAsync(const UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit(&S3Client::UploadPartCopyAsyncHelper, this, request, handler, context);
+  m_executor->Submit( [this, request, handler, context](){ this->UploadPartCopyAsyncHelper( request, handler, context ); } );
 }
 
 void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

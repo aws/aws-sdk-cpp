@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,6 +34,7 @@ namespace Aws
         static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
         static const int PENDING_TRANSFER_HASH = HashingUtils::HashString("PENDING_TRANSFER");
         static const int REGISTER_INACTIVE_HASH = HashingUtils::HashString("REGISTER_INACTIVE");
+        static const int PENDING_ACTIVATION_HASH = HashingUtils::HashString("PENDING_ACTIVATION");
 
 
         CertificateStatus GetCertificateStatusForName(const Aws::String& name)
@@ -59,6 +60,10 @@ namespace Aws
           {
             return CertificateStatus::REGISTER_INACTIVE;
           }
+          else if (hashCode == PENDING_ACTIVATION_HASH)
+          {
+            return CertificateStatus::PENDING_ACTIVATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "PENDING_TRANSFER";
           case CertificateStatus::REGISTER_INACTIVE:
             return "REGISTER_INACTIVE";
+          case CertificateStatus::PENDING_ACTIVATION:
+            return "PENDING_ACTIVATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

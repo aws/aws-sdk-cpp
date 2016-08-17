@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -35,8 +35,7 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>Contains a list of event sources (see
-   * <a>API_EventSourceMappingConfiguration</a>)</p>
+   * <p>Contains a list of event sources (see )</p>
    */
   class AWS_LAMBDA_API ListEventSourceMappingsResult
   {

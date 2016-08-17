@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -234,6 +234,55 @@ namespace Model
     inline PendingModifiedValues& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
     /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline PendingModifiedValues& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline PendingModifiedValues& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline PendingModifiedValues& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+
+    /**
      * <p>Specifies the new Provisioned IOPS value for the DB instance that will be
      * applied or is being applied.</p>
      */
@@ -363,6 +412,41 @@ namespace Model
      */
     inline PendingModifiedValues& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. </p>
+     */
+    inline PendingModifiedValues& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+
   private:
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
@@ -378,6 +462,8 @@ namespace Model
     bool m_multiAZHasBeenSet;
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+    Aws::String m_licenseModel;
+    bool m_licenseModelHasBeenSet;
     int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_dBInstanceIdentifier;
@@ -386,6 +472,8 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     Aws::String m_cACertificateIdentifier;
     bool m_cACertificateIdentifierHasBeenSet;
+    Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
   };
 
 } // namespace Model

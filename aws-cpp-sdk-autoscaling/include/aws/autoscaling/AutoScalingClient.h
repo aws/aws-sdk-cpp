@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,6 +20,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/AttachLoadBalancersResult.h>
 #include <aws/autoscaling/model/CompleteLifecycleActionResult.h>
 #include <aws/autoscaling/model/DeleteLifecycleHookResult.h>
@@ -31,6 +32,7 @@
 #include <aws/autoscaling/model/DescribeLaunchConfigurationsResult.h>
 #include <aws/autoscaling/model/DescribeLifecycleHookTypesResult.h>
 #include <aws/autoscaling/model/DescribeLifecycleHooksResult.h>
+#include <aws/autoscaling/model/DescribeLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/DescribeLoadBalancersResult.h>
 #include <aws/autoscaling/model/DescribeMetricCollectionTypesResult.h>
 #include <aws/autoscaling/model/DescribeNotificationConfigurationsResult.h>
@@ -41,6 +43,7 @@
 #include <aws/autoscaling/model/DescribeTagsResult.h>
 #include <aws/autoscaling/model/DescribeTerminationPolicyTypesResult.h>
 #include <aws/autoscaling/model/DetachInstancesResult.h>
+#include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsResult.h>
 #include <aws/autoscaling/model/DetachLoadBalancersResult.h>
 #include <aws/autoscaling/model/EnterStandbyResult.h>
 #include <aws/autoscaling/model/ExitStandbyResult.h>
@@ -96,6 +99,7 @@ namespace AutoScaling
 namespace Model
 {
         class AttachInstancesRequest;
+        class AttachLoadBalancerTargetGroupsRequest;
         class AttachLoadBalancersRequest;
         class CompleteLifecycleActionRequest;
         class CreateAutoScalingGroupRequest;
@@ -116,6 +120,7 @@ namespace Model
         class DescribeLaunchConfigurationsRequest;
         class DescribeLifecycleHookTypesRequest;
         class DescribeLifecycleHooksRequest;
+        class DescribeLoadBalancerTargetGroupsRequest;
         class DescribeLoadBalancersRequest;
         class DescribeMetricCollectionTypesRequest;
         class DescribeNotificationConfigurationsRequest;
@@ -126,6 +131,7 @@ namespace Model
         class DescribeTagsRequest;
         class DescribeTerminationPolicyTypesRequest;
         class DetachInstancesRequest;
+        class DetachLoadBalancerTargetGroupsRequest;
         class DetachLoadBalancersRequest;
         class DisableMetricsCollectionRequest;
         class EnableMetricsCollectionRequest;
@@ -146,6 +152,7 @@ namespace Model
         class UpdateAutoScalingGroupRequest;
 
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> AttachInstancesOutcome;
+        typedef Aws::Utils::Outcome<AttachLoadBalancerTargetGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> AttachLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<AttachLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> AttachLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<CompleteLifecycleActionResult, Aws::Client::AWSError<AutoScalingErrors>> CompleteLifecycleActionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> CreateAutoScalingGroupOutcome;
@@ -166,6 +173,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLaunchConfigurationsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLaunchConfigurationsOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleHookTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLifecycleHookTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleHooksResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLifecycleHooksOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancerTargetGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<DescribeMetricCollectionTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeMetricCollectionTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeNotificationConfigurationsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeNotificationConfigurationsOutcome;
@@ -176,6 +184,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeTerminationPolicyTypesResult, Aws::Client::AWSError<AutoScalingErrors>> DescribeTerminationPolicyTypesOutcome;
         typedef Aws::Utils::Outcome<DetachInstancesResult, Aws::Client::AWSError<AutoScalingErrors>> DetachInstancesOutcome;
+        typedef Aws::Utils::Outcome<DetachLoadBalancerTargetGroupsResult, Aws::Client::AWSError<AutoScalingErrors>> DetachLoadBalancerTargetGroupsOutcome;
         typedef Aws::Utils::Outcome<DetachLoadBalancersResult, Aws::Client::AWSError<AutoScalingErrors>> DetachLoadBalancersOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> DisableMetricsCollectionOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> EnableMetricsCollectionOutcome;
@@ -196,6 +205,7 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<AutoScalingErrors>> UpdateAutoScalingGroupOutcome;
 
         typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
+        typedef std::future<AttachLoadBalancerTargetGroupsOutcome> AttachLoadBalancerTargetGroupsOutcomeCallable;
         typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
         typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
         typedef std::future<CreateAutoScalingGroupOutcome> CreateAutoScalingGroupOutcomeCallable;
@@ -216,6 +226,7 @@ namespace Model
         typedef std::future<DescribeLaunchConfigurationsOutcome> DescribeLaunchConfigurationsOutcomeCallable;
         typedef std::future<DescribeLifecycleHookTypesOutcome> DescribeLifecycleHookTypesOutcomeCallable;
         typedef std::future<DescribeLifecycleHooksOutcome> DescribeLifecycleHooksOutcomeCallable;
+        typedef std::future<DescribeLoadBalancerTargetGroupsOutcome> DescribeLoadBalancerTargetGroupsOutcomeCallable;
         typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
         typedef std::future<DescribeMetricCollectionTypesOutcome> DescribeMetricCollectionTypesOutcomeCallable;
         typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
@@ -226,6 +237,7 @@ namespace Model
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DescribeTerminationPolicyTypesOutcome> DescribeTerminationPolicyTypesOutcomeCallable;
         typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
+        typedef std::future<DetachLoadBalancerTargetGroupsOutcome> DetachLoadBalancerTargetGroupsOutcomeCallable;
         typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
         typedef std::future<DisableMetricsCollectionOutcome> DisableMetricsCollectionOutcomeCallable;
         typedef std::future<EnableMetricsCollectionOutcome> EnableMetricsCollectionOutcomeCallable;
@@ -249,6 +261,7 @@ namespace Model
   class AutoScalingClient;
 
     typedef std::function<void(const AutoScalingClient*, const Model::AttachInstancesRequest&, const Model::AttachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachInstancesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancerTargetGroupsRequest&, const Model::AttachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancersResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CompleteLifecycleActionRequest&, const Model::CompleteLifecycleActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLifecycleActionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::CreateAutoScalingGroupRequest&, const Model::CreateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoScalingGroupResponseReceivedHandler;
@@ -269,6 +282,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLaunchConfigurationsRequest&, const Model::DescribeLaunchConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchConfigurationsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHookTypesRequest&, const Model::DescribeLifecycleHookTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHookTypesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHooksRequest&, const Model::DescribeLifecycleHooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHooksResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLoadBalancerTargetGroupsRequest&, const Model::DescribeLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeMetricCollectionTypesRequest&, const Model::DescribeMetricCollectionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricCollectionTypesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeNotificationConfigurationsRequest&, const Model::DescribeNotificationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationConfigurationsResponseReceivedHandler;
@@ -279,6 +293,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTerminationPolicyTypesResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancerTargetGroupsRequest&, const Model::DetachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancerTargetGroupsResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancersResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::DisableMetricsCollectionRequest&, const Model::DisableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableMetricsCollectionResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::EnableMetricsCollectionRequest&, const Model::EnableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableMetricsCollectionResponseReceivedHandler;
@@ -335,9 +350,13 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>For more information, see <a
+         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * attached to your Auto Scaling group, the instances are also registered with the
+         * load balancer. If there are target groups attached to your Auto Scaling group,
+         * the instances are also registered with the target groups.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
-         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
         virtual Model::AttachInstancesOutcome AttachInstances(const Model::AttachInstancesRequest& request) const;
@@ -347,9 +366,13 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>For more information, see <a
+         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * attached to your Auto Scaling group, the instances are also registered with the
+         * load balancer. If there are target groups attached to your Auto Scaling group,
+         * the instances are also registered with the target groups.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
-         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -361,9 +384,13 @@ namespace Model
          * <p>When you attach instances, Auto Scaling increases the desired capacity of the
          * group by the number of instances being attached. If the number of instances
          * being attached plus the desired capacity of the group exceeds the maximum size
-         * of the group, the operation fails.</p> <p>For more information, see <a
+         * of the group, the operation fails.</p> <p>If there is a Classic load balancer
+         * attached to your Auto Scaling group, the instances are also registered with the
+         * load balancer. If there are target groups attached to your Auto Scaling group,
+         * the instances are also registered with the target groups.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
-         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -371,23 +398,67 @@ namespace Model
         virtual void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches one or more load balancers to the specified Auto Scaling group.</p>
-         * <p>To describe the load balancers for an Auto Scaling group, use
-         * <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling
-         * group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
+         * <p>To describe the target groups for an Auto Scaling group, use
+         * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
+         * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
-         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
+         */
+        virtual Model::AttachLoadBalancerTargetGroupsOutcome AttachLoadBalancerTargetGroups(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
+         * <p>To describe the target groups for an Auto Scaling group, use
+         * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
+         * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachLoadBalancerTargetGroupsOutcomeCallable AttachLoadBalancerTargetGroupsCallable(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
+         * <p>To describe the target groups for an Auto Scaling group, use
+         * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
+         * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachLoadBalancerTargetGroupsAsync(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application load balancer instead, see
+         * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
+         * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
+         * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
         virtual Model::AttachLoadBalancersOutcome AttachLoadBalancers(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Attaches one or more load balancers to the specified Auto Scaling group.</p>
-         * <p>To describe the load balancers for an Auto Scaling group, use
-         * <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling
-         * group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
+         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application load balancer instead, see
+         * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
+         * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
+         * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
-         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -395,12 +466,14 @@ namespace Model
         virtual Model::AttachLoadBalancersOutcomeCallable AttachLoadBalancersCallable(const Model::AttachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Attaches one or more load balancers to the specified Auto Scaling group.</p>
-         * <p>To describe the load balancers for an Auto Scaling group, use
-         * <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling
-         * group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
+         * <p>Attaches one or more Classic load balancers to the specified Auto Scaling
+         * group.</p> <p>To attach an Application load balancer instead, see
+         * <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for
+         * an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
+         * balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
-         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -410,36 +483,38 @@ namespace Model
         /**
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
-         * lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda
-         * function and a rule that allows CloudWatch Events to invoke your Lambda function
-         * when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a
-         * notification target and an IAM role. The target can be either an Amazon SQS
-         * queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle
-         * notifications to the target.</li> <li>Create the lifecycle hook. Specify whether
-         * the hook is used when the instances launch or terminate.</li> <li>If you need
-         * more time, record the lifecycle action heartbeat to keep the instance in a
-         * pending state.</li> <li><b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b></li> </ol> <p>For more information, see <a
+         * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
+         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p>If you need more time, record the lifecycle action
+         * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
+         * finish before the timeout period ends, complete the lifecycle action.</b> </p>
+         * </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CompleteLifecycleActionOutcome CompleteLifecycleAction(const Model::CompleteLifecycleActionRequest& request) const;
 
         /**
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
-         * lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda
-         * function and a rule that allows CloudWatch Events to invoke your Lambda function
-         * when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a
-         * notification target and an IAM role. The target can be either an Amazon SQS
-         * queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle
-         * notifications to the target.</li> <li>Create the lifecycle hook. Specify whether
-         * the hook is used when the instances launch or terminate.</li> <li>If you need
-         * more time, record the lifecycle action heartbeat to keep the instance in a
-         * pending state.</li> <li><b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b></li> </ol> <p>For more information, see <a
+         * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
+         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p>If you need more time, record the lifecycle action
+         * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
+         * finish before the timeout period ends, complete the lifecycle action.</b> </p>
+         * </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -448,18 +523,19 @@ namespace Model
         /**
          * <p>Completes the lifecycle action for the specified token or instance with the
          * specified result.</p> <p>This step is a part of the procedure for adding a
-         * lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a Lambda
-         * function and a rule that allows CloudWatch Events to invoke your Lambda function
-         * when Auto Scaling launches or terminates instances.</li> <li>(Optional) Create a
-         * notification target and an IAM role. The target can be either an Amazon SQS
-         * queue or an Amazon SNS topic. The role allows Auto Scaling to publish lifecycle
-         * notifications to the target.</li> <li>Create the lifecycle hook. Specify whether
-         * the hook is used when the instances launch or terminate.</li> <li>If you need
-         * more time, record the lifecycle action heartbeat to keep the instance in a
-         * pending state.</li> <li><b>If you finish before the timeout period ends,
-         * complete the lifecycle action.</b></li> </ol> <p>For more information, see <a
+         * lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
+         * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p>If you need more time, record the lifecycle action
+         * heartbeat to keep the instance in a pending state.</p> </li> <li> <p> <b>If you
+         * finish before the timeout period ends, complete the lifecycle action.</b> </p>
+         * </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -471,7 +547,7 @@ namespace Model
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateAutoScalingGroupOutcome CreateAutoScalingGroup(const Model::CreateAutoScalingGroupRequest& request) const;
 
@@ -481,7 +557,7 @@ namespace Model
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -493,7 +569,7 @@ namespace Model
          * 20 per region, the call fails. For information about viewing and updating this
          * limit, see <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -505,7 +581,7 @@ namespace Model
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
-         * Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateLaunchConfigurationOutcome CreateLaunchConfiguration(const Model::CreateLaunchConfigurationRequest& request) const;
 
@@ -515,7 +591,7 @@ namespace Model
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
-         * Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -527,7 +603,7 @@ namespace Model
          * information about viewing and updating this limit, see
          * <a>DescribeAccountLimits</a>.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
-         * Configurations</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Configurations</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -539,8 +615,7 @@ namespace Model
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
-         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer
-         * Guide</i>.</p>
+         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::CreateOrUpdateTagsOutcome CreateOrUpdateTags(const Model::CreateOrUpdateTagsRequest& request) const;
 
@@ -550,8 +625,7 @@ namespace Model
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
-         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer
-         * Guide</i>.</p>
+         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -563,8 +637,7 @@ namespace Model
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
-         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer
-         * Guide</i>.</p>
+         * Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -799,44 +872,38 @@ namespace Model
         virtual void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups. If a list of names is not
-         * provided, the call describes all Auto Scaling groups.</p>
+         * <p>Describes one or more Auto Scaling groups.</p>
          */
         virtual Model::DescribeAutoScalingGroupsOutcome DescribeAutoScalingGroups(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups. If a list of names is not
-         * provided, the call describes all Auto Scaling groups.</p>
+         * <p>Describes one or more Auto Scaling groups.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAutoScalingGroupsOutcomeCallable DescribeAutoScalingGroupsCallable(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups. If a list of names is not
-         * provided, the call describes all Auto Scaling groups.</p>
+         * <p>Describes one or more Auto Scaling groups.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAutoScalingGroupsAsync(const Model::DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more Auto Scaling instances. If a list is not provided, the
-         * call describes all instances.</p>
+         * <p>Describes one or more Auto Scaling instances.</p>
          */
         virtual Model::DescribeAutoScalingInstancesOutcome DescribeAutoScalingInstances(const Model::DescribeAutoScalingInstancesRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling instances. If a list is not provided, the
-         * call describes all instances.</p>
+         * <p>Describes one or more Auto Scaling instances.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeAutoScalingInstancesOutcomeCallable DescribeAutoScalingInstancesCallable(const Model::DescribeAutoScalingInstancesRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling instances. If a list is not provided, the
-         * call describes all instances.</p>
+         * <p>Describes one or more Auto Scaling instances.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -862,22 +929,19 @@ namespace Model
         virtual void DescribeAutoScalingNotificationTypesAsync(const Model::DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more launch configurations. If you omit the list of names,
-         * then the call describes all launch configurations.</p>
+         * <p>Describes one or more launch configurations.</p>
          */
         virtual Model::DescribeLaunchConfigurationsOutcome DescribeLaunchConfigurations(const Model::DescribeLaunchConfigurationsRequest& request) const;
 
         /**
-         * <p>Describes one or more launch configurations. If you omit the list of names,
-         * then the call describes all launch configurations.</p>
+         * <p>Describes one or more launch configurations.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeLaunchConfigurationsOutcomeCallable DescribeLaunchConfigurationsCallable(const Model::DescribeLaunchConfigurationsRequest& request) const;
 
         /**
-         * <p>Describes one or more launch configurations. If you omit the list of names,
-         * then the call describes all launch configurations.</p>
+         * <p>Describes one or more launch configurations.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -922,12 +986,37 @@ namespace Model
         virtual void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the target groups for the specified Auto Scaling group.</p>
+         */
+        virtual Model::DescribeLoadBalancerTargetGroupsOutcome DescribeLoadBalancerTargetGroups(const Model::DescribeLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the target groups for the specified Auto Scaling group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLoadBalancerTargetGroupsOutcomeCallable DescribeLoadBalancerTargetGroupsCallable(const Model::DescribeLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the target groups for the specified Auto Scaling group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLoadBalancerTargetGroupsAsync(const Model::DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
+         * <p>Note that this operation describes only Classic load balancers. If you have
+         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * instead.</p>
          */
         virtual Model::DescribeLoadBalancersOutcome DescribeLoadBalancers(const Model::DescribeLoadBalancersRequest& request) const;
 
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
+         * <p>Note that this operation describes only Classic load balancers. If you have
+         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * instead.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -935,6 +1024,9 @@ namespace Model
 
         /**
          * <p>Describes the load balancers for the specified Auto Scaling group.</p>
+         * <p>Note that this operation describes only Classic load balancers. If you have
+         * Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a>
+         * instead.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1011,17 +1103,13 @@ namespace Model
 
         /**
          * <p>Describes one or more scaling activities for the specified Auto Scaling
-         * group. If you omit the <code>ActivityIds</code>, the call returns all activities
-         * from the past six weeks. Activities are sorted by the start time. Activities
-         * still in progress appear first on the list.</p>
+         * group.</p>
          */
         virtual Model::DescribeScalingActivitiesOutcome DescribeScalingActivities(const Model::DescribeScalingActivitiesRequest& request) const;
 
         /**
          * <p>Describes one or more scaling activities for the specified Auto Scaling
-         * group. If you omit the <code>ActivityIds</code>, the call returns all activities
-         * from the past six weeks. Activities are sorted by the start time. Activities
-         * still in progress appear first on the list.</p>
+         * group.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1029,9 +1117,7 @@ namespace Model
 
         /**
          * <p>Describes one or more scaling activities for the specified Auto Scaling
-         * group. If you omit the <code>ActivityIds</code>, the call returns all activities
-         * from the past six weeks. Activities are sorted by the start time. Activities
-         * still in progress appear first on the list.</p>
+         * group.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1145,9 +1231,12 @@ namespace Model
          * <p>After the instances are detached, you can manage them independently from the
          * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
          * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>For more information, see <a
+         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
+         * the Auto Scaling group, the instances are deregistered from the load balancer.
+         * If there are target groups attached to the Auto Scaling group, the instances are
+         * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
-         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
         virtual Model::DetachInstancesOutcome DetachInstances(const Model::DetachInstancesRequest& request) const;
@@ -1157,9 +1246,12 @@ namespace Model
          * <p>After the instances are detached, you can manage them independently from the
          * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
          * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>For more information, see <a
+         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
+         * the Auto Scaling group, the instances are deregistered from the load balancer.
+         * If there are target groups attached to the Auto Scaling group, the instances are
+         * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
-         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1171,9 +1263,12 @@ namespace Model
          * <p>After the instances are detached, you can manage them independently from the
          * rest of the Auto Scaling group.</p> <p>If you do not specify the option to
          * decrement the desired capacity, Auto Scaling launches instances to replace the
-         * ones that are detached.</p> <p>For more information, see <a
+         * ones that are detached.</p> <p>If there is a Classic load balancer attached to
+         * the Auto Scaling group, the instances are deregistered from the load balancer.
+         * If there are target groups attached to the Auto Scaling group, the instances are
+         * deregistered from the target groups.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
-         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling Developer
+         * EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1181,31 +1276,59 @@ namespace Model
         virtual void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more load balancers from the specified Auto Scaling group.</p>
-         * <p>When you detach a load balancer, it enters the <code>Removing</code> state
-         * while deregistering the instances in the group. When all instances are
-         * deregistered, then you can no longer describe the load balancer using
-         * <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
+         * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
+         */
+        virtual Model::DetachLoadBalancerTargetGroupsOutcome DetachLoadBalancerTargetGroups(const Model::DetachLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachLoadBalancerTargetGroupsOutcomeCallable DetachLoadBalancerTargetGroupsCallable(const Model::DetachLoadBalancerTargetGroupsRequest& request) const;
+
+        /**
+         * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachLoadBalancerTargetGroupsAsync(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
+         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * instead.</p> <p>When you detach a load balancer, it enters the
+         * <code>Removing</code> state while deregistering the instances in the group. When
+         * all instances are deregistered, then you can no longer describe the load
+         * balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain
+         * running.</p>
          */
         virtual Model::DetachLoadBalancersOutcome DetachLoadBalancers(const Model::DetachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Removes one or more load balancers from the specified Auto Scaling group.</p>
-         * <p>When you detach a load balancer, it enters the <code>Removing</code> state
-         * while deregistering the instances in the group. When all instances are
-         * deregistered, then you can no longer describe the load balancer using
-         * <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
+         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
+         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * instead.</p> <p>When you detach a load balancer, it enters the
+         * <code>Removing</code> state while deregistering the instances in the group. When
+         * all instances are deregistered, then you can no longer describe the load
+         * balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain
+         * running.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DetachLoadBalancersOutcomeCallable DetachLoadBalancersCallable(const Model::DetachLoadBalancersRequest& request) const;
 
         /**
-         * <p>Removes one or more load balancers from the specified Auto Scaling group.</p>
-         * <p>When you detach a load balancer, it enters the <code>Removing</code> state
-         * while deregistering the instances in the group. When all instances are
-         * deregistered, then you can no longer describe the load balancer using
-         * <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>
+         * <p>Detaches one or more Classic load balancers from the specified Auto Scaling
+         * group.</p> <p>Note that this operation detaches only Classic load balancers. If
+         * you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a>
+         * instead.</p> <p>When you detach a load balancer, it enters the
+         * <code>Removing</code> state while deregistering the instances in the group. When
+         * all instances are deregistered, then you can no longer describe the load
+         * balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain
+         * running.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1265,7 +1388,7 @@ namespace Model
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest& request) const;
 
@@ -1273,7 +1396,7 @@ namespace Model
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1283,7 +1406,7 @@ namespace Model
          * <p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1312,7 +1435,7 @@ namespace Model
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::ExitStandbyOutcome ExitStandby(const Model::ExitStandbyRequest& request) const;
 
@@ -1320,7 +1443,7 @@ namespace Model
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1330,7 +1453,7 @@ namespace Model
          * <p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For
          * more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1341,21 +1464,21 @@ namespace Model
          * <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an
          * instance that is not actively in service; for example, either when the instance
          * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
          * to invoke your Lambda function when Auto Scaling launches or terminates
-         * instances.</li> <li>(Optional) Create a notification target and an IAM role. The
-         * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
-         * Auto Scaling to publish lifecycle notifications to the target.</li>
-         * <li><b>Create the lifecycle hook. Specify whether the hook is used when the
-         * instances launch or terminate.</b></li> <li>If you need more time, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>If
-         * you finish before the timeout period ends, complete the lifecycle action.</li>
-         * </ol> <p>For more information, see <a
+         * instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM
+         * role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The
+         * role allows Auto Scaling to publish lifecycle notifications to the target.</p>
+         * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
+         * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
+         * time, record the lifecycle action heartbeat to keep the instance in a pending
+         * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
+         * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you
-         * exceed your maximum limit of lifecycle hooks, which by default is 50 per region,
-         * the call fails. For information about updating this limit, see <a
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
+         * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
          * Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
          */
@@ -1366,21 +1489,21 @@ namespace Model
          * <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an
          * instance that is not actively in service; for example, either when the instance
          * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
          * to invoke your Lambda function when Auto Scaling launches or terminates
-         * instances.</li> <li>(Optional) Create a notification target and an IAM role. The
-         * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
-         * Auto Scaling to publish lifecycle notifications to the target.</li>
-         * <li><b>Create the lifecycle hook. Specify whether the hook is used when the
-         * instances launch or terminate.</b></li> <li>If you need more time, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>If
-         * you finish before the timeout period ends, complete the lifecycle action.</li>
-         * </ol> <p>For more information, see <a
+         * instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM
+         * role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The
+         * role allows Auto Scaling to publish lifecycle notifications to the target.</p>
+         * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
+         * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
+         * time, record the lifecycle action heartbeat to keep the instance in a pending
+         * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
+         * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you
-         * exceed your maximum limit of lifecycle hooks, which by default is 50 per region,
-         * the call fails. For information about updating this limit, see <a
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
+         * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
          * Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
          *
@@ -1393,21 +1516,21 @@ namespace Model
          * <p>A lifecycle hook tells Auto Scaling that you want to perform an action on an
          * instance that is not actively in service; for example, either when the instance
          * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
-         * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
+         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
+         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
          * to invoke your Lambda function when Auto Scaling launches or terminates
-         * instances.</li> <li>(Optional) Create a notification target and an IAM role. The
-         * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
-         * Auto Scaling to publish lifecycle notifications to the target.</li>
-         * <li><b>Create the lifecycle hook. Specify whether the hook is used when the
-         * instances launch or terminate.</b></li> <li>If you need more time, record the
-         * lifecycle action heartbeat to keep the instance in a pending state.</li> <li>If
-         * you finish before the timeout period ends, complete the lifecycle action.</li>
-         * </ol> <p>For more information, see <a
+         * instances.</p> </li> <li> <p>(Optional) Create a notification target and an IAM
+         * role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The
+         * role allows Auto Scaling to publish lifecycle notifications to the target.</p>
+         * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
+         * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
+         * time, record the lifecycle action heartbeat to keep the instance in a pending
+         * state.</p> </li> <li> <p>If you finish before the timeout period ends, complete
+         * the lifecycle action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p> <p>If you
-         * exceed your maximum limit of lifecycle hooks, which by default is 50 per region,
-         * the call fails. For information about updating this limit, see <a
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p> <p>If you
+         * exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto
+         * Scaling group, the call fails. For information about updating this limit, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
          * Service Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
          *
@@ -1416,40 +1539,37 @@ namespace Model
         virtual void PutLifecycleHookAsync(const Model::PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Configures an Auto Scaling group to send notifications when specified events
-         * take place. Subscribers to this topic can have messages for events delivered to
-         * an endpoint such as a web server or email address. </p> <p>For more information
-         * see <a
+         * <p>Configures an Auto Scaling group to send notifications when specified events
+         * take place. Subscribers to the specified topic can have messages delivered to an
+         * endpoint such as a web server or an email address.</p> <p>This configuration
+         * overwrites any existing configuration.</p> <p>For more information see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
-         * Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling
-         * Developer Guide</i>.</p> <p>This configuration overwrites an existing
-         * configuration.</p>
+         * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
+         * User Guide</i>.</p>
          */
         virtual Model::PutNotificationConfigurationOutcome PutNotificationConfiguration(const Model::PutNotificationConfigurationRequest& request) const;
 
         /**
-         * <p> Configures an Auto Scaling group to send notifications when specified events
-         * take place. Subscribers to this topic can have messages for events delivered to
-         * an endpoint such as a web server or email address. </p> <p>For more information
-         * see <a
+         * <p>Configures an Auto Scaling group to send notifications when specified events
+         * take place. Subscribers to the specified topic can have messages delivered to an
+         * endpoint such as a web server or an email address.</p> <p>This configuration
+         * overwrites any existing configuration.</p> <p>For more information see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
-         * Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling
-         * Developer Guide</i>.</p> <p>This configuration overwrites an existing
-         * configuration.</p>
+         * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
+         * User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutNotificationConfigurationOutcomeCallable PutNotificationConfigurationCallable(const Model::PutNotificationConfigurationRequest& request) const;
 
         /**
-         * <p> Configures an Auto Scaling group to send notifications when specified events
-         * take place. Subscribers to this topic can have messages for events delivered to
-         * an endpoint such as a web server or email address. </p> <p>For more information
-         * see <a
+         * <p>Configures an Auto Scaling group to send notifications when specified events
+         * take place. Subscribers to the specified topic can have messages delivered to an
+         * endpoint such as a web server or an email address.</p> <p>This configuration
+         * overwrites any existing configuration.</p> <p>For more information see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
-         * Notifications When Your Auto Scaling Group Changes</a> in the <i>Auto Scaling
-         * Developer Guide</i>.</p> <p>This configuration overwrites an existing
-         * configuration.</p>
+         * SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling
+         * User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1496,34 +1616,34 @@ namespace Model
         virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates or updates a scheduled scaling action for an Auto Scaling group.
-         * When updating a scheduled scaling action, if you leave a parameter unspecified,
-         * the corresponding value remains unchanged in the affected Auto Scaling group.
-         * </p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
+         * updating a scheduled scaling action, if you leave a parameter unspecified, the
+         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
-         * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::PutScheduledUpdateGroupActionOutcome PutScheduledUpdateGroupAction(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
         /**
-         * <p> Creates or updates a scheduled scaling action for an Auto Scaling group.
-         * When updating a scheduled scaling action, if you leave a parameter unspecified,
-         * the corresponding value remains unchanged in the affected Auto Scaling group.
-         * </p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
+         * updating a scheduled scaling action, if you leave a parameter unspecified, the
+         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
-         * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutScheduledUpdateGroupActionOutcomeCallable PutScheduledUpdateGroupActionCallable(const Model::PutScheduledUpdateGroupActionRequest& request) const;
 
         /**
-         * <p> Creates or updates a scheduled scaling action for an Auto Scaling group.
-         * When updating a scheduled scaling action, if you leave a parameter unspecified,
-         * the corresponding value remains unchanged in the affected Auto Scaling group.
-         * </p> <p>For more information, see <a
+         * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. When
+         * updating a scheduled scaling action, if you leave a parameter unspecified, the
+         * corresponding value remains unchanged in the affected Auto Scaling group.</p>
+         * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
-         * Scaling</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1533,19 +1653,19 @@ namespace Model
          * <p>Records a heartbeat for the lifecycle action associated with the specified
          * token or instance. This extends the timeout by the length of time defined using
          * <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding
-         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a
+         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
          * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
-         * function when Auto Scaling launches or terminates instances.</li> <li>(Optional)
-         * Create a notification target and an IAM role. The target can be either an Amazon
-         * SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-         * lifecycle notifications to the target.</li> <li>Create the lifecycle hook.
-         * Specify whether the hook is used when the instances launch or terminate.</li>
-         * <li><b>If you need more time, record the lifecycle action heartbeat to keep the
-         * instance in a pending state.</b></li> <li>If you finish before the timeout
-         * period ends, complete the lifecycle action.</li> </ol> <p>For more information,
-         * see <a
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p> <b>If you need more time, record the lifecycle
+         * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
+         * <p>If you finish before the timeout period ends, complete the lifecycle
+         * action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::RecordLifecycleActionHeartbeatOutcome RecordLifecycleActionHeartbeat(const Model::RecordLifecycleActionHeartbeatRequest& request) const;
 
@@ -1553,19 +1673,19 @@ namespace Model
          * <p>Records a heartbeat for the lifecycle action associated with the specified
          * token or instance. This extends the timeout by the length of time defined using
          * <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding
-         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a
+         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
          * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
-         * function when Auto Scaling launches or terminates instances.</li> <li>(Optional)
-         * Create a notification target and an IAM role. The target can be either an Amazon
-         * SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-         * lifecycle notifications to the target.</li> <li>Create the lifecycle hook.
-         * Specify whether the hook is used when the instances launch or terminate.</li>
-         * <li><b>If you need more time, record the lifecycle action heartbeat to keep the
-         * instance in a pending state.</b></li> <li>If you finish before the timeout
-         * period ends, complete the lifecycle action.</li> </ol> <p>For more information,
-         * see <a
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p> <b>If you need more time, record the lifecycle
+         * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
+         * <p>If you finish before the timeout period ends, complete the lifecycle
+         * action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1575,19 +1695,19 @@ namespace Model
          * <p>Records a heartbeat for the lifecycle action associated with the specified
          * token or instance. This extends the timeout by the length of time defined using
          * <a>PutLifecycleHook</a>.</p> <p>This step is a part of the procedure for adding
-         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li>(Optional) Create a
+         * a lifecycle hook to an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
          * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
-         * function when Auto Scaling launches or terminates instances.</li> <li>(Optional)
-         * Create a notification target and an IAM role. The target can be either an Amazon
-         * SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-         * lifecycle notifications to the target.</li> <li>Create the lifecycle hook.
-         * Specify whether the hook is used when the instances launch or terminate.</li>
-         * <li><b>If you need more time, record the lifecycle action heartbeat to keep the
-         * instance in a pending state.</b></li> <li>If you finish before the timeout
-         * period ends, complete the lifecycle action.</li> </ol> <p>For more information,
-         * see <a
+         * function when Auto Scaling launches or terminates instances.</p> </li> <li>
+         * <p>(Optional) Create a notification target and an IAM role. The target can be
+         * either an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling
+         * to publish lifecycle notifications to the target.</p> </li> <li> <p>Create the
+         * lifecycle hook. Specify whether the hook is used when the instances launch or
+         * terminate.</p> </li> <li> <p> <b>If you need more time, record the lifecycle
+         * action heartbeat to keep the instance in a pending state.</b> </p> </li> <li>
+         * <p>If you finish before the timeout period ends, complete the lifecycle
+         * action.</p> </li> </ol> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1598,7 +1718,7 @@ namespace Model
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
         virtual Model::ResumeProcessesOutcome ResumeProcesses(const Model::ResumeProcessesRequest& request) const;
@@ -1608,7 +1728,7 @@ namespace Model
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1620,7 +1740,7 @@ namespace Model
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1631,7 +1751,7 @@ namespace Model
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
-         * Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetDesiredCapacityOutcome SetDesiredCapacity(const Model::SetDesiredCapacityRequest& request) const;
 
@@ -1639,7 +1759,7 @@ namespace Model
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
-         * Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1649,7 +1769,7 @@ namespace Model
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
-         * Is Auto Scaling?</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1659,7 +1779,7 @@ namespace Model
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-         * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetInstanceHealthOutcome SetInstanceHealth(const Model::SetInstanceHealthRequest& request) const;
 
@@ -1667,7 +1787,7 @@ namespace Model
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-         * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1677,7 +1797,7 @@ namespace Model
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-         * Checks</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Checks</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1687,7 +1807,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
-         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          */
         virtual Model::SetInstanceProtectionOutcome SetInstanceProtection(const Model::SetInstanceProtectionRequest& request) const;
 
@@ -1695,7 +1815,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
-         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1705,7 +1825,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
-         * Protection</a> in the <i>Auto Scaling Developer Guide</i>.</p>
+         * Protection</a> in the <i>Auto Scaling User Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1719,7 +1839,7 @@ namespace Model
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          */
         virtual Model::SuspendProcessesOutcome SuspendProcesses(const Model::SuspendProcessesRequest& request) const;
@@ -1732,7 +1852,7 @@ namespace Model
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1747,7 +1867,7 @@ namespace Model
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
-         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling Developer
+         * and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User
          * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1858,6 +1978,7 @@ namespace Model
 
         /**Async helpers**/
         void AttachInstancesAsyncHelper(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AttachLoadBalancerTargetGroupsAsyncHelper(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachLoadBalancersAsyncHelper(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CompleteLifecycleActionAsyncHelper(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAutoScalingGroupAsyncHelper(const Model::CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1878,6 +1999,7 @@ namespace Model
         void DescribeLaunchConfigurationsAsyncHelper(const Model::DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleHookTypesAsyncHelper(const Model::DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleHooksAsyncHelper(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLoadBalancerTargetGroupsAsyncHelper(const Model::DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMetricCollectionTypesAsyncHelper(const Model::DescribeMetricCollectionTypesRequest& request, const DescribeMetricCollectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotificationConfigurationsAsyncHelper(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1888,6 +2010,7 @@ namespace Model
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTerminationPolicyTypesAsyncHelper(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachInstancesAsyncHelper(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachLoadBalancerTargetGroupsAsyncHelper(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachLoadBalancersAsyncHelper(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableMetricsCollectionAsyncHelper(const Model::DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableMetricsCollectionAsyncHelper(const Model::EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

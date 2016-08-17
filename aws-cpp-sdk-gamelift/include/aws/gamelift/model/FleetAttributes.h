@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -158,127 +158,132 @@ namespace Model
     inline FleetAttributes& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline FleetAttributes& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this object was created. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline FleetAttributes& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline FleetAttributes& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this fleet was terminated. Format is an integer
-     * representing the number of seconds since the Unix epoch (Unix time).</p>
+     * <p>Time stamp indicating when this data object was terminated. Format is a
+     * number expressed in Unix time as milliseconds (ex: "1469498468.057".</p>
      */
     inline FleetAttributes& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(value); return *this;}
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include the following:
-     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
-     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
+     * instances is set to 1.
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
      * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
      * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
      * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul></p>
+     * longer exists.</li></ul>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include the following:
-     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
-     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
+     * instances is set to 1.
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
      * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
      * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
      * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul></p>
+     * longer exists.</li></ul>
      */
     inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include the following:
-     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
-     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
+     * instances is set to 1.
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
      * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
      * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
      * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul></p>
+     * longer exists.</li></ul>
      */
     inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include the following:
-     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
-     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
+     * instances is set to 1.
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
      * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
      * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
      * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul></p>
+     * longer exists.</li></ul>
      */
     inline FleetAttributes& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the fleet. Possible fleet states include the following:
-     * <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set
-     * to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is
-     * setting up the new fleet, creating new instances with the game build and
-     * starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
+     * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
+     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
+     * instances is set to 1.
+     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+     * up the new fleet, creating new instances with the game build and starting server
+     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
      * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
      * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
      * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul></p>
+     * longer exists.</li></ul>
      */
     inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(value); return *this;}
 
@@ -491,46 +496,46 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet. <ul><li><b>NoProtection</b> – The game session can be terminated during a
-     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
-     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul></p>
+     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
+     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
+     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 

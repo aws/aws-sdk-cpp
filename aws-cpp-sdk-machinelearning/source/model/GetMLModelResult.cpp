@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -26,13 +26,15 @@ using namespace Aws;
 
 GetMLModelResult::GetMLModelResult() : 
     m_sizeInBytes(0),
-    m_scoreThreshold(0.0)
+    m_scoreThreshold(0.0),
+    m_computeTime(0)
 {
 }
 
 GetMLModelResult::GetMLModelResult(const AmazonWebServiceResult<JsonValue>& result) : 
     m_sizeInBytes(0),
-    m_scoreThreshold(0.0)
+    m_scoreThreshold(0.0),
+    m_computeTime(0)
 {
   *this = result;
 }
@@ -136,6 +138,24 @@ GetMLModelResult& GetMLModelResult::operator =(const AmazonWebServiceResult<Json
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
+
+  }
+
+  if(jsonValue.ValueExists("ComputeTime"))
+  {
+    m_computeTime = jsonValue.GetInt64("ComputeTime");
+
+  }
+
+  if(jsonValue.ValueExists("FinishedAt"))
+  {
+    m_finishedAt = jsonValue.GetDouble("FinishedAt");
+
+  }
+
+  if(jsonValue.ValueExists("StartedAt"))
+  {
+    m_startedAt = jsonValue.GetDouble("StartedAt");
 
   }
 

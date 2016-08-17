@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,6 +30,7 @@ namespace Model
 StepStatus::StepStatus() : 
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false),
     m_timelineHasBeenSet(false)
 {
 }
@@ -37,6 +38,7 @@ StepStatus::StepStatus() :
 StepStatus::StepStatus(const JsonValue& jsonValue) : 
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
+    m_failureDetailsHasBeenSet(false),
     m_timelineHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ StepStatus& StepStatus::operator =(const JsonValue& jsonValue)
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
 
     m_stateChangeReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureDetails"))
+  {
+    m_failureDetails = jsonValue.GetObject("FailureDetails");
+
+    m_failureDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Timeline"))
@@ -80,6 +89,12 @@ JsonValue StepStatus::Jsonize() const
   if(m_stateChangeReasonHasBeenSet)
   {
    payload.WithObject("StateChangeReason", m_stateChangeReason.Jsonize());
+
+  }
+
+  if(m_failureDetailsHasBeenSet)
+  {
+   payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
 
   }
 
