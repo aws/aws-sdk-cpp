@@ -108,7 +108,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
             String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                     shapeEntry.getKey());
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
 
         return null;
@@ -142,7 +142,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         if (template == null)
             return null;
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -155,7 +155,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -167,6 +167,6 @@ public class QueryCppClientGenerator extends CppClientGenerator {
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 }

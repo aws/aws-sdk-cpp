@@ -42,7 +42,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -87,7 +87,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
             String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                     shapeEntry.getKey());
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
         return null;
     }
@@ -125,7 +125,7 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
 
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
         return null;
     }

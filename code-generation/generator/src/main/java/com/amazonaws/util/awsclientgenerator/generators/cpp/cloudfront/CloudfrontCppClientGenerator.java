@@ -55,7 +55,7 @@ public class CloudfrontCppClientGenerator extends RestXmlCppClientGenerator {
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
 
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
 
         return super.generateModelSourceFile(serviceModel, shapeEntry);

@@ -125,7 +125,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         String fileName = String.format("include/aws/%s/model/%s.h", serviceModel.getMetadata().getProjectName(),
                 shapeEntry.getKey());
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected List<SdkFileEntry> generateModelSourceFiles(final ServiceModel serviceModel) throws Exception {
@@ -164,7 +164,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             context.put("CppViewHelper", CppViewHelper.class);
 
             String fileName = String.format("source/model/%s.cpp", shapeEntry.getKey());
-            return makeFile(template, context, fileName);
+            return makeFile(template, context, fileName, true);
         }
 
         return null;
@@ -185,7 +185,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("ErrorFormatter", ErrorFormatter.class);
 
         String fileName = String.format("source/%sErrors.cpp", serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected Set<String> getRetryableErrors() {
@@ -200,7 +200,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("ErrorFormatter", ErrorFormatter.class);
 
         String fileName = String.format("source/%sErrorMarshaller.cpp", serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected SdkFileEntry generateErrorsHeaderFile(ServiceModel serviceModel) throws Exception {
@@ -215,7 +215,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         String fileName = String.format("include/aws/%s/%sErrors.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
@@ -228,7 +228,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
                 serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected SdkFileEntry generateNugetFile(ServiceModel serviceModel) throws Exception {
@@ -239,7 +239,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         String fileName = String.format("nuget/aws-cpp-sdk-%s.autopkg", serviceModel.getMetadata().getProjectName());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
@@ -252,7 +252,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         String fileName = String.format("include/aws/%s/%sRequest.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     private SdkFileEntry generateRegionHeaderFile(final ServiceModel serviceModel) throws Exception {
@@ -265,7 +265,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         String fileName = String.format("include/aws/%s/%s%s.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix(), "Endpoint");
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     private SdkFileEntry generateRegionSourceFile(final ServiceModel serviceModel) throws Exception {
@@ -276,7 +276,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("endpointMapping", computeRegionEndpointsForService(serviceModel));
 
         String fileName = String.format("source/%s%s.cpp", serviceModel.getMetadata().getClassNamePrefix(), "Endpoint");
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     protected Map<String, String> computeRegionEndpointsForService(final ServiceModel serviceModel) {
@@ -292,7 +292,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         String fileName = String.format("include/aws/%s/%s_EXPORTS.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     private SdkFileEntry generateCmakeFile(final ServiceModel serviceModel) throws Exception {
@@ -301,10 +301,10 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         VelocityContext context = createContext(serviceModel);
 
-        return makeFile(template, context, "CMakeLists.txt");
+        return makeFile(template, context, "CMakeLists.txt", false);
     }
 
-    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path) throws IOException {
+    protected final SdkFileEntry makeFile(Template template, VelocityContext context, String path, boolean needsBOM) throws IOException {
         StringWriter sw = new StringWriter();
         template.merge(context, sw);
 
@@ -320,6 +320,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         SdkFileEntry file = new SdkFileEntry();
         file.setPathRelativeToRoot(path);
         file.setSdkFile(sb);
+        file.setNeedsByteOrderMark(needsBOM);
         return file;
     }
 

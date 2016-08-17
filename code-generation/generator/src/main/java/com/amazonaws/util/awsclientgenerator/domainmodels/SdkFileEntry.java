@@ -21,4 +21,5 @@ import lombok.Data;
 public class SdkFileEntry {
     private StringBuffer sdkFile;
     private String pathRelativeToRoot;
+    private boolean needsByteOrderMark;
 }

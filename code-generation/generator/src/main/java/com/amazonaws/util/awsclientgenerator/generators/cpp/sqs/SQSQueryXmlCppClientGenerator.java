@@ -61,6 +61,6 @@ public class SQSQueryXmlCppClientGenerator extends QueryCppClientGenerator {
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 }

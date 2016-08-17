@@ -61,7 +61,11 @@ public class MainClientGenerator {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
                     zipOutputStream.putNextEntry(zipEntry);
-                    zipOutputStream.write(bom);
+
+                    if(apiFile.isNeedsByteOrderMark()) {
+                        zipOutputStream.write(bom);
+                    }
+
                     zipOutputStream.write(apiFile.getSdkFile().toString().getBytes(StandardCharsets.UTF_8));
                     zipOutputStream.closeEntry();
                 }

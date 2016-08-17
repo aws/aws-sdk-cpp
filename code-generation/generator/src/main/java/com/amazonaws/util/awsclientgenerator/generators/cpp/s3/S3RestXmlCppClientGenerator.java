@@ -68,7 +68,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         String fileName = String.format("source/%sClient.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
-        return makeFile(template, context, fileName);
+        return makeFile(template, context, fileName, true);
     }
 
     @Override
@@ -88,7 +88,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         switch(shapeEntry.getKey()) {
             case "GetBucketLocationResult": {
                 Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/GetBucketLocationResult.vm", StandardCharsets.UTF_8.name());
-                return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp");
+                return makeFile(template, createContext(serviceModel), "source/model/GetBucketLocationResult.cpp", true);
             }
             default:
                 return super.generateModelSourceFile(serviceModel, shapeEntry);
