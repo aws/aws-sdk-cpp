@@ -1,4 +1,4 @@
-﻿cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-dms)
 
   file(GLOB AWS_DMS_HEADERS
