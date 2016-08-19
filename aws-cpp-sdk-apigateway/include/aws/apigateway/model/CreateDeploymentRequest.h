@@ -246,96 +246,96 @@ namespace Model
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(value); return *this;}
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }
 
     /**
      * <p>A map that defines the stage variables for the <a>Stage</a> resource that is
-     * associated with the new deployment. Variable names can have alphanumeric
-     * characters, and the values must match
+     * associated with the new deployment. Variable names can have alphanumeric and
+     * underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline CreateDeploymentRequest& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables[key] = value; return *this; }

@@ -106,79 +106,79 @@ namespace Model
     inline UpdateMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline UpdateMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline UpdateMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline UpdateMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateMethodRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateMethodRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateMethodRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateMethodRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 

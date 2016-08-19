@@ -27,8 +27,12 @@
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesResult.h>
 #include <aws/workspaces/model/DescribeWorkspacesResult.h>
+#include <aws/workspaces/model/DescribeWorkspacesConnectionStatusResult.h>
+#include <aws/workspaces/model/ModifyWorkspacePropertiesResult.h>
 #include <aws/workspaces/model/RebootWorkspacesResult.h>
 #include <aws/workspaces/model/RebuildWorkspacesResult.h>
+#include <aws/workspaces/model/StartWorkspacesResult.h>
+#include <aws/workspaces/model/StopWorkspacesResult.h>
 #include <aws/workspaces/model/TerminateWorkspacesResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -82,8 +86,12 @@ namespace Model
         class DescribeWorkspaceBundlesRequest;
         class DescribeWorkspaceDirectoriesRequest;
         class DescribeWorkspacesRequest;
+        class DescribeWorkspacesConnectionStatusRequest;
+        class ModifyWorkspacePropertiesRequest;
         class RebootWorkspacesRequest;
         class RebuildWorkspacesRequest;
+        class StartWorkspacesRequest;
+        class StopWorkspacesRequest;
         class TerminateWorkspacesRequest;
 
         typedef Aws::Utils::Outcome<CreateTagsResult, Aws::Client::AWSError<WorkSpacesErrors>> CreateTagsOutcome;
@@ -93,8 +101,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeWorkspaceBundlesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceBundlesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceDirectoriesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceDirectoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<DescribeWorkspacesConnectionStatusResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspacesConnectionStatusOutcome;
+        typedef Aws::Utils::Outcome<ModifyWorkspacePropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspacePropertiesOutcome;
         typedef Aws::Utils::Outcome<RebootWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebootWorkspacesOutcome;
         typedef Aws::Utils::Outcome<RebuildWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebuildWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<StartWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> StartWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<StopWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> StopWorkspacesOutcome;
         typedef Aws::Utils::Outcome<TerminateWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> TerminateWorkspacesOutcome;
 
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
@@ -104,8 +116,12 @@ namespace Model
         typedef std::future<DescribeWorkspaceBundlesOutcome> DescribeWorkspaceBundlesOutcomeCallable;
         typedef std::future<DescribeWorkspaceDirectoriesOutcome> DescribeWorkspaceDirectoriesOutcomeCallable;
         typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
+        typedef std::future<DescribeWorkspacesConnectionStatusOutcome> DescribeWorkspacesConnectionStatusOutcomeCallable;
+        typedef std::future<ModifyWorkspacePropertiesOutcome> ModifyWorkspacePropertiesOutcomeCallable;
         typedef std::future<RebootWorkspacesOutcome> RebootWorkspacesOutcomeCallable;
         typedef std::future<RebuildWorkspacesOutcome> RebuildWorkspacesOutcomeCallable;
+        typedef std::future<StartWorkspacesOutcome> StartWorkspacesOutcomeCallable;
+        typedef std::future<StopWorkspacesOutcome> StopWorkspacesOutcomeCallable;
         typedef std::future<TerminateWorkspacesOutcome> TerminateWorkspacesOutcomeCallable;
 } // namespace Model
 
@@ -118,14 +134,17 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceBundlesRequest&, const Model::DescribeWorkspaceBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceBundlesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceDirectoriesRequest&, const Model::DescribeWorkspaceDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceDirectoriesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesRequest&, const Model::DescribeWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspacesConnectionStatusRequest&, const Model::DescribeWorkspacesConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspacesConnectionStatusResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspacePropertiesRequest&, const Model::ModifyWorkspacePropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspacePropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebootWorkspacesRequest&, const Model::RebootWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebuildWorkspacesRequest&, const Model::RebuildWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebuildWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::StartWorkspacesRequest&, const Model::StartWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::StopWorkspacesRequest&, const Model::StopWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::TerminateWorkspacesRequest&, const Model::TerminateWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateWorkspacesResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon WorkSpaces Service</fullname> <p>This is the <i>Amazon
-   * WorkSpaces API Reference</i>. This guide provides detailed information about
-   * Amazon WorkSpaces operations, data types, parameters, and errors.</p>
+   * <fullname>Amazon WorkSpaces Service</fullname> <p>This reference provides
+   * detailed information about the Amazon WorkSpaces operations.</p>
    */
   class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient
   {
@@ -304,7 +323,7 @@ namespace Model
         virtual void DescribeWorkspaceDirectoriesAsync(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the
+         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
          * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
          * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
          * supports pagination with the use of the <code>NextToken</code> request and
@@ -315,7 +334,7 @@ namespace Model
         virtual Model::DescribeWorkspacesOutcome DescribeWorkspaces(const Model::DescribeWorkspacesRequest& request) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the
+         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
          * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
          * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
          * supports pagination with the use of the <code>NextToken</code> request and
@@ -328,7 +347,7 @@ namespace Model
         virtual Model::DescribeWorkspacesOutcomeCallable DescribeWorkspacesCallable(const Model::DescribeWorkspacesRequest& request) const;
 
         /**
-         * <p>Obtains information about the specified WorkSpaces. </p> <p>Only one of the
+         * <p>Obtains information about the specified WorkSpaces.</p> <p>Only one of the
          * filter parameters, such as <code>BundleId</code>, <code>DirectoryId</code>, or
          * <code>WorkspaceIds</code>, can be specified at a time.</p> <p>This operation
          * supports pagination with the use of the <code>NextToken</code> request and
@@ -341,10 +360,51 @@ namespace Model
         virtual void DescribeWorkspacesAsync(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the connection status of a specified WorkSpace.</p>
+         */
+        virtual Model::DescribeWorkspacesConnectionStatusOutcome DescribeWorkspacesConnectionStatus(const Model::DescribeWorkspacesConnectionStatusRequest& request) const;
+
+        /**
+         * <p>Describes the connection status of a specified WorkSpace.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWorkspacesConnectionStatusOutcomeCallable DescribeWorkspacesConnectionStatusCallable(const Model::DescribeWorkspacesConnectionStatusRequest& request) const;
+
+        /**
+         * <p>Describes the connection status of a specified WorkSpace.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWorkspacesConnectionStatusAsync(const Model::DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the WorkSpace properties, including the RunningMode and AutoStop
+         * time.</p>
+         */
+        virtual Model::ModifyWorkspacePropertiesOutcome ModifyWorkspaceProperties(const Model::ModifyWorkspacePropertiesRequest& request) const;
+
+        /**
+         * <p>Modifies the WorkSpace properties, including the RunningMode and AutoStop
+         * time.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyWorkspacePropertiesOutcomeCallable ModifyWorkspacePropertiesCallable(const Model::ModifyWorkspacePropertiesRequest& request) const;
+
+        /**
+         * <p>Modifies the WorkSpace properties, including the RunningMode and AutoStop
+         * time.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyWorkspacePropertiesAsync(const Model::ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
          * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
          * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>
+         * is asynchronous and returns before the WorkSpaces have rebooted.</p> </note>
          */
         virtual Model::RebootWorkspacesOutcome RebootWorkspaces(const Model::RebootWorkspacesRequest& request) const;
 
@@ -352,7 +412,7 @@ namespace Model
          * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
          * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
          * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>
+         * is asynchronous and returns before the WorkSpaces have rebooted.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -362,7 +422,7 @@ namespace Model
          * <p>Reboots the specified WorkSpaces.</p> <p>To be able to reboot a WorkSpace,
          * the WorkSpace must have a <b>State</b> of <code>AVAILABLE</code>,
          * <code>IMPAIRED</code>, or <code>INOPERABLE</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have rebooted.</p> </note>
+         * is asynchronous and returns before the WorkSpaces have rebooted.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -371,16 +431,16 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
          * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to
-         * the image of the bundle that the WorkSpace is created from. Any applications
+         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
+         * to the image of the bundle that the WorkSpace is created from. Any applications
          * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</li> <li>The data drive (D drive) is
-         * re-created from the last automatic snapshot taken of the data drive. The current
-         * contents of the data drive are overwritten. Automatic snapshots of the data
-         * drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a
-         * <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This
-         * operation is asynchronous and will return before the WorkSpaces have been
+         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
+         * is re-created from the last automatic snapshot taken of the data drive. The
+         * current contents of the data drive are overwritten. Automatic snapshots of the
+         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
+         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
+         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
+         * <p>This operation is asynchronous and returns before the WorkSpaces have been
          * completely rebuilt.</p> </note>
          */
         virtual Model::RebuildWorkspacesOutcome RebuildWorkspaces(const Model::RebuildWorkspacesRequest& request) const;
@@ -388,16 +448,16 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
          * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to
-         * the image of the bundle that the WorkSpace is created from. Any applications
+         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
+         * to the image of the bundle that the WorkSpace is created from. Any applications
          * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</li> <li>The data drive (D drive) is
-         * re-created from the last automatic snapshot taken of the data drive. The current
-         * contents of the data drive are overwritten. Automatic snapshots of the data
-         * drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a
-         * <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This
-         * operation is asynchronous and will return before the WorkSpaces have been
+         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
+         * is re-created from the last automatic snapshot taken of the data drive. The
+         * current contents of the data drive are overwritten. Automatic snapshots of the
+         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
+         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
+         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
+         * <p>This operation is asynchronous and returns before the WorkSpaces have been
          * completely rebuilt.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -407,16 +467,16 @@ namespace Model
         /**
          * <p>Rebuilds the specified WorkSpaces.</p> <p>Rebuilding a WorkSpace is a
          * potentially destructive action that can result in the loss of data. Rebuilding a
-         * WorkSpace causes the following to occur:</p> <ul> <li>The system is restored to
-         * the image of the bundle that the WorkSpace is created from. Any applications
+         * WorkSpace causes the following to occur:</p> <ul> <li> <p>The system is restored
+         * to the image of the bundle that the WorkSpace is created from. Any applications
          * that have been installed, or system settings that have been made since the
-         * WorkSpace was created will be lost.</li> <li>The data drive (D drive) is
-         * re-created from the last automatic snapshot taken of the data drive. The current
-         * contents of the data drive are overwritten. Automatic snapshots of the data
-         * drive are taken every 12 hours, so the snapshot can be as much as 12 hours
-         * old.</li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must have a
-         * <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note> <p>This
-         * operation is asynchronous and will return before the WorkSpaces have been
+         * WorkSpace was created will be lost.</p> </li> <li> <p>The data drive (D drive)
+         * is re-created from the last automatic snapshot taken of the data drive. The
+         * current contents of the data drive are overwritten. Automatic snapshots of the
+         * data drive are taken every 12 hours, so the snapshot can be as much as 12 hours
+         * old.</p> </li> </ul> <p>To be able to rebuild a WorkSpace, the WorkSpace must
+         * have a <b>State</b> of <code>AVAILABLE</code> or <code>ERROR</code>.</p> <note>
+         * <p>This operation is asynchronous and returns before the WorkSpaces have been
          * completely rebuilt.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -424,12 +484,59 @@ namespace Model
         virtual void RebuildWorkspacesAsync(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to “STOPPED.”</p>
+         */
+        virtual Model::StartWorkspacesOutcome StartWorkspaces(const Model::StartWorkspacesRequest& request) const;
+
+        /**
+         * <p>Starts the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to “STOPPED.”</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartWorkspacesOutcomeCallable StartWorkspacesCallable(const Model::StartWorkspacesRequest& request) const;
+
+        /**
+         * <p>Starts the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to “STOPPED.”</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartWorkspacesAsync(const Model::StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Stops the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to AVAILABLE, IMPAIRED,
+         * UNHEALTHY, or ERROR.</p>
+         */
+        virtual Model::StopWorkspacesOutcome StopWorkspaces(const Model::StopWorkspacesRequest& request) const;
+
+        /**
+         * <p> Stops the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to AVAILABLE, IMPAIRED,
+         * UNHEALTHY, or ERROR.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopWorkspacesOutcomeCallable StopWorkspacesCallable(const Model::StopWorkspacesRequest& request) const;
+
+        /**
+         * <p> Stops the specified WorkSpaces. The API only works with WorkSpaces that have
+         * RunningMode configured as AutoStop and the State set to AVAILABLE, IMPAIRED,
+         * UNHEALTHY, or ERROR.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopWorkspacesAsync(const Model::StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a
          * permanent action and cannot be undone. The user's data is not maintained and
          * will be destroyed. If you need to archive any user data, contact Amazon Web
          * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
          * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have been completely
+         * is asynchronous and returns before the WorkSpaces have been completely
          * terminated.</p> </note>
          */
         virtual Model::TerminateWorkspacesOutcome TerminateWorkspaces(const Model::TerminateWorkspacesRequest& request) const;
@@ -440,7 +547,7 @@ namespace Model
          * will be destroyed. If you need to archive any user data, contact Amazon Web
          * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
          * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have been completely
+         * is asynchronous and returns before the WorkSpaces have been completely
          * terminated.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -453,7 +560,7 @@ namespace Model
          * will be destroyed. If you need to archive any user data, contact Amazon Web
          * Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace
          * that is in any state except <code>SUSPENDED</code>.</p> <note> <p>This operation
-         * is asynchronous and will return before the WorkSpaces have been completely
+         * is asynchronous and returns before the WorkSpaces have been completely
          * terminated.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -472,8 +579,12 @@ namespace Model
         void DescribeWorkspaceBundlesAsyncHelper(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceDirectoriesAsyncHelper(const Model::DescribeWorkspaceDirectoriesRequest& request, const DescribeWorkspaceDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspacesAsyncHelper(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWorkspacesConnectionStatusAsyncHelper(const Model::DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyWorkspacePropertiesAsyncHelper(const Model::ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootWorkspacesAsyncHelper(const Model::RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebuildWorkspacesAsyncHelper(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartWorkspacesAsyncHelper(const Model::StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopWorkspacesAsyncHelper(const Model::StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateWorkspacesAsyncHelper(const Model::TerminateWorkspacesRequest& request, const TerminateWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

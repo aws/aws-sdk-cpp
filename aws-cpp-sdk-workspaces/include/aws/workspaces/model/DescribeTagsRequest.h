@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The request of the describe tags action.</p>
+   * <p>The request of the <a>DescribeTags</a> operation.</p>
    */
   class AWS_WORKSPACES_API DescribeTagsRequest : public WorkSpacesRequest
   {

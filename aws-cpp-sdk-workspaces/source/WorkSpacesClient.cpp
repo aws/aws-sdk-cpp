@@ -33,8 +33,12 @@
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 #include <aws/workspaces/model/DescribeWorkspacesRequest.h>
+#include <aws/workspaces/model/DescribeWorkspacesConnectionStatusRequest.h>
+#include <aws/workspaces/model/ModifyWorkspacePropertiesRequest.h>
 #include <aws/workspaces/model/RebootWorkspacesRequest.h>
 #include <aws/workspaces/model/RebuildWorkspacesRequest.h>
+#include <aws/workspaces/model/StartWorkspacesRequest.h>
+#include <aws/workspaces/model/StopWorkspacesRequest.h>
 #include <aws/workspaces/model/TerminateWorkspacesRequest.h>
 
 using namespace Aws;
@@ -318,6 +322,68 @@ void WorkSpacesClient::DescribeWorkspacesAsyncHelper(const DescribeWorkspacesReq
   handler(this, request, DescribeWorkspaces(request), context);
 }
 
+DescribeWorkspacesConnectionStatusOutcome WorkSpacesClient::DescribeWorkspacesConnectionStatus(const DescribeWorkspacesConnectionStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeWorkspacesConnectionStatusOutcome(DescribeWorkspacesConnectionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeWorkspacesConnectionStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeWorkspacesConnectionStatusOutcomeCallable WorkSpacesClient::DescribeWorkspacesConnectionStatusCallable(const DescribeWorkspacesConnectionStatusRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeWorkspacesConnectionStatus(request); } );
+}
+
+void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsync(const DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkspacesConnectionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeWorkspacesConnectionStatusAsyncHelper(const DescribeWorkspacesConnectionStatusRequest& request, const DescribeWorkspacesConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorkspacesConnectionStatus(request), context);
+}
+
+ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(const ModifyWorkspacePropertiesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyWorkspacePropertiesOutcome(ModifyWorkspacePropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyWorkspacePropertiesOutcome(outcome.GetError());
+  }
+}
+
+ModifyWorkspacePropertiesOutcomeCallable WorkSpacesClient::ModifyWorkspacePropertiesCallable(const ModifyWorkspacePropertiesRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->ModifyWorkspaceProperties(request); } );
+}
+
+void WorkSpacesClient::ModifyWorkspacePropertiesAsync(const ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyWorkspacePropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::ModifyWorkspacePropertiesAsyncHelper(const ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyWorkspaceProperties(request), context);
+}
+
 RebootWorkspacesOutcome WorkSpacesClient::RebootWorkspaces(const RebootWorkspacesRequest& request) const
 {
   Aws::StringStream ss;
@@ -378,6 +444,68 @@ void WorkSpacesClient::RebuildWorkspacesAsync(const RebuildWorkspacesRequest& re
 void WorkSpacesClient::RebuildWorkspacesAsyncHelper(const RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebuildWorkspaces(request), context);
+}
+
+StartWorkspacesOutcome WorkSpacesClient::StartWorkspaces(const StartWorkspacesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartWorkspacesOutcome(StartWorkspacesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartWorkspacesOutcome(outcome.GetError());
+  }
+}
+
+StartWorkspacesOutcomeCallable WorkSpacesClient::StartWorkspacesCallable(const StartWorkspacesRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StartWorkspaces(request); } );
+}
+
+void WorkSpacesClient::StartWorkspacesAsync(const StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartWorkspacesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::StartWorkspacesAsyncHelper(const StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartWorkspaces(request), context);
+}
+
+StopWorkspacesOutcome WorkSpacesClient::StopWorkspaces(const StopWorkspacesRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopWorkspacesOutcome(StopWorkspacesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopWorkspacesOutcome(outcome.GetError());
+  }
+}
+
+StopWorkspacesOutcomeCallable WorkSpacesClient::StopWorkspacesCallable(const StopWorkspacesRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StopWorkspaces(request); } );
+}
+
+void WorkSpacesClient::StopWorkspacesAsync(const StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopWorkspacesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::StopWorkspacesAsyncHelper(const StopWorkspacesRequest& request, const StopWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopWorkspaces(request), context);
 }
 
 TerminateWorkspacesOutcome WorkSpacesClient::TerminateWorkspaces(const TerminateWorkspacesRequest& request) const

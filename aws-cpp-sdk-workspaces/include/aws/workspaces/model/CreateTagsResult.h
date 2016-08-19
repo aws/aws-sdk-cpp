@@ -32,7 +32,7 @@ namespace WorkSpaces
 namespace Model
 {
   /**
-   * <p>The result of the create tags action.</p>
+   * <p>The result of the <a>CreateTags</a> operation.</p>
    */
   class AWS_WORKSPACES_API CreateTagsResult
   {

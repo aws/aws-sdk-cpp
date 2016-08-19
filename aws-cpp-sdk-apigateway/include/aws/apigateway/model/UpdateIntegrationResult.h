@@ -37,7 +37,11 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a HTTP, AWS, or Mock integration.</p>
+   * <p>Represents an HTTP, AWS, or Mock integration.</p> <div class="remarks">In the
+   * API Gateway console, the built-in Lambda integration is an AWS
+   * integration.</div> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+   * an API</a> </div>
    */
   class AWS_APIGATEWAY_API UpdateIntegrationResult
   {
@@ -287,146 +291,146 @@ namespace Model
     inline UpdateIntegrationResult& WithCredentials(const char* value) { SetCredentials(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParameters = value; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParameters = value; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the back end. The key is an integration request parameter name and
+     * the associated value is a method request parameter value or static value that
+     * must be enclosed within single quotes and pre-encoded as required by the back
+     * end. The method request parameter value must match the pattern of
+     * <code>method.request.{location}.{name}</code>, where <code>location</code> is
+     * <code>querystring</code>, <code>path</code>, or <code>header</code> and
+     * <code>name</code> must be a valid and unique method request parameter name.</p>
      */
     inline UpdateIntegrationResult& AddRequestParameters(const char* key, const char* value) { m_requestParameters[key] = value; return *this; }
 
@@ -527,107 +531,170 @@ namespace Model
     inline UpdateIntegrationResult& AddRequestTemplates(const char* key, const char* value) { m_requestTemplates[key] = value; return *this; }
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline const Aws::String& GetPassthroughBehavior() const{ return m_passthroughBehavior; }
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline void SetPassthroughBehavior(const Aws::String& value) { m_passthroughBehavior = value; }
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline void SetPassthroughBehavior(Aws::String&& value) { m_passthroughBehavior = value; }
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline void SetPassthroughBehavior(const char* value) { m_passthroughBehavior.assign(value); }
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline UpdateIntegrationResult& WithPassthroughBehavior(const Aws::String& value) { SetPassthroughBehavior(value); return *this;}
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline UpdateIntegrationResult& WithPassthroughBehavior(Aws::String&& value) { SetPassthroughBehavior(value); return *this;}
 
     /**
-     * <p>Specifies the pass-through behavior for incoming requests based on the
-     * Content-Type header in the request, and the available requestTemplates defined
-     * on the Integration. There are three valid values: <code>WHEN_NO_MATCH</code>,
-     * <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p> <p/>
-     * <p><code>WHEN_NO_MATCH</code> passes the request body for unmapped content types
-     * through to the Integration backend without transformation.</p>
-     * <p><code>NEVER</code> rejects unmapped content types with an HTTP 415
-     * 'Unsupported Media Type' response.</p> <p><code>WHEN_NO_TEMPLATES</code> will
-     * allow pass-through when the Integration has NO content types mapped to
-     * templates. However if there is at least one content type defined, unmapped
-     * content types will be rejected with the same 415 response.</p>
+     * <div> <p> Specifies how the method request body of an unmapped content type will
+     * be passed through the integration request to the back end without
+     * transformation. A content type is unmapped if no mapping template is defined in
+     * the integration or the content type does not match any of the mapped content
+     * types, as specified in <code>requestTemplates</code>. There are three valid
+     * values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>. </p> <ul> <li> <code>WHEN_NO_MATCH</code> passes the method
+     * request body through the integration request to the back end without
+     * transformation when the method request content type does not match any content
+     * type associated with the mapping templates defined in the integration request.
+     * </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request body through
+     * the integration request to the back end without transformation when no mapping
+     * template is defined in the integration request. If a template is defined when
+     * this option is selected, the method request of an unmapped content-type will be
+     * rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+     * <li> <code>NEVER</code> rejects the method request with an HTTP <code>415
+     * Unsupported Media Type</code> response when either the method request content
+     * type does not match any content type associated with the mapping templates
+     * defined in the integration request or no mapping template is defined in the
+     * integration request. </li> </ul> </div>
      */
     inline UpdateIntegrationResult& WithPassthroughBehavior(const char* value) { SetPassthroughBehavior(value); return *this;}
 
@@ -707,57 +774,310 @@ namespace Model
     inline UpdateIntegrationResult& AddCacheKeyParameters(const char* value) { m_cacheKeyParameters.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline const Aws::Map<Aws::String, IntegrationResponse>& GetIntegrationResponses() const{ return m_integrationResponses; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline void SetIntegrationResponses(const Aws::Map<Aws::String, IntegrationResponse>& value) { m_integrationResponses = value; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline void SetIntegrationResponses(Aws::Map<Aws::String, IntegrationResponse>&& value) { m_integrationResponses = value; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& WithIntegrationResponses(const Aws::Map<Aws::String, IntegrationResponse>& value) { SetIntegrationResponses(value); return *this;}
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& WithIntegrationResponses(Aws::Map<Aws::String, IntegrationResponse>&& value) { SetIntegrationResponses(value); return *this;}
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const Aws::String& key, const IntegrationResponse& value) { m_integrationResponses[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(Aws::String&& key, const IntegrationResponse& value) { m_integrationResponses[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const Aws::String& key, IntegrationResponse&& value) { m_integrationResponses[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(Aws::String&& key, IntegrationResponse&& value) { m_integrationResponses[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, IntegrationResponse&& value) { m_integrationResponses[key] = value; return *this; }
 
     /**
-     * <p>Specifies the integration's responses.</p>
+     * <p>Specifies the integration's responses.</p> <div class="remarks"> <p/>
+     * <h4>Example: Get integration responses of a method</h4> <h5>Request</h5> <p/>
+     * <pre><code>GET
+     * /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+     * HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com
+     * X-Amz-Date: 20160607T191449Z Authorization: AWS4-HMAC-SHA256
+     * Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+     * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
+     * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
+     * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
+     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "name": "integrationresponse", "templated": true }, "self": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+     * "title": "200" }, "integrationresponse:delete": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * }, "integrationresponse:update": { "href":
+     * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+     * } }, "responseParameters": { "method.response.header.Content-Type":
+     * "'application/xml'" }, "responseTemplates": { "application/json":
+     * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
+     * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+     * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
+     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponses[key] = value; return *this; }
 

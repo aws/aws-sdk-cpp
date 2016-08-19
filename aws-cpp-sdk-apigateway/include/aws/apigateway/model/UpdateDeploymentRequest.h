@@ -79,86 +79,86 @@ namespace Model
     inline UpdateDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline UpdateDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline UpdateDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The replacment identifier for the <a>Deployment</a> resource to change
+     * <p>The replacement identifier for the <a>Deployment</a> resource to change
      * information about.</p>
      */
     inline UpdateDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateDeploymentRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateDeploymentRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(value); return *this;}
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateDeploymentRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 
     /**
-     * <p>A list of operations describing the updates to apply to the specified
-     * resource. The patches are applied in the order specified in the list.</p>
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
      */
     inline UpdateDeploymentRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
 

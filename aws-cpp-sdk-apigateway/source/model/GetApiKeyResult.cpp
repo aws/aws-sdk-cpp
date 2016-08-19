@@ -44,6 +44,12 @@ GetApiKeyResult& GetApiKeyResult::operator =(const AmazonWebServiceResult<JsonVa
 
   }
 
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetString("value");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -62,15 +68,6 @@ GetApiKeyResult& GetApiKeyResult::operator =(const AmazonWebServiceResult<JsonVa
 
   }
 
-  if(jsonValue.ValueExists("stageKeys"))
-  {
-    Array<JsonValue> stageKeysJsonList = jsonValue.GetArray("stageKeys");
-    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
-    {
-      m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());
-    }
-  }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
@@ -81,6 +78,15 @@ GetApiKeyResult& GetApiKeyResult::operator =(const AmazonWebServiceResult<JsonVa
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
 
+  }
+
+  if(jsonValue.ValueExists("stageKeys"))
+  {
+    Array<JsonValue> stageKeysJsonList = jsonValue.GetArray("stageKeys");
+    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
+    {
+      m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());
+    }
   }
 
 

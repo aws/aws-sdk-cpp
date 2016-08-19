@@ -34,7 +34,7 @@ namespace WorkSpaces
 namespace Model
 {
   /**
-   * <p>The result of the describe tags action.</p>
+   * <p>The result of the <a>DescribeTags</a> operation.</p>
    */
   class AWS_WORKSPACES_API DescribeTagsResult
   {

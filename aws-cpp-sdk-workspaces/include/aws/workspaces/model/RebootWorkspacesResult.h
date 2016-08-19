@@ -44,43 +44,43 @@ namespace Model
     RebootWorkspacesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline const Aws::Vector<FailedWorkspaceChangeRequest>& GetFailedRequests() const{ return m_failedRequests; }
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline void SetFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { m_failedRequests = value; }
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline void SetFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { m_failedRequests = value; }
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline RebootWorkspacesResult& WithFailedRequests(const Aws::Vector<FailedWorkspaceChangeRequest>& value) { SetFailedRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline RebootWorkspacesResult& WithFailedRequests(Aws::Vector<FailedWorkspaceChangeRequest>&& value) { SetFailedRequests(value); return *this;}
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline RebootWorkspacesResult& AddFailedRequests(const FailedWorkspaceChangeRequest& value) { m_failedRequests.push_back(value); return *this; }
 
     /**
-     * <p>An array of structures that represent any WorkSpaces that could not be
+     * <p>An array of structures representing any WorkSpaces that could not be
      * rebooted.</p>
      */
     inline RebootWorkspacesResult& AddFailedRequests(FailedWorkspaceChangeRequest&& value) { m_failedRequests.push_back(value); return *this; }

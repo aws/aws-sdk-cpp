@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/model/WorkspaceProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces/model/Tag.h>
 
@@ -261,6 +262,21 @@ namespace Model
      */
     inline WorkspaceRequest& WithRootVolumeEncryptionEnabled(bool value) { SetRootVolumeEncryptionEnabled(value); return *this;}
 
+    
+    inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+
+    
+    inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+
+    
+    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
+
+    
+    inline WorkspaceRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
+
+    
+    inline WorkspaceRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(value); return *this;}
+
     /**
      * <p>The tags of the WorkSpace request.</p>
      */
@@ -309,6 +325,8 @@ namespace Model
     bool m_userVolumeEncryptionEnabledHasBeenSet;
     bool m_rootVolumeEncryptionEnabled;
     bool m_rootVolumeEncryptionEnabledHasBeenSet;
+    WorkspaceProperties m_workspaceProperties;
+    bool m_workspacePropertiesHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

@@ -104,37 +104,37 @@ namespace Model
     inline GetMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline GetMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 

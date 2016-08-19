@@ -14,8 +14,8 @@
 */
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigateway/model/ApiKey.h>
 
 namespace Aws
@@ -35,7 +35,10 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of <a>ApiKey</a> resources.</p>
+   * <p>Represents a collection of API keys as represented by an <a>ApiKeys</a>
+   * resource.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+   * API Keys</a> </div>
    */
   class AWS_APIGATEWAY_API GetApiKeysResult
   {
@@ -43,6 +46,54 @@ namespace Model
     GetApiKeysResult();
     GetApiKeysResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetApiKeysResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warnings = value; }
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warnings = value; }
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline GetApiKeysResult& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline GetApiKeysResult& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline GetApiKeysResult& AddWarnings(const Aws::String& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline GetApiKeysResult& AddWarnings(Aws::String&& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of warning messages logged during the import of API keys when the
+     * <code>failOnWarnings</code> option is set to true.</p>
+     */
+    inline GetApiKeysResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }
 
     
     inline const Aws::String& GetPosition() const{ return m_position; }
@@ -108,6 +159,7 @@ namespace Model
     inline GetApiKeysResult& AddItems(ApiKey&& value) { m_items.push_back(value); return *this; }
 
   private:
+    Aws::Vector<Aws::String> m_warnings;
     Aws::String m_position;
     Aws::Vector<ApiKey> m_items;
   };

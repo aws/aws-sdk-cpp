@@ -128,7 +128,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
@@ -137,7 +139,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
@@ -146,7 +150,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
@@ -155,7 +161,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
@@ -164,7 +172,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
@@ -173,7 +183,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(value); return *this;}
 
@@ -182,7 +194,9 @@ namespace Model
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
      * parameter is a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: =,.@-. The group name must be unique within the account.
+     * Group names are not distinguished by case. For example, you cannot create groups
+     * named both "ADMINS" and "admins".</p>
      */
     inline CreateGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

@@ -28,6 +28,9 @@ namespace WorkSpacesErrorMapper
 {
 
 static const int INVALID_PARAMETER_VALUES_HASH = HashingUtils::HashString("InvalidParameterValuesException");
+static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
+static const int UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH = HashingUtils::HashString("UnsupportedWorkspaceConfigurationException");
+static const int INVALID_RESOURCE_STATE_HASH = HashingUtils::HashString("InvalidResourceStateException");
 static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceLimitExceededException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 
@@ -39,6 +42,18 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INVALID_PARAMETER_VALUES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_PARAMETER_VALUES), false);
+  }
+  else if (hashCode == OPERATION_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::OPERATION_IN_PROGRESS), false);
+  }
+  else if (hashCode == UNSUPPORTED_WORKSPACE_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::UNSUPPORTED_WORKSPACE_CONFIGURATION), false);
+  }
+  else if (hashCode == INVALID_RESOURCE_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkSpacesErrors::INVALID_RESOURCE_STATE), false);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {

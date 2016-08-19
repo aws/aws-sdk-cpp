@@ -111,20 +111,23 @@ namespace Model
     inline GetModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
     /**
-     * <p>Resolves all external model references and returns a flattened model
-     * schema.</p>
+     * <p>A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not
+     * (<code>false</code>) The default is <code>false</code>.</p>
      */
     inline bool GetFlatten() const{ return m_flatten; }
 
     /**
-     * <p>Resolves all external model references and returns a flattened model
-     * schema.</p>
+     * <p>A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not
+     * (<code>false</code>) The default is <code>false</code>.</p>
      */
     inline void SetFlatten(bool value) { m_flattenHasBeenSet = true; m_flatten = value; }
 
     /**
-     * <p>Resolves all external model references and returns a flattened model
-     * schema.</p>
+     * <p>A query parameter of a Boolean value to resolve (<code>true</code>) all
+     * external model references and returns a flattened model schema or not
+     * (<code>false</code>) The default is <code>false</code>.</p>
      */
     inline GetModelRequest& WithFlatten(bool value) { SetFlatten(value); return *this;}
 

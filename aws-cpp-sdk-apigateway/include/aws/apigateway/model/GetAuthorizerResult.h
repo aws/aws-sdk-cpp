@@ -36,7 +36,10 @@ namespace Model
 {
   /**
    * <p>Represents an authorization layer for methods. If enabled on a method, API
-   * Gateway will activate the authorizer when a client calls the method.</p>
+   * Gateway will activate the authorizer when a client calls the method.</p> <div
+   * class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+   * custom authorization</a> </div>
    */
   class AWS_APIGATEWAY_API GetAuthorizerResult
   {
@@ -145,28 +148,44 @@ namespace Model
      */
     inline GetAuthorizerResult& WithType(AuthorizerType&& value) { SetType(value); return *this;}
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNs = value; }
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNs = value; }
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline GetAuthorizerResult& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline GetAuthorizerResult& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline GetAuthorizerResult& AddProviderARNs(const Aws::String& value) { m_providerARNs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline GetAuthorizerResult& AddProviderARNs(Aws::String&& value) { m_providerARNs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the provider ARNs of the authorizer.</p>
+     */
     inline GetAuthorizerResult& AddProviderARNs(const char* value) { m_providerARNs.push_back(value); return *this; }
 
     /**
@@ -304,7 +323,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -312,7 +331,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -320,7 +339,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -328,7 +347,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -336,7 +355,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -344,7 +363,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */
@@ -352,7 +371,7 @@ namespace Model
 
     /**
      * <p>Specifies the credentials required for the authorizer, if any. Two options
-     * are available. To specify an IAM Role for Amazon API Gateway to assume, use the
+     * are available. To specify an IAM role for Amazon API Gateway to assume, use the
      * role's Amazon Resource Name (ARN). To use resource-based permissions on the
      * Lambda function, specify null.</p>
      */

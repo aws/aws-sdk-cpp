@@ -104,37 +104,37 @@ namespace Model
     inline DeleteMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline DeleteMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline DeleteMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>The HTTP verb that identifies the <a>Method</a> resource.</p>
+     * <p>The HTTP verb of the <a>Method</a> resource.</p>
      */
     inline DeleteMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 

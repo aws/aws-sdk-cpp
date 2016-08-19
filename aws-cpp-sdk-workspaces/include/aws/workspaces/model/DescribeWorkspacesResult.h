@@ -97,7 +97,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = value; }
 
@@ -121,7 +121,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -129,7 +129,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline DescribeWorkspacesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -137,7 +137,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline DescribeWorkspacesResult& WithNextToken(Aws::String&& value) { SetNextToken(value); return *this;}
 
@@ -145,7 +145,7 @@ namespace Model
      * <p>If not null, more results are available. Pass this value for the
      * <code>NextToken</code> parameter in a subsequent call to this operation to
      * retrieve the next set of items. This token is valid for one day and must be used
-     * within that timeframe.</p>
+     * within that time frame.</p>
      */
     inline DescribeWorkspacesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

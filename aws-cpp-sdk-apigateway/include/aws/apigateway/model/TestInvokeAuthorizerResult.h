@@ -35,7 +35,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents the response of the test invoke request in for a custom
+   * <p>Represents the response of the test invoke request for a custom
    * <a>Authorizer</a></p>
    */
   class AWS_APIGATEWAY_API TestInvokeAuthorizerResult
@@ -99,17 +99,17 @@ namespace Model
     inline TestInvokeAuthorizerResult& WithLog(const char* value) { SetLog(value); return *this;}
 
     /**
-     * <p>The execution latency of the test authorizer request</p>
+     * <p>The execution latency of the test authorizer request.</p>
      */
     inline long long GetLatency() const{ return m_latency; }
 
     /**
-     * <p>The execution latency of the test authorizer request</p>
+     * <p>The execution latency of the test authorizer request.</p>
      */
     inline void SetLatency(long long value) { m_latency = value; }
 
     /**
-     * <p>The execution latency of the test authorizer request</p>
+     * <p>The execution latency of the test authorizer request.</p>
      */
     inline TestInvokeAuthorizerResult& WithLatency(long long value) { SetLatency(value); return *this;}
 
@@ -149,37 +149,37 @@ namespace Model
     inline TestInvokeAuthorizerResult& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = value; }
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline TestInvokeAuthorizerResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline TestInvokeAuthorizerResult& WithPolicy(Aws::String&& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The policy JSON document returned by the <a>Authorizer</a></p>
+     * <p>The JSON policy document returned by the <a>Authorizer</a></p>
      */
     inline TestInvokeAuthorizerResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -216,40 +216,100 @@ namespace Model
     
     inline TestInvokeAuthorizerResult& AddAuthorization(const char* key, const Aws::Vector<Aws::String>& value) { m_authorization[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetClaims() const{ return m_claims; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline void SetClaims(const Aws::Map<Aws::String, Aws::String>& value) { m_claims = value; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline void SetClaims(Aws::Map<Aws::String, Aws::String>&& value) { m_claims = value; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& WithClaims(const Aws::Map<Aws::String, Aws::String>& value) { SetClaims(value); return *this;}
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& WithClaims(Aws::Map<Aws::String, Aws::String>&& value) { SetClaims(value); return *this;}
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, const Aws::String& value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const Aws::String& value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, Aws::String&& value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, Aws::String&& value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, Aws::String&& value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const char* value) { m_claims[key] = value; return *this; }
 
-    
+    /**
+     * <p>The <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * identity claims</a>, with any supported custom attributes, returned from the
+     * Cognito Your User Pool configured for the API.</p>
+     */
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, const char* value) { m_claims[key] = value; return *this; }
 
   private:

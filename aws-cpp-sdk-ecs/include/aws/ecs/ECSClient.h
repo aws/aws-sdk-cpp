@@ -938,14 +938,18 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
+         * your task definition with the <code>networkMode</code> parameter. The available
+         * network modes correspond to those described in <a
+         * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+         * settings</a> in the Docker run reference.</p>
          */
         virtual Model::RegisterTaskDefinitionOutcome RegisterTaskDefinition(const Model::RegisterTaskDefinitionRequest& request) const;
 
@@ -956,14 +960,18 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
+         * your task definition with the <code>networkMode</code> parameter. The available
+         * network modes correspond to those described in <a
+         * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+         * settings</a> in the Docker run reference.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -976,14 +984,18 @@ namespace Model
          * task definition parameters and defaults, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p> <p>You may also specify an IAM role for your task with the
+         * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer
-         * Guide</i>.</p>
+         * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
+         * your task definition with the <code>networkMode</code> parameter. The available
+         * network modes correspond to those described in <a
+         * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+         * settings</a> in the Docker run reference.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -35,6 +35,8 @@
 #include <aws/apigateway/model/CreateResourceRequest.h>
 #include <aws/apigateway/model/CreateRestApiRequest.h>
 #include <aws/apigateway/model/CreateStageRequest.h>
+#include <aws/apigateway/model/CreateUsagePlanRequest.h>
+#include <aws/apigateway/model/CreateUsagePlanKeyRequest.h>
 #include <aws/apigateway/model/DeleteApiKeyRequest.h>
 #include <aws/apigateway/model/DeleteAuthorizerRequest.h>
 #include <aws/apigateway/model/DeleteBasePathMappingRequest.h>
@@ -49,6 +51,8 @@
 #include <aws/apigateway/model/DeleteResourceRequest.h>
 #include <aws/apigateway/model/DeleteRestApiRequest.h>
 #include <aws/apigateway/model/DeleteStageRequest.h>
+#include <aws/apigateway/model/DeleteUsagePlanRequest.h>
+#include <aws/apigateway/model/DeleteUsagePlanKeyRequest.h>
 #include <aws/apigateway/model/FlushStageAuthorizersCacheRequest.h>
 #include <aws/apigateway/model/FlushStageCacheRequest.h>
 #include <aws/apigateway/model/GenerateClientCertificateRequest.h>
@@ -80,6 +84,12 @@
 #include <aws/apigateway/model/GetSdkRequest.h>
 #include <aws/apigateway/model/GetStageRequest.h>
 #include <aws/apigateway/model/GetStagesRequest.h>
+#include <aws/apigateway/model/GetUsageRequest.h>
+#include <aws/apigateway/model/GetUsagePlanRequest.h>
+#include <aws/apigateway/model/GetUsagePlanKeyRequest.h>
+#include <aws/apigateway/model/GetUsagePlanKeysRequest.h>
+#include <aws/apigateway/model/GetUsagePlansRequest.h>
+#include <aws/apigateway/model/ImportApiKeysRequest.h>
 #include <aws/apigateway/model/ImportRestApiRequest.h>
 #include <aws/apigateway/model/PutIntegrationRequest.h>
 #include <aws/apigateway/model/PutIntegrationResponseRequest.h>
@@ -103,6 +113,8 @@
 #include <aws/apigateway/model/UpdateResourceRequest.h>
 #include <aws/apigateway/model/UpdateRestApiRequest.h>
 #include <aws/apigateway/model/UpdateStageRequest.h>
+#include <aws/apigateway/model/UpdateUsageRequest.h>
+#include <aws/apigateway/model/UpdateUsagePlanRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -458,6 +470,70 @@ void APIGatewayClient::CreateStageAsync(const CreateStageRequest& request, const
 void APIGatewayClient::CreateStageAsyncHelper(const CreateStageRequest& request, const CreateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateStage(request), context);
+}
+
+CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateUsagePlanOutcome(CreateUsagePlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUsagePlanOutcome(outcome.GetError());
+  }
+}
+
+CreateUsagePlanOutcomeCallable APIGatewayClient::CreateUsagePlanCallable(const CreateUsagePlanRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->CreateUsagePlan(request); } );
+}
+
+void APIGatewayClient::CreateUsagePlanAsync(const CreateUsagePlanRequest& request, const CreateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUsagePlanAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::CreateUsagePlanAsyncHelper(const CreateUsagePlanRequest& request, const CreateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUsagePlan(request), context);
+}
+
+CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsagePlanKeyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/keys";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateUsagePlanKeyOutcome(CreateUsagePlanKeyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUsagePlanKeyOutcome(outcome.GetError());
+  }
+}
+
+CreateUsagePlanKeyOutcomeCallable APIGatewayClient::CreateUsagePlanKeyCallable(const CreateUsagePlanKeyRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->CreateUsagePlanKey(request); } );
+}
+
+void APIGatewayClient::CreateUsagePlanKeyAsync(const CreateUsagePlanKeyRequest& request, const CreateUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUsagePlanKeyAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::CreateUsagePlanKeyAsyncHelper(const CreateUsagePlanKeyRequest& request, const CreateUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUsagePlanKey(request), context);
 }
 
 DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& request) const
@@ -939,6 +1015,72 @@ void APIGatewayClient::DeleteStageAsync(const DeleteStageRequest& request, const
 void APIGatewayClient::DeleteStageAsyncHelper(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStage(request), context);
+}
+
+DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUsagePlanOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteUsagePlanOutcome(outcome.GetError());
+  }
+}
+
+DeleteUsagePlanOutcomeCallable APIGatewayClient::DeleteUsagePlanCallable(const DeleteUsagePlanRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DeleteUsagePlan(request); } );
+}
+
+void APIGatewayClient::DeleteUsagePlanAsync(const DeleteUsagePlanRequest& request, const DeleteUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUsagePlanAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteUsagePlanAsyncHelper(const DeleteUsagePlanRequest& request, const DeleteUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUsagePlan(request), context);
+}
+
+DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsagePlanKeyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/keys/";
+  ss << request.GetKeyId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUsagePlanKeyOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteUsagePlanKeyOutcome(outcome.GetError());
+  }
+}
+
+DeleteUsagePlanKeyOutcomeCallable APIGatewayClient::DeleteUsagePlanKeyCallable(const DeleteUsagePlanKeyRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DeleteUsagePlanKey(request); } );
+}
+
+void APIGatewayClient::DeleteUsagePlanKeyAsync(const DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUsagePlanKeyAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::DeleteUsagePlanKeyAsyncHelper(const DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUsagePlanKey(request), context);
 }
 
 FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(const FlushStageAuthorizersCacheRequest& request) const
@@ -1983,6 +2125,200 @@ void APIGatewayClient::GetStagesAsyncHelper(const GetStagesRequest& request, con
   handler(this, request, GetStages(request), context);
 }
 
+GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/usage";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetUsageOutcome(GetUsageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsageOutcome(outcome.GetError());
+  }
+}
+
+GetUsageOutcomeCallable APIGatewayClient::GetUsageCallable(const GetUsageRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetUsage(request); } );
+}
+
+void APIGatewayClient::GetUsageAsync(const GetUsageRequest& request, const GetUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsageAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetUsageAsyncHelper(const GetUsageRequest& request, const GetUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsage(request), context);
+}
+
+GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetUsagePlanOutcome(GetUsagePlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsagePlanOutcome(outcome.GetError());
+  }
+}
+
+GetUsagePlanOutcomeCallable APIGatewayClient::GetUsagePlanCallable(const GetUsagePlanRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetUsagePlan(request); } );
+}
+
+void APIGatewayClient::GetUsagePlanAsync(const GetUsagePlanRequest& request, const GetUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsagePlanAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetUsagePlanAsyncHelper(const GetUsagePlanRequest& request, const GetUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsagePlan(request), context);
+}
+
+GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/keys/";
+  ss << request.GetKeyId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetUsagePlanKeyOutcome(GetUsagePlanKeyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsagePlanKeyOutcome(outcome.GetError());
+  }
+}
+
+GetUsagePlanKeyOutcomeCallable APIGatewayClient::GetUsagePlanKeyCallable(const GetUsagePlanKeyRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetUsagePlanKey(request); } );
+}
+
+void APIGatewayClient::GetUsagePlanKeyAsync(const GetUsagePlanKeyRequest& request, const GetUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsagePlanKeyAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetUsagePlanKeyAsyncHelper(const GetUsagePlanKeyRequest& request, const GetUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsagePlanKey(request), context);
+}
+
+GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKeysRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/keys";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetUsagePlanKeysOutcome(GetUsagePlanKeysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsagePlanKeysOutcome(outcome.GetError());
+  }
+}
+
+GetUsagePlanKeysOutcomeCallable APIGatewayClient::GetUsagePlanKeysCallable(const GetUsagePlanKeysRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetUsagePlanKeys(request); } );
+}
+
+void APIGatewayClient::GetUsagePlanKeysAsync(const GetUsagePlanKeysRequest& request, const GetUsagePlanKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsagePlanKeysAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetUsagePlanKeysAsyncHelper(const GetUsagePlanKeysRequest& request, const GetUsagePlanKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsagePlanKeys(request), context);
+}
+
+GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetUsagePlansOutcome(GetUsagePlansResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetUsagePlansOutcome(outcome.GetError());
+  }
+}
+
+GetUsagePlansOutcomeCallable APIGatewayClient::GetUsagePlansCallable(const GetUsagePlansRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetUsagePlans(request); } );
+}
+
+void APIGatewayClient::GetUsagePlansAsync(const GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUsagePlansAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::GetUsagePlansAsyncHelper(const GetUsagePlansRequest& request, const GetUsagePlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUsagePlans(request), context);
+}
+
+ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/apikeys?mode=import";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ImportApiKeysOutcome(ImportApiKeysResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportApiKeysOutcome(outcome.GetError());
+  }
+}
+
+ImportApiKeysOutcomeCallable APIGatewayClient::ImportApiKeysCallable(const ImportApiKeysRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->ImportApiKeys(request); } );
+}
+
+void APIGatewayClient::ImportApiKeysAsync(const ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportApiKeysAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::ImportApiKeysAsyncHelper(const ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportApiKeys(request), context);
+}
+
 ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest& request) const
 {
   Aws::StringStream ss;
@@ -2775,5 +3111,72 @@ void APIGatewayClient::UpdateStageAsync(const UpdateStageRequest& request, const
 void APIGatewayClient::UpdateStageAsyncHelper(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateStage(request), context);
+}
+
+UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+  ss << "/keys/";
+  ss << request.GetKeyId();
+  ss << "/usage";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateUsageOutcome(UpdateUsageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateUsageOutcome(outcome.GetError());
+  }
+}
+
+UpdateUsageOutcomeCallable APIGatewayClient::UpdateUsageCallable(const UpdateUsageRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->UpdateUsage(request); } );
+}
+
+void APIGatewayClient::UpdateUsageAsync(const UpdateUsageRequest& request, const UpdateUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateUsageAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateUsageAsyncHelper(const UpdateUsageRequest& request, const UpdateUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateUsage(request), context);
+}
+
+UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/usageplans/";
+  ss << request.GetUsagePlanId();
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_PATCH);
+  if(outcome.IsSuccess())
+  {
+    return UpdateUsagePlanOutcome(UpdateUsagePlanResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateUsagePlanOutcome(outcome.GetError());
+  }
+}
+
+UpdateUsagePlanOutcomeCallable APIGatewayClient::UpdateUsagePlanCallable(const UpdateUsagePlanRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->UpdateUsagePlan(request); } );
+}
+
+void APIGatewayClient::UpdateUsagePlanAsync(const UpdateUsagePlanRequest& request, const UpdateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateUsagePlanAsyncHelper( request, handler, context ); } );
+}
+
+void APIGatewayClient::UpdateUsagePlanAsyncHelper(const UpdateUsagePlanRequest& request, const UpdateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateUsagePlan(request), context);
 }
 
