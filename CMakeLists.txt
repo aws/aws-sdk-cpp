@@ -394,7 +394,7 @@ endif()
 if(PLATFORM_ANDROID AND ANDROID_BUILD_ZLIB)
     set(BUILD_ZLIB 1)
     message(STATUS "  Building Zlib as part of AWS SDK")
-elseif(NOT PLATFORM_WINDOWS)
+elseif(NOT PLATFORM_WINDOWS AND NOT PLATFORM_CUSTOM)
     include(FindZLIB)
     if(NOT ZLIB_FOUND)
         message(FATAL_ERROR "Could not find zlib")
@@ -407,7 +407,7 @@ endif()
 
 
 # UUID headers
-if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_ANDROID)
+if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_ANDROID AND NOT PLATFORM_CUSTOM)
     message(STATUS "Finding uuid")
 
     find_path(UUID_INCLUDE_DIR uuid/uuid.h)
