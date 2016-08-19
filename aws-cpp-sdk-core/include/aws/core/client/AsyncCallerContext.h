@@ -16,6 +16,7 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -30,9 +31,9 @@ namespace Aws
         {
         public:
             /**
-             * Initializes object with empty UUID
+             * Initializes object with generated UUID
              */
-            AsyncCallerContext() {}
+            AsyncCallerContext() { m_uuid = Aws::Utils::UUID::RandomUUID(); }
 
             /**
              * Initializes object with UUID
