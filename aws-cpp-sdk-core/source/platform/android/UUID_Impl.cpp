@@ -24,7 +24,7 @@ namespace Aws
             char uuid[UUID_STR_SIZE];
             memset(uuid, 0, sizeof(uuid));
 
-            int fd = fopen("/proc/sys/kernel/random/uuid", "r");
+            FILE* fd = fopen("/proc/sys/kernel/random/uuid", "r");
 
             if(fd)
             {

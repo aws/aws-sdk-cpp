@@ -330,6 +330,7 @@ add_library(aws-cpp-sdk-core ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
 if(ENABLE_CURL_CLIENT AND BUILD_CURL)
     add_dependencies(aws-cpp-sdk-core CURL)
 endif()
+
 if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
     add_dependencies(aws-cpp-sdk-core OPENSSL)
 endif()
@@ -338,7 +339,6 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
-
 
 target_compile_definitions(aws-cpp-sdk-core PUBLIC -DJSON_USE_EXCEPTION=0)
 
