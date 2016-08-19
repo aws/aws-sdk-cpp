@@ -26,7 +26,7 @@ namespace Aws
     {
         namespace Stream
         {
-            class AWS_CORE_API PreallocatedStreamBuf : std::streambuf
+            class AWS_CORE_API PreallocatedStreamBuf : public std::streambuf
             {
             public:
                 PreallocatedStreamBuf(Aws::Utils::Array<uint8_t>* buffer, std::size_t lengthToRead);

@@ -16,19 +16,17 @@
 #pragma once
 
 #include <aws/transfer/TransferHandle.h>
+#include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/ResourceManager.h>
+#include <aws/core/client/AsyncCallerContext.h>
 
 namespace Aws
-{
-    namespace S3
-    {
-        class S3Client;
-    }
+{    
     namespace Transfer
     {
         class TransferManager;
@@ -87,15 +85,22 @@ namespace Aws
             DownloadProgressCallback downloadProgressCallback;
             TransferStatusUpdatedCallback transferStatusUpdatedCallback;
             ErrorCallback errorCallback;
-        };
+        };        
 
         class  AWS_TRANSFER_API TransferManager
         {
         public:
             TransferManager(const TransferManagerConfiguration& config);
 
-            std::shared_ptr<TransferHandle> UploadFile
+            std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
+                                                            const Aws::Map<Aws::String, Aws::String>& metadata);
+            std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
+                const Aws::Map<Aws::String, Aws::String>& metadata);
+        
         private:
+            void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
+            void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
+
             Aws::Utils::ResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
         };

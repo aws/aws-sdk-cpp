@@ -41,7 +41,7 @@ namespace Aws
                 }
                 else if (dir == std::ios_base::end)
                 {
-                    return seekpos(m_lengthToRead - (m_lengthToRead - off), which);
+                    return seekpos(m_lengthToRead - off, which);
                 }
                 else if (dir == std::ios_base::cur)
                 {
@@ -60,8 +60,8 @@ namespace Aws
 
             PreallocatedStreamBuf::pos_type PreallocatedStreamBuf::seekpos(pos_type pos, std::ios_base::openmode which)
             {
-                assert(pos < m_lengthToRead);
-                if (pos >= m_lengthToRead)
+                assert(static_cast<size_t>(pos) < m_lengthToRead);
+                if (static_cast<size_t>(pos) >= m_lengthToRead)
                 {
                     return pos_type(off_type(-1));
                 }

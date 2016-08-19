@@ -105,5 +105,15 @@ namespace Aws
                 semaphoreLock.unlock();
             }
         }
+
+        void TransferHandle::Cancel()
+        {
+            m_cancel = true;
+        }
+
+        bool TransferHandle::Continue()
+        {
+            return !m_cancel;
+        }
     }
 }
