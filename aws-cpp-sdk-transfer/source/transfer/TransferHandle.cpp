@@ -19,13 +19,13 @@ namespace Aws
 {
     namespace Transfer
     {
-        Aws::Set<int> TransferHandle::GetCompletedParts() const
+        Aws::Set<std::pair<int, Aws::String>> TransferHandle::GetCompletedParts() const
         {
             std::lock_guard<std::recursive_mutex> locker(m_completedPartsLock);
             return m_completedParts;
         }
 
-        void TransferHandle::ChangePartToCompleted(int partNumber)
+        void TransferHandle::ChangePartToCompleted(int partNumber, const Aws::String& eTag)
         {
             {
                 std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
@@ -36,7 +36,7 @@ namespace Aws
                 }
             }
             std::lock_guard<std::recursive_mutex> completedPartsLocker(m_completedPartsLock);
-            m_completedParts.insert(partNumber);
+            m_completedParts.insert(std::pair<int, Aws::String>(partNumber, eTag));
         }
 
         Aws::Set<int> TransferHandle::GetPendingParts() const
@@ -49,11 +49,7 @@ namespace Aws
         {
             {
                 std::lock_guard<std::recursive_mutex> failedPartsLocker(m_failedPartsLock);
-                if (!m_failedParts.erase(partNumber))
-                {
-                    std::lock_guard<std::recursive_mutex> completedPartsLocker(m_completedPartsLock);
-                    m_completedParts.erase(partNumber);
-                }
+                m_failedParts.erase(partNumber);
             }
 
             std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
@@ -70,11 +66,7 @@ namespace Aws
         {
             {
                 std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
-                if (!m_pendingParts.erase(partNumber))
-                {
-                    std::lock_guard<std::recursive_mutex> completedPartsLocker(m_completedPartsLock);
-                    m_completedParts.erase(partNumber);
-                }
+                m_pendingParts.erase(partNumber);               
             }
             std::lock_guard<std::recursive_mutex> failedPartsLocker(m_failedPartsLock);
             m_failedParts.insert(partNumber);

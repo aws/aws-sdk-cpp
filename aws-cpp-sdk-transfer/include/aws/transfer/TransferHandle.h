@@ -49,18 +49,23 @@ namespace Aws
         class AWS_TRANSFER_API TransferHandle
         {
         public:
-            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, TransferDirection direction, const Aws::String& targetFilePath = "") : 
-                m_isMultipart(false), m_direction(direction), m_bytesTransferred(0), m_bucket(bucketName), 
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "") : 
+                m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bucket(bucketName), 
                 m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(totalSize), m_status(TransferStatus::NOT_STARTED), m_cancel(false)
+            {}
+
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "") :
+                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bucket(bucketName),
+                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(0), m_status(TransferStatus::NOT_STARTED), m_cancel(false)
             {}
 
             inline bool IsMultipart() const { return m_isMultipart; }
             inline void SetIsMultipart(bool value) { m_isMultipart = value; }
             inline const Aws::String& GetMultiPartId() const { return m_multipartId; }
-            inline void SetMultiPartId(const Aws::String& value) { m_multipartId = value; }
+            inline void SetMultipartId(const Aws::String& value) { m_multipartId = value; }
 
-            Aws::Set<int> GetCompletedParts() const;
-            void ChangePartToCompleted(int);
+            Aws::Set<std::pair<int, Aws::String>> GetCompletedParts() const;
+            void ChangePartToCompleted(int, const Aws::String&);
 
             Aws::Set<int> GetPendingParts() const;
             void AddPendingPart(int);
@@ -73,8 +78,10 @@ namespace Aws
 
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }
             inline void AddTransferredBytes(uint64_t bytes) { m_bytesTransferred += bytes; }
+            inline void SetTransferredBytes(uint64_t bytes) { m_bytesTransferred = bytes; }
 
             inline uint64_t GetBytesTotalSize() const { return m_bytesTotalSize; }
+            inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize = value; }
 
             inline const Aws::String& GetBucketName() const { return m_bucket; }
             inline const Aws::String& GetKey() const { return m_key; }
@@ -96,7 +103,7 @@ namespace Aws
             bool m_isMultipart;
             Aws::String m_multipartId;
             TransferDirection m_direction;
-            Aws::Set<int> m_completedParts;
+            Aws::Set<std::pair<int, Aws::String>> m_completedParts;
             Aws::Set<int> m_pendingParts;
             Aws::Set<int> m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;

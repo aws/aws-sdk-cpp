@@ -40,8 +40,12 @@ namespace Aws
 
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), maxParallelTransfers(3)
-            {}
+            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), bufferSize(MB5_BUFFER_SIZE), maxParallelTransfers(3)
+            {
+                //let the programmer know if they've created two useless values here.
+                //you need at least bufferSize * maxParallelTransfers for the  max heap size.
+                assert(transferBufferMaxHeapSize > bufferSize * maxParallelTransfers);
+            }
 
             /**
              * S3 Client to use for transfers. You are responsible for setting this.
@@ -77,6 +81,11 @@ namespace Aws
              */
             uint64_t transferBufferMaxHeapSize;
             /**
+             * Defaults to 5MB. If you are uploading large files,  (larger than 50GB, this needs to be specified to be something larger than 5MB. Also keep in mind that you may need
+             * to increase your max heap size if this is something you plan on increasing.
+             */
+            uint64_t bufferSize;
+            /**
              * Maximum number of file transfers to run in parallel. The default is 3. This is only enforced if the executor is a thread pool.
              */
             size_t maxParallelTransfers;
@@ -95,11 +104,23 @@ namespace Aws
             std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
                                                             const Aws::Map<Aws::String, Aws::String>& metadata);
             std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
-                const Aws::Map<Aws::String, Aws::String>& metadata);
+                                                            const Aws::Map<Aws::String, Aws::String>& metadata);
+
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& writeToFile);
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, Aws::IOStream* writeToStream);
         
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
+            void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
+            void DoDownload(Aws::IOStream* streamToWriteTo, const std::shared_ptr<TransferHandle>& handle);
+
             void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
+            void HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
+
+            void TriggerUploadProgressCallback(const TransferHandle&);
+            void TriggerDownloadProgressCallback(const TransferHandle&);
+            void TriggerTransferStatusUpdatedCallback(const TransferHandle&);
+            void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error);
 
             Aws::Utils::ResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
