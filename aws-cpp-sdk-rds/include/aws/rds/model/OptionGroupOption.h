@@ -253,87 +253,84 @@ namespace Model
     inline OptionGroupOption& WithDefaultPort(int value) { SetDefaultPort(value); return *this;}
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOptionsDependedOn() const{ return m_optionsDependedOn; }
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline void SetOptionsDependedOn(const Aws::Vector<Aws::String>& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn = value; }
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline void SetOptionsDependedOn(Aws::Vector<Aws::String>&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn = value; }
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline OptionGroupOption& WithOptionsDependedOn(const Aws::Vector<Aws::String>& value) { SetOptionsDependedOn(value); return *this;}
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline OptionGroupOption& WithOptionsDependedOn(Aws::Vector<Aws::String>&& value) { SetOptionsDependedOn(value); return *this;}
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline OptionGroupOption& AddOptionsDependedOn(const Aws::String& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline OptionGroupOption& AddOptionsDependedOn(Aws::String&& value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
     /**
-     * <p>List of all options that are prerequisites for this option.</p>
+     * <p>The options that are prerequisites for this option.</p>
      */
     inline OptionGroupOption& AddOptionsDependedOn(const char* value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
     /**
-     * <p>A persistent option cannot be removed from the option group once the option
-     * group is used, but this option can be removed from the db instance while
-     * modifying the related data and assigning another option group without this
-     * option.</p>
+     * <p>Persistent options can't be removed from an option group while DB instances
+     * are associated with the option group. If you disassociate all DB instances from
+     * the option group, your can remove the persistent option from the option
+     * group.</p>
      */
     inline bool GetPersistent() const{ return m_persistent; }
 
     /**
-     * <p>A persistent option cannot be removed from the option group once the option
-     * group is used, but this option can be removed from the db instance while
-     * modifying the related data and assigning another option group without this
-     * option.</p>
+     * <p>Persistent options can't be removed from an option group while DB instances
+     * are associated with the option group. If you disassociate all DB instances from
+     * the option group, your can remove the persistent option from the option
+     * group.</p>
      */
     inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
 
     /**
-     * <p>A persistent option cannot be removed from the option group once the option
-     * group is used, but this option can be removed from the db instance while
-     * modifying the related data and assigning another option group without this
-     * option.</p>
+     * <p>Persistent options can't be removed from an option group while DB instances
+     * are associated with the option group. If you disassociate all DB instances from
+     * the option group, your can remove the persistent option from the option
+     * group.</p>
      */
     inline OptionGroupOption& WithPersistent(bool value) { SetPersistent(value); return *this;}
 
     /**
-     * <p>A permanent option cannot be removed from the option group once the option
-     * group is used, and it cannot be removed from the db instance after assigning an
-     * option group with this permanent option.</p>
+     * <p>Permanent options can never be removed from an option group. An option group
+     * containing a permanent option can't be removed from a DB instance.</p>
      */
     inline bool GetPermanent() const{ return m_permanent; }
 
     /**
-     * <p>A permanent option cannot be removed from the option group once the option
-     * group is used, and it cannot be removed from the db instance after assigning an
-     * option group with this permanent option.</p>
+     * <p>Permanent options can never be removed from an option group. An option group
+     * containing a permanent option can't be removed from a DB instance.</p>
      */
     inline void SetPermanent(bool value) { m_permanentHasBeenSet = true; m_permanent = value; }
 
     /**
-     * <p>A permanent option cannot be removed from the option group once the option
-     * group is used, and it cannot be removed from the db instance after assigning an
-     * option group with this permanent option.</p>
+     * <p>Permanent options can never be removed from an option group. An option group
+     * containing a permanent option can't be removed from a DB instance.</p>
      */
     inline OptionGroupOption& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
@@ -380,37 +377,37 @@ namespace Model
     inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline const Aws::Vector<OptionVersion>& GetOptionGroupOptionVersions() const{ return m_optionGroupOptionVersions; }
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline void SetOptionGroupOptionVersions(const Aws::Vector<OptionVersion>& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = value; }
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline void SetOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions = value; }
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline OptionGroupOption& WithOptionGroupOptionVersions(const Aws::Vector<OptionVersion>& value) { SetOptionGroupOptionVersions(value); return *this;}
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline OptionGroupOption& WithOptionGroupOptionVersions(Aws::Vector<OptionVersion>&& value) { SetOptionGroupOptionVersions(value); return *this;}
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline OptionGroupOption& AddOptionGroupOptionVersions(const OptionVersion& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the versions that are available for the option.</p>
+     * <p>The versions that are available for the option.</p>
      */
     inline OptionGroupOption& AddOptionGroupOptionVersions(OptionVersion&& value) { m_optionGroupOptionVersionsHasBeenSet = true; m_optionGroupOptionVersions.push_back(value); return *this; }
 

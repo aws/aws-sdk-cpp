@@ -208,6 +208,27 @@ namespace Model
      */
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
+    
+    inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
+
+    
+    inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+
+    
+    inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
+
+    
+    inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
+
+    
+    inline Event& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+
+    
+    inline Event& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
+
+    
+    inline Event& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+
   private:
     Aws::String m_sourceIdentifier;
     bool m_sourceIdentifierHasBeenSet;
@@ -219,6 +240,8 @@ namespace Model
     bool m_eventCategoriesHasBeenSet;
     Aws::Utils::DateTime m_date;
     bool m_dateHasBeenSet;
+    Aws::String m_sourceArn;
+    bool m_sourceArnHasBeenSet;
   };
 
 } // namespace Model

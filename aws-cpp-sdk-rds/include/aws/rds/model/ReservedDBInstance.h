@@ -429,6 +429,27 @@ namespace Model
      */
     inline ReservedDBInstance& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
+    
+    inline const Aws::String& GetReservedDBInstanceArn() const{ return m_reservedDBInstanceArn; }
+
+    
+    inline void SetReservedDBInstanceArn(const Aws::String& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
+
+    
+    inline void SetReservedDBInstanceArn(Aws::String&& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
+
+    
+    inline void SetReservedDBInstanceArn(const char* value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn.assign(value); }
+
+    
+    inline ReservedDBInstance& WithReservedDBInstanceArn(const Aws::String& value) { SetReservedDBInstanceArn(value); return *this;}
+
+    
+    inline ReservedDBInstance& WithReservedDBInstanceArn(Aws::String&& value) { SetReservedDBInstanceArn(value); return *this;}
+
+    
+    inline ReservedDBInstance& WithReservedDBInstanceArn(const char* value) { SetReservedDBInstanceArn(value); return *this;}
+
   private:
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
@@ -458,6 +479,8 @@ namespace Model
     bool m_stateHasBeenSet;
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+    Aws::String m_reservedDBInstanceArn;
+    bool m_reservedDBInstanceArnHasBeenSet;
   };
 
 } // namespace Model

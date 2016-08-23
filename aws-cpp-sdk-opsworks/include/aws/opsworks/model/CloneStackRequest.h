@@ -112,56 +112,56 @@ namespace Model
     inline CloneStackRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline CloneStackRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */
     inline CloneStackRequest& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The cloned stack AWS region, such as "us-east-1". For more information about
-     * AWS regions, see <a
+     * <p>The cloned stack AWS region, such as "ap-northeast-2". For more information
+     * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
      * Endpoints</a>.</p>
      */

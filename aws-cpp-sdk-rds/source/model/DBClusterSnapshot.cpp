@@ -50,7 +50,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_percentProgressHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dBClusterSnapshotArnHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_percentProgressHasBeenSet(false),
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dBClusterSnapshotArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -194,6 +196,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode dBClusterSnapshotArnNode = resultNode.FirstChild("DBClusterSnapshotArn");
+    if(!dBClusterSnapshotArnNode.IsNull())
+    {
+      m_dBClusterSnapshotArn = StringUtils::Trim(dBClusterSnapshotArnNode.GetText().c_str());
+      m_dBClusterSnapshotArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -290,6 +298,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if(m_dBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -365,6 +378,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_dBClusterSnapshotArnHasBeenSet)
+  {
+      oStream << location << ".DBClusterSnapshotArn=" << StringUtils::URLEncode(m_dBClusterSnapshotArn.c_str()) << "&";
   }
 }
 

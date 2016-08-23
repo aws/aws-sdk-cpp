@@ -784,6 +784,27 @@ namespace Model
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    
+    inline const Aws::String& GetDBSnapshotArn() const{ return m_dBSnapshotArn; }
+
+    
+    inline void SetDBSnapshotArn(const Aws::String& value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn = value; }
+
+    
+    inline void SetDBSnapshotArn(Aws::String&& value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn = value; }
+
+    
+    inline void SetDBSnapshotArn(const char* value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn.assign(value); }
+
+    
+    inline DBSnapshot& WithDBSnapshotArn(const Aws::String& value) { SetDBSnapshotArn(value); return *this;}
+
+    
+    inline DBSnapshot& WithDBSnapshotArn(Aws::String&& value) { SetDBSnapshotArn(value); return *this;}
+
+    
+    inline DBSnapshot& WithDBSnapshotArn(const char* value) { SetDBSnapshotArn(value); return *this;}
+
   private:
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
@@ -831,6 +852,8 @@ namespace Model
     bool m_encryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_dBSnapshotArn;
+    bool m_dBSnapshotArnHasBeenSet;
   };
 
 } // namespace Model

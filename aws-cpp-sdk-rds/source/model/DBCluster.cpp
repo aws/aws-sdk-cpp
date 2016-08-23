@@ -61,7 +61,8 @@ DBCluster::DBCluster() :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false)
+    m_dbClusterResourceIdHasBeenSet(false),
+    m_dBClusterArnHasBeenSet(false)
 {
 }
 
@@ -97,7 +98,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_storageEncrypted(false),
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false)
+    m_dbClusterResourceIdHasBeenSet(false),
+    m_dBClusterArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -306,6 +308,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_dbClusterResourceId = StringUtils::Trim(dbClusterResourceIdNode.GetText().c_str());
       m_dbClusterResourceIdHasBeenSet = true;
     }
+    XmlNode dBClusterArnNode = resultNode.FirstChild("DBClusterArn");
+    if(!dBClusterArnNode.IsNull())
+    {
+      m_dBClusterArn = StringUtils::Trim(dBClusterArnNode.GetText().c_str());
+      m_dBClusterArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -479,6 +487,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
   }
 
+  if(m_dBClusterArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBClusterArn=" << StringUtils::URLEncode(m_dBClusterArn.c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -620,6 +633,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_dbClusterResourceIdHasBeenSet)
   {
       oStream << location << ".DbClusterResourceId=" << StringUtils::URLEncode(m_dbClusterResourceId.c_str()) << "&";
+  }
+  if(m_dBClusterArnHasBeenSet)
+  {
+      oStream << location << ".DBClusterArn=" << StringUtils::URLEncode(m_dBClusterArn.c_str()) << "&";
   }
 }
 

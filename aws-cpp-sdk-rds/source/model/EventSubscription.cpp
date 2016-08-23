@@ -39,7 +39,8 @@ EventSubscription::EventSubscription() :
     m_sourceIdsListHasBeenSet(false),
     m_eventCategoriesListHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_eventSubscriptionArnHasBeenSet(false)
 {
 }
 
@@ -53,7 +54,8 @@ EventSubscription::EventSubscription(const XmlNode& xmlNode) :
     m_sourceIdsListHasBeenSet(false),
     m_eventCategoriesListHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_eventSubscriptionArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -130,6 +132,12 @@ EventSubscription& EventSubscription::operator =(const XmlNode& xmlNode)
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(enabledNode.GetText().c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
+    XmlNode eventSubscriptionArnNode = resultNode.FirstChild("EventSubscriptionArn");
+    if(!eventSubscriptionArnNode.IsNull())
+    {
+      m_eventSubscriptionArn = StringUtils::Trim(eventSubscriptionArnNode.GetText().c_str());
+      m_eventSubscriptionArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -190,6 +198,11 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
 
+  if(m_eventSubscriptionArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EventSubscriptionArn=" << StringUtils::URLEncode(m_eventSubscriptionArn.c_str()) << "&";
+  }
+
 }
 
 void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -237,6 +250,10 @@ void EventSubscription::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_enabledHasBeenSet)
   {
       oStream << location << ".Enabled=" << m_enabled << "&";
+  }
+  if(m_eventSubscriptionArnHasBeenSet)
+  {
+      oStream << location << ".EventSubscriptionArn=" << StringUtils::URLEncode(m_eventSubscriptionArn.c_str()) << "&";
   }
 }
 

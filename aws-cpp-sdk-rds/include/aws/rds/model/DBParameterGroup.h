@@ -159,6 +159,27 @@ namespace Model
      */
     inline DBParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    
+    inline const Aws::String& GetDBParameterGroupArn() const{ return m_dBParameterGroupArn; }
+
+    
+    inline void SetDBParameterGroupArn(const Aws::String& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = value; }
+
+    
+    inline void SetDBParameterGroupArn(Aws::String&& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = value; }
+
+    
+    inline void SetDBParameterGroupArn(const char* value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn.assign(value); }
+
+    
+    inline DBParameterGroup& WithDBParameterGroupArn(const Aws::String& value) { SetDBParameterGroupArn(value); return *this;}
+
+    
+    inline DBParameterGroup& WithDBParameterGroupArn(Aws::String&& value) { SetDBParameterGroupArn(value); return *this;}
+
+    
+    inline DBParameterGroup& WithDBParameterGroupArn(const char* value) { SetDBParameterGroupArn(value); return *this;}
+
   private:
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
@@ -166,6 +187,8 @@ namespace Model
     bool m_dBParameterGroupFamilyHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_dBParameterGroupArn;
+    bool m_dBParameterGroupArnHasBeenSet;
   };
 
 } // namespace Model

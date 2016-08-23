@@ -412,17 +412,24 @@ namespace Model
    * Node.js</a> </p> </li> <li> <p> <a
    * href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for
    * Python(Boto)</a> </p> </li> </ul> <p> <b>Endpoints</b> </p> <p>AWS OpsWorks
-   * supports two endpoints, opsworks.us-east-1.amazonaws.com and
-   * opsworks.ap-south-1.amazonaws.com (both HTTPS). You must connect to one of those
-   * two endpoints. You can then use the API to direct AWS OpsWorks to create stacks
-   * in any AWS region. Stacks created in all regions except ap-south-1 are connected
-   * to the us-east-1 regional endpoint; stacks created in ap-south-1 are associated
-   * with the ap-south-1 regional endpoint, and can only be accessed or managed
-   * within that endpoint.</p> <p> <b>Chef Versions</b> </p> <p>When you call
-   * <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend you
-   * use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-   * The recommended and default value for Linux stacks is currently 12. Windows
-   * stacks use Chef 12.2. For more information, see <a
+   * supports the following endpoints, all HTTPS. You must connect to one of the
+   * following endpoints. Stacks can only be accessed or managed within the endpoint
+   * in which they are created.</p> <ul> <li> <p>opsworks.us-east-1.amazonaws.com</p>
+   * </li> <li> <p>opsworks.us-west-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.us-west-2.amazonaws.com</p> </li> <li>
+   * <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.eu-central-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ap-northeast-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ap-northeast-2.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ap-south-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ap-southeast-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ap-southeast-2.amazonaws.com</p> </li> <li>
+   * <p>opsworks.sa-east-1.amazonaws.com</p> </li> </ul> <p> <b>Chef Versions</b>
+   * </p> <p>When you call <a>CreateStack</a>, <a>CloneStack</a>, or
+   * <a>UpdateStack</a> we recommend you use the <code>ConfigurationManager</code>
+   * parameter to specify the Chef version. The recommended and default value for
+   * Linux stacks is currently 12. Windows stacks use Chef 12.2. For more
+   * information, see <a
    * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
    * Versions</a>.</p> <note> <p>You can specify Chef 12, 11.10, or 11.4 for your
    * Linux stack. We recommend migrating your existing Linux stacks to Chef 12 as
