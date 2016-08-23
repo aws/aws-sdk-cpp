@@ -40,7 +40,7 @@ namespace Aws
 
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), bufferSize(MB5_BUFFER_SIZE), maxParallelTransfers(3)
+            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), bufferSize(MB5_BUFFER_SIZE), maxParallelTransfers(1)
             {
                 //let the programmer know if they've created two useless values here.
                 //you need at least bufferSize * maxParallelTransfers for the  max heap size.
@@ -86,7 +86,7 @@ namespace Aws
              */
             uint64_t bufferSize;
             /**
-             * Maximum number of file transfers to run in parallel. The default is 3. This is only enforced if the executor is a thread pool.
+             * Maximum number of file transfers to run in parallel. The default is 1. This is only enforced if the executor is a thread pool.
              */
             size_t maxParallelTransfers;
 
@@ -117,10 +117,11 @@ namespace Aws
             void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
             void HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
 
-            void TriggerUploadProgressCallback(const TransferHandle&);
-            void TriggerDownloadProgressCallback(const TransferHandle&);
-            void TriggerTransferStatusUpdatedCallback(const TransferHandle&);
-            void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error);
+            TransferStatus DetermineIfFailedOrCanceled(const TransferHandle&) const;
+            void TriggerUploadProgressCallback(const TransferHandle&) const;
+            void TriggerDownloadProgressCallback(const TransferHandle&) const;
+            void TriggerTransferStatusUpdatedCallback(const TransferHandle&) const;
+            void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
 
             Aws::Utils::ResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;

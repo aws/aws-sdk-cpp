@@ -323,6 +323,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
     httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());
+    httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
 
     request.AddQueryStringParameters(httpRequest->GetUri());
 }

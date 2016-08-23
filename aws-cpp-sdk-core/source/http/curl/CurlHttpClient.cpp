@@ -467,7 +467,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
 
         const CurlHttpClient* client = context->m_client;
-        if(!client->IsRequestProcessingEnabled())
+        if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
         {
             return 0;
         }
@@ -530,7 +530,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     }
 
     const CurlHttpClient* client = context->m_client;
-    if(!client->IsRequestProcessingEnabled())
+    if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
     {
         return CURL_READFUNC_ABORT;
     }

@@ -36,6 +36,7 @@ namespace Aws
             EXACT_OBJECT_ALREADY_EXISTS,            
             NOT_STARTED,
             IN_PROGRESS,
+            CANCELED,
             FAILED,
             COMPLETED
         };
@@ -73,7 +74,7 @@ namespace Aws
             Aws::Set<int> GetFailedParts() const;
             void ChangePartToFailed(int);
 
-            bool Continue();
+            bool ShouldContinue() const;
             void Cancel();
 
             inline uint64_t GetBytesTransferred() const { return m_bytesTransferred.load(); }

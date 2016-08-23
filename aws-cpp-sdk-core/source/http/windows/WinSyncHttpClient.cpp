@@ -132,7 +132,7 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
                 done = true;
             }
 
-            success = success && IsRequestProcessingEnabled();
+            success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }
 
         payloadStream->clear();
@@ -207,8 +207,9 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
         char body[1024];
         uint64_t bodySize = sizeof(body);
         int64_t numBytesResponseReceived = 0;
-        read = 0;
-        bool success = true;
+        read = 0;    
+        
+        bool success = ContinueRequest(request);
 
         while (DoReadData(hHttpRequest, body, bodySize, read) && read > 0 && success)
         {
@@ -227,7 +228,7 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
                 }
             }
 
-            success = success && IsRequestProcessingEnabled();
+            success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
         }
 
         if (response->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER))

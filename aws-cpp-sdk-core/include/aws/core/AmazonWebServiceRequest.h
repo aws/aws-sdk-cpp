@@ -72,14 +72,19 @@ namespace Aws
          * register closure for data sent event
          */
         inline virtual void SetDataSentEventHandler(const Aws::Http::DataSentEventHandler& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+
+        inline virtual void SetContinueRequestHandler(const Aws::Http::ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
         /**
         * Register closure for data recieved event.
         */
-        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = dataReceivedEventHandler; }
+        inline virtual void SetDataReceivedEventHandler(Aws::Http::DataReceivedEventHandler&& dataReceivedEventHandler) { m_onDataReceived = std::move(dataReceivedEventHandler); }
         /**
         * register closure for data sent event
         */
-        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = dataSentEventHandler; }
+        inline virtual void SetDataSentEventHandler(Aws::Http::DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
+
+        inline virtual void SetContinueRequestHandler(Aws::Http::ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
+
         /**
         * get closure for data recieved event.
         */
@@ -88,6 +93,8 @@ namespace Aws
         * get closure for data sent event
         */
         inline virtual const Aws::Http::DataSentEventHandler& GetDataSentEventHandler() const { return m_onDataSent; }
+
+        inline virtual const Aws::Http::ContinueRequestHandler& GetContinueRequestHandler() const { return m_continueRequest; }
         /**
          * If this is set to true, content-md5 needs to be computed and set on the request
          */
@@ -100,6 +107,7 @@ namespace Aws
 
         Aws::Http::DataReceivedEventHandler m_onDataReceived;
         Aws::Http::DataSentEventHandler m_onDataSent;
+        Aws::Http::ContinueRequestHandler m_continueRequest;
     };
 
 } // namespace Aws

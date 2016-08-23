@@ -139,7 +139,7 @@ namespace Aws
                 partNumber = 1;
                 size_t sentBytes = 0;
 
-                while (sentBytes < handle->GetBytesTotalSize() && handle->Continue())
+                while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue())
                 {
                     auto buffer = m_bufferManager.Acquire();
                     
@@ -150,6 +150,7 @@ namespace Aws
                     auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
+                    uploadPartRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
                             .WithContentLength(lengthToWrite)
                             .WithKey(handle->GetKey())
@@ -173,7 +174,7 @@ namespace Aws
             else
             {
                 handle->SetError(createMultipartResponse.GetError());
-                handle->UpdateStatus(TransferStatus::FAILED);
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
 
                 TriggerErrorCallback(*handle, createMultipartResponse.GetError());                
             }
@@ -185,6 +186,7 @@ namespace Aws
             handle->SetIsMultipart(false);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
+            putObjectRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())
                 .WithContentLength(handle->GetBytesTotalSize())
@@ -264,6 +266,7 @@ namespace Aws
                     }
 
                     Aws::S3::Model::CompleteMultipartUploadRequest completeMultipartUploadRequest;
+                    completeMultipartUploadRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return transferContext->handle->ShouldContinue(); });
                     completeMultipartUploadRequest.WithBucket(transferContext->handle->GetBucketName())
                         .WithKey(transferContext->handle->GetKey())
                         .WithUploadId(transferContext->handle->GetMultiPartId())
@@ -277,12 +280,12 @@ namespace Aws
                     }
                     else
                     {
-                        transferContext->handle->UpdateStatus(TransferStatus::FAILED);
+                        transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                     }                    
                 }
                 else
                 {
-                    transferContext->handle->UpdateStatus(TransferStatus::FAILED);
+                    transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 }
             }
 
@@ -306,7 +309,7 @@ namespace Aws
             }
             else
             {
-                transferContext->handle->UpdateStatus(TransferStatus::FAILED);
+                transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());               
             }
@@ -323,6 +326,7 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(*handle);
 
             Aws::S3::Model::GetObjectRequest request;
+            request.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey());
             request.SetResponseStreamFactory([&]() { return streamToWriteTo; });
@@ -343,7 +347,7 @@ namespace Aws
             else
             {
                 handle->ChangePartToFailed(1);
-                handle->UpdateStatus(TransferStatus::FAILED);
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 handle->SetError(getObjectOutcome.GetError());
                
                 TriggerErrorCallback(*handle, getObjectOutcome.GetError());               
@@ -352,7 +356,12 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(*handle);
         }
 
-        void TransferManager::TriggerUploadProgressCallback(const TransferHandle& handle)
+        TransferStatus TransferManager::DetermineIfFailedOrCanceled(const TransferHandle& handle) const
+        {
+            return handle.ShouldContinue() ? TransferStatus::FAILED : TransferStatus::CANCELED;
+        }
+
+        void TransferManager::TriggerUploadProgressCallback(const TransferHandle& handle) const
         {
             if (m_transferConfig.uploadProgressCallback)
             {
@@ -360,7 +369,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerDownloadProgressCallback(const TransferHandle& handle)
+        void TransferManager::TriggerDownloadProgressCallback(const TransferHandle& handle) const
         {
             if (m_transferConfig.downloadProgressCallback)
             {
@@ -368,7 +377,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerTransferStatusUpdatedCallback(const TransferHandle& handle)
+        void TransferManager::TriggerTransferStatusUpdatedCallback(const TransferHandle& handle) const
         {
             if (m_transferConfig.transferStatusUpdatedCallback)
             {
@@ -376,7 +385,7 @@ namespace Aws
             }
         }
 
-        void TransferManager::TriggerErrorCallback(const TransferHandle& handle, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)
+        void TransferManager::TriggerErrorCallback(const TransferHandle& handle, const Aws::Client::AWSError<Aws::S3::S3Errors>& error) const
         {
             if (m_transferConfig.errorCallback)
             {
