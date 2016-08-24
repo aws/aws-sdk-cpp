@@ -38,6 +38,9 @@ namespace Aws
 
         const uint64_t MB5_BUFFER_SIZE = 5 * 1024 * 1024;
 
+        /**
+         * Configuration for use with TransferManager. The data here will be copied directly to TransferManager.
+         */
         struct TransferManagerConfiguration
         {
             TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), bufferSize(MB5_BUFFER_SIZE), maxParallelTransfers(1)
@@ -90,29 +93,83 @@ namespace Aws
              */
             size_t maxParallelTransfers;
 
+            /**
+             * Callback to receive progress updates for uploads.
+             */
             UploadProgressCallback uploadProgressCallback;
+            /**
+             * Callback to receive progress updates for downloads.
+             */
             DownloadProgressCallback downloadProgressCallback;
+            /**
+             * Callback to receive updates on the status of the transfer.
+             */
             TransferStatusUpdatedCallback transferStatusUpdatedCallback;
+            /**
+             * Callback to receive all errors that are thrown over the course of a transfer.
+             */
             ErrorCallback errorCallback;
         };        
 
+        /**
+         * This is a utility around Amazon Simple Storage Service. It can Upload large files via parts in parallel, Upload files less than 5MB in single PutObject, and download files via GetObject,
+         *  If a transfer fails, it can be retried for an upload. For a download, there is nothing to retry in case of failure. Just download it again. You can also abort any in progress transfers.
+         *  The key interface for controlling and knowing the status of your upload is the TransferHandle. An instance of TransferHandle is returned from each of the public functions in this interface.
+         *  Keep a reference to the pointer. Each of the callbacks will also pass the handle that has received an update. None of the public methods in this interface block.
+         */
         class  AWS_TRANSFER_API TransferManager
         {
         public:
+            /**
+             * Initializes TransferManager with config.
+             */
             TransferManager(const TransferManagerConfiguration& config);
 
+            /**
+             * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
+             * then a multi-part upload will be performed.
+             */
             std::shared_ptr<TransferHandle> UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType, 
                                                             const Aws::Map<Aws::String, Aws::String>& metadata);
+
+            /**
+             * Uploads the contents of stream, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,
+             * then a multi-part upload will be performed.
+             */
             std::shared_ptr<TransferHandle> UploadFile(const std::shared_ptr<Aws::IOStream>& stream, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
                                                             const Aws::Map<Aws::String, Aws::String>& metadata);
 
+            /**
+             * Downloads the contents of bucketName/keyName in S3 to the file specified by writeToFile. This will perform a GetObject operation.
+             */
             std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& writeToFile);
-            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, Aws::IOStream* writeToStream);
-        
+            /**
+             * Downloads the contents of bucketName/keyName in S3 and writes it to writeToStream. This will perform a GetObject operation.
+             */
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, Aws::IOStream* writeToStream);  
+            
+            /**
+             * Retry an upload that failed from a previous UploadFile operation. If a multi-part upload was used, only the failed parts will be re-sent.
+             */
+            std::shared_ptr<TransferHandle> RetryUpload(const Aws::String& fileName, const std::shared_ptr<TransferHandle>& retryHandle);
+            /**
+            * Retry an upload that failed from a previous UploadFile operation. If a multi-part upload was used, only the failed parts will be re-sent.
+            */
+            std::shared_ptr<TransferHandle> RetryUpload(const std::shared_ptr<Aws::IOStream>& stream, const std::shared_ptr<TransferHandle>& retryHandle);
+            
+            /**
+             * By default, multi-part uploads will remain in a FAILED state if they fail, or a CANCELED state if they were canceled. Leaving failed uploads around
+             * still costs the owner of the bucket money. If you know you will not be retrying the request, abort the request after canceling it or if it fails and you don't
+             * intend to retry it.
+             */
+            void AbortMultipartUpload(const std::shared_ptr<TransferHandle>& inProgressHandle);
+
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoDownload(Aws::IOStream* streamToWriteTo, const std::shared_ptr<TransferHandle>& handle);
+
+            void WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle);
 
             void HandleUploadPartResponse(const Aws::S3::S3Client*, const Aws::S3::Model::UploadPartRequest&, const Aws::S3::Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
             void HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest&, const Aws::S3::Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);

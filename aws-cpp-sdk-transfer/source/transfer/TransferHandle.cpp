@@ -74,7 +74,8 @@ namespace Aws
 
         static bool IsFinishedStatus(TransferStatus value)
         {
-            return value == TransferStatus::COMPLETED || value == TransferStatus::FAILED || value == TransferStatus::CANCELED || value == TransferStatus::EXACT_OBJECT_ALREADY_EXISTS;
+            return value == TransferStatus::ABORTED || value == TransferStatus::COMPLETED || value == TransferStatus::FAILED || 
+                value == TransferStatus::CANCELED || value == TransferStatus::EXACT_OBJECT_ALREADY_EXISTS;
         }
 
         void TransferHandle::UpdateStatus(TransferStatus value)
