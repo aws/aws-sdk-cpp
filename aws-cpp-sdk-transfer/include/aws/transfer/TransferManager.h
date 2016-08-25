@@ -36,18 +36,19 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
 
-        const uint64_t MB5_BUFFER_SIZE = 5 * 1024 * 1024;
+        const uint64_t MB5 = 5 * 1024 * 1024;
 
         /**
          * Configuration for use with TransferManager. The data here will be copied directly to TransferManager.
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5_BUFFER_SIZE), bufferSize(MB5_BUFFER_SIZE), maxParallelTransfers(1)
+            TransferManagerConfiguration() : s3Client(nullptr), transferExecutor(nullptr), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5), maxParallelTransfers(1)
             {
                 //let the programmer know if they've created two useless values here.
                 //you need at least bufferSize * maxParallelTransfers for the  max heap size.
                 assert(transferBufferMaxHeapSize > bufferSize * maxParallelTransfers);
+                assert(bufferSize >= MB5);
             }
 
             /**
@@ -124,6 +125,8 @@ namespace Aws
              * Initializes TransferManager with config.
              */
             TransferManager(const TransferManagerConfiguration& config);
+
+            ~TransferManager();
 
             /**
              * Uploads a file via filename, to bucketName/keyName in S3. contentType and metadata will be added to the object. If the object is larger than the configured bufferSize,

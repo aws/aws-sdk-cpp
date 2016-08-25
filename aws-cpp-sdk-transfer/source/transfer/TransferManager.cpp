@@ -17,6 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
@@ -49,6 +50,14 @@ namespace Aws
             }
         }
 
+        TransferManager::~TransferManager()
+        {
+            for (auto buffer : m_bufferManager.ShutdownAndWait())
+            {
+                Aws::Delete(buffer);
+            }
+        }
+
         std::shared_ptr<TransferHandle> TransferManager::UploadFile(const Aws::String& fileName, const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& contentType,
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
@@ -62,11 +71,11 @@ namespace Aws
 
             if (length > m_transferConfig.bufferSize)
             {
-                m_transferConfig.transferExecutor->Submit([&] { DoMultipartUpload(fileStream, handle); });
+                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([&] { DoSinglePartUpload(fileStream, handle); });
+                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
             }
 
             return handle;
@@ -84,11 +93,11 @@ namespace Aws
 
             if (length > m_transferConfig.bufferSize)
             {
-                m_transferConfig.transferExecutor->Submit([&] { DoMultipartUpload(fileStream, handle); });
+                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoMultipartUpload(fileStream, handle); });
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([&] { DoSinglePartUpload(fileStream, handle); });
+                m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoSinglePartUpload(fileStream, handle); });
             }
 
             return handle;
@@ -98,7 +107,7 @@ namespace Aws
         {
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName);
 
-            m_transferConfig.transferExecutor->Submit([&] { DoDownload(writeToStream, handle); });
+            m_transferConfig.transferExecutor->Submit([this, writeToStream, handle] { DoDownload(writeToStream, handle); });
             return handle;
         }
 
@@ -107,7 +116,7 @@ namespace Aws
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToFile);
             auto fileStream = Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary);
 
-            m_transferConfig.transferExecutor->Submit([&] { DoDownload(fileStream, handle); });
+            m_transferConfig.transferExecutor->Submit([this, fileStream, handle] { DoDownload(fileStream, handle); });
             return handle;
         }
 
@@ -127,6 +136,17 @@ namespace Aws
             {
                 return UploadFile(stream, retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetContentType(), retryHandle->GetMetadata());
             }
+            
+            if (retryHandle->GetBytesTotalSize() > m_transferConfig.bufferSize)
+            {
+                m_transferConfig.transferExecutor->Submit([this, stream, retryHandle] { DoMultipartUpload(stream, retryHandle); });
+            }
+            else
+            {
+                m_transferConfig.transferExecutor->Submit([this, stream, retryHandle] { DoSinglePartUpload(stream, retryHandle); });
+            }
+
+            return retryHandle;
         }
 
         void TransferManager::AbortMultipartUpload(const std::shared_ptr<TransferHandle>& inProgressHandle)
@@ -135,7 +155,7 @@ namespace Aws
             assert(inProgressHandle->GetTransferDirection() == TransferDirection::UPLOAD);
 
             inProgressHandle->Cancel();
-            m_transferConfig.transferExecutor->Submit([&] { WaitForCancellationAndAbortUpload(inProgressHandle); });
+            m_transferConfig.transferExecutor->Submit([this, inProgressHandle] { WaitForCancellationAndAbortUpload(inProgressHandle); });
         }
 
         void TransferManager::DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle)
@@ -201,13 +221,14 @@ namespace Aws
                 auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
                 Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
-                uploadPartRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                 uploadPartRequest.WithBucket(handle->GetBucketName())
                     .WithContentLength(lengthToWrite)
                     .WithKey(handle->GetKey())
                     .WithPartNumber(*partsIter)
                     .WithUploadId(handle->GetMultiPartId());
 
+                uploadPartRequest.SetBody(preallocatedStreamReader);
                 auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
                 asyncContext->handle = handle;
 
@@ -228,9 +249,10 @@ namespace Aws
         {
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             handle->SetIsMultipart(false);
+            handle->AddPendingPart(1);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
-            putObjectRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+            putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())
                 .WithContentLength(handle->GetBytesTotalSize())
@@ -243,18 +265,16 @@ namespace Aws
 
             auto lengthToWrite = std::min(buffer->GetLength(), handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
-
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, lengthToWrite);
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
+
             putObjectRequest.SetBody(preallocatedStreamReader);
 
-            auto uploadProgressCallback = [&](const Aws::Http::HttpRequest*, long long progress)
+            auto uploadProgressCallback = [this, handle](const Aws::Http::HttpRequest*, long long progress)
             {
                 handle->AddTransferredBytes(progress);
                 TriggerUploadProgressCallback(*handle);
             };
-
-            putObjectRequest.SetDataSentEventHandler(uploadProgressCallback);
 
             auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
             asyncContext->handle = handle;
@@ -310,7 +330,7 @@ namespace Aws
                     }
 
                     Aws::S3::Model::CompleteMultipartUploadRequest completeMultipartUploadRequest;
-                    completeMultipartUploadRequest.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return transferContext->handle->ShouldContinue(); });
+                    completeMultipartUploadRequest.SetContinueRequestHandler([handle = transferContext->handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     completeMultipartUploadRequest.WithBucket(transferContext->handle->GetBucketName())
                         .WithKey(transferContext->handle->GetKey())
                         .WithUploadId(transferContext->handle->GetMultiPartId())
@@ -349,11 +369,13 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
+                transferContext->handle->ChangePartToCompleted(1, outcome.GetResult().GetETag());
                 transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
             {
                 transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                transferContext->handle->ChangePartToFailed(1);
                 transferContext->handle->SetError(outcome.GetError());
                 TriggerErrorCallback(*transferContext->handle, outcome.GetError());
             }
@@ -370,12 +392,12 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(*handle);
 
             Aws::S3::Model::GetObjectRequest request;
-            request.SetContinueRequestHandler([&](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+            request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey());
-            request.SetResponseStreamFactory([&]() { return streamToWriteTo; });
+            request.SetResponseStreamFactory([streamToWriteTo]() { return streamToWriteTo; });
 
-            request.SetDataReceivedEventHandler([&](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
+            request.SetDataReceivedEventHandler([this, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
                 handle->AddTransferredBytes(progress);
                 TriggerDownloadProgressCallback(*handle);

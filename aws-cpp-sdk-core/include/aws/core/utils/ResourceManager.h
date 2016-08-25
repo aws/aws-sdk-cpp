@@ -32,6 +32,8 @@ namespace Aws
         class ResourceManager
         {
         public:
+            ResourceManager() : m_shutdown(false) {}
+
             ~ResourceManager()
             {
                 ShutdownAndWait();
@@ -48,12 +50,11 @@ namespace Aws
                 std::unique_lock<std::mutex> locker(m_queueLock);
                 while(!m_shutdown.load() && m_resources.size() == 0)
                 {
-                    m_semaphore.wait(locker, [&](){ return m_shutdown.load() || m_resources.size() > 0; });
+                    m_semaphore.wait(locker, [&](){ return m_shutdown.load() || m_resources.size() > 0; });                    
                 }
 
                 RESOURCE_TYPE resource = m_resources.front();
                 m_resources.pop();
-                locker.unlock();
 
                 return resource;
             }
@@ -79,6 +80,7 @@ namespace Aws
             {
                 std::unique_lock<std::mutex> locker(m_queueLock);
                 m_resources.push(resource);
+                locker.unlock();
                 m_semaphore.notify_one();
             }
 

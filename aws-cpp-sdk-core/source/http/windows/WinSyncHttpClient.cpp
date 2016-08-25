@@ -106,17 +106,17 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
         char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
         bool done = false;
         while(success && !done)
-        {
+        {            
             payloadStream->read(streamBuffer, HTTP_REQUEST_WRITE_BUFFER_LENGTH);
             std::streamsize bytesRead = payloadStream->gcount();
             success = !payloadStream->bad();
-
+            
             uint64_t bytesWritten = 0;
             if (bytesRead > 0)
             {
                 bytesWritten = DoWriteData(hHttpRequest, streamBuffer, bytesRead);
                 if (!bytesWritten)
-                {
+                {                    
                     success = false;
                 }
             }
@@ -128,12 +128,12 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const HttpRequest& request, void*
             }
 
             if(!payloadStream->good())
-            {
+            {                
                 done = true;
-            }
+            }           
 
             success = success && ContinueRequest(request) && IsRequestProcessingEnabled();
-        }
+        }        
 
         payloadStream->clear();
         payloadStream->seekg(startingPos, payloadStream->beg);

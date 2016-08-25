@@ -42,7 +42,7 @@ namespace Transfer
 class UploadFileRequest;
 class DownloadFileRequest;
 
-const uint64_t MB5_BUFFER_SIZE = 5 * 1024 * 1024;
+static const uint64_t MB5_BUFFER_SIZE = 5 * 1024 * 1024;
 
 struct AWS_TRANSFER_API TransferClientConfiguration
 {

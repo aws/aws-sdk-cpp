@@ -86,27 +86,27 @@ namespace Aws
                 m_waitUntilFinishedSignal.notify_all();
             }
 
-            m_status = value;
+            m_status.store(static_cast<long>(value));
         }
 
         void TransferHandle::WaitUntilFinished() const
         {
-            if (!IsFinishedStatus(m_status.load()))
+            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())))
             {
                 std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
-                m_waitUntilFinishedSignal.wait(semaphoreLock, [&](){return IsFinishedStatus(m_status.load()); });
+                m_waitUntilFinishedSignal.wait(semaphoreLock, [this](){return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())); });
                 semaphoreLock.unlock();
             }
         }
 
         void TransferHandle::Cancel()
         {
-            m_cancel = true;
+            m_cancel.store(true);
         }
 
         bool TransferHandle::ShouldContinue() const
         {
-            return !m_cancel;
+            return !m_cancel.load();
         }
     }
 }

@@ -21,7 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/s3/S3Errors.h>
-
+#include <iostream>
 #include <atomic>
 #include <mutex>
 #include <condition_variable>
@@ -70,7 +70,7 @@ namespace Aws
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "") : 
                 m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bucket(bucketName), 
-                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(totalSize), m_status(TransferStatus::NOT_STARTED), m_cancel(false)
+                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(totalSize), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
             {}
 
             /**
@@ -78,7 +78,7 @@ namespace Aws
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "") :
                 m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bucket(bucketName),
-                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(0), m_status(TransferStatus::NOT_STARTED), m_cancel(false)
+                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(0), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
             {}
 
             /**
@@ -193,7 +193,7 @@ namespace Aws
             /**
              * The current status of the operation
              */
-            inline TransferStatus GetStatus() const { return m_status.load(); }
+            inline TransferStatus GetStatus() const { return static_cast<TransferStatus>(m_status.load()); }
             /**
             * The current status of the operation
             */
@@ -228,7 +228,7 @@ namespace Aws
             Aws::String m_fileName;
             Aws::String m_contentType;
             Aws::Map<Aws::String, Aws::String> m_metadata;
-            std::atomic<TransferStatus> m_status;
+            std::atomic<long> m_status;
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
 
