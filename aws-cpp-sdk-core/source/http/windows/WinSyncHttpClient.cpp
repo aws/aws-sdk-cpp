@@ -297,9 +297,11 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
     {
         response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
     }
-    else if (!IsRequestProcessingEnabled())
+    else if (!IsRequestProcessingEnabled() || !ContinueRequest(request))
     {
-        AWS_LOG_INFO(GetLogTag(), "Request cancelled by client controller");
+        AWS_LOGSTREAM_INFO(GetLogTag(), "Request cancelled by client controller");
+        response = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(GetLogTag(), request);
+        response->SetResponseCode(Http::HttpResponseCode::NO_RESPONSE);
     }
     else
     {

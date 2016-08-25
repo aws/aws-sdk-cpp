@@ -49,7 +49,6 @@ using namespace Aws::Client;
 using namespace Aws::Http;
 using namespace Aws::Utils;
 
-
 static const char* TEST_FILE_NAME = "TransferTestFile.txt"; // Also used as key
 
 static const char* SMALL_TEST_FILE_NAME = "SmallTransferTestFile.txt";
@@ -153,6 +152,7 @@ protected:
         }
         return randomizedBucketName.c_str();
     }
+
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
     {
         Aws::IFStream inFile1(fileName.c_str(), std::ios::binary | std::ios::ate);
@@ -198,47 +198,7 @@ protected:
             curFilePos = inFile1.tellg();
         }
         return true;
-    }
-    static bool CheckGetObjectValidation(std::shared_ptr<UploadFileRequest> requestPtr)
-    {
-        GetObjectRequest getRequest;
-        getRequest.SetBucket(requestPtr->GetBucketName());
-        getRequest.SetKey(requestPtr->GetKeyName());
-        GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getRequest);
-        unsigned retryCount = 0;
-        const unsigned retryMax = 5;
-        while (!getObjectOutcome.IsSuccess() && retryCount < retryMax)
-        {
-            ++retryCount;
-            std::cout << "Get retry " << retryCount << std::endl;
-            getObjectOutcome = m_s3Client->GetObject(getRequest);
-        }
-        return getObjectOutcome.IsSuccess();
-    }
-    static bool CheckListObjectsValidation(std::shared_ptr<UploadFileRequest> requestPtr)
-    {
-        ListObjectsRequest listRequest;
-        listRequest.SetBucket(requestPtr->GetBucketName());
-
-        ListObjectsOutcome listOutcome = m_s3Client->ListObjects(listRequest);
-
-        unsigned retryCount = 0;
-        const unsigned retryMax = 5;
-        while (retryCount < retryMax)
-        {
-            for (auto& thisResult : listOutcome.GetResult().GetContents())
-            {
-                if (thisResult.GetKey() == requestPtr->GetKeyName() && static_cast<uint64_t>(thisResult.GetSize()) == requestPtr->GetFileSize())
-                {
-                    return true;
-                }
-            }
-            listOutcome = m_s3Client->ListObjects(listRequest);
-            ++retryCount;
-            std::cout << "List retry " << retryCount << std::endl;
-        }
-        return false;
-    }
+    }    
 
     static void SetUpTestCase()
     {
@@ -332,27 +292,7 @@ protected:
                 break;
             }
         }
-    }
-
-    static bool WaitForObjectToPropagate(const Aws::String& bucketName, const char* objectKey)
-    {
-        unsigned timeoutCount = 0;
-        while (timeoutCount++ < TEST_WAIT_TIMEOUT)
-        {
-            HeadObjectRequest headObjectRequest;
-            headObjectRequest.SetBucket(bucketName);
-            headObjectRequest.SetKey(objectKey);
-            HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-            if (headObjectOutcome.IsSuccess())
-            {
-                return true;
-            }
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-
-        return false;
-    }
+    }   
 
     static void DeleteBucket(const Aws::String& bucketName)
     {
@@ -378,105 +318,7 @@ protected:
         deleteBucketRequest.SetBucket(bucketName);
 
         DeleteBucketOutcome deleteBucketOutcome = m_s3Client->DeleteBucket(deleteBucketRequest);
-    }
-
-    static void WaitForUploadAndUpdate(std::shared_ptr<UploadFileRequest> thisRequest, float progressPercent)
-    {
-        unsigned timeoutCount = 0;
-        std::cout << thisRequest->GetBucketName() << " : " << thisRequest->GetKeyName() << " Upload progress - " << thisRequest->GetProgress() << std::endl;
-
-        bool sentConsistency = false;
-        bool passedHeadObject = false;
-        bool passedGetObject = false;
-        bool passedListObjects = false;
-        uint32_t retryCount = 0;
-
-        float totalProgress = thisRequest->GetProgress();
-        while (timeoutCount++ < TEST_WAIT_TIMEOUT_LONG)
-        {
-            if (!sentConsistency && thisRequest->HasSentConsistencyChecks())
-            {
-                sentConsistency = true;
-                std::cout << "Sent consistency checks" << std::endl;
-            }
-            if (!passedHeadObject && thisRequest->HasPassedHeadObject())
-            {
-                passedHeadObject = true;
-                std::cout << "Passed head object check" << std::endl;
-            }
-            if (!passedGetObject && thisRequest->HasPassedGetObject())
-            {
-                passedGetObject = true;
-                std::cout << "Passed get object check" << std::endl;
-            }
-            if (!passedListObjects && thisRequest->HasPassedListObjects())
-            {
-                passedListObjects = true;
-                std::cout << "Passed list objects check" << std::endl;
-            }
-            if(thisRequest->GetTotalPartRetries() != retryCount)
-            {
-                retryCount = thisRequest->GetTotalPartRetries();
-                std::cout << "Retry count now " << retryCount << " last failure: " << thisRequest->GetFailure() << std::endl;
-            }
-            if (thisRequest->IsDone() || (thisRequest->GetProgress() >= progressPercent && progressPercent < 100.0f))
-            {
-                std::cout << "Done - Progress at " << thisRequest->GetProgress() << " total retries " << thisRequest->GetTotalPartRetries() << std::endl;
-                if(thisRequest->GetFailure().length())
-                {
-                    std::cout << "Failure reason was " << thisRequest->GetFailure() << std::endl;
-                }
-                break;
-            }
-            // Let's reset our timeout
-            if (thisRequest->GetProgress() != totalProgress)
-            {
-                timeoutCount = 0;
-                totalProgress = thisRequest->GetProgress();
-                std::cout << "Progress update - " << totalProgress << std::endl;
-            }
-            else if(!sentConsistency)
-            {
-                std::cout << "Completed parts " << thisRequest->GetCompletedPartCount() << " total " << thisRequest->GetTotalParts() << std::endl;
-                std::cout << "Returned parts " << thisRequest->GetPartsReturned() << " Pending parts " << thisRequest->GetPendingParts() << std::endl;
-                std::cout << "Total retries " << thisRequest->GetTotalPartRetries() << " Raw Progress: " << thisRequest->GetProgressAmount() << std::endl;
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    }
-
-    static void WaitForDownloadAndUpdate(std::shared_ptr<DownloadFileRequest> thisRequest, float progressPercent)
-    {
-        unsigned timeoutCount = 0;
-        uint32_t retryCount = 0;
-        std::cout << "Initial Download progress - " << thisRequest->GetProgress() << std::endl;
-        float totalProgress = thisRequest->GetProgress();
-        while (timeoutCount++ < TEST_WAIT_TIMEOUT_LONG)
-        {
-            if (thisRequest->GetRetries() != retryCount)
-            {
-                retryCount = thisRequest->GetRetries();
-                std::cout << "Retry count now " << retryCount << " last failure: " << thisRequest->GetFailure() << std::endl;
-            }
-            if (thisRequest->IsDone() || (thisRequest->GetProgress() >= progressPercent && progressPercent < 100.0f))
-            {
-                std::cout << "Done - Progress at " << thisRequest->GetProgress() << std::endl;
-                if (thisRequest->GetFailure().length())
-                {
-                    std::cout << "Failure reason was " << thisRequest->GetFailure() << std::endl;
-                }
-                break;
-            }
-            // Let's reset our timeout
-            if (thisRequest->GetProgress() != totalProgress)
-            {
-                timeoutCount = 0;
-                totalProgress = thisRequest->GetProgress();
-                std::cout << "Progress update - " << totalProgress << std::endl;
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    }
+    }   
 
     static void AbortMultiPartUpload(const Aws::String& bucketName, const Aws::String& fileName)
     {
@@ -795,344 +637,161 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTransferred());
 }
 
-/*
-// Basic test of a 5 meg file meaning it should be exactly at the limit of a single part upload
-TEST_F(TransferTests, SinglePartUploadTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(TEST_FILE_NAME);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    const bool cCreateBucket = true; 
-    const bool cConsistencyChecks = true;
-    // Test with default behavior of using file name as key
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(m_testFileName, GetTestBucketName(), "", "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be just under 5 megs
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-    ASSERT_TRUE(fileSize == (MB5_BUFFER_SIZE / testStrLen * testStrLen));
-
-    WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_NAME);
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-}
-
-
-// Half size file - similar to our 5 meg test, let's make sure we're processing < 1 part files correctly
-TEST_F(TransferTests, SmallTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(SMALL_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    const bool cCreateBucket = false;
-    const bool cConsistencyChecks = false;
-    // Not creating the bucket.. it should be there
-    // No consistency checks on this one, just verifying that it seems to complete
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(SMALL_TEST_FILE_NAME, GetTestBucketName(), SMALL_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be about 2.5 megs
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-    
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-    ASSERT_TRUE(fileSize == (SMALL_TEST_SIZE / testStrLen * testStrLen));
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-}
-
-// Let's make sure the content we uploaded matched what we believe we sent - this is of course
-// to make sure we're loading in and sending our buffers properly more than making sure that S3 works.
-TEST_F(TransferTests, ContentTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(CONTENT_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    const bool cCreateBucket = false;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, GetTestBucketName(), CONTENT_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-    ASSERT_TRUE(fileSize == strlen(CONTENT_TEST_FILE_TEXT));
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY);
-
-    getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    unsigned retryCount = 0;
-    const unsigned retryMax = 5;
-    while (!getObjectOutcome.IsSuccess() && retryCount < retryMax)
-    {
-        ++retryCount;
-        std::cout << "Get retry " << retryCount << std::endl;
-        getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    }
-
-    Aws::StringStream ss;
-    ss << getObjectOutcome.GetResult().GetBody().rdbuf();
-    ASSERT_EQ(CONTENT_TEST_FILE_TEXT, ss.str());
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-}
-
-// Test of a basic multi part upload - 7.5 megs
-TEST_F(TransferTests, MediumTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(MEDIUM_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), PARTS_IN_MEDIUM_TEST); // Currently set to 2
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-
-    ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY);
-
-    ASSERT_TRUE(CheckGetObjectValidation(requestPtr));
-
-    std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY);
-
-    WaitForDownloadAndUpdate(downloadPtr, 100);
-
-    ASSERT_TRUE(downloadPtr->IsDone());
-
-    ASSERT_TRUE(downloadPtr->CompletedSuccessfully());
-
-    Aws::IFStream inFile(MEDIUM_TEST_FILE_NAME, std::ios::binary | std::ios::ate);
-
-    fileSize = inFile.tellg();
-    ASSERT_EQ(fileSize, MEDIUM_TEST_SIZE / testStrLen * testStrLen);
-}
-
-// Large file test - we're now using many buffers at once.  This demonstrates multi part uploads using many buffers together
-// which also tests the now default WINHTTP functionality if available to process them all together.
-// With wininet this was not a pleasant wait.
-TEST_F(TransferTests, BigTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(BIG_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), BIG_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), PARTS_IN_BIG_TEST); 
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-
-    ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen);
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), BIG_FILE_KEY);
-
-    ASSERT_TRUE(CheckGetObjectValidation(requestPtr));
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-
-    std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), BIG_FILE_KEY);
-
-    WaitForDownloadAndUpdate(downloadPtr, 100);
-
-    ASSERT_TRUE(downloadPtr->IsDone());
-
-    ASSERT_TRUE(downloadPtr->CompletedSuccessfully());
-
-    Aws::IFStream inFile(BIG_TEST_FILE_NAME, std::ios::binary | std::ios::ate);
-
-    fileSize = inFile.tellg();
-    ASSERT_EQ(fileSize, BIG_TEST_SIZE / testStrLen * testStrLen);
-}
-
-// Make sure we can properly cancel an active upload
-TEST_F(TransferTests, CancelTest)
+TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 {
     ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
+    listMultipartRequest.WithBucket(GetTestBucketName());
 
     if (EmptyBucket(GetTestBucketName()))
     {
         WaitForBucketToEmpty(GetTestBucketName());
     }
 
-    const bool cCreateBucket = false;
-    const bool cConsistencyChecks = false;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CANCEL_TEST_FILE_NAME, GetTestBucketName(), CANCEL_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
+    bool retryInProgress = false;
+    bool completedPartsStayedCompletedDuringRetry = true;
+    bool completionCheckDone = false;
 
-    uint64_t fileSize = requestPtr->GetFileSize();
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.transferStatusUpdatedCallback = 
+        [&](const TransferManager*, const TransferHandle& handle)
+        {
+            if (!retryInProgress && handle.GetCompletedParts().size() >= 15 &&  handle.GetStatus() != TransferStatus::CANCELED)
+            {
+                const_cast<TransferHandle&>(handle).Cancel();
+            }
+            else if (retryInProgress)
+            {
+                if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+                {
+                    completionCheckDone = true;
+                    //this should NEVER rise above 15 or we had some completed parts get retried too.
+                    completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15; 
+                }
+            }
+        };
 
+    transferManagerConfig.s3Client = m_s3Client;
+    TransferManager transferManager(transferManagerConfig);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(CANCEL_TEST_FILE_NAME, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
 
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 40.0f);
-
-    m_transferClient->CancelUpload(requestPtr);
-
-    requestPtr->WaitUntilDone();
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
+    ASSERT_EQ(15u, requestPtr->GetCompletedParts().size());
+    ASSERT_EQ(0, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(15u, requestPtr->GetFailedParts().size());
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    ASSERT_EQ(1u, listMultipartOutcome.GetResult().GetUploads().size());
 
-    ASSERT_EQ(listMultipartOutcome.GetResult().GetUploads().size(), 1u);
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.WithBucket(GetTestBucketName())
+        .WithKey(CANCEL_FILE_KEY);
 
-    ASSERT_FALSE(requestPtr->CompletedSuccessfully());
+    ASSERT_FALSE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
+
+    retryInProgress = true;
+    requestPtr = transferManager.RetryUpload(CANCEL_TEST_FILE_NAME, requestPtr);
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(30, requestPtr->GetCompletedParts().size());
+    ASSERT_TRUE(completionCheckDone);
+    ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
+
+    listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
+
+    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
+    
+    headObjectRequest;
+    headObjectRequest.WithBucket(GetTestBucketName())
+        .WithKey(CANCEL_FILE_KEY);
+
+    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 }
 
-// This is a complete cycle - we upload a file, then download it, and compare content
-TEST_F(TransferTests, DownloadContentTest)
+TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
 {
+    ListMultipartUploadsRequest listMultipartRequest;
+    listMultipartRequest.WithBucket(GetTestBucketName());
+
     if (EmptyBucket(GetTestBucketName()))
     {
         WaitForBucketToEmpty(GetTestBucketName());
     }
 
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(CONTENT_FILE_KEY);
+    bool retryInProgress = false;
+    bool completedPartsStayedCompletedDuringRetry = true;
+    bool completionCheckDone = false;
 
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
+    std::shared_ptr<TransferHandle> requestPtr(nullptr);
 
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, GetTestBucketName(), CONTENT_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-    ASSERT_TRUE(fileSize == strlen(CONTENT_TEST_FILE_TEXT));
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY);
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-
-    std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(CONTENT_TEST_DOWNLOAD_FILE_NAME, GetTestBucketName(), CONTENT_FILE_KEY);
-
-    WaitForDownloadAndUpdate(downloadPtr, 100.0f);
-
-    ASSERT_TRUE(downloadPtr->IsDone());
-
-    ASSERT_TRUE(downloadPtr->CompletedSuccessfully());
-
-    Aws::IFStream inFile(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    Aws::StringStream testStr;
-    if (inFile.good() && inFile.is_open())
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.transferStatusUpdatedCallback =
+        [&](const TransferManager* manager, const TransferHandle& handle)
     {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
+        if (!retryInProgress && handle.GetCompletedParts().size() >= 15 && handle.GetStatus() != TransferStatus::CANCELED)
+        {
+            const_cast<TransferManager*>(manager)->AbortMultipartUpload(requestPtr);
+        }
+        else if (retryInProgress)
+        {
+            if (handle.GetStatus() == TransferStatus::IN_PROGRESS && completedPartsStayedCompletedDuringRetry)
+            {
+                completionCheckDone = true;
+                //this should NEVER rise above 15 or we had some completed parts get retried too.
+                completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15;
+            }
+        }
+    };
 
+    transferManagerConfig.s3Client = m_s3Client;
+    TransferManager transferManager(transferManagerConfig);
+    requestPtr = transferManager.UploadFile(CANCEL_TEST_FILE_NAME, GetTestBucketName(), CANCEL_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    uint64_t fileSize = requestPtr->GetBytesTotalSize();
+    ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
+
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
+    while(requestPtr->GetStatus() != TransferStatus::ABORTED) std::this_thread::sleep_for(std::chrono::seconds(1));
+    ASSERT_EQ(15u, requestPtr->GetCompletedParts().size());
+    ASSERT_EQ(0, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(15u, requestPtr->GetFailedParts().size());
+
+    ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
+
+    EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
+
+    HeadObjectRequest headObjectRequest;
+    headObjectRequest.WithBucket(GetTestBucketName())
+        .WithKey(CANCEL_FILE_KEY);
+
+    ASSERT_FALSE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
+
+    retryInProgress = true;
+    std::shared_ptr<TransferHandle> tempPtr = requestPtr;
+    requestPtr = transferManager.RetryUpload(CANCEL_TEST_FILE_NAME, tempPtr);
+    ASSERT_NE(requestPtr, tempPtr);
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(30, requestPtr->GetCompletedParts().size());
+    ASSERT_TRUE(completionCheckDone);
+    ASSERT_FALSE(completedPartsStayedCompletedDuringRetry);
+
+    headObjectRequest;
+    headObjectRequest.WithBucket(GetTestBucketName())
+        .WithKey(CANCEL_FILE_KEY);
+
+    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 }
 
-// This guarantees that content is not affected by performing a multi part upload 
-// It performs an exact file comparison after the cycle is complete
-TEST_F(TransferTests, MultiPartContentTest)
+TEST_F(TransferTests, TransferManager_MultiPartContentTest)
 {
     if (EmptyBucket(GetTestBucketName()))
     {
@@ -1146,351 +805,26 @@ TEST_F(TransferTests, MultiPartContentTest)
     GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     EXPECT_FALSE(getObjectOutcome.IsSuccess());
 
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.s3Client = m_s3Client;
+    TransferManager transferManager(transferManagerConfig);
+    
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(m_multiPartContentFile, GetTestBucketName(), MULTI_PART_CONTENT_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MULTI_PART_CONTENT_FILE, GetTestBucketName(), MULTI_PART_CONTENT_KEY, "", cCreateBucket, cConsistencyChecks);
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
 
-    ASSERT_EQ(requestPtr->GetTotalParts(), PARTS_IN_MEDIUM_TEST); // > 1 part
+    std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), MULTI_PART_CONTENT_KEY, m_multiPartContentDownload);
 
-    ASSERT_FALSE(requestPtr->IsDone());
+    downloadPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
 
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), MULTI_PART_CONTENT_KEY);
-    ListObjectsRequest listRequest;
-    listRequest.SetBucket(GetTestBucketName());
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-
-    std::shared_ptr<DownloadFileRequest> downloadPtr = m_transferClient->DownloadFile(MULTI_PART_CONTENT_DOWNLOAD, GetTestBucketName(), MULTI_PART_CONTENT_KEY);
-
-    WaitForDownloadAndUpdate(downloadPtr, 100.0f);
-
-    ASSERT_TRUE(downloadPtr->IsDone());
-
-    ASSERT_TRUE(downloadPtr->CompletedSuccessfully());
-
-    ASSERT_TRUE(AreFilesSame(MULTI_PART_CONTENT_DOWNLOAD, MULTI_PART_CONTENT_FILE));
-}
-
-// This test is to be sure that we can process multiple downloads at the same time correctly
-TEST_F(TransferTests, MultiDownloadTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(CONTENT_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CONTENT_TEST_FILE_NAME, GetTestBucketName(), CONTENT_FILE_KEY, "", cCreateBucket, cConsistencyChecks);
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be tiny
-
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    uint64_t fileSize = requestPtr->GetFileSize();
-    ASSERT_TRUE(fileSize == strlen(CONTENT_TEST_FILE_TEXT));
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY);
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr));
-
-    Aws::String dir1(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    dir1 += "1";
-    Aws::String dir2(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    dir2 += "2";
-    Aws::String dir3(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    dir3 += "3";
-    Aws::String dir4(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    dir4 += "4";
-    Aws::String dir5(CONTENT_TEST_DOWNLOAD_FILE_NAME);
-    dir5 += "5";
-
-    std::shared_ptr<DownloadFileRequest> downloadPtr1 = m_transferClient->DownloadFile(dir1, GetTestBucketName(), CONTENT_FILE_KEY);
-    std::shared_ptr<DownloadFileRequest> downloadPtr2 = m_transferClient->DownloadFile(dir2, GetTestBucketName(), CONTENT_FILE_KEY);
-    std::shared_ptr<DownloadFileRequest> downloadPtr3 = m_transferClient->DownloadFile(dir3, GetTestBucketName(), CONTENT_FILE_KEY);
-    std::shared_ptr<DownloadFileRequest> downloadPtr4 = m_transferClient->DownloadFile(dir4, GetTestBucketName(), CONTENT_FILE_KEY);
-    std::shared_ptr<DownloadFileRequest> downloadPtr5 = m_transferClient->DownloadFile(dir5, GetTestBucketName(), CONTENT_FILE_KEY);
-
-    downloadPtr1->WaitUntilDone();
-    ASSERT_TRUE(downloadPtr1->IsDone());
-    ASSERT_TRUE(downloadPtr1->CompletedSuccessfully());
-
-    downloadPtr2->WaitUntilDone();
-    ASSERT_TRUE(downloadPtr2->IsDone());
-    ASSERT_TRUE(downloadPtr2->CompletedSuccessfully());
-
-    downloadPtr3->WaitUntilDone();
-    ASSERT_TRUE(downloadPtr3->IsDone());
-    ASSERT_TRUE(downloadPtr3->CompletedSuccessfully());
-
-    downloadPtr4->WaitUntilDone();
-    ASSERT_TRUE(downloadPtr4->IsDone());
-    ASSERT_TRUE(downloadPtr4->CompletedSuccessfully());
-
-    downloadPtr5->WaitUntilDone();
-    ASSERT_TRUE(downloadPtr5->IsDone());
-    ASSERT_TRUE(downloadPtr5->CompletedSuccessfully());
-
-    Aws::IFStream inFile(dir1.c_str());
-    Aws::StringStream testStr;
-    if (inFile.good() && inFile.is_open())
-    {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
-    inFile.close();
-    testStr.str("");
-
-    inFile.open(dir2.c_str());
-    if (inFile.good() && inFile.is_open())
-    {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
-    inFile.close();
-    testStr.str("");
-
-    inFile.open(dir3.c_str());
-    if (inFile.good() && inFile.is_open())
-    {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
-    inFile.close();
-    testStr.str("");
-
-    inFile.open(dir4.c_str());
-    if (inFile.good() && inFile.is_open())
-    {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
-    inFile.close();
-    testStr.str("");
-
-    inFile.open(dir5.c_str());
-    if (inFile.good() && inFile.is_open())
-    {
-        testStr << inFile.rdbuf();
-    }
-    ASSERT_EQ(testStr.str(), CONTENT_TEST_FILE_TEXT);
-    inFile.close();
-    testStr.str("");
-
-}
-
-// Test to be sure our completion callbacks fire correctly
-TEST_F(TransferTests, CallbackTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(TEST_FILE_NAME);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = true;
-    // Test with default behavior of using file name as key
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(SMALL_TEST_FILE_NAME, GetTestBucketName(), "", "", cCreateBucket, cConsistencyChecks);
-
-    bool testCallbackDone = false;
-
-    requestPtr->AddCompletionCallback([&]() { testCallbackDone = true; });
-
-    ASSERT_EQ(requestPtr->GetTotalParts(), 1u); // Should be just under 5 megs
-
-    ASSERT_FALSE(testCallbackDone);
-    ASSERT_FALSE(requestPtr->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-    ASSERT_TRUE(testCallbackDone);
-
-}
-
-// Test several multi part uploads happening in parallel where buffer handoffs are taking
-// place behind the scenes as uploads are completed
-TEST_F(TransferTests, MultiBigTest)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(BIG_FILE_KEY);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    Aws::String file1(BIG_FILE_KEY);
-    file1 += "1";
-
-    Aws::String file2(BIG_FILE_KEY);
-    file2 += "2";
-
-    Aws::String file3(BIG_FILE_KEY);
-    file3 += "3";
-
-    bool createBucket = true; // Not const, we only want to create the first time
-    const bool cConsistencyChecks = true;
-    std::shared_ptr<UploadFileRequest> requestPtr1 = m_transferClient->UploadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), file1.c_str(), "", createBucket, cConsistencyChecks);
-
-    WaitForUploadAndUpdate(requestPtr1, 10.0f);
-    ASSERT_FALSE(requestPtr1->IsDone());
-
-    createBucket = false;
-    std::shared_ptr<UploadFileRequest> requestPtr2 = m_transferClient->UploadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), file2.c_str(), "", createBucket, cConsistencyChecks);
-
-    ASSERT_FALSE(requestPtr2->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr1, 100.0f);
-    ASSERT_TRUE(requestPtr1->CompletedSuccessfully());
-
-    WaitForUploadAndUpdate(requestPtr2, 100.0f);
-
-    ASSERT_TRUE(requestPtr2->CompletedSuccessfully());
-
-    std::shared_ptr<UploadFileRequest> requestPtr3 = m_transferClient->UploadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), file3.c_str(), "", createBucket, cConsistencyChecks);;
-
-    ASSERT_FALSE(requestPtr3->IsDone());
-
-    WaitForUploadAndUpdate(requestPtr3, 100.0f);
-
-    ASSERT_TRUE(requestPtr3->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), file1.c_str());
-    WaitForObjectToPropagate(GetTestBucketName(), file2.c_str());
-    WaitForObjectToPropagate(GetTestBucketName(), file3.c_str());
-
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr1));
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr2));
-    ASSERT_TRUE(CheckListObjectsValidation(requestPtr3));
-
-
-}
-
-// Here we're testing to make sure the expected results occur when the handler we've been given for the upload goes out of scope
-// Behind the scenes our request contexts contain additional shared pointers to our handlers which should keep them in scope
-// meaning they should continue to process as they were last told.  Outstanding requests will finish, cancels will complete
-// the parts in progress and then cancel correctly, and buffers should properly be freed up to hand to the next request to process
-TEST_F(TransferTests, ScopeTests)
-{
-    if (EmptyBucket(GetTestBucketName()))
-    {
-        WaitForBucketToEmpty(GetTestBucketName());
-    }
-    GetObjectRequest getObjectRequest;
-    getObjectRequest.SetBucket(GetTestBucketName());
-    getObjectRequest.SetKey(TEST_FILE_NAME);
-
-    GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
-    EXPECT_FALSE(getObjectOutcome.IsSuccess());
-
-    ListMultipartUploadsRequest listMultipartRequest;
-    listMultipartRequest.SetBucket(GetTestBucketName());
-
-    bool createBucket = true; // Yes please, create the bucket
-    const bool cConsistencyChecks = true;
-    const float cCancelPercent = 10.0;
-
-    // First we'll grab a single buffer
-    {
-        std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(SMALL_TEST_FILE_NAME, GetTestBucketName(), "", "", createBucket, cConsistencyChecks);
-    }
-
-    createBucket = false;
-
-    // Now grab all available buffers (19 by default though we want 20)
-    {
-        if (EmptyBucket(GetTestBucketName()))
-        {
-            WaitForBucketToEmpty(GetTestBucketName());
-        }
-        std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CANCEL_TEST_FILE_NAME, GetTestBucketName(), CANCEL_FILE_KEY, "", createBucket, cConsistencyChecks);
-
-        uint64_t fileSize = requestPtr->GetFileSize();
-
-        ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
-
-        ASSERT_FALSE(requestPtr->IsDone());
-        WaitForUploadAndUpdate(requestPtr, cCancelPercent);
-        // Cancel though we have outstanding requests we've started which keep our buffers locked
-        m_transferClient->CancelUpload(requestPtr);
-    }
-    {
-        // Now this guy should start with one buffer (The initial one after it's done)
-        std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(CANCEL_TEST_FILE_NAME, GetTestBucketName(), CANCEL_FILE_KEY2, "", createBucket, cConsistencyChecks);
-
-        size_t startBuffers = requestPtr->GetResourcesInUse();
-
-        uint64_t fileSize = requestPtr->GetFileSize();
-
-        ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
-
-        ASSERT_FALSE(requestPtr->IsDone());
-
-        size_t finalBuffers = startBuffers;
-        unsigned timeoutCount = 0;
-
-        // And some time during the process should collect the buffers from our canceled upload
-        while (timeoutCount++ < TEST_WAIT_TIMEOUT_LONG && !requestPtr->IsDone())
-        {
-            finalBuffers = requestPtr->GetResourcesInUse();
-            if (finalBuffers != startBuffers)
-            {
-                m_transferClient->CancelUpload(requestPtr);
-                break;
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-
-        // Either we got more buffers, or we started with everything we could use
-        // either because our start value is artificially low or we finished our initial uploads incredibly fast
-        EXPECT_TRUE(startBuffers == m_transferClient->GetConfigBufferCount() || finalBuffers != startBuffers || requestPtr->CompletedSuccessfully());
-    }
+    ASSERT_TRUE(AreFilesSame(m_multiPartContentDownload, m_multiPartContentFile));
 }
 
 // Single part upload with metadata specified
-TEST_F(TransferTests, SinglePartUploadWithMetadataTest)
+TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
 {
     if (EmptyBucket(GetTestBucketName()))
     {
@@ -1506,19 +840,15 @@ TEST_F(TransferTests, SinglePartUploadWithMetadataTest)
     Aws::Map<Aws::String, Aws::String> metadata;
     metadata["key1"] = "val1";
     metadata["key2"] = "val2";
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = false;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(TEST_FILE_NAME, GetTestBucketName(), "", "", metadata, cCreateBucket, cConsistencyChecks);
 
-    ASSERT_FALSE(requestPtr->IsDone());
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.s3Client = m_s3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(TEST_FILE_NAME, GetTestBucketName(), TEST_FILE_NAME, "text/plain", metadata);
 
-    ASSERT_TRUE(requestPtr->IsDone());
-
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), TEST_FILE_NAME);
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;
@@ -1557,18 +887,15 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     Aws::Map<Aws::String, Aws::String> metadata;
     metadata["key1"] = "val1";
     metadata["key2"] = "val2";
-    const bool cCreateBucket = true;
-    const bool cConsistencyChecks = false;
-    std::shared_ptr<UploadFileRequest> requestPtr = m_transferClient->UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "", metadata, cCreateBucket, cConsistencyChecks);
+    
+    TransferManagerConfiguration transferManagerConfig;
+    transferManagerConfig.s3Client = m_s3Client;
+    TransferManager transferManager(transferManagerConfig);
 
-    ASSERT_FALSE(requestPtr->IsDone());
+    std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", metadata);
 
-    WaitForUploadAndUpdate(requestPtr, 100.0f);
-
-    ASSERT_TRUE(requestPtr->IsDone());
-    ASSERT_TRUE(requestPtr->CompletedSuccessfully());
-
-    WaitForObjectToPropagate(GetTestBucketName(), MEDIUM_FILE_KEY);
+    requestPtr->WaitUntilFinished();
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
 
     // Check the metadata matches
     HeadObjectRequest headObjectRequest;
@@ -1582,6 +909,6 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     ASSERT_EQ(metadata.size(), headObjectMetadata.size());
     ASSERT_EQ(metadata["key1"], headObjectMetadata["key1"]);
     ASSERT_EQ(metadata["key2"], headObjectMetadata["key2"]);
-}*/
+}
 
 }

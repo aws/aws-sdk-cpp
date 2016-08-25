@@ -104,6 +104,11 @@ namespace Aws
             m_cancel.store(true);
         }
 
+        void TransferHandle::Restart()
+        {
+            m_cancel = false;
+        }
+
         bool TransferHandle::ShouldContinue() const
         {
             return !m_cancel.load();

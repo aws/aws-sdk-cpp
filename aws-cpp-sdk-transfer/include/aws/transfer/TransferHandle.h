@@ -132,6 +132,8 @@ namespace Aws
              */
             void Cancel();
 
+            void Restart();
+
             /**
              * Total bytes transferred successfully on this transfer operation.
              */
@@ -212,7 +214,7 @@ namespace Aws
             /**
              * Blocks the calling thread until the operation has finished. This function does not busy wait. It is safe for your CPU.
              */
-            void WaitUntilFinished() const;
+            void WaitUntilFinished() const;      
 
         private:
             bool m_isMultipart;
