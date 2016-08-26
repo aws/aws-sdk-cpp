@@ -35,6 +35,7 @@ namespace Aws
         typedef std::function<void(const TransferManager*, const TransferHandle&)> DownloadProgressCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&)> TransferStatusUpdatedCallback;
         typedef std::function<void(const TransferManager*, const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>&)> ErrorCallback;
+        typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
 
         const uint64_t MB5 = 5 * 1024 * 1024;
 
@@ -149,7 +150,7 @@ namespace Aws
             /**
              * Downloads the contents of bucketName/keyName in S3 and writes it to writeToStream. This will perform a GetObject operation.
              */
-            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, Aws::IOStream* writeToStream);  
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback writeToStreamfn);
             
             /**
              * Retry an upload that failed from a previous UploadFile operation. If a multi-part upload was used, only the failed parts will be re-sent.
@@ -170,7 +171,7 @@ namespace Aws
         private:
             void DoMultipartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
             void DoSinglePartUpload(const std::shared_ptr<Aws::IOStream>& streamToPut, const std::shared_ptr<TransferHandle>& handle);
-            void DoDownload(Aws::IOStream* streamToWriteTo, const std::shared_ptr<TransferHandle>& handle);
+            void DoDownload(CreateDownloadStreamCallback writeToStreamfn, const std::shared_ptr<TransferHandle>& handle);
 
             void WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle);
 

@@ -267,10 +267,11 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     httpRequest->AddContentBody(body);
 
     //If there is no body, we have a content length of 0
+    //note: we also used to remove content-type, but S3 actually needs content-type on InitiateMultipartUpload and it isn't
+    //forbiden by the spec. If we start getting weird errors related to this, make sure it isn't caused by this removal.
     if (!body)
     {
-        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
-        httpRequest->DeleteHeader(Http::CONTENT_TYPE_HEADER);
+        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, content-length headers");
 
         if(httpRequest->GetMethod() == HttpMethod::HTTP_POST || httpRequest->GetMethod() == HttpMethod::HTTP_PUT)
         {        

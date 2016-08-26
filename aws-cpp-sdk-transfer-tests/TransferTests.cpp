@@ -155,49 +155,15 @@ protected:
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
     {
-        Aws::IFStream inFile1(fileName.c_str(), std::ios::binary | std::ios::ate);
-        Aws::IFStream inFile2(fileName2.c_str(), std::ios::binary | std::ios::ate);
-        Aws::StringStream testStr1;
-
-        const auto READ_BLOCK_SIZE = 1024 * 5;
-
-        const auto fileSize = inFile1.tellg();
+        Aws::FStream inFile1(fileName.c_str(), std::ios::binary | std::ios::in);
+        Aws::FStream inFile2(fileName2.c_str(), std::ios::binary | std::ios::in);        
 
         if (!inFile1.good() || !inFile2.good())
         {
             return false;
         }
-        if (fileSize != inFile2.tellg())
-        {
-            return false;
-        }
-
-        inFile1.seekg(0);
-        inFile2.seekg(0);
-
-        char inBlock1[READ_BLOCK_SIZE];
-        char inBlock2[READ_BLOCK_SIZE];
-
-        auto curFilePos = inFile1.tellg();
-        while (curFilePos < fileSize)
-        {
-            auto readAmount1 = inFile1.read(inBlock1, READ_BLOCK_SIZE).gcount();
-            auto readAmount2 = inFile2.read(inBlock2, READ_BLOCK_SIZE).gcount();
-            if (readAmount1 != readAmount2)
-            {
-                return false;
-            }
-            if (!readAmount1)
-            {
-                return true;
-            }
-            if (memcmp(inBlock1, inBlock2, READ_BLOCK_SIZE) != 0)
-            {
-                return false;
-            }
-            curFilePos = inFile1.tellg();
-        }
-        return true;
+        
+        return HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
     }    
 
     static void SetUpTestCase()
@@ -416,7 +382,8 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be just under 5 megs
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
-    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());       
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());   
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == (MB5_BUFFER_SIZE / testStrLen * testStrLen));
@@ -459,6 +426,7 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be 2.5 megs
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == (SMALL_TEST_SIZE / testStrLen * testStrLen));
@@ -467,7 +435,10 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(SMALL_FILE_KEY);
 
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
+    auto outcome = m_s3Client->HeadObject(headObjectRequest);
+
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
 }
 
 TEST_F(TransferTests, TransferManager_ContentTest)
@@ -502,6 +473,7 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be tiny
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == strlen(CONTENT_TEST_FILE_TEXT));
@@ -557,6 +529,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // Should be 2
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == MEDIUM_TEST_SIZE / testStrLen * testStrLen);
@@ -565,9 +538,11 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(MEDIUM_FILE_KEY);
 
-    ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
+    auto outcome = m_s3Client->HeadObject(headObjectRequest);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_STREQ(requestPtr->GetContentType().c_str(), outcome.GetResult().GetContentType().c_str());
        
-    std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), MEDIUM_FILE_KEY, MEDIUM_TEST_FILE_NAME);
+    std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), MEDIUM_FILE_KEY, Aws::String(MEDIUM_TEST_FILE_NAME));
     
     ASSERT_EQ(true, downloadPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
@@ -579,8 +554,9 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_EQ(1u, downloadPtr->GetCompletedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
-
+    ASSERT_EQ(downloadPtr->GetBytesTotalSize(), MEDIUM_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_EQ(downloadPtr->GetBytesTransferred(), MEDIUM_TEST_SIZE / testStrLen * testStrLen);
+    ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
 }
 
 TEST_F(TransferTests, TransferManager_BigTest)
@@ -612,6 +588,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(PARTS_IN_BIG_TEST, requestPtr->GetCompletedParts().size()); // Should be 15
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_TRUE(fileSize == BIG_TEST_SIZE / testStrLen * testStrLen);
@@ -622,7 +599,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
 
     ASSERT_TRUE(m_s3Client->HeadObject(headObjectRequest).IsSuccess());
 
-    std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), BIG_FILE_KEY, BIG_TEST_FILE_NAME);
+    std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(GetTestBucketName(), BIG_FILE_KEY, Aws::String(BIG_TEST_FILE_NAME));
 
     ASSERT_EQ(true, downloadPtr->ShouldContinue());
     ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
@@ -634,7 +611,9 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(1u, downloadPtr->GetCompletedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+    ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTotalSize());
     ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTransferred());
+    ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
 }
 
 TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
@@ -679,9 +658,10 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
-    ASSERT_EQ(15u, requestPtr->GetCompletedParts().size());
+    ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17); //some may have been in flight.
     ASSERT_EQ(0, requestPtr->GetPendingParts().size());
-    ASSERT_EQ(15u, requestPtr->GetFailedParts().size());
+    ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13); //some may have been in flight at cancelation time.
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -701,6 +681,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
     ASSERT_EQ(30, requestPtr->GetCompletedParts().size());
     ASSERT_TRUE(completionCheckDone);
     ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -759,9 +740,10 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
     while(requestPtr->GetStatus() != TransferStatus::ABORTED) std::this_thread::sleep_for(std::chrono::seconds(1));
-    ASSERT_EQ(15u, requestPtr->GetCompletedParts().size());
+    ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17); //some may have been in flight.
     ASSERT_EQ(0, requestPtr->GetPendingParts().size());
-    ASSERT_EQ(15u, requestPtr->GetFailedParts().size());
+    ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13); //some may have been in flight at cancelation time.
+    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
@@ -819,6 +801,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
 
     downloadPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+    ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
 
     ASSERT_TRUE(AreFilesSame(m_multiPartContentDownload, m_multiPartContentFile));
 }
