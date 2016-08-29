@@ -68,7 +68,6 @@ static const char* BIG_FILE_KEY = "BigFileKey";
 
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
 static const char* CANCEL_FILE_KEY = "CancelFileKey";
-static const char* CANCEL_FILE_KEY2 = "CancelFileKey2";
 
 static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtestbucket";
 static const unsigned SMALL_TEST_SIZE = MB5 / 2;
@@ -367,7 +366,9 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be just under 5 megs
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
-    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());   
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
@@ -411,6 +412,8 @@ TEST_F(TransferTests, TransferManager_SmallTest)
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be 2.5 megs
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
@@ -458,6 +461,8 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be tiny
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
+
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
@@ -528,6 +533,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // Should be 2
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
@@ -553,6 +559,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     ASSERT_EQ(1u, downloadPtr->GetCompletedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
     ASSERT_EQ(downloadPtr->GetBytesTotalSize(), MEDIUM_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_EQ(downloadPtr->GetBytesTransferred(), MEDIUM_TEST_SIZE / testStrLen * testStrLen);
     ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
@@ -601,6 +608,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(PARTS_IN_BIG_TEST, requestPtr->GetCompletedParts().size()); // Should be 15
     ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
@@ -624,6 +632,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     ASSERT_EQ(1u, downloadPtr->GetCompletedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
     ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
     ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTotalSize());
     ASSERT_EQ(BIG_TEST_SIZE / testStrLen * testStrLen, downloadPtr->GetBytesTransferred());
     ASSERT_STREQ(requestPtr->GetContentType().c_str(), downloadPtr->GetContentType().c_str());
@@ -677,9 +686,9 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 
     requestPtr->WaitUntilFinished();
     ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
-    ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17); //some may have been in flight.
-    ASSERT_EQ(0, requestPtr->GetPendingParts().size());
-    ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13); //some may have been in flight at cancelation time.
+    ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17u); //some may have been in flight.
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
+    ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13u); //some may have been in flight at cancelation time.
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
@@ -705,7 +714,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
     }
 
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(30, requestPtr->GetCompletedParts().size());
+    ASSERT_EQ(30u, requestPtr->GetCompletedParts().size());
     ASSERT_TRUE(completionCheckDone);
     ASSERT_TRUE(completedPartsStayedCompletedDuringRetry);
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
@@ -714,8 +723,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
-    
-    headObjectRequest;
+
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(CANCEL_FILE_KEY);
 
@@ -752,7 +760,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
             {
                 completionCheckDone = true;
                 //this should NEVER rise above 15 or we had some completed parts get retried too.
-                completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15;
+                completedPartsStayedCompletedDuringRetry = handle.GetPendingParts().size() <= 15 && handle.GetQueuedParts().size() <= 15;
             }
         }
     };
@@ -774,7 +782,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
     while(requestPtr->GetStatus() != TransferStatus::ABORTED) std::this_thread::sleep_for(std::chrono::seconds(1));
     ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17); //some may have been in flight.
-    ASSERT_EQ(0, requestPtr->GetPendingParts().size());
+    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
     ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13); //some may have been in flight at cancelation time.
     ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
 
@@ -803,11 +811,10 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     }
 
     ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(30, requestPtr->GetCompletedParts().size());
+    ASSERT_EQ(30u, requestPtr->GetCompletedParts().size());
     ASSERT_TRUE(completionCheckDone);
     ASSERT_FALSE(completedPartsStayedCompletedDuringRetry);
 
-    headObjectRequest;
     headObjectRequest.WithBucket(GetTestBucketName())
         .WithKey(CANCEL_FILE_KEY);
 

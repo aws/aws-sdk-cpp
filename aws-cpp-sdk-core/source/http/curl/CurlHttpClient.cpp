@@ -405,10 +405,14 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
 
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
-        if (curlResponseCode != CURLE_OK)
+        if (curlResponseCode != CURLE_OK && ContinueRequest(request))
         {
             response = nullptr;
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode);
+        }
+        else if(!ContinueRequest(request))
+        {
+            response->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
         }
         else
         {

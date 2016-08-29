@@ -63,7 +63,7 @@ namespace Aws
         {
             auto fileStream = Aws::MakeShared<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::in | std::ios_base::binary);
             fileStream->seekg(0, std::ios_base::end);
-            size_t length = fileStream->tellg();
+            size_t length = static_cast<size_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length, fileName);
             handle->SetContentType(contentType);
@@ -85,7 +85,7 @@ namespace Aws
             const Aws::Map<Aws::String, Aws::String>& metadata)
         {
             fileStream->seekg(0, std::ios_base::end);
-            size_t length = fileStream->tellg();
+            size_t length = static_cast<size_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, length);
             handle->SetContentType(contentType);
@@ -114,7 +114,8 @@ namespace Aws
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& writeToFile)
         {
             auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, writeToFile);
-            auto createFileFn = [fileName = writeToFile]() { return Aws::New<Aws::FStream>(CLASS_TAG, fileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
+            auto createFileFn = [=]() { return Aws::New<Aws::FStream>(CLASS_TAG, writeToFile.c_str(),
+                                                                     std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);};
 
             m_transferConfig.transferExecutor->Submit([this, createFileFn, handle] { DoDownload(createFileFn, handle); });
             return handle;
@@ -184,7 +185,7 @@ namespace Aws
                     int partNumber = 1;
                     for (size_t i = 1; i < handle->GetBytesTotalSize(); i += m_transferConfig.bufferSize)
                     {
-                        handle->AddPendingPart(partNumber++);
+                        handle->AddQueuedPart(partNumber++);
                     }                    
                 }
                 else
@@ -202,13 +203,13 @@ namespace Aws
                 for (auto failedParts : handle->GetFailedParts())
                 {
                     partsToRetry++;
-                    handle->AddPendingPart(failedParts);
+                    handle->AddQueuedPart(failedParts);
                 }
                 sentBytes = partsToRetry * m_transferConfig.bufferSize;                
             }
 
-            Set<int> pendingParts = handle->GetPendingParts();
-            auto partsIter = pendingParts.begin();
+            Set<int> queuedParts = handle->GetQueuedParts();
+            auto partsIter = queuedParts.begin();
 
             TriggerTransferStatusUpdatedCallback(*handle);
 
@@ -227,10 +228,12 @@ namespace Aws
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     uploadPartRequest.WithBucket(handle->GetBucketName())
-                        .WithContentLength(lengthToWrite)
+                        .WithContentLength(static_cast<long long>(lengthToWrite))
                         .WithKey(handle->GetKey())
                         .WithPartNumber(*partsIter)
                         .WithUploadId(handle->GetMultiPartId());
+
+                    handle->AddPendingPart(*partsIter);
 
                     uploadPartRequest.SetBody(preallocatedStreamReader);
                     uploadPartRequest.SetContentType(handle->GetContentType());
@@ -254,7 +257,7 @@ namespace Aws
                 }
             }
             
-            for (; partsIter != pendingParts.end(); ++partsIter)
+            for (; partsIter != queuedParts.end(); ++partsIter)
             {
                 handle->ChangePartToFailed(*partsIter);
             }
@@ -271,7 +274,7 @@ namespace Aws
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())                
-                .WithContentLength(handle->GetBytesTotalSize())
+                .WithContentLength(static_cast<long long>(handle->GetBytesTotalSize()))
                 .WithMetadata(handle->GetMetadata());
 
             putObjectRequest.SetContentType(handle->GetContentType());
@@ -288,7 +291,7 @@ namespace Aws
 
             auto uploadProgressCallback = [this, handle](const Aws::Http::HttpRequest*, long long progress)
             {
-                handle->AddTransferredBytes(progress);
+                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
                 TriggerUploadProgressCallback(*handle);
             };
 
@@ -326,7 +329,7 @@ namespace Aws
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->AddTransferredBytes(request.GetContentLength());
+                transferContext->handle->AddTransferredBytes(static_cast<uint64_t>(request.GetContentLength()));
                 TriggerUploadProgressCallback(*transferContext->handle);
                 transferContext->handle->ChangePartToCompleted(request.GetPartNumber(), outcome.GetResult().GetETag());
             }
@@ -340,7 +343,8 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(*transferContext->handle);
 
             auto pendingParts = transferContext->handle->GetPendingParts();
-            if (pendingParts.size() == 0)
+            auto queuedParts = transferContext->handle->GetQueuedParts();
+            if (pendingParts.size() == 0 && queuedParts.size() == 0)
             {
                 auto failedParts = transferContext->handle->GetFailedParts();
                 if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
@@ -356,7 +360,7 @@ namespace Aws
                     }
 
                     Aws::S3::Model::CompleteMultipartUploadRequest completeMultipartUploadRequest;
-                    completeMultipartUploadRequest.SetContinueRequestHandler([handle = transferContext->handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                    completeMultipartUploadRequest.SetContinueRequestHandler([=](const Aws::Http::HttpRequest*) { return transferContext->handle->ShouldContinue(); });
                     completeMultipartUploadRequest.WithBucket(transferContext->handle->GetBucketName())
                         .WithKey(transferContext->handle->GetKey())
                         .WithUploadId(transferContext->handle->GetMultiPartId())
@@ -425,7 +429,7 @@ namespace Aws
 
             if (headObjectOutcome.IsSuccess())
             {
-                handle->SetBytesTotalSize(headObjectOutcome.GetResult().GetContentLength());
+                handle->SetBytesTotalSize(static_cast<uint64_t>(headObjectOutcome.GetResult().GetContentLength()));
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
                 TriggerTransferStatusUpdatedCallback(*handle);
@@ -448,7 +452,7 @@ namespace Aws
 
             request.SetDataReceivedEventHandler([this, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
-                handle->AddTransferredBytes(progress);
+                handle->AddTransferredBytes(static_cast<uint64_t>(progress));
                 TriggerDownloadProgressCallback(*handle);
             });
 

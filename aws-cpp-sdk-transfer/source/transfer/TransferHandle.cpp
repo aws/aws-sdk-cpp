@@ -39,6 +39,23 @@ namespace Aws
             m_completedParts.insert(std::pair<int, Aws::String>(partNumber, eTag));
         }
 
+        Aws::Set<int> TransferHandle::GetQueuedParts() const
+        {
+            std::lock_guard<std::recursive_mutex> locker(m_queuedPartsLock);
+            return m_queuedParts;
+        }
+
+        void TransferHandle::AddQueuedPart(int partNumber)
+        {
+            {
+                std::lock_guard<std::recursive_mutex> failedPartsLocker(m_failedPartsLock);
+                m_failedParts.erase(partNumber);
+            }
+
+            std::lock_guard<std::recursive_mutex> queuedPartsLocker(m_queuedPartsLock);
+            m_queuedParts.insert(partNumber);
+        }
+
         Aws::Set<int> TransferHandle::GetPendingParts() const
         {
             std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
@@ -48,8 +65,8 @@ namespace Aws
         void TransferHandle::AddPendingPart(int partNumber)
         {
             {
-                std::lock_guard<std::recursive_mutex> failedPartsLocker(m_failedPartsLock);
-                m_failedParts.erase(partNumber);
+                std::lock_guard<std::recursive_mutex> queuedPartsLocker(m_queuedPartsLock);
+                m_queuedParts.erase(partNumber);
             }
 
             std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
@@ -67,6 +84,10 @@ namespace Aws
             {
                 std::lock_guard<std::recursive_mutex> pendingPartsLocker(m_pendingPartsLock);
                 m_pendingParts.erase(partNumber);               
+            }
+            {
+                std::lock_guard<std::recursive_mutex> queuedPartsLocker(m_queuedPartsLock);
+                m_queuedParts.erase(partNumber);
             }
             std::lock_guard<std::recursive_mutex> failedPartsLocker(m_failedPartsLock);
             m_failedParts.insert(partNumber);
@@ -91,10 +112,11 @@ namespace Aws
 
         void TransferHandle::WaitUntilFinished() const
         {
-            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())))
+            if (!IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) || GetPendingParts().size() > 0)
             {
                 std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
-                m_waitUntilFinishedSignal.wait(semaphoreLock, [this](){return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())); });
+                m_waitUntilFinishedSignal.wait(semaphoreLock, [this]()
+                    { return IsFinishedStatus(static_cast<TransferStatus>(m_status.load())) && GetPendingParts().size() == 0; });
                 semaphoreLock.unlock();
             }
         }

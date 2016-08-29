@@ -64,21 +64,20 @@ namespace Aws
         class AWS_TRANSFER_API TransferHandle
         {
         public:
-
             /**
              * Initialize with required information for an UPLOAD
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, uint64_t totalSize, const Aws::String& targetFilePath = "") : 
-                m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bucket(bucketName), 
-                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(totalSize), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
+                m_isMultipart(false), m_direction(TransferDirection::UPLOAD), m_bytesTransferred(0), m_bytesTotalSize(totalSize),
+                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath),  m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
             {}
 
             /**
              * Initialize with required information for a DOWNLOAD
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const Aws::String& targetFilePath = "") :
-                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bucket(bucketName),
-                m_key(keyName), m_fileName(targetFilePath), m_bytesTotalSize(0), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
+                m_isMultipart(false), m_direction(TransferDirection::DOWNLOAD), m_bytesTransferred(0), m_bytesTotalSize(0),
+                m_bucket(bucketName), m_key(keyName), m_fileName(targetFilePath), m_status(static_cast<long>(TransferStatus::NOT_STARTED)), m_cancel(false)
             {}
 
             /**
@@ -113,6 +112,14 @@ namespace Aws
              * Set a part to pending. Used for all transfers.
              */
             void AddPendingPart(int);
+            /**
+             * Returns a copy of the queued parts. Used for all transfers.
+             */
+            Aws::Set<int> GetQueuedParts() const;
+            /**
+             * Set a part to queued. Used for all transfers.
+             */
+            void AddQueuedPart(int);
             /**
              * Returns a copy of the failed parts. Used for all transfers.
              */
@@ -224,6 +231,7 @@ namespace Aws
             TransferDirection m_direction;
             Aws::Set<std::pair<int, Aws::String>> m_completedParts;
             Aws::Set<int> m_pendingParts;
+            Aws::Set<int> m_queuedParts;
             Aws::Set<int> m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;
             uint64_t m_bytesTotalSize;
@@ -237,6 +245,7 @@ namespace Aws
             std::atomic<bool> m_cancel;
 
             mutable std::recursive_mutex m_completedPartsLock;
+            mutable std::recursive_mutex m_queuedPartsLock;
             mutable std::recursive_mutex m_pendingPartsLock;
             mutable std::recursive_mutex m_failedPartsLock;
             mutable std::mutex m_statusLock;
