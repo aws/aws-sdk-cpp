@@ -148,6 +148,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                 request.GetBody()->seekg(0);
             }
 
+            if (request.GetRequestRetryHandler())
+            {
+                request.GetRequestRetryHandler()(request);
+            }
+
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }

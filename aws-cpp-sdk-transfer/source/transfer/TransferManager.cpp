@@ -292,6 +292,15 @@ namespace Aws
                 TriggerUploadProgressCallback(*handle);
             };
 
+            auto retryHandlerCallback = [this, handle](const Aws::AmazonWebServiceRequest&)
+            {
+                handle->SetTransferredBytes(0);
+                TriggerUploadProgressCallback(*handle);
+            };
+
+            putObjectRequest.SetDataSentEventHandler(uploadProgressCallback);
+            putObjectRequest.SetRequestRetryHandler(retryHandlerCallback);
+
             auto asyncContext = Aws::MakeShared<TransferHandleAsyncContext>(CLASS_TAG);
             asyncContext->handle = handle;
 
@@ -318,6 +327,7 @@ namespace Aws
             if (outcome.IsSuccess())
             {
                 transferContext->handle->AddTransferredBytes(request.GetContentLength());
+                TriggerUploadProgressCallback(*transferContext->handle);
                 transferContext->handle->ChangePartToCompleted(request.GetPartNumber(), outcome.GetResult().GetETag());
             }
             else
@@ -439,6 +449,12 @@ namespace Aws
             request.SetDataReceivedEventHandler([this, handle](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse*, long long progress)
             {
                 handle->AddTransferredBytes(progress);
+                TriggerDownloadProgressCallback(*handle);
+            });
+
+            request.SetRequestRetryHandler([this, handle](const Aws::AmazonWebServiceRequest&)
+            {
+                handle->SetTransferredBytes(0);
                 TriggerDownloadProgressCallback(*handle);
             });
 

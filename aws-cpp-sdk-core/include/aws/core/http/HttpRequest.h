@@ -58,7 +58,9 @@ namespace Aws
          * closure type for receiving notifications that data has been sent.
          */
         typedef std::function<void(const HttpRequest*, long long)> DataSentEventHandler;
-
+        /**
+         * Closure type for handling whether or not a request should be canceled.
+         */
         typedef std::function<bool(const HttpRequest*)> ContinueRequestHandler;
 
         /**
@@ -359,9 +361,13 @@ namespace Aws
              * Sets the closure for receiving events when data is sent to the server.
              */
             inline void SetDataSentEventHandler(DataSentEventHandler&& dataSentEventHandler) { m_onDataSent = std::move(dataSentEventHandler); }
-
+            /**
+             * Sets the closure for handling whether or not to cancel a request.
+             */
             inline void SetContinueRequestHandle(const ContinueRequestHandler& continueRequestHandler) { m_continueRequest = continueRequestHandler; }
-
+            /**
+             * Sets the closure for handling whether or not to cancel a request.
+             */
             inline void SetContinueRequestHandle(ContinueRequestHandler&& continueRequestHandler) { m_continueRequest = std::move(continueRequestHandler); }
 
             /**

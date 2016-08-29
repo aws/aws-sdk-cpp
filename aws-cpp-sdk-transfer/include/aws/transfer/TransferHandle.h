@@ -132,8 +132,10 @@ namespace Aws
              */
             void Cancel();
 
+            /**
+             * Reset the cancellation status for a retry. This will be done automatically by Transfermanager.
+             */
             void Restart();
-
             /**
              * Total bytes transferred successfully on this transfer operation.
              */
