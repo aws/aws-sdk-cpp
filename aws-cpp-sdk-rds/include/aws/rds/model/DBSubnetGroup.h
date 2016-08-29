@@ -226,6 +226,27 @@ namespace Model
      */
     inline DBSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
+    
+    inline const Aws::String& GetDBSubnetGroupArn() const{ return m_dBSubnetGroupArn; }
+
+    
+    inline void SetDBSubnetGroupArn(const Aws::String& value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn = value; }
+
+    
+    inline void SetDBSubnetGroupArn(Aws::String&& value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn = value; }
+
+    
+    inline void SetDBSubnetGroupArn(const char* value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn.assign(value); }
+
+    
+    inline DBSubnetGroup& WithDBSubnetGroupArn(const Aws::String& value) { SetDBSubnetGroupArn(value); return *this;}
+
+    
+    inline DBSubnetGroup& WithDBSubnetGroupArn(Aws::String&& value) { SetDBSubnetGroupArn(value); return *this;}
+
+    
+    inline DBSubnetGroup& WithDBSubnetGroupArn(const char* value) { SetDBSubnetGroupArn(value); return *this;}
+
   private:
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
@@ -237,6 +258,8 @@ namespace Model
     bool m_subnetGroupStatusHasBeenSet;
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
+    Aws::String m_dBSubnetGroupArn;
+    bool m_dBSubnetGroupArnHasBeenSet;
   };
 
 } // namespace Model

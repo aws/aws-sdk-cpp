@@ -32,6 +32,7 @@ TaskDefinition::TaskDefinition() :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -45,6 +46,7 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -85,6 +87,13 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_taskRoleArn = jsonValue.GetString("taskRoleArn");
 
     m_taskRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkMode"))
+  {
+    m_networkMode = NetworkModeMapper::GetNetworkModeForName(jsonValue.GetString("networkMode"));
+
+    m_networkModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("revision"))
@@ -155,6 +164,11 @@ JsonValue TaskDefinition::Jsonize() const
   {
    payload.WithString("taskRoleArn", m_taskRoleArn);
 
+  }
+
+  if(m_networkModeHasBeenSet)
+  {
+   payload.WithString("networkMode", NetworkModeMapper::GetNameForNetworkMode(m_networkMode));
   }
 
   if(m_revisionHasBeenSet)

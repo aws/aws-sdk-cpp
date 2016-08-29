@@ -15,8 +15,8 @@
 #pragma once
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -38,7 +38,9 @@ namespace Model
    * <p>A resource that can be distributed to callers for executing <a>Method</a>
    * resources that require an API key. API keys can be mapped to any <a>Stage</a> on
    * any <a>RestApi</a>, which indicates that the callers with the API key can make
-   * requests to that stage.</p>
+   * requests to that stage.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+   * API Keys</a> </div>
    */
   class AWS_APIGATEWAY_API GetApiKeyResult
   {
@@ -81,6 +83,41 @@ namespace Model
      * <p>The identifier of the API Key.</p>
      */
     inline GetApiKeyResult& WithId(const char* value) { SetId(value); return *this;}
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline void SetValue(const Aws::String& value) { m_value = value; }
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline void SetValue(Aws::String&& value) { m_value = value; }
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline void SetValue(const char* value) { m_value.assign(value); }
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline GetApiKeyResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline GetApiKeyResult& WithValue(Aws::String&& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>The value of the API Key.</p>
+     */
+    inline GetApiKeyResult& WithValue(const char* value) { SetValue(value); return *this;}
 
     /**
      * <p>The name of the API Key.</p>
@@ -168,54 +205,6 @@ namespace Model
     inline GetApiKeyResult& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
     /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetStageKeys() const{ return m_stageKeys; }
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline void SetStageKeys(const Aws::Vector<Aws::String>& value) { m_stageKeys = value; }
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline void SetStageKeys(Aws::Vector<Aws::String>&& value) { m_stageKeys = value; }
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline GetApiKeyResult& WithStageKeys(const Aws::Vector<Aws::String>& value) { SetStageKeys(value); return *this;}
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline GetApiKeyResult& WithStageKeys(Aws::Vector<Aws::String>&& value) { SetStageKeys(value); return *this;}
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline GetApiKeyResult& AddStageKeys(const Aws::String& value) { m_stageKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline GetApiKeyResult& AddStageKeys(Aws::String&& value) { m_stageKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
-     * resource.</p>
-     */
-    inline GetApiKeyResult& AddStageKeys(const char* value) { m_stageKeys.push_back(value); return *this; }
-
-    /**
      * <p>The date when the API Key was created, in <a
      * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO
      * 8601 format</a>.</p>
@@ -275,14 +264,63 @@ namespace Model
      */
     inline GetApiKeyResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(value); return *this;}
 
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStageKeys() const{ return m_stageKeys; }
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline void SetStageKeys(const Aws::Vector<Aws::String>& value) { m_stageKeys = value; }
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline void SetStageKeys(Aws::Vector<Aws::String>&& value) { m_stageKeys = value; }
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline GetApiKeyResult& WithStageKeys(const Aws::Vector<Aws::String>& value) { SetStageKeys(value); return *this;}
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline GetApiKeyResult& WithStageKeys(Aws::Vector<Aws::String>&& value) { SetStageKeys(value); return *this;}
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline GetApiKeyResult& AddStageKeys(const Aws::String& value) { m_stageKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline GetApiKeyResult& AddStageKeys(Aws::String&& value) { m_stageKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
+     * resource.</p>
+     */
+    inline GetApiKeyResult& AddStageKeys(const char* value) { m_stageKeys.push_back(value); return *this; }
+
   private:
     Aws::String m_id;
+    Aws::String m_value;
     Aws::String m_name;
     Aws::String m_description;
     bool m_enabled;
-    Aws::Vector<Aws::String> m_stageKeys;
     Aws::Utils::DateTime m_createdDate;
     Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Vector<Aws::String> m_stageKeys;
   };
 
 } // namespace Model

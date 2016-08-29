@@ -40,9 +40,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWorkspaceIds() const{ return m_workspaceIds; }
 
@@ -50,9 +49,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline void SetWorkspaceIds(const Aws::Vector<Aws::String>& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
@@ -60,9 +58,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline void SetWorkspaceIds(Aws::Vector<Aws::String>&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds = value; }
 
@@ -70,9 +67,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& WithWorkspaceIds(const Aws::Vector<Aws::String>& value) { SetWorkspaceIds(value); return *this;}
 
@@ -80,9 +76,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& WithWorkspaceIds(Aws::Vector<Aws::String>&& value) { SetWorkspaceIds(value); return *this;}
 
@@ -90,9 +85,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(const Aws::String& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
@@ -100,9 +94,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(Aws::String&& value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
@@ -110,9 +103,8 @@ namespace Model
      * <p>An array of strings that contain the identifiers of the WorkSpaces for which
      * to retrieve information. This parameter cannot be combined with any other filter
      * parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous,
-     * the identifier returned by <a>CreateWorkspaces</a> is not immediately available.
-     * If you immediately call <a>DescribeWorkspaces</a> with this identifier, no
-     * information will be returned.</p>
+     * the identifier it returns is not immediately available. If you immediately call
+     * <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>
      */
     inline DescribeWorkspacesRequest& AddWorkspaceIds(const char* value) { m_workspaceIdsHasBeenSet = true; m_workspaceIds.push_back(value); return *this; }
 
@@ -174,43 +166,43 @@ namespace Model
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(Aws::String&& value) { SetUserName(value); return *this;}
 
     /**
      * <p>Used with the <code>DirectoryId</code> parameter to specify the directory
-     * user for which to obtain the WorkSpace.</p>
+     * user for whom to obtain the WorkSpace.</p>
      */
     inline DescribeWorkspacesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

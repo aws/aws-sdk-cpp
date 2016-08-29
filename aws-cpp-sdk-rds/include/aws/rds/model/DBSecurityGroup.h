@@ -262,6 +262,27 @@ namespace Model
      */
     inline DBSecurityGroup& AddIPRanges(IPRange&& value) { m_iPRangesHasBeenSet = true; m_iPRanges.push_back(value); return *this; }
 
+    
+    inline const Aws::String& GetDBSecurityGroupArn() const{ return m_dBSecurityGroupArn; }
+
+    
+    inline void SetDBSecurityGroupArn(const Aws::String& value) { m_dBSecurityGroupArnHasBeenSet = true; m_dBSecurityGroupArn = value; }
+
+    
+    inline void SetDBSecurityGroupArn(Aws::String&& value) { m_dBSecurityGroupArnHasBeenSet = true; m_dBSecurityGroupArn = value; }
+
+    
+    inline void SetDBSecurityGroupArn(const char* value) { m_dBSecurityGroupArnHasBeenSet = true; m_dBSecurityGroupArn.assign(value); }
+
+    
+    inline DBSecurityGroup& WithDBSecurityGroupArn(const Aws::String& value) { SetDBSecurityGroupArn(value); return *this;}
+
+    
+    inline DBSecurityGroup& WithDBSecurityGroupArn(Aws::String&& value) { SetDBSecurityGroupArn(value); return *this;}
+
+    
+    inline DBSecurityGroup& WithDBSecurityGroupArn(const char* value) { SetDBSecurityGroupArn(value); return *this;}
+
   private:
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
@@ -275,6 +296,8 @@ namespace Model
     bool m_eC2SecurityGroupsHasBeenSet;
     Aws::Vector<IPRange> m_iPRanges;
     bool m_iPRangesHasBeenSet;
+    Aws::String m_dBSecurityGroupArn;
+    bool m_dBSecurityGroupArnHasBeenSet;
   };
 
 } // namespace Model

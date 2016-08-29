@@ -33,7 +33,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a REST API.</p>
+   * <p>Represents a REST API.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+   * an API</a> </div>
    */
   class AWS_APIGATEWAY_API RestApi
   {
@@ -190,28 +192,52 @@ namespace Model
      */
     inline RestApi& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warningsHasBeenSet = true; m_warnings = value; }
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = value; }
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline RestApi& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline RestApi& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(value); return *this;}
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline RestApi& AddWarnings(const Aws::String& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline RestApi& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The warning messages reported when <code>failonwarnings</code> is turned on
+     * during API import.</p>
+     */
     inline RestApi& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
 
   private:

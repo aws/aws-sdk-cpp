@@ -46,9 +46,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -63,9 +63,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -80,9 +80,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -97,9 +97,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -114,9 +114,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -131,9 +131,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value
@@ -148,9 +148,9 @@ namespace Model
 
     /**
      * <p>The name of the attribute.</p> <ul> <li> <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The time to wait for
-     * in-flight requests to complete while deregistering a target. The state of a
-     * deregistering target is <code>draining</code>. The range is 0-3600 seconds. The
+     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic
+     * Load Balancing to wait before changing the state of a deregistering target from
+     * <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
      * default value is 300 seconds.</p> </li> <li> <p> <code>stickiness.enabled</code>
      * - Indicates whether sticky sessions are enabled.</p> </li> <li> <p>
      * <code>stickiness.type</code> - The type of sticky sessions. The possible value

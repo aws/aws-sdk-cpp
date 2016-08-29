@@ -123,7 +123,7 @@ namespace Model
     inline MethodSetting& WithLoggingLevel(const char* value) { SetLoggingLevel(value); return *this;}
 
     /**
-     * <p>Specifies the whether data trace logging is enabled for this method, which
+     * <p>Specifies whether data trace logging is enabled for this method, which
      * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
@@ -131,7 +131,7 @@ namespace Model
     inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
 
     /**
-     * <p>Specifies the whether data trace logging is enabled for this method, which
+     * <p>Specifies whether data trace logging is enabled for this method, which
      * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
@@ -139,7 +139,7 @@ namespace Model
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
-     * <p>Specifies the whether data trace logging is enabled for this method, which
+     * <p>Specifies whether data trace logging is enabled for this method, which
      * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
@@ -213,24 +213,24 @@ namespace Model
     inline MethodSetting& WithCachingEnabled(bool value) { SetCachingEnabled(value); return *this;}
 
     /**
-     * <p>Specifies the time to live (TTL) in seconds, for cached responses. The higher
-     * a the TTL, the longer the response will be cached. The PATCH path for this
+     * <p>Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path for this
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
     inline int GetCacheTtlInSeconds() const{ return m_cacheTtlInSeconds; }
 
     /**
-     * <p>Specifies the time to live (TTL) in seconds, for cached responses. The higher
-     * a the TTL, the longer the response will be cached. The PATCH path for this
+     * <p>Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path for this
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
     inline void SetCacheTtlInSeconds(int value) { m_cacheTtlInSecondsHasBeenSet = true; m_cacheTtlInSeconds = value; }
 
     /**
-     * <p>Specifies the time to live (TTL) in seconds, for cached responses. The higher
-     * a the TTL, the longer the response will be cached. The PATCH path for this
+     * <p>Specifies the time to live (TTL), in seconds, for cached responses. The
+     * higher the TTL, the longer the response will be cached. The PATCH path for this
      * setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the
      * value is an integer.</p>
      */
@@ -282,8 +282,8 @@ namespace Model
     inline MethodSetting& WithRequireAuthorizationForCacheControl(bool value) { SetRequireAuthorizationForCacheControl(value); return *this;}
 
     /**
-     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
-     * invalidation. The PATCH path for this setting is
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
      * and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -292,8 +292,8 @@ namespace Model
     inline const UnauthorizedCacheControlHeaderStrategy& GetUnauthorizedCacheControlHeaderStrategy() const{ return m_unauthorizedCacheControlHeaderStrategy; }
 
     /**
-     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
-     * invalidation. The PATCH path for this setting is
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
      * and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -302,8 +302,8 @@ namespace Model
     inline void SetUnauthorizedCacheControlHeaderStrategy(const UnauthorizedCacheControlHeaderStrategy& value) { m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true; m_unauthorizedCacheControlHeaderStrategy = value; }
 
     /**
-     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
-     * invalidation. The PATCH path for this setting is
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
      * and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -312,8 +312,8 @@ namespace Model
     inline void SetUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy&& value) { m_unauthorizedCacheControlHeaderStrategyHasBeenSet = true; m_unauthorizedCacheControlHeaderStrategy = value; }
 
     /**
-     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
-     * invalidation. The PATCH path for this setting is
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
      * and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
@@ -322,8 +322,8 @@ namespace Model
     inline MethodSetting& WithUnauthorizedCacheControlHeaderStrategy(const UnauthorizedCacheControlHeaderStrategy& value) { SetUnauthorizedCacheControlHeaderStrategy(value); return *this;}
 
     /**
-     * <p>Specifies the strategy on how to handle the unauthorized requests for cache
-     * invalidation. The PATCH path for this setting is
+     * <p>Specifies how to handle unauthorized requests for cache invalidation. The
+     * PATCH path for this setting is
      * <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
      * and the available values are <code>FAIL_WITH_403</code>,
      * <code>SUCCEED_WITH_RESPONSE_HEADER</code>,

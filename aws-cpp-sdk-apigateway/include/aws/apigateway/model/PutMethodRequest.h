@@ -105,37 +105,37 @@ namespace Model
     inline PutMethodRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline PutMethodRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline PutMethodRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>Specifies the put method request's HTTP method type.</p>
+     * <p>Specifies the method request's HTTP method type.</p>
      */
     inline PutMethodRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
@@ -232,98 +232,106 @@ namespace Model
     inline PutMethodRequest& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline const Aws::Map<Aws::String, bool>& GetRequestParameters() const{ return m_requestParameters; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, bool>& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, bool>&& value) { m_requestParametersHasBeenSet = true; m_requestParameters = value; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline PutMethodRequest& WithRequestParameters(const Aws::Map<Aws::String, bool>& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline PutMethodRequest& WithRequestParameters(Aws::Map<Aws::String, bool>&& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline PutMethodRequest& AddRequestParameters(const Aws::String& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline PutMethodRequest& AddRequestParameters(Aws::String&& key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents requests parameters that are sent with the backend request.
-     * Request parameters are represented as a key/value map, with a destination as the
-     * key and a source as the value. A source must match an existing method request
-     * parameter, or a static value. Static values must be enclosed with single quotes,
-     * and be pre-encoded based on their destination in the request. The destination
-     * must match the pattern <code>integration.request.{location}.{name}</code>, where
-     * <code>location</code> is either querystring, path, or header. <code>name</code>
-     * must be a valid, unique parameter name.</p>
+     * <p>A key-value map defining required or optional method request parameters that
+     * can be accepted by Amazon API Gateway. A key defines a method request parameter
+     * name matching the pattern of <code>method.request.{location}.{name}</code>,
+     * where <code>location</code> is <code>querystring</code>, <code>path</code>, or
+     * <code>header</code> and <code>name</code> is a valid and unique parameter name.
+     * The value associated with the key is a Boolean flag indicating whether the
+     * parameter is required (<code>true</code>) or optional (<code>false</code>). The
+     * method request parameter names defined here are available in <a>Integration</a>
+     * to be mapped to integration request parameters or body-mapping templates.</p>
      */
     inline PutMethodRequest& AddRequestParameters(const char* key, bool value) { m_requestParametersHasBeenSet = true; m_requestParameters[key] = value; return *this; }
 

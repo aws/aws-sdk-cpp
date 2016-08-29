@@ -48,7 +48,8 @@ ReservedDBInstance::ReservedDBInstance() :
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservedDBInstanceArnHasBeenSet(false)
 {
 }
 
@@ -71,7 +72,8 @@ ReservedDBInstance::ReservedDBInstance(const XmlNode& xmlNode) :
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservedDBInstanceArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -172,6 +174,12 @@ ReservedDBInstance& ReservedDBInstance::operator =(const XmlNode& xmlNode)
 
       m_recurringChargesHasBeenSet = true;
     }
+    XmlNode reservedDBInstanceArnNode = resultNode.FirstChild("ReservedDBInstanceArn");
+    if(!reservedDBInstanceArnNode.IsNull())
+    {
+      m_reservedDBInstanceArn = StringUtils::Trim(reservedDBInstanceArnNode.GetText().c_str());
+      m_reservedDBInstanceArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -255,6 +263,11 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 
+  if(m_reservedDBInstanceArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedDBInstanceArn=" << StringUtils::URLEncode(m_reservedDBInstanceArn.c_str()) << "&";
+  }
+
 }
 
 void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -320,6 +333,10 @@ void ReservedDBInstance::OutputToStream(Aws::OStream& oStream, const char* locat
         recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
+  }
+  if(m_reservedDBInstanceArnHasBeenSet)
+  {
+      oStream << location << ".ReservedDBInstanceArn=" << StringUtils::URLEncode(m_reservedDBInstanceArn.c_str()) << "&";
   }
 }
 

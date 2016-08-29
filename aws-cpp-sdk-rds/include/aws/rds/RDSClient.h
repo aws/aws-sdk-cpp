@@ -2492,14 +2492,14 @@ namespace Model
         virtual void ModifyDBClusterSnapshotAttributeAsync(const Model::ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modify settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p>
          */
         virtual Model::ModifyDBInstanceOutcome ModifyDBInstance(const Model::ModifyDBInstanceRequest& request) const;
 
         /**
-         * <p>Modify settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p>
          *
@@ -2508,7 +2508,7 @@ namespace Model
         virtual Model::ModifyDBInstanceOutcomeCallable ModifyDBInstanceCallable(const Model::ModifyDBInstanceRequest& request) const;
 
         /**
-         * <p>Modify settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for a DB instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p>
          *

@@ -138,28 +138,44 @@ namespace Model
      */
     inline CreateAuthorizerRequest& WithType(AuthorizerType&& value) { SetType(value); return *this;}
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetProviderARNs() const{ return m_providerARNs; }
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline void SetProviderARNs(const Aws::Vector<Aws::String>& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline void SetProviderARNs(Aws::Vector<Aws::String>&& value) { m_providerARNsHasBeenSet = true; m_providerARNs = value; }
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline CreateAuthorizerRequest& WithProviderARNs(const Aws::Vector<Aws::String>& value) { SetProviderARNs(value); return *this;}
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline CreateAuthorizerRequest& WithProviderARNs(Aws::Vector<Aws::String>&& value) { SetProviderARNs(value); return *this;}
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline CreateAuthorizerRequest& AddProviderARNs(const Aws::String& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline CreateAuthorizerRequest& AddProviderARNs(Aws::String&& value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the Cognito Your User Pool authorizer's provider ARNs.</p>
+     */
     inline CreateAuthorizerRequest& AddProviderARNs(const char* value) { m_providerARNsHasBeenSet = true; m_providerARNs.push_back(value); return *this; }
 
     /**

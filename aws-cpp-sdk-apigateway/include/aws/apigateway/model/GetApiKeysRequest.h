@@ -96,11 +96,68 @@ namespace Model
      */
     inline GetApiKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline const Aws::String& GetNameQuery() const{ return m_nameQuery; }
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline void SetNameQuery(const Aws::String& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline void SetNameQuery(Aws::String&& value) { m_nameQueryHasBeenSet = true; m_nameQuery = value; }
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline void SetNameQuery(const char* value) { m_nameQueryHasBeenSet = true; m_nameQuery.assign(value); }
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline GetApiKeysRequest& WithNameQuery(const Aws::String& value) { SetNameQuery(value); return *this;}
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline GetApiKeysRequest& WithNameQuery(Aws::String&& value) { SetNameQuery(value); return *this;}
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline GetApiKeysRequest& WithNameQuery(const char* value) { SetNameQuery(value); return *this;}
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains key values.</p>
+     */
+    inline bool GetIncludeValues() const{ return m_includeValues; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains key values.</p>
+     */
+    inline void SetIncludeValues(bool value) { m_includeValuesHasBeenSet = true; m_includeValues = value; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains key values.</p>
+     */
+    inline GetApiKeysRequest& WithIncludeValues(bool value) { SetIncludeValues(value); return *this;}
+
   private:
     Aws::String m_position;
     bool m_positionHasBeenSet;
     int m_limit;
     bool m_limitHasBeenSet;
+    Aws::String m_nameQuery;
+    bool m_nameQueryHasBeenSet;
+    bool m_includeValues;
+    bool m_includeValuesHasBeenSet;
   };
 
 } // namespace Model

@@ -1072,6 +1072,27 @@ namespace Model
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
+    
+    inline const Aws::String& GetDBClusterArn() const{ return m_dBClusterArn; }
+
+    
+    inline void SetDBClusterArn(const Aws::String& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
+
+    
+    inline void SetDBClusterArn(Aws::String&& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
+
+    
+    inline void SetDBClusterArn(const char* value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn.assign(value); }
+
+    
+    inline DBCluster& WithDBClusterArn(const Aws::String& value) { SetDBClusterArn(value); return *this;}
+
+    
+    inline DBCluster& WithDBClusterArn(Aws::String&& value) { SetDBClusterArn(value); return *this;}
+
+    
+    inline DBCluster& WithDBClusterArn(const char* value) { SetDBClusterArn(value); return *this;}
+
   private:
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
@@ -1129,6 +1150,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_dbClusterResourceId;
     bool m_dbClusterResourceIdHasBeenSet;
+    Aws::String m_dBClusterArn;
+    bool m_dBClusterArnHasBeenSet;
   };
 
 } // namespace Model

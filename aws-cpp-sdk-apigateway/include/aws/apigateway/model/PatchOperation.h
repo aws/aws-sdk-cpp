@@ -45,170 +45,222 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>A patch operation whose value indicates the operation to perform. Its value
-     * MUST be one of "add", "remove", "replace", "move", "copy", or "test"; other
-     * values are errors. </p>
+     * <p>An update operation to be performed with this PATCH request. The valid value
+     * can be "add", "remove", or "replace". Not all valid operations are supported for
+     * a given resource. Support of the operations depends on specific operational
+     * contexts. Attempts to apply an unsupported operation on a resource will return
+     * an error message.</p>
      */
     inline const Op& GetOp() const{ return m_op; }
 
     /**
-     * <p>A patch operation whose value indicates the operation to perform. Its value
-     * MUST be one of "add", "remove", "replace", "move", "copy", or "test"; other
-     * values are errors. </p>
+     * <p>An update operation to be performed with this PATCH request. The valid value
+     * can be "add", "remove", or "replace". Not all valid operations are supported for
+     * a given resource. Support of the operations depends on specific operational
+     * contexts. Attempts to apply an unsupported operation on a resource will return
+     * an error message.</p>
      */
     inline void SetOp(const Op& value) { m_opHasBeenSet = true; m_op = value; }
 
     /**
-     * <p>A patch operation whose value indicates the operation to perform. Its value
-     * MUST be one of "add", "remove", "replace", "move", "copy", or "test"; other
-     * values are errors. </p>
+     * <p>An update operation to be performed with this PATCH request. The valid value
+     * can be "add", "remove", or "replace". Not all valid operations are supported for
+     * a given resource. Support of the operations depends on specific operational
+     * contexts. Attempts to apply an unsupported operation on a resource will return
+     * an error message.</p>
      */
     inline void SetOp(Op&& value) { m_opHasBeenSet = true; m_op = value; }
 
     /**
-     * <p>A patch operation whose value indicates the operation to perform. Its value
-     * MUST be one of "add", "remove", "replace", "move", "copy", or "test"; other
-     * values are errors. </p>
+     * <p>An update operation to be performed with this PATCH request. The valid value
+     * can be "add", "remove", or "replace". Not all valid operations are supported for
+     * a given resource. Support of the operations depends on specific operational
+     * contexts. Attempts to apply an unsupported operation on a resource will return
+     * an error message.</p>
      */
     inline PatchOperation& WithOp(const Op& value) { SetOp(value); return *this;}
 
     /**
-     * <p>A patch operation whose value indicates the operation to perform. Its value
-     * MUST be one of "add", "remove", "replace", "move", "copy", or "test"; other
-     * values are errors. </p>
+     * <p>An update operation to be performed with this PATCH request. The valid value
+     * can be "add", "remove", or "replace". Not all valid operations are supported for
+     * a given resource. Support of the operations depends on specific operational
+     * contexts. Attempts to apply an unsupported operation on a resource will return
+     * an error message.</p>
      */
     inline PatchOperation& WithOp(Op&& value) { SetOp(value); return *this;}
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(Aws::String&& value) { SetPath(value); return *this;}
 
     /**
-     * <p>Operation objects MUST have exactly one "path" member. That member's value is
-     * a string containing a `JSON-Pointer` value that references a location within the
-     * target document (the "target location") where the operation is performed.</p>
+     * <p>The <code>op</code> operation's target, as identified by a <a
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(const char* value) { SetPath(value); return *this;}
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline PatchOperation& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The actual value content. </p>
+     * <p>The new target value of the update operation. </p>
      */
     inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline const Aws::String& GetFrom() const{ return m_from; }
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline PatchOperation& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline PatchOperation& WithFrom(Aws::String&& value) { SetFrom(value); return *this;}
 
     /**
-     * <p>The "move" and "copy" operation object MUST contain a "from" member, which is
-     * a string containing a <code>JSON Pointer</code> value that references the
-     * location in the target document to move the value from.</p>
+     * <p> Not supported.</p>
      */
     inline PatchOperation& WithFrom(const char* value) { SetFrom(value); return *this;}
 

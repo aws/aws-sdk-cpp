@@ -29,25 +29,27 @@ namespace Model
 
 ApiKey::ApiKey() : 
     m_idHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_stageKeysHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_stageKeysHasBeenSet(false)
 {
 }
 
 ApiKey::ApiKey(const JsonValue& jsonValue) : 
     m_idHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_stageKeysHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false)
+    m_lastUpdatedDateHasBeenSet(false),
+    m_stageKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetString("value");
+
+    m_valueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -82,16 +91,6 @@ ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
     m_enabledHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("stageKeys"))
-  {
-    Array<JsonValue> stageKeysJsonList = jsonValue.GetArray("stageKeys");
-    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
-    {
-      m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());
-    }
-    m_stageKeysHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
@@ -106,6 +105,16 @@ ApiKey& ApiKey::operator =(const JsonValue& jsonValue)
     m_lastUpdatedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stageKeys"))
+  {
+    Array<JsonValue> stageKeysJsonList = jsonValue.GetArray("stageKeys");
+    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
+    {
+      m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());
+    }
+    m_stageKeysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue ApiKey::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("value", m_value);
 
   }
 
@@ -137,6 +152,16 @@ JsonValue ApiKey::Jsonize() const
 
   }
 
+  if(m_createdDateHasBeenSet)
+  {
+   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedDateHasBeenSet)
+  {
+   payload.WithDouble("lastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
+  }
+
   if(m_stageKeysHasBeenSet)
   {
    Array<JsonValue> stageKeysJsonList(m_stageKeys.size());
@@ -146,16 +171,6 @@ JsonValue ApiKey::Jsonize() const
    }
    payload.WithArray("stageKeys", std::move(stageKeysJsonList));
 
-  }
-
-  if(m_createdDateHasBeenSet)
-  {
-   payload.WithDouble("createdDate", m_createdDate.SecondsWithMSPrecision());
-  }
-
-  if(m_lastUpdatedDateHasBeenSet)
-  {
-   payload.WithDouble("lastUpdatedDate", m_lastUpdatedDate.SecondsWithMSPrecision());
   }
 
   return payload;

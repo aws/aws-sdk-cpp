@@ -183,50 +183,50 @@ namespace Model
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId.assign(value); }
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(value); return *this;}
 
     /**
      * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
-     * Gateway will use use the certificate when making the HTTPS request to the
-     * defined backend endpoint.</p>
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
      */
     inline TestInvokeMethodRequest& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
 

@@ -34,10 +34,14 @@ namespace Aws
         static const int IMPAIRED_HASH = HashingUtils::HashString("IMPAIRED");
         static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
+        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
         static const int REBUILDING_HASH = HashingUtils::HashString("REBUILDING");
+        static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
         static const int TERMINATING_HASH = HashingUtils::HashString("TERMINATING");
         static const int TERMINATED_HASH = HashingUtils::HashString("TERMINATED");
         static const int SUSPENDED_HASH = HashingUtils::HashString("SUSPENDED");
+        static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
+        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 
@@ -64,9 +68,17 @@ namespace Aws
           {
             return WorkspaceState::REBOOTING;
           }
+          else if (hashCode == STARTING_HASH)
+          {
+            return WorkspaceState::STARTING;
+          }
           else if (hashCode == REBUILDING_HASH)
           {
             return WorkspaceState::REBUILDING;
+          }
+          else if (hashCode == MAINTENANCE_HASH)
+          {
+            return WorkspaceState::MAINTENANCE;
           }
           else if (hashCode == TERMINATING_HASH)
           {
@@ -79,6 +91,14 @@ namespace Aws
           else if (hashCode == SUSPENDED_HASH)
           {
             return WorkspaceState::SUSPENDED;
+          }
+          else if (hashCode == STOPPING_HASH)
+          {
+            return WorkspaceState::STOPPING;
+          }
+          else if (hashCode == STOPPED_HASH)
+          {
+            return WorkspaceState::STOPPED;
           }
           else if (hashCode == ERROR__HASH)
           {
@@ -108,14 +128,22 @@ namespace Aws
             return "UNHEALTHY";
           case WorkspaceState::REBOOTING:
             return "REBOOTING";
+          case WorkspaceState::STARTING:
+            return "STARTING";
           case WorkspaceState::REBUILDING:
             return "REBUILDING";
+          case WorkspaceState::MAINTENANCE:
+            return "MAINTENANCE";
           case WorkspaceState::TERMINATING:
             return "TERMINATING";
           case WorkspaceState::TERMINATED:
             return "TERMINATED";
           case WorkspaceState::SUSPENDED:
             return "SUSPENDED";
+          case WorkspaceState::STOPPING:
+            return "STOPPING";
+          case WorkspaceState::STOPPED:
+            return "STOPPED";
           case WorkspaceState::ERROR_:
             return "ERROR";
           default:

@@ -167,6 +167,27 @@ namespace Model
      */
     inline DBClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    
+    inline const Aws::String& GetDBClusterParameterGroupArn() const{ return m_dBClusterParameterGroupArn; }
+
+    
+    inline void SetDBClusterParameterGroupArn(const Aws::String& value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn = value; }
+
+    
+    inline void SetDBClusterParameterGroupArn(Aws::String&& value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn = value; }
+
+    
+    inline void SetDBClusterParameterGroupArn(const char* value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn.assign(value); }
+
+    
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(const Aws::String& value) { SetDBClusterParameterGroupArn(value); return *this;}
+
+    
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(Aws::String&& value) { SetDBClusterParameterGroupArn(value); return *this;}
+
+    
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(const char* value) { SetDBClusterParameterGroupArn(value); return *this;}
+
   private:
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
@@ -174,6 +195,8 @@ namespace Model
     bool m_dBParameterGroupFamilyHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_dBClusterParameterGroupArn;
+    bool m_dBClusterParameterGroupArnHasBeenSet;
   };
 
 } // namespace Model

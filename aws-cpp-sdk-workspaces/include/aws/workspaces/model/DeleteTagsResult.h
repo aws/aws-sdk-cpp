@@ -32,7 +32,7 @@ namespace WorkSpaces
 namespace Model
 {
   /**
-   * <p>The result of the delete tags action.</p>
+   * <p>The result of the <a>DeleteTags</a> operation.</p>
    */
   class AWS_WORKSPACES_API DeleteTagsResult
   {

@@ -30,7 +30,8 @@ namespace Model
     journald,
     gelf,
     fluentd,
-    awslogs
+    awslogs,
+    splunk
   };
 
 namespace LogDriverMapper

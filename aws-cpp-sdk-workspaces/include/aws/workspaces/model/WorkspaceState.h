@@ -30,10 +30,14 @@ namespace Model
     IMPAIRED,
     UNHEALTHY,
     REBOOTING,
+    STARTING,
     REBUILDING,
+    MAINTENANCE,
     TERMINATING,
     TERMINATED,
     SUSPENDED,
+    STOPPING,
+    STOPPED,
     ERROR_
   };
 

@@ -57,7 +57,8 @@ DBSnapshot::DBSnapshot() :
     m_tdeCredentialArnHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dBSnapshotArnHasBeenSet(false)
 {
 }
 
@@ -89,7 +90,8 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_tdeCredentialArnHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_dBSnapshotArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -238,6 +240,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode dBSnapshotArnNode = resultNode.FirstChild("DBSnapshotArn");
+    if(!dBSnapshotArnNode.IsNull())
+    {
+      m_dBSnapshotArn = StringUtils::Trim(dBSnapshotArnNode.GetText().c_str());
+      m_dBSnapshotArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -360,6 +368,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if(m_dBSnapshotArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBSnapshotArn=" << StringUtils::URLEncode(m_dBSnapshotArn.c_str()) << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -455,6 +468,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_dBSnapshotArnHasBeenSet)
+  {
+      oStream << location << ".DBSnapshotArn=" << StringUtils::URLEncode(m_dBSnapshotArn.c_str()) << "&";
   }
 }
 

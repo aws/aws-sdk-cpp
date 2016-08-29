@@ -35,7 +35,10 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>Represents a collection of <a>BasePathMapping</a> resources.</p>
+   * <p>Represents a collection of <a>BasePathMapping</a> resources.</p> <div
+   * class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+   * Custom Domain Names</a> </div>
    */
   class AWS_APIGATEWAY_API GetBasePathMappingsResult
   {

@@ -36,7 +36,9 @@ namespace Model
   /**
    * <p>Represents an integration response. The status code must map to an existing
    * <a>MethodResponse</a>, and parameters and templates can be used to transform the
-   * backend response.</p>
+   * back-end response.</p> <div class="seeAlso"> <a
+   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+   * an API</a> </div>
    */
   class AWS_APIGATEWAY_API GetIntegrationResponseResult
   {
@@ -89,189 +91,277 @@ namespace Model
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline const Aws::String& GetSelectionPattern() const{ return m_selectionPattern; }
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(const Aws::String& value) { m_selectionPattern = value; }
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(Aws::String&& value) { m_selectionPattern = value; }
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline void SetSelectionPattern(const char* value) { m_selectionPattern.assign(value); }
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline GetIntegrationResponseResult& WithSelectionPattern(const Aws::String& value) { SetSelectionPattern(value); return *this;}
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline GetIntegrationResponseResult& WithSelectionPattern(Aws::String&& value) { SetSelectionPattern(value); return *this;}
 
     /**
      * <p>Specifies the regular expression (regex) pattern used to choose an
-     * integration response based on the response from the backend. If the backend is
-     * an AWS Lambda function, the AWS Lambda function error header is matched. For all
-     * other HTTP and AWS backends, the HTTP status code is matched.</p>
+     * integration response based on the response from the back end. For example, if
+     * the success response returns nothing and the error response returns some string,
+     * you could use the <code>.+</code> regex to match error response. However, make
+     * sure that the error response does not contain any newline (<code>\n</code>)
+     * character in such cases. If the back end is an AWS Lambda function, the AWS
+     * Lambda function error header is matched. For all other HTTP and AWS back ends,
+     * the HTTP status code is matched.</p>
      */
     inline GetIntegrationResponseResult& WithSelectionPattern(const char* value) { SetSelectionPattern(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseParameters() const{ return m_responseParameters; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline void SetResponseParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_responseParameters = value; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline void SetResponseParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_responseParameters = value; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& WithResponseParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetResponseParameters(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& WithResponseParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetResponseParameters(value); return *this;}
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(const Aws::String& key, const Aws::String& value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(Aws::String&& key, const Aws::String& value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(const Aws::String& key, Aws::String&& value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(Aws::String&& key, Aws::String&& value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(const char* key, Aws::String&& value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(Aws::String&& key, const char* value) { m_responseParameters[key] = value; return *this; }
 
     /**
-     * <p>Represents response parameters that can be read from the backend response.
-     * Response parameters are represented as a key/value map, with a destination as
-     * the key and a source as the value. A destination must match an existing response
-     * parameter in the <a>MethodResponse</a>. The source can be a header from the
-     * backend response, or a static value. Static values are specified using enclosing
-     * single quotes, and backend response headers can be read using the pattern
-     * <code>integration.response.header.{name}</code>.</p>
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> is a valid and unique response header name and
+     * <code>JSON-expression</code> is a valid JSON expression without the
+     * <code>$</code> prefix.</p>
      */
     inline GetIntegrationResponseResult& AddResponseParameters(const char* key, const char* value) { m_responseParameters[key] = value; return *this; }
 

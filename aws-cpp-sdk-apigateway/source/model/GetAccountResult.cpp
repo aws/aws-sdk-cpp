@@ -48,6 +48,21 @@ GetAccountResult& GetAccountResult::operator =(const AmazonWebServiceResult<Json
 
   }
 
+  if(jsonValue.ValueExists("features"))
+  {
+    Array<JsonValue> featuresJsonList = jsonValue.GetArray("features");
+    for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+    {
+      m_features.push_back(featuresJsonList[featuresIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("apiKeyVersion"))
+  {
+    m_apiKeyVersion = jsonValue.GetString("apiKeyVersion");
+
+  }
+
 
 
   return *this;

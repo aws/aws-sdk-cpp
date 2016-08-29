@@ -34,6 +34,8 @@ ContainerDefinition::ContainerDefinition() :
     m_cpuHasBeenSet(false),
     m_memory(0),
     m_memoryHasBeenSet(false),
+    m_memoryReservation(0),
+    m_memoryReservationHasBeenSet(false),
     m_linksHasBeenSet(false),
     m_portMappingsHasBeenSet(false),
     m_essential(false),
@@ -69,6 +71,8 @@ ContainerDefinition::ContainerDefinition(const JsonValue& jsonValue) :
     m_cpuHasBeenSet(false),
     m_memory(0),
     m_memoryHasBeenSet(false),
+    m_memoryReservation(0),
+    m_memoryReservationHasBeenSet(false),
     m_linksHasBeenSet(false),
     m_portMappingsHasBeenSet(false),
     m_essential(false),
@@ -126,6 +130,13 @@ ContainerDefinition& ContainerDefinition::operator =(const JsonValue& jsonValue)
     m_memory = jsonValue.GetInteger("memory");
 
     m_memoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memoryReservation"))
+  {
+    m_memoryReservation = jsonValue.GetInteger("memoryReservation");
+
+    m_memoryReservationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("links"))
@@ -342,6 +353,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_memoryHasBeenSet)
   {
    payload.WithInteger("memory", m_memory);
+
+  }
+
+  if(m_memoryReservationHasBeenSet)
+  {
+   payload.WithInteger("memoryReservation", m_memoryReservation);
 
   }
 

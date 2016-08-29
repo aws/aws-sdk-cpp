@@ -19,6 +19,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace APIGateway
 {
 namespace Model
@@ -32,6 +36,8 @@ namespace Model
   public:
     GetApiKeyRequest();
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
      * <p>The identifier of the <a>ApiKey</a> resource.</p>
@@ -68,9 +74,29 @@ namespace Model
      */
     inline GetApiKeyRequest& WithApiKey(const char* value) { SetApiKey(value); return *this;}
 
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains the key value.</p>
+     */
+    inline bool GetIncludeValue() const{ return m_includeValue; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains the key value.</p>
+     */
+    inline void SetIncludeValue(bool value) { m_includeValueHasBeenSet = true; m_includeValue = value; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains the key value.</p>
+     */
+    inline GetApiKeyRequest& WithIncludeValue(bool value) { SetIncludeValue(value); return *this;}
+
   private:
     Aws::String m_apiKey;
     bool m_apiKeyHasBeenSet;
+    bool m_includeValue;
+    bool m_includeValueHasBeenSet;
   };
 
 } // namespace Model

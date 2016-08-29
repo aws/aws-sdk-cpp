@@ -37,7 +37,8 @@ OptionGroup::OptionGroup() :
     m_optionsHasBeenSet(false),
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_optionGroupArnHasBeenSet(false)
 {
 }
 
@@ -49,7 +50,8 @@ OptionGroup::OptionGroup(const XmlNode& xmlNode) :
     m_optionsHasBeenSet(false),
     m_allowsVpcAndNonVpcInstanceMemberships(false),
     m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_optionGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -108,6 +110,12 @@ OptionGroup& OptionGroup::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode optionGroupArnNode = resultNode.FirstChild("OptionGroupArn");
+    if(!optionGroupArnNode.IsNull())
+    {
+      m_optionGroupArn = StringUtils::Trim(optionGroupArnNode.GetText().c_str());
+      m_optionGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -156,6 +164,11 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_optionGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
+  }
+
 }
 
 void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -193,6 +206,10 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_optionGroupArnHasBeenSet)
+  {
+      oStream << location << ".OptionGroupArn=" << StringUtils::URLEncode(m_optionGroupArn.c_str()) << "&";
   }
 }
 

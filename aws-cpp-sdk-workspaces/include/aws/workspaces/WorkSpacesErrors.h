@@ -49,8 +49,11 @@ enum class WorkSpacesErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_PARAMETER_VALUES= static_cast<int>(Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_RESOURCE_STATE,
+  OPERATION_IN_PROGRESS,
   RESOURCE_LIMIT_EXCEEDED,
-  RESOURCE_UNAVAILABLE
+  RESOURCE_UNAVAILABLE,
+  UNSUPPORTED_WORKSPACE_CONFIGURATION
 };
 namespace WorkSpacesErrorMapper
 {
