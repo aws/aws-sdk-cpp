@@ -26,9 +26,19 @@ namespace Aws
     {
         namespace Stream
         {
+            /**
+             * this is a stream buf to use with std::iostream that uses a preallocated buffer under the hood.
+             */
             class AWS_CORE_API PreallocatedStreamBuf : public std::streambuf
             {
             public:
+                /**
+                 * Initialize the stream buffer with a pointer to your buffer. This class never takes ownership
+                 * of the buffer. It is your responsibility to delete it once the stream is no longer in use.
+                 * @param buffer buffer to initialize from.
+                 * @param lengthToRead length in bytes to actually use in the buffer (e.g. you have a 1kb buffer, but only want the stream
+                 * to see 500 b of it.
+                 */
                 PreallocatedStreamBuf(Aws::Utils::Array<uint8_t>* buffer, std::size_t lengthToRead);
 
                 PreallocatedStreamBuf(const PreallocatedStreamBuf&) = delete;
@@ -37,6 +47,10 @@ namespace Aws
                 PreallocatedStreamBuf(PreallocatedStreamBuf&& toMove) = delete;
                 PreallocatedStreamBuf& operator=(PreallocatedStreamBuf&&) = delete;
 
+                /**
+                 * Get the buffer that is being used by the stream buffer.
+                 * @return Pointer to the underlying buffer (probably for a Aws::Delete() call).
+                 */
                 Aws::Utils::Array<uint8_t>* GetBuffer() { return m_underlyingBuffer; }
 
             protected:
