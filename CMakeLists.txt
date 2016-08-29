@@ -411,7 +411,9 @@ if(NOT PLATFORM_WINDOWS AND NOT PLATFORM_ANDROID AND NOT PLATFORM_CUSTOM)
     message(STATUS "Finding uuid")
 
     find_path(UUID_INCLUDE_DIR uuid/uuid.h)
-    find_library(UUID_LIBRARIES uuid)
+    if(NOT PLATFORM_APPLE)
+        find_library(UUID_LIBRARIES uuid)
+    endif()
 
     if("${UUID_INCLUDE_DIR}" STREQUAL "UUID_INCLUDE_DIR-NOTFOUND" OR "${UUID_LIBRARIES}" STREQUAL "UUID_LIBRARIES-NOTFOUND")
         message(FATAL_ERROR "Could not find uuid components")
