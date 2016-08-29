@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MarketplaceCommerceAnalytics;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.14.20150701.7;
+        version : @RUNTIME_MAJOR_VERSION@.20150701.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Marketplace Commerce Analytics);

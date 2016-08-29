@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-EMR;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 0.14.20090331.7;
+        version : @RUNTIME_MAJOR_VERSION@.20090331.@RUNTIME_MINOR_VERSION@;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elastic MapReduce);
