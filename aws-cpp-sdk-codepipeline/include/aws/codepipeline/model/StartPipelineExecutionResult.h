@@ -43,37 +43,44 @@ namespace Model
     StartPipelineExecutionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline void SetPipelineExecutionId(const Aws::String& value) { m_pipelineExecutionId = value; }
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline void SetPipelineExecutionId(Aws::String&& value) { m_pipelineExecutionId = value; }
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline void SetPipelineExecutionId(const char* value) { m_pipelineExecutionId.assign(value); }
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline StartPipelineExecutionResult& WithPipelineExecutionId(const Aws::String& value) { SetPipelineExecutionId(value); return *this;}
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline StartPipelineExecutionResult& WithPipelineExecutionId(Aws::String&& value) { SetPipelineExecutionId(value); return *this;}
 
     /**
-     * <p>The unique system-generated ID of the pipeline that was started.</p>
+     * <p>The unique system-generated ID of the pipeline execution that was
+     * started.</p>
      */
     inline StartPipelineExecutionResult& WithPipelineExecutionId(const char* value) { SetPipelineExecutionId(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>To retrieve a count of all your hosted zones, send a <code>GET</code> request
-   * to the <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.</p>
+   * to the <code>/2013-04-01/hostedzonecount</code> resource.</p>
    */
   class AWS_ROUTE53_API GetHostedZoneCountRequest : public Route53Request
   {

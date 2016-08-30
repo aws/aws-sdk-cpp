@@ -70,114 +70,93 @@ namespace Model
     inline CreateTrafficPolicyVersionRequest& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(Aws::String&& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The definition of a new traffic policy version, in JSON format. You must
-     * specify the full definition of the new traffic policy. You cannot specify just
-     * the differences between the new version and a previous version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
-     * Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.</p>
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments that you want to include about the new traffic policy
-     * version.</p>
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
      */
     inline CreateTrafficPolicyVersionRequest& WithComment(const char* value) { SetComment(value); return *this;}
 

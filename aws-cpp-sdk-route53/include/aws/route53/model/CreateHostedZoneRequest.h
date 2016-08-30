@@ -27,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to create a hosted
-   * zone.</p>
+   * <p>A complex type containing the hosted zone request information.</p>
    */
   class AWS_ROUTE53_API CreateHostedZoneRequest : public Route53Request
   {
@@ -37,86 +36,100 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline CreateHostedZoneRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline CreateHostedZoneRequest& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the domain. This must be a fully-specified domain, for example,
-     * www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the
-     * domain name is fully qualified. This means that Amazon Route 53 treats
-     * www.example.com (without a trailing dot) and www.example.com. (with a trailing
-     * dot) as identical.</p> <p>This is the name you have registered with your DNS
-     * registrar. You should ask your registrar to change the authoritative name
-     * servers for your domain to the set of <code>NameServers</code> elements returned
-     * in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. For resource record types that include a domain name,
+     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
+     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
+     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
+     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
+     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
+     * have registered with your DNS registrar. If your domain name is registered with
+     * a registrar other than Amazon Route 53, change the name servers for your domain
+     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
+     * returns in the DelegationSet element.</p>
      */
     inline CreateHostedZoneRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -160,10 +173,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
@@ -172,10 +183,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -184,10 +193,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -196,10 +203,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
@@ -208,10 +213,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline CreateHostedZoneRequest& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
@@ -220,10 +223,8 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline CreateHostedZoneRequest& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
 
@@ -232,77 +233,113 @@ namespace Model
      * <code>CreateHostedZone</code> requests to be retried without the risk of
      * executing the operation twice. You must use a unique
      * <code>CallerReference</code> string every time you create a hosted zone.
-     * <code>CallerReference</code> can be any unique string; you might choose to use a
-     * string that identifies your project, such as <code>DNSMigration_01</code>.</p>
-     * <p>Valid characters are any Unicode code points that are legal in an XML 1.0
-     * document. The UTF-8 encoding of the value must be less than 128 bytes.</p>
+     * <code>CallerReference</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline CreateHostedZoneRequest& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains an optional comment about your hosted zone.</p>
+     * <p> (Optional) A complex type that contains an optional comment about your
+     * hosted zone. If you don't want to specify a comment, omit both the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
     inline const HostedZoneConfig& GetHostedZoneConfig() const{ return m_hostedZoneConfig; }
 
     /**
-     * <p>A complex type that contains an optional comment about your hosted zone.</p>
+     * <p> (Optional) A complex type that contains an optional comment about your
+     * hosted zone. If you don't want to specify a comment, omit both the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
     inline void SetHostedZoneConfig(const HostedZoneConfig& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = value; }
 
     /**
-     * <p>A complex type that contains an optional comment about your hosted zone.</p>
+     * <p> (Optional) A complex type that contains an optional comment about your
+     * hosted zone. If you don't want to specify a comment, omit both the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
     inline void SetHostedZoneConfig(HostedZoneConfig&& value) { m_hostedZoneConfigHasBeenSet = true; m_hostedZoneConfig = value; }
 
     /**
-     * <p>A complex type that contains an optional comment about your hosted zone.</p>
+     * <p> (Optional) A complex type that contains an optional comment about your
+     * hosted zone. If you don't want to specify a comment, omit both the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
     inline CreateHostedZoneRequest& WithHostedZoneConfig(const HostedZoneConfig& value) { SetHostedZoneConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains an optional comment about your hosted zone.</p>
+     * <p> (Optional) A complex type that contains an optional comment about your
+     * hosted zone. If you don't want to specify a comment, omit both the
+     * <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
      */
     inline CreateHostedZoneRequest& WithHostedZoneConfig(HostedZoneConfig&& value) { SetHostedZoneConfig(value); return *this;}
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline void SetDelegationSetId(const Aws::String& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline void SetDelegationSetId(const char* value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId.assign(value); }
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(const Aws::String& value) { SetDelegationSetId(value); return *this;}
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(value); return *this;}
 
     /**
-     * <p>The delegation set id of the reusable delgation set whose NS records you want
-     * to assign to the new hosted zone.</p>
+     * <p>If you want to associate a reusable delegation set with this hosted zone, the
+     * ID that Amazon Route 53 assigned to the reusable delegation set when you created
+     * it. For more information about reusable delegation sets, see
+     * <a>CreateReusableDelegationSet</a>.</p> <dl> <dt>Type</dt> <dd> <p>String</p>
+     * </dd> <dt>Default</dt> <dd> <p>None</p> </dd> <dt>Parent</dt> <dd> <p>
+     * <code>CreatedHostedZoneRequest</code> </p> </dd> </dl>
      */
     inline CreateHostedZoneRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 

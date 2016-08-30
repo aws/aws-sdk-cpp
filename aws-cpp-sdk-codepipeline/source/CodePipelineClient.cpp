@@ -36,6 +36,7 @@
 #include <aws/codepipeline/model/EnableStageTransitionRequest.h>
 #include <aws/codepipeline/model/GetJobDetailsRequest.h>
 #include <aws/codepipeline/model/GetPipelineRequest.h>
+#include <aws/codepipeline/model/GetPipelineExecutionRequest.h>
 #include <aws/codepipeline/model/GetPipelineStateRequest.h>
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsRequest.h>
 #include <aws/codepipeline/model/ListActionTypesRequest.h>
@@ -424,6 +425,37 @@ void CodePipelineClient::GetPipelineAsync(const GetPipelineRequest& request, con
 void CodePipelineClient::GetPipelineAsyncHelper(const GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPipeline(request), context);
+}
+
+GetPipelineExecutionOutcome CodePipelineClient::GetPipelineExecution(const GetPipelineExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetPipelineExecutionOutcome(GetPipelineExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPipelineExecutionOutcome(outcome.GetError());
+  }
+}
+
+GetPipelineExecutionOutcomeCallable CodePipelineClient::GetPipelineExecutionCallable(const GetPipelineExecutionRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetPipelineExecution(request); } );
+}
+
+void CodePipelineClient::GetPipelineExecutionAsync(const GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPipelineExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::GetPipelineExecutionAsyncHelper(const GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPipelineExecution(request), context);
 }
 
 GetPipelineStateOutcome CodePipelineClient::GetPipelineState(const GetPipelineStateRequest& request) const

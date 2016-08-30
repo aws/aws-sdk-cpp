@@ -1335,50 +1335,50 @@ namespace Model
         virtual void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p>
+         * <p>Disables group metrics for the specified Auto Scaling group.</p>
          */
         virtual Model::DisableMetricsCollectionOutcome DisableMetricsCollection(const Model::DisableMetricsCollectionRequest& request) const;
 
         /**
-         * <p>Disables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p>
+         * <p>Disables group metrics for the specified Auto Scaling group.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisableMetricsCollectionOutcomeCallable DisableMetricsCollectionCallable(const Model::DisableMetricsCollectionRequest& request) const;
 
         /**
-         * <p>Disables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p>
+         * <p>Disables group metrics for the specified Auto Scaling group.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisableMetricsCollectionAsync(const Model::DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p> <p>You can only enable metrics collection if
-         * <code>InstanceMonitoring</code> in the launch configuration for the group is set
-         * to <code>True</code>.</p>
+         * <p>Enables group metrics for the specified Auto Scaling group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
          */
         virtual Model::EnableMetricsCollectionOutcome EnableMetricsCollection(const Model::EnableMetricsCollectionRequest& request) const;
 
         /**
-         * <p>Enables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p> <p>You can only enable metrics collection if
-         * <code>InstanceMonitoring</code> in the launch configuration for the group is set
-         * to <code>True</code>.</p>
+         * <p>Enables group metrics for the specified Auto Scaling group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::EnableMetricsCollectionOutcomeCallable EnableMetricsCollectionCallable(const Model::EnableMetricsCollectionRequest& request) const;
 
         /**
-         * <p>Enables monitoring of the specified metrics for the specified Auto Scaling
-         * group.</p> <p>You can only enable metrics collection if
-         * <code>InstanceMonitoring</code> in the launch configuration for the group is set
-         * to <code>True</code>.</p>
+         * <p>Enables group metrics for the specified Auto Scaling group. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+         * Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User
+         * Guide</i>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

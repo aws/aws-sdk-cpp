@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to update a hosted
-   * zone comment.</p>
+   * <p>A complex type that contains the hosted zone request information.</p>
    */
   class AWS_ROUTE53_API UpdateHostedZoneCommentRequest : public Route53Request
   {
@@ -35,72 +34,86 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to update.</p>
+     * <p>The ID for the hosted zone for which you want to update the comment.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * <p>A comment about your hosted zone.</p>
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
      */
     inline UpdateHostedZoneCommentRequest& WithComment(const char* value) { SetComment(value); return *this;}
 

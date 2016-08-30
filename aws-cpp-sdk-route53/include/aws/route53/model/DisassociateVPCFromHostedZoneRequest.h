@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to disassociate a
-   * VPC from an hosted zone.</p>
+   * <p>A complex type that contains information about the VPC and the hosted zone
+   * that you want to disassociate.</p>
    */
   class AWS_ROUTE53_API DisassociateVPCFromHostedZoneRequest : public Route53Request
   {
@@ -36,111 +36,109 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted zone you want to disassociate your VPC from.</p> <p>Note
-     * that you cannot disassociate the last VPC from a hosted zone.</p>
+     * <p>The ID of the VPC that you want to disassociate from an Amazon Route 53
+     * hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The VPC that you want your hosted zone to be disassociated from. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be disassociated from. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be disassociated from. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be disassociated from. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
     /**
-     * <p>The VPC that you want your hosted zone to be disassociated from. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * disassociating from the specified hosted zone.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>DisassociateVPCFromHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the disassociation request.</p>
      */
     inline DisassociateVPCFromHostedZoneRequest& WithComment(const char* value) { SetComment(value); return *this;}
 

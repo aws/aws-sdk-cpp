@@ -32,7 +32,7 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>Empty response for the request.</p>
+   * <p>An empty element.</p>
    */
   class AWS_ROUTE53_API DeleteReusableDelegationSetResult
   {
