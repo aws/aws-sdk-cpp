@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to associate a VPC
-   * with an hosted zone.</p>
+   * <p>A complex type that contains information about the VPC and the hosted zone
+   * that you want to associate.</p>
    */
   class AWS_ROUTE53_API AssociateVPCWithHostedZoneRequest : public Route53Request
   {
@@ -85,69 +85,67 @@ namespace Model
     inline AssociateVPCWithHostedZoneRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The VPC that you want your hosted zone to be associated with. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.</p>
      */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be associated with. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.</p>
      */
     inline void SetVPC(const VPC& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be associated with. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.</p>
      */
     inline void SetVPC(VPC&& value) { m_vPCHasBeenSet = true; m_vPC = value; }
 
     /**
-     * <p>The VPC that you want your hosted zone to be associated with. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
     /**
-     * <p>The VPC that you want your hosted zone to be associated with. </p>
+     * <p>A complex type containing information about the Amazon VPC that you're
+     * associating with the specified hosted zone.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithVPC(VPC&& value) { SetVPC(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * <p><i>Optional:</i> Any comments you want to include about a
-     * <code>AssociateVPCWithHostedZoneRequest</code>.</p>
+     * <p> <i>Optional:</i> A comment about the association request.</p>
      */
     inline AssociateVPCWithHostedZoneRequest& WithComment(const char* value) { SetComment(value); return *this;}
 

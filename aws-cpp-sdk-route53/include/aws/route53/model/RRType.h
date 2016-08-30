@@ -31,6 +31,7 @@ namespace Model
     NS,
     CNAME,
     MX,
+    NAPTR,
     PTR,
     SRV,
     SPF,

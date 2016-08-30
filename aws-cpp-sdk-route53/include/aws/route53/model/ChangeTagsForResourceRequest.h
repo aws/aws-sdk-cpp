@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type containing information about a request to add, change, or
-   * delete the tags that are associated with a resource.</p>
+   * <p>A complex type that contains information about the tags that you want to add,
+   * edit, or delete.</p>
    */
   class AWS_ROUTE53_API ChangeTagsForResourceRequest : public Route53Request
   {
@@ -38,37 +38,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The type of the resource.</p> <p>- The resource type for health checks is
-     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
-     * <code>hostedzone</code>.</p>
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the resource.</p> <p>- The resource type for health checks is
-     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
-     * <code>hostedzone</code>.</p>
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resource.</p> <p>- The resource type for health checks is
-     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
-     * <code>hostedzone</code>.</p>
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resource.</p> <p>- The resource type for health checks is
-     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
-     * <code>hostedzone</code>.</p>
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline ChangeTagsForResourceRequest& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the resource.</p> <p>- The resource type for health checks is
-     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
-     * <code>hostedzone</code>.</p>
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline ChangeTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(value); return *this;}
 
@@ -108,99 +108,106 @@ namespace Model
     inline ChangeTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline const Aws::Vector<Tag>& GetAddTags() const{ return m_addTags; }
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline void SetAddTags(Aws::Vector<Tag>&& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& WithAddTags(const Aws::Vector<Tag>& value) { SetAddTags(value); return *this;}
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& WithAddTags(Aws::Vector<Tag>&& value) { SetAddTags(value); return *this;}
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& AddAddTags(const Tag& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains a list of <code>Tag</code> elements. Each
-     * <code>Tag</code> element identifies a tag that you want to add or update for the
-     * specified resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to add to the
+     * specified health check or hosted zone and/or the tags for which you want to edit
+     * the <code>Value</code> element.</p> <p>You can add a maximum of 10 tags to a
+     * health check or a hosted zone.</p>
      */
     inline ChangeTagsForResourceRequest& AddAddTags(Tag&& value) { m_addTagsHasBeenSet = true; m_addTags.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveTagKeys() const{ return m_removeTagKeys; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline void SetRemoveTagKeys(const Aws::Vector<Aws::String>& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys = value; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline void SetRemoveTagKeys(Aws::Vector<Aws::String>&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys = value; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline ChangeTagsForResourceRequest& WithRemoveTagKeys(const Aws::Vector<Aws::String>& value) { SetRemoveTagKeys(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline ChangeTagsForResourceRequest& WithRemoveTagKeys(Aws::Vector<Aws::String>&& value) { SetRemoveTagKeys(value); return *this;}
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline ChangeTagsForResourceRequest& AddRemoveTagKeys(const Aws::String& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline ChangeTagsForResourceRequest& AddRemoveTagKeys(Aws::String&& value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>Tag</code> keys that you want to remove from the specified
-     * resource.</p>
+     * <p>A complex type that contains a list of the tags that you want to delete from
+     * the specified health check or hosted zone. You can specify up to 10 keys.</p>
      */
     inline ChangeTagsForResourceRequest& AddRemoveTagKeys(const char* value) { m_removeTagKeysHasBeenSet = true; m_removeTagKeys.push_back(value); return *this; }
 

@@ -203,14 +203,13 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateManagedInstanceRoleRequest&, const Model::UpdateManagedInstanceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedInstanceRoleResponseReceivedHandler;
 
   /**
-   * <p>This is the Amazon EC2 Simple Systems Manager (SSM) API Reference. SSM
-   * enables you to remotely manage the configuration of your Amazon EC2 instances,
-   * virtual machines (VMs), or servers in your on-premises environment or in an
-   * environment provided by other cloud providers using scripts, commands, or the
-   * Amazon EC2 console. SSM includes an on-demand solution called <i>Amazon EC2 Run
-   * Command</i> and a lightweight instance configuration solution called <i>SSM
-   * Config</i>. </p> <p>This references is intended to be used with the EC2 Run
-   * Command User Guide for <a
+   * <p>Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the
+   * configuration of your Amazon EC2 instances, virtual machines (VMs), or servers
+   * in your on-premises environment or in an environment provided by other cloud
+   * providers using scripts, commands, or the Amazon EC2 console. SSM includes an
+   * on-demand solution called <i>Amazon EC2 Run Command</i> and a lightweight
+   * instance configuration solution called <i>SSM Config</i>. </p> <p>This
+   * references is intended to be used with the EC2 Run Command User Guide for <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
    * or <a
    * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.</p>
@@ -460,20 +459,20 @@ namespace Model
         /**
          * <p>Associates the specified SSM document with the specified instance.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          */
         virtual Model::CreateAssociationOutcome CreateAssociation(const Model::CreateAssociationRequest& request) const;
 
         /**
          * <p>Associates the specified SSM document with the specified instance.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -482,10 +481,10 @@ namespace Model
         /**
          * <p>Associates the specified SSM document with the specified instance.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -494,20 +493,20 @@ namespace Model
         /**
          * <p>Associates the specified SSM document with the specified instances.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          */
         virtual Model::CreateAssociationBatchOutcome CreateAssociationBatch(const Model::CreateAssociationBatchRequest& request) const;
 
         /**
          * <p>Associates the specified SSM document with the specified instances.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -516,10 +515,10 @@ namespace Model
         /**
          * <p>Associates the specified SSM document with the specified instances.</p>
          * <p>When you associate an SSM document with an instance, the configuration agent
-         * on the instance processes the document and configures the instance as
-         * specified.</p> <p>If you associate a document with an instance that already has
-         * an associated document, the system throws the AssociationAlreadyExists
-         * exception.</p>
+         * on the instance (SSM agent for Linux and EC2Config service for Windows)
+         * processes the document and configures the instance as specified.</p> <p>If you
+         * associate a document with an instance that already has an associated document,
+         * the system throws the AssociationAlreadyExists exception.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -749,21 +748,21 @@ namespace Model
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version,
-         * status etc. If you specify one or more instance IDs, it returns information for
-         * those instances. If you do not specify instance IDs, it returns information for
-         * all your instances. If you specify an instance ID that is not valid or an
-         * instance that you do not own, you receive an error. </p>
+         * about instances like the operating system platform, the SSM agent version
+         * (Linux), status etc. If you specify one or more instance IDs, it returns
+         * information for those instances. If you do not specify instance IDs, it returns
+         * information for all your instances. If you specify an instance ID that is not
+         * valid or an instance that you do not own, you receive an error. </p>
          */
         virtual Model::DescribeInstanceInformationOutcome DescribeInstanceInformation(const Model::DescribeInstanceInformationRequest& request) const;
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version,
-         * status etc. If you specify one or more instance IDs, it returns information for
-         * those instances. If you do not specify instance IDs, it returns information for
-         * all your instances. If you specify an instance ID that is not valid or an
-         * instance that you do not own, you receive an error. </p>
+         * about instances like the operating system platform, the SSM agent version
+         * (Linux), status etc. If you specify one or more instance IDs, it returns
+         * information for those instances. If you do not specify instance IDs, it returns
+         * information for all your instances. If you specify an instance ID that is not
+         * valid or an instance that you do not own, you receive an error. </p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -771,11 +770,11 @@ namespace Model
 
         /**
          * <p>Describes one or more of your instances. You can use this to get information
-         * about instances like the operating system platform, the SSM agent version,
-         * status etc. If you specify one or more instance IDs, it returns information for
-         * those instances. If you do not specify instance IDs, it returns information for
-         * all your instances. If you specify an instance ID that is not valid or an
-         * instance that you do not own, you receive an error. </p>
+         * about instances like the operating system platform, the SSM agent version
+         * (Linux), status etc. If you specify one or more instance IDs, it returns
+         * information for those instances. If you do not specify instance IDs, it returns
+         * information for all your instances. If you specify an instance ID that is not
+         * valid or an instance that you do not own, you receive an error. </p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

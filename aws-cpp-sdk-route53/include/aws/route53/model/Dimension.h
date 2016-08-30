@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The name and value of a dimension for a CloudWatch metric.</p>
+   * <p>For the metric that the CloudWatch alarm is associated with, a complex type
+   * that contains information about one dimension.</p>
    */
   class AWS_ROUTE53_API Dimension
   {
@@ -43,72 +44,86 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline Dimension& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
      */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the dimension.</p>
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
      */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 
