@@ -159,25 +159,39 @@ namespace Model
      */
     inline DBParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline const Aws::String& GetDBParameterGroupArn() const{ return m_dBParameterGroupArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupArn(const Aws::String& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupArn(Aws::String&& value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupArn(const char* value) { m_dBParameterGroupArnHasBeenSet = true; m_dBParameterGroupArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline DBParameterGroup& WithDBParameterGroupArn(const Aws::String& value) { SetDBParameterGroupArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline DBParameterGroup& WithDBParameterGroupArn(Aws::String&& value) { SetDBParameterGroupArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
     inline DBParameterGroup& WithDBParameterGroupArn(const char* value) { SetDBParameterGroupArn(value); return *this;}
 
   private:

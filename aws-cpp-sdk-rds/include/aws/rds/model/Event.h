@@ -208,25 +208,39 @@ namespace Model
      */
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline Event& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline Event& WithSourceArn(Aws::String&& value) { SetSourceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event.</p>
+     */
     inline Event& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
   private:

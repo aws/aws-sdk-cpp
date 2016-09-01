@@ -17,6 +17,7 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/S3Location.h>
+#include <aws/gamelift/model/OperatingSystem.h>
 
 namespace Aws
 {
@@ -149,6 +150,41 @@ namespace Model
     
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(value); return *this;}
 
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.</p>
+     */
+    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.</p>
+     */
+    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.</p>
+     */
+    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.</p>
+     */
+    inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
+
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this
+     * build.</p>
+     */
+    inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -156,6 +192,8 @@ namespace Model
     bool m_versionHasBeenSet;
     S3Location m_storageLocation;
     bool m_storageLocationHasBeenSet;
+    OperatingSystem m_operatingSystem;
+    bool m_operatingSystemHasBeenSet;
   };
 
 } // namespace Model

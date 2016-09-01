@@ -49,7 +49,8 @@ namespace Model
     AWS_RDS_DBSubnetGroup,
     AWS_RDS_DBSecurityGroup,
     AWS_RDS_DBSnapshot,
-    AWS_RDS_EventSubscription
+    AWS_RDS_EventSubscription,
+    AWS_ElasticLoadBalancingV2_LoadBalancer
   };
 
 namespace ResourceTypeMapper

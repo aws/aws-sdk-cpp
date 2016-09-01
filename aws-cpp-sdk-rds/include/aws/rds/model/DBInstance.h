@@ -1664,25 +1664,39 @@ namespace Model
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline const Aws::String& GetDBInstanceArn() const{ return m_dBInstanceArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline void SetDBInstanceArn(const Aws::String& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline void SetDBInstanceArn(Aws::String&& value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline void SetDBInstanceArn(const char* value) { m_dBInstanceArnHasBeenSet = true; m_dBInstanceArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline DBInstance& WithDBInstanceArn(const Aws::String& value) { SetDBInstanceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline DBInstance& WithDBInstanceArn(Aws::String&& value) { SetDBInstanceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB instance.</p>
+     */
     inline DBInstance& WithDBInstanceArn(const char* value) { SetDBInstanceArn(value); return *this;}
 
   private:

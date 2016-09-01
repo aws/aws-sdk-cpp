@@ -31,6 +31,7 @@ namespace Aws
 
         static const int USER_SRP_AUTH_HASH = HashingUtils::HashString("USER_SRP_AUTH");
         static const int REFRESH_TOKEN_AUTH_HASH = HashingUtils::HashString("REFRESH_TOKEN_AUTH");
+        static const int REFRESH_TOKEN_HASH = HashingUtils::HashString("REFRESH_TOKEN");
         static const int CUSTOM_AUTH_HASH = HashingUtils::HashString("CUSTOM_AUTH");
         static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == REFRESH_TOKEN_AUTH_HASH)
           {
             return AuthFlowType::REFRESH_TOKEN_AUTH;
+          }
+          else if (hashCode == REFRESH_TOKEN_HASH)
+          {
+            return AuthFlowType::REFRESH_TOKEN;
           }
           else if (hashCode == CUSTOM_AUTH_HASH)
           {
@@ -72,6 +77,8 @@ namespace Aws
             return "USER_SRP_AUTH";
           case AuthFlowType::REFRESH_TOKEN_AUTH:
             return "REFRESH_TOKEN_AUTH";
+          case AuthFlowType::REFRESH_TOKEN:
+            return "REFRESH_TOKEN";
           case AuthFlowType::CUSTOM_AUTH:
             return "CUSTOM_AUTH";
           case AuthFlowType::ADMIN_NO_SRP_AUTH:

@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 CreateBuildRequest::CreateBuildRequest() : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_storageLocationHasBeenSet(false)
+    m_storageLocationHasBeenSet(false),
+    m_operatingSystemHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,11 @@ Aws::String CreateBuildRequest::SerializePayload() const
   {
    payload.WithObject("StorageLocation", m_storageLocation.Jsonize());
 
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   return payload.WriteReadable();

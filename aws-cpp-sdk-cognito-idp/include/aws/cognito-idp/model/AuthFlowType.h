@@ -27,6 +27,7 @@ namespace Model
     NOT_SET,
     USER_SRP_AUTH,
     REFRESH_TOKEN_AUTH,
+    REFRESH_TOKEN,
     CUSTOM_AUTH,
     ADMIN_NO_SRP_AUTH
   };

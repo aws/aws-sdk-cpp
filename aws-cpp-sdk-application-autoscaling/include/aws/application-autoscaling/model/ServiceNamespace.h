@@ -25,7 +25,8 @@ namespace Model
   enum class ServiceNamespace
   {
     NOT_SET,
-    ecs
+    ecs,
+    ec2
   };
 
 namespace ServiceNamespaceMapper

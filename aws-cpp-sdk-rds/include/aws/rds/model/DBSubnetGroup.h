@@ -226,25 +226,39 @@ namespace Model
      */
     inline DBSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline const Aws::String& GetDBSubnetGroupArn() const{ return m_dBSubnetGroupArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupArn(const Aws::String& value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupArn(Aws::String&& value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline void SetDBSubnetGroupArn(const char* value) { m_dBSubnetGroupArnHasBeenSet = true; m_dBSubnetGroupArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline DBSubnetGroup& WithDBSubnetGroupArn(const Aws::String& value) { SetDBSubnetGroupArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline DBSubnetGroup& WithDBSubnetGroupArn(Aws::String&& value) { SetDBSubnetGroupArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
+     */
     inline DBSubnetGroup& WithDBSubnetGroupArn(const char* value) { SetDBSubnetGroupArn(value); return *this;}
 
   private:

@@ -25,7 +25,8 @@ namespace Model
   enum class ExplicitAuthFlowsType
   {
     NOT_SET,
-    ADMIN_NO_SRP_AUTH
+    ADMIN_NO_SRP_AUTH,
+    CUSTOM_AUTH_FLOW_ONLY
   };
 
 namespace ExplicitAuthFlowsTypeMapper

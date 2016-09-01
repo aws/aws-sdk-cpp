@@ -40,6 +40,7 @@ OptionGroupOption::OptionGroupOption() :
     m_defaultPort(0),
     m_defaultPortHasBeenSet(false),
     m_optionsDependedOnHasBeenSet(false),
+    m_optionsConflictsWithHasBeenSet(false),
     m_persistent(false),
     m_persistentHasBeenSet(false),
     m_permanent(false),
@@ -60,6 +61,7 @@ OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode) :
     m_defaultPort(0),
     m_defaultPortHasBeenSet(false),
     m_optionsDependedOnHasBeenSet(false),
+    m_optionsConflictsWithHasBeenSet(false),
     m_persistent(false),
     m_persistentHasBeenSet(false),
     m_permanent(false),
@@ -129,6 +131,18 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
       }
 
       m_optionsDependedOnHasBeenSet = true;
+    }
+    XmlNode optionsConflictsWithNode = resultNode.FirstChild("OptionsConflictsWith");
+    if(!optionsConflictsWithNode.IsNull())
+    {
+      XmlNode optionsConflictsWithMember = optionsConflictsWithNode.FirstChild("OptionConflictName");
+      while(!optionsConflictsWithMember.IsNull())
+      {
+        m_optionsConflictsWith.push_back(StringUtils::Trim(optionsConflictsWithMember.GetText().c_str()));
+        optionsConflictsWithMember = optionsConflictsWithMember.NextNode("OptionConflictName");
+      }
+
+      m_optionsConflictsWithHasBeenSet = true;
     }
     XmlNode persistentNode = resultNode.FirstChild("Persistent");
     if(!persistentNode.IsNull())
@@ -217,6 +231,15 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_optionsConflictsWithHasBeenSet)
+  {
+      unsigned optionsConflictsWithIdx = 1;
+      for(auto& item : m_optionsConflictsWith)
+      {
+        oStream << location << index << locationValue << ".OptionConflictName." << optionsConflictsWithIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_persistentHasBeenSet)
   {
       oStream << location << index << locationValue << ".Persistent=" << m_persistent << "&";
@@ -287,6 +310,14 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
       for(auto& item : m_optionsDependedOn)
       {
         oStream << location << ".OptionName." << optionsDependedOnIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_optionsConflictsWithHasBeenSet)
+  {
+      unsigned optionsConflictsWithIdx = 1;
+      for(auto& item : m_optionsConflictsWith)
+      {
+        oStream << location << ".OptionConflictName." << optionsConflictsWithIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_persistentHasBeenSet)

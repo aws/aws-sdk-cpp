@@ -784,25 +784,39 @@ namespace Model
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline const Aws::String& GetDBSnapshotArn() const{ return m_dBSnapshotArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline void SetDBSnapshotArn(const Aws::String& value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline void SetDBSnapshotArn(Aws::String&& value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline void SetDBSnapshotArn(const char* value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline DBSnapshot& WithDBSnapshotArn(const Aws::String& value) { SetDBSnapshotArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline DBSnapshot& WithDBSnapshotArn(Aws::String&& value) { SetDBSnapshotArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline DBSnapshot& WithDBSnapshotArn(const char* value) { SetDBSnapshotArn(value); return *this;}
 
   private:

@@ -429,25 +429,39 @@ namespace Model
      */
     inline ReservedDBInstance& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline const Aws::String& GetReservedDBInstanceArn() const{ return m_reservedDBInstanceArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline void SetReservedDBInstanceArn(const Aws::String& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline void SetReservedDBInstanceArn(Aws::String&& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline void SetReservedDBInstanceArn(const char* value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline ReservedDBInstance& WithReservedDBInstanceArn(const Aws::String& value) { SetReservedDBInstanceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline ReservedDBInstance& WithReservedDBInstanceArn(Aws::String&& value) { SetReservedDBInstanceArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
     inline ReservedDBInstance& WithReservedDBInstanceArn(const char* value) { SetReservedDBInstanceArn(value); return *this;}
 
   private:

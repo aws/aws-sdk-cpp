@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>The identifier or ARN for the source option group. For information about
      * creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an RDS Amazon Resource Name (ARN)</a>. </p> <p>Constraints:</p>
      * <ul> <li> <p>Must specify a valid option group.</p> </li> <li> <p>If the source
      * option group is in the same region as the copy, specify a valid option group
