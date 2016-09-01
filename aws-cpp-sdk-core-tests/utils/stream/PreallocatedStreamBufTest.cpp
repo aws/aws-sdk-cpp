@@ -21,144 +21,131 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Stream;
 
+const char bufferStr[] = "This is an internal buffer.";
+const char replacementBuf[] = "Boom, I ruined your st";
+const char concatStr[] = "This Boom, I ruined your st";
+const char shortenedBuffer[] = "This is an internal buf";
+
 TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
-{
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+{    
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
-    Array<uint8_t> readBuf(strlen(bufferStr) + 1);
+    Array<uint8_t> readBuf(sizeof(bufferStr));
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(strlen(bufferStr) + 1, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr), ioStream.gcount());
     ASSERT_STREQ(bufferStr, (const char*)readBuf.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamWriteToPrefilledBuffer)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer(strlen(bufferStr) + 1);
+    Array<uint8_t> buffer(sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
-    ioStream.write(bufferStr, strlen(bufferStr) + 1);
+    ioStream.write(bufferStr, sizeof(bufferStr));
     ASSERT_STREQ(bufferStr, (const char*)buffer.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekg(5, std::ios_base::beg);
     Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(strlen(bufferStr) + 1 - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekg(5, std::ios_base::cur);
-    Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
+    Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(strlen(bufferStr) + 1 - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
-    auto seekPos = strlen(bufferStr) + 1 - 5;
+    auto seekPos = sizeof(bufferStr) - 5;
     ioStream.seekg(seekPos, std::ios_base::end);
-    Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
+    Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(strlen(bufferStr) + 1 - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 {                           
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekp(5, std::ios_base::beg);   
-    const char* replacementBuf = "Boom, I ruined your st";
-    ioStream.write(replacementBuf, strlen(replacementBuf) + 1);
+    ioStream.write(replacementBuf, sizeof(replacementBuf));
 
-    const char* concatStr = "This Boom, I ruined your st";
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
     ioStream.seekp(5, std::ios_base::cur);
-    const char* replacementBuf = "Boom, I ruined your st";
-    ioStream.write(replacementBuf, strlen(replacementBuf) + 1);
+    ioStream.write(replacementBuf, sizeof(replacementBuf));
 
-    const char* concatStr = "This Boom, I ruined your st";
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
     Aws::IOStream ioStream(&streamBuf);
 
     auto seekPos = strlen(bufferStr) + 1 - 5;
     ioStream.seekp(seekPos, std::ios_base::end);
-    const char* replacementBuf = "Boom, I ruined your st";
-    ioStream.write(replacementBuf, strlen(replacementBuf) + 1);
+    ioStream.write(replacementBuf, sizeof(replacementBuf));
 
-    const char* concatStr = "This Boom, I ruined your st";
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer((uint8_t*)bufferStr, strlen(bufferStr) + 1);
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength() - 5);
     Aws::IOStream ioStream(&streamBuf);
 
-    Array<uint8_t> readBuf(strlen(bufferStr) + 1);
-    readBuf[strlen(bufferStr) - 4] = 0;
+    Array<uint8_t> readBuf(sizeof(bufferStr));
+    readBuf[sizeof(bufferStr) - 5] = 0;
 
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
 
-    ASSERT_EQ(strlen(bufferStr) - 4, ioStream.gcount());
-    const char* shortenedBuffer = "This is an internal buf";
+    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
     ASSERT_STREQ(shortenedBuffer, (const char*)readBuf.GetUnderlyingData());
 }
 
 TEST(PreallocatedStreamBufTest, TestStreamWriteHonorsSizeLimitShorterThanBuffer)
 {
-    const char* bufferStr = "This is an internal buffer.";
-    Array<uint8_t> buffer(strlen(bufferStr) + 1);
+    Array<uint8_t> buffer(sizeof(bufferStr));
     PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength() - 5);
     Aws::IOStream ioStream(&streamBuf);
-    buffer[strlen(bufferStr) - 4] = 0;
-    ioStream.write(bufferStr, strlen(bufferStr) + 1);
-    const char* shortenedBuffer = "This is an internal buf";
+    buffer[sizeof(bufferStr) - 5] = 0;
+    ioStream.write(bufferStr, sizeof(bufferStr));
     ASSERT_STREQ(shortenedBuffer, (const char*)buffer.GetUnderlyingData());
 }

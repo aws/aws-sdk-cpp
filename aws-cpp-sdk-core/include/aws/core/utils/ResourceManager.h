@@ -14,7 +14,6 @@
   */
 #pragma once
 
-#include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <mutex>
 #include <condition_variable>
@@ -27,18 +26,17 @@ namespace Aws
         /**
          * Generic resource manager with Acquire/Release semantics. Acquire will block waiting on a an available resource. Release will
          * cause one blocked acquisition to unblock.
+         *
+         * You must call ShutdownAndWait() when finished with this container, this unblocks the listening thread and gives you a chance to 
+         * clean up the resource if needed. 
+         * After calling ShutdownAndWait(), you must not call Acquire any more.
          */
         template< typename RESOURCE_TYPE>
-        class ResourceManager
+        class ExclusiveOwnershipResourceManager
         {
         public:
-            ResourceManager() : m_shutdown(false) {}
-
-            ~ResourceManager()
-            {
-                ShutdownAndWait();
-            }
-
+            ExclusiveOwnershipResourceManager() : m_shutdown(false) {}
+            
             /**
              * Returns a resource with exclusive ownership. You must call Release on the resource when you are finished or other
              * threads will block waiting to acquire it.
@@ -52,6 +50,8 @@ namespace Aws
                 {
                     m_semaphore.wait(locker, [&](){ return m_shutdown.load() || m_resources.size() > 0; });                    
                 }
+
+                assert(!m_shutdown.load());
 
                 RESOURCE_TYPE resource = m_resources.front();
                 m_resources.pop();
@@ -68,7 +68,7 @@ namespace Aws
             bool HasResourcesAvailable()
             {
                 std::lock_guard<std::mutex> locker(m_queueLock);
-                return m_resources.size() > 0;
+                return m_resources.size() > 0 && !m_shutdown.load();
             }
 
             /**
@@ -96,6 +96,9 @@ namespace Aws
 
             /**
              * Empties the queue and then notifies all waiting threads to quit blocking.
+             * You must call ShutdownAndWait() when finished with this container, this unblocks the listening thread and gives you a chance to
+             * clean up the resource if needed.
+             * After calling ShutdownAndWait(), you must not call Acquire any more.
              */
             Aws::Vector<RESOURCE_TYPE> ShutdownAndWait()
             {
@@ -113,7 +116,7 @@ namespace Aws
             }
 
         private:
-            Aws::Queue<RESOURCE_TYPE> m_resources;
+            Aws::Vector<RESOURCE_TYPE> m_resources;
             std::mutex m_queueLock;
             std::condition_variable m_semaphore;
             std::atomic<bool> m_shutdown;

@@ -184,7 +184,7 @@ namespace Aws
             void TriggerTransferStatusUpdatedCallback(const TransferHandle&) const;
             void TriggerErrorCallback(const TransferHandle&, const Aws::Client::AWSError<Aws::S3::S3Errors>& error)const;
 
-            Aws::Utils::ResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
+            Aws::Utils::ExclusiveOwnershipResourceManager<Aws::Utils::Array<uint8_t>*> m_bufferManager;
             TransferManagerConfiguration m_transferConfig;
         };
     }

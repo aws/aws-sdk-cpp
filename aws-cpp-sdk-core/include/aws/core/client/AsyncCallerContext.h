@@ -16,7 +16,6 @@
 #pragma once
 
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -27,13 +26,13 @@ namespace Aws
         * It is entirely intended that you override this class in-lieu of using a void* for the user context. The base class just gives you the ability to
         * pass a uuid for your context.
         */
-        class AsyncCallerContext
+        class AWS_CORE_API AsyncCallerContext
         {
         public:
             /**
              * Initializes object with generated UUID
              */
-            AsyncCallerContext() { m_uuid = Aws::Utils::UUID::RandomUUID(); }
+            AsyncCallerContext();
 
             /**
              * Initializes object with UUID

@@ -74,7 +74,7 @@ namespace Aws
             {
             public:
                 uint16_t port;
-                Aws::Utils::ResourceManager<void*> hostConnections;
+                Aws::Utils::ExclusiveOwnershipResourceManager<void*> hostConnections;
                 unsigned currentPoolSize;
             };
 

@@ -60,7 +60,7 @@ private:
     bool CheckAndGrowPool();
     void SetDefaultOptionsOnHandle(void* handle);
 
-    Aws::Utils::ResourceManager<CURL*> m_handleContainer;
+    Aws::Utils::ExclusiveOwnershipResourceManager<CURL*> m_handleContainer;
     unsigned m_maxPoolSize;
     unsigned long m_requestTimeout;
     unsigned long m_connectTimeout;
