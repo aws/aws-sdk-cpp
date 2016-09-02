@@ -128,7 +128,11 @@ namespace Aws
              * Set a pending part to failed. Used for all transfers.
              */
             void ChangePartToFailed(int);
-
+            /**
+             * Get the parts transactionally, mostly for internal purposes.
+             */
+             void GetAllPartsTransactional(Aws::Set<int>& queuedParts, Aws::Set<int>& pendingParts,
+                 Aws::Set<int>& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts);
             /**
              * Returns false if Cancel has been called. Largely for internal use.
              */
@@ -244,10 +248,7 @@ namespace Aws
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
 
-            mutable std::recursive_mutex m_completedPartsLock;
-            mutable std::recursive_mutex m_queuedPartsLock;
-            mutable std::recursive_mutex m_pendingPartsLock;
-            mutable std::recursive_mutex m_failedPartsLock;
+            mutable std::recursive_mutex m_partsLock;
             mutable std::mutex m_statusLock;
             mutable std::condition_variable m_waitUntilFinishedSignal;
         };

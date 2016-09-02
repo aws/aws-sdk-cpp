@@ -48,7 +48,7 @@ void WinConnectionPoolMgr::DoCleanup()
     AWS_LOG_INFO(GetLogTag(), "Cleaning up conneciton pool mgr.");
     for (auto& hostHandles : m_hostConnections)
     {
-        for(void* handleToClose : hostHandles.second->hostConnections.ShutdownAndWait())
+        for(void* handleToClose : hostHandles.second->hostConnections.ShutdownAndWait(hostHandles.second->currentPoolSize))
         {
             AWS_LOGSTREAM_DEBUG(GetLogTag(), "Closing handle " << handleToClose);
             DoCloseHandle(handleToClose);

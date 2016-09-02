@@ -34,7 +34,7 @@ CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, 
 CurlHandleContainer::~CurlHandleContainer()
 {
     AWS_LOG_INFO(CURL_HANDLE_CONTAINER_TAG, "Cleaning up CurlHandleContainer.");
-    for (CURL* handle : m_handleContainer.ShutdownAndWait())
+    for (CURL* handle : m_handleContainer.ShutdownAndWait(m_poolSize))
     {
         AWS_LOG_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Cleaning up %p.", handle);
         curl_easy_cleanup(handle);

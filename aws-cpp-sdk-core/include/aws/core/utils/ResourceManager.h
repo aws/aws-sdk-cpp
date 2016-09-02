@@ -18,6 +18,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <atomic>
+#include <cassert>
 
 namespace Aws
 {
@@ -53,8 +54,8 @@ namespace Aws
 
                 assert(!m_shutdown.load());
 
-                RESOURCE_TYPE resource = m_resources.front();
-                m_resources.pop();
+                RESOURCE_TYPE resource = m_resources.back();
+                m_resources.pop_back();
 
                 return resource;
             }
@@ -79,7 +80,7 @@ namespace Aws
             void Release(RESOURCE_TYPE resource)
             {
                 std::unique_lock<std::mutex> locker(m_queueLock);
-                m_resources.push(resource);
+                m_resources.push_back(resource);
                 locker.unlock();
                 m_semaphore.notify_one();
             }
@@ -91,27 +92,33 @@ namespace Aws
              */
             void PutResource(RESOURCE_TYPE resource)
             {
-                m_resources.push(resource);
+                m_resources.push_back(resource);
             }
 
             /**
-             * Empties the queue and then notifies all waiting threads to quit blocking.
+             * Waits for all aquired resources to be released, then empties the queue.
              * You must call ShutdownAndWait() when finished with this container, this unblocks the listening thread and gives you a chance to
              * clean up the resource if needed.
              * After calling ShutdownAndWait(), you must not call Acquire any more.
+             *
+             * @params resourceCount the number of resources you've added to the resource manager. 
+             * @return the previously managed resources that are now available for cleanup.
              */
-            Aws::Vector<RESOURCE_TYPE> ShutdownAndWait()
+            Aws::Vector<RESOURCE_TYPE> ShutdownAndWait(size_t resourceCount)
             {
                 Aws::Vector<RESOURCE_TYPE> resources;
-                std::lock_guard<std::mutex> locker(m_queueLock);
-                while (m_resources.size() > 0)
+                std::unique_lock<std::mutex> locker(m_queueLock);
+                m_shutdown = true;
+
+                //wait for all aquired resources to be released.
+                while (m_resources.size() < resourceCount)
                 {
-                    resources.push_back(m_resources.front());
-                    m_resources.pop();
+                    m_semaphore.wait(locker, [&]() { return m_resources.size() == resourceCount; });
                 }
 
-                m_shutdown = true;
-                m_semaphore.notify_all();
+                resources = m_resources;
+                m_resources.clear();
+                
                 return resources;
             }
 

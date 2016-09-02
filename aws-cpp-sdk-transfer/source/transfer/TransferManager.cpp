@@ -52,7 +52,7 @@ namespace Aws
 
         TransferManager::~TransferManager()
         {
-            for (auto buffer : m_bufferManager.ShutdownAndWait())
+            for (auto buffer : m_bufferManager.ShutdownAndWait(m_transferConfig.transferBufferMaxHeapSize / m_transferConfig.bufferSize))
             {
                 Aws::Delete(buffer);
             }
@@ -200,6 +200,7 @@ namespace Aws
             else
             {
                 int partsToRetry = 0;
+                //at this point we've been going synchronously so this is consistent
                 for (auto failedParts : handle->GetFailedParts())
                 {
                     partsToRetry++;
@@ -207,7 +208,7 @@ namespace Aws
                 }
                 sentBytes = partsToRetry * m_transferConfig.bufferSize;                
             }
-
+            //still consistent
             Set<int> queuedParts = handle->GetQueuedParts();
             auto partsIter = queuedParts.begin();
 
@@ -256,7 +257,8 @@ namespace Aws
                     m_bufferManager.Release(buffer);
                 }
             }
-            
+            //parts get moved from queued to pending on this thread.
+            //still consistent.
             for (; partsIter != queuedParts.end(); ++partsIter)
             {
                 handle->ChangePartToFailed(*partsIter);
@@ -342,11 +344,12 @@ namespace Aws
 
             TriggerTransferStatusUpdatedCallback(*transferContext->handle);
 
-            auto pendingParts = transferContext->handle->GetPendingParts();
-            auto queuedParts = transferContext->handle->GetQueuedParts();
+            Aws::Set<int> pendingParts, queuedParts, failedParts;
+            Aws::Set<std::pair<int, Aws::String>> completedParts;
+            transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
+
             if (pendingParts.size() == 0 && queuedParts.size() == 0)
-            {
-                auto failedParts = transferContext->handle->GetFailedParts();
+            {               
                 if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
                 {
                     Aws::S3::Model::CompletedMultipartUpload completedUpload;
