@@ -58,7 +58,9 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      Aws::Map<Aws::String, Aws::String>&& metadata,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client, 
                                      bool createBucket,
-                                     bool doConsistencyChecks) :
+                                     bool doConsistencyChecks,
+                                     Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                                     Aws::S3::Model::StorageClass storageClass) :
 S3FileRequest(fileName, bucketName, keyName, s3Client),
 m_bytesRemaining(0),
 m_partCount(0),
@@ -75,6 +77,8 @@ m_totalParts(0),
 m_fileStream(fileName.c_str(), std::ios::binary | std::ios::ate),
 m_contentType(contentType),
 m_metadata(std::move(metadata)),
+m_serverSideEncryption(serverSideEncryption),
+m_storageClass(storageClass),
 m_createMultipartRetries(0),
 m_createBucketRetries(0),
 m_completeRetries(0),
@@ -113,8 +117,10 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      const Aws::String& contentType,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                                      bool createBucket,
-                                     bool doConsistencyChecks) :
-UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>{}, s3Client, createBucket, doConsistencyChecks)
+                                     bool doConsistencyChecks,
+                                     Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                                     Aws::S3::Model::StorageClass storageClass) :
+UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>{}, s3Client, createBucket, doConsistencyChecks, serverSideEncryption, storageClass)
 {
 }
 
@@ -125,8 +131,10 @@ UploadFileRequest::UploadFileRequest(const Aws::String& fileName,
                                      const Aws::Map<Aws::String, Aws::String>& metadata,
                                      const std::shared_ptr<Aws::S3::S3Client>& s3Client,
                                      bool createBucket,
-                                     bool doConsistencyChecks) :
-UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>(metadata), s3Client, createBucket, doConsistencyChecks)
+                                     bool doConsistencyChecks,
+                                     Aws::S3::Model::ServerSideEncryption serverSideEncryption,
+                                     Aws::S3::Model::StorageClass storageClass) :
+UploadFileRequest(fileName, bucketName, keyName, contentType, Aws::Map<Aws::String, Aws::String>(metadata), s3Client, createBucket, doConsistencyChecks, serverSideEncryption, storageClass)
 {
 }
 
@@ -222,6 +230,16 @@ bool UploadFileRequest::CreateMultipartUpload()
     Aws::S3::Model::CreateMultipartUploadRequest createMultipartUploadRequest;
     createMultipartUploadRequest.SetBucket(GetBucketName());
     createMultipartUploadRequest.SetKey(GetKeyName());
+    
+    if (m_serverSideEncryption != Aws::S3::Model::ServerSideEncryption::NOT_SET) 
+    {
+        createMultipartUploadRequest.SetServerSideEncryption(m_serverSideEncryption);
+    }
+    if (m_storageClass != Aws::S3::Model::StorageClass::NOT_SET) 
+    {
+        createMultipartUploadRequest.SetStorageClass(m_storageClass);    
+    } 
+
     // not mandatory - defaults to binary in S3
     if (m_contentType.length())
     {
@@ -810,6 +828,15 @@ bool UploadFileRequest::DoSingleObjectUpload(std::shared_ptr<Aws::IOStream>& str
         putObjectRequest.SetMetadata(m_metadata);
     }
     putObjectRequest.SetKey(GetKeyName());
+    
+    if (m_serverSideEncryption != Aws::S3::Model::ServerSideEncryption::NOT_SET) 
+    {
+        putObjectRequest.SetServerSideEncryption(m_serverSideEncryption);
+    }
+    if (m_storageClass != Aws::S3::Model::StorageClass::NOT_SET) 
+    {
+        putObjectRequest.SetStorageClass(m_storageClass);    
+    } 
 
     putObjectRequest.SetDataSentEventHandler(std::bind(&UploadFileRequest::OnDataSent, this, std::placeholders::_1, std::placeholders::_2));
     
