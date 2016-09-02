@@ -33,5 +33,9 @@ if(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
     include(platform/unix)
 endif()
 
-include(platform/${__LOWER_ARCH})
+if(NOT PLATFORM_CUSTOM)
+    include(platform/${__LOWER_ARCH})
+else()
+    include(platform/custom)
+endif()
 
