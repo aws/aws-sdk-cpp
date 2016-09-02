@@ -31,8 +31,6 @@ find_package(Git)
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
 #   CUSTOM_PLATFORM_DIR - directory where custom platform scripts, modules, and source resides
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
-
 # TODO: convert boolean invocation variables to options
 option(ENABLE_UNITY_BUILD "If enabled, the SDK will be built using a single unified .cpp file for each service library.  Reduces the size of static library binaries on Windows and Linux" OFF)
 option(MINIMIZE_SIZE "If enabled, the SDK will be built via a unity aggregation process that results in smaller static libraries; additionally, release binaries will favor size optimizations over speed" OFF)
@@ -64,55 +62,9 @@ endif()
 
 SET(PYTHON_CMD "python")
 
-# ToDo: untangle platform and compiler specific logic.  Right now we have a lot of things checking platform that should be checking compiler
-#
-# Platform recognition
-SET(PLATFORM_WINDOWS 0)
-SET(PLATFORM_LINUX 0)
-SET(PLATFORM_ANDROID 0)
-SET(PLATFORM_APPLE 0)
-SET(PLATFORM_CUSTOM 0)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-if("${TARGET_ARCH}" STREQUAL "WINDOWS")
-    SET(PLATFORM_WINDOWS 1)
-elseif("${TARGET_ARCH}" STREQUAL "LINUX")
-    SET(PLATFORM_LINUX 1)
-elseif("${TARGET_ARCH}" STREQUAL "APPLE")
-    SET(PLATFORM_APPLE 1)
-elseif("${TARGET_ARCH}" STREQUAL "ANDROID")
-    SET(PLATFORM_ANDROID 1)
-elseif(TARGET_ARCH)
-    SET(PLATFORM_CUSTOM 1)
-else()
-    message(STATUS "TARGET_ARCH not specified; inferring host OS to be platform compilation target")
-    if(WIN32)
-        SET(PLATFORM_WINDOWS 1)
-    elseif(APPLE)
-        SET(PLATFORM_APPLE 1)
-    elseif(UNIX)
-        SET(PLATFORM_LINUX 1)
-    else()
-        message(FATAL_ERROR "Unknown host OS; unable to determine platform compilation target")
-    endif()
-endif()
-
-
-if(PLATFORM_WINDOWS)
-    INCLUDE(platform/windows)
-elseif(PLATFORM_LINUX)
-    INCLUDE(platform/unix)
-    INCLUDE(platform/linux)
-elseif(PLATFORM_APPLE)
-    INCLUDE(platform/unix)
-    INCLUDE(platform/apple)
-elseif(PLATFORM_ANDROID)
-    INCLUDE(platform/unix)
-    INCLUDE(platform/android)
-elseif(PLATFORM_CUSTOM)
-    INCLUDE(platform/custom)
-else()
-    message(FATAL_ERROR "Unknown target platform.  How did this happen?")
-endif()
+include(resolve_platform)
 
 if(BUILD_SHARED_LIBS)
     SET(ARCHIVE_DIRECTORY "bin")
@@ -161,8 +113,6 @@ include(utilities)
 #
 # set( CMAKE_VERBOSE_MAKEFILE 1 )
 
-# Setup the project configurations.
-
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
 # pass this flag to the jsoncpp amalgamated source
@@ -171,6 +121,18 @@ add_definitions(-DJSON_USE_EXCEPTION=0)
 set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 
 include(build_external)
+
+if(ENABLE_BCRYPT_ENCRYPTION)
+    set(CRYPTO_LIBS Bcrypt)
+elseif(ENABLE_OPENSSL_ENCRYPTION)
+    set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
+endif()
+
+if(ENABLE_CURL_CLIENT)
+    set(CLIENT_LIBS ${CURL_LIBRARIES})
+elseif(ENABLE_WINDOWS_CLIENT)
+    set(CLIENT_LIBS Wininet winhttp)
+endif()
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     if(BUILD_SHARED_LIBS)
