@@ -164,9 +164,6 @@ std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::
     return std::make_pair(lowerBound, upperBound);
 }
 
-
-
-
 CryptoModuleEO::CryptoModuleEO(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
     CryptoModule(encryptionMaterials, cryptoConfig)
 {
