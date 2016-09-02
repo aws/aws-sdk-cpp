@@ -29,7 +29,6 @@ dependencies
 _build
 build
 _build_*
-cmake/
 
 # Compiled Object files
 *.slo
