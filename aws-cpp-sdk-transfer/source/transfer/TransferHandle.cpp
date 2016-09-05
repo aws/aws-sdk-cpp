@@ -21,13 +21,13 @@ namespace Aws
     {
         Aws::Set<std::pair<int, Aws::String>> TransferHandle::GetCompletedParts() const
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             return m_completedParts;
         }
 
         void TransferHandle::ChangePartToCompleted(int partNumber, const Aws::String& eTag)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             if (!m_pendingParts.erase(partNumber))
             {                   
                 m_failedParts.erase(partNumber);
@@ -38,39 +38,39 @@ namespace Aws
 
         Aws::Set<int> TransferHandle::GetQueuedParts() const
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             return m_queuedParts;
         }
 
         void TransferHandle::AddQueuedPart(int partNumber)
         {            
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             m_failedParts.erase(partNumber);          
             m_queuedParts.insert(partNumber);
         }
 
         Aws::Set<int> TransferHandle::GetPendingParts() const
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             return m_pendingParts;
         }
 
         void TransferHandle::AddPendingPart(int partNumber)
         {            
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             m_queuedParts.erase(partNumber);           
             m_pendingParts.insert(partNumber);
         }
 
         Aws::Set<int> TransferHandle::GetFailedParts() const
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             return m_failedParts;
         }
 
         void TransferHandle::ChangePartToFailed(int partNumber)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             m_pendingParts.erase(partNumber);  
             m_queuedParts.erase(partNumber);            
             m_failedParts.insert(partNumber);
@@ -79,7 +79,7 @@ namespace Aws
         void TransferHandle::GetAllPartsTransactional(Aws::Set<int>& queuedParts, Aws::Set<int>& pendingParts,
             Aws::Set<int>& failedParts, Aws::Set<std::pair<int, Aws::String>>& completedParts)
         {
-            std::lock_guard<std::recursive_mutex> locker(m_partsLock);
+            std::lock_guard<std::mutex> locker(m_partsLock);
             queuedParts = m_queuedParts;
             pendingParts = m_pendingParts;
             failedParts = m_failedParts;

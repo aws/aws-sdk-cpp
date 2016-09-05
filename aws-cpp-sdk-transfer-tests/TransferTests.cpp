@@ -477,6 +477,7 @@ TEST_F(TransferTests, TransferManager_ContentTest)
     getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
     unsigned retryCount = 0;
     const unsigned retryMax = 5;
+    //just make sure we don't fail because a get object failed. (e.g. network problems or interuptions
     while (!getObjectOutcome.IsSuccess() && retryCount < retryMax)
     {
         ++retryCount;
@@ -521,6 +522,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because a the put object failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
@@ -597,6 +599,7 @@ TEST_F(TransferTests, TransferManager_BigTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
@@ -707,6 +710,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
@@ -804,6 +808,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
@@ -844,6 +849,7 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
@@ -936,6 +942,7 @@ TEST_F(TransferTests, MultipartUploadWithMetadataTest)
     requestPtr->WaitUntilFinished();
 
     size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
         transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);

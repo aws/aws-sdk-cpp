@@ -26,6 +26,8 @@ const char replacementBuf[] = "Boom, I ruined your st";
 const char concatStr[] = "This Boom, I ruined your st";
 const char shortenedBuffer[] = "This is an internal buf";
 
+//Fill in a buffer and make sure we read the same exact thing back
+//for the stream
 TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
 {    
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -38,6 +40,8 @@ TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
     ASSERT_STREQ(bufferStr, (const char*)readBuf.GetUnderlyingData());
 }
 
+//Write to an empty buffer via a stream interface, and make sure the buffer
+//contains the data.
 TEST(PreallocatedStreamBufTest, TestStreamWriteToPrefilledBuffer)
 {
     Array<uint8_t> buffer(sizeof(bufferStr));
@@ -48,6 +52,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteToPrefilledBuffer)
     ASSERT_STREQ(bufferStr, (const char*)buffer.GetUnderlyingData());
 }
 
+//test read seeking from the beginning
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -61,6 +66,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
+//test read seeking from current pos.
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -74,6 +80,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
+//test read seeking from the end.
 TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -88,6 +95,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
+//test write seeking from the beginning.
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 {                           
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -100,6 +108,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
+//test write seeking from the current position.
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -112,6 +121,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
+//test write seeking from the end.
 TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -125,6 +135,8 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
     ASSERT_STREQ(concatStr, (const char*)buffer.GetUnderlyingData());
 }
 
+//make sure if the max stream size has been set to something smaller than the 
+//buffer size, that max stream size is honored instead of the buffer length for reads
 TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
 {
     Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
@@ -140,6 +152,8 @@ TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
     ASSERT_STREQ(shortenedBuffer, (const char*)readBuf.GetUnderlyingData());
 }
 
+//make sure if the max stream size has been set to something smaller than the 
+//buffer size, that max stream size is honored instead of the buffer length for writes
 TEST(PreallocatedStreamBufTest, TestStreamWriteHonorsSizeLimitShorterThanBuffer)
 {
     Array<uint8_t> buffer(sizeof(bufferStr));
