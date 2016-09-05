@@ -128,7 +128,7 @@ elseif(USE_GCC_FLAGS)
         SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
     endif()
 
-    if(MINIMIZE_SIZE)
+    if(MINIMIZE_SIZE AND COMPILER_GCC)
         set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -s")
     endif()
 endif()
