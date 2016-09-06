@@ -24,6 +24,7 @@
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <fstream>
+#include <algorithm>
 
 namespace Aws
 {
