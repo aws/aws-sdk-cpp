@@ -71,12 +71,12 @@ namespace Aws
 
                 if (which == std::ios_base::in)
                 {
-                    setg(begin, begin + pos, end);                    
+                    setg(begin, begin + static_cast<size_t>(pos), end);                    
                 }
 
                 if (which == std::ios_base::out)
                 {
-                    setp(begin + pos, end);
+                    setp(begin + static_cast<size_t>(pos), end);
                 }
 
                 return pos;
