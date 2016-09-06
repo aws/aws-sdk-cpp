@@ -36,7 +36,7 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type containing information about the specified hosted zone.</p>
+   * <p>A complex type containing the response information for the hosted zone.</p>
    */
   class AWS_ROUTE53_API GetHostedZoneResult
   {
@@ -46,62 +46,52 @@ namespace Model
     GetHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains the information about the specified hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
 
     /**
-     * <p>A complex type that contains the information about the specified hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
 
     /**
-     * <p>A complex type that contains the information about the specified hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline void SetHostedZone(HostedZone&& value) { m_hostedZone = value; }
 
     /**
-     * <p>A complex type that contains the information about the specified hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline GetHostedZoneResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
 
     /**
-     * <p>A complex type that contains the information about the specified hosted
-     * zone.</p>
+     * <p>A complex type that contains general information about the hosted zone.</p>
      */
     inline GetHostedZoneResult& WithHostedZone(HostedZone&& value) { SetHostedZone(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the name servers for the
-     * specified hosted zone.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
 
     /**
-     * <p>A complex type that contains information about the name servers for the
-     * specified hosted zone.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains information about the name servers for the
-     * specified hosted zone.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains information about the name servers for the
-     * specified hosted zone.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline GetHostedZoneResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the name servers for the
-     * specified hosted zone.</p>
+     * <p>A complex type that describes the name servers for this hosted zone.</p>
      */
     inline GetHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
 

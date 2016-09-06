@@ -34,8 +34,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains information about the status of the specified
-   * health check.</p>
+   * <p>A complex type that contains the response to a <code>GetHealthCheck</code>
+   * request.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckStatusResult
   {
@@ -46,43 +46,50 @@ namespace Model
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline const Aws::Vector<HealthCheckObservation>& GetHealthCheckObservations() const{ return m_healthCheckObservations; }
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline void SetHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { m_healthCheckObservations = value; }
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = value; }
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline GetHealthCheckStatusResult& WithHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { SetHealthCheckObservations(value); return *this;}
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline GetHealthCheckStatusResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(value); return *this;}
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline GetHealthCheckStatusResult& AddHealthCheckObservations(const HealthCheckObservation& value) { m_healthCheckObservations.push_back(value); return *this; }
 
     /**
      * <p>A list that contains one <code>HealthCheckObservation</code> element for each
-     * Amazon Route 53 health checker.</p>
+     * Amazon Route 53 health checker that is reporting a status about the health check
+     * endpoint.</p>
      */
     inline GetHealthCheckStatusResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(value); return *this; }
 

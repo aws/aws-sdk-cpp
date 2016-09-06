@@ -32,8 +32,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the count of health checks associated with the
-   * current AWS account.</p>
+   * <p>A complex type that contains the response to a <code>healthcheckcount</code>
+   * request.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckCountResult
   {

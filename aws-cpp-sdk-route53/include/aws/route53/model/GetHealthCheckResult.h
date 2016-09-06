@@ -33,7 +33,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type containing information about the specified health check.</p>
+   * <p>A complex type that contains the response to a <code>GetHealthCheck</code>
+   * request.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckResult
   {
@@ -43,32 +44,32 @@ namespace Model
     GetHealthCheckResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains the information about the specified health
-     * check.</p>
+     * <p>A complex type that contains information about one health check that is
+     * associated with the current AWS account.</p>
      */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
 
     /**
-     * <p>A complex type that contains the information about the specified health
-     * check.</p>
+     * <p>A complex type that contains information about one health check that is
+     * associated with the current AWS account.</p>
      */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
 
     /**
-     * <p>A complex type that contains the information about the specified health
-     * check.</p>
+     * <p>A complex type that contains information about one health check that is
+     * associated with the current AWS account.</p>
      */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = value; }
 
     /**
-     * <p>A complex type that contains the information about the specified health
-     * check.</p>
+     * <p>A complex type that contains information about one health check that is
+     * associated with the current AWS account.</p>
      */
     inline GetHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
     /**
-     * <p>A complex type that contains the information about the specified health
-     * check.</p>
+     * <p>A complex type that contains information about one health check that is
+     * associated with the current AWS account.</p>
      */
     inline GetHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(value); return *this;}
 

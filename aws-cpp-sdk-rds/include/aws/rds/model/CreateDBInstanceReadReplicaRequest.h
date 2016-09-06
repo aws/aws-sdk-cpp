@@ -96,7 +96,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
@@ -114,7 +114,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
@@ -132,7 +132,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
@@ -150,7 +150,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
@@ -168,7 +168,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
@@ -186,7 +186,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(value); return *this;}
@@ -204,7 +204,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
