@@ -285,7 +285,7 @@ namespace Aws
 
             auto buffer = m_bufferManager.Acquire();
 
-            auto lengthToWrite = std::min(buffer->GetLength(), handle->GetBytesTotalSize());
+            auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
             auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, lengthToWrite);
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
