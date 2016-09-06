@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains identifying information about the health
-   * check.</p>
+   * <p>A complex type that contains information about one health check that is
+   * associated with the current AWS account.</p>
    */
   class AWS_ROUTE53_API HealthCheck
   {
@@ -46,97 +46,118 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline HealthCheck& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline HealthCheck& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID of the specified health check.</p>
+     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * created it. When you add or update a resource record set, you use this value to
+     * specify which health check to use. The value can be up to 64 characters long.
+     * </p>
      */
     inline HealthCheck& WithId(const char* value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline HealthCheck& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline HealthCheck& WithCallerReference(Aws::String&& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique string that identifies the request to create the health check.</p>
+     * <p>A unique string that you specified when you created the health check.</p>
      */
     inline HealthCheck& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains the health check configuration.</p>
+     * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
-     * <p>A complex type that contains the health check configuration.</p>
+     * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p>A complex type that contains the health check configuration.</p>
+     * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p>A complex type that contains the health check configuration.</p>
+     * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline HealthCheck& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains the health check configuration.</p>
+     * <p>A complex type that contains detailed information about one health check.</p>
      */
     inline HealthCheck& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(value); return *this;}
 
@@ -162,32 +183,32 @@ namespace Model
     inline HealthCheck& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
 
     /**
-     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
-     * about the CloudWatch alarm that you're associating with the health check.</p>
+     * <p>A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.</p>
      */
     inline const CloudWatchAlarmConfiguration& GetCloudWatchAlarmConfiguration() const{ return m_cloudWatchAlarmConfiguration; }
 
     /**
-     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
-     * about the CloudWatch alarm that you're associating with the health check.</p>
+     * <p>A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.</p>
      */
     inline void SetCloudWatchAlarmConfiguration(const CloudWatchAlarmConfiguration& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = value; }
 
     /**
-     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
-     * about the CloudWatch alarm that you're associating with the health check.</p>
+     * <p>A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.</p>
      */
     inline void SetCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { m_cloudWatchAlarmConfigurationHasBeenSet = true; m_cloudWatchAlarmConfiguration = value; }
 
     /**
-     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
-     * about the CloudWatch alarm that you're associating with the health check.</p>
+     * <p>A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.</p>
      */
     inline HealthCheck& WithCloudWatchAlarmConfiguration(const CloudWatchAlarmConfiguration& value) { SetCloudWatchAlarmConfiguration(value); return *this;}
 
     /**
-     * <p>For CLOUDWATCH_METRIC health checks, a complex type that contains information
-     * about the CloudWatch alarm that you're associating with the health check.</p>
+     * <p>A complex type that contains information about the CloudWatch alarm that
+     * Amazon Route 53 is monitoring for this health check.</p>
      */
     inline HealthCheck& WithCloudWatchAlarmConfiguration(CloudWatchAlarmConfiguration&& value) { SetCloudWatchAlarmConfiguration(value); return *this;}
 
