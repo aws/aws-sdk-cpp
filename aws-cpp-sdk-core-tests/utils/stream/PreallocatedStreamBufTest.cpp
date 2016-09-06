@@ -36,7 +36,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
 
     Array<uint8_t> readBuf(sizeof(bufferStr));
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(sizeof(bufferStr), ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr), static_cast<size_t>(ioStream.gcount()));
     ASSERT_STREQ(bufferStr, (const char*)readBuf.GetUnderlyingData());
 }
 
@@ -62,7 +62,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
     ioStream.seekg(5, std::ios_base::beg);
     Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
@@ -76,7 +76,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
     ioStream.seekg(5, std::ios_base::cur);
     Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
@@ -91,7 +91,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
     ioStream.seekg(seekPos, std::ios_base::end);
     Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
-    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
     ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
 }
 
@@ -148,7 +148,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
 
     ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
 
-    ASSERT_EQ(sizeof(bufferStr) - 5, ioStream.gcount());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
     ASSERT_STREQ(shortenedBuffer, (const char*)readBuf.GetUnderlyingData());
 }
 

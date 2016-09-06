@@ -82,7 +82,6 @@ static const unsigned BIG_TEST_SIZE = MB5 * PARTS_IN_BIG_TEST;
 static const char* testString = "S3 MultiPart upload Test File ";
 static const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
 static const uint32_t TEST_WAIT_TIMEOUT = 10;
-static const uint32_t TEST_WAIT_TIMEOUT_LONG = 200;
 
 namespace 
 {
