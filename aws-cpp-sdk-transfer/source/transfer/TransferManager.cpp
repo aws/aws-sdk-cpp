@@ -220,7 +220,7 @@ namespace Aws
                 auto buffer = m_bufferManager.Acquire();
                 if(handle->ShouldContinue())
                 {
-                    auto lengthToWrite = std::min(buffer->GetLength(), handle->GetBytesTotalSize() - sentBytes);
+                    auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize() - sentBytes);
                     streamToPut->seekg(sentBytes);
                     streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
 
