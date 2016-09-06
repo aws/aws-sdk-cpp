@@ -1412,10 +1412,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -1425,71 +1422,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1539,10 +1512,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -1552,71 +1522,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1666,10 +1612,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -1679,71 +1622,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1793,10 +1712,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -1806,71 +1722,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1920,10 +1812,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -1933,71 +1822,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -2047,10 +1912,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -2060,71 +1922,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(value); return *this;}
 
@@ -2174,10 +2012,7 @@ namespace Model
      * ap-northeast-2):</b> <code> 5.5.40b | 5.5.41</code> </p> </li> <li> <p>
      * <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code>
      * 5.5.42</code> </p> </li> <li> <p> <b>Version 5.5 (available in all AWS
-     * regions):</b> <code> 5.5.46</code> </p> </li> <li> <p> <b>Version 5.1 (only
-     * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.1.73a | 5.1.73b</code> </p> </li> </ul> <p> <b>Oracle Database
+     * regions):</b> <code> 5.5.46</code> </p> </li> </ul> <p> <b>Oracle Database
      * Enterprise Edition (oracle-ee)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
      * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
      * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
@@ -2187,71 +2022,47 @@ namespace Model
      * in all AWS regions):</b> <code> 12.1.0.2.v1</code> </p> </li> <li> <p>
      * <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code>
      * 12.1.0.2.v2 | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
+     * 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 |
+     * 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 |
+     * 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database
+     * Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1 (available
+     * in all AWS regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
      * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition (oracle-se)</b> </p> <ul> <li> <p> <b>Version 12.1
-     * (available in all AWS regions except ap-south-1, ap-northeast-2):</b> <code>
-     * 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition One
+     * (oracle-se1)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except ap-south-1, ap-northeast-2):</b> <code> 12.1.0.1.v1 |
+     * 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1 (only available in AWS
+     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
+     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3 |
+     * 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version 11.2 (available
+     * in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code>
+     * </p> </li> <li> <p> <b>Version 11.2 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 11.2.0.4.v5 | 11.2.0.4.v6 | 11.2.0.4.v7 |
+     * 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle Database Standard Edition Two
+     * (oracle-se2)</b> </p> <ul> <li> <p> <b>Version 12.1 (available in all AWS
+     * regions except us-gov-west-1):</b> <code> 12.1.0.2.v2 | 12.1.0.2.v3 |
+     * 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p> <ul> <li> <p>
+     * <b>Version 9.5 (available in all AWS regions except us-gov-west-1):</b> <code>
+     * 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS regions
+     * except ap-south-1):</b> <code> 9.4.1 | 9.4.4</code> </p> </li> <li> <p>
+     * <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> </p>
+     * </li> <li> <p> <b>Version 9.4 (available in all AWS regions except
+     * us-gov-west-1):</b> <code> 9.4.7</code> </p> </li> <li> <p> <b>Version 9.3 (only
      * available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition One (oracle-se1)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-     * <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> </p> </li> <li> <p> <b>Version 12.1
-     * (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code>
-     * 12.1.0.1.v3 | 12.1.0.1.v4 | 12.1.0.1.v5</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1,
-     * ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     * us-west-2):</b> <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 |
-     * 11.2.0.2.v7</code> </p> </li> <li> <p> <b>Version 11.2 (available in all AWS
-     * regions except ap-south-1, ap-northeast-2):</b> <code> 11.2.0.3.v1 | 11.2.0.3.v2
-     * | 11.2.0.3.v3</code> </p> </li> <li> <p> <b>Version 11.2 (only available in AWS
-     * regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1,
-     * sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code> </p>
-     * </li> <li> <p> <b>Version 11.2 (available in all AWS regions):</b> <code>
-     * 11.2.0.4.v1 | 11.2.0.4.v3 | 11.2.0.4.v4</code> </p> </li> <li> <p> <b>Version
-     * 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-     * | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> </p> </li> </ul> <p> <b>Oracle
-     * Database Standard Edition Two (oracle-se2)</b> </p> <ul> <li> <p> <b>Version
-     * 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-     * | 12.1.0.2.v3 | 12.1.0.2.v4</code> </p> </li> </ul> <p> <b>PostgreSQL</b> </p>
-     * <ul> <li> <p> <b>Version 9.5 (available in all AWS regions except
-     * us-gov-west-1):</b> <code> 9.5.2</code> </p> </li> <li> <p> <b>Version 9.4
-     * (available in all AWS regions except ap-south-1):</b> <code> 9.4.1 |
-     * 9.4.4</code> </p> </li> <li> <p> <b>Version 9.4 (available in all AWS
-     * regions):</b> <code> 9.4.5</code> </p> </li> <li> <p> <b>Version 9.4 (available
-     * in all AWS regions except us-gov-west-1):</b> <code> 9.4.7</code> </p> </li>
-     * <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-west-1, sa-east-1, us-east-1, us-gov-west-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p>
-     * <b>Version 9.3 (available in all AWS regions except ap-south-1,
-     * ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> </p>
-     * </li> <li> <p> <b>Version 9.3 (only available in AWS regions ap-northeast-1,
-     * ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1,
-     * us-west-1, us-west-2):</b> <code> 9.3.12</code> </p> </li> </ul>
+     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
+     * <code> 9.3.1 | 9.3.2</code> </p> </li> <li> <p> <b>Version 9.3 (available in all
+     * AWS regions except ap-south-1, ap-northeast-2):</b> <code> 9.3.10 | 9.3.3 |
+     * 9.3.5 | 9.3.6 | 9.3.9</code> </p> </li> <li> <p> <b>Version 9.3 (only available
+     * in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
+     * eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+     * </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

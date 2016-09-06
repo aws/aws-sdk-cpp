@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains name server information.</p>
+   * <p>A complex type that describes the name servers for this hosted zone.</p>
    */
   class AWS_ROUTE53_API DelegationSet
   {
@@ -86,66 +86,50 @@ namespace Model
     inline DelegationSet& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNameServers() const{ return m_nameServers; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline void SetNameServers(const Aws::Vector<Aws::String>& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& WithNameServers(const Aws::Vector<Aws::String>& value) { SetNameServers(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(value); return *this;}
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(const Aws::String& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
     /**
-     * <p>A complex type that contains the authoritative name servers for the hosted
-     * zone. Use the method provided by your domain registrar to add an NS record to
-     * your domain for each <code>NameServer</code> that is assigned to your hosted
-     * zone.</p>
+     * <p>A complex type that contains a list of the authoritative name servers for the
+     * hosted zone.</p>
      */
     inline DelegationSet& AddNameServers(const char* value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
 
