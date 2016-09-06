@@ -45,15 +45,15 @@ namespace Aws
                 m_transferConfig.transferExecutor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(CLASS_TAG, m_transferConfig.maxParallelTransfers);
             }
 
-            for (size_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
+            for (uint64_t i = 0; i < m_transferConfig.transferBufferMaxHeapSize; i += m_transferConfig.bufferSize)
             {
-                m_bufferManager.PutResource(Aws::New<Aws::Utils::Array<uint8_t>>(CLASS_TAG, m_transferConfig.bufferSize));
+                m_bufferManager.PutResource(Aws::New<Aws::Utils::Array<uint8_t>>(CLASS_TAG, static_cast<size_t>(m_transferConfig.bufferSize)));
             }
         }
 
         TransferManager::~TransferManager()
         {
-            for (auto buffer : m_bufferManager.ShutdownAndWait(m_transferConfig.transferBufferMaxHeapSize / m_transferConfig.bufferSize))
+            for (auto buffer : m_bufferManager.ShutdownAndWait(static_cast<size_t>(m_transferConfig.transferBufferMaxHeapSize / m_transferConfig.bufferSize)))
             {
                 Aws::Delete(buffer);
             }
@@ -184,7 +184,7 @@ namespace Aws
                 {
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
                     int partNumber = 1;
-                    for (size_t i = 1; i < handle->GetBytesTotalSize(); i += m_transferConfig.bufferSize)
+                    for (uint64_t i = 1; i < handle->GetBytesTotalSize(); i += m_transferConfig.bufferSize)
                     {
                         handle->AddQueuedPart(partNumber++);
                     }                    
@@ -224,7 +224,7 @@ namespace Aws
                     streamToPut->seekg(sentBytes);
                     streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
 
-                    auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, lengthToWrite);
+                    auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
                     auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
@@ -287,7 +287,7 @@ namespace Aws
 
             auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize());
             streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
-            auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, lengthToWrite);
+            auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));
             auto preallocatedStreamReader = Aws::MakeShared<Aws::IOStream>(CLASS_TAG, streamBuf);
 
             putObjectRequest.SetBody(preallocatedStreamReader);
