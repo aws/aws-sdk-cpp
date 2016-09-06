@@ -133,20 +133,20 @@ namespace Model
     inline CreateTrafficPolicyInstanceRequest& WithName(const char* value) { SetName(value); return *this;}
 
     /**
-     * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
-     * resource record sets that it creates in the specified hosted zone.</p>
+     * <p>The TTL that you want Amazon Route 53 to assign to all of the resource record
+     * sets that it creates in the specified hosted zone.</p>
      */
     inline long long GetTTL() const{ return m_tTL; }
 
     /**
-     * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
-     * resource record sets that it creates in the specified hosted zone.</p>
+     * <p>The TTL that you want Amazon Route 53 to assign to all of the resource record
+     * sets that it creates in the specified hosted zone.</p>
      */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
 
     /**
-     * <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the
-     * resource record sets that it creates in the specified hosted zone.</p>
+     * <p>The TTL that you want Amazon Route 53 to assign to all of the resource record
+     * sets that it creates in the specified hosted zone.</p>
      */
     inline CreateTrafficPolicyInstanceRequest& WithTTL(long long value) { SetTTL(value); return *this;}
 

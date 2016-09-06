@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Gets information about a specific traffic policy version. To get the
-   * information, send a GET request to the /2013-04-01/trafficpolicy resource, and
-   * specify the ID and the version of the traffic policy.</p>
+   * information, send a GET request to the /<i>Route 53 API
+   * version</i>/trafficpolicy resource, and specify the ID and the version of the
+   * traffic policy.</p>
    */
   class AWS_ROUTE53_API GetTrafficPolicyRequest : public Route53Request
   {

@@ -77,7 +77,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
@@ -89,7 +91,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -101,7 +105,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -113,7 +119,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline EnableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
@@ -125,7 +133,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline EnableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(value); return *this;}
 
@@ -137,7 +147,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -149,7 +161,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -161,7 +175,9 @@ namespace Model
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>Note that the
+     * <code>GroupStandbyInstances</code> metric is not enabled by default. You must
+     * explicitly request this metric.</p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 

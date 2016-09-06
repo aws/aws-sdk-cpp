@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the last failure reason as reported by one
-   * Amazon Route 53 health checker.</p>
+   * <p>A complex type that contains the IP address of a Amazon Route 53 health
+   * checker and the reason for the health check status.</p>
    */
   class AWS_ROUTE53_API HealthCheckObservation
   {
@@ -46,104 +46,104 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
      */
     inline const HealthCheckRegion& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
      */
     inline void SetRegion(const HealthCheckRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
      */
     inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
      */
     inline HealthCheckObservation& WithRegion(const HealthCheckRegion& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The region of the Amazon Route 53 health checker that provided the status in
-     * StatusReport.</p>
+     * <p>The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that
+     * performed this health check.</p>
      */
     inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline void SetIPAddress(const Aws::String& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline void SetIPAddress(const char* value) { m_iPAddressHasBeenSet = true; m_iPAddress.assign(value); }
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(const Aws::String& value) { SetIPAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(Aws::String&& value) { SetIPAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the Amazon Route 53 health checker that provided the
-     * failure reason in <code>StatusReport</code>.</p>
+     * <p>The IP address of the Amazon Route 53 health checker that performed this
+     * health check.</p>
      */
     inline HealthCheckObservation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
 
     /**
-     * <p>A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     * <p>A complex type that contains information about the health check status for
+     * the current observation.</p>
      */
     inline const StatusReport& GetStatusReport() const{ return m_statusReport; }
 
     /**
-     * <p>A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     * <p>A complex type that contains information about the health check status for
+     * the current observation.</p>
      */
     inline void SetStatusReport(const StatusReport& value) { m_statusReportHasBeenSet = true; m_statusReport = value; }
 
     /**
-     * <p>A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     * <p>A complex type that contains information about the health check status for
+     * the current observation.</p>
      */
     inline void SetStatusReport(StatusReport&& value) { m_statusReportHasBeenSet = true; m_statusReport = value; }
 
     /**
-     * <p>A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     * <p>A complex type that contains information about the health check status for
+     * the current observation.</p>
      */
     inline HealthCheckObservation& WithStatusReport(const StatusReport& value) { SetStatusReport(value); return *this;}
 
     /**
-     * <p>A complex type that contains the last failure reason as reported by one
-     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     * <p>A complex type that contains information about the health check status for
+     * the current observation.</p>
      */
     inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(value); return *this;}
 

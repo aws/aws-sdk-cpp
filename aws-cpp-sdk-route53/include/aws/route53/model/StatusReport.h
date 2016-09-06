@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains the status that one Amazon Route 53 health
-   * checker reports and the time of the health check.</p>
+   * <p>A complex type that contains information about the health check status for
+   * the current observation.</p>
    */
   class AWS_ROUTE53_API StatusReport
   {
@@ -45,89 +45,77 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline StatusReport& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline StatusReport& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
+     * <p>The observed health check status.</p>
      */
     inline StatusReport& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetCheckedTime() const{ return m_checkedTime; }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
      */
     inline void SetCheckedTime(const Aws::Utils::DateTime& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
      */
     inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
      */
     inline StatusReport& WithCheckedTime(const Aws::Utils::DateTime& value) { SetCheckedTime(value); return *this;}
 
     /**
-     * <p>The time at which the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2014-10-27T17:48:16.751Z</code> represents October 27, 2014 at
-     * 17:48:16.751 UTC.</p>
+     * <p>The date and time the health check status was observed, in the format
+     * <code>YYYY-MM-DDThh:mm:ssZ</code>, as specified in the ISO 8601 standard (for
+     * example, 2009-11-19T19:37:58Z). The <code>Z</code> after the time indicates that
+     * the time is listed in Coordinated Universal Time (UTC).</p>
      */
     inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(value); return *this;}
 

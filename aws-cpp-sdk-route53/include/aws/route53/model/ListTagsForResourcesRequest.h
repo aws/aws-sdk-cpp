@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the health checks or hosted
-   * zones for which you want to list tags.</p>
+   * <p>A complex type containing information about a request for a list of the tags
+   * that are associated with up to 10 specified resources.</p>
    */
   class AWS_ROUTE53_API ListTagsForResourcesRequest : public Route53Request
   {
@@ -37,37 +37,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     * <p>The type of the resources.</p> <p>- The resource type for health checks is
+     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.</p>
      */
     inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     * <p>The type of the resources.</p> <p>- The resource type for health checks is
+     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.</p>
      */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     * <p>The type of the resources.</p> <p>- The resource type for health checks is
+     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.</p>
      */
     inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     * <p>The type of the resources.</p> <p>- The resource type for health checks is
+     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.</p>
      */
     inline ListTagsForResourcesRequest& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the resources.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     * <p>The type of the resources.</p> <p>- The resource type for health checks is
+     * <code>healthcheck</code>.</p> <p>- The resource type for hosted zones is
+     * <code>hostedzone</code>.</p>
      */
     inline ListTagsForResourcesRequest& WithResourceType(TagResourceType&& value) { SetResourceType(value); return *this;}
 

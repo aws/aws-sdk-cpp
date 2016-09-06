@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>The RDS Amazon Resource Name (ARN) of the resource that the pending
      * maintenance action applies to. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
      * Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}

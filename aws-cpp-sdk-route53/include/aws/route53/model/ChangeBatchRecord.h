@@ -131,84 +131,84 @@ namespace Model
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code> </p>
+     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code></p>
      */
     inline const ChangeStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code> </p>
+     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code></p>
      */
     inline void SetStatus(const ChangeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code> </p>
+     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code></p>
      */
     inline void SetStatus(ChangeStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code> </p>
+     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code></p>
      */
     inline ChangeBatchRecord& WithStatus(const ChangeStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code> </p>
+     * <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code></p>
      */
     inline ChangeBatchRecord& WithStatus(ChangeStatus&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeBatchRecord& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeBatchRecord& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
      * <p>A complex type that describes change information about changes made to your
      * hosted zone.</p> <p>This element contains an ID that you use when performing a
-     * <a>GetChange</a> action to get detailed information about the change.</p>
+     * <code>GetChange</code> action to get detailed information about the change.</p>
      */
     inline ChangeBatchRecord& WithComment(const char* value) { SetComment(value); return *this;}
 

@@ -26,7 +26,6 @@
 #include <aws/codepipeline/model/CreatePipelineResult.h>
 #include <aws/codepipeline/model/GetJobDetailsResult.h>
 #include <aws/codepipeline/model/GetPipelineResult.h>
-#include <aws/codepipeline/model/GetPipelineExecutionResult.h>
 #include <aws/codepipeline/model/GetPipelineStateResult.h>
 #include <aws/codepipeline/model/GetThirdPartyJobDetailsResult.h>
 #include <aws/codepipeline/model/ListActionTypesResult.h>
@@ -94,7 +93,6 @@ namespace Model
         class EnableStageTransitionRequest;
         class GetJobDetailsRequest;
         class GetPipelineRequest;
-        class GetPipelineExecutionRequest;
         class GetPipelineStateRequest;
         class GetThirdPartyJobDetailsRequest;
         class ListActionTypesRequest;
@@ -121,7 +119,6 @@ namespace Model
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CodePipelineErrors>> EnableStageTransitionOutcome;
         typedef Aws::Utils::Outcome<GetJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetJobDetailsOutcome;
         typedef Aws::Utils::Outcome<GetPipelineResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineOutcome;
-        typedef Aws::Utils::Outcome<GetPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<GetPipelineStateResult, Aws::Client::AWSError<CodePipelineErrors>> GetPipelineStateOutcome;
         typedef Aws::Utils::Outcome<GetThirdPartyJobDetailsResult, Aws::Client::AWSError<CodePipelineErrors>> GetThirdPartyJobDetailsOutcome;
         typedef Aws::Utils::Outcome<ListActionTypesResult, Aws::Client::AWSError<CodePipelineErrors>> ListActionTypesOutcome;
@@ -148,7 +145,6 @@ namespace Model
         typedef std::future<EnableStageTransitionOutcome> EnableStageTransitionOutcomeCallable;
         typedef std::future<GetJobDetailsOutcome> GetJobDetailsOutcomeCallable;
         typedef std::future<GetPipelineOutcome> GetPipelineOutcomeCallable;
-        typedef std::future<GetPipelineExecutionOutcome> GetPipelineExecutionOutcomeCallable;
         typedef std::future<GetPipelineStateOutcome> GetPipelineStateOutcomeCallable;
         typedef std::future<GetThirdPartyJobDetailsOutcome> GetThirdPartyJobDetailsOutcomeCallable;
         typedef std::future<ListActionTypesOutcome> ListActionTypesOutcomeCallable;
@@ -178,7 +174,6 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::EnableStageTransitionRequest&, const Model::EnableStageTransitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableStageTransitionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetJobDetailsRequest&, const Model::GetJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobDetailsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineRequest&, const Model::GetPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineResponseReceivedHandler;
-    typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineExecutionRequest&, const Model::GetPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineStateRequest&, const Model::GetPipelineStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineStateResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetThirdPartyJobDetailsRequest&, const Model::GetThirdPartyJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThirdPartyJobDetailsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::ListActionTypesRequest&, const Model::ListActionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActionTypesResponseReceivedHandler;
@@ -209,25 +204,23 @@ namespace Model
    * creates a uniquely-named pipeline.</p> </li> <li> <p> <a>DeletePipeline</a>,
    * which deletes the specified pipeline.</p> </li> <li> <p> <a>GetPipeline</a>,
    * which returns information about a pipeline structure.</p> </li> <li> <p>
-   * <a>GetPipelineExecution</a>, which returns information about a specific
-   * execution of a pipeline.</p> </li> <li> <p> <a>GetPipelineState</a>, which
-   * returns information about the current state of the stages and actions of a
-   * pipeline.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all
-   * of the pipelines associated with your account.</p> </li> <li> <p>
-   * <a>StartPipelineExecution</a>, which runs the the most recent revision of an
-   * artifact through the pipeline.</p> </li> <li> <p> <a>UpdatePipeline</a>, which
-   * updates a pipeline with edits or changes to the structure of the pipeline.</p>
-   * </li> </ul> <p>Pipelines include <i>stages</i>, which are which are logical
-   * groupings of gates and actions. Each stage contains one or more actions that
-   * must complete before the next stage begins. A stage will result in success or
-   * failure. If a stage fails, then the pipeline stops at that stage and will remain
-   * stopped until either a new version of an artifact appears in the source
-   * location, or a user takes action to re-run the most recent artifact through the
-   * pipeline. You can call <a>GetPipelineState</a>, which displays the status of a
-   * pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>,
-   * which returns the entire structure of the pipeline, including the stages of that
-   * pipeline. For more information about the structure of stages and actions, also
-   * refer to the <a
+   * <a>GetPipelineState</a>, which returns information about the current state of
+   * the stages and actions of a pipeline.</p> </li> <li> <p> <a>ListPipelines</a>,
+   * which gets a summary of all of the pipelines associated with your account.</p>
+   * </li> <li> <p> <a>StartPipelineExecution</a>, which runs the the most recent
+   * revision of an artifact through the pipeline.</p> </li> <li> <p>
+   * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the
+   * structure of the pipeline.</p> </li> </ul> <p>Pipelines include <i>stages</i>,
+   * which are which are logical groupings of gates and actions. Each stage contains
+   * one or more actions that must complete before the next stage begins. A stage
+   * will result in success or failure. If a stage fails, then the pipeline stops at
+   * that stage and will remain stopped until either a new version of an artifact
+   * appears in the source location, or a user takes action to re-run the most recent
+   * artifact through the pipeline. You can call <a>GetPipelineState</a>, which
+   * displays the status of a pipeline, including the status of stages in the
+   * pipeline, or <a>GetPipeline</a>, which returns the entire structure of the
+   * pipeline, including the stages of that pipeline. For more information about the
+   * structure of stages and actions, also refer to the <a
    * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
    * CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include
    * <i>actions</i>, which are categorized into categories such as source or build
@@ -528,31 +521,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPipelineAsync(const Model::GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * <p>Returns information about an execution of a pipeline, including details about
-         * artifacts, the pipeline execution ID, and the name, version, and status of the
-         * pipeline.</p>
-         */
-        virtual Model::GetPipelineExecutionOutcome GetPipelineExecution(const Model::GetPipelineExecutionRequest& request) const;
-
-        /**
-         * <p>Returns information about an execution of a pipeline, including details about
-         * artifacts, the pipeline execution ID, and the name, version, and status of the
-         * pipeline.</p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetPipelineExecutionOutcomeCallable GetPipelineExecutionCallable(const Model::GetPipelineExecutionRequest& request) const;
-
-        /**
-         * <p>Returns information about an execution of a pipeline, including details about
-         * artifacts, the pipeline execution ID, and the name, version, and status of the
-         * pipeline.</p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetPipelineExecutionAsync(const Model::GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the state of a pipeline, including the stages and
@@ -932,7 +900,6 @@ namespace Model
         void EnableStageTransitionAsyncHelper(const Model::EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobDetailsAsyncHelper(const Model::GetJobDetailsRequest& request, const GetJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPipelineAsyncHelper(const Model::GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPipelineExecutionAsyncHelper(const Model::GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPipelineStateAsyncHelper(const Model::GetPipelineStateRequest& request, const GetPipelineStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetThirdPartyJobDetailsAsyncHelper(const Model::GetThirdPartyJobDetailsRequest& request, const GetThirdPartyJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListActionTypesAsyncHelper(const Model::ListActionTypesRequest& request, const ListActionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

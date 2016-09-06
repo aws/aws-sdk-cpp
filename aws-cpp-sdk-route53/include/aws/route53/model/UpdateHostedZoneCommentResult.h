@@ -33,8 +33,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response to the
-   * UpdateHostedZoneCommentRequest.</p>
+   * <p>A complex type containing information about the specified hosted zone after
+   * the update.</p>
    */
   class AWS_ROUTE53_API UpdateHostedZoneCommentResult
   {

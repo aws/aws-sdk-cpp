@@ -34,8 +34,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response to a
-   * <code>GetHealthCheckLastFailureReason</code> request.</p>
+   * <p>A complex type that contains information about the most recent failure for
+   * the specified health check.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckLastFailureReasonResult
   {
@@ -45,44 +45,44 @@ namespace Model
     GetHealthCheckLastFailureReasonResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline const Aws::Vector<HealthCheckObservation>& GetHealthCheckObservations() const{ return m_healthCheckObservations; }
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline void SetHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { m_healthCheckObservations = value; }
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline void SetHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { m_healthCheckObservations = value; }
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline GetHealthCheckLastFailureReasonResult& WithHealthCheckObservations(const Aws::Vector<HealthCheckObservation>& value) { SetHealthCheckObservations(value); return *this;}
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline GetHealthCheckLastFailureReasonResult& WithHealthCheckObservations(Aws::Vector<HealthCheckObservation>&& value) { SetHealthCheckObservations(value); return *this;}
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline GetHealthCheckLastFailureReasonResult& AddHealthCheckObservations(const HealthCheckObservation& value) { m_healthCheckObservations.push_back(value); return *this; }
 
     /**
-     * <p>A list that contains one <code>Observation</code> element for each Amazon
-     * Route 53 health checker that is reporting a last failure reason. </p>
+     * <p>A list that contains one <code>HealthCheckObservation</code> element for each
+     * Amazon Route 53 health checker.</p>
      */
     inline GetHealthCheckLastFailureReasonResult& AddHealthCheckObservations(HealthCheckObservation&& value) { m_healthCheckObservations.push_back(value); return *this; }
 

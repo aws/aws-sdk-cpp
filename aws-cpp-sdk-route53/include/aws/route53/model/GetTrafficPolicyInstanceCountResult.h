@@ -32,8 +32,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains information about the resource record sets that
-   * Amazon Route 53 created based on a specified traffic policy.</p>
+   * <p>A complex type that contains information about the number of traffic policy
+   * instances that are associated with the current AWS account.</p>
    */
   class AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult
   {

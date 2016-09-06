@@ -30,15 +30,15 @@ namespace Model
 
   /**
    * <p>To retrieve a list of your reusable delegation sets, send a <code>GET</code>
-   * request to the <code>/2013-04-01/delegationset</code> resource. The response to
-   * this request includes a <code>DelegationSets</code> element with zero or more
-   * <code>DelegationSet</code> child elements. By default, the list of reusable
-   * delegation sets is displayed on a single page. You can control the length of the
-   * page that is displayed by using the <code>MaxItems</code> parameter. You can use
-   * the <code>Marker</code> parameter to control the delegation set that the list
-   * begins with.</p> <note> <p>Amazon Route 53 returns a maximum of 100 items. If
-   * you set <code>MaxItems</code> to a value greater than 100, Amazon Route 53
-   * returns only the first 100.</p> </note>
+   * request to the <code>/<i>Route 53 API version</i>/delegationset</code> resource.
+   * The response to this request includes a <code>DelegationSets</code> element with
+   * zero or more <code>DelegationSet</code> child elements. By default, the list of
+   * reusable delegation sets is displayed on a single page. You can control the
+   * length of the page that is displayed by using the <code>MaxItems</code>
+   * parameter. You can use the <code>Marker</code> parameter to control the
+   * delegation set that the list begins with.</p> <note> Amazon Route 53 returns a
+   * maximum of 100 items. If you set <code>MaxItems</code> to a value greater than
+   * 100, Amazon Route 53 returns only the first 100.</note>
    */
   class AWS_ROUTE53_API ListReusableDelegationSetsRequest : public Route53Request
   {
@@ -49,100 +49,93 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>If you're making the second or subsequent call to
-     * <code>ListReusableDelegationSets</code>, the <code>Marker</code> element matches
-     * the value that you specified in the <code>marker</code> parameter in the
-     * previous request.</p>
+     * <p>If the request returned more than one page of results, submit another request
+     * and specify the value of <code>NextMarker</code> from the last response in the
+     * <code>marker</code> parameter to get the next page of results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(value); return *this;}
 
     /**
-     * <p>The value that you specified for the <code>maxitems</code> parameter in the
-     * request that produced the current response.</p>
+     * <p>Specify the maximum number of reusable delegation sets to return per page of
+     * results.</p>
      */
     inline ListReusableDelegationSetsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

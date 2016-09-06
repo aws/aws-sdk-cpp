@@ -33,8 +33,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response to the
-   * <code>GetReusableDelegationSet</code> request.</p>
+   * <p>A complex type containing information about the specified reusable delegation
+   * set.</p>
    */
   class AWS_ROUTE53_API GetReusableDelegationSetResult
   {
@@ -44,32 +44,32 @@ namespace Model
     GetReusableDelegationSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains information about the reusable delegation
-     * set.</p>
+     * <p>A complex type that contains the information about the nameservers for the
+     * specified delegation set ID.</p>
      */
     inline const DelegationSet& GetDelegationSet() const{ return m_delegationSet; }
 
     /**
-     * <p>A complex type that contains information about the reusable delegation
-     * set.</p>
+     * <p>A complex type that contains the information about the nameservers for the
+     * specified delegation set ID.</p>
      */
     inline void SetDelegationSet(const DelegationSet& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains information about the reusable delegation
-     * set.</p>
+     * <p>A complex type that contains the information about the nameservers for the
+     * specified delegation set ID.</p>
      */
     inline void SetDelegationSet(DelegationSet&& value) { m_delegationSet = value; }
 
     /**
-     * <p>A complex type that contains information about the reusable delegation
-     * set.</p>
+     * <p>A complex type that contains the information about the nameservers for the
+     * specified delegation set ID.</p>
      */
     inline GetReusableDelegationSetResult& WithDelegationSet(const DelegationSet& value) { SetDelegationSet(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the reusable delegation
-     * set.</p>
+     * <p>A complex type that contains the information about the nameservers for the
+     * specified delegation set ID.</p>
      */
     inline GetReusableDelegationSetResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
 

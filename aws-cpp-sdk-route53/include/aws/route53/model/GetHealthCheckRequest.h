@@ -25,14 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>This action gets information about a specified health check.</p> <p>Send a
-   * <code>GET</code> request to the <code>/<i>Amazon Route 53 API
-   * version</i>/gethealthcheckrequest</code> resource.</p> <p>For information about
-   * getting information about a health check using the Amazon Route 53 console, see
-   * <a
-   * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-   * Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer
-   * Guide</i>.</p>
+   * <p>A complex type that contains information about the request to get a health
+   * check.</p>
    */
   class AWS_ROUTE53_API GetHealthCheckRequest : public Route53Request
   {
@@ -41,58 +35,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline GetHealthCheckRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline GetHealthCheckRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(value); return *this;}
 
     /**
-     * <p>The identifier that Amazon Route 53 assigned to the health check when you
-     * created it. When you add or update a resource record set, you use this value to
-     * specify which health check to use. The value can be up to 64 characters
-     * long.</p>
+     * <p>The ID of the health check to retrieve.</p>
      */
     inline GetHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 

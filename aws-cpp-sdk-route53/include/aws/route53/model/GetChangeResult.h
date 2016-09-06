@@ -43,32 +43,37 @@ namespace Model
     GetChangeResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
+     * <p>A complex type that contains information about the specified change batch,
+     * including the change batch ID, the status of the change, and the date and time
+     * of the request.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
+     * <p>A complex type that contains information about the specified change batch,
+     * including the change batch ID, the status of the change, and the date and time
+     * of the request.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
+     * <p>A complex type that contains information about the specified change batch,
+     * including the change batch ID, the status of the change, and the date and time
+     * of the request.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
+     * <p>A complex type that contains information about the specified change batch,
+     * including the change batch ID, the status of the change, and the date and time
+     * of the request.</p>
      */
     inline GetChangeResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the specified change
-     * batch.</p>
+     * <p>A complex type that contains information about the specified change batch,
+     * including the change batch ID, the status of the change, and the date and time
+     * of the request.</p>
      */
     inline GetChangeResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
 

@@ -111,19 +111,18 @@ namespace Model
    * <p>Application Auto Scaling is a general purpose Auto Scaling service for
    * supported elastic AWS resources. With Application Auto Scaling, you can
    * automatically scale your AWS resources, with an experience similar to that of
-   * Auto Scaling.</p> <p>Application Auto Scaling supports scaling the following AWS
-   * resources:</p> <ul> <li> <p>Amazon ECS services</p> </li> <li> <p>Amazon EC2
-   * Spot fleet instances</p> </li> </ul> <p>You can use Application Auto Scaling to
-   * accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies for
-   * automatically adjusting your AWS resources</p> </li> <li> <p>Scale your
-   * resources in response to CloudWatch alarms</p> </li> <li> <p>View history of
-   * your scaling events </p> </li> </ul> <p>Application Auto Scaling is available in
-   * the following regions:</p> <ul> <li> <p> <code>us-east-1</code> </p> </li> <li>
-   * <p> <code>us-west-1</code> </p> </li> <li> <p> <code>us-west-2</code> </p> </li>
-   * <li> <p> <code>ap-southeast-1</code> </p> </li> <li> <p>
-   * <code>ap-southeast-2</code> </p> </li> <li> <p> <code>ap-northeast-1</code> </p>
-   * </li> <li> <p> <code>eu-central-1</code> </p> </li> <li> <p>
-   * <code>eu-west-1</code> </p> </li> </ul>
+   * Auto Scaling.</p> <note> <p>At this time, Application Auto Scaling only supports
+   * scaling Amazon ECS services.</p> </note> <p>For example, you can use Application
+   * Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling
+   * policies for automatically adjusting your application’s resources</p> </li> <li>
+   * <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View
+   * history of your scaling events </p> </li> </ul> <p>Application Auto Scaling is
+   * available in the following regions:</p> <ul> <li> <p> <code>us-east-1</code>
+   * </p> </li> <li> <p> <code>us-west-1</code> </p> </li> <li> <p>
+   * <code>us-west-2</code> </p> </li> <li> <p> <code>ap-southeast-1</code> </p>
+   * </li> <li> <p> <code>ap-southeast-2</code> </p> </li> <li> <p>
+   * <code>ap-northeast-1</code> </p> </li> <li> <p> <code>eu-central-1</code> </p>
+   * </li> <li> <p> <code>eu-west-1</code> </p> </li> </ul>
    */
   class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient : public Aws::Client::AWSJsonClient
   {
@@ -155,9 +154,9 @@ namespace Model
          * <p>Deletes an Application Auto Scaling scaling policy that was previously
          * created. If you are no longer using a scaling policy, you can delete it with
          * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * but does not delete the CloudWatch alarm, even if it no longer has an associated
+         * action.</p> <p>To create a new scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>.</p>
          */
         virtual Model::DeleteScalingPolicyOutcome DeleteScalingPolicy(const Model::DeleteScalingPolicyRequest& request) const;
 
@@ -165,9 +164,9 @@ namespace Model
          * <p>Deletes an Application Auto Scaling scaling policy that was previously
          * created. If you are no longer using a scaling policy, you can delete it with
          * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * but does not delete the CloudWatch alarm, even if it no longer has an associated
+         * action.</p> <p>To create a new scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -177,9 +176,9 @@ namespace Model
          * <p>Deletes an Application Auto Scaling scaling policy that was previously
          * created. If you are no longer using a scaling policy, you can delete it with
          * this operation.</p> <p>Deleting a policy deletes the underlying alarm action,
-         * but does not delete the CloudWatch alarm associated with the scaling policy,
-         * even if it no longer has an associated action.</p> <p>To create a new scaling
-         * policy or update an existing one, see <a>PutScalingPolicy</a>.</p>
+         * but does not delete the CloudWatch alarm, even if it no longer has an associated
+         * action.</p> <p>To create a new scaling policy or update an existing one, see
+         * <a>PutScalingPolicy</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -375,27 +374,29 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          */
         virtual Model::RegisterScalableTargetOutcome RegisterScalableTarget(const Model::RegisterScalableTargetRequest& request) const;
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -403,14 +404,15 @@ namespace Model
 
         /**
          * <p>Registers or updates a scalable target. A scalable target is a resource that
-         * can be scaled out or in with Application Auto Scaling. After you have registered
-         * a scalable target, you can use this operation to update the minimum and maximum
-         * values for your scalable dimension.</p> <p>After you register a scalable target
-         * with Application Auto Scaling, you can create and apply scaling policies to it
-         * with <a>PutScalingPolicy</a>. You can view the existing scaling policies for a
-         * service namespace with <a>DescribeScalableTargets</a>. If you are no longer
-         * using a scalable target, you can deregister it with
-         * <a>DeregisterScalableTarget</a>.</p>
+         * can be scaled up or down with Application Auto Scaling. After you have
+         * registered a scalable target, you can use this command to update the minimum and
+         * maximum values for your scalable dimension.</p> <note> <p>At this time,
+         * Application Auto Scaling only supports scaling Amazon ECS services.</p> </note>
+         * <p>After you register a scalable target with Application Auto Scaling, you can
+         * create and apply scaling policies to it with <a>PutScalingPolicy</a>. You can
+         * view the existing scaling policies for a service namespace with
+         * <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+         * you can deregister it with <a>DeregisterScalableTarget</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

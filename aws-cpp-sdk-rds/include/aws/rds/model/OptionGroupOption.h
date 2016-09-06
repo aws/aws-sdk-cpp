@@ -293,46 +293,6 @@ namespace Model
     inline OptionGroupOption& AddOptionsDependedOn(const char* value) { m_optionsDependedOnHasBeenSet = true; m_optionsDependedOn.push_back(value); return *this; }
 
     /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetOptionsConflictsWith() const{ return m_optionsConflictsWith; }
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline void SetOptionsConflictsWith(const Aws::Vector<Aws::String>& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith = value; }
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline void SetOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith = value; }
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline OptionGroupOption& WithOptionsConflictsWith(const Aws::Vector<Aws::String>& value) { SetOptionsConflictsWith(value); return *this;}
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline OptionGroupOption& WithOptionsConflictsWith(Aws::Vector<Aws::String>&& value) { SetOptionsConflictsWith(value); return *this;}
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline OptionGroupOption& AddOptionsConflictsWith(const Aws::String& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(value); return *this; }
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline OptionGroupOption& AddOptionsConflictsWith(Aws::String&& value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(value); return *this; }
-
-    /**
-     * <p>The options that conflict with this option.</p>
-     */
-    inline OptionGroupOption& AddOptionsConflictsWith(const char* value) { m_optionsConflictsWithHasBeenSet = true; m_optionsConflictsWith.push_back(value); return *this; }
-
-    /**
      * <p>Persistent options can't be removed from an option group while DB instances
      * are associated with the option group. If you disassociate all DB instances from
      * the option group, your can remove the persistent option from the option
@@ -375,44 +335,44 @@ namespace Model
     inline OptionGroupOption& WithPermanent(bool value) { SetPermanent(value); return *this;}
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline const Aws::Vector<OptionGroupOptionSetting>& GetOptionGroupOptionSettings() const{ return m_optionGroupOptionSettings; }
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline void SetOptionGroupOptionSettings(const Aws::Vector<OptionGroupOptionSetting>& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = value; }
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline void SetOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings = value; }
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline OptionGroupOption& WithOptionGroupOptionSettings(const Aws::Vector<OptionGroupOptionSetting>& value) { SetOptionGroupOptionSettings(value); return *this;}
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline OptionGroupOption& WithOptionGroupOptionSettings(Aws::Vector<OptionGroupOptionSetting>&& value) { SetOptionGroupOptionSettings(value); return *this;}
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline OptionGroupOption& AddOptionGroupOptionSettings(const OptionGroupOptionSetting& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
 
     /**
-     * <p>The option settings that are available (and the default value) for each
-     * option in an option group.</p>
+     * <p>Specifies the option settings that are available (and the default value) for
+     * each option in an option group.</p>
      */
     inline OptionGroupOption& AddOptionGroupOptionSettings(OptionGroupOptionSetting&& value) { m_optionGroupOptionSettingsHasBeenSet = true; m_optionGroupOptionSettings.push_back(value); return *this; }
 
@@ -468,8 +428,6 @@ namespace Model
     bool m_defaultPortHasBeenSet;
     Aws::Vector<Aws::String> m_optionsDependedOn;
     bool m_optionsDependedOnHasBeenSet;
-    Aws::Vector<Aws::String> m_optionsConflictsWith;
-    bool m_optionsConflictsWithHasBeenSet;
     bool m_persistent;
     bool m_persistentHasBeenSet;
     bool m_permanent;

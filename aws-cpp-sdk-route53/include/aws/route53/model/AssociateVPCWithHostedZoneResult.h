@@ -33,8 +33,7 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response information for the hosted
-   * zone.</p>
+   * <p>A complex type containing the response information for the request.</p>
    */
   class AWS_ROUTE53_API AssociateVPCWithHostedZoneResult
   {
@@ -44,27 +43,32 @@ namespace Model
     AssociateVPCWithHostedZoneResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains the ID, the status, and the date and time of
+     * your <code>AssociateVPCWithHostedZoneRequest</code>.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains the ID, the status, and the date and time of
+     * your <code>AssociateVPCWithHostedZoneRequest</code>.</p>
      */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains the ID, the status, and the date and time of
+     * your <code>AssociateVPCWithHostedZoneRequest</code>.</p>
      */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = value; }
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains the ID, the status, and the date and time of
+     * your <code>AssociateVPCWithHostedZoneRequest</code>.</p>
      */
     inline AssociateVPCWithHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
 
     /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
+     * <p>A complex type that contains the ID, the status, and the date and time of
+     * your <code>AssociateVPCWithHostedZoneRequest</code>.</p>
      */
     inline AssociateVPCWithHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(value); return *this;}
 

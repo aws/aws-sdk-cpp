@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>This action deletes a health check. Send a <code>DELETE</code> request to the
-   * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.</p>
+   * <p>A complex type containing the request information for delete health
+   * check.</p>
    */
   class AWS_ROUTE53_API DeleteHealthCheckRequest : public Route53Request
   {
@@ -34,25 +34,39 @@ namespace Model
     DeleteHealthCheckRequest();
     Aws::String SerializePayload() const override;
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the health check to delete.</p>
+     */
     inline DeleteHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
 
   private:

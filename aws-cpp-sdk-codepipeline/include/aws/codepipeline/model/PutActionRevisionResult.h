@@ -43,20 +43,20 @@ namespace Model
     PutActionRevisionResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Indicates whether the artifact revision was previously used in an execution
-     * of the specified pipeline.</p>
+     * <p>The new revision number or ID for the revision after the action
+     * completes.</p>
      */
     inline bool GetNewRevision() const{ return m_newRevision; }
 
     /**
-     * <p>Indicates whether the artifact revision was previously used in an execution
-     * of the specified pipeline.</p>
+     * <p>The new revision number or ID for the revision after the action
+     * completes.</p>
      */
     inline void SetNewRevision(bool value) { m_newRevision = value; }
 
     /**
-     * <p>Indicates whether the artifact revision was previously used in an execution
-     * of the specified pipeline.</p>
+     * <p>The new revision number or ID for the revision after the action
+     * completes.</p>
      */
     inline PutActionRevisionResult& WithNewRevision(bool value) { SetNewRevision(value); return *this;}
 

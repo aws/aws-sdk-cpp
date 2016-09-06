@@ -19,7 +19,6 @@
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
-#include <aws/gamelift/model/OperatingSystem.h>
 
 namespace Aws
 {
@@ -324,114 +323,86 @@ namespace Model
     inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Path to a game server executable in the fleet's build, specified for fleets
-     * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now set using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
-     * <p>Game server launch parameters specified for fleets created prior to
-     * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * <p>Deprecated. Server launch parameters are now specified using a
+     * <code><a>RuntimeConfiguration</a></code> object.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
@@ -568,41 +539,6 @@ namespace Model
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
-    /**
-     * <p>Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.</p>
-     */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
-
-    /**
-     * <p>Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.</p>
-     */
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-
-    /**
-     * <p>Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.</p>
-     */
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-
-    /**
-     * <p>Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.</p>
-     */
-    inline FleetAttributes& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-
-    /**
-     * <p>Operating system of the fleet's computing resources. A fleet's operating
-     * system depends on the OS specified for the build that is deployed on this
-     * fleet.</p>
-     */
-    inline FleetAttributes& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
-
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
@@ -626,8 +562,6 @@ namespace Model
     bool m_logPathsHasBeenSet;
     ProtectionPolicy m_newGameSessionProtectionPolicy;
     bool m_newGameSessionProtectionPolicyHasBeenSet;
-    OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
   };
 
 } // namespace Model

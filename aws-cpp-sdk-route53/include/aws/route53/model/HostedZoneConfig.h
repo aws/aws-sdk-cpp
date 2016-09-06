@@ -32,8 +32,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains an optional comment about your hosted zone. If
-   * you don't want to specify a comment, omit both the <code>HostedZoneConfig</code>
-   * and <code>Comment</code> elements.</p>
+   * you don't want to specify a comment, you can omit the
+   * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the XML
+   * document.</p>
    */
   class AWS_ROUTE53_API HostedZoneConfig
   {
@@ -45,52 +46,78 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline HostedZoneConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline HostedZoneConfig& WithComment(Aws::String&& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments that you want to include about the hosted zone.</p>
+     * <p>An optional comment about your hosted zone. If you don't want to specify a
+     * comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
+     * elements from the XML document.</p>
      */
     inline HostedZoneConfig& WithComment(const char* value) { SetComment(value); return *this;}
 
     /**
-     * <p>A value that indicates whether this is a private hosted zone.</p>
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
      */
     inline bool GetPrivateZone() const{ return m_privateZone; }
 
     /**
-     * <p>A value that indicates whether this is a private hosted zone.</p>
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
      */
     inline void SetPrivateZone(bool value) { m_privateZoneHasBeenSet = true; m_privateZone = value; }
 
     /**
-     * <p>A value that indicates whether this is a private hosted zone.</p>
+     * <p><code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A
+     * Boolean value that indicates whether a hosted zone is private.</p>
+     * <p><code>CreateHostedZone</code> requests: When you're creating a private hosted
+     * zone (when you specify values for VPCId and VPCRegion), you can optionally
+     * specify true for PrivateZone. </p>
      */
     inline HostedZoneConfig& WithPrivateZone(bool value) { SetPrivateZone(value); return *this;}
 

@@ -36,57 +36,57 @@ namespace Model
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline DeleteTrafficPolicyInstanceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline DeleteTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of the traffic policy instance that you want to delete. </p>
-     * <important> <p>When you delete a traffic policy instance, Amazon Route 53 also
+     * <important>When you delete a traffic policy instance, Amazon Route 53 also
      * deletes all of the resource record sets that were created when you created the
-     * traffic policy instance.</p> </important>
+     * traffic policy instance.</important>
      */
     inline DeleteTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
 

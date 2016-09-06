@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides options for how often AWS Config delivers configuration snapshots to
-   * the Amazon S3 bucket in your delivery channel.</p> <note> <p>If you want to
+   * <p>Shows the options for how often AWS Config delivers configuration snapshots
+   * to the Amazon S3 bucket in your delivery channel.</p> <note> <p>If you want to
    * create a rule that triggers evaluations for your resources when AWS Config
    * delivers the configuration snapshot, see the following:</p> </note> <p>The
    * frequency for a rule that triggers evaluations for your resources when AWS
@@ -47,21 +47,20 @@ namespace Model
    * information, see <a>ConfigRule</a>.</p> </li> </ul> <p>If the
    * <code>deliveryFrequency</code> value is less frequent than the
    * <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the
-   * rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li>
-   * <p>For example, you want your rule to run evaluations when AWS Config delivers
-   * the configuration snapshot. </p> </li> <li> <p>You specify the
-   * <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p>
+   * rule only as often as the <code>deliveryFrequency</code> value. </p> <ol> <li>
+   * <p>For example, you have a rule and you specify the
+   * <code>MaximumExecutionFrequency</code> value to be <code>Six_Hours</code>. </p>
    * </li> <li> <p>You then specify the delivery channel
-   * <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>. </p>
+   * <code>deliveryFrequency</code> value to <code>TwentyFour_Hours</code>. </p>
    * </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less
    * frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes
    * evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the
    * <code>MaximumExecutionFrequency</code> value to be at least as frequent as the
    * <code>deliveryFrequency</code> value. You can view the
    * <code>deliveryFrequency</code> value by using the
-   * <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the
-   * <code>deliveryFrequency</code> with which AWS Config delivers your configuration
-   * snapshots, use the <code>PutDeliveryChannel</code> action.</p>
+   * <code>DescribeDeliveryChannnels</code> action.</p> <p>To update the frequency
+   * with which AWS Config delivers your configuration snapshots, use the
+   * <code>PutDeliveryChannel</code> action.</p>
    */
   class AWS_CONFIGSERVICE_API ConfigSnapshotDeliveryProperties
   {

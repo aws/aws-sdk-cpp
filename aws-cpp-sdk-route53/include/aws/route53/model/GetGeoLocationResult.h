@@ -33,8 +33,7 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type that contains the response information for the specified
-   * geolocation code.</p>
+   * <p>A complex type containing information about the specified geo location.</p>
    */
   class AWS_ROUTE53_API GetGeoLocationResult
   {
@@ -44,32 +43,32 @@ namespace Model
     GetGeoLocationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
+     * <p>A complex type that contains the information about the specified geo
+     * location.</p>
      */
     inline const GeoLocationDetails& GetGeoLocationDetails() const{ return m_geoLocationDetails; }
 
     /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
+     * <p>A complex type that contains the information about the specified geo
+     * location.</p>
      */
     inline void SetGeoLocationDetails(const GeoLocationDetails& value) { m_geoLocationDetails = value; }
 
     /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
+     * <p>A complex type that contains the information about the specified geo
+     * location.</p>
      */
     inline void SetGeoLocationDetails(GeoLocationDetails&& value) { m_geoLocationDetails = value; }
 
     /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
+     * <p>A complex type that contains the information about the specified geo
+     * location.</p>
      */
     inline GetGeoLocationResult& WithGeoLocationDetails(const GeoLocationDetails& value) { SetGeoLocationDetails(value); return *this;}
 
     /**
-     * <p>A complex type that contains the codes and full continent, country, and
-     * subdivision names for the specified geolocation code.</p>
+     * <p>A complex type that contains the information about the specified geo
+     * location.</p>
      */
     inline GetGeoLocationResult& WithGeoLocationDetails(GeoLocationDetails&& value) { SetGeoLocationDetails(value); return *this;}
 
