@@ -38,7 +38,8 @@ FleetAttributes::FleetAttributes() :
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
-    m_newGameSessionProtectionPolicyHasBeenSet(false)
+    m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystemHasBeenSet(false)
 {
 }
 
@@ -53,7 +54,8 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_serverLaunchPathHasBeenSet(false),
     m_serverLaunchParametersHasBeenSet(false),
     m_logPathsHasBeenSet(false),
-    m_newGameSessionProtectionPolicyHasBeenSet(false)
+    m_newGameSessionProtectionPolicyHasBeenSet(false),
+    m_operatingSystemHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,13 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_newGameSessionProtectionPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
+
+    m_operatingSystemHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -212,6 +221,11 @@ JsonValue FleetAttributes::Jsonize() const
   if(m_newGameSessionProtectionPolicyHasBeenSet)
   {
    payload.WithString("NewGameSessionProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_newGameSessionProtectionPolicy));
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   return payload;

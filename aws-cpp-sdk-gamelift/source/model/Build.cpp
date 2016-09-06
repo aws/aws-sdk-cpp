@@ -34,6 +34,7 @@ Build::Build() :
     m_statusHasBeenSet(false),
     m_sizeOnDisk(0),
     m_sizeOnDiskHasBeenSet(false),
+    m_operatingSystemHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
 }
@@ -45,6 +46,7 @@ Build::Build(const JsonValue& jsonValue) :
     m_statusHasBeenSet(false),
     m_sizeOnDisk(0),
     m_sizeOnDiskHasBeenSet(false),
+    m_operatingSystemHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -85,6 +87,13 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_sizeOnDisk = jsonValue.GetInt64("SizeOnDisk");
 
     m_sizeOnDiskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OperatingSystem"))
+  {
+    m_operatingSystem = OperatingSystemMapper::GetOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
+
+    m_operatingSystemHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -128,6 +137,11 @@ JsonValue Build::Jsonize() const
   {
    payload.WithInt64("SizeOnDisk", m_sizeOnDisk);
 
+  }
+
+  if(m_operatingSystemHasBeenSet)
+  {
+   payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
   if(m_creationTimeHasBeenSet)

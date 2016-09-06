@@ -25,7 +25,8 @@ namespace Model
   enum class ScalableDimension
   {
     NOT_SET,
-    ecs_service_DesiredCount
+    ecs_service_DesiredCount,
+    ec2_spot_fleet_request_TargetCapacity
   };
 
 namespace ScalableDimensionMapper

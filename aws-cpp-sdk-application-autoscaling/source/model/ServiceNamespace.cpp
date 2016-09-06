@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int ecs_HASH = HashingUtils::HashString("ecs");
+        static const int ec2_HASH = HashingUtils::HashString("ec2");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == ecs_HASH)
           {
             return ServiceNamespace::ecs;
+          }
+          else if (hashCode == ec2_HASH)
+          {
+            return ServiceNamespace::ec2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case ServiceNamespace::ecs:
             return "ecs";
+          case ServiceNamespace::ec2:
+            return "ec2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

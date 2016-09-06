@@ -67,6 +67,7 @@
 #include <aws/route53/model/ListTrafficPolicyInstancesByHostedZoneRequest.h>
 #include <aws/route53/model/ListTrafficPolicyInstancesByPolicyRequest.h>
 #include <aws/route53/model/ListTrafficPolicyVersionsRequest.h>
+#include <aws/route53/model/TestDNSAnswerRequest.h>
 #include <aws/route53/model/UpdateHealthCheckRequest.h>
 #include <aws/route53/model/UpdateHostedZoneCommentRequest.h>
 #include <aws/route53/model/UpdateTrafficPolicyCommentRequest.h>
@@ -1402,6 +1403,36 @@ void Route53Client::ListTrafficPolicyVersionsAsync(const ListTrafficPolicyVersio
 void Route53Client::ListTrafficPolicyVersionsAsyncHelper(const ListTrafficPolicyVersionsRequest& request, const ListTrafficPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTrafficPolicyVersions(request), context);
+}
+
+TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/2013-04-01/testdnsanswer";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return TestDNSAnswerOutcome(TestDNSAnswerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestDNSAnswerOutcome(outcome.GetError());
+  }
+}
+
+TestDNSAnswerOutcomeCallable Route53Client::TestDNSAnswerCallable(const TestDNSAnswerRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->TestDNSAnswer( request ); } );
+}
+
+void Route53Client::TestDNSAnswerAsync(const TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestDNSAnswerAsyncHelper( request, handler, context ); } );
+}
+
+void Route53Client::TestDNSAnswerAsyncHelper(const TestDNSAnswerRequest& request, const TestDNSAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestDNSAnswer(request), context);
 }
 
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const

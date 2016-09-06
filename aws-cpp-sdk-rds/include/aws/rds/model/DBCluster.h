@@ -1072,25 +1072,39 @@ namespace Model
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline const Aws::String& GetDBClusterArn() const{ return m_dBClusterArn; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline void SetDBClusterArn(const Aws::String& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline void SetDBClusterArn(Aws::String&& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline void SetDBClusterArn(const char* value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline DBCluster& WithDBClusterArn(const Aws::String& value) { SetDBClusterArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline DBCluster& WithDBClusterArn(Aws::String&& value) { SetDBClusterArn(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
+     */
     inline DBCluster& WithDBClusterArn(const char* value) { SetDBClusterArn(value); return *this;}
 
   private:

@@ -131,37 +131,37 @@ namespace Model
     inline InstanceInformation& WithLastPingDateTime(Aws::Utils::DateTime&& value) { SetLastPingDateTime(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(Aws::String&& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the SSM agent running on your instance. </p>
+     * <p>The version of the SSM agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 

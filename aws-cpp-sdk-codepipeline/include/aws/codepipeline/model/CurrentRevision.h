@@ -15,6 +15,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 
 namespace Aws
 {
@@ -111,11 +112,80 @@ namespace Model
      */
     inline CurrentRevision& WithChangeIdentifier(const char* value) { SetChangeIdentifier(value); return *this;}
 
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
+    inline CurrentRevision& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
+    inline CurrentRevision& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline void SetRevisionSummary(const Aws::String& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline void SetRevisionSummary(const char* value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary.assign(value); }
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline CurrentRevision& WithRevisionSummary(const Aws::String& value) { SetRevisionSummary(value); return *this;}
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline CurrentRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(value); return *this;}
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline CurrentRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
+
   private:
     Aws::String m_revision;
     bool m_revisionHasBeenSet;
     Aws::String m_changeIdentifier;
     bool m_changeIdentifierHasBeenSet;
+    Aws::Utils::DateTime m_created;
+    bool m_createdHasBeenSet;
+    Aws::String m_revisionSummary;
+    bool m_revisionSummaryHasBeenSet;
   };
 
 } // namespace Model

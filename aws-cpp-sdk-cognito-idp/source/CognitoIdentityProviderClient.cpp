@@ -47,22 +47,26 @@
 #include <aws/cognito-idp/model/ConfirmDeviceRequest.h>
 #include <aws/cognito-idp/model/ConfirmForgotPasswordRequest.h>
 #include <aws/cognito-idp/model/ConfirmSignUpRequest.h>
+#include <aws/cognito-idp/model/CreateUserImportJobRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolRequest.h>
 #include <aws/cognito-idp/model/CreateUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/DeleteUserRequest.h>
 #include <aws/cognito-idp/model/DeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolRequest.h>
 #include <aws/cognito-idp/model/DeleteUserPoolClientRequest.h>
+#include <aws/cognito-idp/model/DescribeUserImportJobRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolRequest.h>
 #include <aws/cognito-idp/model/DescribeUserPoolClientRequest.h>
 #include <aws/cognito-idp/model/ForgetDeviceRequest.h>
 #include <aws/cognito-idp/model/ForgotPasswordRequest.h>
+#include <aws/cognito-idp/model/GetCSVHeaderRequest.h>
 #include <aws/cognito-idp/model/GetDeviceRequest.h>
 #include <aws/cognito-idp/model/GetUserRequest.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeRequest.h>
 #include <aws/cognito-idp/model/GlobalSignOutRequest.h>
 #include <aws/cognito-idp/model/InitiateAuthRequest.h>
 #include <aws/cognito-idp/model/ListDevicesRequest.h>
+#include <aws/cognito-idp/model/ListUserImportJobsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolClientsRequest.h>
 #include <aws/cognito-idp/model/ListUserPoolsRequest.h>
 #include <aws/cognito-idp/model/ListUsersRequest.h>
@@ -70,6 +74,8 @@
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
 #include <aws/cognito-idp/model/SetUserSettingsRequest.h>
 #include <aws/cognito-idp/model/SignUpRequest.h>
+#include <aws/cognito-idp/model/StartUserImportJobRequest.h>
+#include <aws/cognito-idp/model/StopUserImportJobRequest.h>
 #include <aws/cognito-idp/model/UpdateDeviceStatusRequest.h>
 #include <aws/cognito-idp/model/UpdateUserAttributesRequest.h>
 #include <aws/cognito-idp/model/UpdateUserPoolRequest.h>
@@ -791,6 +797,37 @@ void CognitoIdentityProviderClient::ConfirmSignUpAsyncHelper(const ConfirmSignUp
   handler(this, request, ConfirmSignUp(request), context);
 }
 
+CreateUserImportJobOutcome CognitoIdentityProviderClient::CreateUserImportJob(const CreateUserImportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateUserImportJobOutcome(CreateUserImportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUserImportJobOutcome(outcome.GetError());
+  }
+}
+
+CreateUserImportJobOutcomeCallable CognitoIdentityProviderClient::CreateUserImportJobCallable(const CreateUserImportJobRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->CreateUserImportJob(request); } );
+}
+
+void CognitoIdentityProviderClient::CreateUserImportJobAsync(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::CreateUserImportJobAsyncHelper(const CreateUserImportJobRequest& request, const CreateUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUserImportJob(request), context);
+}
+
 CreateUserPoolOutcome CognitoIdentityProviderClient::CreateUserPool(const CreateUserPoolRequest& request) const
 {
   Aws::StringStream ss;
@@ -977,6 +1014,37 @@ void CognitoIdentityProviderClient::DeleteUserPoolClientAsyncHelper(const Delete
   handler(this, request, DeleteUserPoolClient(request), context);
 }
 
+DescribeUserImportJobOutcome CognitoIdentityProviderClient::DescribeUserImportJob(const DescribeUserImportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeUserImportJobOutcome(DescribeUserImportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeUserImportJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeUserImportJobOutcomeCallable CognitoIdentityProviderClient::DescribeUserImportJobCallable(const DescribeUserImportJobRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeUserImportJob(request); } );
+}
+
+void CognitoIdentityProviderClient::DescribeUserImportJobAsync(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::DescribeUserImportJobAsyncHelper(const DescribeUserImportJobRequest& request, const DescribeUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeUserImportJob(request), context);
+}
+
 DescribeUserPoolOutcome CognitoIdentityProviderClient::DescribeUserPool(const DescribeUserPoolRequest& request) const
 {
   Aws::StringStream ss;
@@ -1099,6 +1167,37 @@ void CognitoIdentityProviderClient::ForgotPasswordAsync(const ForgotPasswordRequ
 void CognitoIdentityProviderClient::ForgotPasswordAsyncHelper(const ForgotPasswordRequest& request, const ForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ForgotPassword(request), context);
+}
+
+GetCSVHeaderOutcome CognitoIdentityProviderClient::GetCSVHeader(const GetCSVHeaderRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCSVHeaderOutcome(GetCSVHeaderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCSVHeaderOutcome(outcome.GetError());
+  }
+}
+
+GetCSVHeaderOutcomeCallable CognitoIdentityProviderClient::GetCSVHeaderCallable(const GetCSVHeaderRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->GetCSVHeader(request); } );
+}
+
+void CognitoIdentityProviderClient::GetCSVHeaderAsync(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCSVHeaderAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::GetCSVHeaderAsyncHelper(const GetCSVHeaderRequest& request, const GetCSVHeaderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCSVHeader(request), context);
 }
 
 GetDeviceOutcome CognitoIdentityProviderClient::GetDevice(const GetDeviceRequest& request) const
@@ -1285,6 +1384,37 @@ void CognitoIdentityProviderClient::ListDevicesAsync(const ListDevicesRequest& r
 void CognitoIdentityProviderClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDevices(request), context);
+}
+
+ListUserImportJobsOutcome CognitoIdentityProviderClient::ListUserImportJobs(const ListUserImportJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListUserImportJobsOutcome(ListUserImportJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListUserImportJobsOutcome(outcome.GetError());
+  }
+}
+
+ListUserImportJobsOutcomeCallable CognitoIdentityProviderClient::ListUserImportJobsCallable(const ListUserImportJobsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->ListUserImportJobs(request); } );
+}
+
+void CognitoIdentityProviderClient::ListUserImportJobsAsync(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListUserImportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::ListUserImportJobsAsyncHelper(const ListUserImportJobsRequest& request, const ListUserImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListUserImportJobs(request), context);
 }
 
 ListUserPoolClientsOutcome CognitoIdentityProviderClient::ListUserPoolClients(const ListUserPoolClientsRequest& request) const
@@ -1502,6 +1632,68 @@ void CognitoIdentityProviderClient::SignUpAsync(const SignUpRequest& request, co
 void CognitoIdentityProviderClient::SignUpAsyncHelper(const SignUpRequest& request, const SignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SignUp(request), context);
+}
+
+StartUserImportJobOutcome CognitoIdentityProviderClient::StartUserImportJob(const StartUserImportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartUserImportJobOutcome(StartUserImportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartUserImportJobOutcome(outcome.GetError());
+  }
+}
+
+StartUserImportJobOutcomeCallable CognitoIdentityProviderClient::StartUserImportJobCallable(const StartUserImportJobRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StartUserImportJob(request); } );
+}
+
+void CognitoIdentityProviderClient::StartUserImportJobAsync(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartUserImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::StartUserImportJobAsyncHelper(const StartUserImportJobRequest& request, const StartUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartUserImportJob(request), context);
+}
+
+StopUserImportJobOutcome CognitoIdentityProviderClient::StopUserImportJob(const StopUserImportJobRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopUserImportJobOutcome(StopUserImportJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopUserImportJobOutcome(outcome.GetError());
+  }
+}
+
+StopUserImportJobOutcomeCallable CognitoIdentityProviderClient::StopUserImportJobCallable(const StopUserImportJobRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->StopUserImportJob(request); } );
+}
+
+void CognitoIdentityProviderClient::StopUserImportJobAsync(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopUserImportJobAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::StopUserImportJobAsyncHelper(const StopUserImportJobRequest& request, const StopUserImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopUserImportJob(request), context);
 }
 
 UpdateDeviceStatusOutcome CognitoIdentityProviderClient::UpdateDeviceStatus(const UpdateDeviceStatusRequest& request) const

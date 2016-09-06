@@ -33,7 +33,8 @@ namespace Route53
 namespace Model
 {
   /**
-   * <p>A complex type containing tags for the specified resource.</p>
+   * <p>A complex type that contains information about the health checks or hosted
+   * zones for which you want to list tags.</p>
    */
   class AWS_ROUTE53_API ListTagsForResourceResult
   {
