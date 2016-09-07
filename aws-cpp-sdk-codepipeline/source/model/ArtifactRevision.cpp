@@ -28,6 +28,7 @@ namespace Model
 {
 
 ArtifactRevision::ArtifactRevision() : 
+    m_nameHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdentifierHasBeenSet(false),
     m_revisionSummaryHasBeenSet(false),
@@ -37,6 +38,7 @@ ArtifactRevision::ArtifactRevision() :
 }
 
 ArtifactRevision::ArtifactRevision(const JsonValue& jsonValue) : 
+    m_nameHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdentifierHasBeenSet(false),
     m_revisionSummaryHasBeenSet(false),
@@ -48,6 +50,13 @@ ArtifactRevision::ArtifactRevision(const JsonValue& jsonValue) :
 
 ArtifactRevision& ArtifactRevision::operator =(const JsonValue& jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
@@ -89,6 +98,12 @@ ArtifactRevision& ArtifactRevision::operator =(const JsonValue& jsonValue)
 JsonValue ArtifactRevision::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
 
   if(m_revisionIdHasBeenSet)
   {

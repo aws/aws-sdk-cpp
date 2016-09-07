@@ -33,7 +33,7 @@ PipelineExecution::PipelineExecution() :
     m_pipelineVersionHasBeenSet(false),
     m_pipelineExecutionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_artifactRevisionInformationsHasBeenSet(false)
+    m_artifactRevisionsHasBeenSet(false)
 {
 }
 
@@ -43,7 +43,7 @@ PipelineExecution::PipelineExecution(const JsonValue& jsonValue) :
     m_pipelineVersionHasBeenSet(false),
     m_pipelineExecutionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_artifactRevisionInformationsHasBeenSet(false)
+    m_artifactRevisionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,14 +78,14 @@ PipelineExecution& PipelineExecution::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("artifactRevisionInformations"))
+  if(jsonValue.ValueExists("artifactRevisions"))
   {
-    Array<JsonValue> artifactRevisionInformationsJsonList = jsonValue.GetArray("artifactRevisionInformations");
-    for(unsigned artifactRevisionInformationsIndex = 0; artifactRevisionInformationsIndex < artifactRevisionInformationsJsonList.GetLength(); ++artifactRevisionInformationsIndex)
+    Array<JsonValue> artifactRevisionsJsonList = jsonValue.GetArray("artifactRevisions");
+    for(unsigned artifactRevisionsIndex = 0; artifactRevisionsIndex < artifactRevisionsJsonList.GetLength(); ++artifactRevisionsIndex)
     {
-      m_artifactRevisionInformations.push_back(artifactRevisionInformationsJsonList[artifactRevisionInformationsIndex].AsObject());
+      m_artifactRevisions.push_back(artifactRevisionsJsonList[artifactRevisionsIndex].AsObject());
     }
-    m_artifactRevisionInformationsHasBeenSet = true;
+    m_artifactRevisionsHasBeenSet = true;
   }
 
   return *this;
@@ -118,14 +118,14 @@ JsonValue PipelineExecution::Jsonize() const
    payload.WithString("status", PipelineExecutionStatusMapper::GetNameForPipelineExecutionStatus(m_status));
   }
 
-  if(m_artifactRevisionInformationsHasBeenSet)
+  if(m_artifactRevisionsHasBeenSet)
   {
-   Array<JsonValue> artifactRevisionInformationsJsonList(m_artifactRevisionInformations.size());
-   for(unsigned artifactRevisionInformationsIndex = 0; artifactRevisionInformationsIndex < artifactRevisionInformationsJsonList.GetLength(); ++artifactRevisionInformationsIndex)
+   Array<JsonValue> artifactRevisionsJsonList(m_artifactRevisions.size());
+   for(unsigned artifactRevisionsIndex = 0; artifactRevisionsIndex < artifactRevisionsJsonList.GetLength(); ++artifactRevisionsIndex)
    {
-     artifactRevisionInformationsJsonList[artifactRevisionInformationsIndex].AsObject(m_artifactRevisionInformations[artifactRevisionInformationsIndex].Jsonize());
+     artifactRevisionsJsonList[artifactRevisionsIndex].AsObject(m_artifactRevisions[artifactRevisionsIndex].Jsonize());
    }
-   payload.WithArray("artifactRevisionInformations", std::move(artifactRevisionInformationsJsonList));
+   payload.WithArray("artifactRevisions", std::move(artifactRevisionsJsonList));
 
   }
 

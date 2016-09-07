@@ -46,14 +46,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -61,14 +61,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -76,14 +76,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -91,14 +91,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -106,14 +106,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -121,14 +121,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -136,14 +136,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -151,14 +151,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -166,14 +166,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -181,14 +181,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -196,14 +196,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */
@@ -211,14 +211,14 @@ namespace Model
 
     /**
      * <p>A map of the subscription's attributes. Attributes in this map include the
-     * following:</p> <ul> <li> <p><code>SubscriptionArn</code> -- the subscription's
-     * ARN</p> </li> <li> <p><code>TopicArn</code> -- the topic ARN that the
-     * subscription is associated with</p> </li> <li> <p><code>Owner</code> -- the AWS
-     * account ID of the subscription's owner</p> </li> <li>
-     * <p><code>ConfirmationWasAuthenticated</code> -- true if the subscription
-     * confirmation request was authenticated</p> </li> <li>
-     * <p><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
-     * delivery policy</p> </li> <li> <p><code>EffectiveDeliveryPolicy</code> -- the
+     * following:</p> <ul> <li> <p> <code>SubscriptionArn</code> -- the subscription's
+     * ARN</p> </li> <li> <p> <code>TopicArn</code> -- the topic ARN that the
+     * subscription is associated with</p> </li> <li> <p> <code>Owner</code> -- the AWS
+     * account ID of the subscription's owner</p> </li> <li> <p>
+     * <code>ConfirmationWasAuthenticated</code> -- true if the subscription
+     * confirmation request was authenticated</p> </li> <li> <p>
+     * <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's
+     * delivery policy</p> </li> <li> <p> <code>EffectiveDeliveryPolicy</code> -- the
      * JSON serialization of the effective delivery policy that takes into account the
      * topic delivery policy and account system defaults</p> </li> </ul>
      */

@@ -239,19 +239,34 @@ namespace Model
      */
     inline ListImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
-    
+    /**
+     * <p>The filter key and value with which to filter your <code>ListImages</code>
+     * results.</p>
+     */
     inline const ListImagesFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * <p>The filter key and value with which to filter your <code>ListImages</code>
+     * results.</p>
+     */
     inline void SetFilter(const ListImagesFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p>The filter key and value with which to filter your <code>ListImages</code>
+     * results.</p>
+     */
     inline void SetFilter(ListImagesFilter&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * <p>The filter key and value with which to filter your <code>ListImages</code>
+     * results.</p>
+     */
     inline ListImagesRequest& WithFilter(const ListImagesFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * <p>The filter key and value with which to filter your <code>ListImages</code>
+     * results.</p>
+     */
     inline ListImagesRequest& WithFilter(ListImagesFilter&& value) { SetFilter(value); return *this;}
 
   private:

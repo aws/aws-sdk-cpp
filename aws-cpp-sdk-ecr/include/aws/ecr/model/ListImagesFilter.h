@@ -30,6 +30,9 @@ namespace ECR
 namespace Model
 {
 
+  /**
+   * <p>An object representing a filter on a <a>ListImages</a> operation.</p>
+   */
   class AWS_ECR_API ListImagesFilter
   {
   public:
@@ -38,19 +41,39 @@ namespace Model
     ListImagesFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
-    
+    /**
+     * <p>The tag status with which to filter your <a>ListImages</a> results. You can
+     * filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline const TagStatus& GetTagStatus() const{ return m_tagStatus; }
 
-    
+    /**
+     * <p>The tag status with which to filter your <a>ListImages</a> results. You can
+     * filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline void SetTagStatus(const TagStatus& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
 
-    
+    /**
+     * <p>The tag status with which to filter your <a>ListImages</a> results. You can
+     * filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline void SetTagStatus(TagStatus&& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
 
-    
+    /**
+     * <p>The tag status with which to filter your <a>ListImages</a> results. You can
+     * filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline ListImagesFilter& WithTagStatus(const TagStatus& value) { SetTagStatus(value); return *this;}
 
-    
+    /**
+     * <p>The tag status with which to filter your <a>ListImages</a> results. You can
+     * filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline ListImagesFilter& WithTagStatus(TagStatus&& value) { SetTagStatus(value); return *this;}
 
   private:

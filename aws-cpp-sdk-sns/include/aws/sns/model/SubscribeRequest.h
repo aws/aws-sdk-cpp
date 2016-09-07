@@ -69,107 +69,107 @@ namespace Model
     inline SubscribeRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li>
-     * <p><code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p><code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p><code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p><code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p><code>sms</code> -- delivery of message via SMS</p> </li>
-     * <li> <p><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</p> </li> <li> <p><code>application</code> -- delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li>
-     * <p><code>lambda</code> -- delivery of JSON-encoded message to an AWS Lambda
-     * function.</p> </li> </ul>
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
+     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
+     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
+     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
+     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
+     * Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 

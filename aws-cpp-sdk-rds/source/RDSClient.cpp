@@ -83,6 +83,7 @@
 #include <aws/rds/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesRequest.h>
 #include <aws/rds/model/DescribeReservedDBInstancesOfferingsRequest.h>
+#include <aws/rds/model/DescribeSourceRegionsRequest.h>
 #include <aws/rds/model/DownloadDBLogFilePortionRequest.h>
 #include <aws/rds/model/FailoverDBClusterRequest.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
@@ -1883,6 +1884,36 @@ void RDSClient::DescribeReservedDBInstancesOfferingsAsync(const DescribeReserved
 void RDSClient::DescribeReservedDBInstancesOfferingsAsyncHelper(const DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeReservedDBInstancesOfferings(request), context);
+}
+
+DescribeSourceRegionsOutcome RDSClient::DescribeSourceRegions(const DescribeSourceRegionsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSourceRegionsOutcome(DescribeSourceRegionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSourceRegionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeSourceRegionsOutcomeCallable RDSClient::DescribeSourceRegionsCallable(const DescribeSourceRegionsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSourceRegions( request ); } );
+}
+
+void RDSClient::DescribeSourceRegionsAsync(const DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSourceRegionsAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::DescribeSourceRegionsAsyncHelper(const DescribeSourceRegionsRequest& request, const DescribeSourceRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSourceRegions(request), context);
 }
 
 DownloadDBLogFilePortionOutcome RDSClient::DownloadDBLogFilePortion(const DownloadDBLogFilePortionRequest& request) const

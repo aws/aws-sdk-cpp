@@ -43,26 +43,26 @@ namespace Model
     CheckIfPhoneNumberIsOptedOutResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p>Indicates whether the phone number is opted out:</p> <ul>
-     * <li><p><code>true</code> – The phone number is opted out, meaning you cannot
-     * publish SMS messages to it.</p></li> <li><p><code>false</code> – The phone
-     * number is opted in, meaning you can publish SMS messages to it.</p></li> </ul>
+     * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
+     * <code>true</code> – The phone number is opted out, meaning you cannot publish
+     * SMS messages to it.</p> </li> <li> <p> <code>false</code> – The phone number is
+     * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
      */
     inline bool GetIsOptedOut() const{ return m_isOptedOut; }
 
     /**
-     * <p>Indicates whether the phone number is opted out:</p> <ul>
-     * <li><p><code>true</code> – The phone number is opted out, meaning you cannot
-     * publish SMS messages to it.</p></li> <li><p><code>false</code> – The phone
-     * number is opted in, meaning you can publish SMS messages to it.</p></li> </ul>
+     * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
+     * <code>true</code> – The phone number is opted out, meaning you cannot publish
+     * SMS messages to it.</p> </li> <li> <p> <code>false</code> – The phone number is
+     * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
      */
     inline void SetIsOptedOut(bool value) { m_isOptedOut = value; }
 
     /**
-     * <p>Indicates whether the phone number is opted out:</p> <ul>
-     * <li><p><code>true</code> – The phone number is opted out, meaning you cannot
-     * publish SMS messages to it.</p></li> <li><p><code>false</code> – The phone
-     * number is opted in, meaning you can publish SMS messages to it.</p></li> </ul>
+     * <p>Indicates whether the phone number is opted out:</p> <ul> <li> <p>
+     * <code>true</code> – The phone number is opted out, meaning you cannot publish
+     * SMS messages to it.</p> </li> <li> <p> <code>false</code> – The phone number is
+     * opted in, meaning you can publish SMS messages to it.</p> </li> </ul>
      */
     inline CheckIfPhoneNumberIsOptedOutResult& WithIsOptedOut(bool value) { SetIsOptedOut(value); return *this;}
 
