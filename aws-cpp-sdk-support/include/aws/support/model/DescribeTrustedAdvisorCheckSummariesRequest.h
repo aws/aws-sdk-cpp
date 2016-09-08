@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesRequest : public SupportRequest
   {

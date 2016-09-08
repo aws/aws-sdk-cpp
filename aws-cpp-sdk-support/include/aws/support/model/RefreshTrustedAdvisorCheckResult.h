@@ -44,31 +44,31 @@ namespace Model
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh. </p>
+     * the check is eligible for refresh.</p>
      */
     inline const TrustedAdvisorCheckRefreshStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh. </p>
+     * the check is eligible for refresh.</p>
      */
     inline void SetStatus(const TrustedAdvisorCheckRefreshStatus& value) { m_status = value; }
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh. </p>
+     * the check is eligible for refresh.</p>
      */
     inline void SetStatus(TrustedAdvisorCheckRefreshStatus&& value) { m_status = value; }
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh. </p>
+     * the check is eligible for refresh.</p>
      */
     inline RefreshTrustedAdvisorCheckResult& WithStatus(const TrustedAdvisorCheckRefreshStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current refresh status for a check, including the amount of time until
-     * the check is eligible for refresh. </p>
+     * the check is eligible for refresh.</p>
      */
     inline RefreshTrustedAdvisorCheckResult& WithStatus(TrustedAdvisorCheckRefreshStatus&& value) { SetStatus(value); return *this;}
 

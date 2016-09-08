@@ -35,7 +35,7 @@ namespace Support
 namespace Model
 {
   /**
-   * <p>Returns an array of <a>CaseDetails</a> objects and a <code>NextToken</code>
+   * <p>Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code>
    * that defines a point for pagination in the result set.</p>
    */
   class AWS_SUPPORT_API DescribeCasesResult

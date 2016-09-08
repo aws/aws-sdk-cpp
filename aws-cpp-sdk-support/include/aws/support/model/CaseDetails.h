@@ -35,29 +35,30 @@ namespace Model
   /**
    * <p>A JSON-formatted object that contains the metadata for a support case. It is
    * contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b>
-   * contains the following fields:</p> <ol> <li> <b>CaseID.</b> The AWS Support case
-   * ID requested or returned in the call. The case ID is an alphanumeric string
+   * contains the following fields:</p> <ul> <li> <p> <b>caseId.</b> The AWS Support
+   * case ID requested or returned in the call. The case ID is an alphanumeric string
    * formatted as shown in this example:
-   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</li> <li> <b>CategoryCode.</b>
-   * The category of problem for the AWS Support case. Corresponds to the
-   * CategoryCode values returned by a call to <a>DescribeServices</a>.</li> <li>
-   * <b>DisplayId.</b> The identifier for the case on pages in the AWS Support
-   * Center.</li> <li> <b>Language.</b> The ISO 639-1 code for the language in which
-   * AWS provides support. AWS Support currently supports English ("en") and Japanese
-   * ("ja"). Language parameters must be passed explicitly for operations that take
-   * them.</li> <li> <b>RecentCommunications.</b> One or more <a>Communication</a>
-   * objects. Fields of these objects are <code>Attachments</code>,
-   * <code>Body</code>, <code>CaseId</code>, <code>SubmittedBy</code>, and
-   * <code>TimeCreated</code>.</li> <li> <b>NextToken.</b> A resumption point for
-   * pagination.</li> <li> <b>ServiceCode.</b> The identifier for the AWS service
-   * that corresponds to the service code defined in the call to
-   * <a>DescribeServices</a>.</li> <li> <b>SeverityCode. </b>The severity code
-   * assigned to the case. Contains one of the values returned by the call to
-   * <a>DescribeSeverityLevels</a>.</li> <li> <b>Status.</b> The status of the case
-   * in the AWS Support Center.</li> <li> <b>Subject.</b> The subject line of the
-   * case.</li> <li> <b>SubmittedBy.</b> The email address of the account that
-   * submitted the case.</li> <li> <b>TimeCreated.</b> The time the case was created,
-   * in ISO-8601 format.</li> </ol>
+   * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p>
+   * <b>categoryCode.</b> The category of problem for the AWS Support case.
+   * Corresponds to the CategoryCode values returned by a call to
+   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for
+   * the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b>
+   * The ISO 639-1 code for the language in which AWS provides support. AWS Support
+   * currently supports English ("en") and Japanese ("ja"). Language parameters must
+   * be passed explicitly for operations that take them.</p> </li> <li> <p>
+   * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
+   * these objects are <code>attachments</code>, <code>body</code>,
+   * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p>
+   * </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li>
+   * <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds
+   * to the service code defined in the call to <a>DescribeServices</a>.</p> </li>
+   * <li> <p> <b>severityCode. </b>The severity code assigned to the case. Contains
+   * one of the values returned by the call to <a>DescribeSeverityLevels</a>.</p>
+   * </li> <li> <p> <b>status.</b> The status of the case in the AWS Support
+   * Center.</p> </li> <li> <p> <b>subject.</b> The subject line of the case.</p>
+   * </li> <li> <p> <b>submittedBy.</b> The email address of the account that
+   * submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was
+   * created, in ISO-8601 format.</p> </li> </ul>
    */
   class AWS_SUPPORT_API CaseDetails
   {
@@ -70,91 +71,91 @@ namespace Model
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline const Aws::String& GetDisplayId() const{ return m_displayId; }
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline void SetDisplayId(Aws::String&& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline void SetDisplayId(const char* value) { m_displayIdHasBeenSet = true; m_displayId.assign(value); }
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline CaseDetails& WithDisplayId(const Aws::String& value) { SetDisplayId(value); return *this;}
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline CaseDetails& WithDisplayId(Aws::String&& value) { SetDisplayId(value); return *this;}
 
     /**
      * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string. </p>
+     * string.</p>
      */
     inline CaseDetails& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
 
@@ -194,37 +195,37 @@ namespace Model
     inline CaseDetails& WithSubject(const char* value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline CaseDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline CaseDetails& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the case. </p>
+     * <p>The status of the case.</p>
      */
     inline CaseDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -383,37 +384,37 @@ namespace Model
     inline CaseDetails& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline const Aws::String& GetTimeCreated() const{ return m_timeCreated; }
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline void SetTimeCreated(const Aws::String& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline void SetTimeCreated(Aws::String&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline void SetTimeCreated(const char* value) { m_timeCreatedHasBeenSet = true; m_timeCreated.assign(value); }
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline CaseDetails& WithTimeCreated(const Aws::String& value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline CaseDetails& WithTimeCreated(Aws::String&& value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>The time that the case was case created in the AWS Support Center. </p>
+     * <p>The time that the case was case created in the AWS Support Center.</p>
      */
     inline CaseDetails& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
 

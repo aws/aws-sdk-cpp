@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SUPPORT_API DescribeSeverityLevelsRequest : public SupportRequest
   {

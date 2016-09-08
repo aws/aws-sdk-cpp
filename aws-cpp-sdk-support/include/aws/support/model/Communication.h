@@ -48,49 +48,49 @@ namespace Model
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline Communication& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline Communication& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline Communication& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
@@ -130,107 +130,107 @@ namespace Model
     inline Communication& WithBody(const char* value) { SetBody(value); return *this;}
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline const Aws::String& GetSubmittedBy() const{ return m_submittedBy; }
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline void SetSubmittedBy(const Aws::String& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline void SetSubmittedBy(Aws::String&& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline void SetSubmittedBy(const char* value) { m_submittedByHasBeenSet = true; m_submittedBy.assign(value); }
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline Communication& WithSubmittedBy(const Aws::String& value) { SetSubmittedBy(value); return *this;}
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline Communication& WithSubmittedBy(Aws::String&& value) { SetSubmittedBy(value); return *this;}
 
     /**
-     * <p>The email address of the account that submitted the AWS Support case. </p>
+     * <p>The email address of the account that submitted the AWS Support case.</p>
      */
     inline Communication& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline const Aws::String& GetTimeCreated() const{ return m_timeCreated; }
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline void SetTimeCreated(const Aws::String& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline void SetTimeCreated(Aws::String&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline void SetTimeCreated(const char* value) { m_timeCreatedHasBeenSet = true; m_timeCreated.assign(value); }
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline Communication& WithTimeCreated(const Aws::String& value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline Communication& WithTimeCreated(Aws::String&& value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>The time the communication was created. </p>
+     * <p>The time the communication was created.</p>
      */
     inline Communication& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline const Aws::Vector<AttachmentDetails>& GetAttachmentSet() const{ return m_attachmentSet; }
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline void SetAttachmentSet(const Aws::Vector<AttachmentDetails>& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet = value; }
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline void SetAttachmentSet(Aws::Vector<AttachmentDetails>&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet = value; }
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline Communication& WithAttachmentSet(const Aws::Vector<AttachmentDetails>& value) { SetAttachmentSet(value); return *this;}
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline Communication& WithAttachmentSet(Aws::Vector<AttachmentDetails>&& value) { SetAttachmentSet(value); return *this;}
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline Communication& AddAttachmentSet(const AttachmentDetails& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.push_back(value); return *this; }
 
     /**
-     * <p>Information about the attachments to the case communication. </p>
+     * <p>Information about the attachments to the case communication.</p>
      */
     inline Communication& AddAttachmentSet(AttachmentDetails&& value) { m_attachmentSetHasBeenSet = true; m_attachmentSet.push_back(value); return *this; }
 

@@ -44,57 +44,57 @@ namespace Model
     AddAttachmentsToSetResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline void SetAttachmentSetId(const Aws::String& value) { m_attachmentSetId = value; }
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetId = value; }
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline void SetAttachmentSetId(const char* value) { m_attachmentSetId.assign(value); }
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline AddAttachmentsToSetResult& WithAttachmentSetId(const Aws::String& value) { SetAttachmentSetId(value); return *this;}
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline AddAttachmentsToSetResult& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(value); return *this;}
 
     /**
-     * <p>The ID of the attachment set. If an <code>AttachmentSetId</code> was not
+     * <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not
      * specified, a new attachment set is created, and the ID of the set is returned in
-     * the response. If an <code>AttachmentSetId</code> was specified, the attachments
+     * the response. If an <code>attachmentSetId</code> was specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
     inline AddAttachmentsToSetResult& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}

@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_SUPPORT_API DescribeCasesRequest : public SupportRequest
   {
@@ -37,84 +38,84 @@ namespace Model
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCaseIdList() const{ return m_caseIdList; }
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline void SetCaseIdList(const Aws::Vector<Aws::String>& value) { m_caseIdListHasBeenSet = true; m_caseIdList = value; }
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline void SetCaseIdList(Aws::Vector<Aws::String>&& value) { m_caseIdListHasBeenSet = true; m_caseIdList = value; }
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline DescribeCasesRequest& WithCaseIdList(const Aws::Vector<Aws::String>& value) { SetCaseIdList(value); return *this;}
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline DescribeCasesRequest& WithCaseIdList(Aws::Vector<Aws::String>&& value) { SetCaseIdList(value); return *this;}
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline DescribeCasesRequest& AddCaseIdList(const Aws::String& value) { m_caseIdListHasBeenSet = true; m_caseIdList.push_back(value); return *this; }
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline DescribeCasesRequest& AddCaseIdList(Aws::String&& value) { m_caseIdListHasBeenSet = true; m_caseIdList.push_back(value); return *this; }
 
     /**
      * <p>A list of ID numbers of the support cases you want returned. The maximum
-     * number of cases is 100. </p>
+     * number of cases is 100.</p>
      */
     inline DescribeCasesRequest& AddCaseIdList(const char* value) { m_caseIdListHasBeenSet = true; m_caseIdList.push_back(value); return *this; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline const Aws::String& GetDisplayId() const{ return m_displayId; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline void SetDisplayId(Aws::String&& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline void SetDisplayId(const char* value) { m_displayIdHasBeenSet = true; m_displayId.assign(value); }
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(const Aws::String& value) { SetDisplayId(value); return *this;}
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(Aws::String&& value) { SetDisplayId(value); return *this;}
 
     /**
-     * <p>The ID displayed for a case in the AWS Support Center user interface. </p>
+     * <p>The ID displayed for a case in the AWS Support Center user interface.</p>
      */
     inline DescribeCasesRequest& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
 

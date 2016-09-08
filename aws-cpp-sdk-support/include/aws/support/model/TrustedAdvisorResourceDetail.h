@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a resource identified by a Trusted Advisor check.
-   * </p>
+   * <p>Contains information about a resource identified by a Trusted Advisor
+   * check.</p>
    */
   class AWS_SUPPORT_API TrustedAdvisorResourceDetail
   {
@@ -79,37 +79,37 @@ namespace Model
     inline TrustedAdvisorResourceDetail& WithStatus(const char* value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(Aws::String&& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which the identified resource is located. </p>
+     * <p>The AWS region in which the identified resource is located.</p>
      */
     inline TrustedAdvisorResourceDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
 
