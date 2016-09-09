@@ -49,7 +49,7 @@ nuget {
     dependencies {
        packages: {
             AWSSDKCPP-Core/1.0
-			AWSSDKCPP-CognitoIdentity/1.0
+            AWSSDKCPP-CognitoIdentity/1.0.20140630
        }
     }
 
