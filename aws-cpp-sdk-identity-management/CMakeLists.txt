@@ -64,6 +64,6 @@ endif()
 install (FILES ${AWS_IDENTITY_HEADERS} DESTINATION include/aws/identity-management)
 install (FILES ${AWS_IDENTITY_PROVIDER_HEADERS} DESTINATION include/aws/identity-management/auth)
 
-if(MSVC)
+if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-identity-management.autopkg DESTINATION nuget)
 endif()
