@@ -54,19 +54,17 @@ if(MSVC)
 endif()
 
 # compiler warning control
-if(PLATFORM_WINDOWS)
-    if(MSVC)
-        # warnings as errors, max warning level (4)
-        if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
-        endif()
+if(MSVC)
+    # warnings as errors, max warning level (4)
+    if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
+    endif()
 
-        # taken from http://stackoverflow.com/questions/2368811/how-to-set-warning-level-in-cmake
-        if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
-            string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-        else()
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
-        endif()
+    # taken from http://stackoverflow.com/questions/2368811/how-to-set-warning-level-in-cmake
+    if(CMAKE_CXX_FLAGS MATCHES "/W[0-4]")
+        string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    else()
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
     endif()
 elseif(USE_GCC_FLAGS)
     # max warning level, warnings are errors, turn off unused private field. We have one for an empty class.    

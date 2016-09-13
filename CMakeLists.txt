@@ -115,9 +115,6 @@ include(utilities)
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
-# pass this flag to the jsoncpp amalgamated source
-add_definitions(-DJSON_USE_EXCEPTION=0)
-
 set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 
 include(build_external)

@@ -88,7 +88,7 @@ project(aws-cpp-sdk-${metadata.projectName})
   install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION include/aws/${metadata.projectName})
   install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION include/aws/${metadata.projectName}/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-${metadata.projectName}.autopkg DESTINATION nuget)
   endif()
 

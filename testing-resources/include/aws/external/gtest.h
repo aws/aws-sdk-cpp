@@ -1757,7 +1757,7 @@ using ::std::tuple_size;
 // pops up a dialog window that cannot be suppressed programmatically.
 #if (GTEST_OS_LINUX || GTEST_OS_CYGWIN || GTEST_OS_SOLARIS || \
      (GTEST_OS_MAC && !GTEST_OS_IOS) || GTEST_OS_IOS_SIMULATOR || \
-     (GTEST_OS_WINDOWS_DESKTOP && _MSC_VER >= 1400) || \
+     (GTEST_OS_WINDOWS_DESKTOP && _MSC_VER >= 1400 && !defined(GTEST_PSEUDO_WINDOWS)) || \
      GTEST_OS_WINDOWS_MINGW || GTEST_OS_AIX || GTEST_OS_HPUX || \
      GTEST_OS_OPENBSD || GTEST_OS_QNX)
 # define GTEST_HAS_DEATH_TEST 1
@@ -2889,7 +2889,7 @@ inline int ChDir(const char* dir) { return chdir(dir); }
 inline FILE* FOpen(const char* path, const char* mode) {
   return fopen(path, mode);
 }
-#if !GTEST_OS_WINDOWS_MOBILE
+#if !GTEST_OS_WINDOWS_MOBILE 
 inline FILE *FReopen(const char* path, const char* mode, FILE* stream) {
   return freopen(path, mode, stream);
 }

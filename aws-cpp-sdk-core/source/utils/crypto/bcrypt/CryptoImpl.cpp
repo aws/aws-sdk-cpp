@@ -26,6 +26,10 @@
 #include <winternl.h> 
 #include <winerror.h> 
 
+#ifndef NT_SUCCESS
+#define NT_SUCCESS(Status) ((NTSTATUS)(Status) >= 0)
+#endif // NT_SUCCESS
+
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
 

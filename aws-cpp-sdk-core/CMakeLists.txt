@@ -9,14 +9,14 @@ if(GIT_FOUND)
 
     if(VERSION_STRING)
         set(Version_VERSION_STRING ${VERSION_STRING})
-        message("Updating version info to ${VERSION_STRING}")
+        message(STATUS "Updating version info to ${VERSION_STRING}")
         if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-          FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+            FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
         endif()
 
         configure_file(
-          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
+            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
     else()
         message("Not able to compute versioning string, not updating.")
     endif()
@@ -340,21 +340,23 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
 
-target_compile_definitions(aws-cpp-sdk-core PUBLIC -DJSON_USE_EXCEPTION=0)
-
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
+if(COMMAND add_platform_definition)
+    if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+        add_platform_definition(USE_IMPORT_EXPORT 1)
+    endif()
+else()
+    if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+        target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
+    endif()
 endif()
 
-if(NOT PLATFORM_WINDOWS)
+if(USE_GCC_FLAGS)
     target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++${CPP_STANDARD})
 
-    if(USE_GCC_FLAGS)
-        if(NOT ENABLE_RTTI)
-            target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
-        endif()
+    if(NOT ENABLE_RTTI)
+        target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
     endif()
-elseif(MSVC)
+else()
 
     if(NOT ENABLE_RTTI)
         target_compile_options(aws-cpp-sdk-core PUBLIC /GR-)
@@ -414,6 +416,6 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION include/aws/core/utils/crypto/commoncrypto)
 endif()
 
-if(MSVC)
+if(PLATFORM_WINDOWS AND MSVC)
   install (FILES nuget/aws-cpp-sdk-core.autopkg DESTINATION nuget)
 endif()
