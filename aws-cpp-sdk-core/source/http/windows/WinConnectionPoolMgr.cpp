@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   * 
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -14,10 +14,8 @@
   */
 
 #include <aws/core/http/windows/WinConnectionPoolMgr.h>
-
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
-
 #include <Windows.h>
 #include <algorithm>
 
@@ -33,9 +31,8 @@ WinConnectionPoolMgr::WinConnectionPoolMgr(void* iOpenHandle,
     m_requestTimeoutMs(requestTimeoutMs),
     m_connectTimeoutMs(connectTimeoutMs)
 {
-    AWS_LOG_INFO(GetLogTag(), "Creating connection pool mgr with handle %p, and max connections per host %d, request timeout %d ms,"
-        " and connect timeout in %d ms.",
-        iOpenHandle, maxConnectionsPerHost, requestTimeoutMs, connectTimeoutMs);
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Creating connection pool mgr with handle " << iOpenHandle << ", and max connections per host "
+         << maxConnectionsPerHost <<  ", request timeout " << requestTimeoutMs << " ms, and connect timeout in " << connectTimeoutMs << " ms.");
 }
 
 WinConnectionPoolMgr::~WinConnectionPoolMgr()
@@ -51,12 +48,10 @@ void WinConnectionPoolMgr::DoCleanup()
     AWS_LOG_INFO(GetLogTag(), "Cleaning up conneciton pool mgr.");
     for (auto& hostHandles : m_hostConnections)
     {
-        while (hostHandles.second->hostConnections.size() > 0)
+        for(void* handleToClose : hostHandles.second->hostConnections.ShutdownAndWait(hostHandles.second->currentPoolSize))
         {
-            void* handleToClose = hostHandles.second->hostConnections.top();
-            AWS_LOG_DEBUG(GetLogTag(), "Closing handle %p.", handleToClose);
+            AWS_LOGSTREAM_DEBUG(GetLogTag(), "Closing handle " << handleToClose);
             DoCloseHandle(handleToClose);
-            hostHandles.second->hostConnections.pop();
         }
 
         Aws::Delete(hostHandles.second);
@@ -94,25 +89,15 @@ void* WinConnectionPoolMgr::AquireConnectionForHost(const Aws::String& host, uin
         }
     }
 
-    std::unique_lock<std::mutex> locker(hostConnectionContainer->connectionsMutex);
-
-    //spin waiting on available connection.
-    while (hostConnectionContainer->hostConnections.size() == 0)
+    if(!hostConnectionContainer->hostConnections.HasResourcesAvailable())
     {
         AWS_LOG_DEBUG(GetLogTag(), "Pool has no available existing connections for endpoint, attempting to grow pool.");
-        if (!CheckAndGrowPool(host, *hostConnectionContainer))
-        {
-            AWS_LOG_INFO(GetLogTag(), "Attempted to grow pool, but it has reached the maximum length. Waiting until a connection becomes available.");
-            //this guy will return when someone calls notify on a different thread.
-            hostConnectionContainer->conditionVariable.wait(locker);
-            AWS_LOG_INFO(GetLogTag(), "Connection now available, continuing.");
-        }
+        CheckAndGrowPool(host, *hostConnectionContainer);
     }
 
-    void* handle = hostConnectionContainer->hostConnections.top();
-    AWS_LOG_DEBUG(GetLogTag(), "Returning connection handle %p.", handle);
-    hostConnectionContainer->hostConnections.pop();
-
+    void* handle = hostConnectionContainer->hostConnections.Acquire();
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Connection now available, continuing.");
+    AWS_LOGSTREAM_DEBUG(GetLogTag(), "Returning connection handle " << handle);
     return handle;
 }
 
@@ -122,7 +107,7 @@ void WinConnectionPoolMgr::ReleaseConnectionForHost(const Aws::String& host, uns
     {
         Aws::StringStream ss;
         ss << host << ":" << port;
-        AWS_LOG_DEBUG(GetLogTag(), "Releasing connection to endpoint %s.", ss.str().c_str());
+        AWS_LOGSTREAM_DEBUG(GetLogTag(), "Releasing connection to endpoint " << ss.str());
         Aws::Map<Aws::String, HostConnectionContainer*>::iterator foundPool; 
         
         //protect reads and writes on the connectionPool itself.
@@ -133,10 +118,7 @@ void WinConnectionPoolMgr::ReleaseConnectionForHost(const Aws::String& host, uns
 
         if (foundPool != m_hostConnections.end())
         {
-            std::unique_lock<std::mutex> locker(foundPool->second->connectionsMutex);
-            foundPool->second->hostConnections.push(connection);
-            locker.unlock();
-            foundPool->second->conditionVariable.notify_one();
+            foundPool->second->hostConnections.Release(connection);
         }
     }
 }
@@ -155,7 +137,7 @@ bool WinConnectionPoolMgr::CheckAndGrowPool(const Aws::String& host, HostConnect
 
             if (newConnection)
             {
-                connectionContainer.hostConnections.push(newConnection);
+                connectionContainer.hostConnections.Release(newConnection);
             }
         }
 

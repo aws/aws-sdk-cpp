@@ -405,10 +405,15 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(HttpRequest& request, 
         }
 
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
-        if (curlResponseCode != CURLE_OK)
+        bool shouldContinueRequest = ContinueRequest(request);
+        if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
             response = nullptr;
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode);
+        }
+        else if(!shouldContinueRequest)
+        {
+            response->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
         }
         else
         {
@@ -467,7 +472,7 @@ size_t CurlHttpClient::WriteData(char* ptr, size_t size, size_t nmemb, void* use
         CurlWriteCallbackContext* context = reinterpret_cast<CurlWriteCallbackContext*>(userdata);
 
         const CurlHttpClient* client = context->m_client;
-        if(!client->IsRequestProcessingEnabled())
+        if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
         {
             return 0;
         }
@@ -530,7 +535,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     }
 
     const CurlHttpClient* client = context->m_client;
-    if(!client->IsRequestProcessingEnabled())
+    if(!client->ContinueRequest(*context->m_request) || !client->IsRequestProcessingEnabled())
     {
         return CURL_READFUNC_ABORT;
     }

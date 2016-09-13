@@ -2,20 +2,16 @@ cmake_minimum_required(VERSION 2.8.12)
 project(aws-cpp-sdk-transfer)
 
 file( GLOB TRANSFER_HEADERS "include/aws/transfer/*.h" )
-file( GLOB TRANSFER_RESOURCE_HEADERS "include/aws/transfer/resource/*.h" )
 
 file( GLOB TRANSFER_SOURCE "source/transfer/*.cpp" )
 
 if(MSVC)
     source_group("Header Files\\aws\\transfer" FILES ${TRANSFER_HEADERS})
-    source_group("Header Files\\aws\\transfer\\resource" FILES ${TRANSFER_RESOURCE_HEADERS})
-
     source_group("Source Files\\transfer" FILES ${TRANSFER_SOURCE})
 endif()
 
 file(GLOB ALL_TRANSFER_HEADERS
     ${TRANSFER_HEADERS}
-    ${TRANSFER_RESOURCE_HEADERS}
 )
 
 file(GLOB ALL_TRANSFER_SOURCE
@@ -63,3 +59,7 @@ else()
 endif()
 
 install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION include/aws/transfer)
+
+if(MSVC)
+    install (FILES nuget/aws-cpp-sdk-transfer.autopkg DESTINATION nuget)
+endif()

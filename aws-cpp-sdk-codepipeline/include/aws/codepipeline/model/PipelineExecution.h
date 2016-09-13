@@ -17,7 +17,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/PipelineExecutionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/codepipeline/model/ArtifactRevisionInformation.h>
+#include <aws/codepipeline/model/ArtifactRevision.h>
 
 namespace Aws
 {
@@ -185,46 +185,39 @@ namespace Model
     inline PipelineExecution& WithStatus(PipelineExecutionStatus&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline const Aws::Vector<ArtifactRevisionInformation>& GetArtifactRevisionInformations() const{ return m_artifactRevisionInformations; }
+    inline const Aws::Vector<ArtifactRevision>& GetArtifactRevisions() const{ return m_artifactRevisions; }
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline void SetArtifactRevisionInformations(const Aws::Vector<ArtifactRevisionInformation>& value) { m_artifactRevisionInformationsHasBeenSet = true; m_artifactRevisionInformations = value; }
+    inline void SetArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = value; }
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline void SetArtifactRevisionInformations(Aws::Vector<ArtifactRevisionInformation>&& value) { m_artifactRevisionInformationsHasBeenSet = true; m_artifactRevisionInformations = value; }
+    inline void SetArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions = value; }
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline PipelineExecution& WithArtifactRevisionInformations(const Aws::Vector<ArtifactRevisionInformation>& value) { SetArtifactRevisionInformations(value); return *this;}
+    inline PipelineExecution& WithArtifactRevisions(const Aws::Vector<ArtifactRevision>& value) { SetArtifactRevisions(value); return *this;}
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline PipelineExecution& WithArtifactRevisionInformations(Aws::Vector<ArtifactRevisionInformation>&& value) { SetArtifactRevisionInformations(value); return *this;}
+    inline PipelineExecution& WithArtifactRevisions(Aws::Vector<ArtifactRevision>&& value) { SetArtifactRevisions(value); return *this;}
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline PipelineExecution& AddArtifactRevisionInformations(const ArtifactRevisionInformation& value) { m_artifactRevisionInformationsHasBeenSet = true; m_artifactRevisionInformations.push_back(value); return *this; }
+    inline PipelineExecution& AddArtifactRevisions(const ArtifactRevision& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(value); return *this; }
 
     /**
-     * <p>A list of ArtifactRevisionInformation objects included in a pipeline
-     * execution.</p>
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
-    inline PipelineExecution& AddArtifactRevisionInformations(ArtifactRevisionInformation&& value) { m_artifactRevisionInformationsHasBeenSet = true; m_artifactRevisionInformations.push_back(value); return *this; }
+    inline PipelineExecution& AddArtifactRevisions(ArtifactRevision&& value) { m_artifactRevisionsHasBeenSet = true; m_artifactRevisions.push_back(value); return *this; }
 
   private:
     Aws::String m_pipelineName;
@@ -235,8 +228,8 @@ namespace Model
     bool m_pipelineExecutionIdHasBeenSet;
     PipelineExecutionStatus m_status;
     bool m_statusHasBeenSet;
-    Aws::Vector<ArtifactRevisionInformation> m_artifactRevisionInformations;
-    bool m_artifactRevisionInformationsHasBeenSet;
+    Aws::Vector<ArtifactRevision> m_artifactRevisions;
+    bool m_artifactRevisionsHasBeenSet;
   };
 
 } // namespace Model

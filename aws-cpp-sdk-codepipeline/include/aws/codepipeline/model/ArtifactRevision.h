@@ -43,6 +43,48 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline ArtifactRevision& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline ArtifactRevision& WithName(Aws::String&& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of an artifact. This name might be system-generated, such as
+     * "MyApp", or might be defined by the user when an action is created.</p>
+     */
+    inline ArtifactRevision& WithName(const char* value) { SetName(value); return *this;}
+
+    /**
      * <p>The revision ID of the artifact.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
@@ -122,63 +164,63 @@ namespace Model
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline void SetRevisionSummary(const Aws::String& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline void SetRevisionSummary(Aws::String&& value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary = value; }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline void SetRevisionSummary(const char* value) { m_revisionSummaryHasBeenSet = true; m_revisionSummary.assign(value); }
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline ArtifactRevision& WithRevisionSummary(const Aws::String& value) { SetRevisionSummary(value); return *this;}
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline ArtifactRevision& WithRevisionSummary(Aws::String&& value) { SetRevisionSummary(value); return *this;}
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
      * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided value of an
-     * <code>x-amz-meta-codepipeline-artifact-revision-summary</code> key specified in
-     * the object metadata.</p>
+     * buckets or actions, the user-provided content of a
+     * <code>codepipeline-artifact-revision-summary</code> key specified in the object
+     * metadata.</p>
      */
     inline ArtifactRevision& WithRevisionSummary(const char* value) { SetRevisionSummary(value); return *this;}
 
@@ -262,6 +304,8 @@ namespace Model
     inline ArtifactRevision& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
 
   private:
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
     Aws::String m_revisionChangeIdentifier;

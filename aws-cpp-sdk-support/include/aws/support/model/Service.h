@@ -46,84 +46,84 @@ namespace Model
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline Service& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline Service& WithCode(Aws::String&& value) { SetCode(value); return *this;}
 
     /**
      * <p>The code for an AWS service returned by the <a>DescribeServices</a> response.
-     * The <code>Name</code> element contains the corresponding friendly name.</p>
+     * The <code>name</code> element contains the corresponding friendly name.</p>
      */
     inline Service& WithCode(const char* value) { SetCode(value); return *this;}
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline Service& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline Service& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name for an AWS service. The <code>Code</code> element contains
+     * <p>The friendly name for an AWS service. The <code>code</code> element contains
      * the corresponding code.</p>
      */
     inline Service& WithName(const char* value) { SetName(value); return *this;}

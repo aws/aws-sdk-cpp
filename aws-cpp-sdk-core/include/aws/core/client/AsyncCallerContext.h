@@ -26,13 +26,13 @@ namespace Aws
         * It is entirely intended that you override this class in-lieu of using a void* for the user context. The base class just gives you the ability to
         * pass a uuid for your context.
         */
-        class AsyncCallerContext
+        class AWS_CORE_API AsyncCallerContext
         {
         public:
             /**
-             * Initializes object with empty UUID
+             * Initializes object with generated UUID
              */
-            AsyncCallerContext() {}
+            AsyncCallerContext();
 
             /**
              * Initializes object with UUID

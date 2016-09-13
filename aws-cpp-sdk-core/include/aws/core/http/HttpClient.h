@@ -70,6 +70,8 @@ namespace Aws
              */
             void RetryRequestSleep(std::chrono::milliseconds sleepTime);
 
+            bool ContinueRequest(const Aws::Http::HttpRequest&) const;
+
         private:
 
             std::atomic< bool > m_disableRequestProcessing;

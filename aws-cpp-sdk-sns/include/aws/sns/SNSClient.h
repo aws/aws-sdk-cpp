@@ -558,7 +558,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic. </p>
+         * topic.</p>
          */
         virtual Model::DeleteEndpointOutcome DeleteEndpoint(const Model::DeleteEndpointRequest& request) const;
 
@@ -568,7 +568,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic. </p>
+         * topic.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -580,7 +580,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
          * SNS Mobile Push Notifications</a>. </p> <p>When you delete an endpoint that is
          * also subscribed to a topic, then you must also unsubscribe the endpoint from the
-         * topic. </p>
+         * topic.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -741,13 +741,13 @@ namespace Model
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user. </p>
+         * differ based on the authorization of the user.</p>
          */
         virtual Model::GetTopicAttributesOutcome GetTopicAttributes(const Model::GetTopicAttributesRequest& request) const;
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user. </p>
+         * differ based on the authorization of the user.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -755,7 +755,7 @@ namespace Model
 
         /**
          * <p>Returns all of the properties of a topic. Topic properties returned might
-         * differ based on the authorization of the user. </p>
+         * differ based on the authorization of the user.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1016,9 +1016,8 @@ namespace Model
          * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
          * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
          * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
-         * second example below shows a request and response for publishing to a mobile
-         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
+         * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          */
@@ -1032,9 +1031,8 @@ namespace Model
          * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
          * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
          * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
-         * second example below shows a request and response for publishing to a mobile
-         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
+         * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          *
@@ -1050,9 +1048,8 @@ namespace Model
          * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
          * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
          * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. The
-         * second example below shows a request and response for publishing to a mobile
-         * endpoint. </p> <p>For more information about formatting messages, see <a
+         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
+         * <p>For more information about formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>. </p>
          *

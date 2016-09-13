@@ -39,49 +39,49 @@ namespace Model
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline AddCommunicationToCaseRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline AddCommunicationToCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(value); return *this;}
 
     /**
      * <p>The AWS Support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
-     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline AddCommunicationToCaseRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
 
@@ -170,43 +170,43 @@ namespace Model
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline void SetAttachmentSetId(const Aws::String& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = value; }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = value; }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline void SetAttachmentSetId(const char* value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId.assign(value); }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline AddCommunicationToCaseRequest& WithAttachmentSetId(const Aws::String& value) { SetAttachmentSetId(value); return *this;}
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline AddCommunicationToCaseRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(value); return *this;}
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to
-     * the case. Create the set by calling <a>AddAttachmentsToSet</a></p>
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline AddCommunicationToCaseRequest& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
 

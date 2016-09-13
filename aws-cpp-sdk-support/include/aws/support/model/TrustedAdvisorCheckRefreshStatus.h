@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>The refresh status of a Trusted Advisor check. </p>
+   * <p>The refresh status of a Trusted Advisor check.</p>
    */
   class AWS_SUPPORT_API TrustedAdvisorCheckRefreshStatus
   {

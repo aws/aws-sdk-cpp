@@ -18,12 +18,10 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSStack.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/ResourceManager.h>
 
 #include <utility>
-#include <mutex>
-#include <condition_variable>
 
 namespace Aws
 {
@@ -76,10 +74,8 @@ namespace Aws
             {
             public:
                 uint16_t port;
-                Aws::Stack<void*> hostConnections;
+                Aws::Utils::ExclusiveOwnershipResourceManager<void*> hostConnections;
                 unsigned currentPoolSize;
-                std::mutex connectionsMutex;
-                std::condition_variable conditionVariable;
             };
 
             /**

@@ -1,6 +1,5 @@
-
 /*
-* Copyright 2010-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -14,22 +13,14 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/transfer/TransferContext.h>
+#include <aws/core/client/AsyncCallerContext.h>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
-namespace Transfer
-{
-
-
-UploadFileContext::UploadFileContext(const std::shared_ptr<UploadFileRequest> uploadFileRequest) : m_request(uploadFileRequest)
-{
+    namespace Client
+    {
+        AsyncCallerContext::AsyncCallerContext() : m_uuid(Aws::Utils::UUID::RandomUUID())
+        {}
+    }
 }
-
-DownloadFileContext::DownloadFileContext(const std::shared_ptr<DownloadFileRequest> downloadFileRequest) : m_request(downloadFileRequest)
-{
-}
-
-
-} // namespace Transfer
-} // namespace Aws

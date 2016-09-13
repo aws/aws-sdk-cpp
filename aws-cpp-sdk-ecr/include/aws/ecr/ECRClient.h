@@ -493,19 +493,37 @@ namespace Model
         virtual void InitiateLayerUploadAsync(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p>
+         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
+         * based on whether or not they are tagged by setting the <code>tagStatus</code>
+         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
+         * filter your results to return only <code>UNTAGGED</code> images and then pipe
+         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
+         * filter your results to return only <code>TAGGED</code> images to list all of the
+         * tags in your repository.</p>
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p>
+         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
+         * based on whether or not they are tagged by setting the <code>tagStatus</code>
+         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
+         * filter your results to return only <code>UNTAGGED</code> images and then pipe
+         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
+         * filter your results to return only <code>TAGGED</code> images to list all of the
+         * tags in your repository.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p>
+         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
+         * based on whether or not they are tagged by setting the <code>tagStatus</code>
+         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
+         * filter your results to return only <code>UNTAGGED</code> images and then pipe
+         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
+         * filter your results to return only <code>TAGGED</code> images to list all of the
+         * tags in your repository.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
