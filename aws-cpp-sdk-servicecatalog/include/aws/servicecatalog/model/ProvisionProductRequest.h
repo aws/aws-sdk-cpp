@@ -38,51 +38,51 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ProvisionProductRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ProvisionProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline ProvisionProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
@@ -297,37 +297,37 @@ namespace Model
     inline ProvisionProductRequest& AddProvisioningParameters(ProvisioningParameter&& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline ProvisionProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline ProvisionProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(value); return *this;}
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline ProvisionProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>(Optional) A list of tags to use as provisioning options.</p>
+     * <p>A list of tags to use as provisioning options.</p>
      */
     inline ProvisionProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 

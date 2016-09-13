@@ -196,72 +196,69 @@ namespace Model
     inline TerminateProvisionedProductRequest& WithTerminateToken(const char* value) { SetTerminateToken(value); return *this;}
 
     /**
-     * <p>Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete the
-     * underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
      */
     inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
 
     /**
-     * <p>Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete the
-     * underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
      */
     inline void SetIgnoreErrors(bool value) { m_ignoreErrorsHasBeenSet = true; m_ignoreErrors = value; }
 
     /**
-     * <p>Optional Boolean parameter. If set to true, AWS Service Catalog stops
-     * managing the specified ProvisionedProduct object even if it cannot delete the
-     * underlying resources.</p>
+     * <p>If set to true, AWS Service Catalog stops managing the specified
+     * ProvisionedProduct object even if it cannot delete the underlying resources.</p>
      */
     inline TerminateProvisionedProductRequest& WithIgnoreErrors(bool value) { SetIgnoreErrors(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>Optional language code. Supported language codes are as follows:</p> <p>"en"
-     * (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p> <p>If no code is
-     * specified, "en" is used as the default.</p>
+     * <p>The language code to use for this operation. Supported language codes are as
+     * follows:</p> <p>"en" (English)</p> <p>"jp" (Japanese)</p> <p>"zh" (Chinese)</p>
+     * <p>If no code is specified, "en" is used as the default.</p>
      */
     inline TerminateProvisionedProductRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
