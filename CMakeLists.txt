@@ -131,14 +131,6 @@ elseif(ENABLE_WINDOWS_CLIENT)
     set(CLIENT_LIBS Wininet winhttp)
 endif()
 
-if(USE_WINDOWS_DLL_SEMANTICS)
-    if(BUILD_SHARED_LIBS)
-        add_definitions("-DUSE_IMPORT_EXPORT")
-    endif()
-
-    add_definitions(-DUSE_WINDOWS_DLL_SEMANTICS)
-endif()
-
 if(COMMAND apply_custom_platform_settings)
     apply_custom_platform_settings()
 endif()

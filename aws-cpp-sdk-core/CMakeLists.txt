@@ -201,13 +201,13 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
     ${AWS_JSONCPP_SOURCE}
+    ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
   ${AWS_NATIVE_SDK_COMMON_SRC}
   ${AWS_NATIVE_SDK_LINUX_SHARED_SRC}
   ${AWS_NATIVE_SDK_ANDROID_SRC}
-  ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
 
 if(ENABLE_UNITY_BUILD)
@@ -314,7 +314,7 @@ set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 include_directories(${Core_INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-  add_definitions("-DAWS_CORE_EXPORTS=1")
+    add_definitions(-DAWS_CORE_EXPORTS=1)
 endif()
 
 if(PLATFORM_ANDROID)
@@ -340,12 +340,10 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
 
-if(COMMAND add_platform_definition)
-    if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-        add_platform_definition(USE_IMPORT_EXPORT 1)
-    endif()
-else()
-    if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
+if(USE_WINDOWS_DLL_SEMANTICS)
+    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
+
+    if(BUILD_SHARED_LIBS)
         target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
     endif()
 endif()
