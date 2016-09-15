@@ -19,6 +19,8 @@
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+#include <comdef.h>
+
 namespace Aws
 {
     namespace Http
@@ -27,34 +29,57 @@ namespace Aws
         
         using namespace Microsoft::WRL;
 
+        /**
+         * Wrapper around std::iostream. Also has rate limiters and callbacks plugged in.
+         */
         class IOStreamSequentialStream : public RuntimeClass<RuntimeClassFlags<ClassicCom>, ISequentialStream, IDispatch>
         {
             public:
-                IOStreamSequentialStream(Aws::IOStream& stream, const HttpClient& client,  const HttpRequest& request, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter) 
-                    : m_stream(stream), m_client(client), m_request(request), m_rateLimiter(rateLimiter), m_response(response) {}
+                /**
+                 * Init an instance of this class with stream to read or write from, the http client instance, the request that contains this stream,
+                 * the response (only for Write mode), and the ratelimiter to use. Ratelimiter can be nullptr.
+                 */
+                IOStreamSequentialStream(Aws::IOStream& stream, const HttpClient& client,  const HttpRequest& request, 
+                            HttpRequestComHandle requestHandle, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter)
+                    : m_stream(stream), m_client(client), m_request(request), m_requestHandle(requestHandle), m_rateLimiter(rateLimiter), m_response(response) {}
 
                 HRESULT STDMETHODCALLTYPE Read(void* pv, ULONG cb, ULONG* pcbRead) override
                 {
-                    *pcbRead = 0;
-
-                    if (pv && cb > 0 && m_stream && m_client.ContinueRequest(m_request))
+                    if (!m_client.ContinueRequest(m_request) || !m_client.IsRequestProcessingEnabled())
                     {
-                        m_stream.read((char*)pv, static_cast<std::streamsize>(cb));
-                        *pcbRead = static_cast<ULONG>(m_stream.gcount());
-
-                        if (m_request.GetDataSentEventHandler())
-                        {
-                            m_request.GetDataSentEventHandler()(&m_request, static_cast<long long>(*pcbRead));
-                        }
-
-                        if (m_rateLimiter != nullptr)
-                        {
-                            m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(*pcbRead));
-                        }
+                        m_requestHandle->Abort();
                     }
 
-                    if (*pcbRead < cb)
+                    ULONG read = 0;
+
+                    if (pv && cb > 0 && m_stream)
                     {
+                        m_stream.read((char*)pv, static_cast<std::streamsize>(cb));
+                        read = static_cast<ULONG>(m_stream.gcount());
+
+                        auto dataSentHandler = m_request.GetDataSentEventHandler();
+                        if (dataSentHandler)
+                        {
+                            dataSentHandler(&m_request, static_cast<long long>(read));
+                        }
+
+                        if (m_rateLimiter)
+                        {
+                            m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(read));
+                        }
+
+                        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Read " << read << " bytes from the request stream.");
+                    }
+
+                    if (pcbRead)
+                    {
+                        *pcbRead = read;
+                    }
+
+                    if (read < cb)
+                    {
+                        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Read " << read
+                            << " bytes from the request stream. Since this is less than was requested, the stream will send a fail flag.");
                         return S_FALSE;
                     }
 
@@ -62,23 +87,31 @@ namespace Aws
                 }
 
                 HRESULT STDMETHODCALLTYPE Write(void const* pv, ULONG cb, ULONG* pcbWritten) override
-                {                   
+                {        
+                    if (!m_client.ContinueRequest(m_request) || !m_client.IsRequestProcessingEnabled())
+                    {
+                        m_requestHandle->Abort();
+                    }
+
                     ULONG written = 0;
 
-                    if (pv && cb > 0 && m_stream && m_client.ContinueRequest(m_request))
+                    if (pv && cb > 0 && m_stream)
                     {
                         m_stream.write((const char*)pv, static_cast<std::streamsize>(cb));
                         written = cb;
 
-                        if (m_request.GetDataReceivedEventHandler())
+                        auto dataReceivedHandler = m_request.GetDataReceivedEventHandler();
+                        if (dataReceivedHandler)
                         {
-                            m_request.GetDataReceivedEventHandler()(&m_request, m_response, static_cast<long long>(written));
+                            dataReceivedHandler(&m_request, m_response, static_cast<long long>(written));
                         }
 
-                        if (m_rateLimiter != nullptr)
+                        if (m_rateLimiter)
                         {
                             m_rateLimiter->ApplyAndPayForCost(static_cast<int64_t>(written));
                         }
+
+                        AWS_LOGSTREAM_TRACE(CLASS_TAG, "Wrote " << written << " bytes to the response stream.");
                     }
 
                     if (pcbWritten)
@@ -88,6 +121,8 @@ namespace Aws
 
                     if (written < cb)
                     {
+                        AWS_LOGSTREAM_WARN(CLASS_TAG, "Wrote " << written 
+                            << " bytes to the response stream. Which was less than requested. Failing the stream.");
                         return STG_E_CANTSAVE;
                     }
 
@@ -103,46 +138,78 @@ namespace Aws
                 Aws::IOStream& m_stream;
                 const HttpClient& m_client;
                 const HttpRequest& m_request;
+                HttpRequestComHandle m_requestHandle;
                 HttpResponse* m_response;
                 Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
 
                 LONG m_refCount;
         };
 
+        /**
+         * Callbacks for the http client. Handles lifecycle management for the client. 
+         */
         class IXmlHttpRequest2HttpClientCallbacks : public RuntimeClass<RuntimeClassFlags<ClassicCom>, IXMLHTTPRequest2Callback>
         {
             public:
+                /**
+                 * Initialize callbacks with a response to fill in. If allow redirects will be used when a redirect is detected.
+                 */
                 IXmlHttpRequest2HttpClientCallbacks(HttpResponse& response, bool allowRedirects) : 
                     m_response(response), m_allowRedirects(allowRedirects), m_isFinished(false) {}
 
+                /**
+                 * We currently have this turned off so it should never be called.
+                 */
                 HRESULT STDMETHODCALLTYPE OnDataAvailable(IXMLHTTPRequest2*, ISequentialStream*) override
                 {
                     return S_OK;
                 }
 
-                HRESULT STDMETHODCALLTYPE OnError(IXMLHTTPRequest2*, HRESULT) override
+                /**
+                 * When an error happens at the request level. This does not fire when the server sends a 400 or 500 level response.
+                 */
+                HRESULT STDMETHODCALLTYPE OnError(IXMLHTTPRequest2*, HRESULT res) override
                 {
+                    //timeout
+                    if (res == 0x800c000b)
+                    {
+                        m_response.SetResponseCode(HttpResponseCode::REQUEST_TIMEOUT);
+                    }
+                    else
+                    {
+                        m_response.SetResponseCode(HttpResponseCode::CLIENT_CLOSED_TO_REQUEST);
+                    }
+                    
+                    _com_error err(res);
+                    LPCTSTR errMsg = err.ErrorMessage();
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error while making request with code: " << errMsg);
                     m_isFinished = true;
                     m_completionSignal.notify_all();                    
                     return S_OK;
                 }
 
+                /**
+                 * The beginning of the response has been recieved from the server. This method will set the response code and fill in the 
+                 * response headers.
+                 */
                 HRESULT STDMETHODCALLTYPE OnHeadersAvailable(IXMLHTTPRequest2 *pXHR, DWORD dwStatus, const WCHAR*) override
                 {
                     m_response.SetResponseCode(static_cast<HttpResponseCode>(dwStatus));
-
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Response recieved with code " << dwStatus);
                     if (pXHR)
                     {
                         wchar_t* headers = nullptr;
                         HRESULT hr = pXHR->GetAllResponseHeaders(&headers);
                         if (SUCCEEDED(hr))
                         {
+                            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Reading response headers:");
                             auto unparsedHeadersStr = Aws::Utils::StringUtils::FromWString(headers);
                             for (auto& headerPair : Aws::Utils::StringUtils::SplitOnLine(unparsedHeadersStr))
                             {
                                 Aws::Vector<Aws::String>&& keyValue = Aws::Utils::StringUtils::Split(headerPair, ':');
                                 if (keyValue.size() >= 2)
                                 {
+                                    AWS_LOGSTREAM_TRACE(CLASS_TAG, keyValue[0] << ": " << keyValue[1]);
                                     m_response.AddHeader(Aws::Utils::StringUtils::Trim(keyValue[0].c_str()), Aws::Utils::StringUtils::Trim(keyValue[1].c_str()));
                                 }
                             }
@@ -152,8 +219,12 @@ namespace Aws
                     return S_OK;
                 }
 
-                HRESULT STDMETHODCALLTYPE OnRedirect(IXMLHTTPRequest2* pXHR, const WCHAR*) override
+                /**
+                 * If allowRedirects was true, then this will allow the request to continue. Otherwise the request will be aborted.
+                 */
+                HRESULT STDMETHODCALLTYPE OnRedirect(IXMLHTTPRequest2* pXHR, const WCHAR* url) override
                 {
+                    AWS_LOGSTREAM_INFO(CLASS_TAG, "Redirect to url " << url << " detected");
                     if (pXHR && !m_allowRedirects)
                     {
                         pXHR->Abort();
@@ -162,18 +233,26 @@ namespace Aws
                     return S_OK;
                 }
 
+                /**
+                 * Request/Response cycle finished successfully.
+                 */
                 HRESULT STDMETHODCALLTYPE OnResponseReceived(IXMLHTTPRequest2*, ISequentialStream*) override
                 {
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Response received.");
                     m_isFinished = true;
                     m_completionSignal.notify_all();
                     return S_OK;
                 }
 
-                //Sorry guys, we'll come back and expose async io soon.
+                /**
+                 * This API is asynchronous, to use the APi synchronously, call this after calling Send().
+                 */
                 void WaitUntilFinished()
                 {
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Waiting for request to finish.");
                     std::unique_lock<std::mutex> completionLock(m_completionMutex);
                     m_completionSignal.wait(completionLock, [this]() { return m_isFinished.load(); });
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request completed, continueing thread.");
                 }
 
 
@@ -187,6 +266,7 @@ namespace Aws
 
         void IXmlHttpRequest2HttpClient::InitCOM()
         {
+            AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing COM with flag RO_INIT_MULTITHREADED");
             Windows::Foundation::Initialize(RO_INIT_MULTITHREADED);
         }
 
@@ -196,6 +276,7 @@ namespace Aws
         {
             //user defined proxy not supported on this interface, this has to come from the default settings.
             assert(clientConfig.proxyHost.empty());           
+            AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing client with pool size of " << clientConfig.maxConnections);
 
             for (unsigned int i = 0; i < m_poolSize; ++i)
             {
@@ -229,7 +310,11 @@ namespace Aws
         {
             auto uri = request.GetUri();
             uri.SetPath(URI::URLEncodePath(uri.GetPath()));
-            auto url = Aws::Utils::StringUtils::ToWString(uri.GetURIString().c_str());
+            auto fullUriString = uri.GetURIString();
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) 
+                        << " request to url: " << fullUriString);
+
+            auto url = Aws::Utils::StringUtils::ToWString(fullUriString.c_str());
             auto methodStr = Aws::Utils::StringUtils::ToWString(HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()));
             auto proxyUserNameStr = Aws::Utils::StringUtils::ToWString(m_proxyUserName.c_str());
             auto proxyPasswordStr = Aws::Utils::StringUtils::ToWString(m_proxyPassword.c_str());
@@ -248,8 +333,10 @@ namespace Aws
                 return nullptr;
             }
 
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting http headers:");
             for (auto& header : request.GetHeaders())
             {
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, header.first << ": " << header.second);
                 hrResult = requestHandle->SetRequestHeader(Aws::Utils::StringUtils::ToWString(header.first.c_str()).c_str(),
                                                                 Aws::Utils::StringUtils::ToWString(header.second.c_str()).c_str());
 
@@ -259,13 +346,14 @@ namespace Aws
                     return nullptr;
                 }
             }
-
-            if (writeLimiter != nullptr)
+            
+            if (writeLimiter)
             {
                 writeLimiter->ApplyAndPayForCost(request.GetSize());
             }            
                         
-            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, request, response.get(), writeLimiter);
+            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, request, 
+                            requestHandle, response.get(), writeLimiter);
 
             requestHandle->SetCustomResponseStream(responseStream.Get());
                      
@@ -274,29 +362,34 @@ namespace Aws
 
             if (request.GetContentBody() && !request.GetContentLength().empty())
             {
-                requestStream = Make<IOStreamSequentialStream>(*request.GetContentBody(), *this, request, nullptr, readLimiter);
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Content detected, setting request stream.");
+                requestStream = Make<IOStreamSequentialStream>(*request.GetContentBody(), *this, request, requestHandle, nullptr, readLimiter);
                 streamLength = static_cast<ULONGLONG>(Aws::Utils::StringUtils::ConvertToInt64(request.GetContentLength().c_str()));
             }
 
             hrResult = requestHandle->Send(requestStream.Get(), streamLength);
             callbacks->WaitUntilFinished();
-
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
             //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.
             HttpRequestComHandle handle;
             CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
             m_resourceManager.Release(handle);
 
+            response->GetResponseBody().flush();
             return response;
         }
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const
         {
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting up request handle with verifySSL = " << m_verifySSL 
+                            << " ,follow redirects = " << m_followRedirects << " and request timeout = " << m_requestTimeoutMs);
             handle->SetProperty(XHR_PROP_NO_DEFAULT_HEADERS, TRUE);
             handle->SetProperty(XHR_PROP_REPORT_REDIRECT_STATUS, m_followRedirects);
             handle->SetProperty(XHR_PROP_QUERY_STRING_UTF8, FALSE);
             handle->SetProperty(XHR_PROP_IGNORE_CERT_ERRORS, !m_verifySSL);
             handle->SetProperty(XHR_PROP_NO_CRED_PROMPT, TRUE);
-            handle->SetProperty(XHR_PROP_NO_AUTH, XHR_AUTH_PROXY);            
+            handle->SetProperty(XHR_PROP_NO_AUTH, XHR_AUTH_PROXY);   
+            handle->SetProperty(XHR_PROP_NO_CACHE, TRUE);
             handle->SetProperty(XHR_PROP_TIMEOUT, m_requestTimeoutMs);
             handle->SetProperty(XHR_PROP_ONDATA_THRESHOLD, XHR_PROP_ONDATA_NEVER);            
         }

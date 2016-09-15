@@ -28,16 +28,33 @@ namespace Aws
     {
         typedef Microsoft::WRL::ComPtr<IXMLHTTPRequest2> HttpRequestComHandle;
 
+        /**
+         * COM-based http client. To use this client see the CMake option USE_IXML_HTTP_REQUEST_2.
+         * Note this client is written for compatibility with windows versions that do not ship with winhttp, and will only work
+         * on windows versions > 8.1. WinHttp should still be the default client for windows when possible. This client will run the IXMLHttpRequest2
+         * COM module in CLSCTX_SERVER mode.
+         */
         class AWS_CORE_API IXmlHttpRequest2HttpClient : public HttpClient
         {
         public:
+            /**
+             * Initialize client based on clientConfiguration. This will create a connection pool and configure client
+             * wide parameters.
+             */
             IXmlHttpRequest2HttpClient(const Aws::Client::ClientConfiguration& clientConfiguration);
             virtual ~IXmlHttpRequest2HttpClient();
 
+            /**
+             * Makes http request, returns http response.
+             */
             virtual std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const;
 
+            /**
+             * You must call this method before making any calls to the constructor, unless you have already
+             * called CoInit elsewhere in your system.
+             */
             static void InitCOM();
 
         private:

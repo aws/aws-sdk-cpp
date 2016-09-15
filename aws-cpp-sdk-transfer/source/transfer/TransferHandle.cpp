@@ -92,15 +92,31 @@ namespace Aws
                 value == TransferStatus::CANCELED || value == TransferStatus::EXACT_OBJECT_ALREADY_EXISTS;
         }
 
-        void TransferHandle::UpdateStatus(TransferStatus value)
-        {            
-            if (IsFinishedStatus(value))
+        static bool IsTransitionAllowed(TransferStatus currentValue, TransferStatus nextState)
+        {
+            //we can only change from a final state to a final state if moving from canceled to aborted
+            if (IsFinishedStatus(currentValue) && IsFinishedStatus(nextState))
             {
-                std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
-                m_waitUntilFinishedSignal.notify_all();
+                return currentValue == TransferStatus::CANCELED && nextState == TransferStatus::ABORTED;
             }
 
-            m_status.store(static_cast<long>(value));
+            return true;
+        }
+
+        void TransferHandle::UpdateStatus(TransferStatus value)
+        {            
+            auto currentStatus = static_cast<TransferStatus>(m_status.load());
+
+            if(IsTransitionAllowed(currentStatus, value))
+            {
+                m_status.store(static_cast<long>(value));
+
+                if (IsFinishedStatus(value))
+                {
+                    std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
+                    m_waitUntilFinishedSignal.notify_all();
+                }
+            }
         }
 
         void TransferHandle::WaitUntilFinished() const
