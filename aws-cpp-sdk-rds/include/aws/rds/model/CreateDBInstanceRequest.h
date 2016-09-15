@@ -433,71 +433,78 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p> Valid
-     * Values: <code>MySQL</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
-     * <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code> </p>
-     * <p>Not every database engine is available for every AWS region.</p>
+     * Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> |
+     * <code>aurora</code> </p> <p>Not every database engine is available for every AWS
+     * region.</p>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

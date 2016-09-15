@@ -1747,58 +1747,58 @@ namespace Model
     inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -2034,44 +2034,44 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 

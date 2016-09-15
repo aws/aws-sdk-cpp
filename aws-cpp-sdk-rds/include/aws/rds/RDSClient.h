@@ -2236,25 +2236,25 @@ namespace Model
         virtual void DescribeReservedDBInstancesOfferingsAsync(const Model::DescribeReservedDBInstancesOfferingsRequest& request, const DescribeReservedDBInstancesOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list that includes the status of each source AWS Region that the
-         * current region can get a Read Replica or a DB snapshot from. This API action
-         * supports pagination.</p>
+         * <p>Returns a list of the source AWS regions where the current AWS region can
+         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * pagination.</p>
          */
         virtual Model::DescribeSourceRegionsOutcome DescribeSourceRegions(const Model::DescribeSourceRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list that includes the status of each source AWS Region that the
-         * current region can get a Read Replica or a DB snapshot from. This API action
-         * supports pagination.</p>
+         * <p>Returns a list of the source AWS regions where the current AWS region can
+         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * pagination.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeSourceRegionsOutcomeCallable DescribeSourceRegionsCallable(const Model::DescribeSourceRegionsRequest& request) const;
 
         /**
-         * <p>Returns a list that includes the status of each source AWS Region that the
-         * current region can get a Read Replica or a DB snapshot from. This API action
-         * supports pagination.</p>
+         * <p>Returns a list of the source AWS regions where the current AWS region can
+         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * pagination.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -489,6 +489,104 @@ namespace Model
     inline DBCluster& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
     /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline const Aws::String& GetReaderEndpoint() const{ return m_readerEndpoint; }
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline void SetReaderEndpoint(const Aws::String& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline void SetReaderEndpoint(Aws::String&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline void SetReaderEndpoint(const char* value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint.assign(value); }
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline DBCluster& WithReaderEndpoint(const Aws::String& value) { SetReaderEndpoint(value); return *this;}
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline DBCluster& WithReaderEndpoint(Aws::String&& value) { SetReaderEndpoint(value); return *this;}
+
+    /**
+     * <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster
+     * load-balances connections across the Aurora Replicas that are available in a DB
+     * cluster. As clients request new connections to the reader endpoint, Aurora
+     * distributes the connection requests among the Aurora Replicas in the DB cluster.
+     * This functionality can help balance your read workload across multiple Aurora
+     * Replicas in your DB cluster. </p> <p>If a failover occurs, and the Aurora
+     * Replica that you are connected to is promoted to be the primary instance, your
+     * connection will be dropped. To continue sending your read workload to other
+     * Aurora Replicas in the cluster, you can then recoonect to the reader
+     * endpoint.</p>
+     */
+    inline DBCluster& WithReaderEndpoint(const char* value) { SetReaderEndpoint(value); return *this;}
+
+    /**
      * <p>Provides the name of the database engine to be used for this DB cluster.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
@@ -1132,6 +1230,8 @@ namespace Model
     bool m_earliestRestorableTimeHasBeenSet;
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet;
+    Aws::String m_readerEndpoint;
+    bool m_readerEndpointHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
     Aws::String m_engineVersion;

@@ -44,6 +44,7 @@ DBCluster::DBCluster() :
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_readerEndpointHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_latestRestorableTimeHasBeenSet(false),
@@ -81,6 +82,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_percentProgressHasBeenSet(false),
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_readerEndpointHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_latestRestorableTimeHasBeenSet(false),
@@ -187,6 +189,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_endpoint = StringUtils::Trim(endpointNode.GetText().c_str());
       m_endpointHasBeenSet = true;
+    }
+    XmlNode readerEndpointNode = resultNode.FirstChild("ReaderEndpoint");
+    if(!readerEndpointNode.IsNull())
+    {
+      m_readerEndpoint = StringUtils::Trim(readerEndpointNode.GetText().c_str());
+      m_readerEndpointHasBeenSet = true;
     }
     XmlNode engineNode = resultNode.FirstChild("Engine");
     if(!engineNode.IsNull())
@@ -385,6 +393,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
   }
 
+  if(m_readerEndpointHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
+  }
+
   if(m_engineHasBeenSet)
   {
       oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
@@ -547,6 +560,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_endpointHasBeenSet)
   {
       oStream << location << ".Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+  }
+  if(m_readerEndpointHasBeenSet)
+  {
+      oStream << location << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
   }
   if(m_engineHasBeenSet)
   {

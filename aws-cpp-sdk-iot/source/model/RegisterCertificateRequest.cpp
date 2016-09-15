@@ -14,21 +14,17 @@
 */
 #include <aws/iot/model/RegisterCertificateRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/http/URI.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
 RegisterCertificateRequest::RegisterCertificateRequest() : 
     m_certificatePemHasBeenSet(false),
     m_caCertificatePemHasBeenSet(false),
-    m_setAsActive(false),
-    m_setAsActiveHasBeenSet(false)
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -48,19 +44,13 @@ Aws::String RegisterCertificateRequest::SerializePayload() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
+  }
+
   return payload.WriteReadable();
 }
 
-void RegisterCertificateRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_setAsActiveHasBeenSet)
-    {
-      ss << m_setAsActive;
-      uri.AddQueryStringParameter("setAsActive", ss.str());
-      ss.str("");
-    }
-
-}
 
 
