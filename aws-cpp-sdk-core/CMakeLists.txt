@@ -88,8 +88,13 @@ if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
 elseif(ENABLE_WINDOWS_CLIENT)
-    file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/*.h")
-    file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
+    if(USE_IXML_HTTP_REQUEST_2)
+        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/IXmlHttpRequest2HttpClient.h")
+        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/IXmlHttpRequest2HttpClient.cpp")
+    else()
+        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
+        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
+    endif()
 endif()
 
 # encryption implementations
@@ -111,7 +116,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_AUTH_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${AWS_INTERNAL_SOURCE}
-    ${HTTP_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
@@ -200,6 +204,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
+    ${HTTP_SOURCE}
     ${AWS_JSONCPP_SOURCE}
     ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
@@ -312,6 +317,10 @@ endif(MSVC)
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 include_directories(${Core_INCLUDES})
+
+if(NOT PLATFORM_CUSTOM)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs)
+endif()
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
     add_definitions(-DAWS_CORE_EXPORTS=1)

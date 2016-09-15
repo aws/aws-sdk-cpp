@@ -39,3 +39,5 @@ else()
     include(platform/custom)
 endif()
 
+# only usable in .cpp files
+add_definitions(-DPLATFORM_${__UPPER_TARGET_ARCH})
