@@ -207,7 +207,7 @@ namespace Aws
                     partsToRetry++;
                     handle->AddQueuedPart(failedParts);
                 }
-                sentBytes = partsToRetry * m_transferConfig.bufferSize;                
+                sentBytes = handle->GetBytesTotalSize() - (partsToRetry * m_transferConfig.bufferSize);
             }
             //still consistent
             Set<int> queuedParts = handle->GetQueuedParts();
@@ -215,13 +215,13 @@ namespace Aws
 
             TriggerTransferStatusUpdatedCallback(*handle);
 
-            while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue())
+            while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue() && partsIter != queuedParts.end())
             {
                 auto buffer = m_bufferManager.Acquire();
                 if(handle->ShouldContinue())
                 {
                     auto lengthToWrite = std::min(static_cast<uint64_t>(buffer->GetLength()), handle->GetBytesTotalSize() - sentBytes);
-                    streamToPut->seekg(sentBytes);
+                    streamToPut->seekg((*partsIter - 1) * m_transferConfig.bufferSize);
                     streamToPut->read((char*)buffer->GetUnderlyingData(), lengthToWrite);
 
                     auto streamBuf = Aws::New<Aws::Utils::Stream::PreallocatedStreamBuf>(CLASS_TAG, buffer, static_cast<size_t>(lengthToWrite));

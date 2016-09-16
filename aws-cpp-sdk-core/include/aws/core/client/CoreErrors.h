@@ -44,6 +44,7 @@ namespace Aws
             RESOURCE_NOT_FOUND = 16, // Shared with multiple services
             UNRECOGNIZED_CLIENT = 17, // Most likely caused by an invalid access key or secret key
             MALFORMED_QUERY_STRING = 18, // Where does this come from? (cognito identity uses it)
+            SLOW_DOWN = 19,
 
             NETWORK_CONNECTION = 99, // General failure to send message to service 
 
