@@ -36,100 +36,107 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(value); return *this;}
 
     /**
-     * <p> The name for the security group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all security groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesecuritygroup</code></p>
+     * <p>The name for the security group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline CreateClusterSecurityGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline CreateClusterSecurityGroupRequest& WithDescription(Aws::String&& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> A description for the security group. </p>
+     * <p>A description for the security group.</p>
      */
     inline CreateClusterSecurityGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

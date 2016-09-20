@@ -26,7 +26,8 @@ namespace Model
   {
     NOT_SET,
     user,
-    autoscaling
+    autoscaling,
+    codeDeployRollback
   };
 
 namespace DeploymentCreatorMapper

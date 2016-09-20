@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeClusterSecurityGroupsResult
   {
@@ -46,7 +46,7 @@ namespace Model
     DescribeClusterSecurityGroupsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -56,7 +56,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -66,7 +66,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -76,7 +76,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -86,7 +86,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -96,7 +96,7 @@ namespace Model
     inline DescribeClusterSecurityGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -106,7 +106,7 @@ namespace Model
     inline DescribeClusterSecurityGroupsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -116,37 +116,37 @@ namespace Model
     inline DescribeClusterSecurityGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline const Aws::Vector<ClusterSecurityGroup>& GetClusterSecurityGroups() const{ return m_clusterSecurityGroups; }
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline void SetClusterSecurityGroups(const Aws::Vector<ClusterSecurityGroup>& value) { m_clusterSecurityGroups = value; }
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline void SetClusterSecurityGroups(Aws::Vector<ClusterSecurityGroup>&& value) { m_clusterSecurityGroups = value; }
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline DescribeClusterSecurityGroupsResult& WithClusterSecurityGroups(const Aws::Vector<ClusterSecurityGroup>& value) { SetClusterSecurityGroups(value); return *this;}
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline DescribeClusterSecurityGroupsResult& WithClusterSecurityGroups(Aws::Vector<ClusterSecurityGroup>&& value) { SetClusterSecurityGroups(value); return *this;}
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline DescribeClusterSecurityGroupsResult& AddClusterSecurityGroups(const ClusterSecurityGroup& value) { m_clusterSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p> A list of <a>ClusterSecurityGroup</a> instances. </p>
+     * <p>A list of <a>ClusterSecurityGroup</a> instances. </p>
      */
     inline DescribeClusterSecurityGroupsResult& AddClusterSecurityGroups(ClusterSecurityGroup&& value) { m_clusterSecurityGroups.push_back(value); return *this; }
 

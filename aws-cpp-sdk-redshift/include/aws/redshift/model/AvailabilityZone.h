@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes an availability zone. </p>
+   * <p>Describes an availability zone.</p>
    */
   class AWS_REDSHIFT_API AvailabilityZone
   {
@@ -45,37 +45,37 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the availability zone. </p>
+     * <p>The name of the availability zone.</p>
      */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 

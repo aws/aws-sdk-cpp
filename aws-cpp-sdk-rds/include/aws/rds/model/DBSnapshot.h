@@ -651,78 +651,78 @@ namespace Model
     inline DBSnapshot& WithSourceDBSnapshotIdentifier(const char* value) { SetSourceDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline DBSnapshot& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline DBSnapshot& WithStorageType(Aws::String&& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with DB Snapshot.</p>
+     * <p>Specifies the storage type associated with DB snapshot.</p>
      */
     inline DBSnapshot& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline DBSnapshot& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline DBSnapshot& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
-     * <p>The ARN from the Key Store with which to associate the instance for TDE
+     * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
     inline DBSnapshot& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
@@ -819,6 +819,62 @@ namespace Model
      */
     inline DBSnapshot& WithDBSnapshotArn(const char* value) { SetDBSnapshotArn(value); return *this;}
 
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline DBSnapshot& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline DBSnapshot& WithTimezone(Aws::String&& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline DBSnapshot& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+
   private:
     Aws::String m_dBSnapshotIdentifier;
     bool m_dBSnapshotIdentifierHasBeenSet;
@@ -868,6 +924,8 @@ namespace Model
     bool m_kmsKeyIdHasBeenSet;
     Aws::String m_dBSnapshotArn;
     bool m_dBSnapshotArnHasBeenSet;
+    Aws::String m_timezone;
+    bool m_timezoneHasBeenSet;
   };
 
 } // namespace Model

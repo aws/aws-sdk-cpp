@@ -29,12 +29,16 @@
 #include <aws/elasticmapreduce/model/AddInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/AddJobFlowStepsRequest.h>
 #include <aws/elasticmapreduce/model/AddTagsRequest.h>
+#include <aws/elasticmapreduce/model/CreateSecurityConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/DeleteSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeClusterRequest.h>
+#include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/ListInstancesRequest.h>
+#include <aws/elasticmapreduce/model/ListSecurityConfigurationsRequest.h>
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/RemoveTagsRequest.h>
@@ -200,6 +204,68 @@ void EMRClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsR
   handler(this, request, AddTags(request), context);
 }
 
+CreateSecurityConfigurationOutcome EMRClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateSecurityConfigurationOutcome(CreateSecurityConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateSecurityConfigurationOutcome(outcome.GetError());
+  }
+}
+
+CreateSecurityConfigurationOutcomeCallable EMRClient::CreateSecurityConfigurationCallable(const CreateSecurityConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->CreateSecurityConfiguration(request); } );
+}
+
+void EMRClient::CreateSecurityConfigurationAsync(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSecurityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSecurityConfiguration(request), context);
+}
+
+DeleteSecurityConfigurationOutcome EMRClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSecurityConfigurationOutcome(DeleteSecurityConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSecurityConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteSecurityConfigurationOutcomeCallable EMRClient::DeleteSecurityConfigurationCallable(const DeleteSecurityConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DeleteSecurityConfiguration(request); } );
+}
+
+void EMRClient::DeleteSecurityConfigurationAsync(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSecurityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSecurityConfiguration(request), context);
+}
+
 DescribeClusterOutcome EMRClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
   Aws::StringStream ss;
@@ -229,6 +295,37 @@ void EMRClient::DescribeClusterAsync(const DescribeClusterRequest& request, cons
 void EMRClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCluster(request), context);
+}
+
+DescribeSecurityConfigurationOutcome EMRClient::DescribeSecurityConfiguration(const DescribeSecurityConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSecurityConfigurationOutcome(DescribeSecurityConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSecurityConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DescribeSecurityConfigurationOutcomeCallable EMRClient::DescribeSecurityConfigurationCallable(const DescribeSecurityConfigurationRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->DescribeSecurityConfiguration(request); } );
+}
+
+void EMRClient::DescribeSecurityConfigurationAsync(const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSecurityConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::DescribeSecurityConfigurationAsyncHelper(const DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSecurityConfiguration(request), context);
 }
 
 DescribeStepOutcome EMRClient::DescribeStep(const DescribeStepRequest& request) const
@@ -384,6 +481,37 @@ void EMRClient::ListInstancesAsync(const ListInstancesRequest& request, const Li
 void EMRClient::ListInstancesAsyncHelper(const ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListInstances(request), context);
+}
+
+ListSecurityConfigurationsOutcome EMRClient::ListSecurityConfigurations(const ListSecurityConfigurationsRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListSecurityConfigurationsOutcome(ListSecurityConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSecurityConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+ListSecurityConfigurationsOutcomeCallable EMRClient::ListSecurityConfigurationsCallable(const ListSecurityConfigurationsRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->ListSecurityConfigurations(request); } );
+}
+
+void EMRClient::ListSecurityConfigurationsAsync(const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSecurityConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::ListSecurityConfigurationsAsyncHelper(const ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSecurityConfigurations(request), context);
 }
 
 ListStepsOutcome EMRClient::ListSteps(const ListStepsRequest& request) const

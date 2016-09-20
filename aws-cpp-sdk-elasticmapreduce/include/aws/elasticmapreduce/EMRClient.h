@@ -23,12 +23,16 @@
 #include <aws/elasticmapreduce/model/AddInstanceGroupsResult.h>
 #include <aws/elasticmapreduce/model/AddJobFlowStepsResult.h>
 #include <aws/elasticmapreduce/model/AddTagsResult.h>
+#include <aws/elasticmapreduce/model/CreateSecurityConfigurationResult.h>
+#include <aws/elasticmapreduce/model/DeleteSecurityConfigurationResult.h>
 #include <aws/elasticmapreduce/model/DescribeClusterResult.h>
+#include <aws/elasticmapreduce/model/DescribeSecurityConfigurationResult.h>
 #include <aws/elasticmapreduce/model/DescribeStepResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
 #include <aws/elasticmapreduce/model/ListClustersResult.h>
 #include <aws/elasticmapreduce/model/ListInstanceGroupsResult.h>
 #include <aws/elasticmapreduce/model/ListInstancesResult.h>
+#include <aws/elasticmapreduce/model/ListSecurityConfigurationsResult.h>
 #include <aws/elasticmapreduce/model/ListStepsResult.h>
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
@@ -81,12 +85,16 @@ namespace Model
         class AddInstanceGroupsRequest;
         class AddJobFlowStepsRequest;
         class AddTagsRequest;
+        class CreateSecurityConfigurationRequest;
+        class DeleteSecurityConfigurationRequest;
         class DescribeClusterRequest;
+        class DescribeSecurityConfigurationRequest;
         class DescribeStepRequest;
         class ListBootstrapActionsRequest;
         class ListClustersRequest;
         class ListInstanceGroupsRequest;
         class ListInstancesRequest;
+        class ListSecurityConfigurationsRequest;
         class ListStepsRequest;
         class ModifyInstanceGroupsRequest;
         class RemoveTagsRequest;
@@ -98,12 +106,16 @@ namespace Model
         typedef Aws::Utils::Outcome<AddInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> AddInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<AddJobFlowStepsResult, Aws::Client::AWSError<EMRErrors>> AddJobFlowStepsOutcome;
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<EMRErrors>> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateSecurityConfigurationResult, Aws::Client::AWSError<EMRErrors>> CreateSecurityConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteSecurityConfigurationResult, Aws::Client::AWSError<EMRErrors>> DeleteSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EMRErrors>> DescribeClusterOutcome;
+        typedef Aws::Utils::Outcome<DescribeSecurityConfigurationResult, Aws::Client::AWSError<EMRErrors>> DescribeSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeStepResult, Aws::Client::AWSError<EMRErrors>> DescribeStepOutcome;
         typedef Aws::Utils::Outcome<ListBootstrapActionsResult, Aws::Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EMRErrors>> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListInstanceGroupsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<ListInstancesResult, Aws::Client::AWSError<EMRErrors>> ListInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListSecurityConfigurationsResult, Aws::Client::AWSError<EMRErrors>> ListSecurityConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListStepsResult, Aws::Client::AWSError<EMRErrors>> ListStepsOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<EMRErrors>> RemoveTagsOutcome;
@@ -115,12 +127,16 @@ namespace Model
         typedef std::future<AddInstanceGroupsOutcome> AddInstanceGroupsOutcomeCallable;
         typedef std::future<AddJobFlowStepsOutcome> AddJobFlowStepsOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
+        typedef std::future<CreateSecurityConfigurationOutcome> CreateSecurityConfigurationOutcomeCallable;
+        typedef std::future<DeleteSecurityConfigurationOutcome> DeleteSecurityConfigurationOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+        typedef std::future<DescribeSecurityConfigurationOutcome> DescribeSecurityConfigurationOutcomeCallable;
         typedef std::future<DescribeStepOutcome> DescribeStepOutcomeCallable;
         typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListInstanceGroupsOutcome> ListInstanceGroupsOutcomeCallable;
         typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
+        typedef std::future<ListSecurityConfigurationsOutcome> ListSecurityConfigurationsOutcomeCallable;
         typedef std::future<ListStepsOutcome> ListStepsOutcomeCallable;
         typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
@@ -135,12 +151,16 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::AddInstanceGroupsRequest&, const Model::AddInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::AddJobFlowStepsRequest&, const Model::AddJobFlowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddJobFlowStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::CreateSecurityConfigurationRequest&, const Model::CreateSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::DeleteSecurityConfigurationRequest&, const Model::DeleteSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::DescribeSecurityConfigurationRequest&, const Model::DescribeSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStepResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBootstrapActionsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstanceGroupsRequest&, const Model::ListInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstancesRequest&, const Model::ListInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstancesResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::ListSecurityConfigurationsRequest&, const Model::ListSecurityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityConfigurationsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStepsRequest&, const Model::ListStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
@@ -306,6 +326,50 @@ namespace Model
         virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a security configuration using EMR Security Configurations, which are
+         * stored in the service. Security Configurations enable you to more easily create
+         * a configuration, reuse it, and apply it whenever a cluster is created.</p>
+         */
+        virtual Model::CreateSecurityConfigurationOutcome CreateSecurityConfiguration(const Model::CreateSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a security configuration using EMR Security Configurations, which are
+         * stored in the service. Security Configurations enable you to more easily create
+         * a configuration, reuse it, and apply it whenever a cluster is created.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSecurityConfigurationOutcomeCallable CreateSecurityConfigurationCallable(const Model::CreateSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates a security configuration using EMR Security Configurations, which are
+         * stored in the service. Security Configurations enable you to more easily create
+         * a configuration, reuse it, and apply it whenever a cluster is created.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSecurityConfigurationAsync(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a security configuration.</p>
+         */
+        virtual Model::DeleteSecurityConfigurationOutcome DeleteSecurityConfiguration(const Model::DeleteSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes a security configuration.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSecurityConfigurationOutcomeCallable DeleteSecurityConfigurationCallable(const Model::DeleteSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes a security configuration.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSecurityConfigurationAsync(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides cluster-level details including status, hardware and software
          * configuration, VPC settings, and so on. For information about the cluster steps,
          * see <a>ListSteps</a>.</p>
@@ -329,6 +393,28 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides the details of a security configuration by returning the
+         * configuration JSON.</p>
+         */
+        virtual Model::DescribeSecurityConfigurationOutcome DescribeSecurityConfiguration(const Model::DescribeSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Provides the details of a security configuration by returning the
+         * configuration JSON.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSecurityConfigurationOutcomeCallable DescribeSecurityConfigurationCallable(const Model::DescribeSecurityConfigurationRequest& request) const;
+
+        /**
+         * <p>Provides the details of a security configuration by returning the
+         * configuration JSON.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSecurityConfigurationAsync(const Model::DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides more detail about the cluster step.</p>
@@ -451,6 +537,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the security configurations visible to this account, providing
+         * their creation dates and times, and their names. This call returns a maximum of
+         * 50 clusters per call, but returns a marker to track the paging of the cluster
+         * list across multiple ListSecurityConfigurations calls.</p>
+         */
+        virtual Model::ListSecurityConfigurationsOutcome ListSecurityConfigurations(const Model::ListSecurityConfigurationsRequest& request) const;
+
+        /**
+         * <p>Lists all the security configurations visible to this account, providing
+         * their creation dates and times, and their names. This call returns a maximum of
+         * 50 clusters per call, but returns a marker to track the paging of the cluster
+         * list across multiple ListSecurityConfigurations calls.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSecurityConfigurationsOutcomeCallable ListSecurityConfigurationsCallable(const Model::ListSecurityConfigurationsRequest& request) const;
+
+        /**
+         * <p>Lists all the security configurations visible to this account, providing
+         * their creation dates and times, and their names. This call returns a maximum of
+         * 50 clusters per call, but returns a marker to track the paging of the cluster
+         * list across multiple ListSecurityConfigurations calls.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSecurityConfigurationsAsync(const Model::ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Provides a list of steps for the cluster.</p>
@@ -752,12 +866,16 @@ namespace Model
         void AddInstanceGroupsAsyncHelper(const Model::AddInstanceGroupsRequest& request, const AddInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddJobFlowStepsAsyncHelper(const Model::AddJobFlowStepsRequest& request, const AddJobFlowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateSecurityConfigurationAsyncHelper(const Model::CreateSecurityConfigurationRequest& request, const CreateSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSecurityConfigurationAsyncHelper(const Model::DeleteSecurityConfigurationRequest& request, const DeleteSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSecurityConfigurationAsyncHelper(const Model::DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceGroupsAsyncHelper(const Model::ListInstanceGroupsRequest& request, const ListInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstancesAsyncHelper(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSecurityConfigurationsAsyncHelper(const Model::ListSecurityConfigurationsRequest& request, const ListSecurityConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStepsAsyncHelper(const Model::ListStepsRequest& request, const ListStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

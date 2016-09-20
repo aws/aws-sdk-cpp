@@ -31,6 +31,7 @@ namespace Aws
 
         static const int user_HASH = HashingUtils::HashString("user");
         static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
+        static const int codeDeployRollback_HASH = HashingUtils::HashString("codeDeployRollback");
 
 
         DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == autoscaling_HASH)
           {
             return DeploymentCreator::autoscaling;
+          }
+          else if (hashCode == codeDeployRollback_HASH)
+          {
+            return DeploymentCreator::codeDeployRollback;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -62,6 +67,8 @@ namespace Aws
             return "user";
           case DeploymentCreator::autoscaling:
             return "autoscaling";
+          case DeploymentCreator::codeDeployRollback:
+            return "codeDeployRollback";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

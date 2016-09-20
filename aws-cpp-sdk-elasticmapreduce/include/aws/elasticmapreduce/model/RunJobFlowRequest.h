@@ -931,6 +931,41 @@ namespace Model
      */
     inline RunJobFlowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline RunJobFlowRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline RunJobFlowRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
+    inline RunJobFlowRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
   private:
     Aws::String m_name;
     bool m_nameHasBeenSet;
@@ -964,6 +999,8 @@ namespace Model
     bool m_serviceRoleHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
   };
 
 } // namespace Model

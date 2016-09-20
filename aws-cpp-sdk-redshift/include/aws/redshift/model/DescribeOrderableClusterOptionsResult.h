@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
+   * <p>Contains the output from the <a>DescribeOrderableClusterOptions</a> action.
    * </p>
    */
   class AWS_REDSHIFT_API DescribeOrderableClusterOptionsResult
@@ -89,7 +89,7 @@ namespace Model
     inline DescribeOrderableClusterOptionsResult& AddOrderableClusterOptions(OrderableClusterOption&& value) { m_orderableClusterOptions.push_back(value); return *this; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -99,7 +99,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -109,7 +109,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -119,7 +119,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -129,7 +129,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -139,7 +139,7 @@ namespace Model
     inline DescribeOrderableClusterOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -149,7 +149,7 @@ namespace Model
     inline DescribeOrderableClusterOptionsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the

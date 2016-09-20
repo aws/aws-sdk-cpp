@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API RevokeSnapshotAccessRequest : public RedshiftRequest
   {
@@ -34,128 +34,128 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the snapshot that the account can no longer access. </p>
+     * <p>The identifier of the snapshot that the account can no longer access.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the cluster the snapshot was created from. This parameter
+     * <p>The identifier of the cluster the snapshot was created from. This parameter
      * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name. </p>
+     * that specifies anything other than * for the cluster name.</p>
      */
     inline RevokeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline const Aws::String& GetAccountWithRestoreAccess() const{ return m_accountWithRestoreAccess; }
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline void SetAccountWithRestoreAccess(const Aws::String& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline void SetAccountWithRestoreAccess(Aws::String&& value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess = value; }
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline void SetAccountWithRestoreAccess(const char* value) { m_accountWithRestoreAccessHasBeenSet = true; m_accountWithRestoreAccess.assign(value); }
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(const Aws::String& value) { SetAccountWithRestoreAccess(value); return *this;}
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(Aws::String&& value) { SetAccountWithRestoreAccess(value); return *this;}
 
     /**
-     * <p> The identifier of the AWS customer account that can no longer restore the
-     * specified snapshot. </p>
+     * <p>The identifier of the AWS customer account that can no longer restore the
+     * specified snapshot.</p>
      */
     inline RevokeSnapshotAccessRequest& WithAccountWithRestoreAccess(const char* value) { SetAccountWithRestoreAccess(value); return *this;}
 

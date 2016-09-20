@@ -86,7 +86,8 @@ DBInstance::DBInstance() :
     m_monitoringRoleArnHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
-    m_dBInstanceArnHasBeenSet(false)
+    m_dBInstanceArnHasBeenSet(false),
+    m_timezoneHasBeenSet(false)
 {
 }
 
@@ -147,7 +148,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_monitoringRoleArnHasBeenSet(false),
     m_promotionTier(0),
     m_promotionTierHasBeenSet(false),
-    m_dBInstanceArnHasBeenSet(false)
+    m_dBInstanceArnHasBeenSet(false),
+    m_timezoneHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -476,6 +478,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_dBInstanceArn = StringUtils::Trim(dBInstanceArnNode.GetText().c_str());
       m_dBInstanceArnHasBeenSet = true;
     }
+    XmlNode timezoneNode = resultNode.FirstChild("Timezone");
+    if(!timezoneNode.IsNull())
+    {
+      m_timezone = StringUtils::Trim(timezoneNode.GetText().c_str());
+      m_timezoneHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -759,6 +767,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DBInstanceArn=" << StringUtils::URLEncode(m_dBInstanceArn.c_str()) << "&";
   }
 
+  if(m_timezoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -992,6 +1005,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_dBInstanceArnHasBeenSet)
   {
       oStream << location << ".DBInstanceArn=" << StringUtils::URLEncode(m_dBInstanceArn.c_str()) << "&";
+  }
+  if(m_timezoneHasBeenSet)
+  {
+      oStream << location << ".Timezone=" << StringUtils::URLEncode(m_timezone.c_str()) << "&";
   }
 }
 

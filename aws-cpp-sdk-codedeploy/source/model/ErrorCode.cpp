@@ -42,6 +42,11 @@ namespace Aws
         static const int HEALTH_CONSTRAINTS_HASH = HashingUtils::HashString("HEALTH_CONSTRAINTS");
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
+        static const int ALARM_ACTIVE_HASH = HashingUtils::HashString("ALARM_ACTIVE");
+        static const int AGENT_ISSUE_HASH = HashingUtils::HashString("AGENT_ISSUE");
+        static const int AUTO_SCALING_IAM_ROLE_PERMISSIONS_HASH = HashingUtils::HashString("AUTO_SCALING_IAM_ROLE_PERMISSIONS");
+        static const int AUTO_SCALING_CONFIGURATION_HASH = HashingUtils::HashString("AUTO_SCALING_CONFIGURATION");
+        static const int MANUAL_STOP_HASH = HashingUtils::HashString("MANUAL_STOP");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -99,6 +104,26 @@ namespace Aws
           {
             return ErrorCode::THROTTLED;
           }
+          else if (hashCode == ALARM_ACTIVE_HASH)
+          {
+            return ErrorCode::ALARM_ACTIVE;
+          }
+          else if (hashCode == AGENT_ISSUE_HASH)
+          {
+            return ErrorCode::AGENT_ISSUE;
+          }
+          else if (hashCode == AUTO_SCALING_IAM_ROLE_PERMISSIONS_HASH)
+          {
+            return ErrorCode::AUTO_SCALING_IAM_ROLE_PERMISSIONS;
+          }
+          else if (hashCode == AUTO_SCALING_CONFIGURATION_HASH)
+          {
+            return ErrorCode::AUTO_SCALING_CONFIGURATION;
+          }
+          else if (hashCode == MANUAL_STOP_HASH)
+          {
+            return ErrorCode::MANUAL_STOP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -139,6 +164,16 @@ namespace Aws
             return "INTERNAL_ERROR";
           case ErrorCode::THROTTLED:
             return "THROTTLED";
+          case ErrorCode::ALARM_ACTIVE:
+            return "ALARM_ACTIVE";
+          case ErrorCode::AGENT_ISSUE:
+            return "AGENT_ISSUE";
+          case ErrorCode::AUTO_SCALING_IAM_ROLE_PERMISSIONS:
+            return "AUTO_SCALING_IAM_ROLE_PERMISSIONS";
+          case ErrorCode::AUTO_SCALING_CONFIGURATION:
+            return "AUTO_SCALING_CONFIGURATION";
+          case ErrorCode::MANUAL_STOP:
+            return "MANUAL_STOP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

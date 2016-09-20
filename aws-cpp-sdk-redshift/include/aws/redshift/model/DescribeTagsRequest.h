@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeTagsRequest : public RedshiftRequest
   {
@@ -35,61 +35,62 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline DescribeTagsRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline DescribeTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for which you want to describe the tag or
+     * <p>The Amazon Resource Name (ARN) for which you want to describe the tag or
      * tags. For example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>.
      * </p>
      */
     inline DescribeTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -97,12 +98,13 @@ namespace Model
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -110,12 +112,13 @@ namespace Model
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -123,12 +126,13 @@ namespace Model
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -136,12 +140,13 @@ namespace Model
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -149,12 +154,13 @@ namespace Model
     inline DescribeTagsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -162,12 +168,13 @@ namespace Model
     inline DescribeTagsRequest& WithResourceType(Aws::String&& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p> The type of resource with which you want to view tags. Valid resource types
-     * are: <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li>
-     * <li>Snapshot</li> <li>Cluster security group</li> <li>Subnet group</li> <li>HSM
-     * connection</li> <li>HSM certificate</li> <li>Parameter group</li> <li>Snapshot
-     * copy grant</li> </ul> </p> <p> For more information about Amazon Redshift
-     * resource types and constructing ARNs, go to <a
+     * <p>The type of resource with which you want to view tags. Valid resource types
+     * are: </p> <ul> <li> <p>Cluster</p> </li> <li> <p>CIDR/IP</p> </li> <li> <p>EC2
+     * security group</p> </li> <li> <p>Snapshot</p> </li> <li> <p>Cluster security
+     * group</p> </li> <li> <p>Subnet group</p> </li> <li> <p>HSM connection</p> </li>
+     * <li> <p>HSM certificate</p> </li> <li> <p>Parameter group</p> </li> <li>
+     * <p>Snapshot copy grant</p> </li> </ul> <p>For more information about Amazon
+     * Redshift resource types and constructing ARNs, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
      * an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster
      * Management Guide. </p>
@@ -175,7 +182,7 @@ namespace Model
     inline DescribeTagsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
     /**
-     * <p> The maximum number or response records to return in each call. If the number
+     * <p>The maximum number or response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
@@ -184,7 +191,7 @@ namespace Model
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number or response records to return in each call. If the number
+     * <p>The maximum number or response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
@@ -193,7 +200,7 @@ namespace Model
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number or response records to return in each call. If the number
+     * <p>The maximum number or response records to return in each call. If the number
      * of remaining response records exceeds the specified <code>MaxRecords</code>
      * value, a value is returned in a <code>marker</code> field of the response. You
      * can retrieve the next set of records by retrying the command with the returned
@@ -202,7 +209,7 @@ namespace Model
     inline DescribeTagsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -212,7 +219,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -222,7 +229,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -232,7 +239,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -242,7 +249,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -252,7 +259,7 @@ namespace Model
     inline DescribeTagsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the
@@ -262,7 +269,7 @@ namespace Model
     inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>marker</code> parameter and retrying the command. If the

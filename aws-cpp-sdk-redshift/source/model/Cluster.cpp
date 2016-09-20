@@ -66,6 +66,8 @@ Cluster::Cluster() :
     m_clusterRevisionNumberHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false)
 {
 }
@@ -107,6 +109,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_clusterRevisionNumberHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false),
     m_iamRolesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -334,6 +338,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
       m_kmsKeyIdHasBeenSet = true;
     }
+    XmlNode enhancedVpcRoutingNode = resultNode.FirstChild("EnhancedVpcRouting");
+    if(!enhancedVpcRoutingNode.IsNull())
+    {
+      m_enhancedVpcRouting = StringUtils::ConvertToBool(StringUtils::Trim(enhancedVpcRoutingNode.GetText().c_str()).c_str());
+      m_enhancedVpcRoutingHasBeenSet = true;
+    }
     XmlNode iamRolesNode = resultNode.FirstChild("IamRoles");
     if(!iamRolesNode.IsNull())
     {
@@ -550,6 +560,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
   if(m_iamRolesHasBeenSet)
   {
       unsigned iamRolesIdx = 1;
@@ -730,6 +745,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
   }
   if(m_iamRolesHasBeenSet)
   {

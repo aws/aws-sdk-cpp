@@ -106,85 +106,85 @@ namespace Model
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline const Aws::String& GetTargetClusterType() const{ return m_targetClusterType; }
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline void SetTargetClusterType(const Aws::String& value) { m_targetClusterType = value; }
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline void SetTargetClusterType(Aws::String&& value) { m_targetClusterType = value; }
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline void SetTargetClusterType(const char* value) { m_targetClusterType.assign(value); }
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline DescribeResizeResult& WithTargetClusterType(const Aws::String& value) { SetTargetClusterType(value); return *this;}
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline DescribeResizeResult& WithTargetClusterType(Aws::String&& value) { SetTargetClusterType(value); return *this;}
 
     /**
      * <p>The cluster type after the resize operation is complete.</p> <p>Valid Values:
-     * <code>multi-node</code> | <code>single-node</code></p>
+     * <code>multi-node</code> | <code>single-node</code> </p>
      */
     inline DescribeResizeResult& WithTargetClusterType(const char* value) { SetTargetClusterType(value); return *this;}
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline void SetStatus(Aws::String&& value) { m_status = value; }
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline DescribeResizeResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline DescribeResizeResult& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the resize operation.</p> <p>Valid Values: <code>NONE</code> |
-     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code></p>
+     * <code>IN_PROGRESS</code> | <code>FAILED</code> | <code>SUCCEEDED</code> </p>
      */
     inline DescribeResizeResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -376,7 +376,7 @@ namespace Model
      * amount of data, in megabytes, that has been processed so far. When the resize
      * operation is complete, this value shows the total amount of data, in megabytes,
      * on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the
-     * estimated total amount of data before resize). </p>
+     * estimated total amount of data before resize).</p>
      */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
 
@@ -385,7 +385,7 @@ namespace Model
      * amount of data, in megabytes, that has been processed so far. When the resize
      * operation is complete, this value shows the total amount of data, in megabytes,
      * on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the
-     * estimated total amount of data before resize). </p>
+     * estimated total amount of data before resize).</p>
      */
     inline void SetProgressInMegaBytes(long long value) { m_progressInMegaBytes = value; }
 
@@ -394,28 +394,28 @@ namespace Model
      * amount of data, in megabytes, that has been processed so far. When the resize
      * operation is complete, this value shows the total amount of data, in megabytes,
      * on the cluster, which may be more or less than TotalResizeDataInMegaBytes (the
-     * estimated total amount of data before resize). </p>
+     * estimated total amount of data before resize).</p>
      */
     inline DescribeResizeResult& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
     /**
      * <p>The amount of seconds that have elapsed since the resize operation began.
      * After the resize operation completes, this value shows the total actual time, in
-     * seconds, for the resize operation. </p>
+     * seconds, for the resize operation.</p>
      */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
 
     /**
      * <p>The amount of seconds that have elapsed since the resize operation began.
      * After the resize operation completes, this value shows the total actual time, in
-     * seconds, for the resize operation. </p>
+     * seconds, for the resize operation.</p>
      */
     inline void SetElapsedTimeInSeconds(long long value) { m_elapsedTimeInSeconds = value; }
 
     /**
      * <p>The amount of seconds that have elapsed since the resize operation began.
      * After the resize operation completes, this value shows the total actual time, in
-     * seconds, for the resize operation. </p>
+     * seconds, for the resize operation.</p>
      */
     inline DescribeResizeResult& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
 
@@ -423,7 +423,7 @@ namespace Model
      * <p>The estimated time remaining, in seconds, until the resize operation is
      * complete. This value is calculated based on the average resize rate and the
      * estimated amount of data remaining to be processed. Once the resize operation is
-     * complete, this value will be 0. </p>
+     * complete, this value will be 0.</p>
      */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
 
@@ -431,7 +431,7 @@ namespace Model
      * <p>The estimated time remaining, in seconds, until the resize operation is
      * complete. This value is calculated based on the average resize rate and the
      * estimated amount of data remaining to be processed. Once the resize operation is
-     * complete, this value will be 0. </p>
+     * complete, this value will be 0.</p>
      */
     inline void SetEstimatedTimeToCompletionInSeconds(long long value) { m_estimatedTimeToCompletionInSeconds = value; }
 
@@ -439,7 +439,7 @@ namespace Model
      * <p>The estimated time remaining, in seconds, until the resize operation is
      * complete. This value is calculated based on the average resize rate and the
      * estimated amount of data remaining to be processed. Once the resize operation is
-     * complete, this value will be 0. </p>
+     * complete, this value will be 0.</p>
      */
     inline DescribeResizeResult& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 

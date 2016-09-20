@@ -2879,6 +2879,62 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline CreateDBInstanceRequest& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone of the DB instance. The time zone parameter is currently
+     * supported only by <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * SQL Server</a>. </p>
+     */
+    inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+
   private:
     Aws::String m_dBName;
     bool m_dBNameHasBeenSet;
@@ -2954,6 +3010,8 @@ namespace Model
     bool m_domainIAMRoleNameHasBeenSet;
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+    Aws::String m_timezone;
+    bool m_timezoneHasBeenSet;
   };
 
 } // namespace Model

@@ -162,52 +162,57 @@ namespace Model
     inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
-     * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
-     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-     * The deployment lifecycle event is unknown.</li> </ul>
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
      */
     inline const LifecycleEventStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
-     * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
-     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-     * The deployment lifecycle event is unknown.</li> </ul>
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
      */
     inline void SetStatus(const LifecycleEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
-     * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
-     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-     * The deployment lifecycle event is unknown.</li> </ul>
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
      */
     inline void SetStatus(LifecycleEventStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
-     * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
-     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-     * The deployment lifecycle event is unknown.</li> </ul>
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
      */
     inline LifecycleEvent& WithStatus(const LifecycleEventStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The deployment lifecycle event status:</p> <ul> <li>Pending: The deployment
-     * lifecycle event is pending.</li> <li>InProgress: The deployment lifecycle event
-     * is in progress.</li> <li>Succeeded: The deployment lifecycle event ran
-     * successfully.</li> <li>Failed: The deployment lifecycle event has failed.</li>
-     * <li>Skipped: The deployment lifecycle event has been skipped.</li> <li>Unknown:
-     * The deployment lifecycle event is unknown.</li> </ul>
+     * <p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The
+     * deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The
+     * deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The
+     * deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The
+     * deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment
+     * lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment
+     * lifecycle event is unknown.</p> </li> </ul>
      */
     inline LifecycleEvent& WithStatus(LifecycleEventStatus&& value) { SetStatus(value); return *this;}
 

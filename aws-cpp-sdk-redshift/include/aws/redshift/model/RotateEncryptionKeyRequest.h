@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API RotateEncryptionKeyRequest : public RedshiftRequest
   {
@@ -34,51 +34,51 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline RotateEncryptionKeyRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline RotateEncryptionKeyRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p> The unique identifier of the cluster that you want to rotate the encryption
-     * keys for. </p> <p> Constraints: Must be the name of valid cluster that has
-     * encryption enabled. </p>
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
      */
     inline RotateEncryptionKeyRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 

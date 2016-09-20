@@ -115,79 +115,86 @@ namespace Model
     inline ListDeploymentInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<InstanceStatus>& GetInstanceStatusFilter() const{ return m_instanceStatusFilter; }
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline void SetInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = value; }
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline void SetInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter = value; }
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(const Aws::Vector<InstanceStatus>& value) { SetInstanceStatusFilter(value); return *this;}
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline ListDeploymentInstancesRequest& WithInstanceStatusFilter(Aws::Vector<InstanceStatus>&& value) { SetInstanceStatusFilter(value); return *this;}
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(const InstanceStatus& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
 
     /**
-     * <p>A subset of instances to list by status:</p> <ul> <li>Pending: Include those
-     * instance with pending deployments.</li> <li>InProgress: Include those instance
-     * where deployments are still in progress.</li> <li>Succeeded: Include those
-     * instances with successful deployments.</li> <li>Failed: Include those instance
-     * with failed deployments.</li> <li>Skipped: Include those instance with skipped
-     * deployments.</li> <li>Unknown: Include those instance with deployments in an
-     * unknown state.</li> </ul>
+     * <p>A subset of instances to list by status:</p> <ul> <li> <p>Pending: Include
+     * those instance with pending deployments.</p> </li> <li> <p>InProgress: Include
+     * those instance where deployments are still in progress.</p> </li> <li>
+     * <p>Succeeded: Include those instances with successful deployments.</p> </li>
+     * <li> <p>Failed: Include those instance with failed deployments.</p> </li> <li>
+     * <p>Skipped: Include those instance with skipped deployments.</p> </li> <li>
+     * <p>Unknown: Include those instance with deployments in an unknown state.</p>
+     * </li> </ul>
      */
     inline ListDeploymentInstancesRequest& AddInstanceStatusFilter(InstanceStatus&& value) { m_instanceStatusFilterHasBeenSet = true; m_instanceStatusFilter.push_back(value); return *this; }
 

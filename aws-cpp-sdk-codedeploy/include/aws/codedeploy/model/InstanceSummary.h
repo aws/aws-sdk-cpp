@@ -116,57 +116,57 @@ namespace Model
     inline InstanceSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment
-     * is pending for this instance.</li> <li>In Progress: The deployment is in
-     * progress for this instance.</li> <li>Succeeded: The deployment has succeeded for
-     * this instance.</li> <li>Failed: The deployment has failed for this
-     * instance.</li> <li>Skipped: The deployment has been skipped for this
-     * instance.</li> <li>Unknown: The deployment status is unknown for this
-     * instance.</li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment
-     * is pending for this instance.</li> <li>In Progress: The deployment is in
-     * progress for this instance.</li> <li>Succeeded: The deployment has succeeded for
-     * this instance.</li> <li>Failed: The deployment has failed for this
-     * instance.</li> <li>Skipped: The deployment has been skipped for this
-     * instance.</li> <li>Unknown: The deployment status is unknown for this
-     * instance.</li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment
-     * is pending for this instance.</li> <li>In Progress: The deployment is in
-     * progress for this instance.</li> <li>Succeeded: The deployment has succeeded for
-     * this instance.</li> <li>Failed: The deployment has failed for this
-     * instance.</li> <li>Skipped: The deployment has been skipped for this
-     * instance.</li> <li>Unknown: The deployment status is unknown for this
-     * instance.</li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
      */
     inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment
-     * is pending for this instance.</li> <li>In Progress: The deployment is in
-     * progress for this instance.</li> <li>Succeeded: The deployment has succeeded for
-     * this instance.</li> <li>Failed: The deployment has failed for this
-     * instance.</li> <li>Skipped: The deployment has been skipped for this
-     * instance.</li> <li>Unknown: The deployment status is unknown for this
-     * instance.</li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
      */
     inline InstanceSummary& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The deployment status for this instance:</p> <ul> <li>Pending: The deployment
-     * is pending for this instance.</li> <li>In Progress: The deployment is in
-     * progress for this instance.</li> <li>Succeeded: The deployment has succeeded for
-     * this instance.</li> <li>Failed: The deployment has failed for this
-     * instance.</li> <li>Skipped: The deployment has been skipped for this
-     * instance.</li> <li>Unknown: The deployment status is unknown for this
-     * instance.</li> </ul>
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
      */
     inline InstanceSummary& WithStatus(InstanceStatus&& value) { SetStatus(value); return *this;}
 

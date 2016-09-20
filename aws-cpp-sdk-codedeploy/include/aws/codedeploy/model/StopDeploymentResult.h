@@ -44,37 +44,37 @@ namespace Model
     StopDeploymentResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation was
-     * successful.</li> </ul>
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
      */
     inline const StopStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation was
-     * successful.</li> </ul>
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
      */
     inline void SetStatus(const StopStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation was
-     * successful.</li> </ul>
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
      */
     inline void SetStatus(StopStatus&& value) { m_status = value; }
 
     /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation was
-     * successful.</li> </ul>
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
      */
     inline StopDeploymentResult& WithStatus(const StopStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the stop deployment operation:</p> <ul> <li>Pending: The stop
-     * operation is pending.</li> <li>Succeeded: The stop operation was
-     * successful.</li> </ul>
+     * <p>The status of the stop deployment operation:</p> <ul> <li> <p>Pending: The
+     * stop operation is pending.</p> </li> <li> <p>Succeeded: The stop operation was
+     * successful.</p> </li> </ul>
      */
     inline StopDeploymentResult& WithStatus(StopStatus&& value) { SetStatus(value); return *this;}
 

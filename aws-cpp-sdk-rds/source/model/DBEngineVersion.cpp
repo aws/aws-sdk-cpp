@@ -37,7 +37,8 @@ DBEngineVersion::DBEngineVersion() :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false)
+    m_validUpgradeTargetHasBeenSet(false),
+    m_supportedTimezonesHasBeenSet(false)
 {
 }
 
@@ -49,7 +50,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_dBEngineVersionDescriptionHasBeenSet(false),
     m_defaultCharacterSetHasBeenSet(false),
     m_supportedCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false)
+    m_validUpgradeTargetHasBeenSet(false),
+    m_supportedTimezonesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -120,6 +122,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_validUpgradeTargetHasBeenSet = true;
     }
+    XmlNode supportedTimezonesNode = resultNode.FirstChild("SupportedTimezones");
+    if(!supportedTimezonesNode.IsNull())
+    {
+      XmlNode supportedTimezonesMember = supportedTimezonesNode.FirstChild("Timezone");
+      while(!supportedTimezonesMember.IsNull())
+      {
+        m_supportedTimezones.push_back(supportedTimezonesMember);
+        supportedTimezonesMember = supportedTimezonesMember.NextNode("Timezone");
+      }
+
+      m_supportedTimezonesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -181,6 +195,17 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_supportedTimezonesHasBeenSet)
+  {
+      unsigned supportedTimezonesIdx = 1;
+      for(auto& item : m_supportedTimezones)
+      {
+        Aws::StringStream supportedTimezonesSs;
+        supportedTimezonesSs << location << index << locationValue << ".Timezone." << supportedTimezonesIdx++;
+        item.OutputToStream(oStream, supportedTimezonesSs.str().c_str());
+      }
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -229,6 +254,16 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
         Aws::StringStream validUpgradeTargetSs;
         validUpgradeTargetSs << location <<  ".UpgradeTarget." << validUpgradeTargetIdx++;
         item.OutputToStream(oStream, validUpgradeTargetSs.str().c_str());
+      }
+  }
+  if(m_supportedTimezonesHasBeenSet)
+  {
+      unsigned supportedTimezonesIdx = 1;
+      for(auto& item : m_supportedTimezones)
+      {
+        Aws::StringStream supportedTimezonesSs;
+        supportedTimezonesSs << location <<  ".Timezone." << supportedTimezonesIdx++;
+        item.OutputToStream(oStream, supportedTimezonesSs.str().c_str());
       }
   }
 }

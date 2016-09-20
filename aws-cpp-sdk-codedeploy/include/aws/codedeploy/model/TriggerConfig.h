@@ -121,65 +121,37 @@ namespace Model
     inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline const Aws::Vector<TriggerEventType>& GetTriggerEvents() const{ return m_triggerEvents; }
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline void SetTriggerEvents(const Aws::Vector<TriggerEventType>& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = value; }
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline void SetTriggerEvents(Aws::Vector<TriggerEventType>&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = value; }
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline TriggerConfig& WithTriggerEvents(const Aws::Vector<TriggerEventType>& value) { SetTriggerEvents(value); return *this;}
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline TriggerConfig& WithTriggerEvents(Aws::Vector<TriggerEventType>&& value) { SetTriggerEvents(value); return *this;}
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline TriggerConfig& AddTriggerEvents(const TriggerEventType& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
 
     /**
-     * <p>The event type or types for which notifications are triggered.</p> <p>The
-     * following event type values are supported:</p> <ul> <li>DEPLOYMENT_START</li>
-     * <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li> <li>DEPLOYMENT_STOP</li>
-     * <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-     * </ul>
+     * <p>The event type or types for which notifications are triggered.</p>
      */
     inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
 

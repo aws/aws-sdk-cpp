@@ -67,7 +67,9 @@ Snapshot::Snapshot() :
     m_elapsedTimeInSecondsHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_restorableNodeTypesHasBeenSet(false)
+    m_restorableNodeTypesHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
 }
 
@@ -109,7 +111,9 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_elapsedTimeInSecondsHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_restorableNodeTypesHasBeenSet(false)
+    m_restorableNodeTypesHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -306,6 +310,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
 
       m_restorableNodeTypesHasBeenSet = true;
     }
+    XmlNode enhancedVpcRoutingNode = resultNode.FirstChild("EnhancedVpcRouting");
+    if(!enhancedVpcRoutingNode.IsNull())
+    {
+      m_enhancedVpcRouting = StringUtils::ConvertToBool(StringUtils::Trim(enhancedVpcRoutingNode.GetText().c_str()).c_str());
+      m_enhancedVpcRoutingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -469,6 +479,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -600,6 +615,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
       {
         oStream << location << ".NodeType." << restorableNodeTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
   }
 }
 

@@ -113,32 +113,37 @@ namespace Model
     inline EC2TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
 
     /**
-     * <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
-     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
      */
     inline const EC2TagFilterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
-     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
      */
     inline void SetType(const EC2TagFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
-     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
      */
     inline void SetType(EC2TagFilterType&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
-     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
      */
     inline EC2TagFilter& WithType(const EC2TagFilterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The tag filter type:</p> <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY:
-     * Value only.</li> <li>KEY_AND_VALUE: Key and value.</li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
+     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
+     * </li> </ul>
      */
     inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(value); return *this;}
 

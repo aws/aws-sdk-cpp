@@ -3022,8 +3022,8 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
-         * Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.</p>
+         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
          */
         virtual Model::RestoreDBClusterFromS3Outcome RestoreDBClusterFromS3(const Model::RestoreDBClusterFromS3Request& request) const;
 
@@ -3031,8 +3031,8 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
-         * Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.</p>
+         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -3042,8 +3042,8 @@ namespace Model
          * <p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket.
          * Amazon RDS must be authorized to access the Amazon S3 bucket and the data must
          * be created using the Percona XtraBackup utility as described in <a
-         * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
-         * Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.</p>
+         * href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+         * Data from MySQL by Using an Amazon S3 Bucket</a>.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

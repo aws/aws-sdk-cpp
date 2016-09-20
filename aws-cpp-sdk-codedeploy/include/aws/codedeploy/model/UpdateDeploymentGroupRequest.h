@@ -17,6 +17,8 @@
 #include <aws/codedeploy/CodeDeployRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codedeploy/model/AlarmConfiguration.h>
+#include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/TagFilter.h>
 #include <aws/codedeploy/model/TriggerConfig.h>
@@ -384,46 +386,127 @@ namespace Model
     inline UpdateDeploymentGroupRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(value); return *this;}
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Information about triggers to change when the deployment group is
-     * updated.</p>
+     * <p>Information about triggers to change when the deployment group is updated.
+     * For examples, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
+     * Guide.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated. </p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated. </p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated. </p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated. </p>
+     */
+    inline UpdateDeploymentGroupRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>Information to add or change about Amazon CloudWatch alarms when the
+     * deployment group is updated. </p>
+     */
+    inline UpdateDeploymentGroupRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Information for an automatic rollback configuration that is added or changed
+     * when a deployment group is updated.</p>
+     */
+    inline UpdateDeploymentGroupRequest& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
 
   private:
     Aws::String m_applicationName;
@@ -444,6 +527,10 @@ namespace Model
     bool m_serviceRoleArnHasBeenSet;
     Aws::Vector<TriggerConfig> m_triggerConfigurations;
     bool m_triggerConfigurationsHasBeenSet;
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet;
+    AutoRollbackConfiguration m_autoRollbackConfiguration;
+    bool m_autoRollbackConfigurationHasBeenSet;
   };
 
 } // namespace Model

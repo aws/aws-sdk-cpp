@@ -82,126 +82,133 @@ namespace Model
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline void SetParameterApplyStatus(Aws::String&& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline void SetParameterApplyStatus(const char* value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus.assign(value); }
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline ClusterParameterStatus& WithParameterApplyStatus(const Aws::String& value) { SetParameterApplyStatus(value); return *this;}
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline ClusterParameterStatus& WithParameterApplyStatus(Aws::String&& value) { SetParameterApplyStatus(value); return *this;}
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
      * with the database, waiting for a cluster reboot, or encountered an error when
-     * being applied.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The parameter value is in sync with the database.</li>
-     * <li><code>pending-reboot</code>: The parameter value will be applied after the
-     * cluster reboots.</li> <li><code>applying</code>: The parameter value is being
-     * applied to the database.</li> <li><code>invalid-parameter</code>: Cannot apply
-     * the parameter value because it has an invalid value or syntax.</li>
-     * <li><code>apply-deferred</code>: The parameter contains static property changes.
-     * The changes are deferred until the cluster reboots.</li>
-     * <li><code>apply-error</code>: Cannot connect to the cluster. The parameter
-     * change will be applied after the cluster reboots.</li>
-     * <li><code>unknown-error</code>: Cannot apply the parameter change right now. The
-     * change will be applied after the cluster reboots.</li> </ul> </p>
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline ClusterParameterStatus& WithParameterApplyStatus(const char* value) { SetParameterApplyStatus(value); return *this;}
 

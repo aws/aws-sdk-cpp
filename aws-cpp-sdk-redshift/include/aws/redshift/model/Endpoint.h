@@ -45,52 +45,52 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(value); return *this;}
 
     /**
-     * <p> The DNS address of the Cluster. </p>
+     * <p>The DNS address of the Cluster.</p>
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
     /**
-     * <p> The port that the database engine is listening on. </p>
+     * <p>The port that the database engine is listening on.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p> The port that the database engine is listening on. </p>
+     * <p>The port that the database engine is listening on.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p> The port that the database engine is listening on. </p>
+     * <p>The port that the database engine is listening on.</p>
      */
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 

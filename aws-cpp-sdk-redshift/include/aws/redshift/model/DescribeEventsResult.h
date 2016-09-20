@@ -36,7 +36,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeEventsResult
   {
@@ -46,7 +46,7 @@ namespace Model
     DescribeEventsResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -56,7 +56,7 @@ namespace Model
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -66,7 +66,7 @@ namespace Model
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -76,7 +76,7 @@ namespace Model
     inline void SetMarker(Aws::String&& value) { m_marker = value; }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -86,7 +86,7 @@ namespace Model
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -96,7 +96,7 @@ namespace Model
     inline DescribeEventsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -106,7 +106,7 @@ namespace Model
     inline DescribeEventsResult& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A value that indicates the starting point for the next set of response
+     * <p>A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response, you can
      * retrieve the next set of records by providing this returned marker value in the
      * <code>Marker</code> parameter and retrying the command. If the
@@ -116,37 +116,37 @@ namespace Model
     inline DescribeEventsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = value; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(value); return *this;}
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
 
     /**
-     * <p> A list of <code>Event</code> instances. </p>
+     * <p>A list of <code>Event</code> instances. </p>
      */
     inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(value); return *this; }
 

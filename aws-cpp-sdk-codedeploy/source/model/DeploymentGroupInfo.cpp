@@ -37,7 +37,9 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_targetRevisionHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false)
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
 }
 
@@ -51,7 +53,9 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
     m_autoScalingGroupsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_targetRevisionHasBeenSet(false),
-    m_triggerConfigurationsHasBeenSet(false)
+    m_triggerConfigurationsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_autoRollbackConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +144,20 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
     m_triggerConfigurationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("alarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("alarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoRollbackConfiguration"))
+  {
+    m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
+
+    m_autoRollbackConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -224,6 +242,18 @@ JsonValue DeploymentGroupInfo::Jsonize() const
      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
    }
    payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_autoRollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
 
   }
 

@@ -46,114 +46,121 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline ClusterIamRole& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline ClusterIamRole& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role. For example,
+     * <p>The Amazon Resource Name (ARN) of the IAM role, for example,
      * <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. </p>
      */
     inline ClusterIamRole& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline const Aws::String& GetApplyStatus() const{ return m_applyStatus; }
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline void SetApplyStatus(const Aws::String& value) { m_applyStatusHasBeenSet = true; m_applyStatus = value; }
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline void SetApplyStatus(Aws::String&& value) { m_applyStatusHasBeenSet = true; m_applyStatus = value; }
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline void SetApplyStatus(const char* value) { m_applyStatusHasBeenSet = true; m_applyStatus.assign(value); }
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline ClusterIamRole& WithApplyStatus(const Aws::String& value) { SetApplyStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline ClusterIamRole& WithApplyStatus(Aws::String&& value) { SetApplyStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the IAM role's association with an Amazon Redshift
-     * cluster.</p> <p>The following are possible statuses and descriptions.<ul>
-     * <li><code>in-sync</code>: The role is available for use by the cluster.</li>
-     * <li><code>adding</code>: The role is in the process of being associated with the
-     * cluster.</li> <li><code>removing</code>: The role is in the process of being
-     * disassociated with the cluster.</li> </ul> </p>
+     * <p>A value that describes the status of the IAM role's association with an
+     * Amazon Redshift cluster.</p> <p>The following are possible statuses and
+     * descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for
+     * use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the
+     * process of being associated with the cluster.</p> </li> <li> <p>
+     * <code>removing</code>: The role is in the process of being disassociated with
+     * the cluster.</p> </li> </ul>
      */
     inline ClusterIamRole& WithApplyStatus(const char* value) { SetApplyStatus(value); return *this;}
 

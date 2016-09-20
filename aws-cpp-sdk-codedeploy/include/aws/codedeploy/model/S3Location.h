@@ -129,36 +129,36 @@ namespace Model
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive
-     * file.</li> <li>zip: A zip archive file.</li> </ul>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline const BundleType& GetBundleType() const{ return m_bundleType; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive
-     * file.</li> <li>zip: A zip archive file.</li> </ul>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline void SetBundleType(const BundleType& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive
-     * file.</li> <li>zip: A zip archive file.</li> </ul>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline void SetBundleType(BundleType&& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive
-     * file.</li> <li>zip: A zip archive file.</li> </ul>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(const BundleType& value) { SetBundleType(value); return *this;}
 
     /**
      * <p>The file type of the application revision. Must be one of the following:</p>
-     * <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive
-     * file.</li> <li>zip: A zip archive file.</li> </ul>
+     * <ul> <li> <p>tar: A tar archive file.</p> </li> <li> <p>tgz: A compressed tar
+     * archive file.</p> </li> <li> <p>zip: A zip archive file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(BundleType&& value) { SetBundleType(value); return *this;}
 

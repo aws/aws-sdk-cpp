@@ -29,6 +29,7 @@ namespace Model
     DeploymentSuccess,
     DeploymentFailure,
     DeploymentStop,
+    DeploymentRollback,
     InstanceStart,
     InstanceSuccess,
     InstanceFailure

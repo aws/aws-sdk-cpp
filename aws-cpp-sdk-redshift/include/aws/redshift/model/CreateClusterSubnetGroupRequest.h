@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API CreateClusterSubnetGroupRequest : public RedshiftRequest
   {
@@ -36,65 +36,72 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline const Aws::String& GetClusterSubnetGroupName() const{ return m_clusterSubnetGroupName; }
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(Aws::String&& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline void SetClusterSubnetGroupName(const char* value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName.assign(value); }
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(const Aws::String& value) { SetClusterSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(Aws::String&& value) { SetClusterSubnetGroupName(value); return *this;}
 
     /**
-     * <p> The name for the subnet group. Amazon Redshift stores the value as a
-     * lowercase string. </p> <p>Constraints: </p> <ul> <li>Must contain no more than
-     * 255 alphanumeric characters or hyphens.</li> <li>Must not be "Default".</li>
-     * <li>Must be unique for all subnet groups that are created by your AWS
-     * account.</li> </ul> <p>Example: <code>examplesubnetgroup</code></p>
+     * <p>The name for the subnet group. Amazon Redshift stores the value as a
+     * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
+     * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
+     * "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are
+     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * <code>examplesubnetgroup</code> </p>
      */
     inline CreateClusterSubnetGroupRequest& WithClusterSubnetGroupName(const char* value) { SetClusterSubnetGroupName(value); return *this;}
 
@@ -134,50 +141,50 @@ namespace Model
     inline CreateClusterSubnetGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline CreateClusterSubnetGroupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline CreateClusterSubnetGroupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline CreateClusterSubnetGroupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline CreateClusterSubnetGroupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p> An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-     * single request. </p>
+     * <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
+     * single request.</p>
      */
     inline CreateClusterSubnetGroupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

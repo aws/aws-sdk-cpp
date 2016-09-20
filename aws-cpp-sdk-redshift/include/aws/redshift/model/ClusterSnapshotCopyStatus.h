@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p> Returns the destination region and retention period that are configured for
-   * cross-region snapshot copy. </p>
+   * <p>Returns the destination region and retention period that are configured for
+   * cross-region snapshot copy.</p>
    */
   class AWS_REDSHIFT_API ClusterSnapshotCopyStatus
   {

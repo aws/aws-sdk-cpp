@@ -40,7 +40,9 @@ PendingModifiedValues::PendingModifiedValues() :
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
 }
 
@@ -55,7 +57,9 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false),
+    m_enhancedVpcRouting(false),
+    m_enhancedVpcRoutingHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -114,6 +118,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_publiclyAccessible = StringUtils::ConvertToBool(StringUtils::Trim(publiclyAccessibleNode.GetText().c_str()).c_str());
       m_publiclyAccessibleHasBeenSet = true;
     }
+    XmlNode enhancedVpcRoutingNode = resultNode.FirstChild("EnhancedVpcRouting");
+    if(!enhancedVpcRoutingNode.IsNull())
+    {
+      m_enhancedVpcRouting = StringUtils::ConvertToBool(StringUtils::Trim(enhancedVpcRoutingNode.GetText().c_str()).c_str());
+      m_enhancedVpcRoutingHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -161,6 +171,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
   }
 
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -196,6 +211,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_publiclyAccessibleHasBeenSet)
   {
       oStream << location << ".PubliclyAccessible=" << m_publiclyAccessible << "&";
+  }
+  if(m_enhancedVpcRoutingHasBeenSet)
+  {
+      oStream << location << ".EnhancedVpcRouting=" << m_enhancedVpcRouting << "&";
   }
 }
 

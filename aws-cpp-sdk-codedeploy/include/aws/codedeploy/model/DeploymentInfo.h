@@ -21,6 +21,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/codedeploy/model/DeploymentOverview.h>
 #include <aws/codedeploy/model/DeploymentCreator.h>
+#include <aws/codedeploy/model/AutoRollbackConfiguration.h>
+#include <aws/codedeploy/model/RollbackInfo.h>
 
 namespace Aws
 {
@@ -418,37 +420,42 @@ namespace Model
     inline DeploymentInfo& WithDescription(const char* value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
-     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
-     * deployment.</li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
+     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
+     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
-     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
-     * deployment.</li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
+     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
+     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
-     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
-     * deployment.</li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
+     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
+     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
-     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
-     * deployment.</li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
+     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
+     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li>user: A user
-     * created the deployment.</li> <li>autoscaling: Auto Scaling created the
-     * deployment.</li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
+     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
+     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(value); return *this;}
 
@@ -485,6 +492,79 @@ namespace Model
      */
     inline DeploymentInfo& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment.</p>
+     */
+    inline const AutoRollbackConfiguration& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment.</p>
+     */
+    inline void SetAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment.</p>
+     */
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment.</p>
+     */
+    inline DeploymentInfo& WithAutoRollbackConfiguration(const AutoRollbackConfiguration& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Information about the automatic rollback configuration associated with the
+     * deployment.</p>
+     */
+    inline DeploymentInfo& WithAutoRollbackConfiguration(AutoRollbackConfiguration&& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Indicates whether only instances that are not running the latest application
+     * revision are to be deployed to.</p>
+     */
+    inline bool GetUpdateOutdatedInstancesOnly() const{ return m_updateOutdatedInstancesOnly; }
+
+    /**
+     * <p>Indicates whether only instances that are not running the latest application
+     * revision are to be deployed to.</p>
+     */
+    inline void SetUpdateOutdatedInstancesOnly(bool value) { m_updateOutdatedInstancesOnlyHasBeenSet = true; m_updateOutdatedInstancesOnly = value; }
+
+    /**
+     * <p>Indicates whether only instances that are not running the latest application
+     * revision are to be deployed to.</p>
+     */
+    inline DeploymentInfo& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
+
+    /**
+     * <p>Information about a deployment rollback.</p>
+     */
+    inline const RollbackInfo& GetRollbackInfo() const{ return m_rollbackInfo; }
+
+    /**
+     * <p>Information about a deployment rollback.</p>
+     */
+    inline void SetRollbackInfo(const RollbackInfo& value) { m_rollbackInfoHasBeenSet = true; m_rollbackInfo = value; }
+
+    /**
+     * <p>Information about a deployment rollback.</p>
+     */
+    inline void SetRollbackInfo(RollbackInfo&& value) { m_rollbackInfoHasBeenSet = true; m_rollbackInfo = value; }
+
+    /**
+     * <p>Information about a deployment rollback.</p>
+     */
+    inline DeploymentInfo& WithRollbackInfo(const RollbackInfo& value) { SetRollbackInfo(value); return *this;}
+
+    /**
+     * <p>Information about a deployment rollback.</p>
+     */
+    inline DeploymentInfo& WithRollbackInfo(RollbackInfo&& value) { SetRollbackInfo(value); return *this;}
+
   private:
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;
@@ -514,6 +594,12 @@ namespace Model
     bool m_creatorHasBeenSet;
     bool m_ignoreApplicationStopFailures;
     bool m_ignoreApplicationStopFailuresHasBeenSet;
+    AutoRollbackConfiguration m_autoRollbackConfiguration;
+    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_updateOutdatedInstancesOnly;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    RollbackInfo m_rollbackInfo;
+    bool m_rollbackInfoHasBeenSet;
   };
 
 } // namespace Model

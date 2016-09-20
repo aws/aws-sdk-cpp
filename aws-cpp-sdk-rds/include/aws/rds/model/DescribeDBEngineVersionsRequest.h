@@ -294,25 +294,49 @@ namespace Model
     inline DescribeDBEngineVersionsRequest& WithDefaultOnly(bool value) { SetDefaultOnly(value); return *this;}
 
     /**
-     * <p>If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version.</p>
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported character sets for each engine version.
+     * </p>
      */
     inline bool GetListSupportedCharacterSets() const{ return m_listSupportedCharacterSets; }
 
     /**
-     * <p>If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version.</p>
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported character sets for each engine version.
+     * </p>
      */
     inline void SetListSupportedCharacterSets(bool value) { m_listSupportedCharacterSetsHasBeenSet = true; m_listSupportedCharacterSets = value; }
 
     /**
-     * <p>If this parameter is specified, and if the requested engine supports the
-     * CharacterSetName parameter for CreateDBInstance, the response includes a list of
-     * supported character sets for each engine version.</p>
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the
+     * response includes a list of supported character sets for each engine version.
+     * </p>
      */
     inline DescribeDBEngineVersionsRequest& WithListSupportedCharacterSets(bool value) { SetListSupportedCharacterSets(value); return *this;}
+
+    /**
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
+     * includes a list of supported time zones for each engine version. </p>
+     */
+    inline bool GetListSupportedTimezones() const{ return m_listSupportedTimezones; }
+
+    /**
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
+     * includes a list of supported time zones for each engine version. </p>
+     */
+    inline void SetListSupportedTimezones(bool value) { m_listSupportedTimezonesHasBeenSet = true; m_listSupportedTimezones = value; }
+
+    /**
+     * <p>If this parameter is specified and the requested engine supports the
+     * <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response
+     * includes a list of supported time zones for each engine version. </p>
+     */
+    inline DescribeDBEngineVersionsRequest& WithListSupportedTimezones(bool value) { SetListSupportedTimezones(value); return *this;}
 
   private:
     Aws::String m_engine;
@@ -331,6 +355,8 @@ namespace Model
     bool m_defaultOnlyHasBeenSet;
     bool m_listSupportedCharacterSets;
     bool m_listSupportedCharacterSetsHasBeenSet;
+    bool m_listSupportedTimezones;
+    bool m_listSupportedTimezonesHasBeenSet;
   };
 
 } // namespace Model

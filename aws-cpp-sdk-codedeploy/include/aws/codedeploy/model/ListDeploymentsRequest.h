@@ -116,79 +116,79 @@ namespace Model
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline void SetIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline void SetIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses = value; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(const Aws::Vector<DeploymentStatus>& value) { SetIncludeOnlyStatuses(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& WithIncludeOnlyStatuses(Aws::Vector<DeploymentStatus>&& value) { SetIncludeOnlyStatuses(value); return *this;}
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(const DeploymentStatus& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 
     /**
-     * <p>A subset of deployments to list by status:</p> <ul> <li>Created: Include
-     * created deployments in the resulting list.</li> <li>Queued: Include queued
-     * deployments in the resulting list.</li> <li>In Progress: Include in-progress
-     * deployments in the resulting list.</li> <li>Succeeded: Include successful
-     * deployments in the resulting list.</li> <li>Failed: Include failed deployments
-     * in the resulting list.</li> <li>Stopped: Include stopped deployments in the
-     * resulting list.</li> </ul>
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline ListDeploymentsRequest& AddIncludeOnlyStatuses(DeploymentStatus&& value) { m_includeOnlyStatusesHasBeenSet = true; m_includeOnlyStatuses.push_back(value); return *this; }
 

@@ -77,114 +77,114 @@ namespace Model
     inline ModifyClusterIamRolesRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddIamRoles() const{ return m_addIamRoles; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline void SetAddIamRoles(const Aws::Vector<Aws::String>& value) { m_addIamRolesHasBeenSet = true; m_addIamRoles = value; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline void SetAddIamRoles(Aws::Vector<Aws::String>&& value) { m_addIamRolesHasBeenSet = true; m_addIamRoles = value; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& WithAddIamRoles(const Aws::Vector<Aws::String>& value) { SetAddIamRoles(value); return *this;}
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& WithAddIamRoles(Aws::Vector<Aws::String>&& value) { SetAddIamRoles(value); return *this;}
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddAddIamRoles(const Aws::String& value) { m_addIamRolesHasBeenSet = true; m_addIamRoles.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddAddIamRoles(Aws::String&& value) { m_addIamRolesHasBeenSet = true; m_addIamRoles.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to associate with the cluster.
-     * You can associate up to 10 IAM roles with a single cluster in a single
-     * request.</p>
+     * <p>Zero or more IAM roles to associate with the cluster. The roles must be in
+     * their Amazon Resource Name (ARN) format. You can associate up to 10 IAM roles
+     * with a single cluster in a single request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddAddIamRoles(const char* value) { m_addIamRolesHasBeenSet = true; m_addIamRoles.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveIamRoles() const{ return m_removeIamRoles; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline void SetRemoveIamRoles(const Aws::Vector<Aws::String>& value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles = value; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline void SetRemoveIamRoles(Aws::Vector<Aws::String>&& value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles = value; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline ModifyClusterIamRolesRequest& WithRemoveIamRoles(const Aws::Vector<Aws::String>& value) { SetRemoveIamRoles(value); return *this;}
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline ModifyClusterIamRolesRequest& WithRemoveIamRoles(Aws::Vector<Aws::String>&& value) { SetRemoveIamRoles(value); return *this;}
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddRemoveIamRoles(const Aws::String& value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddRemoveIamRoles(Aws::String&& value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles.push_back(value); return *this; }
 
     /**
-     * <p>Zero or more IAM roles (in their ARN format) to disassociate from the
-     * cluster. You can disassociate up to 10 IAM roles from a single cluster in a
-     * single request.</p>
+     * <p>Zero or more IAM roles in ARN format to disassociate from the cluster. You
+     * can disassociate up to 10 IAM roles from a single cluster in a single
+     * request.</p>
      */
     inline ModifyClusterIamRolesRequest& AddRemoveIamRoles(const char* value) { m_removeIamRolesHasBeenSet = true; m_removeIamRoles.push_back(value); return *this; }
 

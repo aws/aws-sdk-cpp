@@ -35,7 +35,7 @@ namespace Redshift
 namespace Model
 {
   /**
-   * <p> </p>
+   * <p/>
    */
   class AWS_REDSHIFT_API DescribeEventCategoriesResult
   {
@@ -45,37 +45,37 @@ namespace Model
     DescribeEventCategoriesResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline const Aws::Vector<EventCategoriesMap>& GetEventCategoriesMapList() const{ return m_eventCategoriesMapList; }
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline void SetEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { m_eventCategoriesMapList = value; }
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline void SetEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { m_eventCategoriesMapList = value; }
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(const Aws::Vector<EventCategoriesMap>& value) { SetEventCategoriesMapList(value); return *this;}
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline DescribeEventCategoriesResult& WithEventCategoriesMapList(Aws::Vector<EventCategoriesMap>&& value) { SetEventCategoriesMapList(value); return *this;}
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(const EventCategoriesMap& value) { m_eventCategoriesMapList.push_back(value); return *this; }
 
     /**
-     * <p> A list of event categories descriptions. </p>
+     * <p>A list of event categories descriptions.</p>
      */
     inline DescribeEventCategoriesResult& AddEventCategoriesMapList(EventCategoriesMap&& value) { m_eventCategoriesMapList.push_back(value); return *this; }
 

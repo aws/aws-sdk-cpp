@@ -70,19 +70,19 @@ namespace Model
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
-     * <code>1</code></p>
+     * <code>1</code> </p>
      */
     inline int GetNodeCount() const{ return m_nodeCount; }
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
-     * <code>1</code></p>
+     * <code>1</code> </p>
      */
     inline void SetNodeCount(int value) { m_nodeCountHasBeenSet = true; m_nodeCount = value; }
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
-     * <code>1</code></p>
+     * <code>1</code> </p>
      */
     inline PurchaseReservedNodeOfferingRequest& WithNodeCount(int value) { SetNodeCount(value); return *this;}
 
