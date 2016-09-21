@@ -72,7 +72,7 @@ bool PooledThreadExecutor::SubmitToThread(std::function<void()>&& fn)
     {
         std::lock_guard<std::mutex> locker(m_queueLock);
 
-        if (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY && m_poolSize >= m_tasks.size())
+        if (m_overflowPolicy == OverflowPolicy::REJECT_IMMEDIATELY && m_tasks.size() >= m_poolSize)
         {
             return false;
         }
