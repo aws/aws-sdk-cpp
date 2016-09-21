@@ -18,9 +18,13 @@
 #if ENABLE_CURL_CLIENT
     #include <aws/core/http/curl/CurlHttpClient.h>
 #elif ENABLE_WINDOWS_CLIENT
-    #include <aws/core/http/windows/WinINetSyncHttpClient.h>
-    #include <aws/core/http/windows/WinHttpSyncHttpClient.h>
-    #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/ClientConfiguration.h>
+#if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
+#include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
+#else
+#include <aws/core/http/windows/WinINetSyncHttpClient.h>
+#include <aws/core/http/windows/WinHttpSyncHttpClient.h>
+#endif
 #endif
 
 #include <aws/core/http/standard/StandardHttpRequest.h>
@@ -48,6 +52,9 @@ namespace Aws
                 // Windows clients:  Http and Inet are always options, Curl MIGHT be an option if USE_CURL_CLIENT is on, and http is "default"
                 // Other clients: Curl is your default
 #if ENABLE_WINDOWS_CLIENT
+#if ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
+                return Aws::MakeShared<IXmlHttpRequest2HttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
+#else
                 switch (clientConfiguration.httpLibOverride)
                 {
                     case TransferLibType::WIN_INET_CLIENT:
@@ -56,6 +63,7 @@ namespace Aws
                     default:
                         return Aws::MakeShared<WinHttpSyncHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
                 }
+#endif                
 #elif ENABLE_CURL_CLIENT
     return Aws::MakeShared<CurlHttpClient>(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, clientConfiguration);
 #else
@@ -88,6 +96,8 @@ namespace Aws
                 {
                     CurlHttpClient::InitGlobalState();
                 }
+#elif ENABLE_WINDOWS_IXML_HTTP_REQUEST_2_CLIENT
+                IXmlHttpRequest2HttpClient::InitCOM();
 #endif
             }
 

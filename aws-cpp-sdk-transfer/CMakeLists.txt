@@ -60,6 +60,6 @@ endif()
 
 install (FILES ${ALL_TRANSFER_HEADERS} DESTINATION include/aws/transfer)
 
-if(MSVC)
+if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-transfer.autopkg DESTINATION nuget)
 endif()

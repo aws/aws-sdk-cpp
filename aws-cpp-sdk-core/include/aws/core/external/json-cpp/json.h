@@ -147,6 +147,8 @@ This file has been modified from its original version by Amazon:
 /// Only has effects if AWS_JSON_VALUE_USE_INTERNAL_MAP is defined.
 //#  define AWS_JSON_USE_SIMPLE_INTERNAL_ALLOCATOR 1
 
+#include <aws/core/SDKConfig.h>
+
 // If non-zero, the library uses exceptions to report bad input instead of C
 // assertion macros. The default is to use exceptions.
 #ifndef JSON_USE_EXCEPTION

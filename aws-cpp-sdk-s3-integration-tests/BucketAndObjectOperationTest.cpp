@@ -352,10 +352,9 @@ namespace
         Client->DisableRequestProcessing();
 
         auto&& getOutcome = getCallable.get();
-
-        ASSERT_FALSE(getOutcome.IsSuccess());
-
         Client->EnableRequestProcessing();
+
+        ASSERT_FALSE(getOutcome.IsSuccess());        
     }
 
     TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)

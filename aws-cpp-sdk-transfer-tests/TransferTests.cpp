@@ -685,9 +685,16 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
 
     uint64_t fileSize = requestPtr->GetBytesTotalSize();
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
-
     requestPtr->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
+
+    //if this is the case, the request actually failed before we could cancel it and we need to try again.
+    while (requestPtr->GetCompletedParts().size() < 15u)
+    {        
+        requestPtr = transferManager.RetryUpload(CANCEL_TEST_FILE_NAME, requestPtr); 
+        requestPtr->WaitUntilFinished();
+    }
+
+    ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());    
     ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17u); //some may have been in flight.
     ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
     ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size() && requestPtr->GetFailedParts().size() >= 13u); //some may have been in flight at cancelation time.
@@ -712,7 +719,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
-        transferManager.RetryUpload(MEDIUM_TEST_FILE_NAME, requestPtr);
+        transferManager.RetryUpload(CANCEL_TEST_FILE_NAME, requestPtr);
         requestPtr->WaitUntilFinished();
     }
 
@@ -782,6 +789,14 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
     ASSERT_EQ(fileSize, CANCEL_TEST_SIZE / testStrLen * testStrLen);
 
     requestPtr->WaitUntilFinished();
+
+    //if this is the case, the request actually failed before we could cancel it and we need to try again.
+    while (requestPtr->GetCompletedParts().size() < 15u)
+    {
+        requestPtr = transferManager.RetryUpload(CANCEL_TEST_FILE_NAME, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+
     ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());
     while(requestPtr->GetStatus() != TransferStatus::ABORTED) std::this_thread::sleep_for(std::chrono::seconds(1));
     ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size() && requestPtr->GetCompletedParts().size() <= 17); //some may have been in flight.
@@ -874,6 +889,7 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
     {
         WaitForBucketToEmpty(GetTestBucketName());
     }
+
     GetObjectRequest getObjectRequest;
     getObjectRequest.SetBucket(GetTestBucketName());
     getObjectRequest.SetKey(TEST_FILE_NAME);

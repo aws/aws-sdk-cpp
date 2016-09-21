@@ -2828,7 +2828,7 @@ namespace {
 AssertionResult HRESULTFailureHelper(const char* expr,
                                      const char* expected,
                                      long hr) {  // NOLINT
-# if GTEST_OS_WINDOWS_MOBILE
+# if GTEST_OS_WINDOWS_MOBILE || defined(GTEST_PSEUDO_WINDOWS)
 
   // Windows CE doesn't support FormatMessage.
   const char error_text[] = "";
@@ -4042,7 +4042,7 @@ enum GTestColor {
   COLOR_YELLOW
 };
 
-#if GTEST_OS_WINDOWS && !GTEST_OS_WINDOWS_MOBILE
+#if GTEST_OS_WINDOWS && !GTEST_OS_WINDOWS_MOBILE && !defined(GTEST_PSEUDO_WINDOWS)
 
 // Returns the character attribute for the given color.
 WORD GetColorAttribute(GTestColor color) {
@@ -4125,7 +4125,7 @@ void ColoredPrintf(GTestColor color, const char* fmt, ...) {
     return;
   }
 
-#if GTEST_OS_WINDOWS && !GTEST_OS_WINDOWS_MOBILE
+#if GTEST_OS_WINDOWS && !GTEST_OS_WINDOWS_MOBILE && !defined(GTEST_PSEUDO_WINDOWS)
   const HANDLE stdout_handle = GetStdHandle(STD_OUTPUT_HANDLE);
 
   // Gets the current text color.
@@ -5378,7 +5378,7 @@ int UnitTest::Run() {
   // process. In either case the user does not want to see pop-up dialogs
   // about crashes - they are expected.
   if (impl()->catch_exceptions() || in_death_test_child_process) {
-# if !GTEST_OS_WINDOWS_MOBILE
+# if !GTEST_OS_WINDOWS_MOBILE && !defined(GTEST_PSEUDO_WINDOWS)
     // SetErrorMode doesn't exist on CE.
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOALIGNMENTFAULTEXCEPT |
                  SEM_NOGPFAULTERRORBOX | SEM_NOOPENFILEERRORBOX);
@@ -7244,10 +7244,13 @@ DeathTest::TestRole WindowsDeathTest::AssumeRole() {
   // The child process will share the standard handles with the parent.
   STARTUPINFOA startup_info;
   memset(&startup_info, 0, sizeof(STARTUPINFO));
+
+#if !defined(GTEST_PSEUDO_WINDOWS)
   startup_info.dwFlags = STARTF_USESTDHANDLES;
   startup_info.hStdInput = ::GetStdHandle(STD_INPUT_HANDLE);
   startup_info.hStdOutput = ::GetStdHandle(STD_OUTPUT_HANDLE);
   startup_info.hStdError = ::GetStdHandle(STD_ERROR_HANDLE);
+#endif
 
   PROCESS_INFORMATION process_info;
   GTEST_DEATH_TEST_CHECK_(::CreateProcessA(
@@ -7722,7 +7725,7 @@ static void SplitString(const ::std::string& str, char delimiter,
   dest->swap(parsed);
 }
 
-# if GTEST_OS_WINDOWS
+# if GTEST_OS_WINDOWS && !defined(GTEST_PSEUDO_WINDOWS)
 // Recreates the pipe and event handles from the provided parameters,
 // signals the event, and returns a file descriptor wrapped around the pipe
 // handle. This function is called in the child process only.
@@ -7804,7 +7807,7 @@ InternalRunDeathTestFlag* ParseInternalRunDeathTestFlag() {
   SplitString(GTEST_FLAG(internal_run_death_test).c_str(), '|', &fields);
   int write_fd = -1;
 
-# if GTEST_OS_WINDOWS
+# if GTEST_OS_WINDOWS && !defined(GTEST_PSEUDO_WINDOWS)
 
   unsigned int parent_process_id = 0;
   size_t write_handle_as_size_t = 0;
@@ -8740,12 +8743,14 @@ class CapturedStream {
                                             "gtest_redir",
                                             0,  // Generate unique file name.
                                             temp_file_path);
+
     GTEST_CHECK_(success != 0)
         << "Unable to create a temporary file in " << temp_dir_path;
     const int captured_fd = creat(temp_file_path, _S_IREAD | _S_IWRITE);
     GTEST_CHECK_(captured_fd != -1) << "Unable to open temporary file "
                                     << temp_file_path;
     filename_ = temp_file_path;
+
 # else
     // There's no guarantee that a test has write access to the current
     // directory, so we create the temporary file in the /tmp directory

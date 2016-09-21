@@ -77,12 +77,8 @@ set(INCLUDES
 include_directories(${INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-  add_definitions("-DAWS_TESTING_EXPORTS=1")
-  add_definitions("-DGTEST_CREATE_SHARED_LIBRARY=1")
-endif()
-
-if(PLATFORM_CUSTOM)
-  add_custom_testing_definitions()
+  add_definitions(-DAWS_TESTING_EXPORTS=1)
+  add_definitions(-DGTEST_CREATE_SHARED_LIBRARY=1)
 endif()
 
 if(PLATFORM_WINDOWS)
@@ -96,8 +92,11 @@ target_include_directories(testing-resources PUBLIC
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(testing-resources aws-cpp-sdk-core)
 
-if(PLATFORM_CUSTOM)
+if(COMMAND add_custom_testing_link_libraries)
   add_custom_testing_link_libraries()
+endif()
+
+if(COMMAND add_custom_testing_target_compile_definitions)
   add_custom_testing_target_compile_definitions()
 endif()
 

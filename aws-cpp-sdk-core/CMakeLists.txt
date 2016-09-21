@@ -9,14 +9,14 @@ if(GIT_FOUND)
 
     if(VERSION_STRING)
         set(Version_VERSION_STRING ${VERSION_STRING})
-        message("Updating version info to ${VERSION_STRING}")
+        message(STATUS "Updating version info to ${VERSION_STRING}")
         if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-          FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+            FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
         endif()
 
         configure_file(
-          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-          "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
+            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
     else()
         message("Not able to compute versioning string, not updating.")
     endif()
@@ -88,8 +88,13 @@ if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
 elseif(ENABLE_WINDOWS_CLIENT)
-    file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/*.h")
-    file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
+    if(USE_IXML_HTTP_REQUEST_2)
+        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/IXmlHttpRequest2HttpClient.h")
+        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/IXmlHttpRequest2HttpClient.cpp")
+    else()
+        file(GLOB HTTP_WINDOWS_CLIENT_HEADERS "include/aws/core/http/windows/Win*.h")
+        file(GLOB HTTP_WINDOWS_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/Win*.cpp")
+    endif()
 endif()
 
 # encryption implementations
@@ -111,7 +116,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_AUTH_SOURCE}
     ${AWS_CLIENT_SOURCE}
     ${AWS_INTERNAL_SOURCE}
-    ${HTTP_SOURCE}
     ${HTTP_STANDARD_SOURCE}
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
@@ -200,14 +204,15 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_SOURCE}
+    ${HTTP_SOURCE}
     ${AWS_JSONCPP_SOURCE}
+    ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
 
 file(GLOB AWS_NATIVE_SDK_UNITY_SRC
   ${AWS_NATIVE_SDK_COMMON_SRC}
   ${AWS_NATIVE_SDK_LINUX_SHARED_SRC}
   ${AWS_NATIVE_SDK_ANDROID_SRC}
-  ${AWS_NATIVE_SDK_CUSTOM_SRC}
 )
 
 if(ENABLE_UNITY_BUILD)
@@ -313,8 +318,12 @@ set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 include_directories(${Core_INCLUDES})
 
+if(NOT PLATFORM_CUSTOM)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs)
+endif()
+
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-  add_definitions("-DAWS_CORE_EXPORTS=1")
+    add_definitions(-DAWS_CORE_EXPORTS=1)
 endif()
 
 if(PLATFORM_ANDROID)
@@ -340,21 +349,21 @@ target_include_directories(aws-cpp-sdk-core PUBLIC
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
 
-target_compile_definitions(aws-cpp-sdk-core PUBLIC -DJSON_USE_EXCEPTION=0)
+if(USE_WINDOWS_DLL_SEMANTICS)
+    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
 
-if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
-    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
+    if(BUILD_SHARED_LIBS)
+        target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
+    endif()
 endif()
 
-if(NOT PLATFORM_WINDOWS)
+if(USE_GCC_FLAGS)
     target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++${CPP_STANDARD})
 
-    if(USE_GCC_FLAGS)
-        if(NOT ENABLE_RTTI)
-            target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
-        endif()
+    if(NOT ENABLE_RTTI)
+        target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
     endif()
-elseif(MSVC)
+else()
 
     if(NOT ENABLE_RTTI)
         target_compile_options(aws-cpp-sdk-core PUBLIC /GR-)
@@ -414,6 +423,6 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
   install (FILES ${UTILS_CRYPTO_COMMONCRYPTO_HEADERS} DESTINATION include/aws/core/utils/crypto/commoncrypto)
 endif()
 
-if(MSVC)
+if(PLATFORM_WINDOWS AND MSVC)
   install (FILES nuget/aws-cpp-sdk-core.autopkg DESTINATION nuget)
 endif()
