@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elastictranscoder)
   install (FILES ${AWS_ELASTICTRANSCODER_HEADERS} DESTINATION include/aws/elastictranscoder)
   install (FILES ${AWS_ELASTICTRANSCODER_MODEL_HEADERS} DESTINATION include/aws/elastictranscoder/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elastictranscoder.autopkg DESTINATION nuget)
   endif()
 

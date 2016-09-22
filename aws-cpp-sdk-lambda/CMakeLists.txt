@@ -84,7 +84,7 @@ project(aws-cpp-sdk-lambda)
   install (FILES ${AWS_LAMBDA_HEADERS} DESTINATION include/aws/lambda)
   install (FILES ${AWS_LAMBDA_MODEL_HEADERS} DESTINATION include/aws/lambda/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-lambda.autopkg DESTINATION nuget)
   endif()
 

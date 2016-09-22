@@ -84,7 +84,7 @@ project(aws-cpp-sdk-dms)
   install (FILES ${AWS_DMS_HEADERS} DESTINATION include/aws/dms)
   install (FILES ${AWS_DMS_MODEL_HEADERS} DESTINATION include/aws/dms/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-dms.autopkg DESTINATION nuget)
   endif()
 

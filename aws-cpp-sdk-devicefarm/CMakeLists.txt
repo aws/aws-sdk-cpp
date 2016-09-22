@@ -84,7 +84,7 @@ project(aws-cpp-sdk-devicefarm)
   install (FILES ${AWS_DEVICEFARM_HEADERS} DESTINATION include/aws/devicefarm)
   install (FILES ${AWS_DEVICEFARM_MODEL_HEADERS} DESTINATION include/aws/devicefarm/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-devicefarm.autopkg DESTINATION nuget)
   endif()
 

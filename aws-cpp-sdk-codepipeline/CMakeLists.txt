@@ -84,7 +84,7 @@ project(aws-cpp-sdk-codepipeline)
   install (FILES ${AWS_CODEPIPELINE_HEADERS} DESTINATION include/aws/codepipeline)
   install (FILES ${AWS_CODEPIPELINE_MODEL_HEADERS} DESTINATION include/aws/codepipeline/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-codepipeline.autopkg DESTINATION nuget)
   endif()
 

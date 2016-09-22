@@ -84,7 +84,7 @@ project(aws-cpp-sdk-autoscaling)
   install (FILES ${AWS_AUTOSCALING_HEADERS} DESTINATION include/aws/autoscaling)
   install (FILES ${AWS_AUTOSCALING_MODEL_HEADERS} DESTINATION include/aws/autoscaling/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-autoscaling.autopkg DESTINATION nuget)
   endif()
 

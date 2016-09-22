@@ -51,32 +51,52 @@ namespace Model
     GetIntegrationResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
-     * <code>AWS</code>, or <code>MOCK</code>.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
+     * integrating with an HTTP back end, <code>AWS</code> for any AWS service
+     * endpoints, <code>MOCK</code> for testing without actually invoking the back end,
+     * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or
+     * <code>AWS_PROXY</code> for integrating with the Lambda proxy integration
+     * type.</p>
      */
     inline const IntegrationType& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
-     * <code>AWS</code>, or <code>MOCK</code>.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
+     * integrating with an HTTP back end, <code>AWS</code> for any AWS service
+     * endpoints, <code>MOCK</code> for testing without actually invoking the back end,
+     * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or
+     * <code>AWS_PROXY</code> for integrating with the Lambda proxy integration
+     * type.</p>
      */
     inline void SetType(const IntegrationType& value) { m_type = value; }
 
     /**
-     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
-     * <code>AWS</code>, or <code>MOCK</code>.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
+     * integrating with an HTTP back end, <code>AWS</code> for any AWS service
+     * endpoints, <code>MOCK</code> for testing without actually invoking the back end,
+     * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or
+     * <code>AWS_PROXY</code> for integrating with the Lambda proxy integration
+     * type.</p>
      */
     inline void SetType(IntegrationType&& value) { m_type = value; }
 
     /**
-     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
-     * <code>AWS</code>, or <code>MOCK</code>.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
+     * integrating with an HTTP back end, <code>AWS</code> for any AWS service
+     * endpoints, <code>MOCK</code> for testing without actually invoking the back end,
+     * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or
+     * <code>AWS_PROXY</code> for integrating with the Lambda proxy integration
+     * type.</p>
      */
     inline GetIntegrationResult& WithType(const IntegrationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the integration's type. The valid value is <code>HTTP</code>,
-     * <code>AWS</code>, or <code>MOCK</code>.</p>
+     * <p>Specifies the integration's type. The valid value is <code>HTTP</code> for
+     * integrating with an HTTP back end, <code>AWS</code> for any AWS service
+     * endpoints, <code>MOCK</code> for testing without actually invoking the back end,
+     * <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration, or
+     * <code>AWS_PROXY</code> for integrating with the Lambda proxy integration
+     * type.</p>
      */
     inline GetIntegrationResult& WithType(IntegrationType&& value) { SetType(value); return *this;}
 

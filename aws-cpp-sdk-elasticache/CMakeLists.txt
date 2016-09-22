@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elasticache)
   install (FILES ${AWS_ELASTICACHE_HEADERS} DESTINATION include/aws/elasticache)
   install (FILES ${AWS_ELASTICACHE_MODEL_HEADERS} DESTINATION include/aws/elasticache/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elasticache.autopkg DESTINATION nuget)
   endif()
 

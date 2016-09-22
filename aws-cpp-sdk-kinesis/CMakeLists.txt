@@ -84,7 +84,7 @@ project(aws-cpp-sdk-kinesis)
   install (FILES ${AWS_KINESIS_HEADERS} DESTINATION include/aws/kinesis)
   install (FILES ${AWS_KINESIS_MODEL_HEADERS} DESTINATION include/aws/kinesis/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-kinesis.autopkg DESTINATION nuget)
   endif()
 

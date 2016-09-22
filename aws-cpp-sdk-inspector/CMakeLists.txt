@@ -84,7 +84,7 @@ project(aws-cpp-sdk-inspector)
   install (FILES ${AWS_INSPECTOR_HEADERS} DESTINATION include/aws/inspector)
   install (FILES ${AWS_INSPECTOR_MODEL_HEADERS} DESTINATION include/aws/inspector/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-inspector.autopkg DESTINATION nuget)
   endif()
 

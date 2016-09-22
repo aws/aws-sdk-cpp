@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cognito-sync)
   install (FILES ${AWS_COGNITO-SYNC_HEADERS} DESTINATION include/aws/cognito-sync)
   install (FILES ${AWS_COGNITO-SYNC_MODEL_HEADERS} DESTINATION include/aws/cognito-sync/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cognito-sync.autopkg DESTINATION nuget)
   endif()
 

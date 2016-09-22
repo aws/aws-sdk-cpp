@@ -84,7 +84,7 @@ project(aws-cpp-sdk-meteringmarketplace)
   install (FILES ${AWS_METERINGMARKETPLACE_HEADERS} DESTINATION include/aws/meteringmarketplace)
   install (FILES ${AWS_METERINGMARKETPLACE_MODEL_HEADERS} DESTINATION include/aws/meteringmarketplace/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-meteringmarketplace.autopkg DESTINATION nuget)
   endif()
 

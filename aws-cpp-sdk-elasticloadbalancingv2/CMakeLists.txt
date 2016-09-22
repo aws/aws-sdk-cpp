@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elasticloadbalancingv2)
   install (FILES ${AWS_ELASTICLOADBALANCINGV2_HEADERS} DESTINATION include/aws/elasticloadbalancingv2)
   install (FILES ${AWS_ELASTICLOADBALANCINGV2_MODEL_HEADERS} DESTINATION include/aws/elasticloadbalancingv2/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elasticloadbalancingv2.autopkg DESTINATION nuget)
   endif()
 

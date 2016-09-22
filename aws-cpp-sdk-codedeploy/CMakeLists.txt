@@ -84,7 +84,7 @@ project(aws-cpp-sdk-codedeploy)
   install (FILES ${AWS_CODEDEPLOY_HEADERS} DESTINATION include/aws/codedeploy)
   install (FILES ${AWS_CODEDEPLOY_MODEL_HEADERS} DESTINATION include/aws/codedeploy/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-codedeploy.autopkg DESTINATION nuget)
   endif()
 

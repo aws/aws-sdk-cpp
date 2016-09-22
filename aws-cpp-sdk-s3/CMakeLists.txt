@@ -84,7 +84,7 @@ project(aws-cpp-sdk-s3)
   install (FILES ${AWS_S3_HEADERS} DESTINATION include/aws/s3)
   install (FILES ${AWS_S3_MODEL_HEADERS} DESTINATION include/aws/s3/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-s3.autopkg DESTINATION nuget)
   endif()
 

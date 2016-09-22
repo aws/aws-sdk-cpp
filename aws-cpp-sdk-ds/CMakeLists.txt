@@ -84,7 +84,7 @@ project(aws-cpp-sdk-ds)
   install (FILES ${AWS_DS_HEADERS} DESTINATION include/aws/ds)
   install (FILES ${AWS_DS_MODEL_HEADERS} DESTINATION include/aws/ds/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-ds.autopkg DESTINATION nuget)
   endif()
 

@@ -84,7 +84,7 @@ project(aws-cpp-sdk-mobileanalytics)
   install (FILES ${AWS_MOBILEANALYTICS_HEADERS} DESTINATION include/aws/mobileanalytics)
   install (FILES ${AWS_MOBILEANALYTICS_MODEL_HEADERS} DESTINATION include/aws/mobileanalytics/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-mobileanalytics.autopkg DESTINATION nuget)
   endif()
 

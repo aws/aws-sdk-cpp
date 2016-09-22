@@ -84,7 +84,7 @@ project(aws-cpp-sdk-route53domains)
   install (FILES ${AWS_ROUTE53DOMAINS_HEADERS} DESTINATION include/aws/route53domains)
   install (FILES ${AWS_ROUTE53DOMAINS_MODEL_HEADERS} DESTINATION include/aws/route53domains/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-route53domains.autopkg DESTINATION nuget)
   endif()
 

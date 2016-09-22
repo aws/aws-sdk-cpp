@@ -84,7 +84,7 @@ project(aws-cpp-sdk-snowball)
   install (FILES ${AWS_SNOWBALL_HEADERS} DESTINATION include/aws/snowball)
   install (FILES ${AWS_SNOWBALL_MODEL_HEADERS} DESTINATION include/aws/snowball/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-snowball.autopkg DESTINATION nuget)
   endif()
 

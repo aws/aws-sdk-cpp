@@ -84,7 +84,7 @@ project(aws-cpp-sdk-dynamodb)
   install (FILES ${AWS_DYNAMODB_HEADERS} DESTINATION include/aws/dynamodb)
   install (FILES ${AWS_DYNAMODB_MODEL_HEADERS} DESTINATION include/aws/dynamodb/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-dynamodb.autopkg DESTINATION nuget)
   endif()
 

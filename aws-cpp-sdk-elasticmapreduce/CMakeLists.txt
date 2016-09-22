@@ -84,7 +84,7 @@ project(aws-cpp-sdk-elasticmapreduce)
   install (FILES ${AWS_ELASTICMAPREDUCE_HEADERS} DESTINATION include/aws/elasticmapreduce)
   install (FILES ${AWS_ELASTICMAPREDUCE_MODEL_HEADERS} DESTINATION include/aws/elasticmapreduce/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-elasticmapreduce.autopkg DESTINATION nuget)
   endif()
 

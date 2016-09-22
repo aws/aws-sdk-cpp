@@ -84,7 +84,7 @@ project(aws-cpp-sdk-marketplacecommerceanalytics)
   install (FILES ${AWS_MARKETPLACECOMMERCEANALYTICS_HEADERS} DESTINATION include/aws/marketplacecommerceanalytics)
   install (FILES ${AWS_MARKETPLACECOMMERCEANALYTICS_MODEL_HEADERS} DESTINATION include/aws/marketplacecommerceanalytics/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-marketplacecommerceanalytics.autopkg DESTINATION nuget)
   endif()
 

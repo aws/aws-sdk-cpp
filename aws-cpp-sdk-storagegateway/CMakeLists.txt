@@ -84,7 +84,7 @@ project(aws-cpp-sdk-storagegateway)
   install (FILES ${AWS_STORAGEGATEWAY_HEADERS} DESTINATION include/aws/storagegateway)
   install (FILES ${AWS_STORAGEGATEWAY_MODEL_HEADERS} DESTINATION include/aws/storagegateway/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-storagegateway.autopkg DESTINATION nuget)
   endif()
 

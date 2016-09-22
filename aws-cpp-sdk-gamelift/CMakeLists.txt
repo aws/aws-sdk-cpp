@@ -84,7 +84,7 @@ project(aws-cpp-sdk-gamelift)
   install (FILES ${AWS_GAMELIFT_HEADERS} DESTINATION include/aws/gamelift)
   install (FILES ${AWS_GAMELIFT_MODEL_HEADERS} DESTINATION include/aws/gamelift/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-gamelift.autopkg DESTINATION nuget)
   endif()
 

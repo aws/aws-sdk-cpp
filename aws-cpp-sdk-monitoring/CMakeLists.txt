@@ -84,7 +84,7 @@ project(aws-cpp-sdk-monitoring)
   install (FILES ${AWS_MONITORING_HEADERS} DESTINATION include/aws/monitoring)
   install (FILES ${AWS_MONITORING_MODEL_HEADERS} DESTINATION include/aws/monitoring/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-monitoring.autopkg DESTINATION nuget)
   endif()
 

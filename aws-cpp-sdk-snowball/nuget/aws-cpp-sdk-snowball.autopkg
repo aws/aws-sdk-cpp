@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Snowball;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.0.20160630.8;
+        version : 1.0.20160630.9;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Import/Export Snowball);

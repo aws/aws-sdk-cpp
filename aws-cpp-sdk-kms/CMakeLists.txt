@@ -84,7 +84,7 @@ project(aws-cpp-sdk-kms)
   install (FILES ${AWS_KMS_HEADERS} DESTINATION include/aws/kms)
   install (FILES ${AWS_KMS_MODEL_HEADERS} DESTINATION include/aws/kms/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-kms.autopkg DESTINATION nuget)
   endif()
 

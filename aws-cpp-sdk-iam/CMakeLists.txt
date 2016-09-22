@@ -84,7 +84,7 @@ project(aws-cpp-sdk-iam)
   install (FILES ${AWS_IAM_HEADERS} DESTINATION include/aws/iam)
   install (FILES ${AWS_IAM_MODEL_HEADERS} DESTINATION include/aws/iam/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-iam.autopkg DESTINATION nuget)
   endif()
 

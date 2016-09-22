@@ -84,7 +84,7 @@ project(aws-cpp-sdk-cloudfront)
   install (FILES ${AWS_CLOUDFRONT_HEADERS} DESTINATION include/aws/cloudfront)
   install (FILES ${AWS_CLOUDFRONT_MODEL_HEADERS} DESTINATION include/aws/cloudfront/model)
 
-  if(MSVC)
+  if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/aws-cpp-sdk-cloudfront.autopkg DESTINATION nuget)
   endif()
 
