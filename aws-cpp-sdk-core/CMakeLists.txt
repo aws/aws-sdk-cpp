@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-set(PROJECT_NAME "${PROJECT_NAME}")
+set(PROJECT_NAME "aws-cpp-sdk-core")
 set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_DESCRIPTION "C++ interface for Amazon Web Services")
 set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
@@ -354,6 +354,7 @@ endif()
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
@@ -375,7 +376,6 @@ else()
         target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
     endif()
 endif()
-configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
 if(SIMPLE_INSTALL)
     install (
@@ -385,11 +385,6 @@ if(SIMPLE_INSTALL)
         LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
         RUNTIME DESTINATION ${BINARY_DIRECTORY})
 
-    if (BUILD_SHARED_LIBS)
-        install(
-            FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
-            DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
-    endif()
 else()
     if(PLATFORM_CUSTOM)
         install_custom_library(${PROJECT_NAME})
@@ -400,6 +395,13 @@ else()
              LIBRARY DESTINATION ${LIBRARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
              RUNTIME DESTINATION ${BINARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
     endif()
+endif()
+
+configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
+if (BUILD_SHARED_LIBS)
+    install(
+        FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+        DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
 endif()
 
 install (FILES ${AWS_HEADERS} DESTINATION include/aws/core)
@@ -463,6 +465,7 @@ configure_file(
     @ONLY)
 
 set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+
 install(EXPORT "${PROJECT_NAME}-targets"
     FILE "${PROJECT_NAME}-targets.cmake"
     NAMESPACE AWS::
