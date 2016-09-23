@@ -19,7 +19,7 @@ set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_DESCRIPTION "C++ interface for AWS Elasticbeanstalk")
 set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(PROJECT_LIBS "")
-list(APPEND PROJECT_LIBS "aws-cpp-sdk-core")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
 
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)

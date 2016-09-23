@@ -109,6 +109,7 @@ set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(PROJECT_BUGREPORT "https://github.com/aws/aws-sdk-cpp/issues/")
 
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)

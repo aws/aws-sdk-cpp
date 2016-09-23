@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 set(PROJECT_NAME "aws-cpp-sdk-core")
-set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_STRING "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_DESCRIPTION "C++ interface for Amazon Web Services")
-set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+set(PROJECT_TARNAME "${PROJECT_NAME}-${PROJECT_VERSION}")
 
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)
+
 
 project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
