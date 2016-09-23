@@ -78,6 +78,6 @@ if(PLATFORM_WINDOWS AND MSVC)
     install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
 endif()
 
-do_unix_packaging()
+do_packaging()
 
 

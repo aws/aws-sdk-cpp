@@ -24,5 +24,5 @@ else()
 endif()
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS_RAW})
 
