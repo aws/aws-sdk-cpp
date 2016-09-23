@@ -67,16 +67,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(resolve_platform)
 
-if(BUILD_SHARED_LIBS)
-    SET(ARCHIVE_DIRECTORY "bin")
-    SET(LIBTYPE SHARED)
-    message(STATUS "Building AWS libraries as shared objects")
-else()
-    SET(ARCHIVE_DIRECTORY "lib")
-    SET(LIBTYPE STATIC)
-    message(STATUS "Building AWS libraries as static objects")
-endif()
-
 # use response files to prevent command-line-too-big errors for large libraries like iam
 SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
 SET(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
@@ -86,7 +76,8 @@ if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
 endif()
 
-project(aws-sdk-cpp-all)
+include(initialize_project_version)
+add_project("aws-cpp-sdk-all" "AWS SDK for C++")
 
 # http client, encryption, zlib, uuid
 include(external_dependencies)
@@ -109,14 +100,7 @@ include(sdks)
 
 include(utilities)
 
-# In Windows, this dumps the CL and LINK command lines to the output - makes it much easier to
-# check that CMake is passing in the right defines, paths, etc...
-#
-# set( CMAKE_VERBOSE_MAKEFILE 1 )
-
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
-
-set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
 
 include(build_external)
 
@@ -134,10 +118,6 @@ elseif(ENABLE_WINDOWS_CLIENT)
     else()
         set(CLIENT_LIBS Wininet winhttp)
     endif()
-endif()
-
-if(COMMAND apply_custom_platform_settings)
-    apply_custom_platform_settings()
 endif()
 
 add_sdks()

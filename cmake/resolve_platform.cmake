@@ -30,6 +30,20 @@ else()
     endif()
 endif()
 
+# directory defaults; linux overrides these on SIMPLE_INSTALL builds
+SET(BINARY_DIRECTORY "bin")
+SET(LIBRARY_DIRECTORY "lib")
+SET(INCLUDE_DIRECTORY "include")
+if(BUILD_SHARED_LIBS)
+    SET(ARCHIVE_DIRECTORY "bin")
+    SET(LIBTYPE SHARED)
+    message(STATUS "Building AWS libraries as shared objects")
+else()
+    SET(ARCHIVE_DIRECTORY "lib")
+    SET(LIBTYPE STATIC)
+    message(STATUS "Building AWS libraries as static objects")
+endif()
+
 string(TOLOWER ${TARGET_ARCH} __LOWER_ARCH)
 
 if(PLATFORM_LINUX OR PLATFORM_APPLE OR PLATFORM_ANDROID)
