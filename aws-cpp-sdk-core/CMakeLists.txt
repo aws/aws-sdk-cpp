@@ -1,26 +1,32 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-core)
+
+set(PROJECT_NAME "${PROJECT_NAME}")
+set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_DESCRIPTION "C++ interface for Amazon Web Services")
+set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 if(GIT_FOUND)
     execute_process(COMMAND ${GIT_EXECUTABLE} describe --abbrev=0 --tags
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     OUTPUT_VARIABLE VERSION_STRING
     OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-    if(VERSION_STRING)
-        set(Version_VERSION_STRING ${VERSION_STRING})
-        message(STATUS "Updating version info to ${VERSION_STRING}")
-        if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-            FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
-        endif()
-
-        configure_file(
-            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-            "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
-    else()
-        message("Not able to compute versioning string, not updating.")
-    endif()
+else()
+    set(VERSION_STRING "${PROJECT_VERSION}")
 endif()
+
+set(Version_VERSION_STRING ${VERSION_STRING})
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+  FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
+endif()
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
 
 # If building shared libraries, custom memory management enabled is the default, otherwise regular memory management is the default.
 # We make custom memory management the default on shared library builds because it is safer and much more difficult to accidentally
@@ -334,53 +340,65 @@ if(PLATFORM_ANDROID)
 
 endif()
 
-add_library(aws-cpp-sdk-core ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_NATIVE_SDK_SRC})
+set(PKG_CONFIG_LIB "-l${PROJECT_NAME}")
 
 if(ENABLE_CURL_CLIENT AND BUILD_CURL)
-    add_dependencies(aws-cpp-sdk-core CURL)
+    add_dependencies(${PROJECT_NAME} CURL)
 endif()
 
 if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
-    add_dependencies(aws-cpp-sdk-core OPENSSL)
+    add_dependencies(${PROJECT_NAME} OPENSSL)
 endif()
 
-target_include_directories(aws-cpp-sdk-core PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
-target_link_libraries(aws-cpp-sdk-core ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
-    target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC -DUSE_WINDOWS_DLL_SEMANTICS)
 
     if(BUILD_SHARED_LIBS)
-        target_compile_definitions(aws-cpp-sdk-core PUBLIC -DUSE_IMPORT_EXPORT=1)
+        target_compile_definitions(${PROJECT_NAME} PUBLIC -DUSE_IMPORT_EXPORT=1)
     endif()
 endif()
 
 if(USE_GCC_FLAGS)
-    target_compile_options(aws-cpp-sdk-core PUBLIC -std=c++${CPP_STANDARD})
+    target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
 
     if(NOT ENABLE_RTTI)
-        target_compile_options(aws-cpp-sdk-core PUBLIC -fno-rtti)
+        target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
     endif()
 else()
 
     if(NOT ENABLE_RTTI)
-        target_compile_options(aws-cpp-sdk-core PUBLIC /GR-)
+        target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
     endif()
 endif()
+configure_file("${CMAKE_SOURCE_DIR}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
 if(SIMPLE_INSTALL)
-    install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
-                                      LIBRARY DESTINATION lib
-                                      RUNTIME DESTINATION bin)
+    install (
+        TARGETS ${PROJECT_NAME}
+        EXPORT "${PROJECT_NAME}-targets"
+        ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+        LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
+        RUNTIME DESTINATION ${BINARY_DIRECTORY})
+
+    if (BUILD_SHARED_LIBS)
+        install(
+            FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+            DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
+    endif()
 else()
     if(PLATFORM_CUSTOM)
-        install_custom_library(aws-cpp-sdk-core)
+        install_custom_library(${PROJECT_NAME})
     else()
-        install (TARGETS aws-cpp-sdk-core ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                                          LIBRARY DESTINATION lib/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
-                                          RUNTIME DESTINATION bin/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
+        install (TARGETS ${PROJECT_NAME}
+             EXPORT "${PROJECT_NAME}-targets"
+             ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+             LIBRARY DESTINATION ${LIBRARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME}
+             RUNTIME DESTINATION ${BINARY_DIRECTORY}/${SDK_INSTALL_BINARY_PREFIX}/${PLATFORM_INSTALL_QUALIFIER}/\${CMAKE_INSTALL_CONFIG_NAME})
     endif()
 endif()
 
@@ -424,5 +442,38 @@ elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
 endif()
 
 if(PLATFORM_WINDOWS AND MSVC)
-  install (FILES nuget/aws-cpp-sdk-core.autopkg DESTINATION nuget)
+  install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
 endif()
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+
+export(EXPORT "${PROJECT_NAME}-targets"
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
+    NAMESPACE AWS::
+)
+
+configure_file(
+    "${CMAKE_SOURCE_DIR}/toolchains/cmakeProjectConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+    @ONLY)
+
+set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+install(EXPORT "${PROJECT_NAME}-targets"
+    FILE "${PROJECT_NAME}-targets.cmake"
+    NAMESPACE AWS::
+    DESTINATION ${ConfigPackageLocation}
+)
+
+install(
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+      "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+    DESTINATION
+      ${ConfigPackageLocation}
+    COMPONENT
+      Devel)

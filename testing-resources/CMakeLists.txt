@@ -14,7 +14,19 @@
 #
 
 cmake_minimum_required(VERSION 2.8.12)
-project(testing-resources)
+set(PROJECT_NAME "testing-resources")
+set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_DESCRIPTION "C++ interface for AWS Elasticbeanstalk")
+set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+set(PROJECT_LIBS "")
+list(APPEND PROJECT_LIBS "aws-cpp-sdk-core")
+
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
 include(GenerateExportHeader)
 
 file(GLOB AWS_TESTING_HEADERS "include/aws/testing/*.h")
@@ -71,7 +83,6 @@ file(GLOB TestingResources_SRC
 
 set(INCLUDES
   "${CMAKE_CURRENT_SOURCE_DIR}/include/"
-  "${CORE_DIR}/include/"
 )
 
 include_directories(${INCLUDES})
@@ -85,12 +96,12 @@ if(PLATFORM_WINDOWS)
   add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
 endif()
 
-add_library(testing-resources ${LIBTYPE} ${TestingResources_SRC})
+add_library(${PROJECT_NAME} ${LIBTYPE} ${TestingResources_SRC})
 
-target_include_directories(testing-resources PUBLIC
+target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(testing-resources aws-cpp-sdk-core)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
 
 if(COMMAND add_custom_testing_link_libraries)
   add_custom_testing_link_libraries()
@@ -99,4 +110,3 @@ endif()
 if(COMMAND add_custom_testing_target_compile_definitions)
   add_custom_testing_target_compile_definitions()
 endif()
-

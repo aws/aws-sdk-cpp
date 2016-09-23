@@ -67,12 +67,29 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 include(resolve_platform)
 
+if(PLATFORM_LINUX)
+    include(GNUInstallDirs)
+    SET(BINARY_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
+    SET(LIBRARY_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
+    set(INCLUDE_DIRECTORY "${CMAKE_INSTALL_INCLUDEDIR}")
+endif()
+
 if(BUILD_SHARED_LIBS)
     SET(ARCHIVE_DIRECTORY "bin")
+
+    if (PLATFORM_LINUX)
+        SET(ARCHIVE_DIRECTORY "${CMAKE_INSTALL_BINDIR}")
+    endif()
+
     SET(LIBTYPE SHARED)
     message(STATUS "Building AWS libraries as shared objects")
 else()
     SET(ARCHIVE_DIRECTORY "lib")
+
+    if(PLATFORM_LINUX)
+        set(ARCHIVE_DIRECTORY "${CMAKE_INSTALL_LIBDIR}")
+    endif()
+
     SET(LIBTYPE STATIC)
     message(STATUS "Building AWS libraries as static objects")
 endif()
@@ -86,7 +103,17 @@ if(COMMAND apply_pre_project_platform_settings)
     apply_pre_project_platform_settings()
 endif()
 
-project(aws-sdk-cpp-all)
+set(PROJECT_NAME "aws-cpp-sdk")
+set(PROJECT_VERSION "0.14.8.1")
+set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+set(PROJECT_BUGREPORT "https://github.com/aws/aws-sdk-cpp/issues/")
+
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+project(${PROJECT_NAME} VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib, uuid
 include(external_dependencies)
@@ -116,10 +143,7 @@ include(utilities)
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
-set(CORE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-core/")
-
 include(build_external)
-
 if(ENABLE_BCRYPT_ENCRYPTION)
     set(CRYPTO_LIBS Bcrypt)
 elseif(ENABLE_OPENSSL_ENCRYPTION)
@@ -141,4 +165,3 @@ if(COMMAND apply_custom_platform_settings)
 endif()
 
 add_sdks()
-
