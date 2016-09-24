@@ -19,6 +19,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/s3-encryption/modules/CryptoModuleFactory.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
@@ -47,6 +48,8 @@ namespace
     static const char* const TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
     static const int TIMEOUT_MAX = 30;
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
+    static const char* const GET_RANGE_SPECIFIER = "bytes=20-36";
+    static const char* const GET_RANGE_OUTPUT = "ssage for encryption";
     static const char* const ASSERTION_FAILED = "Assertion failed: 0";
     static const char* const TAG_REQUEST_RANGE_SPECIFIER = "bytes=-16";
     static size_t const GCM_TAG_LENGTH = 128u;
@@ -163,28 +166,24 @@ namespace
             Aws::Utils::Stream::ResponseStream responseStream(factory);
 
             Aws::String range = request.GetRange();
+            size_t written = 0;
             if (!range.empty())
             {
-                auto bytes = bodyString.size();
-                if (range == TAG_REQUEST_RANGE_SPECIFIER)
-                {
-                    auto tagString = bodyString.substr(bytes - 16u);
-                    responseStream.GetUnderlyingStream() << tagString;
-                }
-                else
-                {
-                    auto adjustedBodyString = bodyString.substr(0, bodyString.size() - 16u);
-                    responseStream.GetUnderlyingStream() << adjustedBodyString;
-
-                }
+                auto bytes = m_requestContentLength;
+                auto rangeBytes = CryptoModule::ParseGetObjectRequestRange(range, bytes);
+                responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first);
+                written = rangeBytes.second - rangeBytes.first;                
             }
             else
             {
-                responseStream.GetUnderlyingStream() << bodyString;
-            }
-            
+                responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str(), m_requestContentLength);
+                written = m_requestContentLength;
+            }          
+
+            responseStream.GetUnderlyingStream().flush();
             Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
             Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
+            getObjectResult.SetContentLength(written);
             getObjectResult.SetMetadata(m_metadata);
             return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
         }
@@ -194,6 +193,7 @@ namespace
             Aws::S3::Model::HeadObjectOutcome outcome;
             Aws::S3::Model::HeadObjectResult result(outcome.GetResultWithOwnership());
             result.SetMetadata(m_metadata);
+            result.SetContentLength(m_requestContentLength);
             return result;
         }
 
@@ -363,7 +363,7 @@ namespace
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
 
-        ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
+        ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 2);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
@@ -566,6 +566,73 @@ namespace
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
         ASSERT_EQ(kmsClient->m_encryptCalledCount, 1u);
         ASSERT_EQ(kmsClient->m_decryptCalledCount, 1u);
+    }
+
+    TEST_F(CryptoModulesTest, AERangeGet)
+    {
+        SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
+        CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
+
+        MockS3Client s3Client;
+
+        CryptoModuleFactory factory;
+        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+
+        PutObjectRequest putRequest;
+        putRequest.SetBucket(BUCKET_TEST_NAME);
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << BODY_STREAM_TEST;
+        objectStream->flush();
+        putRequest.SetBody(objectStream);
+        putRequest.SetKey(KEY_TEST_NAME);
+
+        auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest putRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(putRequest); };
+        PutObjectOutcome putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
+        ASSERT_TRUE(putOutcome.IsSuccess());
+
+        auto metadata = s3Client.GetMetadata();
+        MetadataFilled(metadata);
+
+        size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
+        ASSERT_EQ(cryptoTagLength, GCM_TAG_LENGTH);
+
+        Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
+        ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+
+        Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
+        ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
+
+        Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
+        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
+
+        ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
+
+        auto decryptionModule = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), cryptoConfig);
+        GetObjectRequest getRequest;
+        getRequest.SetBucket(BUCKET_TEST_NAME);
+        getRequest.SetKey(KEY_TEST_NAME);
+        getRequest.SetRange(GET_RANGE_SPECIFIER);
+
+        HeadObjectRequest headObject;
+        headObject.WithBucket(BUCKET_TEST_NAME);
+        headObject.WithKey(KEY_TEST_NAME);
+        HeadObjectOutcome headOutcome = s3Client.HeadObject(headObject);
+
+        Aws::S3Encryption::Handlers::MetadataHandler handler;
+        ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
+
+        auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
+        auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
+
+        ASSERT_TRUE(getOutcome.IsSuccess());
+        Aws::OStream& ostream = getOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << ostream.rdbuf();
+
+        ASSERT_STREQ(GET_RANGE_OUTPUT, ss.str().c_str());
+        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)

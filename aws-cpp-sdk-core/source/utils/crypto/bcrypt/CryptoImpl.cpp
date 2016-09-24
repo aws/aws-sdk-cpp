@@ -927,7 +927,7 @@ namespace Aws
                         CryptoBuffer* newBuffer = Aws::New<CryptoBuffer>(CTR_LOG_TAG, BlockSizeBytes);
                         *newBuffer = slicedBuffers[i] ^ encryptedText;
                         finalBufferSet[i] = newBuffer;
-                        IncrementCounter(m_workingIv);
+                        m_workingIv = IncrementCTRCounter(m_workingIv, 1);
                         bytesWritten += static_cast<size_t>(lengthWritten);
                     }
                     else
@@ -958,27 +958,7 @@ namespace Aws
             size_t AES_CTR_Cipher_BCrypt::GetKeyLengthBits() const
             {
                 return KeyLengthBits;
-            }
-
-            void AES_CTR_Cipher_BCrypt::IncrementCounter(CryptoBuffer& buffer)
-            {
-                assert(buffer.GetLength() == BlockSizeBytes);
-
-                int32_t ctr = 0;
-                for (size_t i = BlockSizeBytes - 5; i < BlockSizeBytes; ++i)
-                {
-                    ctr <<= 8;
-                    ctr |= buffer[i];
-                }
-
-                ctr += 1;
-
-                for (size_t i = BlockSizeBytes - 1; i > BlockSizeBytes - 5; --i)
-                {
-                    buffer[i] = ctr & 0x000000FF;
-                    ctr >>= 8;
-                }
-            }
+            }           
 
             void AES_CTR_Cipher_BCrypt::InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers)
             {

@@ -85,10 +85,26 @@ Aws::S3::Model::GetObjectOutcome CryptoModule::GetObjectSecurely(const Aws::S3::
     m_encryptionMaterials->DecryptCEK(m_contentCryptoMaterial);
 
     CryptoBuffer tagFromBody = GetTag(copyRequest, getObjectFunction);
-    InitDecryptionCipher(tagFromBody);
-    AdjustRange(copyRequest, headObjectResult);
+    int64_t rangeStart = 0;
+
+    if (!request.GetRange().empty())
+    {
+        auto range = ParseGetObjectRequestRange(request.GetRange(), headObjectResult.GetContentLength());
+        rangeStart = range.first;
+    }
+
+    InitDecryptionCipher(rangeStart, tagFromBody);
+    auto newRange = AdjustRange(copyRequest, headObjectResult);
+
+    int16_t firstBlockAdjustment = 0;
+    if (rangeStart > 0)
+    {
+        //new range will ALWAYS be adjusted downwards or not at all.
+        //For Strict AE, it will not be adjusted at all.
+        firstBlockAdjustment = static_cast<int16_t>(rangeStart - newRange.first);
+    }
     
-    return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction);
+    return UnwrapAndMakeRequestWithCipher(copyRequest, getObjectFunction, firstBlockAdjustment);
 }
 
 const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCipher(Aws::S3::Model::PutObjectRequest & request, const PutObjectFunction& putObjectFunction)
@@ -108,13 +124,14 @@ const Aws::S3::Model::PutObjectOutcome CryptoModule::WrapAndMakeRequestWithCiphe
     return outcome;
 }
 
-const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction)
+const Aws::S3::Model::GetObjectOutcome CryptoModule::UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset)
 {
+    assert(firstBlockOffset < AES_BLOCK_SIZE && firstBlockOffset >= 0);
     auto userSuppliedStreamFactory = request.GetResponseStreamFactory();
     auto userSuppliedStream = userSuppliedStreamFactory();
 
     request.SetResponseStreamFactory(
-        [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher); }
+        [&] { return Aws::New<SymmetricCryptoStream>(ALLOCATION_TAG, (Aws::OStream&)*userSuppliedStream, CipherMode::Decrypt, *m_cipher, DEFAULT_BUF_SIZE, firstBlockOffset); }
     );
     GetObjectOutcome outcome = getObjectFunction(request);
     if (!outcome.IsSuccess())
@@ -149,7 +166,8 @@ std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::
     iterDash = bytesRange.find("-");
     if (iterDash == 0)
     {
-        upperBound = StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
+        upperBound = contentLength;
+        lowerBound = contentLength - StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
     }
     else if (iterDash == bytesRange.size() - 1)
     {
@@ -192,7 +210,7 @@ void CryptoModuleEO::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleEO::InitDecryptionCipher(const Aws::Utils::CryptoBuffer &)
+void CryptoModuleEO::InitDecryptionCipher(int64_t, const Aws::Utils::CryptoBuffer &)
 {
     m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
 }
@@ -207,17 +225,19 @@ void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
     AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "Decryption using Encryption Only mode is not recommended. Using Authenticated Encryption or Strict Authenticated Encryption is advised.");
 }
 
-void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult & result)
+std::pair<int64_t, int64_t> CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult & result)
 {
     Aws::String range = request.GetRange();
-    if (request.GetRange() != "")
+    std::pair<int64_t, int64_t> newRange(0, result.GetContentLength());
+
+    if (!request.GetRange().empty())
     {
         auto pairOfBounds = ParseGetObjectRequestRange(range, result.GetContentLength());
         if (pairOfBounds == std::make_pair(0LL, 0LL))
         {
             AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will not be adjusted. "
                << "Invalid Range specifier: " << range);
-            return;
+            return newRange;
         }
         int64_t lowerBound = pairOfBounds.first;
         int64_t upperBound = pairOfBounds.second;
@@ -241,10 +261,12 @@ void CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, con
             AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Invalid adjusted range was calculated. Make sure range is in correct format. The set range will not be adjusted."
                 << "Invalid Range specifier: " << range);
         }
+
+        newRange = std::pair<int64_t, int64_t>(newLowerBound, newUpperBound);
     }
+
+    return newRange;
 }
-
-
 
 
 CryptoModuleAE::CryptoModuleAE(const std::shared_ptr<Materials::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig) :
@@ -275,31 +297,53 @@ void CryptoModuleAE::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer & tag)
+void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, const Aws::Utils::CryptoBuffer& tag)
 {
-    m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+    if (rangeStart > 0)
+    {
+        CryptoBuffer counter(4);
+        counter.Zero();
+        counter[3] = 0x01; 
+        CryptoBuffer gcmToCtrIv({(ByteBuffer*)&m_contentCryptoMaterial.GetIV(), (ByteBuffer*)&counter});
+
+        m_cipher = CreateAES_CTRImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), 
+            IncrementCTRCounter(gcmToCtrIv, static_cast<int32_t>(rangeStart / static_cast<int64_t>(AES_BLOCK_SIZE))));
+        std::cout << Aws::Utils::HashingUtils::HexEncode(gcmToCtrIv) << std::endl;
+    }
+    else
+    {
+        m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+    }
 }
 
-Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectRequest & request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
+Aws::Utils::CryptoBuffer CryptoModuleAE::GetTag(const Aws::S3::Model::GetObjectRequest& request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
 {
-    GetObjectRequest getTag;
-    getTag.WithBucket(request.GetBucket());
-    getTag.WithKey(request.GetKey());
-    auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
-    Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
-    getTag.SetRange(tagLengthRangeSpecifier);
-    GetObjectOutcome tagOutcome = getObjectFunction(getTag);
-    if (!tagOutcome.IsSuccess())
+    if(request.GetRange().empty())
     {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Get Operation for crypto tag not successful: "
-            << tagOutcome.GetError().GetExceptionName() << " : "
-            << tagOutcome.GetError().GetMessage());
+        GetObjectRequest getTag;
+        getTag.WithBucket(request.GetBucket());
+        getTag.WithKey(request.GetKey());
+        auto tagLengthInBytes = m_contentCryptoMaterial.GetCryptoTagLength() / BITS_IN_BYTE;
+        Aws::String tagLengthRangeSpecifier = LAST_BYTES_SPECIFIER + Utils::StringUtils::to_string(tagLengthInBytes);
+        getTag.SetRange(tagLengthRangeSpecifier);
+        GetObjectOutcome tagOutcome = getObjectFunction(getTag);
+        if (!tagOutcome.IsSuccess())
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Get Operation for crypto tag not successful: "
+                << tagOutcome.GetError().GetExceptionName() << " : "
+                << tagOutcome.GetError().GetMessage());
+            return CryptoBuffer();
+        }
+        Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
+        Aws::OStringStream ss;
+        ss << tagStream.rdbuf();
+        return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
+    }
+    else
+    {
+        AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Not retrieving tag, because we don't need it for ranged gets.");
         return CryptoBuffer();
     }
-    Aws::IOStream& tagStream = tagOutcome.GetResult().GetBody();
-    Aws::OStringStream ss;
-    ss << tagStream.rdbuf();
-    return CryptoBuffer((unsigned char*)ss.str().c_str(), ss.str().length());
 }
 
 void CryptoModuleAE::DecryptionConditionCheck(const Aws::String&)
@@ -307,10 +351,41 @@ void CryptoModuleAE::DecryptionConditionCheck(const Aws::String&)
     //no condition checks needed for decryption in Authenticated Encryption Mode. 
 }
 
-void CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectRequest, const Aws::S3::Model::HeadObjectResult & headObjectResult)
+std::pair<int64_t, int64_t> CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult)
 {
-    auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES - 1;
-    getObjectRequest.SetRange(FIRST_BYTES_SPECIFIER + Aws::Utils::StringUtils::to_string(adjustedRange));
+    Aws::StringStream ss;
+    ss << "bytes=";
+
+    std::pair<int64_t, int64_t> newRange(0, headObjectResult.GetContentLength());
+
+    //if we have a range specified, we need to honor it, but we will be using CTR mode for decryption. We need to move the range to the beginning of a block.
+    //also we need to trim off the GCM tag since we don't care about it as part of the decrypted output.
+    if (!getObjectRequest.GetRange().empty())
+    {
+        auto range = ParseGetObjectRequestRange(getObjectRequest.GetRange(), headObjectResult.GetContentLength());
+        auto adjustedFirstByte = range.first - (range.first % 16);
+        auto adjustedLastByte = range.second;
+
+        if(range.second >= static_cast<int64_t>(headObjectResult.GetContentLength() - TAG_SIZE_BYTES - 1))
+        {
+            adjustedLastByte = headObjectResult.GetContentLength() - TAG_SIZE_BYTES - 1;
+        }
+
+        newRange = std::pair<int64_t, int64_t>(adjustedFirstByte, adjustedLastByte);
+
+        ss << adjustedFirstByte << "-" << adjustedLastByte;
+        AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Range was specified for AE mode, we need to adjust it to fit block alignment. New Range is " << ss.str());
+    }
+    else
+    {
+        auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES;        
+        ss << "0-" << adjustedRange; 
+        newRange = std::pair<int64_t, int64_t>(0, adjustedRange);
+        AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Range was not specified for AE mode, we need to trim away the tag. New Range is " << ss.str());
+    }
+
+    getObjectRequest.SetRange(ss.str());
+    return newRange;
 }
 
 
@@ -344,8 +419,10 @@ void CryptoModuleStrictAE::InitEncryptionCipher()
     m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
 }
 
-void CryptoModuleStrictAE::InitDecryptionCipher(const Aws::Utils::CryptoBuffer & tag)
+void CryptoModuleStrictAE::InitDecryptionCipher(int64_t rangeStart, const Aws::Utils::CryptoBuffer & tag)
 {
+    //range gets not allowed in Strict AE.
+    assert(rangeStart == 0);
     m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
 }
 
@@ -369,19 +446,20 @@ void CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRa
     if (!requestRange.empty())
     {
         AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.")
-            assert(0);
+        assert(0);
     }
     if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM)
     {
         AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.")
-            assert(0);
+        assert(0);
     }
 }
 
-void CryptoModuleStrictAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectRequest, const Aws::S3::Model::HeadObjectResult & headObjectResult)
+std::pair<int64_t, int64_t> CryptoModuleStrictAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectRequest, const Aws::S3::Model::HeadObjectResult & headObjectResult)
 {
-    auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES - 1;
+    auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES;
     getObjectRequest.SetRange(FIRST_BYTES_SPECIFIER + Aws::Utils::StringUtils::to_string(adjustedRange));
+    return std::pair<int64_t, int64_t>(0, adjustedRange);
 }
 
 

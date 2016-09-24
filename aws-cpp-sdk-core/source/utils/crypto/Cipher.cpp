@@ -30,6 +30,31 @@ namespace Aws
         {
             static const char* LOG_TAG = "Cipher";
 
+            CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, int32_t numberOfBlocks)
+            {
+                int32_t ctr = 0;
+                static const size_t ctrModeMinBlockSize = 12;
+                assert(counter.GetLength() >= ctrModeMinBlockSize);
+
+                for (size_t i = counter.GetLength() - 5; i < counter.GetLength(); ++i)
+                {
+                    ctr <<= 8;
+                    ctr |= counter[i];
+                }
+
+                ctr += numberOfBlocks;
+
+                CryptoBuffer incrementedCounter(counter);
+
+                for (size_t i = counter.GetLength() - 1; i > counter.GetLength() - 5; --i)
+                {
+                    incrementedCounter[i] = ctr & 0x000000FF;
+                    ctr >>= 8;
+                }
+
+                return incrementedCounter;
+            }
+
             CryptoBuffer GenerateXRandomBytes(size_t lengthBytes, bool ctrMode)
             {
                 std::shared_ptr<SecureRandomBytes> rng = CreateSecureRandomBytesImplementation();

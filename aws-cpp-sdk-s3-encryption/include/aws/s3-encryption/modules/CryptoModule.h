@@ -61,7 +61,7 @@ namespace Aws
                 /*
                 * Function to parse range of a get object request and return a pair containing the lower and upper bounds.
                 */
-                std::pair<int64_t, int64_t> ParseGetObjectRequestRange(const Aws::String& range, int64_t contentLength);
+                static std::pair<int64_t, int64_t> ParseGetObjectRequestRange(const Aws::String& range, int64_t contentLength);
 
             private:
                 /*
@@ -72,7 +72,7 @@ namespace Aws
                 /*
                 * This function is used to decrypt the given S3 GetObjectResult.
                 */
-                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction);
+                const Aws::S3::Model::GetObjectOutcome UnwrapAndMakeRequestWithCipher(Aws::S3::Model::GetObjectRequest& request, const GetObjectFunction& getObjectFunction, int16_t firstBlockOffset = 0);
 
             protected:
                 /*
@@ -88,7 +88,7 @@ namespace Aws
                 /**
                 * This function initializes the cipher for decryption with the content encryption key, iv and tag. 
                 */
-                virtual void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
+                virtual void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer()) = 0;
 
                 /*
                 * This function populates the content crypto material with the module specific details for encryption. 
@@ -108,7 +108,7 @@ namespace Aws
                 /*
                 * This function adjusts the get object request range to specifically get only the body of the content and not any addition content. It also adjusts the range if the a range-get request was specified according to the range for the cipher block.
                 */
-                virtual void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
+                virtual std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) = 0;
 
                 std::shared_ptr<Materials::EncryptionMaterials> m_encryptionMaterials;
                 ContentCryptoMaterial m_contentCryptoMaterial;
@@ -143,7 +143,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
 
                 /*
                 * Function to get the crypto tag according to the module. 
@@ -158,7 +158,7 @@ namespace Aws
                 /*
                 * Function to adjust getObjectRequest range to only specify the encrypted body.
                 */
-                void AdjustRange( Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
+                std::pair<int64_t, int64_t> AdjustRange( Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleAE : public CryptoModule
@@ -187,7 +187,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
 
                 /*
                 * Function to get the crypto tag according to the module.
@@ -202,7 +202,7 @@ namespace Aws
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.
                 */
-                void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
+                std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };
 
             class AWS_S3ENCRYPTION_API CryptoModuleStrictAE : public CryptoModule
@@ -231,7 +231,7 @@ namespace Aws
                 /**
                 *Function to initialize the cipher for decryption using the crypto content material.
                 */
-                void InitDecryptionCipher(const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
+                void InitDecryptionCipher(int64_t rangeStart = 0, const Aws::Utils::CryptoBuffer& tag = Aws::Utils::CryptoBuffer());
 
                 /*
                 * Function to get the crypto tag according to the module.
@@ -246,7 +246,7 @@ namespace Aws
                 /*
                 * Function adjust getObjectRequest range to only specify the encrypted body.
                 */
-                void AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
+                std::pair<int64_t, int64_t> AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult) override;
             };           
 
             /**

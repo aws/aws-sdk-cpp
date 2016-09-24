@@ -28,6 +28,8 @@ namespace Aws
             static const size_t SYMMETRIC_KEY_LENGTH = 32;
             static const size_t MIN_IV_LENGTH = 12;
 
+            AWS_CORE_API CryptoBuffer IncrementCTRCounter(const CryptoBuffer& counter, int32_t numberOfBlocks);
+
             /**
              * Interface for symmetric encryption and decryption providers. An instance of this class is good for exactly one encryption or decryption run.
              * It should not be used to encrypt or decrypt multiple messages.
@@ -146,7 +148,7 @@ namespace Aws
                 /**
                  * Generates a non-deterministic random symmetric key. Default (and minimum bar for security) is 256 bits.
                  */
-                static CryptoBuffer GenerateKey(size_t keyLengthBytes = SYMMETRIC_KEY_LENGTH);
+                static CryptoBuffer GenerateKey(size_t keyLengthBytes = SYMMETRIC_KEY_LENGTH);                
 
             protected:
                 SymmetricCipher() {}
