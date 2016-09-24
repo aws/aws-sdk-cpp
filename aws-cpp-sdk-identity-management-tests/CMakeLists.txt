@@ -10,6 +10,7 @@ list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-cognito-identity")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-identity-management")
 
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)

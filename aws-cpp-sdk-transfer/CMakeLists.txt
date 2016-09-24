@@ -8,6 +8,7 @@ set(PROJECT_LIBS "")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-s3")
 
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)
@@ -49,6 +50,7 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ALL_TRANSFER})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

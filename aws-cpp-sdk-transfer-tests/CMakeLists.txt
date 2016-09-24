@@ -10,6 +10,7 @@ list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-s3")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-transfer")
 list(APPEND PROJECT_LIBS "testing-resources")
 
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)
