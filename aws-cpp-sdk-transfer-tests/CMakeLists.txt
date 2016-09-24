@@ -33,6 +33,7 @@ enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
     add_library(${PROJECT_NAME} ${LIBTYPE} ${TRANSFER_TEST_SRC})
+    add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 else()
     add_executable(${PROJECT_NAME} ${TRANSFER_TEST_SRC})
 endif()

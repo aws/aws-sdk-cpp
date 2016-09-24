@@ -5,15 +5,17 @@ set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_DESCRIPTION "C++ interface for Amazon Access Management")
 set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(PROJECT_LIBS "")
-list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
-list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-cognito-identity")
-list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-iam")
  
+cmake_policy(SET CMP0028 NEW)
 cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0056 NEW)
 
 project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-cognito-identity")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-iam")
 
 file(GLOB AWS_ACCESS_MANAGEMENT_HEADERS
     "include/aws/access-management/*.h"
@@ -45,6 +47,7 @@ if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
 endif()
 
 add_library(${PROJECT_NAME} ${LIBTYPE} ${ACCESS_MANAGEMENT_SRC})
+add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

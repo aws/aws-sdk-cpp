@@ -4,15 +4,17 @@ set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
 set(PROJECT_DESCRIPTION "Tests for C++ interface for Amazon Cognito Identity")
 set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
 set(PROJECT_LIBS "")
+ 
+cmake_policy(SET CMP0028 NEW)
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-cognito-identity")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-access-management")
 list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-iam")
 list(APPEND PROJECT_LIBS "testing-resources")
- 
-cmake_policy(SET CMP0048 NEW)
-cmake_policy(SET CMP0054 NEW)
-cmake_policy(SET CMP0056 NEW)
 
 project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
@@ -35,6 +37,7 @@ enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
     add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+    add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 else()
     add_executable(${PROJECT_NAME} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
 endif()
