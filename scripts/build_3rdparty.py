@@ -218,7 +218,7 @@ def CopyPDBs(config, libDir, installDirectoryPrefix, platformInstallQualifier, c
             for dirName in dirNames:
                 
                 sourceFile = os.path.join(rootDir, dirName, config, dirName + ".pdb")
-                if os.path.isfile(sourceFile):
+                if os.path.isfile(sourceFile) and not dirName.endswith("-tests"):
                     subprocess.check_call( "copy " + sourceFile + " \"" + destDirectory + "\"", shell = True )
     
 
@@ -348,7 +348,7 @@ def Main():
             # platform specific stuff
         
             # Copy Windows PDBs
-            if architecture.startswith('Windows'):
+            if architecture.startswith('Windows') and targetConfig.endswith("Dynamic"):
                  CopyPDBs( archConfig[ 'config' ], "bin", installDirectory, targetPlatformDef[ 'platform_install_qualifier' ], windowsCpuArch )
 
             # Install Android auxiliary dependencies (zlib, openssl, curl)

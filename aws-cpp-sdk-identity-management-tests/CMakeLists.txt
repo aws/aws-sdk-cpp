@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8.12)
 add_project(aws-cpp-sdk-identity-management-tests 
     "Tests for the AWS Identity Management C++ SDK" 
-    aws-cpp-sdk-identity-management 
+    aws-cpp-sdk-identity-management
+    aws-cpp-sdk-cognito-identity
     testing-resources 
     aws-cpp-sdk-core)
 
