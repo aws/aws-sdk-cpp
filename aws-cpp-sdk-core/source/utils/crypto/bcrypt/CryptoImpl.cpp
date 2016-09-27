@@ -430,7 +430,7 @@ namespace Aws
                     }
 
                     if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
-                    {                        
+                    {              
                         NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
 
                         if (!NT_SUCCESS(status))
@@ -832,7 +832,7 @@ namespace Aws
             }
 
             void AES_CTR_Cipher_BCrypt::InitEncryptor_Internal()
-            {
+            {                
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -851,7 +851,7 @@ namespace Aws
             }
 
             void AES_CTR_Cipher_BCrypt::InitDecryptor_Internal()
-            {
+            {                
                 m_flags = 0;
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algHandle, BCRYPT_AES_ALGORITHM, nullptr, 0);
 
@@ -909,7 +909,7 @@ namespace Aws
                 for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
                 {
                     if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
-                    {
+                    {                       
                         ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
                         CryptoBuffer encryptedText(BlockSizeBytes);
 

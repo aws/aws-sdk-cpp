@@ -48,8 +48,8 @@ namespace
     static const char* const TEST_CMK_ID = "ARN:SOME_COMBINATION_OF_LETTERS_AND_NUMBERS";
     static const int TIMEOUT_MAX = 30;
     static const char* const BYTES_SPECIFIER = "bytes=0-10";
-    static const char* const GET_RANGE_SPECIFIER = "bytes=20-36";
-    static const char* const GET_RANGE_OUTPUT = "ssage for encryption";
+    static const char* const GET_RANGE_SPECIFIER = "bytes=20-40";
+    static const char* const GET_RANGE_OUTPUT = "ge for encryption and";
     static const char* const ASSERTION_FAILED = "Assertion failed: 0";
     static const char* const TAG_REQUEST_RANGE_SPECIFIER = "bytes=-16";
     static size_t const GCM_TAG_LENGTH = 128u;
@@ -171,16 +171,16 @@ namespace
             {
                 auto bytes = m_requestContentLength;
                 auto rangeBytes = CryptoModule::ParseGetObjectRequestRange(range, bytes);
-                responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first);
-                written = rangeBytes.second - rangeBytes.first;                
+                responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str() + rangeBytes.first, rangeBytes.second - rangeBytes.first + 1);
+                written = rangeBytes.second - rangeBytes.first; 
             }
             else
             {
                 responseStream.GetUnderlyingStream().write((const char*)bodyString.c_str(), m_requestContentLength);
                 written = m_requestContentLength;
             }          
-
-            responseStream.GetUnderlyingStream().flush();
+            
+            responseStream.GetUnderlyingStream().flush();            
             Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream> awsStream(std::move(responseStream), Aws::Http::HeaderValueCollection());
             Aws::S3::Model::GetObjectResult getObjectResult(std::move(awsStream));
             getObjectResult.SetContentLength(written);
@@ -298,8 +298,8 @@ namespace
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
         
-        ASSERT_STREQ(ss.str().c_str(), BODY_STREAM_TEST);
-        ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
+        ASSERT_STREQ(BODY_STREAM_TEST, ss.str().c_str());
+        ASSERT_EQ(s3Client.GetMetadata(), getOutcome.GetResult().GetMetadata());
         ASSERT_EQ(s3Client.m_getObjectCalled, 1);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1);
     }
@@ -594,16 +594,16 @@ namespace
         MetadataFilled(metadata);
 
         size_t cryptoTagLength = static_cast<size_t>(Aws::Utils::StringUtils::ConvertToInt64(metadata[CRYPTO_TAG_LENGTH_HEADER].c_str()));
-        ASSERT_EQ(cryptoTagLength, GCM_TAG_LENGTH);
+        ASSERT_EQ(GCM_TAG_LENGTH, cryptoTagLength);
 
         Aws::Utils::CryptoBuffer ivBuffer = Aws::Utils::HashingUtils::Base64Decode(metadata[IV_HEADER]);
-        ASSERT_EQ(ivBuffer.GetLength(), GCM_IV_SIZE_BYTES);
+        ASSERT_EQ(GCM_IV_SIZE_BYTES, ivBuffer.GetLength());
 
         Aws::S3Encryption::ContentCryptoScheme scheme = Aws::S3Encryption::ContentCryptoSchemeMapper::GetContentCryptoSchemeForName(metadata[CONTENT_CRYPTO_SCHEME_HEADER]);
-        ASSERT_EQ(scheme, ContentCryptoScheme::GCM);
+        ASSERT_EQ(ContentCryptoScheme::GCM, scheme);
 
         Aws::S3Encryption::KeyWrapAlgorithm keyWrapAlgorithm = Aws::S3Encryption::KeyWrapAlgorithmMapper::GetKeyWrapAlgorithmForName(metadata[KEY_WRAP_ALGORITHM]);
-        ASSERT_EQ(keyWrapAlgorithm, KeyWrapAlgorithm::AES_KEY_WRAP);
+        ASSERT_EQ(KeyWrapAlgorithm::AES_KEY_WRAP, keyWrapAlgorithm);
 
         ASSERT_TRUE(s3Client.GetRequestContentLength() > strlen(BODY_STREAM_TEST));
 
@@ -620,7 +620,6 @@ namespace
 
         Aws::S3Encryption::Handlers::MetadataHandler handler;
         ContentCryptoMaterial contentCryptoMaterial = handler.ReadContentCryptoMaterial(headOutcome.GetResult());
-
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest getRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(getRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
 
@@ -631,7 +630,8 @@ namespace
 
         ASSERT_STREQ(GET_RANGE_OUTPUT, ss.str().c_str());
         ASSERT_EQ(getOutcome.GetResult().GetMetadata(), s3Client.GetMetadata());
-        ASSERT_EQ(s3Client.m_getObjectCalled, 2u);
+        //we should not have pulled a tag here.
+        ASSERT_EQ(s3Client.m_getObjectCalled, 1u);
         ASSERT_EQ(s3Client.m_putObjectCalled, 1u);
     }
 
@@ -820,21 +820,20 @@ namespace
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
         CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
-        CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), config);
+        CryptoModuleFactory factory;        
 
         int64_t contentLength = 90;
         Aws::Vector<Aws::String> rangeOptions = { "bytes=10-20", "bytes=-20", "bytes=20-", "bytes=1-9" };
         Aws::Vector<std::pair<int64_t, int64_t>> resultPairs = {
             std::make_pair(10LL, 20LL),
-            std::make_pair(0LL, 20LL),
-            std::make_pair(20LL, contentLength),
+            std::make_pair(70LL, contentLength - 1),
+            std::make_pair(20LL, contentLength - 1),
             std::make_pair(1LL, 9LL)
         };
         
         for (size_t i = 0; i < rangeOptions.size(); ++i)
         {
-            auto pair = module->ParseGetObjectRequestRange(rangeOptions[i], contentLength);
+            auto pair = CryptoModule::ParseGetObjectRequestRange(rangeOptions[i], contentLength);
             ASSERT_EQ(pair, resultPairs[i]);
         }
     }
@@ -843,15 +842,14 @@ namespace
     {
         SimpleEncryptionMaterials materials(Aws::Utils::Crypto::SymmetricCipher::GenerateKey());
         CryptoConfiguration config(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
-        CryptoModuleFactory factory;
-        auto module = factory.FetchCryptoModule(Aws::MakeShared<SimpleEncryptionMaterials>(ALLOCATION_TAG, materials), config);
+        CryptoModuleFactory factory;        
 
         int64_t contentLength = 90;
         Aws::Vector<Aws::String> rangeOptions = { "bytes10-20", "bytes=20", "20=-", "bytes19" };
 
         for (size_t i = 0; i < rangeOptions.size(); ++i)
         {
-            auto pair = module->ParseGetObjectRequestRange(rangeOptions[i], contentLength);
+            auto pair = CryptoModule::ParseGetObjectRequestRange(rangeOptions[i], contentLength);
             ASSERT_EQ(pair, std::make_pair(0LL, 0LL));
         }
     }

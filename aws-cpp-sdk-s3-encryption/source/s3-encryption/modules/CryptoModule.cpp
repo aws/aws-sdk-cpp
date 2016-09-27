@@ -160,19 +160,24 @@ std::pair<int64_t, int64_t> CryptoModule::ParseGetObjectRequestRange(const Aws::
     {
         return std::make_pair(0LL, 0LL);
     }
+    if (range.substr(0, iterEquals) != "bytes")
+    {
+        return std::make_pair(0LL, 0LL);
+    }
+
     Aws::String bytesRange = range.substr(iterEquals + 1);
     uint64_t lowerBound = 0LL;
     uint64_t upperBound = 0LL;
     iterDash = bytesRange.find("-");
     if (iterDash == 0)
     {
-        upperBound = contentLength;
+        upperBound = contentLength - 1;
         lowerBound = contentLength - StringUtils::ConvertToInt64((bytesRange.substr(iterDash + 1).c_str()));
     }
     else if (iterDash == bytesRange.size() - 1)
     {
         lowerBound = StringUtils::ConvertToInt64((bytesRange.substr(0, iterDash)).c_str());
-        upperBound = contentLength;
+        upperBound = contentLength - 1;
     }
     else
     {
@@ -211,7 +216,7 @@ void CryptoModuleEO::InitEncryptionCipher()
 }
 
 void CryptoModuleEO::InitDecryptionCipher(int64_t, const Aws::Utils::CryptoBuffer &)
-{
+{    
     m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
 }
 
@@ -227,43 +232,10 @@ void CryptoModuleEO::DecryptionConditionCheck(const Aws::String&)
 
 std::pair<int64_t, int64_t> CryptoModuleEO::AdjustRange(Aws::S3::Model::GetObjectRequest & request, const Aws::S3::Model::HeadObjectResult & result)
 {
-    Aws::String range = request.GetRange();
-    std::pair<int64_t, int64_t> newRange(0, result.GetContentLength());
-
-    if (!request.GetRange().empty())
-    {
-        auto pairOfBounds = ParseGetObjectRequestRange(range, result.GetContentLength());
-        if (pairOfBounds == std::make_pair(0LL, 0LL))
-        {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Could not read range of request. Make sure range is in correct format. The set range will not be adjusted. "
-               << "Invalid Range specifier: " << range);
-            return newRange;
-        }
-        int64_t lowerBound = pairOfBounds.first;
-        int64_t upperBound = pairOfBounds.second;
-        int64_t newLowerBound = lowerBound - (lowerBound % CBC_IV_SIZE) - CBC_IV_SIZE;
-        if (newLowerBound < 0)
-        {
-            newLowerBound = 0;
-        }
-        int64_t newUpperBound = upperBound + (CBC_IV_SIZE - (upperBound % CBC_IV_SIZE)) + CBC_IV_SIZE;
-        if (newUpperBound < 0)
-        {
-            newUpperBound = LONG_MAX;
-        }
-        if (newUpperBound > newLowerBound)
-        {
-            Aws::String rangeSpecifier = "bytes=" + StringUtils::to_string(newLowerBound) + "-" + StringUtils::to_string(newUpperBound);
-            request.SetRange(rangeSpecifier);
-        }
-        else
-        {
-            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Invalid adjusted range was calculated. Make sure range is in correct format. The set range will not be adjusted."
-                << "Invalid Range specifier: " << range);
-        }
-
-        newRange = std::pair<int64_t, int64_t>(newLowerBound, newUpperBound);
-    }
+    //we currently do not support range gets for CBC mode. It is possible, but it is complicated.
+    //if this is something you need, file a github issue requesting it. We recommend that you use Authenticated Encryption and use range gets there.
+    assert(request.GetRange().empty());
+    std::pair<int64_t, int64_t> newRange(0, result.GetContentLength());   
 
     return newRange;
 }
@@ -301,14 +273,15 @@ void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, const Aws::Utils::
 {
     if (rangeStart > 0)
     {
+        //See http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf for decrypting a GCM message using CTR mode.
+        assert(m_contentCryptoMaterial.GetIV().GetLength() == GCM_IV_SIZE);
         CryptoBuffer counter(4);
         counter.Zero();
-        counter[3] = 0x01; 
-        CryptoBuffer gcmToCtrIv({(ByteBuffer*)&m_contentCryptoMaterial.GetIV(), (ByteBuffer*)&counter});
-
+        //start at 0x01, but that is for the Hash, this message should begin at 0x02
+        counter[3] = 0x02; 
+        CryptoBuffer gcmToCtrIv({(ByteBuffer*)&m_contentCryptoMaterial.GetIV(), (ByteBuffer*)&counter});       
         m_cipher = CreateAES_CTRImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), 
-            IncrementCTRCounter(gcmToCtrIv, static_cast<int32_t>(rangeStart / static_cast<int64_t>(AES_BLOCK_SIZE))));
-        std::cout << Aws::Utils::HashingUtils::HexEncode(gcmToCtrIv) << std::endl;
+            IncrementCTRCounter(gcmToCtrIv, static_cast<int32_t>(rangeStart / static_cast<int64_t>(AES_BLOCK_SIZE))));        
     }
     else
     {
@@ -378,7 +351,7 @@ std::pair<int64_t, int64_t> CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjec
     }
     else
     {
-        auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES;        
+        auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES  - 1;        
         ss << "0-" << adjustedRange; 
         newRange = std::pair<int64_t, int64_t>(0, adjustedRange);
         AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Range was not specified for AE mode, we need to trim away the tag. New Range is " << ss.str());
@@ -457,7 +430,7 @@ void CryptoModuleStrictAE::DecryptionConditionCheck(const Aws::String& requestRa
 
 std::pair<int64_t, int64_t> CryptoModuleStrictAE::AdjustRange(Aws::S3::Model::GetObjectRequest & getObjectRequest, const Aws::S3::Model::HeadObjectResult & headObjectResult)
 {
-    auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES;
+    auto adjustedRange = headObjectResult.GetContentLength() - TAG_SIZE_BYTES - 1;
     getObjectRequest.SetRange(FIRST_BYTES_SPECIFIER + Aws::Utils::StringUtils::to_string(adjustedRange));
     return std::pair<int64_t, int64_t>(0, adjustedRange);
 }
