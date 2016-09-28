@@ -66,7 +66,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
@@ -75,7 +75,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
@@ -84,7 +84,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
@@ -93,7 +93,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
@@ -102,7 +102,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(value); return *this;}
@@ -111,7 +111,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -120,7 +120,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -129,7 +129,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -138,7 +138,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -147,7 +147,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -156,7 +156,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }
@@ -165,7 +165,7 @@ namespace Model
      * <p>The encryption context. If this was specified in the <a>Encrypt</a> function,
      * it must be specified here or the decryption operation will fail. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      * Context</a>.</p>
      */
     inline DecryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext[key] = value; return *this; }

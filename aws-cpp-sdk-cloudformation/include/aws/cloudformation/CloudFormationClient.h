@@ -625,12 +625,16 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          */
         virtual Model::DescribeStacksOutcome DescribeStacks(const Model::DescribeStacksRequest& request) const;
 
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -639,6 +643,8 @@ namespace Model
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
+         * <note> <p>If the stack does not exist, an
+         * <code>AmazonCloudFormationException</code> is returned.</p> </note>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -980,19 +986,28 @@ namespace Model
         virtual void UpdateStackAsync(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          */
         virtual Model::ValidateTemplateOutcome ValidateTemplate(const Model::ValidateTemplateRequest& request) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ValidateTemplateOutcomeCallable ValidateTemplateCallable(const Model::ValidateTemplateRequest& request) const;
 
         /**
-         * <p>Validates a specified template.</p>
+         * <p>Validates a specified template. AWS CloudFormation first checks if the
+         * template is valid JSON. If it isn't, AWS CloudFormation checks if the template
+         * is valid YAML. If both these checks fail, AWS CloudFormation returns a template
+         * validation error.</p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

@@ -453,6 +453,55 @@ namespace Model
     inline Stack& AddOutputs(Output&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(value); return *this; }
 
     /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(Aws::String&& value) { SetRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * role that is associated with the stack. During a stack operation, AWS
+     * CloudFormation uses this role's credentials to make calls on your behalf.</p>
+     */
+    inline Stack& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+
+    /**
      * <p>A list of <code>Tag</code>s that specify information about the stack.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -514,6 +563,8 @@ namespace Model
     bool m_capabilitiesHasBeenSet;
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
+    Aws::String m_roleARN;
+    bool m_roleARNHasBeenSet;
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
   };

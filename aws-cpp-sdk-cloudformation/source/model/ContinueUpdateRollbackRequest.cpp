@@ -20,7 +20,8 @@ using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
 ContinueUpdateRollbackRequest::ContinueUpdateRollbackRequest() : 
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_roleARNHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,11 @@ Aws::String ContinueUpdateRollbackRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
     ss << "StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if(m_roleARNHasBeenSet)
+  {
+    ss << "RoleARN=" << StringUtils::URLEncode(m_roleARN.c_str()) << "&";
   }
 
   ss << "Version=2010-05-15";
