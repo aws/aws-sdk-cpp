@@ -136,7 +136,8 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     request.SetHeaderValue("x-amz-content-sha256", payloadHash);
 
     //calculate date header to use in internal signature (this also goes into date header).
-    Aws::String dateHeaderValue = DateTime::CalculateGmtTimestampAsString(LONG_DATE_FORMAT_STR);
+    DateTime now = GetSigningTimestamp();
+    Aws::String dateHeaderValue = now.ToGmtString(LONG_DATE_FORMAT_STR);
     request.SetHeaderValue(AWS_DATE_HEADER, dateHeaderValue);
 
     Aws::StringStream headersStream;
@@ -179,7 +180,7 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
 
     auto sha256Digest = hashResult.GetResult();
     Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
-    Aws::String simpleDate = DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR);
+    Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
     Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash);
     auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate);
@@ -216,7 +217,8 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     }
 
     //calculate date header to use in internal signature (this also goes into date header).
-    Aws::String dateQueryValue = DateTime::CalculateGmtTimestampAsString(LONG_DATE_FORMAT_STR);
+    DateTime now = GetSigningTimestamp();
+    Aws::String dateQueryValue = now.ToGmtString(LONG_DATE_FORMAT_STR);
     request.AddQueryStringParameter(Http::AWS_DATE_HEADER, dateQueryValue);
 
     Aws::StringStream ss;
@@ -232,7 +234,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
-    Aws::String simpleDate = DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR);
+    Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
         << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST;
 

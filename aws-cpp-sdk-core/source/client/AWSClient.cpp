@@ -130,18 +130,50 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
         HttpResponseOutcome outcome = AttemptOneRequest(uri, request, method);
         if (outcome.IsSuccess() || !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
-            AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "Request was either successful, or we are now out of retries.");
+            AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request was either successful, or we are now out of retries.");
             return outcome;
         }
         else if(!m_httpClient->IsRequestProcessingEnabled())
         {
-            AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "Request was cancelled externally.");
+            AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request was cancelled externally.");
             return outcome;
         }
         else
         {
+            auto errorType = outcome.GetError().GetErrorType();
+            //detect clock skew and try to correct.
+            if (errorType == CoreErrors::REQUEST_TIME_TOO_SKEWED || errorType == CoreErrors::REQUEST_EXPIRED 
+                || errorType == CoreErrors::INVALID_SIGNATURE || errorType == CoreErrors::SIGNATURE_DOES_NOT_MATCH)
+            {
+                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Time Skew detected. Will attempt to adjust the signer.");
+                const Http::HeaderValueCollection& headers = outcome.GetError().GetResponseHeaders();
+                auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
+                auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
+
+                DateTime serverTime;
+                if (awsDateHeaderIter != headers.end())
+                {
+                    serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::RFC822);
+                }
+                else if (dateHeaderIter != headers.end())
+                {
+                    serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::RFC822);
+                }
+                else
+                {
+                    AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Clock Skew detected, but a date header was not found in the response.");
+                    return outcome;
+                }
+
+                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
+                auto diff = DateTime::Diff(serverTime, DateTime::Now());
+                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
+
+                m_signer->SetClockSkew(diff);
+            }
+
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
-            AWS_LOG_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting %d ms before attempting again.", sleepMillis);
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
             if(request.GetBody())
             {
                 request.GetBody()->clear();
@@ -412,38 +444,48 @@ const char* TYPE = "__type";
 AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
 {
+    AWSError<CoreErrors> error;
     if (!httpResponse)
     {
-        return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        return error;
     }
-
-    if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
+    
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
+        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);        
     }
-
-    assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
-    //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
-    JsonValue exceptionPayload(httpResponse->GetResponseBody());
-    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
-
-    Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
-        exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
-
-    if (httpResponse->HasHeader(ERROR_TYPE_HEADER))
+    else
     {
-        return GetErrorMarshaller()->Marshall(httpResponse->GetHeader(ERROR_TYPE_HEADER), message);
-    }
-    else if (exceptionPayload.ValueExists(TYPE))
-    {
-        return GetErrorMarshaller()->Marshall(exceptionPayload.GetString(TYPE), message);
+        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
+
+        //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
+        JsonValue exceptionPayload(httpResponse->GetResponseBody());
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
+
+        Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
+            exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
+
+        if (httpResponse->HasHeader(ERROR_TYPE_HEADER))
+        {
+            error = GetErrorMarshaller()->Marshall(httpResponse->GetHeader(ERROR_TYPE_HEADER), message);            
+        }
+        else if (exceptionPayload.ValueExists(TYPE))
+        {
+            error = GetErrorMarshaller()->Marshall(exceptionPayload.GetString(TYPE), message);            
+        }
+        else
+        {
+            error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", message, false);
+        }
     }
 
-    return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", message, false);
+    error.SetResponseHeaders(httpResponse->GetHeaders());
+
+    return error;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -502,57 +544,68 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::String& uri,
 }
 
 AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
-{
+{    
     if (!httpResponse)
     {
         return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
     }
+
+    AWSError<CoreErrors> error;
 
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
         ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
-        return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
+        error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
-
-    assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
-    // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
-    // file pointer back to the beginning in order to correctly read the input using the XML string iterator
-    if ((httpResponse->GetResponseBody().tellp() > 0)
-        && (httpResponse->GetResponseBody().tellg() > 0))
+    else
     {
-        httpResponse->GetResponseBody().seekg(0);
-    }
+        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
 
-    XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
-    AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << doc.ConvertToString());
-    if (doc.WasParseSuccessful())
-    {
-        XmlNode errorNode = doc.GetRootElement();
-        if (errorNode.GetName() != "Error")
+        // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
+        // file pointer back to the beginning in order to correctly read the input using the XML string iterator
+        if ((httpResponse->GetResponseBody().tellp() > 0)
+            && (httpResponse->GetResponseBody().tellg() > 0))
         {
-            errorNode = doc.GetRootElement().FirstChild("Error");
+            httpResponse->GetResponseBody().seekg(0);
         }
 
-        if (!errorNode.IsNull())
+        XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse->GetResponseBody());
+        AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Error response is " << doc.ConvertToString());
+        bool errorParsed = false;
+        if (doc.WasParseSuccessful())
         {
-            XmlNode codeNode = errorNode.FirstChild("Code");
-            XmlNode messageNode = errorNode.FirstChild("Message");
-
-            if (!(codeNode.IsNull() || messageNode.IsNull()))
+            XmlNode errorNode = doc.GetRootElement();
+            if (errorNode.GetName() != "Error")
             {
-                return GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
-                    StringUtils::Trim(messageNode.GetText().c_str()));
+                errorNode = doc.GetRootElement().FirstChild("Error");
+            }
+
+            if (!errorNode.IsNull())
+            {
+                XmlNode codeNode = errorNode.FirstChild("Code");
+                XmlNode messageNode = errorNode.FirstChild("Message");
+
+                if (!(codeNode.IsNull() || messageNode.IsNull()))
+                {
+                    error = GetErrorMarshaller()->Marshall(StringUtils::Trim(codeNode.GetText().c_str()),
+                        StringUtils::Trim(messageNode.GetText().c_str()));
+                    errorParsed = true;
+                }
             }
         }
+
+        if(!errorParsed)
+        {
+            // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
+            // going to dump the XML parsing error and the http response code as a string
+            Aws::StringStream ss;
+            ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
+            error = GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
+        }
     }
 
-    // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
-    // going to dump the XML parsing error and the http response code as a string
-    Aws::StringStream ss;
-    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
-    return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
-
+    error.SetResponseHeaders(httpResponse->GetHeaders());
+    return error;
 }
