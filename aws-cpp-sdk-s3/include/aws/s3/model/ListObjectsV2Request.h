@@ -17,6 +17,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
+#include <aws/s3/model/RequestPayer.h>
 
 namespace Aws
 {
@@ -38,6 +39,8 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
      * Name of the bucket to list.
@@ -289,6 +292,21 @@ namespace Model
      */
     inline ListObjectsV2Request& WithStartAfter(const char* value) { SetStartAfter(value); return *this;}
 
+    
+    inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
+
+    
+    inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
+
+    
+    inline ListObjectsV2Request& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
+
+    
+    inline ListObjectsV2Request& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
+
   private:
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
@@ -306,6 +324,8 @@ namespace Model
     bool m_fetchOwnerHasBeenSet;
     Aws::String m_startAfter;
     bool m_startAfterHasBeenSet;
+    RequestPayer m_requestPayer;
+    bool m_requestPayerHasBeenSet;
   };
 
 } // namespace Model
