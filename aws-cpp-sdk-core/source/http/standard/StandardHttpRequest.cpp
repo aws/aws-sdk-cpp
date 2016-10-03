@@ -72,12 +72,6 @@ bool StandardHttpRequest::HasHeader(const char* headerName) const
 int64_t StandardHttpRequest::GetSize() const
 {
     int64_t size = 0;
-    if(bodyStream)
-    {
-        bodyStream->seekg(0, bodyStream->end);
-        size += bodyStream->tellg();
-        bodyStream->seekg(0, bodyStream->beg);
-    }
 
     std::for_each(headerMap.cbegin(), headerMap.cend(), [&](const HeaderValueCollection::value_type& kvPair){ size += kvPair.first.length(); size += kvPair.second.length(); });
 
