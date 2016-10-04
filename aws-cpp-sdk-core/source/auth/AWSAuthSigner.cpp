@@ -58,7 +58,7 @@ static const char* SIMPLE_DATE_FORMAT_STR = "%Y%m%d";
 
 static const char* v4LogTag = "AWSAuthV4Signer";
 
-Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool urlEscapePath)
+static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool urlEscapePath)
 {
     request.CanonicalizeRequest();
     Aws::StringStream signingStringStream;
@@ -86,8 +86,43 @@ Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool urlEscap
     return signingStringStream.str();
 }
 
+static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollection&& headers)
+{
+    Http::HeaderValueCollection canonicalHeaders;
+    for (const auto& header : headers)
+    {
+        auto trimmedHeaderName = StringUtils::Trim(header.first.c_str());
+        auto trimmedHeaderValue = StringUtils::Trim(header.second.c_str());
+
+        //multiline gets converted to line1,line2,etc...
+        auto headerMultiLine = StringUtils::SplitOnLine(trimmedHeaderValue);
+        Aws::String headerValue = headerMultiLine[0];
+
+        if (headerMultiLine.size() > 1)
+        {
+            for(size_t i = 1; i < headerMultiLine.size(); ++i)
+            {
+                headerValue += ",";
+                headerValue += StringUtils::Trim(headerMultiLine[i].c_str());
+            }
+        }
+
+        //duplicate spaces need to be converted to one.
+        Aws::String::iterator new_end =
+            std::unique(headerValue.begin(), headerValue.end(),
+                [=](char lhs, char rhs) { return (lhs == rhs) && (lhs == ' '); }
+        );
+        headerValue.erase(new_end, headerValue.end());
+
+        canonicalHeaders[trimmedHeaderName] = headerValue;       
+    }
+
+    return canonicalHeaders;
+}
+
 AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
     const char* serviceName, const Aws::String& region, bool signPayloads, bool urlEscapePath) :
+    m_includeSha256HashHeader(true),
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
     m_region(region),
@@ -133,7 +168,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
                 << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
     }
 
-    request.SetHeaderValue("x-amz-content-sha256", payloadHash);
+    if(m_includeSha256HashHeader)
+    {
+        request.SetHeaderValue("x-amz-content-sha256", payloadHash);
+    }
 
     //calculate date header to use in internal signature (this also goes into date header).
     DateTime now = GetSigningTimestamp();
@@ -143,10 +181,10 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
     Aws::StringStream headersStream;
     Aws::StringStream signedHeadersStream;
 
-    for (const auto& header : request.GetHeaders())
+    for (const auto& header : CanonicalizeHeaders(request.GetHeaders()))
     {
-        headersStream << header.first << ":" << header.second << NEWLINE;
-        signedHeadersStream << header.first << ";";
+        headersStream << header.first.c_str() << ":" << header.second.c_str() << NEWLINE;
+        signedHeadersStream << header.first.c_str() << ";";
     }
 
     Aws::String canonicalHeadersString = headersStream.str();

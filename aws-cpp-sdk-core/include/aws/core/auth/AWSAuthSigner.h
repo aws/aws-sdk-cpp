@@ -120,6 +120,9 @@ namespace Aws
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
 
+        protected:
+            bool m_includeSha256HashHeader;
+
         private:
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
