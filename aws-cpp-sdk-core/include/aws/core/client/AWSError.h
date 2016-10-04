@@ -51,7 +51,7 @@ namespace Aws
             //by policy we enforce all clients to contain a CoreErrors alignment for their Errors.
             AWSError(const AWSError<CoreErrors>& rhs) :
                 m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), 
-                m_message(rhs.GetMessage()), m_isRetryable(rhs.ShouldRetry()), m_responseHeaders(rhs.GetResponseHeaders())
+                m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()) , m_isRetryable(rhs.ShouldRetry())
             {}          
 
             /**
