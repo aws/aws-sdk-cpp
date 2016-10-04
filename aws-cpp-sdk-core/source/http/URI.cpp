@@ -205,7 +205,7 @@ void URI::CanonicalizeQueryString()
             }
 
             first = false;
-            queryStringStream << StringUtils::URLEncode(iter->first.c_str()) << "=" << StringUtils::URLEncode(iter->second.c_str());
+            queryStringStream << iter->first.c_str() << "=" << iter->second.c_str();
         }
 
         m_queryString = queryStringStream.str();

@@ -50,6 +50,7 @@ static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
 static const char* AWS_CLIENT_LOG_TAG = "AWSClient";
+static const std::chrono::minutes FOUR_MINUTES = std::chrono::minutes(4); 
 
 std::atomic<int> AWSClient::s_refCount(0);
 
@@ -145,7 +146,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
             if (errorType == CoreErrors::REQUEST_TIME_TOO_SKEWED || errorType == CoreErrors::REQUEST_EXPIRED 
                 || errorType == CoreErrors::INVALID_SIGNATURE || errorType == CoreErrors::SIGNATURE_DOES_NOT_MATCH)
             {
-                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Time Skew detected. Will attempt to adjust the signer.");
+                AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "Signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
                 const Http::HeaderValueCollection& headers = outcome.GetError().GetResponseHeaders();
                 auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
                 auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
@@ -165,11 +166,19 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                     return outcome;
                 }
 
-                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
+                AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Server time is " << serverTime.ToGmtString(DateFormat::RFC822) << ", while client time is " << DateTime::Now().ToGmtString(DateFormat::RFC822));
                 auto diff = DateTime::Diff(serverTime, DateTime::Now());
-                AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. Adjusting signer with the skew.");
+                //only try again if clock skew was the cause of the error.
+                if(diff >= FOUR_MINUTES)
+                {
+                    AWS_LOGSTREAM_INFO(AWS_CLIENT_LOG_TAG, "Computed time difference as " << diff.count() << " milliseconds. This is more than 4 minutes. Adjusting signer with the skew.");
 
-                m_signer->SetClockSkew(diff);
+                    m_signer->SetClockSkew(diff);
+                }
+                else
+                {
+                    return outcome;
+                }
             }
 
             long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);

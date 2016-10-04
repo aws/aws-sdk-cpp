@@ -117,8 +117,25 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
         }
     }
     
-    Aws::StringStream uriSS;
-    uriSS << "http://" << hostStr << pathStr;
+    auto pathAndQuery = StringUtils::Split(pathStr, '?');
+    auto pathOnly = pathAndQuery[0];
+    URI uri;
+    uri.SetScheme(Scheme::HTTP);
+    uri.SetAuthority(hostStr);
+    uri.SetPath(pathOnly);
+
+    if (pathAndQuery.size() == 2)
+    {
+        auto params = StringUtils::Split(pathAndQuery[1], '&');
+        for (auto& param : params)
+        {
+            auto keyValue = StringUtils::Split(param, '=');
+            if (keyValue.size() == 2)
+            {
+                uri.AddQueryStringParameter(keyValue[0].c_str(), keyValue[1]);
+            }
+        }
+    }
 
     HttpMethod method = HttpMethod::HTTP_GET;
     if (methodStr == "GET")
@@ -142,7 +159,7 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
         method = HttpMethod::HTTP_HEAD;
     }
 
-    Standard::StandardHttpRequest request(URI(uriSS.str().c_str()), method);
+    Standard::StandardHttpRequest request(uri, method);
     for (auto& header : headers)
     {
         request.SetHeaderValue(header.first, header.second);
@@ -271,9 +288,4 @@ TEST(AWSAuthV4SignerTest, PostVanillaEmptyQueryValue)
 TEST(AWSAuthV4SignerTest, PostVanillaQuery)
 {
     RunV4TestCase("post-vanilla-query");
-}
-
-TEST(AWSAuthV4SignerTest, PostVanillaQuerySpace)
-{
-    RunV4TestCase("post-vanilla-query-space");
 }
