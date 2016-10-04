@@ -19,8 +19,11 @@
 
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/DateTime.h>
 
 #include <memory>
+#include <atomic>
+#include <chrono>
 
 namespace Aws
 {
@@ -55,6 +58,7 @@ namespace Aws
         class AWS_CORE_API AWSAuthSigner
         {
         public:
+            AWSAuthSigner() : m_clockSkew(std::chrono::milliseconds(0L)) {}
             virtual ~AWSAuthSigner() = default;
 
             /**
@@ -67,6 +71,18 @@ namespace Aws
              * The URI can then be used in a normal HTTP call until expiration.
              */
             virtual bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds) const = 0;
+
+            /**
+             * This handles detection of clock skew between clients and the server and adjusts the clock so that the next request will not
+             * fail on the timestamp check.
+             */
+            virtual void SetClockSkew(const std::chrono::milliseconds& clockSkew) { m_clockSkew = clockSkew; }
+
+        protected:
+            virtual Aws::Utils::DateTime GetSigningTimestamp() const { return Aws::Utils::DateTime::Now() + GetClockSkewOffset(); }
+            virtual std::chrono::milliseconds GetClockSkewOffset() const { return m_clockSkew.load(); }
+
+            std::atomic<std::chrono::milliseconds> m_clockSkew;
         };
 
         /**
@@ -103,6 +119,9 @@ namespace Aws
             * expirationInSeconds defaults to 0 which provides a URI good for 7 days.
             */
             bool PresignRequest(Aws::Http::HttpRequest& request, long long expirationInSeconds = 0) const override;
+
+        protected:
+            bool m_includeSha256HashHeader;
 
         private:
             Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;

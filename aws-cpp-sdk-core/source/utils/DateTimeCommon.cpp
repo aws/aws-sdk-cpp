@@ -936,6 +936,20 @@ bool DateTime::operator >= (const DateTime& other) const
     return m_time >= other.m_time;
 }
 
+DateTime DateTime::operator +(const std::chrono::milliseconds& a) const
+{
+    auto timepointCpy = m_time;
+    timepointCpy += a;
+    return DateTime(timepointCpy);
+}
+
+DateTime DateTime::operator -(const std::chrono::milliseconds& a) const
+{
+    auto timepointCpy = m_time;
+    timepointCpy -= a;
+    return DateTime(timepointCpy);
+}
+
 Aws::String DateTime::ToLocalTimeString(DateFormat format) const
 {
     switch (format)
@@ -1076,6 +1090,12 @@ int DateTime::CalculateCurrentHour()
 double DateTime::ComputeCurrentTimestampInAmazonFormat()
 {
    return Now().SecondsWithMSPrecision();
+}
+
+std::chrono::milliseconds DateTime::Diff(const DateTime& a, const DateTime& b)
+{
+    auto diff = a.m_time - b.m_time;
+    return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
 }
 
 void DateTime::ConvertTimestampStringToTimePoint(const char* timestamp, DateFormat format)

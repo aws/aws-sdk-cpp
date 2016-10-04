@@ -75,6 +75,10 @@ target_link_libraries(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
 copyDlls(runCoreUnitTests aws-cpp-sdk-core testing-resources)
 
+add_custom_command(TARGET runCoreUnitTests PRE_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_CURRENT_SOURCE_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR})
+
 if(NOT CMAKE_CROSSCOMPILING)
     ADD_CUSTOM_COMMAND( TARGET runCoreUnitTests POST_BUILD COMMAND $<TARGET_FILE:runCoreUnitTests>)
     SET_TARGET_PROPERTIES(runCoreUnitTests PROPERTIES OUTPUT_NAME runCoreUnitTests)
