@@ -18,6 +18,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/StringUtils.h>
 
 namespace Aws
 {
@@ -88,7 +89,7 @@ namespace Aws
             /**
              * tests whether or not a header exists.
              */
-            inline bool ResponseHeaderExists(const Aws::String& headerName) const { return m_responseHeaders.find(StringUtils::ToLower(headerName.c_str())) != m_responseHeaders.end(); }
+            inline bool ResponseHeaderExists(const Aws::String& headerName) const { return m_responseHeaders.find(Aws::Utils::StringUtils::ToLower(headerName.c_str())) != m_responseHeaders.end(); }
 
         private:
             ERROR_TYPE m_errorType;
