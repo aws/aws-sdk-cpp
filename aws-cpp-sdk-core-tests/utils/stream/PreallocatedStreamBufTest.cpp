@@ -163,3 +163,20 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteHonorsSizeLimitShorterThanBuffer)
     ioStream.write(bufferStr, sizeof(bufferStr));
     ASSERT_STREQ(shortenedBuffer, (const char*)buffer.GetUnderlyingData());
 }
+
+TEST(PreallocatedStreamBufTest, TestZeroLengthSeekFromEnd)
+{
+    Array<uint8_t> buffer((uint8_t*)bufferStr, sizeof(bufferStr));
+    PreallocatedStreamBuf streamBuf(&buffer, buffer.GetLength());
+    Aws::IOStream ioStream(&streamBuf);
+
+    ioStream.seekg(0, std::ios_base::end);
+    ASSERT_FALSE(ioStream.eof());
+
+    // attempting to read a character should fail and hit eof since we're one position after
+    // the last character
+    char ch = 0;
+    ioStream.get(ch);
+    // could check ch == 0 but I don't think the standard guarantees that
+    ASSERT_TRUE(ioStream.eof());
+}

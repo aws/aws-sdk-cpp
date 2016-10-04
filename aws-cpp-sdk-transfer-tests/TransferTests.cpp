@@ -346,12 +346,6 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.s3Client = m_s3Client;
-    transferManagerConfig.uploadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Upload Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n";};
-    transferManagerConfig.downloadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Download Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
     TransferManager transferManager(transferManagerConfig);
 
     // Test with default behavior of using file name as key
@@ -506,12 +500,7 @@ TEST_F(TransferTests, TransferManager_MediumTest)
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.s3Client = m_s3Client;
-    transferManagerConfig.uploadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Upload Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
-    transferManagerConfig.downloadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Download Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
+
     TransferManager transferManager(transferManagerConfig);
     std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(MEDIUM_TEST_FILE_NAME, GetTestBucketName(), MEDIUM_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
 
@@ -582,12 +571,6 @@ TEST_F(TransferTests, TransferManager_BigTest)
 
     TransferManagerConfiguration transferManagerConfig;
     transferManagerConfig.s3Client = m_s3Client;
-    transferManagerConfig.uploadProgressCallback = 
-        [](const TransferManager*, const TransferHandle& handle) 
-        { std::cout << "Upload Progress: " << handle.GetBytesTransferred() << " of " <<  handle.GetBytesTotalSize() << " bytes\n"; };
-    transferManagerConfig.downloadProgressCallback = 
-        [](const TransferManager*, const TransferHandle& handle) 
-        { std::cout << "Download Progress: " << handle.GetBytesTransferred() << " of "<<  handle.GetBytesTotalSize() << " bytes\n"; };
 
     TransferManager transferManager(transferManagerConfig);
     std::shared_ptr<TransferHandle> requestPtr = transferManager.UploadFile(BIG_TEST_FILE_NAME, GetTestBucketName(), BIG_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
@@ -672,12 +655,6 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryTest)
                 }
             }
         };
-    transferManagerConfig.uploadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Upload Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
-    transferManagerConfig.downloadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Download Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
 
     transferManagerConfig.s3Client = m_s3Client;
     TransferManager transferManager(transferManagerConfig);
@@ -774,12 +751,6 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryTest)
             }
         }
     };
-    transferManagerConfig.uploadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Upload Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
-    transferManagerConfig.downloadProgressCallback =
-        [](const TransferManager*, const TransferHandle& handle)
-    { std::cout << "Download Progress: " << handle.GetBytesTransferred() << " of " << handle.GetBytesTotalSize() << " bytes\n"; };
 
     transferManagerConfig.s3Client = m_s3Client;
     TransferManager transferManager(transferManagerConfig);

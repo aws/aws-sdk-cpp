@@ -18,6 +18,8 @@
 
 #undef min
 
+#include <algorithm>
+
 using namespace Aws::Utils::Logging;
 using namespace Aws::Http;
 

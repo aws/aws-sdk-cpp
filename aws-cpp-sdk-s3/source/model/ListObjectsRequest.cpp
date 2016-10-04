@@ -32,7 +32,8 @@ ListObjectsRequest::ListObjectsRequest() :
     m_markerHasBeenSet(false),
     m_maxKeys(0),
     m_maxKeysHasBeenSet(false),
-    m_prefixHasBeenSet(false)
+    m_prefixHasBeenSet(false),
+    m_requestPayerHasBeenSet(false)
 {
 }
 
@@ -81,3 +82,14 @@ void ListObjectsRequest::AddQueryStringParameters(URI& uri) const
 
 }
 
+Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_requestPayerHasBeenSet)
+  {
+    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+  }
+
+  return headers;
+}
