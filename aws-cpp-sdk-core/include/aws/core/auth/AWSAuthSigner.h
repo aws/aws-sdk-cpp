@@ -58,7 +58,7 @@ namespace Aws
         class AWS_CORE_API AWSAuthSigner
         {
         public:
-            AWSAuthSigner() : m_clockSkew(std::chrono::milliseconds(0L)) {}
+            AWSAuthSigner() : m_clockSkew() { m_clockSkew.store(std::chrono::milliseconds(0L)); }
             virtual ~AWSAuthSigner() = default;
 
             /**
