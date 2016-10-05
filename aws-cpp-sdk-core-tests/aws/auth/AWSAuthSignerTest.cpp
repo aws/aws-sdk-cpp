@@ -174,13 +174,13 @@ static void RunV4TestCase(const char* testCaseName)
     Aws::StringStream requestFileName;
     requestFileName << "./aws4_testsuite/aws4_testsuite/" << testCaseName << "/" << testCaseName << ".req";
     Aws::FStream requestFile(requestFileName.str().c_str(), std::ios::in);
-    ASSERT_TRUE(requestFile.operator bool());
+    ASSERT_TRUE(requestFile.good());
 
     Aws::StringStream expectedSignatureFileName;
     expectedSignatureFileName << "./aws4_testsuite/aws4_testsuite/" << testCaseName << "/" << testCaseName << ".authz";
 
     Aws::FStream signatureFile(expectedSignatureFileName.str().c_str(), std::ios::in);
-    ASSERT_TRUE(signatureFile.operator bool());
+    ASSERT_TRUE(signatureFile.good());
 
     DateTime timestampForSigner;
     static const char* region = "us-east-1";
