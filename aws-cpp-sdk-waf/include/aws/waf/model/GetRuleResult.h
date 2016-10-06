@@ -42,55 +42,55 @@ namespace Model
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
      * <code>GetRule</code> request. For more information, see the following
-     * topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>,
+     * topics:</p> <ul> <li> <p> <a>Rule</a>: Contains <code>MetricName</code>,
      * <code>Name</code>, an array of <code>Predicate</code> objects, and
-     * <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code>
-     * object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li> </ul>
+     * <code>RuleId</code> </p> </li> <li> <p> <a>Predicate</a>: Each
+     * <code>Predicate</code> object contains <code>DataId</code>,
+     * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
     inline const Rule& GetRule() const{ return m_rule; }
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
      * <code>GetRule</code> request. For more information, see the following
-     * topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>,
+     * topics:</p> <ul> <li> <p> <a>Rule</a>: Contains <code>MetricName</code>,
      * <code>Name</code>, an array of <code>Predicate</code> objects, and
-     * <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code>
-     * object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li> </ul>
+     * <code>RuleId</code> </p> </li> <li> <p> <a>Predicate</a>: Each
+     * <code>Predicate</code> object contains <code>DataId</code>,
+     * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
     inline void SetRule(const Rule& value) { m_rule = value; }
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
      * <code>GetRule</code> request. For more information, see the following
-     * topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>,
+     * topics:</p> <ul> <li> <p> <a>Rule</a>: Contains <code>MetricName</code>,
      * <code>Name</code>, an array of <code>Predicate</code> objects, and
-     * <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code>
-     * object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li> </ul>
+     * <code>RuleId</code> </p> </li> <li> <p> <a>Predicate</a>: Each
+     * <code>Predicate</code> object contains <code>DataId</code>,
+     * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
     inline void SetRule(Rule&& value) { m_rule = value; }
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
      * <code>GetRule</code> request. For more information, see the following
-     * topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>,
+     * topics:</p> <ul> <li> <p> <a>Rule</a>: Contains <code>MetricName</code>,
      * <code>Name</code>, an array of <code>Predicate</code> objects, and
-     * <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code>
-     * object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li> </ul>
+     * <code>RuleId</code> </p> </li> <li> <p> <a>Predicate</a>: Each
+     * <code>Predicate</code> object contains <code>DataId</code>,
+     * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
     inline GetRuleResult& WithRule(const Rule& value) { SetRule(value); return *this;}
 
     /**
      * <p>Information about the <a>Rule</a> that you specified in the
      * <code>GetRule</code> request. For more information, see the following
-     * topics:</p> <ul> <li><a>Rule</a>: Contains <code>MetricName</code>,
+     * topics:</p> <ul> <li> <p> <a>Rule</a>: Contains <code>MetricName</code>,
      * <code>Name</code>, an array of <code>Predicate</code> objects, and
-     * <code>RuleId</code></li> <li><a>Predicate</a>: Each <code>Predicate</code>
-     * object contains <code>DataId</code>, <code>Negated</code>, and
-     * <code>Type</code></li> </ul>
+     * <code>RuleId</code> </p> </li> <li> <p> <a>Predicate</a>: Each
+     * <code>Predicate</code> object contains <code>DataId</code>,
+     * <code>Negated</code>, and <code>Type</code> </p> </li> </ul>
      */
     inline GetRuleResult& WithRule(Rule&& value) { SetRule(value); return *this;}
 

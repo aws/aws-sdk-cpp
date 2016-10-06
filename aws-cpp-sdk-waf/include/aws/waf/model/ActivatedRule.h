@@ -81,7 +81,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
@@ -92,7 +92,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
@@ -103,7 +103,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
@@ -114,7 +114,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
@@ -125,7 +125,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline ActivatedRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
@@ -136,7 +136,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline ActivatedRule& WithRuleId(Aws::String&& value) { SetRuleId(value); return *this;}
@@ -147,7 +147,7 @@ namespace Model
      * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
      * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
      * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
-     * <a>DeleteRule</a>).</p> <p><code>RuleId</code> is returned by <a>CreateRule</a>
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
     inline ActivatedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
@@ -155,60 +155,60 @@ namespace Model
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
-     * <code>Action</code> include the following:</p> <ul> <li><code>ALLOW</code>:
-     * CloudFront responds with the requested object.</li> <li><code>BLOCK</code>:
-     * CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the
-     * conditions in the rule and then continues to inspect the web request based on
-     * the remaining rules in the web ACL. </li> </ul>
+     * <code>Action</code> include the following:</p> <ul> <li> <p> <code>ALLOW</code>:
+     * CloudFront responds with the requested object.</p> </li> <li> <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
+     * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
+     * requests that match the conditions in the rule and then continues to inspect the
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
     inline const WafAction& GetAction() const{ return m_action; }
 
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
-     * <code>Action</code> include the following:</p> <ul> <li><code>ALLOW</code>:
-     * CloudFront responds with the requested object.</li> <li><code>BLOCK</code>:
-     * CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the
-     * conditions in the rule and then continues to inspect the web request based on
-     * the remaining rules in the web ACL. </li> </ul>
+     * <code>Action</code> include the following:</p> <ul> <li> <p> <code>ALLOW</code>:
+     * CloudFront responds with the requested object.</p> </li> <li> <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
+     * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
+     * requests that match the conditions in the rule and then continues to inspect the
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
     inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
-     * <code>Action</code> include the following:</p> <ul> <li><code>ALLOW</code>:
-     * CloudFront responds with the requested object.</li> <li><code>BLOCK</code>:
-     * CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the
-     * conditions in the rule and then continues to inspect the web request based on
-     * the remaining rules in the web ACL. </li> </ul>
+     * <code>Action</code> include the following:</p> <ul> <li> <p> <code>ALLOW</code>:
+     * CloudFront responds with the requested object.</p> </li> <li> <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
+     * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
+     * requests that match the conditions in the rule and then continues to inspect the
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
     inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
-     * <code>Action</code> include the following:</p> <ul> <li><code>ALLOW</code>:
-     * CloudFront responds with the requested object.</li> <li><code>BLOCK</code>:
-     * CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the
-     * conditions in the rule and then continues to inspect the web request based on
-     * the remaining rules in the web ACL. </li> </ul>
+     * <code>Action</code> include the following:</p> <ul> <li> <p> <code>ALLOW</code>:
+     * CloudFront responds with the requested object.</p> </li> <li> <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
+     * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
+     * requests that match the conditions in the rule and then continues to inspect the
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
     inline ActivatedRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>Specifies the action that CloudFront or AWS WAF takes when a web request
      * matches the conditions in the <code>Rule</code>. Valid values for
-     * <code>Action</code> include the following:</p> <ul> <li><code>ALLOW</code>:
-     * CloudFront responds with the requested object.</li> <li><code>BLOCK</code>:
-     * CloudFront responds with an HTTP 403 (Forbidden) status code.</li>
-     * <li><code>COUNT</code>: AWS WAF increments a counter of requests that match the
-     * conditions in the rule and then continues to inspect the web request based on
-     * the remaining rules in the web ACL. </li> </ul>
+     * <code>Action</code> include the following:</p> <ul> <li> <p> <code>ALLOW</code>:
+     * CloudFront responds with the requested object.</p> </li> <li> <p>
+     * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
+     * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
+     * requests that match the conditions in the rule and then continues to inspect the
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul>
      */
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(value); return *this;}
 

@@ -30,7 +30,8 @@ namespace Model
     CUSTOM_CHALLENGE,
     DEVICE_SRP_AUTH,
     DEVICE_PASSWORD_VERIFIER,
-    ADMIN_NO_SRP_AUTH
+    ADMIN_NO_SRP_AUTH,
+    NEW_PASSWORD_REQUIRED
   };
 
 namespace ChallengeNameTypeMapper

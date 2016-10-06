@@ -35,6 +35,7 @@ namespace Aws
         static const int DEVICE_SRP_AUTH_HASH = HashingUtils::HashString("DEVICE_SRP_AUTH");
         static const int DEVICE_PASSWORD_VERIFIER_HASH = HashingUtils::HashString("DEVICE_PASSWORD_VERIFIER");
         static const int ADMIN_NO_SRP_AUTH_HASH = HashingUtils::HashString("ADMIN_NO_SRP_AUTH");
+        static const int NEW_PASSWORD_REQUIRED_HASH = HashingUtils::HashString("NEW_PASSWORD_REQUIRED");
 
 
         ChallengeNameType GetChallengeNameTypeForName(const Aws::String& name)
@@ -64,6 +65,10 @@ namespace Aws
           {
             return ChallengeNameType::ADMIN_NO_SRP_AUTH;
           }
+          else if (hashCode == NEW_PASSWORD_REQUIRED_HASH)
+          {
+            return ChallengeNameType::NEW_PASSWORD_REQUIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "DEVICE_PASSWORD_VERIFIER";
           case ChallengeNameType::ADMIN_NO_SRP_AUTH:
             return "ADMIN_NO_SRP_AUTH";
+          case ChallengeNameType::NEW_PASSWORD_REQUIRED:
+            return "NEW_PASSWORD_REQUIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,6 +22,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/cognito-idp/model/AddCustomAttributesResult.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpResult.h>
+#include <aws/cognito-idp/model/AdminCreateUserResult.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesResult.h>
 #include <aws/cognito-idp/model/AdminDisableUserResult.h>
 #include <aws/cognito-idp/model/AdminEnableUserResult.h>
@@ -117,6 +118,7 @@ namespace Model
 {
         class AddCustomAttributesRequest;
         class AdminConfirmSignUpRequest;
+        class AdminCreateUserRequest;
         class AdminDeleteUserRequest;
         class AdminDeleteUserAttributesRequest;
         class AdminDisableUserRequest;
@@ -173,6 +175,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddCustomAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AddCustomAttributesOutcome;
         typedef Aws::Utils::Outcome<AdminConfirmSignUpResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminConfirmSignUpOutcome;
+        typedef Aws::Utils::Outcome<AdminCreateUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminCreateUserOutcome;
         typedef Aws::Utils::Outcome<NoResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserOutcome;
         typedef Aws::Utils::Outcome<AdminDeleteUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDeleteUserAttributesOutcome;
         typedef Aws::Utils::Outcome<AdminDisableUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> AdminDisableUserOutcome;
@@ -229,6 +232,7 @@ namespace Model
 
         typedef std::future<AddCustomAttributesOutcome> AddCustomAttributesOutcomeCallable;
         typedef std::future<AdminConfirmSignUpOutcome> AdminConfirmSignUpOutcomeCallable;
+        typedef std::future<AdminCreateUserOutcome> AdminCreateUserOutcomeCallable;
         typedef std::future<AdminDeleteUserOutcome> AdminDeleteUserOutcomeCallable;
         typedef std::future<AdminDeleteUserAttributesOutcome> AdminDeleteUserAttributesOutcomeCallable;
         typedef std::future<AdminDisableUserOutcome> AdminDisableUserOutcomeCallable;
@@ -288,6 +292,7 @@ namespace Model
 
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AddCustomAttributesRequest&, const Model::AddCustomAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddCustomAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminConfirmSignUpRequest&, const Model::AdminConfirmSignUpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminConfirmSignUpResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminCreateUserRequest&, const Model::AdminCreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminCreateUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminDeleteUserRequest&, const Model::AdminDeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminDeleteUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminDeleteUserAttributesRequest&, const Model::AdminDeleteUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminDeleteUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::AdminDisableUserRequest&, const Model::AdminDisableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdminDisableUserResponseReceivedHandler;
@@ -343,11 +348,11 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifyUserAttributeRequest&, const Model::VerifyUserAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyUserAttributeResponseReceivedHandler;
 
   /**
-   * <p>You can create a user pool in Amazon Cognito Identity to manage directories
-   * and users. You can authenticate a user to obtain tokens related to user identity
-   * and access policies.</p> <p>This API reference provides information about user
-   * pools in Amazon Cognito Identity.</p> <p>For more information, see <a
-   * href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.</p>
+   * <p>Using the Amazon Cognito Your User Pools API, you can create a user pool to
+   * manage directories and users. You can authenticate a user to obtain tokens
+   * related to user identity and access policies.</p> <p>This API reference provides
+   * information about user pools in Amazon Cognito Your User Pools.</p> <p>For more
+   * information, see the Amazon Cognito Documentation.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient : public Aws::Client::AWSJsonClient
   {
@@ -415,6 +420,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AdminConfirmSignUpAsync(const Model::AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new user in the specified user pool and sends a welcome message via
+         * email or phone (SMS). This message is based on a template that you configured in
+         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Requires developer credentials.</p>
+         */
+        virtual Model::AdminCreateUserOutcome AdminCreateUser(const Model::AdminCreateUserRequest& request) const;
+
+        /**
+         * <p>Creates a new user in the specified user pool and sends a welcome message via
+         * email or phone (SMS). This message is based on a template that you configured in
+         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Requires developer credentials.</p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdminCreateUserOutcomeCallable AdminCreateUserCallable(const Model::AdminCreateUserRequest& request) const;
+
+        /**
+         * <p>Creates a new user in the specified user pool and sends a welcome message via
+         * email or phone (SMS). This message is based on a template that you configured in
+         * your call to CreateUserPool or UpdateUserPool. This template includes your
+         * custom sign-up instructions and placeholders for user name and temporary
+         * password.</p> <p>Requires developer credentials.</p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdminCreateUserAsync(const Model::AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a user as an administrator. Works on any user.</p>
@@ -1505,6 +1541,7 @@ namespace Model
         /**Async helpers**/
         void AddCustomAttributesAsyncHelper(const Model::AddCustomAttributesRequest& request, const AddCustomAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminConfirmSignUpAsyncHelper(const Model::AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdminCreateUserAsyncHelper(const Model::AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminDeleteUserAsyncHelper(const Model::AdminDeleteUserRequest& request, const AdminDeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminDeleteUserAttributesAsyncHelper(const Model::AdminDeleteUserAttributesRequest& request, const AdminDeleteUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AdminDisableUserAsyncHelper(const Model::AdminDisableUserRequest& request, const AdminDisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

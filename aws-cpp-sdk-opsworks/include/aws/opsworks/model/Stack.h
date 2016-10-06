@@ -547,9 +547,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -559,9 +559,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -571,9 +571,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -583,9 +583,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -595,9 +595,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -607,9 +607,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -619,9 +619,9 @@ namespace Model
      * <p>A JSON object that contains user-defined attributes to be added to the stack
      * configuration and deployment attributes. You can use custom JSON to override the
      * corresponding default stack configuration attribute values or to pass data to
-     * recipes. The string should be in the following format and must escape characters
-     * such as '"':</p> <p> <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code> </p> <p>For more information on custom JSON, see <a
+     * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */

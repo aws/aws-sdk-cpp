@@ -49,7 +49,8 @@ UserPoolType::UserPoolType() :
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
-    m_emailConfigurationFailureHasBeenSet(false)
+    m_emailConfigurationFailureHasBeenSet(false),
+    m_adminCreateUserConfigHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,8 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_emailConfigurationHasBeenSet(false),
     m_smsConfigurationHasBeenSet(false),
     m_smsConfigurationFailureHasBeenSet(false),
-    m_emailConfigurationFailureHasBeenSet(false)
+    m_emailConfigurationFailureHasBeenSet(false),
+    m_adminCreateUserConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +240,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_emailConfigurationFailureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdminCreateUserConfig"))
+  {
+    m_adminCreateUserConfig = jsonValue.GetObject("AdminCreateUserConfig");
+
+    m_adminCreateUserConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -379,6 +388,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_emailConfigurationFailureHasBeenSet)
   {
    payload.WithString("EmailConfigurationFailure", m_emailConfigurationFailure);
+
+  }
+
+  if(m_adminCreateUserConfigHasBeenSet)
+  {
+   payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
 
   }
 

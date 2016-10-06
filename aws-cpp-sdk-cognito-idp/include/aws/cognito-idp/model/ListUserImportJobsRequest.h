@@ -93,43 +93,43 @@ namespace Model
     inline ListUserImportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
+     * <p>An identifier that was returned from the previous call to ListUserImportJobs,
      * which can be used to return the next set of import jobs in the list.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}

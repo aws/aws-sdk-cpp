@@ -123,70 +123,77 @@ namespace Model
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline const Aws::Vector<RuleUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdates(const Aws::Vector<RuleUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline void SetUpdates(Aws::Vector<RuleUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline UpdateRuleRequest& WithUpdates(const Aws::Vector<RuleUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline UpdateRuleRequest& WithUpdates(Aws::Vector<RuleUpdate>&& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline UpdateRuleRequest& AddUpdates(const RuleUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
      * delete from a <a>Rule</a>. For more information, see the applicable data
-     * types:</p> <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and
-     * <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>,
-     * <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>:
-     * Contains <code>Data</code> and <code>Type</code></li> </ul>
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
      */
     inline UpdateRuleRequest& AddUpdates(RuleUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 

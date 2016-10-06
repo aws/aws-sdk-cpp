@@ -28,6 +28,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderErrorMarshaller.h>
 #include <aws/cognito-idp/model/AddCustomAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminConfirmSignUpRequest.h>
+#include <aws/cognito-idp/model/AdminCreateUserRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserRequest.h>
 #include <aws/cognito-idp/model/AdminDeleteUserAttributesRequest.h>
 #include <aws/cognito-idp/model/AdminDisableUserRequest.h>
@@ -206,6 +207,37 @@ void CognitoIdentityProviderClient::AdminConfirmSignUpAsync(const AdminConfirmSi
 void CognitoIdentityProviderClient::AdminConfirmSignUpAsyncHelper(const AdminConfirmSignUpRequest& request, const AdminConfirmSignUpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AdminConfirmSignUp(request), context);
+}
+
+AdminCreateUserOutcome CognitoIdentityProviderClient::AdminCreateUser(const AdminCreateUserRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AdminCreateUserOutcome(AdminCreateUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AdminCreateUserOutcome(outcome.GetError());
+  }
+}
+
+AdminCreateUserOutcomeCallable CognitoIdentityProviderClient::AdminCreateUserCallable(const AdminCreateUserRequest& request) const
+{
+  return std::async(std::launch::async, [this, request](){ return this->AdminCreateUser(request); } );
+}
+
+void CognitoIdentityProviderClient::AdminCreateUserAsync(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AdminCreateUserAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::AdminCreateUserAsyncHelper(const AdminCreateUserRequest& request, const AdminCreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AdminCreateUser(request), context);
 }
 
 AdminDeleteUserOutcome CognitoIdentityProviderClient::AdminDeleteUser(const AdminDeleteUserRequest& request) const

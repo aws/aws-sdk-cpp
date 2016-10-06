@@ -49,6 +49,7 @@ static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorEx
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
 static const int USER_NOT_CONFIRMED_HASH = HashingUtils::HashString("UserNotConfirmedException");
+static const int UNSUPPORTED_USER_STATE_HASH = HashingUtils::HashString("UnsupportedUserStateException");
 static const int INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH = HashingUtils::HashString("InvalidSmsRoleTrustRelationshipException");
 static const int M_F_A_METHOD_NOT_FOUND_HASH = HashingUtils::HashString("MFAMethodNotFoundException");
 static const int PASSWORD_RESET_REQUIRED_HASH = HashingUtils::HashString("PasswordResetRequiredException");
@@ -146,6 +147,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == USER_NOT_CONFIRMED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::USER_NOT_CONFIRMED), false);
+  }
+  else if (hashCode == UNSUPPORTED_USER_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityProviderErrors::UNSUPPORTED_USER_STATE), false);
   }
   else if (hashCode == INVALID_SMS_ROLE_TRUST_RELATIONSHIP_HASH)
   {

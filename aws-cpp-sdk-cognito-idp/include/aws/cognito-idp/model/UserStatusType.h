@@ -30,7 +30,8 @@ namespace Model
     ARCHIVED,
     COMPROMISED,
     UNKNOWN,
-    RESET_REQUIRED
+    RESET_REQUIRED,
+    FORCE_CHANGE_PASSWORD
   };
 
 namespace UserStatusTypeMapper

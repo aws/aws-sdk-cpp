@@ -72,37 +72,37 @@ namespace Model
     inline ListArtifactsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
     /**
-     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The
-     * artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT:
-     * The artifacts are screenshots.</li> </ul>
+     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
+     * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
+     * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline const ArtifactCategory& GetType() const{ return m_type; }
 
     /**
-     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The
-     * artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT:
-     * The artifacts are screenshots.</li> </ul>
+     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
+     * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
+     * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline void SetType(const ArtifactCategory& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The
-     * artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT:
-     * The artifacts are screenshots.</li> </ul>
+     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
+     * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
+     * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline void SetType(ArtifactCategory&& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The
-     * artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT:
-     * The artifacts are screenshots.</li> </ul>
+     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
+     * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
+     * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline ListArtifactsRequest& WithType(const ArtifactCategory& value) { SetType(value); return *this;}
 
     /**
-     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li>FILE: The
-     * artifacts are files.</li> <li>LOG: The artifacts are logs.</li> <li>SCREENSHOT:
-     * The artifacts are screenshots.</li> </ul>
+     * <p>The artifacts' type.</p> <p>Allowed values include:</p> <ul> <li> <p>FILE:
+     * The artifacts are files.</p> </li> <li> <p>LOG: The artifacts are logs.</p>
+     * </li> <li> <p>SCREENSHOT: The artifacts are screenshots.</p> </li> </ul>
      */
     inline ListArtifactsRequest& WithType(ArtifactCategory&& value) { SetType(value); return *this;}
 

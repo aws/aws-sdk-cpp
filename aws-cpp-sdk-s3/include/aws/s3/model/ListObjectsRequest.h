@@ -201,19 +201,39 @@ namespace Model
      */
     inline ListObjectsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
-    
+    /**
+     * Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.
+     */
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
-    
+    /**
+     * Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.
+     */
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
-    
+    /**
+     * Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.
+     */
     inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
-    
+    /**
+     * Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.
+     */
     inline ListObjectsRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
 
-    
+    /**
+     * Confirms that the requester knows that she or he will be charged for the list
+     * objects request. Bucket owners need not specify this parameter in their
+     * requests.
+     */
     inline ListObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(value); return *this;}
 
   private:

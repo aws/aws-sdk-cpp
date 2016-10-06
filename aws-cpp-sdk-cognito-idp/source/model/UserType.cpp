@@ -34,7 +34,8 @@ UserType::UserType() :
     m_userLastModifiedDateHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_userStatusHasBeenSet(false)
+    m_userStatusHasBeenSet(false),
+    m_mFAOptionsHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,8 @@ UserType::UserType(const JsonValue& jsonValue) :
     m_userLastModifiedDateHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_userStatusHasBeenSet(false)
+    m_userStatusHasBeenSet(false),
+    m_mFAOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,16 @@ UserType& UserType::operator =(const JsonValue& jsonValue)
     m_userStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MFAOptions"))
+  {
+    Array<JsonValue> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
+    for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
+    {
+      m_mFAOptions.push_back(mFAOptionsJsonList[mFAOptionsIndex].AsObject());
+    }
+    m_mFAOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +152,17 @@ JsonValue UserType::Jsonize() const
   if(m_userStatusHasBeenSet)
   {
    payload.WithString("UserStatus", UserStatusTypeMapper::GetNameForUserStatusType(m_userStatus));
+  }
+
+  if(m_mFAOptionsHasBeenSet)
+  {
+   Array<JsonValue> mFAOptionsJsonList(m_mFAOptions.size());
+   for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
+   {
+     mFAOptionsJsonList[mFAOptionsIndex].AsObject(m_mFAOptions[mFAOptionsIndex].Jsonize());
+   }
+   payload.WithArray("MFAOptions", std::move(mFAOptionsJsonList));
+
   }
 
   return payload;

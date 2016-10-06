@@ -35,49 +35,56 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline DescribePermissionsRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
     inline DescribePermissionsRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The user's IAM ARN. For more information about IAM ARNs, see <a
+     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
+     * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.</p>
      */
