@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>ModifyCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>ModifyCacheCluster</code> operation.</p>
    */
   class AWS_ELASTICACHE_API ModifyCacheClusterRequest : public ElastiCacheRequest
   {
@@ -74,30 +74,30 @@ namespace Model
      * <p>The number of cache nodes that the cache cluster should have. If the value
      * for <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
-     * then more nodes will be added. If the value is less than the number of existing
-     * cache nodes, then nodes will be removed. If the value is equal to the number of
-     * current cache nodes, then any pending add or remove requests are canceled.</p>
-     * <p>If you are removing cache nodes, you must use the
-     * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific
-     * cache nodes to remove.</p> <p>For clusters running Redis, this value must be 1.
-     * For clusters running Memcached, this value must be between 1 and 20.</p> <note>
-     * <p>Adding or removing Memcached cache nodes can be applied immediately or as a
-     * pending action. See <code>ApplyImmediately</code>.</p> <p>A pending action to
-     * modify the number of cache nodes in a cluster during its maintenance window,
-     * whether by adding or removing nodes in accordance with the scale out
-     * architecture, is not queued. The customer's latest request to add or remove
-     * nodes to the cluster overrides any previous pending actions to modify the number
-     * of cache nodes in the cluster. For example, a request to remove 2 nodes would
-     * override a previous pending action to remove 3 nodes. Similarly, a request to
-     * add 2 nodes would override a previous pending action to remove 3 nodes and vice
-     * versa. As Memcached cache nodes may now be provisioned in different Availability
-     * Zones with flexible cache node placement, a request to add nodes does not
-     * automatically override a previous pending action to add nodes. The customer can
-     * modify the previous pending action to add more nodes or explicitly cancel the
-     * pending request and retry the new request. To cancel pending actions to modify
-     * the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code>
-     * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.</p> </note>
+     * more nodes are added. If the value is less than the number of existing cache
+     * nodes, nodes are removed. If the value is equal to the number of current cache
+     * nodes, any pending add or remove requests are canceled.</p> <p>If you are
+     * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
+     * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
+     * clusters running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 20.</p> <note> <p>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
+     * of cache nodes in a cluster during its maintenance window, whether by adding or
+     * removing nodes in accordance with the scale out architecture, is not queued. The
+     * customer's latest request to add or remove nodes to the cluster overrides any
+     * previous pending operations to modify the number of cache nodes in the cluster.
+     * For example, a request to remove 2 nodes would override a previous pending
+     * operation to remove 3 nodes. Similarly, a request to add 2 nodes would override
+     * a previous pending operation to remove 3 nodes and vice versa. As Memcached
+     * cache nodes may now be provisioned in different Availability Zones with flexible
+     * cache node placement, a request to add nodes does not automatically override a
+     * previous pending operation to add nodes. The customer can modify the previous
+     * pending operation to add more nodes or explicitly cancel the pending request and
+     * retry the new request. To cancel pending operations to modify the number of
+     * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
+     * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
+     * the cache cluster.</p> </note>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
@@ -105,30 +105,30 @@ namespace Model
      * <p>The number of cache nodes that the cache cluster should have. If the value
      * for <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
-     * then more nodes will be added. If the value is less than the number of existing
-     * cache nodes, then nodes will be removed. If the value is equal to the number of
-     * current cache nodes, then any pending add or remove requests are canceled.</p>
-     * <p>If you are removing cache nodes, you must use the
-     * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific
-     * cache nodes to remove.</p> <p>For clusters running Redis, this value must be 1.
-     * For clusters running Memcached, this value must be between 1 and 20.</p> <note>
-     * <p>Adding or removing Memcached cache nodes can be applied immediately or as a
-     * pending action. See <code>ApplyImmediately</code>.</p> <p>A pending action to
-     * modify the number of cache nodes in a cluster during its maintenance window,
-     * whether by adding or removing nodes in accordance with the scale out
-     * architecture, is not queued. The customer's latest request to add or remove
-     * nodes to the cluster overrides any previous pending actions to modify the number
-     * of cache nodes in the cluster. For example, a request to remove 2 nodes would
-     * override a previous pending action to remove 3 nodes. Similarly, a request to
-     * add 2 nodes would override a previous pending action to remove 3 nodes and vice
-     * versa. As Memcached cache nodes may now be provisioned in different Availability
-     * Zones with flexible cache node placement, a request to add nodes does not
-     * automatically override a previous pending action to add nodes. The customer can
-     * modify the previous pending action to add more nodes or explicitly cancel the
-     * pending request and retry the new request. To cancel pending actions to modify
-     * the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code>
-     * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.</p> </note>
+     * more nodes are added. If the value is less than the number of existing cache
+     * nodes, nodes are removed. If the value is equal to the number of current cache
+     * nodes, any pending add or remove requests are canceled.</p> <p>If you are
+     * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
+     * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
+     * clusters running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 20.</p> <note> <p>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
+     * of cache nodes in a cluster during its maintenance window, whether by adding or
+     * removing nodes in accordance with the scale out architecture, is not queued. The
+     * customer's latest request to add or remove nodes to the cluster overrides any
+     * previous pending operations to modify the number of cache nodes in the cluster.
+     * For example, a request to remove 2 nodes would override a previous pending
+     * operation to remove 3 nodes. Similarly, a request to add 2 nodes would override
+     * a previous pending operation to remove 3 nodes and vice versa. As Memcached
+     * cache nodes may now be provisioned in different Availability Zones with flexible
+     * cache node placement, a request to add nodes does not automatically override a
+     * previous pending operation to add nodes. The customer can modify the previous
+     * pending operation to add more nodes or explicitly cancel the pending request and
+     * retry the new request. To cancel pending operations to modify the number of
+     * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
+     * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
+     * the cache cluster.</p> </note>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
@@ -136,134 +136,134 @@ namespace Model
      * <p>The number of cache nodes that the cache cluster should have. If the value
      * for <code>NumCacheNodes</code> is greater than the sum of the number of current
      * cache nodes and the number of cache nodes pending creation (which may be zero),
-     * then more nodes will be added. If the value is less than the number of existing
-     * cache nodes, then nodes will be removed. If the value is equal to the number of
-     * current cache nodes, then any pending add or remove requests are canceled.</p>
-     * <p>If you are removing cache nodes, you must use the
-     * <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific
-     * cache nodes to remove.</p> <p>For clusters running Redis, this value must be 1.
-     * For clusters running Memcached, this value must be between 1 and 20.</p> <note>
-     * <p>Adding or removing Memcached cache nodes can be applied immediately or as a
-     * pending action. See <code>ApplyImmediately</code>.</p> <p>A pending action to
-     * modify the number of cache nodes in a cluster during its maintenance window,
-     * whether by adding or removing nodes in accordance with the scale out
-     * architecture, is not queued. The customer's latest request to add or remove
-     * nodes to the cluster overrides any previous pending actions to modify the number
-     * of cache nodes in the cluster. For example, a request to remove 2 nodes would
-     * override a previous pending action to remove 3 nodes. Similarly, a request to
-     * add 2 nodes would override a previous pending action to remove 3 nodes and vice
-     * versa. As Memcached cache nodes may now be provisioned in different Availability
-     * Zones with flexible cache node placement, a request to add nodes does not
-     * automatically override a previous pending action to add nodes. The customer can
-     * modify the previous pending action to add more nodes or explicitly cancel the
-     * pending request and retry the new request. To cancel pending actions to modify
-     * the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code>
-     * request and set <i>NumCacheNodes</i> equal to the number of cache nodes
-     * currently in the cache cluster.</p> </note>
+     * more nodes are added. If the value is less than the number of existing cache
+     * nodes, nodes are removed. If the value is equal to the number of current cache
+     * nodes, any pending add or remove requests are canceled.</p> <p>If you are
+     * removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
+     * parameter to provide the IDs of the specific cache nodes to remove.</p> <p>For
+     * clusters running Redis, this value must be 1. For clusters running Memcached,
+     * this value must be between 1 and 20.</p> <note> <p>Adding or removing Memcached
+     * cache nodes can be applied immediately or as a pending operation (see
+     * <code>ApplyImmediately</code>).</p> <p>A pending operation to modify the number
+     * of cache nodes in a cluster during its maintenance window, whether by adding or
+     * removing nodes in accordance with the scale out architecture, is not queued. The
+     * customer's latest request to add or remove nodes to the cluster overrides any
+     * previous pending operations to modify the number of cache nodes in the cluster.
+     * For example, a request to remove 2 nodes would override a previous pending
+     * operation to remove 3 nodes. Similarly, a request to add 2 nodes would override
+     * a previous pending operation to remove 3 nodes and vice versa. As Memcached
+     * cache nodes may now be provisioned in different Availability Zones with flexible
+     * cache node placement, a request to add nodes does not automatically override a
+     * previous pending operation to add nodes. The customer can modify the previous
+     * pending operation to add more nodes or explicitly cancel the pending request and
+     * retry the new request. To cancel pending operations to modify the number of
+     * cache nodes in a cluster, use the <code>ModifyCacheCluster</code> request and
+     * set <code>NumCacheNodes</code> equal to the number of cache nodes currently in
+     * the cache cluster.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToRemove() const{ return m_cacheNodeIdsToRemove; }
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline void SetCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline void SetCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove = value; }
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeIdsToRemove(const Aws::Vector<Aws::String>& value) { SetCacheNodeIdsToRemove(value); return *this;}
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeIdsToRemove(Aws::Vector<Aws::String>&& value) { SetCacheNodeIdsToRemove(value); return *this;}
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(const Aws::String& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(Aws::String&& value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
     /**
      * <p>A list of cache node IDs to be removed. A node ID is a numeric identifier
-     * (0001, 0002, etc.). This parameter is only valid when <i>NumCacheNodes</i> is
-     * less than the existing number of cache nodes. The number of cache node IDs
+     * (0001, 0002, etc.). This parameter is only valid when <code>NumCacheNodes</code>
+     * is less than the existing number of cache nodes. The number of cache node IDs
      * supplied in this parameter must match the difference between the existing number
      * of cache nodes in the cluster or pending cache nodes, whichever is greater, and
-     * the value of <i>NumCacheNodes</i> in the request.</p> <p>For example: If you
-     * have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes
-     * in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5) cache
-     * node IDs to remove.</p>
+     * the value of <code>NumCacheNodes</code> in the request.</p> <p>For example: If
+     * you have 3 active cache nodes, 7 pending cache nodes, and the number of cache
+     * nodes in this <code>ModifyCacheCluser</code> call is 5, you must list 2 (7 - 5)
+     * cache node IDs to remove.</p>
      */
     inline ModifyCacheClusterRequest& AddCacheNodeIdsToRemove(const char* value) { m_cacheNodeIdsToRemoveHasBeenSet = true; m_cacheNodeIdsToRemove.push_back(value); return *this; }
 
@@ -275,7 +275,7 @@ namespace Model
      * cannot specify <code>single-az</code> if the Memcached cache cluster already has
      * cache nodes in different Availability Zones. If <code>cross-az</code> is
      * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes will be located in different Availability
+     * Zone.</p> <p>Only newly created nodes are located in different Availability
      * Zones. For instructions on how to move existing Memcached nodes to different
      * Availability Zones, see the <b>Availability Zone Considerations</b> section of
      * <a
@@ -292,7 +292,7 @@ namespace Model
      * cannot specify <code>single-az</code> if the Memcached cache cluster already has
      * cache nodes in different Availability Zones. If <code>cross-az</code> is
      * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes will be located in different Availability
+     * Zone.</p> <p>Only newly created nodes are located in different Availability
      * Zones. For instructions on how to move existing Memcached nodes to different
      * Availability Zones, see the <b>Availability Zone Considerations</b> section of
      * <a
@@ -309,7 +309,7 @@ namespace Model
      * cannot specify <code>single-az</code> if the Memcached cache cluster already has
      * cache nodes in different Availability Zones. If <code>cross-az</code> is
      * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes will be located in different Availability
+     * Zone.</p> <p>Only newly created nodes are located in different Availability
      * Zones. For instructions on how to move existing Memcached nodes to different
      * Availability Zones, see the <b>Availability Zone Considerations</b> section of
      * <a
@@ -326,7 +326,7 @@ namespace Model
      * cannot specify <code>single-az</code> if the Memcached cache cluster already has
      * cache nodes in different Availability Zones. If <code>cross-az</code> is
      * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes will be located in different Availability
+     * Zone.</p> <p>Only newly created nodes are located in different Availability
      * Zones. For instructions on how to move existing Memcached nodes to different
      * Availability Zones, see the <b>Availability Zone Considerations</b> section of
      * <a
@@ -343,7 +343,7 @@ namespace Model
      * cannot specify <code>single-az</code> if the Memcached cache cluster already has
      * cache nodes in different Availability Zones. If <code>cross-az</code> is
      * specified, existing Memcached nodes remain in their current Availability
-     * Zone.</p> <p>Only newly created nodes will be located in different Availability
+     * Zone.</p> <p>Only newly created nodes are located in different Availability
      * Zones. For instructions on how to move existing Memcached nodes to different
      * Availability Zones, see the <b>Availability Zone Considerations</b> section of
      * <a
@@ -353,9 +353,9 @@ namespace Model
     inline ModifyCacheClusterRequest& WithAZMode(AZMode&& value) { SetAZMode(value); return *this;}
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -366,14 +366,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -391,16 +391,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetNewAvailabilityZones() const{ return m_newAvailabilityZones; }
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -411,14 +409,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -436,16 +434,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline void SetNewAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones = value; }
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -456,14 +452,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -481,16 +477,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline void SetNewAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones = value; }
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -501,14 +495,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -526,16 +520,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline ModifyCacheClusterRequest& WithNewAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetNewAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -546,14 +538,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -571,16 +563,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline ModifyCacheClusterRequest& WithNewAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetNewAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -591,14 +581,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -616,16 +606,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline ModifyCacheClusterRequest& AddNewAvailabilityZones(const Aws::String& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -636,14 +624,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -661,16 +649,14 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline ModifyCacheClusterRequest& AddNewAvailabilityZones(Aws::String&& value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The list of Availability Zones where the new Memcached cache nodes will be
-     * created.</p> <p>This parameter is only valid when <i>NumCacheNodes</i> in the
-     * request is greater than the sum of the number of active cache nodes and the
+     * <p>The list of Availability Zones where the new Memcached cache nodes are
+     * created.</p> <p>This parameter is only valid when <code>NumCacheNodes</code> in
+     * the request is greater than the sum of the number of active cache nodes and the
      * number of cache nodes pending creation (which may be zero). The number of
      * Availability Zones supplied in this list must match the cache nodes being added
      * in this request.</p> <p>This option is only supported on Memcached clusters.</p>
@@ -681,14 +667,14 @@ namespace Model
      * the scenario 1 call) and want to add 1 more node. Specify
      * <code>NumCacheNodes=6</code> ((3 + 2) + 1) and optionally specify an
      * Availability Zone for the new node.</p> </li> <li> <p> <b>Scenario 3:</b> You
-     * want to cancel all pending actions. Specify <code>NumCacheNodes=3</code> to
-     * cancel all pending actions.</p> </li> </ul> <p>The Availability Zone placement
-     * of nodes pending creation cannot be modified. If you wish to cancel any nodes
-     * pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to the
-     * number of current nodes.</p> <p>If <code>cross-az</code> is specified, existing
-     * Memcached nodes remain in their current Availability Zone. Only newly created
-     * nodes can be located in different Availability Zones. For guidance on how to
-     * move existing Memcached nodes to different Availability Zones, see the
+     * want to cancel all pending operations. Specify <code>NumCacheNodes=3</code> to
+     * cancel all pending operations.</p> </li> </ul> <p>The Availability Zone
+     * placement of nodes pending creation cannot be modified. If you wish to cancel
+     * any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code> to
+     * the number of current nodes.</p> <p>If <code>cross-az</code> is specified,
+     * existing Memcached nodes remain in their current Availability Zone. Only newly
+     * created nodes can be located in different Availability Zones. For guidance on
+     * how to move existing Memcached nodes to different Availability Zones, see the
      * <b>Availability Zone Considerations</b> section of <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheNode.Memcached.html">Cache
      * Node Considerations for Memcached</a>.</p> <p> <b>Impact of new add/remove
@@ -706,269 +692,267 @@ namespace Model
      * create.</p> <important> <p> <b>Important:</b> If the new create request is
      * <b>Apply Immediately - Yes</b>, all creates are performed immediately. If the
      * new create request is <b>Apply Immediately - No</b>, all creates are
-     * pending.</p> </important> </li> </ul> </li> </ul> <p>Example:</p> <p>
-     * <code>NewAvailabilityZones.member.1=us-west-2a&amp;amp;NewAvailabilityZones.member.2=us-west-2b&amp;amp;NewAvailabilityZones.member.3=us-west-2c</code>
-     * </p>
+     * pending.</p> </important> </li> </ul> </li> </ul>
      */
     inline ModifyCacheClusterRequest& AddNewAvailabilityZones(const char* value) { m_newAvailabilityZonesHasBeenSet = true; m_newAvailabilityZones.push_back(value); return *this; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheSecurityGroupNames() const{ return m_cacheSecurityGroupNames; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline void SetCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline void SetCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames = value; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline ModifyCacheClusterRequest& WithCacheSecurityGroupNames(const Aws::Vector<Aws::String>& value) { SetCacheSecurityGroupNames(value); return *this;}
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline ModifyCacheClusterRequest& WithCacheSecurityGroupNames(Aws::Vector<Aws::String>&& value) { SetCacheSecurityGroupNames(value); return *this;}
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline ModifyCacheClusterRequest& AddCacheSecurityGroupNames(const Aws::String& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline ModifyCacheClusterRequest& AddCacheSecurityGroupNames(Aws::String&& value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
     /**
      * <p>A list of cache security group names to authorize on this cache cluster. This
-     * change is asynchronously applied as soon as possible.</p> <p>This parameter can
-     * be used only with clusters that are created outside of an Amazon Virtual Private
-     * Cloud (VPC).</p> <p>Constraints: Must contain no more than 255 alphanumeric
-     * characters. Must not be "Default".</p>
+     * change is asynchronously applied as soon as possible.</p> <p>You can use this
+     * parameter only with clusters that are created outside of an Amazon Virtual
+     * Private Cloud (Amazon VPC).</p> <p>Constraints: Must contain no more than 255
+     * alphanumeric characters. Must not be "Default".</p>
      */
     inline ModifyCacheClusterRequest& AddCacheSecurityGroupNames(const char* value) { m_cacheSecurityGroupNamesHasBeenSet = true; m_cacheSecurityGroupNames.push_back(value); return *this; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>Specifies the VPC Security Groups associated with the cache cluster.</p>
      * <p>This parameter can be used only with clusters that are created in an Amazon
-     * Virtual Private Cloud (VPC).</p>
+     * Virtual Private Cloud (Amazon VPC).</p>
      */
     inline ModifyCacheClusterRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline ModifyCacheClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline ModifyCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Specifies the weekly time range during which maintenance on the cache cluster
-     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
-     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
      * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
      * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
      * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
      * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
-     * <p>Example: <code>sun:05:00-sun:09:00</code> </p>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline ModifyCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline const Aws::String& GetNotificationTopicArn() const{ return m_notificationTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline void SetNotificationTopicArn(Aws::String&& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline void SetNotificationTopicArn(const char* value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(const Aws::String& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(Aws::String&& value) { SetNotificationTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
-     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
+     * are sent.</p> <note> <p>The Amazon SNS topic owner must be same as the cache
      * cluster owner.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicArn(const char* value) { SetNotificationTopicArn(value); return *this;}
@@ -976,104 +960,104 @@ namespace Model
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline const Aws::String& GetCacheParameterGroupName() const{ return m_cacheParameterGroupName; }
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline void SetCacheParameterGroupName(Aws::String&& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline void SetCacheParameterGroupName(const char* value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheParameterGroupName(const Aws::String& value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheParameterGroupName(Aws::String&& value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the cache parameter group to apply to this cache cluster. This
      * change is asynchronously applied as soon as possible for parameters when the
-     * <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this
-     * request.</p>
+     * <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
+     * this request.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheParameterGroupName(const char* value) { SetCacheParameterGroupName(value); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline const Aws::String& GetNotificationTopicStatus() const{ return m_notificationTopicStatus; }
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(const Aws::String& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(Aws::String&& value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus = value; }
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline void SetNotificationTopicStatus(const char* value) { m_notificationTopicStatusHasBeenSet = true; m_notificationTopicStatus.assign(value); }
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicStatus(const Aws::String& value) { SetNotificationTopicStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicStatus(Aws::String&& value) { SetNotificationTopicStatus(value); return *this;}
 
     /**
      * <p>The status of the Amazon SNS notification topic. Notifications are sent only
-     * if the status is <i>active</i>.</p> <p>Valid values: <code>active</code> |
+     * if the status is <code>active</code>.</p> <p>Valid values: <code>active</code> |
      * <code>inactive</code> </p>
      */
     inline ModifyCacheClusterRequest& WithNotificationTopicStatus(const char* value) { SetNotificationTopicStatus(value); return *this;}
@@ -1081,8 +1065,8 @@ namespace Model
     /**
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
-     * possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * cache cluster.</p> <p>If <code>false</code>, then changes to the cache cluster
+     * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
+     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
      * are applied on the next maintenance reboot, or the next failure reboot,
      * whichever occurs first.</p> <important> <p>If you perform a
      * <code>ModifyCacheCluster</code> before a pending modification is applied, the
@@ -1095,8 +1079,8 @@ namespace Model
     /**
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
-     * possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * cache cluster.</p> <p>If <code>false</code>, then changes to the cache cluster
+     * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
+     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
      * are applied on the next maintenance reboot, or the next failure reboot,
      * whichever occurs first.</p> <important> <p>If you perform a
      * <code>ModifyCacheCluster</code> before a pending modification is applied, the
@@ -1109,8 +1093,8 @@ namespace Model
     /**
      * <p>If <code>true</code>, this parameter causes the modifications in this request
      * and any pending modifications to be applied, asynchronously and as soon as
-     * possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for the
-     * cache cluster.</p> <p>If <code>false</code>, then changes to the cache cluster
+     * possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for
+     * the cache cluster.</p> <p>If <code>false</code>, changes to the cache cluster
      * are applied on the next maintenance reboot, or the next failure reboot,
      * whichever occurs first.</p> <important> <p>If you perform a
      * <code>ModifyCacheCluster</code> before a pending modification is applied, the
@@ -1206,120 +1190,109 @@ namespace Model
     inline ModifyCacheClusterRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
     /**
-     * <p>The number of days for which ElastiCache will retain automatic cache cluster
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
      * snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
-     * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </note>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
     /**
-     * <p>The number of days for which ElastiCache will retain automatic cache cluster
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
      * snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
-     * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </note>
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
-     * <p>The number of days for which ElastiCache will retain automatic cache cluster
+     * <p>The number of days for which ElastiCache retains automatic cache cluster
      * snapshots before deleting them. For example, if you set
-     * <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
      * retained for 5 days before being deleted.</p> <note> <p>If the value of
-     * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p> </note>
+     * <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned
+     * off.</p> </note>
      */
     inline ModifyCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline void SetSnapshotWindow(const Aws::String& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline void SetSnapshotWindow(Aws::String&& value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow = value; }
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline void SetSnapshotWindow(const char* value) { m_snapshotWindowHasBeenSet = true; m_snapshotWindow.assign(value); }
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(const Aws::String& value) { SetSnapshotWindow(value); return *this;}
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(Aws::String&& value) { SetSnapshotWindow(value); return *this;}
 
     /**
-     * <p>The daily time range (in UTC) during which ElastiCache will begin taking a
-     * daily snapshot of your cache cluster. </p>
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cache cluster. </p>
      */
     inline ModifyCacheClusterRequest& WithSnapshotWindow(const char* value) { SetSnapshotWindow(value); return *this;}
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(value); return *this;}
 
     /**
-     * <p>A valid cache node type that you want to scale this cache cluster to. The
-     * value of this parameter must be one of the <i>ScaleUpModifications</i> values
-     * returned by the <code>ListAllowedCacheNodeTypeModification</code> action.</p>
+     * <p>A valid cache node type that you want to scale this cache cluster up to.</p>
      */
     inline ModifyCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheCluster</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheCluster</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DeleteCacheClusterRequest : public ElastiCacheRequest
   {

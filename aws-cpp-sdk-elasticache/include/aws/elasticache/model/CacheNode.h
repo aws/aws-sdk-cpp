@@ -41,26 +41,30 @@ namespace Model
    * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
    * <code>cache.t2.medium</code>, <code>cache.m3.medium</code>,
    * <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-   * <code>cache.m3.2xlarge</code> </p> </li> <li> <p>Previous generation:
-   * <code>cache.t1.micro</code>, <code>cache.m1.small</code>,
-   * <code>cache.m1.medium</code>, <code>cache.m1.large</code>,
-   * <code>cache.m1.xlarge</code> </p> </li> </ul> </li> <li> <p>Compute optimized:
-   * <code>cache.c1.xlarge</code> </p> </li> <li> <p>Memory optimized:</p> <ul> <li>
-   * <p>Current generation: <code>cache.r3.large</code>,
-   * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-   * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
-   * <p>Previous generation: <code>cache.m2.xlarge</code>,
-   * <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code> </p> </li> </ul>
-   * </li> </ul> <p> <b>Notes:</b> </p> <ul> <li> <p>All t2 instances are created in
-   * an Amazon Virtual Private Cloud (VPC).</p> </li> <li> <p>Redis backup/restore is
-   * not supported for t2 instances.</p> </li> <li> <p>Redis Append-only files (AOF)
-   * functionality is not supported for t1 or t2 instances.</p> </li> </ul> <p>For a
-   * complete listing of cache node types and specifications, see <a
-   * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
-   * Features and Details</a> and either <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
+   * <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>,
+   * <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>,
+   * <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code> </p> </li> <li>
+   * <p>Previous generation: <code>cache.t1.micro</code>,
+   * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+   * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+   * <li> <p>Compute optimized: <code>cache.c1.xlarge</code> </p> </li> <li>
+   * <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+   * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
+   * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
+   * <code>cache.r3.8xlarge</code> </p> </li> <li> <p>Previous generation:
+   * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+   * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+   * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+   * Cloud (Amazon VPC).</p> </li> <li> <p>Redis backup/restore is not supported for
+   * Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is supported
+   * on Redis (cluster mode enabled) T2 instances.</p> </li> <li> <p>Redis
+   * Append-only files (AOF) functionality is not supported for T1 or T2
+   * instances.</p> </li> </ul> <p>For a complete listing of node types and
+   * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+   * ElastiCache Product Features and Details</a> and either <a
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
    * Node Type-Specific Parameters for Memcached</a> or <a
-   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+   * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
    * Node Type-Specific Parameters for Redis</a>.</p>
    */
   class AWS_ELASTICACHE_API CacheNode
@@ -244,49 +248,49 @@ namespace Model
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline const Aws::String& GetSourceCacheNodeId() const{ return m_sourceCacheNodeId; }
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline void SetSourceCacheNodeId(const Aws::String& value) { m_sourceCacheNodeIdHasBeenSet = true; m_sourceCacheNodeId = value; }
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline void SetSourceCacheNodeId(Aws::String&& value) { m_sourceCacheNodeIdHasBeenSet = true; m_sourceCacheNodeId = value; }
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline void SetSourceCacheNodeId(const char* value) { m_sourceCacheNodeIdHasBeenSet = true; m_sourceCacheNodeId.assign(value); }
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline CacheNode& WithSourceCacheNodeId(const Aws::String& value) { SetSourceCacheNodeId(value); return *this;}
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline CacheNode& WithSourceCacheNodeId(Aws::String&& value) { SetSourceCacheNodeId(value); return *this;}
 
     /**
      * <p>The ID of the primary node to which this read replica node is synchronized.
-     * If this field is empty, then this node is not associated with a primary cache
+     * If this field is empty, this node is not associated with a primary cache
      * cluster.</p>
      */
     inline CacheNode& WithSourceCacheNodeId(const char* value) { SetSourceCacheNodeId(value); return *this;}

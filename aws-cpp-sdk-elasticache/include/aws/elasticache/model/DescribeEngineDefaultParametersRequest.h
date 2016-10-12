@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DescribeEngineDefaultParameters</i> action.</p>
+   * <p>Represents the input of a <code>DescribeEngineDefaultParameters</code>
+   * operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeEngineDefaultParametersRequest : public ElastiCacheRequest
   {
@@ -34,44 +35,51 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline void SetCacheParameterGroupFamily(Aws::String&& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline void SetCacheParameterGroupFamily(const char* value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily.assign(value); }
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline DescribeEngineDefaultParametersRequest& WithCacheParameterGroupFamily(const Aws::String& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline DescribeEngineDefaultParametersRequest& WithCacheParameterGroupFamily(Aws::String&& value) { SetCacheParameterGroupFamily(value); return *this;}
 
     /**
-     * <p>The name of the cache parameter group family. Valid values are:
-     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </p>
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> </p>
      */
     inline DescribeEngineDefaultParametersRequest& WithCacheParameterGroupFamily(const char* value) { SetCacheParameterGroupFamily(value); return *this;}
 
@@ -101,57 +109,57 @@ namespace Model
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithMarker(Aws::String&& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is specified, the
+     * pagination of results from this operation. If this parameter is specified, the
      * response includes only records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.</p>
+     * <code>MaxRecords</code>.</p>
      */
     inline DescribeEngineDefaultParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

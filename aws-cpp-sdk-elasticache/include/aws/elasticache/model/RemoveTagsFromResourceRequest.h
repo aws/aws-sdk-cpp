@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>RemoveTagsFromResource</i> action.</p>
+   * <p>Represents the input of a <code>RemoveTagsFromResource</code> operation.</p>
    */
   class AWS_ELASTICACHE_API RemoveTagsFromResourceRequest : public ElastiCacheRequest
   {
@@ -39,7 +39,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -50,7 +50,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -61,7 +61,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -72,7 +72,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -83,7 +83,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -105,7 +105,7 @@ namespace Model
      * removed, for example
      * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
      * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information on ARNs, go to <a
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -113,65 +113,49 @@ namespace Model
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline RemoveTagsFromResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(value); return *this;}
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>TagKeys</code> identifying the tags you want removed from the
-     * named resource. For example, <code>TagKeys.member.1=Region</code> removes the
-     * cost allocation tag with the key name <code>Region</code> from the resource
-     * named by the <i>ResourceName</i> parameter.</p>
+     * named resource.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

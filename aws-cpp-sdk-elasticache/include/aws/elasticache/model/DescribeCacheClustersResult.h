@@ -36,7 +36,7 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <i>DescribeCacheClusters</i> action.</p>
+   * <p>Represents the output of a <code>DescribeCacheClusters</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeCacheClustersResult
   {

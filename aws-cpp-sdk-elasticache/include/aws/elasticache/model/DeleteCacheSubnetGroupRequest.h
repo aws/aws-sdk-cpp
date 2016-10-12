@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a <i>DeleteCacheSubnetGroup</i> action.</p>
+   * <p>Represents the input of a <code>DeleteCacheSubnetGroup</code> operation.</p>
    */
   class AWS_ELASTICACHE_API DeleteCacheSubnetGroupRequest : public ElastiCacheRequest
   {

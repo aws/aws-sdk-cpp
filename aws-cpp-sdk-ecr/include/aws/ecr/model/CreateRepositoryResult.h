@@ -39,19 +39,29 @@ namespace Model
     CreateRepositoryResult(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     CreateRepositoryResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
-    
+    /**
+     * <p>The repository that was created.</p>
+     */
     inline const Repository& GetRepository() const{ return m_repository; }
 
-    
+    /**
+     * <p>The repository that was created.</p>
+     */
     inline void SetRepository(const Repository& value) { m_repository = value; }
 
-    
+    /**
+     * <p>The repository that was created.</p>
+     */
     inline void SetRepository(Repository&& value) { m_repository = value; }
 
-    
+    /**
+     * <p>The repository that was created.</p>
+     */
     inline CreateRepositoryResult& WithRepository(const Repository& value) { SetRepository(value); return *this;}
 
-    
+    /**
+     * <p>The repository that was created.</p>
+     */
     inline CreateRepositoryResult& WithRepository(Repository&& value) { SetRepository(value); return *this;}
 
   private:

@@ -36,7 +36,7 @@ namespace ElastiCache
 namespace Model
 {
   /**
-   * <p>Represents the output of a <a>DescribeCacheEngineVersions</a> action.</p>
+   * <p>Represents the output of a <a>DescribeCacheEngineVersions</a> operation.</p>
    */
   class AWS_ELASTICACHE_API DescribeCacheEngineVersionsResult
   {

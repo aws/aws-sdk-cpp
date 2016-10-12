@@ -62,6 +62,7 @@ static const int CACHE_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::Hash
 static const int INVALID_CACHE_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheParameterGroupState");
 static const int INVALID_CACHE_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheClusterState");
 static const int RESERVED_CACHE_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedCacheNodeNotFound");
+static const int NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeGroupsPerReplicationGroupQuotaExceeded");
 static const int CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaForCustomerExceeded");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
 static const int CACHE_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CacheClusterNotFound");
@@ -212,6 +213,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESERVED_CACHE_NODE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::RESERVED_CACHE_NODE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::NODE_GROUPS_PER_REPLICATION_GROUP_QUOTA_EXCEEDED_FAULT), false);
   }
   else if (hashCode == CLUSTER_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH)
   {
