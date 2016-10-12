@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.0
+            AWSSDKCPP-Core/1.0,
             AWSSDKCPP-S3/1.0.20060301
        }
     }
