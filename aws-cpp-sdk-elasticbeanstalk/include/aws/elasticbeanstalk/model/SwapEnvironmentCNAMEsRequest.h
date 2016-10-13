@@ -34,7 +34,7 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -43,7 +43,7 @@ namespace Model
     inline const Aws::String& GetSourceEnvironmentId() const{ return m_sourceEnvironmentId; }
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -52,7 +52,7 @@ namespace Model
     inline void SetSourceEnvironmentId(const Aws::String& value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId = value; }
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -61,7 +61,7 @@ namespace Model
     inline void SetSourceEnvironmentId(Aws::String&& value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId = value; }
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -70,7 +70,7 @@ namespace Model
     inline void SetSourceEnvironmentId(const char* value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId.assign(value); }
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -79,7 +79,7 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(const Aws::String& value) { SetSourceEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -88,7 +88,7 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(Aws::String&& value) { SetSourceEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the source environment. </p> <p> Condition: You must specify at
+     * <p>The ID of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentId</code>, you must specify the
@@ -97,7 +97,7 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(const char* value) { SetSourceEnvironmentId(value); return *this;}
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -106,7 +106,7 @@ namespace Model
     inline const Aws::String& GetSourceEnvironmentName() const{ return m_sourceEnvironmentName; }
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -115,7 +115,7 @@ namespace Model
     inline void SetSourceEnvironmentName(const Aws::String& value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName = value; }
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -124,7 +124,7 @@ namespace Model
     inline void SetSourceEnvironmentName(Aws::String&& value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName = value; }
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -133,7 +133,7 @@ namespace Model
     inline void SetSourceEnvironmentName(const char* value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName.assign(value); }
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -142,7 +142,7 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(const Aws::String& value) { SetSourceEnvironmentName(value); return *this;}
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -151,7 +151,7 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(Aws::String&& value) { SetSourceEnvironmentName(value); return *this;}
 
     /**
-     * <p> The name of the source environment. </p> <p> Condition: You must specify at
+     * <p>The name of the source environment.</p> <p> Condition: You must specify at
      * least the <code>SourceEnvironmentID</code> or the
      * <code>SourceEnvironmentName</code>. You may also specify both. If you specify
      * the <code>SourceEnvironmentName</code>, you must specify the
@@ -160,8 +160,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(const char* value) { SetSourceEnvironmentName(value); return *this;}
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -169,8 +169,8 @@ namespace Model
     inline const Aws::String& GetDestinationEnvironmentId() const{ return m_destinationEnvironmentId; }
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -178,8 +178,8 @@ namespace Model
     inline void SetDestinationEnvironmentId(const Aws::String& value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId = value; }
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -187,8 +187,8 @@ namespace Model
     inline void SetDestinationEnvironmentId(Aws::String&& value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId = value; }
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -196,8 +196,8 @@ namespace Model
     inline void SetDestinationEnvironmentId(const char* value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId.assign(value); }
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -205,8 +205,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(const Aws::String& value) { SetDestinationEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -214,8 +214,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(Aws::String&& value) { SetDestinationEnvironmentId(value); return *this;}
 
     /**
-     * <p> The ID of the destination environment. </p> <p> Condition: You must specify
-     * at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The ID of the destination environment.</p> <p> Condition: You must specify at
+     * least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
@@ -223,8 +223,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(const char* value) { SetDestinationEnvironmentId(value); return *this;}
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -232,8 +232,8 @@ namespace Model
     inline const Aws::String& GetDestinationEnvironmentName() const{ return m_destinationEnvironmentName; }
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -241,8 +241,8 @@ namespace Model
     inline void SetDestinationEnvironmentName(const Aws::String& value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName = value; }
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -250,8 +250,8 @@ namespace Model
     inline void SetDestinationEnvironmentName(Aws::String&& value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName = value; }
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -259,8 +259,8 @@ namespace Model
     inline void SetDestinationEnvironmentName(const char* value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName.assign(value); }
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -268,8 +268,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(const Aws::String& value) { SetDestinationEnvironmentName(value); return *this;}
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
@@ -277,8 +277,8 @@ namespace Model
     inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(Aws::String&& value) { SetDestinationEnvironmentName(value); return *this;}
 
     /**
-     * <p> The name of the destination environment. </p> <p> Condition: You must
-     * specify at least the <code>DestinationEnvironmentID</code> or the
+     * <p>The name of the destination environment.</p> <p> Condition: You must specify
+     * at least the <code>DestinationEnvironmentID</code> or the
      * <code>DestinationEnvironmentName</code>. You may also specify both. You must
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>

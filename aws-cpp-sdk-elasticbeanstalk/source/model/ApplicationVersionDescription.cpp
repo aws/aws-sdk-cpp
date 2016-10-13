@@ -33,6 +33,7 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
+    m_sourceBuildInformationHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
@@ -44,6 +45,7 @@ ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlN
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
+    m_sourceBuildInformationHasBeenSet(false),
     m_sourceBundleHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
     m_dateUpdatedHasBeenSet(false),
@@ -75,6 +77,12 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
     {
       m_versionLabel = StringUtils::Trim(versionLabelNode.GetText().c_str());
       m_versionLabelHasBeenSet = true;
+    }
+    XmlNode sourceBuildInformationNode = resultNode.FirstChild("SourceBuildInformation");
+    if(!sourceBuildInformationNode.IsNull())
+    {
+      m_sourceBuildInformation = sourceBuildInformationNode;
+      m_sourceBuildInformationHasBeenSet = true;
     }
     XmlNode sourceBundleNode = resultNode.FirstChild("SourceBundle");
     if(!sourceBundleNode.IsNull())
@@ -122,6 +130,13 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
 
+  if(m_sourceBuildInformationHasBeenSet)
+  {
+      Aws::StringStream sourceBuildInformationLocationAndMemberSs;
+      sourceBuildInformationLocationAndMemberSs << location << index << locationValue << ".SourceBuildInformation";
+      m_sourceBuildInformation.OutputToStream(oStream, sourceBuildInformationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_sourceBundleHasBeenSet)
   {
       Aws::StringStream sourceBundleLocationAndMemberSs;
@@ -159,6 +174,12 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
   if(m_versionLabelHasBeenSet)
   {
       oStream << location << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
+  }
+  if(m_sourceBuildInformationHasBeenSet)
+  {
+      Aws::String sourceBuildInformationLocationAndMember(location);
+      sourceBuildInformationLocationAndMember += ".SourceBuildInformation";
+      m_sourceBuildInformation.OutputToStream(oStream, sourceBuildInformationLocationAndMember.c_str());
   }
   if(m_sourceBundleHasBeenSet)
   {

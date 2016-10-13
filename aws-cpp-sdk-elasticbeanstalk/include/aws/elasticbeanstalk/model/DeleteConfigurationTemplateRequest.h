@@ -34,37 +34,37 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline DeleteConfigurationTemplateRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline DeleteConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of the application to delete the configuration template from.</p>
+     * <p>The name of the application to delete the configuration template from.</p>
      */
     inline DeleteConfigurationTemplateRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 

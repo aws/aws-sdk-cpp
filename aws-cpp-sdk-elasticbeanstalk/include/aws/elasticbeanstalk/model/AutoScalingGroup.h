@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Auto Scaling launch configuration. </p>
+   * <p>Describes an Auto Scaling launch configuration.</p>
    */
   class AWS_ELASTICBEANSTALK_API AutoScalingGroup
   {

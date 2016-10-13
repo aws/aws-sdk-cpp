@@ -99,51 +99,58 @@ namespace Model
     inline Deployment& WithDeploymentId(long long value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline Deployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline Deployment& WithStatus(Aws::String&& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment:</p> <ul> <li> <code>In Progress</code> : The
-     * deployment is in progress.</li> <li> <code>Deployed</code> : The deployment
-     * succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li> </ul>
+     * <p>The status of the deployment:</p> <ul> <li> <p> <code>In Progress</code> :
+     * The deployment is in progress.</p> </li> <li> <p> <code>Deployed</code> : The
+     * deployment succeeded.</p> </li> <li> <p> <code>Failed</code> : The deployment
+     * failed.</p> </li> </ul>
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 

@@ -21,7 +21,10 @@ using namespace Aws::Utils;
 
 DescribeApplicationVersionsRequest::DescribeApplicationVersionsRequest() : 
     m_applicationNameHasBeenSet(false),
-    m_versionLabelsHasBeenSet(false)
+    m_versionLabelsHasBeenSet(false),
+    m_maxRecords(0),
+    m_maxRecordsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
@@ -43,6 +46,16 @@ Aws::String DescribeApplicationVersionsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       versionLabelsCount++;
     }
+  }
+
+  if(m_maxRecordsHasBeenSet)
+  {
+    ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   ss << "Version=2010-12-01";

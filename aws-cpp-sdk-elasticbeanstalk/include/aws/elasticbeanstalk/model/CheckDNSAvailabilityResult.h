@@ -44,23 +44,23 @@ namespace Model
     CheckDNSAvailabilityResult& operator=(const AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
     /**
-     * <p> Indicates if the specified CNAME is available: </p> <ul> <li>
-     * <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The
-     * CNAME is not available. </li> </ul>
+     * <p>Indicates if the specified CNAME is available:</p> <ul> <li> <p>
+     * <code>true</code> : The CNAME is available.</p> </li> <li> <p>
+     * <code>false</code> : The CNAME is not available.</p> </li> </ul>
      */
     inline bool GetAvailable() const{ return m_available; }
 
     /**
-     * <p> Indicates if the specified CNAME is available: </p> <ul> <li>
-     * <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The
-     * CNAME is not available. </li> </ul>
+     * <p>Indicates if the specified CNAME is available:</p> <ul> <li> <p>
+     * <code>true</code> : The CNAME is available.</p> </li> <li> <p>
+     * <code>false</code> : The CNAME is not available.</p> </li> </ul>
      */
     inline void SetAvailable(bool value) { m_available = value; }
 
     /**
-     * <p> Indicates if the specified CNAME is available: </p> <ul> <li>
-     * <code>true</code> : The CNAME is available. </li> <li> <code>false</code> : The
-     * CNAME is not available. </li> </ul>
+     * <p>Indicates if the specified CNAME is available:</p> <ul> <li> <p>
+     * <code>true</code> : The CNAME is available.</p> </li> <li> <p>
+     * <code>false</code> : The CNAME is not available.</p> </li> </ul>
      */
     inline CheckDNSAvailabilityResult& WithAvailable(bool value) { SetAvailable(value); return *this;}
 

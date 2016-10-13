@@ -16,6 +16,7 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 
 namespace Aws
@@ -174,9 +175,24 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    
+    inline const SourceBuildInformation& GetSourceBuildInformation() const{ return m_sourceBuildInformation; }
+
+    
+    inline void SetSourceBuildInformation(const SourceBuildInformation& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
+
+    
+    inline void SetSourceBuildInformation(SourceBuildInformation&& value) { m_sourceBuildInformationHasBeenSet = true; m_sourceBuildInformation = value; }
+
+    
+    inline CreateApplicationVersionRequest& WithSourceBuildInformation(const SourceBuildInformation& value) { SetSourceBuildInformation(value); return *this;}
+
+    
+    inline CreateApplicationVersionRequest& WithSourceBuildInformation(SourceBuildInformation&& value) { SetSourceBuildInformation(value); return *this;}
+
     /**
-     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <p> If data found at the Amazon S3 location exceeds the
      * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
@@ -187,8 +203,8 @@ namespace Model
     inline const S3Location& GetSourceBundle() const{ return m_sourceBundle; }
 
     /**
-     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <p> If data found at the Amazon S3 location exceeds the
      * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
@@ -199,8 +215,8 @@ namespace Model
     inline void SetSourceBundle(const S3Location& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <p> If data found at the Amazon S3 location exceeds the
      * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
@@ -211,8 +227,8 @@ namespace Model
     inline void SetSourceBundle(S3Location&& value) { m_sourceBundleHasBeenSet = true; m_sourceBundle = value; }
 
     /**
-     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <p> If data found at the Amazon S3 location exceeds the
      * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
@@ -223,8 +239,8 @@ namespace Model
     inline CreateApplicationVersionRequest& WithSourceBundle(const S3Location& value) { SetSourceBundle(value); return *this;}
 
     /**
-     * <p> The Amazon S3 bucket and key that identify the location of the source bundle
-     * for this version. </p> <p> If data found at the Amazon S3 location exceeds the
+     * <p>The Amazon S3 bucket and key that identify the location of the source bundle
+     * for this version.</p> <p> If data found at the Amazon S3 location exceeds the
      * maximum allowed source bundle size, AWS Elastic Beanstalk returns an
      * <code>InvalidParameterValue</code> error. The maximum size allowed is 512 MB.
      * </p> <p>Default: If not specified, AWS Elastic Beanstalk uses a sample
@@ -235,35 +251,35 @@ namespace Model
     inline CreateApplicationVersionRequest& WithSourceBundle(S3Location&& value) { SetSourceBundle(value); return *this;}
 
     /**
-     * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
-     * creates the specified application for this release if it does not already exist.
-     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist. </li> </ul>
-     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
-     * <code>false</code> </p>
+     * <p>Determines how the system behaves if the specified application for this
+     * version does not already exist:</p> <ul> <li> <p> <code>true</code> :
+     * Automatically creates the specified application for this release if it does not
+     * already exist.</p> </li> <li> <p> <code>false</code> : Throws an
+     * <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.</p> </li> </ul> <p> Default: <code>false</code> </p> <p>
+     * Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetAutoCreateApplication() const{ return m_autoCreateApplication; }
 
     /**
-     * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
-     * creates the specified application for this release if it does not already exist.
-     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist. </li> </ul>
-     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
-     * <code>false</code> </p>
+     * <p>Determines how the system behaves if the specified application for this
+     * version does not already exist:</p> <ul> <li> <p> <code>true</code> :
+     * Automatically creates the specified application for this release if it does not
+     * already exist.</p> </li> <li> <p> <code>false</code> : Throws an
+     * <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.</p> </li> </ul> <p> Default: <code>false</code> </p> <p>
+     * Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetAutoCreateApplication(bool value) { m_autoCreateApplicationHasBeenSet = true; m_autoCreateApplication = value; }
 
     /**
-     * <p> Determines how the system behaves if the specified application for this
-     * version does not already exist: </p> <ul> <li> <code>true</code> : Automatically
-     * creates the specified application for this release if it does not already exist.
-     * </li> <li> <code>false</code> : Throws an <code>InvalidParameterValue</code> if
-     * the specified application for this release does not already exist. </li> </ul>
-     * <p> Default: <code>false</code> </p> <p> Valid Values: <code>true</code> |
-     * <code>false</code> </p>
+     * <p>Determines how the system behaves if the specified application for this
+     * version does not already exist:</p> <ul> <li> <p> <code>true</code> :
+     * Automatically creates the specified application for this release if it does not
+     * already exist.</p> </li> <li> <p> <code>false</code> : Throws an
+     * <code>InvalidParameterValue</code> if the specified application for this release
+     * does not already exist.</p> </li> </ul> <p> Default: <code>false</code> </p> <p>
+     * Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateApplicationVersionRequest& WithAutoCreateApplication(bool value) { SetAutoCreateApplication(value); return *this;}
 
@@ -295,6 +311,8 @@ namespace Model
     bool m_versionLabelHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    SourceBuildInformation m_sourceBuildInformation;
+    bool m_sourceBuildInformationHasBeenSet;
     S3Location m_sourceBundle;
     bool m_sourceBundleHasBeenSet;
     bool m_autoCreateApplication;
