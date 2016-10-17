@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <functional>
+#include <future>
 #include <mutex>
 #include <condition_variable>
 
@@ -48,7 +49,6 @@ namespace Aws
                 {
                     return SubmitToThread(AWS_BUILD_TYPED_FUNCTION(std::bind(std::forward<Fn>(fn), std::forward<Args>(args)...), void()));
                 }
-
 
             protected:
                 /**
