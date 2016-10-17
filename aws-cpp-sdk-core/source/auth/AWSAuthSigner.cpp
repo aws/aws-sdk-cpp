@@ -245,6 +245,21 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
         return true;
     }
 
+    Aws::String payloadHash(UNSIGNED_PAYLOAD);
+    if (m_signPayloads || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
+    {
+        payloadHash.assign(ComputePayloadHash(request));
+        if (payloadHash.empty())
+        {
+            return false;
+        }
+    }
+    else
+    {
+        AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads=" << m_signPayloads
+            << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+    }
+
     Aws::StringStream intConversionStream;
     intConversionStream << expirationTimeInSeconds;
     request.AddQueryStringParameter(Http::X_AMZ_EXPIRES_HEADER, intConversionStream.str());   
@@ -288,7 +303,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, long long 
     canonicalRequestString.append(NEWLINE);
     canonicalRequestString.append(signedHeadersValue);
     canonicalRequestString.append(NEWLINE);
-    canonicalRequestString.append(UNSIGNED_PAYLOAD);
+    canonicalRequestString.append(payloadHash);
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Canonical Request String: " << canonicalRequestString);
 
     //now compute sha256 on that request string
