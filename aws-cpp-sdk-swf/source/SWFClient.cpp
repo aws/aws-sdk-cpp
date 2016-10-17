@@ -140,7 +140,10 @@ CountClosedWorkflowExecutionsOutcome SWFClient::CountClosedWorkflowExecutions(co
 
 CountClosedWorkflowExecutionsOutcomeCallable SWFClient::CountClosedWorkflowExecutionsCallable(const CountClosedWorkflowExecutionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CountClosedWorkflowExecutions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CountClosedWorkflowExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CountClosedWorkflowExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::CountClosedWorkflowExecutionsAsync(const CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -171,7 +174,10 @@ CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const 
 
 CountOpenWorkflowExecutionsOutcomeCallable SWFClient::CountOpenWorkflowExecutionsCallable(const CountOpenWorkflowExecutionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CountOpenWorkflowExecutions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CountOpenWorkflowExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CountOpenWorkflowExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::CountOpenWorkflowExecutionsAsync(const CountOpenWorkflowExecutionsRequest& request, const CountOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -202,7 +208,10 @@ CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const Coun
 
 CountPendingActivityTasksOutcomeCallable SWFClient::CountPendingActivityTasksCallable(const CountPendingActivityTasksRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CountPendingActivityTasks(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CountPendingActivityTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CountPendingActivityTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::CountPendingActivityTasksAsync(const CountPendingActivityTasksRequest& request, const CountPendingActivityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -233,7 +242,10 @@ CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const Coun
 
 CountPendingDecisionTasksOutcomeCallable SWFClient::CountPendingDecisionTasksCallable(const CountPendingDecisionTasksRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CountPendingDecisionTasks(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CountPendingDecisionTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CountPendingDecisionTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::CountPendingDecisionTasksAsync(const CountPendingDecisionTasksRequest& request, const CountPendingDecisionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -264,7 +276,10 @@ DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateAct
 
 DeprecateActivityTypeOutcomeCallable SWFClient::DeprecateActivityTypeCallable(const DeprecateActivityTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeprecateActivityType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeprecateActivityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeprecateActivityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DeprecateActivityTypeAsync(const DeprecateActivityTypeRequest& request, const DeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -295,7 +310,10 @@ DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& 
 
 DeprecateDomainOutcomeCallable SWFClient::DeprecateDomainCallable(const DeprecateDomainRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeprecateDomain(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeprecateDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeprecateDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DeprecateDomainAsync(const DeprecateDomainRequest& request, const DeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -326,7 +344,10 @@ DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWor
 
 DeprecateWorkflowTypeOutcomeCallable SWFClient::DeprecateWorkflowTypeCallable(const DeprecateWorkflowTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeprecateWorkflowType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeprecateWorkflowTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeprecateWorkflowType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DeprecateWorkflowTypeAsync(const DeprecateWorkflowTypeRequest& request, const DeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -357,7 +378,10 @@ DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivi
 
 DescribeActivityTypeOutcomeCallable SWFClient::DescribeActivityTypeCallable(const DescribeActivityTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeActivityType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeActivityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeActivityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DescribeActivityTypeAsync(const DescribeActivityTypeRequest& request, const DescribeActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -388,7 +412,10 @@ DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& req
 
 DescribeDomainOutcomeCallable SWFClient::DescribeDomainCallable(const DescribeDomainRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeDomain(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -419,7 +446,10 @@ DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const Desc
 
 DescribeWorkflowExecutionOutcomeCallable SWFClient::DescribeWorkflowExecutionCallable(const DescribeWorkflowExecutionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeWorkflowExecution(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkflowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkflowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DescribeWorkflowExecutionAsync(const DescribeWorkflowExecutionRequest& request, const DescribeWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -450,7 +480,10 @@ DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkfl
 
 DescribeWorkflowTypeOutcomeCallable SWFClient::DescribeWorkflowTypeCallable(const DescribeWorkflowTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeWorkflowType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkflowTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkflowType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::DescribeWorkflowTypeAsync(const DescribeWorkflowTypeRequest& request, const DescribeWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -481,7 +514,10 @@ GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const 
 
 GetWorkflowExecutionHistoryOutcomeCallable SWFClient::GetWorkflowExecutionHistoryCallable(const GetWorkflowExecutionHistoryRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetWorkflowExecutionHistory(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetWorkflowExecutionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetWorkflowExecutionHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::GetWorkflowExecutionHistoryAsync(const GetWorkflowExecutionHistoryRequest& request, const GetWorkflowExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -512,7 +548,10 @@ ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesReq
 
 ListActivityTypesOutcomeCallable SWFClient::ListActivityTypesCallable(const ListActivityTypesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListActivityTypes(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListActivityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListActivityTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::ListActivityTypesAsync(const ListActivityTypesRequest& request, const ListActivityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -543,7 +582,10 @@ ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(cons
 
 ListClosedWorkflowExecutionsOutcomeCallable SWFClient::ListClosedWorkflowExecutionsCallable(const ListClosedWorkflowExecutionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListClosedWorkflowExecutions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListClosedWorkflowExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClosedWorkflowExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::ListClosedWorkflowExecutionsAsync(const ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -574,7 +616,10 @@ ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) con
 
 ListDomainsOutcomeCallable SWFClient::ListDomainsCallable(const ListDomainsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListDomains(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -605,7 +650,10 @@ ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const Li
 
 ListOpenWorkflowExecutionsOutcomeCallable SWFClient::ListOpenWorkflowExecutionsCallable(const ListOpenWorkflowExecutionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListOpenWorkflowExecutions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListOpenWorkflowExecutionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOpenWorkflowExecutions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::ListOpenWorkflowExecutionsAsync(const ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -636,7 +684,10 @@ ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesReq
 
 ListWorkflowTypesOutcomeCallable SWFClient::ListWorkflowTypesCallable(const ListWorkflowTypesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListWorkflowTypes(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListWorkflowTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWorkflowTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::ListWorkflowTypesAsync(const ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -667,7 +718,10 @@ PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityT
 
 PollForActivityTaskOutcomeCallable SWFClient::PollForActivityTaskCallable(const PollForActivityTaskRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->PollForActivityTask(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< PollForActivityTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PollForActivityTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::PollForActivityTaskAsync(const PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -698,7 +752,10 @@ PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionT
 
 PollForDecisionTaskOutcomeCallable SWFClient::PollForDecisionTaskCallable(const PollForDecisionTaskRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->PollForDecisionTask(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< PollForDecisionTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PollForDecisionTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::PollForDecisionTaskAsync(const PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -729,7 +786,10 @@ RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const 
 
 RecordActivityTaskHeartbeatOutcomeCallable SWFClient::RecordActivityTaskHeartbeatCallable(const RecordActivityTaskHeartbeatRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RecordActivityTaskHeartbeat(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RecordActivityTaskHeartbeatOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RecordActivityTaskHeartbeat(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RecordActivityTaskHeartbeatAsync(const RecordActivityTaskHeartbeatRequest& request, const RecordActivityTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -760,7 +820,10 @@ RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivi
 
 RegisterActivityTypeOutcomeCallable SWFClient::RegisterActivityTypeCallable(const RegisterActivityTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterActivityType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterActivityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterActivityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RegisterActivityTypeAsync(const RegisterActivityTypeRequest& request, const RegisterActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -791,7 +854,10 @@ RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& req
 
 RegisterDomainOutcomeCallable SWFClient::RegisterDomainCallable(const RegisterDomainRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterDomain(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RegisterDomainAsync(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -822,7 +888,10 @@ RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkfl
 
 RegisterWorkflowTypeOutcomeCallable SWFClient::RegisterWorkflowTypeCallable(const RegisterWorkflowTypeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterWorkflowType(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterWorkflowTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterWorkflowType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RegisterWorkflowTypeAsync(const RegisterWorkflowTypeRequest& request, const RegisterWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -853,7 +922,10 @@ RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(
 
 RequestCancelWorkflowExecutionOutcomeCallable SWFClient::RequestCancelWorkflowExecutionCallable(const RequestCancelWorkflowExecutionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RequestCancelWorkflowExecution(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RequestCancelWorkflowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RequestCancelWorkflowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RequestCancelWorkflowExecutionAsync(const RequestCancelWorkflowExecutionRequest& request, const RequestCancelWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -884,7 +956,10 @@ RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const 
 
 RespondActivityTaskCanceledOutcomeCallable SWFClient::RespondActivityTaskCanceledCallable(const RespondActivityTaskCanceledRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RespondActivityTaskCanceled(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RespondActivityTaskCanceledOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondActivityTaskCanceled(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RespondActivityTaskCanceledAsync(const RespondActivityTaskCanceledRequest& request, const RespondActivityTaskCanceledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -915,7 +990,10 @@ RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(cons
 
 RespondActivityTaskCompletedOutcomeCallable SWFClient::RespondActivityTaskCompletedCallable(const RespondActivityTaskCompletedRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RespondActivityTaskCompleted(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RespondActivityTaskCompletedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondActivityTaskCompleted(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RespondActivityTaskCompletedAsync(const RespondActivityTaskCompletedRequest& request, const RespondActivityTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -946,7 +1024,10 @@ RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const Resp
 
 RespondActivityTaskFailedOutcomeCallable SWFClient::RespondActivityTaskFailedCallable(const RespondActivityTaskFailedRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RespondActivityTaskFailed(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RespondActivityTaskFailedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondActivityTaskFailed(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RespondActivityTaskFailedAsync(const RespondActivityTaskFailedRequest& request, const RespondActivityTaskFailedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -977,7 +1058,10 @@ RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(cons
 
 RespondDecisionTaskCompletedOutcomeCallable SWFClient::RespondDecisionTaskCompletedCallable(const RespondDecisionTaskCompletedRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RespondDecisionTaskCompleted(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RespondDecisionTaskCompletedOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RespondDecisionTaskCompleted(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::RespondDecisionTaskCompletedAsync(const RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1008,7 +1092,10 @@ SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWo
 
 SignalWorkflowExecutionOutcomeCallable SWFClient::SignalWorkflowExecutionCallable(const SignalWorkflowExecutionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SignalWorkflowExecution(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< SignalWorkflowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SignalWorkflowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::SignalWorkflowExecutionAsync(const SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1039,7 +1126,10 @@ StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkf
 
 StartWorkflowExecutionOutcomeCallable SWFClient::StartWorkflowExecutionCallable(const StartWorkflowExecutionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->StartWorkflowExecution(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StartWorkflowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartWorkflowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::StartWorkflowExecutionAsync(const StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1070,7 +1160,10 @@ TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const Te
 
 TerminateWorkflowExecutionOutcomeCallable SWFClient::TerminateWorkflowExecutionCallable(const TerminateWorkflowExecutionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->TerminateWorkflowExecution(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< TerminateWorkflowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateWorkflowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void SWFClient::TerminateWorkflowExecutionAsync(const TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

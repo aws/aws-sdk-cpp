@@ -178,7 +178,10 @@ AssignInstanceOutcome OpsWorksClient::AssignInstance(const AssignInstanceRequest
 
 AssignInstanceOutcomeCallable OpsWorksClient::AssignInstanceCallable(const AssignInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AssignInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AssignInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssignInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::AssignInstanceAsync(const AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -209,7 +212,10 @@ AssignVolumeOutcome OpsWorksClient::AssignVolume(const AssignVolumeRequest& requ
 
 AssignVolumeOutcomeCallable OpsWorksClient::AssignVolumeCallable(const AssignVolumeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AssignVolume(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AssignVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssignVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::AssignVolumeAsync(const AssignVolumeRequest& request, const AssignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -240,7 +246,10 @@ AssociateElasticIpOutcome OpsWorksClient::AssociateElasticIp(const AssociateElas
 
 AssociateElasticIpOutcomeCallable OpsWorksClient::AssociateElasticIpCallable(const AssociateElasticIpRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AssociateElasticIp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AssociateElasticIpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateElasticIp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::AssociateElasticIpAsync(const AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -271,7 +280,10 @@ AttachElasticLoadBalancerOutcome OpsWorksClient::AttachElasticLoadBalancer(const
 
 AttachElasticLoadBalancerOutcomeCallable OpsWorksClient::AttachElasticLoadBalancerCallable(const AttachElasticLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AttachElasticLoadBalancer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AttachElasticLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachElasticLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::AttachElasticLoadBalancerAsync(const AttachElasticLoadBalancerRequest& request, const AttachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -302,7 +314,10 @@ CloneStackOutcome OpsWorksClient::CloneStack(const CloneStackRequest& request) c
 
 CloneStackOutcomeCallable OpsWorksClient::CloneStackCallable(const CloneStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CloneStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CloneStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CloneStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CloneStackAsync(const CloneStackRequest& request, const CloneStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -333,7 +348,10 @@ CreateAppOutcome OpsWorksClient::CreateApp(const CreateAppRequest& request) cons
 
 CreateAppOutcomeCallable OpsWorksClient::CreateAppCallable(const CreateAppRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateApp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -364,7 +382,10 @@ CreateDeploymentOutcome OpsWorksClient::CreateDeployment(const CreateDeploymentR
 
 CreateDeploymentOutcomeCallable OpsWorksClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateDeployment(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -395,7 +416,10 @@ CreateInstanceOutcome OpsWorksClient::CreateInstance(const CreateInstanceRequest
 
 CreateInstanceOutcomeCallable OpsWorksClient::CreateInstanceCallable(const CreateInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -426,7 +450,10 @@ CreateLayerOutcome OpsWorksClient::CreateLayer(const CreateLayerRequest& request
 
 CreateLayerOutcomeCallable OpsWorksClient::CreateLayerCallable(const CreateLayerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateLayer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateLayerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLayer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateLayerAsync(const CreateLayerRequest& request, const CreateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -457,7 +484,10 @@ CreateStackOutcome OpsWorksClient::CreateStack(const CreateStackRequest& request
 
 CreateStackOutcomeCallable OpsWorksClient::CreateStackCallable(const CreateStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateStackAsync(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -488,7 +518,10 @@ CreateUserProfileOutcome OpsWorksClient::CreateUserProfile(const CreateUserProfi
 
 CreateUserProfileOutcomeCallable OpsWorksClient::CreateUserProfileCallable(const CreateUserProfileRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateUserProfile(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -519,7 +552,10 @@ DeleteAppOutcome OpsWorksClient::DeleteApp(const DeleteAppRequest& request) cons
 
 DeleteAppOutcomeCallable OpsWorksClient::DeleteAppCallable(const DeleteAppRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteApp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -550,7 +586,10 @@ DeleteInstanceOutcome OpsWorksClient::DeleteInstance(const DeleteInstanceRequest
 
 DeleteInstanceOutcomeCallable OpsWorksClient::DeleteInstanceCallable(const DeleteInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -581,7 +620,10 @@ DeleteLayerOutcome OpsWorksClient::DeleteLayer(const DeleteLayerRequest& request
 
 DeleteLayerOutcomeCallable OpsWorksClient::DeleteLayerCallable(const DeleteLayerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteLayer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLayerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLayer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeleteLayerAsync(const DeleteLayerRequest& request, const DeleteLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -612,7 +654,10 @@ DeleteStackOutcome OpsWorksClient::DeleteStack(const DeleteStackRequest& request
 
 DeleteStackOutcomeCallable OpsWorksClient::DeleteStackCallable(const DeleteStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeleteStackAsync(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -643,7 +688,10 @@ DeleteUserProfileOutcome OpsWorksClient::DeleteUserProfile(const DeleteUserProfi
 
 DeleteUserProfileOutcomeCallable OpsWorksClient::DeleteUserProfileCallable(const DeleteUserProfileRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteUserProfile(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -674,7 +722,10 @@ DeregisterEcsClusterOutcome OpsWorksClient::DeregisterEcsCluster(const Deregiste
 
 DeregisterEcsClusterOutcomeCallable OpsWorksClient::DeregisterEcsClusterCallable(const DeregisterEcsClusterRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterEcsCluster(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterEcsClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterEcsCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeregisterEcsClusterAsync(const DeregisterEcsClusterRequest& request, const DeregisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -705,7 +756,10 @@ DeregisterElasticIpOutcome OpsWorksClient::DeregisterElasticIp(const DeregisterE
 
 DeregisterElasticIpOutcomeCallable OpsWorksClient::DeregisterElasticIpCallable(const DeregisterElasticIpRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterElasticIp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterElasticIpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterElasticIp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeregisterElasticIpAsync(const DeregisterElasticIpRequest& request, const DeregisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -736,7 +790,10 @@ DeregisterInstanceOutcome OpsWorksClient::DeregisterInstance(const DeregisterIns
 
 DeregisterInstanceOutcomeCallable OpsWorksClient::DeregisterInstanceCallable(const DeregisterInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeregisterInstanceAsync(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -767,7 +824,10 @@ DeregisterRdsDbInstanceOutcome OpsWorksClient::DeregisterRdsDbInstance(const Der
 
 DeregisterRdsDbInstanceOutcomeCallable OpsWorksClient::DeregisterRdsDbInstanceCallable(const DeregisterRdsDbInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterRdsDbInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterRdsDbInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterRdsDbInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeregisterRdsDbInstanceAsync(const DeregisterRdsDbInstanceRequest& request, const DeregisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -798,7 +858,10 @@ DeregisterVolumeOutcome OpsWorksClient::DeregisterVolume(const DeregisterVolumeR
 
 DeregisterVolumeOutcomeCallable OpsWorksClient::DeregisterVolumeCallable(const DeregisterVolumeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterVolume(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DeregisterVolumeAsync(const DeregisterVolumeRequest& request, const DeregisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -829,7 +892,10 @@ DescribeAgentVersionsOutcome OpsWorksClient::DescribeAgentVersions(const Describ
 
 DescribeAgentVersionsOutcomeCallable OpsWorksClient::DescribeAgentVersionsCallable(const DescribeAgentVersionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeAgentVersions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAgentVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAgentVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeAgentVersionsAsync(const DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -860,7 +926,10 @@ DescribeAppsOutcome OpsWorksClient::DescribeApps(const DescribeAppsRequest& requ
 
 DescribeAppsOutcomeCallable OpsWorksClient::DescribeAppsCallable(const DescribeAppsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeApps(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAppsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApps(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeAppsAsync(const DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -891,7 +960,10 @@ DescribeCommandsOutcome OpsWorksClient::DescribeCommands(const DescribeCommandsR
 
 DescribeCommandsOutcomeCallable OpsWorksClient::DescribeCommandsCallable(const DescribeCommandsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeCommands(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCommandsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCommands(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeCommandsAsync(const DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -922,7 +994,10 @@ DescribeDeploymentsOutcome OpsWorksClient::DescribeDeployments(const DescribeDep
 
 DescribeDeploymentsOutcomeCallable OpsWorksClient::DescribeDeploymentsCallable(const DescribeDeploymentsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeDeployments(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDeployments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeDeploymentsAsync(const DescribeDeploymentsRequest& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -953,7 +1028,10 @@ DescribeEcsClustersOutcome OpsWorksClient::DescribeEcsClusters(const DescribeEcs
 
 DescribeEcsClustersOutcomeCallable OpsWorksClient::DescribeEcsClustersCallable(const DescribeEcsClustersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeEcsClusters(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEcsClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEcsClusters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeEcsClustersAsync(const DescribeEcsClustersRequest& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -984,7 +1062,10 @@ DescribeElasticIpsOutcome OpsWorksClient::DescribeElasticIps(const DescribeElast
 
 DescribeElasticIpsOutcomeCallable OpsWorksClient::DescribeElasticIpsCallable(const DescribeElasticIpsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeElasticIps(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeElasticIpsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeElasticIps(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeElasticIpsAsync(const DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1015,7 +1096,10 @@ DescribeElasticLoadBalancersOutcome OpsWorksClient::DescribeElasticLoadBalancers
 
 DescribeElasticLoadBalancersOutcomeCallable OpsWorksClient::DescribeElasticLoadBalancersCallable(const DescribeElasticLoadBalancersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeElasticLoadBalancers(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeElasticLoadBalancersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeElasticLoadBalancers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeElasticLoadBalancersAsync(const DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1046,7 +1130,10 @@ DescribeInstancesOutcome OpsWorksClient::DescribeInstances(const DescribeInstanc
 
 DescribeInstancesOutcomeCallable OpsWorksClient::DescribeInstancesCallable(const DescribeInstancesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeInstances(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1077,7 +1164,10 @@ DescribeLayersOutcome OpsWorksClient::DescribeLayers(const DescribeLayersRequest
 
 DescribeLayersOutcomeCallable OpsWorksClient::DescribeLayersCallable(const DescribeLayersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLayers(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLayersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLayers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeLayersAsync(const DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1108,7 +1198,10 @@ DescribeLoadBasedAutoScalingOutcome OpsWorksClient::DescribeLoadBasedAutoScaling
 
 DescribeLoadBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeLoadBasedAutoScalingCallable(const DescribeLoadBasedAutoScalingRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBasedAutoScaling(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoadBasedAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoadBasedAutoScaling(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeLoadBasedAutoScalingAsync(const DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1139,7 +1232,10 @@ DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
 
 DescribeMyUserProfileOutcomeCallable OpsWorksClient::DescribeMyUserProfileCallable() const
 {
-  return std::async(std::launch::async, [this](){ return this->DescribeMyUserProfile(); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMyUserProfileOutcome() > >(ALLOCATION_TAG, [this](){ return this->DescribeMyUserProfile(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1170,7 +1266,10 @@ DescribePermissionsOutcome OpsWorksClient::DescribePermissions(const DescribePer
 
 DescribePermissionsOutcomeCallable OpsWorksClient::DescribePermissionsCallable(const DescribePermissionsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribePermissions(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribePermissionsAsync(const DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1201,7 +1300,10 @@ DescribeRaidArraysOutcome OpsWorksClient::DescribeRaidArrays(const DescribeRaidA
 
 DescribeRaidArraysOutcomeCallable OpsWorksClient::DescribeRaidArraysCallable(const DescribeRaidArraysRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeRaidArrays(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRaidArraysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRaidArrays(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeRaidArraysAsync(const DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1232,7 +1334,10 @@ DescribeRdsDbInstancesOutcome OpsWorksClient::DescribeRdsDbInstances(const Descr
 
 DescribeRdsDbInstancesOutcomeCallable OpsWorksClient::DescribeRdsDbInstancesCallable(const DescribeRdsDbInstancesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeRdsDbInstances(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRdsDbInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRdsDbInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeRdsDbInstancesAsync(const DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1263,7 +1368,10 @@ DescribeServiceErrorsOutcome OpsWorksClient::DescribeServiceErrors(const Describ
 
 DescribeServiceErrorsOutcomeCallable OpsWorksClient::DescribeServiceErrorsCallable(const DescribeServiceErrorsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeServiceErrors(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeServiceErrorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeServiceErrors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeServiceErrorsAsync(const DescribeServiceErrorsRequest& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1294,7 +1402,10 @@ DescribeStackProvisioningParametersOutcome OpsWorksClient::DescribeStackProvisio
 
 DescribeStackProvisioningParametersOutcomeCallable OpsWorksClient::DescribeStackProvisioningParametersCallable(const DescribeStackProvisioningParametersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeStackProvisioningParameters(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStackProvisioningParametersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStackProvisioningParameters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeStackProvisioningParametersAsync(const DescribeStackProvisioningParametersRequest& request, const DescribeStackProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1325,7 +1436,10 @@ DescribeStackSummaryOutcome OpsWorksClient::DescribeStackSummary(const DescribeS
 
 DescribeStackSummaryOutcomeCallable OpsWorksClient::DescribeStackSummaryCallable(const DescribeStackSummaryRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeStackSummary(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStackSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStackSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeStackSummaryAsync(const DescribeStackSummaryRequest& request, const DescribeStackSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1356,7 +1470,10 @@ DescribeStacksOutcome OpsWorksClient::DescribeStacks(const DescribeStacksRequest
 
 DescribeStacksOutcomeCallable OpsWorksClient::DescribeStacksCallable(const DescribeStacksRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeStacks(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStacksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStacks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeStacksAsync(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1387,7 +1504,10 @@ DescribeTimeBasedAutoScalingOutcome OpsWorksClient::DescribeTimeBasedAutoScaling
 
 DescribeTimeBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeTimeBasedAutoScalingCallable(const DescribeTimeBasedAutoScalingRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeTimeBasedAutoScaling(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTimeBasedAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTimeBasedAutoScaling(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeTimeBasedAutoScalingAsync(const DescribeTimeBasedAutoScalingRequest& request, const DescribeTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1418,7 +1538,10 @@ DescribeUserProfilesOutcome OpsWorksClient::DescribeUserProfiles(const DescribeU
 
 DescribeUserProfilesOutcomeCallable OpsWorksClient::DescribeUserProfilesCallable(const DescribeUserProfilesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeUserProfiles(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUserProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUserProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeUserProfilesAsync(const DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1449,7 +1572,10 @@ DescribeVolumesOutcome OpsWorksClient::DescribeVolumes(const DescribeVolumesRequ
 
 DescribeVolumesOutcomeCallable OpsWorksClient::DescribeVolumesCallable(const DescribeVolumesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeVolumes(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVolumesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVolumes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1480,7 +1606,10 @@ DetachElasticLoadBalancerOutcome OpsWorksClient::DetachElasticLoadBalancer(const
 
 DetachElasticLoadBalancerOutcomeCallable OpsWorksClient::DetachElasticLoadBalancerCallable(const DetachElasticLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DetachElasticLoadBalancer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DetachElasticLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachElasticLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DetachElasticLoadBalancerAsync(const DetachElasticLoadBalancerRequest& request, const DetachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1511,7 +1640,10 @@ DisassociateElasticIpOutcome OpsWorksClient::DisassociateElasticIp(const Disasso
 
 DisassociateElasticIpOutcomeCallable OpsWorksClient::DisassociateElasticIpCallable(const DisassociateElasticIpRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DisassociateElasticIp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateElasticIpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateElasticIp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::DisassociateElasticIpAsync(const DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1542,7 +1674,10 @@ GetHostnameSuggestionOutcome OpsWorksClient::GetHostnameSuggestion(const GetHost
 
 GetHostnameSuggestionOutcomeCallable OpsWorksClient::GetHostnameSuggestionCallable(const GetHostnameSuggestionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetHostnameSuggestion(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetHostnameSuggestionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetHostnameSuggestion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::GetHostnameSuggestionAsync(const GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1573,7 +1708,10 @@ GrantAccessOutcome OpsWorksClient::GrantAccess(const GrantAccessRequest& request
 
 GrantAccessOutcomeCallable OpsWorksClient::GrantAccessCallable(const GrantAccessRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GrantAccess(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GrantAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GrantAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::GrantAccessAsync(const GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1604,7 +1742,10 @@ RebootInstanceOutcome OpsWorksClient::RebootInstance(const RebootInstanceRequest
 
 RebootInstanceOutcomeCallable OpsWorksClient::RebootInstanceCallable(const RebootInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RebootInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RebootInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RebootInstanceAsync(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1635,7 +1776,10 @@ RegisterEcsClusterOutcome OpsWorksClient::RegisterEcsCluster(const RegisterEcsCl
 
 RegisterEcsClusterOutcomeCallable OpsWorksClient::RegisterEcsClusterCallable(const RegisterEcsClusterRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterEcsCluster(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterEcsClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterEcsCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RegisterEcsClusterAsync(const RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1666,7 +1810,10 @@ RegisterElasticIpOutcome OpsWorksClient::RegisterElasticIp(const RegisterElastic
 
 RegisterElasticIpOutcomeCallable OpsWorksClient::RegisterElasticIpCallable(const RegisterElasticIpRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterElasticIp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterElasticIpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterElasticIp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RegisterElasticIpAsync(const RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1697,7 +1844,10 @@ RegisterInstanceOutcome OpsWorksClient::RegisterInstance(const RegisterInstanceR
 
 RegisterInstanceOutcomeCallable OpsWorksClient::RegisterInstanceCallable(const RegisterInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RegisterInstanceAsync(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1728,7 +1878,10 @@ RegisterRdsDbInstanceOutcome OpsWorksClient::RegisterRdsDbInstance(const Registe
 
 RegisterRdsDbInstanceOutcomeCallable OpsWorksClient::RegisterRdsDbInstanceCallable(const RegisterRdsDbInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterRdsDbInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterRdsDbInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterRdsDbInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RegisterRdsDbInstanceAsync(const RegisterRdsDbInstanceRequest& request, const RegisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1759,7 +1912,10 @@ RegisterVolumeOutcome OpsWorksClient::RegisterVolume(const RegisterVolumeRequest
 
 RegisterVolumeOutcomeCallable OpsWorksClient::RegisterVolumeCallable(const RegisterVolumeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterVolume(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::RegisterVolumeAsync(const RegisterVolumeRequest& request, const RegisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1790,7 +1946,10 @@ SetLoadBasedAutoScalingOutcome OpsWorksClient::SetLoadBasedAutoScaling(const Set
 
 SetLoadBasedAutoScalingOutcomeCallable OpsWorksClient::SetLoadBasedAutoScalingCallable(const SetLoadBasedAutoScalingRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetLoadBasedAutoScaling(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetLoadBasedAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetLoadBasedAutoScaling(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::SetLoadBasedAutoScalingAsync(const SetLoadBasedAutoScalingRequest& request, const SetLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1821,7 +1980,10 @@ SetPermissionOutcome OpsWorksClient::SetPermission(const SetPermissionRequest& r
 
 SetPermissionOutcomeCallable OpsWorksClient::SetPermissionCallable(const SetPermissionRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetPermission(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::SetPermissionAsync(const SetPermissionRequest& request, const SetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1852,7 +2014,10 @@ SetTimeBasedAutoScalingOutcome OpsWorksClient::SetTimeBasedAutoScaling(const Set
 
 SetTimeBasedAutoScalingOutcomeCallable OpsWorksClient::SetTimeBasedAutoScalingCallable(const SetTimeBasedAutoScalingRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetTimeBasedAutoScaling(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetTimeBasedAutoScalingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetTimeBasedAutoScaling(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::SetTimeBasedAutoScalingAsync(const SetTimeBasedAutoScalingRequest& request, const SetTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1883,7 +2048,10 @@ StartInstanceOutcome OpsWorksClient::StartInstance(const StartInstanceRequest& r
 
 StartInstanceOutcomeCallable OpsWorksClient::StartInstanceCallable(const StartInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->StartInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StartInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::StartInstanceAsync(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1914,7 +2082,10 @@ StartStackOutcome OpsWorksClient::StartStack(const StartStackRequest& request) c
 
 StartStackOutcomeCallable OpsWorksClient::StartStackCallable(const StartStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->StartStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StartStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::StartStackAsync(const StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1945,7 +2116,10 @@ StopInstanceOutcome OpsWorksClient::StopInstance(const StopInstanceRequest& requ
 
 StopInstanceOutcomeCallable OpsWorksClient::StopInstanceCallable(const StopInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->StopInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StopInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::StopInstanceAsync(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -1976,7 +2150,10 @@ StopStackOutcome OpsWorksClient::StopStack(const StopStackRequest& request) cons
 
 StopStackOutcomeCallable OpsWorksClient::StopStackCallable(const StopStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->StopStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< StopStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::StopStackAsync(const StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2007,7 +2184,10 @@ UnassignInstanceOutcome OpsWorksClient::UnassignInstance(const UnassignInstanceR
 
 UnassignInstanceOutcomeCallable OpsWorksClient::UnassignInstanceCallable(const UnassignInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UnassignInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UnassignInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnassignInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UnassignInstanceAsync(const UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2038,7 +2218,10 @@ UnassignVolumeOutcome OpsWorksClient::UnassignVolume(const UnassignVolumeRequest
 
 UnassignVolumeOutcomeCallable OpsWorksClient::UnassignVolumeCallable(const UnassignVolumeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UnassignVolume(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UnassignVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnassignVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UnassignVolumeAsync(const UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2069,7 +2252,10 @@ UpdateAppOutcome OpsWorksClient::UpdateApp(const UpdateAppRequest& request) cons
 
 UpdateAppOutcomeCallable OpsWorksClient::UpdateAppCallable(const UpdateAppRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateApp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAppOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2100,7 +2286,10 @@ UpdateElasticIpOutcome OpsWorksClient::UpdateElasticIp(const UpdateElasticIpRequ
 
 UpdateElasticIpOutcomeCallable OpsWorksClient::UpdateElasticIpCallable(const UpdateElasticIpRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateElasticIp(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateElasticIpOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateElasticIp(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateElasticIpAsync(const UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2131,7 +2320,10 @@ UpdateInstanceOutcome OpsWorksClient::UpdateInstance(const UpdateInstanceRequest
 
 UpdateInstanceOutcomeCallable OpsWorksClient::UpdateInstanceCallable(const UpdateInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2162,7 +2354,10 @@ UpdateLayerOutcome OpsWorksClient::UpdateLayer(const UpdateLayerRequest& request
 
 UpdateLayerOutcomeCallable OpsWorksClient::UpdateLayerCallable(const UpdateLayerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateLayer(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLayerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLayer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateLayerAsync(const UpdateLayerRequest& request, const UpdateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2193,7 +2388,10 @@ UpdateMyUserProfileOutcome OpsWorksClient::UpdateMyUserProfile(const UpdateMyUse
 
 UpdateMyUserProfileOutcomeCallable OpsWorksClient::UpdateMyUserProfileCallable(const UpdateMyUserProfileRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateMyUserProfile(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMyUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMyUserProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateMyUserProfileAsync(const UpdateMyUserProfileRequest& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2224,7 +2422,10 @@ UpdateRdsDbInstanceOutcome OpsWorksClient::UpdateRdsDbInstance(const UpdateRdsDb
 
 UpdateRdsDbInstanceOutcomeCallable OpsWorksClient::UpdateRdsDbInstanceCallable(const UpdateRdsDbInstanceRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateRdsDbInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRdsDbInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRdsDbInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateRdsDbInstanceAsync(const UpdateRdsDbInstanceRequest& request, const UpdateRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2255,7 +2456,10 @@ UpdateStackOutcome OpsWorksClient::UpdateStack(const UpdateStackRequest& request
 
 UpdateStackOutcomeCallable OpsWorksClient::UpdateStackCallable(const UpdateStackRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateStack(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateStackAsync(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2286,7 +2490,10 @@ UpdateUserProfileOutcome OpsWorksClient::UpdateUserProfile(const UpdateUserProfi
 
 UpdateUserProfileOutcomeCallable OpsWorksClient::UpdateUserProfileCallable(const UpdateUserProfileRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateUserProfile(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -2317,7 +2524,10 @@ UpdateVolumeOutcome OpsWorksClient::UpdateVolume(const UpdateVolumeRequest& requ
 
 UpdateVolumeOutcomeCallable OpsWorksClient::UpdateVolumeCallable(const UpdateVolumeRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateVolume(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVolumeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVolume(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void OpsWorksClient::UpdateVolumeAsync(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

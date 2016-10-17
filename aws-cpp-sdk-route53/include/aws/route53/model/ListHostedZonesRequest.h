@@ -208,25 +208,53 @@ namespace Model
      */
     inline ListHostedZonesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline void SetDelegationSetId(const Aws::String& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline void SetDelegationSetId(Aws::String&& value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId = value; }
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline void SetDelegationSetId(const char* value) { m_delegationSetIdHasBeenSet = true; m_delegationSetId.assign(value); }
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline ListHostedZonesRequest& WithDelegationSetId(const Aws::String& value) { SetDelegationSetId(value); return *this;}
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline ListHostedZonesRequest& WithDelegationSetId(Aws::String&& value) { SetDelegationSetId(value); return *this;}
 
-    
+    /**
+     * <p>If you're using reusable delegation sets and you want to list all of the
+     * hosted zones that are associated with a reusable delegation set, specify the ID
+     * of that reusable delegation set. </p>
+     */
     inline ListHostedZonesRequest& WithDelegationSetId(const char* value) { SetDelegationSetId(value); return *this;}
 
   private:

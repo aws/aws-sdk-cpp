@@ -137,7 +137,10 @@ AddTagsOutcome ElasticLoadBalancingClient::AddTags(const AddTagsRequest& request
 
 AddTagsOutcomeCallable ElasticLoadBalancingClient::AddTagsCallable(const AddTagsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AddTags( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< AddTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -167,7 +170,10 @@ ApplySecurityGroupsToLoadBalancerOutcome ElasticLoadBalancingClient::ApplySecuri
 
 ApplySecurityGroupsToLoadBalancerOutcomeCallable ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerCallable(const ApplySecurityGroupsToLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ApplySecurityGroupsToLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ApplySecurityGroupsToLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ApplySecurityGroupsToLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::ApplySecurityGroupsToLoadBalancerAsync(const ApplySecurityGroupsToLoadBalancerRequest& request, const ApplySecurityGroupsToLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -197,7 +203,10 @@ AttachLoadBalancerToSubnetsOutcome ElasticLoadBalancingClient::AttachLoadBalance
 
 AttachLoadBalancerToSubnetsOutcomeCallable ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsCallable(const AttachLoadBalancerToSubnetsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->AttachLoadBalancerToSubnets( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< AttachLoadBalancerToSubnetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AttachLoadBalancerToSubnets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::AttachLoadBalancerToSubnetsAsync(const AttachLoadBalancerToSubnetsRequest& request, const AttachLoadBalancerToSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -227,7 +236,10 @@ ConfigureHealthCheckOutcome ElasticLoadBalancingClient::ConfigureHealthCheck(con
 
 ConfigureHealthCheckOutcomeCallable ElasticLoadBalancingClient::ConfigureHealthCheckCallable(const ConfigureHealthCheckRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ConfigureHealthCheck( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ConfigureHealthCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfigureHealthCheck(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::ConfigureHealthCheckAsync(const ConfigureHealthCheckRequest& request, const ConfigureHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -257,7 +269,10 @@ CreateAppCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateAppCook
 
 CreateAppCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyCallable(const CreateAppCookieStickinessPolicyRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateAppCookieStickinessPolicy( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateAppCookieStickinessPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAppCookieStickinessPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::CreateAppCookieStickinessPolicyAsync(const CreateAppCookieStickinessPolicyRequest& request, const CreateAppCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -287,7 +302,10 @@ CreateLBCookieStickinessPolicyOutcome ElasticLoadBalancingClient::CreateLBCookie
 
 CreateLBCookieStickinessPolicyOutcomeCallable ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyCallable(const CreateLBCookieStickinessPolicyRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateLBCookieStickinessPolicy( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateLBCookieStickinessPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLBCookieStickinessPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::CreateLBCookieStickinessPolicyAsync(const CreateLBCookieStickinessPolicyRequest& request, const CreateLBCookieStickinessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -317,7 +335,10 @@ CreateLoadBalancerOutcome ElasticLoadBalancingClient::CreateLoadBalancer(const C
 
 CreateLoadBalancerOutcomeCallable ElasticLoadBalancingClient::CreateLoadBalancerCallable(const CreateLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::CreateLoadBalancerAsync(const CreateLoadBalancerRequest& request, const CreateLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -347,7 +368,10 @@ CreateLoadBalancerListenersOutcome ElasticLoadBalancingClient::CreateLoadBalance
 
 CreateLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::CreateLoadBalancerListenersCallable(const CreateLoadBalancerListenersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateLoadBalancerListeners( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateLoadBalancerListenersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLoadBalancerListeners(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::CreateLoadBalancerListenersAsync(const CreateLoadBalancerListenersRequest& request, const CreateLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -377,7 +401,10 @@ CreateLoadBalancerPolicyOutcome ElasticLoadBalancingClient::CreateLoadBalancerPo
 
 CreateLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::CreateLoadBalancerPolicyCallable(const CreateLoadBalancerPolicyRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateLoadBalancerPolicy( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateLoadBalancerPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLoadBalancerPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::CreateLoadBalancerPolicyAsync(const CreateLoadBalancerPolicyRequest& request, const CreateLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -407,7 +434,10 @@ DeleteLoadBalancerOutcome ElasticLoadBalancingClient::DeleteLoadBalancer(const D
 
 DeleteLoadBalancerOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBalancerCallable(const DeleteLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DeleteLoadBalancerAsync(const DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -437,7 +467,10 @@ DeleteLoadBalancerListenersOutcome ElasticLoadBalancingClient::DeleteLoadBalance
 
 DeleteLoadBalancerListenersOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBalancerListenersCallable(const DeleteLoadBalancerListenersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteLoadBalancerListeners( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoadBalancerListenersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoadBalancerListeners(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DeleteLoadBalancerListenersAsync(const DeleteLoadBalancerListenersRequest& request, const DeleteLoadBalancerListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -467,7 +500,10 @@ DeleteLoadBalancerPolicyOutcome ElasticLoadBalancingClient::DeleteLoadBalancerPo
 
 DeleteLoadBalancerPolicyOutcomeCallable ElasticLoadBalancingClient::DeleteLoadBalancerPolicyCallable(const DeleteLoadBalancerPolicyRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteLoadBalancerPolicy( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLoadBalancerPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLoadBalancerPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DeleteLoadBalancerPolicyAsync(const DeleteLoadBalancerPolicyRequest& request, const DeleteLoadBalancerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -497,7 +533,10 @@ DeregisterInstancesFromLoadBalancerOutcome ElasticLoadBalancingClient::Deregiste
 
 DeregisterInstancesFromLoadBalancerOutcomeCallable ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerCallable(const DeregisterInstancesFromLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeregisterInstancesFromLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterInstancesFromLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterInstancesFromLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DeregisterInstancesFromLoadBalancerAsync(const DeregisterInstancesFromLoadBalancerRequest& request, const DeregisterInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -527,7 +566,10 @@ DescribeInstanceHealthOutcome ElasticLoadBalancingClient::DescribeInstanceHealth
 
 DescribeInstanceHealthOutcomeCallable ElasticLoadBalancingClient::DescribeInstanceHealthCallable(const DescribeInstanceHealthRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeInstanceHealth( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceHealthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceHealth(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeInstanceHealthAsync(const DescribeInstanceHealthRequest& request, const DescribeInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -557,7 +599,10 @@ DescribeLoadBalancerAttributesOutcome ElasticLoadBalancingClient::DescribeLoadBa
 
 DescribeLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBalancerAttributesCallable(const DescribeLoadBalancerAttributesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancerAttributes( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoadBalancerAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoadBalancerAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeLoadBalancerAttributesAsync(const DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -587,7 +632,10 @@ DescribeLoadBalancerPoliciesOutcome ElasticLoadBalancingClient::DescribeLoadBala
 
 DescribeLoadBalancerPoliciesOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesCallable(const DescribeLoadBalancerPoliciesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancerPolicies( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoadBalancerPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoadBalancerPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeLoadBalancerPoliciesAsync(const DescribeLoadBalancerPoliciesRequest& request, const DescribeLoadBalancerPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -617,7 +665,10 @@ DescribeLoadBalancerPolicyTypesOutcome ElasticLoadBalancingClient::DescribeLoadB
 
 DescribeLoadBalancerPolicyTypesOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesCallable(const DescribeLoadBalancerPolicyTypesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancerPolicyTypes( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoadBalancerPolicyTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoadBalancerPolicyTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeLoadBalancerPolicyTypesAsync(const DescribeLoadBalancerPolicyTypesRequest& request, const DescribeLoadBalancerPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -647,7 +698,10 @@ DescribeLoadBalancersOutcome ElasticLoadBalancingClient::DescribeLoadBalancers(c
 
 DescribeLoadBalancersOutcomeCallable ElasticLoadBalancingClient::DescribeLoadBalancersCallable(const DescribeLoadBalancersRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeLoadBalancers( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLoadBalancersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLoadBalancers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeLoadBalancersAsync(const DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -677,7 +731,10 @@ DescribeTagsOutcome ElasticLoadBalancingClient::DescribeTags(const DescribeTagsR
 
 DescribeTagsOutcomeCallable ElasticLoadBalancingClient::DescribeTagsCallable(const DescribeTagsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DescribeTags( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DescribeTagsAsync(const DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -707,7 +764,10 @@ DetachLoadBalancerFromSubnetsOutcome ElasticLoadBalancingClient::DetachLoadBalan
 
 DetachLoadBalancerFromSubnetsOutcomeCallable ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsCallable(const DetachLoadBalancerFromSubnetsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DetachLoadBalancerFromSubnets( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DetachLoadBalancerFromSubnetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetachLoadBalancerFromSubnets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DetachLoadBalancerFromSubnetsAsync(const DetachLoadBalancerFromSubnetsRequest& request, const DetachLoadBalancerFromSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -737,7 +797,10 @@ DisableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::Disab
 
 DisableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerCallable(const DisableAvailabilityZonesForLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DisableAvailabilityZonesForLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DisableAvailabilityZonesForLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAvailabilityZonesForLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::DisableAvailabilityZonesForLoadBalancerAsync(const DisableAvailabilityZonesForLoadBalancerRequest& request, const DisableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -767,7 +830,10 @@ EnableAvailabilityZonesForLoadBalancerOutcome ElasticLoadBalancingClient::Enable
 
 EnableAvailabilityZonesForLoadBalancerOutcomeCallable ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerCallable(const EnableAvailabilityZonesForLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->EnableAvailabilityZonesForLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< EnableAvailabilityZonesForLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAvailabilityZonesForLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::EnableAvailabilityZonesForLoadBalancerAsync(const EnableAvailabilityZonesForLoadBalancerRequest& request, const EnableAvailabilityZonesForLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -797,7 +863,10 @@ ModifyLoadBalancerAttributesOutcome ElasticLoadBalancingClient::ModifyLoadBalanc
 
 ModifyLoadBalancerAttributesOutcomeCallable ElasticLoadBalancingClient::ModifyLoadBalancerAttributesCallable(const ModifyLoadBalancerAttributesRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ModifyLoadBalancerAttributes( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ModifyLoadBalancerAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyLoadBalancerAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::ModifyLoadBalancerAttributesAsync(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -827,7 +896,10 @@ RegisterInstancesWithLoadBalancerOutcome ElasticLoadBalancingClient::RegisterIns
 
 RegisterInstancesWithLoadBalancerOutcomeCallable ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerCallable(const RegisterInstancesWithLoadBalancerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RegisterInstancesWithLoadBalancer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< RegisterInstancesWithLoadBalancerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterInstancesWithLoadBalancer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::RegisterInstancesWithLoadBalancerAsync(const RegisterInstancesWithLoadBalancerRequest& request, const RegisterInstancesWithLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -857,7 +929,10 @@ RemoveTagsOutcome ElasticLoadBalancingClient::RemoveTags(const RemoveTagsRequest
 
 RemoveTagsOutcomeCallable ElasticLoadBalancingClient::RemoveTagsCallable(const RemoveTagsRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->RemoveTags( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< RemoveTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -887,7 +962,10 @@ SetLoadBalancerListenerSSLCertificateOutcome ElasticLoadBalancingClient::SetLoad
 
 SetLoadBalancerListenerSSLCertificateOutcomeCallable ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateCallable(const SetLoadBalancerListenerSSLCertificateRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetLoadBalancerListenerSSLCertificate( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetLoadBalancerListenerSSLCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetLoadBalancerListenerSSLCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::SetLoadBalancerListenerSSLCertificateAsync(const SetLoadBalancerListenerSSLCertificateRequest& request, const SetLoadBalancerListenerSSLCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -917,7 +995,10 @@ SetLoadBalancerPoliciesForBackendServerOutcome ElasticLoadBalancingClient::SetLo
 
 SetLoadBalancerPoliciesForBackendServerOutcomeCallable ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerCallable(const SetLoadBalancerPoliciesForBackendServerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetLoadBalancerPoliciesForBackendServer( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetLoadBalancerPoliciesForBackendServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetLoadBalancerPoliciesForBackendServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::SetLoadBalancerPoliciesForBackendServerAsync(const SetLoadBalancerPoliciesForBackendServerRequest& request, const SetLoadBalancerPoliciesForBackendServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -947,7 +1028,10 @@ SetLoadBalancerPoliciesOfListenerOutcome ElasticLoadBalancingClient::SetLoadBala
 
 SetLoadBalancerPoliciesOfListenerOutcomeCallable ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerCallable(const SetLoadBalancerPoliciesOfListenerRequest& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->SetLoadBalancerPoliciesOfListener( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< SetLoadBalancerPoliciesOfListenerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetLoadBalancerPoliciesOfListener(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsync(const SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

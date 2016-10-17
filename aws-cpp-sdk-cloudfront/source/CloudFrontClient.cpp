@@ -131,7 +131,10 @@ CreateCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::CreateCl
 
 CreateCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable CloudFrontClient::CreateCloudFrontOriginAccessIdentity2016_01_28Callable(const CreateCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateCloudFrontOriginAccessIdentity2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateCloudFrontOriginAccessIdentity2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCloudFrontOriginAccessIdentity2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2016_01_28Async(const CreateCloudFrontOriginAccessIdentity2016_01_28Request& request, const CreateCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -161,7 +164,10 @@ CreateDistribution2016_01_28Outcome CloudFrontClient::CreateDistribution2016_01_
 
 CreateDistribution2016_01_28OutcomeCallable CloudFrontClient::CreateDistribution2016_01_28Callable(const CreateDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::CreateDistribution2016_01_28Async(const CreateDistribution2016_01_28Request& request, const CreateDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -193,7 +199,10 @@ CreateInvalidation2016_01_28Outcome CloudFrontClient::CreateInvalidation2016_01_
 
 CreateInvalidation2016_01_28OutcomeCallable CloudFrontClient::CreateInvalidation2016_01_28Callable(const CreateInvalidation2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateInvalidation2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateInvalidation2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateInvalidation2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::CreateInvalidation2016_01_28Async(const CreateInvalidation2016_01_28Request& request, const CreateInvalidation2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -223,7 +232,10 @@ CreateStreamingDistribution2016_01_28Outcome CloudFrontClient::CreateStreamingDi
 
 CreateStreamingDistribution2016_01_28OutcomeCallable CloudFrontClient::CreateStreamingDistribution2016_01_28Callable(const CreateStreamingDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->CreateStreamingDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< CreateStreamingDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateStreamingDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::CreateStreamingDistribution2016_01_28Async(const CreateStreamingDistribution2016_01_28Request& request, const CreateStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -254,7 +266,10 @@ DeleteCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::DeleteCl
 
 DeleteCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2016_01_28Callable(const DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteCloudFrontOriginAccessIdentity2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCloudFrontOriginAccessIdentity2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCloudFrontOriginAccessIdentity2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2016_01_28Async(const DeleteCloudFrontOriginAccessIdentity2016_01_28Request& request, const DeleteCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -285,7 +300,10 @@ DeleteDistribution2016_01_28Outcome CloudFrontClient::DeleteDistribution2016_01_
 
 DeleteDistribution2016_01_28OutcomeCallable CloudFrontClient::DeleteDistribution2016_01_28Callable(const DeleteDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::DeleteDistribution2016_01_28Async(const DeleteDistribution2016_01_28Request& request, const DeleteDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -316,7 +334,10 @@ DeleteStreamingDistribution2016_01_28Outcome CloudFrontClient::DeleteStreamingDi
 
 DeleteStreamingDistribution2016_01_28OutcomeCallable CloudFrontClient::DeleteStreamingDistribution2016_01_28Callable(const DeleteStreamingDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->DeleteStreamingDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< DeleteStreamingDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteStreamingDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::DeleteStreamingDistribution2016_01_28Async(const DeleteStreamingDistribution2016_01_28Request& request, const DeleteStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -347,7 +368,10 @@ GetCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::GetCloudFro
 
 GetCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentity2016_01_28Callable(const GetCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetCloudFrontOriginAccessIdentity2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetCloudFrontOriginAccessIdentity2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFrontOriginAccessIdentity2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetCloudFrontOriginAccessIdentity2016_01_28Async(const GetCloudFrontOriginAccessIdentity2016_01_28Request& request, const GetCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -379,7 +403,10 @@ GetCloudFrontOriginAccessIdentityConfig2016_01_28Outcome CloudFrontClient::GetCl
 
 GetCloudFrontOriginAccessIdentityConfig2016_01_28OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2016_01_28Callable(const GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetCloudFrontOriginAccessIdentityConfig2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetCloudFrontOriginAccessIdentityConfig2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFrontOriginAccessIdentityConfig2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2016_01_28Async(const GetCloudFrontOriginAccessIdentityConfig2016_01_28Request& request, const GetCloudFrontOriginAccessIdentityConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -410,7 +437,10 @@ GetDistribution2016_01_28Outcome CloudFrontClient::GetDistribution2016_01_28(con
 
 GetDistribution2016_01_28OutcomeCallable CloudFrontClient::GetDistribution2016_01_28Callable(const GetDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetDistribution2016_01_28Async(const GetDistribution2016_01_28Request& request, const GetDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -442,7 +472,10 @@ GetDistributionConfig2016_01_28Outcome CloudFrontClient::GetDistributionConfig20
 
 GetDistributionConfig2016_01_28OutcomeCallable CloudFrontClient::GetDistributionConfig2016_01_28Callable(const GetDistributionConfig2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetDistributionConfig2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetDistributionConfig2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDistributionConfig2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetDistributionConfig2016_01_28Async(const GetDistributionConfig2016_01_28Request& request, const GetDistributionConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -475,7 +508,10 @@ GetInvalidation2016_01_28Outcome CloudFrontClient::GetInvalidation2016_01_28(con
 
 GetInvalidation2016_01_28OutcomeCallable CloudFrontClient::GetInvalidation2016_01_28Callable(const GetInvalidation2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetInvalidation2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetInvalidation2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInvalidation2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetInvalidation2016_01_28Async(const GetInvalidation2016_01_28Request& request, const GetInvalidation2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -506,7 +542,10 @@ GetStreamingDistribution2016_01_28Outcome CloudFrontClient::GetStreamingDistribu
 
 GetStreamingDistribution2016_01_28OutcomeCallable CloudFrontClient::GetStreamingDistribution2016_01_28Callable(const GetStreamingDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetStreamingDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetStreamingDistribution2016_01_28Async(const GetStreamingDistribution2016_01_28Request& request, const GetStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -538,7 +577,10 @@ GetStreamingDistributionConfig2016_01_28Outcome CloudFrontClient::GetStreamingDi
 
 GetStreamingDistributionConfig2016_01_28OutcomeCallable CloudFrontClient::GetStreamingDistributionConfig2016_01_28Callable(const GetStreamingDistributionConfig2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->GetStreamingDistributionConfig2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetStreamingDistributionConfig2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStreamingDistributionConfig2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::GetStreamingDistributionConfig2016_01_28Async(const GetStreamingDistributionConfig2016_01_28Request& request, const GetStreamingDistributionConfig2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -568,7 +610,10 @@ ListCloudFrontOriginAccessIdentities2016_01_28Outcome CloudFrontClient::ListClou
 
 ListCloudFrontOriginAccessIdentities2016_01_28OutcomeCallable CloudFrontClient::ListCloudFrontOriginAccessIdentities2016_01_28Callable(const ListCloudFrontOriginAccessIdentities2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListCloudFrontOriginAccessIdentities2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListCloudFrontOriginAccessIdentities2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCloudFrontOriginAccessIdentities2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::ListCloudFrontOriginAccessIdentities2016_01_28Async(const ListCloudFrontOriginAccessIdentities2016_01_28Request& request, const ListCloudFrontOriginAccessIdentities2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -598,7 +643,10 @@ ListDistributions2016_01_28Outcome CloudFrontClient::ListDistributions2016_01_28
 
 ListDistributions2016_01_28OutcomeCallable CloudFrontClient::ListDistributions2016_01_28Callable(const ListDistributions2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListDistributions2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListDistributions2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributions2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::ListDistributions2016_01_28Async(const ListDistributions2016_01_28Request& request, const ListDistributions2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -629,7 +677,10 @@ ListDistributionsByWebACLId2016_01_28Outcome CloudFrontClient::ListDistributions
 
 ListDistributionsByWebACLId2016_01_28OutcomeCallable CloudFrontClient::ListDistributionsByWebACLId2016_01_28Callable(const ListDistributionsByWebACLId2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListDistributionsByWebACLId2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListDistributionsByWebACLId2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDistributionsByWebACLId2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::ListDistributionsByWebACLId2016_01_28Async(const ListDistributionsByWebACLId2016_01_28Request& request, const ListDistributionsByWebACLId2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -661,7 +712,10 @@ ListInvalidations2016_01_28Outcome CloudFrontClient::ListInvalidations2016_01_28
 
 ListInvalidations2016_01_28OutcomeCallable CloudFrontClient::ListInvalidations2016_01_28Callable(const ListInvalidations2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListInvalidations2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListInvalidations2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInvalidations2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::ListInvalidations2016_01_28Async(const ListInvalidations2016_01_28Request& request, const ListInvalidations2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -691,7 +745,10 @@ ListStreamingDistributions2016_01_28Outcome CloudFrontClient::ListStreamingDistr
 
 ListStreamingDistributions2016_01_28OutcomeCallable CloudFrontClient::ListStreamingDistributions2016_01_28Callable(const ListStreamingDistributions2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->ListStreamingDistributions2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListStreamingDistributions2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStreamingDistributions2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::ListStreamingDistributions2016_01_28Async(const ListStreamingDistributions2016_01_28Request& request, const ListStreamingDistributions2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -723,7 +780,10 @@ UpdateCloudFrontOriginAccessIdentity2016_01_28Outcome CloudFrontClient::UpdateCl
 
 UpdateCloudFrontOriginAccessIdentity2016_01_28OutcomeCallable CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2016_01_28Callable(const UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateCloudFrontOriginAccessIdentity2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateCloudFrontOriginAccessIdentity2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateCloudFrontOriginAccessIdentity2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2016_01_28Async(const UpdateCloudFrontOriginAccessIdentity2016_01_28Request& request, const UpdateCloudFrontOriginAccessIdentity2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -755,7 +815,10 @@ UpdateDistribution2016_01_28Outcome CloudFrontClient::UpdateDistribution2016_01_
 
 UpdateDistribution2016_01_28OutcomeCallable CloudFrontClient::UpdateDistribution2016_01_28Callable(const UpdateDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::UpdateDistribution2016_01_28Async(const UpdateDistribution2016_01_28Request& request, const UpdateDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
@@ -787,7 +850,10 @@ UpdateStreamingDistribution2016_01_28Outcome CloudFrontClient::UpdateStreamingDi
 
 UpdateStreamingDistribution2016_01_28OutcomeCallable CloudFrontClient::UpdateStreamingDistribution2016_01_28Callable(const UpdateStreamingDistribution2016_01_28Request& request) const
 {
-  return std::async(std::launch::async, [this, request](){ return this->UpdateStreamingDistribution2016_01_28( request ); } );
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStreamingDistribution2016_01_28Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStreamingDistribution2016_01_28(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
 }
 
 void CloudFrontClient::UpdateStreamingDistribution2016_01_28Async(const UpdateStreamingDistribution2016_01_28Request& request, const UpdateStreamingDistribution2016_01_28ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const

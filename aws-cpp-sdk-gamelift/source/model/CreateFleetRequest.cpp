@@ -31,7 +31,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_eC2InstanceTypeHasBeenSet(false),
     m_eC2InboundPermissionsHasBeenSet(false),
     m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_runtimeConfigurationHasBeenSet(false)
+    m_runtimeConfigurationHasBeenSet(false),
+    m_resourceCreationLimitPolicyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_runtimeConfigurationHasBeenSet)
   {
    payload.WithObject("RuntimeConfiguration", m_runtimeConfiguration.Jsonize());
+
+  }
+
+  if(m_resourceCreationLimitPolicyHasBeenSet)
+  {
+   payload.WithObject("ResourceCreationLimitPolicy", m_resourceCreationLimitPolicy.Jsonize());
 
   }
 

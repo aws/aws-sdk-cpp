@@ -132,66 +132,66 @@ namespace Model
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <b>ChangeInCapacity</b> – add (or subtract)
-     * the scaling adjustment value from the current instance count. Positive values
-     * scale up while negative values scale down.</li> <li> <b>ExactCapacity</b> – set
-     * the instance count to the scaling adjustment value.</li> <li>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count
-     * by the scaling adjustment, read as a percentage. Positive values scale up while
-     * negative values scale down; for example, a value of "-10" scales the fleet down
-     * by 10%.</li> </ul>
+     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> – add (or
+     * subtract) the scaling adjustment value from the current instance count. Positive
+     * values scale up while negative values scale down.</p> </li> <li> <p>
+     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment
+     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> – increase or reduce
+     * the current instance count by the scaling adjustment, read as a percentage.
+     * Positive values scale up while negative values scale down; for example, a value
+     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline const ScalingAdjustmentType& GetScalingAdjustmentType() const{ return m_scalingAdjustmentType; }
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <b>ChangeInCapacity</b> – add (or subtract)
-     * the scaling adjustment value from the current instance count. Positive values
-     * scale up while negative values scale down.</li> <li> <b>ExactCapacity</b> – set
-     * the instance count to the scaling adjustment value.</li> <li>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count
-     * by the scaling adjustment, read as a percentage. Positive values scale up while
-     * negative values scale down; for example, a value of "-10" scales the fleet down
-     * by 10%.</li> </ul>
+     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> – add (or
+     * subtract) the scaling adjustment value from the current instance count. Positive
+     * values scale up while negative values scale down.</p> </li> <li> <p>
+     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment
+     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> – increase or reduce
+     * the current instance count by the scaling adjustment, read as a percentage.
+     * Positive values scale up while negative values scale down; for example, a value
+     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline void SetScalingAdjustmentType(const ScalingAdjustmentType& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <b>ChangeInCapacity</b> – add (or subtract)
-     * the scaling adjustment value from the current instance count. Positive values
-     * scale up while negative values scale down.</li> <li> <b>ExactCapacity</b> – set
-     * the instance count to the scaling adjustment value.</li> <li>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count
-     * by the scaling adjustment, read as a percentage. Positive values scale up while
-     * negative values scale down; for example, a value of "-10" scales the fleet down
-     * by 10%.</li> </ul>
+     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> – add (or
+     * subtract) the scaling adjustment value from the current instance count. Positive
+     * values scale up while negative values scale down.</p> </li> <li> <p>
+     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment
+     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> – increase or reduce
+     * the current instance count by the scaling adjustment, read as a percentage.
+     * Positive values scale up while negative values scale down; for example, a value
+     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <b>ChangeInCapacity</b> – add (or subtract)
-     * the scaling adjustment value from the current instance count. Positive values
-     * scale up while negative values scale down.</li> <li> <b>ExactCapacity</b> – set
-     * the instance count to the scaling adjustment value.</li> <li>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count
-     * by the scaling adjustment, read as a percentage. Positive values scale up while
-     * negative values scale down; for example, a value of "-10" scales the fleet down
-     * by 10%.</li> </ul>
+     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> – add (or
+     * subtract) the scaling adjustment value from the current instance count. Positive
+     * values scale up while negative values scale down.</p> </li> <li> <p>
+     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment
+     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> – increase or reduce
+     * the current instance count by the scaling adjustment, read as a percentage.
+     * Positive values scale up while negative values scale down; for example, a value
+     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustmentType(const ScalingAdjustmentType& value) { SetScalingAdjustmentType(value); return *this;}
 
     /**
      * <p>Type of adjustment to make to a fleet's instance count (see
-     * <a>FleetCapacity</a>):</p> <ul> <li> <b>ChangeInCapacity</b> – add (or subtract)
-     * the scaling adjustment value from the current instance count. Positive values
-     * scale up while negative values scale down.</li> <li> <b>ExactCapacity</b> – set
-     * the instance count to the scaling adjustment value.</li> <li>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count
-     * by the scaling adjustment, read as a percentage. Positive values scale up while
-     * negative values scale down; for example, a value of "-10" scales the fleet down
-     * by 10%.</li> </ul>
+     * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> – add (or
+     * subtract) the scaling adjustment value from the current instance count. Positive
+     * values scale up while negative values scale down.</p> </li> <li> <p>
+     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment
+     * value.</p> </li> <li> <p> <b>PercentChangeInCapacity</b> – increase or reduce
+     * the current instance count by the scaling adjustment, read as a percentage.
+     * Positive values scale up while negative values scale down; for example, a value
+     * of "-10" scales the fleet down by 10%.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustmentType(ScalingAdjustmentType&& value) { SetScalingAdjustmentType(value); return *this;}
 
@@ -212,31 +212,31 @@ namespace Model
 
     /**
      * <p>Comparison operator to use when measuring the metric against the threshold
-     * value. </p>
+     * value.</p>
      */
     inline const ComparisonOperatorType& GetComparisonOperator() const{ return m_comparisonOperator; }
 
     /**
      * <p>Comparison operator to use when measuring the metric against the threshold
-     * value. </p>
+     * value.</p>
      */
     inline void SetComparisonOperator(const ComparisonOperatorType& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
      * <p>Comparison operator to use when measuring the metric against the threshold
-     * value. </p>
+     * value.</p>
      */
     inline void SetComparisonOperator(ComparisonOperatorType&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
      * <p>Comparison operator to use when measuring the metric against the threshold
-     * value. </p>
+     * value.</p>
      */
     inline PutScalingPolicyRequest& WithComparisonOperator(const ComparisonOperatorType& value) { SetComparisonOperator(value); return *this;}
 
     /**
      * <p>Comparison operator to use when measuring the metric against the threshold
-     * value. </p>
+     * value.</p>
      */
     inline PutScalingPolicyRequest& WithComparisonOperator(ComparisonOperatorType&& value) { SetComparisonOperator(value); return *this;}
 
@@ -260,96 +260,106 @@ namespace Model
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <b>ActivatingGameSessions</b> – number of game
+     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b> – number of game
-     * sessions currently running (game session status = <code>ACTIVE</code>).</li>
-     * <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions
-     * (player session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li>
-     * <li> <b>AvailablePlayerSessions</b> – number of player session slots currently
+     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
+     * of game sessions currently running (game session status =
+     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> – number
+     * of active or reserved player sessions (player session status =
+     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> – number of player session slots currently
      * available in active game sessions across the fleet, calculated by subtracting a
      * game session's current player session count from its maximum player session
      * count. This number includes game sessions that are not currently accepting
      * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances
-     * currently running a game session.</li> <li> <b>IdleInstances</b> – number of
-     * instances not currently running a game session.</li> </ul>
+     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> – number of
+     * instances currently running a game session.</p> </li> <li> <p>
+     * <b>IdleInstances</b> – number of instances not currently running a game
+     * session.</p> </li> </ul>
      */
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <b>ActivatingGameSessions</b> – number of game
+     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b> – number of game
-     * sessions currently running (game session status = <code>ACTIVE</code>).</li>
-     * <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions
-     * (player session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li>
-     * <li> <b>AvailablePlayerSessions</b> – number of player session slots currently
+     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
+     * of game sessions currently running (game session status =
+     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> – number
+     * of active or reserved player sessions (player session status =
+     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> – number of player session slots currently
      * available in active game sessions across the fleet, calculated by subtracting a
      * game session's current player session count from its maximum player session
      * count. This number includes game sessions that are not currently accepting
      * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances
-     * currently running a game session.</li> <li> <b>IdleInstances</b> – number of
-     * instances not currently running a game session.</li> </ul>
+     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> – number of
+     * instances currently running a game session.</p> </li> <li> <p>
+     * <b>IdleInstances</b> – number of instances not currently running a game
+     * session.</p> </li> </ul>
      */
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <b>ActivatingGameSessions</b> – number of game
+     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b> – number of game
-     * sessions currently running (game session status = <code>ACTIVE</code>).</li>
-     * <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions
-     * (player session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li>
-     * <li> <b>AvailablePlayerSessions</b> – number of player session slots currently
+     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
+     * of game sessions currently running (game session status =
+     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> – number
+     * of active or reserved player sessions (player session status =
+     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> – number of player session slots currently
      * available in active game sessions across the fleet, calculated by subtracting a
      * game session's current player session count from its maximum player session
      * count. This number includes game sessions that are not currently accepting
      * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances
-     * currently running a game session.</li> <li> <b>IdleInstances</b> – number of
-     * instances not currently running a game session.</li> </ul>
+     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> – number of
+     * instances currently running a game session.</p> </li> <li> <p>
+     * <b>IdleInstances</b> – number of instances not currently running a game
+     * session.</p> </li> </ul>
      */
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <b>ActivatingGameSessions</b> – number of game
+     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b> – number of game
-     * sessions currently running (game session status = <code>ACTIVE</code>).</li>
-     * <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions
-     * (player session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li>
-     * <li> <b>AvailablePlayerSessions</b> – number of player session slots currently
+     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
+     * of game sessions currently running (game session status =
+     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> – number
+     * of active or reserved player sessions (player session status =
+     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> – number of player session slots currently
      * available in active game sessions across the fleet, calculated by subtracting a
      * game session's current player session count from its maximum player session
      * count. This number includes game sessions that are not currently accepting
      * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances
-     * currently running a game session.</li> <li> <b>IdleInstances</b> – number of
-     * instances not currently running a game session.</li> </ul>
+     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> – number of
+     * instances currently running a game session.</p> </li> <li> <p>
+     * <b>IdleInstances</b> – number of instances not currently running a game
+     * session.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <b>ActivatingGameSessions</b> – number of game
+     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> – number of game
      * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b> – number of game
-     * sessions currently running (game session status = <code>ACTIVE</code>).</li>
-     * <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions
-     * (player session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li>
-     * <li> <b>AvailablePlayerSessions</b> – number of player session slots currently
+     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> – number
+     * of game sessions currently running (game session status =
+     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> – number
+     * of active or reserved player sessions (player session status =
+     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> – number of player session slots currently
      * available in active game sessions across the fleet, calculated by subtracting a
      * game session's current player session count from its maximum player session
      * count. This number includes game sessions that are not currently accepting
      * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances
-     * currently running a game session.</li> <li> <b>IdleInstances</b> – number of
-     * instances not currently running a game session.</li> </ul>
+     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> – number of
+     * instances currently running a game session.</p> </li> <li> <p>
+     * <b>IdleInstances</b> – number of instances not currently running a game
+     * session.</p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithMetricName(MetricName&& value) { SetMetricName(value); return *this;}
 

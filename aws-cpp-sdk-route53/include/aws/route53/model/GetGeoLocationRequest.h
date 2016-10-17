@@ -41,7 +41,7 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -50,7 +50,7 @@ namespace Model
     inline const Aws::String& GetContinentCode() const{ return m_continentCode; }
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -59,7 +59,7 @@ namespace Model
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -68,7 +68,7 @@ namespace Model
     inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -77,7 +77,7 @@ namespace Model
     inline void SetContinentCode(const char* value) { m_continentCodeHasBeenSet = true; m_continentCode.assign(value); }
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -86,7 +86,7 @@ namespace Model
     inline GetGeoLocationRequest& WithContinentCode(const Aws::String& value) { SetContinentCode(value); return *this;}
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>
@@ -95,7 +95,7 @@ namespace Model
     inline GetGeoLocationRequest& WithContinentCode(Aws::String&& value) { SetContinentCode(value); return *this;}
 
     /**
-     * <p>Amazon Route 53 supports the following contintent codes:</p> <ul> <li> <p>
+     * <p>Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p>
      * <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p>
      * <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p>
      * <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li>

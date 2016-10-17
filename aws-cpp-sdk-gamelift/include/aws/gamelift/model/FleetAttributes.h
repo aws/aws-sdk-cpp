@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/OperatingSystem.h>
+#include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
 
 namespace Aws
 {
@@ -220,71 +221,71 @@ namespace Model
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
-     * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul>
+     * following:</p> <ul> <li> <p> <b>NEW</b> – A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the
+     * new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> – An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p> <b>TERMINATED</b> – The fleet no longer exists.</p> </li> </ul>
      */
     inline const FleetStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
-     * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul>
+     * following:</p> <ul> <li> <p> <b>NEW</b> – A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the
+     * new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> – An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p> <b>TERMINATED</b> – The fleet no longer exists.</p> </li> </ul>
      */
     inline void SetStatus(const FleetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
-     * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul>
+     * following:</p> <ul> <li> <p> <b>NEW</b> – A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the
+     * new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> – An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p> <b>TERMINATED</b> – The fleet no longer exists.</p> </li> </ul>
      */
     inline void SetStatus(FleetStatus&& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
-     * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul>
+     * following:</p> <ul> <li> <p> <b>NEW</b> – A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the
+     * new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> – An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p> <b>TERMINATED</b> – The fleet no longer exists.</p> </li> </ul>
      */
     inline FleetAttributes& WithStatus(const FleetStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Current status of the fleet.</p> <p>Possible fleet statuses include the
-     * following:</p> <ul><li><b>NEW</b> – A new fleet has been defined and desired
-     * instances is set to 1.
-     * </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-     * up the new fleet, creating new instances with the game build and starting server
-     * processes.</li><li><b>ACTIVE</b> – Hosts can now accept game
-     * sessions.</li><li><b>ERROR</b> – An error occurred when downloading, validating,
-     * building, or activating the fleet.</li><li><b>DELETING</b> – Hosts are
-     * responding to a delete fleet request.</li><li><b>TERMINATED</b> – The fleet no
-     * longer exists.</li></ul>
+     * following:</p> <ul> <li> <p> <b>NEW</b> – A new fleet has been defined and
+     * desired instances is set to 1. </p> </li> <li> <p>
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the
+     * new fleet, creating new instances with the game build and starting server
+     * processes.</p> </li> <li> <p> <b>ACTIVE</b> – Hosts can now accept game
+     * sessions.</p> </li> <li> <p> <b>ERROR</b> – An error occurred when downloading,
+     * validating, building, or activating the fleet.</p> </li> <li> <p>
+     * <b>DELETING</b> – Hosts are responding to a delete fleet request.</p> </li> <li>
+     * <p> <b>TERMINATED</b> – The fleet no longer exists.</p> </li> </ul>
      */
     inline FleetAttributes& WithStatus(FleetStatus&& value) { SetStatus(value); return *this;}
 
@@ -326,112 +327,112 @@ namespace Model
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline const Aws::String& GetServerLaunchPath() const{ return m_serverLaunchPath; }
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline void SetServerLaunchPath(const Aws::String& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline void SetServerLaunchPath(Aws::String&& value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath = value; }
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline void SetServerLaunchPath(const char* value) { m_serverLaunchPathHasBeenSet = true; m_serverLaunchPath.assign(value); }
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const Aws::String& value) { SetServerLaunchPath(value); return *this;}
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(Aws::String&& value) { SetServerLaunchPath(value); return *this;}
 
     /**
      * <p>Path to a game server executable in the fleet's build, specified for fleets
      * created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for
-     * fleets created after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * fleets created after this date are specified in the fleet's <code>
+     * <a>RuntimeConfiguration</a> </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchPath(const char* value) { SetServerLaunchPath(value); return *this;}
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline const Aws::String& GetServerLaunchParameters() const{ return m_serverLaunchParameters; }
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline void SetServerLaunchParameters(const Aws::String& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline void SetServerLaunchParameters(Aws::String&& value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters = value; }
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline void SetServerLaunchParameters(const char* value) { m_serverLaunchParametersHasBeenSet = true; m_serverLaunchParameters.assign(value); }
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const Aws::String& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(Aws::String&& value) { SetServerLaunchParameters(value); return *this;}
 
     /**
      * <p>Game server launch parameters specified for fleets created prior to
      * 2016-08-04 (or AWS SDK v. 0.12.16). Server launch parameters for fleets created
-     * after this date are specified in the fleet's
-     * <code><a>RuntimeConfiguration</a></code>.</p>
+     * after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a>
+     * </code>.</p>
      */
     inline FleetAttributes& WithServerLaunchParameters(const char* value) { SetServerLaunchParameters(value); return *this;}
 
@@ -525,46 +526,46 @@ namespace Model
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> –
+     * If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> –
+     * If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> –
+     * If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</p> </li> </ul>
      */
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> –
+     * If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</p> </li> </ul>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
      * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul><li><b>NoProtection</b> – The game session can be terminated
-     * during a scale-down event.</li> <li><b>FullProtection</b> – If the game session
-     * is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-     * event.</li></ul>
+     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> – The game session can be
+     * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b> –
+     * If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     * during a scale-down event.</p> </li> </ul>
      */
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
@@ -603,6 +604,36 @@ namespace Model
      */
     inline FleetAttributes& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(value); return *this;}
 
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
+    inline const ResourceCreationLimitPolicy& GetResourceCreationLimitPolicy() const{ return m_resourceCreationLimitPolicy; }
+
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
+    inline void SetResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
+
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
+    inline void SetResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { m_resourceCreationLimitPolicyHasBeenSet = true; m_resourceCreationLimitPolicy = value; }
+
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
+    inline FleetAttributes& WithResourceCreationLimitPolicy(const ResourceCreationLimitPolicy& value) { SetResourceCreationLimitPolicy(value); return *this;}
+
+    /**
+     * <p>Fleet policy to limit the number of game sessions an individual player can
+     * create over a span of time.</p>
+     */
+    inline FleetAttributes& WithResourceCreationLimitPolicy(ResourceCreationLimitPolicy&& value) { SetResourceCreationLimitPolicy(value); return *this;}
+
   private:
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet;
@@ -628,6 +659,8 @@ namespace Model
     bool m_newGameSessionProtectionPolicyHasBeenSet;
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+    ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
+    bool m_resourceCreationLimitPolicyHasBeenSet;
   };
 
 } // namespace Model

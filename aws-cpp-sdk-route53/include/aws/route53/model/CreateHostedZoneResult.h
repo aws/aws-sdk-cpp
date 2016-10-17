@@ -121,19 +121,34 @@ namespace Model
      */
     inline CreateHostedZoneResult& WithDelegationSet(DelegationSet&& value) { SetDelegationSet(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline const VPC& GetVPC() const{ return m_vPC; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline void SetVPC(const VPC& value) { m_vPC = value; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline void SetVPC(VPC&& value) { m_vPC = value; }
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline CreateHostedZoneResult& WithVPC(const VPC& value) { SetVPC(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains information about an Amazon VPC that you
+     * associated with this hosted zone.</p>
+     */
     inline CreateHostedZoneResult& WithVPC(VPC&& value) { SetVPC(value); return *this;}
 
     /**

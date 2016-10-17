@@ -26,6 +26,7 @@ namespace Model
   {
     NOT_SET,
     us_east_1,
+    us_east_2,
     us_west_1,
     us_west_2,
     eu_west_1,

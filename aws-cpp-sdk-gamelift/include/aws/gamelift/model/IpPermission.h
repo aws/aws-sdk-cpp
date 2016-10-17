@@ -47,17 +47,17 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Starting value for a range of allowed port numbers. </p>
+     * <p>Starting value for a range of allowed port numbers.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
-     * <p>Starting value for a range of allowed port numbers. </p>
+     * <p>Starting value for a range of allowed port numbers.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
-     * <p>Starting value for a range of allowed port numbers. </p>
+     * <p>Starting value for a range of allowed port numbers.</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 

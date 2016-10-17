@@ -47,37 +47,58 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline GameSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a game session.</p>
+     * <p>Unique identifier for a game session. Game session ID format is as follows:
+     * "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+     * string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one
+     * was specified when the game session was created) an auto-generated string. </p>
      */
     inline GameSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
@@ -398,6 +419,55 @@ namespace Model
      */
     inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(value); return *this;}
 
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline GameSession& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline GameSession& WithCreatorId(Aws::String&& value) { SetCreatorId(value); return *this;}
+
+    /**
+     * <p>Player ID of the person or entity that created the game session. This ID is
+     * used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline GameSession& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+
   private:
     Aws::String m_gameSessionId;
     bool m_gameSessionIdHasBeenSet;
@@ -423,6 +493,8 @@ namespace Model
     bool m_portHasBeenSet;
     PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
     bool m_playerSessionCreationPolicyHasBeenSet;
+    Aws::String m_creatorId;
+    bool m_creatorIdHasBeenSet;
   };
 
 } // namespace Model
