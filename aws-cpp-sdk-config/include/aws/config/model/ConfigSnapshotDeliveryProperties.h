@@ -49,10 +49,10 @@ namespace Model
    * <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the
    * rule only as often as the <code>deliveryFrequency</code> value.</p> <ol> <li>
    * <p>For example, you want your rule to run evaluations when AWS Config delivers
-   * the configuration snapshot. </p> </li> <li> <p>You specify the
+   * the configuration snapshot.</p> </li> <li> <p>You specify the
    * <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. </p>
    * </li> <li> <p>You then specify the delivery channel
-   * <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>. </p>
+   * <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.</p>
    * </li> <li> <p>Because the value for <code>deliveryFrequency</code> is less
    * frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes
    * evaluations for the rule every 24 hours. </p> </li> </ol> <p>You should set the

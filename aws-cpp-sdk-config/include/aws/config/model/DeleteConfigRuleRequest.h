@@ -25,6 +25,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_CONFIGSERVICE_API DeleteConfigRuleRequest : public ConfigServiceRequest
   {

@@ -45,37 +45,37 @@ namespace Model
     DescribeConfigurationRecorderStatusResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline const Aws::Vector<ConfigurationRecorderStatus>& GetConfigurationRecordersStatus() const{ return m_configurationRecordersStatus; }
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline void SetConfigurationRecordersStatus(const Aws::Vector<ConfigurationRecorderStatus>& value) { m_configurationRecordersStatus = value; }
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline void SetConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { m_configurationRecordersStatus = value; }
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline DescribeConfigurationRecorderStatusResult& WithConfigurationRecordersStatus(const Aws::Vector<ConfigurationRecorderStatus>& value) { SetConfigurationRecordersStatus(value); return *this;}
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline DescribeConfigurationRecorderStatusResult& WithConfigurationRecordersStatus(Aws::Vector<ConfigurationRecorderStatus>&& value) { SetConfigurationRecordersStatus(value); return *this;}
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline DescribeConfigurationRecorderStatusResult& AddConfigurationRecordersStatus(const ConfigurationRecorderStatus& value) { m_configurationRecordersStatus.push_back(value); return *this; }
 
     /**
-     * <p> A list that contains status of the specified recorders. </p>
+     * <p>A list that contains status of the specified recorders.</p>
      */
     inline DescribeConfigurationRecorderStatusResult& AddConfigurationRecordersStatus(ConfigurationRecorderStatus&& value) { m_configurationRecordersStatus.push_back(value); return *this; }
 

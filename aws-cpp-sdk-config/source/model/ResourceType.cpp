@@ -55,6 +55,7 @@ namespace Aws
         static const int AWS_RDS_DBSnapshot_HASH = HashingUtils::HashString("AWS::RDS::DBSnapshot");
         static const int AWS_RDS_EventSubscription_HASH = HashingUtils::HashString("AWS::RDS::EventSubscription");
         static const int AWS_ElasticLoadBalancingV2_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancingV2::LoadBalancer");
+        static const int AWS_S3_Bucket_HASH = HashingUtils::HashString("AWS::S3::Bucket");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -164,6 +165,10 @@ namespace Aws
           {
             return ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer;
           }
+          else if (hashCode == AWS_S3_Bucket_HASH)
+          {
+            return ResourceType::AWS_S3_Bucket;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -230,6 +235,8 @@ namespace Aws
             return "AWS::RDS::EventSubscription";
           case ResourceType::AWS_ElasticLoadBalancingV2_LoadBalancer:
             return "AWS::ElasticLoadBalancingV2::LoadBalancer";
+          case ResourceType::AWS_S3_Bucket:
+            return "AWS::S3::Bucket";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

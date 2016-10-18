@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>The details of an AWS Config evaluation. Provides the AWS resource that was
    * evaluated, the compliance of the resource, related timestamps, and supplementary
-   * information. </p>
+   * information.</p>
    */
   class AWS_CONFIGSERVICE_API EvaluationResult
   {

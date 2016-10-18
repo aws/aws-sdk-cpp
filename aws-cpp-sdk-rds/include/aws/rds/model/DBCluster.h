@@ -21,6 +21,7 @@
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
+#include <aws/rds/model/DBClusterRole.h>
 
 namespace Aws
 {
@@ -1205,6 +1206,62 @@ namespace Model
      */
     inline DBCluster& WithDBClusterArn(const char* value) { SetDBClusterArn(value); return *this;}
 
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline void SetAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline void SetAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline DBCluster& WithAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { SetAssociatedRoles(value); return *this;}
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline DBCluster& WithAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { SetAssociatedRoles(value); return *this;}
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline DBCluster& AddAssociatedRoles(const DBClusterRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
+
+    /**
+     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
+     * are associated with the DB cluster. IAM roles that are associated with a DB
+     * cluster grant permission for the DB cluster to access other AWS services on your
+     * behalf.</p>
+     */
+    inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
+
   private:
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
@@ -1266,6 +1323,8 @@ namespace Model
     bool m_dbClusterResourceIdHasBeenSet;
     Aws::String m_dBClusterArn;
     bool m_dBClusterArnHasBeenSet;
+    Aws::Vector<DBClusterRole> m_associatedRoles;
+    bool m_associatedRolesHasBeenSet;
   };
 
 } // namespace Model
