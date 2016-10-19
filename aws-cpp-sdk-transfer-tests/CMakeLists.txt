@@ -1,5 +1,21 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-transfer-integration-tests)
+cmake_minimum_required(VERSION 2.8.12)
+set(PROJECT_NAME "aws-cpp-sdk-transfer-integration-tests")
+set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_DESCRIPTION "Tests for C++ interface for Amazon Cognito Identity")
+set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+set(PROJECT_LIBS "")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-s3")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-transfer")
+list(APPEND PROJECT_LIBS "testing-resources")
+
+cmake_policy(SET CMP0028 NEW)
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
@@ -8,16 +24,7 @@ file(GLOB TRANSFER_TEST_SRC
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
 
-set(TRANSFER_INTEGRATION_TEST_APPLICATION_INCLUDES
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-s3/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-transfer/include/"
-  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
-)
-
 project(${PROJECT_NAME})
-
-include_directories(${TRANSFER_INTEGRATION_TEST_APPLICATION_INCLUDES})
 
 if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
@@ -26,10 +33,11 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runTransferIntegrationTests ${LIBTYPE} ${TRANSFER_TEST_SRC})
+    add_library(${PROJECT_NAME} ${LIBTYPE} ${TRANSFER_TEST_SRC})
+    add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 else()
-    add_executable(runTransferIntegrationTests ${TRANSFER_TEST_SRC})
+    add_executable(${PROJECT_NAME} ${TRANSFER_TEST_SRC})
 endif()
 
-target_link_libraries(runTransferIntegrationTests aws-cpp-sdk-transfer testing-resources)
-copyDlls(runTransferIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-transfer testing-resources)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})

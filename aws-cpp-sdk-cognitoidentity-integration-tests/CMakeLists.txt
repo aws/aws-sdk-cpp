@@ -1,26 +1,33 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(aws-cpp-sdk-cognitoidentity-integration-tests)
+set(PROJECT_NAME "aws-cpp-sdk-cognitoidentity-integration-tests")
+set(PROJECT_STRING    "${PROJECT_NAME}_${PROJECT_VERSION}")
+set(PROJECT_DESCRIPTION "Tests for C++ interface for Amazon Cognito Identity")
+set(PROJECT_TARNAME   "${PROJECT_NAME}-${PROJECT_VERSION}")
+set(PROJECT_LIBS "")
+ 
+cmake_policy(SET CMP0028 NEW)
+cmake_policy(SET CMP0048 NEW)
+cmake_policy(SET CMP0054 NEW)
+cmake_policy(SET CMP0056 NEW)
+
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-core")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-cognito-identity")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-access-management")
+list(APPEND PROJECT_LIBS "AWS::aws-cpp-sdk-iam")
+list(APPEND PROJECT_LIBS "testing-resources")
+
+project("${PROJECT_NAME}" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # Headers are included in the source so that they show up in Visual Studio.
 # They are included elsewhere for consistency.
 
-  file(GLOB AWS_COGNITO_SRC
-  "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
-  )
-
-  file(GLOB AWS_COGNITO_INTEGRATION_TESTS_SRC
-    ${AWS_COGNITO_SRC}
-  )
-
-set(AWS_COGNITO_INTEGRATION_TEST_APPLICATION_INCLUDES
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-core/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-cognito-identity/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-access-management/include/"
-  "${AWS_NATIVE_SDK_ROOT}/aws-cpp-sdk-iam/include/"
-  "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
+file(GLOB AWS_COGNITO_SRC
+"${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
 )
 
-include_directories(${AWS_COGNITO_INTEGRATION_TEST_APPLICATION_INCLUDES})
+file(GLOB AWS_COGNITO_INTEGRATION_TESTS_SRC
+  ${AWS_COGNITO_SRC}
+)
 
 if(MSVC AND BUILD_SHARED_LIBS)
     add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
@@ -29,10 +36,11 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(runCognitoIntegrationTests ${LIBTYPE} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+    add_library(${PROJECT_NAME} ${LIBTYPE} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+    add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 else()
-    add_executable(runCognitoIntegrationTests ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
+    add_executable(${PROJECT_NAME} ${AWS_COGNITO_INTEGRATION_TESTS_SRC})
 endif()
 
-target_link_libraries(runCognitoIntegrationTests aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
-copyDlls(runCognitoIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
