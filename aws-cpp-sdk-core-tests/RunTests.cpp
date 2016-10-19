@@ -18,15 +18,23 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/Aws.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/testing/platform/PlatformTesting.h>
 
 int main(int argc, char** argv)
 {
+
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
     Aws::SDKOptions options;
+
+    Aws::Testing::InitPlatformTest(options);
+
     Aws::InitAPI(options);
     ::testing::InitGoogleTest(&argc, argv);
     int retVal = RUN_ALL_TESTS();
     Aws::ShutdownAPI(options);
+
+    Aws::Testing::ShutdownPlatformTest(options);
+
     return retVal;
 }

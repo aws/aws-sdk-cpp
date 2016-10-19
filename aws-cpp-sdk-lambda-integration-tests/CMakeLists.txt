@@ -28,6 +28,8 @@ include_directories(${AWS_LAMBDA_INTEGRATION_TEST_APPLICATION_INCLUDES})
 
 if(PLATFORM_ANDROID)
   add_definitions(-DRESOURCES_DIR="resources")
+elseif(COMMAND add_custom_lambda_resources_directory_definition)
+  add_custom_lambda_resources_directory_definition()
 else()
   add_definitions(-DRESOURCES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/resources")
 endif()
@@ -46,3 +48,7 @@ endif()
 
 target_link_libraries(runLambdaIntegrationTests aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
 copyDlls(runLambdaIntegrationTests aws-cpp-sdk-core aws-cpp-sdk-kinesis aws-cpp-sdk-lambda aws-cpp-sdk-cognito-identity aws-cpp-sdk-access-management aws-cpp-sdk-iam testing-resources)
+
+if(COMMAND copy_lambda_testing_resources)
+  copy_lambda_testing_resources()
+endif()

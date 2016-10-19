@@ -74,6 +74,11 @@ set(INCLUDES
   "${CORE_DIR}/include/"
 )
 
+if(PLATFORM_CUSTOM)
+  add_custom_core_include_directories(CUSTOM_INCLUDE)
+  set(INCLUDES ${INCLUDES} ${CUSTOM_INCLUDE})
+endif()
+
 include_directories(${INCLUDES})
 
 if(USE_WINDOWS_DLL_SEMANTICS AND BUILD_SHARED_LIBS)
@@ -87,16 +92,12 @@ endif()
 
 add_library(testing-resources ${LIBTYPE} ${TestingResources_SRC})
 
+if(PLATFORM_CUSTOM)
+  add_custom_testing_target_compile_definitions()
+endif()
+
 target_include_directories(testing-resources PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(testing-resources aws-cpp-sdk-core)
-
-if(COMMAND add_custom_testing_link_libraries)
-  add_custom_testing_link_libraries()
-endif()
-
-if(COMMAND add_custom_testing_target_compile_definitions)
-  add_custom_testing_target_compile_definitions()
-endif()
 
