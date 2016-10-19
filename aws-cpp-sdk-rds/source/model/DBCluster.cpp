@@ -63,7 +63,8 @@ DBCluster::DBCluster() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false)
+    m_dBClusterArnHasBeenSet(false),
+    m_associatedRolesHasBeenSet(false)
 {
 }
 
@@ -101,7 +102,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false)
+    m_dBClusterArnHasBeenSet(false),
+    m_associatedRolesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -322,6 +324,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_dBClusterArn = StringUtils::Trim(dBClusterArnNode.GetText().c_str());
       m_dBClusterArnHasBeenSet = true;
     }
+    XmlNode associatedRolesNode = resultNode.FirstChild("AssociatedRoles");
+    if(!associatedRolesNode.IsNull())
+    {
+      XmlNode associatedRolesMember = associatedRolesNode.FirstChild("DBClusterRole");
+      while(!associatedRolesMember.IsNull())
+      {
+        m_associatedRoles.push_back(associatedRolesMember);
+        associatedRolesMember = associatedRolesMember.NextNode("DBClusterRole");
+      }
+
+      m_associatedRolesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -505,6 +519,17 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DBClusterArn=" << StringUtils::URLEncode(m_dBClusterArn.c_str()) << "&";
   }
 
+  if(m_associatedRolesHasBeenSet)
+  {
+      unsigned associatedRolesIdx = 1;
+      for(auto& item : m_associatedRoles)
+      {
+        Aws::StringStream associatedRolesSs;
+        associatedRolesSs << location << index << locationValue << ".DBClusterRole." << associatedRolesIdx++;
+        item.OutputToStream(oStream, associatedRolesSs.str().c_str());
+      }
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -654,6 +679,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_dBClusterArnHasBeenSet)
   {
       oStream << location << ".DBClusterArn=" << StringUtils::URLEncode(m_dBClusterArn.c_str()) << "&";
+  }
+  if(m_associatedRolesHasBeenSet)
+  {
+      unsigned associatedRolesIdx = 1;
+      for(auto& item : m_associatedRoles)
+      {
+        Aws::StringStream associatedRolesSs;
+        associatedRolesSs << location <<  ".DBClusterRole." << associatedRolesIdx++;
+        item.OutputToStream(oStream, associatedRolesSs.str().c_str());
+      }
   }
 }
 

@@ -328,7 +328,7 @@ namespace Model
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * can specify a value for <code>MaximumExecutionFrequency</code> when: </p> <ul>
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
@@ -338,7 +338,7 @@ namespace Model
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * can specify a value for <code>MaximumExecutionFrequency</code> when: </p> <ul>
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
@@ -348,7 +348,7 @@ namespace Model
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * can specify a value for <code>MaximumExecutionFrequency</code> when: </p> <ul>
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
@@ -358,7 +358,7 @@ namespace Model
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * can specify a value for <code>MaximumExecutionFrequency</code> when: </p> <ul>
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,
@@ -368,7 +368,7 @@ namespace Model
 
     /**
      * <p>The maximum frequency with which AWS Config runs evaluations for a rule. You
-     * can specify a value for <code>MaximumExecutionFrequency</code> when: </p> <ul>
+     * can specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul>
      * <li> <p>You are using an AWS managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when AWS Config
      * delivers the configuration snapshot.</p> </li> </ul> <p>For more information,

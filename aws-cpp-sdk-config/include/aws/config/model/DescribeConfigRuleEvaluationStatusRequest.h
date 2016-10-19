@@ -26,6 +26,7 @@ namespace Model
 {
 
   /**
+   * <p/>
    */
   class AWS_CONFIGSERVICE_API DescribeConfigRuleEvaluationStatusRequest : public ConfigServiceRequest
   {
@@ -38,56 +39,56 @@ namespace Model
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigRuleNames() const{ return m_configRuleNames; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline void SetConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetConfigRuleNames(value); return *this;}
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& WithConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetConfigRuleNames(value); return *this;}
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const Aws::String& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(Aws::String&& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 
     /**
      * <p>The name of the AWS managed Config rules for which you want status
      * information. If you do not specify any names, AWS Config returns status
-     * information for all AWS managed Config rules that you use. </p>
+     * information for all AWS managed Config rules that you use.</p>
      */
     inline DescribeConfigRuleEvaluationStatusRequest& AddConfigRuleNames(const char* value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames.push_back(value); return *this; }
 

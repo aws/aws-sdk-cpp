@@ -45,50 +45,50 @@ namespace Model
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline ConfigurationRecorder& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline ConfigurationRecorder& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the recorder. By default, AWS Config automatically assigns the
-     * name &quot;default&quot; when creating the configuration recorder. You cannot
-     * change the assigned name.</p>
+     * name "default" when creating the configuration recorder. You cannot change the
+     * assigned name.</p>
      */
     inline ConfigurationRecorder& WithName(const char* value) { SetName(value); return *this;}
 

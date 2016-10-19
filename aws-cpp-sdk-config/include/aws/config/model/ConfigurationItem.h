@@ -212,51 +212,51 @@ namespace Model
     inline ConfigurationItem& WithConfigurationStateId(const char* value) { SetConfigurationStateId(value); return *this;}
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline const Aws::String& GetConfigurationItemMD5Hash() const{ return m_configurationItemMD5Hash; }
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline void SetConfigurationItemMD5Hash(const Aws::String& value) { m_configurationItemMD5HashHasBeenSet = true; m_configurationItemMD5Hash = value; }
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline void SetConfigurationItemMD5Hash(Aws::String&& value) { m_configurationItemMD5HashHasBeenSet = true; m_configurationItemMD5Hash = value; }
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline void SetConfigurationItemMD5Hash(const char* value) { m_configurationItemMD5HashHasBeenSet = true; m_configurationItemMD5Hash.assign(value); }
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline ConfigurationItem& WithConfigurationItemMD5Hash(const Aws::String& value) { SetConfigurationItemMD5Hash(value); return *this;}
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline ConfigurationItem& WithConfigurationItemMD5Hash(Aws::String&& value) { SetConfigurationItemMD5Hash(value); return *this;}
 
     /**
-     * <p>Unique MD5 hash that represents the configuration item&apos;s state.</p>
-     * <p>You can use MD5 hash to compare the states of two or more configuration items
-     * that are associated with the same resource.</p>
+     * <p>Unique MD5 hash that represents the configuration item's state.</p> <p>You
+     * can use MD5 hash to compare the states of two or more configuration items that
+     * are associated with the same resource.</p>
      */
     inline ConfigurationItem& WithConfigurationItemMD5Hash(const char* value) { SetConfigurationItemMD5Hash(value); return *this;}
 
@@ -461,27 +461,27 @@ namespace Model
     inline ConfigurationItem& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The time stamp when the resource was created. </p>
+     * <p>The time stamp when the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetResourceCreationTime() const{ return m_resourceCreationTime; }
 
     /**
-     * <p>The time stamp when the resource was created. </p>
+     * <p>The time stamp when the resource was created.</p>
      */
     inline void SetResourceCreationTime(const Aws::Utils::DateTime& value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
 
     /**
-     * <p>The time stamp when the resource was created. </p>
+     * <p>The time stamp when the resource was created.</p>
      */
     inline void SetResourceCreationTime(Aws::Utils::DateTime&& value) { m_resourceCreationTimeHasBeenSet = true; m_resourceCreationTime = value; }
 
     /**
-     * <p>The time stamp when the resource was created. </p>
+     * <p>The time stamp when the resource was created.</p>
      */
     inline ConfigurationItem& WithResourceCreationTime(const Aws::Utils::DateTime& value) { SetResourceCreationTime(value); return *this;}
 
     /**
-     * <p>The time stamp when the resource was created. </p>
+     * <p>The time stamp when the resource was created.</p>
      */
     inline ConfigurationItem& WithResourceCreationTime(Aws::Utils::DateTime&& value) { SetResourceCreationTime(value); return *this;}
 

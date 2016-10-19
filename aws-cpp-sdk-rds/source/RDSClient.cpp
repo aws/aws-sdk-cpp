@@ -26,6 +26,7 @@
 #include <aws/rds/RDSClient.h>
 #include <aws/rds/RDSEndpoint.h>
 #include <aws/rds/RDSErrorMarshaller.h>
+#include <aws/rds/model/AddRoleToDBClusterRequest.h>
 #include <aws/rds/model/AddSourceIdentifierToSubscriptionRequest.h>
 #include <aws/rds/model/AddTagsToResourceRequest.h>
 #include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
@@ -100,6 +101,7 @@
 #include <aws/rds/model/PromoteReadReplicaDBClusterRequest.h>
 #include <aws/rds/model/PurchaseReservedDBInstancesOfferingRequest.h>
 #include <aws/rds/model/RebootDBInstanceRequest.h>
+#include <aws/rds/model/RemoveRoleFromDBClusterRequest.h>
 #include <aws/rds/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/rds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/rds/model/ResetDBClusterParameterGroupRequest.h>
@@ -174,6 +176,39 @@ void RDSClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AddRoleToDBClusterOutcome RDSClient::AddRoleToDBCluster(const AddRoleToDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AddRoleToDBClusterOutcome(NoResult());
+  }
+  else
+  {
+    return AddRoleToDBClusterOutcome(outcome.GetError());
+  }
+}
+
+AddRoleToDBClusterOutcomeCallable RDSClient::AddRoleToDBClusterCallable(const AddRoleToDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddRoleToDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddRoleToDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::AddRoleToDBClusterAsync(const AddRoleToDBClusterRequest& request, const AddRoleToDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddRoleToDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::AddRoleToDBClusterAsyncHelper(const AddRoleToDBClusterRequest& request, const AddRoleToDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddRoleToDBCluster(request), context);
 }
 
 AddSourceIdentifierToSubscriptionOutcome RDSClient::AddSourceIdentifierToSubscription(const AddSourceIdentifierToSubscriptionRequest& request) const
@@ -2616,6 +2651,39 @@ void RDSClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, co
 void RDSClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebootDBInstance(request), context);
+}
+
+RemoveRoleFromDBClusterOutcome RDSClient::RemoveRoleFromDBCluster(const RemoveRoleFromDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RemoveRoleFromDBClusterOutcome(NoResult());
+  }
+  else
+  {
+    return RemoveRoleFromDBClusterOutcome(outcome.GetError());
+  }
+}
+
+RemoveRoleFromDBClusterOutcomeCallable RDSClient::RemoveRoleFromDBClusterCallable(const RemoveRoleFromDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveRoleFromDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveRoleFromDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::RemoveRoleFromDBClusterAsync(const RemoveRoleFromDBClusterRequest& request, const RemoveRoleFromDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveRoleFromDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::RemoveRoleFromDBClusterAsyncHelper(const RemoveRoleFromDBClusterRequest& request, const RemoveRoleFromDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveRoleFromDBCluster(request), context);
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome RDSClient::RemoveSourceIdentifierFromSubscription(const RemoveSourceIdentifierFromSubscriptionRequest& request) const

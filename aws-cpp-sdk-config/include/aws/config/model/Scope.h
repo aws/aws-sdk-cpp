@@ -37,7 +37,7 @@ namespace Model
    * value, or a combination of one resource type and one resource ID. Specify a
    * scope to constrain which resources trigger an evaluation for a rule. Otherwise,
    * evaluations for the rule are triggered when any resource in your recording group
-   * changes in configuration. </p>
+   * changes in configuration.</p>
    */
   class AWS_CONFIGSERVICE_API Scope
   {
