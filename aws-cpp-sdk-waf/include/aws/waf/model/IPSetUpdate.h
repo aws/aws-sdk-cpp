@@ -74,32 +74,32 @@ namespace Model
     inline IPSetUpdate& WithAction(ChangeAction&& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
+     * <p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR
+     * notation) that web requests originate from.</p>
      */
     inline const IPSetDescriptor& GetIPSetDescriptor() const{ return m_iPSetDescriptor; }
 
     /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
+     * <p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR
+     * notation) that web requests originate from.</p>
      */
     inline void SetIPSetDescriptor(const IPSetDescriptor& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = value; }
 
     /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
+     * <p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR
+     * notation) that web requests originate from.</p>
      */
     inline void SetIPSetDescriptor(IPSetDescriptor&& value) { m_iPSetDescriptorHasBeenSet = true; m_iPSetDescriptor = value; }
 
     /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
+     * <p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR
+     * notation) that web requests originate from.</p>
      */
     inline IPSetUpdate& WithIPSetDescriptor(const IPSetDescriptor& value) { SetIPSetDescriptor(value); return *this;}
 
     /**
-     * <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-     * address range (in CIDR notation) that web requests originate from.</p>
+     * <p>The IP address type (<code>IPV4</code>) and the IP address range (in CIDR
+     * notation) that web requests originate from.</p>
      */
     inline IPSetUpdate& WithIPSetDescriptor(IPSetDescriptor&& value) { SetIPSetDescriptor(value); return *this;}
 
