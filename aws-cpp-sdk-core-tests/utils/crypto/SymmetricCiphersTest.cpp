@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#ifndef NO_SYMMETRIC_ENCRYPTION2
+#ifndef NO_SYMMETRIC_ENCRYPTION
 
 #include <aws/external/gtest.h>
 #include <aws/core/utils/crypto/Factories.h>
