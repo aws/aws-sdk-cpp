@@ -317,8 +317,13 @@ endif(MSVC)
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 if(PLATFORM_CUSTOM)
-  add_custom_core_include_directories(CORE_CUSTOM_INCLUDE)
-  SET(Core_INCLUDES ${Core_INCLUDES} ${CORE_CUSTOM_INCLUDE})
+  if(COMMAND add_custom_core_include_directories)
+    add_custom_core_include_directories(CORE_CUSTOM_INCLUDE)
+    SET(Core_INCLUDES ${Core_INCLUDES} ${CORE_CUSTOM_INCLUDE})
+  endif()
+  if(COMMAND add_custom_definitions)
+    add_custom_definitions()
+  endif()
 endif()
 
 include_directories(${Core_INCLUDES})
@@ -350,7 +355,9 @@ if(ENABLE_OPENSSL_ENCRYPTION AND BUILD_OPENSSL)
 endif()
 
 if(PLATFORM_CUSTOM)
-  add_custom_core_libraries()
+  if(COMMAND add_custom_core_libraries)
+    add_custom_core_libraries()
+  endif()
 endif()
 
 target_include_directories(aws-cpp-sdk-core PUBLIC

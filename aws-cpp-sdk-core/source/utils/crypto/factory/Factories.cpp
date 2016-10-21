@@ -187,6 +187,7 @@ public:
     }
 };
 
+
 class DefaultAES_CBCFactory : public SymmetricCipherFactory
 {
 public:
@@ -744,55 +745,94 @@ std::shared_ptr<HMAC> Aws::Utils::Crypto::CreateSha256HMACImplementation()
     return s_Sha256HMACFactory->CreateImplementation();
 }
 
+#ifdef _WIN32
+#pragma warning( push )
+#pragma warning( disable : 4702 )
+#endif
+
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const CryptoBuffer& key)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CBCFactory->CreateImplementation(key);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CBCFactory->CreateImplementation(key, iv);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CBCImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CBCFactory->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CTRFactory->CreateImplementation(key);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(const CryptoBuffer& key, const CryptoBuffer& iv)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CTRFactory->CreateImplementation(key, iv);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_CTRImplementation(CryptoBuffer&& key, CryptoBuffer&& iv)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_CTRFactory->CreateImplementation(std::move(key), std::move(iv));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_GCMFactory->CreateImplementation(key);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_GCMFactory->CreateImplementation(key, iv, tag);
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_GCMImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_GCMFactory->CreateImplementation(std::move(key), std::move(iv), std::move(tag));
 }
 
 std::shared_ptr<SymmetricCipher> Aws::Utils::Crypto::CreateAES_KeyWrapImplementation(const CryptoBuffer& key)
 {
+#ifdef NO_SYMMETRIC_ENCRYPTION
+    return nullptr;
+#endif
     return s_AES_KeyWrapFactory->CreateImplementation(key);
 }
+
+#ifdef _WIN32
+#pragma warning(pop)
+#endif
 
 std::shared_ptr<SecureRandomBytes> Aws::Utils::Crypto::CreateSecureRandomBytesImplementation()
 {

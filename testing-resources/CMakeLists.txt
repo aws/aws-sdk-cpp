@@ -75,8 +75,13 @@ set(INCLUDES
 )
 
 if(PLATFORM_CUSTOM)
-  add_custom_core_include_directories(CUSTOM_INCLUDE)
-  set(INCLUDES ${INCLUDES} ${CUSTOM_INCLUDE})
+  if(COMMAND add_custom_core_include_directories)
+    add_custom_core_include_directories(CUSTOM_INCLUDE)
+    set(INCLUDES ${INCLUDES} ${CUSTOM_INCLUDE})
+  endif()
+  if(COMMAND add_custom_definitions)
+    add_custom_definitions()
+  endif()
 endif()
 
 include_directories(${INCLUDES})

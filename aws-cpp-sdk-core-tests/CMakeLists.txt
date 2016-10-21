@@ -57,6 +57,12 @@ set(TestApplication_INCLUDES
   "${AWS_NATIVE_SDK_ROOT}/testing-resources/include/"
 )
 
+if(PLATFORM_CUSTOM)
+    if(COMMAND add_custom_core_testing_definitions)
+        add_custom_core_testing_definitions()
+    endif()
+endif()
+
 include_directories(${TestApplication_INCLUDES})
 
 enable_testing()

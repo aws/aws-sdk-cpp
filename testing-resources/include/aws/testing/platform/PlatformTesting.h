@@ -39,5 +39,6 @@ namespace Testing
 {
     AWS_TESTING_API void InitPlatformTest(Aws::SDKOptions& sdkOptions);
     AWS_TESTING_API void ShutdownPlatformTest(Aws::SDKOptions& sdkOptions);
+    AWS_TESTING_API const char* GetDefaultWriteFolder();
 } // namespace Testing
 } // namespace Aws

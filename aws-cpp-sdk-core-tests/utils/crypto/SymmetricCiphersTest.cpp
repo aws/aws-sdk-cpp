@@ -13,6 +13,8 @@
 * permissions and limitations under the License.
 */
 
+#ifndef NO_SYMMETRIC_ENCRYPTION2
+
 #include <aws/external/gtest.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Cipher.h>
@@ -57,6 +59,7 @@ TEST(AES_CBC_TEST, LessThanOneBlockTest)
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     ASSERT_TRUE(*cipher);
@@ -141,6 +144,7 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     Aws::String data_raw(TEST_ENCRYPTION_STRING);
 
     auto cipher = CreateAES_CBCImplementation(key);
+    ASSERT_NE(cipher, nullptr);
     ASSERT_EQ(16u, cipher->GetIV().GetLength());
     auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
     auto part2 = cipher->FinalizeEncryption();
@@ -322,6 +326,7 @@ TEST(AES_GCM_TEST, Test_Generated_IV)
     Aws::String data_raw(TEST_ENCRYPTION_STRING);
 
     auto cipher = CreateAES_GCMImplementation(key);
+    ASSERT_NE(cipher, nullptr);
     ASSERT_EQ(12u, cipher->GetIV().GetLength());
     auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
     auto part2 = cipher->FinalizeEncryption();
@@ -353,6 +358,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
     CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
     
@@ -385,6 +391,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
     CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
@@ -417,6 +424,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
     CryptoBuffer expected_cipher_text_raw = HashingUtils::HexDecode(expected_cipher_text);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
@@ -449,6 +457,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
     CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
@@ -481,6 +490,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
     CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
@@ -512,6 +522,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
     CryptoBuffer cek_raw = HashingUtils::HexDecode(cek);
 
     auto cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
@@ -541,6 +552,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);    
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     ASSERT_TRUE(*cipher);
@@ -576,6 +588,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CTRImplementation(key, iv);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);    
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     ASSERT_TRUE(*cipher);
@@ -608,6 +621,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     CryptoBuffer tag = HashingUtils::HexDecode(tag_raw);
 
     auto cipher = CreateAES_GCMImplementation(key, iv);
+    ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
     CryptoBuffer encryptedResult({ &encryptResult, &finalEncryptedBuffer });   
@@ -640,7 +654,7 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     CryptoBuffer tag = HashingUtils::HexDecode(tag_raw);
 
     auto cipher = CreateAES_GCMImplementation(key, iv);
-
+    ASSERT_NE(cipher, nullptr);
     //slice on a weird boundary just to force boundary conditions
     auto slices = data.Slice(24);
 
@@ -706,7 +720,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
-
+    ASSERT_NE(cipher, nullptr);
     //slice on a weird boundary just to force boundary conditions
     auto slices = data.Slice(24);
 
@@ -773,6 +787,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     CryptoBuffer expected = HashingUtils::HexDecode(expected_raw);
 
     auto cipher = CreateAES_CTRImplementation(key, iv);
+    ASSERT_NE(cipher, nullptr);
     //slice on a weird boundary just to force boundary conditions
     auto slices = data.Slice(24);
 
@@ -826,4 +841,5 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     ASSERT_EQ(data, plainText);
 }
 
+#endif // NO_SYMMETRIC_ENCRYPTION
 

@@ -43,5 +43,9 @@ namespace Testing
     {
         AWS_UNREFERENCED_PARAM(sdkOptions);
     }
+    const char* GetDefaultWriteFolder()
+    {
+        return "";
+    }
 } // namespace Testing
 } // namespace Aws
